@@ -1,5 +1,17 @@
 {
-  "name": "Strife",
+  "name": "strife",
   "private": true,
-  "dependencies": {}
+  "description": "Discord - \"disagreement between people.\"     Synonym Strife - \"angry or bitter disagreement over fundamental issues; conflict\"",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
