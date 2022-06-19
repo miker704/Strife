@@ -6,4 +6,5 @@
  - will be using faker gem later on 
 
  - later for the bonus feature this folder will house the source code for the bot which will be 
- implemented in c++ using webserver for c++ and, restful api, and cmake and called with react.js 
+ implemented in c++ using webserver for c++ and, restful api, and cmake and called with react.js this 
+ is done through the restbed api && json library for c++ 
