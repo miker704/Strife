@@ -4,7 +4,7 @@ import ReactDom from "react-dom";
 
 document.addEventListener("DOMContentLoaded", ()=>{
 	ReactDom.render(
-		<h1>Hello world</h1>,
+		<h1>Hello worldi</h1>,
 		document.getElementById("root")
 	);
 })
