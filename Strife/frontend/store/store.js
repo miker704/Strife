@@ -2,8 +2,8 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from 'redux-thunk';
 import rootReducer from "../reducers/root_reducer";
 
-const configureStore = (preLoadedState = {}) =>{
- return createStore(rootReducer,preLoadedState,applyMiddleware(thunk));
+const configureStore = (preLoadedState = {}) => {
+    return createStore(rootReducer, preLoadedState, applyMiddleware(thunk));
 }
 
 export default configureStore;
