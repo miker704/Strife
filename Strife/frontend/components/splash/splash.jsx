@@ -8,16 +8,13 @@ class Splash extends React.Component{
     }
     render(){
         return(
-            <div className="home">
+            <div className="splash-home">
               <h1>calling from home</h1>
             </div>
         )
     }
 
 } 
-    
-
-
 
 
 export default Splash;
