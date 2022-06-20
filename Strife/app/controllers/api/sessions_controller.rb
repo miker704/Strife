@@ -14,7 +14,7 @@ class Api::SessionsController < ApplicationController
             render json: ['Login Required!'], status: 404
         else
             logout
-            render json: {}
+            render "api/users/show"
         end
     end
 
