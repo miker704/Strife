@@ -10,6 +10,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :id_tag, null: false
       t.integer :color_id, null: false
       t.date :birthday, null: false
+      t.decimal :phone
       t.timestamps
     end
     add_index :users, :username
