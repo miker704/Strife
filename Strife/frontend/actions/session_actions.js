@@ -56,8 +56,9 @@ export const removeSessionErrors = () => {
  SessionAPIUtil.signOut().then( () => dispatch(logoutCurrentUser()));
 
 
+// for updating and removing a user 
 
 
 
 
- 
+
