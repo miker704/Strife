@@ -29,8 +29,19 @@ export const removeCurrentUser = (userId) => {
     }
 }
 
+export const receiveSessionErrors =  (errors) => {
+    return {
+        type: RECEIVE_SESSION_ERRORS,
+        errors
+    }
+}
 
 
+export const removeSessionErrors = () => {
+    return {
+        type: REMOVE_SESSION_ERRORS
+    }
+}
 
 
 
@@ -43,3 +54,10 @@ export const removeCurrentUser = (userId) => {
 
  export const logoutUser = ()=> (dispatch) =>
  SessionAPIUtil.signOut().then( () => dispatch(logoutCurrentUser()));
+
+
+
+
+
+
+ 
