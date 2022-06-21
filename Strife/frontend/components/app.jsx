@@ -13,16 +13,28 @@ const App = () => (
     {/* <h1>can you work PLEASE 😒 !!!!!!!!</h1> */}
    
    {/* <Routes> */}
-    {/* <Switch> */}
+    <Switch>
     {/* <Route path="/" element={<NavBarContainer/>}/> */}
-    <Route path="/" component={NavBarContainer}/>
-    <Route exact path="/" component={SplashContainer} />
+    {/* <Route path="/" component={NavBarContainer}/> */}
+    {/* <Route exact path="/" component={SplashContainer} /> */}
+
+    {/* <Route path="/"></Route> */}
+    <Route exact path="/"> <SplashContainer/> <NavBarContainer/> </Route>
     <Route path="/signup" component={SignUpFormContainer} />
     <Route path="/signin" component={SignInFormContainer} />
-    {/* </Switch> */}
+    </Switch>
     {/* </Routes> */}
     
-   
+    {/* testing custom switch route */}
+    {/* <Switch>
+
+                 <Route path="/"> <NavBarContainer/></Route>
+                <Route exact path="/"> <SplashContainer/> </Route>
+                <Route path="/signup"> <SignUpFormContainer/> </Route>
+                <Route path="/signin"> <SignInFormContainer/> </Route>
+
+
+    </Switch> */}
    
     </div>
 )

@@ -1,0 +1,49 @@
+
+    
+
+
+      t.boolean :online, default: false, null: false
+      t.string :profile_pic_url
+      t.string :id_tag, null: false
+      t.integer :color_id, null: false
+      t.date :birthday, null: false
+      t.decimal :phone
+    <Route path="/" component={NavBarContainer}/>
+    <Route exact path="/" component={SplashContainer} />
+    <Route path="/signup" component={SignUpFormContainer} />
+    <Route path="/login" component={SignInFormContainer} />
+
+
+
+
+
+how login works  -> sign in info correct  -> got to user dash  -> yes 
+(while signed in the pages signup and 
+
+login are not accessible to user) -> login not accessible in signed in  ->
+
+moving into any page via url that does not exist will singed in leads to a logout option screen to logout - --- > yes 
+
+
+when signing out redirect to home/ signin page/signup
+
+while signed out/ after signing out cannot go back to loged user via back/foward or url indexing
+
+signing up redirects user to their account page signed in 
+
+
+
+edit forms for all their data for sign up  -> edit active record for users rollback they mirgrate again
+
+- update controllers modelds for users
+- set up server and channel active record
+- set up controllers and model for server and channel
+- set up reducers, actions for server channels etc
+- set up entity reduer and actions,
+- error reducer refactor and debug
+
+
+- tomorrow websoket and m,essging 
+
+- thursdat ui 
+ 
