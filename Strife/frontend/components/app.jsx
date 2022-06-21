@@ -13,13 +13,13 @@ const App = () => (
     {/* <h1>can you work PLEASE 😒 !!!!!!!!</h1> */}
    
    {/* <Routes> */}
-    <Switch>
+    {/* <Switch> */}
     {/* <Route path="/" element={<NavBarContainer/>}/> */}
-    {/* <Route path="/" component={NavBarContainer}/> */}
-    {/* <Route exact path="/" component={SplashContainer} /> */}
+    <Route path="/" component={NavBarContainer}/>
+    <Route exact path="/" component={SplashContainer} />
     <Route path="/signup" component={SignUpFormContainer} />
     <Route path="/signin" component={SignInFormContainer} />
-    </Switch>
+    {/* </Switch> */}
     {/* </Routes> */}
     
    

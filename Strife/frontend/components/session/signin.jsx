@@ -7,7 +7,8 @@ class SignIn extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
+            // username: '',
+            email: '',
             password: ''
         };
 
@@ -31,8 +32,12 @@ class SignIn extends React.Component {
             <div className="session-signin-form">
                         <form >
                                 <label>Log in !</label> <br />
-                                <label>username:
+                                {/* <label>username:
                                 <input type="text"value={this.state.username} onChange={this.handleInput('username')}/> <br />
+                               </label>  */}
+
+                                <label>Email:
+                                <input type="text"value={this.state.email} onChange={this.handleInput('email')}/> <br />
                                </label> 
                                <label>password:
                                 <input type="password" value={this.state.password} onChange={this.handleInput('password')}/> <br />
