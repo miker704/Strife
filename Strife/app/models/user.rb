@@ -3,13 +3,14 @@ class User < ApplicationRecord
     # validates :email, :username, :password_digest, :birthday, :session_token, presence: true
     # validates :username, uniqueness: true, length: {minimum: 2, maximum: 50}
     # validates :email, uniqueness: true
-    # validates :phone, uniqueness: true, allow_nil: true
+    # validates :phone, uniqueness: true, allow_nil: true\
+    # validates :password_digest, :id_tag, presence: true
 
 
     validates :email, :username, :password_digest, :session_token, presence: true
     validates :email, uniqueness: true
     validates :password, length: {minimum: 6, allow_nil: true}
-    validates :password_digest, :id_tag, presence: true
+    validates :password_digest, presence: true
     validates :session_token, uniqueness: true
     attr_reader :password
 
