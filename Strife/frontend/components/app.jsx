@@ -20,8 +20,8 @@ const App = () => (
 
     {/* <Route path="/"></Route> */}
     <Route exact path="/"> <SplashContainer/> <NavBarContainer/> </Route>
-    <Route path="/signup" component={SignUpFormContainer} />
-    <Route path="/signin" component={SignInFormContainer} />
+    <AuthRoute path="/signup" component={SignUpFormContainer} />
+    <AuthRoute path="/signin" component={SignInFormContainer} />
     </Switch>
     {/* </Routes> */}
     
