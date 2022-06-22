@@ -1,6 +1,6 @@
 import { LOGOUT_CURRENT_USER,RECEIVE_CURRENT_USER, REMOVE_CURRENT_USER } from "../actions/session_actions";
 
-const userReducer = (state ={},action) => {
+const userReducer = (state={},action) => {
 
     Object.freeze(state);
 
