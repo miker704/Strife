@@ -9,6 +9,7 @@ class SignUp extends React.Component {
         this.state = {
             username: '',
             email: '',
+            birthday: '',
             password: ''
         };
 
@@ -36,6 +37,8 @@ class SignUp extends React.Component {
                                 <input type="text"value={this.state.username} onChange={this.handleInput('username')}/> <br />
                                 <label>Email:</label>
                                 <input type="text"value={this.state.email} onChange={this.handleInput('email')} /> <br />
+                                <label>Birthday:</label>
+                                <input type="date"value={this.state.birthday} onChange={this.handleInput('birthday')} /> <br />
                                 <label>password:</label>
                                 <input type="password" value={this.state.password} onChange={this.handleInput('password')}/> <br />
                                 <button>Create Account!</button>
