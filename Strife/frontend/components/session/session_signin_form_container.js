@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { signIn } from "../../utils/session_api_util";
+import SessionForm from "./session_form";
 import SignIn from "./signin";
 
 
@@ -17,4 +18,4 @@ const mDTP = dispatch =>{
     }
 }
 
-const SessionSignInFormContainer = connect(mSTP,mDTP)();
+const SessionSignInFormContainer = connect(mSTP,mDTP)(SessionForm);
