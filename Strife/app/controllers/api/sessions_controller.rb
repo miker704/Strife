@@ -15,7 +15,7 @@ class Api::SessionsController < ApplicationController
 
         if @user 
            logout!
-           render json: ["Sign out successful"]
+           render json: ["Sign out successful"], status: 200
         else
             render json: ["Login Required Redirecting "], status: 404
         end
