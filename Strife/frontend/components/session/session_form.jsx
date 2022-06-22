@@ -10,9 +10,16 @@ import { Link } from "react-router-dom";
 
             constructor(props){
                 super(props);
+                this.state = this.props.formType === 'Sign In' ? {email:"", password:""}: {email:"",username:"",password:""};
                 this.handleUserInput = this.handleUserInput.bind(this);
                 this.handleSubmit = this.handleSubmit.bind(this);
             }
 
+            render(){
+                
+            }
 
     }
+
+
+export default SessionForm;
