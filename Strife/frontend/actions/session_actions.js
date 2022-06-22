@@ -1,3 +1,4 @@
+import { useDispatch } from "react-redux";
 import * as SessionAPIUtil from "../utils/session_api_util.js"
 
 
@@ -49,6 +50,7 @@ export const removeSessionErrors = () => {
 
  export const signUpUser = user => (dispatch) =>
  SessionAPIUtil.signUp(user).then( (user) => dispatch(receiveCurrentUser(user)));
+
  export const signInUser = user => (dispatch) =>
  SessionAPIUtil.signIn(user).then( (user) => dispatch(receiveCurrentUser(user)));
 
@@ -57,8 +59,14 @@ export const removeSessionErrors = () => {
 
 
 // for updating and removing a user 
+export const updateUserInfo = user => (dispatch) => 
+SessionAPIUtil.updateUser(user).then((user) => dispatch(receiveCurrentUser(user)));
 
+//delete / ban a user from Strife or a channel/server
 
+export const removeUserAccount = userId => (dispatch) => 
+SessionAPIUtil.removeUser(userId).then(() => (dispatch(logoutCurrentUser()),dispatch(removeCurrentUser(userId))));
 
-
-
+//search up a user 
+// export const searchUpUser = userId => (dispatch) =>
+// SessionAPIUtil.searchUsers()
