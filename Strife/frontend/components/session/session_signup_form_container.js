@@ -7,7 +7,7 @@ const mSTP  = state => {
     return {
         errors: state.errors.sessionError,
         formType: 'Sign Up',
-        navLink: <Link to="/sigin">Have an account ? Sign In !</Link>,
+        navLink: <Link to="/signin">Have an account ? Sign In !</Link>,
     }
 }
 
