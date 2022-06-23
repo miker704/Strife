@@ -26,26 +26,57 @@ class SignUp extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.signUpUser(this.state).then(() => this.props.history.push('/'));
+        // this.props.removeSessionErrors();
+        // this.props.signUpUser(this.state)
     }
 
-    // componentWillUnmount(){
-        // this.props.
-    // }
+    componentWillUnmount(){
+        this.props.removeSessionErrors();
+    }
 
     render() {
+
+        let email = this.props.errors.includes("Email cant be blank") ? <h5 className="login-error">
+            EMAIL - REQUIRED FIELD </h5> : <h5 className="login-normal">EMAIL</h5>
+
+
+        let password=this.props.errors.includes('Password is too short (minimum is 6 characters)') ? <h5 className="login-error">
+        PASSWORD - MUST BE AT LEAST 6 CHARACTERS LONG </h5> : <h5 className="login-normal">PASSWORD</h5>
+        let username=this.props.errors.includes("Username cant be blank") ? <h5 className="login-error">
+        USERNAME - REQUIRED FIELD </h5> : <h5 className="login-normal">USERNAME</h5>
+        let birthday=this.props.errors.includes("Birthday can't be blank") ? <h5 className="login-error">
+        BIRTHDAY - REQUIRED FIELD </h5> : <h5 className="login-normal">BIRTHDAY</h5>
+
+
+        if (this.props.errors.includes("Email has already been taken")){
+            email = <h5 className="login-error">AN ACCOUNT WITH THAT EMAIL ALREADY EXISTS</h5>
+        }
+
+
         return (
             <div className="session-signup-form">
+
+                        <h2>Create an Account!</h2>
                         <form onSubmit={this.handleSubmit}>
-                                <label>Create an Account!</label> <br />
-                                <label>username:</label>
-                                <input type="text"value={this.state.username} onChange={this.handleInput('username')}/> <br />
-                                <label>Email:</label>
-                                <input type="text"value={this.state.email} onChange={this.handleInput('email')} /> <br />
-                                <label>Birthday:</label>
-                                <input type="date"value={this.state.birthday} onChange={this.handleInput('birthday')} /> <br />
-                                <label>password:</label>
-                                <input type="password" value={this.state.password} onChange={this.handleInput('password')}/> <br />
-                                <button>Create Account!</button>
+                                {/* <label>username:</label> */}
+                                {username}
+                                <input type="text"value={this.state.username} onChange={this.handleInput('username')}/>
+                                
+                                {/* <br /> */}
+                                {/* <label>Email:</label> */}
+                                {email}
+                                <input type="email"value={this.state.email} onChange={this.handleInput('email')} />
+                                {/* <br /> */}
+
+                                {/* <label>Birthday:</label> */}
+                                {birthday}
+                                <input type="date"value={this.state.birthday} onChange={this.handleInput('birthday')} />
+                                {password}
+                                {/* <br /> */}
+
+                                {/* <label>password:</label> */}
+                                <input type="password" value={this.state.password} onChange={this.handleInput('password')}/>
+                                <button type="submit">Create Account!</button>
                         </form>
             </div>
         )

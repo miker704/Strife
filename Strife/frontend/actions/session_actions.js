@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+
 import * as SessionAPIUtil from "../utils/session_api_util.js"
 
 
@@ -49,7 +49,7 @@ export const removeSessionErrors = () => {
  //ajax dispatch
 
  export const signUpUser = user => (dispatch) =>
- SessionAPIUtil.signUp(user).then( (user) => dispatch(receiveCurrentUser(user)), (err) => dispatch(receiveSessionErrors(err.responseJSON)));
+ SessionAPIUtil.signUp(user).then( user => (dispatch(receiveCurrentUser(user))), err => (dispatch(receiveSessionErrors(err.responseJSON))));
 
  export const signInUser = user => (dispatch) =>
  SessionAPIUtil.signIn(user).then( (user) =>  dispatch(receiveCurrentUser(user)), (err) => dispatch(receiveSessionErrors(err.responseJSON)));
