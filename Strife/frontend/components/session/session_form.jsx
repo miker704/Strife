@@ -14,6 +14,9 @@ import { Link } from "react-router-dom";
                 this.handleUserInput = this.handleUserInput.bind(this);
                 this.handleSubmit = this.handleSubmit.bind(this);
                 this.handleError = this.handleError.bind(this);
+                this.handleDemoUser1=this.handleDemoUser1.bind(this);
+                this.handleDemoUser2=this.handleDemoUser2.bind(this);
+
             }
 
             handleSubmit(){
@@ -29,10 +32,19 @@ import { Link } from "react-router-dom";
 
             }
 
+            handleDemoUser1(){
+
+            }
+
+            handleDemoUser2(){
+                
+            }
+
+
             render(){
                 return (
                     <div>
-                            
+
                     </div>
                 )   
             }

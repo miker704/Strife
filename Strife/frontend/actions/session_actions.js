@@ -49,10 +49,10 @@ export const removeSessionErrors = () => {
  //ajax dispatch
 
  export const signUpUser = user => (dispatch) =>
- SessionAPIUtil.signUp(user).then( (user) => dispatch(receiveCurrentUser(user)));
+ SessionAPIUtil.signUp(user).then( (user) => dispatch(receiveCurrentUser(user)), (err) => dispatch(receiveSessionErrors(err.responseJSON)));
 
  export const signInUser = user => (dispatch) =>
- SessionAPIUtil.signIn(user).then( (user) => dispatch(receiveCurrentUser(user)));
+ SessionAPIUtil.signIn(user).then( (user) =>  dispatch(receiveCurrentUser(user)), (err) => dispatch(receiveSessionErrors(err.responseJSON)));
 
  export const logoutUser = ()=> (dispatch) =>
  SessionAPIUtil.signOut().then( () => dispatch(logoutCurrentUser()));
@@ -60,12 +60,12 @@ export const removeSessionErrors = () => {
 
 // for updating and removing a user 
 export const updateUserInfo = user => (dispatch) => 
-SessionAPIUtil.updateUser(user).then((user) => dispatch(receiveCurrentUser(user)));
+SessionAPIUtil.updateUser(user).then((user) => (dispatch(receiveCurrentUser(user))),(err) => dispatch(receiveSessionErrors(err.responseJSON)));
 
 //delete / ban a user from Strife or a channel/server
 
 export const removeUserAccount = userId => (dispatch) => 
-SessionAPIUtil.removeUser(userId).then(() => (dispatch(logoutCurrentUser()),dispatch(removeCurrentUser(userId))));
+SessionAPIUtil.removeUser(userId).then(() => {dispatch(logoutCurrentUser()),dispatch(removeCurrentUser(userId))}, (err) => dispatch(receiveSessionErrors(err.responseJSON)));
 
 //search up a user 
 // export const searchUpUser = userId => (dispatch) =>
