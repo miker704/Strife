@@ -36,13 +36,13 @@ class SignUp extends React.Component {
 
     render() {
 
-        let email = this.props.errors.includes("Email cant be blank") ? <h5 className="login-error">
+        let email = this.props.errors.includes("Email can't be blank") ? <h5 className="login-error">
             EMAIL - REQUIRED FIELD </h5> : <h5 className="login-normal">EMAIL</h5>
 
 
         let password=this.props.errors.includes('Password is too short (minimum is 6 characters)') ? <h5 className="login-error">
         PASSWORD - MUST BE AT LEAST 6 CHARACTERS LONG </h5> : <h5 className="login-normal">PASSWORD</h5>
-        let username=this.props.errors.includes("Username cant be blank") ? <h5 className="login-error">
+        let username=this.props.errors.includes("Username can't be blank") ? <h5 className="login-error">
         USERNAME - REQUIRED FIELD </h5> : <h5 className="login-normal">USERNAME</h5>
         let birthday=this.props.errors.includes("Birthday can't be blank") ? <h5 className="login-error">
         BIRTHDAY - REQUIRED FIELD </h5> : <h5 className="login-normal">BIRTHDAY</h5>
