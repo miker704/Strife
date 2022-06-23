@@ -5,3 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+
+# demo user 1
+User.create(
+    username: 'DemoUser1',
+    email: 'DemoUser1@strife.com',
+    password: 'qwerty1234',
+    birthday: '02/25/1996'
+)
+
+# demo user 2
+User.create(
+    username: 'DemoUser2',
+    email: 'DemoUser2@strife.com',
+    password: 'QWERTY1234',
+    birthday: '02/25/1997'
+)
+
+
+#discord bot
+

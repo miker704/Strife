@@ -28,6 +28,10 @@ class SignUp extends React.Component {
         this.props.signUpUser(this.state).then(() => this.props.history.push('/'));
     }
 
+    // componentWillUnmount(){
+        // this.props.
+    // }
+
     render() {
         return (
             <div className="session-signup-form">
