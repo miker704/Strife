@@ -1,0 +1,2 @@
+class ServerMembership < ApplicationRecord
+end

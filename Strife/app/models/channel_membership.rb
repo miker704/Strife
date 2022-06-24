@@ -1,0 +1,2 @@
+class ChannelMembership < ApplicationRecord
+end
