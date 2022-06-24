@@ -19,4 +19,50 @@
 #  index_servers_on_server_owner_id_and_server_name  (server_owner_id,server_name) UNIQUE
 #
 class Server < ApplicationRecord
+
+    validates :server_owner_id, presence: true
+    validates :server_name, presence: true, length: {minimum:2, maximum:100}
+    validates :public, inclusion: {in:[true,false]}
+
+    validates :server_owner_id, uniqueness: {scope: :server_name, message: 'You already have a server with that name already'}
+
+
+    belongs_to :serverOwner, class_name: "User", foreign_key: "server_owner_id"
+    has_many :channels, class_name: "Channel", foreign_key: "server_id", dependent: :destroy
+    has_many :server_members, class_name: "ServerMembership", foreign_key: "server_id", dependent: :destroy
+    has_many :members, through: :server_members, source: :user
+
+    # ensure that with the creation of a new server there must be one channel called general
+    def create_Default_Channel
+        Channel.create(server_id: self.id, name: "general")
+    end
+
+    #this is to ensure that that the the owner of the server is joined as a member 
+    def create_OwnerShip
+        ServerMembership.create(user_id: self.server_owner_id, server_id: self.id)
+    end
+
+    # functions to generate a new invite code
+
+
+    def generate_Server_Invitation_Code
+        self.invite_code = self.new_Server_Invite_Code
+        while Server.find_by(invite_code: invite_code)
+            self.invite_code=new_Server_Invite_Code
+        end
+        save!
+        return invite_code
+    end
+
+    # generate some hexdecimal string of 8 characters long params takes half the desired length
+    # to give a string that is twice the length of the passed in params
+    def new_Server_Invite_Code
+        return 'https://strife.gg/'+SecureRandom.hex(4)
+    end
+
+    def reset_Server_Invite_Code
+         generate_Server_Invitation_Code
+         save!
+         return invite_code
+    end
 end

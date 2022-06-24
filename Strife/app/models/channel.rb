@@ -14,4 +14,19 @@
 #  index_channels_on_server_id                   (server_id)
 #
 class Channel < ApplicationRecord
+    validates :channel_name, :server_id, presence: true
+    validates :channel_name, uniqueness: {scope: :server_id, message: 'Only one channel in a server can have that name'}
+
+
+    belongs_to :server, class_name: "Server", foreign_key: "server_id"
+    has_many :messages, class_name: "Message", foreign_key: "channel_id", dependent: :destroy
+    has_many :channel_members, class_name: "ChannelMembership", foreign_key: "channel_id"
+    has_many :members, through: :channel_members, source: :member
+
+    after_create :create_Welcome_Message
+
+    def create_Welcome_Message
+        Message.create(channel_id: self.id, author_id: 1000, body: "Welcome to #{self.channel_name} channel")
+    end
+
 end
