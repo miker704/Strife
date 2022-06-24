@@ -1,0 +1,2 @@
+class DmServer < ApplicationRecord
+end

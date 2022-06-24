@@ -1,0 +1,2 @@
+class DmMember < ApplicationRecord
+end

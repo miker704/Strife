@@ -1,0 +1,2 @@
+class DmMessage < ApplicationRecord
+end
