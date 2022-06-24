@@ -12,9 +12,9 @@
 #  index_dm_servers_on_owner_id  (owner_id)
 #
 class DmServer < ApplicationRecord
-    validates :owner_id, presence :true
+    validates :owner_id, presence: true
     belongs_to :user, class_name: "User", foreign_key: "owner_id"
     has_many :dm_messages, class_name: "DmMessage", foreign_key: "dm_server_id", dependent: :destroy
     has_many :dm_members, class_name: "DMmember", foreign_key: "dm_server_id"
-    has_many :members, through: :dm_members, source: :member
+    has_many :users, through: :dm_members, source: :user
 end
