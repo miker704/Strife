@@ -1,4 +1,19 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# == Schema Information
+#
+# Table name: dm_members
+#
+#  id           :bigint           not null, primary key
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  dm_member_id :integer          not null
+#  dm_server_id :integer          not null
+#
+# Indexes
+#
+#  index_dm_members_on_dm_member_id                   (dm_member_id)
+#  index_dm_members_on_dm_server_id                   (dm_server_id)
+#  index_dm_members_on_dm_server_id_and_dm_member_id  (dm_server_id,dm_member_id) UNIQUE
+#
 
 # This model initially had no columns defined. If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
