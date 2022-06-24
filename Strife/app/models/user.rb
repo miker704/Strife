@@ -38,6 +38,24 @@ class User < ApplicationRecord
     validates :phone_number, uniqueness: true, allow_nil: true
 
 
+
+    # user ownership
+    #user ownership of servers
+    has_many :owned_servers, class_name: "Server", foreign_key: "server_owner_id", dependent: :destroy
+    # user membership to servers
+    has_many :server_memberships, class_name: "ServerMembership", foreign_key: "reference_id", dependent: :destroy
+
+    # messages
+    has_many :messages, class_name: "Message", foreign_key: "sender_id", dependent: :destroy
+
+    has_many :friends, class_name: "friend", foreign_key: "reference_id", dependent: :destroy
+
+
+
+
+
+    #user auth and strife tag generation
+
     validates :password, length: {minimum: 6, allow_nil: true}
     validates :password_digest, presence: true
     validates :session_token, uniqueness: true
@@ -82,11 +100,19 @@ class User < ApplicationRecord
     def ensure_strife_id_tag
         self.strife_id_tag ||= rand(1000..10000).to_s
     end
+    # future fix create another function to make this a string and add a # along withe users name
+
+
 
     # allows the text coloring to be different depending on if an account is a person or a chat bot
+    # this also allows a user to change there text color when messaging however bots can
+    # have only one text color dedicated for itself
     def ensure_color_tag
         self.color_tag ||= rand(1..5).to_s
     end
+
+
+    
 
 
 end
