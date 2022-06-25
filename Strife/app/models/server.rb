@@ -31,10 +31,18 @@ class Server < ApplicationRecord
     has_many :channels, class_name: "Channel", foreign_key: "server_id", dependent: :destroy
     has_many :server_members, class_name: "ServerMembership", foreign_key: "server_id", dependent: :destroy
     has_many :members, through: :server_members, source: :user
+    after_create :create_Default_Channel
+    after_create :create_OwnerShip
+    after_create :generate_Server_Invitation_Code
+
+
+
+
 
     # ensure that with the creation of a new server there must be one channel called general
     def create_Default_Channel
-        Channel.create(server_id: self.id, name: "general")
+        general_channel = Channel.create(server_id: self.id, name: "general")
+       first_Channel_membership = ChannelMembership.create(ch)
     end
 
     #this is to ensure that that the the owner of the server is joined as a member 
