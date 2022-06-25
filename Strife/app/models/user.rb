@@ -49,7 +49,7 @@ class User < ApplicationRecord
     has_many :dm_memberships, class_name: "DmMember", foreign_key: "dm_member_id", dependent: :destroy
     #user dm_servers
     has_many :owned_dm_servers, class_name: "Dmserver", foreign_key: "owner_id"
-
+    has_many :dm_servers, through: :dm_memberships, source: :dm_server
 
     # messages
     has_many :messages, class_name: "Message", foreign_key: "sender_id", dependent: :destroy
@@ -62,15 +62,34 @@ class User < ApplicationRecord
     has_many :friends, class_name: "friend", foreign_key: "reference_id", dependent: :destroy
     
     #has-many relationships
-    #servers -> has many servers through server memberships
-    has_many :servers, through: :server_memberships, source: :server
-    
+    #servers -> has many servers joined through server memberships
+    has_many :servers_joined, through: :server_memberships, source: :server
+
     #channels
-    has_many :channels, through: :servers, source: :join_association_table_foreign_key_to_channels_table
+
+    #wrong user cant own a channel direectly thewy can own one trhrough a server they own 
+    # has_many :owned_channels, class_name: "Channel", foreign_key: "reference_id"
+    has_many :channel_memberships, class_name: "ChannelMembership", foreign_key: "receiver_id"
+
+
+    has_many :channel_joined, through: :servers_joined, source: :channels
+
+    has_many :owned_channels, through: :owned_servers, source: :channels
+    
+    #    
+    
+
+    
+
+    
+
+
+
 
 
     #user auth and strife tag generation
 
+    
     validates :password, length: {minimum: 6, allow_nil: true}
     validates :password_digest, presence: true
     validates :session_token, uniqueness: true
