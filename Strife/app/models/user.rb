@@ -57,21 +57,24 @@ class User < ApplicationRecord
     has_many :dm_messages, class_name: "DmMessage", foreign_key: "sender_id", dependent: :destroy
 
     has_many :dm_members, through: :dm_servers, source: :members
-    has_many :server_co_members, through: :servers_joined, source: :members
     
     
     #has-many relationships
     #servers -> has many servers joined through server memberships
     has_many :servers_joined, through: :server_memberships, source: :server
-
+    
     #channels
     
     #wrong user cant own a channel direectly thewy can own one trhrough a server they own 
     # has_many :owned_channels, class_name: "Channel", foreign_key: "reference_id"
     has_many :channel_memberships, class_name: "ChannelMembership", foreign_key: "receiver_id"
     
+    has_many :server_co_members, through: :servers_joined, source: :members
     
-    has_many :channel_joined, through: :servers_joined, source: :channels
+    # has_many :channel_joined, through: :servers_joined, source: :channels
+    has_many :channel_joined, through: :channel_memberships, source: :channel
+
+
     
     has_many :owned_channels, through: :owned_servers, source: :channels
     

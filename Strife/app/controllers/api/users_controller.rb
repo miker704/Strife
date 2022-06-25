@@ -33,16 +33,38 @@ class Api::UsersController < ApplicationController
     
     def update
         @user = User.find(params[:id])
-        if @user.update(user_params)
+        if @user && @user.is_password?(params[:user][:password]) && @user.update(user_params)
             render :show
         else
-            render json: @user.errors.full_messages, status: 422
+            invalid_password_error = @user.error.full_messages.length > 0 ? @user.error.full_messages : ['Incorrect Password !']
+            render json: invalid_password_error, status: 401
         end
     end
     
+    #search up other users
+    def search 
+        userName = params[:username]
+        @user = User.where('username ~ ? and id != ?', userName, current_user.id)
+        render :searchResult
+    end
+
+
+    # allow user to delete their strife account 
     def destroy
-        @user = User.find(params[:id])
-        @user.destroy
+        # @user = User.find(params[:id])
+        @user = User.find_by(id: params[:id])
+       
+        if !@user.is_password?(user_params[:password])
+            render json: ['Wrong Password!'], status: 401
+        elsif @user.id == current_user.id
+            @user.destroy
+            render :show
+        
+        else
+            render json: ['This is not your account'], status: 401
+        end
+        
+        
     end
 
     private
