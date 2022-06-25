@@ -45,9 +45,21 @@ class User < ApplicationRecord
     # user membership to servers
     has_many :server_memberships, class_name: "ServerMembership", foreign_key: "reference_id", dependent: :destroy
 
+    #user dm_server_membership
+    has_many :dm_memberships, class_name: "DmMember", foreign_key: "dm_member_id", dependent: :destroy
+    #user dm_servers
+    has_many :owned_dm_servers, class_name: "Dmserver", foreign_key: "owner_id"
+    
+
     # messages
     has_many :messages, class_name: "Message", foreign_key: "sender_id", dependent: :destroy
+    # dm messages
+    has_many :dm_messages, class_name: "DmMessage", foreign_key: "sender_id", dependent: :destroy
 
+
+
+
+    # friends
     has_many :friends, class_name: "friend", foreign_key: "reference_id", dependent: :destroy
 
 
