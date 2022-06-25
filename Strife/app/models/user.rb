@@ -36,7 +36,7 @@ class User < ApplicationRecord
     validates :username, uniqueness: {scope: :strife_id_tag}
     validates :email, uniqueness: true
     validates :phone_number, uniqueness: true, allow_nil: true
-
+    has_one_attached :profile_pic_url
 
 
     # user ownership
@@ -49,21 +49,24 @@ class User < ApplicationRecord
     has_many :dm_memberships, class_name: "DmMember", foreign_key: "dm_member_id", dependent: :destroy
     #user dm_servers
     has_many :owned_dm_servers, class_name: "Dmserver", foreign_key: "owner_id"
-    
+
 
     # messages
     has_many :messages, class_name: "Message", foreign_key: "sender_id", dependent: :destroy
     # dm messages
     has_many :dm_messages, class_name: "DmMessage", foreign_key: "sender_id", dependent: :destroy
 
-
-
-
+    
+    
     # friends
     has_many :friends, class_name: "friend", foreign_key: "reference_id", dependent: :destroy
-
-
-
+    
+    #has-many relationships
+    #servers -> has many servers through server memberships
+    has_many :servers, through: :server_memberships, source: :server
+    
+    #channels
+    has_many :channels, through: :servers, source: :join_association_table_foreign_key_to_channels_table
 
 
     #user auth and strife tag generation
