@@ -56,32 +56,40 @@ class User < ApplicationRecord
     # dm messages
     has_many :dm_messages, class_name: "DmMessage", foreign_key: "sender_id", dependent: :destroy
 
+    has_many :dm_members, through: :dm_servers, source: :members
+    has_many :server_co_members, through: :servers_joined, source: :members
     
-    
-    # friends
-    has_many :friends, class_name: "friend", foreign_key: "reference_id", dependent: :destroy
     
     #has-many relationships
     #servers -> has many servers joined through server memberships
     has_many :servers_joined, through: :server_memberships, source: :server
 
     #channels
-
+    
     #wrong user cant own a channel direectly thewy can own one trhrough a server they own 
     # has_many :owned_channels, class_name: "Channel", foreign_key: "reference_id"
     has_many :channel_memberships, class_name: "ChannelMembership", foreign_key: "receiver_id"
-
-
+    
+    
     has_many :channel_joined, through: :servers_joined, source: :channels
-
+    
     has_many :owned_channels, through: :owned_servers, source: :channels
     
-    #    
-    
 
+    # friends
+    has_many :friendships, class_name: "Friendship", foreign_key: "friend_a_id"
     
+    has_many :friends_accepted, 
+    -> {where Friendships: { status: "accepted"}},
+     through: :friendships, source: :friend_b_Id, dependent: :destroy
+    
+     has_many :friends_ongoing, 
+     -> {where Friendships: { status: "ongoing"}},
+      through: :friendships, source: :friend_b_Id, dependent: :destroy
 
-    
+      has_many :friends_incoming, 
+      -> {where Friendships: { status: "incoming"}},
+       through: :friendships, source: :friend_b_Id, dependent: :destroy
 
 
 
