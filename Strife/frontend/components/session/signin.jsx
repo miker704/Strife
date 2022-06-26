@@ -16,8 +16,12 @@ class SignIn extends React.Component {
         // this.handleInput = this.handleInput.bind(this);
         this.loginAsDemoUser1 = this.loginAsDemoUser1.bind(this);
         this.loginAsDemoUser2 = this.loginAsDemoUser2.bind(this);
+    }    
+    
+    
+    componentWillUnmount(){
+        this.props.removeSessionErrors();
     }
-
 
     loginAsDemoUser1() {
         let demoUser = {
@@ -25,9 +29,11 @@ class SignIn extends React.Component {
             email: 'DemoUser1@strife.com',
             birthday: '02-25-1996',
             password: 'qwerty1234',
-        }
-        this.props.signInUser(demoUser)
-    }
+        }    
+        // this.props.signInUser(demoUser)
+        this.setState({email:demoUser.email})
+        this.setState({password: demoUser.password})
+    }    
 
     loginAsDemoUser2() {
         let demoUser = {
@@ -35,25 +41,21 @@ class SignIn extends React.Component {
             email: 'DemoUser2@strife.com',
             password: 'QWERTY1234',
             birthday: '02-25-1997',
-        }
+        }    
         this.setState({email:demoUser.email})
-        // this.props.signInUser(this.state)
         this.setState({password: demoUser.password})
-    }
+        // this.props.signInUser(this.state)
+    }    
 
     handleInput(type) {
         return (e) => {
             this.setState({ [type]: e.currentTarget.value })
-        }
-    }
+        }    
+    }    
     handleSubmit(e) {
         e.preventDefault();
         this.props.signInUser(this.state).then(() => this.props.history.push('/'));
-    }
-
-    componentWillUnmount(){
-        this.props.removeSessionErrors();
-    }
+    }    
 
 
     render() {
@@ -64,11 +66,11 @@ class SignIn extends React.Component {
         const headerMessage = "Welcome back!"
         const subHeaderMessage = "We're so excited to see you again!"
 
-        let email = this.props.errors.includes("Invalid Login Credentials") ? <h5 className="login-error">
+        const email = this.props.errors.includes("Invalid Login Credentials") ? <h5 className="login-error">
         EMAIL - INVALID CREDENTIALS </h5> : <h5 className="login-normal">EMAIL</h5>
 
 
-        let password=this.props.errors.includes("Invalid Login Credentials") ? <h5 className="login-error">
+        const password=this.props.errors.includes("Invalid Login Credentials") ? <h5 className="login-error">
         PASSWORD - INVALID CREDENTIALS </h5> : <h5 className="login-normal">PASSWORD</h5>
         
         //demo user button remains const as there credentials wont change
@@ -83,7 +85,7 @@ class SignIn extends React.Component {
                     <h3>{headerMessage}</h3>
                     <p>{subHeaderMessage}</p>
 
-                <form onClick={this.handleSubmit}>
+                <form autoComplete="off" onSubmit={this.handleSubmit}>
                     <label>Log in !</label> <br />
                     {/* <label>username:
                                 <input type="text"value={this.state.username} onChange={this.handleInput('username')}/> <br />
@@ -93,11 +95,13 @@ class SignIn extends React.Component {
                         <input type="text" value={this.state.email} onChange={this.handleInput('email')} /> <br />
                     
                         {password}
-                        <input type="password" value={this.state.password} onChange={this.handleInput('password')} /> <br />
+                        <input type="password" value={this.state.password} onChange={this.handleInput('password')} /> 
 
                         <button type="submit" >Login!</button>
-                         {signInAsDemoUser1}
+                         <br />
+                         {signInAsDemoUser1} 
                          {signInAsDemoUser2}
+                         <br /><br />
                          {footerMessage} {signupLink}
 
                   
