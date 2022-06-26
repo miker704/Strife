@@ -14,6 +14,7 @@ class SessionForm extends React.Component {
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        this.userNameErrors=this.userNameErrors.bind(this);
         this.emailErrors = this.emailErrors.bind(this);
         this.passwordErrors = this.passwordErrors.bind(this);
         this.birthdayErrors = this.birthdayErrors.bind(this);
@@ -64,6 +65,10 @@ class SessionForm extends React.Component {
         )
     }
 
+    componentWillUnmount(){
+        this.props.removeSessionErrors();
+    }
+
     loginAsDemoUser1() {
         let demoUser = {
             email: 'DemoUser1@strife.com',
@@ -78,6 +83,33 @@ class SessionForm extends React.Component {
             password: 'QWERTY1234'
         }
         this.props.processForm(demoUser);
+    }
+
+
+    userNameErrors(){
+
+        const USERNAME_ERRORS = ["USERNAME - Must be between 2 and 32 in length","Username can't be blank"]
+            if(this.props.formType==="Sign Up"){
+                if(this.props.errors.includes(USERNAME_ERRORS[0])){
+                    return USERNAME_ERRORS[0];
+                }
+                else if(this.props.errors.includes(USERNAME_ERRORS[1])){
+                    return USERNAME_ERRORS[1];
+                }
+            }
+            return "";
+    }
+
+    emailErrors(){
+
+    }
+
+    passwordErrors(){
+
+    }
+
+    birthdayErrors(){
+
     }
 
 
