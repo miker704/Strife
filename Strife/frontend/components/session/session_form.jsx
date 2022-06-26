@@ -210,7 +210,6 @@ class SessionForm extends React.Component {
             <h2>Create an account</h2>
             <form onSubmit={this.handleSubmit}>
                   
-                    {userName}
                     {/* <input type="text"value={this.state.username} onChange={this.handleInput('username')}/> */}
                     {/* {email} */}
                     <div className="email-field">
@@ -222,6 +221,7 @@ class SessionForm extends React.Component {
                     {/* {email}
                     <input type="email"value={this.state.email} onChange={this.handleInput('email')} /> */}
                   
+                    {userName}
 
                   
                     {/* {birthday} */}
