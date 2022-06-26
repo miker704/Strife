@@ -10,7 +10,7 @@ class SessionForm extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = this.props.formType === 'Sign In' ? { email: "", password: "", emailError: "", passwordError: "" } : { email: "", username: "", birthday: "", password: "" };
+        this.state = this.props.formType === 'Sign In' ? { email: "", password: ""} : { email: "", username: "",password: "" , birthday:"", month:"",day:"",year:""};
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.errors = this.errors.bind(this);
@@ -32,8 +32,8 @@ class SessionForm extends React.Component {
                 email: this.state.email,
                 username: this.state.username,
                 password: this.state.password,
-                birthday: this.state.birthday
-                // birthday: new Date(this.state.birthday)
+                // birthday: this.state.birthday
+                birthday: new Date(this.state.birthday)
 
             }
         }
@@ -49,7 +49,7 @@ class SessionForm extends React.Component {
 
     handleInput(field) {
         return (e) => {
-            this.setState({ [field]: e.currentTarget.value })
+            this.setState({ [field]: e.currentTarget.value },()=>{this.setState({birthday: this.state.month +"/"+this.state.day+"/"+this.state.year})})
         }
     }
 
@@ -254,7 +254,41 @@ class SessionForm extends React.Component {
         }
 
 
-        
+        const birthday = this.props.formType = "Sign In" ? (""):(
+            
+            <div className="field">
+
+                        <label id="birthday-label">DATE OF BIRTH</label>
+                        <div className="dropbox-selector">
+
+                            <select id="month" defaultValue="00" onChange={this.handleInput('month')}>
+
+                                <option value="00" disabled>
+                                    Month
+                                </option>
+                                <option value="01">January</option>
+                                <option value="02">February</option>
+                                <option value="03">March</option>
+                                <option value="04">April</option>
+                                <option value="05">May</option>
+                                <option value="06">June</option>
+                                <option value="07">July</option>
+                                <option value="08">August</option>
+                                <option value="09">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+
+
+                            </select>
+
+
+                        </div>
+
+
+            </div>
+
+        ) 
 
 
 
