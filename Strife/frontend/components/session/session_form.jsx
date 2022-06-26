@@ -245,6 +245,8 @@ class SessionForm extends React.Component {
             days.push(<option key={i} value={i}>{i}</option>);
         }
 
+        const years = new Array();
+        const months= []
 
 
 
