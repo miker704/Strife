@@ -20,12 +20,13 @@ class Friendship < ApplicationRecord
     validates :friend_a_Id, :friend_b_Id, :friend_request_status, presence: true
     validates :accepted, inclusion: {in: [true,false]}
     validates :friend_request_status, inclusion: {in: %w(ongoing incoming accepted)}
-    # validates :prevent_self_friending
+    validates :friend_a_Id, uniqueness: {scope: :friend_b_Id}
+    validate :prevent_self_friending
 
 
 
-    belongs_to :friend, class_name: "User", foreign_key: "friend_b_Id"
     belongs_to :user, class_name: "User", foreign_key: "friend_a_Id"
+    belongs_to :friend, class_name: "User", foreign_key: "friend_b_Id"
 
     private
     def prevent_self_friending

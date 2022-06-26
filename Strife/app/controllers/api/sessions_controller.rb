@@ -3,6 +3,7 @@ class Api::SessionsController < ApplicationController
         @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
         if @user
         login!(@user)
+        # @user.online=true;
         # render :create
         render 'api/users/show'
         else
@@ -14,6 +15,7 @@ class Api::SessionsController < ApplicationController
         @user = current_user
 
         if @user 
+        #   @user.online=false
            logout!
         #    render json: ["Sign out successful"], status: 200
              render 'api/users/show'

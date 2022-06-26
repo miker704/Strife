@@ -21,20 +21,24 @@ class SignIn extends React.Component {
 
     loginAsDemoUser1() {
         let demoUser = {
+            username: 'DemoUser1',
             email: 'DemoUser1@strife.com',
-            password: 'qwerty1234'
+            birthday: '02-25-1996',
+            password: 'qwerty1234',
         }
         this.props.signInUser(demoUser)
     }
 
     loginAsDemoUser2() {
         let demoUser = {
+            username: 'DemoUser2',
             email: 'DemoUser2@strife.com',
-            password: 'QWERTY1234'
+            password: 'QWERTY1234',
+            birthday: '02-25-1997',
         }
-        this.setState({email:demoUser.email,password: demoUser.password})
-        this.props.signInUser(this.state)
-
+        this.setState({email:demoUser.email})
+        // this.props.signInUser(this.state)
+        this.setState({password: demoUser.password})
     }
 
     handleInput(type) {

@@ -36,6 +36,7 @@ class User < ApplicationRecord
     validates :username, uniqueness: {scope: :strife_id_tag}
     validates :email, uniqueness: true
     validates :phone_number, uniqueness: true, allow_nil: true
+    validates :online, inclusion: {in: [true,false]}
     has_one_attached :profile_pic_url
 
 
@@ -81,6 +82,7 @@ class User < ApplicationRecord
 
     # friends
     has_many :friendships, class_name: "Friendship", foreign_key: "friend_a_Id"
+    # has_many :friendships
     
     has_many :friends_accepted, 
     -> {where Friendships: { status: "accepted"}},
