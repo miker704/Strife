@@ -37,7 +37,7 @@ class User < ApplicationRecord
     validates :email, uniqueness: true
     validates :phone_number, uniqueness: true, allow_nil: true
     validates :online, inclusion: {in: [true,false]}
-    has_one_attached :profile_pic_url
+    # has_one_attached :profile_pic_url -- > this requires acxtive storage 
 
 
     # user ownership
@@ -81,20 +81,26 @@ class User < ApplicationRecord
     
 
     # friends
-    has_many :friendships, class_name: "Friendship", foreign_key: "friend_a_Id"
-    # has_many :friendships
+    # has_many :friendships, class_name: "Friendship", foreign_key: "friend_a_Id"
+    has_many :friendships
     
     has_many :friends_accepted, 
-    -> {where Friendships: { status: "accepted"}},
-     through: :friendships, source: :friend, dependent: :destroy
+        -> {where friendships: { friend_request_status: "accepted"}},
+        through: :friendships,
+        source: :friend,
+        dependent: :destroy
     
-     has_many :friends_ongoing, 
-     -> {where Friendships: { status: "ongoing"}},
-      through: :friendships, source: :friend, dependent: :destroy
+    has_many :friends_ongoing, 
+        -> {where friendships: { friend_request_status: "ongoing"}},
+        through: :friendships,
+         source: :friend, 
+         dependent: :destroy
 
-      has_many :friends_incoming, 
-      -> {where Friendships: { status: "incoming"}},
-       through: :friendships, source: :friend, dependent: :destroy
+    has_many :friends_incoming, 
+        -> {where friendships: { friend_request_status: "incoming"}},
+        through: :friendships, 
+        source: :friend, 
+        dependent: :destroy
 
 
 

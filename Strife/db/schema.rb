@@ -61,14 +61,11 @@ ActiveRecord::Schema.define(version: 2022_06_24_092057) do
   end
 
   create_table "friendships", force: :cascade do |t|
-    t.integer "friend_a_Id", null: false
-    t.integer "friend_b_Id", null: false
-    t.boolean "accepted", default: false, null: false
+    t.integer "user_id", null: false
+    t.integer "friend_id", null: false
     t.string "friend_request_status", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["accepted"], name: "index_friendships_on_accepted"
-    t.index ["friend_a_Id", "friend_b_Id"], name: "index_friendships_on_friend_a_Id_and_friend_b_Id", unique: true
     t.index ["friend_request_status"], name: "index_friendships_on_friend_request_status"
   end
 
