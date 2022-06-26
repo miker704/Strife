@@ -150,7 +150,12 @@ class SessionForm extends React.Component {
     render() {
 
         //assign variables to change classname tags depending if an error has occcured or not
-        
+
+        let emailErrorTag= "";
+        let passwordErrorTag= "";
+        let birthdayErrorTag = "";
+        let usernameErrorTag = "";
+
 
         //assign variables that will display content bassed if the form is sigin vs sign out
         let email;
