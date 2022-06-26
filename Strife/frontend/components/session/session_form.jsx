@@ -254,7 +254,7 @@ class SessionForm extends React.Component {
         }
 
 
-        const birthday = this.props.formType = "Sign In" ? (""):(
+        const birthday = this.props.formType === "Sign In" ? (""):(
             
             <div className="field">
 
@@ -281,10 +281,16 @@ class SessionForm extends React.Component {
 
 
                             </select>
-
+                            <select id="day" defaultValue="00" onChange={this.handleInput('day')}>
+                                <option value="00"disabled> Day </option>
+                                {days}
+                            </select>
+                            <select id="year" placeholder="Select" defaultValue="Select" onChange={this.handleInput('year')}>
+                                <option value="Select" disabled>Select</option>
+                                {years}
+                            </select>
 
                         </div>
-
 
             </div>
 
@@ -304,26 +310,10 @@ class SessionForm extends React.Component {
                     <h3>{subHeaderMessage}</h3>
 
                     <form onSubmit={this.handleSubmit}>
-
-                        {/* <input type="text"value={this.state.username} onChange={this.handleInput('username')}/> */}
                         {email}
-                        {/* <div className="email-field">
-                            <label id="email-field" className={emailErrorTag}>
-                                EMAIL{this.emailErrors()}
-                            </label>
-                            <input type="email" className={emailErrorTag} id="email" value={this.state.email} onChange={this.handleInput('email')} />
-                        </div> */}
                         {userName}
-
                         {password}
-                        {/* {birthday} */}
-                        <input type="date" value={this.state.birthday} onChange={this.handleInput('birthday')} />
-                        {/* {password} */}
-
-
-
-
-
+                        {birthday}
                         <div className="field"><button type="submit">{submitButtonMessage}</button></div>
 
                     </form>
