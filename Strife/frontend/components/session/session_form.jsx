@@ -101,15 +101,48 @@ class SessionForm extends React.Component {
     }
 
     emailErrors(){
-
+        const EMAIL_ERRORS =["EMAIL - Not well formed email address", "EMAIL - Must be 320 or fewer in Length", "Email can't be blank","Email has already been taken"];
+        // if(this.props.formType === "Sign In"){
+        //     if()
+        // }
+        if (this.props.formType === "Sign Up"){
+                for(let i= 0; i<=EMAIL_ERRORS.length;i++){
+                    if(this.props.errors.includes(EMAIL_ERRORS[i])){
+                        return EMAIL_ERRORS[i];
+                    }
+                }
+        }
+        return "";
     }
 
     passwordErrors(){
-
+        const PASSWORD_ERRORS =["PASSWORD - Must be 72 or fewer in length", "Password is too short (minimum is 6 characters)", "Password can't be blank"];
+        // if(this.props.formType === "Sign In"){
+        //     if()
+        // }
+        if (this.props.formType === "Sign Up"){
+                for(let i= 0; i<=PASSWORD_ERRORS.length;i++){
+                    if(this.props.errors.includes(PASSWORD_ERRORS[i])){
+                        return PASSWORD_ERRORS[i];
+                    }
+                }
+        }
+        return "";
     }
 
     birthdayErrors(){
-
+        const BIRTHDAY_ERRORS =["Birthday can't be blank"]
+        // if(this.props.formType === "Sign In"){
+        //     if()
+        // }
+        if (this.props.formType === "Sign Up"){
+             
+                    if(this.props.errors.includes(BIRTHDAY_ERRORS[0])){
+                        return BIRTHDAY_ERRORS[0];
+                    }
+                
+        }
+        return "";
     }
 
 
@@ -118,14 +151,53 @@ class SessionForm extends React.Component {
         //assign variables that will display content bassed if the form is sigin vs sign out
         let email;
         let password;
-        let userName;
+        
         let birthday;
-
-
-        return (
-            <div>
-
+        const userName = this.props.formType === "Sign In" ? (""):(
+            <div className="field">
+                <label id="username-field">USERNAME{this.userNameErrors()}</label>
+                <input type="text"value={this.state.username} onChange={this.handleInput('username')}/>
             </div>
+        );
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        return (
+            <div className="session-signup-form">
+
+            <h2>Create an Account!</h2>
+            <form onSubmit={this.handleSubmit}>
+                  
+                    {userName}
+                    {/* <input type="text"value={this.state.username} onChange={this.handleInput('username')}/> */}
+                    
+                
+                    {email}
+                    <input type="email"value={this.state.email} onChange={this.handleInput('email')} />
+                  
+
+                  
+                    {birthday}
+                    <input type="date"value={this.state.birthday} onChange={this.handleInput('birthday')} />
+                    {password}
+                    
+
+               
+                    <input type="password" value={this.state.password} onChange={this.handleInput('password')}/>
+                    <button type="submit">Create Account!</button>
+            </form>
+</div>
         )
     }
 
