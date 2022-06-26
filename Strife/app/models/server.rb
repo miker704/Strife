@@ -42,7 +42,7 @@ class Server < ApplicationRecord
     # ensure that with the creation of a new server there must be one channel called general
     def create_Default_Channel
         general_channel = Channel.create(server_id: self.id, name: "general")
-       first_Channel_membership = ChannelMembership.create(ch)
+    #    first_Channel_membership = ChannelMembership.create(ch)
     end
 
     #this is to ensure that that the the owner of the server is joined as a member 

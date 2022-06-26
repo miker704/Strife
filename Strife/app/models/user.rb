@@ -43,7 +43,7 @@ class User < ApplicationRecord
     #user ownership of servers
     has_many :owned_servers, class_name: "Server", foreign_key: "server_owner_id", dependent: :destroy
     # user membership to servers
-    has_many :server_memberships, class_name: "ServerMembership", foreign_key: "reference_id", dependent: :destroy
+    has_many :server_memberships, class_name: "ServerMembership", foreign_key: "user_id", dependent: :destroy
 
     #user dm_server_membership
     has_many :dm_memberships, class_name: "DmMember", foreign_key: "dm_member_id", dependent: :destroy
@@ -52,7 +52,7 @@ class User < ApplicationRecord
     has_many :dm_servers, through: :dm_memberships, source: :dm_server
 
     # messages
-    has_many :messages, class_name: "Message", foreign_key: "sender_id", dependent: :destroy
+    has_many :messages, class_name: "Message", foreign_key: "author_id", dependent: :destroy
     # dm messages
     has_many :dm_messages, class_name: "DmMessage", foreign_key: "sender_id", dependent: :destroy
 
@@ -84,15 +84,15 @@ class User < ApplicationRecord
     
     has_many :friends_accepted, 
     -> {where Friendships: { status: "accepted"}},
-     through: :friendships, source: :friend_b_Id, dependent: :destroy
+     through: :friendships, source: :friend, dependent: :destroy
     
      has_many :friends_ongoing, 
      -> {where Friendships: { status: "ongoing"}},
-      through: :friendships, source: :friend_b_Id, dependent: :destroy
+      through: :friendships, source: :friend, dependent: :destroy
 
       has_many :friends_incoming, 
       -> {where Friendships: { status: "incoming"}},
-       through: :friendships, source: :friend_b_Id, dependent: :destroy
+       through: :friendships, source: :friend, dependent: :destroy
 
 
 

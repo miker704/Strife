@@ -3,7 +3,12 @@ import { signInUser, removeSessionErrors } from "../../actions/session_actions";
 import SignIn from "./signin";
 
 
-
+const mSTP = state => {
+    return {   
+       errors: state.errors.session
+   }
+   
+   }
 
 const mDTP = dispatch => (
 
@@ -12,5 +17,5 @@ const mDTP = dispatch => (
         removeSessionErrors: ()=> dispatch(removeSessionErrors())
     })
 
-const SignInFormContainer = connect(null, mDTP)(SignIn);
+const SignInFormContainer = connect(mSTP, mDTP)(SignIn);
 export default SignInFormContainer;
