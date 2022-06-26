@@ -128,16 +128,22 @@ class SessionForm extends React.Component {
     }
 
     passwordErrors() {
-        const PASSWORD_ERRORS = ["PASSWORD - Must be 72 or fewer in length", "Password is too short (minimum is 6 characters)", "Password can't be blank"];
+        const PASSWORD_ERRORS = ["PASSWORD - Must be 72 or fewer in length", "Password is too short (minimum is 8 characters)", "Password can't be blank"];
         // if(this.props.formType === "Sign In"){
         //     if()
         // }
         if (this.props.formType === "Sign Up") {
-            for (let i = 0; i <= PASSWORD_ERRORS.length; i++) {
-                if (this.props.errors.includes(PASSWORD_ERRORS[i])) {
-                    return PASSWORD_ERRORS[i];
-                }
+            if (this.props.errors.includes("PASSWORD - Must be 72 or fewer in length")) {
+
+                return " - Must be 72 or fewer in length";
             }
+            else if (this.props.errors.includes("Password is too short (minimum is 8 characters)")) {
+                return " - is too short (minimum is 8 characters)";
+            }
+            if (this.props.errors.includes("Password can't be blank")) {
+                return " - can't be blank";
+            }
+
         }
         return "";
     }
@@ -168,30 +174,35 @@ class SessionForm extends React.Component {
         let usernameErrorTag = "";
         if (this.props.formType === "Sign In") {
             emailErrorTag = this.props.errors[0] === "" ? "" : "login-error";
-            passwordErrorTag= this.props.errors[0] === "" ? "" : "login-error";
+            passwordErrorTag = this.props.errors[0] === "" ? "" : "login-error";
         }
         else if (this.props.formType === "Sign Up") {
-            emailErrorTag = this.props.errors.includes("Not well formed email address")||
-            this.props.errors.includes("Email Must be 320 or fewer in Length")||
-            this.props.errors.includes("Email can't be blank")||
-            this.props.errors.includes("Email has already been taken") ? "login-error" : "";
+            emailErrorTag = this.props.errors.includes("Not well formed email address") ||
+                this.props.errors.includes("Email Must be 320 or fewer in Length") ||
+                this.props.errors.includes("Email can't be blank") ||
+                this.props.errors.includes("Email has already been taken") ? "login-error" : "";
 
-            passwordErrorTag= this.props.errors.includes("Password is too short (minimum is 6 characters)")||
-            this.props.errors.includes("Password can't be blank")||
-            this.props.errors.includes("PASSWORD - Must be 72 or fewer in length") ? "" : "login-error";
+            passwordErrorTag = this.props.errors.includes("Password is too short (minimum is 8 characters)") ||
+                this.props.errors.includes("Password can't be blank") ||
+                this.props.errors.includes("PASSWORD - Must be 72 or fewer in length") ? "login-error" : "";
             //  birthdayErrorTag = this.birthdayErrors()=== "" ? "" : "login-error";
             usernameErrorTag = this.props.errors.includes('Username Must be between 2 and 32 in length') ||
                 this.props.errors.includes("Username can't be blank") ? "login-error" : ""
         }
-        
+
         //assign variables that will display content bassed if the form is sigin vs sign out
         const email = (
             <div className="field">
                 <label id="email-label" className={emailErrorTag}>EMAIL{this.emailErrors()}</label><br />
-                <input id="email" className={emailErrorTag} type="email"value={this.state.email} onChange={this.handleInput('email')}/>
+                <input id="email" className={emailErrorTag} type="email" value={this.state.email} onChange={this.handleInput('email')} />
             </div>
         );
-        let password;
+        const password = (
+           <div className="field">
+               <label id="password-label" className={passwordErrorTag}>PASSWORD{this.passwordErrors()}</label><br />
+                <input id="password" className={passwordErrorTag} type="password" value={this.state.password} onChange={this.handleInput('password')} />
+            </div>
+        );
 
         let birthday;
         let userName = this.props.formType === "Sign In" ? ("") : (
@@ -232,14 +243,14 @@ class SessionForm extends React.Component {
 
                         {userName}
 
-                        <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
+                        {password}
                         {/* {birthday} */}
                         <input type="date" value={this.state.birthday} onChange={this.handleInput('birthday')} />
                         {/* {password} */}
 
 
 
-                        
+
 
                         <div className="field"><button type="submit">{submitButtonMessage}</button></div>
 

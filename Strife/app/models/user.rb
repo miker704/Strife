@@ -112,7 +112,7 @@ class User < ApplicationRecord
     #user auth and strife tag generation
 
     
-    validates :password, length: {minimum: 6, allow_nil: true}
+    validates :password, length: {minimum: 8, allow_nil: true}
     validates :password_digest, presence: true
     validates :session_token, uniqueness: true
     attr_reader :password
