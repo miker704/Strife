@@ -7,7 +7,7 @@ import SplashContainer from "./splash/splash_container";
 import NavBarContainer from './nav_bar/nav_bar_container';
 
 import SessionSignInFormContainer from './session/session_signin_form_container';
-
+import SessionSignUpFormContainer from './session/session_signup_form_container';
 
 
 const App = () => (
