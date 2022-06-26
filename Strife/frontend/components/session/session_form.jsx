@@ -32,7 +32,6 @@ class SessionForm extends React.Component {
                 email: this.state.email,
                 username: this.state.username,
                 password: this.state.password,
-                // birthday: this.state.birthday
                 birthday: new Date(this.state.birthday)
 
             }
