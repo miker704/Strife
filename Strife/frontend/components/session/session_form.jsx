@@ -183,22 +183,23 @@ class SessionForm extends React.Component {
         }
 
         //assign variables that will display content bassed if the form is sigin vs sign out
-        // const email = (
-        //     <div className="field">
-        //         <label id="email-label" className={emailErrorTag}>EMAIL{this.emailErrors()}</label>
-        //         <input id="email" className={emailErrorTag} type="email"value={this.state.email} onChange={this.handleInput('email')}/>
-        //     </div>
-        // );
+        const email = (
+            <div className="field">
+                <label id="email-label" className={emailErrorTag}>EMAIL{this.emailErrors()}</label><br />
+                <input id="email" className={emailErrorTag} type="email"value={this.state.email} onChange={this.handleInput('email')}/>
+            </div>
+        );
         let password;
 
         let birthday;
         let userName = this.props.formType === "Sign In" ? ("") : (
             <div className="field">
-                <label id="username-label" className={usernameErrorTag}>USERNAME{this.userNameErrors()}</label>
+                <label id="username-label" className={usernameErrorTag}>USERNAME{this.userNameErrors()}</label><br />
                 <input id="username" type="text" value={this.state.username} onChange={this.handleInput('username')} />
             </div>
         );
 
+        //messages depending on signup or sign in
         const submitButtonMessage = this.props.formType === "Sign In" ? "Login" : "Continue"
         const headerMessage = this.props.formType === "Sign In" ? (<h2 className="welcome-message">Welcome Back!</h2>) :
             (<h2 className="signup-header">Create an account</h2>);
@@ -211,17 +212,17 @@ class SessionForm extends React.Component {
                     {headerMessage}
 
                     <h3>{subHeaderMessage}</h3>
-                    
+
                     <form onSubmit={this.handleSubmit}>
 
                         {/* <input type="text"value={this.state.username} onChange={this.handleInput('username')}/> */}
-                        {/* {email} */}
-                        <div className="email-field">
+                        {email}
+                        {/* <div className="email-field">
                             <label id="email-field" className={emailErrorTag}>
                                 EMAIL{this.emailErrors()}
                             </label>
                             <input type="email" className={emailErrorTag} id="email" value={this.state.email} onChange={this.handleInput('email')} />
-                        </div>
+                        </div> */}
                         {/* {email}
                     <input type="email"value={this.state.email} onChange={this.handleInput('email')} /> */}
 
