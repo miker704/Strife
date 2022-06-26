@@ -1,14 +1,15 @@
+import React from "react";
 import { connect } from "react-redux";
 import { signInUser,removeSessionErrors } from "../../actions/session_actions";
 import SessionForm from "./session_form";
-
+import { Link } from "react-router-dom";
 
 
 const mSTP  = state => {
     return {
         errors: state.errors.sessionError,
         formType: 'Sign In',
-        navLink: <Link to="/signup">Need an account ? Register</Link>,
+        navLink: <Link to="/session_signup_form_container">Need an account ? Register</Link>,
     }
 }
 

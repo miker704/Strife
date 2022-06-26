@@ -13,7 +13,7 @@ class SessionForm extends React.Component {
         this.state = this.props.formType === 'Sign In' ? { email: "", password: "", emailError: "", passwordError: "" } : { email: "", username: "", birthday: "", password: "" };
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.renderErrors = this.renderErrors.bind(this);
+        this.errors = this.errors.bind(this);
         this.userNameErrors=this.userNameErrors.bind(this);
         this.emailErrors = this.emailErrors.bind(this);
         this.passwordErrors = this.passwordErrors.bind(this);
@@ -25,7 +25,7 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.removeErrors();
+        // this.props.removeErrors();
         let submissionState = {};
         if (this.props.formType === 'Sign Up') {
             submissionState = {
@@ -54,7 +54,7 @@ class SessionForm extends React.Component {
     }
 
 
-    renderErrors() {
+    errors() {
 
         return (
             <ul>
@@ -88,13 +88,14 @@ class SessionForm extends React.Component {
 
     userNameErrors(){
 
-        const USERNAME_ERRORS = ["USERNAME - Must be between 2 and 32 in length","Username can't be blank"]
+        let USERNAME_ERRORS = ['Username Must be between 2 and 32 in length',"Username can't be blank"]
             if(this.props.formType==="Sign Up"){
                 if(this.props.errors.includes(USERNAME_ERRORS[0])){
-                    return USERNAME_ERRORS[0];
+                  
+                    return "USERNAME - Must be between 2 and 32 in length";
                 }
-                else if(this.props.errors.includes(USERNAME_ERRORS[1])){
-                    return USERNAME_ERRORS[1];
+                else if(this.props.errors.includes("Username can't be blank")){
+                    return "Username can't be blank";
                 }
             }
             return "";
@@ -148,6 +149,9 @@ class SessionForm extends React.Component {
 
     render() {
 
+        //assign variables to change classname tags depending if an error has occcured or not
+        
+
         //assign variables that will display content bassed if the form is sigin vs sign out
         let email;
         let password;
@@ -155,7 +159,7 @@ class SessionForm extends React.Component {
         let birthday;
         const userName = this.props.formType === "Sign In" ? (""):(
             <div className="field">
-                <label id="username-field">USERNAME{this.userNameErrors()}</label>
+                <label className="login-error">USERNAME{this.userNameErrors}</label>
                 <input type="text"value={this.state.username} onChange={this.handleInput('username')}/>
             </div>
         );
@@ -183,14 +187,14 @@ class SessionForm extends React.Component {
                     {/* <input type="text"value={this.state.username} onChange={this.handleInput('username')}/> */}
                     
                 
-                    {email}
+                    {/* {email} */}
                     <input type="email"value={this.state.email} onChange={this.handleInput('email')} />
                   
 
                   
-                    {birthday}
+                    {/* {birthday} */}
                     <input type="date"value={this.state.birthday} onChange={this.handleInput('birthday')} />
-                    {password}
+                    {/* {password} */}
                     
 
                

@@ -1,6 +1,8 @@
+import React from "react";
 import { connect } from "react-redux";
 import { signUpUser,removeSessionErrors } from "../../actions/session_actions";
 import SessionForm from "./session_form";
+import { Link } from "react-router-dom";
 
 
 const mSTP  = state => {
