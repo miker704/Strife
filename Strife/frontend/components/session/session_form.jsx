@@ -108,25 +108,21 @@ class SessionForm extends React.Component {
         // }
 
         if (this.props.formType === "Sign Up") {
-            if (this.props.errors.includes(EMAIL_ERRORS[0])) {
+            if (this.props.errors.includes("Not well formed email address")) {
 
-                return "Not well formed email address";
+                return " - Not well formed email address";
             }
-            else if (this.props.errors.includes(EMAIL_ERRORS[1])) {
-                return "Must be 320 or fewer in Length";
+            else if (this.props.errors.includes("Email Must be 320 or fewer in Length")) {
+                return " - Must be 320 or fewer in Length";
             }
             if (this.props.errors.includes("Email can't be blank")) {
-                return "Email can't be blank";
+                return " - can't be blank";
             }
             else if (this.props.errors.includes("Email has already been taken")) {
-                return "Email has already been taken";
+                return "Email is already registered ";
             }
 
-
-
         }
-
-
 
         return "";
     }
@@ -171,17 +167,23 @@ class SessionForm extends React.Component {
         let birthdayErrorTag = "";
         let usernameErrorTag = "";
         if (this.props.formType === "Sign In") {
-            emailErrorTag = this.emailErrors() === "" ? "" : "login-error";
-            // passwordErrorTag= this.passwordErrors() === "" ? "" : "login-error";
+            emailErrorTag = this.props.errors[0] === "" ? "" : "login-error";
+            passwordErrorTag= this.props.errors[0] === "" ? "" : "login-error";
         }
         else if (this.props.formType === "Sign Up") {
-            emailErrorTag = this.props.errors.includes(this.emailErrors()) ? "login-error" : "";
-            // passwordErrorTag= this.passwordErrors() === "" ? "" : "login-error";
+            emailErrorTag = this.props.errors.includes("Not well formed email address")||
+            this.props.errors.includes("Email Must be 320 or fewer in Length")||
+            this.props.errors.includes("Email can't be blank")||
+            this.props.errors.includes("Email has already been taken") ? "login-error" : "";
+
+            passwordErrorTag= this.props.errors.includes("Password is too short (minimum is 6 characters)")||
+            this.props.errors.includes("Password can't be blank")||
+            this.props.errors.includes("PASSWORD - Must be 72 or fewer in length") ? "" : "login-error";
             //  birthdayErrorTag = this.birthdayErrors()=== "" ? "" : "login-error";
             usernameErrorTag = this.props.errors.includes('Username Must be between 2 and 32 in length') ||
                 this.props.errors.includes("Username can't be blank") ? "login-error" : ""
         }
-
+        
         //assign variables that will display content bassed if the form is sigin vs sign out
         const email = (
             <div className="field">
@@ -204,6 +206,8 @@ class SessionForm extends React.Component {
         const headerMessage = this.props.formType === "Sign In" ? (<h2 className="welcome-message">Welcome Back!</h2>) :
             (<h2 className="signup-header">Create an account</h2>);
         const subHeaderMessage = this.props.formType === "Sign In" ? ("We're so excited to see you again!") : ("");
+
+
 
         return (
             <div className="session-signup-form">
@@ -228,15 +232,14 @@ class SessionForm extends React.Component {
 
                         {userName}
 
-
+                        <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
                         {/* {birthday} */}
                         <input type="date" value={this.state.birthday} onChange={this.handleInput('birthday')} />
                         {/* {password} */}
 
 
 
-                        <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
-
+                        
 
                         <div className="field"><button type="submit">{submitButtonMessage}</button></div>
 
