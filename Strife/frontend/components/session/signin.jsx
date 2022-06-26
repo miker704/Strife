@@ -66,12 +66,12 @@ class SignIn extends React.Component {
         const headerMessage = "Welcome back!"
         const subHeaderMessage = "We're so excited to see you again!"
 
-        const email = this.props.errors.includes("Invalid Login Credentials") ? <h5 className="login-error">
-        EMAIL - INVALID CREDENTIALS </h5> : <h5 className="login-normal">EMAIL</h5>
+        const email = this.props.errors.includes("Login or password is invalid") ? <h5 className="login-error">
+        EMAIL - Login or password is invalid </h5> : <h5 className="login-normal">EMAIL</h5>
 
 
-        const password=this.props.errors.includes("Invalid Login Credentials") ? <h5 className="login-error">
-        PASSWORD - INVALID CREDENTIALS </h5> : <h5 className="login-normal">PASSWORD</h5>
+        const password=this.props.errors.includes("Login or password is invalid") ? <h5 className="login-error">
+        PASSWORD - Login or password is invalid </h5> : <h5 className="login-normal">PASSWORD</h5>
         
         //demo user button remains const as there credentials wont change
         const signInAsDemoUser1 = <button type="submit" onClick={()=>this.loginAsDemoUser1()}>Demo 1 Login</button>

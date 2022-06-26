@@ -88,38 +88,45 @@ class SessionForm extends React.Component {
 
     userNameErrors() {
 
-        let USERNAME_ERRORS = ['Username Must be between 2 and 32 in length', "Username can't be blank"]
+        let USERNAME_ERRORS = ['Username is too short (minimum is 2 characters)','Username is too long (maximum is 32 characters)','Username Must be between 2 and 32 in length', "Username can't be blank"]
         if (this.props.formType === "Sign Up") {
-            if (this.props.errors.includes('Username Must be between 2 and 32 in length')) {
+            if (this.props.errors.includes("Username can't be blank")) {
+                return " - This field is required";
+            }
+            else if (this.props.errors.includes('Username is too short (minimum is 2 characters)')) {
 
                 return ' - Must be between 2 and 32 in length';
             }
-            else if (this.props.errors.includes("Username can't be blank")) {
-                return "Username can't be blank";
+            else if (this.props.errors.includes('Username is too long (maximum is 32 characters)')) {
+                return ' - Must be between 2 and 32 in length';
             }
+          
         }
         return "";
     }
 
     emailErrors() {
-        const EMAIL_ERRORS = ["Not well formed email address", "Must be 320 or fewer in Length", "Email can't be blank", "Email has already been taken"];
-        // if(this.props.formType === "Sign In"){
-        //     if()
-        // }
+        const EMAIL_ERRORS = ['Email Not well formed email address', "Must be 320 or fewer in Length", "Email can't be blank", "Email has already been taken","Login or password is invalid"];
+       
+        if(this.props.formType === "Sign In"){
+            if (this.props.errors.includes('Login or password is invalid')) {
+                return " - Login or password is invalid";
+            }
+        }
 
         if (this.props.formType === "Sign Up") {
-            if (this.props.errors.includes("Not well formed email address")) {
+            if (this.props.errors.includes("Email can't be blank")) {
+                return " - can't be blank";
+            }
+            else if (this.props.errors.includes("Email Not well formed email address")) {
 
                 return " - Not well formed email address";
             }
             else if (this.props.errors.includes("Email Must be 320 or fewer in Length")) {
                 return " - Must be 320 or fewer in Length";
             }
-            if (this.props.errors.includes("Email can't be blank")) {
-                return " - can't be blank";
-            }
             else if (this.props.errors.includes("Email has already been taken")) {
-                return "Email is already registered ";
+                return " - Email is already registered ";
             }
 
         }
@@ -128,20 +135,22 @@ class SessionForm extends React.Component {
     }
 
     passwordErrors() {
-        const PASSWORD_ERRORS = ["PASSWORD - Must be 72 or fewer in length", "Password is too short (minimum is 8 characters)", "Password can't be blank"];
-        // if(this.props.formType === "Sign In"){
-        //     if()
-        // }
+        const PASSWORD_ERRORS = ['Password is too long (maximum is 72 characters)', "Password is too short (minimum is 8 characters)", "Password can't be blank",'Login or password is invalid'];
+        if(this.props.formType === "Sign In"){
+            if (this.props.errors.includes('Login or password is invalid')) {
+                return " - Login or password is invalid";
+            }
+        }
         if (this.props.formType === "Sign Up") {
-            if (this.props.errors.includes("PASSWORD - Must be 72 or fewer in length")) {
+            if (this.props.errors.includes("Password can't be blank")) {
+                return " - can't be blank";
+            }
+            else if (this.props.errors.includes("Password is too long (maximum is 72 characters)")) {
 
                 return " - Must be 72 or fewer in length";
             }
             else if (this.props.errors.includes("Password is too short (minimum is 8 characters)")) {
-                return " - is too short (minimum is 8 characters)";
-            }
-            if (this.props.errors.includes("Password can't be blank")) {
-                return " - can't be blank";
+                return " - Must be at least 8 characters long";
             }
 
         }
@@ -172,24 +181,28 @@ class SessionForm extends React.Component {
         let passwordErrorTag = "";
         let birthdayErrorTag = "";
         let usernameErrorTag = "";
-        if (this.props.formType === "Sign In") {
-            emailErrorTag = this.props.errors[0] === "" ? "" : "login-error";
-            passwordErrorTag = this.props.errors[0] === "" ? "" : "login-error";
+        if (this.props.formType === "Sign In" && this.props.errors.length >0 ) {
+            emailErrorTag = this.props.errors.includes('Login or password is invalid')? "login-error":""
+            passwordErrorTag = this.props.errors.includes('Login or password is invalid')? "login-error":""
         }
         else if (this.props.formType === "Sign Up") {
-            emailErrorTag = this.props.errors.includes("Not well formed email address") ||
+            emailErrorTag = this.props.errors.includes("Email Not well formed email address") ||
                 this.props.errors.includes("Email Must be 320 or fewer in Length") ||
                 this.props.errors.includes("Email can't be blank") ||
                 this.props.errors.includes("Email has already been taken") ? "login-error" : "";
 
             passwordErrorTag = this.props.errors.includes("Password is too short (minimum is 8 characters)") ||
                 this.props.errors.includes("Password can't be blank") ||
-                this.props.errors.includes("PASSWORD - Must be 72 or fewer in length") ? "login-error" : "";
+                this.props.errors.includes("Password is too long (maximum is 72 characters)") ? "login-error" : "";
+
+
             //  birthdayErrorTag = this.birthdayErrors()=== "" ? "" : "login-error";
-            usernameErrorTag = this.props.errors.includes('Username Must be between 2 and 32 in length') ||
+
+            usernameErrorTag = this.props.errors.includes('Username is too short (minimum is 2 characters)') ||
+            this.props.errors.includes('Username is too long (maximum is 32 characters)') ||
                 this.props.errors.includes("Username can't be blank") ? "login-error" : ""
         }
-
+    
         //assign variables that will display content bassed if the form is sigin vs sign out
         const email = (
             <div className="field">
