@@ -196,7 +196,7 @@ class SessionForm extends React.Component {
                 this.props.errors.includes("Password is too long (maximum is 72 characters)") ? "login-error" : "";
 
 
-            // birthdayErrorTag = this.birthdayErrors()=== "" ? "" : "login-error";
+            birthdayErrorTag = this.props.errors.includes("Birthday can't be blank") ?"login-error":"";
 
             usernameErrorTag = this.props.errors.includes('Username is too short (minimum is 2 characters)') ||
                 this.props.errors.includes('Username is too long (maximum is 32 characters)') ||
@@ -258,7 +258,7 @@ class SessionForm extends React.Component {
             
             <div className="field">
 
-                        <label id="birthday-label">DATE OF BIRTH</label>
+                        <label id="birthday-label" className={birthdayErrorTag}>DATE OF BIRTH{this.birthdayErrors()}</label>
                         <div className="dropbox-selector">
 
                             <select id="month" defaultValue="00" onChange={this.handleInput('month')}>
