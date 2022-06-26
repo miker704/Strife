@@ -34,15 +34,15 @@ class User < ApplicationRecord
 
     validates :email, :username, :password_digest, :session_token, :strife_id_tag, :birthday, presence: true
     validates :username, uniqueness: {scope: :strife_id_tag}
-    validates :username, length: {minimum:2, maximum:32, too_long: "Must be between 2 and 32 in length", too_short: "Must be between 2 and 32 in length"}
+    validates :username, length: {minimum:2, maximum:32 }
     validates :email, uniqueness: true
-    validates :email, uniqueness: {case_sensitive: false}
+    validates :email, length: {maximum:320, too_long: "Must be 320 or fewer in Length"},uniqueness: {case_sensitive: false}
     validates :phone_number, uniqueness: true, allow_nil: true
     validates :online, inclusion: {in: [true,false]}
     # has_one_attached :profile_pic_url -- > this requires acxtive storage 
     #email has a length 320 max or EMAIL - Must be 320 or fewer in Length, EMAIL - Not well formed email address
     #PASSWORD - Must be 72 or fewer in length , Age Error user must be 13 years to sign up
-
+    # too_long: "Username Must be between 2 and 32 in length", too_short: "Username Must be between 2 and 32 in length"}
     # user ownership
     #user ownership of servers
     has_many :owned_servers, class_name: "Server", foreign_key: "server_owner_id", dependent: :destroy

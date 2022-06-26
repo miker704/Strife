@@ -90,9 +90,9 @@ class SessionForm extends React.Component {
 
         let USERNAME_ERRORS = ['Username Must be between 2 and 32 in length',"Username can't be blank"]
             if(this.props.formType==="Sign Up"){
-                if(this.props.errors.includes(USERNAME_ERRORS[0])){
+                if(this.props.errors.includes("Username is too long (maximum is 32 characters)")){
                   
-                    return "USERNAME - Must be between 2 and 32 in length";
+                    return 'Username Must be between 2 and 32 in length';
                 }
                 else if(this.props.errors.includes("Username can't be blank")){
                     return "Username can't be blank";
@@ -102,16 +102,26 @@ class SessionForm extends React.Component {
     }
 
     emailErrors(){
-        const EMAIL_ERRORS =["EMAIL - Not well formed email address", "EMAIL - Must be 320 or fewer in Length", "Email can't be blank","Email has already been taken"];
+        const EMAIL_ERRORS =["Not well formed email address", "Must be 320 or fewer in Length", "Email can't be blank","Email has already been taken"];
         // if(this.props.formType === "Sign In"){
         //     if()
         // }
+    
         if (this.props.formType === "Sign Up"){
-                for(let i= 0; i<=EMAIL_ERRORS.length;i++){
-                    if(this.props.errors.includes(EMAIL_ERRORS[i])){
-                        return EMAIL_ERRORS[i];
-                    }
-                }
+            // if(this.props.errors.includes(EMAIL_ERRORS[0])){
+                  
+            //     return "Not well formed email address";
+            // }
+            // else if(this.props.errors.includes(EMAIL_ERRORS[1])){
+            //     return "Must be 320 or fewer in Length";
+            // }
+             if(this.props.errors.includes("Email can't be blank")){
+                return "Email can't be blank";
+            }
+            else if(this.props.errors.includes("Email has already been taken")){
+                return "Email has already been taken";
+            }
+         
         }
         return "";
     }
@@ -155,17 +165,32 @@ class SessionForm extends React.Component {
         let passwordErrorTag= "";
         let birthdayErrorTag = "";
         let usernameErrorTag = "";
-
+        if(this.props.formType === "Sign In" ){
+            emailErrorTag = this.emailErrors === "" ? "" : "login-error";
+            // passwordErrorTag= this.passwordErrors() === "" ? "" : "login-error";
+        }
+        else if (this.props.formType === "Sign Up" ){
+            // emailErrorTag = this.emailErrors === "" ? "login-normal" : "login-error";
+            // passwordErrorTag= this.passwordErrors() === "" ? "" : "login-error";
+            //  birthdayErrorTag = this.birthdayErrors()=== "" ? "" : "login-error";
+             usernameErrorTag = this.props.errors.includes("Username is too long (maximum is 32 characters)")||
+             this.props.errors.includes("Username can't be blank") ? "login-error" : ""
+        }
 
         //assign variables that will display content bassed if the form is sigin vs sign out
-        let email;
+        // const email = (
+        //     <div className="field">
+        //         <label id="email-label" className={emailErrorTag}>EMAIL{this.emailErrors()}</label>
+        //         <input id="email" type="email"value={this.state.email} onChange={this.handleInput('email')}/>
+        //     </div>
+        // );
         let password;
         
         let birthday;
-        const userName = this.props.formType === "Sign In" ? (""):(
+        let userName = this.props.formType === "Sign In" ? (""):(
             <div className="field">
-                <label className="login-error">USERNAME{this.userNameErrors}</label>
-                <input type="text"value={this.state.username} onChange={this.handleInput('username')}/>
+                <label id="username-label" className={usernameErrorTag}>USERNAME{this.userNameErrors}</label>
+                <input id="username" type="text"value={this.state.username} onChange={this.handleInput('username')}/>
             </div>
         );
 
@@ -191,9 +216,14 @@ class SessionForm extends React.Component {
                     {userName}
                     {/* <input type="text"value={this.state.username} onChange={this.handleInput('username')}/> */}
                     
-                
-                    {/* {email} */}
-                    <input type="email"value={this.state.email} onChange={this.handleInput('email')} />
+                    {/* <div className="email-field">
+                        <label id="email-field" className={emailErrorTag}>
+                            EMAIL{this.emailErrors}
+                        </label>
+                        <input type="email" className={emailErrorTag} id="email"value={this.state.email} onChange={this.handleInput('email')}/>
+                    </div> */}
+                    {/* {email}
+                    <input type="email"value={this.state.email} onChange={this.handleInput('email')} /> */}
                   
 
                   
