@@ -217,8 +217,8 @@ class SessionForm extends React.Component {
             </div>
         );
 
-        let birthday;
-        let userName = this.props.formType === "Sign In" ? ("") : (
+        
+        const userName = this.props.formType === "Sign In" ? ("") : (
             <div className="field">
                 <label id="username-label" className={usernameErrorTag}>USERNAME{this.userNameErrors()}</label><br />
                 <input id="username" type="text" value={this.state.username} onChange={this.handleInput('username')} />
@@ -245,8 +245,16 @@ class SessionForm extends React.Component {
             days.push(<option key={i} value={i}>{i}</option>);
         }
 
+        //to future proof this  we use the current year right now
+        let timeNow = new Date();
+        let currentYear = timeNow.getFullYear();
         const years = new Array();
-        const months= []
+        for (let i = 0; i <= 150; i++) {
+            years.push(<option key={i} value={currentYear-i}>{currentYear-i}</option>);
+        }
+
+
+        
 
 
 
