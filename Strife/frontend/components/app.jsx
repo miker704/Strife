@@ -6,6 +6,8 @@ import SignInFormContainer from './session/signin_form_container';
 import SplashContainer from "./splash/splash_container";
 import NavBarContainer from './nav_bar/nav_bar_container';
 
+import SessionSignInFormContainer from './session/session_signin_form_container';
+
 
 
 const App = () => (
@@ -14,17 +16,24 @@ const App = () => (
    
    {/* <Routes> */}
     <Switch>
-    {/* <Route path="/" element={<NavBarContainer/>}/> */}
-    {/* <Route path="/" component={NavBarContainer}/> */}
-    {/* <Route exact path="/" component={SplashContainer} /> */}
+ 
 
-    {/* <Route path="/"></Route> */}
+
     <Route exact path="/"> <SplashContainer/> <NavBarContainer/> </Route>
     <AuthRoute path="/signup" component={SignUpFormContainer} />
     <AuthRoute path="/signin" component={SignInFormContainer} />
     </Switch>
     {/* </Routes> */}
     
+    {/* testing custom switch route to a session only form */}
+    
+    <Switch>
+    <Route exact path="/"> <SplashContainer/> <NavBarContainer/> </Route>
+    <AuthRoute path="/signup" component={SignUpFormContainer} />
+    <AuthRoute path="/signin" component={SignInFormContainer} />
+    </Switch>
+
+
     {/* testing custom switch route */}
     {/* <Switch>
 
