@@ -40,7 +40,8 @@ class User < ApplicationRecord
     validates :phone_number, uniqueness: true, allow_nil: true
     validates :online, inclusion: {in: [true,false]}
     # has_one_attached :profile_pic_url -- > this requires acxtive storage 
-
+    #email has a length 320 max or EMAIL - Must be 320 or fewer in Length, EMAIL - Not well formed email address
+    #PASSWORD - Must be 72 or fewer in length
 
     # user ownership
     #user ownership of servers
