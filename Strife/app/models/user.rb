@@ -34,7 +34,7 @@ class User < ApplicationRecord
 
     validates :email, :username, :password_digest, :session_token, :strife_id_tag, :birthday, presence: true
     validates :username, uniqueness: {scope: :strife_id_tag}
-    validates :username, length: {minimum:2, maximum:32 }
+    validates :username, length: {minimum:2, maximum:32, too_long: "Must be between 2 and 32 in length", too_short: "Must be between 2 and 32 in length"}
     validates :email, uniqueness: true
     validates :email, length: {maximum:320, too_long: "Must be 320 or fewer in Length"},uniqueness: {case_sensitive: false}
     validates :phone_number, uniqueness: true, allow_nil: true
