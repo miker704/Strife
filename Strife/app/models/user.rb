@@ -80,7 +80,7 @@ class User < ApplicationRecord
     
 
     # friends
-    has_many :friendships, class_name: "Friendship", foreign_key: "friend_a_id"
+    has_many :friendships, class_name: "Friendship", foreign_key: "friend_a_Id"
     
     has_many :friends_accepted, 
     -> {where Friendships: { status: "accepted"}},
