@@ -196,7 +196,7 @@ class SessionForm extends React.Component {
                 this.props.errors.includes("Password is too long (maximum is 72 characters)") ? "login-error" : "";
 
 
-            //  birthdayErrorTag = this.birthdayErrors()=== "" ? "" : "login-error";
+            // birthdayErrorTag = this.birthdayErrors()=== "" ? "" : "login-error";
 
             usernameErrorTag = this.props.errors.includes('Username is too short (minimum is 2 characters)') ||
             this.props.errors.includes('Username is too long (maximum is 32 characters)') ||
@@ -251,9 +251,6 @@ class SessionForm extends React.Component {
                             </label>
                             <input type="email" className={emailErrorTag} id="email" value={this.state.email} onChange={this.handleInput('email')} />
                         </div> */}
-                        {/* {email}
-                    <input type="email"value={this.state.email} onChange={this.handleInput('email')} /> */}
-
                         {userName}
 
                         {password}
