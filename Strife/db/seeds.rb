@@ -6,15 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
-# Server.destroy_all
-# ServerMembership.destroy_all
-# Channel.destroy_all
-# ChannelMembership.destroy_all
-# Message.destroy_all
-# Friendship.destroy_all
-# DmServer.destroy_all
-# DmMember.destroy_all
-# DmMessage.destroy_all
+Server.destroy_all
+ServerMembership.destroy_all
+Channel.destroy_all
+ChannelMembership.destroy_all
+Message.destroy_all
+Friendship.destroy_all
+DmServer.destroy_all
+DmMember.destroy_all
+DmMessage.destroy_all
 
 # demo user 1
 demouser1=User.create!(
