@@ -4,3 +4,60 @@
 .login-error{
     color: red;
 }
+
+//background for session
+
+.session-form{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: image_url("Discord_login_background_2022.png");
+    background-size: cover;
+}
+
+//discords background 36393f
+//input background #202225
+// date of birth drop box
+//text in drop box rgb(114, 118, 125);
+//"ABC Ginto Normal","Helvetica Neue",Helvetica,Arial,sans-serif
+//select box font  Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif
+//select faded rgb(114,118,125)
+
+select{
+    background-color: #313339;
+    font-size: 18px;
+    font-family: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #DCDDDE;
+    
+}
+
+
+
+select#month{
+    width: 150px;
+    margin-left: 0;
+}
+
+select#day{
+    width: 100px;;
+}
+
+select#year{
+    width:125px;
+    margin-right:5px;
+}
+
+select:hover{
+    border: solid black 1px;
+    outline:none;
+    transition: 0.25s;
+}
+
+select#year option:hover{
+    box-shadow: 0 0 10px 100px #FFFFFF inset;
+}
+
+select option:focus{
+    color: #191919
+}
+

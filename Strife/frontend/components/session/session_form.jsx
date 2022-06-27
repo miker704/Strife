@@ -335,7 +335,7 @@ class SessionForm extends React.Component {
 
 
         return (
-            <div className="session-signup-form">
+            <div className="session-form">
                 <div className="login-box">
 
                     {headerMessage}
