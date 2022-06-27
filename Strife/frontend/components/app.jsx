@@ -30,9 +30,11 @@ const App = () => (
     <Switch>
     {/* <Route exact path="/"> <SplashContainer/> <NavBarContainer/> </Route> */}
     <Route exact path="/"> <SplashContainer/> </Route>
-    <AuthRoute path="/session_signup_form_container" component={SessionSignUpFormContainer} />
-    <AuthRoute path="/session_signin_form_container" component={SessionSignInFormContainer} />
+    {/* <AuthRoute path="/session_signup_form_container" component={SessionSignUpFormContainer} /> */}
+    {/* <AuthRoute path="/session_signin_form_container" component={SessionSignInFormContainer} /> */}
     {/* <ProtectedRoute path=""/>     */}
+    <AuthRoute path="/signup" component={SessionSignUpFormContainer} />
+    <AuthRoute path="/login" component={SessionSignInFormContainer} />
     </Switch>
 
 

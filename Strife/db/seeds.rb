@@ -41,7 +41,7 @@ defaultServer = Server.create!(
 
 # ServerMembership.create!(
 #     user_id: demouser1.id,
-#     server_id: defaultServer.id
+#     server_id: defaultServer.id 11
 # )
 
 
