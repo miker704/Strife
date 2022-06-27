@@ -3,18 +3,10 @@ import UserNav from "./user_nav";
 
 const mSTP  = state => {
     return {
-       
+       currentUser: state.entities.users[state.session.id]
     }
 }
 
 
-
-const mDTP = dispatch =>{
-    return {
-       
-
-    }
-}
-
-const UserNavContainer = connect(mSTP,mDTP)(UserNav);
+const UserNavContainer = connect(mSTP,null)(UserNav);
 export default UserNavContainer;

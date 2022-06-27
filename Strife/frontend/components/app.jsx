@@ -28,9 +28,11 @@ const App = () => (
     {/* testing custom switch route to a session only form */}
     
     <Switch>
-    <Route exact path="/"> <SplashContainer/> <NavBarContainer/> </Route>
+    {/* <Route exact path="/"> <SplashContainer/> <NavBarContainer/> </Route> */}
+    <Route exact path="/"> <SplashContainer/> </Route>
     <AuthRoute path="/session_signup_form_container" component={SessionSignUpFormContainer} />
     <AuthRoute path="/session_signin_form_container" component={SessionSignInFormContainer} />
+    {/* <ProtectedRoute path=""/>     */}
     </Switch>
 
 

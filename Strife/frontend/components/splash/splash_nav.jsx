@@ -1,19 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-class UserNav extends React.Component{
+
+
+class SplashNav extends React.Component {
     constructor(props){
         super(props);
     }
 
     render(){
-        return(
-            <div>
+        return (
+            <div className="splash-nav">
+
+            
 
             </div>
         )
     }
-
-
 }
-export default UserNav;
+
+export default SplashNav;

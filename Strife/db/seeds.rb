@@ -32,6 +32,18 @@ User.create!(
     birthday: Date.new(1997,03,10),
 )
 
+defaultServer = Server.create!(
+    server_owner_id: demouser1.id,
+    server_name: "defaultServer",
+    public: true
+
+)
+
+# ServerMembership.create!(
+#     user_id: demouser1.id,
+#     server_id: defaultServer.id
+# )
+
 
 #discord bot
 

@@ -10,7 +10,7 @@ class Splash extends React.Component{
         return(
             <div className="splash-home">
               <h1>calling from home</h1>
-              {/* <NavBarContainer/> */}
+              <NavBarContainer/>
             </div>
         )
     }
