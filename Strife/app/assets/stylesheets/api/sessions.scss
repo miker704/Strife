@@ -1,9 +1,6 @@
 // Place all the styles related to the api::sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.login-error{
-    color: red;
-}
 
 //background for session
 
@@ -13,7 +10,100 @@
     position: absolute;
     background-image: image_url("Discord_login_background_2022.png");
     background-size: cover;
+    
+    top: 0;
+    left:0;
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // -webkit-box-align: center;
+    // -webkit-box-pack: center;
+    // vertical-align: baseline;
+    
+    
 }
+
+.login-box{
+    background-color: #36393f;
+    font-size: 18px;
+    
+    max-width: 480px;
+    max-height:580px;
+    padding: 32px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
+    color: #72767d;
+    // test
+    // margin: auto;
+    
+    // width:50%;
+    // height:50%;
+    // transform: translate(0%,40%);
+    
+    
+    
+}
+
+
+
+form{
+   display: flex;
+   flex-direction: column;
+
+
+    .field{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        label{
+            // color:#8e9297;
+            color: #B9BBBE;
+            font-weight: 600;
+            font-size: 12px;
+            position: relative;
+            margin: 10px 0;
+
+        }
+
+
+        
+
+
+    }
+
+
+
+}
+.login-box h3{
+    font-size:25px;
+    font-weight: 500;
+    line-height:30px;
+    font-family:"ABC Ginto Normal","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: white;
+    text-align: center;
+}
+h3.welcome-message{
+    font-weight:700;
+    font-size:25px;
+    margin: 10px;
+}
+h3.signup-header{
+    font-weight:700;
+    font-size:25px;
+    margin:20px 20px -10px 20px;
+
+}
+
+a{
+    color: #00Aff4;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+
 
 //discords background 36393f
 //input background #202225
@@ -28,10 +118,20 @@ select{
     font-size: 18px;
     font-family: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #DCDDDE;
-    
+    border: solid rgb(25,25,25) 1px;
+    padding: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    // align-items: center;
+    border-radius: 3px;
+
+ 
+
 }
 
-
+select .fade-select{
+    color: rgb(114, 118, 125);
+}
 
 select#month{
     width: 150px;
@@ -61,3 +161,19 @@ select option:focus{
     color: #191919
 }
 
+
+
+
+.tos{
+    font-size:12px;
+    // color: #dcddde;
+    // color: #72767d;
+    color: #888b8f;
+    margin-top: 30px;
+    line-height: 16px;
+}
+
+
+.login-error{
+    color: red;
+}

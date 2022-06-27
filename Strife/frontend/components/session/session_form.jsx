@@ -235,8 +235,8 @@ class SessionForm extends React.Component {
 
         //messages depending on signup or sign in
         const submitButtonMessage = this.props.formType === "Sign In" ? "Login" : "Continue"
-        const headerMessage = this.props.formType === "Sign In" ? (<h2 className="welcome-message">Welcome Back!</h2>) :
-            (<h2 className="signup-header">Create an account</h2>);
+        const headerMessage = this.props.formType === "Sign In" ? (<h3 className="welcome-message">Welcome Back!</h3>) :
+            (<h3 className="signup-header">Create an account</h3>);
         const subHeaderMessage = this.props.formType === "Sign In" ? ("We're so excited to see you again!") : ("");
 
         const signInAsDemoUser1 = (
@@ -296,7 +296,7 @@ class SessionForm extends React.Component {
 
                     <select id="month" defaultValue="00" onChange={this.handleInput('month')}>
 
-                        <option value="00" disabled>
+                        <option className="fade-select"value="00" disabled>
                             Select
                         </option>
                         <option value="01">January</option>
@@ -315,11 +315,11 @@ class SessionForm extends React.Component {
 
                     </select>
                     <select id="day" defaultValue="00" onChange={this.handleInput('day')}>
-                        <option value="00" disabled>Select</option>
+                        <option className="fade-select" value="00" disabled>Select</option>
                         {days}
                     </select>
                     <select id="year" placeholder="Select" defaultValue="Select" onChange={this.handleInput('year')}>
-                        <option value="Select" disabled>Select</option>
+                        <option className="fade-select" value="Select" disabled>Select</option>
                         {years}
                     </select>
 
@@ -340,7 +340,7 @@ class SessionForm extends React.Component {
 
                     {headerMessage}
 
-                    <h3>{subHeaderMessage}</h3>
+                    <h4>{subHeaderMessage}</h4>
 
                     <form onSubmit={this.handleSubmit}>
                         {email}
