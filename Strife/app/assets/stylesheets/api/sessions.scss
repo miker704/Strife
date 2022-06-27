@@ -282,7 +282,10 @@
         color: #f38688;
     }
 
-    
+    .forgotPassword{
+        text-align: left;
+        font-size: 14px;
+    }
     }
     .demologins {
         display: flex;
@@ -292,13 +295,13 @@
         justify-content: center;
         width: auto;
 
-        .demologin-text {
-            width: 80%;
-            margin: 0 auto;
-            text-align: center;
-            color: #888b8f;
-
-        }
+        // .demologin-text {
+            // width: 80%;
+            // margin: 0 auto;
+            // text-align: left;
+            // color: #888b8f;
+// 
+        // }
 
         h2 {
             font-family: "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -312,7 +315,7 @@
     .demo-login-button {
         height: 40px;
         width: 70%;
-      
+    
         color: white;
         background-color: #5865F2;
         border-radius: 3px;

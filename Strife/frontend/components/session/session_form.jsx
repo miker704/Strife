@@ -238,7 +238,7 @@ class SessionForm extends React.Component {
         const subHeaderMessage = this.props.formType === "Sign In" ? ("We're so excited to see you again!") : ("");
 
         const signInAsDemoUser1 = (
-            <button type="submit" className="demo-login-button" onClick={() => this.loginAsDemoUser1()}>Demo 1 Login</button>);
+            <button type="submit" className="demo-login-button" onClick={() => this.loginAsDemoUser1()}>Demo Login</button>);
         // const signInAsDemoUser2 = (
             // <button type="submit" className="demo-login-button" onClick={() => this.loginAsDemoUser2()}>Demo 2 Login</button>);
 
@@ -248,9 +248,9 @@ class SessionForm extends React.Component {
             <div className="demologins">
                 {signInAsDemoUser1} 
                 {/* {signInAsDemoUser2} */}
-                <div className="demologin-text">
+                {/* <div className="demologin-text">
                     <h2>Want a tour? Login with a Demo account!</h2>
-                </div>
+                </div> */}
             </div>
         )
 
@@ -258,7 +258,7 @@ class SessionForm extends React.Component {
 
 
         const forgotPassword = this.props.formType === "Sign In" ? (
-            <span className="navlinks"><Link to="/session_signup_form_container">Forgot your password?</Link></span>
+            <span className="forgotPassword"><Link to="/session_signup_form_container">Forgot your password?</Link></span>
         ) : ("");
 
         const tos = this.props.formType === "Sign Up" ? (
