@@ -73,7 +73,7 @@ class SessionForm extends React.Component {
             email: 'DemoUser1@strife.com',
             password: 'qwerty1234'
         }
-
+        // this.props.processForm(demoUser);
         this.setState({ email: demoUser.email })
         this.setState({ password: demoUser.password })
     }
@@ -161,9 +161,7 @@ class SessionForm extends React.Component {
 
     birthdayErrors() {
         const BIRTHDAY_ERRORS = ["Birthday can't be blank"]
-        // if(this.props.formType === "Sign In"){
-        //     if()
-        // }
+     
         if (this.props.formType === "Sign Up") {
 
             if (this.props.errors.includes("Birthday can't be blank")) {
@@ -208,19 +206,19 @@ class SessionForm extends React.Component {
         //assign variables that will display content bassed if the form is sigin vs sign out
         const email = this.props.formType === "Sign Up" ? (
             <div className="field">
-                <label id="email-label" className={emailErrorTag}>EMAIL{this.emailErrors()}</label><br />
+                <label id="email-label" className={emailErrorTag}>EMAIL{this.emailErrors()}</label>
                 <input id="email" className={emailErrorTag} type="email" value={this.state.email} onChange={this.handleInput('email')} />
             </div>
         ) : (
             <div className="field">
-                <label id="email-label" className={emailErrorTag}>EMAIL OR PHONE NUMBER{this.emailErrors()}</label><br />
+                <label id="email-label" className={emailErrorTag}>EMAIL OR PHONE NUMBER{this.emailErrors()}</label>
                 <input id="email" className={emailErrorTag} type="email" value={this.state.email} onChange={this.handleInput('email')} />
             </div>
         )
             ;
         const password = (
             <div className="field">
-                <label id="password-label" className={passwordErrorTag}>PASSWORD{this.passwordErrors()}</label><br />
+                <label id="password-label" className={passwordErrorTag}>PASSWORD{this.passwordErrors()}</label>
                 <input id="password" className={passwordErrorTag} type="password" value={this.state.password} onChange={this.handleInput('password')} />
             </div>
         );
@@ -228,30 +226,30 @@ class SessionForm extends React.Component {
 
         const userName = this.props.formType === "Sign In" ? ("") : (
             <div className="field">
-                <label id="username-label" className={usernameErrorTag}>USERNAME{this.userNameErrors()}</label><br />
+                <label id="username-label" className={usernameErrorTag}>USERNAME{this.userNameErrors()}</label>
                 <input id="username" type="text" value={this.state.username} onChange={this.handleInput('username')} />
             </div>
         );
 
         //messages depending on signup or sign in
         const submitButtonMessage = this.props.formType === "Sign In" ? "Login" : "Continue"
-        const headerMessage = this.props.formType === "Sign In" ? (<h3 className="welcome-message">Welcome Back!</h3>) :
-            (<h3 className="signup-header">Create an account</h3>);
+        const headerMessage = this.props.formType === "Sign In" ? (<h2 className="welcome-message">Welcome Back!</h2>) :
+            (<h2 className="signup-header">Create an account</h2>);
         const subHeaderMessage = this.props.formType === "Sign In" ? ("We're so excited to see you again!") : ("");
 
         const signInAsDemoUser1 = (
             <button type="submit" className="demo-login-button" onClick={() => this.loginAsDemoUser1()}>Demo 1 Login</button>);
-        const signInAsDemoUser2 = (
-            <button type="submit" className="demo-login-button" onClick={() => this.loginAsDemoUser2()}>Demo 2 Login</button>);
+        // const signInAsDemoUser2 = (
+            // <button type="submit" className="demo-login-button" onClick={() => this.loginAsDemoUser2()}>Demo 2 Login</button>);
 
 
 
         const demoLogins = this.props.formType === "Sign Up" ? ("") : (
             <div className="demologins">
-                {signInAsDemoUser1} <br />
-                {signInAsDemoUser2}
+                {signInAsDemoUser1} 
+                {/* {signInAsDemoUser2} */}
                 <div className="demologin-text">
-                    <h2>Want a tour? Login with a Demo account !</h2>
+                    <h2>Want a tour? Login with a Demo account!</h2>
                 </div>
             </div>
         )
@@ -296,7 +294,7 @@ class SessionForm extends React.Component {
 
                     <select id="month" defaultValue="00" onChange={this.handleInput('month')}>
 
-                        <option className="fade-select"value="00" disabled>
+                        <option value="00" disabled>
                             Select
                         </option>
                         <option value="01">January</option>
@@ -315,11 +313,11 @@ class SessionForm extends React.Component {
 
                     </select>
                     <select id="day" defaultValue="00" onChange={this.handleInput('day')}>
-                        <option className="fade-select" value="00" disabled>Select</option>
+                        <option  value="00" disabled>Select</option>
                         {days}
                     </select>
                     <select id="year" placeholder="Select" defaultValue="Select" onChange={this.handleInput('year')}>
-                        <option className="fade-select" value="Select" disabled>Select</option>
+                        <option value="Select" disabled>Select</option>
                         {years}
                     </select>
 
@@ -330,33 +328,56 @@ class SessionForm extends React.Component {
         )
 
 
-
+        const formtype = this.props.formType === "Sign in" ? "login-box":"signup-box";
 
 
 
         return (
             <div className="session-form">
-                <div className="login-box">
-
+                {/* <div className={formtype}> */}
+                <div className='login-box'>
+                    <div className="form-box">
                     {headerMessage}
 
-                    <h4>{subHeaderMessage}</h4>
+                    <h3>{subHeaderMessage}</h3>
 
                     <form onSubmit={this.handleSubmit}>
                         {email}
+
+                        {/* <div className="field">
+                            <label id="email-label" className={emailErrorTag}>
+                                EMAIL{this.emailErrors()}
+                                </label>
+                                <input id="email" type="email" className={emailErrorTag} onChange={this.handleInput('email')}/>
+
+                        </div> */}
+
+
                         {userName}
                         {password}
+
+                        {/* <div className="field">
+                            <label id="password-label" className={passwordErrorTag}>
+                                PASSWORD{this.passwordErrors()}
+                                </label>
+                                <input id="password" type="password" className={passwordErrorTag} onChange={this.handleInput('password')}/> */}
+
                         {forgotPassword}
+                        {/* </div> */}
+
+
+
                         {birthday}
-                        <div className="field"><button type="submit">{submitButtonMessage}</button></div>
+                        <div className="field"><button type="submit">{submitButtonMessage}</button>
                         {this.props.navLink}
-                        <br />
-                        {demoLogins}
-                        <br />
                         {tos}
+                        </div>
+                        {demoLogins}
                     </form>
+                    </div>
                 </div>
             </div>
+            // </div>
         )
     }
 
