@@ -8,8 +8,15 @@ export const RECEIVE_SERVER_ERRORS = "RECEIVE_SERVER_ERRORS";
 export const REMOVE_SERVER_ERRORS = "REMOVE_SERVER_ERRORS";
 
 
-const receiveServer = (server) => {return{}}
-const receiveServers = (servers) => {return{}}
-const removeServer = (serverId) => {return{}}
-const receiveServerErrors = (errors) => {return{}}
-const removveServerErrors = () => {return{}}
+export const receiveServer = (server) => {return{}}
+
+export const receiveServers = (servers) => {return{}}
+
+export const removeServer = (serverId) => {return{}}
+
+export const receiveServerErrors = (errors) => {return{}}
+
+
+export const removeServerErrors = () => {return{}}
+
+
