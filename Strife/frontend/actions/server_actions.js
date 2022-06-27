@@ -49,5 +49,11 @@ ServerAPI.fetchServers(user).then((servers) => {dispatch(receiveServers(servers)
 export const fetchServer = (serverId) => (dispatch) =>
 ServerAPI.fetchServer(serverId).then((server) => {dispatch(receiveServers(server))})
 
+export const createServer = (server) => (dispatch) =>
+ServerAPI.createServer(server).then((server) => {dispatch(removeServerErrors()),dispatch(receiveServer(server))},(err)=>{dispatch(receiveServerErrors(err.responseJSON))}) 
 
+export const updateServer = (server) => (dispatch) =>
+ServerAPI.updateServer(server).then((server) => {dispatch(removeServerErrors()),dispatch(receiveServer(server))},(err)=>{dispatch(receiveServerErrors(err.responseJSON))}) 
 
+export const deleteServer = (serverId) => (dispatch) =>
+ServerAPI.deleteServer(serverId).then(() => {dispatch(removeServer(serverId))}) 
