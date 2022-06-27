@@ -45,3 +45,9 @@ export const removeServerErrors = () => {
 
 export const fetchServers = (user) => (dispatch) =>
 ServerAPI.fetchServers(user).then((servers) => {dispatch(receiveServers(servers))},(err)=>{dispatch(receiveServerErrors(err.responseJSON))}) 
+
+export const fetchServer = (serverId) => (dispatch) =>
+ServerAPI.fetchServer(serverId).then((server) => {dispatch(receiveServers(server))})
+
+
+
