@@ -1,3 +1,5 @@
+// this is the beginning signin page which as been renamed redacted as it was merged with session form 
+
 import React from "react";
 import { Link } from "react-router-dom";
 

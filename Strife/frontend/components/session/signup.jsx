@@ -1,3 +1,5 @@
+// this is the beginning signup page which as been renamed redacted as it was merged with session form 
+
 import React from "react";
 import SessionErrorHandler from "../../utils/error_handling_api_util";
 
