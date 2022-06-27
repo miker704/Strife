@@ -10,7 +10,7 @@ class SessionForm extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = this.props.formType === 'Sign In' ? { email: "", password: ""} : { email: "", username: "",password: "" , birthday:"", month:"",day:"",year:""};
+        this.state = this.props.formType === 'Sign In' ? { email: "", password: "" } : { email: "", username: "", password: "", birthday: "", month: "", day: "", year: "" };
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.errors = this.errors.bind(this);
@@ -48,7 +48,7 @@ class SessionForm extends React.Component {
 
     handleInput(field) {
         return (e) => {
-            this.setState({ [field]: e.currentTarget.value },()=>{this.setState({birthday: this.state.month +"/"+this.state.day+"/"+this.state.year})})
+            this.setState({ [field]: e.currentTarget.value }, () => { this.setState({ birthday: this.state.month + "/" + this.state.day + "/" + this.state.year }) })
         }
     }
 
@@ -73,7 +73,9 @@ class SessionForm extends React.Component {
             email: 'DemoUser1@strife.com',
             password: 'qwerty1234'
         }
-        this.props.processForm(demoUser);
+
+        this.setState({ email: demoUser.email })
+        this.setState({ password: demoUser.password })
     }
 
     loginAsDemoUser2() {
@@ -81,7 +83,8 @@ class SessionForm extends React.Component {
             email: 'DemoUser2@strife.com',
             password: 'QWERTY1234'
         }
-        this.props.processForm(demoUser);
+        this.setState({email:demoUser.email})
+        this.setState({password: demoUser.password})
     }
 
 
@@ -195,7 +198,7 @@ class SessionForm extends React.Component {
                 this.props.errors.includes("Password is too long (maximum is 72 characters)") ? "login-error" : "";
 
 
-            birthdayErrorTag = this.props.errors.includes("Birthday can't be blank") ?"login-error":"";
+            birthdayErrorTag = this.props.errors.includes("Birthday can't be blank") ? "login-error" : "";
 
             usernameErrorTag = this.props.errors.includes('Username is too short (minimum is 2 characters)') ||
                 this.props.errors.includes('Username is too long (maximum is 32 characters)') ||
@@ -203,12 +206,18 @@ class SessionForm extends React.Component {
         }
 
         //assign variables that will display content bassed if the form is sigin vs sign out
-        const email = (
+        const email = this.props.formType === "Sign Up" ? (
             <div className="field">
                 <label id="email-label" className={emailErrorTag}>EMAIL{this.emailErrors()}</label><br />
                 <input id="email" className={emailErrorTag} type="email" value={this.state.email} onChange={this.handleInput('email')} />
             </div>
-        );
+        ) : (
+            <div className="field">
+                <label id="email-label" className={emailErrorTag}>EMAIL OR PHONE NUMBER{this.emailErrors()}</label><br />
+                <input id="email" className={emailErrorTag} type="email" value={this.state.email} onChange={this.handleInput('email')} />
+            </div>
+        )
+            ;
         const password = (
             <div className="field">
                 <label id="password-label" className={passwordErrorTag}>PASSWORD{this.passwordErrors()}</label><br />
@@ -216,7 +225,7 @@ class SessionForm extends React.Component {
             </div>
         );
 
-        
+
         const userName = this.props.formType === "Sign In" ? ("") : (
             <div className="field">
                 <label id="username-label" className={usernameErrorTag}>USERNAME{this.userNameErrors()}</label><br />
@@ -230,13 +239,38 @@ class SessionForm extends React.Component {
             (<h2 className="signup-header">Create an account</h2>);
         const subHeaderMessage = this.props.formType === "Sign In" ? ("We're so excited to see you again!") : ("");
 
+        const signInAsDemoUser1 = (
+            <button type="submit" className="demo-login-button" onClick={() => this.loginAsDemoUser1()}>Demo 1 Login</button>);
+        const signInAsDemoUser2 = (
+            <button type="submit" className="demo-login-button" onClick={() => this.loginAsDemoUser2()}>Demo 2 Login</button>);
+
+
+
+        const demoLogins = this.props.formType === "Sign Up" ? ("") : (
+            <div className="demologins">
+                {signInAsDemoUser1} <br />
+                {signInAsDemoUser2}
+                <div className="demologin-text">
+                    <h2>Want a tour? Login with a Demo account !</h2>
+                </div>
+            </div>
+        )
 
 
 
 
+        const forgotPassword = this.props.formType === "Sign In" ? (
+            <span className="navlinks"><Link to="/session_signup_form_container">Forgot your password?</Link></span>
+        ) : ("");
 
-
-
+        const tos = this.props.formType === "Sign Up" ? (
+            <span className="tos">By registering, you agree to Strife's{" "}
+                <Link to="/session_signup_form_container">Terms of Service</Link>
+                {" "}and{" "}
+                <Link to="/session_signup_form_container">Privacy Policy</Link>
+                .
+            </span>
+        ) : ("");
 
         //drop box functions discord does not use the normal html date input tag 
         const days = new Array();
@@ -249,51 +283,51 @@ class SessionForm extends React.Component {
         let currentYear = timeNow.getFullYear();
         const years = new Array();
         for (let i = 0; i <= 150; i++) {
-            years.push(<option key={i} value={currentYear-i}>{currentYear-i}</option>);
+            years.push(<option key={i} value={currentYear - i}>{currentYear - i}</option>);
         }
 
 
-        const birthday = this.props.formType === "Sign In" ? (""):(
-            
+        const birthday = this.props.formType === "Sign In" ? ("") : (
+
             <div className="field">
 
-                        <label id="birthday-label" className={birthdayErrorTag}>DATE OF BIRTH{this.birthdayErrors()}</label>
-                        <div className="dropbox-selector">
+                <label id="birthday-label" className={birthdayErrorTag}>DATE OF BIRTH{this.birthdayErrors()}</label>
+                <div className="dropbox-selector">
 
-                            <select id="month" defaultValue="00" onChange={this.handleInput('month')}>
+                    <select id="month" defaultValue="00" onChange={this.handleInput('month')}>
 
-                                <option value="00" disabled>
-                                    Month
-                                </option>
-                                <option value="01">January</option>
-                                <option value="02">February</option>
-                                <option value="03">March</option>
-                                <option value="04">April</option>
-                                <option value="05">May</option>
-                                <option value="06">June</option>
-                                <option value="07">July</option>
-                                <option value="08">August</option>
-                                <option value="09">September</option>
-                                <option value="10">October</option>
-                                <option value="11">November</option>
-                                <option value="12">December</option>
+                        <option value="00" disabled>
+                            Select
+                        </option>
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
 
 
-                            </select>
-                            <select id="day" defaultValue="00" onChange={this.handleInput('day')}>
-                                <option value="00"disabled> Day </option>
-                                {days}
-                            </select>
-                            <select id="year" placeholder="Select" defaultValue="Select" onChange={this.handleInput('year')}>
-                                <option value="Select" disabled>Select</option>
-                                {years}
-                            </select>
+                    </select>
+                    <select id="day" defaultValue="00" onChange={this.handleInput('day')}>
+                        <option value="00" disabled>Select</option>
+                        {days}
+                    </select>
+                    <select id="year" placeholder="Select" defaultValue="Select" onChange={this.handleInput('year')}>
+                        <option value="Select" disabled>Select</option>
+                        {years}
+                    </select>
 
-                        </div>
+                </div>
 
             </div>
 
-        ) 
+        )
 
 
 
@@ -312,9 +346,14 @@ class SessionForm extends React.Component {
                         {email}
                         {userName}
                         {password}
+                        {forgotPassword}
                         {birthday}
                         <div className="field"><button type="submit">{submitButtonMessage}</button></div>
-
+                        {this.props.navLink}
+                        <br />
+                        {demoLogins}
+                        <br />
+                        {tos}
                     </form>
                 </div>
             </div>
