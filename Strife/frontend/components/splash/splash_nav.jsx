@@ -10,17 +10,26 @@ class SplashNav extends React.Component {
 
     render() {
         return (
-            <div className="splash-nav">
+            <div id="splash-nav">
           
-                    <div id="site-intro">
+                    <div id="website-banner">
                         <i className="fa-brands fa-discord fa-xl" />
-                        <span id="site-name"> Strife </span>
+                        <span id="website-name"> Strife </span>
                     </div>
-                    <div className="splash-nav-links">
+                    <div id="splash-nav-links">
+                        
+                        <a className="link" href="https://github.com/miker704"
+                            target="_blank"> Download </a>
+                        <a className="link" href="https://www.linkedin.com/in/michael-ramoutar/"
+                            target="_blank"> Strife </a>
                         <a className="link" href="https://github.com/miker704"
                             target="_blank"> Github </a>
                         <a className="link" href="https://www.linkedin.com/in/michael-ramoutar/"
                             target="_blank"> LinkedIn  </a>
+                        <a className="link" href="https://github.com/miker704"
+                            target="_blank"> App/acc </a>
+                        <a className="link" href="https://www.linkedin.com/in/michael-ramoutar/"
+                            target="_blank"> Discord  </a>
                     </div>
                     <div id="login">
                         <Link to="/login">Login</Link>
