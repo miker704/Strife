@@ -258,14 +258,14 @@ class SessionForm extends React.Component {
 
 
         const forgotPassword = this.props.formType === "Sign In" ? (
-            <span className="forgotPassword"><Link to="/session_signup_form_container">Forgot your password?</Link></span>
+            <span className="forgotPassword"><Link to="/register">Forgot your password?</Link></span>
         ) : ("");
 
         const tos = this.props.formType === "Sign Up" ? (
             <span className="tos">By registering, you agree to Strife's{" "}
-                <Link to="/session_signup_form_container">Terms of Service</Link>
+                <Link to="/register">Terms of Service</Link>
                 {" "}and{" "}
-                <Link to="/session_signup_form_container">Privacy Policy</Link>
+                <Link to="/register">Privacy Policy</Link>
                 .
             </span>
         ) : ("");
