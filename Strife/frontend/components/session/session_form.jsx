@@ -23,6 +23,13 @@ class SessionForm extends React.Component {
 
     }
 
+
+    // componentDidMount() {
+    //     let renderout = document.getElementById('box');
+    //     renderout.classList.remove("unrender");
+    // }
+
+
     handleSubmit(e) {
         e.preventDefault();
         // this.props.removeErrors();
@@ -73,9 +80,10 @@ class SessionForm extends React.Component {
             email: 'DemoUser1@strife.com',
             password: 'qwerty1234'
         }
-        // this.props.processForm(demoUser);
         this.setState({ email: demoUser.email })
         this.setState({ password: demoUser.password })
+        this.props.processForm(demoUser);
+        // this.props.processForm(this.state)
     }
 
     loginAsDemoUser2() {
@@ -83,8 +91,8 @@ class SessionForm extends React.Component {
             email: 'DemoUser2@strife.com',
             password: 'QWERTY1234'
         }
-        this.setState({email:demoUser.email})
-        this.setState({password: demoUser.password})
+        this.setState({ email: demoUser.email })
+        this.setState({ password: demoUser.password })
     }
 
 
@@ -161,7 +169,7 @@ class SessionForm extends React.Component {
 
     birthdayErrors() {
         const BIRTHDAY_ERRORS = ["Birthday can't be blank"]
-     
+
         if (this.props.formType === "Sign Up") {
 
             if (this.props.errors.includes("Birthday can't be blank")) {
@@ -238,20 +246,37 @@ class SessionForm extends React.Component {
         const subHeaderMessage = this.props.formType === "Sign In" ? ("We're so excited to see you again!") : ("");
 
         const signInAsDemoUser1 = (
-            <button type="submit" className="demo-login-button" onClick={() => this.loginAsDemoUser1()}>Demo Login</button>);
+            // <button type="submit" className="demo-login-button" onClick={() => this.loginAsDemoUser1()}>Demo Login</button>
+
+            <button type="submit" className="demo-login-button" onClick={() => this.loginAsDemoUser1()}>Demo Login</button>
+
+
+        );
         // const signInAsDemoUser2 = (
-            // <button type="submit" className="demo-login-button" onClick={() => this.loginAsDemoUser2()}>Demo 2 Login</button>);
+        // <button type="submit" className="demo-login-button" onClick={() => this.loginAsDemoUser2()}>Demo 2 Login</button>);
 
 
 
         const demoLogins = this.props.formType === "Sign Up" ? ("") : (
-            <div className="demologins">
-                {signInAsDemoUser1} 
-                {/* {signInAsDemoUser2} */}
-                {/* <div className="demologin-text">
-                    <h2>Want a tour? Login with a Demo account!</h2>
-                </div> */}
-            </div>
+
+                <div className="demologins">
+                
+             
+                <img className="wumpuslogin"  />
+
+                        {signInAsDemoUser1}
+                    <div className="demologin-text">
+                        <h2>Login with a Demo account</h2>
+                        <p> and take a tour of Strife  </p>
+                    </div>
+
+                    {/* {signInAsDemoUser1} */}
+
+                 
+
+                </div>
+
+
         )
 
 
@@ -313,7 +338,7 @@ class SessionForm extends React.Component {
 
                     </select>
                     <select id="day" defaultValue="00" onChange={this.handleInput('day')}>
-                        <option  value="00" disabled>Select</option>
+                        <option value="00" disabled>Select</option>
                         {days}
                     </select>
                     <select id="year" placeholder="Select" defaultValue="Select" onChange={this.handleInput('year')}>
@@ -328,53 +353,60 @@ class SessionForm extends React.Component {
         )
 
 
-        const formtype = this.props.formType === "Sign in" ? "login-box":"signup-box";
+        const formtype = this.props.formType === "Sign In" ? "box" : "box signup-box";
 
 
 
         return (
             <div className="session-form">
-                {/* <div className={formtype}> */}
-                <div className='login-box'>
+                <div id="box" className={formtype}>
+                    {/* <div className='login-box'> */}
                     <div className="form-box">
-                    {headerMessage}
+                        {headerMessage}
 
-                    <h3>{subHeaderMessage}</h3>
+                        <h3>{subHeaderMessage}</h3>
 
-                    <form onSubmit={this.handleSubmit}>
-                        {email}
+                        <form onSubmit={this.handleSubmit}>
+                            {email}
 
-                        {/* <div className="field">
-                            <label id="email-label" className={emailErrorTag}>
-                                EMAIL{this.emailErrors()}
+                            {/* <div className="field">
+                                <label id="email-label" className={emailErrorTag}>
+                                    EMAIL{this.emailErrors()}
                                 </label>
-                                <input id="email" type="email" className={emailErrorTag} onChange={this.handleInput('email')}/>
+                                <input id="email" type="email" className={emailErrorTag} onChange={this.handleInput('email')} />
 
-                        </div> */}
+                            </div> */}
 
 
-                        {userName}
-                        {password}
+                            {userName}
+                            {password}
 
-                        {/* <div className="field">
-                            <label id="password-label" className={passwordErrorTag}>
-                                PASSWORD{this.passwordErrors()}
+                            {/* <div className="field">
+                                <label id="password-label" className={passwordErrorTag}>
+                                    PASSWORD{this.passwordErrors()}
                                 </label>
-                                <input id="password" type="password" className={passwordErrorTag} onChange={this.handleInput('password')}/> */}
+                                <input id="password" type="password" className={passwordErrorTag} onChange={this.handleInput('password')} /> */}
 
-                        {forgotPassword}
-                        {/* </div> */}
+                                {forgotPassword}
+                            {/* </div> */}
 
 
 
-                        {birthday}
-                        <div className="field"><button type="submit">{submitButtonMessage}</button>
-                        {this.props.navLink}
-                        {tos}
-                        </div>
-                        {demoLogins}
-                    </form>
+                            {birthday}
+                            <div className="field">
+
+
+                                {/* <button type="submit">{submitButtonMessage}</button> */}
+                                <input type="submit" value={submitButtonMessage} />
+
+
+                                {this.props.navLink}
+                                {tos}
+                            </div>
+                        </form>
                     </div>
+                 
+                    {demoLogins}
                 </div>
             </div>
             // </div>

@@ -12,9 +12,9 @@ class Splash extends React.Component {
             <div id="splash-home">
 
                 <div id="splash-banner">
-                    
-                    <div id="banner-message">
                         
+                    <div id="banner-message">
+                            
 
                         <h1 id="intro-header">IMAGINE A PLACE...</h1>
                         <p id="intro_p_text">...where you can belong to a school club, a gaming group,

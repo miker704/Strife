@@ -1,7 +1,7 @@
 import React from "react";
 import SplashNav from "./splash_nav";
 import Splash from "./splash";
-
+import SplashFooter from "./splash_footer";
 
 class SplashMain extends React.Component{
     constructor(props){
@@ -12,7 +12,7 @@ class SplashMain extends React.Component{
             <div>
                 <SplashNav/>
                 <Splash/>
-
+                <SplashFooter/>
             </div>
          )
     }

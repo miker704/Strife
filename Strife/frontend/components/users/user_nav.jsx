@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+//user nav bar
 class UserNav extends React.Component{
     constructor(props){
         super(props);
@@ -9,7 +9,7 @@ class UserNav extends React.Component{
     render(){
         return(
             <div>
-
+                    
             </div>
         )
     }

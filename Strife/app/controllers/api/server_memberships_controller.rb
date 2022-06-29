@@ -25,7 +25,7 @@ class Api::ServerMembershipsController < ApplicationController
 
     private
     def server_membership_params
-        return params.require(:server_memberships).permit(:user_id,:server_id)
+        return params.require(:server_membership).permit(:user_id,:server_id)
     end
 
 end

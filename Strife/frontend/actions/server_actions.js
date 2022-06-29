@@ -47,7 +47,7 @@ export const fetchServers = (user) => (dispatch) =>
 ServerAPI.fetchServers(user).then((servers) => {dispatch(receiveServers(servers))},(err)=>{dispatch(receiveServerErrors(err.responseJSON))}) 
 
 export const fetchServer = (serverId) => (dispatch) =>
-ServerAPI.fetchServer(serverId).then((server) => {dispatch(receiveServers(server))})
+ServerAPI.fetchServer(serverId).then((server) => {dispatch(receiveServer(server))})
 
 export const createServer = (server) => (dispatch) =>
 ServerAPI.createServer(server).then((server) => {dispatch(removeServerErrors()),dispatch(receiveServer(server))},(err)=>{dispatch(receiveServerErrors(err.responseJSON))}) 

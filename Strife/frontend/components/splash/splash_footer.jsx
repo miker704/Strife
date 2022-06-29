@@ -1,0 +1,83 @@
+import React from "react"
+import { Link } from "react-router-dom"
+
+
+
+
+class SplashFooter extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+
+  render() {
+
+    return (
+      <div id="main-footer-bar">
+        <div id="footer-content">
+          <div id="footer-title">
+
+            <h4> IMAGINE A PLACE</h4>
+            <span id="flag-span"><image className="flag" /> English, USA</span><br />
+            <i class="fa-brands fa-twitter"></i>{"    "}
+            <i class="fa-brands fa-instagram"></i>{"    "}
+            <i class="fa-brands fa-facebook-square"></i>{"    "}
+            <i class="fa-brands fa-youtube"></i>
+
+
+          </div>
+          <h6> <a className="link" href="https://www.linkedin.com/in/michael-ramoutar/"
+            target="_blank"> LinkedIn  </a></h6>
+          <h6> <a className="link" href="https://github.com/miker704"
+            target="_blank"> Github </a></h6>
+          <h6>  <a className="link" href="https://www.appacademy.io/"
+            target="_blank"> App/acc </a></h6>
+          <h6>         <a className="link" href="https://discord.com/"
+            target="_blank"> Discord  </a></h6>
+
+          <div id="footer-cnt">
+            <ul className="footer-list"> About STRIFE
+              <li>
+                <a className="link" href="https://github.com/miker704/Strife"
+                  target="_blank"> STRIFE on Github </a>
+              </li>
+              <li>
+              <a className="link" href="https://github.com/miker704"
+                            target="_blank"> Download </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+        <br />
+        <div id="footer-navbar">
+          <div id="bottom_site">
+            <i className="fa-brands fa-discord fa-xl" />
+            <span id="website-name"> STRIFE </span>
+          </div>
+          <div id="NW">
+            <div>
+              <span>STRIFE is a Discord Clone built by </span>
+              <a className="link" href="https://github.com/miker704" target="_blank">
+                Michael A. Ramoutar.</a>
+            </div>
+
+          </div>
+          <div id="register-link-footer">
+            <Link to="/register">Sign Up</Link>
+          </div>
+        </div>
+      </div>
+    )
+
+  }
+}
+
+export default SplashFooter;
+
+
+
+
+
+
+

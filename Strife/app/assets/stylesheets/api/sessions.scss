@@ -10,23 +10,24 @@
     position: absolute;
     background-image: image_url("Discord_login_background_2022.png");
     // background-size: cover;
-    background-color: #36393f;
+    // background-color: #36393f;
     top: 0;
     left: 0;
-    // min-height: 580px;
+
     display: flex;
-    align-items: center;
-    justify-content: center;
+
+    // align-items: center;
+    // justify-content: center;
 
     // vertical-align: baseline;
-    z-index: 1;
+    // z-index: 1;
     overflow-y: auto;
     overflow-x: hidden;
 
 }
 
 
- .session-form .login-box {
+/*.session-form .login-box {
 
     z-index: 1;
     background-color: #36393f;
@@ -61,13 +62,41 @@
     // height:50%;
     // transform: translate(0%,40%);
     flex-direction: column;
+}*/
+
+.session-form .box {
+
+    z-index: 1;
+    background-color: #36393f;
+    width: auto;
+    height: auto;
+    color: white;
+    font-family: "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    text-align: center;
+    margin: auto auto auto 350px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+
+    // align-items: center;
+    // justify-content: center;
+
+
+
+    // flex-direction: column;
 }
 
-.session-form .login-box.signup-box {
-    background-color: #36393f;
-    // margin: auto auto auto 400px;
-    // padding-top: 25px;
-    // padding-bottom: 20px;
+
+
+
+
+
+.session-form .box.signup-box {
+    // background-color: #36393f;
+    margin: auto auto auto auto;
+    padding-top: 25px;
+    padding-bottom: 20px;
 }
 
 
@@ -161,7 +190,7 @@
             }
 
             input[type="password"] {
-                // font-size: 22px;
+                font-size: 22px;
                 font-weight: 500;
                 letter-spacing: 2px;
             }
@@ -220,73 +249,87 @@
 
 
 
+
+
+
+        input[type="submit"] {
+            background-color: #5865F2;
+            color: #FFFFFF;
+            // font-size: 16px;
+            font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            width: 415px;
+            height: 45px;
+            margin: 20px 0 10px 0;
+            font-weight: 500;
+
+        }
+
+        input[type="submit"]:hover {
+            cursor: pointer;
+            transition: 0.25s;
+            background-color: #4752C4;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #040405;
+        }
+
+        .navlinks {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+
+
+
+
+        //discords background 36393f
+        //input background #202225
+        // date of birth drop box
+        //text in drop box rgb(114, 118, 125);
+        //"ABC Ginto Normal","Helvetica Neue",Helvetica,Arial,sans-serif
+        //select box font  Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif
+        //select faded rgb(114,118,125)
+
+
+
+
+
+        .tos {
+            font-size: 12px;
+            color: #888b8f;
+            margin-top: 30px;
+            // line-height: 16px;
+            // align-items: left;
+        }
+
+
+        label.login-error {
+            color: #f38688;
+        }
+
+        .forgotPassword {
+            // text-align: left;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+    }
+
+
+  
+ 
+    .wumpuslogin {
+        width: 176px;
+        height: 176px;
+        margin-bottom: 20px;
+        color: white;
+        content: image_url("discord-qr-image.png");
     
-
-
-    button[type="submit"] {
-        background-color: #5865F2;
-        color: #FFFFFF;
-        // font-size: 16px;
-        font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        width: 415px;
-        height: 45px;
-        margin: 20px 0 10px 0;
-        font-weight: 500;
-
     }
 
-    button[type="submit"]:hover {
-        cursor: pointer;
-        transition: 0.25s;
-        background-color: #4752C4;
-    }
-
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    input[type="password"]:focus {
-        outline: none;
-        border-color: #040405;
-    }
-
-    .navlinks {
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
-
-
-
-
-
-    //discords background 36393f
-    //input background #202225
-    // date of birth drop box
-    //text in drop box rgb(114, 118, 125);
-    //"ABC Ginto Normal","Helvetica Neue",Helvetica,Arial,sans-serif
-    //select box font  Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif
-    //select faded rgb(114,118,125)
-
-
-
-
-
-    .tos {
-        font-size: 12px;
-        color: #888b8f;
-        margin-top: 30px;
-        // line-height: 16px;
-        // align-items: left;
-    }
-
-
-    label.login-error{
-        color: #f38688;
-    }
-
-    .forgotPassword{
-        text-align: left;
-        font-size: 14px;
-    }
-    }
     .demologins {
         display: flex;
         flex-direction: column;
@@ -295,32 +338,52 @@
         justify-content: center;
         width: auto;
 
-        // .demologin-text {
-            // width: 80%;
-            // margin: 0 auto;
-            // text-align: left;
-            // color: #888b8f;
-// 
+        // .barcodeWumpus{
+        //     // content: image_url("barcode.png");
+        //     // content: image_url("incognitowumpus.png");
+        //     // align-items: center;
+        //     // z-index:10;
+        //     background-image: image_url("barcode.png");
         // }
+
+        .demologin-text {
+            width: 80%;
+            // margin: 0 auto;
+            text-align: center;
+            color: #888b8f;
+
+
+        }
 
         h2 {
             font-family: "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 16px;
+            font-size: 24px;
             font-weight: 700;
-            margin: 10px auto 10px 60px;
+            // margin: 10px auto 10px 60px;
 
         }
+
+
+        p {
+            font-size: 14px;
+            color: #b9bbbe;
+            // margin: 0 auto 0 50px;
+            margin: 0 auto 0 auto;
+
+        }
+
     }
 
     .demo-login-button {
         height: 40px;
         width: 70%;
-    
+
         color: white;
         background-color: #5865F2;
         border-radius: 3px;
+        border: none;
         cursor: pointer;
-        margin: 0 -40px 0 20px;
+        // margin: 0 -40px 0 20px;
         margin-bottom: 5px;
     }
 

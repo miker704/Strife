@@ -16,6 +16,20 @@ DmServer.destroy_all
 DmMember.destroy_all
 DmMessage.destroy_all
 
+
+
+#Strife Bot - mr.wumpus
+mr_Wumpus = User.create!(
+    username: 'Mr.Wumpus',
+    email: 'wumbo@strife.com',
+    birthday: Date.new(1996,02,25),
+    password: 'wumboing',
+    color_tag: 6,
+    strife_id_tag:0001
+)
+
+
+
 # demo user 1
 demouser1=User.create!(
     username: 'DemoUser1',
