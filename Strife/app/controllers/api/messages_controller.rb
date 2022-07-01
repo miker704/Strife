@@ -1,9 +1,10 @@
 class Api::MessagesController < ApplicationController
     def create
         @message = Message.new(message_params)
+        @channel = Channel.find_by(id: @message[:channel_id])
         if @message.save
-          flash[:success] = "Object successfully created"
-          redirect_to @message
+            # ServerChannel.brodcast_to(@channel,@message)
+            render :show
         else
       
           render json: @message.errors.full_messages , status: 400
@@ -13,7 +14,10 @@ class Api::MessagesController < ApplicationController
 
     def update
         @message = Message.find_by(id: params[:id])
+        @channel = Channel.find_by(id: @message[:channel_id])
+
         if @message.update(message_params)
+            # ServerChannel.brodcast_to(@channel,@message)
           render :show
         else
             render json: @message.errors.full_messages , status: 400
@@ -24,9 +28,11 @@ class Api::MessagesController < ApplicationController
 
     def destroy
         @message = Message.find_by(id: params[:id])
+        @channel = Channel.find_by(id: @message[:channel_id])
+
         if @message.destroy
-            flash[:success] = 'Object was successfully deleted.'
-            redirect_to messages_url
+             # ServerChannel.brodcast_to(@channel,@message)
+          render :show
         else
             render json: @message.errors.full_messages , status: 400
         end

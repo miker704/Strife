@@ -11,10 +11,10 @@ ServerMembership.destroy_all
 Channel.destroy_all
 ChannelMembership.destroy_all
 Message.destroy_all
-Friendship.destroy_all
-DmServer.destroy_all
-DmMember.destroy_all
-DmMessage.destroy_all
+# Friendship.destroy_all
+# DmServer.destroy_all
+# DmMember.destroy_all
+# DmMessage.destroy_all
 
 
 
@@ -28,8 +28,6 @@ mr_Wumpus = User.create!(
     strife_id_tag:0001
 )
 
-
-
 # demo user 1
 demouser1=User.create!(
     username: 'DemoUser1',
@@ -39,11 +37,18 @@ demouser1=User.create!(
 )
 
 # demo user 2
-User.create!(
+demouser2=User.create!(
     username: 'DemoUser2',
     email: 'DemoUser2@strife.com',
     password: 'QWERTY1234',
     birthday: Date.new(1997,03,10),
+)
+
+stacy=User.create!(
+    username: 'stacy',
+    email: 'Demo56@strife.com',
+    password: 'QWERTY1234',
+    birthday: Date.new(1990,03,10),
 )
 
 defaultServer = Server.create!(
@@ -53,11 +58,58 @@ defaultServer = Server.create!(
 
 )
 
-# ServerMembership.create!(
-#     user_id: demouser1.id,
-#     server_id: defaultServer.id 11
-# )
+spencer = User.create(
+    email: "Iascone.com",
+    username: "Iascone",
+    password: "great TA",
+    birthday: Date.new(1990,03,10),
+)
+
+ayce = User.create(
+  email: "ayce@aa.com",
+  username: "Ayce machine",
+  password: "12348hello",
+  birthday: Date.new(1990,03,10),
+)
+
+jwong = User.create(
+    email: "@hhl.com",
+    username: "Jwong",
+    password: "Dance dance revolution",
+    birthday: Date.new(1990,03,10),
+)
+
+kinKa = User.create!(username: "burgerkinka", email: "kinka@kinka.com", password: "123456789", birthday: Date.new(1990,03,10),)
+
+kinKaServer = Server.create!(
+    server_owner_id: kinKa.id,
+    server_name: "Kin Ka Attendance",
+    public: true
+
+)
+ayceServer = Server.create!(
+    server_owner_id: ayce.id,
+    server_name: "ayce Attendance", 
+    public: true
+
+)
+demoChannel = Channel.create!(channel_name: "Demo Channel", server_id: 1)
+kinKaCircle = Channel.create!(channel_name: "Kin Ka's Circle", server_id: 2)
+ayceCircle = Channel.create!(channel_name: "Ayce's Circle", server_id: 3)
 
 
-#discord bot
+ServerMembership.create(server_id: ayceServer.id , user_id: demouser1.id)
+ServerMembership.create(server_id: ayceServer.id , user_id: demouser2.id)
+ServerMembership.create(server_id: ayceServer.id , user_id: kinKa.id)
+ServerMembership.create(server_id: ayceServer.id , user_id: spencer.id)
+ServerMembership.create(server_id: ayceServer.id , user_id: stacy.id)
+
+Message.create(channel_id: ayceServer.id, author_id:demouser1.id, body: "hello?")
+Message.create(channel_id: ayceServer.id, author_id: demouser2.id, body: "hell0!")
+
+
+
+
+
+
 

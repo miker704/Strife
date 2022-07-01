@@ -16,13 +16,12 @@ class SplashFooter extends React.Component {
       <div id="main-footer-bar">
         <div id="footer-content">
           <div id="footer-title">
-
             <h4> IMAGINE A PLACE</h4>
-            <span id="flag-span"><image className="flag" /> English, USA</span><br />
-            <i class="fa-brands fa-twitter"></i>{"    "}
-            <i class="fa-brands fa-instagram"></i>{"    "}
-            <i class="fa-brands fa-facebook-square"></i>{"    "}
-            <i class="fa-brands fa-youtube"></i>
+            <span id="flag-span"><img className="flag" /> English, USA <br /></span><br />
+            <i className="fa-brands fa-twitter"></i>{"    "}
+            <i className="fa-brands fa-instagram"></i>{"    "}
+            <i className="fa-brands fa-facebook-square"></i>{"    "}
+            <i className="fa-brands fa-youtube"></i>
 
 
           </div>
@@ -42,7 +41,7 @@ class SplashFooter extends React.Component {
                   target="_blank"> STRIFE on Github </a>
               </li>
               <li>
-              <a className="link" href="https://github.com/miker704"
+              <a className="link" href="app/assets/images/discord_Strife_logo.png" download = "STRIFE.EXE"
                             target="_blank"> Download </a>
               </li>
 

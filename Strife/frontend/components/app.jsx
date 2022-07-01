@@ -8,32 +8,29 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 
 import SessionSignInFormContainer from './session/session_signin_form_container';
 import SessionSignUpFormContainer from './session/session_signup_form_container';
-
+import ChannelNavBarContainer from "./channels/channel_nav/channel_nav_bar_container"
 
 const App = () => (
     <div>
     <Switch>
-    {/* <Route exact path="/"> <SplashContainer/> <NavBarContainer/> </Route> */}
-    <Route exact path="/"> <SplashContainer/> </Route>
-    {/* <AuthRoute path="/session_signup_form_container" component={SessionSignUpFormContainer} /> */}
-    {/* <AuthRoute path="/session_signin_form_container" component={SessionSignInFormContainer} /> */}
-    {/* <ProtectedRoute path=""/>     */}
+    
+    {/* <Route exact path="/"> <SplashContainer/> </Route> */}
+
+   
+    <AuthRoute exact path="/" component={SplashContainer}/>
     <AuthRoute path="/register" component={SessionSignUpFormContainer} />
     <AuthRoute path="/login" component={SessionSignInFormContainer} />
+    <ProtectedRoute path="/channels/@me" component={ChannelNavBarContainer}/>
+    
+    
     </Switch>
 
-
-    {/* testing custom switch route */}
-    {/* <Switch>
-
-                 <Route path="/"> <NavBarContainer/></Route>
-                <Route exact path="/"> <SplashContainer/> </Route>
-                <Route path="/signup"> <SignUpFormContainer/> </Route>
-                <Route path="/signin"> <SignInFormContainer/> </Route>
-
-
-    </Switch> */}
    
+
+
+
+
+ 
     </div>
 )
 

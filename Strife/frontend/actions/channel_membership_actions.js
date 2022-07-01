@@ -1,4 +1,4 @@
-import * as ChannelMembershipAPI from "../utils/channel_membersip_api_util.js";
+import * as ChannelMembershipAPI from "../utils/channel_membership_api_util.js";
 
 export const RECEIVE_CHANNEL_MEMBERSHIP = "RECEIVE_CHANNEL_MEMBERSHIP";
 export const REMOVE_CHANNEL_MEMBERSHIP = "REMOVE_CHANNEL_MEMBERSHIP";

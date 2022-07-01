@@ -18,7 +18,7 @@ class SplashNav extends React.Component {
                     </div>
                     <div id="splash-nav-links">
                         
-                        <a className="link" href="https://github.com/miker704"
+                        <a className="link" href="app/assets/images/discord_Strife_logo.png" download = "STRIFE.EXE"
                             target="_blank"> Download </a>
                         <a className="link" href="https://github.com/miker704/Strife"
                             target="_blank"> STRIFE </a>

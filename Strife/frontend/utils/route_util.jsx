@@ -8,11 +8,12 @@ const mSTP = state => ({
 
 // redirect users (functional component) 
 // AuthRoute path = "" component = {}/>
-const Auth = ({loggedIn,path, component: Component}) => (
+const Auth = ({loggedIn,path, component: Component, exact}) => (
     <Route
         path={path}
+        exact={exact}
         render={props => (
-            loggedIn ? <Redirect to={`/`}/> : <Component {...props}/>
+            loggedIn ? <Redirect to={`/channels/@me`}/> : <Component {...props}/>
         )}
     />
 );
@@ -21,7 +22,7 @@ const Protected = ({loggedIn,path, component: Component}) => (
     <Route
     path={path}
     render={props => (
-        loggedIn ?  <Component {...props}/> : <Redirect to={`/signup`}/> 
+        loggedIn ?  <Component {...props}/> : <Redirect to={`/login`}/> 
     )}
     />
 );

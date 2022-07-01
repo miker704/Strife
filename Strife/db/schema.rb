@@ -63,10 +63,11 @@ ActiveRecord::Schema.define(version: 2022_06_24_092057) do
   create_table "friendships", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "friend_id", null: false
-    t.string "friend_request_status", null: false
+    t.integer "friend_request_status", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["friend_request_status"], name: "index_friendships_on_friend_request_status"
+    t.index ["user_id", "friend_id"], name: "index_friendships_on_user_id_and_friend_id", unique: true
+    t.index ["user_id", "friend_request_status"], name: "index_friendships_on_user_id_and_friend_request_status"
   end
 
   create_table "messages", force: :cascade do |t|

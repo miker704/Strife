@@ -88,25 +88,30 @@ class User < ApplicationRecord
     # has_many :friendships, class_name: "Friendship", foreign_key: "friend_a_Id"
     has_many :friendships
     
-    has_many :friends_accepted, 
-        -> {where friendships: { friend_request_status: "accepted"}},
+
+    #friend req works as 0 no requests 1 requested 2 pending request revert to 0 if denied or 3 if accepted
+    has_many :friends, 
+        -> {where friendships: { friend_request_status: 3}},
         through: :friendships,
         source: :friend,
         dependent: :destroy
     
     has_many :friends_ongoing, 
-        -> {where friendships: { friend_request_status: "ongoing"}},
+        -> {where friendships: { friend_request_status: 1}},
         through: :friendships,
          source: :friend, 
          dependent: :destroy
 
     has_many :friends_incoming, 
-        -> {where friendships: { friend_request_status: "incoming"}},
+        -> {where friendships: { friend_request_status: 2}},
         through: :friendships, 
         source: :friend, 
         dependent: :destroy
 
-
+    def friendship_status(friend)
+        relationShip = self.friendships.find_by(friend_id: friend.id)
+        relationShip ? relationShip.friend_request_status : 0
+    end
 
 
 

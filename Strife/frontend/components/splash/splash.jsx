@@ -8,22 +8,31 @@ class Splash extends React.Component {
 
     }
     render() {
+          
+
         return (
             <div id="splash-home">
 
                 <div id="splash-banner">
-                        
+
                     <div id="banner-message">
-                            
+
 
                         <h1 id="intro-header">IMAGINE A PLACE...</h1>
                         <p id="intro_p_text">...where you can belong to a school club, a gaming group,
                             or a worldwide art community.
                             Where just you and a handful of friends can spend time together.
                             A place that makes it easy to talk every day and hang out more often.</p>
-                        <a href=""><span id="fake-download-windows">Download for Windows</span></a>
+                        <a id="fake-download-windows" href="app/assets/images/discord_Strife_logo.png" download = "STRIFE.EXE"><span >
+
+                            <span id="change-down-icon">
+
+                                <i id="movedown-icon" className="fa-solid fa-download">{"     "}</i>
+                            </span>
+
+                            Download for Windows</span></a>
                         {"    "}
-                        <Link to="/register"><span id="register-embedded-text">Open Strife in your browser</span></Link>
+                        <Link id="open-Strife_banner" to="/register"><span >Open Strife in your browser</span></Link>
 
                     </div>
 
@@ -93,10 +102,16 @@ class Splash extends React.Component {
                     <div className="bottom-winddown-div">
                         <div id="bottom-windows-download">
                             <div className="sparkles">
-                                <img className="sparkles1" />
-                            <h4 className="bottom-windows-div-header">Ready to start your journey?</h4>
+                                {/* <img className="sparkles1" /> */}
+                                <h4 className="bottom-windows-div-header">Ready to start your journey?</h4>
                             </div>
-                            <a className="bwd" href="">Download for Windows</a>
+                            <a className="bwd" href="app/assets/images/discord_Strife_logo.png" download = "STRIFE.EXE">
+                                <span id="change-down-icon">
+
+                                    <i id="movedown-icon2" className="fa-solid fa-download">{"     "}</i>
+
+
+                                </span> Download for Windows</a>
                         </div>
                     </div>
 

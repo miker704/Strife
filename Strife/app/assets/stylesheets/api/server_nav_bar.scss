@@ -1,0 +1,349 @@
+#server-nav{
+    height: 100vh;
+    width: 225px;
+    background-color:rgb(32, 34, 37);
+    color: white;
+    position: absolute;
+  }
+  
+  .non-selected-server, .selected-server{
+    text-decoration: none;
+    color: rgb(221,221,221);
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    height: 50px; 
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.4s;
+  }
+  
+  .non-selected-server {
+    background-color: rgb(56, 57, 62);
+    border-radius: 50%;
+  }
+  
+  .selected-server {
+    background-color: #5865F2;
+    border-radius: 30%;
+  }
+  
+  #server-nav-list{
+    margin-top: 5px;
+    height: calc(100vh - 55px);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  #server-nav a:hover{
+    background-color: #5865F2;
+    border-radius: 30%;
+  }
+  
+  
+  #server-nav-list li{
+    padding: 5px;
+    height: 50px;
+    padding-left: 0px;
+  }
+  
+  .home-bubble{
+    font-size: 25px;
+  }
+  
+  #server-nav-list::-webkit-scrollbar{
+    width: 1px;
+  }
+  
+  #server-nav-list::-webkit-scrollbar-thumb{
+    background: rgb(30,35,40);
+    border-radius: 5px;
+  }
+  
+  #server-nav-list::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgb(40,45,50);
+  }
+  
+  // CSS for create server and serach server buttons
+  #create-server{
+    border-style: none;
+    text-decoration: none;
+    border-color: rgb(56,57,62);
+    background-color: rgb(56,57,62);
+    color: rgb(221,221,221);
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    height: 50px; 
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-align: center;
+    transition: 0.4s;
+    color:rgb(60,163,92);
+    padding: 0;
+  }
+  
+  #create-servers:hover{
+    background-color: rgb(60,163,92);
+    color: white;
+    border-radius: 30%;
+  }
+  
+  
+  #server-form{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: translate(calc(50vw - 150px), calc(40vh - 150px));
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black; 
+    background: white;
+    z-index: 10;
+  }
+  
+  #server-form{
+    text-align: center;
+  }
+  
+  
+  #server-form h4{
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Ginto"
+  
+  }
+  
+  #server-form p{
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  #server-form-message{
+    color: rgb(79, 86, 96)
+  }
+  
+  #server-form span{
+    font-style: italic;
+  }
+  
+  #public-info div{
+    height: 60px;
+    width: 380px;
+    margin: 10px;
+    margin-top: none;
+    background-color: white;
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .public-info-p {
+    margin: 0px;
+    color: black;
+    font-weight: 700;
+  }
+  
+  #private-server-svg{
+    padding-left: 15px;
+    content: image_url("private.svg")
+  }
+  
+  #public-server-svg {
+    padding-left: 15px;
+    content: image_url("public.svg")
+  }
+  
+  #server-form input {
+    text-align: left;
+    border: 1px solid rgb(227, 229, 232);
+    border-radius: 5px;
+    width: 380px;
+    margin: 10px;
+    height: 30px;
+    font-size: 15px;
+    background-color: rgb(227, 229, 232);
+  }
+  
+  #create-server{
+    text-align: center;
+    margin: 10px;
+    width: 380px;
+    background-color: #5865F2;
+    border: 0.75px solid #5865F2;
+    border-radius: 3px;
+    color: white;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  #create-server-name{
+    text-align: left;
+    padding-left: 10px;
+    color: rgb(78, 78, 78);
+  }
+  
+  #error-server-name{
+    text-align: left;
+    padding-left: 10px;
+    color: rgb(162,45,47);
+  }
+  
+  #server-exit{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: translate(calc(50vw + 230px), calc(40vh - 150px));
+    z-index: 12;
+    border: none;
+    font-size: 20px;
+    background-color: transparent;
+    color: rgb(167, 171,175);
+    cursor: pointer;
+  }
+  
+
+  
+  .server-join-button{
+    text-align: center;
+    width: 50px;
+    background-color: #5865F2;
+    border: 0.75px solid #5865F2;
+    border-radius: 3px;
+    color: lightgrey;
+    height: 20px;
+    cursor: pointer;
+  }
+  
+
+  // Create a hover effect for my buttons in the create server and 
+  // Search server forms
+  #create-server:hover, 
+  #public-info div:hover {
+    filter: brightness(90%);
+  }
+  
+  #modal-container{
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(10, 10, 10, .9);
+  }
+  
+  #double-modal-container{
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: transparent;
+  }
+  
+  .server-search-inital{
+    display: flex;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(56,57,62);
+    color: rgb(225, 225, 225); 
+    margin-right: 5px;
+  }
+  
+  #server-form-name:focus{
+    outline: none;
+  }
+  
+  .selected {
+    filter: brightness(90%);
+  }
+  
+  // Line Across top of the screen
+  
+  #line-across-top-of-screen{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 1.5px;
+    width: calc(100vw - 75px);
+    background-color: rgb(35,36,40);
+    transform: translate(75px, 50px);
+  }
+  
+  #channel-line-across-top{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 1.5px;
+    width: 235px;
+    background-color: rgb(35, 36, 40);
+    transform: translate(0px, 50px);
+  }
+  
+  // grey seperator between Home nav and rest of server nav.
+  
+  #server-nav-seperator{
+    width: 37.5px;
+    height: 2px;
+    background-color: #383a3f;
+    border-radius: 5px;
+  }
+  
+  #seperator-container{
+    width: 75px;
+    height: 2px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .server-nav-a {
+    width: 75px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  // Server Nav Tool tip for server name
+  .server-bubble .server-tool-name{
+    visibility: hidden;
+    position: relative;
+    background-color: rgb(25,25,25);
+    color: rgb(255,255,255);
+    border-radius: 5px;
+    width: fit-content;
+    max-width: 115px;
+    text-align: left;
+    padding: 5px;
+    z-index: 5;
+    top: -50px;
+    left: 85px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Ginto";
+  }
+  
+  .server-bubble:hover .server-tool-name{
+    visibility: visible;
+    z-index:5;
+  }
+  
+  

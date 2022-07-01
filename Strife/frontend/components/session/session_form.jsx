@@ -24,11 +24,7 @@ class SessionForm extends React.Component {
     }
 
 
-    // componentDidMount() {
-    //     let renderout = document.getElementById('box');
-    //     renderout.classList.remove("unrender");
-    // }
-
+  
 
     handleSubmit(e) {
         e.preventDefault();
