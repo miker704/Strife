@@ -9,11 +9,12 @@
     "test": "test"
   },
   "engines": {
-    "node": "v16.15.0",
-    "npm": "8.10.0"
+    "node":"v16.15.0",
+    "npm" :"8.10.0"
   },
   "scripts": {
     "postinstall": "webpack"
+  
   },
   "keywords": [],
   "author": "",
@@ -22,8 +23,6 @@
     "@babel/core": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
-    "@rails/actioncable": "^6.0.5",
-    "autosize": "^5.0.1",
     "babel-loader": "^8.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
