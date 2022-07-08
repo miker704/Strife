@@ -18,7 +18,7 @@ class Api::DmMessagesController < ApplicationController
 
       if @dm_message.update(dm_message_params)
         # DmChannel.brodcast_to(@dm_server,@dm_message)
-        render: show
+        render :show
       else
         render json: @dm_message.errors.full_messages, status:400
       end
