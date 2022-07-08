@@ -1,1 +1,1 @@
-json.extract! @servermembership :id, :user_id, :server_id
+json.extract! @membership :id, :member_id, :server_id

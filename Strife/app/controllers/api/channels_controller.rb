@@ -15,7 +15,7 @@ class Api::ChannelsController < ApplicationController
         if @channel.save
           render :show
         else
-            render json: @channel.errors.full_messages, status: 400
+            render json: @channel.errors.full_messages, status 400
         end
     end
     
@@ -26,7 +26,7 @@ class Api::ChannelsController < ApplicationController
           @default_channel_message.update(body: "Welcome to #{@channel.channel_name} channel !")
           render :show
         else
-            render json: @channel.errors.full_messages, status: 400
+            render json: @channel.errors.full_messages, status 400
         end
     end
 
@@ -35,7 +35,7 @@ class Api::ChannelsController < ApplicationController
         if @channel.destroy
           render :delete
         else
-            render json: @channel.errors.full_messages, status: 400
+            render json: @channel.errors.full_messages, status 400
         end
     end
     

@@ -1,1 +1,1 @@
-json.extract! user, :id, :username, :email, :strife_id_tag, :color_tag
+json.extract! user, :id, :username, :email

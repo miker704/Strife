@@ -1,1 +1,0 @@
-json.extract! @dm_server, :id
