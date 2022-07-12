@@ -3,7 +3,7 @@ class Api::MessagesController < ApplicationController
         @message = Message.new(message_params)
         @channel = Channel.find_by(id: @message[:channel_id])
         if @message.save
-            # ServerChannel.brodcast_to(@channel,@message)
+            ServerChannel.brodcast_to(@channel,@message)
             render :show
         else
       
@@ -17,7 +17,7 @@ class Api::MessagesController < ApplicationController
         @channel = Channel.find_by(id: @message[:channel_id])
 
         if @message.update(message_params)
-            # ServerChannel.brodcast_to(@channel,@message)
+            ServerChannel.brodcast_to(@channel,@message)
           render :show
         else
             render json: @message.errors.full_messages , status: 400
@@ -31,7 +31,7 @@ class Api::MessagesController < ApplicationController
         @channel = Channel.find_by(id: @message[:channel_id])
 
         if @message.destroy
-             # ServerChannel.brodcast_to(@channel,@message)
+             ServerChannel.brodcast_to(@channel,@message)
           render :show
         else
             render json: @message.errors.full_messages , status: 400
