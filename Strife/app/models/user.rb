@@ -76,7 +76,7 @@ class User < ApplicationRecord
     
     has_many :server_co_members, through: :servers_joined, source: :members
     
-    # has_many :channel_joined, through: :servers_joined, source: :channels
+    # has_many :channels_joined, through: :servers_joined, source: :channels
     has_many :channel_joined, through: :channel_memberships, source: :channel
 
 
