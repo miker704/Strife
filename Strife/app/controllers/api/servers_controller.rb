@@ -2,6 +2,10 @@ class Api::ServersController < ApplicationController
 
     def index
         @servers = Server.all
+        @current_user = userId ? current_user : false
+        # if @current_user
+        @servers = @current_user.servers_joined.includes(:channels) if (@current_user)
+        # end
         render :index
     end
 
@@ -50,6 +54,9 @@ class Api::ServersController < ApplicationController
     private
         def server_params
             return params.require(:server).permit(:server_name,:server_owner_id,:public)
+        end
+        def userId
+            return params[:user]
         end
 
 end
