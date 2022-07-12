@@ -9,10 +9,10 @@ import * as SessionAPIUtil from "../utils/session_api_util.js"
  export const REMOVE_SESSION_ERRORS = "REMOVE_SESSION_ERRORS";
 
 
- export const receiveCurrentUser = user => {
+ export const receiveCurrentUser = currentUser => {
     return{
         type: RECEIVE_CURRENT_USER,
-        user
+        currentUser
     }
  }
 
