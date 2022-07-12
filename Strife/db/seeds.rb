@@ -58,6 +58,9 @@ defaultServer = Server.create!(
 
 )
 
+defaultServerChannel = Channel.create!(channel_name: "not_general" , server_id: defaultServer.id)
+
+
 spencer = User.create(
     email: "Iascone.com",
     username: "Iascone",
@@ -93,9 +96,69 @@ ayceServer = Server.create!(
     public: true
 
 )
-demoChannel = Channel.create!(channel_name: "Demo Channel", server_id: 1)
-kinKaCircle = Channel.create!(channel_name: "Kin Ka's Circle", server_id: 2)
-ayceCircle = Channel.create!(channel_name: "Ayce's Circle", server_id: 3)
+
+
+
+
+Server1 = Server.create!(
+    server_owner_id: demouser1.id,
+    server_name: "Server1", 
+    public: true
+
+)
+Server2 = Server.create!(
+    server_owner_id: demouser1.id,
+    server_name: "Server2", 
+    public: true
+
+)
+Server3 = Server.create!(
+    server_owner_id: demouser1.id,
+    server_name: "Server3", 
+    public: true
+
+)
+Server4 = Server.create!(
+    server_owner_id: demouser1.id,
+    server_name: "Server4", 
+    public: true
+
+)
+Server5 = Server.create!(
+    server_owner_id: demouser1.id,
+    server_name: "Server5", 
+    public: true
+
+)
+Server6 = Server.create!(
+    server_owner_id: demouser1.id,
+    server_name: "Server6", 
+    public: true
+
+)
+Server7 = Server.create!(
+    server_owner_id: demouser1.id,
+    server_name: "Server7", 
+    public: true
+
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+demoChannel = Channel.create!(channel_name: "Demo Channel", server_id: defaultServer.id)
+kinKaCircle = Channel.create!(channel_name: "Kin Ka's Circle", server_id: kinKaServer.id)
+ayceCircle = Channel.create!(channel_name: "Ayce's Circle", server_id: ayceServer.id)
 
 
 ServerMembership.create(server_id: ayceServer.id , user_id: demouser1.id)
@@ -109,7 +172,30 @@ Message.create(channel_id: ayceServer.id, author_id: demouser2.id, body: "hell0!
 
 
 
+dm_server_1 = DmServer.create!( owner_id: demouser1.id )
+dm_server_2 = DmServer.create!( owner_id: demouser1.id)
+dm_server_3 = DmServer.create!( owner_id: demouser1.id )
 
 
+dm_membership_1 = DmMember.create!( dm_server_id: dm_server_1.id, dm_member_id: demouser1.id )
+dm_membership_2 = DmMember.create!( dm_server_id: dm_server_1.id, dm_member_id: demouser2.id)
+dm_membership_3 = DmMember.create!( dm_server_id: dm_server_2.id, dm_member_id: demouser1.id )
+dm_membership_4 = DmMember.create!( dm_server_id: dm_server_2.id, dm_member_id: stacy.id )
+dm_membership_5 = DmMember.create!( dm_server_id: dm_server_3.id, dm_member_id: demouser1.id )
+dm_membership_6 = DmMember.create!( dm_server_id: dm_server_3.id, dm_member_id: ayce.id )
 
+DmMessage.create!(dm_server_id: dm_server_1.id, sender_id: demouser2.id, body:"You should apply to App Academy. You would be a great software engineer." )
+DmMessage.create!(dm_server_id: dm_server_1.id, sender_id: demouser1.id, body:"Will do. Thanks for the advice and motivation." )
+DmMessage.create!(dm_server_id: dm_server_1.id, sender_id: demouser1.id, body:"Just wanted to update you. I have finished App Academy. It was hard, but fun. Thanks for all the support man." )
+DmMessage.create!(dm_server_id: dm_server_1.id, sender_id: demouser2.id, body:"Congrats!" )
+
+DmMessage.create!(dm_server_id: dm_server_2.id, sender_id: stacy.id, body:"You should apply to App Academy. You would be a great software engineer." )
+DmMessage.create!(dm_server_id: dm_server_2.id, sender_id: demouser1.id, body:"Will do. Thanks for the advice and motivation." )
+DmMessage.create!(dm_server_id: dm_server_2.id, sender_id: demouser1.id, body:"Just wanted to update you. I have finished App Academy. It was hard, but fun. Thanks for all the support man." )
+DmMessage.create!(dm_server_id: dm_server_2.id, sender_id: stacy.id, body:"Congrats!" )
+
+DmMessage.create!(dm_server_id: dm_server_3.id, sender_id: ayce.id, body:"You should apply to App Academy. You would be a great software engineer." )
+DmMessage.create!(dm_server_id: dm_server_3.id, sender_id: demouser1.id, body:"Will do. Thanks for the advice and motivation." )
+DmMessage.create!(dm_server_id: dm_server_3.id, sender_id: demouser1.id, body:"Just wanted to update you. I have finished App Academy. It was hard, but fun. Thanks for all the support man." )
+DmMessage.create!(dm_server_id: dm_server_3.id, sender_id: ayce.id, body:"Congrats!" )
 
