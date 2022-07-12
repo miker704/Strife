@@ -200,7 +200,7 @@ class ChannelNavBar extends React.Component {
           if (channel.server_id === this.props.server.id) {
           return (
           <Link 
-              to={`/servers/${this.props.server.id}/${channel.id}`} 
+              to={`/channels/${this.props.server.id}/${channel.id}`} 
               onClick={() => this.props.fetchChannel(channel.id)}
               className="channel-nav-link"
               key = {channel.id}
