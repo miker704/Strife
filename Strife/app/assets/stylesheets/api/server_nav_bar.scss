@@ -348,4 +348,30 @@
   
   .server-nav-bar{
     // height: 100vh;
+    height: auto;
+    width: 225px;
+    position: absolute;
+    background-color: rgb(32, 34,37);
+    color: white;
+  }
+
+  .server-nav-bar a:hover{
+    background-color: #5865F2;
+    border-radius: 30%;
+  }
+
+
+  .server-nav-bar-list{
+    margin-top :5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    // height: calc(100vh-55px);
+    height: calc(auto-55px);
+
+  }
+
+  .server-nav-bar-list li{
+    padding:5px;
+    // height : 50px;
+    padding-left: 0px;
   }
