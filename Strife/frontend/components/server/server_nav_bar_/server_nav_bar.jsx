@@ -46,7 +46,7 @@ class ServerNavBar extends React.Component {
             <div className="server-nav-bar">
                 <ul className="server-nav-bar-list">  
                 <li key="home-Bubbles" className="server-bubbles">
-                    <div>
+                    <div className="server-nav-bar-a">
 
                     </div>
                 
