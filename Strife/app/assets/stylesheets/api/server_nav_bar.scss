@@ -387,30 +387,26 @@
 
   .server-bubbles{
     // visibility:hidden;
-    // position: relative;
-    // background-color: rgb(25,25,25);
-    // color: #FFFFFF;
-    // border-radius: 5px;
-    // width:fit-content;
-    // max-width: 115px;
-    // text-align: left;
-    // padding:5px;
-    // z-index: 5;
-    // top:-50px;
-    // left:85px;
-    // text-overflow: ellipsis;
-    // overflow: hidden;
-    // font-size: 15px;
-    // font-weight: 500;
-    // font-family: "Ginto",Arial, Helvetica, sans-serif;
+    position: relative;
+    background-color: rgb(25,25,25);
+    color: #FFFFFF;
+    border-radius: 5px;
+    width:fit-content;
+    max-width: 115px;
+    text-align: left;
+    padding:5px;
+    z-index: 5;
+    top:-50px;
+    left:85px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Ginto",Arial, Helvetica, sans-serif;
 
   }
 
   .server-bubbles:hover {
     // visibility: visible;
     z-index: 5;
-  }
-
-  .server-nav-bar-a{
-    
   }
