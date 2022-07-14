@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from  'react-router-dom';
 class ServerNavBar extends React.Component {
     constructor(props) {
         super(props);
@@ -38,7 +38,7 @@ class ServerNavBar extends React.Component {
         }
         )
 
-        let homeButton = this.props.serverId === "@me" ? "selected-Server" : "unselected-Server";
+        let goHome = this.props.serverId === "@me" ? "selected-Server" : "unselected-Server";
 
 
 
@@ -47,11 +47,17 @@ class ServerNavBar extends React.Component {
                 <ul className="server-nav-bar-list">  
                 <li key="home-Bubbles" className="server-bubbles">
                     <div className="server-nav-bar-a">
-
+                        <Link className={goHome} to={`/channels/@me`}>
+                            <i className="fa-brands fa-discord home-Bubbles"/>
+                        </Link>
                     </div>
-                
-                </li>            
-                    {userServer}
+                    <div className="server-nav-bar-tool-kit">HOME</div>
+                </li>     
+
+                <div className="server-bubble-seperator-container">
+                    <div className="server-bubble-seperator"></div>    
+                </div>       
+                    {/* {userServer} */}
                 
                 </ul>
               
