@@ -9,15 +9,16 @@
     <%= javascript_include_tag 'application' %>
     <script src="https://kit.fontawesome.com/c7eb8a60f1.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" type="image/x-icon" href="<%=image_url("discord_Strife_logo.png") %>"> 
-     <% if current_user %>
-      window.currentUser = {
-        "id": <%= current_user.id %>,
-        "username": "<%= current_user.username %>",
-        "email": "<%= current_user.email %>",
-        "birthday":"<%= current_user.birthday %>",
-        "online":"<%= current_user.online %>"
-      }
-    <% end %>
+     <%# if current_user %>
+      <%# window.currentUser = { %>
+        <%# "id": %>
+         <%# = current_user.id, %>
+        <%# "username": "= current_user.username", %>
+        <%# "email": "= current_user.email", %>
+        <%# "birthday":"= current_user.birthday", %>
+        <%# "online":"= current_user.online" %>
+      <%# } %>
+    <%# end %>
   </head>
 
   <body>
