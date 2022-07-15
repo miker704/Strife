@@ -3,7 +3,7 @@ import ServerNavBar from "./server_nav_bar.jsx";
 import {  withRouter } from "react-router";
 
 import { fetchServer, fetchServers } from "../../../actions/server_actions";
-
+import {openModal} from "../../../actions/modal_actions.js";
 
 const mSTP = (state, ownProps) => {
     
@@ -23,6 +23,7 @@ const mDTP = (dispatch) => {
         fetchUserServers: (userId) => dispatch(fetchServers(userId)),
         fetchAllServers : () => dispatch(fetchServers()),
         fetchServer : (serverId) => dispatch(fetchServer(serverId)),
+        openModal : (modal) => dispatch(openModal(modal))
     }
 }
 
