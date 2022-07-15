@@ -3,7 +3,7 @@ json.partial! 'api/servers/server', server: @server
 
 json.server do 
     json.general_channel_id @server.channels.first.id
-    json.extract! @server, :id, :server_name, :server_owner_id, :public
+    json.extract! @server, :id, :server_name, :server_owner_id, :public, :server_icon, :invite_code
   end
 
 #users in server
