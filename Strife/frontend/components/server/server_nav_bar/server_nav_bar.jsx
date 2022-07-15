@@ -78,11 +78,20 @@ class ServerNavBar extends React.Component {
 
                     <li className="server-bubbles" key="createServer">
                         <div className="server-nav-bar-a">
-                            <button id="create-server"></button>
+                            <button id="create-server" onClick={()=>this.props.openModal("createServerForm")}>
+                                <i className="fa-solid fa-plus"/>
+                            </button>
                         </div>
+                        <div className="server-nav-bar-tool-kit">Add a Server</div>
                     </li>
-
-
+                    <li className="server-bubbles" key="serverSearch">
+                            <div className="server-nav-bar-a">
+                                <button id="search-servers" onClick={()=>this.props.openModal("serverSearch")}>
+                                        <i className="fa-solid fa-compass"/>
+                                </button>
+                            </div>
+                            <div className="server-nav-bar-tool-kit">Explore Public Servers</div>
+                    </li>
 
                 </ul>
 
