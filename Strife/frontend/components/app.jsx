@@ -10,7 +10,7 @@ import SessionSignInFormContainer from './session/session_signin_form_container'
 import SessionSignUpFormContainer from './session/session_signup_form_container';
 import ChannelNavBarContainer from "./channels/channel_nav/channel_nav_bar_container"
 import UserNavContainer from './users/user_nav/user_nav_container';
-import ServerNavBarContainer from './server/server_nav_bar_/server_nav_bar_container';
+import ServerNavBarContainer from './server/server_nav_bar/server_nav_bar_container';
 
 const App = () => (
     <div>
