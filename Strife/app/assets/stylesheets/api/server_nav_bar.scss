@@ -1,7 +1,7 @@
 
 .server-nav-bar {
-  height: 100vh;
-  // height: auto;
+  // height: 100vh;
+  height: auto;
   width: 225px;
   position: absolute;
   background-color: rgb(32, 34, 37);
@@ -104,7 +104,7 @@
   border-radius: 5px;
 }
 
-.unselected-Server .selected-Server{
+.unselected-Server, .selected-Server{
   text-decoration: none;
   color: rgb(221, 221, 221);
   cursor: pointer;
@@ -116,7 +116,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  transition: 0.04s;
+  transition: 0.4s;
 }
 
 .unselected-Server{
@@ -128,3 +128,31 @@
   border-radius: 30%;
 }
 
+//server nav bar modals
+// createServer modal file name Create_server_form.jsx called in server nav bar.jsx
+#create-server, #search-servers{
+  text-decoration: none;
+  border-style: none;
+  border-color: rgb(56,57,62);
+  color: rgb(221, 221, 221);
+  background-color: rgb(56,57,62);
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  transition: 0.4s;
+  color: rgb(60,163,92);
+  padding: 0;
+} 
+
+#create-server:hover, #search-servers:hover{
+ background-color: rgb(60,163,92);
+ color:#FFFFFF;
+ border-radius: 30%;
+} 
