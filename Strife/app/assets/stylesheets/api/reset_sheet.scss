@@ -61,3 +61,31 @@ input {
 	background:none;
 }
 
+
+//importing fonts that discord uses
+
+@font-face {
+	font-family: "Ginto Nord";
+	src: url("GintoNord.otf");
+}
+
+@font-face {
+	font-family: "Ginto Normal";
+	src: url("GintoNormal.otf");
+}
+
+@font-face {
+	font-family: "Helvetica";
+	src: url("Helvetica.ttf");
+}
+
+@font-face {
+	font-family: "Helvetica Neue";
+	src: url("HelveticaNeue.ttf");
+}
+
+@font-face {
+	font-family: "Whitney";
+	src: url("whitney.tff");
+}
+
