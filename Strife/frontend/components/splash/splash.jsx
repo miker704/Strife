@@ -8,7 +8,7 @@ class Splash extends React.Component {
 
     }
     render() {
-          
+
 
         return (
             <div id="splash-home">
@@ -23,7 +23,7 @@ class Splash extends React.Component {
                             or a worldwide art community.
                             Where just you and a handful of friends can spend time together.
                             A place that makes it easy to talk every day and hang out more often.</p>
-                        <a id="fake-download-windows" href="app/assets/images/discord_Strife_logo.png" download = "STRIFE.EXE"><span >
+                        <a id="fake-download-windows" href="app/assets/images/discord_Strife_logo.png" download="STRIFE.EXE"><span >
 
                             <span id="change-down-icon">
 
@@ -35,8 +35,8 @@ class Splash extends React.Component {
                         <Link id="open-Strife_banner" to="/register"><span >Open Strife in your browser</span></Link>
 
                     </div>
-
-
+                        
+                
                 </div>
 
 
@@ -102,10 +102,11 @@ class Splash extends React.Component {
                     <div className="bottom-winddown-div">
                         <div id="bottom-windows-download">
                             <div className="sparkles">
-                                {/* <img className="sparkles1" /> */}
-                                <h4 className="bottom-windows-div-header">Ready to start your journey?</h4>
+                                <img className="sparkles1" />
+                                {/* <h4 className="bottom-windows-div-header">Ready to start your journey?</h4> */}
                             </div>
-                            <a className="bwd" href="app/assets/images/discord_Strife_logo.png" download = "STRIFE.EXE">
+                            <h4 className="bottom-windows-div-header">Ready to start your journey?</h4>
+                            <a className="bwd" href="app/assets/images/discord_Strife_logo.png" download="STRIFE.EXE">
                                 <span id="change-down-icon">
 
                                     <i id="movedown-icon2" className="fa-solid fa-download">{"     "}</i>
