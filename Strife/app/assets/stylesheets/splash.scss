@@ -39,7 +39,7 @@
     font-size: 16px;
 }
 
-#splash-nav a:hover .footer-list a:hover{
+#splash-nav a:hover, .footer-list a:hover{
     text-decoration: underline;
 }
 
@@ -72,7 +72,7 @@ width:100%;
 
 
 #splash-banner{
-    height: 700px;
+    height: 550px;
     width: 100%;
     color: white;
     display: flex;
@@ -84,16 +84,13 @@ width:100%;
 
     // position: absolute;
     background-size :cover;
-    line-height: 0%;
+ 
+    // line-height: 0%;
     overflow-x: hidden;
     overflow-y: hidden;
 //   margin : auto;
 
 }
-
-// .splash-img{
-//     content: image_url('hiresbackground.png');
-// }
 
 
 #banner-message {
@@ -130,34 +127,39 @@ width:100%;
     // padding: auto;
 }
 #banner-message a#fake-download-windows{
-    padding: 12px;
-    border: 1px solid black;
-    border-radius: 40px;
+    padding: 16px 32px;
+    border: 1px none black;
+    border-radius: 28px;
     color: #23272a;
     background-color: white;
     text-decoration: none;
     cursor: pointer;
     font-size: 20px;
+    font-weight: 500;
     width: 270px;
-    margin-bottom: auto;
-    margin-top: auto;
+    // margin-bottom: auto;
+    margin-top: 24px;
     font-family: "Whitney","Helvetica Neue","Helvetica","Arial",sans-serif;
+    margin-right: 24px;
+    line-height: 24px;
 
 }
 
 #banner-message a#open-Strife_banner{
-    padding: 12px;
-    border: 1px solid black;
-    border-radius: 40px;
+    padding: 16px 32px;
+    border: 1px none black;
+    border-radius: 28px;
     color: white;
     background-color: #23272a;
     text-decoration: none;
     cursor: pointer;
     font-size: 20px;
+    font-weight: 500;
     width: 270px;
-    margin-bottom: auto;
-    margin-top: auto;
+    // margin-bottom: auto;
+    margin-top: 24px;
     font-family: "Whitney","Helvetica Neue","Helvetica","Arial",sans-serif;
+    line-height: 24px;
 }
 
 
@@ -175,6 +177,7 @@ width:100%;
 
 #banner-message a:hover {
     color: #5865F2;
+    
 }
 
 
@@ -192,6 +195,11 @@ a#open-Strife_banner:hover{
 
 a#fake-download-windows:hover {
     filter: brightness(125%);
+    
+}
+
+a#fake-download-windows span:hover{
+     color:#5865F2;
 }
 
 
@@ -220,7 +228,7 @@ a#fake-download-windows:hover {
 }
 
 .even-div, .bottom-winddown-div, .last-div{
-    background-color: rgb(246,246,246) ;
+    background-color: #f6f6f6;
 }
 
 .odd-div-img1{
@@ -278,9 +286,9 @@ a#fake-download-windows:hover {
 // }
 
 .bwd{
-    padding: 12px;
-    border: 1px solid black;
-    border-radius: 40px;
+    padding: 16px 32px;
+    border: 1px none black;
+    border-radius: 28px;
     color: white;
     background-color: #5865F2;
     text-decoration: none;
@@ -289,7 +297,13 @@ a#fake-download-windows:hover {
     width: 270px;
     margin-bottom: auto;
     margin-top: auto;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: "Whitney","Helvetica Neue","Helvetica","Arial",sans-serif;
     
+}
+a.bwd:hover{
+    filter: brightness(125%);
 }
 
 #change-down-icon2 {
@@ -317,27 +331,39 @@ font-weight: 600;
 color: black;
 font-weight: bold;
 font-family: "Ginto Normal";
+padding-bottom: 50px;
 
 
 }
 
 
-// .sparkles1{
+.sparkles1{
     // padding-top: 40px;
-    // content: image_url("sparkles.svg");
+    content: image_url("sparkles.svg");
+    // background-image: image_url("sparkles.svg");
     // background-position: center;
     // justify-content: center;
     // z-index: -10;
-// }
+}
 
 .sparkles{
-background-image: image_url("sparkles.svg");
-// width:75%;
-background-position: center;
-padding-top: 1px;
-// text-align: center;
+// background-image: image_url("sparkles.svg");
+// content: image_url("sparkles.svg");
+// background-position: center;
+// padding-top: 1px;
+// margin : auto;
+// position: absolute;
+// top: 0;
+
+width: 100%;
+margin-bottom: -25px;
+overflow: hidden;
+display: flex;
 justify-content: center;
-margin : auto;
+
+
+
+
 }
 
 // .dl-Strife{
