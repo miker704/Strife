@@ -75,6 +75,11 @@ input {
 }
 
 @font-face {
+	font-family: "Ginto";
+	src: url("GintoMedium.otf");
+}
+
+@font-face {
 	font-family: "Helvetica";
 	src: url("Helvetica.ttf");
 }
@@ -84,8 +89,12 @@ input {
 	src: url("HelveticaNeue.ttf");
 }
 
+// @font-face {
+// 	font-family: "Whitney";
+// 	src: url("WhitneyMedium.otf");
+// }
+
 @font-face {
 	font-family: "Whitney";
-	src: url("whitney.tff");
+	src: url("WhitneyBook.otf");
 }
-
