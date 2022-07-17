@@ -20,9 +20,28 @@ class SessionForm extends React.Component {
         this.birthdayErrors = this.birthdayErrors.bind(this);
         this.loginAsDemoUser1 = this.loginAsDemoUser1.bind(this);
         this.loginAsDemoUser2 = this.loginAsDemoUser2.bind(this);
+        this.transitionOut = this.transitionOut.bind(this);
 
     }
+    componentDidMount() {
+        let box = document.getElementById("box");
+    
+        box.classList.remove("deactivate");
+      }
 
+
+    transitionOut(e) {
+        e.preventDefault();
+    
+        this.props.clearErrors();
+        let box = document.getElementById("box");
+    
+        box.classList.add("deactivate");
+    
+        setTimeout(() => {
+          this.setState({ redirect: true });
+        }, 100);
+      }
 
   
 

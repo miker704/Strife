@@ -27,42 +27,54 @@
 }
 
 
-/*.session-form .login-box {
 
-    z-index: 1;
-    background-color: #36393f;
-    width: auto;
-    height: auto;
-    color: white;
-    // color: #72767d;
-    // font-family: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-family: "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    // padding: 32px;
-    padding: 30px;
-    border-radius: 10px;
-    // border-radius: 5px;
+.session-form .box {
 
-    display: flex;
-    text-align: center;
-    // margin: auto auto auto 350px;
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
-    // max-width: 480px;
-    // max-height:580px;
-    // font-size: 18px;
+    animation-name: slideDown;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+  }
+.session-form .box.deactivate {
+  animation-name: slideUp;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0%) scale(1, 1);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(1.2, 1.2);
+  }
+  99% {
+    transform: translateY(1%);
+  }
+  100% {
+    transform: translateY(-40%);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40%) scale(1.2, 1.2);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+  99% {
+    transform: translateY(1%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
 
 
-    // padding: 32px;
-    // box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
-    //     // test
-    // margin: auto;
-
-    // width:50%;
-    // height:50%;
-    // transform: translate(0%,40%);
-    flex-direction: column;
-}*/
 
 .session-form .box {
 
@@ -71,7 +83,7 @@
     width: auto;
     height: auto;
     color: white;
-    font-family: "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family:  Arial, sans-serif;
     padding: 30px;
     border-radius: 10px;
     display: flex;
@@ -100,35 +112,16 @@
 }
 
 
-// .login-box{
-//     background-color: #36393f;
-//     font-size: 18px;
-
-//     max-width: 480px;
-//     max-height:580px;
-//     padding: 32px;
-//     border-radius: 5px;
-//     box-sizing: border-box;
-//     box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
-//     color: #72767d;
-//     // test
-//     // margin: auto;
-//     display: flex;
-//     flex-direction: column;
-// }
-
-
-
-
 .session-form {
 
     h3 {
-        // font-size: 25px;
-        // font-weight: 500;
-        // font-family: "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 18.72px;
+        font-weight: 700;
+        font-family:  Arial, sans-serif;
         color: #B9BBBE;
         // text-align: center;
         margin: 0 20px 10px 20px;
+
     }
 
     h2.welcome-message {
@@ -280,6 +273,7 @@
         .navlinks {
             font-size: 14px;
             margin-bottom: 10px;
+            color: #72767D;
         }
 
 
@@ -312,7 +306,7 @@
         }
 
         .forgotPassword {
-            // text-align: left;
+            text-align: left;
             margin-bottom: 10px;
             font-size: 14px;
         }
@@ -351,15 +345,17 @@
             // margin: 0 auto;
             text-align: center;
             color: #888b8f;
-
+            padding-top: 20px;
 
         }
 
         h2 {
-            font-family: "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-family:  Arial, sans-serif;
             font-size: 24px;
             font-weight: 700;
-            // margin: 10px auto 10px 60px;
+            // margin: 10px 15px 10px 15px;
+            // padding-top: 10px;
+            line-height: 1.2;
 
         }
 
@@ -368,7 +364,8 @@
             font-size: 14px;
             color: #b9bbbe;
             // margin: 0 auto 0 50px;
-            margin: 0 auto 0 auto;
+            // margin: 0 auto 0 auto;
+            padding-top: 15px;
 
         }
 
