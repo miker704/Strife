@@ -8,7 +8,7 @@ class Api::DmMessagesController < ApplicationController
         DmChannel.brodcast_to(@dm_server,@dm_message)
         render :show
     else
-      render json: @dm_message.errors.full_messages, status:400
+      render json: @dm_message.errors.full_messages, status: 400
     end
   end
   
@@ -20,7 +20,8 @@ class Api::DmMessagesController < ApplicationController
         DmChannel.brodcast_to(@dm_server,@dm_message)
         render: show
       else
-        render json: @dm_message.errors.full_messages, status:400
+        render json: @dm_message.errors.full_messages, status: 400
+        # 422
       end
   end
   
@@ -32,7 +33,7 @@ class Api::DmMessagesController < ApplicationController
       DmChannel.brodcast_to(@dm_server,@dm_message)
         render :show
     else
-        render json: @dm_message.errors.full_messages, status:400
+        render json: @dm_message.errors.full_messages, status: 400
     end
   end
   
