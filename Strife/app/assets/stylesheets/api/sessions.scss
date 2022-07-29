@@ -66,7 +66,11 @@
     border-radius: 10px;
     display: flex;
     text-align: center;
-    margin: auto auto auto 350px;
+    //when on smaller screens 350px  work but on 4k res screens its not enough 
+    //places the login boxto much to the right 
+    // margin: auto auto auto 350px;
+    margin: auto auto auto auto;
+
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
 
     // align-items: center;
