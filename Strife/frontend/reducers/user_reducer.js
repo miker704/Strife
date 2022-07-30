@@ -19,8 +19,8 @@ const userReducer = (state = {}, action) => {
 
 
         case RECEIVE_SERVER:
-            return action.servers.users;
-            //return action.server.users
+            // return action.servers.users;
+            return action.server.users
         case RECEIVE_SERVER_MEMBERSHIP:
             return action.servermembership.users;
         case RECEIVE_DM_MEMBER:
