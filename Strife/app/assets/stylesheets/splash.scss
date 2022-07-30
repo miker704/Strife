@@ -82,8 +82,8 @@
 }
 
 
-.website-banner-flex{
-    display:flex;
+.website-banner-flex {
+    display: flex;
     // width: 124px;
     // grid-row: 2/12;
 }
@@ -96,12 +96,13 @@
     // align-items: center;
     // flex: 0 0 auto;
     // text-align: left;
- 
+
 }
-.logo-banner{
+
+.logo-banner {
     justify-content: center;
     display: flex;
-    align-items:flex-start;
+    align-items: flex-start;
 
 }
 
@@ -110,6 +111,7 @@
     justify-content: center;
     // padding-left
 }
+
 .login-container {
     display: flex;
     flex: 0 0 auto;
@@ -159,6 +161,8 @@
 
 #splash-banner {
     height: 550px;
+    // height: 575px;
+
     width: 100%;
     color: white;
     display: flex;
@@ -166,6 +170,8 @@
     justify-content: center;
     // content: image_url('home2.png');
     background-image: image_url('home2.png');
+    // background-image: image_url('hiresbackground.png');
+   
     // display: block;
 
     // position: absolute;
@@ -179,6 +185,18 @@
 
 
 }
+// 2560*626 if screen is  1440p - 4k res 
+@media only screen and (min-width:1400px) {
+    #splash-banner {
+        background-image: image_url('hiresbackground.png');
+        // background-image: image_url('hiresbackground.png');
+        // background-image: image_url('hiresbackground.png');
+
+        // background-image: image_url('home2.png');
+        height: 626px;
+    }
+}
+
 
 #banner-grid {
     display: grid;
@@ -338,7 +356,7 @@ a#fake-download-windows span:hover {
 }
 
 
-.odd-div-grid{
+.odd-div-grid {
     display: grid;
     opacity: 1;
     transform: translateY(0);
@@ -347,13 +365,14 @@ a#fake-download-windows span:hover {
     width: 100%;
     max-width: 1260px;
     box-sizing: border-box;
-    grid-template-columns: repeat(12,1fr);
+    grid-template-columns: repeat(12, 1fr);
     gap: 0 20px;
     // padding: 0 40px;
 
 
 }
-.even-div-grid{
+
+.even-div-grid {
     display: grid;
     opacity: 1;
     transform: translateY(0);
@@ -362,7 +381,7 @@ a#fake-download-windows span:hover {
     width: 100%;
     max-width: 1260px;
     box-sizing: border-box;
-    grid-template-columns: repeat(12,1fr);
+    grid-template-columns: repeat(12, 1fr);
     gap: 0 20px;
     // padding: 0 40px;
 
@@ -397,14 +416,14 @@ a#fake-download-windows span:hover {
     max-height: 440px;
     width: 100%;
     object-fit: cover;
-    order:1;
+    order: 1;
 
 }
 
 .odd-div-img2 {
     content: image_url("textchat2.svg");
     grid-column: span 7;
-    order:1;
+    order: 1;
     margin-top: auto;
     margin-bottom: auto;
     max-width: 678px;
@@ -450,8 +469,8 @@ a#fake-download-windows span:hover {
 }
 
 
-.even-div-msg{
-    display:flex;
+.even-div-msg {
+    display: flex;
     // margin-top: 0;
     order: 1;
     grid-column: 1/span 4;
@@ -470,7 +489,7 @@ a#fake-download-windows span:hover {
 }
 
 .odd-div-ptag {
-    font-size: clamp(16px,2vw,20px);
+    font-size: clamp(16px, 2vw, 20px);
     font-family: "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     font-weight: lighter;
     color: #2d3c4b;
@@ -531,7 +550,7 @@ a.bwd:hover {
     max-width: 1260px;
     opacity: 1;
     transform: translateY(0);
-    grid-template-columns: repeat(12,1fr);
+    grid-template-columns: repeat(12, 1fr);
 }
 
 .last-div-header {
@@ -638,55 +657,6 @@ a.bwd:hover {
 
 
 
-
-@media only screen and (max-width: 1015px) {
-
-    .white-div-image-one,
-    .white-div-image-two,
-    .grey-div-image-one {
-        display: none;
-    }
-
-    .white-div-message,
-    .white-div-header {
-        width: 80%
-    }
-
-    .white-div {
-        display: block;
-    }
-
-    #imagine-header {
-        font-size: 45px;
-    }
-
-    #imagine-text {
-        font-size: 20px;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    #singup-footer a {
-        display: none;
-    }
-
-    #imagine-message a:after {
-        content: "Signup";
-    }
-
-    #signup-inner-text {
-        display: none;
-    }
-}
-
-
-
-
-
-
-
-
-
 //footer bar 
 
 
@@ -694,13 +664,22 @@ a.bwd:hover {
 
 #main-footer-bar {
     height: 30%;
-    min-height: 400px;
+    // min-height: 400px;
+    //recentlly added
+    min-height: 510px;
+    
     width: 90%;
     padding-right: 5%;
     padding-left: 5%;
     background-color: rgb(35, 39, 42);
     color: white;
-    
+
+    //recently added
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 #footer-content {
@@ -709,15 +688,18 @@ a.bwd:hover {
     align-content: center;
     padding-bottom: 5%;
     padding-top: 5%;
-    border-bottom: 1px solid #5865F2
+    border-bottom: 1px solid #5865F2;
+    //recently added
+    max-width:1260px;
+    width: 100%;
 }
 
 
 
-#flag-span{
+#flag-span {
     font-size: 14px;
 
-    font-family: "Whitney","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-family: "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     line-height: 18px;
 
 }
@@ -737,7 +719,7 @@ a.bwd:hover {
     // display: block;
     text-transform: uppercase;
     text-rendering: geometricPrecision;
-    font-family: "Ginto Nord","Whitney","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-family: "Ginto Nord", "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 #footer-navbar {
@@ -745,6 +727,9 @@ a.bwd:hover {
     justify-content: space-between;
     align-content: center;
     padding-top: 20px;
+    //recently added
+    max-width:1260px;
+    width: 100%;
 }
 
 #register-link-footer a {
@@ -767,9 +752,9 @@ a.bwd:hover {
     color: #5865F2
 }
 
-ul.footer-list{
+ul.footer-list {
     font-size: 16px;
-    font-family: "Whitney","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-family: "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     // padding-top: 8px;
     line-height: 24px;
 }
@@ -778,7 +763,7 @@ ul.footer-list{
     padding-top: 15px;
     list-style: none;
     font-size: 16px;
-    font-family: "Whitney","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-family: "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     padding-top: 8px;
     line-height: 24px;
 }
@@ -786,14 +771,14 @@ ul.footer-list{
 #NW {
     text-align: center;
     font-size: 16px;
-    font-family: "Whitney","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-family: "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     padding-top: 8px;
 }
 
 h6 .link {
     color: #5865F2;
     font-size: 16px;
-    font-family: "Whitney","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-family: "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     padding-top: 8px;
     line-height: 24px;
 }
