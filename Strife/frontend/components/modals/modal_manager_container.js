@@ -15,4 +15,5 @@ const mDTP = (dispatch) => {
 }
 
 const ModalManagerContainer = connect(mSTP,mDTP)(withRouter(ModalManager));
+// const ModalManagerContainer = connect(mSTP,mDTP)(ModalManager);
 export default ModalManagerContainer;
