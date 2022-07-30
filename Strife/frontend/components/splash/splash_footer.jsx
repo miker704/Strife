@@ -17,6 +17,7 @@ class SplashFooter extends React.Component {
         <div id="footer-content">
           <div id="footer-title">
             <h4> IMAGINE A PLACE</h4>
+            <br />
             <span id="flag-span"><img className="flag" /> English, USA <br /></span><br />
             <i className="fa-brands fa-twitter"></i>{"    "}
             <i className="fa-brands fa-instagram"></i>{"    "}
