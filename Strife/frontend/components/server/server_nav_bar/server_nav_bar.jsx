@@ -1,26 +1,26 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 class ServerNavBar extends React.Component {
-    constructor(props) {
+    constructor (props) {
         super(props);
 
         this.splitServerName = this.splitServerName.bind(this);
     }
 
-    componentDidMount() {
+    componentDidMount () {
         this.props.fetchUserServers(this.props.currentUser.id);
         // this.props.fetchAllServers(); 
     }
 
-    splitServerName(serverName,serverIcon){
+    splitServerName (serverName, serverIcon) {
         //if the server owner has given a server icon to there server set the servericon url to fill the 
         //bubble instead of the name of the server
-            const serverNameAcronym = serverIcon ? serverIcon : serverName.split(" ").map((parts) => parts[0]).join("");
-            
-            return serverNameAcronym;
-        }
+        const serverNameAcronym = serverIcon ? serverIcon : serverName.split(" ").map((parts) => parts[0]).join("");
 
-    render() {
+        return serverNameAcronym;
+    }
+
+    render () {
 
 
         console.log(this.props.servers);
@@ -34,7 +34,7 @@ class ServerNavBar extends React.Component {
                         <Link to={`/channels/${server.id}/${server.general_channelId}`}
                             onClick={() => this.props.fetchServer(server.id)} className={serverNavBarClassTag}>
                             {/* <p className="server-name-initials">{server.server_name.charAt(0)}</p> */}
-                            <p className="server-name-initials">{this.splitServerName(server.server_name,server.server_icon)}</p>
+                            <p className="server-name-initials">{this.splitServerName(server.server_name, server.server_icon)}</p>
 
                         </Link>
                         {/* <span> */}
@@ -44,9 +44,9 @@ class ServerNavBar extends React.Component {
                         {/* {"{ server icon : "} {server.server_icon} {"} "} */}
                         {/* {"{ server public status : "} {server.public} {"} "} */}
                         {/* {"{ server invite code : "} {server.invite_code} {"}} "} */}
-                        
+
                         {/* </p> */}
-                     
+
                         {/* </span> */}
                     </div>
                     <div className="server-nav-bar-tool-kit">{server.server_name}</div>
@@ -78,19 +78,19 @@ class ServerNavBar extends React.Component {
 
                     <li className="server-bubbles" key="createServer">
                         <div className="server-nav-bar-a">
-                            <button id="create-server" onClick={()=>this.props.openModal("createServerForm")}>
-                                <i className="fa-solid fa-plus"/>
+                            <button id="create-server" onClick={() => this.props.openModal("createServerForm" )}>
+                                <i className="fa-solid fa-plus" />
                             </button>
                         </div>
                         <div className="server-nav-bar-tool-kit">Add a Server</div>
                     </li>
                     <li className="server-bubbles" key="serverSearch">
-                            <div className="server-nav-bar-a">
-                                <button id="search-servers" onClick={()=>this.props.openModal("serverSearch")}>
-                                        <i className="fa-solid fa-compass"/>
-                                </button>
-                            </div>
-                            <div className="server-nav-bar-tool-kit">Explore Public Servers</div>
+                        <div className="server-nav-bar-a">
+                            <button id="search-servers" onClick={() => this.props.openModal({modal:"serverSearch"})}>
+                                <i className="fa-solid fa-compass" />
+                            </button>
+                        </div>
+                        <div className="server-nav-bar-tool-kit">Explore Public Servers</div>
                     </li>
 
                 </ul>
