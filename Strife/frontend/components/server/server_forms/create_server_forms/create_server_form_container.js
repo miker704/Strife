@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { createServer, removeServerErrors } from "../../../../actions/server_actions";
-import CreateServerForm from "./create_server_form";
+import CreateServerForm from "./create_server_form.jsx";
 
 
 
@@ -26,4 +26,5 @@ const mDTP = (dispatch) => {
 }
 
 const CreateServerFormContainer = connect(mSTP,mDTP)(withRouter(CreateServerForm));
+// const CreateServerFormContainer =withRouter(connect(mSTP,mDTP)(CreateServerForm));
 export default CreateServerFormContainer;
