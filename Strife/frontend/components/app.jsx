@@ -11,9 +11,12 @@ import SessionSignUpFormContainer from './session/session_signup_form_container'
 import ChannelNavBarContainer from "./channels/channel_nav/channel_nav_bar_container"
 import UserNavContainer from './users/user_nav/user_nav_container';
 import ServerNavBarContainer from './server/server_nav_bar/server_nav_bar_container';
+import ModalManager from './modals/modal_manager';
 
 const App = () => (
     <div>
+
+        <Route path='/' component={ModalManager}></Route>
     <Switch>
     
     {/* <Route exact path="/"> <SplashContainer/> </Route> */}
