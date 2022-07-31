@@ -40,7 +40,10 @@ class User < ApplicationRecord
     length: {maximum:320, too_long: "Must be 320 or fewer in Length"},uniqueness: {case_sensitive: false}
     validates :phone_number, uniqueness: true, allow_nil: true
     validates :online, inclusion: {in: [true,false]}
-    # has_one_attached :profile_pic_url -- > this requires acxtive storage 
+
+    # has_one_attached :profile_pic_url 
+    #-- > this requires acxtive storage 
+    has_one_attached :photo
     # too_long: "Must be between 2 and 32 in length", too_short: "Must be between 2 and 32 in length"
    # Age Error user must be 13 years to sign up
     # too_long: "Username Must be between 2 and 32 in length", too_short: "Username Must be between 2 and 32 in length"}
@@ -113,6 +116,14 @@ class User < ApplicationRecord
         relationShip ? relationShip.friend_request_status : 0
     end
 
+    # def checkPhoto
+    #     if self.profile_pic_url == nil 
+    #         self.profile_pic_url = ""
+    #     end
+    #      if self.photo == nil || self.photo == ""
+    #         self.photo = ""
+    #     end
+    # end
 
 
     #user auth and strife tag generation
@@ -126,6 +137,7 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     after_initialize :ensure_strife_id_tag
     after_initialize :ensure_color_tag
+    # after_initialize :checkPhoto
     # SPIRE
 
     def self.find_by_credentials(email,password)
