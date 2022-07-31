@@ -1,4 +1,3 @@
-
 .server-nav-bar {
   height: 100vh;
   // height: auto;
@@ -9,6 +8,15 @@
   background-color: rgb(32, 34, 37);
   color: white;
 }
+
+// @media only screen and (min-width:1400px) {
+//   #splash-banner {
+     
+//   }
+// }
+
+
+
 
 .server-nav-bar a:hover {
   background-color: #5865F2;
@@ -22,16 +30,18 @@
   margin-top: 5px;
   overflow-x: hidden;
   overflow-y: auto;
-  height: calc(100vh-55px);
+  // height: calc(100vh-55px);
+  height: auto;
   // height: calc(auto-55px);
 
 }
 
 .server-nav-bar-list li {
   padding: 5px;
-  height : 50px;
+  height: 50px;
   padding-left: 0px;
   list-style: none;
+  // background-color: rgb(32, 34, 37);
 }
 
 //get rid of the stupid windows scroll bar / minimize it so its nearly unseeable its noticieable when a ton of text
@@ -40,14 +50,14 @@
   width: 1px;
 }
 
-.server-nav-bar-list::-webkit-scrollbar-thumb{
-  background:rgb(30,35,40);
+.server-nav-bar-list::-webkit-scrollbar-thumb {
+  background: rgb(30, 35, 40);
   border-radius: 5px;
 }
 
-.server-nav-bar-list::-webkit-scrollbar-track{
+.server-nav-bar-list::-webkit-scrollbar-track {
   border-radius: 10px;
-  background: rgb(40,45,50);
+  background: rgb(40, 45, 50);
 }
 
 
@@ -58,8 +68,8 @@
   font-size: 25px;
 }
 
-.server-bubbles .server-nav-bar-tool-kit{
-  visibility:hidden;
+.server-bubbles .server-nav-bar-tool-kit {
+  visibility: hidden;
   position: relative;
   background-color: rgb(25, 25, 25);
   color: #FFFFFF;
@@ -90,13 +100,31 @@
   justify-content: center;
 }
 
+.bottom-server-bubble-seperator-container {
+  width: 75px;
+  height: 2px;
+  display: flex;
+  justify-content: center;
+  // padding-bottom:15px;
+
+  // background-color:rgb(32, 34, 37);
+}
+
+.bottom-server-bubble-seperator {
+  width: 37.5px;
+  height: 2px;
+  background-color: #383A3F;
+  border-radius: 5px;
+}
 
 
 .server-bubble-seperator-container {
-  width:75px;
-  height:2px;
+  width: 75px;
+  height: 2px;
   display: flex;
   justify-content: center;
+  
+  // background-color:rgb(32, 34, 37);
 }
 
 .server-bubble-seperator {
@@ -106,7 +134,8 @@
   border-radius: 5px;
 }
 
-.unselected-Server, .selected-Server{
+.unselected-Server,
+.selected-Server {
   text-decoration: none;
   color: rgb(221, 221, 221);
   cursor: pointer;
@@ -121,23 +150,26 @@
   transition: 0.4s;
 }
 
-.unselected-Server{
-  background-color: rgb(56,57,62);
+.unselected-Server {
+  background-color: rgb(56, 57, 62);
   border-radius: 50%;
 }
-.selected-Server{
+
+.selected-Server {
   background-color: #5865F2;
   border-radius: 30%;
 }
 
 //server nav bar modals
 // createServer modal file name Create_server_form.jsx called in server nav bar.jsx these aare buttons to call these forms
-#create-server, #search-servers{
+#create-server,
+#search-servers,
+#download-apps {
   text-decoration: none;
   border-style: none;
-  border-color: rgb(56,57,62);
+  border-color: rgb(56, 57, 62);
   color: rgb(221, 221, 221);
-  background-color: rgb(56,57,62);
+  background-color: rgb(56, 57, 62);
   cursor: pointer;
   font-size: 20px;
   font-weight: bold;
@@ -149,24 +181,198 @@
   width: 50px;
   border-radius: 50%;
   transition: 0.4s;
-  color: rgb(60,163,92);
+  color: rgb(60, 163, 92);
   padding: 0;
-} 
+}
 
-#create-server:hover, #search-servers:hover{
- background-color: rgb(60,163,92);
- color:#FFFFFF;
- border-radius: 30%;
-} 
+#create-server:hover,
+#search-servers:hover,
+#download-apps:hover {
+  background-color: rgb(60, 163, 92);
+  color: #FFFFFF;
+  border-radius: 30%;
+}
 
-
+// .circleIconButton-1VxDrg{
+//   background-color: rgb(60, 163, 92);
+//   color: #FFFFFF;
+//   border-radius: 30%;
+// }
 
 //server nav bar modals 
 
-//create server modal
+//create server modal - called in file create_server_form.jsx and create_server_form_container.js
 
-.create-A-Server{
-  background-color: black;
-  width: 100%;
+
+//create server modal wrapper the wrapper is basically a background element that makes 
+// fades out the colors of all elements behind the modal
+
+.create-A-Server-Wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
   height: 100%;
+  width: 100%;
+  animation-name: wrapperRender;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  z-index: 3;
+
+
+  .create-A-Server-Modal {
+    position: absolute;
+    top: calc(50%-180px);
+    left: calc(50%-220px);
+    height: auto;
+    min-width: 440px;
+    max-width: 440px;
+    background-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    border-radius: 5px;
+    animation-name: createServerModalAppear;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    display: block;
+    border: none;
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+  //animation to slide forward 
+  @keyframes slideModal1To2 {
+
+    0% {
+      transform: translateX(440px);
+    }
+
+    99% {
+      transform: translateX(-10px);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+  @keyframes slideModal2To3 {
+
+    0% {
+      transform: translateX(440px);
+    }
+
+    99% {
+      transform: translateX(-10px);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  //animations to slide backward
+  @keyframes slideBackModal2To1 {
+
+    0% {
+      transform: translateX(-440px);
+    }
+
+    99% {
+      transform: translateX(10px);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+
+  }
+
+
+  @keyframes slideBackModal3To2 {
+
+    0% {
+      transform: translateX(-440px);
+    }
+
+    99% {
+      transform: translateX(10px);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+
+  }
+
+
+  @keyframes wrapperRender {
+
+    0% {
+      opacity: 0;
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {}
+
+  }
+
+
+  @keyframes createServerModalAppear {
+
+    0% {
+      opacity: 0;
+      transform: scale(0.5, 0.5);
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(1, 1);
+    }
+
+  }
+
+  @keyframes createServerModalDisappear {
+
+    0% {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+
+    70% {
+      opacity: 0.5;
+    }
+
+    100% {
+      transform: scale(0.5, 0.5);
+    }
+
+  }
+
+
+
+
+
+
+
+
+
+
 }
