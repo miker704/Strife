@@ -7,11 +7,13 @@
   // position:;
   background-color: rgb(32, 34, 37);
   color: white;
+  // display: flex;
+  // flex-direction: column;
 }
 
 // @media only screen and (min-width:1400px) {
 //   #splash-banner {
-     
+
 //   }
 // }
 
@@ -123,7 +125,7 @@
   height: 2px;
   display: flex;
   justify-content: center;
-  
+
   // background-color:rgb(32, 34, 37);
 }
 
@@ -237,6 +239,112 @@
     border: none;
 
 
+
+    .all-Slides {
+      z-index: 2;
+      min-width: 1320px;
+      height: auto;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      top: 0;
+
+
+      .first-Slide {
+        min-width: 440px;
+        max-width: 440px;
+        // height: 415px;
+        height: 880px;
+
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+
+        .first-Slide-Header {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 24px 16px 0 16px;
+
+          h2 {
+            font-size: 24px;
+            color: #060607;
+            font-weight: 800;
+            margin-top: 0px;
+          }
+
+          p {
+            color: #4F5660;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 300;
+            margin-top: 0px;
+          }
+
+          .slide1-To-Slide2-Button {
+            cursor: pointer;
+            width: 92%;
+            min-height: 66px;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid rgba(6, 6, 7, 0.08);
+            border-radius: 8px;
+
+            div {
+              display: flex;
+              text-align: center;
+              align-items: center;
+
+              img {
+                width: 48px;
+                height: 48px;
+                margin-left: 16px;
+              }
+
+              h2 {
+                font-size: 15px;
+                margin-left: 10px;
+                font-weight: 700;
+              }
+
+              p {
+                font-size: 16px;
+              }
+
+              img.arrow {
+                width: 20px;
+                height: 20px;
+                margin-right: 20px;
+              }
+
+            }
+          }
+
+          .slide1-To-Slide2-Button:hover {
+            background-color: rgba(116, 127, 141, 0.08);
+          }
+
+
+
+
+
+
+        }
+
+
+
+      }
+
+
+
+    }
 
   }
 
