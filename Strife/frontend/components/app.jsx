@@ -11,33 +11,33 @@ import SessionSignUpFormContainer from './session/session_signup_form_container'
 import ChannelNavBarContainer from "./channels/channel_nav/channel_nav_bar_container"
 import UserNavContainer from './users/user_nav/user_nav_container';
 import ServerNavBarContainer from './server/server_nav_bar/server_nav_bar_container';
-import ModalManager from './modals/modal_manager';
+import ModalManagerContainer from './modals/modal_manager_container';
 
 const App = () => (
     <div>
 
-        <Route path='/' component={ModalManager}></Route>
-    <Switch>
-    
-    {/* <Route exact path="/"> <SplashContainer/> </Route> */}
+        <Route path='/' component={ModalManagerContainer}></Route>
+        <ProtectedRoute path="/channels/@me" component={ServerNavBarContainer} />
+     
+        <Switch>
 
-   
-    <AuthRoute exact path="/" component={SplashContainer}/>
-    <AuthRoute path="/register" component={SessionSignUpFormContainer} />
-    <AuthRoute path="/login" component={SessionSignInFormContainer} />
-    {/* <ProtectedRoute path="/channels/@me" component={UserNavContainer}/> */}
-    <ProtectedRoute path="/channels/@me" component={ServerNavBarContainer}/>
+            {/* <Route exact path="/"> <SplashContainer/> </Route> */}
+            <AuthRoute exact path="/" component={SplashContainer} />
+            <AuthRoute path="/register" component={SessionSignUpFormContainer} />
+            <AuthRoute path="/login" component={SessionSignInFormContainer} />
+            {/* <ProtectedRoute path="/channels/@me" component={UserNavContainer}/> */}
+            {/* <Route path='/' component={ModalManager}></Route> */}
 
-    
-    
-    </Switch>
 
-   
+
+        </Switch>
 
 
 
 
- 
+
+
+
     </div>
 )
 
