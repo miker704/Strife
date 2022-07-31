@@ -24,16 +24,16 @@ class ModalManager extends React.Component {
     }
 
     render () {
-        let renderedModal = "";
+        let renderedModal;
         // using a switch statement to reduce slow down of processing multiple if statemnets with similar
         // or little complex condtions also to dry up the code
         switch (this.props.modal) {
-            case "createServerForm":
+            case 'createServerForm':
                 console.log("createServerForm called to be rendered")
-                renderedModal = <CreateServerFormContainer />
+                renderedModal = <CreateServerFormContainer/>
                 break;
-            case "EditServerForm":
-                renderedModal = <EditServerFormContainer />
+            case 'downloadApps':
+                renderedModal = <EditServerFormContainer/>
                 break;
 
             // case "SearchServerForm":
@@ -54,7 +54,7 @@ class ModalManager extends React.Component {
 
         return (
             <div className="modal-struct" onClick={this.props.closeModal}>
-                <div className="modal-child-componenet" onClick={e => e.stopPropagation()}>
+                <div className="modal-child-component" onClick={e => e.stopPropagation()}>
                     {renderedModal}
                 </div>
             </div>
