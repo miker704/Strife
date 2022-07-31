@@ -81,15 +81,27 @@ class CreateServerForm extends React.Component {
         console.log("call");
 
 
-        let currentModalState;
-        let form_state;
+        let currentModalState="";
+        let form_state = "all-Slides";
 
 
         if (this.state.foward === false) {
 
         }
 
-        let slide1;
+        let slide1 = (
+
+            <div className="first-Slide">
+                    <div className="first-Slide-Header">
+                            <h2>Create a server</h2>
+                            <p>Your server is where you and your friends hang out. Make yours and start talking.</p>
+                    </div>
+
+            </div>
+
+
+
+        );
         let slide2;
         let slide3;
 
@@ -103,27 +115,41 @@ class CreateServerForm extends React.Component {
         return (
             <div className="create-A-Server-Wrapper">
 
-                <div className="x-To-Close">
-
-                    <svg
-                        // className="close-button"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        onClick={() => this.props.closeModal()}
-                    ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
-                    </svg>
-
-                </div>
-
-
-
                 <div className="create-A-Server-Modal">
+                    <div className="x-To-Close">
+
+                        <svg
+                            // className="close-button"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            onClick={() => this.props.closeModal()}
+                        ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
+                        </svg>
+
+                    </div>
+
                     <p>HELLO</p>
                     <button onClick={() => this.handleSubmit()}>hello submit</button>
 
 
+                    <div className={form_state}>
+
+                            {slide1}
+
+                    </div>
+
+
+
                 </div>
+
+
+                {/* <div className="create-A-Server-Modal"> */}
+                {/* <p>HELLO</p>
+                <button onClick={() => this.handleSubmit()}>hello submit</button> */}
+
+
+                {/* </div> */}
 
 
             </div>
