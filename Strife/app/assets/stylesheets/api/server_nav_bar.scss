@@ -224,7 +224,8 @@
 
   .create-A-Server-Modal {
     position: absolute;
-    top: Calc(50% - 180px);
+    // top: Calc(50% - 180px);
+    top: Calc(50% - 280px);
     left: Calc(50% - 220px);
     height: auto;
     min-width: 440px;
@@ -333,7 +334,7 @@
             }
 
             h2 {
-              font-size: 15px;
+              font-size: 16px;
               margin-left: 10px;
               font-weight: 700;
             }
@@ -372,22 +373,22 @@
           z-index: 4;
         }
         
-        .start-from-template{
-          color:#4F5660;
-          font-size: 12px;
-          font-family: "Whitney";
-          text-transform: uppercase;
-          margin-top: 16px;
-          margin-bottom: 8px;
-          font-weight: 700;
-          line-height: 16px;
-          display: flex;
+        // .start-from-template{
+        //   color:#4F5660;
+        //   font-size: 12px;
+        //   font-family: "Whitney";
+        //   text-transform: uppercase;
+        //   margin-top: 16px;
+        //   margin-bottom: 8px;
+        //   font-weight: 700;
+        //   line-height: 16px;
+        //   display: flex;
          
-          flex-direction: column;
-          align-items: left;
-          text-align:left;
+        //   // flex-direction: column;
+        //   align-items: left;
+        //   text-align:left;
         
-        }
+        // }
         
 
         .join-Existing-Server {
@@ -602,19 +603,19 @@
 }
 
 
-// .start-from-template{
-//   color:#4F5660;
-//   font-size: 12px;
-//   font-family: "Whitney";
-//   text-transform: uppercase;
-//   margin-top: 16px;
-//   margin-bottom: 8px;
-//   font-weight: 700;
-//   line-height: 16px;
-//   display: flex;
-//   align-items: left;
-//   text-align: start;
-//   align-content: flex-start;
+.start-from-template{
+  color:#4F5660;
+  font-size: 12px;
+  font-family: "Whitney";
+  text-transform: uppercase;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  line-height: 16px;
 
+}
 
-// }
+.start-from-template h2 {
+  position:absolute;
+  left:20px;
+}
