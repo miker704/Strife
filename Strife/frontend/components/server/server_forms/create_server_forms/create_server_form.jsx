@@ -21,6 +21,10 @@ class CreateServerForm extends React.Component {
         console.log(serverNamefiller);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.handleJoinServer = this.handleJoinServer.bind(this);
+        this.handleSlideBackward = this.handleSlideBackward.bind(this);
+        this.handleSlideFoward = this.handleSlideFoward.bind(this);
+        this.handleInviteCode = this.handleInviteCode.bind(this);
     }
 
 
@@ -79,6 +83,42 @@ class CreateServerForm extends React.Component {
     }
 
 
+    handleJoinServer (e) {
+        let currentSlide = this.state.form_number;
+        this.setState({
+            form_number: currentSlide + 1,
+            forward: true,
+            backward: false,
+            joiningServer: true
+        });
+    }
+
+    handleSlideFoward (e) {
+        e.preventDefault();
+        let currentSlide = this.state.form_number;
+        this.setState({
+            form_number: currentSlide + 1,
+            forward: true,
+            backward: false,
+            joiningServer: false
+        });
+    }
+
+    handleSlideBackward (e) {
+        e.preventDefault();
+        let currentSlide = this.state.form_number;
+        this.setState({
+            form_number: currentSlide - 1,
+            foward: false,
+            backward: true,
+            joiningServer: false
+        })
+    }
+
+    handleInviteCode (e) {
+        return (e) => this.setState({ invite_code: e.currentTarget.value });
+    }
+
     render () {
 
         let currentModalState = "";
@@ -128,95 +168,95 @@ class CreateServerForm extends React.Component {
                 <div className="sep">
 
 
-                <div className="top-separator" />
-                <div className="slide1-To-Slide2-Button">
+                    <div className="top-separator" />
+                    <div className="slide1-To-Slide2-Button">
 
-                    <div>
-                        <img className="create-A-Server-Img" />
-                        <h2>Create My Own</h2>
+                        <div>
+                            <img className="create-A-Server-Img" />
+                            <h2>Create My Own</h2>
+                        </div>
+                        <img className="arrow" />
                     </div>
-                    <img className="arrow" />
-                </div>
-                <div className="bottom-separator" />
+                    <div className="bottom-separator" />
 
 
-                <div className="top-separator" />
-                <div className="start-from-template">
-                    <h2>Start From A Template</h2>
-                </div>
-                
-                <div className="bottom-separator" />
-
-                <div className="top-separator" />
-                <div className="slide1-To-Slide2-Button">
-
-                    <div>
-                        <img className="gaming-Server-Img" />
-                        <h2>Gaming</h2>
+                    <div className="top-separator" />
+                    <div className="start-from-template">
+                        <h2>Start From A Template</h2>
                     </div>
-                    <img className="arrow" />
-                </div>
-                <div className="bottom-separator" />
 
+                    <div className="bottom-separator" />
 
-                <div className="top-separator" />
-                <div className="slide1-To-Slide2-Button">
+                    <div className="top-separator" />
+                    <div className="slide1-To-Slide2-Button">
 
-                    <div>
-                        <img className="school-Club-Server-Img" />
-                        <h2>School Club</h2>
+                        <div>
+                            <img className="gaming-Server-Img" />
+                            <h2>Gaming</h2>
+                        </div>
+                        <img className="arrow" />
                     </div>
-                    <img className="arrow" />
-                </div>
-                <div className="bottom-separator" />
+                    <div className="bottom-separator" />
 
 
+                    <div className="top-separator" />
+                    <div className="slide1-To-Slide2-Button">
 
-                <div className="top-separator" />
-                <div className="slide1-To-Slide2-Button">
-
-                    <div>
-                        <img className="study-Server-Img" />
-                        <h2>Study Group</h2>
+                        <div>
+                            <img className="school-Club-Server-Img" />
+                            <h2>School Club</h2>
+                        </div>
+                        <img className="arrow" />
                     </div>
-                    <img className="arrow" />
-                </div>
-                <div className="bottom-separator" />
+                    <div className="bottom-separator" />
 
-                <div className="top-separator" />
-                <div className="slide1-To-Slide2-Button">
 
-                    <div>
-                        <img className="friends-Server-Img" />
-                        <h2>Friends</h2>
+
+                    <div className="top-separator" />
+                    <div className="slide1-To-Slide2-Button">
+
+                        <div>
+                            <img className="study-Server-Img" />
+                            <h2>Study Group</h2>
+                        </div>
+                        <img className="arrow" />
                     </div>
-                    <img className="arrow" />
-                </div>
-                <div className="bottom-separator" />
+                    <div className="bottom-separator" />
 
-                <div className="top-separator" />
-                <div className="slide1-To-Slide2-Button">
+                    <div className="top-separator" />
+                    <div className="slide1-To-Slide2-Button">
 
-                    <div>
-                        <img className="artists-and-Creators-Server-Img" />
-                        <h2>Artists & Creators</h2>
+                        <div>
+                            <img className="friends-Server-Img" />
+                            <h2>Friends</h2>
+                        </div>
+                        <img className="arrow" />
                     </div>
-                    <img className="arrow" />
-                </div>
-                <div className="bottom-separator" />
+                    <div className="bottom-separator" />
 
+                    <div className="top-separator" />
+                    <div className="slide1-To-Slide2-Button">
 
-
-                <div className="top-separator" />
-                <div className="slide1-To-Slide2-Button">
-
-                    <div>
-                        <img className="local-Community-Server-Img" />
-                        <h2>Local Community</h2>
+                        <div>
+                            <img className="artists-and-Creators-Server-Img" />
+                            <h2>Artists & Creators</h2>
+                        </div>
+                        <img className="arrow" />
                     </div>
-                    <img className="arrow" />
-                </div>
-                <div className="bottom-separator" />
+                    <div className="bottom-separator" />
+
+
+
+                    <div className="top-separator" />
+                    <div className="slide1-To-Slide2-Button">
+
+                        <div>
+                            <img className="local-Community-Server-Img" />
+                            <h2>Local Community</h2>
+                        </div>
+                        <img className="arrow" />
+                    </div>
+                    <div className="bottom-separator" />
 
 
                 </div>
@@ -236,7 +276,15 @@ class CreateServerForm extends React.Component {
         );
         //modal slide for joining a server via invite link
         let slide2 = this.state.joiningServer === true ? (
-            <div className="second-Slide">
+            <div className="second-Slide joinServer">
+                <div className="second-Slide-Header">
+                    <h2>Join a Server</h2>
+                    <p>Enter an invite below to join an existing server</p>
+                </div>
+                <div className="server-use-invite-form">
+                
+
+                </div>
 
             </div>
         ) : ("");
@@ -247,7 +295,7 @@ class CreateServerForm extends React.Component {
         let slide3 = (
             <div className="third-Slide">
                 <div className="third-Slide-Header">
-                        <h2>Customize your server</h2>
+                    <h2>Customize your server</h2>
 
                 </div>
 
