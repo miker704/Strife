@@ -136,44 +136,52 @@ class CreateServerForm extends React.Component {
 
 
                 <div className="top-separator" />
-                <div className="slide1-To-Slide2-Button">
-
-                    <div>
-                        <img className="create-A-Server-Img" />
-                        <h2>Create My Own</h2>
-                    </div>
-                    <img className="arrow" />
-                </div>
-                <div className="bottom-separator" />
-
-
-                <div className="top-separator" />
-                <div className="slide1-To-Slide2-Button">
-
-                    <div>
-                        <img className="create-A-Server-Img" />
-                        <h2>Create My Own</h2>
-                    </div>
-                    <img className="arrow" />
-                </div>
-                <div className="bottom-separator" />
-
-
-
-                <div className="top-separator" />
-                <div className="slide1-To-Slide2-Button">
-
-                    <div>
-                        <img className="create-A-Server-Img" />
-                        <h2>Create My Own</h2>
-                    </div>
-                    <img className="arrow" />
-                </div>
-                <div className="bottom-separator" />
-
                 <div className="start-from-template">
-                    Start From A Template
+                   <h2>Start From A Template</h2> 
                 </div>
+                <div className="bottom-separator" />
+
+                <div className="top-separator" />
+                <div className="slide1-To-Slide2-Button">
+
+                    <div>
+                        <img className="gaming-Server-Img" />
+                        <h2>Gaming</h2>
+                    </div>
+                    <img className="arrow" />
+                </div>
+                <div className="bottom-separator" />
+
+
+                <div className="top-separator" />
+                <div className="slide1-To-Slide2-Button">
+
+                    <div>
+                        <img className="school-Club-Server-Img" />
+                        <h2>School Club</h2>
+                    </div>
+                    <img className="arrow" />
+                </div>
+                <div className="bottom-separator" />
+
+
+
+                <div className="top-separator" />
+                <div className="slide1-To-Slide2-Button">
+
+                    <div>
+                        <img className="study-Server-Img" />
+                        <h2>Study Group</h2>
+                    </div>
+                    <img className="arrow" />
+                </div>
+                <div className="bottom-separator" />
+            
+                {/* <div className="start-from-template">
+                    Start From A Template
+                </div> */}
+
+
                 <div className="join-Existing-Server">
                     <h2>Have an invite already?</h2>
                     <button>Join a Server</button>
