@@ -125,7 +125,7 @@ class CreateServerForm extends React.Component {
                 </div>
 
 
-                {/* <div className="sep"> */}
+                <div className="sep">
 
 
                 <div className="top-separator" />
@@ -219,7 +219,7 @@ class CreateServerForm extends React.Component {
                 <div className="bottom-separator" />
 
 
-                {/* </div> */}
+                </div>
 
 
                 <div className="join-Existing-Server">
