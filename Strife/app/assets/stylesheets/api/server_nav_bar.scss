@@ -321,7 +321,7 @@
             text-align: left;
             left: 20px;
             padding-bottom: 10px;
-            padding-left:5px;
+            padding-left: 5px;
             // padding-right: 200px;
           }
 
@@ -554,20 +554,21 @@
           background-color: rgba(100, 116, 128, 0.16);
         }
 
-        .skip-this-step{
+        .skip-this-step {
           margin: 4px;
-          h2{
-            color:#4F5660;
+
+          h2 {
+            color: #4F5660;
             font-size: 14px;
             font-weight: 400;
 
 
-            a{
-              color:#0067E0;
-              cursor:pointer;
+            a {
+              color: #0067E0;
+              cursor: pointer;
             }
 
-            a:hover{
+            a:hover {
               text-decoration: underline;
             }
 
@@ -575,79 +576,137 @@
         }
 
 
-        .back-button{
-            width: 100%;
-            height: 50px;
-            background-color: #F6F6F7;
-            display:flex;
-            align-items: center;
+        .back-button {
+          width: 100%;
+          height: 50px;
+          background-color: #F6F6F7;
+          display: flex;
+          align-items: center;
 
-            h2{
-              cursor: pointer;
-              color: #000000;
-              font-size:14px;
-              margin-left: 16px;
-              font-family: "Whitney";
+          h2 {
+            cursor: pointer;
+            color: #000000;
+            font-size: 14px;
+            margin-left: 16px;
+            font-family: "Whitney";
 
-            }
+          }
 
 
 
 
         }
 
-        .server-use-invite-form{
+        .server-use-invite-form {
 
+          width: 400px;
+          margin-bottom: 10px;
+
+          label {
+            color: #4F5660;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-family: "Ginto Normal";
+            margin-bottom: 8px;
+
+
+            span {
+              color: #D83C3E;
+            }
+
+          }
+
+          label.ERROR {
+            color: #D83C3E;
+          }
+
+          input[type="text"] {
             width: 400px;
-            margin-bottom: 10px;
+            color: #000000;
+            height: 40px;
+            background-color: #E1E1E1;
+            padding-left: 10px;
+            outline: none;
+            font-size: 16px;
+            margin: 8px auto 24px auto;
+            border: none;
 
-            label{
-              color:#4F5660;
+
+          }
+
+          .invite-code-examples {
+            margin: 10px auto;
+
+            h3 {
               font-size: 12px;
+              margin: 4px;
               font-weight: 500;
-              text-transform: uppercase;
-              font-family: "Ginto Normal";
-              margin-bottom: 8px;
-
-
-              span{
-                color: #D83C3E;
-              }
-
+              // text-transform: uppercase;
+              font-family: "Whitney";
+              color: #060607;
             }
 
-            label.ERROR{
-              color:#D83C3E;
-            }
-
-            input[type="text"]{
-              width:400px;
-              color: #000000;
-              height: 40px;
-              background-color: #E1E1E1;
-              padding-left: 10px;
-              outline: none;
-              font-size: 16px;
-              margin: 8px auto 24px auto;
-              border:none;
 
 
-            }
+          }
 
-            .invite-code-examples{
-
-            }
-
-            .back-button-join{
-              
-            }
 
         }
 
+        .back-button-join {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          background-color: #F6F6F7;
+          min-width: 440px;
+          height: 90px;
+
+          h2 {
+            cursor: pointer;
+            color: #747F8D;
+            font-size: 14px;
+            font-family: "Whitney";
+            margin-left: 16px;
+          }
+
+          h2:hover {
+            text-decoration: underline;
+          }
 
 
+          input[type="submit"] {
+            margin-right: 16px;
+            background-color: #5865F2;
+            color: #FFFFFF;
+            border: none;
+            min-height: 38px;
+            min-width: 96px;
+            border-radius: 3px;
+            transition: 0.2s;
+            cursor: pointer;
+          }
 
+          input[type="submit"]:hover {
+            background-color: #4752C4;
+            transition: 0.2s;
+          }
+        }
       }
+
+
+      .second-Slide.joinServer {
+        .second-Slide-Header {
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+
+
+
+
 
     }
 
@@ -864,7 +923,7 @@
 
 .sep::-webkit-scrollbar-track {
   border-radius: 10px;
- 
+
 }
 
 .sep::-webkit-scrollbar {
@@ -872,7 +931,7 @@
 }
 
 .sep::-webkit-scrollbar-thumb {
- 
+
 
   background: #C1C1C1;
   border-radius: 5px;
