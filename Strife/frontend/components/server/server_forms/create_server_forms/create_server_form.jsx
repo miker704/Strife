@@ -81,7 +81,7 @@ class CreateServerForm extends React.Component {
         console.log("call");
 
 
-        let currentModalState="";
+        let currentModalState = "";
         let form_state = "all-Slides";
 
 
@@ -92,11 +92,20 @@ class CreateServerForm extends React.Component {
         let slide1 = (
 
             <div className="first-Slide">
-                    <div className="first-Slide-Header">
-                            <h2>Create a server</h2>
-                            <p>Your server is where you and your friends hang out. Make yours and start talking.</p>
+                <div className="first-Slide-Header">
+                    <h2>Create a server</h2>
+                    <p>Your server is where you and your friends hang out. Make yours and start talking.</p>
+                </div>
+                <div className="top-Separator"></div>
+                <div className="slide1-To-Slide2-Button">
+
+                    <div>
+                        <img className="create-A-Server-Img" />
+                        <h2>Create My Own</h2>
                     </div>
 
+                </div>
+                <div className="bottom-Separator"></div>
             </div>
 
 
@@ -129,14 +138,16 @@ class CreateServerForm extends React.Component {
 
                     </div>
 
-                    <p>HELLO</p>
-                    <button onClick={() => this.handleSubmit()}>hello submit</button>
+                    {/* <p>HELLO</p>
+                    <button onClick={() => this.handleSubmit()}>hello submit</button> */}
 
 
                     <div className={form_state}>
 
-                            {slide1}
-
+                        {slide1}
+                    </div>
+                    <div className="start-from-template">
+                        <h2>Start From A Template</h2>
                     </div>
 
 
@@ -144,12 +155,7 @@ class CreateServerForm extends React.Component {
                 </div>
 
 
-                {/* <div className="create-A-Server-Modal"> */}
-                {/* <p>HELLO</p>
-                <button onClick={() => this.handleSubmit()}>hello submit</button> */}
 
-
-                {/* </div> */}
 
 
             </div>
