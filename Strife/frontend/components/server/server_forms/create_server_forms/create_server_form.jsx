@@ -14,6 +14,7 @@ class CreateServerForm extends React.Component {
             backward: false,
             joiningServer: false,
             invite_code: "",
+            submissionType : ""
         }
         console.log("calling create server modal");
         let serverNamefiller = `${this.props.currentUser.username}'s server`;
@@ -169,12 +170,6 @@ class CreateServerForm extends React.Component {
                     <img className="arrow" />
                 </div>
                 <div className="bottom-separator" />
-
-
-
-
-
-
 
                 <div className="start-from-template">
                     Start From A Template
