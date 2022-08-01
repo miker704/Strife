@@ -10,8 +10,9 @@ class CreateServerForm extends React.Component {
             public: true, //true by default
             server_icon: "", // empty by default until aws functionality is implemented
             form_number: 1,
-            foward: false,
+            foward: true,
             backward: false,
+            joiningServer: false,
             invite_code: "",
         }
         console.log("calling create server modal");
@@ -78,16 +79,41 @@ class CreateServerForm extends React.Component {
 
 
     render () {
-        console.log("call");
-
 
         let currentModalState = "";
         let form_state = "all-Slides";
 
 
         if (this.state.foward === false) {
+            if (this.state.form_number === 1) {
+                form_state = "all-Slides back";
+            }
+            else if (this.state.form_number === 2) {
+                form_state = "all-Slides second back";
+            }
+        }
+        else {
+
+            if (this.state.form_number === 1) {
+                form_state = "all-Slides";
+            }
+            if (this.state.form_number === 2) {
+                form_state = "all-Slides second foward";
+
+            }
+            else if (this.state.form_number === 3) {
+                form_state = "all-Slides third forward";
+            }
+
+
 
         }
+
+
+
+
+
+
 
         let slide1 = (
 
@@ -96,7 +122,7 @@ class CreateServerForm extends React.Component {
                     <h2>Create a server</h2>
                     <p>Your server is where you and your friends hang out. Make yours and start talking.</p>
                 </div>
-                <div className="top-Separator"></div>
+                <div className="top-separator" />
                 <div className="slide1-To-Slide2-Button">
 
                     <div>
@@ -105,13 +131,76 @@ class CreateServerForm extends React.Component {
                     </div>
                     <img className="arrow" />
                 </div>
-                <div className="bottom-Separator"></div>
+                <div className="bottom-separator" />
+
+
+                <div className="top-separator" />
+                <div className="slide1-To-Slide2-Button">
+
+                    <div>
+                        <img className="create-A-Server-Img" />
+                        <h2>Create My Own</h2>
+                    </div>
+                    <img className="arrow" />
+                </div>
+                <div className="bottom-separator" />
+
+
+                <div className="top-separator" />
+                <div className="slide1-To-Slide2-Button">
+
+                    <div>
+                        <img className="create-A-Server-Img" />
+                        <h2>Create My Own</h2>
+                    </div>
+                    <img className="arrow" />
+                </div>
+                <div className="bottom-separator" />
+
+
+
+                <div className="top-separator" />
+                <div className="slide1-To-Slide2-Button">
+
+                    <div>
+                        <img className="create-A-Server-Img" />
+                        <h2>Create My Own</h2>
+                    </div>
+                    <img className="arrow" />
+                </div>
+                <div className="bottom-separator" />
+
+
+
+
+
+
+
+                <div className="start-from-template">
+                    Start From A Template
+                </div>
+                <div className="join-Existing-Server">
+                    <h2>Have an invite already?</h2>
+                    <button>Join a Server</button>
+
+                </div>
+
+
             </div>
 
 
 
         );
-        let slide2;
+        //modal slide for joining a server via invite link
+        let slide2 = this.state.joiningServer === true ? (
+            <div className="second-Slide">
+
+            </div>
+        ) : ("");
+
+
+
+
         let slide3;
 
 
