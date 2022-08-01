@@ -239,6 +239,26 @@
     border: none;
 
 
+    .x-To-Close{
+      color: white;
+
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+      z-index: 3;
+      svg path { 
+        transition: 0.2s;
+      }
+    }
+
+    .x-To-Close:hover{
+      svg path {
+        fill: #2e3338;
+        transition: 0.2s;
+      }
+    }
+
 
     .all-Slides {
       z-index: 2;
@@ -254,8 +274,8 @@
       .first-Slide {
         min-width: 440px;
         max-width: 440px;
-        // height: 415px;
-        height: 880px;
+        height: 415px;
+        // height: 880px;
 
         background-color: #FFFFFF;
         display: flex;
@@ -296,7 +316,7 @@
             justify-content: space-between;
             border: 1px solid rgba(6, 6, 7, 0.08);
             border-radius: 8px;
-
+         
             div {
               display: flex;
               text-align: center;
@@ -332,9 +352,53 @@
           }
 
 
+          .top-Separator {
+            height: 24px;
+            width: 70%;
+            border-radius: 2px;
+            z-index: 4;
+          }
+
+          .bottom-Separator {
+            height: 32px;
+            width: 70%;
+            border-radius: 2px;
+            z-index: 4;
+          }
+
+          .join-Existing-Server {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #F6F6F7;
 
 
+            h2 {
+              margin-top: 24px;
+              font-size: 20px;
+              color: #2E3338;
+              font-weight: 600;
+            }
 
+            button {
+              background-color: #747F8D;
+              color: #FFFFFF;
+              border: none;
+              border-radius: 4px;
+              width: 92%;
+              height: 38px;
+              margin: 16px 0 16px 0;
+              cursor: pointer;
+              transition: 0.2s;
+            }
+
+            button:hover {
+              background-color: #68727F;
+              transition: 0.2s;
+            }
+
+          }
 
         }
 
@@ -347,14 +411,6 @@
     }
 
   }
-
-
-
-
-
-
-
-
 
 
 
@@ -475,12 +531,38 @@
   }
 
 
+}
 
+.dont-Have-A-Server-Img {
+  content: image_url("dont_Have_Server_Invite.svg");
+}
 
+.public-Server-Img {
+  content: image_url("public.svg");
 
+}
 
+.private-Server-Img {
+  content: image_url("private.svg");
 
+}
 
+.study-Server-Img {
+  content: image_url("studyServerIcon.svg");
 
+}
+
+.school-Club-Server-Img {
+  content: image_url("schoolClubServerIcon.svg");
+
+}
+
+.gaming-Server-Img {
+  content: image_url("gamingServerIcon.svg");
+
+}
+
+.slide1-To-Slide2-Button .create-A-Server-Img {
+  content: image_url("create_server_icon.png");
 
 }
