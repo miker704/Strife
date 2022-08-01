@@ -239,7 +239,7 @@
     display: block;
     border: none;
 
-   
+
     .x-To-Close {
       // color: white;
 
@@ -274,9 +274,11 @@
 
 
       .first-Slide {
-        min-width: 440px;
-        max-width: 440px;
-        height: 615px;
+        min-width: 450px;
+        max-width: 450px;
+        height: 725px;
+        // max-height: 610px;
+        // height:auto;
         // height: 880px;
 
         background-color: #FFFFFF;
@@ -296,7 +298,7 @@
           h2 {
             font-size: 25px;
             color: #060607;
-            font-weight: 800;
+            font-weight: 700;
             margin-top: 0px;
             font-family: "Ginto Normal";
           }
@@ -306,7 +308,7 @@
             font-size: 16px;
             line-height: 20px;
             margin-top: 0px;
-            font-weight: 300;
+            font-weight: 400;
             font-family: "Whitney";
           }
         }
@@ -355,7 +357,7 @@
         }
 
         .slide1-To-Slide2-Button:hover {
-          background-color:  rgba(100, 116, 128, 0.16);
+          background-color: rgba(100, 116, 128, 0.16);
         }
 
 
@@ -372,24 +374,7 @@
           border-radius: 2px;
           z-index: 4;
         }
-        
-        // .start-from-template{
-        //   color:#4F5660;
-        //   font-size: 12px;
-        //   font-family: "Whitney";
-        //   text-transform: uppercase;
-        //   margin-top: 16px;
-        //   margin-bottom: 8px;
-        //   font-weight: 700;
-        //   line-height: 16px;
-        //   display: flex;
-         
-        //   // flex-direction: column;
-        //   align-items: left;
-        //   text-align:left;
-        
-        // }
-        
+
 
         .join-Existing-Server {
           width: 100%;
@@ -409,9 +394,9 @@
           }
 
           button {
-          
+
             background-color: #6A7480;
-            font-size:14px;
+            font-size: 14px;
             font-family: "Whitney";
             color: #FFFFFF;
             border: none;
@@ -432,7 +417,88 @@
 
       }
 
+      .second-Slide {
+        min-width: 450px;
+        max-width: 450px;
+        height: 615px;
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
 
+
+
+        .second-Slide-Header {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding-inline: 10px;
+
+
+          h2 {
+            font-size: 25px;
+            color: #060607;
+            font-weight: 700;
+            margin-top: 0px;
+            font-family: "Ginto Normal";
+          }
+
+          p {
+            color: #4F5660;
+            font-size: 16px;
+            line-height: 20px;
+            margin-top: 0px;
+            font-weight: 400;
+            font-family: "Whitney";
+          }
+
+
+
+
+        }
+
+        .slide2-to-slide3-button {
+
+          cursor: pointer;
+          width: 92%;
+          min-height: 60px;
+          display: flex;
+          text-align: center;
+          align-items: center;
+          justify-content: space-between;
+          border: 1px solid rgba(6, 6, 7, 0.08);
+          border-radius: 8px;
+          margin: 4px 0 8px 0;
+
+
+          div {
+            display: flex;
+            text-align: center;
+            align-items: center;
+
+            img {
+              width: 48px;
+              height: 48px;
+              margin-left: 16px;
+            }
+
+            h2 {
+              font-size: 16px;
+              margin-left: 10px;
+              font-weight: 700;
+            }
+          }
+
+        }
+
+
+        .slide2-to-slide3-button:hover {
+          background-color: rgba(100, 116, 128, 0.16);
+        }
+
+      }
 
     }
 
@@ -573,6 +639,27 @@
 
 }
 
+
+
+.friends-Server-Img {
+  content: image_url("friends_server_icon.svg");
+
+}
+
+.local-Community-Server-Img {
+  content: image_url("Local_Community_icon.svg");
+
+}
+
+
+.artists-and-Creators-Server-Img {
+  content: image_url("artists_and_creators_icon.svg");
+
+}
+
+
+
+
 .study-Server-Img {
   content: image_url("studyServerIcon.svg");
 
@@ -603,8 +690,8 @@
 }
 
 
-.start-from-template{
-  color:#4F5660;
+.start-from-template {
+  color: #4F5660;
   font-size: 12px;
   font-family: "Whitney";
   text-transform: uppercase;
@@ -616,6 +703,7 @@
 }
 
 .start-from-template h2 {
-  position:absolute;
-  left:20px;
+  position: absolute;
+  left: 20px;
+  padding-bottom: 10px;
 }
