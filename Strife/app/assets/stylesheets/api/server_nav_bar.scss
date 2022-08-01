@@ -224,8 +224,8 @@
 
   .create-A-Server-Modal {
     position: absolute;
-    top: calc(50%-180px);
-    left: calc(50%-220px);
+    top: Calc(50% - 180px);
+    left: Calc(50% - 220px);
     height: auto;
     min-width: 440px;
     max-width: 440px;
@@ -238,9 +238,9 @@
     display: block;
     border: none;
 
-
+   
     .x-To-Close {
-      color: white;
+      // color: white;
 
       position: absolute;
       top: 15px;
@@ -255,7 +255,7 @@
 
     .x-To-Close:hover {
       svg path {
-        fill: #2e3338;
+        fill: #2E3338;
         transition: 0.2s;
       }
     }
@@ -275,7 +275,7 @@
       .first-Slide {
         min-width: 440px;
         max-width: 440px;
-        height: 415px;
+        height: 615px;
         // height: 880px;
 
         background-color: #FFFFFF;
@@ -293,117 +293,141 @@
           padding: 24px 16px 0 16px;
 
           h2 {
-            font-size: 24px;
+            font-size: 25px;
             color: #060607;
             font-weight: 800;
             margin-top: 0px;
+            font-family: "Ginto Normal";
           }
 
           p {
             color: #4F5660;
             font-size: 16px;
             line-height: 20px;
-            font-weight: 300;
             margin-top: 0px;
+            font-weight: 300;
+            font-family: "Whitney";
           }
+        }
 
-          .slide1-To-Slide2-Button {
-            cursor: pointer;
-            width: 92%;
-            min-height: 66px;
+        .slide1-To-Slide2-Button {
+          cursor: pointer;
+          width: 92%;
+          min-height: 66px;
+          display: flex;
+          text-align: center;
+          align-items: center;
+          justify-content: space-between;
+          border: 1px solid rgba(6, 6, 7, 0.08);
+          border-radius: 8px;
+
+          div {
             display: flex;
             text-align: center;
             align-items: center;
-            justify-content: space-between;
-            border: 1px solid rgba(6, 6, 7, 0.08);
-            border-radius: 8px;
 
-            div {
-              display: flex;
-              text-align: center;
-              align-items: center;
-
-              img {
-                width: 48px;
-                height: 48px;
-                margin-left: 16px;
-              }
-
-              h2 {
-                font-size: 15px;
-                margin-left: 10px;
-                font-weight: 700;
-              }
-
-              p {
-                font-size: 16px;
-              }
-
-              img.arrow {
-                width: 20px;
-                height: 20px;
-                margin-right: 20px;
-              }
-
+            img {
+              width: 48px;
+              height: 48px;
+              margin-left: 16px;
             }
-          }
-
-          .slide1-To-Slide2-Button:hover {
-            background-color: rgba(116, 127, 141, 0.08);
-          }
-
-
-          .top-Separator {
-            height: 24px;
-            width: 70%;
-            border-radius: 2px;
-            z-index: 4;
-          }
-
-          .bottom-Separator {
-            height: 32px;
-            width: 70%;
-            border-radius: 2px;
-            z-index: 4;
-          }
-
-          .join-Existing-Server {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #F6F6F7;
-
 
             h2 {
-              margin-top: 24px;
-              font-size: 20px;
-              color: #2E3338;
-              font-weight: 600;
+              font-size: 15px;
+              margin-left: 10px;
+              font-weight: 700;
             }
 
-            button {
-              background-color: #747F8D;
-              color: #FFFFFF;
-              border: none;
-              border-radius: 4px;
-              width: 92%;
-              height: 38px;
-              margin: 16px 0 16px 0;
-              cursor: pointer;
-              transition: 0.2s;
+            p {
+              font-size: 16px;
+              font-family: "Whitney";
             }
 
-            button:hover {
-              background-color: #68727F;
-              transition: 0.2s;
-            }
 
           }
 
+          img.arrow {
+            width: 20px;
+            height: 20px;
+            margin-right: 20px;
+          }
+        }
+
+        .slide1-To-Slide2-Button:hover {
+          background-color:  rgba(100, 116, 128, 0.16);
         }
 
 
+        .top-separator {
+          height: 24px;
+          width: 70%;
+          border-radius: 2px;
+          z-index: 4;
+        }
+
+        .bottom-separator {
+          height: 32px;
+          width: 70%;
+          border-radius: 2px;
+          z-index: 4;
+        }
+        
+        .start-from-template{
+          color:#4F5660;
+          font-size: 12px;
+          font-family: "Whitney";
+          text-transform: uppercase;
+          margin-top: 16px;
+          margin-bottom: 8px;
+          font-weight: 700;
+          line-height: 16px;
+          display: flex;
+         
+          flex-direction: column;
+          align-items: left;
+          text-align:left;
+        
+        }
+        
+
+        .join-Existing-Server {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: #F6F6F7;
+
+
+          h2 {
+            margin-top: 24px;
+            font-size: 20px;
+            color: #2E3338;
+            font-weight: 600;
+            font-family: "Ginto Normal";
+
+          }
+
+          button {
+          
+            background-color: #6A7480;
+            font-size:14px;
+            font-family: "Whitney";
+            color: #FFFFFF;
+            border: none;
+            border-radius: 4px;
+            width: 92%;
+            height: 38px;
+            margin: 16px 0 16px 0;
+            cursor: pointer;
+            transition: 0.2s;
+          }
+
+          button:hover {
+            background-color: #4F5660;
+            transition: 0.2s;
+          }
+
+        }
 
       }
 
@@ -576,3 +600,21 @@
   content: image_url("create_server_arrow.svg");
   margin-right: 10px;
 }
+
+
+// .start-from-template{
+//   color:#4F5660;
+//   font-size: 12px;
+//   font-family: "Whitney";
+//   text-transform: uppercase;
+//   margin-top: 16px;
+//   margin-bottom: 8px;
+//   font-weight: 700;
+//   line-height: 16px;
+//   display: flex;
+//   align-items: left;
+//   text-align: start;
+//   align-content: flex-start;
+
+
+// }
