@@ -123,7 +123,11 @@ class CreateServerForm extends React.Component {
                     <h2>Create a server</h2>
                     <p>Your server is where you and your friends hang out. Make yours and start talking.</p>
                 </div>
-                
+
+
+                {/* <div className="sep"> */}
+
+
                 <div className="top-separator" />
                 <div className="slide1-To-Slide2-Button">
 
@@ -140,6 +144,7 @@ class CreateServerForm extends React.Component {
                 <div className="start-from-template">
                     <h2>Start From A Template</h2>
                 </div>
+                
                 <div className="bottom-separator" />
 
                 <div className="top-separator" />
@@ -214,6 +219,9 @@ class CreateServerForm extends React.Component {
                 <div className="bottom-separator" />
 
 
+                {/* </div> */}
+
+
                 <div className="join-Existing-Server">
                     <h2>Have an invite already?</h2>
                     <button>Join a Server</button>
@@ -236,7 +244,15 @@ class CreateServerForm extends React.Component {
 
 
 
-        let slide3;
+        let slide3 = (
+            <div className="third-Slide">
+                <div className="third-Slide-Header">
+                        <h2>Customize your server</h2>
+
+                </div>
+
+            </div>
+        );
 
 
 
