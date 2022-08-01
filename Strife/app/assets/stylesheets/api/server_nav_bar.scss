@@ -239,7 +239,7 @@
     border: none;
 
 
-    .x-To-Close{
+    .x-To-Close {
       color: white;
 
       position: absolute;
@@ -247,12 +247,13 @@
       right: 15px;
       cursor: pointer;
       z-index: 3;
-      svg path { 
+
+      svg path {
         transition: 0.2s;
       }
     }
 
-    .x-To-Close:hover{
+    .x-To-Close:hover {
       svg path {
         fill: #2e3338;
         transition: 0.2s;
@@ -316,7 +317,7 @@
             justify-content: space-between;
             border: 1px solid rgba(6, 6, 7, 0.08);
             border-radius: 8px;
-         
+
             div {
               display: flex;
               text-align: center;
@@ -565,4 +566,13 @@
 .slide1-To-Slide2-Button .create-A-Server-Img {
   content: image_url("create_server_icon.png");
 
+}
+
+.create_server_arrow_Img {
+  content: image_url("create_server_arrow.svg");
+}
+
+.arrow {
+  content: image_url("create_server_arrow.svg");
+  margin-right: 10px;
 }
