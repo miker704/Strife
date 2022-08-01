@@ -228,10 +228,12 @@
     top: Calc(50% - 280px);
     left: Calc(50% - 220px);
     height: auto;
-    min-width: 440px;
-    max-width: 440px;
+    min-width: 450px;
+    max-width: 450px;
     background-color: rgba(0, 0, 0, 0);
+    // overflow: hidden scroll;
     overflow: hidden;
+
     border-radius: 5px;
     animation-name: createServerModalAppear;
     animation-duration: 0.3s;
@@ -266,9 +268,13 @@
       z-index: 2;
       min-width: 1320px;
       height: auto;
+      // height: 400px;
       display: flex;
       align-items: center;
-      overflow: hidden;
+      // overflow: hidden scroll;
+      // overflow: hidden scroll;
+      // overflow: visible scroll;
+
       position: relative;
       top: 0;
 
@@ -276,10 +282,13 @@
       .first-Slide {
         min-width: 450px;
         max-width: 450px;
-        height: 725px;
+        // height: 330px;
+        height: 650px;
+
         // max-height: 610px;
         // height:auto;
         // height: 880px;
+        //  overflow: hidden scroll;
 
         background-color: #FFFFFF;
         display: flex;
@@ -287,7 +296,33 @@
         align-items: center;
         justify-content: space-between;
 
-
+        .start-from-template {
+          color: #4F5660;
+          font-size: 12px;
+          font-family: "Whitney";
+          text-transform: uppercase;
+          margin-top: 16px;
+          margin-bottom: 8px;
+          font-weight: 700;
+          line-height: 16px;
+          h2 {
+            // position: absolute;
+            // position: fixed;
+            text-align: left;
+            left: 20px;
+            padding-bottom: 10px;
+            padding-right: 250px;
+          }
+        
+        }
+        
+        // .start-from-template h2 {
+        //   // position: absolute;
+        //   position: fixed;
+        //   left: 20px;
+        //   padding-bottom: 10px;
+        // }
+        
         .first-Slide-Header {
           display: flex;
           flex-direction: column;
@@ -321,8 +356,10 @@
           text-align: center;
           align-items: center;
           justify-content: space-between;
-          border: 1px solid rgba(6, 6, 7, 0.08);
+          border: 2px solid rgba(6, 6, 7, 0.08);
           border-radius: 8px;
+          background-color: #FFFFFF;
+
 
           div {
             display: flex;
@@ -382,7 +419,7 @@
           flex-direction: column;
           align-items: center;
           background-color: #F6F6F7;
-
+          position: sticky;
 
           h2 {
             margin-top: 24px;
@@ -690,20 +727,41 @@
 }
 
 
-.start-from-template {
-  color: #4F5660;
-  font-size: 12px;
-  font-family: "Whitney";
-  text-transform: uppercase;
-  margin-top: 16px;
-  margin-bottom: 8px;
-  font-weight: 700;
-  line-height: 16px;
+// .start-from-template {
+//   color: #4F5660;
+//   font-size: 12px;
+//   font-family: "Whitney";
+//   text-transform: uppercase;
+//   margin-top: 16px;
+//   margin-bottom: 8px;
+//   font-weight: 700;
+//   line-height: 16px;
 
+// }
+
+// .start-from-template h2 {
+//   position: absolute;
+//   left: 20px;
+//   padding-bottom: 10px;
+// }
+
+.sep{
+   overflow: hidden scroll;
 }
 
-.start-from-template h2 {
-  position: absolute;
-  left: 20px;
-  padding-bottom: 10px;
+.sep::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgb(40, 45, 50);
 }
+
+.sep::-webkit-scrollbar {
+  width: 10px;
+}
+
+.sep::-webkit-scrollbar-thumb {
+  background: rgb(30, 35, 40);
+  border-radius: 5px;
+}
+
+
+
