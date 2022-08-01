@@ -14,7 +14,7 @@ class CreateServerForm extends React.Component {
             backward: false,
             joiningServer: false,
             invite_code: "",
-            submissionType : ""
+            submissionType: ""
         }
         console.log("calling create server modal");
         let serverNamefiller = `${this.props.currentUser.username}'s server`;
@@ -123,6 +123,7 @@ class CreateServerForm extends React.Component {
                     <h2>Create a server</h2>
                     <p>Your server is where you and your friends hang out. Make yours and start talking.</p>
                 </div>
+                
                 <div className="top-separator" />
                 <div className="slide1-To-Slide2-Button">
 
@@ -137,7 +138,7 @@ class CreateServerForm extends React.Component {
 
                 <div className="top-separator" />
                 <div className="start-from-template">
-                   <h2>Start From A Template</h2> 
+                    <h2>Start From A Template</h2>
                 </div>
                 <div className="bottom-separator" />
 
@@ -176,10 +177,41 @@ class CreateServerForm extends React.Component {
                     <img className="arrow" />
                 </div>
                 <div className="bottom-separator" />
-            
-                {/* <div className="start-from-template">
-                    Start From A Template
-                </div> */}
+
+                <div className="top-separator" />
+                <div className="slide1-To-Slide2-Button">
+
+                    <div>
+                        <img className="friends-Server-Img" />
+                        <h2>Friends</h2>
+                    </div>
+                    <img className="arrow" />
+                </div>
+                <div className="bottom-separator" />
+
+                <div className="top-separator" />
+                <div className="slide1-To-Slide2-Button">
+
+                    <div>
+                        <img className="artists-and-Creators-Server-Img" />
+                        <h2>Artists & Creators</h2>
+                    </div>
+                    <img className="arrow" />
+                </div>
+                <div className="bottom-separator" />
+
+
+
+                <div className="top-separator" />
+                <div className="slide1-To-Slide2-Button">
+
+                    <div>
+                        <img className="local-Community-Server-Img" />
+                        <h2>Local Community</h2>
+                    </div>
+                    <img className="arrow" />
+                </div>
+                <div className="bottom-separator" />
 
 
                 <div className="join-Existing-Server">
@@ -238,7 +270,7 @@ class CreateServerForm extends React.Component {
 
                         {slide1}
                     </div>
-                 
+
 
 
 
