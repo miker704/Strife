@@ -230,9 +230,7 @@ class CreateServerForm extends React.Component {
 
                         {slide1}
                     </div>
-                    <div className="start-from-template">
-                        <h2>Start From A Template</h2>
-                    </div>
+                 
 
 
 
