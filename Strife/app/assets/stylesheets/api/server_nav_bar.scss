@@ -705,10 +705,203 @@
       }
 
 
+      .third-Slide{
+        min-width: 450px;
+        max-width: 450px;
+        height: 615px;
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
 
 
+
+        .third-Slide-Header{
+          display:flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 24px 16px 0 16px;
+          margin-bottom: 12px;
+
+
+          h2{
+            font-size: 25px;
+            color:#060607;
+            font-weight: 700;
+            padding-top: 0;
+            margin-top: 0;
+            font-family: "Ginto Normal";
+          }
+          p{
+            color:#4F5660;
+            font-family: "Whitney";
+            font-size: 16px;
+            font-weight: 400;
+            margin-top: 8px;
+            line-height: 20px;
+
+          }
+
+        }
+
+        form{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+
+        .input-server-icon-wrapper{
+          width: 80px;
+          height: 80px;
+          position: relative;
+
+          input[type="file"]{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width:80px;
+            height: 80px;
+            cursor: pointer;
+            z-index: 4;
+            opacity: 0;
+          }
+        }
+
+
+
+        .server-name-input{
+          display:flex;
+          flex-direction: column;
+          margin-top: 16px;
+
+
+          label{
+            color:#6A7480;
+            font-size: 12px;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-family: "Ginto Normal";
+          }
+
+          input[type="text"]{
+            max-height: 20px;
+            min-height: 20px;
+            min-width: 400px;
+            border-radius: 3px;
+            color: #2E3338;
+            border: 2px solid #4f545c4d;
+            background-color: #E3E5E8;
+            font-size: 16px;
+            padding: 10px;
+          }
+
+
+          // input[type="text"]:focus{
+          //   border-color: #5865F2;
+          //   outline: none;
+          // }
+
+          h3{
+            margin-top: 8px;
+            color: #5E6772;
+            font-size: 12px;
+            font-family: "Whitney";
+            margin-bottom: 16px;
+         
+            a{
+              cursor: pointer;
+              color:#0068E0;
+              text-decoration: none;
+              font-size: 12px;
+              font-family: "Whitney";
+  
+            }
+            a:hover{
+              text-decoration: underline;
+            }
+
+          }
+
+        }
+
+        .back-create-server-button{
+          display:flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          background-color: #F6F6F7;
+          height: 58px;
+          min-width: 440px;
+
+
+          h2{
+            cursor:pointer;
+            color: #000000;
+            font-size:14px;
+            margin-left: 16px;
+
+          }
+
+
+          input[type="submit"]{
+            border:none;
+            background-color: #5865F2;
+            margin-right: 16px;
+            color: #FFFFFF;
+            min-width: 96px;
+            min-height: 38px;
+            border-radius: 3px;
+            transition: 0.2s;
+            cursor: pointer;
+          }
+
+          input[type="submit"]:hover{
+            background-color: #4752C4;
+            transition: 0.2s;
+          }
+
+        }
+
+      }
 
     }
+
+    .all-Slides.second{
+      left:-440px;
+    }
+
+    .all-Slides.third{
+      left: -880px;
+    }
+
+    .all-Slides.second.foward{
+      animation-name:slideModal1To2;
+      animation-duration: 0.3s;
+      animation-iteration-count: 1;
+    }
+
+    .all-Slides.third.foward{
+      animation-name:slideModal2To3;
+      animation-duration: 0.3s;
+      animation-iteration-count: 1;
+    }
+
+    .all-Slides.back{
+      animation-name: slideBackModal2To1;
+      animation-duration: 0.3s;
+      animation-iteration-count: 1;
+    }
+
+    .all-Slides.second.back{
+      animation-name: slideBackModal3To2;
+      animation-duration: 0.3s;
+      animation-iteration-count: 1;
+    }
+
+
 
   }
 
