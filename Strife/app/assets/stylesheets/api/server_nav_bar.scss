@@ -543,6 +543,7 @@
               font-size: 16px;
               margin-left: 10px;
               font-weight: 700;
+              font-family: "Ginto Normal";
             }
           }
 
@@ -552,6 +553,94 @@
         .slide2-to-slide3-button:hover {
           background-color: rgba(100, 116, 128, 0.16);
         }
+
+        .skip-this-step{
+          margin: 4px;
+          h2{
+            color:#4F5660;
+            font-size: 14px;
+            font-weight: 400;
+
+
+            a{
+              color:#0067E0;
+              cursor:pointer;
+            }
+
+            a:hover{
+              text-decoration: underline;
+            }
+
+          }
+        }
+
+
+        .back-button{
+            width: 100%;
+            height: 50px;
+            background-color: #F6F6F7;
+            display:flex;
+            align-items: center;
+
+            h2{
+              cursor: pointer;
+              color: #000000;
+              font-size:14px;
+              margin-left: 16px;
+              font-family: "Whitney";
+
+            }
+
+
+
+
+        }
+
+        .server-use-invite-form{
+
+            width: 400px;
+            margin-bottom: 10px;
+
+            label{
+              color:#4F5660;
+              font-size: 12px;
+              font-weight: 500;
+              text-transform: uppercase;
+              font-family: "Ginto Normal";
+              margin-bottom: 8px;
+
+
+              span{
+                color: #D83C3E;
+              }
+
+            }
+
+            label.ERROR{
+              color:#D83C3E;
+            }
+
+            input[type="text"]{
+              width:400px;
+              color: #000000;
+              height: 40px;
+              background-color: #E1E1E1;
+              padding-left: 10px;
+              outline: none;
+              font-size: 16px;
+              margin: 8px auto 24px auto;
+              border:none;
+
+
+            }
+
+            
+
+
+        }
+
+
+
 
       }
 
