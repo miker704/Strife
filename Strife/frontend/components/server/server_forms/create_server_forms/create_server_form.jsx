@@ -317,7 +317,7 @@ class CreateServerForm extends React.Component {
                     <div className="bottom-separator" />
 
                 </div>
-                <div className="back-button">
+                <div className="back-button-join">
                     <h2 onClick={this.handleSlideBackward}>Back</h2>
                     <input type="submit" value="Join Server" onClick={this.handleJoinServer} />
                 </div>
@@ -384,7 +384,7 @@ class CreateServerForm extends React.Component {
                 </div>
                     <form>
 
-                        
+
                     </form>
             </div>
         );
