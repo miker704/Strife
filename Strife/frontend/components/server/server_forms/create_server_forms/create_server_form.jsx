@@ -103,7 +103,7 @@ class CreateServerForm extends React.Component {
                         <img className="create-A-Server-Img" />
                         <h2>Create My Own</h2>
                     </div>
-
+                    <img className="arrow" />
                 </div>
                 <div className="bottom-Separator"></div>
             </div>
