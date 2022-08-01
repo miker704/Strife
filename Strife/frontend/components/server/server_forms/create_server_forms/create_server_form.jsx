@@ -23,6 +23,7 @@ class CreateServerForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleJoinServer = this.handleJoinServer.bind(this);
+        this.handleJoinServerClick = this.handleJoinServerClick.bind(this)
         this.handleSlideBackward = this.handleSlideBackward.bind(this);
         this.handleSlideFoward = this.handleSlideFoward.bind(this);
         this.handleInviteCode = this.handleInviteCode.bind(this);
@@ -83,6 +84,17 @@ class CreateServerForm extends React.Component {
 
     }
 
+
+
+    handleJoinServerClick(e){
+        let currentSlide = this.state.form_number;
+        this.setState({
+            form_number: currentSlide + 1,
+            forward: true,
+            backward: false,
+            joiningServer: true
+        });
+    }
 
     handleJoinServer (e) {
         let currentSlide = this.state.form_number;
@@ -276,7 +288,7 @@ class CreateServerForm extends React.Component {
 
                 <div className="join-Existing-Server" >
                     <h2>Have an invite already?</h2>
-                    <button onClick={this.handleJoinServer}>Join a Server</button>
+                    <button onClick={this.handleJoinServerClick}>Join a Server</button>
 
                 </div>
 
