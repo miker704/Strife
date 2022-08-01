@@ -106,17 +106,17 @@ class CreateServerForm extends React.Component {
     }
 
     handleJoinServer (e) {
-        let currentSlide = this.state.form_number;
-        this.setState({
-            form_number: currentSlide + 1,
-            forward: true,
-            backward: false,
-            joiningServer: true
-        });
+        // let currentSlide = this.state.form_number;
+        // this.setState({
+        //     form_number: currentSlide + 1,
+        //     forward: true,
+        //     backward: false,
+        //     joiningServer: true
+        // });
     }
 
     handleSlideFoward (e) {
-        e.preventDefault();
+        // e.preventDefault();
         let currentSlide = this.state.form_number;
         this.setState({
             form_number: currentSlide + 1,
@@ -127,11 +127,11 @@ class CreateServerForm extends React.Component {
     }
 
     handleSlideBackward (e) {
-        e.preventDefault();
+        // e.preventDefault();
         let currentSlide = this.state.form_number;
         this.setState({
             form_number: currentSlide - 1,
-            foward: false,
+            forward: false,
             backward: true,
             joiningServer: false
         })
@@ -142,9 +142,9 @@ class CreateServerForm extends React.Component {
     }
 
     render () {
-
+        console.log("this.state", this.state);
         let currentModalState = "";
-        let form_state = "all-Slides";
+        let form_state = "";
         let inviteCodeErrorMessage = "";
         let inviteCodeErrors = "";
         if (this.state.invalidInviteCode === "*") {
@@ -464,6 +464,9 @@ class CreateServerForm extends React.Component {
                     <div className={form_state}>
 
                         {slide1}
+                        {slide2}
+                        {slide3}
+
                     </div>
 
 
