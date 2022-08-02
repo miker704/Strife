@@ -28,7 +28,7 @@ class CreateServerForm extends React.Component {
         this.handleSlideFoward = this.handleSlideFoward.bind(this);
         this.handleInviteCode = this.handleInviteCode.bind(this);
         this.stopProc = this.stopProc.bind(this);
-        this.renderErrors=this.renderErrors.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
     }
 
 
@@ -39,16 +39,16 @@ class CreateServerForm extends React.Component {
 
 
 
-    renderErrors(){
-        return(
-        <ul>
-            {this.props.errors.map((errormsg,idx) =>{
-                <li className="rendered-error" key={idx}>
-                    {errormsg}
-                </li>
-            })}
+    renderErrors () {
+        return (
+            <ul>
+                {this.props.errors.map((errormsg, idx) => {
+                    <li className="rendered-error" key={idx}>
+                        {errormsg}
+                    </li>
+                })}
 
-        </ul>
+            </ul>
         );
     }
 
@@ -450,10 +450,18 @@ class CreateServerForm extends React.Component {
                     </div>
 
                     <div className="server-name-input">
-                            <label>SERVER NAME</label>
-
+                        <label>SERVER NAME</label>
+                        {this.renderErrors()}
+                        <input type="text" onChange={this.handleInput} placeholder={`${this.props.currentUser.username}'s server`}/>
+                        <h3>
+                            By creating a server, you agree to Strifes{" "}
+                            <a>Community Guidelines</a>
+                        </h3>
                     </div>
-
+                    <div className="back-create-server-button">
+                                <h2 onClick={this.handleSlideBackward}>Back</h2>
+                                <input type="submit" onClick={this.handleSubmit} />
+                    </div>
                 </form>
             </div>
         );
