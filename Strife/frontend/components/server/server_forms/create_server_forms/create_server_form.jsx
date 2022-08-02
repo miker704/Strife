@@ -28,6 +28,7 @@ class CreateServerForm extends React.Component {
         this.handleSlideFoward = this.handleSlideFoward.bind(this);
         this.handleInviteCode = this.handleInviteCode.bind(this);
         this.stopProc = this.stopProc.bind(this);
+        this.renderErrors=this.renderErrors.bind(this);
     }
 
 
@@ -36,6 +37,20 @@ class CreateServerForm extends React.Component {
         e.preventDefault();
     }
 
+
+
+    renderErrors(){
+        return(
+        <ul>
+            {this.props.errors.map((errormsg,idx) =>{
+                <li className="rendered-error" key={idx}>
+                    {errormsg}
+                </li>
+            })}
+
+        </ul>
+        );
+    }
 
 
 
@@ -431,6 +446,11 @@ class CreateServerForm extends React.Component {
                         </svg>
 
                         <input type="file" accept="image/jpg, image/png, image/jpeg, image/svg" />
+
+                    </div>
+
+                    <div className="server-name-input">
+                            <label>SERVER NAME</label>
 
                     </div>
 
