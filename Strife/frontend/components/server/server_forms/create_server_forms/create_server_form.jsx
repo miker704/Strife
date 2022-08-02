@@ -10,7 +10,7 @@ class CreateServerForm extends React.Component {
             public: true, //true by default
             server_icon: "", // empty by default until aws functionality is implemented
             form_number: 1,
-            foward: true,
+            forward: true,
             backward: false,
             joiningServer: false,
             invite_code: "",
@@ -25,7 +25,7 @@ class CreateServerForm extends React.Component {
         this.handleJoinServer = this.handleJoinServer.bind(this);
         this.handleJoinServerClick = this.handleJoinServerClick.bind(this)
         this.handleSlideBackward = this.handleSlideBackward.bind(this);
-        this.handleSlideFoward = this.handleSlideFoward.bind(this);
+        this.handleSlideForward = this.handleSlideForward.bind(this);
         this.handleInviteCode = this.handleInviteCode.bind(this);
         this.stopProc = this.stopProc.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
@@ -130,7 +130,7 @@ class CreateServerForm extends React.Component {
         // });
     }
 
-    handleSlideFoward (e) {
+    handleSlideForward (e) {
         // e.preventDefault();
         let currentSlide = this.state.form_number;
         this.setState({
@@ -173,7 +173,7 @@ class CreateServerForm extends React.Component {
 
 
 
-        if (this.state.foward === false) {
+        if (this.state.forward === false) {
             if (this.state.form_number === 1) {
                 form_state = "all-Slides back";
             }
@@ -187,7 +187,7 @@ class CreateServerForm extends React.Component {
                 form_state = "all-Slides";
             }
             if (this.state.form_number === 2) {
-                form_state = "all-Slides second foward";
+                form_state = "all-Slides second forward";
 
             }
             else if (this.state.form_number === 3) {
@@ -217,7 +217,7 @@ class CreateServerForm extends React.Component {
 
 
                     <div className="top-separator" />
-                    <div className="slide1-To-Slide2-Button" onClick={this.handleSlideFoward}>
+                    <div className="slide1-To-Slide2-Button" onClick={this.handleSlideForward}>
 
                         <div>
                             <img className="create-A-Server-Img" />
@@ -236,7 +236,7 @@ class CreateServerForm extends React.Component {
                     <div className="bottom-separator" />
 
                     <div className="top-separator" />
-                    <div className="slide1-To-Slide2-Button" onClick={this.handleSlideFoward}>
+                    <div className="slide1-To-Slide2-Button" onClick={this.handleSlideForward}>
 
                         <div>
                             <img className="gaming-Server-Img" />
@@ -248,7 +248,7 @@ class CreateServerForm extends React.Component {
 
 
                     <div className="top-separator" />
-                    <div className="slide1-To-Slide2-Button" onClick={this.handleSlideFoward}>
+                    <div className="slide1-To-Slide2-Button" onClick={this.handleSlideForward}>
 
                         <div>
                             <img className="school-Club-Server-Img" />
@@ -261,7 +261,7 @@ class CreateServerForm extends React.Component {
 
 
                     <div className="top-separator" />
-                    <div className="slide1-To-Slide2-Button" onClick={this.handleSlideFoward}>
+                    <div className="slide1-To-Slide2-Button" onClick={this.handleSlideForward}>
 
                         <div>
                             <img className="study-Server-Img" />
@@ -272,7 +272,7 @@ class CreateServerForm extends React.Component {
                     <div className="bottom-separator" />
 
                     <div className="top-separator" />
-                    <div className="slide1-To-Slide2-Button" onClick={this.handleSlideFoward}>
+                    <div className="slide1-To-Slide2-Button" onClick={this.handleSlideForward}>
 
                         <div>
                             <img className="friends-Server-Img" />
@@ -283,7 +283,7 @@ class CreateServerForm extends React.Component {
                     <div className="bottom-separator" />
 
                     <div className="top-separator" />
-                    <div className="slide1-To-Slide2-Button" onClick={this.handleSlideFoward}>
+                    <div className="slide1-To-Slide2-Button" onClick={this.handleSlideForward}>
 
                         <div>
                             <img className="artists-and-Creators-Server-Img" />
@@ -296,7 +296,7 @@ class CreateServerForm extends React.Component {
 
 
                     <div className="top-separator" />
-                    <div className="slide1-To-Slide2-Button" onClick={this.handleSlideFoward}>
+                    <div className="slide1-To-Slide2-Button" onClick={this.handleSlideForward}>
 
                         <div>
                             <img className="local-Community-Server-Img" />
@@ -367,8 +367,8 @@ class CreateServerForm extends React.Component {
                         new server for just a few friends or a larger community? </p>
                 </div>
 
-                <div className="top-separator" />
-                <div className="slide2-to-slide3-button" onClick={this.handleSlideFoward}>
+                {/* <div className="top-separator" /> */}
+                <div className="slide2-to-slide3-button" onClick={this.handleSlideForward}>
 
                     <div>
                         <img className="public-Server-Img" />
@@ -376,10 +376,10 @@ class CreateServerForm extends React.Component {
                     </div>
                     <img className="arrow" />
                 </div>
-                <div className="bottom-separator" />
+                {/* <div className="bottom-separator" /> */}
 
-                <div className="top-separator" />
-                <div className="slide2-to-slide3-button" onClick={this.handleSlideFoward}>
+                {/* <div className="top-separator" /> */}
+                <div className="slide2-to-slide3-button" onClick={this.handleSlideForward}>
 
                     <div>
                         <img className="private-Server-Img" />
@@ -387,18 +387,18 @@ class CreateServerForm extends React.Component {
                     </div>
                     <img className="arrow" />
                 </div>
-                <div className="bottom-separator" />
+                {/* <div className="bottom-separator" /> */}
 
 
-                <div className="top-separator" />
+                {/* <div className="top-separator" /> */}
                 <div className="skip-this-step">
                     <h2>
                         Not sure? You can{" "}
-                        <a onClick={this.handleSlideFoward}>skip this question </a>
+                        <a onClick={this.handleSlideForward}>skip this question </a>
                         for now
                     </h2>
                 </div>
-                <div className="bottom-separator" />
+                {/* <div className="bottom-separator" /> */}
 
                 <div className="back-button">
                     <h2 onClick={this.handleSlideBackward}>Back</h2>
