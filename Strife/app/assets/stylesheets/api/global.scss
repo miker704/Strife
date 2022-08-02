@@ -23,3 +23,12 @@ svg path {
         transition: 0.2s;
       }
     }
+
+
+    //global error renderfunction styles
+
+    .rendered-error{
+        color: #D83C3E;
+        font-size:12px;
+        margin-bottom: 2px;
+    }
