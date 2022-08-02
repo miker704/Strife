@@ -232,10 +232,10 @@
     height: auto;
     // min-width: 500px;
     // max-width: 500px;
-    // min-width: 450px;
-    // max-width: 450px;
-    min-width: 440px;
-    max-width: 440px;
+    min-width: 450px;
+    max-width: 450px;
+    // min-width: 440px;
+    // max-width: 440px;
     background-color: rgba(0, 0, 0, 0);
     // overflow: hidden scroll;
     overflow: hidden;
@@ -250,7 +250,7 @@
 
     .x-To-Close {
       // color: white;
-
+      color: #A6ABB0;
       position: absolute;
       top: 15px;
       right: 15px;
@@ -272,7 +272,7 @@
 
     .all-Slides {
       z-index: 2;
-      min-width: 1320px;
+      min-width: 1400px;
       height: auto;
       // height: 400px;
       display: flex;
@@ -436,7 +436,7 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          background-color: #F6F6F7;
+          background-color: #F2F3F5;
           position: sticky;
 
           h2 {
@@ -475,7 +475,8 @@
       .second-Slide {
         min-width: 450px;
         max-width: 450px;
-        height: 558px;
+        // height: 558px;
+        height: 415px;
         // height: 415px;
         background-color: #FFFFFF;
         display: flex;
@@ -491,6 +492,7 @@
           align-items: center;
           text-align: center;
           padding-inline: 10px;
+          padding: 24px 16px 0 16px;
 
 
           h2 {
@@ -499,6 +501,8 @@
             font-weight: 700;
             margin-top: 0px;
             font-family: "Ginto Normal";
+            padding-bottom: 10px;
+
           }
 
           p {
@@ -508,6 +512,8 @@
             margin-top: 0px;
             font-weight: 400;
             font-family: "Whitney";
+            padding-bottom: 25px;
+
           }
 
 
@@ -519,7 +525,7 @@
 
           cursor: pointer;
           width: 92%;
-          min-height: 60px;
+          min-height: 66px;
           display: flex;
           text-align: center;
           align-items: center;
@@ -556,7 +562,9 @@
         }
 
         .skip-this-step {
-          margin: 4px;
+          margin-top: 18px;
+          margin-bottom: 16px;
+          text-align: center;
 
           h2 {
             color: #4F5660;
@@ -579,8 +587,8 @@
 
         .back-button {
           width: 100%;
-          height: 50px;
-          background-color: #F6F6F7;
+          height: 70px;
+          background-color: #F2F3F5;
           display: flex;
           align-items: center;
 
@@ -705,7 +713,34 @@
         }
       }
 
+    //  .x-To-Close. {
+    //     // color: white;
+  
+    //     position: absolute;
+    //     top: 15px;
+    //     right: 15px;
+    //     cursor: pointer;
+    //     z-index: 3;
+  
+    //     svg path {
+    //       transition: 0.2s;
+    //     }
+    //   }
 
+
+      .second-Slide .top-separator {
+        height: 2px;
+        width: 70%;
+        border-radius: 2px;
+        z-index: 4;
+      }
+
+      .second-Slide .bottom-separator {
+        height: 2px;
+        width: 70%;
+        border-radius: 2px;
+        z-index: 4;
+      }
       .third-Slide{
         min-width: 450px;
         max-width: 450px;
@@ -873,20 +908,20 @@
     }
 
     .all-Slides.second{
-      left:-440px;
+      left:-450px;
     }
 
     .all-Slides.third{
-      left: -880px;
+      left: -900px;
     }
 
-    .all-Slides.second.foward{
+    .all-Slides.second.forward{
       animation-name:slideModal1To2;
       animation-duration: 0.3s;
       animation-iteration-count: 1;
     }
 
-    .all-Slides.third.foward{
+    .all-Slides.third.forward{
       animation-name:slideModal2To3;
       animation-duration: 0.3s;
       animation-iteration-count: 1;
