@@ -11,7 +11,6 @@ class CreateServerForm extends React.Component {
             server_icon: "", // empty by default until aws functionality is implemented
             form_number: 1,
             forward: true,
-            backward: false,
             joiningServer: false,
             invite_code: "",
             submissionType: "",
@@ -115,19 +114,12 @@ class CreateServerForm extends React.Component {
         this.setState({
             form_number: currentSlide + 1,
             forward: true,
-            backward: false,
             joiningServer: true
         });
     }
 
     handleJoinServer (e) {
-        // let currentSlide = this.state.form_number;
-        // this.setState({
-        //     form_number: currentSlide + 1,
-        //     forward: true,
-        //     backward: false,
-        //     joiningServer: true
-        // });
+  
     }
 
     handleSlideForward (e) {
@@ -136,7 +128,6 @@ class CreateServerForm extends React.Component {
         this.setState({
             form_number: currentSlide + 1,
             forward: true,
-            backward: false,
             joiningServer: false
         });
     }
@@ -147,7 +138,6 @@ class CreateServerForm extends React.Component {
         this.setState({
             form_number: currentSlide - 1,
             forward: false,
-            backward: true,
             joiningServer: false
         })
     }
