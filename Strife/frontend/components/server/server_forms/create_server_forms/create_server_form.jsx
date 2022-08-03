@@ -340,7 +340,7 @@ class CreateServerForm extends React.Component {
                         <h3>https://strife.gg/8406eb38</h3>
                         <h3>https://strife.gg/default-server</h3>
                     </div>
-                    <div className="top-separator" />
+        
                     <div className="slide2-to-slide3-button">
 
                         <div>
@@ -350,7 +350,7 @@ class CreateServerForm extends React.Component {
                         </div>
                         <img className="arrow" />
                     </div>
-                    <div className="bottom-separator" />
+                
 
                 </div>
                 <div className="back-button-join">
