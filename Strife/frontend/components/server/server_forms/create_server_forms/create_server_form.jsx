@@ -340,17 +340,20 @@ class CreateServerForm extends React.Component {
                         <h3>https://strife.gg/8406eb38</h3>
                         <h3>https://strife.gg/default-server</h3>
                     </div>
-        
-                    <div className="slide2-to-slide3-button">
 
-                        <div>
+                    <div className="slide2-to-slide3-button-2">
+
+                        <div className="img-container">
                             <img className="dont-Have-A-Server-Img" />
-                            <h2>Don't have an invite?</h2>
-                            <p>Check out public communities in Server Discovery.</p>
+
+                            <div className="invite-code-examples">
+                                <h2>Don't have an invite?</h2>
+                                <div>Check out public communities in Server Discovery.</div>
+                            </div>
                         </div>
                         <img className="arrow" />
                     </div>
-                
+
 
                 </div>
                 <div className="back-button-join">
@@ -452,15 +455,15 @@ class CreateServerForm extends React.Component {
                     <div className="server-name-input">
                         <label>SERVER NAME</label>
                         {this.renderErrors()}
-                        <input type="text" onChange={this.handleInput} placeholder={`${this.props.currentUser.username}'s server`}/>
+                        <input type="text" onChange={this.handleInput} placeholder={`${this.props.currentUser.username}'s server`} />
                         <h3>
                             By creating a server, you agree to Strifes{" "}
                             <a>Community Guidelines</a>
                         </h3>
                     </div>
                     <div className="back-create-server-button">
-                                <h2 onClick={this.handleSlideBackward}>Back</h2>
-                                <input type="submit" onClick={this.handleSubmit} />
+                        <h2 onClick={this.handleSlideBackward}>Back</h2>
+                        <input type="submit" onClick={this.handleSubmit} />
                     </div>
                 </form>
             </div>
