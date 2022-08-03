@@ -30,8 +30,8 @@ class SplashFooter extends React.Component {
             target="_blank"> LinkedIn  </a></h6>
           <h6> <a className="link" href="https://github.com/miker704"
             target="_blank"> Github </a></h6>
-          <h6>  <a className="link" href="https://www.appacademy.io/"
-            target="_blank"> App/ac </a></h6>
+          <h6>  <a className="link" href="https://angel.co/u/michael-ramoutar-1"
+            target="_blank"> AngelList</a></h6>
           <h6> <a className="link" href="https://discord.com/"
             target="_blank"> Discord  </a></h6>
 
