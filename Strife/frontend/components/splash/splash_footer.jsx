@@ -19,10 +19,10 @@ class SplashFooter extends React.Component {
             <h4> IMAGINE A PLACE</h4>
             <br />
             <span id="flag-span"><img className="flag" /> English, USA <br /></span><br />
-            <i className="fa-brands fa-twitter"></i>{"    "}
-            <i className="fa-brands fa-instagram"></i>{"    "}
-            <i className="fa-brands fa-facebook-square"></i>{"    "}
-            <i className="fa-brands fa-youtube"></i>
+            <i className="fa-brands fa-twitter fa-lg"></i>{"    "}
+            <i className="fa-brands fa-instagram fa-lg"></i>{"    "}
+            <i className="fa-brands fa-facebook-square fa-lg"></i>{"    "}
+            <i className="fa-brands fa-youtube fa-lg"></i>
 
 
           </div>
