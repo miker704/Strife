@@ -457,8 +457,8 @@ class CreateServerForm extends React.Component {
                         {this.renderErrors()}
                         <input type="text" onChange={this.handleInput} placeholder={`${this.props.currentUser.username}'s server`} />
                         <h3>
-                            By creating a server, you agree to Strifes{" "}
-                            <a>Community Guidelines</a>
+                            By creating a server, you agree to Strife's{" "}
+                            <strong><a href="https://discord.com/guidelines" target="_blank">Community Guidelines</a></strong>
                         </h3>
                     </div>
                     <div className="back-create-server-button">
