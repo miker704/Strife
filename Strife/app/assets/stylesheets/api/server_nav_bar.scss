@@ -490,7 +490,7 @@
         top: 50%;
         left: auto;
         right: auto;
-        transform: translate3d(0px,-20%,0px) scale(1,1);
+        transform: translate3d(0px,-17%,0px) scale(1,1);
 
         .second-Slide-Header {
           display: flex;
@@ -616,9 +616,11 @@
 
         .server-use-invite-form {
 
-          width: 400px;
-          margin-bottom: 10px;
-
+          // width: 410px;s
+          width: 416px;
+          // margin-bottom: 10px;
+          padding: 0px 8px 0px 16px;
+ 
           label {
             color: #4F5660;
             font-size: 12px;
@@ -639,14 +641,15 @@
           }
 
           input[type="text"] {
-            width: 400px;
+            // width: 400px;
+            width: 396px;
             color: #000000;
             height: 40px;
             background-color: #E1E1E1;
             padding-left: 10px;
             outline: none;
             font-size: 16px;
-            margin: 8px auto 24px auto;
+            margin: 8px auto 8px auto;
             border: none;
 
 
@@ -656,12 +659,13 @@
             margin: 10px auto;
 
             h3 {
-              font-size: 12px;
-              margin: 4px;
+              font-size: 14px;
+              // margin: 4px;
               font-weight: 500;
               // text-transform: uppercase;
               font-family: "Whitney";
               color: #060607;
+              line-height: 18px;
             }
 
 
@@ -943,7 +947,7 @@
   @keyframes slideModal1To2 {
 
     0% {
-      transform: translateX(440px);
+      transform: translateX(450px);
     }
 
     99% {
@@ -959,7 +963,7 @@
   @keyframes slideModal2To3 {
 
     0% {
-      transform: translateX(440px);
+      transform: translateX(450px);
     }
 
     99% {
@@ -975,7 +979,7 @@
   @keyframes slideBackModal2To1 {
 
     0% {
-      transform: translateX(-440px);
+      transform: translateX(-450px);
     }
 
     99% {
@@ -992,7 +996,7 @@
   @keyframes slideBackModal3To2 {
 
     0% {
-      transform: translateX(-440px);
+      transform: translateX(-450px);
     }
 
     99% {
