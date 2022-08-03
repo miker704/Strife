@@ -490,7 +490,7 @@
         top: 50%;
         left: auto;
         right: auto;
-        transform: translate3d(0px,-17%,0px) scale(1,1);
+        transform: translate3d(0px, -17%, 0px) scale(1, 1);
 
         .second-Slide-Header {
           display: flex;
@@ -620,7 +620,7 @@
           width: 416px;
           // margin-bottom: 10px;
           padding: 0px 8px 0px 16px;
- 
+
           label {
             color: #4F5660;
             font-size: 12px;
@@ -671,27 +671,118 @@
 
 
           }
-          
-          .slide2-to-slide3-button{
+
+          .slide2-to-slide3-button-2 {
+
+          cursor: pointer;
+          width: 92%;
+          min-height: 62px;
+          display: flex;
+          text-align: center;
+          align-items: center;
+          justify-content: space-between;
+          border: 2px solid rgba(6, 6, 7, 0.08);
+          border-radius: 8px;
+          margin: 4px 0 8px 0;
           background-color: #F2F3F5;
-              h2{
+          
+          
+          .invite-code-examples {
+            margin: 10px auto;
+
+            h3 {
+              font-size: 14px;
+              // margin: 4px;
+              font-weight: 500;
+              // text-transform: uppercase;
+              font-family: "Whitney";
+              color: #060607;
+              line-height: 18px;
+            }
+
+            
+              h2 {
                 font-weight: 500;
                 font-size: 17px;
                 line-height: 22px;
                 font-family: "Ginto Normal";
                 color: #060607;
+
+
               }
-              p{
+            
+                 p,div {
                 font-family: "Whitney";
                 color: #2E3338;
                 font-size: 12px;
                 font-weight: 400;
                 line-height: 16px;
-                
               }
 
           }
 
+
+
+
+          div.img-container {
+            display:flex;
+            text-align: left;
+            align-items: center;
+            
+            img {
+              width: 48px;
+              height: 48px;
+              margin-left: 16px;
+            }
+
+           
+              // h2 {
+              //   font-weight: 500;
+              //   font-size: 17px;
+              //   line-height: 22px;
+              //   font-family: "Ginto Normal";
+              //   color: #060607;
+
+
+              // }
+              // p {
+              //   font-family: "Whitney";
+              //   color: #2E3338;
+              //   font-size: 12px;
+              //   font-weight: 400;
+              //   line-height: 16px;
+              // }
+            }
+            
+
+            div{
+              p {
+                font-family: "Whitney";
+                color: #2E3338;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 16px;
+              }
+            }
+
+
+
+          }
+          
+        }
+          .under {
+            display: flex;
+            flex-direction: column;
+            
+          p {
+            font-family: "Whitney";
+            color: #2E3338;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+
+
+          }
         }
 
         .back-button-join {
@@ -744,7 +835,7 @@
         }
       }
 
-  
+
       .second-Slide .top-separator {
         height: 2px;
         width: 70%;
@@ -758,7 +849,8 @@
         border-radius: 2px;
         z-index: 4;
       }
-      .third-Slide{
+
+      .third-Slide {
         min-width: 450px;
         max-width: 450px;
         height: 558px;
@@ -772,8 +864,8 @@
 
 
 
-        .third-Slide-Header{
-          display:flex;
+        .third-Slide-Header {
+          display: flex;
           flex-direction: column;
           align-items: center;
           text-align: center;
@@ -781,16 +873,17 @@
           margin-bottom: 12px;
 
 
-          h2{
+          h2 {
             font-size: 25px;
-            color:#060607;
+            color: #060607;
             font-weight: 700;
             padding-top: 0;
             margin-top: 0;
             font-family: "Ginto Normal";
           }
-          p{
-            color:#4F5660;
+
+          p {
+            color: #4F5660;
             font-family: "Whitney";
             font-size: 16px;
             font-weight: 400;
@@ -801,23 +894,23 @@
 
         }
 
-        form{
+        form {
           display: flex;
           flex-direction: column;
           align-items: center;
         }
 
 
-        .input-server-icon-wrapper{
+        .input-server-icon-wrapper {
           width: 80px;
           height: 80px;
           position: relative;
 
-          input[type="file"]{
+          input[type="file"] {
             position: absolute;
             top: 0;
             left: 0;
-            width:80px;
+            width: 80px;
             height: 80px;
             cursor: pointer;
             z-index: 4;
@@ -827,21 +920,21 @@
 
 
 
-        .server-name-input{
-          display:flex;
+        .server-name-input {
+          display: flex;
           flex-direction: column;
           margin-top: 16px;
 
 
-          label{
-            color:#6A7480;
+          label {
+            color: #6A7480;
             font-size: 12px;
             margin-bottom: 8px;
             font-weight: bold;
             font-family: "Ginto Normal";
           }
 
-          input[type="text"]{
+          input[type="text"] {
             max-height: 20px;
             min-height: 20px;
             min-width: 400px;
@@ -859,22 +952,23 @@
           //   outline: none;
           // }
 
-          h3{
+          h3 {
             margin-top: 8px;
             color: #5E6772;
             font-size: 12px;
             font-family: "Whitney";
             margin-bottom: 16px;
-         
-            a{
+
+            a {
               cursor: pointer;
-              color:#0068E0;
+              color: #0068E0;
               text-decoration: none;
               font-size: 12px;
               font-family: "Whitney";
-  
+
             }
-            a:hover{
+
+            a:hover {
               text-decoration: underline;
             }
 
@@ -882,8 +976,8 @@
 
         }
 
-        .back-create-server-button{
-          display:flex;
+        .back-create-server-button {
+          display: flex;
           flex-direction: row;
           justify-content: space-between;
           align-items: center;
@@ -892,17 +986,17 @@
           min-width: 440px;
 
 
-          h2{
-            cursor:pointer;
+          h2 {
+            cursor: pointer;
             color: #000000;
-            font-size:14px;
+            font-size: 14px;
             margin-left: 16px;
 
           }
 
 
-          input[type="submit"]{
-            border:none;
+          input[type="submit"] {
+            border: none;
             background-color: #5865F2;
             margin-right: 16px;
             color: #FFFFFF;
@@ -913,7 +1007,7 @@
             cursor: pointer;
           }
 
-          input[type="submit"]:hover{
+          input[type="submit"]:hover {
             background-color: #4752C4;
             transition: 0.2s;
           }
@@ -924,33 +1018,33 @@
 
     }
 
-    .all-Slides.second{
-      left:-450px;
+    .all-Slides.second {
+      left: -450px;
     }
 
-    .all-Slides.third{
+    .all-Slides.third {
       left: -900px;
     }
 
-    .all-Slides.second.forward{
-      animation-name:slideModal1To2;
+    .all-Slides.second.forward {
+      animation-name: slideModal1To2;
       animation-duration: 0.3s;
       animation-iteration-count: 1;
     }
 
-    .all-Slides.third.forward{
-      animation-name:slideModal2To3;
+    .all-Slides.third.forward {
+      animation-name: slideModal2To3;
       animation-duration: 0.3s;
       animation-iteration-count: 1;
     }
 
-    .all-Slides.back{
+    .all-Slides.back {
       animation-name: slideBackModal2To1;
       animation-duration: 0.3s;
       animation-iteration-count: 1;
     }
 
-    .all-Slides.second.back{
+    .all-Slides.second.back {
       animation-name: slideBackModal3To2;
       animation-duration: 0.3s;
       animation-iteration-count: 1;
