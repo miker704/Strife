@@ -671,7 +671,26 @@
 
 
           }
+          
+          .slide2-to-slide3-button{
+          background-color: #F2F3F5;
+              h2{
+                font-weight: 500;
+                font-size: 17px;
+                line-height: 22px;
+                font-family: "Ginto Normal";
+                color: #060607;
+              }
+              p{
+                font-family: "Whitney";
+                color: #2E3338;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 16px;
+                
+              }
 
+          }
 
         }
 
@@ -680,7 +699,7 @@
           flex-direction: row;
           justify-content: space-between;
           align-items: center;
-          background-color: #F6F6F7;
+          background-color: #F2F3F5;
           min-width: 440px;
           height: 90px;
 
