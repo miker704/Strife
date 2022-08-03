@@ -675,18 +675,52 @@
           .slide2-to-slide3-button-2 {
 
           cursor: pointer;
-          width: 92%;
+          width: 98%;
           min-height: 62px;
           display: flex;
           text-align: center;
           align-items: center;
           justify-content: space-between;
-          border: 2px solid rgba(6, 6, 7, 0.08);
+          // border: 2px solid rgba(6, 6, 7, 0.08);
           border-radius: 8px;
-          margin: 4px 0 8px 0;
+          margin: 4px 0 16px 0;
           background-color: #F2F3F5;
           
           
+          // .invite-code-examples {
+          //   margin: 10px auto;
+
+          //   h3 {
+          //     font-size: 14px;
+          //     // margin: 4px;
+          //     font-weight: 500;
+          //     // text-transform: uppercase;
+          //     font-family: "Whitney";
+          //     color: #060607;
+          //     line-height: 18px;
+          //   }
+
+            
+          //     h2 {
+          //       font-weight: 500;
+          //       font-size: 17px;
+          //       line-height: 22px;
+          //       font-family: "Ginto Normal";
+          //       color: #060607;
+
+
+          //     }
+            
+          //        p,div {
+          //       font-family: "Whitney";
+          //       color: #2E3338;
+          //       font-size: 12px;
+          //       font-weight: 400;
+          //       line-height: 16px;
+          //     }
+
+          // }
+
           .invite-code-examples {
             margin: 10px auto;
 
@@ -707,7 +741,7 @@
                 line-height: 22px;
                 font-family: "Ginto Normal";
                 color: #060607;
-
+                padding-left: 10px;
 
               }
             
@@ -717,11 +751,10 @@
                 font-size: 12px;
                 font-weight: 400;
                 line-height: 16px;
+                padding-left: 10px;
               }
 
           }
-
-
 
 
           div.img-container {
@@ -735,23 +768,7 @@
               margin-left: 16px;
             }
 
-           
-              // h2 {
-              //   font-weight: 500;
-              //   font-size: 17px;
-              //   line-height: 22px;
-              //   font-family: "Ginto Normal";
-              //   color: #060607;
-
-
-              // }
-              // p {
-              //   font-family: "Whitney";
-              //   color: #2E3338;
-              //   font-size: 12px;
-              //   font-weight: 400;
-              //   line-height: 16px;
-              // }
+     
             }
             
 
@@ -853,15 +870,16 @@
       .third-Slide {
         min-width: 450px;
         max-width: 450px;
-        height: 558px;
+        // height: 558px;
 
-        // height: 415px;
+        height: 415px;
         background-color: #FFFFFF;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
-
+        border-radius: 6px;
+        transform: translate3d(0px,-17%,0px) scale(1,1);
 
 
         .third-Slide-Header {
@@ -959,6 +977,9 @@
             font-family: "Whitney";
             margin-bottom: 16px;
 
+            strong{
+              font-weight: 600;
+            }
             a {
               cursor: pointer;
               color: #0068E0;
