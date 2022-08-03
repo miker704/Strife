@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import discord_Strife_logo  from "../../../app/assets/images/discord_Strife_logo.png";
+import discord_Strife_logo  from "/app/assets/images/discord_Strife_logo.png";
 
 
 
@@ -26,8 +26,8 @@ class SplashNav extends React.Component {
 
 
                     <div id="splash-nav-links">
-                        {/* <img src={discord_Strife_logo} alt="" /> */}
-                        <a className="link" href="app/assets/images/discord_Strife_logo.png" download="STRIFE.EXE"
+                       
+                        <a className="link" href={discord_Strife_logo} download="STRIFE.EXE"
                             target="_blank"> Download </a>
                         <a className="link" href="https://github.com/miker704/Strife"
                             target="_blank"> STRIFE </a>
