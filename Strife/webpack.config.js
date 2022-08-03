@@ -5,7 +5,7 @@ module.exports = {
   entry: './frontend/strife.jsx',
 
   output: {
-    path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
+    path: path.resolve(__dirname, 'app', 'assets', 'javascripts','images'),
     filename: './bundle.js',
   },
   module: {
@@ -19,7 +19,14 @@ module.exports = {
             presets: ['@babel/env', '@babel/react']
           }
         },
+      },
+
+      {
+        test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+        loader: 'url-loader' 
       }
+
+
     ]
   },
   devtool: 'source-map',
