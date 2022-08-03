@@ -34,8 +34,8 @@ class SplashNav extends React.Component {
                             target="_blank"> Github </a>
                         <a className="link" href="https://www.linkedin.com/in/michael-ramoutar/"
                             target="_blank"> LinkedIn  </a>
-                        <a className="link" href="https://www.appacademy.io/"
-                            target="_blank"> App/ac </a>
+                        <a className="link" href="https://angel.co/u/michael-ramoutar-1"
+                            target="_blank"> AngelList </a>
                         <a className="link" href="https://discord.com/"
                             target="_blank"> Discord  </a>
                     </div>
