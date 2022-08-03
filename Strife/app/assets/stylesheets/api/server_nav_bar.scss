@@ -225,10 +225,10 @@
   .create-A-Server-Modal {
     position: absolute;
     // top: Calc(50% - 180px);
-    top: Calc(50% - 280px);
-    left: Calc(50% - 200px);
-    // top: Calc(50% - 180px);
-    // left: Calc(50% - 220px);
+    // top: Calc(50% - 280px);
+    // left: Calc(50% - 200px);
+    top: Calc(50% - 180px);
+    left: Calc(50% - 220px);
     height: auto;
     // min-width: 500px;
     // max-width: 500px;
@@ -1049,25 +1049,25 @@
 
     .all-Slides.second.forward {
       animation-name: slideModal1To2;
-      animation-duration: 0.17s;
+      animation-duration: 0.3s;
       animation-iteration-count: 1;
     }
 
     .all-Slides.third.forward {
       animation-name: slideModal2To3;
-      animation-duration: 0.17s;
+      animation-duration: 0.3s;
       animation-iteration-count: 1;
     }
 
     .all-Slides.back {
       animation-name: slideBackModal2To1;
-      animation-duration: 0.17s;
+      animation-duration: 0.3s;
       animation-iteration-count: 1;
     }
 
     .all-Slides.second.back {
       animation-name: slideBackModal3To2;
-      animation-duration: 0.17s;
+      animation-duration: 0.3s;
       animation-iteration-count: 1;
     }
 
@@ -1134,7 +1134,7 @@
     }
 
     99% {
-      transform: translateX(10px);
+      transform: translateX(-10px);
     }
 
     100% {
