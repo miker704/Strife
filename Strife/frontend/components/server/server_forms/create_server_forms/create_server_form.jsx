@@ -53,6 +53,11 @@ class CreateServerForm extends React.Component {
 
 
 
+
+
+
+
+
     handleSubmit () {
         let serverSubmission = {}
 
@@ -119,7 +124,36 @@ class CreateServerForm extends React.Component {
     }
 
     handleJoinServer (e) {
-  
+
+
+        if(this.state.invite_code === ""){
+            this.setState({invalidInviteCode:" - Please enter a valid invite link or invite code."});
+        }
+        else{
+            let invite = this.state.invite_code;
+
+            if(invite.length<8){
+                this.setState({invalidInviteCode: " - The invite is invalid or has expired."})
+            }
+            //if valid length start the backend check to see if link/code exists
+            else{
+                //check to see if invite is either a code or full link
+                //code is 8 chars long while the link is the code plus https://strife.gg/{code}
+                if(invite.length === 8){
+                    console.log("invite code given now parsing it with full url");
+                    let fullInviteLink = "https://strife.gg/"+ invite.toString();
+                    this.setState({invite_code: fullInviteLink});
+                    invite = fullInviteLink;
+                }
+                else{
+                    // this.props.
+                }
+
+            }
+
+
+        }
+
     }
 
     handleSlideForward (e) {
