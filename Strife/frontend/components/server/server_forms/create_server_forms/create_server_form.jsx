@@ -357,7 +357,7 @@ class CreateServerForm extends React.Component {
                 </div>
                 <div className="server-use-invite-form">
                     <label className={inviteCodeErrors}>INVITE LINK {inviteCodeErrorMessage}</label>
-                    <input type="text" onChange={this.handleInviteCode} placeholder="https://strife.gg/8404br4s" />
+                    <input type="text" onChange={this.handleInviteCode()} placeholder="https://strife.gg/8404br4s" />
                     <label>INVITES SHOULD LOOK LIKE</label>
                     <div className="invite-code-examples">
                         <h3>8404br4s</h3>
