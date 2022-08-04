@@ -34,6 +34,7 @@ class CreateServerForm extends React.Component {
 
     stopProc (e) {
         e.preventDefault();
+        console.log("calling to input an image file");
     }
 
 
