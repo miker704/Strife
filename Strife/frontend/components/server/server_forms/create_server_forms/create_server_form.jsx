@@ -6,7 +6,7 @@ class CreateServerForm extends React.Component {
         super(props);
         this.state = {
             server_owner_id: this.props.currentUser.id,
-            server_name: "",
+            server_name: `${this.props.currentUser.username}'s server`,
             public: true, //true by default
             server_icon: "", // empty by default until aws functionality is implemented
             form_number: 1,
@@ -63,32 +63,10 @@ class CreateServerForm extends React.Component {
 
 
 
-    handleSubmit () {
-        let serverSubmission = {}
-
-
-        if (this.state.public === true) {
-            serverSubmission = {
-                server_owner_id: this.props.currentUser.id,
-                server_name: "",
-                public: true, //true by default
-                server_icon: "", // empty by default until aws functionality is implemented,
-                invite_code: "",
-            }
-        }
-        else {
-            serverSubmission = {
-                server_owner_id: this.props.currentUser.id,
-                server_name: "",
-                public: false, //true by default
-                server_icon: "", // empty by default until aws functionality is implemented,
-                invite_code: "",
-            }
-        }
-        console.log("serverSubmission Form: ", serverSubmission);
-
-
-
+    handleSubmit (e) {
+        // e.preventDefault();
+        let serverSubmission = {};
+        
         //if server genre is of local type 
         let serverChannelSetup = {};
         switch (this.state.serverGenreType) {
@@ -156,6 +134,34 @@ class CreateServerForm extends React.Component {
 
         }
 
+        if (this.state.serverPrivacy === "public") {
+
+            this.setState({public:true});
+
+            serverSubmission = {
+                server_owner_id: this.props.currentUser.id,
+                server_name: this.state.server_name,
+                public: this.state.public, //true by default
+                server_icon: this.state.server_icon, // empty by default until aws functionality is implemented,
+            
+            }
+        }
+        else {
+            this.setState({public:false});
+
+            serverSubmission = {
+                server_owner_id: this.props.currentUser.id,
+                server_name: this.state.server_name,
+                public: this.state.public, //true by default
+                server_icon: this.state.server_icon, // empty by default until aws functionality is implemented,
+    
+            }
+        }
+        console.log("serverSubmission Form: ", serverSubmission);
+
+        console.log("ServerDefaultChannels: ", serverChannelSetup);
+
+
 
 
 
@@ -163,7 +169,7 @@ class CreateServerForm extends React.Component {
     }
 
     handleInput (e) {
-
+        // e.preventDefault();
         return (e) => this.setState({ server_name: e.currentTarget.value });
 
     }
@@ -262,7 +268,6 @@ class CreateServerForm extends React.Component {
 
     render () {
         console.log("this.state", this.state);
-        let currentModalState = "";
         let form_state = "";
         let inviteCodeErrorMessage = "";
         let inviteCodeErrors = "";
@@ -562,7 +567,7 @@ class CreateServerForm extends React.Component {
                     <div className="server-name-input">
                         <label>SERVER NAME</label>
                         {this.renderErrors()}
-                        <input type="text" onChange={this.handleInput} placeholder={`${this.props.currentUser.username}'s server`} />
+                        <input type="text" onChange={this.handleInput()} value={this.state.server_name} placeholder={`${this.props.currentUser.username}'s server`} />
                         <h3>
                             By creating a server, you agree to Strife's{" "}
                             <strong><a href="https://discord.com/guidelines" target="_blank">Community Guidelines</a></strong>
