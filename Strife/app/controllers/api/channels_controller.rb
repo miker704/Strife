@@ -23,7 +23,7 @@ class Api::ChannelsController < ApplicationController
         @channel = Channel.find_by(id: params[:id])
         if @channel.update(channel_params)
           @default_channel_message = @channel.messages.first
-          @default_channel_message.update(body: "Welcome to #{@channel.channel_name} channel !")
+          @default_channel_message.update(body: "Welcome to ##{@channel.channel_name} channel !")
           render :show
         else
             render json: @channel.errors.full_messages, status 400
