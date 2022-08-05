@@ -33,7 +33,9 @@
   overflow-x: hidden;
   overflow-y: auto;
   // height: calc(100vh-55px);
-  height: auto;
+  // height: auto;
+  // height:--webkit-fill-avaliable
+  height: Calc(100vh - 55px);
   // height: calc(auto-55px);
 
 }
