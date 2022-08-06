@@ -39,6 +39,15 @@ class Api::ServersController < ApplicationController
         end
     end
     
+
+    # def join_server
+
+    # end
+
+
+
+
+
     
     def destroy
         @server = Server.find(params[:id])
