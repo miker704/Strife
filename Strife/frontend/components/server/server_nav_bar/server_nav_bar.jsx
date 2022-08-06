@@ -15,7 +15,7 @@ class ServerNavBar extends React.Component {
 
 
     renderModal (modalName) {
-        console.log("can this work goddamit");
+       
         this.props.openModal(modalName);
     }
 
@@ -27,19 +27,26 @@ class ServerNavBar extends React.Component {
 
         return serverNameAcronym;
     }
-
+    
     render () {
-
+        
+        let goHome = this.props.serverId === "@me" ? "selected-Server" : "unselected-Server";
+        console.log("server navbar props: ",this.props);
+        console.log("server navbar serverid: ",this.props.serverId);
+        
+        console.log("server navbar gohome: ",goHome);
 
         console.log(this.props.servers);
         console.log(this.props.serverId);
+        // console.log(`/channels/${server.id}/${server.general_channelId}`)
 
         let userServer = this.props.servers.map((server, serverIndex) => {
             let serverNavBarClassTag = this.props.serverId === server.id.toString() ? "selected-Server" : "unselected-Server";
             return (
                 <li className="server-bubbles" key={serverIndex}>
                     <div className="server-nav-bar-a">
-                        <Link to={`/channels/${server.id}/${server.general_channelId}`}
+                        <Link to={`/channels/${server.id}/${server.general_channel_id}`}
+                        
                             onClick={() => this.props.fetchServer(server.id)} className={serverNavBarClassTag}>
                             {/* <p className="server-name-initials">{server.server_name.charAt(0)}</p> */}
                             <p className="server-name-initials">{this.splitServerName(server.server_name, server.server_icon)}</p>
@@ -52,7 +59,8 @@ class ServerNavBar extends React.Component {
                         {/* {"{ server icon : "} {server.server_icon} {"} "} */}
                         {/* {"{ server public status : "} {server.public} {"} "} */}
                         {/* {"{ server invite code : "} {server.invite_code} {"}} "} */}
-
+     
+                        {/* <p>{`/channels/${server.id}/${server.general_channel_id}`}</p> */}
                         {/* </p> */}
 
                         {/* </span> */}
@@ -62,9 +70,6 @@ class ServerNavBar extends React.Component {
             )
         }
         )
-
-        let goHome = this.props.serverId === "@me" ? "selected-Server" : "unselected-Server";
-
 
 
         return (
