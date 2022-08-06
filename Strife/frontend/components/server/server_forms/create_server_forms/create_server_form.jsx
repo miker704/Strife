@@ -66,23 +66,23 @@ class CreateServerForm extends React.Component {
     handleSubmit (e) {
         // e.preventDefault();
         let serverSubmission = {};
-        
+
         //if server genre is of local type 
         let serverChannelSetup = {};
         switch (this.state.serverGenreType) {
             case 'Local Community':
                 serverChannelSetup = {
-                    channelInfoNames: ['welcome-and-rules',"announcments",'resources'],
-                    channelTextNames: ['general',"meeting-plans",'off-topic'],
-                    channelVoiceNames: ['Lounge',"Meeting Room"],
+                    channelInfoNames: ['welcome-and-rules', "announcments", 'resources'],
+                    channelTextNames: ['general', "meeting-plans", 'off-topic'],
+                    channelVoiceNames: ['Lounge', "Meeting Room"],
 
                 };
                 break;
             case 'Artists & Creators':
                 serverChannelSetup = {
-                    channelInfoNames: ['welcome-and-rules',"announcments"],
-                    channelTextNames: ['general',"events",'ideas-and-feedback'],
-                    channelVoiceNames: ['Lounge','Community Hangout',"Stream Room"],
+                    channelInfoNames: ['welcome-and-rules', "announcments"],
+                    channelTextNames: ['general', "events", 'ideas-and-feedback'],
+                    channelVoiceNames: ['Lounge', 'Community Hangout', "Stream Room"],
 
                 };
                 break;
@@ -90,26 +90,26 @@ class CreateServerForm extends React.Component {
             case 'Friends':
                 serverChannelSetup = {
                     channelInfoNames: [],
-                    channelTextNames: ['general',"games",'music'],
-                    channelVoiceNames: ['Lounge',"Stream Room"],
+                    channelTextNames: ['general', "games", 'music'],
+                    channelVoiceNames: ['Lounge', "Stream Room"],
 
                 };
                 break;
 
             case 'Study Group':
                 serverChannelSetup = {
-                    channelInfoNames: ['welcome-and-rules','notes-resources'],
-                    channelTextNames: ['general',"homework-help",'session-planning','off-topic'],
-                    channelVoiceNames: ['Lounge',"Study Room 1","Study Room 2"],
+                    channelInfoNames: ['welcome-and-rules', 'notes-resources'],
+                    channelTextNames: ['general', "homework-help", 'session-planning', 'off-topic'],
+                    channelVoiceNames: ['Lounge', "Study Room 1", "Study Room 2"],
 
                 };
                 break;
 
             case 'School Club':
                 serverChannelSetup = {
-                    channelInfoNames: ['welcome-and-rules',"announcments",'resources'],
-                    channelTextNames: ['general',"meeting-plans",'off-topic'],
-                    channelVoiceNames: ['Lounge',"Meeting Room 1","Meeting Room 2"],
+                    channelInfoNames: ['welcome-and-rules', "announcments", 'resources'],
+                    channelTextNames: ['general', "meeting-plans", 'off-topic'],
+                    channelVoiceNames: ['Lounge', "Meeting Room 1", "Meeting Room 2"],
 
                 };
                 break;
@@ -117,8 +117,8 @@ class CreateServerForm extends React.Component {
             case 'Gaming':
                 serverChannelSetup = {
                     channelInfoNames: [],
-                    channelTextNames: ['general',"clips-and-highlights"],
-                    channelVoiceNames: ['Lobby',"Gaming"],
+                    channelTextNames: ['general', "clips-and-highlights"],
+                    channelVoiceNames: ['Lobby', "Gaming"],
 
                 };
                 break;
@@ -136,25 +136,25 @@ class CreateServerForm extends React.Component {
 
         if (this.state.serverPrivacy === "public") {
 
-            this.setState({public:true});
+            this.setState({ public: true });
 
             serverSubmission = {
                 server_owner_id: this.props.currentUser.id,
                 server_name: this.state.server_name,
                 public: this.state.public, //true by default
                 server_icon: this.state.server_icon, // empty by default until aws functionality is implemented,
-            
+
             }
         }
         else {
-            this.setState({public:false});
+            this.setState({ public: false });
 
             serverSubmission = {
                 server_owner_id: this.props.currentUser.id,
                 server_name: this.state.server_name,
                 public: this.state.public, //true by default
                 server_icon: this.state.server_icon, // empty by default until aws functionality is implemented,
-    
+
             }
         }
         console.log("serverSubmission Form: ", serverSubmission);
@@ -209,6 +209,14 @@ class CreateServerForm extends React.Component {
     }
 
     handleJoinServer (e) {
+        const INVITE_ERRORS = ['Please enter a valid invite link or invite code.',
+            'The invite is invalid or has expired.',
+            'You are already a member of this server!'
+        ];
+
+
+        console.log("hello in in vite function s");
+
 
 
         if (this.state.invite_code === "") {
@@ -225,13 +233,40 @@ class CreateServerForm extends React.Component {
                 //check to see if invite is either a code or full link
                 //code is 8 chars long while the link is the code plus https://strife.gg/{code}
                 if (invite.length === 8) {
-                    console.log("invite code given now parsing it with full url");
                     let fullInviteLink = "https://strife.gg/" + invite.toString();
+                    console.log("invite code given now parsing it with full url : ", fullInviteLink);
+                    
                     this.setState({ invite_code: fullInviteLink });
                     invite = fullInviteLink;
                 }
+                // else if (invite.length < 26 || invite.length > 26) {
+                else if (invite.length !== 26) {
+                    this.setState({ invalidInviteCode: " - The invite is invalid or has expired." })
+                    setTimeout(() => {
+                        this.props.removeServerErrors();
+                        this.props.closeModal();
+                    }, 1000);
+
+                }
                 else {
-                    // this.props.
+
+                    let requestJoin ={
+                        invite_code: this.state.invite_code
+                    }
+
+                    this.props.joinServer(invite).then(() => {
+
+                        for (let i = 0; i < INVITE_ERRORS.length; i++) {
+                            if (this.props.errors.includes(INVITE_ERRORS[i])) {
+                                this.setState({ invalidInviteCode: ` - ${INVITE_ERRORS[i]}` });
+                            }
+                        }
+
+                        setTimeout(() => {
+                            this.props.removeServerErrors();
+                            this.props.closeModal();
+                        }, 1000);
+                    })
                 }
 
             }
@@ -345,7 +380,7 @@ class CreateServerForm extends React.Component {
                     <div className="bottom-separator" />
 
                     <div className="top-separator" />
-                    <div className="slide1-To-Slide2-Button" onClick={() => {this.handleSlideForward(); this.setState({serverGenreType: "Gaming"});}}>
+                    <div className="slide1-To-Slide2-Button" onClick={() => { this.handleSlideForward(); this.setState({ serverGenreType: "Gaming" }); }}>
 
                         <div>
                             <img className="gaming-Server-Img" />
@@ -357,7 +392,7 @@ class CreateServerForm extends React.Component {
 
 
                     <div className="top-separator" />
-                    <div className="slide1-To-Slide2-Button" onClick={() => {this.handleSlideForward(); this.setState({serverGenreType: "School Club"});}}>
+                    <div className="slide1-To-Slide2-Button" onClick={() => { this.handleSlideForward(); this.setState({ serverGenreType: "School Club" }); }}>
 
                         <div>
                             <img className="school-Club-Server-Img" />
@@ -370,7 +405,7 @@ class CreateServerForm extends React.Component {
 
 
                     <div className="top-separator" />
-                    <div className="slide1-To-Slide2-Button" onClick={() => {this.handleSlideForward(); this.setState({serverGenreType: "Study Group"});}}>
+                    <div className="slide1-To-Slide2-Button" onClick={() => { this.handleSlideForward(); this.setState({ serverGenreType: "Study Group" }); }}>
 
                         <div>
                             <img className="study-Server-Img" />
@@ -381,7 +416,7 @@ class CreateServerForm extends React.Component {
                     <div className="bottom-separator" />
 
                     <div className="top-separator" />
-                    <div className="slide1-To-Slide2-Button" onClick={() => {this.handleSlideForward(); this.setState({serverGenreType: "Friends"});}}>
+                    <div className="slide1-To-Slide2-Button" onClick={() => { this.handleSlideForward(); this.setState({ serverGenreType: "Friends" }); }}>
 
                         <div>
                             <img className="friends-Server-Img" />
@@ -392,7 +427,7 @@ class CreateServerForm extends React.Component {
                     <div className="bottom-separator" />
 
                     <div className="top-separator" />
-                    <div className="slide1-To-Slide2-Button" onClick={() => {this.handleSlideForward(); this.setState({serverGenreType: "Artists & Creators"});}}>
+                    <div className="slide1-To-Slide2-Button" onClick={() => { this.handleSlideForward(); this.setState({ serverGenreType: "Artists & Creators" }); }}>
 
                         <div>
                             <img className="artists-and-Creators-Server-Img" />
@@ -405,7 +440,7 @@ class CreateServerForm extends React.Component {
 
 
                     <div className="top-separator" />
-                    <div className="slide1-To-Slide2-Button" onClick={() => {this.handleSlideForward(); this.setState({serverGenreType: "Local Community"});}}>
+                    <div className="slide1-To-Slide2-Button" onClick={() => { this.handleSlideForward(); this.setState({ serverGenreType: "Local Community" }); }}>
 
                         <div>
                             <img className="local-Community-Server-Img" />
