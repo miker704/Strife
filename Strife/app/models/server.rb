@@ -47,7 +47,7 @@ class Server < ApplicationRecord
 
     #this is to ensure that that the the owner of the server is joined as a member 
     def create_OwnerShip
-        ServerMembership.create(user_id: self.server_owner_id, server_id: self.id)
+        ServerMembership.create!(user_id: self.server_owner_id, server_id: self.id)
     end
 
     # functions to generate a new invite code
