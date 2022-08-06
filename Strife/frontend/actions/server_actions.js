@@ -6,7 +6,7 @@ export const RECEIVE_SERVERS = "RECEIVE_SERVERS";
 export const REMOVE_SERVER = "REMOVE_SERVER";
 export const RECEIVE_SERVER_ERRORS = "RECEIVE_SERVER_ERRORS";
 export const REMOVE_SERVER_ERRORS = "REMOVE_SERVER_ERRORS";
-
+export const JOIN_SERVER = "JOIN_SERVER";
 
 export const receiveServer = (server) => {
     return{
@@ -43,6 +43,14 @@ export const removeServerErrors = () => {
     }
 }
 
+export const joinServerViaInvite = (inviteCode) => {
+        return {
+            type: JOIN_SERVER,
+            inviteCode
+        }
+}
+
+
 export const fetchServers = (user) => (dispatch) =>
 ServerAPI.fetchServers(user).then((servers) => {dispatch(receiveServers(servers))},(err)=>{dispatch(receiveServerErrors(err.responseJSON))}) 
 
@@ -57,3 +65,7 @@ ServerAPI.updateServer(server).then((server) => {dispatch(removeServerErrors()),
 
 export const deleteServer = (serverId) => (dispatch) =>
 ServerAPI.deleteServer(serverId).then(() => {dispatch(removeServer(serverId))}) 
+
+
+export const joinServer = (inviteCode) => (dispatch) =>
+ServerAPI.joinServer(inviteCode).then((inviteCode) => {dispatch(joinServerViaInvite(inviteCode))}, (err) => {dispatch(receiveServerErrors(err.responseJSON))});
