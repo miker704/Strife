@@ -68,4 +68,4 @@ ServerAPI.deleteServer(serverId).then(() => {dispatch(removeServer(serverId))})
 
 
 export const joinServer = (inviteCode) => (dispatch) =>
-ServerAPI.joinServer(inviteCode).then((inviteCode) => {dispatch(joinServerViaInvite(inviteCode))}, (err) => {dispatch(receiveServerErrors(err.responseJSON))});
+ServerAPI.joinServer(inviteCode).then((servers) => {dispatch(joinServerViaInvite(inviteCode)),dispatch(receiveServers(servers))}, (err) => {dispatch(receiveServerErrors(err.responseJSON))});
