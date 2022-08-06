@@ -18,7 +18,8 @@ const App = () => (
 
         <Route path='/' component={ModalManagerContainer}></Route>
         <ProtectedRoute path="/channels/@me" component={ServerNavBarContainer} />
-     
+        <ProtectedRoute path="/channels/:serverId/" component={ServerNavBarContainer} />
+
         <Switch>
 
             {/* <Route exact path="/"> <SplashContainer/> </Route> */}
