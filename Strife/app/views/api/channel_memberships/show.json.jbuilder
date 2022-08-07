@@ -1,0 +1,1 @@
+json.extract! @channel_Membership :id, :channel_id, :receiver_id,
