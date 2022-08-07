@@ -18,11 +18,12 @@ class CreateServerForm extends React.Component {
             //server channel types based on form clicking
             //server privacy type based on form slections
             serverGenreType: "",
-            serverPrivacy: ""
+            serverPrivacy: "",
+           
         }
-        console.log("calling create server modal");
-        let serverNamefiller = `${this.props.currentUser.username}'s server`;
-        console.log(serverNamefiller);
+  
+        
+      
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleJoinServer = this.handleJoinServer.bind(this);
@@ -32,6 +33,7 @@ class CreateServerForm extends React.Component {
         this.handleInviteCode = this.handleInviteCode.bind(this);
         this.stopProc = this.stopProc.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        this.renderServerErrors = this.renderServerErrors.bind(this);
     }
 
 
@@ -58,7 +60,9 @@ class CreateServerForm extends React.Component {
 
 
 
-
+    componentWillUnmount () {
+        this.props.removeServerErrors();
+    }
 
 
 
@@ -72,16 +76,16 @@ class CreateServerForm extends React.Component {
         switch (this.state.serverGenreType) {
             case 'Local Community':
                 serverChannelSetup = {
-                    channelInfoNames: ['welcome-and-rules', "announcments", 'resources'],
-                    channelTextNames: ['general', "meeting-plans", 'off-topic'],
+                    channelInfoNames: ['welcome-and-rules', "announcements", 'resources'],
+                    channelTextNames: ["meeting-plans", 'off-topic'],
                     channelVoiceNames: ['Lounge', "Meeting Room"],
 
                 };
                 break;
             case 'Artists & Creators':
                 serverChannelSetup = {
-                    channelInfoNames: ['welcome-and-rules', "announcments"],
-                    channelTextNames: ['general', "events", 'ideas-and-feedback'],
+                    channelInfoNames: ['welcome-and-rules', "announcements"],
+                    channelTextNames: ["events", 'ideas-and-feedback'],
                     channelVoiceNames: ['Lounge', 'Community Hangout', "Stream Room"],
 
                 };
@@ -90,7 +94,7 @@ class CreateServerForm extends React.Component {
             case 'Friends':
                 serverChannelSetup = {
                     channelInfoNames: [],
-                    channelTextNames: ['general', "games", 'music'],
+                    channelTextNames: ["games", 'music'],
                     channelVoiceNames: ['Lounge', "Stream Room"],
 
                 };
@@ -99,7 +103,7 @@ class CreateServerForm extends React.Component {
             case 'Study Group':
                 serverChannelSetup = {
                     channelInfoNames: ['welcome-and-rules', 'notes-resources'],
-                    channelTextNames: ['general', "homework-help", 'session-planning', 'off-topic'],
+                    channelTextNames: ["homework-help", 'session-planning', 'off-topic'],
                     channelVoiceNames: ['Lounge', "Study Room 1", "Study Room 2"],
 
                 };
@@ -107,8 +111,8 @@ class CreateServerForm extends React.Component {
 
             case 'School Club':
                 serverChannelSetup = {
-                    channelInfoNames: ['welcome-and-rules', "announcments", 'resources'],
-                    channelTextNames: ['general', "meeting-plans", 'off-topic'],
+                    channelInfoNames: ['welcome-and-rules', "announcements", 'resources'],
+                    channelTextNames: ["meeting-plans", 'off-topic'],
                     channelVoiceNames: ['Lounge', "Meeting Room 1", "Meeting Room 2"],
 
                 };
@@ -117,7 +121,7 @@ class CreateServerForm extends React.Component {
             case 'Gaming':
                 serverChannelSetup = {
                     channelInfoNames: [],
-                    channelTextNames: ['general', "clips-and-highlights"],
+                    channelTextNames: ["clips-and-highlights"],
                     channelVoiceNames: ['Lobby', "Gaming"],
 
                 };
@@ -126,7 +130,7 @@ class CreateServerForm extends React.Component {
             default:
                 serverChannelSetup = {
                     channelInfoNames: [],
-                    channelTextNames: ['general'],
+                    channelTextNames: [],
                     channelVoiceNames: ['General'],
 
                 };
@@ -161,8 +165,11 @@ class CreateServerForm extends React.Component {
 
         console.log("ServerDefaultChannels: ", serverChannelSetup);
 
+        let newServer;
+        this.props.action(serverSubmission).then((action) => {
+            newServer = action.server;
 
-
+        })
 
 
 
@@ -208,15 +215,40 @@ class CreateServerForm extends React.Component {
         });
     }
 
+
+
+    renderServerErrors (signalError) {
+        //invite code errors
+        if (this.props.errors.includes('Error You are already a member of this server')) {
+          
+            this.inviteCodeErrors = "ERROR";
+            return this.inviteCodeErrorMessage = ' - You are already a member of this server';
+
+        }
+        else if (this.props.errors.includes('Error The invite is invalid or has expired.')) {
+        
+            this.inviteCodeErrors = "ERROR";
+            return this.inviteCodeErrorMessage = ' - The invite is invalid or has expired.';
+
+        }
+        else if (this.props.errors.includes('The invite is invalid or has expired.')) {
+  
+             this.inviteCodeErrors = "ERROR";
+            return this.inviteCodeErrorMessage = ' - The invite is invalid or has expired.';
+
+        }
+
+
+        return "";
+    }
+
+
     handleJoinServer (e) {
-        const INVITE_ERRORS = ['Please enter a valid invite link or invite code.',
-            'The invite is invalid or has expired.',
-            'You are already a member of this server!'
-        ];
-
-
-        console.log("hello in in vite function s");
-
+        // e.preventDefault();
+       
+        this.props.removeServerErrors();
+        this.inviteCodeErrorMessage = "";
+        this.inviteCodeErrors = "";
 
 
         if (this.state.invite_code === "") {
@@ -234,39 +266,27 @@ class CreateServerForm extends React.Component {
                 //code is 8 chars long while the link is the code plus https://strife.gg/{code}
                 if (invite.length === 8) {
                     let fullInviteLink = "https://strife.gg/" + invite.toString();
-                    console.log("invite code given now parsing it with full url : ", fullInviteLink);
-                    
+                    // console.log("invite code given now parsing it with full url : ", fullInviteLink);
                     this.setState({ invite_code: fullInviteLink });
                     invite = fullInviteLink;
                 }
-                // else if (invite.length < 26 || invite.length > 26) {
-                else if (invite.length !== 26) {
-                    this.setState({ invalidInviteCode: " - The invite is invalid or has expired." })
-                    setTimeout(() => {
-                        this.props.removeServerErrors();
-                        this.props.closeModal();
-                    }, 1000);
 
+                if (invite.length !== 26) {
+                    this.setState({ invalidInviteCode: " - The invite is invalid or has expired." })
                 }
                 else {
-
-                    let requestJoin ={
-                        invite_code: this.state.invite_code
-                    }
-
-                    this.props.joinServer(invite).then(() => {
-
-                        for (let i = 0; i < INVITE_ERRORS.length; i++) {
-                            if (this.props.errors.includes(INVITE_ERRORS[i])) {
-                                this.setState({ invalidInviteCode: ` - ${INVITE_ERRORS[i]}` });
-                            }
-                        }
-
+                    
+                    this.props.joinServer(invite).then((action) => {
+                        
                         setTimeout(() => {
                             this.props.removeServerErrors();
                             this.props.closeModal();
-                        }, 1000);
-                    })
+                        }, 100);
+                        
+                  
+                    });
+                  
+                  
                 }
 
             }
@@ -304,16 +324,23 @@ class CreateServerForm extends React.Component {
     render () {
         console.log("this.state", this.state);
         let form_state = "";
-        let inviteCodeErrorMessage = "";
-        let inviteCodeErrors = "";
+        this.inviteCodeErrorMessage = "";
+        this.inviteCodeErrors = "";
+
+
+
         if (this.state.invalidInviteCode === "*") {
-            inviteCodeErrorMessage = <span>*</span>;
+            this.inviteCodeErrorMessage = <span>*</span>;
         }
         else {
-            inviteCodeErrorMessage = this.state.invalidInviteCode;
-            inviteCodeErrors = "ERROR";
+            this.inviteCodeErrorMessage = this.state.invalidInviteCode;
+            this.inviteCodeErrors = "ERROR";
         }
 
+        if (this.props.errors.length > 0) {
+           
+            this.renderServerErrors();
+        }
 
 
 
@@ -476,7 +503,9 @@ class CreateServerForm extends React.Component {
                     <p>Enter an invite below to join an existing server</p>
                 </div>
                 <div className="server-use-invite-form">
-                    <label className={inviteCodeErrors}>INVITE LINK {inviteCodeErrorMessage}</label>
+                    {/* <label className={inviteCodeErrors}>INVITE LINK {inviteCodeErrorMessage}</label> */}
+                    <label className={this.inviteCodeErrors}>INVITE LINK {this.inviteCodeErrorMessage}</label>
+
                     <input type="text" onChange={this.handleInviteCode()} placeholder="https://strife.gg/8404br4s" />
                     <label>INVITES SHOULD LOOK LIKE</label>
                     <div className="invite-code-examples">
