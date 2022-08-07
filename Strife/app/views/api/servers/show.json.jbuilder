@@ -11,15 +11,44 @@ json.server do
   json.users do 
     @server.members.each do |member|
       json.set! member.id do
-        json.extract! member, :id, :username, :email, :strife_id_tag, :color_tag
+        json.extract! member, :id, :username, :email, :online, :phone_number, :strife_id_tag, :color_tag , :photo
       end
     end
   end
 
+  json.all_Server_Memberships do
+
+    server_member_list = @server.server_members
+ 
+     server_member_list.each do |server_member|
+       json.set! server_member.id do
+         est = Time.zone.utc_to_local(server_member.created_at)
+         est = est + 4.hours
+         json.account_UserName server_member.user.username
+         json.account_Email server_member.user.email
+         json.account_Strife_Id server_member.user.strife_id_tag
+         json.server_membership_created_at est.strftime("%-m/%-d/%Y %-I:%M:%S %p")
+         json.server_memberShip_for_Server server_member.server.server_name
+         json.extract! server_member, :id, :server_id, :user_id
+       end
+ 
+     end
+ 
+ 
+   end
+ 
 
   json.channels do
     @server.channels.each do |channel|
       json.set! channel.id do 
+        json.channel_Memberships do
+          channel_members = channel.channel_members
+          channel_members.each do |channel_member|
+            json.set! channel_member.id do 
+              json.extract! channel_member, :id, :channel_id, :receiver_id
+            end
+          end
+        end
         json.extract! channel, :id, :channel_name, :server_id
       end
     end
