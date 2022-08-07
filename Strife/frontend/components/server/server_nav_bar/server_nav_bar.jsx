@@ -10,7 +10,7 @@ class ServerNavBar extends React.Component {
 
     componentDidMount () {
         this.props.fetchUserServers(this.props.currentUser.id);
-        // this.props.fetchAllServers(); 
+      
     }
 
 
