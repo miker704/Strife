@@ -8,6 +8,10 @@
 #  channel_id  :integer          not null
 #  receiver_id :integer          not null
 #
+# Indexes
+#
+#  index_channel_memberships_on_channel_id_and_receiver_id  (channel_id,receiver_id) UNIQUE
+#
 
 # This model initially had no columns defined. If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
