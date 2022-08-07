@@ -1,34 +1,46 @@
 //this  is a global file that reference styles that will be used across multiple files
 
 
-.x-To-Close{
-// color: white;
+.x-To-Close {
+  // color: white;
 
-position: absolute;
-top: 15px;
-right: 15px;
-cursor: pointer;
-z-index: 3;
-svg path { 
-  transition: 0.2s;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  z-index: 3;
+
+  svg path {
+    transition: 0.2s;
+  }
+
 }
 
+.x-To-Close:hover {
+
+  // color: white;
+  // background-color: white;
+  svg path {
+    fill: #2E3338;
+    transition: 0.2s;
+  }
 }
 
-.x-To-Close:hover{
-    // color: white;
-    // background-color: white;
-    svg path {
-        fill: #2E3338;
-        transition: 0.2s;
-      }
-    }
+
+//global error renderfunction styles
+
+.rendered-error {
+  color: #D83C3E;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
 
 
-    //global error renderfunction styles
-
-    .rendered-error{
-        color: #D83C3E;
-        font-size:12px;
-        margin-bottom: 2px;
-    }
+label.server-error {
+  color: #A12D2F;
+  font-size: 12px;
+  font-family: "Ginto Normal";
+  text-transform: none;
+  font-style: italic;
+  font-weight: 500;
+}
