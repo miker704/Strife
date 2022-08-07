@@ -23,10 +23,13 @@ class Channel < ApplicationRecord
     has_many :channel_members, class_name: "ChannelMembership", foreign_key: "channel_id"
     has_many :members, through: :channel_members, source: :member
 
+    after_create :create_Channel_Membership
     after_create :create_Welcome_Message
 
     def create_Welcome_Message
         Message.create(channel_id: self.id, author_id: 1, body: "Welcome to ##{self.channel_name} channel")
     end
-
+    def create_Channel_Membership
+        ChannelMembership.create(channel_id: self.id, receiver_id: self.server.server_owner_id)
+    end
 end
