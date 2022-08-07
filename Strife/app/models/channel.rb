@@ -30,6 +30,8 @@ class Channel < ApplicationRecord
         Message.create(channel_id: self.id, author_id: 1, body: "Welcome to ##{self.channel_name} channel")
     end
     def create_Channel_Membership
+        if channel_name != "general" 
         ChannelMembership.create(channel_id: self.id, receiver_id: self.server.server_owner_id)
+        end
     end
 end
