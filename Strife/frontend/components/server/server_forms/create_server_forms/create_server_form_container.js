@@ -3,7 +3,7 @@ import { withRouter } from "react-router";
 import { openModal, closeModal } from "../../../../actions/modal_actions";
 import { createServer, removeServerErrors, joinServer } from "../../../../actions/server_actions";
 import CreateServerForm from "./create_server_form.jsx";
-
+import { createChannel, removeChannelErrors } from "../../../../actions/channel_actions";
 
 
 const mSTP = (state) => {
@@ -14,7 +14,8 @@ const mSTP = (state) => {
             public: true,
             server_name: "",
         },
-        errors: state.errors.server
+        errors: state.errors.server,
+        errorsChannel: state.errors.channel
     }
 }
 const mDTP = (dispatch) => {
@@ -24,11 +25,13 @@ const mDTP = (dispatch) => {
         removeServerErrors: () => dispatch(removeServerErrors()),
         openModal: (modal) => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal()),
-        joinServer: (inviteCode) => dispatch(joinServer(inviteCode))
+        joinServer: (inviteCode) => dispatch(joinServer(inviteCode)),
+        createChannel: (channel) => dispatch(createChannel(channel)),
+        removeChannelErrors: () => dispatch(removeChannelErrors())
+
     }
 }
 
-// const CreateServerFormContainer = connect(mSTP,mDTP)(withRouter(CreateServerForm));
-// const CreateServerFormContainer = connect(mSTP, mDTP)(CreateServerForm);
-const CreateServerFormContainer =withRouter(connect(mSTP,mDTP)(CreateServerForm));
+
+const CreateServerFormContainer = withRouter(connect(mSTP, mDTP)(CreateServerForm));
 export default CreateServerFormContainer;
