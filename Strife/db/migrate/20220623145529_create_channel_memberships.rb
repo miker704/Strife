@@ -5,5 +5,6 @@ class CreateChannelMemberships < ActiveRecord::Migration[5.2]
       t.integer :receiver_id, null: false
       t.timestamps
     end
+    add_index :channel_memberships, [:channel_id, :receiver_id], :unique =>  true
   end
 end
