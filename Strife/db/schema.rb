@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2022_07_30_230705) do
     t.integer "receiver_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["channel_id", "receiver_id"], name: "index_channel_memberships_on_channel_id_and_receiver_id", unique: true
   end
 
   create_table "channels", force: :cascade do |t|
