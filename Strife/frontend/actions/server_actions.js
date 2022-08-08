@@ -9,63 +9,72 @@ export const REMOVE_SERVER_ERRORS = "REMOVE_SERVER_ERRORS";
 export const JOIN_SERVER = "JOIN_SERVER";
 
 export const receiveServer = (server) => {
-    return{
-            type: RECEIVE_SERVER,
-            server
+    return {
+        type: RECEIVE_SERVER,
+        server
     }
 }
 
 export const receiveServers = (servers) => {
-    return{
-            type: RECEIVE_SERVERS,
-            servers
+    return {
+        type: RECEIVE_SERVERS,
+        servers
     }
 }
 
 export const removeServer = (serverId) => {
-    return{
-            type: REMOVE_SERVER,
-            serverId
-}
+    return {
+        type: REMOVE_SERVER,
+        serverId
+    }
 }
 
 export const receiveServerErrors = (errors) => {
-    return{
+    return {
         type: RECEIVE_SERVER_ERRORS,
         errors
-    }}
+    }
+}
 
 
 export const removeServerErrors = () => {
-    return{
+    return {
         type: REMOVE_SERVER_ERRORS,
-   
+
     }
 }
 
 export const joinServerViaInvite = (inviteCode) => {
-        return {
-            type: JOIN_SERVER,
-            inviteCode
-        }
+    return {
+        type: JOIN_SERVER,
+        inviteCode
+    }
 }
 
 
 export const fetchServers = (user) => (dispatch) =>
-ServerAPI.fetchServers(user).then((servers) => {dispatch(receiveServers(servers))},(err)=>{dispatch(receiveServerErrors(err.responseJSON))}) 
+    ServerAPI.fetchServers(user).then((servers) => { dispatch(receiveServers(servers)) }, (err) => { dispatch(receiveServerErrors(err.responseJSON)) })
 
 export const fetchServer = (serverId) => (dispatch) =>
-ServerAPI.fetchServer(serverId).then((server) => {dispatch(receiveServer(server))})
+    ServerAPI.fetchServer(serverId).then((server) => { dispatch(receiveServer(server)) })
 
 export const createServer = (server) => (dispatch) =>
-ServerAPI.createServer(server).then((server) => {dispatch(removeServerErrors()),dispatch(receiveServer(server))},(err)=>{dispatch(receiveServerErrors(err.responseJSON))}) 
+    ServerAPI.createServer(server).then((server) => {
+        dispatch(removeServerErrors())
+        return dispatch(receiveServer(server))
+    }
+        , (err) => { dispatch(receiveServerErrors(err.responseJSON)) })
 
 export const updateServer = (server) => (dispatch) =>
-ServerAPI.updateServer(server).then((server) => {dispatch(removeServerErrors()),dispatch(receiveServer(server))},(err)=>{dispatch(receiveServerErrors(err.responseJSON))}) 
+    ServerAPI.updateServer(server).then((server) => {
+        dispatch(removeServerErrors())
+        return dispatch(receiveServer(server))
+    }
+        , (err) => { dispatch(receiveServerErrors(err.responseJSON)) })
 
 export const deleteServer = (serverId) => (dispatch) =>
-ServerAPI.deleteServer(serverId).then(() => {dispatch(removeServer(serverId))}) 
+    ServerAPI.deleteServer(serverId).then(() => { dispatch(removeServer(serverId)) })
 
 
 export const joinServer = (inviteCode) => (dispatch) =>
-ServerAPI.joinServer(inviteCode).then((servers) => {dispatch(joinServerViaInvite(inviteCode)),dispatch(receiveServers(servers))}, (err) => {dispatch(receiveServerErrors(err.responseJSON))});
+    ServerAPI.joinServer(inviteCode).then((servers) => { dispatch(joinServerViaInvite(inviteCode)), dispatch(receiveServers(servers)) }, (err) => { dispatch(receiveServerErrors(err.responseJSON)) });
