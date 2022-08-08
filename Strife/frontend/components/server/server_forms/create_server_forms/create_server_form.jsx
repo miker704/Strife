@@ -173,6 +173,8 @@ class CreateServerForm extends React.Component {
         //create the channels to set up the server 
         this.props.action(serverSubmission).then((action) => {
             newServer = action.server;
+            // newServer = action.server.server;
+
            
 
             //
