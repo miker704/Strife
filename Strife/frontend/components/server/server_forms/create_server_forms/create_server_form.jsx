@@ -150,8 +150,11 @@ class CreateServerForm extends React.Component {
                 server_icon: this.state.server_icon, // empty by default until aws functionality is implemented,
 
             }
+         
+
         }
-        else {
+        else if (this.state.serverPrivacy === "private") {
+           
             this.setState({ public: false });
 
             serverSubmission = {
@@ -161,18 +164,16 @@ class CreateServerForm extends React.Component {
                 server_icon: this.state.server_icon, // empty by default until aws functionality is implemented,
 
             }
+            
         }
-        console.log("serverSubmission Form: ", serverSubmission);
-
-        console.log("ServerDefaultChannels: ", serverChannelSetup);
+       
 
         let newServer;
         //create the new server then if the server is using one of the performed templates 
         //create the channels to set up the server 
         this.props.action(serverSubmission).then((action) => {
             newServer = action.server;
-            console.log("new server: ", newServer);
-            console.log("newServer id", newServer.id);
+           
 
             //
             for (let i in serverChannelSetup) {
@@ -198,6 +199,12 @@ class CreateServerForm extends React.Component {
 
 
 
+        }).then(() => {
+            setTimeout(() => {
+                this.props.removeServerErrors();
+                this.props.removeChannelErrors();
+                this.props.closeModal();
+            }, 100);
         })
 
 
@@ -645,7 +652,7 @@ class CreateServerForm extends React.Component {
                 </div>
 
 
-                <div className="slide2-to-slide3-button" onClick={() => { this.handleSlideForward(); this.setState({ serverPrivacy: "public" }); }}>
+                <div className="slide2-to-slide3-button" onClick={() => { this.handleSlideForward(); this.setState({ serverPrivacy: "public", public: true }); }}>
 
                     <div>
                         <img className="public-Server-Img" />
@@ -654,7 +661,7 @@ class CreateServerForm extends React.Component {
                     <img className="arrow" />
                 </div>
 
-                <div className="slide2-to-slide3-button" onClick={() => { this.handleSlideForward(); this.setState({ serverPrivacy: "private" }); }}>
+                <div className="slide2-to-slide3-button" onClick={() => { this.handleSlideForward(); this.setState({ serverPrivacy: "private", public: false }); }}>
 
                     <div>
                         <img className="private-Server-Img" />
@@ -666,7 +673,7 @@ class CreateServerForm extends React.Component {
                 <div className="skip-this-step">
                     <h2>
                         Not sure? You can{" "}
-                        <a onClick={() => { this.handleSlideForward(); this.setState({ serverPrivacy: "public" }); }}>skip this question </a>
+                        <a onClick={() => { this.handleSlideForward(); this.setState({ serverPrivacy: "public", public: true }); }}>skip this question </a>
                         for now
                     </h2>
                 </div>
