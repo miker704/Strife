@@ -36,11 +36,32 @@
 }
 
 
-label.server-error {
+.server-error {
   color: #A12D2F;
   font-size: 12px;
   font-family: "Ginto Normal";
   text-transform: none;
   font-style: italic;
   font-weight: 500;
+}
+
+
+.modal-struct{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+
+}
+
+
+.modal-child-component{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
