@@ -21,7 +21,7 @@ const mSTP = (state) => {
 const mDTP = (dispatch) => {
     return {
         action: (server) => dispatch(createServer(server)),
-        createServer: (server) => dispatch(createServer(server)),
+        // createServer: (server) => dispatch(createServer(server)),
         removeServerErrors: () => dispatch(removeServerErrors()),
         openModal: (modal) => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal()),
