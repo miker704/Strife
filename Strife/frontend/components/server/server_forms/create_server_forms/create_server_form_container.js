@@ -20,13 +20,13 @@ const mSTP = (state) => {
 }
 const mDTP = (dispatch) => {
     return {
-
+        action: (server) => dispatch(createServer(server)),
         createServer: (server) => dispatch(createServer(server)),
         removeServerErrors: () => dispatch(removeServerErrors()),
         openModal: (modal) => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal()),
         joinServer: (inviteCode) => dispatch(joinServer(inviteCode)),
-        createChannel: (channel) => dispatch(createChannel(channel)),
+        createChannelSetup: (channel) => dispatch(createChannel(channel)),
         removeChannelErrors: () => dispatch(removeChannelErrors())
 
     }
