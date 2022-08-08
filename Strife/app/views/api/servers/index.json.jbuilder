@@ -31,7 +31,7 @@ end
                     end
                 end
             end
-                json.extract! channel, :id, :server_id, :channel_name
+                json.extract! channel, :id, :server_id, :channel_name , :channel_members
             end
         end
         end
