@@ -43,17 +43,18 @@ class Api::ServersController < ApplicationController
     def join_server
         @current_user = userId
         @server = Server.find_by(invite_code: params[:inviteCode])
-       
+        
         if @server
             if (@server.members.find_by(id: current_user.id))
-                # @server.errors.add(:error, 'You are already a member of this server!')
-                # render json: @server.errors.full_messages, status: 422
-                render json: ['You are already a member of this server!'], status: 422
+                @server.errors.add(:error,'You are already a member of this server')
+                render json: @server.errors.full_messages, status: 422
+                # render json: ['You are already a member of this server'], status: 422
             else
                 member = ServerMembership.create!(user_id: current_user.id, server_id: @server.id)
                 if member.save
                     all_channels = @server.channels
                     all_channels.each do |channel|
+                   
                         ChannelMembership.create!(
                             channel_id: channel.id, 
                             receiver_id: current_user.id
@@ -67,12 +68,12 @@ class Api::ServersController < ApplicationController
             @server = Server.last
             # @server.errors.add(:error, 'The Invite code is invalid or has expired')
             # render json: @server.errors.full_messages, status: 422
-            render json: ['The Invite code is invalid or has expired'], status: 422
+            render json: ['The invite is invalid or has expired.'], status: 422
 
         end
     end
 
-
+   
 
 
 
