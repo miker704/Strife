@@ -19,11 +19,9 @@ class CreateServerForm extends React.Component {
             //server privacy type based on form slections
             serverGenreType: "",
             serverPrivacy: "",
-           
+
         }
-  
-        
-      
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleJoinServer = this.handleJoinServer.bind(this);
@@ -33,7 +31,10 @@ class CreateServerForm extends React.Component {
         this.handleInviteCode = this.handleInviteCode.bind(this);
         this.stopProc = this.stopProc.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        this.renderServerInviteErrors = this.renderServerInviteErrors.bind(this);
         this.renderServerErrors = this.renderServerErrors.bind(this);
+        this.submissionBlocker = this.submissionBlocker.bind(this);
+
     }
 
 
@@ -166,8 +167,36 @@ class CreateServerForm extends React.Component {
         console.log("ServerDefaultChannels: ", serverChannelSetup);
 
         let newServer;
+        //create the new server then if the server is using one of the performed templates 
+        //create the channels to set up the server 
         this.props.action(serverSubmission).then((action) => {
             newServer = action.server;
+            console.log("new server: ", newServer);
+            console.log("newServer id", newServer.id);
+
+            //
+            for (let i in serverChannelSetup) {
+                //if template for server has no channels in the in any of the 3 catergories skip it  
+                if (serverChannelSetup[i].length === 0) {
+                    continue;
+                }
+                else {
+
+                    for (let e of serverChannelSetup[i]) {
+                        let channelHash = new Object();
+                        channelHash = {
+                            server_id: newServer.id,
+                            channel_name: e
+                        }
+
+                        this.props.createChannelSetup(channelHash);
+
+                    }
+
+                }
+            }
+
+
 
         })
 
@@ -181,29 +210,15 @@ class CreateServerForm extends React.Component {
 
     }
 
-    submitFormPrivate () {
-        let submitServer = {
-            server_owner_id: this.props.currentUser.id,
-            server_name: "",
-            public: false, //true by default
-            server_icon: "", // empty by default until aws functionality is implemented,
-            invite_code: "",
+
+    submissionBlocker () {
+        if (document.getElementById("servernameInput").value === "" || document.getElementById("servernameInput").value === null) {
+            document.getElementById("serverCreateButton").disabled = true;
         }
-        return this.props.createServer(submitServer);
-    }
-
-    submitFormPublic () {
-        let submitServer = {
-            server_owner_id: this.props.currentUser.id,
-            server_name: "",
-            public: true, //true by default
-            server_icon: "", // empty by default until aws functionality is implemented,
-            invite_code: "",
+        else {
+            document.getElementById("serverCreateButton").disabled = false;
         }
-        return this.props.createServer(submitServer);
-
     }
-
 
 
     handleJoinServerClick (e) {
@@ -216,24 +231,61 @@ class CreateServerForm extends React.Component {
     }
 
 
+    renderServerErrors () {
+        //NOTE: we dont need to bother with channel errors here as channel created here are created  
+        //upon server creation so it is impossible to have dups of same channel names
+        //server errors
 
-    renderServerErrors (signalError) {
+
+        let serverErrorList = [
+            'Server owner You already have a server with that name already',
+            "Server name can't be blank",
+            'Server name is too short (minimum is 2 characters)',
+            "Server name is too long (maximum is 100 characters)",
+            // 'You cannot destroy a server that is not yours !',
+
+        ]
+        //Must be between 2 and 100 in length;
+
+        //error messages can be a bit big lets make a reduced version 
+        let serverErrorMessages = {
+            0: " - You already own a Server with that name already",
+            1: " - Server name can't be blank",
+            2: ' - Must be between 2 and 100 in length',
+            3: " - Must be between 2 and 100 in length",
+        }
+
+        for (let i = 0; i < serverErrorList.length; i++) {
+            if (this.props.errors.includes(serverErrorList[i])) {
+                return serverErrorMessages[i];
+            }
+        }
+
+        return "";
+    }
+
+
+
+    renderServerInviteErrors () {
+
         //invite code errors
+        //these errors are for joining via an invite they return different results
+
         if (this.props.errors.includes('Error You are already a member of this server')) {
-          
+
             this.inviteCodeErrors = "ERROR";
             return this.inviteCodeErrorMessage = ' - You are already a member of this server';
 
         }
         else if (this.props.errors.includes('Error The invite is invalid or has expired.')) {
-        
+
             this.inviteCodeErrors = "ERROR";
             return this.inviteCodeErrorMessage = ' - The invite is invalid or has expired.';
 
         }
         else if (this.props.errors.includes('The invite is invalid or has expired.')) {
-  
-             this.inviteCodeErrors = "ERROR";
+
+            this.inviteCodeErrors = "ERROR";
             return this.inviteCodeErrorMessage = ' - The invite is invalid or has expired.';
 
         }
@@ -245,7 +297,7 @@ class CreateServerForm extends React.Component {
 
     handleJoinServer (e) {
         // e.preventDefault();
-       
+
         this.props.removeServerErrors();
         this.inviteCodeErrorMessage = "";
         this.inviteCodeErrors = "";
@@ -275,18 +327,18 @@ class CreateServerForm extends React.Component {
                     this.setState({ invalidInviteCode: " - The invite is invalid or has expired." })
                 }
                 else {
-                    
+
                     this.props.joinServer(invite).then((action) => {
-                        
+
                         setTimeout(() => {
                             this.props.removeServerErrors();
                             this.props.closeModal();
                         }, 100);
-                        
-                  
+
+
                     });
-                  
-                  
+
+
                 }
 
             }
@@ -320,9 +372,10 @@ class CreateServerForm extends React.Component {
         return (e) => this.setState({ invite_code: e.currentTarget.value });
     }
 
-
     render () {
         console.log("this.state", this.state);
+
+        let serverErrorTag = this.props.errors.length > 0 ? "server-error" : "";
         let form_state = "";
         this.inviteCodeErrorMessage = "";
         this.inviteCodeErrors = "";
@@ -338,8 +391,8 @@ class CreateServerForm extends React.Component {
         }
 
         if (this.props.errors.length > 0) {
-           
-            this.renderServerErrors();
+
+            this.renderServerInviteErrors();
         }
 
 
@@ -356,9 +409,11 @@ class CreateServerForm extends React.Component {
 
             if (this.state.form_number === 1) {
                 form_state = "all-Slides";
+
             }
             if (this.state.form_number === 2) {
                 form_state = "all-Slides second forward";
+
 
             }
             else if (this.state.form_number === 3) {
@@ -378,6 +433,21 @@ class CreateServerForm extends React.Component {
         let slide1 = (
 
             <div className="first-Slide">
+
+
+                <div className="x-To-Close1">
+
+                    <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        onClick={() => this.props.closeModal()}
+                    ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
+                    </svg>
+
+                </div>
+
+
                 <div className="first-Slide-Header">
                     <h2>Create a server</h2>
                     <p>Your server is where you and your friends hang out. Make yours and start talking.</p>
@@ -495,9 +565,21 @@ class CreateServerForm extends React.Component {
         );
 
         //modal slide for joining a server via invite link
+        //transform: translate3d(0px, -17%, 0px) scale(1, 1);
 
         let slide2 = this.state.joiningServer === true ? (
             <div className="second-Slide joinServer">
+                <div className="x-To-Close2">
+
+                    <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        onClick={() => this.props.closeModal()}
+                    ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
+                    </svg>
+
+                </div>
                 <div className="second-Slide-Header">
                     <h2>Join a Server</h2>
                     <p>Enter an invite below to join an existing server</p>
@@ -537,13 +619,32 @@ class CreateServerForm extends React.Component {
             </div>
         ) : (
             <div className="second-Slide">
+
+
+
+                <div className="x-To-Close2">
+
+                    <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        onClick={() => this.props.closeModal()}
+                    ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
+                    </svg>
+
+                </div>
+
+
+
+
+
                 <div className="second-Slide-Header">
                     <h2>Tell us more about your server</h2>
                     <p>In order to help you with your setup, is your
                         new server for just a few friends or a larger community? </p>
                 </div>
 
-                {/* <div className="top-separator" /> */}
+
                 <div className="slide2-to-slide3-button" onClick={() => { this.handleSlideForward(); this.setState({ serverPrivacy: "public" }); }}>
 
                     <div>
@@ -552,9 +653,7 @@ class CreateServerForm extends React.Component {
                     </div>
                     <img className="arrow" />
                 </div>
-                {/* <div className="bottom-separator" /> */}
 
-                {/* <div className="top-separator" /> */}
                 <div className="slide2-to-slide3-button" onClick={() => { this.handleSlideForward(); this.setState({ serverPrivacy: "private" }); }}>
 
                     <div>
@@ -563,10 +662,7 @@ class CreateServerForm extends React.Component {
                     </div>
                     <img className="arrow" />
                 </div>
-                {/* <div className="bottom-separator" /> */}
 
-
-                {/* <div className="top-separator" /> */}
                 <div className="skip-this-step">
                     <h2>
                         Not sure? You can{" "}
@@ -574,7 +670,7 @@ class CreateServerForm extends React.Component {
                         for now
                     </h2>
                 </div>
-                {/* <div className="bottom-separator" /> */}
+
 
                 <div className="back-button">
                     <h2 onClick={this.handleSlideBackward}>Back</h2>
@@ -589,6 +685,22 @@ class CreateServerForm extends React.Component {
 
         let slide3 = (
             <div className="third-Slide">
+
+
+                <div className="x-To-Close2">
+
+                    <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        onClick={() => this.props.closeModal()}
+                    ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
+                    </svg>
+
+                </div>
+
+
+
                 <div className="third-Slide-Header">
                     <h2>Customize your server</h2>
                     <p>Give your new server a personality with a
@@ -629,9 +741,9 @@ class CreateServerForm extends React.Component {
                     </div>
 
                     <div className="server-name-input">
-                        <label>SERVER NAME</label>
-                        {this.renderErrors()}
-                        <input type="text" onChange={this.handleInput()} value={this.state.server_name} placeholder={`${this.props.currentUser.username}'s server`} />
+                        <label className={serverErrorTag}>SERVER NAME{this.renderServerErrors()}</label>
+
+                        <input id="servernameInput" type="text" onKeyUp={this.submissionBlocker} onChange={this.handleInput()} value={this.state.server_name} placeholder={`${this.props.currentUser.username}'s server`} />
                         <h3>
                             By creating a server, you agree to Strife's{" "}
                             <strong><a href="https://discord.com/guidelines" target="_blank">Community Guidelines</a></strong>
@@ -639,7 +751,7 @@ class CreateServerForm extends React.Component {
                     </div>
                     <div className="back-create-server-button">
                         <h2 onClick={this.handleSlideBackward}>Back</h2>
-                        <input type="submit" onClick={this.handleSubmit} />
+                        <input id="serverCreateButton" type="submit" onClick={this.handleSubmit} />
                     </div>
                 </form>
             </div>
@@ -653,13 +765,12 @@ class CreateServerForm extends React.Component {
 
 
         return (
-            <div className="create-A-Server-Wrapper">
+            <div className="create-A-Server-Wrapper" onClick={e => e.stopPropagation()}>
 
                 <div className="create-A-Server-Modal">
-                    <div className="x-To-Close">
+                    {/* <div className="x-To-Close">
 
                         <svg
-                            // className="close-button"
                             width="24"
                             height="24"
                             viewBox="0 0 24 24"
@@ -667,7 +778,7 @@ class CreateServerForm extends React.Component {
                         ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
                         </svg>
 
-                    </div>
+                    </div> */}
                     <div className={form_state}>
 
                         {slide1}
