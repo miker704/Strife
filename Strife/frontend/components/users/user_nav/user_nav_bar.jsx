@@ -13,7 +13,7 @@ class UserNavBar extends React.Component{
 
     return ( 
       <div className = "user-nav-bar">
-        <div id ="username-color">
+        <div id ="username">
           <div className={`user-icon color-${this.props.currentUser.color_tag}`}>
             <i className="fa-brands fa-discord"/>
           </div>
