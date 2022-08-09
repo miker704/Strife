@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 class UserNavBar extends React.Component{
   constructor(props){
     super(props);
+
+    console.log(this.props.currentUser)
   }
 
   render(){
