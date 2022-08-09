@@ -37,12 +37,12 @@
     padding-top: 10px;
 }
 
-#username{
+#username {
     display: flex;
 }
 
 
-#username h3{
+#username h3 {
     color: #FFFFFF;
     font-size: 14px;
     text-overflow: ellipsis;
@@ -62,30 +62,32 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    color: hsl(216,0.037%,73.5%);
+    color: hsl(216, 0.037%, 73.5%);
     font-weight: 400;
 }
 
 
-#user-account-info{
+#user-account-info {
     padding-left: 10px;
     width: 90px;
     overflow-y: auto;
     overflow-x: auto;
 }
 
-#user-account-info::-webkit-scrollbar{
-    width:2px;
+#user-account-info::-webkit-scrollbar {
+    width: 2px;
     height: 2px;
     background-color: #282A2E;
 }
 
-#user-settings-icons{
+#user-settings-icons a {
     text-decoration: none;
-    width: 10px;
+    width: 16px;
 }
 
-
+#user-settings-icons a:hover .fa-gear {
+    filter: brightness(150%);
+}
 
 
 
