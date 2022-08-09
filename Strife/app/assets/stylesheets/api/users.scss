@@ -5,7 +5,7 @@
 
 //user nav bar located in User_nav_container.js calling form user_nav_bar.jsx
 
-.user-nav-bar{
+.user-nav-bar {
     height: 40px;
     display: flex;
     justify-content: space-between;
@@ -14,23 +14,24 @@
     background-color: #292B2F;
     position: absolute;
     transform: translate(75px, Calc(100vh - 50px));
-    
+
 }
 
 
-.user-nav-bar:hover{
+.user-nav-bar:hover {
     z-index: 3;
 }
 
-.fa-microphone, .fa-headphones{
-
+.fa-microphone,
+.fa-headphones {
+    color: #B9BBBE;
+    padding: 5px;
+    padding-top: 10px;
 }
 
 
 
-.fa-gear{
-
-}
+.fa-gear {}
 
 
 
@@ -42,10 +43,3 @@
 
 
 // user settings modal
-
-
-
-
-
-
-
