@@ -110,12 +110,36 @@
 }
 
 .user-settings-toggle {
-    width: 100px;
-    height: 30px;
-    font-family: "Ginto";
-    font-weight: 500;
-    transform: translate(24px, -65px);
+    // width: 100px;
+    // height: 30px;
+    // font-family: "Ginto";
+    // font-weight: 500;
+    // transform: translate(24px, -65px);
+    // visibility: hidden;
+
+
     visibility: hidden;
+    position: relative;
+    background-color: rgb(25, 25, 25);
+    color: #FFFFFF;
+    border-radius: 5px;
+    width: fit-content;
+    max-width: 115px;
+    text-align: left;
+    padding: 5px;
+    z-index: 5;
+    top: -50px;
+    left: 85px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Ginto", Arial, Helvetica, sans-serif;
+
+
+
+
+
 }
 
 #user-settings-icons a:hover .user-settings-toggle {
@@ -132,3 +156,8 @@
 
 
 // user settings modal
+
+
+.user-profile-settings{
+    
+}
