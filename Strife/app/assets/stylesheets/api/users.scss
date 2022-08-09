@@ -23,7 +23,9 @@
 }
 
 .fa-microphone,
-.fa-headphones {
+.fa-headphones,
+.svg-microphone, 
+.svg-muted-microphone {
     color: #B9BBBE;
     padding: 5px;
     padding-top: 10px;
@@ -95,6 +97,16 @@
 
 #user-settings-icons .fa-microphone:hover {
     filter: brightness(150%);
+}
+
+#user-settings-icons .svg-microphone:hover{
+    filter: brightness(150%);
+
+}
+
+#user-settings-icons .svg-muted-microphone:hover{
+    filter: brightness(150%);
+    
 }
 
 .user-settings-toggle {
