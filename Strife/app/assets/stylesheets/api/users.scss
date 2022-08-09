@@ -50,7 +50,22 @@
     line-height: 18px;
     font-weight: 600;
     font-family: "Whitney";
+    white-space: nowrap;
+
 }
+
+
+#username p {
+    font-size: 12px;
+    font-family: "Whitney";
+    line-height: 13px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: hsl(216,0.037%,73.5%);
+    font-weight: 400;
+}
+
 
 #user-account-info{
     padding-left: 10px;
