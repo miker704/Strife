@@ -74,8 +74,16 @@
     overflow-x: auto;
 }
 
+#user-account-info::-webkit-scrollbar{
+    width:2px;
+    height: 2px;
+    background-color: #282A2E;
+}
 
-
+#user-settings-icons{
+    text-decoration: none;
+    width: 10px;
+}
 
 
 
