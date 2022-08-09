@@ -3,7 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-//user nav bar 
+//user nav bar located in User_nav_container.js calling form user_nav_bar.jsx
+
+.user-nav-bar{
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    width: 225px;
+    padding: 5px;
+    background-color: #292B2F;
+    position: absolute;
+    
+}
+
+
+
 
 
 
