@@ -19,11 +19,19 @@ class UserNavBar extends React.Component {
   }
 
   clickToDeafen(){
-    
+
   }
 
 
   render () {
+
+    let microphone_Icon = this.clickToMute() === true ? ("") : ("");
+    let headphone_Icon = this.clickToDeafen() === true ? ("") : ("");
+
+
+
+
+
 
     return (
       <div className="user-nav-bar">
