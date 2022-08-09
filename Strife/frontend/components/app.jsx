@@ -17,9 +17,11 @@ const App = () => (
     <div>
 
         <Route path='/' component={ModalManagerContainer}></Route>
-        {/* <ProtectedRoute path="/channels/@me" component={ServerNavBarContainer} /> */}
-        {/* <ProtectedRoute path="/channels/:serverId/" component={ServerNavBarContainer} /> */}
-        <ProtectedRoute path="/channels/@me" component={UserNavContainer}/>
+        <ProtectedRoute path="/channels/@me" component={ServerNavBarContainer} />
+        <ProtectedRoute path="/channels/:serverId/" component={ServerNavBarContainer} />
+        {/* <ProtectedRoute path="/channels/@me" component={UserNavContainer}/> */}
+        <ProtectedRoute path="/channels/" component={UserNavContainer}/>
+
 
 
         <Switch>
