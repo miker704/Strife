@@ -6,17 +6,21 @@ class UserNavBar extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      micMute: false
+      micMute: false,
+      deafen : false
     }
     console.log(this.props.currentUser)
     this.clickToMute = this.clickToMute.bind(this);
-
+    this.clickToDeafen = this.clickToDeafen.bind(this);
   }
 
   clickToMute(){
 
   }
 
+  clickToDeafen(){
+    
+  }
 
 
   render () {
