@@ -89,7 +89,7 @@
     filter: brightness(150%);
 }
 
-#user-settings-icons .fa-headphones:hover{
+#user-settings-icons .fa-headphones:hover {
     filter: brightness(150%);
 }
 
@@ -97,13 +97,19 @@
     filter: brightness(150%);
 }
 
-.user-settings-toggle{
+.user-settings-toggle {
     width: 100px;
     height: 30px;
     font-family: "Ginto";
     font-weight: 500;
-    
+    transform: translate(24px, -65px);
+    visibility: hidden;
 }
+
+#user-settings-icons a:hover .user-settings-toggle {
+    visibility: visible;
+}
+
 
 
 
