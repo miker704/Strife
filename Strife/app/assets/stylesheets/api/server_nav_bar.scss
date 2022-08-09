@@ -145,8 +145,8 @@
   cursor: pointer;
   font-size: 20px;
   font-family: bold;
-  height: 50px;
-  width: 50px;
+  height: 48px;
+  width: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,7 +155,8 @@
 }
 
 .unselected-Server {
-  background-color: rgb(56, 57, 62);
+  // background-color: rgb(56, 57, 62);
+  background-color:#36393f;
   border-radius: 50%;
 }
 
@@ -181,8 +182,8 @@
   justify-content: center;
   text-align: center;
   align-items: center;
-  height: 50px;
-  width: 50px;
+  height: 48px;
+  width: 48px;
   border-radius: 50%;
   transition: 0.4s;
   color: rgb(60, 163, 92);
