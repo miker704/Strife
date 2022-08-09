@@ -13,8 +13,15 @@
     padding: 5px;
     background-color: #292B2F;
     position: absolute;
+    transform: translate(75px, Calc(100vh - 50px));
     
 }
+
+
+.user-nav-bar:hover{
+    z-index: 3;
+}
+
 
 
 
