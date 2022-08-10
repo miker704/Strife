@@ -12,6 +12,7 @@ import ChannelNavBarContainer from "./channels/channel_nav/channel_nav_bar_conta
 import UserNavContainer from './users/user_nav/user_nav_container';
 import ServerNavBarContainer from './server/server_nav_bar/server_nav_bar_container';
 import ModalManagerContainer from './modals/modal_manager_container';
+import UserProfileContainer from './users/user_profile/user_profile_container';
 
 const App = () => (
     <div>
@@ -38,7 +39,11 @@ const App = () => (
         </Switch>
 
 
+    <Switch>
 
+        <ProtectedRoute path="/users/:userId" component={UserProfileContainer}/>
+
+    </Switch>
 
 
 
