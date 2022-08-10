@@ -127,7 +127,7 @@ class UserNavBar extends React.Component {
 
           {/* redirect link */}
           <Link to={`/users/${this.props.currentUser.id}`}>
-            {/* <i className="fa-solid fa-gear" /> */}
+        
             <svg className="fa-gear" width="20" height="20" viewBox="0 0 24 24">
               <path fill="currentColor" d="M19.738 10H22V14H19.739C19.498 14.931 19.1 15.798 18.565 16.564L20 
                 18L18 20L16.565 18.564C15.797 19.099 14.932 19.498 14 19.738V22H10V19.738C9.069 19.498 8.203 
