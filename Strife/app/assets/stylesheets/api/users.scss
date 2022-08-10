@@ -217,11 +217,11 @@
 
 }
 
-#user-settings-icons a:hover .user-settings-toggle1{
-visibility: visible;
+#user-settings-icons a:hover .user-settings-toggle1 {
+    visibility: visible;
 }
 
-#user-settings-icons div:hover .user-settings-toggle2{
+#user-settings-icons div:hover .user-settings-toggle2 {
     visibility: visible;
 }
 
@@ -229,7 +229,7 @@ visibility: visible;
 
 #user-settings-icons {
     display: flex;
-    
+
 }
 
 .contain-icon {
@@ -238,7 +238,7 @@ visibility: visible;
 
 // user settings modal located as user profile container.js and uiser profile.jsx
 
-.user-profile-wrapper{
+.user-profile-wrapper {
     position: absolute;
     top: 0;
     left: 0;
@@ -252,58 +252,232 @@ visibility: visible;
 
 
 
+    .user-profile {
+        animation-name: userProfileModalAppear;
+        animation-duration: 0.3s;
+        animation-iteration-count: 1;
+        z-index: 20;
+        background-color: #2F3136;
+        width: 100vw;
+        height: 100vh;
+    }
+
+}
+
+.user-profile-right-side {
+    background-color: #36393F;
+}
+
+.user-profile-left-side {
+    // background-color: #2F3136;
+    // position: absolute;
+    // height: 90vh;
+    // width: 25vw;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: end;
+    // color: #96989D;
+    // padding-top: 10vh;
+
+
+    background-color: #2F3136;
+    color: #96989D;
+    overflow: hidden scroll;
+    forced-color-adjust: none;
+    padding-right: 0px;
+    flex: 1 0 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    box-sizing: border-box;
 
 }
 
 
+.user-profile-header3 {
+
+    padding: 6px 10px;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #96989D;
+    // color: hsl(223,0.034%,60.2%);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: "Ginto Normal";
+
+}
+
+
+
+
+.user-profile-item {
+    margin: 10px;
+    // padding:5px;
+    // padding: 6px 10px;#41464d
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: "Whitney";
+    padding-top: 6px;
+    padding-bottom: 10px;
+    margin-bottom: 2px;
+    box-sizing: border-box;
+
+    white-space: nowrap;
+    position: relative;
+    font-size: 16px;
+    line-height: 20px;
+
+    flex-shrink: 0;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+
+
+}
+
+.user-profile-item:hover {
+    color: rgb(212, 212, 212);
+    background-color: rgb(61, 63, 68);
+}
+
+.user-profile-item-list {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 218px;
+    padding: 60px 6px 60px 20px;
+    box-sizing: border-box;
+    -webkit-box-flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+
+}
+
+
+.user-profile-item-list a {
+    text-decoration: none;
+    // colo
+}
+
+.user-settings-separator {
+    margin: 8px 10px;
+    height: 1px;
+    box-sizing: border-box;
+    background-color: hsla(217, 0.076%, 33.5%, 0.48);
+}
+
 @keyframes userProfileWrapperRender {
 
     0% {
-      opacity: 0;
+        opacity: 0;
     }
 
     70% {
-      opacity: 1;
+        opacity: 1;
     }
 
     100% {}
 
-  }
+}
 
 
-  
-  @keyframes userProfileModalAppear {
+
+@keyframes userProfileModalAppear {
 
     0% {
-      opacity: 0;
-      transform: scale(0.5, 0.5);
+        opacity: 0;
+        transform: scale(0.5, 0.5);
     }
 
     70% {
-      opacity: 1;
+        opacity: 1;
     }
 
     100% {
-      transform: scale(1, 1);
+        transform: scale(1, 1);
     }
 
-  }
+}
 
-  @keyframes userProfileModalDisappear {
+@keyframes userProfileModalDisappear {
 
     0% {
-      opacity: 1;
-      transform: scale(1, 1);
+        opacity: 1;
+        transform: scale(1, 1);
     }
 
     70% {
-      opacity: 0.5;
+        opacity: 0.5;
     }
 
     100% {
-      transform: scale(0.5, 0.5);
+        transform: scale(0.5, 0.5);
     }
 
-  }
+}
 
 
+
+.user-profile-socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 10px;
+    padding-top: 5px;
+
+}
+
+.version-number {
+    color: #A3A6AA;
+    font-size: 12px;
+    font-family: "Whitney";
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+.strife-nitro-lbl{
+    display: flex;
+    -webkit-box-pack:justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    pointer-events: none;
+    z-index: 23;
+    box-sizing: border-box;
+
+}
+
+.strife-nitro-img {
+    background-image: linear-gradient(90deg, #32CD32, #AC5C);
+    // #854dc2, #ac5c8f
+    // #854DC2, #AC5C
+    //#00FF00
+    color: hsl(0, 0%, 100%);
+
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+    margin-left: auto;
+    padding: 4px 8px;
+    pointer-events: all;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    font-family: "Whitney";
+}
