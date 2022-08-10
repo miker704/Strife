@@ -118,12 +118,12 @@ class UserNavBar extends React.Component {
 
           <div className="contain-icon">
             {headphone_component}
-            <div className="user-settings-toggle">{this.clickToDeafen()}</div>
+            <div className="user-settings-toggle2">{this.clickToDeafen()}</div>
           </div>
-          {/* <i className="fa-solid fa-headphones" title="user"></i> */}
+         
 
 
-          {/* <div className="contain-icon"> */}
+       
             {/* redirect link */}
             <Link to={`/users/${this.props.currentUser.id}`}>
               {/* <i className="fa-solid fa-gear" /> */}
@@ -136,9 +136,9 @@ class UserNavBar extends React.Component {
                  16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 
                  16 12 16Z"></path>
                  </svg>
-              <div className="user-settings-toggle">User Settings</div>
+              <div className="user-settings-toggle1">User Settings</div>
             </Link>
-          {/* </div> */}
+          
 
 
 
