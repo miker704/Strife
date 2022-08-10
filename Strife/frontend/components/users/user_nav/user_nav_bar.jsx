@@ -24,7 +24,12 @@ class UserNavBar extends React.Component {
   }
 
   clickToDeafen () {
-
+    if (this.state.clickToDeafen === false) {
+      return "Deafen";
+    }
+    else if (this.state.clickToDeafen === true) {
+      return "Undeafen";
+    }
   }
 
 
@@ -90,10 +95,10 @@ class UserNavBar extends React.Component {
           {/* <i className="fa-solid fa-microphone"> </i> */}
           {/* <i className="fa-solid fa-microphone-slash"> </i> */}
 
-          <span>
+          <div className="contain-icon">
             {mic_component}
             <div className="user-settings-toggle">{this.clickToMute()}</div>
-          </span>
+          </div>
 
 
           <i className="fa-solid fa-headphones" title="user"></i>
