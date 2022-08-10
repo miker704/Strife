@@ -19,13 +19,15 @@
 
 
 .user-nav-bar:hover {
-    z-index: 3;
+    z-index: 10;
 }
 
 .fa-microphone,
 .fa-headphones,
-.svg-microphone, 
-.svg-muted-microphone {
+.svg-microphone,
+.svg-muted-microphone,
+.svg-headphone,
+.svg-muted-headphone {
     color: #B9BBBE;
     padding: 5px;
     padding-top: 10px;
@@ -35,7 +37,7 @@
 
 .fa-gear {
     color: #B9BBBE;
-    padding: 6px;
+    padding: 5px;
     padding-top: 10px;
 }
 
@@ -84,7 +86,7 @@
 
 #user-settings-icons a {
     text-decoration: none;
-    width: 16px;
+    width: 32px;
 }
 
 #user-settings-icons a:hover .fa-gear {
@@ -99,26 +101,47 @@
     filter: brightness(150%);
 }
 
-#user-settings-icons .svg-microphone:hover{
+#user-settings-icons .svg-microphone:hover {
     filter: brightness(150%);
 
 }
 
-#user-settings-icons .svg-muted-microphone:hover{
+#user-settings-icons .svg-muted-microphone:hover {
     filter: brightness(150%);
-    
+
 }
+
+
+#user-settings-icons .svg-headphone:hover {
+    filter: brightness(150%);
+
+}
+
+#user-settings-icons .svg-muted-headphone:hover {
+    filter: brightness(150%);
+
+}
+
+
+
+
+
+
+
+
 
 .user-settings-toggle {
     width: fit-content;
-    height: 30px;
+    // height: 30px;
+    height: fit-content;
     font-family: "Ginto";
     font-weight: 500;
-    transform: translate(24px, -65px);
+    // transform: translate(24px, -65px);
+    transform: translate(0px, -80px);
     visibility: hidden;
     background-color: rgb(25, 25, 25);
     color: #FFFFFF;
-    z-index: 5;
+    z-index: 25;
     border-radius: 3px;
 
 }
@@ -128,37 +151,33 @@
 }
 
 
+
 #user-settings-icons span:hover .user-settings-toggle {
     visibility: visible;
 
 }
+
+#user-settings-icons div:hover .user-settings-toggle {
+    visibility: visible;
+
+}
+
 #user-settings-icons .user-settings-toggle:hover {
     visibility: visible;
 
 }
+
 // user settings modal
 
 
-#user-settings-icons{
+#user-settings-icons {
     display: flex;
 
 }
 
-
-.fa-headphones[title]:hover::after{
-    content: attr(title);
-    width: 100px;
-    height: 30px;
-    font-family: "Ginto";
-    font-weight: 500;
-    transform: translate(24px, -65px);
-    // visibility: hidden;
-    background-color: rgb(25, 25, 25);
-    color: #FFFFFF;
-    z-index: 5;
-
+.contain-icon {
+    width: 32px;
 }
 
-.fa-headphones{
-    visibility: visible;
-}
+
+
