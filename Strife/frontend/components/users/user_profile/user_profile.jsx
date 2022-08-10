@@ -35,7 +35,7 @@ class UserProfile extends React.Component {
             <ul className="user-profile-item-list">
 
               <li><h3 className="user-profile-header3">User Settings</h3></li>
-              <li className="user-profile-header3">User Settings</li>
+
 
               <Link to={`/users/${this.props.currentUser.id}`}>
 
@@ -44,7 +44,6 @@ class UserProfile extends React.Component {
               </Link>
 
               <li className="user-profile-item">Friend Requests</li>
-              <li className="user-profile-item">Logout</li>
               <li className="user-profile-item">Profiles</li>
               <li className="user-profile-item">Privacy & Safety</li>
               <li className="user-profile-item">Authorized Apps</li>
@@ -78,7 +77,10 @@ class UserProfile extends React.Component {
               <li className="user-profile-item">What's New</li>
               <li className="user-profile-item">HypeSquad</li>
               <div className="user-settings-separator"></div>
-              <li className="user-profile-item">Logout</li>
+              <li className="user-profile-item" onClick={() => this.props.logoutUser()}>Log Out
+                <span>Log Out</span>
+                <i className="fa-solid fa-arrow-right"></i>
+              </li>
               <div className="user-settings-separator"></div>
               <div className="user-profile-socials">
                 <i className="fa-brands fa-twitter fa-lg"></i>{"    "}
