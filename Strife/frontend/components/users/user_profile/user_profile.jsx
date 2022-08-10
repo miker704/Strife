@@ -77,7 +77,7 @@ class UserProfile extends React.Component {
               <li className="user-profile-item">What's New</li>
               <li className="user-profile-item">HypeSquad</li>
               <div className="user-settings-separator"></div>
-              <li className="user-profile-item" onClick={() => this.props.logoutUser()}>Log Out
+              <li className="user-profile-item" onClick={() => this.props.logoutUser()}>
                 <span>Log Out</span>
                 <i className="fa-solid fa-arrow-right"></i>
               </li>
@@ -93,7 +93,7 @@ class UserProfile extends React.Component {
                 <span>Windows 11 64-bit</span>
 
               </div>
-              <div className="strife-nitro-img">1 month free</div>
+           
             </ul>
           </div>
 
