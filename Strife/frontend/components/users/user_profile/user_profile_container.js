@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import UserProfile from "./user_profile";
-import {removeUserAccount, logoutUser, updateUserInfo } from '../../../actions/session_actions'
+import {removeUserAccount, logoutUser, updateUserInfo, removeSessionErrors} from '../../../actions/session_actions'
 import { openModal, closeModal } from "../../../actions/modal_actions";
 import { withRouter } from "react-router";
 
@@ -17,7 +17,8 @@ const mDTP = (dispatch) => {
     deleteUserAccount : (userId) => {dispatch(removeUserAccount(userId))},
     logoutUser : () => {dispatch(logoutUser())},
     openModal: (modal) => dispatch(openModal(modal)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    removeSessionErrors: () => dispatch(removeSessionErrors())
 
   }
 }
