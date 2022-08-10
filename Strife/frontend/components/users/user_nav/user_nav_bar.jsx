@@ -9,7 +9,7 @@ class UserNavBar extends React.Component {
       micMute: false,
       deafen: false
     }
-    console.log(this.props.currentUser)
+    console.log("usernav bar current user : ",this.props.currentUser)
     this.clickToMute = this.clickToMute.bind(this);
     this.clickToDeafen = this.clickToDeafen.bind(this);
   }
