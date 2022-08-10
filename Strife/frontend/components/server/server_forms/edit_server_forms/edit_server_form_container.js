@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { removeServerErrors, updateServer } from "../../../../actions/server_actions";
+import { openModal, closeModal } from "../../../../actions/modal_actions";
 import EditServerForm from "./edit_server_form";
 
 const mSTP = (state) => {
@@ -12,7 +13,9 @@ const mSTP = (state) => {
 const mDTP = (dispatch) => {
     return {
         updateServerInfo: (server) => dispatch(updateServer(server)),
-        removeServerErrors: () => dispatch(removeServerErrors())
+        removeServerErrors: () => dispatch(removeServerErrors()),
+        openModal: (modal) => dispatch(openModal(modal)),
+        closeModal: () => dispatch(closeModal())
     }
 }
 
