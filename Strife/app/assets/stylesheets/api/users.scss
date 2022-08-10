@@ -131,13 +131,13 @@
 
 
 .user-settings-toggle {
-    width: fit-content;
+    width: 45px;
     // height: 30px;
     height: fit-content;
     font-family: "Ginto";
     font-weight: 500;
     // transform: translate(24px, -65px);
-    transform: translate(0px, -80px);
+    transform: translate(-2px, -80px);
     visibility: hidden;
     background-color: rgb(25, 25, 25);
     color: #FFFFFF;
@@ -145,6 +145,39 @@
     border-radius: 3px;
 
 }
+
+.user-settings-toggle1 {
+    width: 105px;
+    // height: 30px;
+    height: fit-content;
+    font-family: "Ginto";
+    font-weight: 500;
+    // transform: translate(24px, -65px);
+    transform: translate(-25px, -80px);
+    visibility: hidden;
+    background-color: rgb(25, 25, 25);
+    color: #FFFFFF;
+    z-index: 25;
+    border-radius: 3px;
+
+}
+
+.user-settings-toggle2 {
+    width: 60px;
+    // height: 30px;
+    height: fit-content;
+    font-family: "Ginto";
+    font-weight: 500;
+    // transform: translate(24px, -65px);
+    transform: translate(-12px, -80px);
+    visibility: hidden;
+    background-color: rgb(25, 25, 25);
+    color: #FFFFFF;
+    z-index: 25;
+    border-radius: 3px;
+
+}
+
 
 #user-settings-icons a:hover .user-settings-toggle {
     visibility: visible;
@@ -167,17 +200,27 @@
 
 }
 
-// user settings modal
+#user-settings-icons a:hover .user-settings-toggle1{
+visibility: visible;
+}
+
+#user-settings-icons div:hover .user-settings-toggle2{
+    visibility: visible;
+}
+
 
 
 #user-settings-icons {
     display: flex;
-
+    
 }
 
 .contain-icon {
     width: 32px;
 }
+
+// user settings modal located as user profile container.js and uiser profile.jsx
+
 
 
 
