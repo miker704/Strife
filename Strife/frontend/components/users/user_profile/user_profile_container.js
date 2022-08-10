@@ -6,7 +6,7 @@ import { withRouter } from "react-router";
 
 const mSTP = (state) => {
   return{
-    user: state.session.currentUser,
+    currentUser: state.entities.users[state.session.id],
     errors: state.errors.session
   }
 }
