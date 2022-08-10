@@ -131,7 +131,7 @@
 
 
 .user-settings-toggle {
-    width: 45px;
+    width: fit-content;
     // height: 30px;
     height: fit-content;
     font-family: "Ginto";
@@ -163,7 +163,24 @@
 }
 
 .user-settings-toggle2 {
-    width: 60px;
+    width: fit-content;
+    // height: 30px;
+    height: fit-content;
+    font-family: "Ginto";
+    font-weight: 500;
+    // transform: translate(24px, -65px);
+    transform: translate(-12px, -80px);
+    visibility: hidden;
+    background-color: rgb(25, 25, 25);
+    color: #FFFFFF;
+    z-index: 25;
+    border-radius: 3px;
+
+}
+
+
+.user-settings-toggle-unmute {
+    width: 62px;
     // height: 30px;
     height: fit-content;
     font-family: "Ginto";
