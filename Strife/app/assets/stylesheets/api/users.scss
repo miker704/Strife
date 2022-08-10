@@ -141,7 +141,7 @@
     visibility: hidden;
     background-color: rgb(25, 25, 25);
     color: #FFFFFF;
-    z-index: 25;
+    z-index: 15;
     border-radius: 3px;
 
 }
@@ -157,7 +157,7 @@
     visibility: hidden;
     background-color: rgb(25, 25, 25);
     color: #FFFFFF;
-    z-index: 25;
+    z-index: 15;
     border-radius: 3px;
 
 }
@@ -173,7 +173,7 @@
     visibility: hidden;
     background-color: rgb(25, 25, 25);
     color: #FFFFFF;
-    z-index: 25;
+    z-index: 15;
     border-radius: 3px;
 
 }
@@ -190,7 +190,7 @@
     visibility: hidden;
     background-color: rgb(25, 25, 25);
     color: #FFFFFF;
-    z-index: 25;
+    z-index: 15;
     border-radius: 3px;
 
 }
@@ -238,6 +238,72 @@ visibility: visible;
 
 // user settings modal located as user profile container.js and uiser profile.jsx
 
+.user-profile-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    animation-name: userProfileWrapperRender;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    z-index: 20;
 
+
+
+
+}
+
+
+@keyframes userProfileWrapperRender {
+
+    0% {
+      opacity: 0;
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {}
+
+  }
+
+
+  
+  @keyframes userProfileModalAppear {
+
+    0% {
+      opacity: 0;
+      transform: scale(0.5, 0.5);
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(1, 1);
+    }
+
+  }
+
+  @keyframes userProfileModalDisappear {
+
+    0% {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+
+    70% {
+      opacity: 0.5;
+    }
+
+    100% {
+      transform: scale(0.5, 0.5);
+    }
+
+  }
 
 
