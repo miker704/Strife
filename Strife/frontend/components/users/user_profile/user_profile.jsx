@@ -1,10 +1,10 @@
 import React from "react"
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import EditUserFormContainer from "./user_edit_form_container"
 import UserDeleteForm from "./user_delete_form"
 
-class UserProfile extends React.Component{
-  constructor(props){
+class UserProfile extends React.Component {
+  constructor (props) {
     super(props)
     this.state = {
       user: this.props.user,
@@ -12,147 +12,89 @@ class UserProfile extends React.Component{
       deleteForm: false,
     }
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.openModal = this.openModal.bind(this)
-    this.closeModal = this.closeModal.bind(this)
-    this.openDeleteModal= this.openDeleteModal.bind(this);
-    this.openUserEditInfoModal=this.openUserEditInfoModal.bind(this)
-    
+
+
+  }
+
+  handleSubmit () {
+
   }
 
 
-  componentDidMount(){
-    this.mounted = true;
-  }
+  render () {
 
-  componentWillUnmount(){
-    this.mounted = false;
-  }
 
-  openModal(field){
-    this.setState({[field]: true})
-  }
 
-  closeModal(field){
-    if(this.mounted){ 
-      this.setState({[field]: false})
-    }
-  }
+    return (
+      <div className="user-profile-wrapper">
+        <div className="user-profile">
 
-  handleSubmit(){
-    setTimeout(
-      () => {
-              if(this.props.errors.length === 0) {
-                this.closeModal("userEdit")
-              }
-            }, 200)
-  }
+          <div className="user-profile-left-side">
 
-  openUserEditInfoModal(){
-    if(this.state.userEdit){
-      return (
-      <div>
-          <div className="user-editForm-modal" onClick={() => this.closeModal("userEdit")}/>
-          <div onSubmit={() => this.handleSubmit()}> 
-            <EditUserFormContainer id = {this.state.user.id}/>
-          </div>
-          <button id="channel-exit-x" onClick={() => this.closeModal("userEdit")}>
-            <i className="fa-solid fa-xmark"/>
-            </button>
-      </div>
-      )
-    }
-    return null;
-  }
 
-  openDeleteModal(){
-    if (this.state.deleteForm){
-      return(
-        <div>
-          <div className="user-editForm-modal" onClick={() => this.closeModal("deleteForm")}/>
-          <div onSubmit={() => this.closeModal("deleteForm")}> 
-            <UserDeleteForm 
-              user = {this.props.user}
-              deleteUser = {this.props.delete}
-            />
-          </div>
-          <button id="channel-exit-x" onClick={() => this.closeModal("deleteForm")}><i className="fa-solid fa-xmark"/></button>
-      </div>
-      )
-    } else{
-      return null;
-    }
-  }
+            <ul className="user-profile-item-list">
 
-  render(){
-   // prevent the demo account from being deleted
-    const deleteButton = this.props.user.email === "DemoUser1@strife.com" ? <button id ="delete-user"> 
-      Delete Account (Disabled for Demo Account)</button> : 
-    <button className="delete-user-Account-button" onClick={() => this.openModal("deleteForm")}>Delete Account</button>
-  
-    // prevent the user from modifying the demousers info if the demouser is loggged in 
-    const updateButton = 
-      <button className="update-userInfo-button" onClick= {() => this.openModal("userEdit")}>
-        Edit User Profile </button> 
+              <li><h3 className="user-profile-header3">User Settings</h3></li>
+              <li className="user-profile-header3">User Settings</li>
 
-    return(
-      <div className= "user-profile">
-        {this.openUserEditInfoModal()}
-        {this.openDeleteModal()}
-        <div id="user-side-nav"> 
-          <ul id="user-side-nav-list">
-            <Link to={`/users/${this.props.user.id}`}> 
-              <li className = "user-side-nav-item selected-dm">My Account</li>
-            </Link>
-            <Link to={`/channels/@me`}> 
-              <li className = "user-side-nav-item">My Direct Messages</li>
-            </Link>
-            <li className = "user-side-nav-item" onClick={() => this.props.logoutUser()}> 
-              <span>Log Out</span>
-                <i className="fa-solid fa-arrow-right"></i>
-            </li>
-          </ul>
-        </div>
-        <div id="user-profile-header"> 
-          <h3 className="my-account-header">My Account</h3>
-          <div id="to-home"> 
-            <Link id="home-link" to="/channels/@me">
-                <i className="fa-solid fa-xmark"/>
-            </Link> 
-            <p id="esc">ESC</p>
-          </div>
-        </div>
-        <div id="user-profile-content">
-          <div id="user-profile-dark-top"/> 
-          <div id ="user-top-info"> 
-            <div className={"invading-div"}>
-              <div className={`user-icon-profile color-${this.props.user.color_tag}`}>
-                <i className="fa-brands fa-discord"/>
+              <Link to={`/users/${this.props.currentUser.id}`}>
+
+                <li className="user-profile-item">My Account</li>
+
+              </Link>
+
+              <li className="user-profile-item">Friend Requests</li>
+              <li className="user-profile-item">Logout</li>
+              <li className="user-profile-item">Profiles</li>
+              <li className="user-profile-item">Privacy & Safety</li>
+              <li className="user-profile-item">Authorized Apps</li>
+              <li className="user-profile-item">Connections</li>
+              <div className="user-settings-separator"></div>
+              <li><h3 className="user-profile-header3">Billing Settings</h3></li>
+              <li className="user-profile-item" ><div className="strife-nitro-lbl">
+                Nitro
+                <div className="strife-nitro-img">1 month free</div>
+              </div></li>
+              <li className="user-profile-item">Server Boost</li>
+              <li className="user-profile-item">Subscriptions</li>
+              <li className="user-profile-item">Gift Inventory</li>
+              <li className="user-profile-item">Billing</li>
+              <div className="user-settings-separator"></div>
+              <li><h3 className="user-profile-header3">App Settings</h3></li>
+              <li className="user-profile-item">Appearance</li>
+              <li className="user-profile-item">Accessibility</li>
+              <li className="user-profile-item">Voice & Video</li>
+              <li className="user-profile-item">Text & Images</li>
+              <li className="user-profile-item">Notifications</li>
+              <li className="user-profile-item">Keybinds</li>
+              <li className="user-profile-item">Language</li>
+              <li className="user-profile-item">Streamer Mode</li>
+              <li className="user-profile-item">Advanced</li>
+              <div className="user-settings-separator"></div>
+              <li><h3 className="user-profile-header3">Activity Settings</h3></li>
+              <li className="user-profile-item">Activity Privacy</li>
+              <li className="user-profile-item">Registered Games</li>
+              <div className="user-settings-separator"></div>
+              <li className="user-profile-item">What's New</li>
+              <li className="user-profile-item">HypeSquad</li>
+              <div className="user-settings-separator"></div>
+              <li className="user-profile-item">Logout</li>
+              <div className="user-settings-separator"></div>
+              <div className="user-profile-socials">
+                <i className="fa-brands fa-twitter fa-lg"></i>{"    "}
+                <i className="fa-brands fa-instagram fa-lg"></i>{"    "}
+                <i className="fa-brands fa-facebook-square fa-lg"></i>{"    "}
               </div>
-            </div>
-            <div id="user-fullname"> 
-              <h4>{this.props.user.username}</h4> 
-              <span>#{this.props.user.strife_id_tag}</span>
-            </div>
-            {updateButton}
-          </div>
-          <div id="user-info"> 
-            <div id="user-username"> 
-              <p> Username: </p> 
-              <div id="actual-info"> 
-                <p>{this.props.user.username}</p> 
-                <span>STRIFE ID #{this.props.user.strife_id_tag}</span>
+              <div className="version-number">
+                <span>Stable 140575 (12c29a3)</span>
+                <br />
+                <span>Windows 11 64-bit</span>
+
               </div>
-            </div>
-            <div id="user-email"> 
-              <p>Email Address: </p>
-              <div id="actual-info">
-                <p>{this.props.user.email}</p>
-              </div>
-            </div>
+              <div className="strife-nitro-img">1 month free</div>
+            </ul>
           </div>
-          <div id="user-buttons">  
-            {deleteButton}
-          </div>
+
         </div>
       </div>
 
