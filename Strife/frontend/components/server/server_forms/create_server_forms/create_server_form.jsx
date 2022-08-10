@@ -760,7 +760,7 @@ class CreateServerForm extends React.Component {
                     </div>
                     <div className="back-create-server-button">
                         <h2 onClick={this.handleSlideBackward}>Back</h2>
-                        <input id="serverCreateButton" type="submit" onClick={this.handleSubmit} />
+                        <input id="serverCreateButton" type="submit" value="Create" onClick={this.handleSubmit} />
                     </div>
                 </form>
             </div>
