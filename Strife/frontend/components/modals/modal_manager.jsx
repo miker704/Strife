@@ -1,5 +1,6 @@
 import React from "react";
 import CreateServerFormContainer from "../server/server_forms/create_server_forms/create_server_form_container.js";
+import UserProfileContainer from "../users/user_profile/user_profile_container.js";
 
 class ModalManager extends React.Component {
     constructor (props) {
@@ -30,17 +31,19 @@ class ModalManager extends React.Component {
         switch (this.props.modal) {
             case 'createServerForm':
                 console.log("createServerForm called to be rendered")
-                renderedModal = <CreateServerFormContainer/>
+                renderedModal = <CreateServerFormContainer />
                 break;
             case 'downloadApps':
-                renderedModal = <EditServerFormContainer/>
+                renderedModal = <EditServerFormContainer />
                 break;
-
+            case 'userProfile':
+                renderedModal = <UserProfileContainer />
+                break;
             // case "SearchServerForm":
             //     renderedModal = <EditServerFormContainer />
             //     break;
 
-          
+
             default:
                 return null;
         }
