@@ -110,35 +110,16 @@
 }
 
 .user-settings-toggle {
-    // width: 100px;
-    // height: 30px;
-    // font-family: "Ginto";
-    // font-weight: 500;
-    // transform: translate(24px, -65px);
-    // visibility: hidden;
-
-
+    width: fit-content;
+    height: 30px;
+    font-family: "Ginto";
+    font-weight: 500;
+    transform: translate(24px, -65px);
     visibility: hidden;
-    position: relative;
     background-color: rgb(25, 25, 25);
     color: #FFFFFF;
-    border-radius: 5px;
-    width: fit-content;
-    max-width: 115px;
-    text-align: left;
-    padding: 5px;
     z-index: 5;
-    top: -50px;
-    left: 85px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    font-size: 15px;
-    font-weight: 500;
-    font-family: "Ginto", Arial, Helvetica, sans-serif;
-
-
-
-
+    border-radius: 3px;
 
 }
 
@@ -147,17 +128,37 @@
 }
 
 
+#user-settings-icons span:hover .user-settings-toggle {
+    visibility: visible;
 
+}
+#user-settings-icons .user-settings-toggle:hover {
+    visibility: visible;
 
-
-
-
-
-
-
+}
 // user settings modal
 
 
-.user-profile-settings{
-    
+#user-settings-icons{
+    display: flex;
+
+}
+
+
+.fa-headphones[title]:hover::after{
+    content: attr(title);
+    width: 100px;
+    height: 30px;
+    font-family: "Ginto";
+    font-weight: 500;
+    transform: translate(24px, -65px);
+    // visibility: hidden;
+    background-color: rgb(25, 25, 25);
+    color: #FFFFFF;
+    z-index: 5;
+
+}
+
+.fa-headphones{
+    visibility: visible;
 }
