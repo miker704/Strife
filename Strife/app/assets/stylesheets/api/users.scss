@@ -447,9 +447,9 @@
     padding-top: 20px;
 }
 
-.strife-nitro-lbl{
+.strife-nitro-lbl {
     display: flex;
-    -webkit-box-pack:justify;
+    -webkit-box-pack: justify;
     justify-content: space-between;
     -webkit-box-align: center;
     align-items: center;
@@ -461,7 +461,7 @@
 }
 
 .strife-nitro-img {
-    background-image: linear-gradient(90deg,#854DC2, #AC5C8F);
+    background-image: linear-gradient(90deg, #854DC2, #AC5C8F);
     // background-image: linear-gradient(90deg, #32CD32, #AC5C);
 
     // #854dc2, #ac5c8f
@@ -484,6 +484,16 @@
     font-family: "Whitney";
 }
 
-.user-security-img{
+.user-security-img {
     content: image_url("usersecurity.svg");
+}
+
+ .fa-instagram, .fa-facebook-square{
+    margin-left: 5px;
+}
+.fa-arrow-right {
+    background-color: rgb(186, 186, 186);
+    color: rgb(56, 57, 62);
+    position: relative;
+    transform: translate(75px, 0px);
 }
