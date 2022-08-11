@@ -1045,17 +1045,38 @@
     border-radius: 3px;
     border: none;
     background: none;
-    // align-items: center;
     -webkit-box-align: center;
-    // justify-content: center;
     -webkit-box-pack: center;
-    // display: flex;
-    // position: relative;
-    // display: -webkit-box;
+  
 }
 
 
+.reveal-button1 {
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    width: auto;
+    cursor: pointer;
+    color: hsl(197, 100%, 47.8%);
+    display: inline;
+    height: auto;
+    padding: 2px 4px;
+    text-rendering: optimizeLegibility;
+    font-family: "Whitney";
+    user-select: none;
+    line-height: 16px;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 3px;
+    border: none;
+    background: none;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+  
+}
 
+.reveal-button:hover , .reveal-button1:hover{
+    text-decoration: underline;
+}
 
 
 
