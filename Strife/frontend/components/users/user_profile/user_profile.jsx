@@ -337,8 +337,13 @@ class UserProfile extends React.Component {
 
                     <h5 className="account-rem-header">Account Removal</h5>
                   </div>
+                  <div className="account-rem-info-div">
 
-
+                    <p className="account-rem-info">
+                    Disabling your account means you can recover it at any time after taking this action.
+                    </p>
+                  </div>
+                      <div className="account-del-button-cont"></div>
                 </div>
 
 
