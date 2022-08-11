@@ -290,7 +290,9 @@ class UserProfile extends React.Component {
                     <div className="passwrd-section">
                             <h1 className="passwrdAuth">Password and Authentication</h1>
                     </div>
-
+                    <div className="password-edit-section">
+                      
+                    </div>
                 </div>
 
               </div>
