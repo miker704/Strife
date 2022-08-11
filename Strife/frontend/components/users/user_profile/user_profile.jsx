@@ -126,11 +126,16 @@ class UserProfile extends React.Component {
                     <div className="account-card-banner"></div>
 
 
-                      <div className="account-card-user-info">
+                    <div className="account-card-user-info">
 
-                  
+                      <div className="account-avatar-wrapper">
+                        {/* <i className="fa-brands fa-discord fa-2xl" /> */}
+
+                        <img className="user-avatar-img" />
 
                       </div>
+
+                    </div>
 
 
 
