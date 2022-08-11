@@ -164,10 +164,19 @@ class UserProfile extends React.Component {
                     </div>
 
                     <div className="account-card-background">
+                      <div className="account-card-background-inner-wrapper">
+                        <div className="account-card-background-inner-field-1">
+                          
+                        </div>
 
 
-                      
+                      </div>
+
+
                     </div>
+
+
+
 
                   </div>
 
