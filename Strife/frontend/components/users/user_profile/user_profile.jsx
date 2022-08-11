@@ -170,8 +170,8 @@ class UserProfile extends React.Component {
                             <div className="constrain-username">
                               <h5 className="constrain-username-header">Username</h5>
                               <div className="constrain-username-inner">
-                                <span>{this.props.currentUser.username}</span>
-                                <span>#{this.props.currentUser.strife_id_tag}</span>
+                                <span className="const-user-name">{this.props.currentUser.username}</span>
+                                <span className="const-id-tag">#{this.props.currentUser.strife_id_tag}</span>
 
                                
                                 
