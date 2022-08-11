@@ -391,7 +391,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    font-family: "Ginto Normal";
+    font-family: "ABC Ginto Normal";
 
 }
 
@@ -421,7 +421,7 @@
     font-weight: 500;
     overflow: hidden;
     text-overflow: ellipsis;
-
+    color: #B9BBBE;
 
 
 }
@@ -1078,8 +1078,44 @@
     text-decoration: underline;
 }
 
+.phone-num-button-container{
+    display: flex;
+
+}
 
 
+.remove-phone-num{
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    width: auto;
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 8px;
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+    user-select: none;
+    background: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    display: flex;
+    -webkit-box-pack: center;
+    position: relative;
+    color:#FFFFFF;
+    text-rendering: optimizeLegibility;
+    font-family: "Whitney";
+}
+.remove-phone-num:hover{
+    text-decoration: underline;
+}
 
 
 .sidebar-scrollbar::-webkit-scrollbar-track {
@@ -1115,4 +1151,44 @@
     border-radius: 50%;
     overflow: hidden;
     margin-left: 10px;
+}
+
+
+
+.divider-margin{
+ width: 100%;
+ forced-color-adjust: none;
+ box-sizing: border-box;
+ height: 2px;
+ margin-top: 40px;
+ border-top: thin solid hsla(217,0.076%,33.5%,0.48);
+}
+
+
+.userSecuritySettings{
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    margin-top: 40px;
+}
+
+
+.passwrd-section{
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.passwrdAuth{
+    font-size: 20px;
+    line-height: 24px;
+    -webkit-box-flex: 1;
+    flex: 1;
+    cursor: default;
+    font-family: "ABC Ginto Normal";
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+
 }
