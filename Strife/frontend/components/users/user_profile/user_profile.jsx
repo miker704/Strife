@@ -151,20 +151,23 @@ class UserProfile extends React.Component {
                                 10.001 19 10.001Z">
                               </path>
                             </svg>
-
-
                           </div>
 
                         </div>
-
+                        <div className="user-badge-container"></div>
 
                       </div>
 
+                      <button type="button" className="edit-user-profile-button">Edit User Profile</button>
 
 
                     </div>
 
+                    <div className="account-card-background">
 
+
+                      
+                    </div>
 
                   </div>
 
