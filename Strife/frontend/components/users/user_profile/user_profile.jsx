@@ -166,7 +166,20 @@ class UserProfile extends React.Component {
                     <div className="account-card-background">
                       <div className="account-card-background-inner-wrapper">
                         <div className="account-card-background-inner-field-1">
-                          
+                          <div className="constrainedRow">
+                            <div className="constrain-username">
+                              <h5 className="constrain-username-header">Username</h5>
+                              <div className="constrain-username-inner">
+                                <span>{this.props.currentUser.username}</span>
+                                <span>#{this.props.currentUser.strife_id_tag}</span>
+
+                               
+                                
+                                </div>
+                            </div>
+                            
+
+                          </div>
                         </div>
 
 
