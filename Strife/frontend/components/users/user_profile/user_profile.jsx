@@ -12,6 +12,8 @@ class UserProfile extends React.Component {
       deleteForm: false,
     }
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.scrambleEmail = this.scrambleEmail.bind(this);
+    this.scramblePhoneNumber=this.scramblePhoneNumber.bind(this);
     console.log("current user is : ", this.props.currentUser);
 
   }
@@ -19,6 +21,16 @@ class UserProfile extends React.Component {
   handleSubmit () {
 
   }
+
+  scrambleEmail(){
+
+  
+  }
+
+  scramblePhoneNumber(){
+
+  }
+
 
 
   render () {
