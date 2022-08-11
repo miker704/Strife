@@ -121,9 +121,20 @@ class UserProfile extends React.Component {
 
                 <div className="my-account-container-wrapper">
 
-                    <div className="my-account-container">
-                      
-                    </div>                        
+                  <div className="my-account-container">
+
+                    <div className="account-card-banner"></div>
+
+
+                      <div className="account-card-user-info">
+
+                  
+
+                      </div>
+
+
+
+                  </div>
 
                 </div>
 
