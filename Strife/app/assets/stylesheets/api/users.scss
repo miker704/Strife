@@ -434,8 +434,8 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    width: 218px;
-    padding: 60px 6px 60px 20px;
+    // width: 218px;
+    // padding: 60px 6px 60px 20px;
     box-sizing: border-box;
     -webkit-box-flex: 1;
     -webkit-box-orient: vertical;
@@ -768,3 +768,25 @@
     box-sizing: border-box;
 
 }
+
+
+
+.sidebar-scrollbar::-webkit-scrollbar-track {
+    border-radius: 10px;
+  
+  }
+  
+  .sidebar-scrollbar::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  .sidebar-scrollbar::-webkit-scrollbar-thumb {
+  
+    visibility: hidden;
+    background: #202225;
+    border-radius: 5px;
+  }
+
+  .sidebar-scrollbar:hover::-webkit-scrollbar-thumb{
+    visibility: visible;
+  }
