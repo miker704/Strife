@@ -379,8 +379,8 @@
 
 
 .user-profile-header3 {
-
-    padding: 6px 10px;
+    padding: 0px 10px 6px;
+    // padding: 6px 10px;
     box-sizing: border-box;
     font-size: 12px;
     font-weight: 700;
@@ -399,7 +399,8 @@
 
 
 .user-profile-item {
-    margin: 10px;
+    // margin: 10px;
+    margin: 0px 0px 2px;
     // padding:5px;
     // padding: 6px 10px;#41464d
     padding: 6px 10px;
@@ -453,7 +454,7 @@
 
 .user-settings-separator {
     margin: 8px 10px;
-    height: 1px;
+    height: 2px;
     box-sizing: border-box;
     background-color: hsla(217, 0.076%, 33.5%, 0.48);
 }
@@ -597,7 +598,8 @@
     -webkit-box-flex: 1;
     flex: 1;
     cursor: default;
-    font-family: "Ginto Normal";
+    // font-family: "Ginto Normal";
+    font-family: "ABC Ginto Normal";
 
 
 }
