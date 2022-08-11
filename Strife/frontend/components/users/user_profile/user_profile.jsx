@@ -12,7 +12,7 @@ class UserProfile extends React.Component {
       deleteForm: false,
     }
     this.handleSubmit = this.handleSubmit.bind(this)
-
+    console.log("current user is : ", this.props.currentUser);
 
   }
 
@@ -175,15 +175,45 @@ class UserProfile extends React.Component {
                               </div>
                             </div>
                           </div>
-                            <button type="button" className="edit-profile-props-button">Edit</button>
+                          <button type="button" className="edit-profile-props-button">Edit</button>
                         </div>
 
 
-                          <div className="field2"></div>
+                        <div className="field2">
+
+                          <div className="constrainedRow">
+                            <div>
+                              <h5 className="constrain-username-header">Email</h5>
+                              <div>
+                                <span className="const-hidden-props">{this.props.currentUser.email}
+                                  <button type="button" className="reveal-button">Reveal</button>
+                                </span>
+                              </div>
+                            </div>
+
+                          </div>
+
+                          <button type="button" className="edit-profile-props-button">Edit</button>
+
+                        </div>
 
 
-                          
-                          <div className="field3"></div>
+
+                        <div className="field3">
+                          <div className="constrainedRow">
+                            <div>
+                              <h5 className="constrain-username-header">Phone Number</h5>
+                              <div>
+                              <span className="const-hidden-props">{this.props.currentUser.phone_number}
+                                  <button type="button" className="reveal-button">Reveal</button>
+                                </span>
+
+                              </div>
+                            </div>
+                          </div>
+                          <button type="button" className="edit-profile-props-button">Edit</button>
+
+                        </div>
 
                       </div>
 
