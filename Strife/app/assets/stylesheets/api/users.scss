@@ -588,6 +588,7 @@
 }
 
 .user-profile-header1 {
+    forced-color-adjust: none;
     box-sizing: border-box;
     color: #FFFFFF;
     margin-bottom: 20px;
@@ -617,7 +618,7 @@
 
 
 
-.user-profile-rsiw{
+.user-profile-rsiw {
     forced-color-adjust: none;
     -webkit-box-flex: 1;
     flex: 1;
@@ -626,6 +627,7 @@
 }
 
 .user-profile-rs-inner-wrapper {
+    forced-color-adjust: none;
     -webkit-box-flex: 1;
     flex: 1;
     height: 100%;
@@ -666,5 +668,50 @@
     min-width: 460px;
     min-height: 100%;
     box-sizing: border-box;
+    forced-color-adjust: none;
 
+}
+
+
+.my-account-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    forced-color-adjust: none;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+}
+
+.my-account-container {
+    forced-color-adjust: none;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    -webkit-box-direction: normal;
+    background-color: hsl(216, 0.072%, 13.5%);
+}
+
+.account-card-banner{
+    background-color: #5c64f4;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    transition: background-color .1s;
+    position: relative;
+
+
+}
+
+
+.account-card-user-info{
+
+}
+
+.account-card-background{
+    
 }
