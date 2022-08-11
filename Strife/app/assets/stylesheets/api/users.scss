@@ -890,7 +890,7 @@
 
 }
 
-.constrainedRow{
+.constrainedRow {
     forced-color-adjust: none;
     margin-right: 16px;
     overflow: hidden;
@@ -901,13 +901,13 @@
 }
 
 
-.constrain-username{
+.constrain-username {
     forced-color-adjust: none;
     overflow: hidden;
     box-sizing: border-box;
 }
 
-.constrain-username-header{
+.constrain-username-header {
     forced-color-adjust: none;
     box-sizing: border-box;
     margin-bottom: 4px;
@@ -923,8 +923,12 @@
 
 }
 
-.constrain-username-name{
-
+.constrain-username-inner {
+    overflow: hidden;
+    color: #FFFFFF;
+    text-overflow: ellipsis;
+    forced-color-adjust: none;
+    box-sizing: border-box;
 }
 
 
