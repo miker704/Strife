@@ -734,7 +734,7 @@
     border-radius: 50%;
 }
 
-.account-avatar-wrapper > img{
+.account-avatar-wrapper>img {
     height: 100%;
     width: 100%;
     border-radius: 50%;
@@ -743,7 +743,7 @@
 
 .user-avatar-img {
     content: image_url("defaultProfilePic.png");
-   
+
     // object-fit: cover;
     // overflow: hidden;
     // display: flex;
@@ -762,7 +762,7 @@
     box-sizing: border-box;
 }
 
-.account-card-username {
+.account-card-username-strife-id-tag {
     align-items: center;
     overflow: hidden;
     justify-content: flex-start;
@@ -779,7 +779,24 @@
     color: #FFFFFF;
 }
 
+.account-settings-username {
+    forced-color-adjust: none;
+    flex: 0 1 auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    -webkit-box-flex: 0;
+    font-family: "ABC Ginto Normal";
+    font-size: 20px;
+    color: #FFFFFF;
 
+}
+
+.account-settings-strife-id-tag {
+    forced-color-adjust: none;
+    
+}
 
 
 .account-card-background {
