@@ -172,16 +172,18 @@ class UserProfile extends React.Component {
                               <div className="constrain-username-inner">
                                 <span className="const-user-name">{this.props.currentUser.username}</span>
                                 <span className="const-id-tag">#{this.props.currentUser.strife_id_tag}</span>
-
-                               
-                                
-                                </div>
+                              </div>
                             </div>
-                            
-
                           </div>
+                            <button type="button" className="edit-profile-props-button">Edit</button>
                         </div>
 
+
+                          <div className="field2"></div>
+
+
+                          
+                          <div className="field3"></div>
 
                       </div>
 
