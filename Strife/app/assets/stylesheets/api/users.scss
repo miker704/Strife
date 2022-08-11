@@ -956,6 +956,49 @@
 
 
 
+.edit-profile-props-button {
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(217,0.076%,33.5%);
+
+    cursor: pointer;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: auto;
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+    transition: background-color .17s ease, color .17s ease;
+    position: relative;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    user-select: none;
+    font-family: "Whitney";
+    text-rendering: optimizeLegibility;
+}
+
+.edit-profile-props-button:hover {
+    background-color: #686D73;
+
+}
+
+.field2{
+
+}
+
+.field3{
+    
+}
 
 
 
