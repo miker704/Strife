@@ -1047,7 +1047,7 @@
     background: none;
     -webkit-box-align: center;
     -webkit-box-pack: center;
-  
+
 }
 
 
@@ -1071,20 +1071,21 @@
     background: none;
     -webkit-box-align: center;
     -webkit-box-pack: center;
-  
+
 }
 
-.reveal-button:hover , .reveal-button1:hover{
+.reveal-button:hover,
+.reveal-button1:hover {
     text-decoration: underline;
 }
 
-.phone-num-button-container{
+.phone-num-button-container {
     display: flex;
 
 }
 
 
-.remove-phone-num{
+.remove-phone-num {
     forced-color-adjust: none;
     box-sizing: border-box;
     width: auto;
@@ -1109,11 +1110,12 @@
     display: flex;
     -webkit-box-pack: center;
     position: relative;
-    color:#FFFFFF;
+    color: #FFFFFF;
     text-rendering: optimizeLegibility;
     font-family: "Whitney";
 }
-.remove-phone-num:hover{
+
+.remove-phone-num:hover {
     text-decoration: underline;
 }
 
@@ -1155,30 +1157,30 @@
 
 
 
-.divider-margin{
- width: 100%;
- forced-color-adjust: none;
- box-sizing: border-box;
- height: 2px;
- margin-top: 40px;
- border-top: thin solid hsla(217,0.076%,33.5%,0.48);
+.divider-margin {
+    width: 100%;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    height: 2px;
+    margin-top: 40px;
+    border-top: thin solid hsla(217, 0.076%, 33.5%, 0.48);
 }
 
 
-.userSecuritySettings{
+.userSecuritySettings {
     forced-color-adjust: none;
     box-sizing: border-box;
     margin-top: 40px;
 }
 
 
-.passwrd-section{
+.passwrd-section {
     forced-color-adjust: none;
     box-sizing: border-box;
     display: flex;
 }
 
-.passwrdAuth{
+.passwrdAuth {
     font-size: 20px;
     line-height: 24px;
     -webkit-box-flex: 1;
@@ -1194,11 +1196,183 @@
 }
 
 
-.password-edit-section{
+.password-edit-section {
     display: flex;
     forced-color-adjust: none;
     box-sizing: border-box;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
+}
+
+.changePasswordButton {
+    transition: background-color .17s ease, color .17s ease;
+    user-select: none;
+    background: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    display: flex;
+    -webkit-box-pack: center;
+    position: relative;
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+    width: auto;
+    margin-bottom: 28px;
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    cursor: pointer;
+    color: #FFFFFF;
+    background-color: #5865F2;
+    font-family: "Whitney";
+    font-size: 14px;
+}
+
+
+.changePasswordButton:hover {
+    background-color: #4752C4;
+}
+
+
+.two-factor-auth-wrapper {
+    flex: 1 1 auto;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    display: flex;
+
+}
+
+
+.two-factor-auth-inner {
+    flex: 1 1 auto;
+    margin-left: 0;
+    margin-right: 10px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+}
+
+
+
+.auth-header-div {
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    display: flex;
+}
+
+.auth-header {
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    color: hsl(216, 3.7%, 73.5%);
+    margin-bottom: 8px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    flex: 1;
+    cursor: default;
+    -webkit-box-flex: 1;
+    font-family: "ABC Ginto Normal";
+
+}
+
+
+
+.auth-info-div {
+    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    display: flex;
+}
+
+.auth-info {
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    color: hsl(216, 3.7%, 73.5%);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    cursor: default;
+    margin-bottom: 20px;
+
+
+}
+
+
+.auth-button {
+    cursor: pointer;
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+    width: auto;
+    background-color: #5865F2;
+    color: #FFFFFF;
+    transition: background-color .17s ease, color .17s ease;
+    background: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    user-select: none;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    display: flex;
+    -webkit-box-pack: center;
+    position: relative;
+    font-family: "Whitney";
+    text-rendering: optimizeLegibility;
+}
+
+.auth-button:hover {
+    background-color: #4752C4;
+}
+
+.auth-pic-div {
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-wrap: nowrap;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    margin-left: 10px;
+    margin-right: 0;
+    flex: 0 1 323px;
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+
+
+}
+
+.auth-security-img {
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    transition: opacity .3s ease;
+    width: 100%;
+    opacity: 1;
+    content: image_url("usersecurity.svg");
+
 }
