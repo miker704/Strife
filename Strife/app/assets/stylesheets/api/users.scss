@@ -720,7 +720,7 @@
     box-sizing: border-box;
 }
 
-.account-container-avatar {
+.account-avatar-wrapper {
     width: 80px;
     height: 80px;
     forced-color-adjust: none;
@@ -734,6 +734,27 @@
     border-radius: 50%;
 }
 
+.account-avatar-wrapper > img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+
+.user-avatar-img {
+    content: image_url("defaultProfilePic.png");
+   
+    // object-fit: cover;
+    // overflow: hidden;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // width: 35px;
+    // height: 35px;
+    // border-radius: 50%;
+    // margin-left: 10px;
+
+}
 
 .account-card-username-div {
     forced-color-adjust: none;
@@ -775,20 +796,35 @@
 
 .sidebar-scrollbar::-webkit-scrollbar-track {
     border-radius: 10px;
-  
-  }
-  
-  .sidebar-scrollbar::-webkit-scrollbar {
+
+}
+
+.sidebar-scrollbar::-webkit-scrollbar {
     width: 5px;
-  }
-  
-  .sidebar-scrollbar::-webkit-scrollbar-thumb {
-  
+}
+
+.sidebar-scrollbar::-webkit-scrollbar-thumb {
+
     visibility: hidden;
     background: #202225;
     border-radius: 5px;
-  }
+}
 
-  .sidebar-scrollbar:hover::-webkit-scrollbar-thumb{
+.sidebar-scrollbar:hover::-webkit-scrollbar-thumb {
     visibility: visible;
-  }
+}
+
+
+
+
+
+.settings-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 10px;
+}
