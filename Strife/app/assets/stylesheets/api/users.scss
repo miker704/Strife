@@ -795,8 +795,24 @@
 
 .account-settings-strife-id-tag {
     forced-color-adjust: none;
-    
+    font-family: "ABC Ginto Normal";
+    font-size: 20px;
+    color: #B9BBBE;
+
 }
+
+
+.overflow-menu{
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.overflowMenuIcon{
+    color: hsl(216, 0.037%, 73.5%);
+    cursor: pointer;
+}
+
+
 
 
 .account-card-background {
