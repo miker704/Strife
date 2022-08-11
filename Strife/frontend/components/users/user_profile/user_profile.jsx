@@ -7,16 +7,34 @@ class UserProfile extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      user: this.props.user,
+      user: this.props.currentUser,
       userEdit: false,
       deleteForm: false,
+      userEmail: this.props.currentUser.email,
+      userPhone: this.props.currentUser.phone_number,
+      reveal : "Reveal"
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.scrambleEmail = this.scrambleEmail.bind(this);
     this.scramblePhoneNumber=this.scramblePhoneNumber.bind(this);
     console.log("current user is : ", this.props.currentUser);
+    console.log("current state is : ", this.state);
+    console.log("phone type : ", typeof this.state.userPhone);
+    this.handleRevealClick = this.handleRevealClick.bind(this);
+  }
+
+
+  handleRevealClick(e){
+   
+    if(this.state.reveal === "Reveal"){
+      this.setState({reveal:"Hide"});
+    }
+    else if(this.state.reveal === "Hide"){
+      this.setState({reveal:"Reveal"});
+    }
 
   }
+
 
   handleSubmit () {
 
@@ -28,14 +46,21 @@ class UserProfile extends React.Component {
   }
 
   scramblePhoneNumber(){
+          if(this.state.userPhone === null){
 
+          }
+          else{
+
+          }
   }
 
 
 
   render () {
 
-
+    let scrambledEmail = this.scrambleEmail();
+    const {reveal} = this.state.reveal;
+   
 
     return (
       <div className="user-profile-wrapper">
@@ -119,8 +144,6 @@ class UserProfile extends React.Component {
           </div>
 
 
-
-
           <div className="user-profile-right-side-wrapper">
             <div className="user-profile-rs-inner-wrapper">
 
@@ -155,7 +178,7 @@ class UserProfile extends React.Component {
                           </div>
                           <div className="overflow-menu">
                             <svg className="overflowMenuIcon" width="24" height="24" viewBox="0 0 24 24">
-                              <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M7 12.001C7 10.8964 6.10457 10.001 
+                              <path fill="currentColor"  d="M7 12.001C7 10.8964 6.10457 10.001 
                                 5 10.001C3.89543 10.001 3 10.8964 3 12.001C3 13.1055 3.89543 14.001 5 14.001C6.10457 14.001 7 13.1055 
                                 7 12.001ZM14 12.001C14 10.8964 13.1046 10.001 12 10.001C10.8954 10.001 10 10.8964 10 12.001C10 13.1055 
                                 10.8954 14.001 12 14.001C13.1046 14.001 14 13.1055 14 12.001ZM19 10.001C20.1046 10.001 21 10.8964 21 
@@ -197,7 +220,8 @@ class UserProfile extends React.Component {
                             <div>
                               <h5 className="constrain-username-header">Email</h5>
                               <div>
-                                <span className="const-hidden-props">{this.props.currentUser.email}
+                                {/* <span className="const-hidden-props">{this.props.currentUser.email} */}
+                                <span className="const-hidden-props">{this.state.userEmail}
                                   <button type="button" className="reveal-button">Reveal</button>
                                 </span>
                               </div>
@@ -217,7 +241,7 @@ class UserProfile extends React.Component {
                               <h5 className="constrain-username-header">Phone Number</h5>
                               <div>
                                 <span className="const-hidden-props">{this.props.currentUser.phone_number}
-                                  <button type="button" className="reveal-button">Reveal</button>
+                                  <button id="reveal" type="button" className="reveal-button" onClick={() =>this.handleRevealClick()}>{this.state.reveal}</button>
                                 </span>
 
                               </div>
