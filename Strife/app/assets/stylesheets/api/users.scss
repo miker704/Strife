@@ -812,6 +812,49 @@
     cursor: pointer;
 }
 
+.user-badge-container{
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -2px;
+    margin-bottom: -2px;
+}
+
+
+.edit-user-profile-button{
+    color: hsl(0, 0%, 100%);
+    background-color: #5865F2;
+    cursor: pointer;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    width: auto;
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+    transition: background-color .17s ease,color .17s ease;
+    position: relative;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border:none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    user-select: none;
+    font-family: "Whitney";
+    text-rendering: optimizeLegibility;
+}
+
+.edit-user-profile-button:hover{
+    background-color: #4752C4;
+
+}
+
 
 
 
@@ -825,6 +868,9 @@
 
 }
 
+.account-card-background-inner-field{
+    
+}
 
 
 .sidebar-scrollbar::-webkit-scrollbar-track {
