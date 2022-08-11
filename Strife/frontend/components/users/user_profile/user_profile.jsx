@@ -119,6 +119,15 @@ class UserProfile extends React.Component {
                   <h3 className="user-profile-header1">My Account</h3>
                 </div>
 
+                <div className="my-account-container-wrapper">
+
+                    <div className="my-account-container">
+                      
+                    </div>                        
+
+                </div>
+
+
               </div>
 
             </div>
