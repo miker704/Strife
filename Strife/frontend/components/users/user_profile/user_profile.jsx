@@ -287,12 +287,48 @@ class UserProfile extends React.Component {
                 <div className="divider-margin"></div>
                 <div className="userSecuritySettings">
 
-                    <div className="passwrd-section">
-                            <h1 className="passwrdAuth">Password and Authentication</h1>
+                  <div className="passwrd-section">
+                    <h1 className="passwrdAuth">Password and Authentication</h1>
+                  </div>
+                  <div className="password-edit-section">
+                    <div>
+                      <button type="button" className="changePasswordButton">
+                        Change Password
+                      </button>
                     </div>
-                    <div className="password-edit-section">
-                      
+
+                    <div className="two-factor-auth-wrapper">
+                      <div className="two-factor-auth-inner">
+                        <div>
+                          <div className="auth-header-div">
+                            <h5 className="auth-header">Two-factor authentication</h5>
+                          </div>
+                          <div className="auth-info-div">
+                            <p className="auth-info">
+                              Protect your Strife account with an extra layer of security. Once configured, you'll be required
+                              to enter both your password and an authentication code from your mobile phone in order to sign in.
+                            </p>
+                          </div>
+                          <div>
+                            <button type="button" className="auth-button">Enable Two-Factor Auth</button>
+                          </div>
+
+
+                        </div>
+
+                      </div>
+
+                              <div className="auth-pic-div">
+                                <img className="auth-security-img"/>
+                              </div>
+
+
                     </div>
+
+
+                  </div>
+
+
                 </div>
 
               </div>
