@@ -251,15 +251,15 @@
     z-index: 20;
 
 
-    // bottom: 0;
-    // left: 0;
-    // right: 0;
-    // display: flex;
-    // overflow: hidden;
-    // flex-direction: column;
-    // -webkit-box-orient: vertical;
-    // -webkit-box-direction: normal;
-    // flex: 1 1 auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex: 1 1 auto;
 
 
 
@@ -280,16 +280,16 @@
         // width: 100vw;
         // height: 100vh;
 
-        // display: flex;
-        // top: 0;
-        // bottom: 0;
-        // left: 0;
-        // right: 0;
-        // position: absolute;
-        // z-index: 101;
-        // /* display: -webkit-box; */
-        // box-sizing: border-box;
-        // color: #3a3a3a;
+        display: flex;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        z-index: 101;
+        /* display: -webkit-box; */
+        box-sizing: border-box;
+        color: #3a3a3a;
 
 
 
@@ -337,7 +337,6 @@
 }
 
 .user-profile-left-side {
-    // background-color: #2F3136;
     // position: absolute;
     // height: 90vh;
     // width: 25vw;
@@ -603,7 +602,6 @@
 
 }
 
-.user-profile-username {}
 
 .user-profile-right-side-wrapper {
     display: flex;
@@ -677,6 +675,7 @@
     display: flex;
     flex-direction: column;
     forced-color-adjust: none;
+    box-sizing: border-box;
 
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -692,7 +691,7 @@
     background-color: hsl(216, 0.072%, 13.5%);
 }
 
-.account-card-banner{
+.account-card-banner {
     background-color: #5c64f4;
     forced-color-adjust: none;
     box-sizing: border-box;
@@ -708,10 +707,64 @@
 }
 
 
-.account-card-user-info{
-
+.account-card-user-info {
+    forced-color-adjust: none;
+    height: 72px;
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 16px 16px 0 120px;
+    box-sizing: border-box;
 }
 
-.account-card-background{
-    
+.account-container-avatar {
+    width: 80px;
+    height: 80px;
+    forced-color-adjust: none;
+    border: 7px solid hsl(216, 0.072%, 13.5%);
+    background-color: hsl(216, 0.072%, 13.5%);
+    position: absolute;
+    top: 76px;
+    left: 16px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    border-radius: 50%;
+}
+
+
+.account-card-username-div {
+    forced-color-adjust: none;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.account-card-username {
+    align-items: center;
+    overflow: hidden;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    display: flex;
+    -webkit-box-pack: start;
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    font-family: "Ginto Normal";
+    color: #FFFFFF;
+}
+
+
+
+
+.account-card-background {
+    forced-color-adjust: none;
+    border-radius: 8px;
+    background-color: hsl(223, 0.069%, 19.8%);
+    padding: 16px;
+    margin: 8px 16px 16px;
+    box-sizing: border-box;
+
 }
