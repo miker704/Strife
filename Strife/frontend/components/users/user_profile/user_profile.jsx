@@ -318,9 +318,9 @@ class UserProfile extends React.Component {
 
                       </div>
 
-                              <div className="auth-pic-div">
-                                <img className="auth-security-img"/>
-                              </div>
+                      <div className="auth-pic-div">
+                        <img className="auth-security-img" />
+                      </div>
 
 
                     </div>
@@ -330,6 +330,18 @@ class UserProfile extends React.Component {
 
 
                 </div>
+
+                <div className="divider-margin"></div>
+                <div className="acc-removal-section">
+                  <div className="account-rem-header-div">
+
+                    <h5 className="account-rem-header">Account Removal</h5>
+                  </div>
+
+
+                </div>
+
+
 
               </div>
 
