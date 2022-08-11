@@ -11,47 +11,63 @@ class UserProfile extends React.Component {
       userEdit: false,
       deleteForm: false,
       userEmail: this.props.currentUser.email,
-      userPhone: this.props.currentUser.phone_number,
-      reveal : "Reveal"
+      // userPhone: this.props.currentUser.phone_number,
+      userPhone: 1,
+
+      reveal: "Reveal",
+      reveal1: "Reveal"
+
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.scrambleEmail = this.scrambleEmail.bind(this);
-    this.scramblePhoneNumber=this.scramblePhoneNumber.bind(this);
+    this.scramblePhoneNumber = this.scramblePhoneNumber.bind(this);
     console.log("current user is : ", this.props.currentUser);
     console.log("current state is : ", this.state);
     console.log("phone type : ", typeof this.state.userPhone);
     this.handleRevealClick = this.handleRevealClick.bind(this);
-  }
-
-
-  handleRevealClick(e){
-   
-    if(this.state.reveal === "Reveal"){
-      this.setState({reveal:"Hide"});
-    }
-    else if(this.state.reveal === "Hide"){
-      this.setState({reveal:"Reveal"});
-    }
+    this.handleRevealClick2 = this.handleRevealClick2.bind(this);
 
   }
 
+
+  handleRevealClick (e) {
+
+    if (this.state.reveal === "Reveal") {
+      this.setState({ reveal: "Hide" });
+    }
+    else if (this.state.reveal === "Hide") {
+      this.setState({ reveal: "Reveal" });
+    }
+
+  }
+
+  handleRevealClick2 (e) {
+
+    if (this.state.reveal1 === "Reveal") {
+      this.setState({ reveal1: "Hide" });
+    }
+    else if (this.state.reveal1 === "Hide") {
+      this.setState({ reveal1: "Reveal" });
+    }
+
+  }
 
   handleSubmit () {
 
   }
 
-  scrambleEmail(){
+  scrambleEmail () {
 
-  
+
   }
 
-  scramblePhoneNumber(){
-          if(this.state.userPhone === null){
+  scramblePhoneNumber () {
+    if (this.state.userPhone === null) {
+      return
+    }
+    else {
 
-          }
-          else{
-
-          }
+    }
   }
 
 
@@ -59,8 +75,10 @@ class UserProfile extends React.Component {
   render () {
 
     let scrambledEmail = this.scrambleEmail();
-    const {reveal} = this.state.reveal;
-   
+    const { reveal } = this.state.reveal;
+    let removePhoneNum = this.state.userPhone !== null ? (
+      <button type="button" className="remove-phone-num">Remove</button>
+    ) : ("")
 
     return (
       <div className="user-profile-wrapper">
@@ -178,7 +196,7 @@ class UserProfile extends React.Component {
                           </div>
                           <div className="overflow-menu">
                             <svg className="overflowMenuIcon" width="24" height="24" viewBox="0 0 24 24">
-                              <path fill="currentColor"  d="M7 12.001C7 10.8964 6.10457 10.001 
+                              <path fill="currentColor" d="M7 12.001C7 10.8964 6.10457 10.001 
                                 5 10.001C3.89543 10.001 3 10.8964 3 12.001C3 13.1055 3.89543 14.001 5 14.001C6.10457 14.001 7 13.1055 
                                 7 12.001ZM14 12.001C14 10.8964 13.1046 10.001 12 10.001C10.8954 10.001 10 10.8964 10 12.001C10 13.1055 
                                 10.8954 14.001 12 14.001C13.1046 14.001 14 13.1055 14 12.001ZM19 10.001C20.1046 10.001 21 10.8964 21 
@@ -222,7 +240,7 @@ class UserProfile extends React.Component {
                               <div>
                                 {/* <span className="const-hidden-props">{this.props.currentUser.email} */}
                                 <span className="const-hidden-props">{this.state.userEmail}
-                                  <button type="button" className="reveal-button">Reveal</button>
+                                  <button type="button" className="reveal-button" onClick={() => this.handleRevealClick2()}>{this.state.reveal1}</button>
                                 </span>
                               </div>
                             </div>
@@ -240,14 +258,17 @@ class UserProfile extends React.Component {
                             <div>
                               <h5 className="constrain-username-header">Phone Number</h5>
                               <div>
-                                <span className="const-hidden-props">{this.props.currentUser.phone_number}
-                                  <button id="reveal" type="button" className="reveal-button" onClick={() =>this.handleRevealClick()}>{this.state.reveal}</button>
+                                <span className="const-hidden-props">{this.state.userPhone}
+                                  <button id="reveal" type="button" className="reveal-button" onClick={() => this.handleRevealClick()}>{this.state.reveal}</button>
                                 </span>
 
                               </div>
                             </div>
                           </div>
-                          <button type="button" className="edit-profile-props-button">Edit</button>
+                          <div className="phone-num-button-container">
+                            {removePhoneNum}
+                            <button type="button" className="edit-profile-props-button">Edit</button>
+                          </div>
 
                         </div>
 
@@ -263,6 +284,14 @@ class UserProfile extends React.Component {
 
                 </div>
 
+                <div className="divider-margin"></div>
+                <div className="userSecuritySettings">
+
+                    <div className="passwrd-section">
+                            <h1 className="passwrdAuth">Password and Authentication</h1>
+                    </div>
+
+                </div>
 
               </div>
 
