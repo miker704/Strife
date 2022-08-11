@@ -1376,3 +1376,42 @@
     content: image_url("usersecurity.svg");
 
 }
+
+
+
+
+.acc-removal-section{
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    margin-top: 40px;
+}
+
+
+.account-rem-header-div{
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    display: flex;
+}
+.account-rem-header{
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    color: hsl(216,3.7%,73.5%);
+    margin-bottom: 8px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    flex: 1;
+    cursor: default;
+    -webkit-box-flex: 1;
+    font-family: "ABC Ginto Normal";
+}
+
+.account-rem-info-div{
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
