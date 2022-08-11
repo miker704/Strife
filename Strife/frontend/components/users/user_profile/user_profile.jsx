@@ -204,7 +204,7 @@ class UserProfile extends React.Component {
                             <div>
                               <h5 className="constrain-username-header">Phone Number</h5>
                               <div>
-                              <span className="const-hidden-props">{this.props.currentUser.phone_number}
+                                <span className="const-hidden-props">{this.props.currentUser.phone_number}
                                   <button type="button" className="reveal-button">Reveal</button>
                                 </span>
 
