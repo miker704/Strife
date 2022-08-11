@@ -1192,3 +1192,13 @@
     box-sizing: border-box;
 
 }
+
+
+.password-edit-section{
+    display: flex;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
