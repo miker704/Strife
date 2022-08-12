@@ -24,7 +24,19 @@ class UserProfile extends React.Component {
     this.handleRevealClick = this.handleRevealClick.bind(this);
     this.handleRevealClick2 = this.handleRevealClick2.bind(this);
 
+
   }
+
+
+  componentDidMount () {
+    window.addEventListener('keyup', this.props.handleESC, false);
+
+  }
+  componentWillUnmount () {
+    window.removeEventListener('keyup', this.props.handleESC, false);
+
+  }
+
 
 
   handleRevealClick (e) {
