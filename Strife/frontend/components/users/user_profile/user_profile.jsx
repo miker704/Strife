@@ -85,7 +85,7 @@ class UserProfile extends React.Component {
   render () {
 
     let scrambledEmail = this.state.reveal1 === "Reveal" ? this.scrambleEmail() : this.state.userEmail;
-    let scramblePhone = this.state.reveal === "Reveal" ? this.scramblePhoneNumber() : this.state.userPhone;
+    let scramblePhone = this.state.reveal === "Reveal" ? this.scramblePhoneNumber() : "+1" + this.state.userPhone;
     const { reveal } = this.state.reveal;
     let removePhoneNum = this.state.userPhone !== null ? (
       <button type="button" className="remove-phone-num">Remove</button>
@@ -368,11 +368,36 @@ class UserProfile extends React.Component {
 
               </div>
 
-            </div>
+              <div className="tools-container">
 
+                <div className="tool-x-to-esc-button-wrapper">
+                  <div className="inner-tool-container">
+                    <div className="x-to-esc-button">
+                      <svg role="img" width="18" height="18" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 
+                                12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z">
+                        </path>
+                      </svg>
+                    </div>
+                    <div className="esc-bind">ESC</div>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
           </div>
 
+          {/* <div className="tools-container">
 
+                      <div className="tool-x-to-esc-button-wrapper">
+                        <div className="inner-tool-container">
+                              <div className="x-to-esc-button"></div>
+                              <div className="esc-bind">ESC</div>
+                        </div>
+                      </div>
+          </div> */}
 
         </div>
       </div>
