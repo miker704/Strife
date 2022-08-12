@@ -37,7 +37,9 @@ class CreateServerForm extends React.Component {
 
     }
 
-
+    componentDidMount () {
+        window.addEventListener('keyup', this.props.handleESC, false);
+    }
 
     stopProc (e) {
         e.preventDefault();
@@ -63,6 +65,7 @@ class CreateServerForm extends React.Component {
 
     componentWillUnmount () {
         this.props.removeServerErrors();
+        window.removeEventListener('keyup', this.props.handleESC, false);
     }
 
 
@@ -150,11 +153,11 @@ class CreateServerForm extends React.Component {
                 server_icon: this.state.server_icon, // empty by default until aws functionality is implemented,
 
             }
-         
+
 
         }
         else if (this.state.serverPrivacy === "private") {
-           
+
             this.setState({ public: false });
 
             serverSubmission = {
@@ -164,9 +167,9 @@ class CreateServerForm extends React.Component {
                 server_icon: this.state.server_icon, // empty by default until aws functionality is implemented,
 
             }
-            
+
         }
-       
+
 
         let newServer;
         //create the new server then if the server is using one of the performed templates 
@@ -175,7 +178,7 @@ class CreateServerForm extends React.Component {
             newServer = action.server;
             // newServer = action.server.server;
 
-           
+
 
             //
             for (let i in serverChannelSetup) {
