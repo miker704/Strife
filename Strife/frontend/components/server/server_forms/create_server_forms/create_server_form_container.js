@@ -4,6 +4,7 @@ import { openModal, closeModal } from "../../../../actions/modal_actions";
 import { createServer, removeServerErrors, joinServer } from "../../../../actions/server_actions";
 import CreateServerForm from "./create_server_form.jsx";
 import { createChannel, removeChannelErrors } from "../../../../actions/channel_actions";
+import { handleKeyUp } from "../../../../utils/modal_api_util";
 
 
 const mSTP = (state) => {
@@ -27,8 +28,8 @@ const mDTP = (dispatch) => {
         closeModal: () => dispatch(closeModal()),
         joinServer: (inviteCode) => dispatch(joinServer(inviteCode)),
         createChannelSetup: (channel) => dispatch(createChannel(channel)),
-        removeChannelErrors: () => dispatch(removeChannelErrors())
-
+        removeChannelErrors: () => dispatch(removeChannelErrors()),
+        handleESC : (e) => handleKeyUp(e)
     }
 }
 
