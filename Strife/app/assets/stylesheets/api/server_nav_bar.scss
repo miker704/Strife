@@ -156,7 +156,7 @@
 
 .unselected-Server {
   // background-color: rgb(56, 57, 62);
-  background-color:#36393f;
+  background-color: #36393f;
   border-radius: 50%;
 }
 
@@ -1327,4 +1327,36 @@
     fill: #2E3338;
     transition: 0.2s;
   }
+}
+
+
+
+// .server-bubbles:focus {
+//   color: hsl(197, 100%, 47.8%);
+// }
+
+// .server-nav-bar-a:focus {
+//   border-style: solid;
+//   border: solid 2px #00aff4;
+
+// }
+
+// .selected-Server:focus, .unselected-Server:focus, #create-server:focus, #download-apps:focus, #search-servers:focus{
+//   border-style: solid;
+//   border: solid 2px #00aff4;
+// }
+// :focus-visible,
+// :focus-within,
+// :focus{
+//   // border-style: solid;
+//   border: solid 4px #00aff4;
+// }
+// .unselected-Server:focus, .unselected-Server:focus-visible{
+//   border-style: solid;
+//   border: solid 2px #00aff4;
+// }
+button#create-server:focus,
+button#search-servers:focus,
+button#download-apps:focus {
+  visibility: hidden;
 }
