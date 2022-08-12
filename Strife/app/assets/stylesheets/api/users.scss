@@ -277,6 +277,7 @@
         /* display: -webkit-box; */
         box-sizing: border-box;
         color: #3a3a3a;
+        user-select: none;
 
 
 
@@ -324,12 +325,12 @@
 }
 
 .user-profile-left-side {
-    
+
 
 
     background-color: #2F3136;
     color: #96989D;
-    
+
 
 
     display: flex;
@@ -389,6 +390,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     color: #B9BBBE;
+    user-select: none;
+    -webkit-user-drag: none;
 
 
 }
@@ -414,8 +417,10 @@
 
 .user-profile-item-list a {
     text-decoration: none;
-    // colo
     color: #96989D;
+    user-select: none;
+    -webkit-user-drag: none;
+
 
 }
 
@@ -1283,7 +1288,7 @@
 
 
 .auth-button {
-    cursor: pointer;
+    cursor: not-allowed;
     box-sizing: border-box;
     forced-color-adjust: none;
     height: 32px;
@@ -1293,7 +1298,7 @@
     background-color: #5865F2;
     color: #FFFFFF;
     transition: background-color .17s ease, color .17s ease;
-
+    user-select: none;
     border: none;
     border-radius: 3px;
     font-size: 14px;
@@ -1330,6 +1335,7 @@
     -webkit-box-align: center;
     align-items: center;
     display: flex;
+    user-select: none;
 
 
 }
@@ -1347,22 +1353,23 @@
 
 
 
-.acc-removal-section{
+.acc-removal-section {
     box-sizing: border-box;
     forced-color-adjust: none;
     margin-top: 40px;
 }
 
 
-.account-rem-header-div{
+.account-rem-header-div {
     box-sizing: border-box;
     forced-color-adjust: none;
     display: flex;
 }
-.account-rem-header{
+
+.account-rem-header {
     box-sizing: border-box;
     forced-color-adjust: none;
-    color: hsl(216,3.7%,73.5%);
+    color: hsl(216, 3.7%, 73.5%);
     margin-bottom: 8px;
     font-size: 12px;
     line-height: 16px;
@@ -1374,7 +1381,7 @@
     font-family: "ABC Ginto Normal";
 }
 
-.account-rem-info-div{
+.account-rem-info-div {
     box-sizing: border-box;
     forced-color-adjust: none;
     display: flex;
@@ -1383,7 +1390,7 @@
     flex-direction: column;
 }
 
-.account-rem-info{
+.account-rem-info {
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
@@ -1397,7 +1404,7 @@
 }
 
 
-.account-del-button-cont{
+.account-del-button-cont {
     forced-color-adjust: none;
     display: flex;
     -webkit-box-orient: horizontal;
@@ -1407,12 +1414,12 @@
     box-sizing: border-box;
 }
 
-.account-delete-button{
+.account-delete-button {
     user-select: none;
     forced-color-adjust: none;
     box-sizing: border-box;
     display: flex;
-    color:#FFFFFF;
+    color: #FFFFFF;
     font-family: "Whitney";
     font-size: 14px;
     text-rendering: optimizeLegibility;
@@ -1427,16 +1434,17 @@
     -webkit-box-align: center;
     -webkit-box-pack: center;
     position: relative;
-    transition: color .17s ease,background-color .17s ease,border-color .17s ease;
+    transition: color .17s ease, background-color .17s ease, border-color .17s ease;
     border-width: 1px;
     border-style: solid;
     height: 32px;
     min-width: 60px;
     min-height: 32px;
     width: auto;
-    border-color:hsl(359,66.7%,54.1%);
+    border-color: hsl(359, 66.7%, 54.1%);
 }
-.disable-account-button{
+
+.disable-account-button {
     user-select: none;
     forced-color-adjust: none;
     box-sizing: border-box;
@@ -1453,25 +1461,93 @@
     justify-content: center;
     -webkit-box-align: center;
     position: relative;
-    transition: background-color .17s ease,color .17s ease;
+    transition: background-color .17s ease, color .17s ease;
     height: 32px;
     min-width: 60px;
     min-height: 32px;
     width: auto;
     margin-right: 16px;
     cursor: pointer;
-    background-color: hsl(359,66.7%,54.1%);
-    color:#FFFFFF;
+    background-color: hsl(359, 66.7%, 54.1%);
+    color: #FFFFFF;
     font-family: "Whitney";
     font-size: 14px;
     text-rendering: optimizeLegibility;
-    
+
 }
 
-.disable-account-button:hover{
+.disable-account-button:hover {
     background-color: #A12D27;
 }
 
-.account-delete-button:hover{
+.account-delete-button:hover {
     background: #D83C3E;
+}
+
+
+
+.tools-container {
+    margin-right: 21px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    position: relative;
+    -webkit-box-flex: 0;
+    flex: 0 0 36px;
+    width: 60px;
+    padding-top: 60px;
+
+
+}
+
+.tool-x-to-esc-button-wrapper {
+    position: fixed;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+}
+
+.inner-tool-container {
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.x-to-esc-button {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-flex: 0;
+    flex: 0 0 36px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    color: hsl(216, 0.037%, 73.5%);
+}
+
+.esc-bind {
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    text-align: center;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    color: hsl(216, 0.037%, 73.5%);
+    font-family: "Whitney";
+
+}
+
+.x-to-esc-button:hover {
+    background-color: hsla(217, 7.6%, 33.5%, 0.4);
+    color: hsl(210, 2.9%, 86.7%)
 }
