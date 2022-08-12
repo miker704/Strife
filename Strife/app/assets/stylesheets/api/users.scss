@@ -230,6 +230,46 @@
     width: 32px;
 }
 
+
+.color-1 {
+    background-color: rgb(237, 66, 69);
+}
+
+.color-2 {
+    background-color: rgb(89, 101, 242)
+}
+
+.color-3 {
+    background-color: rgb(117, 126, 138)
+}
+
+.color-4 {
+    background-color: rgb(250, 166, 25);
+}
+
+.color-5 {
+    background-color: rgb(60, 165, 92);
+}
+.color-6{
+    background-color: #005a17;
+}
+.user-icon {
+    font-size: 18px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+// .fa-discord {
+//     transform: translate(1px, 2px);
+// }
+
+.user-icon i {
+    padding-top: 6px;
+    padding-left: 3.5px;
+    color: #fff;
+}
+
 // user settings modal located as user profile container.js and uiser profile.jsx
 
 .user-profile-wrapper {
