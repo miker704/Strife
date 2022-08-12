@@ -12,7 +12,7 @@ class UserProfile extends React.Component {
       deleteForm: false,
       userEmail: this.props.currentUser.email,
       // userPhone: this.props.currentUser.phone_number,
-      userPhone: 1,
+      userPhone: 7185931633,
 
       reveal: "Reveal",
       reveal1: "Reveal"
@@ -57,16 +57,29 @@ class UserProfile extends React.Component {
   }
 
   scrambleEmail () {
-
+    let e_mail = this.state.userEmail;
+    let email_Scramble = "";
+    for (let i = 0; i < e_mail.length; i++) {
+      if (e_mail[i] === "@") {
+        email_Scramble += email_Scramble + e_mail.slice(i);
+        return email_Scramble;
+      }
+      else {
+        email_Scramble += "*";
+      }
+    }
 
   }
 
   scramblePhoneNumber () {
     if (this.state.userPhone === null) {
-      return
+      return "";
     }
     else {
-
+      let phoneNum = this.state.userPhone.toString();
+      let part1 = phoneNum.slice(0, -4);
+      part1 = part1.replace(/\d/g, "*") + phoneNum.slice(-4);
+      return part1;
     }
   }
 
@@ -74,10 +87,14 @@ class UserProfile extends React.Component {
 
   render () {
 
-    let scrambledEmail = this.scrambleEmail();
+    let scrambledEmail = this.state.reveal1 === "Reveal" ? this.scrambleEmail() : this.state.userEmail;
+    let scramblePhone = this.state.reveal === "Reveal" ? this.scramblePhoneNumber() : this.state.userPhone;
     const { reveal } = this.state.reveal;
     let removePhoneNum = this.state.userPhone !== null ? (
       <button type="button" className="remove-phone-num">Remove</button>
+    ) : ("")
+    let revealPhone = this.state.userPhone !== null ? (
+      <button id="reveal" type="button" className="reveal-button" onClick={() => this.handleRevealClick()}>{this.state.reveal}</button>
     ) : ("")
 
     return (
@@ -239,7 +256,7 @@ class UserProfile extends React.Component {
                               <h5 className="constrain-username-header">Email</h5>
                               <div>
                                 {/* <span className="const-hidden-props">{this.props.currentUser.email} */}
-                                <span className="const-hidden-props">{this.state.userEmail}
+                                <span className="const-hidden-props">{scrambledEmail}
                                   <button type="button" className="reveal-button" onClick={() => this.handleRevealClick2()}>{this.state.reveal1}</button>
                                 </span>
                               </div>
@@ -258,8 +275,9 @@ class UserProfile extends React.Component {
                             <div>
                               <h5 className="constrain-username-header">Phone Number</h5>
                               <div>
-                                <span className="const-hidden-props">{this.state.userPhone}
-                                  <button id="reveal" type="button" className="reveal-button" onClick={() => this.handleRevealClick()}>{this.state.reveal}</button>
+                                <span className="const-hidden-props">{scramblePhone}
+                                  {/* <button id="reveal" type="button" className="reveal-button" onClick={() => this.handleRevealClick()}>{this.state.reveal}</button> */}
+                                  {revealPhone}
                                 </span>
 
                               </div>
@@ -340,10 +358,15 @@ class UserProfile extends React.Component {
                   <div className="account-rem-info-div">
 
                     <p className="account-rem-info">
-                    Disabling your account means you can recover it at any time after taking this action.
+                      Disabling your account means you can recover it at any time after taking this action.
                     </p>
                   </div>
-                      <div className="account-del-button-cont"></div>
+                  <div className="account-del-button-cont">
+                    <button type="button" className="disable-account-button">Disable Account</button>
+                    <button type="button" className="account-delete-button">Delete Account</button>
+
+
+                  </div>
                 </div>
 
 
