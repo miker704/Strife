@@ -3,6 +3,7 @@ import UserProfile from "./user_profile";
 import {removeUserAccount, logoutUser, updateUserInfo, removeSessionErrors} from '../../../actions/session_actions'
 import { openModal, closeModal } from "../../../actions/modal_actions";
 import { withRouter } from "react-router";
+import { handleKeyUp } from "../../../utils/modal_api_util";
 
 const mSTP = (state) => {
   return{
@@ -18,7 +19,9 @@ const mDTP = (dispatch) => {
     logoutUser : () => {dispatch(logoutUser())},
     openModal: (modal) => dispatch(openModal(modal)),
     closeModal: () => dispatch(closeModal()),
-    removeSessionErrors: () => dispatch(removeSessionErrors())
+    removeSessionErrors: () => dispatch(removeSessionErrors()),
+    handleESC : (e) => handleKeyUp(e)
+    
 
   }
 }
