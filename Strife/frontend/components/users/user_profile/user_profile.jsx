@@ -21,9 +21,6 @@ class UserProfile extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.scrambleEmail = this.scrambleEmail.bind(this);
     this.scramblePhoneNumber = this.scramblePhoneNumber.bind(this);
-    console.log("current user is : ", this.props.currentUser);
-    console.log("current state is : ", this.state);
-    console.log("phone type : ", typeof this.state.userPhone);
     this.handleRevealClick = this.handleRevealClick.bind(this);
     this.handleRevealClick2 = this.handleRevealClick2.bind(this);
 
@@ -255,7 +252,6 @@ class UserProfile extends React.Component {
                             <div>
                               <h5 className="constrain-username-header">Email</h5>
                               <div>
-                                {/* <span className="const-hidden-props">{this.props.currentUser.email} */}
                                 <span className="const-hidden-props">{scrambledEmail}
                                   <button type="button" className="reveal-button" onClick={() => this.handleRevealClick2()}>{this.state.reveal1}</button>
                                 </span>
@@ -276,7 +272,6 @@ class UserProfile extends React.Component {
                               <h5 className="constrain-username-header">Phone Number</h5>
                               <div>
                                 <span className="const-hidden-props">{scramblePhone}
-                                  {/* <button id="reveal" type="button" className="reveal-button" onClick={() => this.handleRevealClick()}>{this.state.reveal}</button> */}
                                   {revealPhone}
                                 </span>
 
