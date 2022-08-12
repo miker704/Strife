@@ -125,11 +125,6 @@
 
 
 
-
-
-
-
-
 .user-settings-toggle {
     width: fit-content;
     // height: 30px;
@@ -201,7 +196,6 @@
 }
 
 
-
 #user-settings-icons span:hover .user-settings-toggle {
     visibility: visible;
 
@@ -260,13 +254,6 @@
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex: 1 1 auto;
-
-
-
-
-
-
-
 
 
 
@@ -337,32 +324,12 @@
 }
 
 .user-profile-left-side {
-    // position: absolute;
-    // height: 90vh;
-    // width: 25vw;
-    // display: flex;
-    // flex-direction: column;
-    // align-items: end;
-    // color: #96989D;
-    // padding-top: 10vh;
+    
 
 
     background-color: #2F3136;
     color: #96989D;
-    // overflow: hidden scroll;
-    // forced-color-adjust: none;
-    // padding-right: 0px;
-    // flex: 1 0 auto;
-    // -webkit-box-orient: horizontal;
-    // -webkit-box-direction: normal;
-    // flex-direction: row;
-    // -webkit-box-align: start;
-    // align-items: flex-start;
-    // display: flex;
-    // -webkit-box-flex: 1;
-    // -webkit-box-pack: end;
-    // justify-content: flex-end;
-    // box-sizing: border-box;
+    
 
 
     display: flex;
@@ -1326,7 +1293,7 @@
     background-color: #5865F2;
     color: #FFFFFF;
     transition: background-color .17s ease, color .17s ease;
-    background: none;
+
     border: none;
     border-radius: 3px;
     font-size: 14px;
@@ -1430,4 +1397,81 @@
 }
 
 
+.account-del-button-cont{
+    forced-color-adjust: none;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    box-sizing: border-box;
+}
 
+.account-delete-button{
+    user-select: none;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    display: flex;
+    color:#FFFFFF;
+    font-family: "Whitney";
+    font-size: 14px;
+    text-rendering: optimizeLegibility;
+    background: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    position: relative;
+    transition: color .17s ease,background-color .17s ease,border-color .17s ease;
+    border-width: 1px;
+    border-style: solid;
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+    width: auto;
+    border-color:hsl(359,66.7%,54.1%);
+}
+.disable-account-button{
+    user-select: none;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    display: flex;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    align-items: center;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    position: relative;
+    transition: background-color .17s ease,color .17s ease;
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+    width: auto;
+    margin-right: 16px;
+    cursor: pointer;
+    background-color: hsl(359,66.7%,54.1%);
+    color:#FFFFFF;
+    font-family: "Whitney";
+    font-size: 14px;
+    text-rendering: optimizeLegibility;
+    
+}
+
+.disable-account-button:hover{
+    background-color: #A12D27;
+}
+
+.account-delete-button:hover{
+    background: #D83C3E;
+}
