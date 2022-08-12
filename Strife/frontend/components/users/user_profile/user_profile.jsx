@@ -388,17 +388,6 @@ class UserProfile extends React.Component {
 
             </div>
           </div>
-
-          {/* <div className="tools-container">
-
-                      <div className="tool-x-to-esc-button-wrapper">
-                        <div className="inner-tool-container">
-                              <div className="x-to-esc-button"></div>
-                              <div className="esc-bind">ESC</div>
-                        </div>
-                      </div>
-          </div> */}
-
         </div>
       </div>
 
