@@ -5,7 +5,7 @@ export const handleKeyUp = (e) => {
 
     const keys = {
         27: () => {
-            // e.preventDefault();
+            e.preventDefault();
             dispatch(closeModal());
             window.removeEventListener('keyup', handleKeyUp, false);
         },
