@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { handleKeyUp } from "../../../utils/modal_api_util";
-
+import EditUserPasswordForm from "./user_edit_password_form";
 
 
 
