@@ -89,9 +89,16 @@
     width: 32px;
 }
 
-#user-settings-icons a:hover .fa-gear {
+// #user-settings-icons a:hover .fa-gear {
+//     filter: brightness(150%);
+// }
+
+#user-settings-icons .fa-gear:hover{
     filter: brightness(150%);
 }
+
+
+
 
 #user-settings-icons .fa-headphones:hover {
     filter: brightness(150%);
@@ -1591,4 +1598,9 @@
     background-color: hsla(217, 7.6%, 33.5%, 0.4);
     color: hsl(210, 2.9%, 86.7%);
     // color: hsl(197,100%,47.8%);
+}
+
+.x-to-esc-button a{
+    color: hsl(216, 0.037%, 73.5%);
+    text-decoration: none;
 }
