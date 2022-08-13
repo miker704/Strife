@@ -22,7 +22,14 @@ class EditUserPhoneNumberForm extends React.Component {
     handleInput (field) {
         return (e) => { this.setState({ [field]: e.currentTarget.value }) }
     }
-
+    handleSubmit(e){
+        e.preventDefault();
+    
+        let submissionState = {
+            phone_number: this.state.phone_number
+        }
+        this.props.updateUserInfo(submissionState);
+      }
 }
 
 export default EditUserPhoneNumberForm;
