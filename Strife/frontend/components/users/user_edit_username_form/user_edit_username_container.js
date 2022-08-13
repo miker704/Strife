@@ -2,8 +2,8 @@ import { connect } from "react-redux";
 import EditUsernameForm from "./user_edit_username_form";
 import { withRouter } from "react-router";
 import { handleKeyUp } from "../../../utils/modal_api_util";
-
-
+import { updateUserInfo, removeSessionErrors } from "../../../actions/session_actions";
+import { openModal,closeModal } from "../../../actions/modal_actions";
 
 const mSTP = (state) => {
     return {
