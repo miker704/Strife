@@ -8,6 +8,8 @@ class EditUserPasswordForm extends React.Component {
         this.state = {
             user: this.props.currentUser,
             password: "",
+            confirmOldPassword: "",
+            confirmNewPassword: "",
             newPassword: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,11 +21,18 @@ class EditUserPasswordForm extends React.Component {
     componentWillUnmount () {
         this.props.removeSessionErrors()
     }
-    
+
     handleInput (field) {
         return (e) => { this.setState({ [field]: e.currentTarget.value }) }
     }
-
+    handleSubmit(e){
+        e.preventDefault();
+    
+        let submissionState = {
+            password: this.state.newPassword
+        }
+        this.props.updateUserInfo(submissionState);
+      }
 
 
 
