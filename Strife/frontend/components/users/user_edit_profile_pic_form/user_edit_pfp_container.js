@@ -13,7 +13,8 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
-
+        currentUser: state.entities.users[state.session.id],
+        errors: state.errors.session
     }
 };
 
