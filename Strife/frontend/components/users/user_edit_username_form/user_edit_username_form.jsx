@@ -23,7 +23,14 @@ class EditUsernameForm extends React.Component {
         return (e) => { this.setState({ [field]: e.currentTarget.value }) }
     }
 
-
+    handleSubmit(e){
+        e.preventDefault();
+    
+        let submissionState = {
+            username: this.state.username
+        }
+        this.props.updateUserInfo(submissionState);
+      }
 
 }
 
