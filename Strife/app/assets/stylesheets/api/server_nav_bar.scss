@@ -1190,6 +1190,14 @@
 
   }
 
+  .create-A-Server-Modal.transition-out{
+    animation-name: createServerModalDisappear;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+  }
+
+
+
 
 }
 
