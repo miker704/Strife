@@ -19,6 +19,10 @@ class EditUserPasswordForm extends React.Component {
     componentWillUnmount () {
         this.props.removeSessionErrors()
     }
+    
+    handleInput (field) {
+        return (e) => { this.setState({ [field]: e.currentTarget.value }) }
+    }
 
 
 
