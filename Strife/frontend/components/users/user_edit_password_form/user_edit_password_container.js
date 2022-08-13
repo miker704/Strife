@@ -7,7 +7,8 @@ import EditUserPasswordForm from "./user_edit_password_form";
 
 const mSTP = (state) => {
     return {
-
+        currentUser: state.entities.users[state.session.id],
+        errors: state.errors.session
     }
 };
 
