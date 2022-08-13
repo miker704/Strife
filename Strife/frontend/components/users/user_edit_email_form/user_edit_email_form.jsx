@@ -2,8 +2,8 @@ import React from "react"
 import { Link, Redirect } from 'react-router-dom'
 
 
-class EditUsernameForm extends React.Component{
+class EditUserEmailForm extends React.Component{
 
 }
 
-export default EditUsernameForm;
+export default EditUserEmailForm;
