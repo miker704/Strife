@@ -8,7 +8,8 @@ import EditUserEmailForm from "./user_edit_email_form";
 
 const mSTP = (state) => {
     return {
-
+        currentUser: state.entities.users[state.session.id],
+        errors: state.errors.session
     }
 };
 
