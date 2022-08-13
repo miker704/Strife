@@ -2,7 +2,7 @@ import React from "react"
 import { Link, Redirect } from 'react-router-dom'
 
 
-class EditUserPFP extends React.Component{
+class EditUserPFP extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
@@ -10,7 +10,12 @@ class EditUserPFP extends React.Component{
             photo: this.props.currentUser.photo
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleInput = this.handleInput.bind(this);
         this.handleCloseModal = this.handleCloseModal.bind(this);
+    }
+
+    componentWillUnmount () {
+        this.props.removeSessionErrors()
     }
 }
 
