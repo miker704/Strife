@@ -9,7 +9,7 @@ class EditUserPhoneNumberForm extends React.Component{
             user: this.props.currentUser,
             phone_number: this.props.currentUser.phone_number
         }
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCloseModal = this.handleCloseModal.bind(this);
     }
 }
