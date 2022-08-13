@@ -9,7 +9,7 @@ class EditUserEmailForm extends React.Component{
             user: this.props.currentUser,
             email: this.props.currentUser.email
         }
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCloseModal = this.handleCloseModal.bind(this);
     }
 }
