@@ -1,6 +1,14 @@
 import React from "react";
 import CreateServerFormContainer from "../server/server_forms/create_server_forms/create_server_form_container.js";
 import UserProfileContainer from "../users/user_profile/user_profile_container.js";
+import EditUserPFPContainer from "../users/user_edit_profile_pic_form/user_edit_pfp_container.js";
+import EditUserPasswordContainer from "../users/user_edit_password_form/user_edit_password_container.js";
+import EditUserEmailContainer from "../users/user_edit_email_form/user_edit_email_container.js";
+import EditUserPhoneNumberContainer from "../users/user_edit_phone_number_form/user_edit_phone_number_container.js";
+import EditUserNameContainer from "../users/user_edit_username_form/user_edit_username_container.js";
+
+
+
 
 class ModalManager extends React.Component {
     constructor (props) {
@@ -34,7 +42,6 @@ class ModalManager extends React.Component {
 
                 // renderedModal =  <CreateServerFormContainer />
                 renderedModal = (<div className="modal-child-component" onClick={e => e.stopPropagation()}>
-
                     <CreateServerFormContainer />
                 </div>)
 
