@@ -31,7 +31,13 @@ class ModalManager extends React.Component {
         switch (this.props.modal) {
             case 'createServerForm':
                 console.log("createServerForm called to be rendered")
-                renderedModal = <CreateServerFormContainer />
+
+                // renderedModal =  <CreateServerFormContainer />
+                renderedModal = (<div className="modal-child-component" onClick={e => e.stopPropagation()}>
+
+                    <CreateServerFormContainer />
+                </div>)
+
                 break;
             case 'downloadApps':
                 renderedModal = <EditServerFormContainer />
@@ -57,14 +63,12 @@ class ModalManager extends React.Component {
 
         return (
             <div className="modal-struct" onClick={this.props.closeModal}>
-                <div className="modal-child-component" onClick={e => e.stopPropagation()}>
+                {/* <div className="modal-child-component" onClick={e => e.stopPropagation()}>
                     {renderedModal}
-                </div>
+                </div> */}
+                {renderedModal}
             </div>
 
-            // <div>
-            //     <div>{renderedModal}</div>
-            // </div>
 
         );
 
