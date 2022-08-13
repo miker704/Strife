@@ -93,7 +93,7 @@
 //     filter: brightness(150%);
 // }
 
-#user-settings-icons .fa-gear:hover{
+#user-settings-icons .fa-gear:hover {
     filter: brightness(150%);
 }
 
@@ -257,9 +257,11 @@
 .color-5 {
     background-color: rgb(60, 165, 92);
 }
-.color-6{
+
+.color-6 {
     background-color: #005a17;
 }
+
 .user-icon {
     font-size: 18px;
     height: 30px;
@@ -529,6 +531,12 @@
 }
 
 
+
+.user-profile.transition-out {
+    animation-name: userProfileModalDisappear;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+}
 
 .user-profile-socials {
     display: flex;
@@ -1162,6 +1170,41 @@
 
 
 
+.user-profile-rs-inner-wrapper::-webkit-scrollbar-track{
+    border-radius: 10px;
+    width: 12px;
+    background-color: #2d3338;
+}
+
+
+.user-profile-rs-inner-wrapper::-webkit-scrollbar{
+    width: 12px;
+    // height:100%;
+
+}
+
+
+.user-profile-rs-inner-wrapper::-webkit-scrollbar-thumb{
+    // visibility: hidden;
+    background: #202225;
+    border-radius: 5px;
+    // height:100%;
+    width: 12px;
+
+
+}
+
+
+
+// .user-profile-rs-inner-wrapper:hover::-webkit-scrollbar-thumb{
+//     visibility: visible;
+// }
+
+
+
+
+
+
 
 .settings-avatar {
     display: flex;
@@ -1600,7 +1643,7 @@
     // color: hsl(197,100%,47.8%);
 }
 
-.x-to-esc-button a{
+.x-to-esc-button a {
     color: hsl(216, 0.037%, 73.5%);
     text-decoration: none;
 }
