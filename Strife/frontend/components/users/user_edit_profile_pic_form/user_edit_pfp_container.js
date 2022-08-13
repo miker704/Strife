@@ -9,16 +9,20 @@ import { removeSessionErrors, updateUserInfo } from "../../../actions/session_ac
 
 const mSTP = (state) => {
     return {
-
-    }
-};
-
-const mDTP = (dispatch) => {
-    return {
         currentUser: state.entities.users[state.session.id],
         errors: state.errors.session
     }
 };
 
-const EditUserPFPContainer = withRouter(connect(mSTP,mDTP)(EditUserPFP))
+const mDTP = (dispatch) => {
+    return {
+        updateUserInfo : (user) => {dispatch(updateUserInfo(user))},
+        openModal: (modal) => dispatch(openModal(modal)),
+        closeModal: () => dispatch(closeModal()),
+        removeSessionErrors: () => dispatch(removeSessionErrors()),
+        handleESC : (e) => handleKeyUp(e)
+    }
+};
+
+const EditUserPFPContainer = withRouter(connect(mSTP, mDTP)(EditUserPFP))
 export default EditUserPFPContainer;
