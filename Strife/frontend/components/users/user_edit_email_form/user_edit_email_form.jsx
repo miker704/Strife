@@ -23,7 +23,14 @@ class EditUserEmailForm extends React.Component {
     handleInput (field) {
         return (e) => { this.setState({ [field]: e.currentTarget.value }) }
     }
-
+    handleSubmit(e){
+        e.preventDefault();
+    
+        let submissionState = {
+            email: this.state.email
+        }
+        this.props.updateUserInfo(submissionState);
+      }
 }
 
 export default EditUserEmailForm;
