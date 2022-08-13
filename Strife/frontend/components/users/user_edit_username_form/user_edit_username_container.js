@@ -7,7 +7,8 @@ import { handleKeyUp } from "../../../utils/modal_api_util";
 
 const mSTP = (state) => {
     return {
-
+        currentUser: state.entities.users[state.session.id],
+        errors: state.errors.session
     }
 };
 
@@ -17,5 +18,5 @@ const mDTP = (dispatch) => {
     }
 };
 
-const EditUserNameContainer = withRouter(connect(mSTP,mDTP)(EditUsernameForm))
+const EditUserNameContainer = withRouter(connect(mSTP, mDTP)(EditUsernameForm))
 export default EditUserNameContainer;
