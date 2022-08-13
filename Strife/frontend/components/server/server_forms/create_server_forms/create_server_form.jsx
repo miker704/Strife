@@ -34,6 +34,40 @@ class CreateServerForm extends React.Component {
         this.renderServerInviteErrors = this.renderServerInviteErrors.bind(this);
         this.renderServerErrors = this.renderServerErrors.bind(this);
         this.submissionBlocker = this.submissionBlocker.bind(this);
+        this.closeModalTransitionOut = this.closeModalTransitionOut.bind(this);
+
+    }
+
+
+    closeModalTransitionOut () {
+
+
+        // this.setState({
+        //     server_owner_id: this.props.currentUser.id,
+        //     server_name: `${this.props.currentUser.username}'s server`,
+        //     public: true, //true by default
+        //     server_icon: "", // empty by default until aws functionality is implemented
+        //     form_number: 1,
+        //     forward: true,
+        //     joiningServer: false,
+        //     invite_code: "",
+        //     submissionType: "",
+        //     invalidInviteCode: "*",
+        //     //server channel types based on form clicking
+        //     //server privacy type based on form slections
+        //     serverGenreType: "",
+        //     serverPrivacy: "",
+        // })
+        let modalToClose = document.getElementById("create-A-Server-Modal");
+
+        modalToClose.classList.add("transition-out");
+        modalToClose.className = "create-A-Server-Modal transition-out";
+
+        setTimeout(() => {
+            this.props.removeServerErrors();
+            this.props.removeChannelErrors();
+            this.props.closeModal();
+        }, 100);
 
     }
 
@@ -208,7 +242,9 @@ class CreateServerForm extends React.Component {
             setTimeout(() => {
                 this.props.removeServerErrors();
                 this.props.removeChannelErrors();
-                this.props.closeModal();
+                // this.props.closeModal();
+                this.closeModalTransitionOut();
+
             }, 100);
         })
 
@@ -342,11 +378,11 @@ class CreateServerForm extends React.Component {
 
                     this.props.joinServer(invite).then((action) => {
 
-                        setTimeout(() => {
-                            this.props.removeServerErrors();
-                            this.props.closeModal();
-                        }, 100);
-
+                        // setTimeout(() => {
+                        //     this.props.removeServerErrors();
+                        //     this.props.closeModal();
+                        // }, 100);
+                        this.closeModalTransitionOut();
 
                     });
 
@@ -453,7 +489,7 @@ class CreateServerForm extends React.Component {
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
-                        onClick={() => this.props.closeModal()}
+                        onClick={() => this.closeModalTransitionOut()}
                     ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
                     </svg>
 
@@ -587,7 +623,7 @@ class CreateServerForm extends React.Component {
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
-                        onClick={() => this.props.closeModal()}
+                        onClick={() => this.closeModalTransitionOut()}
                     ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
                     </svg>
 
@@ -640,7 +676,7 @@ class CreateServerForm extends React.Component {
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
-                        onClick={() => this.props.closeModal()}
+                        onClick={() => this.closeModalTransitionOut()}
                     ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
                     </svg>
 
@@ -705,7 +741,7 @@ class CreateServerForm extends React.Component {
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
-                        onClick={() => this.props.closeModal()}
+                        onClick={() => this.closeModalTransitionOut()}
                     ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
                     </svg>
 
@@ -779,7 +815,7 @@ class CreateServerForm extends React.Component {
         return (
             <div className="create-A-Server-Wrapper" onClick={e => e.stopPropagation()}>
 
-                <div className="create-A-Server-Modal">
+                <div id="create-A-Server-Modal" className="create-A-Server-Modal">
                     {/* <div className="x-To-Close">
 
                         <svg
