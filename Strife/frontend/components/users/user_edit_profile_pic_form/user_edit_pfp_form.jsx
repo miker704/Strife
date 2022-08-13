@@ -9,7 +9,7 @@ class EditUserPFP extends React.Component{
             user: this.props.currentUser,
             photo: this.props.currentUser.photo
         }
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCloseModal = this.handleCloseModal.bind(this);
     }
 }
