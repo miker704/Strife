@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { handleKeyUp } from "../../../utils/modal_api_util";
-
+import EditUserPhoneNumberForm from "./user_edit_phone_number_form";
 
 
 
@@ -17,5 +17,5 @@ const mDTP = (dispatch) => {
     }
 };
 
-const EditUserNameContainer = withRouter(connect(mSTP,mDTP)(EditUsernameForm))
-export default EditUserNameContainer;
+const EditUserPhoneNumberContainer = withRouter(connect(mSTP,mDTP)(EditUserPhoneNumberForm))
+export default EditUserPhoneNumberContainer;
