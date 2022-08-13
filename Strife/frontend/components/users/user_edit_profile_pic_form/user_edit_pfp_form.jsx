@@ -7,7 +7,9 @@ class EditUserPFP extends React.Component {
         super(props)
         this.state = {
             user: this.props.currentUser,
-            photo: this.props.currentUser.photo
+            photo: this.props.currentUser.photo,
+            newPhoto: this.props.currentUser.photo,
+            
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -21,6 +23,15 @@ class EditUserPFP extends React.Component {
     handleInput (field) {
         return (e) => { this.setState({ [field]: e.currentTarget.value }) }
     }
+
+    handleSubmit(e){
+        e.preventDefault();
+    
+        let submissionState = {
+            photo: this.state.newPhoto
+        }
+        this.props.updateUserInfo(submissionState);
+      }
 
 }
 
