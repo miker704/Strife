@@ -46,7 +46,7 @@
 }
 
 
-.modal-struct{
+.modal-struct {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -58,10 +58,35 @@
 }
 
 
-.modal-child-component{
+.modal-child-component {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+}
+
+
+label.field-error {
+  color: #f38688;
+}
+
+
+.this-is-a-test {
+  color: magenta;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  inset: 0px;
+  // background-color: #ffffffbf;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
 }
