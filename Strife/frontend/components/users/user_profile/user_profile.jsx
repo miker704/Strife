@@ -50,6 +50,7 @@ class UserProfile extends React.Component {
     this.renderChangePhone = this.renderChangePhone.bind(this);
     this.renderChangePassword = this.renderChangePassword.bind(this);
     this.renderChangeUserPFP = this.renderChangeUserPFP.bind(this);
+    this.renderRemovePhoneNumber = this.renderRemovePhoneNumber.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
   }
 
