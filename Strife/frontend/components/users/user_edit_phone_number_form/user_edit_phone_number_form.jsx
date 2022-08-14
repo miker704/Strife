@@ -43,7 +43,12 @@ class EditUserPhoneNumberForm extends React.Component {
     }
     handleSubmit(e){
         e.preventDefault();
-    
+        
+
+        if(this.cancel === true){
+            return;
+        }
+
         let submissionState = {
             id: this.props.currentUser.id,
             phone_number: this.state.phone_number,
