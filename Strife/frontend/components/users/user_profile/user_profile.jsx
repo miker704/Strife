@@ -70,9 +70,29 @@ class UserProfile extends React.Component {
 
   renderChangeEmail () {
     if (this.state.changeEmail === true) {
+      window.removeEventListener('keyup', this.props.handleESC, false);
+      window.addEventListener('keyup', this.handleESC, false);
       return (
-        <div>
+        <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("userNameEdit")} >
+          <div className="edit-user-flex-box">
+            <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={e => e.stopPropagation()}>
+              <div className="edit-user-info-exit-button" >
 
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  onClick={() => this.handleSubModalClose("userNameEdit")}
+                ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
+                </svg>
+
+              </div>
+              <div onSubmit={() => this.handleSubmit("userNameEdit")}>
+                <EditUserNameContainer />
+              </div>
+
+            </div>
+          </div>
         </div>
       )
     }
@@ -378,6 +398,7 @@ class UserProfile extends React.Component {
 
     return (
       <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
+        {this.renderChangeEmail()}
         {this.renderEditUserNameModal()}
         {this.renderSample()}
         <div className="user-profile" id="user-profile">
