@@ -1,8 +1,11 @@
 import React from "react"
 import { Link, Redirect } from 'react-router-dom'
-import EditUserFormContainer from "./user_edit_form_container"
 import UserDeleteForm from "./user_delete_form"
-import EditUserNameContainer from "../user_edit_username_form/user_edit_username_container"
+import EditUserNameContainer from "../user_edit_username_form/user_edit_username_container.js"
+import EditUserEmailContainer from "../user_edit_email_form/user_edit_email_container.js"
+import EditUserPFPContainer from "../user_edit_profile_pic_form/user_edit_pfp_container.js"
+import EditUserPasswordContainer from "../user_edit_password_form/user_edit_password_container.js"
+import EditUserPhoneNumberContainer from "../user_edit_phone_number_form/user_edit_phone_number_container.js"
 import ReactModal from "react-modal"
 import Sample from "./sample_modal"
 
@@ -16,7 +19,12 @@ class UserProfile extends React.Component {
       userEdit: false,
       deleteForm: false,
       userNameEdit: false,
+      changeEmail: false,
+      changePhone: false,
+      changePassword: false,
+      changePFP : false,
       userEmail: this.props.currentUser.email,
+
       // userPhone: this.props.currentUser.phone_number,
       userPhone: 7185931633,
 
@@ -38,11 +46,42 @@ class UserProfile extends React.Component {
     this.handleSubModalClose = this.handleSubModalClose.bind(this);
     this.renderSample = this.renderSample.bind(this);
     this.closeAllSubMods = this.closeAllSubMods.bind(this);
+    this.renderChangeEmail = this.renderChangeEmail.bind(this);
+    this.renderChangePhone = this.renderChangePhone.bind(this);
+    this.renderChangePassword = this.renderChangePassword.bind(this);
+    this.renderChangeUserPFP = this.renderChangeUserPFP.bind(this);
 
   }
 
+
+  renderChangePhone(){
+
+  }
+
+  renderChangePassword(){
+
+  }
+
+  renderChangeUserPFP(){
+
+  }
+
+
+
+  renderChangeEmail () {
+    if (this.state.changeEmail === true) {
+      return (
+        <div>
+
+        </div>
+      )
+    }
+  }
+
+
+
   closeAllSubMods () {
-    let array = ['userNameEdit'];
+    let array = ['userNameEdit', 'sample', 'emailChange'];
     for (let i = 0; i < array.length; i++) {
       this.handleSubModalClose(array[i])
       // this.closeModal(i)
@@ -59,13 +98,11 @@ class UserProfile extends React.Component {
 
 
   handleESC (e) {
-    console.log("hello esc on mini")
     const keys = {
       27: () => {
         e.preventDefault();
         this.closeAllSubMods();
         window.removeEventListener('keyup', this.handleESC, false);
-        window.addEventListener('keyup', this.props.handleESC, false);
 
       },
     };
@@ -148,7 +185,12 @@ class UserProfile extends React.Component {
   })
 
   renderSample () {
+
     if (this.state.sample === true) {
+      window.removeEventListener('keyup', this.props.handleESC, false);
+      // window.addEventListener('keyup', this.handleESC, false);
+
+
       return (
         // <Sample/>
         <ReactModal
@@ -158,12 +200,23 @@ class UserProfile extends React.Component {
           ariaHideApp={false}
           onRequestClose={() => this.closeModal("sample")}
           shouldCloseOnEsc={true}
-          shouldCloseOnOverlayClick={true}
+        // shouldCloseOnOverlayClick={true}
         >
 
-          <div className="edit-userInfo-modal-wrapper" onKeyPress={e => e.stopPropagation()}>
+          <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("sample")}>
             <div className="edit-user-flex-box">
-              <div className="edit-userInfo-model">
+              <div className="edit-userInfo-model" onClick={(e) => e.stopPropagation()}>
+                <div className="edit-user-info-exit-button" >
+
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    onClick={() => this.closeModal("sample")}
+                  ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
+                  </svg>
+
+                </div>
                 <div className="edit-username-header-section">
                   <div className="edit-username-header">
                     Change your username
@@ -200,7 +253,7 @@ class UserProfile extends React.Component {
 
         <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("userNameEdit")} >
           <div className="edit-user-flex-box">
-            <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={(e => e.stopPropagation())}>
+            <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={e => e.stopPropagation()}>
               <div className="edit-user-info-exit-button" >
 
                 <svg
@@ -212,7 +265,7 @@ class UserProfile extends React.Component {
                 </svg>
 
               </div>
-              <div>
+              <div onSubmit={() => this.handleSubmit("userNameEdit")}>
                 <EditUserNameContainer />
               </div>
 
@@ -273,8 +326,12 @@ class UserProfile extends React.Component {
 
   }
 
-  handleSubmit () {
-
+  handleSubmit (modalName) {
+    setTimeout(() => {
+      if (this.props.errors.length === 0) {
+        this.closeModal(modalName);
+      }
+    }, 200)
   }
 
   scrambleEmail () {
@@ -487,7 +544,7 @@ class UserProfile extends React.Component {
 
                           </div>
 
-                          <button type="button" className="edit-profile-props-button" onClick={() => this.props.openModal("editUsername")}>Edit</button>
+                          <button type="button" className="edit-profile-props-button" >Edit</button>
 
                         </div>
 
@@ -507,7 +564,7 @@ class UserProfile extends React.Component {
                           </div>
                           <div className="phone-num-button-container">
                             {removePhoneNum}
-                            <button type="button" className="edit-profile-props-button" onClick={() => this.openModal("sample")}>Edit</button>
+                            <button type="button" className="edit-profile-props-button" onClick={() => this.openModal("sample")} >Edit</button>
                           </div>
 
                         </div>
