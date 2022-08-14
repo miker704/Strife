@@ -139,7 +139,7 @@ ActiveRecord::Schema.define(version: 2022_07_30_230705) do
     t.string "strife_id_tag", null: false
     t.integer "color_tag", null: false
     t.date "birthday", null: false
-    t.decimal "phone_number"
+    t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
