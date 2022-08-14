@@ -12,9 +12,8 @@ class EditUserEmailForm extends React.Component {
         }
         this.cancel = false;
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleCloseModal = this.handleCloseModal.bind(this);
         this.handleInput = this.handleInput.bind(this);
-        this.userNameErrors = this.userNameErrors.bind(this);
+        this.emailErrors = this.emailErrors.bind(this);
         this.passwordErrors = this.passwordErrors.bind(this);
 
     }
@@ -101,10 +100,10 @@ class EditUserEmailForm extends React.Component {
                 <div className="form-container1">
 
                     <div className="form-username-sec">
-                        <h5 className="form-username-header"><label className={usernameErrorTag}>Username{this.userNameErrors()}</label></h5>
+                        <h5 className="form-username-header"><label className={emailErrorTag}>Email{this.emailErrors()}</label></h5>
                         <div className="username-form-input-sec">
                             <div className="username-input-wrapper1">
-                                <input placeholder={this.props.currentUser.username} value={this.state.username} onChange={this.handleInput("username")} className="input-1" type="text" />
+                                <input placeholder={this.props.currentUser.email} value={this.state.email} onChange={this.handleInput("email")} className="input-1" type="email" />
                             </div>
                             <div className="username-input-wrapper2">
                                 <span className="quarter-hash-tag">#</span>
