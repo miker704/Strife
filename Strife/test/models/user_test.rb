@@ -8,7 +8,7 @@
 #  email           :string           not null
 #  online          :boolean          default(FALSE), not null
 #  password_digest :string           not null
-#  phone_number    :decimal(, )
+#  phone_number    :string
 #  profile_pic_url :string
 #  session_token   :string           not null
 #  strife_id_tag   :string           not null
