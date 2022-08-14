@@ -41,12 +41,17 @@ class EditUserEmailForm extends React.Component {
             "Email has already been taken"
         ];
 
-        let emailErrorMsgs = {
+        let emailErrorMessages = {
             0: " - can't be blank",
             1: " - Not well formed email address",
             2: " - Must be 320 or fewer in Length",
             3: " - Email is already registered "
 
+        }
+        for (let i = 0; i < emailErrorList.length; i++) {
+            if (this.props.errors.includes(emailErrorList[i])) {
+                return emailErrorMessages[i];
+            }
         }
 
 
@@ -67,7 +72,10 @@ class EditUserEmailForm extends React.Component {
             return;
         }
         let submissionState = {
-            email: this.state.email
+            id: this.props.currentUser.id,
+            email: this.state.email,
+            password: this.state.password
+
         }
         this.props.updateUserInfo(submissionState);
       }
