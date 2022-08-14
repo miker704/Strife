@@ -1,7 +1,12 @@
 import React from "react"
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import EditUserFormContainer from "./user_edit_form_container"
 import UserDeleteForm from "./user_delete_form"
+import EditUserNameContainer from "../user_edit_username_form/user_edit_username_container"
+import ReactModal from "react-modal"
+import Sample from "./sample_modal"
+
+
 
 class UserProfile extends React.Component {
   constructor (props) {
@@ -10,12 +15,14 @@ class UserProfile extends React.Component {
       user: this.props.currentUser,
       userEdit: false,
       deleteForm: false,
+      userNameEdit: false,
       userEmail: this.props.currentUser.email,
       // userPhone: this.props.currentUser.phone_number,
       userPhone: 7185931633,
 
       reveal: "Reveal",
-      reveal1: "Reveal"
+      reveal1: "Reveal",
+      sample: false
 
     }
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -23,17 +30,222 @@ class UserProfile extends React.Component {
     this.scramblePhoneNumber = this.scramblePhoneNumber.bind(this);
     this.handleRevealClick = this.handleRevealClick.bind(this);
     this.handleRevealClick2 = this.handleRevealClick2.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.renderEditUserNameModal = this.renderEditUserNameModal.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.handleESC = this.handleESC.bind(this);
+    this.handleSubModalClose = this.handleSubModalClose.bind(this);
+    this.renderSample = this.renderSample.bind(this);
+    this.closeAllSubMods = this.closeAllSubMods.bind(this);
+
+  }
+
+  closeAllSubMods () {
+    let array = ['userNameEdit'];
+    for (let i = 0; i < array.length; i++) {
+      this.handleSubModalClose(array[i])
+      // this.closeModal(i)
+      this.closeModal(array[i])
+      window.removeEventListener('keyup', this.handleESC, false);
+      window.addEventListener('keyup', this.props.handleESC, false);
+
+    }
+    window.removeEventListener('keyup', this.handleESC, false);
+    window.addEventListener('keyup', this.props.handleESC, false);
 
 
+  }
+
+
+  handleESC (e) {
+    console.log("hello esc on mini")
+    const keys = {
+      27: () => {
+        e.preventDefault();
+        this.closeAllSubMods();
+        window.removeEventListener('keyup', this.handleESC, false);
+        window.addEventListener('keyup', this.props.handleESC, false);
+
+      },
+    };
+    if (keys[e.keyCode]) {
+      keys[e.keyCode]();
+    }
+  }
+
+
+
+  handleSubModalClose (subModalName) {
+
+    let submodalToClose = document.getElementById("edit-userInfo-model")
+    submodalToClose.classList.add("transition-out");
+    submodalToClose.className = "edit-userInfo-model transition-out"
+
+    console.log("animation triggered");
+    setTimeout(() => {
+      this.props.removeSessionErrors();
+      this.closeModal(subModalName);
+    }, 100);
+    // return submodalToClose
+
+  }
+
+
+
+  openModal (field) {
+    this.setState({ [field]: true })
+
+  }
+
+  closeModal (field) {
+
+    if (this.mounted) {
+      setTimeout(() => {
+        this.props.removeSessionErrors();
+        this.setState({ [field]: false })
+        window.removeEventListener('keyup', this.handleESC, false);
+        window.addEventListener('keyup', this.props.handleESC, false);
+
+      }, 100)
+      window.removeEventListener('keyup', this.handleESC, false);
+
+      window.addEventListener('keyup', this.props.handleESC, false);
+
+    }
+  }
+
+  resetModalStyle = (() => {
+    // Styles
+    const initial = null
+
+    const overlay = {
+      position: initial,
+      top: initial,
+      left: initial,
+      right: initial,
+      bottom: initial,
+      backgroundColor: initial,
+      WebkitOverflowScrolling: initial,
+      zIndex: initial,
+    }
+
+    const content = {
+      position: initial,
+      top: initial,
+      left: initial,
+      right: 'rgba(0, 0, 0, 0.8)',
+      bottom: initial,
+      border: initial,
+      background: initial,
+      overflow: initial,
+      borderRadius: initial,
+      outline: initial,
+      padding: initial,
+    }
+
+    return { overlay, content }
+  })
+
+  renderSample () {
+    if (this.state.sample === true) {
+      return (
+        // <Sample/>
+        <ReactModal
+          isOpen={this.state.sample}
+          // appElement={'#root'}
+          style={this.resetModalStyle()}
+          ariaHideApp={false}
+          onRequestClose={() => this.closeModal("sample")}
+          shouldCloseOnEsc={true}
+          shouldCloseOnOverlayClick={true}
+        >
+
+          <div className="edit-userInfo-modal-wrapper" onKeyPress={e => e.stopPropagation()}>
+            <div className="edit-user-flex-box">
+              <div className="edit-userInfo-model">
+                <div className="edit-username-header-section">
+                  <div className="edit-username-header">
+                    Change your username
+                  </div>
+                  <div className="edit-username-header-info">
+                    Enter a new username and your existing password
+                  </div>
+                </div>
+                <p className="this-is-a-test">
+                  hello world
+                </p>
+                <button onClick={() => this.closeModal("sample")}>close</button>
+              </div>
+            </div>
+          </div>
+
+
+
+        </ReactModal>
+      )
+
+    }
+
+  }
+
+
+  renderEditUserNameModal () {
+    if (this.state.userNameEdit) {
+      window.removeEventListener('keyup', this.props.handleESC, false);
+      window.addEventListener('keyup', this.handleESC, false);
+
+      return (
+
+
+        <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("userNameEdit")} >
+          <div className="edit-user-flex-box">
+            <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={(e => e.stopPropagation())}>
+              <div className="edit-user-info-exit-button" >
+
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  onClick={() => this.handleSubModalClose("userNameEdit")}
+                ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
+                </svg>
+
+              </div>
+              <div>
+                <EditUserNameContainer />
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      )
+    }
+  }
+
+
+  handleCloseModal () {
+    let modalToClose = document.getElementById("user-profile");
+    modalToClose.classList.add("transition-out");
+    setTimeout(() => {
+      this.props.removeSessionErrors();
+      this.props.closeModal();
+    }, 100);
   }
 
 
   componentDidMount () {
+    this.mounted = true;
     window.addEventListener('keyup', this.props.handleESC, false);
+
 
   }
   componentWillUnmount () {
+    this.mounted = false;
     window.removeEventListener('keyup', this.props.handleESC, false);
+
 
   }
 
@@ -70,7 +282,7 @@ class UserProfile extends React.Component {
     let email_Scramble = "";
     for (let i = 0; i < e_mail.length; i++) {
       if (e_mail[i] === "@") {
-        email_Scramble += email_Scramble + e_mail.slice(i);
+        email_Scramble = email_Scramble + e_mail.slice(i);
         return email_Scramble;
       }
       else {
@@ -95,6 +307,7 @@ class UserProfile extends React.Component {
 
 
   render () {
+    console.log("this is the current state : ", this.state)
 
     let scrambledEmail = this.state.reveal1 === "Reveal" ? this.scrambleEmail() : this.state.userEmail;
     let scramblePhone = this.state.reveal === "Reveal" ? this.scramblePhoneNumber() : "+1" + this.state.userPhone;
@@ -107,8 +320,10 @@ class UserProfile extends React.Component {
     ) : ("")
 
     return (
-      <div className="user-profile-wrapper">
-        <div className="user-profile">
+      <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
+        {this.renderEditUserNameModal()}
+        {this.renderSample()}
+        <div className="user-profile" id="user-profile">
 
           <div className="sidebar">
             <div className="sidebar-scrollbar">
@@ -254,7 +469,7 @@ class UserProfile extends React.Component {
                               </div>
                             </div>
                           </div>
-                          <button type="button" className="edit-profile-props-button">Edit</button>
+                          <button type="button" className="edit-profile-props-button" onClick={() => this.openModal("userNameEdit")}>Edit</button>
                         </div>
 
 
@@ -272,7 +487,7 @@ class UserProfile extends React.Component {
 
                           </div>
 
-                          <button type="button" className="edit-profile-props-button">Edit</button>
+                          <button type="button" className="edit-profile-props-button" onClick={() => this.props.openModal("editUsername")}>Edit</button>
 
                         </div>
 
@@ -292,7 +507,7 @@ class UserProfile extends React.Component {
                           </div>
                           <div className="phone-num-button-container">
                             {removePhoneNum}
-                            <button type="button" className="edit-profile-props-button">Edit</button>
+                            <button type="button" className="edit-profile-props-button" onClick={() => this.openModal("sample")}>Edit</button>
                           </div>
 
                         </div>
@@ -384,7 +599,7 @@ class UserProfile extends React.Component {
 
                 <div className="tool-x-to-esc-button-wrapper">
                   <div className="inner-tool-container">
-                    <div className="x-to-esc-button">
+                    <div className="x-to-esc-button" onClick={() => this.handleCloseModal()}>
                       <svg role="img" width="18" height="18" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 
                                 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z">
