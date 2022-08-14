@@ -101,7 +101,7 @@ class EditUserEmailForm extends React.Component {
 
                     <div className="form-username-sec">
                         <h5 className="form-username-header"><label className={emailErrorTag}>Email{this.emailErrors()}</label></h5>
-                        <div className="username-form-input-sec">
+                        <div>
                             <div className="email-input-wrapper">
                                 <input placeholder={this.props.currentUser.email} value={this.state.email} onChange={this.handleInput("email")} className="input-4-email" type="email" />
                             </div>
