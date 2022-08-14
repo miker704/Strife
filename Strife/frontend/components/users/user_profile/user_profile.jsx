@@ -349,7 +349,8 @@ class UserProfile extends React.Component {
   handleSubmit (modalName) {
     setTimeout(() => {
       if (this.props.errors.length === 0) {
-        this.closeModal(modalName);
+        // this.closeModal(modalName);
+        this.handleSubModalClose(modalName);
       }
     }, 200)
   }
