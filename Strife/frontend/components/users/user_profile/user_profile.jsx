@@ -25,6 +25,7 @@ class UserProfile extends React.Component {
       changePFP : false,
       removePhoneNumber: false,
       disableUser:false,
+      deleteUser:false,
       demoUser : false,
       userEmail: this.props.currentUser.email,
 
