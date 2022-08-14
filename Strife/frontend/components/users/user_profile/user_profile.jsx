@@ -24,6 +24,8 @@ class UserProfile extends React.Component {
       changePassword: false,
       changePFP : false,
       removePhoneNumber: false,
+      disableUser:false,
+      
       userEmail: this.props.currentUser.email,
 
       // userPhone: this.props.currentUser.phone_number,
@@ -62,7 +64,7 @@ class UserProfile extends React.Component {
   }
 
   checkIfDemoUser(){
-    
+
   }
 
 
