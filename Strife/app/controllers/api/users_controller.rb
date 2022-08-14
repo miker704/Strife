@@ -32,8 +32,9 @@ class Api::UsersController < ApplicationController
       end
     
     def update
-        @user = User.find_by(id: params[:id])
-        if !@user.is_password?(params[:user][:password])
+        @user = User.find(params[:id])
+       
+        if !@user.is_password?(params[:user][:password]) 
             @user.errors.add(:error,'Incorrect Password !')
         end
 
