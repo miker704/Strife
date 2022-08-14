@@ -314,6 +314,8 @@ class UserProfile extends React.Component {
 
 
   componentDidMount () {
+    this.scrambleEmail();
+    this.scramblePhoneNumber();
     this.mounted = true;
     window.addEventListener('keyup', this.props.handleESC, false);
 
@@ -360,7 +362,8 @@ class UserProfile extends React.Component {
   }
 
   scrambleEmail () {
-    let e_mail = this.state.userEmail;
+    // let e_mail = this.state.userEmail;
+    let e_mail = this.props.currentUser.email;
     let email_Scramble = "";
     for (let i = 0; i < e_mail.length; i++) {
       if (e_mail[i] === "@") {
@@ -391,7 +394,7 @@ class UserProfile extends React.Component {
   render () {
     console.log("this is the current state : ", this.state)
 
-    let scrambledEmail = this.state.reveal1 === "Reveal" ? this.scrambleEmail() : this.state.userEmail;
+    let scrambledEmail = this.state.reveal1 === "Reveal" ? this.scrambleEmail() : this.props.currentUser.email;
     let scramblePhone = this.state.reveal === "Reveal" ? this.scramblePhoneNumber() : "+1" + this.state.userPhone;
     const { reveal } = this.state.reveal;
     let removePhoneNum = this.state.userPhone !== null ? (
