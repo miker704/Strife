@@ -544,7 +544,7 @@ class UserProfile extends React.Component {
 
                           </div>
 
-                          <button type="button" className="edit-profile-props-button" >Edit</button>
+                          <button type="button" className="edit-profile-props-button" onClick={() => this.openModal("changeEmail")} >Edit</button>
 
                         </div>
 
@@ -564,7 +564,7 @@ class UserProfile extends React.Component {
                           </div>
                           <div className="phone-num-button-container">
                             {removePhoneNum}
-                            <button type="button" className="edit-profile-props-button" onClick={() => this.openModal("sample")} >Edit</button>
+                            <button type="button" className="edit-profile-props-button" onClick={() => this.openModal("changePhone")} >Edit</button>
                           </div>
 
                         </div>
