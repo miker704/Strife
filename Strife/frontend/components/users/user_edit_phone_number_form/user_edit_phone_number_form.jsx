@@ -5,7 +5,7 @@ import { Link, Redirect } from 'react-router-dom'
 class EditUserPhoneNumberForm extends React.Component {
     constructor (props) {
         super(props)
-        
+
         this.state = {
             phone_number: "",
             password: ""
@@ -16,7 +16,35 @@ class EditUserPhoneNumberForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.passwordErrors = this.passwordErrors.bind(this);
+        this.emailErrors = this.emailErrors.bind(this);
 
+    }
+
+
+    emailErrors() {
+       
+        let emailErrorList = [
+            "Email can't be blank",
+            "Email Not well formed email address",
+            "Email Must be 320 or fewer in Length",
+            "Email has already been taken"
+        ];
+
+        let emailErrorMessages = {
+            0: " - can't be blank",
+            1: " - Not well formed email address",
+            2: " - Must be 320 or fewer in Length",
+            3: " - Email is already registered "
+
+        }
+        for (let i = 0; i < emailErrorList.length; i++) {
+            if (this.props.errors.includes(emailErrorList[i])) {
+                return emailErrorMessages[i];
+            }
+        }
+
+
+        return "";
     }
 
 
@@ -26,7 +54,7 @@ class EditUserPhoneNumberForm extends React.Component {
             console.log("no match in password")
             return " - Password does not match.";
         }
-        else if (this.props.errors.includes("Incorrect Password !")){
+        else if (this.props.errors.includes("Incorrect Password !")) {
             console.log("password is incorrect")
             return " - Password does not match.";
         }
@@ -41,11 +69,11 @@ class EditUserPhoneNumberForm extends React.Component {
     handleInput (field) {
         return (e) => { this.setState({ [field]: e.currentTarget.value }) }
     }
-    handleSubmit(e){
+    handleSubmit (e) {
         e.preventDefault();
-        
 
-        if(this.cancel === true){
+
+        if (this.cancel === true) {
             return;
         }
 
@@ -55,23 +83,60 @@ class EditUserPhoneNumberForm extends React.Component {
             password: this.state.password
         }
         this.props.updateUserInfo(submissionState);
-      }
+    }
 
 
 
-      render (){
+    render () {
         let passwordErrorTag = this.props.errors.length > 0 ? "field-error" : "";
+        let emailErrorTag = this.props.errors.length > 0 ? "field-error" : "";
+
 
         return (
-        
-        <div>
+
+            <div id="edit-userInfo-model" className="edit-userInfo-model" >
+                <div className="edit-username-header-section">
+                    <div className="edit-username-header">
+                        Enter a Phone Number
+                    </div>
+                    <div className="form-email-header-info">
+                        Enter a new email address and your existing password
+                    </div>
+                </div>
+                <form onSubmit={this.handleSubmit}>
+                    <div className="form-container1">
+
+                        <div className="form-username-sec">
+                            <h5 className="form-username-header"><label className={emailErrorTag}>Phone{this.emailErrors()}</label></h5>
+                            <div>
+                                <div className="email-input-wrapper">
+                                    <input placeholder={this.props.currentUser.phone_number} value={this.state.phone_number} onChange={this.handleInput("phone_number")} className="input-4-email" type="tel" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div className="password-section">
+                            <h5 className="password-header1">
+                                <label className={passwordErrorTag}>Current Password{this.passwordErrors()}</label>
+                            </h5>
+                            <div className="input-3-password-wrapper">
+                                <input value={this.state.password} onChange={this.handleInput("password")} type="password" className="input-3-password" />
+                            </div>
+                        </div>
+                        <div className="username-edit-sep"></div>
+                    </div>
+                    <div className="username-edit-button-sec">
+                        <button type="submit" className="username-edit-submit-button">Done</button>
+                        <button type="submit" onClick={() => this.cancel = true} className="username-edit-cancel-button">Cancel</button>
+                    </div>
 
 
 
-        </div>
-        
+                </form>
+            </div>
+
         )
-      }
+    }
 
 
 
