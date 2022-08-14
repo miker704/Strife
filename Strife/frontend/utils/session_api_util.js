@@ -20,3 +20,4 @@ export const removeUser = (userId) => $.ajax({ url: `/api/users/${userId}/`, met
 //user search 
 
 export const searchUsers = () => ajax({ url: "/api/users/", method: "GET" });
+
