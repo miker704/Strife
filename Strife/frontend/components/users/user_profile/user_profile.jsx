@@ -22,11 +22,11 @@ class UserProfile extends React.Component {
       changeEmail: false,
       changePhone: false,
       changePassword: false,
-      changePFP : false,
+      changePFP: false,
       removePhoneNumber: false,
-      disableUser:false,
-      deleteUser:false,
-      demoUser : false,
+      disableUser: false,
+      deleteUser: false,
+      demoUser: false,
       userEmail: this.props.currentUser.email,
 
       // userPhone: this.props.currentUser.phone_number,
@@ -59,42 +59,70 @@ class UserProfile extends React.Component {
     this.checkIfDemoUser = this.checkIfDemoUser.bind(this);
   }
 
-  handleLogout(){
+  handleLogout () {
     this.props.closeModal();
     this.props.logoutUser();
   }
 
-  checkIfDemoUser(){
+  checkIfDemoUser () {
 
   }
 
 
 
 
-  renderRemovePhoneNumber(){
-    if(this.state.removePhoneNumber === true){
+  renderRemovePhoneNumber () {
+    if (this.state.removePhoneNumber === true) {
       window.removeEventListener('keyup', this.props.handleESC, false);
       window.addEventListener('keyup', this.handleESC, false);
     }
   }
 
 
-  renderChangePhone(){
-      if(this.state.changePhone === true){
-        window.removeEventListener('keyup', this.props.handleESC, false);
-        window.addEventListener('keyup', this.handleESC, false);
-      }
+  renderChangePhone () {
+    if (this.state.changePhone === true) {
+      window.removeEventListener('keyup', this.props.handleESC, false);
+      window.addEventListener('keyup', this.handleESC, false);
+
+      return (
+        <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("changePhone")} >
+          <div className="edit-user-flex-box">
+            <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={e => e.stopPropagation()}>
+              <div className="edit-user-info-exit-button" >
+
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  onClick={() => this.handleSubModalClose("changePhone")}
+                ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
+                </svg>
+
+              </div>
+              <div onSubmit={() => this.handleSubmit("changePhone")}>
+                <EditUserPhoneNumberContainer />
+              </div>
+
+            </div>
+          </div>
+        </div>
+      )
+
+
+
+
+    }
   }
 
-  renderChangePassword(){
-    if(this.state.changePassword === true){
+  renderChangePassword () {
+    if (this.state.changePassword === true) {
       window.removeEventListener('keyup', this.props.handleESC, false);
       window.addEventListener('keyup', this.handleESC, false);
     }
   }
 
-  renderChangeUserPFP(){
-    if(this.state.changePFP===true){
+  renderChangeUserPFP () {
+    if (this.state.changePFP === true) {
       window.removeEventListener('keyup', this.props.handleESC, false);
       window.addEventListener('keyup', this.handleESC, false);
     }
@@ -135,7 +163,7 @@ class UserProfile extends React.Component {
 
 
   closeAllSubMods () {
-    let array = ['userNameEdit', 'sample', 'changeEmail','changePhone','changePassword','changePFP','removePhoneNumber'];
+    let array = ['userNameEdit', 'sample', 'changeEmail', 'changePhone', 'changePassword', 'changePFP', 'removePhoneNumber'];
     for (let i = 0; i < array.length; i++) {
       this.handleSubModalClose(array[i])
       // this.closeModal(i)
@@ -456,7 +484,7 @@ class UserProfile extends React.Component {
 
                     {/* <Link to={`/users/${this.props.currentUser.id}`}> */}
 
-                      <li className="user-profile-item">My Account</li>
+                    <li className="user-profile-item">My Account</li>
 
                     {/* </Link> */}
 
@@ -569,7 +597,7 @@ class UserProfile extends React.Component {
 
                       </div>
 
-                      <button type="button" onClick={()=> this.openModal("changePFP")} className="edit-user-profile-button">Edit User Profile</button>
+                      <button type="button" onClick={() => this.openModal("changePFP")} className="edit-user-profile-button">Edit User Profile</button>
 
 
                     </div>
@@ -649,7 +677,7 @@ class UserProfile extends React.Component {
                   </div>
                   <div className="password-edit-section">
                     <div>
-                      <button type="button" className="changePasswordButton" onClick={()=>this.openModal("changePassword")}>
+                      <button type="button" className="changePasswordButton" onClick={() => this.openModal("changePassword")}>
                         Change Password
                       </button>
                     </div>
