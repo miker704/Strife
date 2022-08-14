@@ -6,7 +6,9 @@ class EditUsernameForm extends React.Component {
     constructor (props) {
         super(props)
         
-        this.state = this.props.currentUser;
+        this.state = { username: this.props.currentUser.username, password: ""}
+
+
         this.cancel = false;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -16,13 +18,10 @@ class EditUsernameForm extends React.Component {
     }
 
     passwordErrors () {
-        console.log("hello password errors");
         if (this.props.errors.includes('Login or password is invalid')) {
-            console.log("no match in password")
             return " - Password does not match.";
         }
-        else if (this.props.errors.includes("Incorrect Password !")){
-            console.log("password is incorrect")
+        else if (this.props.errors.includes("Error Incorrect Password !")){
             return " - Password does not match.";
         }
         return "";
@@ -45,8 +44,14 @@ class EditUsernameForm extends React.Component {
         if(this.cancel){
             return;
         }
-        
-            this.props.updateUserInfo(this.state);
+            let subState = {
+                id: this.props.currentUser.id,
+                username: this.state.username,
+                password: this.state.password
+            }
+
+
+            this.props.updateUserInfo(subState);
     }
 
     userNameErrors () {
@@ -88,14 +93,14 @@ class EditUsernameForm extends React.Component {
                         Enter a new username and your existing password
                     </div>
                 </div>
-                <form autoComplete="off" onSubmit={this.handleSubmit}>
+                <form  onSubmit={this.handleSubmit}>
                     <div className="form-container1">
 
                         <div className="form-username-sec">
                             <h5 className="form-username-header"><label className={usernameErrorTag}>Username{this.userNameErrors()}</label></h5>
                             <div className="username-form-input-sec">
                                 <div className="username-input-wrapper1">
-                                    <input value={this.state.username} onChange={this.handleInput("username")} className="input-1" type="text" />
+                                    <input placeholder={this.props.currentUser.username} value={this.state.username} onChange={this.handleInput("username")} className="input-1" type="text" />
                                 </div>
                                 <div className="username-input-wrapper2">
                                     <span className="quarter-hash-tag">#</span>
