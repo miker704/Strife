@@ -328,7 +328,8 @@
 .input-1 {
     forced-color-adjust: none;
     border: none;
-    background-color: #0000;
+    // background-color: #0000;
+    background-color: hsl(216, 7.2%, 13.5%);
     font-size: 16px;
     box-sizing: border-box;
     width: 100%;
@@ -511,7 +512,7 @@
     min-width: 96px;
     min-height: 38px;
     background-color: hsl(235, 85.6%, 64.7%);
-    transition: background-color .17s ease,color .17s ease;
+    transition: background-color .17s ease, color .17s ease;
     position: relative;
     text-rendering: optimizeLegibility;
     font-family: "Whitney";
@@ -540,4 +541,43 @@
     flex: 0 0 auto;
     height: 16px;
     forced-color-adjust: none;
+}
+
+
+.input-4-email {
+    forced-color-adjust: none;
+    padding: 10px;
+    height: 40px;
+    border: none;
+    // background-color: #0000;
+    background-color: hsl(216, 7.2%, 13.5%);
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 3px;
+    color: hsl(210, 2.9%, 86.7%);
+    text-rendering: optimizeLegibility;
+    font-family: "Whitney";
+    transition: border-color .2s ease-in-out;
+    font-weight: 400;
+    outline: none;
+}
+
+.email-input-wrapper {
+    forced-color-adjust: none;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+
+.form-email-header-info {
+    color: hsl(216, 3.7%, 73.5%);
+    forced-color-adjust: none;
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: "Whitney";
 }
