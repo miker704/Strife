@@ -66,13 +66,15 @@ class UserProfile extends React.Component {
 
   renderChangePassword(){
     if(this.state.changePassword === true){
-
+      window.removeEventListener('keyup', this.props.handleESC, false);
+      window.addEventListener('keyup', this.handleESC, false);
     }
   }
 
   renderChangeUserPFP(){
     if(this.state.changePFP===true){
-
+      window.removeEventListener('keyup', this.props.handleESC, false);
+      window.addEventListener('keyup', this.handleESC, false);
     }
   }
 
