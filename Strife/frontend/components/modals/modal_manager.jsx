@@ -34,6 +34,7 @@ class ModalManager extends React.Component {
 
     render () {
         let renderedModal;
+        let subModal;
         // using a switch statement to reduce slow down of processing multiple if statemnets with similar
         // or little complex condtions also to dry up the code
         switch (this.props.modal) {
@@ -55,7 +56,15 @@ class ModalManager extends React.Component {
             // case "SearchServerForm":
             //     renderedModal = <EditServerFormContainer />
             //     break;
+            case 'editUsername':
+                // renderedModal = (<div className="modal-child-component" onClick={e => e.stopPropagation()}>
+                //     <EditUserNameContainer />
+                // </div>)
 
+                    
+                subModal = <EditUserNameContainer />
+
+                break;
 
             default:
                 return null;
@@ -74,6 +83,7 @@ class ModalManager extends React.Component {
                     {renderedModal}
                 </div> */}
                 {renderedModal}
+                {subModal}
             </div>
 
 
