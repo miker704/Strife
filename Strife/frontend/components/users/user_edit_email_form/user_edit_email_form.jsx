@@ -7,8 +7,10 @@ class EditUserEmailForm extends React.Component {
         super(props)
         this.state = {
             user: this.props.currentUser,
-            email: this.props.currentUser.email
+            email: this.props.currentUser.email,
+            password: ""
         }
+        this.cancel = false;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCloseModal = this.handleCloseModal.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -69,7 +71,9 @@ class EditUserEmailForm extends React.Component {
     }
     handleSubmit(e){
         e.preventDefault();
-    
+        if(this.cancel === true){
+            return;
+        }
         let submissionState = {
             email: this.state.email
         }
