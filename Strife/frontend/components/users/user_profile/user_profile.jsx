@@ -440,7 +440,8 @@ class UserProfile extends React.Component {
       return "";
     }
     else {
-      let phoneNum = this.state.userPhone.toString();
+      // let phoneNum = this.state.userPhone.toString();
+      let phoneNum = this.state.userPhone;
       let part1 = phoneNum.slice(0, -4);
       part1 = part1.replace(/\d/g, "*") + phoneNum.slice(-4);
       return part1;
