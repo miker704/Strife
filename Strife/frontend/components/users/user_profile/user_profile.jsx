@@ -101,7 +101,7 @@ class UserProfile extends React.Component {
 
 
   closeAllSubMods () {
-    let array = ['userNameEdit', 'sample', 'emailChange'];
+    let array = ['userNameEdit', 'sample', 'changeEmail','changePhone','changePassword','changePFP'];
     for (let i = 0; i < array.length; i++) {
       this.handleSubModalClose(array[i])
       // this.closeModal(i)
