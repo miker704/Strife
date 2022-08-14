@@ -53,6 +53,7 @@ class UserProfile extends React.Component {
     this.renderChangeUserPFP = this.renderChangeUserPFP.bind(this);
     this.renderRemovePhoneNumber = this.renderRemovePhoneNumber.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.checkIfDemoUser = this.checkIfDemoUser.bind(this);
   }
 
   handleLogout(){
