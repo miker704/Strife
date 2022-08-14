@@ -61,6 +61,12 @@ class UserProfile extends React.Component {
     this.props.logoutUser();
   }
 
+  checkIfDemoUser(){
+    
+  }
+
+
+
 
   renderRemovePhoneNumber(){
     if(this.state.removePhoneNumber === true){
