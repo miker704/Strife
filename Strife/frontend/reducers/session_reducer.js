@@ -1,10 +1,10 @@
 import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from "../actions/session_actions";
 
 // create a default state 
-const _nullSession = {
+const _nullSession = Object.freeze( {
     // currentUser: null
     id: null
-};
+});
 
 const sessionReducer = (state = _nullSession ,action) => {
     Object.freeze(state);
