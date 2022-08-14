@@ -125,8 +125,6 @@ class UserNavBar extends React.Component {
 
 
           <div className="contain-icon">
-            {/* redirect link */}
-            {/* <Link to={`/users/${this.props.currentUser.id}`}> */}
 
               <svg onClick={() => this.props.openModal('userProfile')} className="fa-gear" width="20" height="20" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M19.738 10H22V14H19.739C19.498 14.931 19.1 15.798 18.565 16.564L20 
@@ -138,7 +136,6 @@ class UserNavBar extends React.Component {
                  16 12 16Z"></path>
               </svg>
               <div className="user-settings-toggle1">User Settings</div>
-            {/* </Link> */}
           </div>
 
 
