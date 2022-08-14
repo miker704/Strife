@@ -59,15 +59,21 @@ class UserProfile extends React.Component {
   }
 
   renderChangePhone(){
+      if(this.state.changePhone === true){
 
+      }
   }
 
   renderChangePassword(){
+    if(this.state.changePassword === true){
 
+    }
   }
 
   renderChangeUserPFP(){
+    if(this.state.changePFP===true){
 
+    }
   }
 
 
@@ -407,6 +413,7 @@ class UserProfile extends React.Component {
     return (
       <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
         {this.renderChangeEmail()}
+        {this.renderChangePhone()}
         {this.renderEditUserNameModal()}
         {this.renderSample()}
         <div className="user-profile" id="user-profile">
@@ -538,7 +545,7 @@ class UserProfile extends React.Component {
 
                       </div>
 
-                      <button type="button" className="edit-user-profile-button">Edit User Profile</button>
+                      <button type="button" onClick={()=> this.openModal("changePFP")} className="edit-user-profile-button">Edit User Profile</button>
 
 
                     </div>
@@ -618,7 +625,7 @@ class UserProfile extends React.Component {
                   </div>
                   <div className="password-edit-section">
                     <div>
-                      <button type="button" className="changePasswordButton">
+                      <button type="button" className="changePasswordButton" onClick={()=>this.openModal("changePassword")}>
                         Change Password
                       </button>
                     </div>
