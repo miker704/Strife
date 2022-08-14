@@ -59,6 +59,12 @@ class UserProfile extends React.Component {
     this.props.logoutUser();
   }
 
+
+  renderRemovePhoneNumber(){
+    
+  }
+
+
   renderChangePhone(){
       if(this.state.changePhone === true){
         window.removeEventListener('keyup', this.props.handleESC, false);
