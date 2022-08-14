@@ -50,9 +50,13 @@ class UserProfile extends React.Component {
     this.renderChangePhone = this.renderChangePhone.bind(this);
     this.renderChangePassword = this.renderChangePassword.bind(this);
     this.renderChangeUserPFP = this.renderChangeUserPFP.bind(this);
-
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
+  handleLogout(){
+    this.props.closeModal();
+    this.props.logoutUser();
+  }
 
   renderChangePhone(){
 
@@ -416,11 +420,11 @@ class UserProfile extends React.Component {
                     <li><h3 className="user-profile-header3">User Settings</h3></li>
 
 
-                    <Link to={`/users/${this.props.currentUser.id}`}>
+                    {/* <Link to={`/users/${this.props.currentUser.id}`}> */}
 
                       <li className="user-profile-item">My Account</li>
 
-                    </Link>
+                    {/* </Link> */}
 
                     <li className="user-profile-item">Friend Requests</li>
                     <li className="user-profile-item">Profiles</li>
@@ -456,7 +460,7 @@ class UserProfile extends React.Component {
                     <li className="user-profile-item">What's New</li>
                     <li className="user-profile-item">HypeSquad</li>
                     <div className="user-settings-separator"></div>
-                    <li className="user-profile-item" onClick={() => this.props.logoutUser()}>
+                    <li className="user-profile-item" onClick={() => this.handleLogout()}>
                       <span>Log Out</span>
                       <i className="fa-solid fa-arrow-right"></i>
                     </li>
