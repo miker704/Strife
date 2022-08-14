@@ -60,7 +60,8 @@ class UserProfile extends React.Component {
 
   renderChangePhone(){
       if(this.state.changePhone === true){
-
+        window.removeEventListener('keyup', this.props.handleESC, false);
+        window.addEventListener('keyup', this.handleESC, false);
       }
   }
 
