@@ -23,6 +23,7 @@ class UserProfile extends React.Component {
       changePhone: false,
       changePassword: false,
       changePFP : false,
+      removePhoneNumber: false,
       userEmail: this.props.currentUser.email,
 
       // userPhone: this.props.currentUser.phone_number,
@@ -61,7 +62,7 @@ class UserProfile extends React.Component {
 
 
   renderRemovePhoneNumber(){
-    
+
   }
 
 
