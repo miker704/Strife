@@ -50,7 +50,6 @@ class EditUserPhoneNumberForm extends React.Component {
 
 
       render (){
-        // let usernameErrorTag = this.props.errors.length > 0 ? "field-error" : "";
         let passwordErrorTag = this.props.errors.length > 0 ? "field-error" : "";
 
         return (
