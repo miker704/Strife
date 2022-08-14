@@ -62,7 +62,10 @@ class UserProfile extends React.Component {
 
 
   renderRemovePhoneNumber(){
-
+    if(this.state.removePhoneNumber === true){
+      window.removeEventListener('keyup', this.props.handleESC, false);
+      window.addEventListener('keyup', this.handleESC, false);
+    }
   }
 
 
