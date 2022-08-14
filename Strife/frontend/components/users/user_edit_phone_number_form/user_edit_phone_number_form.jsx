@@ -5,8 +5,13 @@ import { Link, Redirect } from 'react-router-dom'
 class EditUserPhoneNumberForm extends React.Component {
     constructor (props) {
         super(props)
-       
-        this.state = this.props.currentUser;
+        
+        this.state = {
+            phone_number: "",
+            password: ""
+        }
+
+
         this.cancel = false;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
