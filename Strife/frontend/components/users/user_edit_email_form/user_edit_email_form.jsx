@@ -33,37 +33,22 @@ class EditUserEmailForm extends React.Component {
 
 
     emailErrors() {
-        const EMAIL_ERRORS = ['Email Not well formed email address', "Must be 320 or fewer in Length", "Email can't be blank", "Email has already been taken", "Login or password is invalid"];
-
-
+       
         let emailErrorList = [
             "Email can't be blank",
-            "Email Not well formed email address"
+            "Email Not well formed email address",
+            "Email Must be 320 or fewer in Length",
+            "Email has already been taken"
         ];
 
         let emailErrorMsgs = {
             0: " - can't be blank",
-            1: " - Not well formed email address"
-        }
-
-
-        if (this.props.formType === "Sign In") {
-            if (this.props.errors.includes('Login or password is invalid')) {
-                return " - Login or password is invalid";
-            }
-        }
-
-        if (this.props.formType === "Sign Up") {
-           
-           
-            if (this.props.errors.includes("Email Must be 320 or fewer in Length")) {
-                return " - Must be 320 or fewer in Length";
-            }
-            else if (this.props.errors.includes("Email has already been taken")) {
-                return " - Email is already registered ";
-            }
+            1: " - Not well formed email address",
+            2: " - Must be 320 or fewer in Length",
+            3: " - Email is already registered "
 
         }
+
 
         return "";
     }
