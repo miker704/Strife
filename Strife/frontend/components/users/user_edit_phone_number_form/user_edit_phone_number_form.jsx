@@ -40,7 +40,9 @@ class EditUserPhoneNumberForm extends React.Component {
         e.preventDefault();
     
         let submissionState = {
-            phone_number: this.state.phone_number
+            id: this.props.currentUser.id,
+            phone_number: this.state.phone_number,
+            password: this.state.password
         }
         this.props.updateUserInfo(submissionState);
       }
