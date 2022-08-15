@@ -34,11 +34,6 @@ class Api::UsersController < ApplicationController
     def update
         @user = User.find(params[:id])
        
-        # if !@user.is_password?(params[:user][:password]) 
-            # @user.errors.add(:error,'Incorrect Password !')
-            # puts "INCORRECT PASSWORD!"
-        # end
-
         if @user && @user.is_password?(params[:user][:password]) && @user.update(user_params)
             render :show
         else
@@ -67,8 +62,39 @@ class Api::UsersController < ApplicationController
     
     end
 
+    def change_Password
+        @user = User.find(params[:id])
+        #check if password is correct 
+        if @user &&  @user.is_password?(params[:user][:password])
+            old_password = params[:user][:password]
+            new_password = params[:user][:newPassword]
+            confirm_new_password = params[:user][:confirmNewPassword]
+            #now check to see if new password matches old password if so wave error
+            if new_password == old_password
+                puts 'Error your new passcode is the same as the old one'
+                @user.errors.add(:error,'new password cannot match your previous password !')
+
+            elsif new_password != confirm_new_password
+                @user.errors.add(:error,'new password does not match confirm password !')
+
+            else new_password == confirm_new_password
+                puts 'new pass and confrim old pass work now chnaging your password'
+                render :show
+            end
+                
+                puts old_password
+                puts  new_password
+                puts  confirm_new_password
+
+            #now check is new password matches confirm
 
 
+
+        else
+            render json: @user.errors.full_messages, status: 401
+        end
+
+    end
 
 
     #search up other users
