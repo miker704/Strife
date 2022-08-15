@@ -41,7 +41,7 @@ class User < ApplicationRecord
     validates :phone_number, format:{with: /\+\d{1}-\d{3}-\d{3}-\d{4}/, message: "is invalid, please confirm that it is correct."},
     length: {is: 15, message: "is not of 9 digits long" }, uniqueness: true, allow_nil: true
     validates :online, inclusion: {in: [true,false]}
-
+    # /\+\d{1}-\d{3}-\d{3}-\d{4}/ this is normal phone number format with dashes discord doesnt use the dashes however
     # has_one_attached :profile_pic_url 
     #-- > this requires acxtive storage 
     has_one_attached :photo
