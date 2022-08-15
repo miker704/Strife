@@ -25,3 +25,5 @@ export const searchUsers = () => $.ajax({ url: "/api/users/", method: "GET" });
 export const removePhoneNumber = (user) => $.ajax({ url: `/api/users/${user.id}/removephone/`, method: "PATCH", data: { user } });
 
 export const changePassword = (user) => $.ajax({ url: `/api/users/${user.id}/changePassword`, method: "PATCH", data: { user } });
+
+export const changeUserPFP = (user) => $.ajax({ url: `/api/users/${user.id}/changeUserPFP`, method: "PATCH", data: { user } });
