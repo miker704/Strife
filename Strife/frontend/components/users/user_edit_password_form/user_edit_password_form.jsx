@@ -49,7 +49,9 @@ class EditUserPasswordForm extends React.Component {
         }
         let submissionState = {
             id: this.props.currentUser.id,
-            password: this.state.newPassword
+            password: this.state.password,
+            newPassword: this.state.newPassword,
+            confirmNewPassword: this.state.confirmNewPassword
         }
         // this.props.updateUserInfo(submissionState);
         this.props.changePassword(submissionState);
