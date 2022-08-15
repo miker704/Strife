@@ -54,8 +54,9 @@ export const signUpUser = user => (dispatch) =>
 export const signInUser = user => (dispatch) =>
     SessionAPIUtil.signIn(user).then((user) => dispatch(receiveCurrentUser(user)), (err) => dispatch(receiveSessionErrors(err.responseJSON)));
 
-export const logoutUser = () => (dispatch) =>{
-   return SessionAPIUtil.signOut().then(() => dispatch(logoutCurrentUser()));}
+export const logoutUser = () => (dispatch) => {
+    return SessionAPIUtil.signOut().then(() => dispatch(logoutCurrentUser()));
+}
 
 
 // for updating and removing a user 
@@ -70,3 +71,6 @@ export const removeUserAccount = userId => (dispatch) =>
 //search up a user 
 // export const searchUpUser = userId => (dispatch) =>
 // SessionAPIUtil.searchUsers()
+
+export const removePhoneNumber = user => (dispatch) =>
+    SessionAPIUtil.removePhoneNumber(user).then((user) => (dispatch(receiveCurrentUser(user))), (err) => dispatch(receiveSessionErrors(err.responseJSON)));
