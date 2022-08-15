@@ -68,6 +68,7 @@ class EditUserEmailForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         if(this.cancel === true){
+            this.props.removeSessionErrors();
             return;
         }
         let submissionState = {
