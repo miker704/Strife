@@ -15,6 +15,8 @@ class EditUserPasswordForm extends React.Component {
         this.cancel =  false;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.passwordErrors = this.passwordErrors.bind(this);
+
 
     }
 
