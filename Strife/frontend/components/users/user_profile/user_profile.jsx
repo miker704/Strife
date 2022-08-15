@@ -79,7 +79,7 @@ class UserProfile extends React.Component {
       window.addEventListener('keyup', this.handleESC, false);
 
       return(
-        <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("changePhone")} >
+        <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("removePhoneNumber")} >
           <div className="edit-user-flex-box">
             <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={e => e.stopPropagation()}>
               <div className="edit-user-info-exit-button" >
@@ -88,12 +88,12 @@ class UserProfile extends React.Component {
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
-                  onClick={() => this.handleSubModalClose("changePhone")}
+                  onClick={() => this.handleSubModalClose("removePhoneNumber")}
                 ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
                 </svg>
 
               </div>
-              <div onSubmit={() => this.handleSubmit("changePhone")}>
+              <div onSubmit={() => this.handleSubmit("removePhoneNumber")}>
                 <RemoveUserPhoneNumberContainer />
               </div>
 
