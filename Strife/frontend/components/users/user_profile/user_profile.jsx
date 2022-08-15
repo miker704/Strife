@@ -30,7 +30,7 @@ class UserProfile extends React.Component {
       userEmail: this.props.currentUser.email,
 
       // userPhone: this.props.currentUser.phone_number,
-      userPhone: 7185931633,
+      userPhone: "7185931633",
 
       reveal: "Reveal",
       reveal1: "Reveal",
