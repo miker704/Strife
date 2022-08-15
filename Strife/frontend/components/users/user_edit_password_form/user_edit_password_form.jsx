@@ -10,7 +10,6 @@ class EditUserPasswordForm extends React.Component {
             password: "",
             confirmNewPassword: "",
             newPassword: "",
-            newPassword: ""
         }
         this.cancel =  false;
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -57,6 +56,8 @@ class EditUserPasswordForm extends React.Component {
     }
 
     render () {
+        let passwordErrorTag = this.props.errors.length > 0 ? "field-error" : "";
+
         return (
             <div id="edit-userInfo-model" className="edit-userInfo-model" >
                 <div className="edit-username-header-section">
@@ -82,6 +83,14 @@ class EditUserPasswordForm extends React.Component {
                         <div className="password-section">
                             <h5 className="password-header1">
                                 <label className={passwordErrorTag}>New Password{this.passwordErrors()}</label>
+                            </h5>
+                            <div className="input-3-password-wrapper">
+                                <input value={this.state.password} onChange={this.handleInput("password")} type="password" className="input-3-password" />
+                            </div>
+                        </div>
+                        <div className="password-section">
+                            <h5 className="password-header1">
+                                <label className={passwordErrorTag}>Confirm New Password{this.passwordErrors()}</label>
                             </h5>
                             <div className="input-3-password-wrapper">
                                 <input value={this.state.password} onChange={this.handleInput("password")} type="password" className="input-3-password" />
