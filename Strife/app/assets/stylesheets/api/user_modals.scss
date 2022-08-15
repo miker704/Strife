@@ -613,7 +613,7 @@
     border-radius: 4px;
     margin: 0 auto;
     pointer-events: all;
-    background-color: hsl(220,7.7%,22.9%);
+    background-color: hsl(220, 7.7%, 22.9%);
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -622,7 +622,7 @@
     -webkit-box-pack: center;
 }
 
-.phone-container{
+.phone-container {
     position: absolute;
     top: -150px;
     left: 130px;
@@ -632,11 +632,11 @@
 
 
 //remove phone number password form 
-.remove-phone-form-header-wrapper{
+.remove-phone-form-header-wrapper {
     flex: 0 0 auto;
     forced-color-adjust: none;
     border-radius: 4px 4px 0 0;
-    transition: box-shadow .1s ease-out,-webkit-box-shadow .1s ease-out;
+    transition: box-shadow .1s ease-out, -webkit-box-shadow .1s ease-out;
     word-wrap: break-word;
     position: relative;
     -webkit-box-flex: 0;
@@ -654,7 +654,7 @@
     display: flex;
 }
 
-.remove-phone-header{
+.remove-phone-header {
     forced-color-adjust: none;
     font-weight: 500;
     font-size: 20px;
@@ -665,7 +665,7 @@
 }
 
 
-.password-header-flex-container{
+.password-header-flex-container {
     flex: 0 0 auto;
     align-items: center;
     padding-top: 24px;
@@ -676,7 +676,7 @@
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     forced-color-adjust: none;
-    transition: box-shadow .1s ease-out,-webkit-box-shadow .1s ease-out;
+    transition: box-shadow .1s ease-out, -webkit-box-shadow .1s ease-out;
     word-wrap: break-word;
     padding: 16px;
     z-index: 1;
@@ -687,7 +687,8 @@
     justify-content: flex-start;
     -webkit-box-pack: start;
 }
-.password-modal{
+
+.password-modal {
     flex-direction: column;
     min-height: 0;
     max-width: 100%;
@@ -700,6 +701,27 @@
 
 
 
-.password-modal-inner-wrapper{
+.password-modal-inner-wrapper {
+    opacity: 1;
+    transform: scale(1);
+    width: 440px;
+    max-height: 720px;
+    min-height: 200px;
+    border-radius: 4px;
+    margin: 0 auto;
+    pointer-events: all;
+    position: relative;
+    background-color: hsl(220, 7.7%, 22.9%);
+    box-shadow: 0 0 0 1px hsla(216, 7.2%, 13.5%, 0.6), 2px 10px 0 hsla(0, 0%, 0%, 0.2);
+    forced-color-adjust: none;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+
+
+}
+
+.form-container2{
     
 }
