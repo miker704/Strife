@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { updateUserInfo, removeSessionErrors } from "../../../actions/session_actions";
+import { updateUserInfo, removeSessionErrors, removePhoneNumber } from "../../../actions/session_actions";
 import RemoveUserPhoneNumberForm from "./user_remove_phone_number";
 
 const mSTP = (state) => {
@@ -14,6 +14,7 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
+        removePhoneNumber: (user) => dispatch(removePhoneNumber(user)),
         updateUserInfo : (user) => {dispatch(updateUserInfo(user))},
         removeSessionErrors: () => dispatch(removeSessionErrors()),
     }
