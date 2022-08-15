@@ -61,10 +61,10 @@ class EditUserPasswordForm extends React.Component {
             <div id="edit-userInfo-model" className="edit-userInfo-model" >
                 <div className="edit-username-header-section">
                     <div className="edit-username-header">
-                        Enter an email address
+                        Update your password
                     </div>
                     <div className="form-email-header-info">
-                        Enter a new email address and your existing password
+                        Enter a your current password and a new password.
                     </div>
                 </div>
                 <form onSubmit={this.handleSubmit}>
@@ -73,7 +73,7 @@ class EditUserPasswordForm extends React.Component {
                         <div className="form-username-sec">
                             <h5 className="form-username-header"><label className={passwordErrorTag}>Current Password{this.passwordErrors()}</label></h5>
                             <div>
-                                <div className="email-input-wrapper">
+                                <div className="input-3-password-wrapper">
                                     <input value={this.state.password} onChange={this.handleInput("password")} className="input-3-password" type="password" />
                                 </div>
 
