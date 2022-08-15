@@ -73,8 +73,7 @@ class EditUserPhoneNumberForm extends React.Component {
             phone_number: "+1-" + this.state.phone_number,
             password: this.state.password
         }
-        // if(this.props.errors.length > 0 ){
-        // }
+       
         this.props.updateUserInfo(submissionState)
     }
 
