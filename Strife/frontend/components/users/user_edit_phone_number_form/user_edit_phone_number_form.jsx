@@ -49,7 +49,7 @@ class EditUserPhoneNumberForm extends React.Component {
             console.log("no match in password")
             return " - Password does not match.";
         }
-        else if (this.props.errors.includes("Incorrect Password !")) {
+        else if (this.props.errors.includes('Error Incorrect Password !')) {
             console.log("password is incorrect")
             return " - Password does not match.";
         }
@@ -65,8 +65,9 @@ class EditUserPhoneNumberForm extends React.Component {
         return (e) => { this.setState({ [field]: e.currentTarget.value }) }
     }
     handleSubmit (e) {
-        e.preventDefault();
+        // e.preventDefault();
         if (this.cancel === true) {
+            this.props.removeSessionErrors();
             return;
         }
 
@@ -75,8 +76,8 @@ class EditUserPhoneNumberForm extends React.Component {
             phone_number: "+1-" + this.state.phone_number,
             password: this.state.password
         }
-        if(this.props.errors.length > 0 ){
-        }
+        // if(this.props.errors.length > 0 ){
+        // }
         this.props.updateUserInfo(submissionState)
     }
 
