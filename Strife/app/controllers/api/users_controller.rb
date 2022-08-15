@@ -34,20 +34,18 @@ class Api::UsersController < ApplicationController
     def update
         @user = User.find(params[:id])
        
-        if !@user.is_password?(params[:user][:password]) 
-            @user.errors.add(:error,'Incorrect Password !')
+        # if !@user.is_password?(params[:user][:password]) 
+            # @user.errors.add(:error,'Incorrect Password !')
             # puts "INCORRECT PASSWORD!"
-        end
+        # end
 
         if @user && @user.is_password?(params[:user][:password]) && @user.update(user_params)
             render :show
         else
-            # invalid_password_error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['Incorrect Password !']
-            # render json: invalid_password_error, status: 401
-            # if !@user.is_password?(params[:user][:password])
-            #     @user.errors.add(:error,'Incorrect Password !')
-            # end
-            render json: @user.errors.full_messages, status: 401
+            invalid_password_error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['Error Incorrect Password !']
+            render json: invalid_password_error, status: 401
+           
+            # render json: @user.errors.full_messages, status: 401
         end
     end
     
