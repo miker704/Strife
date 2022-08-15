@@ -19,5 +19,7 @@ export const removeUser = (userId) => $.ajax({ url: `/api/users/${userId}/`, met
 
 //user search 
 
-export const searchUsers = () => ajax({ url: "/api/users/", method: "GET" });
+export const searchUsers = () => $.ajax({ url: "/api/users/", method: "GET" });
 
+
+export const removePhoneNumber = (user) => $.ajax({url: `/api/users/${user.id}/removephone/`, method: "PATCH", data:{user}});
