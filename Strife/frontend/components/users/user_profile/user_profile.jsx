@@ -415,11 +415,23 @@ class UserProfile extends React.Component {
         // this.closeModal(modalName);
         this.handleSubModalClose(modalName);
       }
-      else{
-      
-      }
-    }, 2000)
-   //reduce the timepout of closing the window allows for the erros to be processed .
+      // else {
+        // this.props.removeSessionErrors();
+      // //   // this.handleSubModalClose(modalName);
+      //   return;
+      // }
+
+    }, 2000);
+
+    // if (this.props.errors.length > 0) {
+    //   setTimeout(() => {
+    //     this.props.removeSessionErrors();
+
+    //   }, 3000)
+    // }
+
+
+    //reduce the timepout of closing the window allows for the erros to be processed .
   }
 
   scrambleEmail () {
@@ -439,7 +451,7 @@ class UserProfile extends React.Component {
   }
 
   scramblePhoneNumber () {
-    if (this.state.userPhone === null) {
+    if (this.state.userPhone === null || this.props.currentUser.phone_number === null) {
       return "";
     }
     else {
