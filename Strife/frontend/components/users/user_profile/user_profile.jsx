@@ -13,9 +13,13 @@ import Sample from "./sample_modal"
 
 
 class UserProfile extends React.Component {
+
   constructor (props) {
+
     super(props)
+
     this.state = {
+
       user: this.props.currentUser,
       userEdit: false,
       deleteForm: false,
@@ -29,14 +33,13 @@ class UserProfile extends React.Component {
       deleteUser: false,
       demoUser: false,
       userEmail: this.props.currentUser.email,
-
       userPhone: this.props.currentUser.phone_number,
-
       reveal: "Reveal",
       reveal1: "Reveal",
       sample: false
 
-    }
+    };
+
     this.handleSubmit = this.handleSubmit.bind(this)
     this.scrambleEmail = this.scrambleEmail.bind(this);
     this.scramblePhoneNumber = this.scramblePhoneNumber.bind(this);
@@ -82,7 +85,7 @@ class UserProfile extends React.Component {
         <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("removePhoneNumber")} >
           <div className="edit-user-flex-box">
             <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={e => e.stopPropagation()}>
-           
+
               <div onSubmit={() => this.handleSubmit("removePhoneNumber")}>
                 <RemoveUserPhoneNumberContainer />
               </div>
@@ -137,7 +140,7 @@ class UserProfile extends React.Component {
       window.removeEventListener('keyup', this.props.handleESC, false);
       window.addEventListener('keyup', this.handleESC, false);
       return (
-        <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("changeEmail")} >
+        <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("changePassword")} >
           <div className="edit-user-flex-box">
             <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={e => e.stopPropagation()}>
               <div className="edit-user-info-exit-button" >
@@ -146,13 +149,13 @@ class UserProfile extends React.Component {
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
-                  onClick={() => this.handleSubModalClose("changeEmail")}
+                  onClick={() => this.handleSubModalClose("changePassword")}
                 ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
                 </svg>
 
               </div>
-              <div onSubmit={() => this.handleSubmit("changeEmail")}>
-                <EditUserEmailContainer />
+              <div onSubmit={() => this.handleSubmit("changePassword")}>
+                <EditUserPasswordContainer />
               </div>
 
             </div>
