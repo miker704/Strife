@@ -35,7 +35,9 @@ class EditUserPasswordForm extends React.Component {
         this.props.updateUserInfo(submissionState);
       }
 
+    render(){
 
+    }
 
 }
 
