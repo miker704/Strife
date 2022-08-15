@@ -723,5 +723,34 @@
 }
 
 .form-container2{
-    
+
+}
+
+
+.password-main-header{
+    forced-color-adjust: none;
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: #FFFFFF;
+    font-family: "Whitney";
+    text-rendering: optimizeLegibility;
+    user-select: none;
+    pointer-events: all;
+    word-wrap: break-word;
+}
+
+.password-header-info{
+    forced-color-adjust: none;
+    color:hsl(216, 3.7%, 73.5%);
+    margin-top: 8px;
+    text-align: center;
+    font-family: "Whitney";
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    -webkit-box-direction: normal;
+    word-wrap: break-word;
+
 }
