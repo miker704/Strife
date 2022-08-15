@@ -22,13 +22,27 @@ class EditUserPasswordForm extends React.Component {
 
 
     passwordErrors () {
-        if (this.props.errors.includes('Login or password is invalid')) {
-            return " - Password does not match.";
+
+        let passwordErrorList = [
+            'Error Incorrect Password !',
+            'Error new password cannot match your previous password !',
+            'Error new password does not match confirm password !', 
+        ];
+        let passwordErrorMessages = {
+            0: " - incorrect Password",
+            1: " - new password cannot be a previous password",
+            2: ' - new password must match confirm password',
         }
-        else if (this.props.errors.includes('Error Incorrect Password !')) {
-            return " - Password does not match.";
+
+        for (let i = 0; i < passwordErrorList.length; i++) {
+            if (this.props.errors.includes(passwordErrorList[i])) {
+                return passwordErrorMessages[i];
+            }
         }
+
         return "";
+
+       
     }
 
 
