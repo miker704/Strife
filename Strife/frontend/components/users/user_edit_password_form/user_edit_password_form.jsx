@@ -30,8 +30,8 @@ class EditUserPasswordForm extends React.Component {
         ];
         let passwordErrorMessages = {
             0: " - incorrect Password",
-            1: " - new password cannot be a previous password",
-            2: ' - new password must match confirm password',
+            1: " - cannot be an old password",
+            2: ' - must match confirm field',
         }
 
         for (let i = 0; i < passwordErrorList.length; i++) {
