@@ -16,30 +16,25 @@ class EditUserPhoneNumberForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.passwordErrors = this.passwordErrors.bind(this);
-        this.emailErrors = this.emailErrors.bind(this);
+        this.phoneNumberErrors = this.phoneNumberErrors.bind(this);
 
     }
 
 
-    emailErrors() {
-       
-        let emailErrorList = [
-            "Email can't be blank",
-            "Email Not well formed email address",
-            "Email Must be 320 or fewer in Length",
-            "Email has already been taken"
+    phoneNumberErrors () {
+
+        let phoneNumberErrorList = [
+            "Phone number is invalid, please confirm that it is correct.",
+            "Phone Number is not of 9 digits long",
         ];
 
-        let emailErrorMessages = {
-            0: " - can't be blank",
-            1: " - Not well formed email address",
-            2: " - Must be 320 or fewer in Length",
-            3: " - Email is already registered "
-
+        let phoneNumberErrorMessages = {
+            0: " - Phone number is invalid, please confirm that it is correct.",
+            1: " - Phone Number is not of 9 digits long",
         }
-        for (let i = 0; i < emailErrorList.length; i++) {
-            if (this.props.errors.includes(emailErrorList[i])) {
-                return emailErrorMessages[i];
+        for (let i = 0; i < phoneNumberErrorList.length; i++) {
+            if (this.props.errors.includes(phoneNumberErrorList[i])) {
+                return phoneNumberErrorMessages[i];
             }
         }
 
@@ -89,7 +84,7 @@ class EditUserPhoneNumberForm extends React.Component {
 
     render () {
         let passwordErrorTag = this.props.errors.length > 0 ? "field-error" : "";
-        let emailErrorTag = this.props.errors.length > 0 ? "field-error" : "";
+        let phoneNumberErrorTag = this.props.errors.length > 0 ? "field-error" : "";
 
 
         return (
@@ -107,7 +102,7 @@ class EditUserPhoneNumberForm extends React.Component {
                     <div className="form-container1">
 
                         <div className="form-username-sec">
-                            <h5 className="form-username-header"><label className={emailErrorTag}>Phone{this.emailErrors()}</label></h5>
+                            <h5 className="form-username-header"><label className={phoneNumberErrorTag}>Phone{this.phoneNumberErrors()}</label></h5>
                             <div>
                                 <div className="email-input-wrapper">
                                     <input placeholder={this.props.currentUser.phone_number} value={this.state.phone_number} onChange={this.handleInput("phone_number")} className="input-4-email" type="tel" />
