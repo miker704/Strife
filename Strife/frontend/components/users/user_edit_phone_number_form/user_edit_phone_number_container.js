@@ -20,7 +20,6 @@ const mDTP = (dispatch) => {
         openModal: (modal) => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal()),
         removeSessionErrors: () => dispatch(removeSessionErrors()),
-        receiveSessionErrors: () => dispatch(receiveSessionErrors()),
         handleESC : (e) => handleKeyUp(e)
     }
 };
