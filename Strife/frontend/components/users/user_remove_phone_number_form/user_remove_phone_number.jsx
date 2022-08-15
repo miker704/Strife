@@ -46,11 +46,12 @@ class RemoveUserPhoneNumberForm extends React.Component {
 
         let submissionState = {
             id: this.props.currentUser.id,
-            phone_number: "",
+            // phone_number: nil,
             password: this.state.password
         }
        
-        this.props.updateUserInfo(submissionState)
+        // this.props.updateUserInfo(submissionState)
+        this.props.removePhoneNumber(submissionState);
     }
 
 
@@ -61,12 +62,9 @@ class RemoveUserPhoneNumberForm extends React.Component {
         return (
 
             <div id="edit-userInfo-model" className="edit-userInfo-model" >
-                <div className="edit-username-header-section">
-                    <div className="edit-username-header">
-                        Enter a Phone Number
-                    </div>
-                    <div className="form-email-header-info">
-                        Enter a Phone Number and your existing password
+                <div className="remove-phone-form-header-wrapper">
+                    <div className="remove-phone-header">
+                        Remove Phone Number
                     </div>
                 </div>
                 <form onSubmit={this.handleSubmit}>
@@ -75,7 +73,7 @@ class RemoveUserPhoneNumberForm extends React.Component {
                       
                         <div className="password-section">
                             <h5 className="password-header1">
-                                <label className={passwordErrorTag}>Current Password{this.passwordErrors()}</label>
+                                <label className={passwordErrorTag}>Password{this.passwordErrors()}</label>
                             </h5>
                             <div className="input-3-password-wrapper">
                                 <input value={this.state.password} onChange={this.handleInput("password")} type="password" className="input-3-password" />
