@@ -36,6 +36,7 @@ class Api::UsersController < ApplicationController
        
         if !@user.is_password?(params[:user][:password]) 
             @user.errors.add(:error,'Incorrect Password !')
+            # puts "INCORRECT PASSWORD!"
         end
 
         if @user && @user.is_password?(params[:user][:password]) && @user.update(user_params)
@@ -43,6 +44,9 @@ class Api::UsersController < ApplicationController
         else
             # invalid_password_error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['Incorrect Password !']
             # render json: invalid_password_error, status: 401
+            # if !@user.is_password?(params[:user][:password])
+            #     @user.errors.add(:error,'Incorrect Password !')
+            # end
             render json: @user.errors.full_messages, status: 401
         end
     end
@@ -75,7 +79,7 @@ class Api::UsersController < ApplicationController
 
     private
     def user_params
-        return params.require(:user).permit(:email,:username,:birthday,:password,:online)
+        return params.require(:user).permit(:email,:username,:birthday,:password,:online,:phone_number)
     end
 
     
