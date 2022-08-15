@@ -65,6 +65,7 @@ class Api::UsersController < ApplicationController
     def change_Password
         @user = User.find(params[:id])
         #check if password is correct 
+
         if @user &&  @user.is_password?(params[:user][:password])
             old_password = params[:user][:password]
             new_password = params[:user][:newPassword]
@@ -73,9 +74,11 @@ class Api::UsersController < ApplicationController
             if new_password == old_password
                 puts 'Error your new passcode is the same as the old one'
                 @user.errors.add(:error,'new password cannot match your previous password !')
+            render json: @user.errors.full_messages, status: 401
 
             elsif new_password != confirm_new_password
                 @user.errors.add(:error,'new password does not match confirm password !')
+            render json: @user.errors.full_messages, status: 401
 
             else new_password == confirm_new_password
                 puts 'new pass and confrim old pass work now chnaging your password'
@@ -91,7 +94,8 @@ class Api::UsersController < ApplicationController
 
 
         else
-            render json: @user.errors.full_messages, status: 401
+            invalid_password_error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['Error Incorrect Password !']
+            render json: invalid_password_error, status: 401
         end
 
     end
