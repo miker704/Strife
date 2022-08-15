@@ -74,7 +74,7 @@ class EditUserPhoneNumberForm extends React.Component {
 
         let submissionState = {
             id: this.props.currentUser.id,
-            phone_number: this.state.phone_number,
+            phone_number: "+1" + this.state.phone_number,
             password: this.state.password
         }
         this.props.updateUserInfo(submissionState);
@@ -95,7 +95,7 @@ class EditUserPhoneNumberForm extends React.Component {
                         Enter a Phone Number
                     </div>
                     <div className="form-email-header-info">
-                        Enter a new email address and your existing password
+                        Enter a Phone Number and your existing password
                     </div>
                 </div>
                 <form onSubmit={this.handleSubmit}>
