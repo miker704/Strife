@@ -66,18 +66,18 @@ class EditUserPhoneNumberForm extends React.Component {
     }
     handleSubmit (e) {
         e.preventDefault();
-
-
         if (this.cancel === true) {
             return;
         }
 
         let submissionState = {
             id: this.props.currentUser.id,
-            phone_number: "+1" + this.state.phone_number,
+            phone_number: "+1-" + this.state.phone_number,
             password: this.state.password
         }
-        this.props.updateUserInfo(submissionState);
+        if(this.props.errors.length > 0 ){
+        }
+        this.props.updateUserInfo(submissionState)
     }
 
 
