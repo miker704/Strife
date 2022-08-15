@@ -411,18 +411,16 @@ class UserProfile extends React.Component {
   }
 
   handleSubmit (modalName) {
-    // this.props.receiveSessionErrors();
     setTimeout(() => {
       if (this.props.errors.length === 0) {
         // this.closeModal(modalName);
-        console.log("error")
         this.handleSubModalClose(modalName);
       }
       else{
       
       }
     }, 2000)
-  
+   //reduce the timepout of closing the window allows for the erros to be processed .
   }
 
   scrambleEmail () {
