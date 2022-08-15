@@ -65,7 +65,7 @@ class UserProfile extends React.Component {
   }
 
   checkIfDemoUser () {
-    if(this.props.currentUser.email === "DemoUser@strife.com"){
+    if (this.props.currentUser.email === "DemoUser@strife.com") {
       //disable all edit buttons
     }
   }
@@ -78,11 +78,11 @@ class UserProfile extends React.Component {
       window.removeEventListener('keyup', this.props.handleESC, false);
       window.addEventListener('keyup', this.handleESC, false);
 
-      return(
+      return (
         <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("removePhoneNumber")} >
           <div className="edit-user-flex-box">
             <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={e => e.stopPropagation()}>
-              <div className="edit-user-info-exit-button" >
+              {/* <div className="edit-user-info-exit-button" >
 
                 <svg
                   width="24"
@@ -92,7 +92,7 @@ class UserProfile extends React.Component {
                 ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
                 </svg>
 
-              </div>
+              </div> */}
               <div onSubmit={() => this.handleSubmit("removePhoneNumber")}>
                 <RemoveUserPhoneNumberContainer />
               </div>
@@ -231,8 +231,8 @@ class UserProfile extends React.Component {
 
     console.log("animation triggered");
     // setTimeout(() => {
-      // this.props.removeSessionErrors();
-      this.closeModal(subModalName);
+    // this.props.removeSessionErrors();
+    this.closeModal(subModalName);
     // }, 10);
     // return submodalToClose
 
@@ -445,7 +445,7 @@ class UserProfile extends React.Component {
         // this.handleSubModalClose(modalName);
       }
       // else {
-        // this.props.removeSessionErrors();
+      // this.props.removeSessionErrors();
       // //   // this.handleSubModalClose(modalName);
       //   return;
       // }
@@ -480,7 +480,7 @@ class UserProfile extends React.Component {
   }
 
   scramblePhoneNumber () {
-    if (this.state.userPhone === null || this.props.currentUser.phone_number === null) {
+    if (this.props.currentUser.phone_number === null) {
       return "";
     }
     else {
@@ -501,10 +501,10 @@ class UserProfile extends React.Component {
     let scrambledEmail = this.state.reveal1 === "Reveal" ? this.scrambleEmail() : this.props.currentUser.email;
     let scramblePhone = this.state.reveal === "Reveal" ? this.scramblePhoneNumber() : this.props.currentUser.phone_number;
     const { reveal } = this.state.reveal;
-    let removePhoneNum = this.state.userPhone !== null ? (
-      <button type="button" className="remove-phone-num">Remove</button>
+    let removePhoneNum = this.props.currentUser.phone_number !== null ? (
+      <button type="button" onClick={() => this.openModal("removePhoneNumber")} className="remove-phone-num">Remove</button>
     ) : ("")
-    let revealPhone = this.state.userPhone !== null ? (
+    let revealPhone = this.props.currentUser.phone_number !== null ? (
       <button id="reveal" type="button" className="reveal-button" onClick={() => this.handleRevealClick()}>{this.state.reveal}</button>
     ) : ("")
 
