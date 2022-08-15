@@ -1,9 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { handleKeyUp } from "../../../utils/modal_api_util";
 import EditUserPasswordForm from "./user_edit_password_form";
-import { openModal, closeModal } from "../../../actions/modal_actions";
-import { updateUserInfo, removeSessionErrors } from "../../../actions/session_actions";
+import { updateUserInfo, removeSessionErrors, changePassword} from "../../../actions/session_actions";
 
 const mSTP = (state) => {
     return {
@@ -15,10 +13,8 @@ const mSTP = (state) => {
 const mDTP = (dispatch) => {
     return {
         updateUserInfo : (user) => {dispatch(updateUserInfo(user))},
-        openModal: (modal) => dispatch(openModal(modal)),
-        closeModal: () => dispatch(closeModal()),
+        changePassword: (user) => dispatch(changePassword(user)),
         removeSessionErrors: () => dispatch(removeSessionErrors()),
-        handleESC : (e) => handleKeyUp(e)
     }
 };
 
