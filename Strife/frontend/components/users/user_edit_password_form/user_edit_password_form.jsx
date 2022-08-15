@@ -11,7 +11,7 @@ class EditUserPasswordForm extends React.Component {
             confirmNewPassword: "",
             newPassword: "",
         }
-        this.cancel =  false;
+        this.cancel = false;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.passwordErrors = this.passwordErrors.bind(this);
@@ -60,52 +60,54 @@ class EditUserPasswordForm extends React.Component {
 
         return (
             <div className="password-modal" >
-                <div className="password-header-flex-container">
-                    <div className="edit-username-header">
-                        Update your password
+                <div className="password-modal-inner-wrapper">
+                    <div className="password-header-flex-container">
+                        <div className="edit-username-header">
+                            Update your password
+                        </div>
+                        <div className="edit-username-header-info">
+                            Enter a your current password and a new password.
+                        </div>
                     </div>
-                    <div className="edit-username-header-info">
-                        Enter a your current password and a new password.
-                    </div>
-                </div>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="form-container1">
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="form-container1">
 
-                        <div className="form-username-sec">
-                            <h5 className="form-username-header"><label className={passwordErrorTag}>Current Password{this.passwordErrors()}</label></h5>
-                            <div>
-                                <div className="input-3-password-wrapper">
-                                    <input value={this.state.password} onChange={this.handleInput("password")} className="input-3-password" type="password" />
+                            <div className="form-username-sec">
+                                <h5 className="form-username-header"><label className={passwordErrorTag}>Current Password{this.passwordErrors()}</label></h5>
+                                <div>
+                                    <div className="input-3-password-wrapper">
+                                        <input value={this.state.password} onChange={this.handleInput("password")} className="input-3-password" type="password" />
+                                    </div>
+
                                 </div>
-
                             </div>
-                        </div>
-                        <div className="password-section">
-                            <h5 className="password-header1">
-                                <label className={passwordErrorTag}>New Password{this.passwordErrors()}</label>
-                            </h5>
-                            <div className="input-3-password-wrapper">
-                                <input value={this.state.newPassword} onChange={this.handleInput("newPassword")} type="password" className="input-3-password" />
+                            <div className="password-section">
+                                <h5 className="password-header1">
+                                    <label className={passwordErrorTag}>New Password{this.passwordErrors()}</label>
+                                </h5>
+                                <div className="input-3-password-wrapper">
+                                    <input value={this.state.newPassword} onChange={this.handleInput("newPassword")} type="password" className="input-3-password" />
+                                </div>
                             </div>
-                        </div>
-                        <div className="password-section">
-                            <h5 className="password-header1">
-                                <label className={passwordErrorTag}>Confirm New Password{this.passwordErrors()}</label>
-                            </h5>
-                            <div className="input-3-password-wrapper">
-                                <input value={this.state.confirmNewPassword} onChange={this.handleInput("confirmNewPassword")} type="password" className="input-3-password" />
+                            <div className="password-section">
+                                <h5 className="password-header1">
+                                    <label className={passwordErrorTag}>Confirm New Password{this.passwordErrors()}</label>
+                                </h5>
+                                <div className="input-3-password-wrapper">
+                                    <input value={this.state.confirmNewPassword} onChange={this.handleInput("confirmNewPassword")} type="password" className="input-3-password" />
+                                </div>
                             </div>
+                            <div className="username-edit-sep"></div>
                         </div>
-                        <div className="username-edit-sep"></div>
-                    </div>
-                    <div className="username-edit-button-sec">
-                        <button type="submit" className="username-edit-submit-button">Done</button>
-                        <button type="submit" onClick={() => this.cancel = true} className="username-edit-cancel-button">Cancel</button>
-                    </div>
+                        <div className="username-edit-button-sec">
+                            <button type="submit" className="username-edit-submit-button">Done</button>
+                            <button type="submit" onClick={() => this.cancel = true} className="username-edit-cancel-button">Cancel</button>
+                        </div>
 
 
 
-                </form>
+                    </form>
+                </div>
             </div>
         )
     }
