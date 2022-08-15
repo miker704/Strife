@@ -8,8 +8,8 @@ class EditUserPasswordForm extends React.Component {
         this.state = {
             user: this.props.currentUser,
             password: "",
-            confirmOldPassword: "",
             confirmNewPassword: "",
+            newPassword: "",
             newPassword: ""
         }
         this.cancel =  false;
@@ -71,17 +71,17 @@ class EditUserPasswordForm extends React.Component {
                     <div className="form-container1">
 
                         <div className="form-username-sec">
-                            <h5 className="form-username-header"><label className={emailErrorTag}>Email{this.emailErrors()}</label></h5>
+                            <h5 className="form-username-header"><label className={passwordErrorTag}>Current Password{this.passwordErrors()}</label></h5>
                             <div>
                                 <div className="email-input-wrapper">
-                                    <input placeholder={this.props.currentUser.email} value={this.state.email} onChange={this.handleInput("email")} className="input-4-email" type="email" />
+                                    <input value={this.state.password} onChange={this.handleInput("password")} className="input-3-password" type="password" />
                                 </div>
 
                             </div>
                         </div>
                         <div className="password-section">
                             <h5 className="password-header1">
-                                <label className={passwordErrorTag}>Current Password{this.passwordErrors()}</label>
+                                <label className={passwordErrorTag}>New Password{this.passwordErrors()}</label>
                             </h5>
                             <div className="input-3-password-wrapper">
                                 <input value={this.state.password} onChange={this.handleInput("password")} type="password" className="input-3-password" />
