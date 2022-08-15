@@ -25,7 +25,7 @@ class EditUserPhoneNumberForm extends React.Component {
 
         let phoneNumberErrorList = [
             "Phone number is invalid, please confirm that it is correct.",
-            "Phone Number is not of 10 digits long",
+            'Phone number is not of 10 digits long',
         ];
 
         let phoneNumberErrorMessages = {
@@ -70,7 +70,7 @@ class EditUserPhoneNumberForm extends React.Component {
 
         let submissionState = {
             id: this.props.currentUser.id,
-            phone_number: "+1-" + this.state.phone_number,
+            phone_number: "+1" + this.state.phone_number,
             password: this.state.password
         }
        
