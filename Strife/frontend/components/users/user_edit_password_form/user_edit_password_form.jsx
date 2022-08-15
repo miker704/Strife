@@ -85,7 +85,7 @@ class EditUserPasswordForm extends React.Component {
                                 <label className={passwordErrorTag}>New Password{this.passwordErrors()}</label>
                             </h5>
                             <div className="input-3-password-wrapper">
-                                <input value={this.state.password} onChange={this.handleInput("password")} type="password" className="input-3-password" />
+                                <input value={this.state.newPassword} onChange={this.handleInput("newPassword")} type="password" className="input-3-password" />
                             </div>
                         </div>
                         <div className="password-section">
