@@ -29,8 +29,8 @@ class UserProfile extends React.Component {
       demoUser: false,
       userEmail: this.props.currentUser.email,
 
-      // userPhone: this.props.currentUser.phone_number,
-      userPhone: "7185931633",
+      userPhone: this.props.currentUser.phone_number,
+      // userPhone: "7185931633",
 
       reveal: "Reveal",
       reveal1: "Reveal",
@@ -203,7 +203,7 @@ class UserProfile extends React.Component {
 
     console.log("animation triggered");
     setTimeout(() => {
-      this.props.removeSessionErrors();
+      // this.props.removeSessionErrors();
       this.closeModal(subModalName);
     }, 100);
     // return submodalToClose
@@ -382,7 +382,7 @@ class UserProfile extends React.Component {
   componentWillUnmount () {
     this.mounted = false;
     window.removeEventListener('keyup', this.props.handleESC, false);
-
+    this.props.removeSessionErrors();
 
   }
 
@@ -411,12 +411,18 @@ class UserProfile extends React.Component {
   }
 
   handleSubmit (modalName) {
+    // this.props.receiveSessionErrors();
     setTimeout(() => {
       if (this.props.errors.length === 0) {
         // this.closeModal(modalName);
+        console.log("error")
         this.handleSubModalClose(modalName);
       }
-    }, 200)
+      else{
+      
+      }
+    }, 2000)
+  
   }
 
   scrambleEmail () {
@@ -441,7 +447,7 @@ class UserProfile extends React.Component {
     }
     else {
       // let phoneNum = this.state.userPhone.toString();
-      let phoneNum = this.state.userPhone;
+      let phoneNum = this.props.currentUser.phone_number;
       let part1 = phoneNum.slice(0, -4);
       part1 = part1.replace(/\d/g, "*") + phoneNum.slice(-4);
       return part1;
@@ -454,7 +460,7 @@ class UserProfile extends React.Component {
     console.log("this is the current state : ", this.state)
 
     let scrambledEmail = this.state.reveal1 === "Reveal" ? this.scrambleEmail() : this.props.currentUser.email;
-    let scramblePhone = this.state.reveal === "Reveal" ? this.scramblePhoneNumber() : "+1" + this.state.userPhone;
+    let scramblePhone = this.state.reveal === "Reveal" ? this.scramblePhoneNumber() : this.props.currentUser.phone_number;
     const { reveal } = this.state.reveal;
     let removePhoneNum = this.state.userPhone !== null ? (
       <button type="button" className="remove-phone-num">Remove</button>
