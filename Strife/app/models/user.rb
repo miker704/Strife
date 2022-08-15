@@ -32,7 +32,7 @@ class User < ApplicationRecord
     # validates :password_digest, :id_tag, presence: true
 
 
-    validates :email, :username, :password_digest, :session_token, :strife_id_tag, :birthday, :phone_number, presence: true
+    validates :email, :username, :password_digest, :session_token, :strife_id_tag, :birthday, presence: true
     validates :username, uniqueness: {scope: :strife_id_tag}
     validates :username, length: {minimum:2, maximum:32}
     validates :email, uniqueness: true
