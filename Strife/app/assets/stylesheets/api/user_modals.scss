@@ -687,3 +687,19 @@
     justify-content: flex-start;
     -webkit-box-pack: start;
 }
+.password-modal{
+    flex-direction: column;
+    min-height: 0;
+    max-width: 100%;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    forced-color-adjust: none;
+
+}
+
+
+
+.password-modal-inner-wrapper{
+    
+}
