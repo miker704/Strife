@@ -62,7 +62,7 @@ class EditUserPhoneNumberForm extends React.Component {
         return (e) => { this.setState({ [field]: e.currentTarget.value }) }
     }
     handleSubmit (e) {
-        // e.preventDefault();
+        e.preventDefault();
         if (this.cancel === true) {
             this.props.removeSessionErrors();
             return;
