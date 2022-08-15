@@ -49,6 +49,27 @@ class Api::UsersController < ApplicationController
         end
     end
     
+    #delele phone number
+    def delete_PhoneNumber 
+        @user = User.find(params[:id])
+        if @user && @user.is_password?(params[:user][:password])
+            @user.phone_number=nil
+            render :show
+        else
+            render json: @user.errors.full_messages, status: 401
+        end
+       
+    end
+
+    #addPFP
+    def add_PFP
+    
+    end
+
+
+
+
+
     #search up other users
     def search 
         userName = params[:username]
