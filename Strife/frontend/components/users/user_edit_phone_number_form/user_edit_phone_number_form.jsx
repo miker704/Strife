@@ -25,12 +25,12 @@ class EditUserPhoneNumberForm extends React.Component {
 
         let phoneNumberErrorList = [
             "Phone number is invalid, please confirm that it is correct.",
-            "Phone Number is not of 9 digits long",
+            "Phone Number is not of 10 digits long",
         ];
 
         let phoneNumberErrorMessages = {
             0: " - Phone number is invalid, please confirm that it is correct.",
-            1: " - Phone Number is not of 9 digits long",
+            1: " - Phone Number is not of 10 digits long",
         }
         for (let i = 0; i < phoneNumberErrorList.length; i++) {
             if (this.props.errors.includes(phoneNumberErrorList[i])) {
