@@ -64,7 +64,7 @@ class EditUserPasswordForm extends React.Component {
                     <div className="edit-username-header">
                         Update your password
                     </div>
-                    <div className="form-email-header-info">
+                    <div className="edit-username-header-info">
                         Enter a your current password and a new password.
                     </div>
                 </div>
