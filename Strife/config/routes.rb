@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
     resources :users, only: [:create, :index, :show, :update, :destroy]
               patch '/users/:id/removephone/', to: 'users#delete_PhoneNumber', as: 'delete_PhoneNumber'
+              patch '/users/:id/changePassword/', to: 'users#change_Password', as: 'change_Password'
+              patch '/users/:id/changeUserPFP/', to: 'users#change_User_PFP', as: 'change_User_PFP'
     resource  :session, only: [:create, :destroy]
     resources :servers, only: [:index, :show, :create, :update, :destroy]
               post '/servers/join/', to: 'servers#join_server', as: 'join_server'
