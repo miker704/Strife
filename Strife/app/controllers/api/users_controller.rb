@@ -54,11 +54,12 @@ class Api::UsersController < ApplicationController
         @user = User.find(params[:id])
         if @user && @user.is_password?(params[:user][:password])
             @user.phone_number=nil
+            @user.save!
             render :show
         else
             render json: @user.errors.full_messages, status: 401
         end
-       
+        
     end
 
     #addPFP
