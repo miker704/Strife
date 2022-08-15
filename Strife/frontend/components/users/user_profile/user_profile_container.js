@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import UserProfile from "./user_profile";
-import {removeUserAccount, logoutUser, updateUserInfo, removeSessionErrors, receiveSessionErrors} from '../../../actions/session_actions'
+import {removeUserAccount, logoutUser, updateUserInfo, removeSessionErrors} from '../../../actions/session_actions'
 import { openModal, closeModal } from "../../../actions/modal_actions";
 import { withRouter } from "react-router";
 import { handleKeyUp } from "../../../utils/modal_api_util";
