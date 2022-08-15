@@ -59,8 +59,8 @@ class EditUserPasswordForm extends React.Component {
         let passwordErrorTag = this.props.errors.length > 0 ? "field-error" : "";
 
         return (
-            <div id="edit-userInfo-model" className="edit-userInfo-model" >
-                <div className="edit-username-header-section">
+            <div className="password-modal" >
+                <div className="password-header-flex-container">
                     <div className="edit-username-header">
                         Update your password
                     </div>
