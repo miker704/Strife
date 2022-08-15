@@ -74,3 +74,10 @@ export const removeUserAccount = userId => (dispatch) =>
 
 export const removePhoneNumber = user => (dispatch) =>
     SessionAPIUtil.removePhoneNumber(user).then((user) => (dispatch(receiveCurrentUser(user))), (err) => dispatch(receiveSessionErrors(err.responseJSON)));
+
+
+export const changePassword = user => (dispatch) =>
+    SessionAPIUtil.changePassword(user).then((user) => (dispatch(receiveCurrentUser(user))), (err) => (dispatch(receiveSessionErrors(err.responseJSON))));
+
+
+// export const changeUserPFP = user => (dispatch)=>
