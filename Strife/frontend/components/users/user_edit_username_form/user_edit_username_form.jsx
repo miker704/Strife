@@ -42,6 +42,7 @@ class EditUsernameForm extends React.Component {
         // e.preventDefault();
 
         if(this.cancel){
+            this.props.removeSessionErrors();
             return;
         }
             let subState = {
