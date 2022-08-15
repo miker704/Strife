@@ -198,13 +198,13 @@ class UserProfile extends React.Component {
 
     let submodalToClose = document.getElementById("edit-userInfo-model")
     submodalToClose.classList.add("transition-out");
-    submodalToClose.className = "edit-userInfo-model transition-out"
+    // submodalToClose.className = "edit-userInfo-model transition-out"
 
     console.log("animation triggered");
-    setTimeout(() => {
+    // setTimeout(() => {
       // this.props.removeSessionErrors();
       this.closeModal(subModalName);
-    }, 100);
+    // }, 10);
     // return submodalToClose
 
   }
@@ -412,8 +412,8 @@ class UserProfile extends React.Component {
   handleSubmit (modalName) {
     setTimeout(() => {
       if (this.props.errors.length === 0) {
-        // this.closeModal(modalName);
-        this.handleSubModalClose(modalName);
+        this.closeModal(modalName);
+        // this.handleSubModalClose(modalName);
       }
       // else {
         // this.props.removeSessionErrors();
@@ -421,13 +421,13 @@ class UserProfile extends React.Component {
       //   return;
       // }
 
-    }, 2000);
+    }, 1000);
 
     // if (this.props.errors.length > 0) {
     //   setTimeout(() => {
     //     this.props.removeSessionErrors();
 
-    //   }, 3000)
+    //   }, 2000)
     // }
 
 
