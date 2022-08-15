@@ -64,7 +64,9 @@ class UserProfile extends React.Component {
   }
 
   checkIfDemoUser () {
-
+    if(this.props.currentUser.email === "DemoUser@strife.com"){
+      //disable all edit buttons
+    }
   }
 
 
