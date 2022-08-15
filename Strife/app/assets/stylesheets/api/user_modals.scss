@@ -631,3 +631,35 @@
 }
 
 
+//remove phone number password form 
+.remove-phone-form-header-wrapper{
+    flex: 0 0 auto;
+    forced-color-adjust: none;
+    border-radius: 4px 4px 0 0;
+    transition: box-shadow .1s ease-out,-webkit-box-shadow .1s ease-out;
+    word-wrap: break-word;
+    position: relative;
+    -webkit-box-flex: 0;
+    padding: 16px;
+    z-index: 1;
+    overflow-x: hidden;
+    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-box-pack: start;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+}
+
+.remove-phone-header{
+    forced-color-adjust: none;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: "ABC Ginto Normal";
+    color: #FFFFFF;
+    
+}
