@@ -13,7 +13,6 @@ class EditUserPasswordForm extends React.Component {
             newPassword: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleCloseModal = this.handleCloseModal.bind(this);
         this.handleInput = this.handleInput.bind(this);
 
     }
