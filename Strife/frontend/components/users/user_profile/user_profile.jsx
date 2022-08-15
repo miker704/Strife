@@ -6,6 +6,7 @@ import EditUserEmailContainer from "../user_edit_email_form/user_edit_email_cont
 import EditUserPFPContainer from "../user_edit_profile_pic_form/user_edit_pfp_container.js"
 import EditUserPasswordContainer from "../user_edit_password_form/user_edit_password_container.js"
 import EditUserPhoneNumberContainer from "../user_edit_phone_number_form/user_edit_phone_number_container.js"
+import RemoveUserPhoneNumberContainer from "../user_remove_phone_number_form/user_remove_phone_number_container.js"
 import ReactModal from "react-modal"
 import Sample from "./sample_modal"
 
@@ -93,7 +94,7 @@ class UserProfile extends React.Component {
 
               </div>
               <div onSubmit={() => this.handleSubmit("changePhone")}>
-                <EditUserPhoneNumberContainer />
+                <RemoveUserPhoneNumberContainer />
               </div>
 
             </div>
