@@ -26,7 +26,10 @@ class EditUserPasswordForm extends React.Component {
     }
     handleSubmit (e) {
         e.preventDefault();
-
+        if (this.cancel === true) {
+            this.props.removeSessionErrors();
+            return;
+        }
         let submissionState = {
             id: this.props.currentUser.id,
             password: this.state.newPassword
