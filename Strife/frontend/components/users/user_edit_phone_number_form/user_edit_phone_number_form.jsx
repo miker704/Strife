@@ -48,7 +48,6 @@ class EditUserPhoneNumberForm extends React.Component {
             return " - Password does not match.";
         }
         else if (this.props.errors.includes('Error Incorrect Password !')) {
-            console.log("password is incorrect")
             return " - Password does not match.";
         }
         return "";
