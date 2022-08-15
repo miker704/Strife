@@ -18,6 +18,21 @@ class EditUserPasswordForm extends React.Component {
 
     }
 
+
+
+    passwordErrors () {
+        if (this.props.errors.includes('Login or password is invalid')) {
+            return " - Password does not match.";
+        }
+        else if (this.props.errors.includes('Error Incorrect Password !')) {
+            return " - Password does not match.";
+        }
+        return "";
+    }
+
+
+
+
     componentWillUnmount () {
         this.props.removeSessionErrors()
     }
