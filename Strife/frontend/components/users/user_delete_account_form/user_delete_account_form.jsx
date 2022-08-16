@@ -6,8 +6,10 @@ class DeleteUserAccountForm extends React.Component {
     constructor (props) {
         super(props)
 
-        this.state = { username: this.props.currentUser.username, password: "" }
-
+        this.state = {
+            password: "",
+            hasServers: false
+        }
 
         this.cancel = false;
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,7 +28,12 @@ class DeleteUserAccountForm extends React.Component {
         return "";
     }
 
+    componentDidMount () {
+        if (this.props.currentUser.ownedServers.length > 0) {
+            this.setState({ hasServers: true });
+        }
 
+    }
 
     componentWillUnmount () {
         this.props.removeSessionErrors()
