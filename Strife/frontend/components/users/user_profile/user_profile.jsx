@@ -79,7 +79,7 @@ class UserProfile extends React.Component {
       document.getElementById("change-password-button").disabled = true;
       document.getElementById("edit-email-button").disabled = true;
       document.getElementById("edit-phone-button").disabled = true;
-      document.getElementById("remove-phone-button").disabled = true;
+      // document.getElementById("remove-phone-button").disabled = true;
       // document.getElementById("enable-two-auth-button"); // no disable as this feature is diabled already for all users
       document.getElementById("disable-account-button").disabled = true;
       document.getElementById("delete-account-button").disabled = true;
@@ -92,7 +92,7 @@ class UserProfile extends React.Component {
       document.getElementById("change-password-button").disabled = false;
       document.getElementById("edit-email-button").disabled = false;
       document.getElementById("edit-phone-button").disabled = false;
-      document.getElementById("remove-phone-button").disabled = false;
+      // document.getElementById("remove-phone-button").disabled = false;
       document.getElementById("disable-account-button").disabled = false;
       document.getElementById("delete-account-button").disabled = false;
       return;
