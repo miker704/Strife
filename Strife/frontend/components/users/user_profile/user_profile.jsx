@@ -542,9 +542,10 @@ class UserProfile extends React.Component {
     let revealPhone = this.props.currentUser.phone_number !== null ? (
       <button id="reveal" type="button" className="reveal-button" onClick={() => this.handleRevealClick()}>{this.state.reveal}</button>
     ) : ("")
-    let accountEditingLockedMessage = <div className="demo-edit-lock-warning">
-      Editing Disabled For Demo Accounts
-    </div>
+    let accountEditingLockedMessage = this.state.demoUser === true ? (<div className="demo-edit-lock-warning">
+      <p>Editing Disabled For Demo Accounts</p>
+      <p>Create Your own account to edit account information and credentials</p>
+    </div>):("");
 
     return (
       <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
