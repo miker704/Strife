@@ -771,22 +771,47 @@
 
 
 .disable-or-delete-container-warning{
-    margin-right: 5%;
-    margin-left: 5%;
-    margin-top: 20px;
+    margin-right: 4%;
+    margin-left: 4%;
+    margin-top: 10px;
     padding: 10px;
-    height: 40px;
+    height: 60px;
     color: #fff;
     background-color: #faa81a;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    font-family: "ABC Ginto Nord";
-
+    font-family: "Whitney"; 
+    font-size: 16px;
+    font-weight: 500;
     .disable-delete-account-name{
         font-weight: 900;
         text-decoration: underline;
     }
 
+}
+
+
+.has-servers-subtitle-wrapper{
+    overflow: hidden scroll;
+    padding-right: 8px;
+    padding-bottom: 20px;
+    forced-color-adjust: none;
+    position: relative;
+    z-index: 0;
+    border-radius: 5px 5px 0 0;
+    padding-left: 16px;
+    flex: 1 1 auto;
+    min-height: 0;
+    -webkit-box-flex: 1;
+    box-sizing: border-box;
+}
+
+.has-servers-subtitle{
+    font-family: "Whitney"; 
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    color: hsl(210,2.9%,86.7%);
 }
