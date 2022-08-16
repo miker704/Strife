@@ -27,3 +27,5 @@ export const removePhoneNumber = (user) => $.ajax({ url: `/api/users/${user.id}/
 export const changePassword = (user) => $.ajax({ url: `/api/users/${user.id}/changePassword`, method: "PATCH", data: { user } });
 
 export const changeUserPFP = (user) => $.ajax({ url: `/api/users/${user.id}/changeUserPFP`, method: "PATCH", data: { user } });
+
+export const disableAccount = (user) => $.ajax({ url: `/api/users/${user.id}/disableAccount/`, method: "PATCH", data: { user } });
