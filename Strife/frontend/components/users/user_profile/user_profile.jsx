@@ -69,7 +69,7 @@ class UserProfile extends React.Component {
   }
 
   renderUserHasServers () {
-    if (this.state.ownsServers === true) {
+    if (this.state.userOwnsServers === true) {
       window.removeEventListener('keyup', this.props.handleESC, false);
       window.addEventListener('keyup', this.handleESC, false);
 
@@ -96,7 +96,16 @@ class UserProfile extends React.Component {
   }
 
   renderDisableUser () {
+    if (this.state.disableUser === true) {
 
+      this.checkIfUserOwnServers()
+
+      if (this.state.ownsServers === true) {
+        this.openModal("userOwnsServers");
+      }
+
+
+    }
   }
 
 
@@ -105,16 +114,12 @@ class UserProfile extends React.Component {
 
 
 
-    if (this.props.currentUser.ownServers.length > 0) {
+    if (this.props.currentUser.ownedServers.length > 0) {
       console.log("user owns servers");
       this.setState({ ownsServers: true });
-
     }
 
-    else {
-
-      console.log("user doesnot own servers");
-    }
+    
   }
 
 
@@ -631,6 +636,7 @@ class UserProfile extends React.Component {
 
     return (
       <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
+        {this.renderUserHasServers()}
         {this.renderDeleteUser()}
         {this.renderDisableUser()}
         {this.renderChangePassword()}
@@ -901,7 +907,7 @@ class UserProfile extends React.Component {
                     </p>
                   </div>
                   <div className="account-del-button-cont">
-                    <button type="button" id="disable-account-button" className="disable-account-button">Disable Account</button>
+                    <button onClick={() => this.openModal("disableUser")} type="button" id="disable-account-button" className="disable-account-button">Disable Account</button>
                     <button type="button" id="delete-account-button" className="account-delete-button">Delete Account</button>
 
 
