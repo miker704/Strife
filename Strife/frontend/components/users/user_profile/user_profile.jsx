@@ -13,7 +13,6 @@ import DeleteUserAccountContainer from "../user_delete_account_form/user_delete_
 
 import UserOwnsServers from "../user_owns_servers_warning/user_owns_servers.jsx"
 import ReactModal from "react-modal"
-import Sample from "./sample_modal"
 
 
 
