@@ -83,6 +83,7 @@ class UserProfile extends React.Component {
 
     if (this.props.currentUser.ownServers.length > 0) {
       console.log("user owns servers");
+      this.setState({ownsServers : true});
 
     }
 
