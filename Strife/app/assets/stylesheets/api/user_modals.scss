@@ -777,3 +777,9 @@
 //     background-color: hsl(235, 0.856%, 64.7%);
 
 //   }
+
+    button[type="button"]:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        
+    }
