@@ -41,7 +41,6 @@ class UserProfile extends React.Component {
       userPhone: this.props.currentUser.phone_number,
       reveal: "Reveal",
       reveal1: "Reveal",
-      sample: false
 
     };
 
@@ -56,7 +55,6 @@ class UserProfile extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleESC = this.handleESC.bind(this);
     this.handleSubModalClose = this.handleSubModalClose.bind(this);
-    this.renderSample = this.renderSample.bind(this);
     this.closeAllSubMods = this.closeAllSubMods.bind(this);
     this.renderChangeEmail = this.renderChangeEmail.bind(this);
     this.renderChangePhone = this.renderChangePhone.bind(this);
