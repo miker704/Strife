@@ -32,6 +32,7 @@ class UserProfile extends React.Component {
       disableUser: false,
       deleteUser: false,
       demoUser: false,
+      ownsServers: false,
       userEmail: this.props.currentUser.email,
       userPhone: this.props.currentUser.phone_number,
       reveal: "Reveal",
