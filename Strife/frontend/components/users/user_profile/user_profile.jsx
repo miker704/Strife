@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, Redirect } from 'react-router-dom'
-import UserDeleteForm from "./user_delete_form"
 import EditUserNameContainer from "../user_edit_username_form/user_edit_username_container.js"
 import EditUserEmailContainer from "../user_edit_email_form/user_edit_email_container.js"
 import EditUserPFPContainer from "../user_edit_profile_pic_form/user_edit_pfp_container.js"
@@ -61,10 +60,28 @@ class UserProfile extends React.Component {
     this.renderDisableUser = this.renderDisableUser.bind(this);
   }
 
-  
+
 
   renderDeleteUser () {
+    if (this.state.deleteUser === true) {
+      window.removeEventListener('keyup', this.props.handleESC, false);
+      window.addEventListener('keyup', this.handleESC, false);
+      return (
+        <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("deleteUser")} >
+          <div className="edit-user-flex-box">
+            <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={e => e.stopPropagation()}>
 
+              <div onSubmit={() => this.handleSubmit("deleteUser")}>
+                <DeleteUserAccountContainer />
+              </div>
+
+            </div>
+          </div>
+        </div>
+      )
+
+
+    }
   }
 
   renderDisableUser () {
@@ -84,7 +101,7 @@ class UserProfile extends React.Component {
           </div>
         </div>
       )
-   
+
 
     }
   }
@@ -345,7 +362,7 @@ class UserProfile extends React.Component {
     }
   }
 
- 
+
 
   renderEditUserNameModal () {
     if (this.state.userNameEdit) {
@@ -510,7 +527,7 @@ class UserProfile extends React.Component {
 
     return (
       <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
-       
+
         {this.renderDeleteUser()}
         {this.renderDisableUser()}
         {this.renderChangePassword()}
@@ -781,7 +798,7 @@ class UserProfile extends React.Component {
                   </div>
                   <div className="account-del-button-cont">
                     <button onClick={() => this.openModal("disableUser")} type="button" id="disable-account-button" className="disable-account-button">Disable Account</button>
-                    <button type="button" id="delete-account-button" className="account-delete-button">Delete Account</button>
+                    <button onClick={() => this.openModal("deleteUser")} type="button" id="delete-account-button" className="account-delete-button">Delete Account</button>
 
 
                   </div>
