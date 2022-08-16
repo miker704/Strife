@@ -52,11 +52,13 @@ class DeleteUserAccountForm extends React.Component {
             return;
         }
         let subState = {
+            id: this.props.currentUser.id,
             password: this.state.password
         }
 
 
-        this.props.updateUserInfo(subState);
+        // this.props.updateUserInfo(subState);
+        this.props.removeUserAccount(subState);
     }
 
 
