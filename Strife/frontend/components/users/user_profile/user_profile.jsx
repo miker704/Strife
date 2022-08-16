@@ -39,7 +39,7 @@ class UserProfile extends React.Component {
       sample: false
 
     };
-
+    this.checkIfUserOwnServers = this.checkIfUserOwnServers.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this)
     this.scrambleEmail = this.scrambleEmail.bind(this);
     this.scramblePhoneNumber = this.scramblePhoneNumber.bind(this);
@@ -61,6 +61,17 @@ class UserProfile extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.checkIfDemoUser = this.checkIfDemoUser.bind(this);
   }
+
+
+
+  checkIfUserOwnServers(){
+
+  }
+
+
+
+
+
 
   handleLogout () {
     this.props.closeModal();
@@ -541,7 +552,8 @@ class UserProfile extends React.Component {
 
 
   render () {
-    console.log("this is the current state : ", this.state)
+    console.log("this is the current state : ", this.state);
+    console.log("this is the current props : ", this.props);
 
     let scrambledEmail = this.state.reveal1 === "Reveal" ? this.scrambleEmail() : this.props.currentUser.email;
     let scramblePhone = this.state.reveal === "Reveal" ? this.scramblePhoneNumber() : this.props.currentUser.phone_number;
