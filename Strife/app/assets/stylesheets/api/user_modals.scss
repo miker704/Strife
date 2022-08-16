@@ -770,16 +770,23 @@
   }
 
 
-//   input[type="submit"]:disabled {
-//     cursor: not-allowed;
-//     opacity: .5;
-//     color: hsl(0, 0%, 100%);
-//     background-color: hsl(235, 0.856%, 64.7%);
+.disable-or-delete-container-warning{
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 20px;
+    padding: 10px;
+    height: 40px;
+    color: #fff;
+    background-color: #faa81a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-family: "ABC Ginto Nord";
 
-//   }
+    .disable-delete-account-name{
+        font-weight: 900;
+        text-decoration: underline;
+    }
 
-    // button[type="button"]:disabled {
-    //     cursor: not-allowed;
-    //     opacity: 0.5;
-
-    // }
+}
