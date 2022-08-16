@@ -102,7 +102,7 @@ class Api::UsersController < ApplicationController
     end
 
 
-    def disable_account
+    def disable_Account
         @user = User.find_by(id: params[:id])
         if !@user.is_password?(user_params[:password])
             invalid_password_error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['Error Incorrect Password !']
