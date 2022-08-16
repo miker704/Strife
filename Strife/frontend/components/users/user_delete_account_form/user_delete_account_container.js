@@ -4,7 +4,8 @@ import { withRouter } from "react-router";
 const mSTP = (state) => {
     return {
         currentUser: state.entities.users[state.session.id],
-        errors: state.errors.session
+        errors: state.errors.session,
+        serverErrors: state.errors.session
     }
 };
 
