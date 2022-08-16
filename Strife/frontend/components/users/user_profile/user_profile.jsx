@@ -546,15 +546,15 @@ class UserProfile extends React.Component {
     let scrambledEmail = this.state.reveal1 === "Reveal" ? this.scrambleEmail() : this.props.currentUser.email;
     let scramblePhone = this.state.reveal === "Reveal" ? this.scramblePhoneNumber() : this.props.currentUser.phone_number;
     const { reveal } = this.state.reveal;
-    let removePhoneNum = this.props.currentUser.phone_number !== null ? (
+    let removePhoneNum = this.props.currentUser.phone_number !== null ?  (
       <button id="remove-phone-button" type="button" onClick={() => this.openModal("removePhoneNumber")} className="remove-phone-num">Remove</button>
-    ) : ("")
+    ) : ("");
     let revealPhone = this.props.currentUser.phone_number !== null ? (
       <button id="reveal" type="button" className="reveal-button" onClick={() => this.handleRevealClick()}>{this.state.reveal}</button>
     ) : ("")
     let accountEditingLockedMessage = this.state.demoUser === true ? (<div className="demo-edit-lock-warning">
       <p>Editing Disabled For Demo Accounts</p>
-      <p>Create Your own account to edit account information and credentials</p>
+      {/* <p>Create Your own account to edit account information and credentials</p> */}
     </div>):("");
 
     return (
@@ -659,9 +659,9 @@ class UserProfile extends React.Component {
 
                   <div className="my-account-container">
 
-                    <div className="account-card-banner"></div>
+                    <div className="account-card-banner">{accountEditingLockedMessage}</div>
 
-
+                        
                     <div className="account-card-user-info">
 
                       <div className="account-avatar-wrapper">
@@ -672,6 +672,7 @@ class UserProfile extends React.Component {
 
                       <div>
                         <div className="account-card-username-div">
+                          
                           <div className="account-card-username-strife-id-tag">
                             <span className="account-settings-username">{this.props.currentUser.username}</span>
                             <span className="account-settings-strife-id-tag">#{this.props.currentUser.strife_id_tag}</span>
