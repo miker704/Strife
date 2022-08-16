@@ -7,6 +7,10 @@ import EditUserPFPContainer from "../user_edit_profile_pic_form/user_edit_pfp_co
 import EditUserPasswordContainer from "../user_edit_password_form/user_edit_password_container.js"
 import EditUserPhoneNumberContainer from "../user_edit_phone_number_form/user_edit_phone_number_container.js"
 import RemoveUserPhoneNumberContainer from "../user_remove_phone_number_form/user_remove_phone_number_container.js"
+import DisableUserAccountContainer from "../user_disable_account_form/user_disable_account_container.js"
+import DeleteUserAccountContainer from "../user_delete_account_form/user_delete_account_container.js"
+
+
 import UserOwnsServers from "../user_owns_servers_warning/user_owns_servers.jsx"
 import ReactModal from "react-modal"
 import Sample from "./sample_modal"
@@ -33,8 +37,6 @@ class UserProfile extends React.Component {
       disableUser: false,
       deleteUser: false,
       demoUser: false,
-      ownsServers: false,
-      userOwnsServers: false,
       userEmail: this.props.currentUser.email,
       userPhone: this.props.currentUser.phone_number,
       reveal: "Reveal",
@@ -42,7 +44,7 @@ class UserProfile extends React.Component {
       sample: false
 
     };
-    this.checkIfUserOwnServers = this.checkIfUserOwnServers.bind(this);
+
     this.handleSubmit = this.handleSubmit.bind(this)
     this.scrambleEmail = this.scrambleEmail.bind(this);
     this.scramblePhoneNumber = this.scramblePhoneNumber.bind(this);
@@ -65,31 +67,9 @@ class UserProfile extends React.Component {
     this.checkIfDemoUser = this.checkIfDemoUser.bind(this);
     this.renderDeleteUser - this.renderDeleteUser.bind(this);
     this.renderDisableUser = this.renderDisableUser.bind(this);
-    this.renderUserHasServers = this.renderUserHasServers.bind(this);
   }
 
-  renderUserHasServers () {
-    if (this.state.userOwnsServers === true) {
-      window.removeEventListener('keyup', this.props.handleESC, false);
-      window.addEventListener('keyup', this.handleESC, false);
-
-      return (
-        <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("userOwnsServers")} >
-          <div className="edit-user-flex-box">
-            <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={e => e.stopPropagation()}>
-
-              <div onSubmit={() => this.handleSubmit("userOwnsServers")}>
-                <UserOwnsServers />
-              </div>
-
-            </div>
-          </div>
-        </div>
-      )
-
-
-    }
-  }
+  
 
   renderDeleteUser () {
 
@@ -98,31 +78,10 @@ class UserProfile extends React.Component {
   renderDisableUser () {
     if (this.state.disableUser === true) {
 
-      this.checkIfUserOwnServers()
-
-      if (this.state.ownsServers === true) {
-        this.openModal("userOwnsServers");
-      }
-
+   
 
     }
   }
-
-
-
-  checkIfUserOwnServers () {
-
-
-
-    if (this.props.currentUser.ownedServers.length > 0) {
-      console.log("user owns servers");
-      this.setState({ ownsServers: true });
-    }
-
-    
-  }
-
-
 
 
 
@@ -302,13 +261,11 @@ class UserProfile extends React.Component {
   closeAllSubMods () {
     let array = [
       'userNameEdit',
-      'sample',
       'changeEmail',
       'changePhone',
       'changePassword',
       'changePFP',
       'removePhoneNumber',
-      "userOwnsServers",
       "disableUser",
       "deleteUser"
     ];
@@ -382,96 +339,7 @@ class UserProfile extends React.Component {
     }
   }
 
-  resetModalStyle = (() => {
-    // Styles
-    const initial = null
-
-    const overlay = {
-      position: initial,
-      top: initial,
-      left: initial,
-      right: initial,
-      bottom: initial,
-      backgroundColor: initial,
-      WebkitOverflowScrolling: initial,
-      zIndex: initial,
-    }
-
-    const content = {
-      position: initial,
-      top: initial,
-      left: initial,
-      right: 'rgba(0, 0, 0, 0.8)',
-      bottom: initial,
-      border: initial,
-      background: initial,
-      overflow: initial,
-      borderRadius: initial,
-      outline: initial,
-      padding: initial,
-    }
-
-    return { overlay, content }
-  })
-
-  renderSample () {
-
-    if (this.state.sample === true) {
-      window.removeEventListener('keyup', this.props.handleESC, false);
-      // window.addEventListener('keyup', this.handleESC, false);
-
-
-      return (
-        // <Sample/>
-        <ReactModal
-          isOpen={this.state.sample}
-          // appElement={'#root'}
-          style={this.resetModalStyle()}
-          ariaHideApp={false}
-          onRequestClose={() => this.closeModal("sample")}
-          shouldCloseOnEsc={true}
-        // shouldCloseOnOverlayClick={true}
-        >
-
-          <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("sample")}>
-            <div className="edit-user-flex-box">
-              <div className="edit-userInfo-model" onClick={(e) => e.stopPropagation()}>
-                <div className="edit-user-info-exit-button" >
-
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    onClick={() => this.closeModal("sample")}
-                  ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
-                  </svg>
-
-                </div>
-                <div className="edit-username-header-section">
-                  <div className="edit-username-header">
-                    Change your username
-                  </div>
-                  <div className="edit-username-header-info">
-                    Enter a new username and your existing password
-                  </div>
-                </div>
-                <p className="this-is-a-test">
-                  hello world
-                </p>
-                <button onClick={() => this.closeModal("sample")}>close</button>
-              </div>
-            </div>
-          </div>
-
-
-
-        </ReactModal>
-      )
-
-    }
-
-  }
-
+ 
 
   renderEditUserNameModal () {
     if (this.state.userNameEdit) {
