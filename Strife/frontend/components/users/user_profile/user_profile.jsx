@@ -85,18 +85,7 @@ class UserProfile extends React.Component {
       document.getElementById("delete-account-button").disabled = true;
 
     }
-    else {
-      this.setState({ demoUser: false });
-      document.getElementById("edit-username-button").disabled = false;
-      document.getElementById("edit-user-profile-pic-button").disabled = false;
-      document.getElementById("change-password-button").disabled = false;
-      document.getElementById("edit-email-button").disabled = false;
-      document.getElementById("edit-phone-button").disabled = false;
-      document.getElementById("remove-phone-button").disabled = false;
-      document.getElementById("disable-account-button").disabled = false;
-      document.getElementById("delete-account-button").disabled = false;
-      return;
-    }
+   
 
 
   }
