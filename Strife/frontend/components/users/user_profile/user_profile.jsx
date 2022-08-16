@@ -69,7 +69,21 @@ class UserProfile extends React.Component {
 
   renderDisableUser () {
     if (this.state.disableUser === true) {
+      window.removeEventListener('keyup', this.props.handleESC, false);
+      window.addEventListener('keyup', this.handleESC, false);
+      return (
+        <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("disableUser")} >
+          <div className="edit-user-flex-box">
+            <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={e => e.stopPropagation()}>
 
+              <div onSubmit={() => this.handleSubmit("disableUser")}>
+                <DisableUserAccountContainer />
+              </div>
+
+            </div>
+          </div>
+        </div>
+      )
    
 
     }
@@ -496,7 +510,7 @@ class UserProfile extends React.Component {
 
     return (
       <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
-        {this.renderUserHasServers()}
+       
         {this.renderDeleteUser()}
         {this.renderDisableUser()}
         {this.renderChangePassword()}
@@ -504,7 +518,6 @@ class UserProfile extends React.Component {
         {this.renderChangeEmail()}
         {this.renderChangePhone()}
         {this.renderEditUserNameModal()}
-        {this.renderSample()}
         <div className="user-profile" id="user-profile">
 
           <div className="sidebar">
