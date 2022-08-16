@@ -81,6 +81,43 @@ class DeleteUserAccountForm extends React.Component {
         let usernameErrorTag = this.props.errors.length > 0 ? "field-error" : "";
         let passwordErrorTag = this.props.errors.length > 0 ? "field-error" : "";
 
+
+        let hasServers = this.state.hasServers === true ? (<div id="edit-userInfo-model" className="edit-userInfo-model" >
+            <div className="remove-phone-form-header-wrapper">
+                <div className="remove-phone-header">
+                    You Own Servers!
+                </div>
+            </div>
+            <div className="has-servers-subtitle-wrapper">
+                <div className="has-servers-subtitle">In order to delete or disable your account you must
+                    first transfer ownership of all servers that you own.</div>
+            </div>
+
+            <div className="username-edit-sep"></div>
+            <div className="username-edit-sep"></div>
+
+
+            <form onSubmit={this.handleSubmit}>
+
+                <div className="username-edit-button-sec">
+                    <button type="submit" onClick={() => this.cancel = true} className="username-edit-submit-button">Okay</button>
+                </div>
+
+            </form>
+        </div>) : ("");
+
+
+
+
+
+
+
+
+
+
+
+
+
         return (
             <div id="edit-userInfo-model" className="edit-userInfo-model" >
                 <div className="edit-username-header-section">
