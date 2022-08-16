@@ -11,11 +11,6 @@ import DisableUserAccountContainer from "../user_disable_account_form/user_disab
 import DeleteUserAccountContainer from "../user_delete_account_form/user_delete_account_container.js"
 
 
-import UserOwnsServers from "../user_owns_servers_warning/user_owns_servers.jsx"
-import ReactModal from "react-modal"
-
-
-
 class UserProfile extends React.Component {
 
   constructor (props) {
