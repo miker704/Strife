@@ -74,18 +74,27 @@ class UserProfile extends React.Component {
     if (this.props.currentUser.id === 1 || this.props.currentUser.id === 2 || this.props.currentUser.id === 3) {
       //set demouserstate active
       this.setState({ demoUser: true });
-      document.getElementById("edit-username-button");
-      document.getElementById("edit-user-profile-pic-button");
-      document.getElementById("change-password-button");
-      document.getElementById("edit-email-button");
-      document.getElementById("edit-phone-button");
-      document.getElementById("remove-phone-button");
-      document.getElementById("enable-two-auth-button");
-      document.getElementById("disable-account-button");
-      document.getElementById("delete-account-button");
+      document.getElementById("edit-username-button").disabled = true;
+      document.getElementById("edit-user-profile-pic-button").disabled = true;
+      document.getElementById("change-password-button").disabled = true;
+      document.getElementById("edit-email-button").disabled = true;
+      document.getElementById("edit-phone-button").disabled = true;
+      document.getElementById("remove-phone-button").disabled = true;
+      // document.getElementById("enable-two-auth-button"); // no disable as this feature is diabled already for all users
+      document.getElementById("disable-account-button").disabled = true;
+      document.getElementById("delete-account-button").disabled = true;
 
     }
     else {
+      this.setState({ demoUser: false });
+      document.getElementById("edit-username-button").disabled = false;
+      document.getElementById("edit-user-profile-pic-button").disabled = false;
+      document.getElementById("change-password-button").disabled = false;
+      document.getElementById("edit-email-button").disabled = false;
+      document.getElementById("edit-phone-button").disabled = false;
+      document.getElementById("remove-phone-button").disabled = false;
+      document.getElementById("disable-account-button").disabled = false;
+      document.getElementById("delete-account-button").disabled = false;
       return;
     }
 
