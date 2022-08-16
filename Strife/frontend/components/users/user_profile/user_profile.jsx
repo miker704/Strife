@@ -7,6 +7,7 @@ import EditUserPFPContainer from "../user_edit_profile_pic_form/user_edit_pfp_co
 import EditUserPasswordContainer from "../user_edit_password_form/user_edit_password_container.js"
 import EditUserPhoneNumberContainer from "../user_edit_phone_number_form/user_edit_phone_number_container.js"
 import RemoveUserPhoneNumberContainer from "../user_remove_phone_number_form/user_remove_phone_number_container.js"
+import UserOwnsServers from "../user_owns_servers_warning/user_owns_servers.jsx"
 import ReactModal from "react-modal"
 import Sample from "./sample_modal"
 
@@ -33,6 +34,7 @@ class UserProfile extends React.Component {
       deleteUser: false,
       demoUser: false,
       ownsServers: false,
+      userOwnsServers: false,
       userEmail: this.props.currentUser.email,
       userPhone: this.props.currentUser.phone_number,
       reveal: "Reveal",
@@ -63,9 +65,31 @@ class UserProfile extends React.Component {
     this.checkIfDemoUser = this.checkIfDemoUser.bind(this);
     this.renderDeleteUser - this.renderDeleteUser.bind(this);
     this.renderDisableUser = this.renderDisableUser.bind(this);
+    this.renderUserHasServers = this.renderUserHasServers.bind(this);
   }
 
+  renderUserHasServers () {
+    if (this.state.ownsServers === true) {
+      window.removeEventListener('keyup', this.props.handleESC, false);
+      window.addEventListener('keyup', this.handleESC, false);
 
+      return (
+        <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("userOwnsServers")} >
+          <div className="edit-user-flex-box">
+            <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={e => e.stopPropagation()}>
+
+              <div onSubmit={() => this.handleSubmit("userOwnsServers")}>
+                <UserOwnsServers />
+              </div>
+
+            </div>
+          </div>
+        </div>
+      )
+
+
+    }
+  }
 
   renderDeleteUser () {
 
@@ -83,7 +107,7 @@ class UserProfile extends React.Component {
 
     if (this.props.currentUser.ownServers.length > 0) {
       console.log("user owns servers");
-      this.setState({ownsServers : true});
+      this.setState({ ownsServers: true });
 
     }
 
@@ -271,7 +295,18 @@ class UserProfile extends React.Component {
 
 
   closeAllSubMods () {
-    let array = ['userNameEdit', 'sample', 'changeEmail', 'changePhone', 'changePassword', 'changePFP', 'removePhoneNumber'];
+    let array = [
+      'userNameEdit',
+      'sample',
+      'changeEmail',
+      'changePhone',
+      'changePassword',
+      'changePFP',
+      'removePhoneNumber',
+      "userOwnsServers",
+      "disableUser",
+      "deleteUser"
+    ];
     for (let i = 0; i < array.length; i++) {
       this.handleSubModalClose(array[i])
       // this.closeModal(i)
