@@ -78,10 +78,14 @@ class DisableUserAccountForm extends React.Component {
                     You Own Servers!
                 </div>
             </div>
-            <div className="edit-username-header-info">
-                In order to delete or disable your account you must first transfer ownership of all servers that you own.
+            <div className="has-servers-subtitle-wrapper">
+                <div className="has-servers-subtitle">In order to delete or disable your account you must 
+                first transfer ownership of all servers that you own.</div>
             </div>
+            
             <div className="username-edit-sep"></div>
+            <div className="username-edit-sep"></div>
+
 
             <form onSubmit={this.handleSubmit}>
 
