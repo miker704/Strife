@@ -347,7 +347,11 @@
         color: #3a3a3a;
         user-select: none;
 
-
+        button[type="button"]:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+            
+        }
 
     }
 
