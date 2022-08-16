@@ -7,12 +7,10 @@ class DisableUserAccountForm extends React.Component {
         super(props)
 
         this.state = {
-            username: this.props.currentUser.username,
             password: "",
             hasServers: false
         }
 
-        this.hasServers = false;
         this.cancel = false;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -54,12 +52,10 @@ class DisableUserAccountForm extends React.Component {
         }
 
 
-        // this.props.updateUserInfo(subState);
         this.props.disableUserAccout(subState);
     }
     componentDidMount () {
         if (this.props.currentUser.ownedServers.length > 0) {
-            // this.hasServers = true;
             this.setState({ hasServers: true });
         }
 
