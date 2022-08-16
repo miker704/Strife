@@ -1,5 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
+import DeleteUserAccountForm from "./user_delete_account_form.jsx";
+import { removeSessionErrors, removeUserAccount } from "../../../actions/session_actions";
 
 const mSTP = (state) => {
     return {
@@ -11,11 +13,9 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
-        updateUserInfo : (user) => {dispatch(updateUserInfo(user))},
-        openModal: (modal) => dispatch(openModal(modal)),
-        closeModal: () => dispatch(closeModal()),
-        removeSessionErrors: () => dispatch(removeSessionErrors()),
-        handleESC : (e) => handleKeyUp(e)
+
+        removeUserAccount: (userId) => dispatch(removeUserAccount(userId)),
+        removeSessionErrors: () => dispatch(removeSessionErrors())
     }
 };
 
