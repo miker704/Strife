@@ -446,6 +446,7 @@ class UserProfile extends React.Component {
   componentDidMount () {
     this.scrambleEmail();
     this.scramblePhoneNumber();
+    this.checkIfDemoUser();
     this.mounted = true;
     window.addEventListener('keyup', this.props.handleESC, false);
 
