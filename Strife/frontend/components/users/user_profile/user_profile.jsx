@@ -547,7 +547,7 @@ class UserProfile extends React.Component {
     let scramblePhone = this.state.reveal === "Reveal" ? this.scramblePhoneNumber() : this.props.currentUser.phone_number;
     const { reveal } = this.state.reveal;
     let removePhoneNum = this.props.currentUser.phone_number !== null ? (
-      <button type="button" onClick={() => this.openModal("removePhoneNumber")} className="remove-phone-num">Remove</button>
+      <button id="remove-phone-button" type="button" onClick={() => this.openModal("removePhoneNumber")} className="remove-phone-num">Remove</button>
     ) : ("")
     let revealPhone = this.props.currentUser.phone_number !== null ? (
       <button id="reveal" type="button" className="reveal-button" onClick={() => this.handleRevealClick()}>{this.state.reveal}</button>
@@ -694,7 +694,7 @@ class UserProfile extends React.Component {
 
                       </div>
 
-                      <button type="button" onClick={() => this.openModal("changePFP")} className="edit-user-profile-button">Edit User Profile</button>
+                      <button type="button" onClick={() => this.openModal("changePFP")} id="edit-user-profile-pic-button" className="edit-user-profile-button">Edit User Profile</button>
 
 
                     </div>
@@ -711,7 +711,7 @@ class UserProfile extends React.Component {
                               </div>
                             </div>
                           </div>
-                          <button type="button" className="edit-profile-props-button" onClick={() => this.openModal("userNameEdit")}>Edit</button>
+                          <button type="button" className="edit-profile-props-button" id="edit-username-button" onClick={() => this.openModal("userNameEdit")}>Edit</button>
                         </div>
 
 
@@ -729,7 +729,7 @@ class UserProfile extends React.Component {
 
                           </div>
 
-                          <button type="button" className="edit-profile-props-button" onClick={() => this.openModal("changeEmail")} >Edit</button>
+                          <button type="button" id="edit-email-button" className="edit-profile-props-button" onClick={() => this.openModal("changeEmail")} >Edit</button>
 
                         </div>
 
@@ -749,7 +749,7 @@ class UserProfile extends React.Component {
                           </div>
                           <div className="phone-num-button-container">
                             {removePhoneNum}
-                            <button type="button" className="edit-profile-props-button" onClick={() => this.openModal("changePhone")} >Edit</button>
+                            <button type="button" id="edit-phone-button" className="edit-profile-props-button" onClick={() => this.openModal("changePhone")} >Edit</button>
                           </div>
 
                         </div>
@@ -774,7 +774,7 @@ class UserProfile extends React.Component {
                   </div>
                   <div className="password-edit-section">
                     <div>
-                      <button type="button" className="changePasswordButton" onClick={() => this.openModal("changePassword")}>
+                      <button type="button"id="change-password-button" className="changePasswordButton" onClick={() => this.openModal("changePassword")}>
                         Change Password
                       </button>
                     </div>
@@ -826,8 +826,8 @@ class UserProfile extends React.Component {
                     </p>
                   </div>
                   <div className="account-del-button-cont">
-                    <button type="button" className="disable-account-button">Disable Account</button>
-                    <button type="button" className="account-delete-button">Delete Account</button>
+                    <button type="button" id="disable-account-button" className="disable-account-button">Disable Account</button>
+                    <button type="button" id="delete-account-button" className="account-delete-button">Delete Account</button>
 
 
                   </div>
