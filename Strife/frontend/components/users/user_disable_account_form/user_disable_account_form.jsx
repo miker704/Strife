@@ -6,9 +6,12 @@ class DisableUserAccountForm extends React.Component {
     constructor (props) {
         super(props)
 
-        this.state = { username: this.props.currentUser.username, password: "" }
+        this.state = {
+            username: this.props.currentUser.username,
+            password: ""
+        }
 
-
+        this.hasServers = false;
         this.cancel = false;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -53,7 +56,7 @@ class DisableUserAccountForm extends React.Component {
         this.props.updateUserInfo(subState);
     }
 
-    
+
 
 
     render () {
@@ -61,18 +64,18 @@ class DisableUserAccountForm extends React.Component {
 
         return (
             <div id="edit-userInfo-model" className="edit-userInfo-model" >
-                <div className="edit-username-header-section">
-                    <div className="edit-username-header">
-                        Change your username
+                <div className="remove-phone-form-header-wrapper">
+                    <div className="remove-phone-header">
+                        Disable Account
                     </div>
-                    <div className="edit-username-header-info">
-                        Enter a new username and your existing password
-                    </div>
+                </div>
+                <div className="disable-or-delete-container-warning">
+                        
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-container1">
 
-      
+
                         <div className="password-section">
                             <h5 className="password-header1">
                                 <label className={passwordErrorTag}>Current Password{this.passwordErrors()}</label>
