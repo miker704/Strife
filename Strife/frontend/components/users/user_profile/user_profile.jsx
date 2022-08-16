@@ -68,9 +68,28 @@ class UserProfile extends React.Component {
   }
 
   checkIfDemoUser () {
-    if (this.props.currentUser.email === "DemoUser@strife.com") {
-      //disable all edit buttons
+
+    //this will lock bot, demo user 1, and 2 ,from beign edited /deleted
+
+    if (this.props.currentUser.id === 1 || this.props.currentUser.id === 2 || this.props.currentUser.id === 3) {
+      //set demouserstate active
+      this.setState({ demoUser: true });
+      document.getElementById("edit-username-button");
+      document.getElementById("edit-user-profile-pic-button");
+      document.getElementById("change-password-button");
+      document.getElementById("edit-email-button");
+      document.getElementById("edit-phone-button");
+      document.getElementById("remove-phone-button");
+      document.getElementById("enable-two-auth-button");
+      document.getElementById("disable-account-button");
+      document.getElementById("delete-account-button");
+
     }
+    else {
+      return;
+    }
+
+
   }
 
 
@@ -523,6 +542,9 @@ class UserProfile extends React.Component {
     let revealPhone = this.props.currentUser.phone_number !== null ? (
       <button id="reveal" type="button" className="reveal-button" onClick={() => this.handleRevealClick()}>{this.state.reveal}</button>
     ) : ("")
+    let accountEditingLockedMessage = <div className="demo-edit-lock-warning">
+      Editing Disabled For Demo Accounts
+    </div>
 
     return (
       <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
