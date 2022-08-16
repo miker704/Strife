@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-
+import DisableUserAccountForm from "./user_disable_account_form.jsx";
+import { removeSessionErrors, removeCurrentUser } from "../../../actions/session_actions";
 
 const mSTP = (state) => {
     return {
@@ -13,13 +14,10 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
-        updateUserInfo : (user) => {dispatch(updateUserInfo(user))},
-        openModal: (modal) => dispatch(openModal(modal)),
-        closeModal: () => dispatch(closeModal()),
+        updateUserInfo: (user) => { dispatch(updateUserInfo(user)) },
         removeSessionErrors: () => dispatch(removeSessionErrors()),
-        handleESC : (e) => handleKeyUp(e)
     }
 };
 
-const EditUserEmailContainer = withRouter(connect(mSTP,mDTP)(EditUserEmailForm))
-export default EditUserEmailContainer;
+const DisableUserAccountContainer = withRouter(connect(mSTP, mDTP)(DisableUserAccountForm))
+export default DisableUserAccountContainer;
