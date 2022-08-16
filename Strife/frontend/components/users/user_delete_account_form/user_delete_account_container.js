@@ -19,5 +19,5 @@ const mDTP = (dispatch) => {
     }
 };
 
-const EditUserEmailContainer = withRouter(connect(mSTP,mDTP)(EditUserEmailForm))
-export default EditUserEmailContainer;
+const DeleteUserAccountContainer = withRouter(connect(mSTP,mDTP)(DeleteUserAccountForm))
+export default  DeleteUserAccountContainer;
