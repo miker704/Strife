@@ -60,12 +60,35 @@ class UserProfile extends React.Component {
     this.renderRemovePhoneNumber = this.renderRemovePhoneNumber.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
     this.checkIfDemoUser = this.checkIfDemoUser.bind(this);
+    this.renderDeleteUser - this.renderDeleteUser.bind(this);
+    this.renderDisableUser = this.renderDisableUser.bind(this);
   }
 
 
 
-  checkIfUserOwnServers(){
+  renderDeleteUser () {
 
+  }
+
+  renderDisableUser () {
+
+  }
+
+
+
+  checkIfUserOwnServers () {
+
+
+
+    if (this.props.currentUser.ownServers.length > 0) {
+      console.log("user owns servers");
+
+    }
+
+    else {
+
+      console.log("user doesnot own servers");
+    }
   }
 
 
@@ -558,7 +581,7 @@ class UserProfile extends React.Component {
     let scrambledEmail = this.state.reveal1 === "Reveal" ? this.scrambleEmail() : this.props.currentUser.email;
     let scramblePhone = this.state.reveal === "Reveal" ? this.scramblePhoneNumber() : this.props.currentUser.phone_number;
     const { reveal } = this.state.reveal;
-    let removePhoneNum = this.props.currentUser.phone_number !== null ?  (
+    let removePhoneNum = this.state.demoUser === true ? ("") : this.props.currentUser.phone_number !== null ? (
       <button id="remove-phone-button" type="button" onClick={() => this.openModal("removePhoneNumber")} className="remove-phone-num">Remove</button>
     ) : ("");
     let revealPhone = this.props.currentUser.phone_number !== null ? (
@@ -567,7 +590,7 @@ class UserProfile extends React.Component {
     let accountEditingLockedMessage = this.state.demoUser === true ? (<div className="demo-edit-lock-warning">
       <p>Editing Disabled For Demo Accounts</p>
       {/* <p>Create Your own account to edit account information and credentials</p> */}
-    </div>):("");
+    </div>) : ("");
 
     return (
       <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
@@ -673,7 +696,7 @@ class UserProfile extends React.Component {
 
                     <div className="account-card-banner">{accountEditingLockedMessage}</div>
 
-                        
+
                     <div className="account-card-user-info">
 
                       <div className="account-avatar-wrapper">
@@ -684,7 +707,7 @@ class UserProfile extends React.Component {
 
                       <div>
                         <div className="account-card-username-div">
-                          
+
                           <div className="account-card-username-strife-id-tag">
                             <span className="account-settings-username">{this.props.currentUser.username}</span>
                             <span className="account-settings-strife-id-tag">#{this.props.currentUser.strife_id_tag}</span>
@@ -787,7 +810,7 @@ class UserProfile extends React.Component {
                   </div>
                   <div className="password-edit-section">
                     <div>
-                      <button type="button"id="change-password-button" className="changePasswordButton" onClick={() => this.openModal("changePassword")}>
+                      <button type="button" id="change-password-button" className="changePasswordButton" onClick={() => this.openModal("changePassword")}>
                         Change Password
                       </button>
                     </div>
@@ -805,7 +828,7 @@ class UserProfile extends React.Component {
                             </p>
                           </div>
                           <div>
-                            <button type="button" className="auth-button">Enable Two-Factor Auth</button>
+                            <button id="enable-two-auth-button" type="button" className="auth-button" disabled>Enable Two-Factor Auth</button>
                           </div>
 
 
