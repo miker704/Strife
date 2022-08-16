@@ -82,3 +82,7 @@ export const changePassword = user => (dispatch) =>
 
 export const changeUserPFP = user => (dispatch) =>
     SessionAPIUtil.changeUserPFP(user).then((user) => (dispatch(receiveCurrentUser(user))), (err) => (dispatch(receiveSessionErrors(err.responseJSON))));
+
+
+export const disableUserAccout = user => (dispatch) =>
+    SessionAPIUtil.disableAccount(user).then((user) => (dispatch(receiveCurrentUser(user))), (err) => (dispatch(receiveSessionErrors(err.responseJSON))));
