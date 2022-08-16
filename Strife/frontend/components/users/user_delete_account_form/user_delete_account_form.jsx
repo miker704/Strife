@@ -100,9 +100,9 @@ class DeleteUserAccountForm extends React.Component {
                     Disable Account
                 </div>
             </div>
-            <div className="disable-or-delete-container-warning">
-                Are You sure that you want to disable your account? This will immediately
-                log you out and make your account inaccessible to anyone.
+            <div className="disable-or-delete-container-warning2">
+                Are You sure that you want to delete your account? This will immediately
+                log you out of your account and you will not be able to log in again.
             </div>
             <div className="username-edit-sep"></div>
 
