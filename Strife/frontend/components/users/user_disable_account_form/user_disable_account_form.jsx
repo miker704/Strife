@@ -49,7 +49,9 @@ class DisableUserAccountForm extends React.Component {
         }
 
 
-        this.props.disableUserAccout(subState);
+        this.props.disableUserAccout(subState).then(()=>{
+            return <Redirect to={`/login`} />
+        });
     }
     componentDidMount () {
         if (this.props.currentUser.ownedServers.length > 0) {
