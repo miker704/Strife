@@ -13,7 +13,7 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
-        disableUserAccount: (user) => dispatch(disableUserAccount),
+        disableUserAccount: (user) => dispatch(disableUserAccount(user)),
         removeUserAccount: (userId) => dispatch(removeUserAccount(userId)),
         removeSessionErrors: () => dispatch(removeSessionErrors())
     }
