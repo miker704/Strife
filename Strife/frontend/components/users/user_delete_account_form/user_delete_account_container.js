@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import DeleteUserAccountForm from "./user_delete_account_form.jsx";
-import { removeSessionErrors, removeUserAccount } from "../../../actions/session_actions";
+import { removeSessionErrors, removeUserAccount, disableUserAccount } from "../../../actions/session_actions";
 
 const mSTP = (state) => {
     return {
@@ -13,7 +13,7 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
-
+        disableUserAccount: (user) => dispatch(disableUserAccount),
         removeUserAccount: (userId) => dispatch(removeUserAccount(userId)),
         removeSessionErrors: () => dispatch(removeSessionErrors())
     }
