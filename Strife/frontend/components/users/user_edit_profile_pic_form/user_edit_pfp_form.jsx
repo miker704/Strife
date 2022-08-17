@@ -8,9 +8,11 @@ class EditUserPFP extends React.Component {
         this.state = {
             user: this.props.currentUser,
             photo: this.props.currentUser.photo,
-            newPhoto: this.props.currentUser.photo,
+            newPhoto: "",
+            photo_url: this.props.currentUser.photo
 
         }
+        this.file_input = null;
         this.cancel = false;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -28,28 +30,49 @@ class EditUserPFP extends React.Component {
 
 
     handleFileInput (e) {
+        const fileReader = new FileReader();
+        const file = e.currentTarget.files[0];
+        fileReader.onloadend = () => {
+            this.setState({
+                photo_url: fileReader.result,
+                photo: file
+            });
+        }
+
+        if(file){
+            fileReader.readAsDataURL(file);
+        }
+        else{
+            this.setState({photo_url: "", photo: null})
+        }
+
+
 
     }
 
-
+    componentDidMount () {
+        this.file_input = document.querySelector("input[type=file]");
+    }
 
     componentWillUnmount () {
         this.props.removeSessionErrors()
     }
 
-    handleInput (field) {
-        return (e) => { this.setState({ [field]: e.currentTarget.value }) }
+    handleInput (input) {
+        return (e) => { this.setState({ [input]: e.currentTarget.value }) }
     }
 
     handleSubmit (e) {
         e.preventDefault();
-        if(this.cancel === true){
+        if (this.cancel === true) {
+            this.props.removeSessionErrors();
             return;
         }
+
         let submissionState = {
-            photo: this.state.newPhoto
+            photo: this.state.photo
         }
-        this.props.updateUserInfo(submissionState);
+        this.props.changeUserPFP(submissionState);
     }
 
     render () {
@@ -107,7 +130,7 @@ class EditUserPFP extends React.Component {
                             <h5 className="form-username-header"> <label className={fileErrorTag}>{this.fileProcessingErrors()}</label></h5>
                             <div className="username-form-input-sec">
                                 <div className="username-input-wrapper1">
-                                    <input  value={this.state.photo} onChange={this.handleInput("newPhoto")} className="input-1" type="text" />
+                                    <input value={this.state.photo} onChange={this.handleInput("newPhoto")} className="input-1" type="text" />
                                 </div>
                             </div>
                         </div>
