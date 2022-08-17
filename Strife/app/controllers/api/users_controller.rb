@@ -58,7 +58,7 @@ class Api::UsersController < ApplicationController
     end
 
     #addPFP
-    def add_PFP
+    def change_User_PFP
         @user = User.find(params[:id])
         if @user &&  @user.update(user_params)
             render :show
@@ -145,7 +145,7 @@ class Api::UsersController < ApplicationController
 
     private
     def user_params
-        return params.require(:user).permit(:email,:username,:birthday,:password,:online,:phone_number)
+        return params.require(:user).permit(:email,:username,:birthday,:password,:online,:phone_number,:photo)
     end
 
     
