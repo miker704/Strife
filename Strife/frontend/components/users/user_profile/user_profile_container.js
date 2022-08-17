@@ -4,7 +4,6 @@ import {removeUserAccount, logoutUser, updateUserInfo, removeSessionErrors, disa
 import { openModal, closeModal } from "../../../actions/modal_actions";
 import { withRouter } from "react-router";
 import { handleKeyUp } from "../../../utils/modal_api_util";
-import { disableAccount } from "../../../utils/session_api_util";
 
 const mSTP = (state) => {
   return{
