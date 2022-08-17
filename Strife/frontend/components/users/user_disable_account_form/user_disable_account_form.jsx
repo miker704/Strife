@@ -68,6 +68,7 @@ class DisableUserAccountForm extends React.Component {
 
     render () {
 
+        let passwordErrorTag = this.props.errors.length > 0 ? "field-error" : "";
 
         let hasServers = this.state.hasServers === true ? (<div id="edit-userInfo-model" className="edit-userInfo-model" >
             <div className="remove-phone-form-header-wrapper">
@@ -135,7 +136,6 @@ class DisableUserAccountForm extends React.Component {
 
 
 
-        let passwordErrorTag = this.props.errors.length > 0 ? "field-error" : "";
 
         return (
             <div id="edit-userInfo-model" className="edit-userInfo-model" >
