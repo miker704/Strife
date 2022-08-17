@@ -11,6 +11,7 @@ class EditUserPFP extends React.Component {
             newPhoto: this.props.currentUser.photo,
 
         }
+        this.cancel = false;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleFileInput = this.handleFileInput.bind(this);
@@ -18,15 +19,15 @@ class EditUserPFP extends React.Component {
     }
 
 
-    fileProcessingErrors(){
-        if(this.props.errors.includes('cannot process file')){
+    fileProcessingErrors () {
+        if (this.props.errors.includes('cannot process file')) {
             return " - file is bad format/failed to process";
         }
         return "";
     }
 
 
-    handleFileInput(e){
+    handleFileInput (e) {
 
     }
 
@@ -42,7 +43,9 @@ class EditUserPFP extends React.Component {
 
     handleSubmit (e) {
         e.preventDefault();
-
+        if(this.cancel === true){
+            return;
+        }
         let submissionState = {
             photo: this.state.newPhoto
         }
@@ -59,24 +62,56 @@ class EditUserPFP extends React.Component {
         return (
 
 
+            // <div id="edit-userInfo-model" className="edit-userInfo-model" >
+            //     <div className="remove-phone-form-header-wrapper">
+            //         <div className="remove-phone-header">
+            //             Upload a new profile picture
+            //         </div>
+            //     </div>
+            //     <form onSubmit={this.handleSubmit}>
+            //         <div className="form-container1">
+
+
+            //             <div className="password-section">
+            //                 <h5 className="password-header1">
+            //                     <label className={fileErrorTag}>{this.fileProcessingErrors()}</label>
+            //                 </h5>
+            //                 <div className="input-3-password-wrapper">
+            //                     <input value={this.state.newPhoto} onChange={this.handleFileInput("")} type="password" className="input-3-password" />
+            //                 </div>
+            //             </div>
+            //             <div className="username-edit-sep"></div>
+            //         </div>
+            //         <div className="username-edit-button-sec">
+            //             <button type="submit" className="username-edit-submit-button">Done</button>
+            //             <button type="submit" onClick={() => this.cancel = true} className="username-edit-cancel-button">Cancel</button>
+            //         </div>
+
+
+
+            //     </form>
+            // </div>
             <div id="edit-userInfo-model" className="edit-userInfo-model" >
-                <div className="remove-phone-form-header-wrapper">
-                    <div className="remove-phone-header">
-                        Remove Phone Number
+                <div className="edit-username-header-section">
+                    <div className="edit-username-header">
+                        Change your username
+                    </div>
+                    <div className="edit-username-header-info">
+                        Enter a new username and your existing password
                     </div>
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-container1">
 
-
-                        <div className="password-section">
-                            <h5 className="password-header1">
-                                <label className={fileErrorTag}>{this.fileProcessingErrors()}</label>
-                            </h5>
-                            <div className="input-3-password-wrapper">
-                                <input value={this.state.newPhoto} onChange={this.handleFileInput("file")} type="password" className="input-3-password" />
+                        <div className="form-username-sec">
+                            <h5 className="form-username-header"> <label className={fileErrorTag}>{this.fileProcessingErrors()}</label></h5>
+                            <div className="username-form-input-sec">
+                                <div className="username-input-wrapper1">
+                                    <input  value={this.state.photo} onChange={this.handleInput("newPhoto")} className="input-1" type="text" />
+                                </div>
                             </div>
                         </div>
+
                         <div className="username-edit-sep"></div>
                     </div>
                     <div className="username-edit-button-sec">
@@ -88,6 +123,9 @@ class EditUserPFP extends React.Component {
 
                 </form>
             </div>
+
+
+
 
         )
 
