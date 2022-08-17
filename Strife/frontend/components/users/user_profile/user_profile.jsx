@@ -256,7 +256,7 @@ class UserProfile extends React.Component {
             <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={e => e.stopPropagation()}>
 
               <div onSubmit={() => this.handleSubmit("deleteUser")}>
-                <DeleteUserAccountContainer />
+                <EditUserPFPContainer/>
 
               </div>
 
