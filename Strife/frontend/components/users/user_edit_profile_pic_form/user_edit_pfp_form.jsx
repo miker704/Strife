@@ -34,6 +34,18 @@ class EditUserPFP extends React.Component {
         this.props.updateUserInfo(submissionState);
       }
 
+      render(){
+
+
+        return(
+            
+        )
+
+
+      }
+
+
+
 }
 
 export default EditUserPFP;
