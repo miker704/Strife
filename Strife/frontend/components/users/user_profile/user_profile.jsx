@@ -37,7 +37,6 @@ class UserProfile extends React.Component {
       password: ""
 
     };
-    this.cancel = false;
     this.handleSubmit = this.handleSubmit.bind(this)
     this.scrambleEmail = this.scrambleEmail.bind(this);
     this.scramblePhoneNumber = this.scramblePhoneNumber.bind(this);
@@ -111,17 +110,7 @@ class UserProfile extends React.Component {
     }
   }
 
-  handleLogout2 (subState) {
-    setTimeout(() => {
-      if (this.props.errors.length === 0) {
-        // this.closeModal(modalName);
-        this.props.closeModal();
-        this.props.logoutUser();
-        this.props.deleteUserAccount(subState)
 
-      }
-    }, 1000);
-  }
 
 
   handleLogout () {
