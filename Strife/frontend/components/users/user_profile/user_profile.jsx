@@ -248,6 +248,23 @@ class UserProfile extends React.Component {
     if (this.state.changePFP === true) {
       window.removeEventListener('keyup', this.props.handleESC, false);
       window.addEventListener('keyup', this.handleESC, false);
+
+
+      return (
+        <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("deleteUser")} >
+          <div className="edit-user-flex-box">
+            <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={e => e.stopPropagation()}>
+
+              <div onSubmit={() => this.handleSubmit("deleteUser")}>
+                <DeleteUserAccountContainer />
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      )
+
     }
   }
 
@@ -420,7 +437,7 @@ class UserProfile extends React.Component {
     this.scramblePhoneNumber();
     this.checkIfDemoUser();
     this.mounted = true;
-   
+
 
     window.addEventListener('keyup', this.props.handleESC, false);
 
