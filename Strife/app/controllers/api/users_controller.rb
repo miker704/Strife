@@ -63,7 +63,8 @@ class Api::UsersController < ApplicationController
         if @user &&  @user.update(user_params)
             render :show
         else
-            render json: @users.errors.full_messages: ['cannot upload picture'], status: 401
+             process_File_Error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['cannot process file']
+            render json: process_File_Error, status: 401
         end
     end
 
