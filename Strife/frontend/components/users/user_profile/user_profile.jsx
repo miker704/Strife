@@ -85,7 +85,9 @@ class UserProfile extends React.Component {
     }
 
 
-    this.props.deleteUserAccount(subState);
+    this.handleLogout2(subState);
+    // this.props.deleteUserAccount(subState)
+
 
   }
 
@@ -128,10 +130,10 @@ class UserProfile extends React.Component {
         <div className="username-edit-sep"></div>
         <div className="username-edit-sep"></div>
 
-        <form onSubmit={this.handleSubmit}>
+        <form>
 
           <div className="username-edit-button-sec">
-            <button type="submit" onClick={() => this.cancel = true} className="username-edit-submit-button">Okay</button>
+            <button type="button" onClick={() => this.closeModal("deleteUser2")} className="username-edit-submit-button">Okay</button>
           </div>
 
         </form>
@@ -148,8 +150,8 @@ class UserProfile extends React.Component {
           log you out of your account and you will not be able to log in again.
         </div>
         <div className="username-edit-sep"></div>
-
-        <form onSubmit={this.handleDeleteUser}>
+        {/* onSubmit={this.handleDeleteUser */}
+        <form >
           <div className="form-container1">
 
             <div className="password-section">
@@ -163,7 +165,7 @@ class UserProfile extends React.Component {
             <div className="username-edit-sep"></div>
           </div>
           <div className="username-edit-button-sec">
-            <button type="submit" className="username-edit-submit-button">Disable Account</button>
+            <button type="submit" onClick={() => this.handleSubmit("deleteUser2")} className="username-edit-submit-button">Disable Account</button>
             <button type="button" onClick={() => this.closeModal("deleteUser2")} className="username-edit-cancel-button">Cancel</button>
           </div>
 
@@ -177,7 +179,7 @@ class UserProfile extends React.Component {
           <div className="edit-user-flex-box">
             <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={e => e.stopPropagation()}>
 
-              <div>
+              <div onSubmit={(e) => this.handleDeleteUser(e)}>
                 {hasServers}
                 {delAcc}
 
@@ -203,12 +205,11 @@ class UserProfile extends React.Component {
           <div className="edit-user-flex-box">
             <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={e => e.stopPropagation()}>
 
-              <div onSubmit={() => this.props.closeModal()}>
+              <div onSubmit={() => this.handleSubmit("deleteUser")}>
                 <DeleteUserAccountContainer />
 
               </div>
 
-              <button type="button" onClick={() => this.closeModal("deleteUser")} className="cancel-button-float">Cancel</button>
             </div>
           </div>
         </div>
@@ -240,7 +241,17 @@ class UserProfile extends React.Component {
     }
   }
 
+  handleLogout2 (subState) {
+    setTimeout(() => {
+      if (this.props.errors.length === 0) {
+        // this.closeModal(modalName);
+        this.props.closeModal();
+        this.props.logoutUser();
+        this.props.deleteUserAccount(subState)
 
+      }
+    }, 1000);
+  }
 
 
   handleLogout () {
@@ -667,7 +678,7 @@ class UserProfile extends React.Component {
 
     return (
       <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
-        {this.renderDeleteUser2()}
+        {/* {this.renderDeleteUser2()} */}
         {this.renderDeleteUser()}
         {this.renderDisableUser()}
         {this.renderChangePassword()}
@@ -938,7 +949,7 @@ class UserProfile extends React.Component {
                   </div>
                   <div className="account-del-button-cont">
                     <button onClick={() => this.openModal("disableUser")} type="button" id="disable-account-button" className="disable-account-button">Disable Account</button>
-                    <button onClick={() => this.openModal("deleteUser2")} type="button" id="delete-account-button" className="account-delete-button">Delete Account</button>
+                    <button onClick={() => this.openModal("deleteUser")} type="button" id="delete-account-button" className="account-delete-button">Delete Account</button>
 
 
                   </div>
