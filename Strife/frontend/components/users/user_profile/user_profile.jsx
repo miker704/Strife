@@ -550,6 +550,7 @@ class UserProfile extends React.Component {
 
     return (
       <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
+        {this.renderChangeUserPFP()}
         {this.renderDeleteUser()}
         {this.renderDisableUser()}
         {this.renderChangePassword()}
