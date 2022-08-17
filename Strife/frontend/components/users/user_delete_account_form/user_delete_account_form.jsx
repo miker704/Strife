@@ -123,8 +123,8 @@ class DeleteUserAccountForm extends React.Component {
                     <div className="username-edit-sep"></div>
                 </div>
                 <div className="username-edit-button-sec">
-                    <button type="submit" className="username-edit-submit-button">Disable Account</button>
-                    {/* <button type="submit" onClick={() => this.cancel = true} className="username-edit-cancel-button">Cancel</button> */}
+                    <button type="submit" className="username-edit-submit-button">Delete Account</button>
+                    <button type="submit" onClick={() => this.cancel = true} className="username-edit-cancel-button">Cancel</button>
                 </div>
 
             </form>
