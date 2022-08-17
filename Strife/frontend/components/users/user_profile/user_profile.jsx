@@ -251,11 +251,11 @@ class UserProfile extends React.Component {
 
 
       return (
-        <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("deleteUser")} >
+        <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("changePFP")} >
           <div className="edit-user-flex-box">
             <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={e => e.stopPropagation()}>
 
-              <div onSubmit={() => this.handleSubmit("deleteUser")}>
+              <div onSubmit={() => this.handleSubmit("changePFP")}>
                 <EditUserPFPContainer/>
 
               </div>
