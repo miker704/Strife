@@ -94,10 +94,10 @@ class EditUserPFP extends React.Component {
             <div id="edit-userInfo-model" className="edit-userInfo-model" >
                 <div className="edit-username-header-section">
                     <div className="edit-username-header">
-                        Change your username
+                        Change your Avatar
                     </div>
                     <div className="edit-username-header-info">
-                        Enter a new username and your existing password
+                        Upload a .jpg, .jpeg, .svg, .gif, or .png file
                     </div>
                 </div>
                 <form onSubmit={this.handleSubmit}>
