@@ -59,7 +59,12 @@ class Api::UsersController < ApplicationController
 
     #addPFP
     def add_PFP
-    
+        @user = User.find(params[:id])
+        if @user &&  @user.update(user_params)
+            render :show
+        else
+            render json: @users.errors.full_messages: ['cannot upload picture'], status: 401
+        end
     end
 
     def change_Password
