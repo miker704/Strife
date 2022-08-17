@@ -884,6 +884,7 @@
 }
 
 
+
 .user-pfp-header {
     color: #fff;
     user-select: none;
@@ -897,6 +898,16 @@
     left: 0;
     right: 0;
     visibility: hidden;
+    background-color: #474b52;
+
+}
+
+
+
+.user-pfp-wrapper:hover .user-pfp-header {
+    visibility: visible;
+    cursor: pointer;
+    opacity: 85%;
 }
 
 
@@ -911,7 +922,7 @@
     object-position: center;
 }
 
-.display-user-pfp {
+#display-user-pfp {
     display: flex;
     margin-left: auto;
     margin-right: auto;
