@@ -724,7 +724,7 @@
 
 
 
-.password-main-header{
+.password-main-header {
     forced-color-adjust: none;
     text-align: center;
     font-weight: 700;
@@ -738,9 +738,9 @@
     word-wrap: break-word;
 }
 
-.password-header-info{
+.password-header-info {
     forced-color-adjust: none;
-    color:hsl(216, 3.7%, 73.5%);
+    color: hsl(216, 3.7%, 73.5%);
     margin-top: 8px;
     text-align: center;
     font-family: "Whitney";
@@ -758,7 +758,7 @@
 .demo-edit-lock-warning {
     position: relative;
     left: 30%;
-    color:brown;
+    color: brown;
     font-family: "ABC Ginto Nord";
     font-weight: 900;
     text-rendering: optimizeLegibility;
@@ -767,10 +767,10 @@
     font-size: 14px;
     transform: translate(-22px, 250px);
     z-index: 9999;
-  }
+}
 
 
-.disable-or-delete-container-warning{
+.disable-or-delete-container-warning {
     margin-right: 4%;
     margin-left: 4%;
     margin-top: 10px;
@@ -782,16 +782,18 @@
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    font-family: "Whitney"; 
+    font-family: "Whitney";
     font-size: 16px;
     font-weight: 500;
-    .disable-delete-account-name{
+
+    .disable-delete-account-name {
         font-weight: 900;
         text-decoration: underline;
     }
 
 }
-.disable-or-delete-container-warning2{
+
+.disable-or-delete-container-warning2 {
     margin-right: 4%;
     margin-left: 4%;
     margin-top: 10px;
@@ -803,14 +805,14 @@
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    font-family: "Whitney"; 
+    font-family: "Whitney";
     font-size: 16px;
     font-weight: 500;
- 
+
 
 }
 
-.has-servers-subtitle-wrapper{
+.has-servers-subtitle-wrapper {
     padding-right: 8px;
     padding-bottom: 20px;
     forced-color-adjust: none;
@@ -824,16 +826,16 @@
     box-sizing: border-box;
 }
 
-.has-servers-subtitle{
-    font-family: "Whitney"; 
+.has-servers-subtitle {
+    font-family: "Whitney";
     font-size: 16px;
     line-height: 20px;
     font-weight: 400;
-    color: hsl(210,2.9%,86.7%);
+    color: hsl(210, 2.9%, 86.7%);
 }
 
 
-.cancel-button-float{
+.cancel-button-float {
     cursor: pointer;
     font-family: "Whitney";
     text-rendering: optimizeLegibility;
@@ -859,7 +861,7 @@
     margin-right: 8px;
     forced-color-adjust: none;
     color: #FFFFFF;
-    transform:translate(17px, -53px);
+    transform: translate(17px, -53px);
     z-index: 21;
 }
 
@@ -870,7 +872,7 @@
 
 // pfp - stylings
 
-.user-pfp-wrapper{
+.user-pfp-wrapper {
     position: relative;
     height: 100px;
     width: 100px;
@@ -882,7 +884,7 @@
 }
 
 
-.user-pfp-header{
+.user-pfp-header {
     color: #fff;
     user-select: none;
     text-align: center;
@@ -898,7 +900,7 @@
 }
 
 
-.user-pfp{
+.user-pfp {
     border-radius: 50%;
     width: 100px;
     height: 100px;
@@ -909,8 +911,14 @@
     object-position: center;
 }
 
-.display-user-pfp{
+.display-user-pfp {
     display: flex;
     margin-left: auto;
     margin-right: auto;
+}
+
+
+.img-upload-hint-icon {
+    content: image_url('uploadimghint.svg');
+    background-color: hsl(210, 2.9%, 86.7%);
 }
