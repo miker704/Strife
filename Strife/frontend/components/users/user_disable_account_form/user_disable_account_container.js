@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import DisableUserAccountForm from "./user_disable_account_form.jsx";
-import { removeSessionErrors, disableUserAccout, logoutUser, removeUserAccount } from "../../../actions/session_actions";
+import { removeSessionErrors, disableUserAccount, logoutUser, removeUserAccount } from "../../../actions/session_actions";
 import { closeModal } from "../../../actions/modal_actions.js";
 
 const mSTP = (state) => {
@@ -16,7 +16,7 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
-        disableUserAccout: (user) => dispatch(disableUserAccout(user)),
+        disableUserAccount: (user) => dispatch(disableUserAccount(user)),
         logoutUser: () => dispatch(logoutUser()),
         removeSessionErrors: () => dispatch(removeSessionErrors()),
         closeModal:() => dispatch(closeModal()),
