@@ -14,6 +14,7 @@ class EditUserPFP extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleCloseModal = this.handleCloseModal.bind(this);
+        this.handleFileInput = this.handleFileInput.bind(this);
     }
 
     componentWillUnmount () {
