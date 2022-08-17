@@ -16,7 +16,7 @@ export const updateUser = (user) => $.ajax({ url: `/api/users/${user.id}/`, meth
 // export const sendUsertoBanWorld = (userId) => $.ajax({ url: `/api/users/${userId}/`, method: "DELETE"});
 // export const removeUser = (userId) => $.ajax({ url: `/api/users/${userId}/`, method: "DELETE" });
 //chnaging params as we are using password before deleting
-export const removeUser = (userId) => $.ajax({ url: `/api/users/${userId.id}/`, method: "DELETE", data: { userId } });
+export const removeUser = (userId) => $.ajax({ url: `/api/users/${userId}/`, method: "DELETE"});
 
 //user search 
 
