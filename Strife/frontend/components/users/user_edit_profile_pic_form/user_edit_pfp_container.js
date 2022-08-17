@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { handleKeyUp } from "../../../utils/modal_api_util";
 import EditUserPFP from "./user_edit_pfp_form";
 import { closeModal, openModal } from "../../../actions/modal_actions";
-import { removeSessionErrors, updateUserInfo } from "../../../actions/session_actions";
+import { removeSessionErrors, updateUserInfo, changeUserPFP } from "../../../actions/session_actions";
 
 
 
@@ -16,6 +16,7 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
+        changeUserPFP: (user) => dispatch(changeUserPFP(user)),
         updateUserInfo : (user) => {dispatch(updateUserInfo(user))},
         openModal: (modal) => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal()),
