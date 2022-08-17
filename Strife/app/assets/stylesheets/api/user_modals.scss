@@ -921,4 +921,19 @@
 .img-upload-hint-icon {
     content: image_url('uploadimghint.svg');
     background-color: hsl(210, 2.9%, 86.7%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px 0 hsla(0, 0%, 0%, 0.2);
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
 }
