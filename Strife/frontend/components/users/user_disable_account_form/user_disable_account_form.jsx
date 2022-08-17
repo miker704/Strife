@@ -49,7 +49,7 @@ class DisableUserAccountForm extends React.Component {
         }
 
 
-        this.props.disableUserAccout(subState).then(() =>{
+        this.props.disableUserAccount(subState).then(() =>{
             this.props.closeModal();
             this.props.logoutUser();
             // this.props.removeUserAccount(this.props.currentUser.id);
