@@ -862,3 +862,55 @@
     transform:translate(17px, -53px);
     z-index: 21;
 }
+
+
+
+
+
+
+// pfp - stylings
+
+.user-pfp-wrapper{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.user-pfp-header{
+    color: #fff;
+    user-select: none;
+    text-align: center;
+    font-size: small;
+    line-height: 100px;
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+}
+
+
+.user-pfp{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background: none;
+    margin: 8px;
+    transition: border-radius .1s;
+    object-fit: cover;
+    object-position: center;
+}
+
+.display-user-pfp{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
