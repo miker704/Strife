@@ -58,7 +58,10 @@ class DeleteUserAccountForm extends React.Component {
 
 
         // this.props.updateUserInfo(subState);
-        this.props.removeUserAccount(subState);
+        this.props.removeUserAccount(subState).then(()=>{
+            // this.props.history.push('/login');
+            // this.props.closeModal();
+        });
     }
 
 
@@ -97,7 +100,7 @@ class DeleteUserAccountForm extends React.Component {
         let delAcc = this.state.hasServers === false ? (<div id="edit-userInfo-model" className="edit-userInfo-model" >
             <div className="remove-phone-form-header-wrapper">
                 <div className="remove-phone-header">
-                    Disable Account
+                    Delete Account
                 </div>
             </div>
             <div className="disable-or-delete-container-warning2">
@@ -122,7 +125,7 @@ class DeleteUserAccountForm extends React.Component {
                 </div>
                 <div className="username-edit-button-sec">
                     <button type="submit" className="username-edit-submit-button">Disable Account</button>
-                    <button type="submit" onClick={() => this.cancel = true} className="username-edit-cancel-button">Cancel</button>
+                    {/* <button type="submit" onClick={() => this.cancel = true} className="username-edit-cancel-button">Cancel</button> */}
                 </div>
 
             </form>
