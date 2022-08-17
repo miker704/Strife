@@ -109,7 +109,7 @@ class Api::UsersController < ApplicationController
             render json: invalid_password_error, status: 401
 
         elsif  @user.is_password?(params[:user][:password])
-                
+                puts 'password success'
                 render :show
         else
             render json: @user.errors.full_messages, status: 401
@@ -119,19 +119,21 @@ class Api::UsersController < ApplicationController
 
     # allow user to delete their strife account 
     def destroy
-        @user = User.find_by(id: params[:id])
+        # @user = User.find_by(id: params[:id])
        
-        if !@user.is_password?(params[:userId][:password])
-            invalid_password_error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['Error Incorrect Password !']
-            render json: invalid_password_error, status: 401
-        elsif @user.is_password?(params[:userId][:password])
-            @user.destroy
-            render :show
+        # if !@user.is_password?(params[:userId][:password])
+        #     invalid_password_error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['Error Incorrect Password !']
+        #     render json: invalid_password_error, status: 401
+        # elsif @user.is_password?(params[:userId][:password])
+        #     @user.destroy
+        #     render :show
         
-        else
-            render json: ['This is not your account'], status: 401
-        end
-        
+        # else
+        #     render json: ['This is not your account'], status: 401
+        # end
+        @user = User.find_by(id: params[:id])
+        @user.destroy;
+        render :show;
         
     end
 
