@@ -29,8 +29,6 @@ class UserProfile extends React.Component {
       removePhoneNumber: false,
       disableUser: false,
       deleteUser: false,
-      deleteUser2: false,
-      hasServers: false,
       demoUser: false,
       userEmail: this.props.currentUser.email,
       userPhone: this.props.currentUser.phone_number,
@@ -61,138 +59,10 @@ class UserProfile extends React.Component {
     this.checkIfDemoUser = this.checkIfDemoUser.bind(this);
     this.renderDeleteUser = this.renderDeleteUser.bind(this);
     this.renderDisableUser = this.renderDisableUser.bind(this);
-    this.renderDeleteUser2 = this.renderDeleteUser2.bind(this);
-    this.handleDeleteUser = this.handleDeleteUser.bind(this);
-    this.passwordErrors = this.passwordErrors.bind(this);
-    this.handleInput = this.handleInput.bind(this);
 
 
 
   }
-
-  handleDeleteUser (e) {
-    e.preventDefault();
-
-    if (this.cancel) {
-      this.props.removeSessionErrors();
-      this.cancel = false;
-
-      return;
-    }
-    let subState = {
-      id: this.props.currentUser.id,
-      password: this.state.password
-    }
-
-
-    this.handleLogout2(subState);
-    // this.props.deleteUserAccount(subState)
-
-
-  }
-
-
-  handleInput (field) {
-    return (e) => { this.setState({ [field]: e.currentTarget.value }) }
-  }
-
-
-  passwordErrors () {
-    if (this.props.errors.includes('Login or password is invalid')) {
-      return " - Password does not match.";
-    }
-    else if (this.props.errors.includes("Error Incorrect Password !")) {
-      return " - Password does not match.";
-    }
-    return "";
-  }
-
-
-
-
-  renderDeleteUser2 () {
-    if (this.state.deleteUser2 === true) {
-      window.removeEventListener('keyup', this.props.handleESC, false);
-      window.addEventListener('keyup', this.handleESC, false);
-      let passwordErrorTag = this.props.errors.length > 0 ? "field-error" : "";
-
-      let hasServers = this.state.hasServers === true ? (<div id="edit-userInfo-model" className="edit-userInfo-model" >
-        <div className="remove-phone-form-header-wrapper">
-          <div className="remove-phone-header">
-            You Own Servers!
-          </div>
-        </div>
-        <div className="has-servers-subtitle-wrapper">
-          <div className="has-servers-subtitle">In order to delete or disable your account you must
-            first transfer ownership of all servers that you own.</div>
-        </div>
-
-        <div className="username-edit-sep"></div>
-        <div className="username-edit-sep"></div>
-
-        <form>
-
-          <div className="username-edit-button-sec">
-            <button type="button" onClick={() => this.closeModal("deleteUser2")} className="username-edit-submit-button">Okay</button>
-          </div>
-
-        </form>
-      </div>) : ("");
-
-      let delAcc = this.state.hasServers === false ? (<div id="edit-userInfo-model" className="edit-userInfo-model" >
-        <div className="remove-phone-form-header-wrapper">
-          <div className="remove-phone-header">
-            Delete Account
-          </div>
-        </div>
-        <div className="disable-or-delete-container-warning2">
-          Are You sure that you want to delete your account? This will immediately
-          log you out of your account and you will not be able to log in again.
-        </div>
-        <div className="username-edit-sep"></div>
-        {/* onSubmit={this.handleDeleteUser */}
-        <form >
-          <div className="form-container1">
-
-            <div className="password-section">
-              <h5 className="password-header1">
-                <label className={passwordErrorTag}>Current Password{this.passwordErrors()}</label>
-              </h5>
-              <div className="input-3-password-wrapper">
-                <input value={this.state.password} onChange={this.handleInput("password")} type="password" className="input-3-password" />
-              </div>
-            </div>
-            <div className="username-edit-sep"></div>
-          </div>
-          <div className="username-edit-button-sec">
-            <button type="submit" onClick={() => this.handleSubmit("deleteUser2")} className="username-edit-submit-button">Disable Account</button>
-            <button type="button" onClick={() => this.closeModal("deleteUser2")} className="username-edit-cancel-button">Cancel</button>
-          </div>
-
-        </form>
-      </div>
-
-      ) : ("");
-
-      return (
-        <div className="edit-userInfo-modal-wrapper" onClick={() => this.closeModal("deleteUser2")} >
-          <div className="edit-user-flex-box">
-            <div id="edit-userInfo-model" className="edit-userInfo-model" onClick={e => e.stopPropagation()}>
-
-              <div onSubmit={(e) => this.handleDeleteUser(e)}>
-                {hasServers}
-                {delAcc}
-
-              </div>
-            </div>
-          </div>
-        </div>
-      )
-
-
-    }
-  }
-
 
 
 
@@ -436,7 +306,6 @@ class UserProfile extends React.Component {
       'removePhoneNumber',
       "disableUser",
       "deleteUser",
-      "deleteUser2"
 
     ];
     for (let i = 0; i < array.length; i++) {
@@ -562,9 +431,7 @@ class UserProfile extends React.Component {
     this.scramblePhoneNumber();
     this.checkIfDemoUser();
     this.mounted = true;
-    if (this.props.currentUser.ownedServers.length > 0) {
-      this.setState({ hasServers: true });
-    }
+   
 
     window.addEventListener('keyup', this.props.handleESC, false);
 
@@ -661,7 +528,6 @@ class UserProfile extends React.Component {
   render () {
     console.log("this is the current state : ", this.state);
     console.log("this is the current props : ", this.props);
-    let passwordErrorTag = this.props.errors.length > 0 ? "field-error" : "";
     let scrambledEmail = this.state.reveal1 === "Reveal" ? this.scrambleEmail() : this.props.currentUser.email;
     let scramblePhone = this.state.reveal === "Reveal" ? this.scramblePhoneNumber() : this.props.currentUser.phone_number;
     const { reveal } = this.state.reveal;
@@ -678,7 +544,6 @@ class UserProfile extends React.Component {
 
     return (
       <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
-        {/* {this.renderDeleteUser2()} */}
         {this.renderDeleteUser()}
         {this.renderDisableUser()}
         {this.renderChangePassword()}
