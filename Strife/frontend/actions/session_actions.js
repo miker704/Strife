@@ -86,7 +86,6 @@ export const changeUserPFP = user => (dispatch) =>
 
 export const disableUserAccout = user => (dispatch) =>
     SessionAPIUtil.disableAccount(user).then((user) => (
-        dispatch(logoutCurrentUser()),
         dispatch(receiveCurrentUser(user))
         ), 
         (err) => (dispatch(receiveSessionErrors(err.responseJSON))));
