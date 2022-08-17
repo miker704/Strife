@@ -831,3 +831,34 @@
     font-weight: 400;
     color: hsl(210,2.9%,86.7%);
 }
+
+
+.cancel-button-float{
+    cursor: pointer;
+    font-family: "Whitney";
+    text-rendering: optimizeLegibility;
+    user-select: none;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    display: flex;
+    -webkit-box-pack: center;
+    position: relative;
+    height: 38px;
+    min-width: 96px;
+    min-height: 38px;
+    width: auto;
+    margin-right: 8px;
+    forced-color-adjust: none;
+    color: #FFFFFF;
+    transform:translate(17px, -53px);
+    z-index: 21;
+}
