@@ -127,10 +127,19 @@ class EditUserPFP extends React.Component {
                     <div className="form-container1">
 
                         <div className="form-username-sec">
-                            <h5 className="form-username-header"> <label className={fileErrorTag}>{this.fileProcessingErrors()}</label></h5>
+                            <h5 className="form-username-header"> <label className={fileErrorTag}>Avatar{this.fileProcessingErrors()}</label></h5>
                             <div className="username-form-input-sec">
                                 <div className="username-input-wrapper1">
-                                    <input value={this.state.photo} onChange={this.handleInput("newPhoto")} className="input-1" type="text" />
+
+                                    <div className="user-pfp-wrapper">
+
+                                        <p className="user-pfp-header">upload new avatar</p>
+                                        <img className="img-upload-hint-icon" />
+                                        <img className="user-pfp" id="display-user-pfp" src={this.state.photo_url} alt={this.state.photo_url} />
+                                    </div>
+
+                                    <input type='file' accept=".jpg, .jpeg, .svg, .png, .gif" onChange={this.handleFileInput} />
+                                    {/* <input value={this.state.photo} onChange={this.handleInput("newPhoto")} className="input-1" type="text" /> */}
                                 </div>
                             </div>
                         </div>
@@ -138,7 +147,7 @@ class EditUserPFP extends React.Component {
                         <div className="username-edit-sep"></div>
                     </div>
                     <div className="username-edit-button-sec">
-                        <button type="submit" className="username-edit-submit-button">Done</button>
+                        <button type="submit" className="username-edit-submit-button">Save</button>
                         <button type="submit" onClick={() => this.cancel = true} className="username-edit-cancel-button">Cancel</button>
                     </div>
 
