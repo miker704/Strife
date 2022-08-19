@@ -38,7 +38,6 @@ class ServerNavBar extends React.Component {
 
         console.log(this.props.servers);
         console.log(this.props.serverId);
-        // console.log(`/channels/${server.id}/${server.general_channelId}`)
 
         let userServer = this.props.servers.map((server, serverIndex) => {
             let serverNavBarClassTag = this.props.serverId === server.id.toString() ? "selected-Server" : "unselected-Server";
