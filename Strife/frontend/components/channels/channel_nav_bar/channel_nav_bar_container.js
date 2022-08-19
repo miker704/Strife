@@ -1,2 +1,10 @@
 import { withRouter } from "react-router";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
+
+
+const mSTP = (state) => {
+
+    return {
+
+    }
+};
