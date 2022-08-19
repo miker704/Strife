@@ -545,8 +545,6 @@ class UserProfile extends React.Component {
 
 
     let default_profile_pic = this.props.currentUser.photo === undefined ? default_PFP : this.props.currentUser.photo;
-    console.log("this is the current state : ", this.state);
-    console.log("this is the current props : ", this.props);
     let scrambledEmail = this.state.reveal1 === "Reveal" ? this.scrambleEmail() : this.props.currentUser.email;
     let scramblePhone = this.state.reveal === "Reveal" ? this.scramblePhoneNumber() : this.props.currentUser.phone_number;
     const { reveal } = this.state.reveal;
