@@ -98,6 +98,10 @@
     user-select: none;
 }
 
+.edit-userInfo-model input[type=file]{
+    display: none;
+}
+
 
 .edit-username-header-section {
     align-items: center;
@@ -885,6 +889,7 @@
 
 
 
+
 .user-pfp-header {
     color: #fff;
     user-select: none;
@@ -948,3 +953,4 @@
     -webkit-box-align: center;
     align-items: center;
 }
+
