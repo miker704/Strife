@@ -8,7 +8,7 @@ import EditUserPhoneNumberContainer from "../user_edit_phone_number_form/user_ed
 import RemoveUserPhoneNumberContainer from "../user_remove_phone_number_form/user_remove_phone_number_container.js"
 import DisableUserAccountContainer from "../user_disable_account_form/user_disable_account_container.js"
 import DeleteUserAccountContainer from "../user_delete_account_form/user_delete_account_container.js"
-
+import default_PFP from "/app/assets/images/defaultProfilePic.png";
 
 class UserProfile extends React.Component {
 
@@ -542,6 +542,9 @@ class UserProfile extends React.Component {
 
 
   render () {
+
+
+    let default_profile_pic = this.props.currentUser.photo === undefined ? default_PFP : this.props.currentUser.photo;
     console.log("this is the current state : ", this.state);
     console.log("this is the current props : ", this.props);
     let scrambledEmail = this.state.reveal1 === "Reveal" ? this.scrambleEmail() : this.props.currentUser.email;
@@ -669,7 +672,8 @@ class UserProfile extends React.Component {
 
                       <div className="account-avatar-wrapper">
 
-                        <img className="user-avatar-img" />
+                        {/* <img className="user-avatar-img" /> */}
+                        <img src={default_profile_pic} alt="user pfp" />
 
                       </div>
 
