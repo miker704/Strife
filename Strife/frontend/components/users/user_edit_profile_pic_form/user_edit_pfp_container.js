@@ -16,7 +16,8 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
-        changeUserPFP: (user) => dispatch(changeUserPFP(user)),
+        changeUserPFP: (userId,formData) => dispatch(changeUserPFP(userId,formData)),
+        // changeUserPFP: (user) => dispatch(changeUserPFP(user)),
         updateUserInfo : (user) => {dispatch(updateUserInfo(user))},
         openModal: (modal) => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal()),
