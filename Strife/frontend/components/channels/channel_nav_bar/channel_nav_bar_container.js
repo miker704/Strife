@@ -1,6 +1,7 @@
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import ChannelNavBar from "./channel_nav_bar";
+import { fetchChannel } from "../../../actions/channel_actions";
 
 const mSTP = (state) => {
 
