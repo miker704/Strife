@@ -12,7 +12,6 @@ import ChannelNavBarContainer from "./channels/channel_nav/channel_nav_bar_conta
 import UserNavContainer from './users/user_nav/user_nav_container';
 import ServerNavBarContainer from './server/server_nav_bar/server_nav_bar_container';
 import ModalManagerContainer from './modals/modal_manager_container';
-import UserProfileContainer from './users/user_profile/user_profile_container';
 
 const App = () => (
     <div>
@@ -20,6 +19,8 @@ const App = () => (
         <Route path='/' component={ModalManagerContainer}></Route>
         <ProtectedRoute path="/channels/@me" component={ServerNavBarContainer} />
         <ProtectedRoute path="/channels/:serverId/" component={ServerNavBarContainer} />
+        <ProtectedRoute path="/channels/:serverId/:channelId" component={ChannelNavBarContainer} />
+        
         {/* <ProtectedRoute path="/channels/@me" component={UserNavContainer}/> */}
         <ProtectedRoute path="/channels/" component={UserNavContainer}/>
 
@@ -27,21 +28,15 @@ const App = () => (
 
         <Switch>
 
-            {/* <Route exact path="/"> <SplashContainer/> </Route> */}
             <AuthRoute exact path="/" component={SplashContainer} />
             <AuthRoute path="/register" component={SessionSignUpFormContainer} />
             <AuthRoute path="/login" component={SessionSignInFormContainer} />
-            {/* <ProtectedRoute path="/channels/@me" component={UserNavContainer}/> */}
-            {/* <Route path='/' component={ModalManager}></Route> */}
-
-
 
         </Switch>
 
 
     <Switch>
 
-        <ProtectedRoute path="/users/:userId" component={UserProfileContainer}/>
 
     </Switch>
 
