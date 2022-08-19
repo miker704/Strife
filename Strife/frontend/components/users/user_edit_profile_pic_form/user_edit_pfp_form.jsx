@@ -94,19 +94,8 @@ class EditUserPFP extends React.Component {
                 photo: this.state.photo
             }
         }
-        console.log("photo type being uploaded : ", typeof this.state.photo);
-        console.log("photo type uploaded : ", this.state.photo);
-        console.log("photo url type being uploaded : ", typeof this.state.photo_url);
-        console.log("photo url uploaded : ", this.state.photo_url);
-        console.log("substate: ");
-        console.table(submissionState);
-        console.log("form data : ");
-        console.log(formData);
-        console.log("form data type: ");
-
-        // this.props.changeUserPFP(submissionState)
+       
         this.props.changeUserPFP(this.props.currentUser.id,formData);
-        // this.props.changeUserPFP(this.props.currentUser.id,submissionState);
 
         this.setState({
             submit: true,
@@ -115,21 +104,7 @@ class EditUserPFP extends React.Component {
 
     render () {
 
-        //checking to see what is what 
-        console.log("user photo : ", this.props.currentUser.photo);
-
-        if(this.props.currentUser.photo === null){
-            console.log("its null")
-        }
-        if(this.props.currentUser.photo === ""){
-            console.log("blank")
-        }
-        if(this.props.currentUser.photo === undefined){
-            console.log("its undefined")
-        }
-
-        console.log("user photo state : ", this.state);
-
+        
         let fileErrorTag = this.props.errors.length > 0 ? "field-error" : "";
 
 
