@@ -8,7 +8,7 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 
 import SessionSignInFormContainer from './session/session_signin_form_container';
 import SessionSignUpFormContainer from './session/session_signup_form_container';
-import ChannelNavBarContainer from "./channels/channel_nav/channel_nav_bar_container"
+import ChannelNavBarContainer from './channels/channel_nav_bar/channel_nav_bar_container';
 import UserNavContainer from './users/user_nav/user_nav_container';
 import ServerNavBarContainer from './server/server_nav_bar/server_nav_bar_container';
 import ModalManagerContainer from './modals/modal_manager_container';
