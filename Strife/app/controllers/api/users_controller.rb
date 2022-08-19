@@ -59,12 +59,23 @@ class Api::UsersController < ApplicationController
 
     #addPFP
     def change_User_PFP
-        @user = User.find(params[:id])
-        if @user &&  @user.update(user_params)
+        @user = User.find_by(id: params[:id])
+        # debugger
+        # puts 'current backend params : '
+        # puts user_params
+        # puts 'current backend params[photo] : '
+        # data_ = params[:user][:username]
+        # puts data_
+        # if user_params[:photo] 
+        if @user.update(user_params)
+            # @user.photo = user_params[:photo]
+            # @user.save!
+            # @user.photo
+            puts 'update photo sucessful'
             render :show
         else
              process_File_Error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['cannot process file']
-            render json: process_File_Error, status: 401
+            render json: process_File_Error, status: 400
         end
     end
 
@@ -115,7 +126,6 @@ class Api::UsersController < ApplicationController
             render json: invalid_password_error, status: 401
 
         elsif  @user.is_password?(params[:user][:password])
-                puts 'password success'
                 render :show
         else
             render json: @user.errors.full_messages, status: 401
