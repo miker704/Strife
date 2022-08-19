@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import default_PFP from "/app/assets/images/defaultProfilePic.png";
 
 
 class UserNavBar extends React.Component {
@@ -36,6 +37,8 @@ class UserNavBar extends React.Component {
   render () {
     let mic_component_className = this.state.micMute === false ? "user-settings-toggle" : "user-settings-toggle-muted";
     let headphone_component_className = this.state.deafen === false ? "" : "";
+    let default_profile_pic = this.props.currentUser.photo === undefined ? default_PFP : this.props.currentUser.photo;
+
 
     let mic_component = this.state.micMute === false ?
       (<svg onClick={() => this.setState({ micMute: true })} className="svg-microphone" width="20" height="20" viewBox="0 0 20 20">
@@ -96,9 +99,12 @@ class UserNavBar extends React.Component {
     return (
       <div className="user-nav-bar">
         <div id="username">
-          <div className={`user-icon color-${this.props.currentUser.color_tag}`}>
+
+          {/* <div className={`user-icon color-${this.props.currentUser.color_tag}`}>
             <i className="fa-brands fa-discord" />
-          </div>
+          </div> */}
+          <img src={default_profile_pic} alt="user pfp" />
+
           <div id="user-account-info">
             <h3>{this.props.currentUser.username}</h3>
             <p>#{this.props.currentUser.strife_id_tag}</p>
