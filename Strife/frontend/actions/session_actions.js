@@ -80,12 +80,18 @@ export const changePassword = user => (dispatch) =>
     SessionAPIUtil.changePassword(user).then((user) => (dispatch(receiveCurrentUser(user))), (err) => (dispatch(receiveSessionErrors(err.responseJSON))));
 
 
-export const changeUserPFP = user => (dispatch) =>
-    SessionAPIUtil.changeUserPFP(user).then((user) => (dispatch(receiveCurrentUser(user))), (err) => (dispatch(receiveSessionErrors(err.responseJSON))));
+// export const changeUserPFP = user => (dispatch) =>
+//     SessionAPIUtil.changeUserPFP(user).then((user) => (dispatch(receiveCurrentUser(user))), (err) => (dispatch(receiveSessionErrors(err.responseJSON))));
+
+
+export const changeUserPFP = (userId, formData) => (dispatch) =>
+    SessionAPIUtil.changeUserPFP(userId, formData).then((user) => (dispatch(receiveCurrentUser(user))), (err) => (dispatch(receiveSessionErrors(err.responseJSON))));
+
+
 
 
 export const disableUserAccount = user => (dispatch) =>
     SessionAPIUtil.disableAccount(user).then((user) => (
         dispatch(receiveCurrentUser(user))
-        ), 
+    ),
         (err) => (dispatch(receiveSessionErrors(err.responseJSON))));
