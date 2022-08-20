@@ -1,3 +1,4 @@
+require 'open-uri'
 class Api::UsersController < ApplicationController
 
 
@@ -69,9 +70,10 @@ class Api::UsersController < ApplicationController
         # if user_params[:photo] 
         if @user.update(user_params)
             # @user.photo = user_params[:photo]
-            # @user.save!
+            @user.save!
             # @user.photo
             puts 'update photo sucessful'
+
             render :show
         else
              process_File_Error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['cannot process file']
