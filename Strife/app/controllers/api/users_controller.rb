@@ -116,7 +116,7 @@ class Api::UsersController < ApplicationController
     #search up other users
     def search 
         userName = params[:username]
-        @user = User.where('username ~ ? and id != ?', userName, current_user.id)
+        @users = User.where('username ~ ? and id != ?', userName, current_user.id)
         render :searchResult
     end
 
