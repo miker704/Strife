@@ -31,6 +31,7 @@ class ServerNavBar extends React.Component {
     render () {
         
         let goHome = this.props.serverId === "@me" ? "selected-Server" : "unselected-Server";
+        console.log("server currentUser props: ",this.props.currentUser);
         console.log("server navbar props: ",this.props);
         console.log("server navbar serverid: ",this.props.serverId);
         
@@ -46,7 +47,8 @@ class ServerNavBar extends React.Component {
                     <div className="server-nav-bar-a">
                         <Link to={`/channels/${server.id}/${server.general_channel_id}`}
                         
-                            onClick={() => this.props.fetchServer(server.id)} className={serverNavBarClassTag}>
+                            onClick={() => this.props.fetchServer(server.id)} 
+                            className={serverNavBarClassTag}>
                             {/* <p className="server-name-initials">{server.server_name.charAt(0)}</p> */}
                             <p className="server-name-initials">{this.splitServerName(server.server_name, server.server_icon)}</p>
 
