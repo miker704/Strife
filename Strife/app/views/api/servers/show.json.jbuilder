@@ -11,7 +11,8 @@ json.server do
   json.users do 
     @server.members.each do |member|
       json.set! member.id do
-        json.extract! member, :id, :username, :email, :online, :phone_number, :strife_id_tag, :color_tag , :photo
+        json.extract! member, :id, :username, :email, :online, :phone_number, :strife_id_tag, :color_tag 
+        json.photo url_for(member.photo) if member.photo.attached?
       end
     end
   end
