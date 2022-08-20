@@ -37,7 +37,8 @@ class UserNavBar extends React.Component {
   render () {
     let mic_component_className = this.state.micMute === false ? "user-settings-toggle" : "user-settings-toggle-muted";
     let headphone_component_className = this.state.deafen === false ? "" : "";
-    let default_profile_pic = this.props.currentUser.photo === undefined ? default_PFP : this.props.currentUser.photo;
+    let default_profile_pic = this.props.currentUser.photo === undefined ? "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png" : this.props.currentUser.photo;
+    // let default_profile_pic = this.props.currentUser.photo === undefined ? default_PFP : this.props.currentUser.photo;
 
 
     let mic_component = this.state.micMute === false ?
@@ -103,7 +104,9 @@ class UserNavBar extends React.Component {
           {/* <div className={`user-icon color-${this.props.currentUser.color_tag}`}>
             <i className="fa-brands fa-discord" />
           </div> */}
-          <img src={default_profile_pic} alt="user pfp" />
+                        {/* <img className="user-avatar-img" /> */}
+
+          <img src={default_profile_pic} alt="pfp" />
 
           <div id="user-account-info">
             <h3>{this.props.currentUser.username}</h3>
