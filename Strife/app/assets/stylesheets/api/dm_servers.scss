@@ -1,3 +1,34 @@
 // Place all the styles related to the api::DmServers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.dm-server-nav-bar {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    height: calc(100vh - 49px);
+    background-color: #2f3136;
+    width: 225px;
+    padding-left: 5px;
+    padding-right: 5px;
+    transform: translate(75px, 0px);
+    z-index: 2;
+}
+
+
+.fake-nav-bar {
+    height: 50px;
+    width: 225px;
+}
+
+
+.split-line{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 1.5px;
+    width: 235px;
+    background-color: #232428;
+    transform: translate(0px, 50px);
+}
