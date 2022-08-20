@@ -543,8 +543,8 @@ class UserProfile extends React.Component {
 
   render () {
 
-
-    let default_profile_pic = this.props.currentUser.photo === undefined ? default_PFP : this.props.currentUser.photo;
+    let default_profile_pic = this.props.currentUser.photo === undefined ? <img className="user-avatar-img" />  :  <img src={this.props.currentUser.photo} alt="pfp" />
+    // let default_profile_pic = this.props.currentUser.photo === undefined ? "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png" : this.props.currentUser.photo;
     let scrambledEmail = this.state.reveal1 === "Reveal" ? this.scrambleEmail() : this.props.currentUser.email;
     let scramblePhone = this.state.reveal === "Reveal" ? this.scramblePhoneNumber() : this.props.currentUser.phone_number;
     const { reveal } = this.state.reveal;
@@ -671,7 +671,8 @@ class UserProfile extends React.Component {
                       <div className="account-avatar-wrapper">
 
                         {/* <img className="user-avatar-img" /> */}
-                        <img src={default_profile_pic} alt="user pfp" />
+                        {/* <img src={default_profile_pic} alt="pfp" /> */}
+                        {default_profile_pic}
 
                       </div>
 
