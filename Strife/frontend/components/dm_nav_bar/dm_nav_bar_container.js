@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { fetchDmServers } from "../../actions/dm_server_actions";
+import { openModal } from "../../actions/modal_actions";
 import DmNavBar from "./dm_nav_bar";
 
 const mSTP = (state, ownProps) => {
@@ -15,7 +16,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
     return {
-
+        openModal: (modal) => dispatch(openModal(modal)),
         fetchUserDmServers: (userId) => dispatch(fetchDmServers(userId))
 
     }
