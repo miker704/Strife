@@ -116,7 +116,7 @@ class EditUserPFP extends React.Component {
                         Change your Avatar
                     </div>
                     <div className="edit-username-header-info">
-                        Upload a .jpg, .jpeg, .svg, .gif, or .png file
+                        Upload a .jpg, .jpeg, .gif, or .png file
                     </div>
                 </div>
                 <form onSubmit={this.handleSubmit}>
