@@ -7,7 +7,7 @@ export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const REMOVE_CURRENT_USER = "REMOVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const REMOVE_SESSION_ERRORS = "REMOVE_SESSION_ERRORS";
-
+export const RECEIVE_USER_SEARCH = "RECEIVE_USER_SEARCH";
 
 export const receiveCurrentUser = currentUser => {
     return {
@@ -44,6 +44,12 @@ export const removeSessionErrors = () => {
     }
 }
 
+export const receiveUserSearch = (users) => {
+    return{
+        type: RECEIVE_USER_SEARCH,
+        users
+    }
+}
 
 
 //ajax dispatch
@@ -69,8 +75,8 @@ export const removeUserAccount = userId => (dispatch) =>
     SessionAPIUtil.removeUser(userId).then(() => { dispatch(logoutCurrentUser()), dispatch(removeCurrentUser(userId)) }, (err) => dispatch(receiveSessionErrors(err.responseJSON)));
 
 //search up a user 
-// export const searchUpUser = userId => (dispatch) =>
-// SessionAPIUtil.searchUsers()
+export const searchUsers = username => (dispatch) =>
+SessionAPIUtil.searchUsers(username).then((users) => (dispatch(receiveUserSearch(users))), (err) => dispatch(receiveSessionErrors(err.responseJSON)));
 
 export const removePhoneNumber = user => (dispatch) =>
     SessionAPIUtil.removePhoneNumber(user).then((user) => (dispatch(receiveCurrentUser(user))), (err) => dispatch(receiveSessionErrors(err.responseJSON)));
@@ -79,9 +85,6 @@ export const removePhoneNumber = user => (dispatch) =>
 export const changePassword = user => (dispatch) =>
     SessionAPIUtil.changePassword(user).then((user) => (dispatch(receiveCurrentUser(user))), (err) => (dispatch(receiveSessionErrors(err.responseJSON))));
 
-
-// export const changeUserPFP = user => (dispatch) =>
-//     SessionAPIUtil.changeUserPFP(user).then((user) => (dispatch(receiveCurrentUser(user))), (err) => (dispatch(receiveSessionErrors(err.responseJSON))));
 
 
 export const changeUserPFP = (userId, formData) => (dispatch) =>
