@@ -14,13 +14,12 @@ export const updateUser = (user) => $.ajax({ url: `/api/users/${user.id}/`, meth
 // delete a user - >> this probably wont be used at all mostly as a test 
 
 // export const sendUsertoBanWorld = (userId) => $.ajax({ url: `/api/users/${userId}/`, method: "DELETE"});
-// export const removeUser = (userId) => $.ajax({ url: `/api/users/${userId}/`, method: "DELETE" });
 //chnaging params as we are using password before deleting
 export const removeUser = (userId) => $.ajax({ url: `/api/users/${userId}/`, method: "DELETE" });
 
 //user search 
 
-export const searchUsers = () => $.ajax({ url: "/api/users/", method: "GET" });
+export const searchUsers = (username) => $.ajax({ url: `/api/search/${username}`, method: "GET" });
 
 
 export const removePhoneNumber = (user) => $.ajax({ url: `/api/users/${user.id}/removephone/`, method: "PATCH", data: { user } });
@@ -35,16 +34,5 @@ $.ajax({
      contentType: false,
      processData: false
     });
-
-
-
-// export const changeUserPFP = (user) =>
-//     $.ajax({
-//         url: `/api/users/${user.id}/changeUserPFP/`,
-//         method: "PATCH",
-//         data: {user},
-//         contentType: false,
-//         processData: false
-//     });
 
 export const disableAccount = (user) => $.ajax({ url: `/api/users/${user.id}/disableAccount/`, method: "PATCH", data: { user } });
