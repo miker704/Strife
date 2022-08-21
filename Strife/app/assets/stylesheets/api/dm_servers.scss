@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//dm nav bar container
+
 
 .dm-server-nav-bar {
     top: 0px;
@@ -23,7 +25,7 @@
 }
 
 
-.split-line{
+.split-line {
     position: absolute;
     left: 0px;
     top: 0px;
@@ -32,3 +34,105 @@
     background-color: #232428;
     transform: translate(0px, 50px);
 }
+
+.dm-list-header {
+    display: flex;
+    text-align: left;
+    color: rgb(150, 152, 157);
+    padding-left: 5px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: "Ginto";
+}
+
+.dm-tool-tip {
+    visibility: hidden;
+    font-size: 12px;
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    background-color: rgb(25, 25, 28);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-45px, -55px);
+    color: rgb(225, 225, 225);
+}
+
+.create-channel-div:hover .dm-tool-tip {
+    visibility: visible;
+}
+
+
+.dm-tool-tip::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(25, 25, 28) transparent transparent transparent;
+}
+
+
+
+.dm-nav-bar-list {
+    height: 84%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.dm-nav-bar-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.dm-nav-bar-list::-webkit-scrollbar-thumb {
+    background: rgb(30, 35, 40);
+    border-radius: 5px;
+}
+
+.dm-nav-bar-list::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgb(40, 45, 50)
+}
+
+.dm-nav-bar-list a {
+    border-radius: 5px;
+    text-decoration: none;
+    color: rgb(151, 152, 157);
+}
+
+.dm-member-li-item{
+    display: flex;
+    padding-top: 7.5px;
+    padding-left: 15px;
+    padding-bottom: 7.5px;
+    border-radius: 5px;
+}
+
+
+.dm-member-li-item:hover{
+    background-color: #3A3C43;
+
+}
+
+.dm-member-username{
+    padding-left: 10px;
+    padding-top: 3px;
+    font-family: "Whitney";
+    font-size: 16px;
+}
+
+.selected-dm{
+    background-color: #3A3C43;
+    color: #FFFFFF;
+
+}
+
+
