@@ -5,7 +5,7 @@ import channelReducer from "./channel_reducer.js";
 import messageReducer from "./message_reducer.js";
 import dmServerReducer from "./dm_server_reducer.js";
 import dmMessageReducer from "./dm_message_reducer.js";
-
+import userSearchReducer from "./user_search_reducer.js";
 
 const EntitiesReducer = combineReducers({
     users: userReducer,
@@ -13,7 +13,8 @@ const EntitiesReducer = combineReducers({
     channels: channelReducer,
     messages: messageReducer,
     dmServers: dmServerReducer,
-    dmMessages: dmMessageReducer
+    dmMessages: dmMessageReducer,
+    userSearch: userSearchReducer
 
 });
 
