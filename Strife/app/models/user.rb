@@ -34,7 +34,7 @@ class User < ApplicationRecord
 
     validates :email, :username, :password_digest, :session_token, :strife_id_tag, :birthday, presence: true
     validates :username, uniqueness: {scope: :strife_id_tag}
-    validates :username, length: {minimum:2, maximum:32},  uniqueness: {case_sensitive: false}
+    validates :username, length: {minimum:2, maximum:32}
     validates :email, uniqueness: true
     validates :email, format: {with: /\A[\w+-.]+@[a-z\d-]+(.[a-z\d-]+)*.[a-z]+\z/i, message: "Not well formed email address"}, 
     length: {maximum:320, too_long: "Must be 320 or fewer in Length"},uniqueness: {case_sensitive: false}
