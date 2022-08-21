@@ -116,7 +116,9 @@ class Api::UsersController < ApplicationController
     #search up other users
     def search 
         username = params[:username]
-        @users = User.where('username ~ ? and id != ?', username, current_user.id)
+        # @users = User.where('username ~ ? and id != ?', username, current_user.id) <--not case sensitive
+        @users = User.where('lower(username) ~ ? and id != ?', username.downcase, current_user.id)
+
         render :searchResult
     end
 
