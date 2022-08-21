@@ -53,7 +53,7 @@ class DmNavBar extends React.Component{
         <div className="list-header">
           <h4>DIRECT MESSAGES</h4>
           <div className="create-channel-div" onClick={() => this.toggleSearch()}> 
-            <i className="fa-solid fa-plus"/> 
+            <i className="fa-solid fa-plus" onClick={() => this.props.openModal("userSearch")}/> 
               <div className="create-tool-tip"> 
                 <span>Create DM</span>
             </div>
