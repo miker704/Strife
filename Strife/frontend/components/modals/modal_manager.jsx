@@ -6,7 +6,7 @@ import EditUserPasswordContainer from "../users/user_edit_password_form/user_edi
 import EditUserEmailContainer from "../users/user_edit_email_form/user_edit_email_container.js";
 import EditUserPhoneNumberContainer from "../users/user_edit_phone_number_form/user_edit_phone_number_container.js";
 import EditUserNameContainer from "../users/user_edit_username_form/user_edit_username_container.js";
-
+import UserSearchContainer from "../users/user_search_modal/user_search_container.js";
 
 
 
@@ -56,13 +56,12 @@ class ModalManager extends React.Component {
             // case "SearchServerForm":
             //     renderedModal = <EditServerFormContainer />
             //     break;
-            case 'editUsername':
+            case 'userSearch':
                 // renderedModal = (<div className="modal-child-component" onClick={e => e.stopPropagation()}>
                 //     <EditUserNameContainer />
                 // </div>)
-
+                renderedModal = <UserSearchContainer/>
                     
-                subModal = <EditUserNameContainer />
 
                 break;
 
