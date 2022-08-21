@@ -50,17 +50,17 @@ class DmNavBar extends React.Component{
         <div className="fake-nav-bar"/> 
         <div className="split-line"/> 
         <br/> 
-        <div className="list-header">
+        <div className="dm-list-header">
           <h4>DIRECT MESSAGES</h4>
           <div className="create-channel-div" onClick={() => this.toggleSearch()}> 
             <i className="fa-solid fa-plus" onClick={() => this.props.openModal("userSearch")}/> 
-              <div className="create-tool-tip"> 
+              <div className="dm-tool-tip"> 
                 <span>Create DM</span>
             </div>
           </div>
         </div>
         {/* {this.renderSearch()} */}
-        <ul id="dm-nav-list"> 
+        <ul className="dm-nav-bar-list"> 
           {this.props.dmUsers.map((member) => {
           let selectedDm = this.props.otherUserId === member.id.toString()
             ? "selected-dm" : " ";
@@ -70,11 +70,11 @@ class DmNavBar extends React.Component{
             key={member.id}
             to={`/servers/@me/${member.id}/${member.dmMemberid}`}
             > 
-              <li className={`dm-member-item ${selectedDm}`}>
-                <div className={`user-icon color-${member.colorId}`}>
+              <li className={`dm-member-li-item ${selectedDm}`}>
+                <div className={`user-icon color-${member.color_tag}`}>
                   <i className="fa-brands fa-discord"/>
                 </div>
-                <h5 className='member-username'> {member.username} </h5>
+                <h5 className='dm-member-username'> {member.username} </h5>
               </li>
             </Link>
                 )
