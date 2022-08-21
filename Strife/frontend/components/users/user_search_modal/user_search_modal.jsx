@@ -9,24 +9,12 @@ class UserSearchModal extends React.Component {
         //set search state based on which type of search we are doing dm search or server search
         //users
 
-        if (this.props.searchFor === 'invite') {
-            let serverMembers = this.props.server.users.map((user) => {
-                user.username
-            });
-
-            this.state = {
-                username: "",
-                users: [],
-                serverMembers
-            };
-        }
-        else {
             this.state = {
                 username: "",
                 users: [],
                 serverMembers: []
             }
-        }
+        
 
 
 
@@ -35,6 +23,8 @@ class UserSearchModal extends React.Component {
         this.searchDMUsers = this.searchDMUsers.bind(this);
         this.cancel_Search = this.cancel_Search.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.addUser = this.addUser.bind(this);
+        this.dmFooter = this.dmFooter.bind(this);
     }
 
     cancel_Search (e) {
@@ -43,16 +33,101 @@ class UserSearchModal extends React.Component {
 
     updateName (e) {
         e.preventDefault();
-        
+        // debugger
+        const username = e.currentTarget.value;
+        this.setState({ username: username });
+        if (username.length > 0) {
+            // this.props.searchUsers(username.toLowerCase());
+            this.props.searchUsers(username)
+        }
     }
 
-    handleSubmit(){
-
+    handleSubmit (e) {
+        e.preventDefault();
+        let channel_type;
     }
 
     searchDMUsers () {
+    // let default_profile_pic = user.photo === undefined ? 
+    // <img src="https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png" className="settings-img" alt="pfp"/>  : 
+    //  <img src={user.photo} className="settings-img" alt="pfp" />
 
+        if (this.state.username.length > 0) {
+            if (this.props.searchedUsers.length < 1) {
+                return <div className="no-users-found">NO RESULTS FOUND</div>
+            }
+            return this.props.searchedUsers.map((user)=>{
+                <div 
+                className="searched-user-wrapper"
+                onClick={()=> this.addUser(user.username)}
+                >
+                    <div className="searched-user">
+                        <div className="searched-user-pfp">
+                            <img className="settings-img" 
+                            src={user.photo === undefined ? 
+                                "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png" :
+                                user.photo
+                                } alt="pfp" />
+                        </div>
+                        <div className="searched-user-username" key={user.username}>{user.username}</div>
+                    </div>
+                    <div id={user.username} className={`search-user-checkbox ${
+                        this.state.users.includes(user.username) ? "search-user-checkbox-checked" : ""}`}>
+                            {this.state.users.includes(user.username) ? (
+                                 <svg
+                                 aria-hidden="true"
+                                 width="18"
+                                 height="18"
+                                 viewBox="0 0 24 24"
+                               >
+                                 <path
+                                   fill="hsl(217, calc(var(--saturation-factor, 1) * 7.6%), 33.5%)"
+                                   fillRule="evenodd"
+                                   clipRule="evenodd"
+                                   d="M8.99991 16.17L4.82991 12L3.40991 13.41L8.99991 19L20.9999 7.00003L19.5899 5.59003L8.99991 16.17Z"
+                                 ></path>
+                               </svg>
+                            ) : null}
+                        </div>
+
+                </div>
+            });
+        }
+        else{
+            return null;
+        }
     }
+
+
+    addUser(username){
+        if(this.state.users.includes(username)){
+            let users = this.state.users;
+            let idx = users.indexOf(username);
+            if(idx > -1){
+                users.splice(idx,1);
+                this.setState({users});
+            }
+        }
+        else{
+            let users = this.state.users;
+            users.push(username);
+            this.setState({users});
+        }
+    }
+
+    dmFooter(){
+        return (
+            <div className="search-modal-footer">
+                <button className={`search-modal-submit search-modal-submit-${this.state.users.length<1}`}
+                    onClick={this.handleSubmit}
+                    disabled={this.state.users.length<1}
+                >
+                    Create Dm
+                </button>
+            </div>
+        )
+    }
+
 
     render () {
         console.log("user search props: ", this.props);
@@ -81,15 +156,10 @@ class UserSearchModal extends React.Component {
                             onChange={this.updateName} />
                     </div>
                     <div className="search-result-list">
-                        {this.props.searchFor === 'invite' ?
-                            this.searchedServerUsers() :
-                            this.searchDMUsers()}
+                        { this.searchDMUsers()}
                     </div>
                 </div>
-                {this.props.searchFor === 'invite' ?
-                    this.serverFooter() :
-                    this.dmFooter()
-                }
+                {this.dmFooter()}
 
             </div>
         )
