@@ -5,6 +5,10 @@ class EmptyMessagesContainer extends React.Component{
         super(props);
     }
     render(){
-        
+            return (
+                <div className="empty-messages-container"></div>
+            )
     }
 }
+
+export default EmptyMessagesContainer;
