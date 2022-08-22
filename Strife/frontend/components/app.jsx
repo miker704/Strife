@@ -40,6 +40,14 @@ const App = () => (
     </Switch> */}
 
 
+
+    {/* render proper component for messages type or friends list */}
+    <Switch>
+        <ProtectedRoute path="/channels/@me" component={EmptyMessagesContainer}/>
+        
+    </Switch>
+
+
     <Switch>
 
         {/* <ProtectedRoute path="/channels/:serverId/:channelId" component={ChannelNavBarContainer} /> */}
