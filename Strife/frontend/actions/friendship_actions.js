@@ -20,16 +20,16 @@ export const removeFriendship = (friendship) => {
     }
 };
 
-export const requestFriendships = () => (dispatch) => 
-FRIENDSHIP_API_UTIL.requestFriendships().then((users) => dispatch(receiveUsers(users)))
+export const requestFriendships = () => (dispatch) =>
+    FRIENDSHIP_API_UTIL.requestFriendships().then((users) => dispatch(receiveUsers(users)));
 
 
-export const createFriendship = (account_ids) => (dispatch) => 
-FRIENDSHIP_API_UTIL.createFriendship(account_ids).then( (friendship) => dispatch(receiveFriendship(friendship)))
+export const createFriendship = (account_ids) => (dispatch) =>
+    FRIENDSHIP_API_UTIL.createFriendship(account_ids).then((friendship) => dispatch(receiveFriendship(friendship)));
 
 
-// export const updateFriendship = (account_ids) => (dispatch) => 
-//     FRIENDSHIP_API_UTIL.updateFriendship(account_ids).then((friendship) => dispatch(receiveFriendship(friendship)))
+export const updateFriendship = (account_ids) => (dispatch) =>
+    FRIENDSHIP_API_UTIL.updateFriendship(account_ids).then((friendship) => dispatch(receiveFriendship(friendship)))
 
-// export const deleteFriendship = (account_ids) => (dispatch) => 
-    // FRIENDSHIP_API_UTIL.deleteFriendship(account_ids).then((friendship) => dispatch(removeFriendship(friendship)))
+export const deleteFriendship = (account_ids) => (dispatch) =>
+    FRIENDSHIP_API_UTIL.deleteFriendship(account_ids).then((friendship) => dispatch(removeFriendship(friendship)))
