@@ -112,6 +112,13 @@ class User < ApplicationRecord
         source: :friend, 
         dependent: :destroy
 
+
+    has_many :blocked,
+    -> {where friendships: { friend_request_status: 0}},
+        through: :friendships, 
+        source: :friend, 
+        dependent: :destroy
+
     def friendship_status(friend)
         relationShip = self.friendships.find_by(friend_id: friend.id)
         relationShip ? relationShip.friend_request_status : 0
