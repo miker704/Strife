@@ -113,3 +113,40 @@
     overflow: hidden;
     font-family: "Whitney";
 }
+
+.strife-nitro-lbl1 {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    pointer-events: none;
+    z-index: 23;
+    box-sizing: border-box;
+
+}
+
+.strife-nitro-img1 {
+    background-image: linear-gradient(90deg, #854DC2, #AC5C8F);
+    // background-image: linear-gradient(90deg, #32CD32, #AC5C);
+
+    // #854dc2, #ac5c8f
+    // #854DC2, #AC5C
+    //#00FF00
+    color: hsl(0, 0%, 100%);
+
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+    margin-left: auto;
+    padding: 4px 8px;
+    pointer-events: all;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    font-family: "Whitney";
+}
