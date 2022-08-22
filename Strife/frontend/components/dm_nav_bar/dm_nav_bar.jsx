@@ -45,7 +45,6 @@ class DmNavBar extends React.Component {
         console.log("dmserver props: ", this.props);
         console.log("dmusers", this.props.dmUsers);
         console.log("dmServers: ", this.props.dmServers);
-        console.log("dmServers2: ", this.props.dmServers2);
 
 
         return (
