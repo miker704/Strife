@@ -114,7 +114,7 @@ class User < ApplicationRecord
 
 
     has_many :blocked_users,
-    -> {where friendships: { friend_request_status: 0}},
+    -> {where friendships: { friend_request_status: -1}},
         through: :friendships, 
         source: :friend, 
         dependent: :destroy
