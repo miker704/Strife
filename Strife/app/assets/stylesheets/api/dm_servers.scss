@@ -25,12 +25,25 @@
 .dm-server-nav-bar::-webkit-scrollbar-thumb {
     background: rgb(30, 35, 40);
     border-radius: 5px;
+    visibility: hidden;
+}
+
+.dm-server-nav-bar:hover::-webkit-scrollbar-thumb {
+    visibility:visible;
 }
 
 .dm-server-nav-bar::-webkit-scrollbar-track {
     border-radius: 10px;
-    background: rgb(40, 45, 50)
+    background: rgb(40, 45, 50);
+    visibility: hidden;
+
 }
+
+.dm-server-nav-bar:hover::-webkit-scrollbar-track {
+    visibility: visible;
+}
+
+
 
 .fake-nav-bar {
     height: 50px;
