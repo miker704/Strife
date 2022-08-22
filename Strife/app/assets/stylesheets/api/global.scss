@@ -90,3 +90,15 @@ label.field-error {
   bottom: 0;
 
 }
+
+
+.empty-messages-container{
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  width: calc(100vw - 310px);
+  height: 100vh;
+  transform: translate(310px, 0px);
+  background-color: #36393F;
+  z-index: -1;
+}
