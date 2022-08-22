@@ -68,14 +68,14 @@ class DmNavBar extends React.Component {
                                             <path d="M0,0 L24,0 L24,24 L0,24 L0,0 Z M0,0 L24,0 L24,24 L0,24 
                                                 L0,0 Z M0,0 L24,0 L24,24 L0,24 L0,0 Z">
                                             </path>
-                                            </g>
+                                        </g>
                                     </svg>
                                 </div>
-                                    <div className='friend-avatar-text-wrapper'>
-                                        <div className='friend-avatar-text-inner'>
-                                            <div className='friend-avatar-text'>Friends</div>
-                                        </div>
+                                <div className='friend-avatar-text-wrapper'>
+                                    <div className='friend-avatar-text-inner'>
+                                        <div className='friend-avatar-text'>Friends</div>
                                     </div>
+                                </div>
 
                             </div>
 
@@ -86,11 +86,11 @@ class DmNavBar extends React.Component {
 
                 <div className='nitro-nav-bar-wrapper'>
                     <div className='nitro-nav-bar'>
-                            <div className='nitro-nav-bar-link'>
-                                    <div className='nitro-avatar-wrapper'>
-                                        <div className='nitro-avatar'>
-                                            <svg  aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
-                                                <path fill="currentColor" d="M2.98966977,9.35789159 C2.98966977,9.77582472 2.63442946,10.1240466 2.20807287,10.1240466 
+                        <div className='nitro-nav-bar-link'>
+                            <div className='nitro-avatar-wrapper'>
+                                <div className='nitro-avatar'>
+                                    <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M2.98966977,9.35789159 C2.98966977,9.77582472 2.63442946,10.1240466 2.20807287,10.1240466 
                                                 L1.78171628,10.1240466 C1.35535969,10.1240466 0.999948837,9.77582472 0.999948837,9.35789159 C0.999948837,8.93995846 
                                                 1.35535969,8.59173658 1.78171628,8.59173658 L2.20807287,8.59173658 C2.63442946,8.59173658 2.98966977,8.93995846 
                                                 2.98966977,9.35789159 Z M22.2467643,9.14892503 C24.0942527,12.9800344 22.3888264,17.5772989 18.3384388,19.3882867 
@@ -111,22 +111,22 @@ class DmNavBar extends React.Component {
                                                  C12.0142744,12.4227958 12.0142744,12.3530846 12.0852202,12.2138293 L13.5065225,9.84548582 C13.5774682,9.7062305 
                                                  13.7197008,9.7062305 13.7906465,9.7062305 L16.5619643,9.7062305 C16.7041969,9.63651925 16.7751426,9.7062305 
                                                  16.8462589,9.84548582 Z">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                        <div className='nitro-avatar-text-wrapper'>
-                                                <div className='nitro-avatar-text-inner'>
-                                                    <div className='nitro-avatar-text'>
-                                                        Nitro
-                                                    </div>
-                                                </div>
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div className='nitro-avatar-text-wrapper'>
+                                    <div className='nitro-avatar-text-inner'>
+                                        <div className='nitro-avatar-text'>
+                                            Nitro
                                         </div>
                                     </div>
-                                    <div className='strife-nitro-lbl1'>
-                                            <div className='strife-nitro-img1'>
-                                            <svg className='strife-nitro-clock1' aria-hidden="true" role="img" width="12" height="12" viewBox="0 0 20 20">
-                                                <g fill="none" fillRule="evenodd">
-                                                    <path fill="currentColor" d="M9.99999 1.66675C5.39699 1.66675 1.66666 5.39708
+                                </div>
+                            </div>
+                            <div className='strife-nitro-lbl1'>
+                                <div className='strife-nitro-img1'>
+                                    <svg className='strife-nitro-clock1' aria-hidden="true" role="img" width="12" height="12" viewBox="0 0 20 20">
+                                        <g fill="none" fillRule="evenodd">
+                                            <path fill="currentColor" d="M9.99999 1.66675C5.39699 1.66675 1.66666 5.39708
                                                      1.66666 10.0001C1.66666 14.6031 5.39699 18.3334 9.99999 18.3334C14.603 18.3334
                                                       18.3333 14.6031 18.3333 10.0001C18.3333 5.39708 14.603 1.66675 9.99999
                                                        1.66675ZM9.99999 4.66675C10.3685 4.66675 10.6667 4.96493 10.6667
@@ -135,12 +135,12 @@ class DmNavBar extends React.Component {
                                                           10.6148C9.71333 10.6043 9.68989 10.5874 9.66646 10.5731C9.46724 10.4572
                                                            9.33312 10.2463 9.33312 10.0002V5.3335C9.33312 4.965 9.6315 4.66675
                                                             9.99999 4.66675Z">
-                                                            </path></g>
-                                            </svg>    
-                                                
-                                            1 month free</div>
-                                    </div>
+                                            </path></g>
+                                    </svg>
+
+                                    1 month free</div>
                             </div>
+                        </div>
                     </div>
                 </div>
 
@@ -186,3 +186,32 @@ class DmNavBar extends React.Component {
 }
 
 export default DmNavBar;
+
+
+
+
+
+
+
+{/* <ul className="dm-nav-bar-list">
+{this.props.dmUsers.map((member) => {
+    let selectedDm = this.props.otherUserId === member.id.toString()
+        ? "selected-dm" : " ";
+    if (member.id !== this.props.currentUser.id)
+        return (
+            <Link
+                key={member.id}
+                to={`/channels/@me/${member.id}/${member.dmMemberid}`}
+            >
+                <li className={`dm-member-li-item ${selectedDm}`}>
+                    <div className={`user-icon color-${member.color_tag}`}>
+                        <i className="fa-brands fa-discord" />
+                    </div>
+                    <h5 className='dm-member-username'> {member.username} </h5>
+                </li>
+            </Link>
+        )
+}
+)
+}
+</ul> */}
