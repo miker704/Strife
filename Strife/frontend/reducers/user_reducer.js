@@ -5,6 +5,16 @@ import { RECEIVE_SERVER } from '../actions/server_actions.js';
 import { RECEIVE_SERVER_MEMBERSHIP } from '../actions/server_membership_actions.js';
 
 
+const receiveUsers = (state,users) => {
+    if(!users){return state;}
+    let nextState = Object.assign({}, state);
+    for( let [id, user] of Object.entries(users)){
+        nextState[id] = user;
+    }
+    return nextState;
+}
+
+
 
 const userReducer = (state = {}, action) => {
 
