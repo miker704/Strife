@@ -10,7 +10,8 @@ const mSTP = (state, ownProps) => {
         currentUser: state.entities.users[state.session.id],
         dmUsers: Object.values(state.entities.users),
         otherUserId: ownProps.match.params.otherUserId,
-        dmServers: Object.values(state.entities.dmServers)
+        dmServers: Object.values(state.entities.dmServers),
+        dmServers2: Object.entries(state.entities.dmServers)
     }
 };
 
