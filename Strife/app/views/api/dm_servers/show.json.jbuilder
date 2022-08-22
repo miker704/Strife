@@ -1,4 +1,4 @@
-# json.partial! "api/dm_servers/dm_server", dm_server: dm_server
+json.partial! "api/dm_servers/dm_server", dm_server: dm_server
 #grab users
 
 json.dm_server do
@@ -17,9 +17,8 @@ json.users do
     @dm_server.members.each do |member|
         if member.id != @current_user.id
             json.set! member.id do
-                json.dmMemberid @dm_server.id
                 json.extract! member, :id, :username, :email, :phone_number, :strife_id_tag, :color_tag, :online
-                json.photo url_for(user.photo) if user.photo.attached?
+                json.photo url_for(member.photo) if member.photo.attached?
             end
         end
     end
