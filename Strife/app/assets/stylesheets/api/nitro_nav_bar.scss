@@ -1,4 +1,4 @@
-.nitro-nav-bar-wrapper{
+.nitro-nav-bar-wrapper {
     position: relative;
     max-width: 225px;
     width: 215px;
@@ -12,11 +12,11 @@
     margin-top: 8px;
 }
 
-.nitro-nav-bar{
+.nitro-nav-bar {
     forced-color-adjust: none;
     padding-right: 8px;
     // color: #FFFFFF;
-    color: hsl(223,3.4%,60.2%);
+    color: hsl(223, 3.4%, 60.2%);
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -28,19 +28,20 @@
 
 }
 
-.nitro-nav-bar:hover, .nitro-nav-bar:focus-within{
+.nitro-nav-bar:hover,
+.nitro-nav-bar:focus-within {
     // filter: brightness(125%);
-    color: hsl(210,2.9%,86.7%);
-    background-color: hsla(217,7.6%,33.5%,0.4);
+    color: hsl(210, 2.9%, 86.7%);
+    background-color: hsla(217, 7.6%, 33.5%, 0.4);
 }
 
-.nitro-nav-bar:active{
+.nitro-nav-bar:active {
     color: #FFFFFF;
-    background-color: hsla(217,7.6%,33.5%,0.48);
+    background-color: hsla(217, 7.6%, 33.5%, 0.48);
 }
 
 
-.nitro-nav-bar-link{
+.nitro-nav-bar-link {
     align-items: center;
     color: inherit;
     forced-color-adjust: none;
@@ -56,7 +57,7 @@
 }
 
 
-.nitro-avatar-wrapper{
+.nitro-avatar-wrapper {
     forced-color-adjust: none;
     -webkit-box-flex: 1;
     flex-grow: 1;
@@ -68,7 +69,8 @@
     height: 42px;
     padding: 0 8px;
 }
-.nitro-avatar{
+
+.nitro-avatar {
     forced-color-adjust: none;
     flex: 0 0 auto;
     width: 32px;
@@ -82,7 +84,7 @@
     -webkit-box-pack: center;
 }
 
-.nitro-avatar-text-wrapper{
+.nitro-avatar-text-wrapper {
     forced-color-adjust: none;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -92,7 +94,7 @@
     -webkit-box-flex: 1;
 }
 
-.nitro-avatar-text-inner{
+.nitro-avatar-text-inner {
     align-items: center;
     justify-content: flex-start;
     -webkit-box-align: center;
@@ -101,7 +103,7 @@
     forced-color-adjust: none;
 }
 
-.nitro-avatar-text{
+.nitro-avatar-text {
     forced-color-adjust: none;
     font-size: 16px;
     line-height: 20px;
@@ -122,7 +124,7 @@
     align-items: center;
     position: relative;
     pointer-events: none;
-    z-index: 23;
+    z-index: 2;
     box-sizing: border-box;
 
 }
@@ -149,4 +151,9 @@
     text-transform: uppercase;
     box-sizing: border-box;
     font-family: "Whitney";
+    padding-right: 5px;
+}
+
+.strife-nitro-clock1 {
+    padding-right: 2px;
 }
