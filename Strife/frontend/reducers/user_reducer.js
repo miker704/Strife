@@ -1,14 +1,14 @@
-import { LOGOUT_CURRENT_USER, RECEIVE_CURRENT_USER, REMOVE_CURRENT_USER } from "../actions/session_actions.js";
+import { LOGOUT_CURRENT_USER, RECEIVE_CURRENT_USER, REMOVE_CURRENT_USER, RECEIVE_USER, RECEIVE_USERS } from "../actions/session_actions.js";
 import { RECEIVE_DM_MEMBER } from "../actions/dm_member_actions.js";
 import { RECEIVE_DM_SERVERS } from '../actions/dm_server_actions.js';
 import { RECEIVE_SERVER } from '../actions/server_actions.js';
 import { RECEIVE_SERVER_MEMBERSHIP } from '../actions/server_membership_actions.js';
+import { RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP } from '../actions/friendship_actions.js';
 
-
-const receiveUsers = (state,users) => {
-    if(!users){return state;}
+const receiveUsers = (state, users) => {
+    if (!users) { return state; }
     let nextState = Object.assign({}, state);
-    for( let [id, user] of Object.entries(users)){
+    for (let [id, user] of Object.entries(users)) {
         nextState[id] = user;
     }
     return nextState;
@@ -19,6 +19,8 @@ const receiveUsers = (state,users) => {
 const userReducer = (state = {}, action) => {
 
     Object.freeze(state);
+    let user;
+    let newState;
 
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
@@ -26,6 +28,17 @@ const userReducer = (state = {}, action) => {
             // return Object.assign({}, state, {[action.currentUser.id]: action.currentUser});
             return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
 
+        case RECEIVE_USER:
+            return Object.assign({}, state, { [action.user.id]: action.user });
+
+        case RECEIVE_USERS:
+            return receiveUsers(state, action.users);
+
+        case RECEIVE_FRIENDSHIP:
+            newState = Object.assign({}, state);
+            user = newState[action.friendship.friendID];
+            user.friend_request_status = action.friendship.friend_request_status;
+            return newState;
 
 
         case RECEIVE_SERVER:
@@ -38,6 +51,12 @@ const userReducer = (state = {}, action) => {
         case RECEIVE_DM_SERVERS:
             return action.dmservers.users
 
+
+        case REMOVE_FRIENDSHIP:
+            newState = Object.assign({}, state);
+            user = newState[action.friendship.friendID];
+            user.friend_request_status = 0;
+            return newState;
 
         case REMOVE_CURRENT_USER:
             return {};
