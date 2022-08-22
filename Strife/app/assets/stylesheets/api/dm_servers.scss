@@ -92,6 +92,7 @@
     justify-content: center;
     transform: translate(-45px, -55px);
     color: rgb(225, 225, 225);
+    z-index: 6;
 }
 
 .create-channel-div:hover .dm-tool-tip {
