@@ -1,0 +1,115 @@
+.nitro-nav-bar-wrapper{
+    position: relative;
+    max-width: 225px;
+    width: 215px;
+    margin-left: 4px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    display: block;
+    padding: 1px 0;
+    border-radius: 4px;
+    transition: none;
+    margin-top: 8px;
+}
+
+.nitro-nav-bar{
+    forced-color-adjust: none;
+    padding-right: 8px;
+    // color: #FFFFFF;
+    color: hsl(223,3.4%,60.2%);
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    cursor: pointer;
+    border-radius: inherit;
+    // background-color: hsla(217,7.6%,33.5%,0.6);
+
+}
+
+.nitro-nav-bar:hover, .nitro-nav-bar:focus-within{
+    // filter: brightness(125%);
+    color: hsl(210,2.9%,86.7%);
+    background-color: hsla(217,7.6%,33.5%,0.4);
+}
+
+.nitro-nav-bar:active{
+    color: #FFFFFF;
+    background-color: hsla(217,7.6%,33.5%,0.48);
+}
+
+
+.nitro-nav-bar-link{
+    align-items: center;
+    color: inherit;
+    forced-color-adjust: none;
+    flex: 1 1 auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-align: center;
+    display: flex;
+    min-width: 0;
+    -webkit-box-flex: 1;
+    text-decoration: none;
+}
+
+
+.nitro-avatar-wrapper{
+    forced-color-adjust: none;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    align-items: center;
+    display: flex;
+    -webkit-box-align: center;
+    min-width: 0;
+    border-radius: 4px;
+    height: 42px;
+    padding: 0 8px;
+}
+.nitro-avatar{
+    forced-color-adjust: none;
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-flex: 0;
+    -webkit-box-pack: center;
+}
+
+.nitro-avatar-text-wrapper{
+    forced-color-adjust: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1 1 auto;
+    min-width: 0;
+    -webkit-box-flex: 1;
+}
+
+.nitro-avatar-text-inner{
+    align-items: center;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    display: flex;
+    -webkit-box-pack: start;
+    forced-color-adjust: none;
+}
+
+.nitro-avatar-text{
+    forced-color-adjust: none;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    -webkit-box-flex: 0;
+    flex: 0 1 auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: "Whitney";
+}
