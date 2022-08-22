@@ -10,14 +10,16 @@ end
 json.users do 
     
     json.set! @current_user.id do
-        json.extract! @current_user, :id, :username, :email, :phone_number, :strife_id_tag, :color_tag, :online
+        # json.extract! @current_user, :id, :username, :email, :phone_number, :strife_id_tag, :color_tag, :online
+        json.partial! 'api/users/user', user: @current_user
         json.photo url_for(@current_user.photo) if @current_user.photo.attached?
     end
 
     @dm_server.members.each do |member|
         if member.id != @current_user.id
             json.set! member.id do
-                json.extract! member, :id, :username, :email, :phone_number, :strife_id_tag, :color_tag, :online
+                # json.extract! member, :id, :username, :email, :phone_number, :strife_id_tag, :color_tag, :online
+                json.partial! 'api/users/user', user: member
                 json.photo url_for(member.photo) if member.photo.attached?
             end
         end
