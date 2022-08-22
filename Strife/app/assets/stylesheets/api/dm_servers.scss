@@ -16,8 +16,21 @@
     padding-right: 5px;
     transform: translate(75px, 0px);
     z-index: 2;
+    overflow: hidden scroll;
+}
+.dm-server-nav-bar::-webkit-scrollbar {
+    width: 5px;
 }
 
+.dm-server-nav-bar::-webkit-scrollbar-thumb {
+    background: rgb(30, 35, 40);
+    border-radius: 5px;
+}
+
+.dm-server-nav-bar::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgb(40, 45, 50)
+}
 
 .fake-nav-bar {
     height: 50px;
@@ -47,6 +60,11 @@
     font-weight: 500;
     font-family: "Ginto";
 }
+
+.dm-list-header h4:hover{
+    filter: brightness(125%);
+}
+
 
 .dm-tool-tip {
     visibility: hidden;
@@ -86,6 +104,8 @@
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
+    // overflow: hidden scroll;
+
 }
 
 .dm-nav-bar-list::-webkit-scrollbar {
@@ -101,6 +121,9 @@
     border-radius: 10px;
     background: rgb(40, 45, 50)
 }
+
+
+
 
 .dm-nav-bar-list a {
     border-radius: 5px;
