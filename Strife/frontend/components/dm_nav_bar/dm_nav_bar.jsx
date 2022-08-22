@@ -44,6 +44,7 @@ class DmNavBar extends React.Component{
   render(){
     console.log("dmserver props: ", this.props);
     console.log("dmusers", this.props.dmUsers);
+    console.log("dmServers: ", this.props.dmServers);
 
     return(
       <div className='dm-server-nav-bar'>
@@ -68,7 +69,7 @@ class DmNavBar extends React.Component{
           return(
             <Link
             key={member.id}
-            to={`/servers/@me/${member.id}/${member.dmMemberid}`}
+            to={`/channels/@me/${member.id}/${member.dmMemberid}`}
             > 
               <li className={`dm-member-li-item ${selectedDm}`}>
                 <div className={`user-icon color-${member.color_tag}`}>
