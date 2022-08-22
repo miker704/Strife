@@ -36,3 +36,6 @@ $.ajax({
     });
 
 export const disableAccount = (user) => $.ajax({ url: `/api/users/${user.id}/disableAccount/`, method: "PATCH", data: { user } });
+
+
+export const fetchUser = (userId) => $.ajax({ url: `/api/users/${userId}/`, method: "GET"});
