@@ -2,4 +2,5 @@ json.extract! user, :id, :username, :email, :online, :phone_number, :strife_id_t
 
 json.photo url_for(user.photo) if user.photo.attached?
 
+json.set! :friend_request_status, current_user.friendship_status(user)
 json.ownedServers user.owned_servers.map{|ownedServer| ownedServer.id}
