@@ -20,7 +20,12 @@ export const receiveUser = user => {
     }
 }
 
-
+export const receiveUsers = users => {
+    return {
+        type: RECEIVE_USERS,
+        users
+    }
+}
 
 
 
