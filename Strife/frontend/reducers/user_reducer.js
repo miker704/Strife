@@ -49,8 +49,8 @@ const userReducer = (state = {}, action) => {
         case RECEIVE_DM_MEMBER:
             return Object.assign({}, state, { [action.dm_member.user.id]: action.dm_member.user });
         case RECEIVE_DM_SERVERS:
-            return action.dmservers.users
-
+            return action.dmservers.users;
+            
 
         case REMOVE_FRIENDSHIP:
             newState = Object.assign({}, state);
