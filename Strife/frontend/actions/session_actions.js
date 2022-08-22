@@ -11,6 +11,19 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const REMOVE_SESSION_ERRORS = "REMOVE_SESSION_ERRORS";
 export const RECEIVE_USER_SEARCH = "RECEIVE_USER_SEARCH";
 
+
+
+export const receiveUser = user => {
+    return {
+        type: RECEIVE_USER,
+        user
+    }
+}
+
+
+
+
+
 export const receiveCurrentUser = currentUser => {
     return {
         type: RECEIVE_CURRENT_USER,
