@@ -100,13 +100,13 @@ class User < ApplicationRecord
         source: :friend,
         dependent: :destroy
     
-    has_many :friends_ongoing, 
+    has_many :ongoing_friend_requests, 
         -> {where friendships: { friend_request_status: 1}},
         through: :friendships,
          source: :friend, 
          dependent: :destroy
 
-    has_many :friends_incoming, 
+    has_many :incoming_friend_requests, 
         -> {where friendships: { friend_request_status: 2}},
         through: :friendships, 
         source: :friend, 
