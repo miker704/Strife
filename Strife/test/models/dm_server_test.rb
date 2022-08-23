@@ -2,10 +2,11 @@
 #
 # Table name: dm_servers
 #
-#  id         :bigint           not null, primary key
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  owner_id   :integer          not null
+#  id             :bigint           not null, primary key
+#  dm_server_name :string
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  owner_id       :integer          not null
 #
 # Indexes
 #
