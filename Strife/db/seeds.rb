@@ -11,10 +11,10 @@ ServerMembership.destroy_all
 Channel.destroy_all
 ChannelMembership.destroy_all
 Message.destroy_all
-# Friendship.destroy_all
-# DmServer.destroy_all
-# DmMember.destroy_all
-# DmMessage.destroy_all
+Friendship.destroy_all
+DmServer.destroy_all
+DmMember.destroy_all
+DmMessage.destroy_all
 
 
 
@@ -199,3 +199,86 @@ DmMessage.create!(dm_server_id: dm_server_3.id, sender_id: demouser1.id, body:"W
 DmMessage.create!(dm_server_id: dm_server_3.id, sender_id: demouser1.id, body:"Just wanted to update you. I have finished App Academy. It was hard, but fun. Thanks for all the support man." )
 DmMessage.create!(dm_server_id: dm_server_3.id, sender_id: ayce.id, body:"Congrats!" )
 
+
+
+
+# temp test data
+
+# demo user 1
+test1=User.create!(
+    username: 'Test1@1.com',
+    email: 'Test1@1.com',
+    birthday: Date.new(1996,02,25),
+    password: 'Test1@1.com',
+)
+
+test2=User.create!(
+    username: "test1@g.com",
+    email: "test1@g.com",
+    birthday: Date.new(1996,02,25),
+    password: "test1@g.com",
+)
+
+
+test3=User.create!(
+    username: "testuser1234@gmail.com",
+    email: "testuser1234@gmail.com",
+    birthday: Date.new(1996,02,25),
+    password: "testuser1234@gmail.com",
+)
+
+
+test4=User.create!(
+    username: "testuser12345@gmail.com",
+    email: "testuser12345@gmail.com",
+    birthday: Date.new(1996,02,25),
+    password: "testuser12345@gmail.com",
+)
+
+
+
+testserver1 = Server.create!(
+    server_owner_id: test1.id,
+    server_name: "test1@1.com server", 
+    public: true
+
+)
+
+
+testserver2 = Server.create!(
+    server_owner_id: test2.id,
+    server_name: "test1@g.com server", 
+    public: true
+
+)
+
+testserver3 = Server.create!(
+    server_owner_id: test3.id,
+    server_name: "testuser1234@gmail.com server", 
+    public: true
+
+)
+
+testserver4 = Server.create!(
+    server_owner_id: test4.id,
+    server_name: "testuser12345@gmail.com server", 
+    public: true
+
+)
+
+
+
+
+dm_server_4 = DmServer.create!( owner_id: demouser1.id )
+dm_server_5 = DmServer.create!( owner_id: demouser1.id )
+
+dm_membership_7 = DmMember.create!( dm_server_id: dm_server_4.id, dm_member_id: demouser1.id )
+dm_membership_8 = DmMember.create!( dm_server_id: dm_server_4.id, dm_member_id: demouser2.id )
+dm_membership_9 = DmMember.create!( dm_server_id: dm_server_4.id, dm_member_id: stacy.id )
+dm_membership_10 = DmMember.create!( dm_server_id: dm_server_5.id, dm_member_id: demouser1.id )
+dm_membership_11 = DmMember.create!( dm_server_id: dm_server_5.id, dm_member_id: test1.id )
+
+f1 = Friendship.create!(friend_id: demouser2.id user_id: demouser1.id,friend_request_status: 3);
+f2 = Friendship.create!(friend_id: demouser1.id user_id: demouser2.id,friend_request_status: 3);
+f3 = Friendship.create!(friend_id: stacy.id user_id: demouser1.id,friend_request_status: 3);
+f4 = Friendship.create!(friend_id: demouser1.id user_id: stacy.id,friend_request_status: 3);
