@@ -11,7 +11,8 @@ class DmNavBar extends React.Component {
         }
 
         this.toggleSearch = this.toggleSearch.bind(this);
-        this.closeSearch = this.closeSearch.bind(this)
+        this.closeSearch = this.closeSearch.bind(this);
+        this.generateDmServerName=this.generateDmServerName.bind(this);
     }
 
     componentDidMount () {
@@ -39,6 +40,26 @@ class DmNavBar extends React.Component {
                 </div>
             )
         }
+    }
+
+
+    generateDmServerName(dmServer){
+        console.log("individual dmServer props : ",dmServer);
+        let dmServerName = "";
+        let dmMemberArray = Object.values(dmServer.members);
+        for(let i of dmMemberArray){
+            console.log(i.id);
+
+            if(i.id !== this.props.currentUser.id){
+                dmServerName+= i.username + ", ";
+            }
+
+
+        }
+        console.log("dmServername : ",dmServerName);
+        console.log("dmserver members : ",dmServer.members);
+        console.log("dmMemberArray : ",dmMemberArray);
+
     }
 
     render () {
@@ -160,7 +181,13 @@ class DmNavBar extends React.Component {
                 </div>
                 {/* {this.renderSearch()} */}
                 <ul className="dm-nav-bar-list">
+                        { this.props.dmServers.map((dmServer,dmServerIndex) =>{
+                            let selectedDmServer = this.props.dmServerId === dmServer.id.toString()
+                            ? "selected-dm-server": "";
+                            this.generateDmServerName(dmServer);
+                        })
                         
+                        }
                 </ul>
             </div>
         )
