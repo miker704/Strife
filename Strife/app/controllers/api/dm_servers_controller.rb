@@ -26,6 +26,17 @@ class Api::DmServersController < ApplicationController
         render :show
     end
     
+    def update
+        @dm_server = DmServer.find_by(id: params[:id])
+        @current_user = current_user
+
+        if @dm_server.update(dm_server_params)
+            render :show
+        else
+            render json: @dm_server.errors.full_messages, status: 422
+        end
+
+    end
 
     def destroy
         @dm_server = DmServer.find_by(id: params[:id])
@@ -37,7 +48,7 @@ class Api::DmServersController < ApplicationController
 
     private
     def dm_server_params
-        return params.require(:dm_server).permit(:owner_id)
+        return params.require(:dm_server).permit(:owner_id,:dm_server_name)
     end
 
 end
