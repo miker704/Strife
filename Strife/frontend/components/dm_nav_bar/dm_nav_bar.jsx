@@ -12,13 +12,13 @@ class DmNavBar extends React.Component {
 
         this.toggleSearch = this.toggleSearch.bind(this);
         this.closeSearch = this.closeSearch.bind(this);
-        this.generateDmServerName=this.generateDmServerName.bind(this);
+        this.generateDmServerName = this.generateDmServerName.bind(this);
     }
 
     componentDidMount () {
         this.props.fetchUserDmServers(this.props.currentUser.id);
     }
-    componentWillUnmount(){
+    componentWillUnmount () {
         this.props.removeDmServerErrors();
     }
 
@@ -46,26 +46,36 @@ class DmNavBar extends React.Component {
     }
 
 
-    generateDmServerName(dmServer){
-        console.log("individual dmServer props : ",dmServer);
+    generateDmServerName (dmServer) {
+        console.log("individual dmServer props : ", dmServer);
+        let dmServerNameArray = [];
         let dmServerName = "";
         let dmMemberArray = Object.values(dmServer.members);
-        for(let i of dmMemberArray){
+        for (let i of dmMemberArray) {
 
-            if(i.id !== this.props.currentUser.id){
-                dmServerName+= i.username + ", ";
+            if (i.id !== this.props.currentUser.id) {
+                dmServerNameArray.push(i.username)
             }
-
-
         }
-        console.log("dmServername : ",dmServerName);
-        if(dmServer.dm_server_name === null){
-            let subState = {id: dmServer.id, dm_server_name: dmServerName};
-            this.props.updateDmServer(subState);
+        if (dmServerNameArray.length === 1) {
+            dmServerName = dmServerNameArray.join();
         }
-        console.log("dmserver members : ",dmServer.members);
-        console.log("dmMemberArray : ",dmMemberArray);
+        else {
+            dmServerName= dmServerNameArray.join(", ");
+        }
 
+        console.log("dmServername : ", dmServerName);
+
+        if (dmServer.dm_server_name === null) {
+            let subState = {
+                dm_server_name: dmServerName
+            };
+            // this.props.updateDmServer(dmServer.id,subState);
+            console.log("substate: ", subState);
+        }
+        // console.log("dmserver members : ", dmServer.members);
+        console.log("dmMemberArray : ", dmMemberArray);
+        return dmServerName;
     }
 
     render () {
@@ -187,13 +197,19 @@ class DmNavBar extends React.Component {
                 </div>
                 {/* {this.renderSearch()} */}
                 <ul className="dm-nav-bar-list">
-                        { this.props.dmServers.map((dmServer,dmServerIndex) =>{
-                            let selectedDmServer = this.props.dmServerId === dmServer.id.toString()
-                            ? "selected-dm-server": "";
-                            this.generateDmServerName(dmServer);
-                        })
-                        
-                        }
+                    {this.props.dmServers.map((dmServer, dmServerIndex) => {
+                        let selectedDmServer = this.props.dmServerId === dmServer.id.toString()
+                            ? "selected-dm-server" : "";
+                        let dmServerName = this.generateDmServerName(dmServer);
+
+                        return (
+                            <Link>
+                            
+                            </Link>
+                        )
+
+                    })
+                    }
                 </ul>
             </div>
         )
