@@ -173,3 +173,23 @@
 }
 
 
+.dm-server-li-item{
+    display: flex;
+    padding-top: 7.5px;
+    padding-left: 15px;
+    padding-bottom: 7.5px;
+    border-radius: 5px;
+}
+
+
+.dm-server-li-item:hover{
+    background-color: #3A3C43;
+
+}
+
+.dm-server-name{
+    padding-left: 10px;
+    padding-top: 3px;
+    font-family: "Whitney";
+    font-size: 16px;
+}
