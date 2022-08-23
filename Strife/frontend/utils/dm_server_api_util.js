@@ -9,6 +9,10 @@ export const fetchDmServer = (dmServerId) =>
 export const createDmServer = (dmServer) =>
     $.ajax({ url: "/api/dm_servers", method: "POST", data: { dmServer: dmServer } })
 
+export const updateDmServer = (dmServer) =>
+    $.ajax({ url: `/api/dm_servers/${dmServer.id}`, method: "PATCH", data: { dmServer: dmServer } })
+
+
 export const deleteDmServer = (dmServerId) =>
     $.ajax({ url: `/api/servers/${dmServerId}`, method: "DELETE" })
 
