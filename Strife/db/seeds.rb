@@ -278,7 +278,7 @@ dm_membership_9 = DmMember.create!( dm_server_id: dm_server_4.id, dm_member_id: 
 dm_membership_10 = DmMember.create!( dm_server_id: dm_server_5.id, dm_member_id: demouser1.id )
 dm_membership_11 = DmMember.create!( dm_server_id: dm_server_5.id, dm_member_id: test1.id )
 
-f1 = Friendship.create!(friend_id: demouser2.id user_id: demouser1.id,friend_request_status: 3);
-f2 = Friendship.create!(friend_id: demouser1.id user_id: demouser2.id,friend_request_status: 3);
-f3 = Friendship.create!(friend_id: stacy.id user_id: demouser1.id,friend_request_status: 3);
-f4 = Friendship.create!(friend_id: demouser1.id user_id: stacy.id,friend_request_status: 3);
+f1 = Friendship.create!(friend_id: demouser2.id, user_id: demouser1.id, friend_request_status: 3);
+f2 = Friendship.create!(friend_id: demouser1.id, user_id: demouser2.id, friend_request_status: 3);
+f3 = Friendship.create!(friend_id: stacy.id, user_id: demouser1.id, friend_request_status: 3);
+f4 = Friendship.create!(friend_id: demouser1.id, user_id: stacy.id, friend_request_status: 3);
