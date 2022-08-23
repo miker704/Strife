@@ -13,6 +13,7 @@ class DmNavBar extends React.Component {
         this.toggleSearch = this.toggleSearch.bind(this);
         this.closeSearch = this.closeSearch.bind(this);
         this.generateDmServerName = this.generateDmServerName.bind(this);
+        this.renderDmServerPFP = this.renderDmServerPFP.bind(this);
     }
 
     componentDidMount () {
@@ -46,8 +47,14 @@ class DmNavBar extends React.Component {
     }
 
 
+    renderDmServerPFP(dmServer){
+        let dmMemberArray = Object.values(dmServer.members);
+        console.log("dmserverPFP: ",dmMemberArray);
+    }
+
+
     generateDmServerName (dmServer) {
-        console.log("individual dmServer props : ", dmServer);
+        // console.log("individual dmServer props : ", dmServer);
         let dmServerNameArray = [];
         let dmServerName = "";
         let dmMemberArray = Object.values(dmServer.members);
@@ -61,7 +68,7 @@ class DmNavBar extends React.Component {
             dmServerName = dmServerNameArray.join();
         }
         else {
-            dmServerName= dmServerNameArray.join(", ");
+            dmServerName = dmServerNameArray.join(", ");
         }
 
         console.log("dmServername : ", dmServerName);
@@ -82,7 +89,8 @@ class DmNavBar extends React.Component {
         console.log("dmserver props: ", this.props);
         console.log("dmusers", this.props.dmUsers);
         console.log("dmServers: ", this.props.dmServers);
-
+        console.log("dmServers navbar dmServerId : ", this.props.dmServerId);
+ 
 
         return (
             <div className='dm-server-nav-bar'>
@@ -201,11 +209,18 @@ class DmNavBar extends React.Component {
                         let selectedDmServer = this.props.dmServerId === dmServer.id.toString()
                             ? "selected-dm-server" : "";
                         let dmServerName = this.generateDmServerName(dmServer);
-
+                        this.renderDmServerPFP(dmServer);
                         return (
-                            <Link>
-                            
-                            </Link>
+
+                            <li className= {`dm-server-li-item ${selectedDmServer}`} key={dmServerIndex}>
+                                    <Link to={`/channels/dmServers/${dmServer.id}`}>
+                                    
+                                        <h5 className='dm-server-name'>{dmServerName}</h5>
+                                    
+                                    </Link>
+                            </li>
+
+
                         )
 
                     })
