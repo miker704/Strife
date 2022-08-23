@@ -7,9 +7,10 @@ class DmMessages extends React.Component{
     }
 
     render(){
+        console.log("dmserver messages props", this.props);
         return(
             <div>
-
+                
             </div>
         )
     }
