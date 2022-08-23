@@ -2,17 +2,17 @@ export const fetchDmServers = (userId) =>
     $.ajax({ url: "/api/dm_servers/", method: "GET", data: { user: userId } })
 
 
-export const fetchDmServer = (dmServerId) =>
-    $.ajax({ url: `/api/dm_servers/${dmServerId}`, method: "GET" })
+export const fetchDmServer = (dmserverId) =>
+    $.ajax({ url: `/api/dm_servers/${dmserverId}`, method: "GET" })
 
 
-export const createDmServer = (dmServer) =>
-    $.ajax({ url: "/api/dm_servers", method: "POST", data: { dmServer: dmServer } })
+export const createDmServer = (dmserver) =>
+    $.ajax({ url: "/api/dm_servers", method: "POST", data: { dm_server: dmserver } })
 
-export const updateDmServer = (dmServer) =>
-    $.ajax({ url: `/api/dm_servers/${dmServer.id}`, method: "PATCH", data: { dmServer: dmServer } })
+export const updateDmServer = (dmserverId,dmserver) =>
+    $.ajax({ url: `/api/dm_servers/${dmserverId}`, method: "PATCH", data: { dm_server: dmserver } })
 
 
-export const deleteDmServer = (dmServerId) =>
-    $.ajax({ url: `/api/servers/${dmServerId}`, method: "DELETE" })
+export const deleteDmServer = (dmserverId) =>
+    $.ajax({ url: `/api/servers/${dmserverId}`, method: "DELETE" })
 
