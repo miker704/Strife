@@ -13,6 +13,7 @@ import ModalManagerContainer from './modals/modal_manager_container';
 import UserProfileContainer from './users/user_profile/user_profile_container';
 import DMNavBarContainer from './dm_nav_bar/dm_nav_bar_container.js';
 import EmptyMessagesContainer from './dm_messages/empty_messages_container.jsx';
+import DmMessagesContainer from './dm_messages/dm_messages_container.js';
 
 const App = () => (
     <div>
@@ -44,7 +45,8 @@ const App = () => (
     {/* render proper component for messages type or friends list */}
     <Switch>
         <ProtectedRoute path="/channels/@me" component={EmptyMessagesContainer}/>
-        
+        <ProtectedRoute path="/channels/:dmServerId" component={DmMessagesContainer}/>
+
     </Switch>
 
 
