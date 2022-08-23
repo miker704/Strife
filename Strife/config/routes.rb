@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :friendships, only: [:index,:create, :update, :destroy]
     resources :dm_members, only: [:create,:destory]
     resources :dm_messages, only: [:create, :update, :destroy]
-    resources :dm_servers, only: [:index, :show, :create, :destroy]
+    resources :dm_servers, only: [:index, :show, :create, :update, :destroy]
 
   end
 
