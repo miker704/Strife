@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2022_07_30_230705) do
 
   create_table "dm_servers", force: :cascade do |t|
     t.integer "owner_id", null: false
+    t.string "dm_server_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["owner_id"], name: "index_dm_servers_on_owner_id"
