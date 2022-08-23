@@ -27,10 +27,10 @@ class Api::DmServersController < ApplicationController
     end
     
     def update
-        @dm_server = DmServer.find_by(id: params[:id])
-        @current_user = current_user
-
-        if @dm_server.update(dm_server_params)
+        @dm_server = DmServer.find(params[:id])
+       
+        if @dm_server && @dm_server.update(dm_server_params)
+            puts 'updated name'
             render :show
         else
             render json: @dm_server.errors.full_messages, status: 422
