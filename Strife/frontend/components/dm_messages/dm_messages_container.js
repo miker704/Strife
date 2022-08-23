@@ -6,6 +6,18 @@ import { createDmMessage } from "../../actions/dm_messages_actions.js";
 
 const mSTP = (state, ownProps) => {
     return {
+        dmMessage: {
+            body: "",
+            sender_id: state.session.id,
+            dm_server_id: ownProps.match.params.dmServerId
+        },
+        dmMessages: Object.values(state.entities.dmMessages),
+        currentUserId: state.session.id,
+        dmMessagesIds: Object.keys(state.entities.dmMessages),
+        otherUsers: state.entities.users[ownProps.match.params.otherUserId],
+        dmMembers: state.entities.users,
+        dmServerId: ownProps.match.params.dmServerId,
+        errors: state.errors.dmMessage
 
     }
 }
