@@ -18,6 +18,9 @@ class DmNavBar extends React.Component {
     componentDidMount () {
         this.props.fetchUserDmServers(this.props.currentUser.id);
     }
+    componentWillUnmount(){
+        this.props.removeDmServerErrors();
+    }
 
     toggleSearch () {
         this.setState({ search: true })
@@ -48,7 +51,6 @@ class DmNavBar extends React.Component {
         let dmServerName = "";
         let dmMemberArray = Object.values(dmServer.members);
         for(let i of dmMemberArray){
-            console.log(i.id);
 
             if(i.id !== this.props.currentUser.id){
                 dmServerName+= i.username + ", ";
@@ -57,6 +59,10 @@ class DmNavBar extends React.Component {
 
         }
         console.log("dmServername : ",dmServerName);
+        if(dmServer.dm_server_name === null){
+            let subState = {id: dmServer.id, dm_server_name: dmServerName};
+            this.props.updateDmServer(subState);
+        }
         console.log("dmserver members : ",dmServer.members);
         console.log("dmMemberArray : ",dmMemberArray);
 
