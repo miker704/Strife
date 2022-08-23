@@ -21,7 +21,7 @@ const mDTP = (dispatch) => {
     return {
         openModal: (modal) => dispatch(openModal(modal)),
         fetchUserDmServers: (userId) => dispatch(fetchDmServers(userId)),
-        updateDmServer: (dmserver) => dispatch(updateDmServer(dmserver)),
+        updateDmServer: (dmserverId,dmserver) => dispatch(updateDmServer(dmserverId,dmserver)),
         removeDmServerErrors: () => dispatch(removeDmServerErrors())
     }
 }
