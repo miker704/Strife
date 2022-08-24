@@ -49,6 +49,7 @@ class DmNavBar extends React.Component {
 
     renderDmServerPFP (dmServerMembers) {
         let dmServerPFP = "";
+        let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
         if (dmServerMembers.length === 2) {
             for (let i of dmServerMembers) {
                 if (i.id !== this.props.currentUser.id) {
@@ -59,13 +60,24 @@ class DmNavBar extends React.Component {
         else if (dmServerMembers.length > 2) {
             dmServerPFP = dmServerMembers.at(-1);
         }
+
+        if (dmServerMembers.length === 2 && dmServerPFP.photo === undefined) {
+            console.log("dmserver photo is : ", default_Photo);
+            return default_Photo;
+        }
+        else if (dmServerMembers.length === 2 && dmServerPFP.photo !== undefined) {
+            console.log("using user profile pic: ", dmServerPFP.photo);
+            return dmServerPFP.photo;
+
+        }
         console.log("our dmServerPFP will be from user : ", dmServerPFP);
+        // return dmServerPFP;
+        return default_Photo;
 
     }
 
 
     generateDmServerName (dmServer) {
-        // console.log("individual dmServer props : ", dmServer);
         let dmServerNameArray = [];
         let dmServerName = "";
         let dmMemberArray = Object.values(dmServer.members);
@@ -91,7 +103,6 @@ class DmNavBar extends React.Component {
             // this.props.updateDmServer(dmServer.id,subState);
             console.log("substate: ", subState);
         }
-        // console.log("dmserver members : ", dmServer.members);
         console.log("dmMemberArray : ", dmMemberArray);
         return dmServerName;
     }
@@ -222,15 +233,19 @@ class DmNavBar extends React.Component {
                         let dmServerMembers = Object.values(dmServer.members);
                         let dmServerName = this.generateDmServerName(dmServer);
                         let dmServerSubtitle = dmServerMembers.length > 2 ? `${dmServerMembers.length} Members` : "";
-                        this.renderDmServerPFP(dmServerMembers);
+                        let dmServerPFP = this.renderDmServerPFP(dmServerMembers);
+                        console.log("dmServerPFP is : ",dmServerPFP);
                         return (
 
                             <li className={`dm-server-li-item ${selectedDmServer}`} key={dmServerIndex}>
-                                <Link to={`/channels/dmServers/${dmServer.id}`}>
+                                <Link to={`/channels/dmServers/${dmServer.id}`}></Link>
+                                    {/* <div id="username">
+                                        <img src={dmServerPFP} alt="pfp" />
 
+                                    </div> */}
+                                    <div className='user-icon color-3'> <i className="fa-brands fa-discord" /></div>
                                     <h5 className='dm-server-name'>{dmServerName}</h5>
-                                    <p className='dm-server-subtitle'>{dmServerSubtitle}</p>
-                                </Link>
+                                    {/* <p className='dm-server-subtitle'>{dmServerSubtitle}</p> */}
                             </li>
 
 
