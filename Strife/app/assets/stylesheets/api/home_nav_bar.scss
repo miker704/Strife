@@ -57,4 +57,39 @@
     width: auto;
     -webkit-box-flex: 0;
     forced-color-adjust: none;
+    color: hsl(223,3.4%,60.2%);
+
+}
+
+
+.home-nav-bar-friends-text{
+    align-items: center;
+    forced-color-adjust: none;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    margin: 0 8px 0 0;
+    flex: 0 0 auto;
+    min-width: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-box-flex: 0;
+    display: flex;
+    -webkit-box-align: center;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-family: "ABC Ginto Normal";
+    color: var(--header-primary);
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.home-friend-divider{
+    forced-color-adjust: none;
+    width: 1px;
+    height: 24px;
+    margin: 0 8px;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    background: var(--background-modifier-accent);
+    box-sizing: border-box;
 }
