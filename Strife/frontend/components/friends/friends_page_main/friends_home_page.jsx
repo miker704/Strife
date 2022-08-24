@@ -58,7 +58,7 @@ class FriendsHomePageContainer extends React.Component {
                                     </path>
                                 </svg>
                             </div>
-                            <div className="help-tool-bar">
+                            <a className="help-tool-bar" href="https://support.discord.com" target="_blank">
                                 <div className="help-tool-bar-icon-wrapper">
                                     <svg x="0" y="0" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                         <path fill="currentColor" d="M12 2C6.486 2 2 6.487 2 12C2 17.515 6.486 22 12 22C17.514 22 22 17.515
@@ -69,7 +69,7 @@ class FriendsHomePageContainer extends React.Component {
                                         </path>
                                     </svg>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
 
