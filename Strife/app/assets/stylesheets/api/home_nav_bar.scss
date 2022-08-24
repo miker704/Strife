@@ -1,7 +1,7 @@
 //home nav bar rendered on the home page of the app
 
 
-.home-nav-bar-container{
+.home-nav-bar-container {
     display: flex;
     forced-color-adjust: none;
     width: 100%;
@@ -9,13 +9,13 @@
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
-    background-color: hsl(220,7.7%,22.9%);
+    background-color: hsl(220, 7.7%, 22.9%);
 }
 
 
-.home-nav-bar{
+.home-nav-bar {
     forced-color-adjust: none;
-    background-color: var(--background-primary);
+    background-color: hsl(220, 7.7%, 22.9%);
     box-sizing: border-box;
     flex: 0 0 auto;
     height: 48px;
@@ -35,7 +35,7 @@
 
 }
 
-.home-nav-bar-inner{
+.home-nav-bar-inner {
     forced-color-adjust: none;
     align-items: center;
     min-width: 0;
@@ -48,7 +48,7 @@
     box-sizing: border-box;
 }
 
-.home-friends-icon-wrapper{
+.home-friends-icon-wrapper {
     flex: 0 0 auto;
     margin: 0 8px;
     box-sizing: border-box;
@@ -57,12 +57,12 @@
     width: auto;
     -webkit-box-flex: 0;
     forced-color-adjust: none;
-    color: hsl(223,3.4%,60.2%);
+    color: hsl(223, 3.4%, 60.2%);
 
 }
 
 
-.home-nav-bar-friends-text{
+.home-nav-bar-friends-text {
     align-items: center;
     forced-color-adjust: none;
     -webkit-box-pack: start;
@@ -83,7 +83,7 @@
     line-height: 20px;
 }
 
-.home-friend-divider{
+.home-friend-divider {
     forced-color-adjust: none;
     width: 1px;
     height: 24px;
@@ -95,7 +95,7 @@
 }
 
 
-.friends-status-nav-bar{
+.friends-status-nav-bar {
     forced-color-adjust: none;
     box-sizing: border-box;
     flex-direction: row;
@@ -106,7 +106,7 @@
     font-size: 16px;
 }
 
-.online-tab{
+.online-tab {
     align-items: center;
     text-align: center;
     min-width: 40px;
@@ -134,7 +134,7 @@
 }
 
 
-.all-tab{
+.all-tab {
     align-items: center;
     text-align: center;
     min-width: 40px;
@@ -161,7 +161,7 @@
 }
 
 
-.pending-tab{
+.pending-tab {
     display: flex;
     -webkit-box-pack: center;
     justify-content: center;
@@ -187,7 +187,7 @@
     overflow: hidden;
 }
 
-.blocked-tab{
+.blocked-tab {
     display: flex;
     -webkit-box-pack: center;
     justify-content: center;
@@ -213,7 +213,7 @@
     overflow: hidden;
 }
 
-.add-friend-tab{
+.add-friend-tab {
     background-color: var(--status-positive-background);
     color: var(--status-positive-text);
     align-items: center;
@@ -241,7 +241,7 @@
 }
 
 
-.home-nav-tool-bar{
+.home-nav-tool-bar {
     forced-color-adjust: none;
     -webkit-box-flex: 0;
     display: flex;
@@ -252,12 +252,13 @@
     box-sizing: border-box;
 }
 
-.invite-tool-bar{
+.invite-tool-bar {
     forced-color-adjust: none;
     display: flex;
     box-sizing: border-box;
 }
-.invite-tool-bar-group-dm{
+
+.invite-tool-bar-group-dm {
     forced-color-adjust: none;
     position: relative;
     height: 24px;
@@ -270,7 +271,7 @@
 }
 
 
-.inbox-tool-bar{
+.inbox-tool-bar {
     forced-color-adjust: none;
     position: relative;
     height: 24px;
@@ -282,7 +283,7 @@
     box-sizing: border-box;
 }
 
-.help-tool-bar{
+.help-tool-bar {
     forced-color-adjust: none;
     text-decoration: none;
     color: var(--text-link);
@@ -290,7 +291,7 @@
     cursor: pointer;
 }
 
-.help-tool-bar-icon-wrapper{
+.help-tool-bar-icon-wrapper {
     flex: 0 0 auto;
     margin: 0 8px;
     forced-color-adjust: none;
@@ -301,5 +302,3 @@
     cursor: pointer;
     box-sizing: border-box;
 }
-
-
