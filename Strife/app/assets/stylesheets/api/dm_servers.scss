@@ -82,8 +82,8 @@
 
 .dm-tool-tip {
     visibility: hidden;
-    font-size: 12px;
-    width: 60px;
+    font-size: 10px;
+    width: 50px;
     height: 30px;
     position: absolute;
     background-color: rgb(25, 25, 28);
@@ -91,7 +91,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translate(-25px, -55px);
+    transform: translate(-20px, -55px);
     color: rgb(225, 225, 225);
     z-index: 6;
     font-family: "Whitney";
@@ -246,6 +246,9 @@
 }
 
 
+
+
+
 .dm-server-nav-bar-wrapper {
     forced-color-adjust: none;
     flex: 0 0 auto;
@@ -261,18 +264,42 @@
 }
 
 .dm-server-nav-bar1 {
+    // forced-color-adjust: none;
+    // position: relative;
+    // display: flex;
+    // box-sizing: border-box;
+    // overflow: hidden;
+    // user-select: none;
+    // -webkit-box-flex: 1;
+    // flex: 1;
+    // -webkit-box-orient: vertical;
+    // -webkit-box-direction: normal;
+    // flex-direction: column;
+    // background-color: hsl(223, 6.9%, 19.8%);
+
+
+
+
+    left: 0;
     forced-color-adjust: none;
-    position: relative;
+    position: absolute;
     display: flex;
     box-sizing: border-box;
-    overflow: hidden;
+    /* overflow: hidden; */
     user-select: none;
     -webkit-box-flex: 1;
     flex: 1;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
-    background-color: hsl(223, 6.9%, 19.8%);
+    background-color: #2f3136;
+    transform: translate(75px, 0px);
+    width: 234px;
+    padding-left: 5px;
+    top: 0;
+    z-index: 2;
+    padding-right: 5px;
+    height: calc(100vh - 49px);
 
 }
 
@@ -308,4 +335,49 @@
     forced-color-adjust: none;
     cursor: pointer;
     font-family: "Whitney";
+    border-color: transparent;
 }
+
+.dm-nav-bar-scroller{
+    overflow: hidden scroll;
+    padding-right: 0px;
+    forced-color-adjust: none;
+    background-color: hsl(223, 6.9%, 19.8%);
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    min-height: 0;
+    -webkit-box-flex: 1;
+    position: relative;
+}
+
+
+
+
+.dm-nav-bar-scroller::-webkit-scrollbar {
+    width: 5px;
+}
+
+.dm-nav-bar-scroller::-webkit-scrollbar-thumb {
+    background: rgb(30, 35, 40);
+    border-radius: 5px;
+    visibility: hidden;
+}
+
+.dm-nav-bar-scroller:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+.dm-nav-bar-scroller::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgb(40, 45, 50);
+    visibility: hidden;
+
+}
+
+.dm-nav-bar-scroller:hover::-webkit-scrollbar-track {
+    visibility: visible;
+}
+
+
+
+
