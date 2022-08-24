@@ -283,5 +283,23 @@
 }
 
 .help-tool-bar{
-
+    forced-color-adjust: none;
+    text-decoration: none;
+    color: var(--text-link);
+    box-sizing: border-box;
+    cursor: pointer;
 }
+
+.help-tool-bar-icon-wrapper{
+    flex: 0 0 auto;
+    margin: 0 8px;
+    forced-color-adjust: none;
+    position: relative;
+    height: 24px;
+    width: auto;
+    -webkit-box-flex: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+
