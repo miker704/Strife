@@ -95,7 +95,7 @@
 //         let USERNAME_ERRORS = ['Username Must be between 2 and 32 in length',"Username can't be blank",'Username Must be between 2 and 32 in length']
 //             if(this.props.formType==="Sign Up"){
 //                 if(this.props.errors.includes(USERNAME_ERRORS[0])){
-                  
+
 //                     return "USERNAME - Must be between 2 and 32 in length";
 //                 }
 //                 else if(this.props.errors.includes("Username can't be blank")){
@@ -110,10 +110,10 @@
 //         // if(this.props.formType === "Sign In"){
 //         //     if()
 //         // }
-    
+
 //         if (this.props.formType === "Sign Up"){
 //             // if(this.props.errors.includes(EMAIL_ERRORS[0])){
-                  
+
 //             //     return "Not well formed email address";
 //             // }
 //             // else if(this.props.errors.includes(EMAIL_ERRORS[1])){
@@ -125,7 +125,7 @@
 //             else if(this.props.errors.includes("Email has already been taken")){
 //                 return "Email has already been taken";
 //             }
-         
+
 //         }
 //         return "";
 //     }
@@ -151,11 +151,11 @@
 //         //     if()
 //         // }
 //         if (this.props.formType === "Sign Up"){
-             
+
 //                     if(this.props.errors.includes(BIRTHDAY_ERRORS[0])){
 //                         return BIRTHDAY_ERRORS[0];
 //                     }
-                
+
 //         }
 //         return "";
 //     }
@@ -188,7 +188,7 @@
 //             </div>
 //         );
 //         let password;
-        
+
 //         let birthday;
 //         const userName = this.props.formType === "Sign In" ? (""):(
 //             <div className="field">
@@ -197,28 +197,28 @@
 //             </div>
 //         );
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
 //         return (
 //             <div className="session-signup-form">
 
 //             <h2>Create an Account!</h2>
 //             <form onSubmit={this.handleSubmit}>
-                  
+
 //                     {userName}
 //                     {/* <input type="text"value={this.state.username} onChange={this.handleInput('username')}/> */}
-                    
+
 //                     <div className="email-field">
 //                         <label id="email-field" className={emailErrorTag}>
 //                             EMAIL{this.emailErrors}
@@ -227,15 +227,15 @@
 //                     </div>
 //                     {/* {email}
 //                     <input type="email"value={this.state.email} onChange={this.handleInput('email')} /> */}
-                  
 
-                  
+
+
 //                     {/* {birthday} */}
 //                     <input type="date"value={this.state.birthday} onChange={this.handleInput('birthday')} />
 //                     {/* {password} */}
-                    
 
-               
+
+
 //                     <input type="password" value={this.state.password} onChange={this.handleInput('password')}/>
 //                     <button type="submit">Create Account!</button>
 //             </form>
@@ -258,3 +258,16 @@
 ///channels/ redirects to /channels/@me 
 //clicking nitro goes to /store
 //
+
+
+
+{/* <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em"
+    xmlns="http://www.w3.org/2000/svg">
+    <path fill="none" d="M0 0h24v24H0z"></path>
+    <path fill-rule="evenodd" d="M16.67 13.13C18.04 14.06 19 15.32 19 17v3h4v-3c0-2.18-3.57-3.47-6.33-3.87z">
+    </path>
+    <circle cx="9" cy="8" r="4" fill-rule="evenodd"></circle>
+    <path fill-rule="evenodd" d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4c-.47 0-.91.1-1.33.24a5.98
+         5.98 0 010 7.52c.42.14.86.24 1.33.24zM9 13c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z">
+    </path>
+</svg> */}
