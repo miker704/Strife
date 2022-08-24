@@ -35,3 +35,26 @@
 
 }
 
+.home-nav-bar-inner{
+    forced-color-adjust: none;
+    align-items: center;
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    -webkit-box-align: center;
+    flex: 1 1 auto;
+    position: relative;
+    -webkit-box-flex: 1;
+    box-sizing: border-box;
+}
+
+.home-friends-icon-wrapper{
+    flex: 0 0 auto;
+    margin: 0 8px;
+    box-sizing: border-box;
+    position: relative;
+    height: 24px;
+    width: auto;
+    -webkit-box-flex: 0;
+    forced-color-adjust: none;
+}
