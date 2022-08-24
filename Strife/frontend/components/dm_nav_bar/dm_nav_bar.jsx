@@ -221,8 +221,8 @@ class DmNavBar extends React.Component {
                     <div className="create-channel-div" onClick={() => this.toggleSearch()}>
                         <i className="fa-solid fa-plus" onClick={() => this.props.openModal("userSearch")} />
                         <div className="dm-tool-tip">
-                            {/* <span>Create DM</span> */}
-                            Create DM
+                            <span>Create DM</span>
+                            {/* Create DM */}
                         </div>
                     </div>
                 </div>
@@ -231,9 +231,6 @@ class DmNavBar extends React.Component {
                     {this.props.dmServers.map((dmServer, dmServerIndex) => {
                         let selectedDmServer = this.props.dmServerId === dmServer.id.toString()
                             ? "selected-dm-server" : "";
-                        console.log("selectedDmServer: ",selectedDmServer);
-                         console.log(`${this.props.dmServerId} === ${dmServer.id.toString()}`); 
-
 
                         let dmServerMembers = Object.values(dmServer.members);
                         let dmServerName = this.generateDmServerName(dmServer);
