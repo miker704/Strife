@@ -11,3 +11,27 @@
     flex-direction: column;
     background-color: hsl(220,7.7%,22.9%);
 }
+
+
+.home-nav-bar{
+    forced-color-adjust: none;
+    background-color: var(--background-primary);
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    height: 48px;
+    padding: 0 8px;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: default;
+    z-index: 2;
+    align-items: center;
+    min-width: 0;
+    width: 100%;
+    -webkit-box-flex: 0;
+    display: flex;
+    -webkit-box-align: center;
+    position: relative;
+    color: var(--text-normal);
+
+}
+
