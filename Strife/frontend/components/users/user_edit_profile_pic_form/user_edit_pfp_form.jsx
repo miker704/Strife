@@ -12,9 +12,6 @@ class EditUserPFP extends React.Component {
 
         }
 
-        // if (this.state.photo_url === null) {
-        //     photo_url
-        // }
 
         this.file_input = null;
         this.cancel = false;
