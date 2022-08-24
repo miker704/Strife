@@ -238,14 +238,15 @@ class DmNavBar extends React.Component {
                         return (
 
                             <li className={`dm-server-li-item ${selectedDmServer}`} key={dmServerIndex}>
-                                <Link to={`/channels/dmServers/${dmServer.id}`}></Link>
+                                <Link to={`/channels/dmServers/${dmServer.id}`}>
                                     {/* <div id="username">
                                         <img src={dmServerPFP} alt="pfp" />
 
                                     </div> */}
                                     <div className='user-icon color-3'> <i className="fa-brands fa-discord" /></div>
                                     <h5 className='dm-server-name'>{dmServerName}</h5>
-                                    {/* <p className='dm-server-subtitle'>{dmServerSubtitle}</p> */}
+                                    <p className='dm-server-subtitle'>{dmServerSubtitle}</p>
+                                </Link>
                             </li>
 
 
