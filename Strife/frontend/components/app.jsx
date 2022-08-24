@@ -14,6 +14,7 @@ import UserProfileContainer from './users/user_profile/user_profile_container';
 import DMNavBarContainer from './dm_nav_bar/dm_nav_bar_container.js';
 import EmptyMessagesContainer from './dm_messages/empty_messages_container.jsx';
 import DmMessagesContainer from './dm_messages/dm_messages_container.js';
+import FriendsHomePageContainer from './friends/friends_page_main/friends_home_page.jsx';
 
 const App = () => (
     <div>
@@ -51,7 +52,9 @@ const App = () => (
     <Switch>
         <ProtectedRoute path="/channels/@me/:dmServerId" component={DmMessagesContainer}/>
         {/* <ProtectedRoute path="/channels/@me/dmServers/:dmServerId" component={DmMessagesContainer}/> */}
-        <ProtectedRoute path="/channels/@me" component={EmptyMessagesContainer}/>
+        {/* <ProtectedRoute path="/channels/@me" component={EmptyMessagesContainer}/> */}
+        <ProtectedRoute path="/channels/@me" component={FriendsHomePageContainer}/>
+
 
     </Switch>
 
