@@ -234,28 +234,6 @@
     border-radius: 50%;
 }
 
-// .dm-server-pfp h5 {
-//     color: #FFFFFF;
-//     font-size: 14px;
-//     text-overflow: ellipsis;
-//     overflow: hidden;
-//     line-height: 18px;
-//     font-weight: 600;
-//     font-family: "Whitney";
-//     white-space: nowrap;
-
-// }
-
-// .dm-server-pfp p {
-//     font-size: 12px;
-//     font-family: "Whitney";
-//     line-height: 13px;
-//     overflow: hidden;
-//     white-space: nowrap;
-//     text-overflow: ellipsis;
-//     color: hsl(216, 0.037%, 73.5%);
-//     font-weight: 400;
-// }
 
 .dm-server-name-wrapper{
     white-space: nowrap;
@@ -265,4 +243,39 @@
     min-width: 0;
     -webkit-box-flex: 1;
     forced-color-adjust: none;
+}
+
+
+.dm-server-nav-bar-wrapper{
+    forced-color-adjust: none;
+    flex: 0 0 auto;
+    flex-direction: column;
+    min-height: 0;
+    width: 240px;
+    -webkit-box-flex: 0;
+    background-color: hsl(223,6.9%,19.8%);
+    overflow: hidden;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+}
+
+.dm-server-nav-bar1{
+    forced-color-adjust: none;
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    overflow: hidden;
+    user-select: none;
+    -webkit-box-flex: 1;
+    flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    background-color: hsl(223,6.9%,19.8%);
+
+}
+
+.dm-nav-bar-search-bar{
+
 }
