@@ -39,7 +39,11 @@ class FriendsHomePageContainer extends React.Component {
                                 <div className="add-friend-tab"><span>Add Friend</span></div>
 
                             </div>
-                            <div className="home-nav-tool-bar"></div>
+                            <div className="home-nav-tool-bar">
+                                <div className="invite-tool-bar"></div>
+                                <div className="inbox-tool-bar"></div>
+                                <div className="help-tool-bar"></div>
+                            </div>
                     </div>
 
 
