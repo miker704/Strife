@@ -235,7 +235,7 @@
 }
 
 
-.dm-server-name-wrapper{
+.dm-server-name-wrapper {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -246,21 +246,21 @@
 }
 
 
-.dm-server-nav-bar-wrapper{
+.dm-server-nav-bar-wrapper {
     forced-color-adjust: none;
     flex: 0 0 auto;
     flex-direction: column;
     min-height: 0;
     width: 240px;
     -webkit-box-flex: 0;
-    background-color: hsl(223,6.9%,19.8%);
+    background-color: hsl(223, 6.9%, 19.8%);
     overflow: hidden;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
 }
 
-.dm-server-nav-bar1{
+.dm-server-nav-bar1 {
     forced-color-adjust: none;
     position: relative;
     display: flex;
@@ -272,10 +272,36 @@
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
-    background-color: hsl(223,6.9%,19.8%);
+    background-color: hsl(223, 6.9%, 19.8%);
 
 }
 
-.dm-nav-bar-search-bar{
+.dm-nav-bar-search-bar {
+    forced-color-adjust: none;
+    flex: 0 0 auto;
+    padding: 0 10px;
+    height: 48px;
+    -webkit-box-align: center;
+    z-index: 2;
+    -webkit-box-flex: 0;
+    align-items: center;
+    box-shadow: 0 1px 0 hsla(240, 11.1%, 1.8%, 0.2), 0 1.5px 0 hsla(240, 7.7%, 2.5%, 0.05), 0 2px 0 hsla(240, 11.1%, 1.8%, 0.05);
+    display: flex;
+    position: relative;
+}
 
+.dm-nav-bar-search-bar-button{
+    width: 100%;
+    height: 28px;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: none;
+    color: hsl(214, 4%, 65.3%);
+    background-color: hsl(216,7.2%,13.5%);
+    text-align: left;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    white-space: nowrap;
 }
