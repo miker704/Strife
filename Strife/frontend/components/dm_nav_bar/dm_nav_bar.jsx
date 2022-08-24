@@ -241,32 +241,19 @@ class DmNavBar extends React.Component {
 
                             <Link to={`/channels/@me/${dmServer.id}`}
                                 className={selectedDmServer}
-                                onClick={() =>this.props.fetchDmServer(dmServer.id)}
+                                onClick={() => this.props.fetchDmServer(dmServer.id)}
                                 key={dmServer.id}
-                                >
-                            <li className={`dm-server-li-item ${selectedDmServer}`} key={dmServerIndex}>
+                            >
+                                <li className={`dm-server-li-item ${selectedDmServer}`} key={dmServerIndex}>
                                     <div className='dm-server-pfp'>
                                         {dmServerPFP}
                                         <div className='dm-server-name-wrapper'>
-                                        <h5 className='dm-server-name'>{dmServerName}</h5>
-                                        <p className='dm-server-subtitle'>{dmServerSubtitle}</p></div>
+                                            <h5 className='dm-server-name'>{dmServerName}</h5>
+                                            <p className='dm-server-subtitle'>{dmServerSubtitle}</p></div>
                                     </div>
-                            </li>
-                                </Link>
-                            // <Link to={`/channels/@me/${dmServer.id}`}
-                            //     className={`dm-server-li-item ${selectedDmServer}`}
-                            //     onClick={() => this.props.fetchDmServer(dmServer.id)}
-                            //     key={dmServer.id}
-                            // >
-                            //     <li className={`dm-server-li-item ${selectedDmServer}`} key={dmServerIndex} >
-                            //         <div className='dm-server-pfp'>
-                            //             {dmServerPFP}
-                            //             <div className='dm-server-name-wrapper'>
-                            //                 <h5 className='dm-server-name'>{dmServerName}</h5>
-                            //                 <p className='dm-server-subtitle'>{dmServerSubtitle}</p></div>
-                            //         </div>
-                            //     </li>
-                            // </Link>
+                                </li>
+                            </Link>
+
 
 
                         )
