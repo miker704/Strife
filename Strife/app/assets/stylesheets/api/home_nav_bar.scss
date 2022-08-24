@@ -271,7 +271,15 @@
 
 
 .inbox-tool-bar{
-
+    forced-color-adjust: none;
+    position: relative;
+    height: 24px;
+    width: auto;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    margin: 0 8px;
+    cursor: pointer;
+    box-sizing: border-box;
 }
 
 .help-tool-bar{
