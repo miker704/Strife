@@ -1,0 +1,13 @@
+//home nav bar rendered on the home page of the app
+
+
+.home-nav-bar-container{
+    display: flex;
+    forced-color-adjust: none;
+    width: 100%;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    background-color: hsl(220,7.7%,22.9%);
+}
