@@ -173,7 +173,7 @@
     border-radius: 4px;
     margin: 0 8px;
     padding: 2px 8px;
-    color: hsl(216,3.7%,73.5%);
+    color: hsl(216, 3.7%, 73.5%);
     forced-color-adjust: none;
     box-sizing: border-box;
     position: relative;
@@ -199,7 +199,7 @@
     border-radius: 4px;
     margin: 0 8px;
     padding: 2px 8px;
-    color: hsl(216,3.7%,73.5%);
+    color: hsl(216, 3.7%, 73.5%);
     forced-color-adjust: none;
     box-sizing: border-box;
     position: relative;
@@ -214,8 +214,8 @@
 }
 
 .add-friend-tab {
-    background-color: var(--status-positive-background);
-    color: var(--status-positive-text);
+    background-color: hsl(139, 47.15, 33.3%);
+    color: #FFFFFF;
     align-items: center;
     text-align: center;
     min-width: 40px;
