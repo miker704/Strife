@@ -96,7 +96,6 @@ class DmNavBar extends React.Component {
             dmServerName = dmServerNameArray.join(", ");
         }
 
-        console.log("dmServername : ", dmServerName);
 
         if (dmServer.dm_server_name === null) {
             let subState = {
@@ -105,7 +104,6 @@ class DmNavBar extends React.Component {
             // this.props.updateDmServer(dmServer.id,subState);
             console.log("substate: ", subState);
         }
-        console.log("dmMemberArray : ", dmMemberArray);
         return dmServerName;
     }
 
@@ -237,19 +235,19 @@ class DmNavBar extends React.Component {
                         let dmServerName = this.generateDmServerName(dmServer);
                         let dmServerSubtitle = dmServerMembers.length > 2 ? `${dmServerMembers.length} Members` : "";
                         let dmServerPFP = this.renderDmServerPFP(dmServerMembers);
-                        console.log("dmServerPFP is : ", dmServerPFP);
                         return (
 
                             <li className={`dm-server-li-item ${selectedDmServer}`} key={dmServerIndex}>
-                                <Link to={`/channels/@me/${dmServer.id}`}>
+                                <Link to={`/channels/@me/${dmServer.id}`}
+                                className={selectedDmServer}
+                                
+                                >
                                     <div className='dm-server-pfp'>
-                                        {/* <img src={dmServerPFP} alt="pfp" /> */}
                                         {dmServerPFP}
                                         <div className='dm-server-name-wrapper'>
                                         <h5 className='dm-server-name'>{dmServerName}</h5>
                                         <p className='dm-server-subtitle'>{dmServerSubtitle}</p></div>
                                     </div>
-                                    {/* <div className='user-icon color-3'> <i className="fa-brands fa-discord" /></div> */}
                                 </Link>
                             </li>
 
