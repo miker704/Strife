@@ -102,6 +102,8 @@
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
+    font-family: "Whitney";
+    font-size: 16px;
 }
 
 .online-tab{
@@ -133,8 +135,31 @@
 
 
 .all-tab{
-
+    align-items: center;
+    text-align: center;
+    min-width: 40px;
+    -webkit-app-region: no-drag;
+    justify-content: center;
+    -webkit-box-align: center;
+    display: flex;
+    -webkit-box-pack: center;
+    border-radius: 4px;
+    margin: 0 8px;
+    padding: 2px 8px;
+    color: var(--interactive-normal);
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
+
 
 .pending-tab{
 
