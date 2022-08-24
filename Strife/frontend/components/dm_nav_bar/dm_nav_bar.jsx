@@ -59,31 +59,20 @@ class DmNavBar extends React.Component {
             }
         }
         else if (dmServerMembers.length > 2) {
-            dmServerPFP = dmServerMembers.at(-1);
+            // dmServerPFP = dmServerMembers.at(-1);
+            dmServerPFP = dmServerMembers[Math.floor(Math.random()*dmServerMembers.length)];
         }
 
         if (dmServerMembers.length === 2) {
-            console.log("dmserver photo is : ", default_Photo);
             if (dmServerPFP.photo !== undefined) {
-                // return dmServerPFP.photo;
                 return <img src={dmServerPFP.photo} alt="pfp" />
-
             }
             else if (dmServerPFP.photo === undefined) {
-                // return default_Photo;
                 return <img src={default_Photo} alt="pfp" />
-
             }
 
         }
-        // else if (dmServerMembers.length === 2 && dmServerPFP.photo !== undefined) {
-        //     console.log("using user profile pic: ", dmServerPFP.photo);
-        //     return dmServerPFP.photo;
-
-        // }
-        console.log("our dmServerPFP will be from user : ", dmServerPFP);
-        // return dmServerPFP;
-        // return group_Chat_Photo;
+     
         return <img src={group_Chat_Photo} alt="pfp" className={`user-icon color-${dmServerPFP.color_tag}`} />
 
 
