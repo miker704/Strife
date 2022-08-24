@@ -18,6 +18,7 @@
     z-index: 2;
     overflow: hidden scroll;
 }
+
 .dm-server-nav-bar::-webkit-scrollbar {
     width: 5px;
 }
@@ -29,7 +30,7 @@
 }
 
 .dm-server-nav-bar:hover::-webkit-scrollbar-thumb {
-    visibility:visible;
+    visibility: visible;
 }
 
 .dm-server-nav-bar::-webkit-scrollbar-track {
@@ -74,7 +75,7 @@
     font-family: "Ginto";
 }
 
-.dm-list-header h4:hover{
+.dm-list-header h4:hover {
     filter: brightness(125%);
 }
 
@@ -82,7 +83,7 @@
 .dm-tool-tip {
     visibility: hidden;
     font-size: 12px;
-    width: 100px;
+    width: 60px;
     height: 30px;
     position: absolute;
     background-color: rgb(25, 25, 28);
@@ -90,9 +91,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translate(-45px, -55px);
+    transform: translate(-25px, -55px);
     color: rgb(225, 225, 225);
     z-index: 6;
+    font-family: "Whitney";
+}
+
+
+.create-channel-div {
+    cursor: pointer;
+    transform: translate(-8px, 0px);
+    z-index: 20;
 }
 
 .create-channel-div:hover .dm-tool-tip {
@@ -145,7 +154,10 @@
     color: rgb(151, 152, 157);
 }
 
-.dm-member-li-item{
+
+
+
+.dm-member-li-item {
     display: flex;
     padding-top: 7.5px;
     padding-left: 15px;
@@ -154,26 +166,30 @@
 }
 
 
-.dm-member-li-item:hover{
+.dm-member-li-item:hover {
     background-color: #3A3C43;
 
 }
 
-.dm-member-username{
+.dm-member-username {
     padding-left: 10px;
     padding-top: 3px;
     font-family: "Whitney";
     font-size: 16px;
 }
 
-.selected-dm-server{
+.selected-dm-server {
     background-color: #3A3C43;
     color: #FFFFFF;
 
 }
 
+.dm-server-li-item.selected-dm-server {
+    background-color: #3A3C43;
+    color: #FFFFFF;
+}
 
-.dm-server-li-item{
+.dm-server-li-item {
     display: flex;
     padding-top: 7.5px;
     padding-left: 15px;
@@ -182,18 +198,20 @@
 }
 
 
-.dm-server-li-item:hover{
+.dm-server-li-item:hover {
     background-color: #3A3C43;
 
 }
 
-.dm-server-name{
+.dm-server-name {
     padding-left: 10px;
     padding-top: 3px;
     font-family: "Whitney";
     font-size: 16px;
 }
-.dm-server-subtitle{
+
+.dm-server-subtitle {
+    padding-left: 10px;
     font-size: 12px;
     line-height: 16px;
     font-weight: 500;
@@ -203,4 +221,48 @@
     forced-color-adjust: none;
     font-family: "Whitney";
 
+}
+
+.dm-server-pfp {
+    display: flex;
+    align-items: center;
+}
+
+.dm-server-pfp>img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+}
+
+// .dm-server-pfp h5 {
+//     color: #FFFFFF;
+//     font-size: 14px;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     line-height: 18px;
+//     font-weight: 600;
+//     font-family: "Whitney";
+//     white-space: nowrap;
+
+// }
+
+// .dm-server-pfp p {
+//     font-size: 12px;
+//     font-family: "Whitney";
+//     line-height: 13px;
+//     overflow: hidden;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     color: hsl(216, 0.037%, 73.5%);
+//     font-weight: 400;
+// }
+
+.dm-server-name-wrapper{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1 1 auto;
+    min-width: 0;
+    -webkit-box-flex: 1;
+    forced-color-adjust: none;
 }
