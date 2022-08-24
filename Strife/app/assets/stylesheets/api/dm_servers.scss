@@ -304,4 +304,8 @@
     font-weight: 500;
     line-height: 24px;
     white-space: nowrap;
+    text-rendering: optimizeLegibility;
+    forced-color-adjust: none;
+    cursor: pointer;
+    font-family: "Whitney";
 }
