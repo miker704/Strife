@@ -260,5 +260,12 @@ label.field-error {
   --deprecated-text-input-border-hover: hsl(240, calc(var(--saturation-factor, 1)*11.1%), 1.8%);
   --deprecated-text-input-border-disabled: hsl(216, calc(var(--saturation-factor, 1)*7.2%), 13.5%);
   --deprecated-text-input-prefix: hsl(210, calc(var(--saturation-factor, 1)*2.9%), 86.7%);
-
+  --focus-primary: hsl(197, calc(var(--saturation-factor, 1)*100%), 47.8%);
+  --guild-header-text-shadow: 0 1px 1px hsla(0, calc(var(--saturation-factor, 1)*0%), 0%, 0.4);
+  --elevation-stroke: 0 0 0 1px hsla(240, calc(var(--saturation-factor, 1)*11.1%), 1.8%, 0.15);
+  --elevation-low: 0 1px 0 hsla(240, calc(var(--saturation-factor, 1)*11.1%), 1.8%, 0.2), 0 1.5px 0 hsla(240, calc(var(--saturation-factor, 1)*7.7%), 2.5%, 0.05), 0 2px 0 hsla(240, calc(var(--saturation-factor, 1)*11.1%), 1.8%, 0.05);
+  --elevation-medium: 0 4px 4px hsla(0, calc(var(--saturation-factor, 1)*0%), 0%, 0.16);
+  --elevation-high: 0 8px 16px hsla(0, calc(var(--saturation-factor, 1)*0%), 0%, 0.24);
+  --brightness: calc(1.5 - var(--saturation-factor, 1)*0.5);
+  --contrast: var(--saturation-factor, 1);
 }
