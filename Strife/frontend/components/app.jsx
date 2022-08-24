@@ -24,13 +24,13 @@ const App = () => (
 
         <ProtectedRoute path="/channels/" component={UserNavContainer}/>
         
-        {/* <ProtectedRoute path="/channels/@me" component={UserNavContainer}/> */}
 
 
 
     <Switch>
-        <ProtectedRoute path="/channels/@me" component={DMNavBarContainer}/>
         <ProtectedRoute path="/channels/@me/:dmServerId" component={DMNavBarContainer}/>
+        <ProtectedRoute path="/channels/@me" component={DMNavBarContainer}/>
+        
 
         
         {/* <ProtectedRoute path="/channels/dmServers/:dmServerId" component={DMNavBarContainer}/> */}
