@@ -28,6 +28,13 @@ class FriendsHomePageContainer extends React.Component {
                                     </path>
                                 </g>
                             </svg>
+                            <h3 className="home-nav-bar-friends-text">Friends</h3>
+                            <div className="home-friend-divider"></div>
+                            <div className="friends-status-nav-bar">
+
+
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
