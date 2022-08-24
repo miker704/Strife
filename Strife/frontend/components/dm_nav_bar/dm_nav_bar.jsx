@@ -47,9 +47,20 @@ class DmNavBar extends React.Component {
     }
 
 
-    renderDmServerPFP(dmServer){
-        let dmMemberArray = Object.values(dmServer.members);
-        console.log("dmserverPFP: ",dmMemberArray);
+    renderDmServerPFP (dmServerMembers) {
+        let dmServerPFP = "";
+        if (dmServerMembers.length === 2) {
+            for (let i of dmServerMembers) {
+                if (i.id !== this.props.currentUser.id) {
+                    dmServerPFP = i;
+                }
+            }
+        }
+        else if (dmServerMembers.length > 2) {
+            dmServerPFP = dmServerMembers.at(-1);
+        }
+        console.log("our dmServerPFP will be from user : ", dmServerPFP);
+
     }
 
 
@@ -90,7 +101,7 @@ class DmNavBar extends React.Component {
         console.log("dmusers", this.props.dmUsers);
         console.log("dmServers: ", this.props.dmServers);
         console.log("dmServers navbar dmServerId : ", this.props.dmServerId);
- 
+
 
         return (
             <div className='dm-server-nav-bar'>
@@ -208,16 +219,18 @@ class DmNavBar extends React.Component {
                     {this.props.dmServers.map((dmServer, dmServerIndex) => {
                         let selectedDmServer = this.props.dmServerId === dmServer.id.toString()
                             ? "selected-dm-server" : "";
+                        let dmServerMembers = Object.values(dmServer.members);
                         let dmServerName = this.generateDmServerName(dmServer);
-                        this.renderDmServerPFP(dmServer);
+                        let dmServerSubtitle = dmServerMembers.length > 2 ? `${dmServerMembers.length} Members` : "";
+                        this.renderDmServerPFP(dmServerMembers);
                         return (
 
-                            <li className= {`dm-server-li-item ${selectedDmServer}`} key={dmServerIndex}>
-                                    <Link to={`/channels/dmServers/${dmServer.id}`}>
-                                    
-                                        <h5 className='dm-server-name'>{dmServerName}</h5>
-                                    
-                                    </Link>
+                            <li className={`dm-server-li-item ${selectedDmServer}`} key={dmServerIndex}>
+                                <Link to={`/channels/dmServers/${dmServer.id}`}>
+
+                                    <h5 className='dm-server-name'>{dmServerName}</h5>
+                                    <p className='dm-server-subtitle'>{dmServerSubtitle}</p>
+                                </Link>
                             </li>
 
 
