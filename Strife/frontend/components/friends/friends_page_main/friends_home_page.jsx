@@ -28,6 +28,7 @@ class FriendsHomePageContainer extends React.Component {
                                     </path>
                                 </g>
                             </svg>
+                        </div>
                             <h3 className="home-nav-bar-friends-text">Friends</h3>
                             <div className="home-friend-divider"></div>
                             <div className="friends-status-nav-bar">
@@ -38,8 +39,9 @@ class FriendsHomePageContainer extends React.Component {
                                 <div className="add-friend-tab"><span>Add Friend</span></div>
 
                             </div>
-                        </div>
                     </div>
+
+                    
                 </div>
             </div>
         )
