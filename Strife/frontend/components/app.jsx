@@ -29,7 +29,10 @@ const App = () => (
 
 
     <Switch>
-        <ProtectedRoute path="/channels/:dmServerId" component={DMNavBarContainer}/>
+        <ProtectedRoute path="/channels/@me" component={DMNavBarContainer}/>
+        <ProtectedRoute path="/channels/@me/:dmServerId" component={DMNavBarContainer}/>
+
+        
         {/* <ProtectedRoute path="/channels/dmServers/:dmServerId" component={DMNavBarContainer}/> */}
 
         {/* <ProtectedRoute path="/channels/:serverId/:channelId" component={ChannelNavBarContainer} /> */}
@@ -47,7 +50,7 @@ const App = () => (
     {/* render proper component for messages type or friends list */}
     <Switch>
         <ProtectedRoute path="/channels/@me" component={EmptyMessagesContainer}/>
-        <ProtectedRoute path="/channels/:dmServerId" component={DmMessagesContainer}/>
+        <ProtectedRoute path="/channels/@me/:dmServerId" component={DmMessagesContainer}/>
 
     </Switch>
 
