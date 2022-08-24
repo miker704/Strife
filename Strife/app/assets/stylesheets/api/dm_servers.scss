@@ -208,6 +208,8 @@
     padding-top: 3px;
     font-family: "Whitney";
     font-size: 16px;
+    overflow-x: hidden;
+    max-width: 180px;
 }
 
 .dm-server-subtitle {
@@ -220,6 +222,8 @@
     overflow: hidden;
     forced-color-adjust: none;
     font-family: "Whitney";
+    overflow-x: hidden;
+    max-width: 180px;
 
 }
 
