@@ -31,9 +31,12 @@ class FriendsHomePageContainer extends React.Component {
                             <h3 className="home-nav-bar-friends-text">Friends</h3>
                             <div className="home-friend-divider"></div>
                             <div className="friends-status-nav-bar">
+                                <div className="online-tab">Online</div>
+                                <div className="all-tab">All</div>
+                                <div className="pending-tab">Pending</div>
+                                <div className="blocked-tab">Blocked</div>
 
 
-                                
                             </div>
                         </div>
                     </div>
