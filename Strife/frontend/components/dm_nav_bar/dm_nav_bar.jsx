@@ -59,8 +59,8 @@ class DmNavBar extends React.Component {
             }
         }
         else if (dmServerMembers.length > 2) {
-            // dmServerPFP = dmServerMembers.at(-1);
-            dmServerPFP = dmServerMembers[Math.floor(Math.random()*dmServerMembers.length)];
+            dmServerPFP = dmServerMembers.at(-1);
+            // dmServerPFP = dmServerMembers[Math.floor(Math.random()*dmServerMembers.length)];
         }
 
         if (dmServerMembers.length === 2) {
@@ -72,7 +72,7 @@ class DmNavBar extends React.Component {
             }
 
         }
-     
+
         return <img src={group_Chat_Photo} alt="pfp" className={`user-icon color-${dmServerPFP.color_tag}`} />
 
 
@@ -231,25 +231,45 @@ class DmNavBar extends React.Component {
                     {this.props.dmServers.map((dmServer, dmServerIndex) => {
                         let selectedDmServer = this.props.dmServerId === dmServer.id.toString()
                             ? "selected-dm-server" : "";
+                        console.log("selectedDmServer: ",selectedDmServer);
+                         console.log(`${this.props.dmServerId} === ${dmServer.id.toString()}`); 
+
+
                         let dmServerMembers = Object.values(dmServer.members);
                         let dmServerName = this.generateDmServerName(dmServer);
                         let dmServerSubtitle = dmServerMembers.length > 2 ? `${dmServerMembers.length} Members` : "";
                         let dmServerPFP = this.renderDmServerPFP(dmServerMembers);
+
                         return (
 
-                            <li className={`dm-server-li-item ${selectedDmServer}`} key={dmServerIndex}>
-                                <Link to={`/channels/@me/${dmServer.id}`}
+                            <Link to={`/channels/@me/${dmServer.id}`}
                                 className={selectedDmServer}
-                                
+                                onClick={() =>this.props.fetchDmServer(dmServer.id)}
+                                key={dmServer.id}
                                 >
+                            <li className={`dm-server-li-item ${selectedDmServer}`} key={dmServerIndex}>
                                     <div className='dm-server-pfp'>
                                         {dmServerPFP}
                                         <div className='dm-server-name-wrapper'>
                                         <h5 className='dm-server-name'>{dmServerName}</h5>
                                         <p className='dm-server-subtitle'>{dmServerSubtitle}</p></div>
                                     </div>
-                                </Link>
                             </li>
+                                </Link>
+                            // <Link to={`/channels/@me/${dmServer.id}`}
+                            //     className={`dm-server-li-item ${selectedDmServer}`}
+                            //     onClick={() => this.props.fetchDmServer(dmServer.id)}
+                            //     key={dmServer.id}
+                            // >
+                            //     <li className={`dm-server-li-item ${selectedDmServer}`} key={dmServerIndex} >
+                            //         <div className='dm-server-pfp'>
+                            //             {dmServerPFP}
+                            //             <div className='dm-server-name-wrapper'>
+                            //                 <h5 className='dm-server-name'>{dmServerName}</h5>
+                            //                 <p className='dm-server-subtitle'>{dmServerSubtitle}</p></div>
+                            //         </div>
+                            //     </li>
+                            // </Link>
 
 
                         )
