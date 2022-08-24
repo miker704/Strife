@@ -49,8 +49,9 @@ const App = () => (
 
     {/* render proper component for messages type or friends list */}
     <Switch>
-        <ProtectedRoute path="/channels/@me" component={EmptyMessagesContainer}/>
         <ProtectedRoute path="/channels/@me/:dmServerId" component={DmMessagesContainer}/>
+        {/* <ProtectedRoute path="/channels/@me/dmServers/:dmServerId" component={DmMessagesContainer}/> */}
+        <ProtectedRoute path="/channels/@me" component={EmptyMessagesContainer}/>
 
     </Switch>
 
@@ -65,7 +66,7 @@ const App = () => (
 
 
 
-
+            {/* this is the user auth routes */}
         <Switch>
 
             <AuthRoute exact path="/" component={SplashContainer} />
