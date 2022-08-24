@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { fetchDmServers, updateDmServer, removeDmServerErrors } from "../../actions/dm_server_actions";
+import { fetchDmServers, updateDmServer, removeDmServerErrors, fetchDmServer } from "../../actions/dm_server_actions";
 import { openModal } from "../../actions/modal_actions";
 import DmNavBar from "./dm_nav_bar";
 
@@ -22,6 +22,7 @@ const mDTP = (dispatch) => {
         openModal: (modal) => dispatch(openModal(modal)),
         fetchUserDmServers: (userId) => dispatch(fetchDmServers(userId)),
         updateDmServer: (dmserverId,dmserver) => dispatch(updateDmServer(dmserverId,dmserver)),
+        fetchDmServer: (dmserverId) => dispatch(fetchDmServer(dmserverId)),
         removeDmServerErrors: () => dispatch(removeDmServerErrors())
     }
 }
