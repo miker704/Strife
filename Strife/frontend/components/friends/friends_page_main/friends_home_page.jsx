@@ -35,7 +35,7 @@ class FriendsHomePageContainer extends React.Component {
                                 <div className="all-tab">All</div>
                                 <div className="pending-tab">Pending</div>
                                 <div className="blocked-tab">Blocked</div>
-
+                                <div className="add-friend-tab"></div>
 
                             </div>
                         </div>
