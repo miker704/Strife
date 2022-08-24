@@ -10,6 +10,9 @@
     -webkit-box-direction: normal;
     flex-direction: column;
     background-color: hsl(220, 7.7%, 22.9%);
+
+   
+  
 }
 
 
@@ -32,6 +35,16 @@
     -webkit-box-align: center;
     position: relative;
     color: hsl(210, 2.9%, 86.7%);
+
+
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: calc(100vw - 310px);
+    // height: 100vh;
+    transform: translate(309px, 0px);
+    // background-color: #36393F;
+    // z-index: -1;
 
 }
 
@@ -119,7 +132,8 @@
     margin: 0 8px;
     padding: 2px 8px;
     cursor: default;
-    color: #FFFFFF;
+    // color: #FFFFFF;
+    color: hsl(216, 3.7%, 73.5%);
     forced-color-adjust: none;
     box-sizing: border-box;
     position: relative;
@@ -130,7 +144,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    background-color: hsla(217, 7.6%, 33.5%, 0.6);
+    // background-color: hsla(217, 7.6%, 33.5%, 0.6);
 }
 
 
@@ -241,6 +255,17 @@
 }
 
 
+.online-tab.selected,.all-tab.selected,.pending-tab.selected,.blocked-tab.selected{
+      background-color: hsla(217, 7.6%, 33.5%, 0.6);
+      color: #FFFFFF;
+}
+
+.add-friend-tab.selected{
+    background-color: transparent;
+    color:hsl(139, 51.6%, 52.5%);
+}
+
+
 .home-nav-tool-bar {
     forced-color-adjust: none;
     -webkit-box-flex: 0;
@@ -268,6 +293,7 @@
     margin: 0 8px;
     cursor: pointer;
     box-sizing: border-box;
+    color: #B9BBBE;
 }
 
 
@@ -281,12 +307,15 @@
     margin: 0 8px;
     cursor: pointer;
     box-sizing: border-box;
+    color: #B9BBBE;
+
 }
 
 .help-tool-bar {
     forced-color-adjust: none;
     text-decoration: none;
-    color: hsl(197, 100%, 47.8%);
+    // color: hsl(197, 100%, 47.8%);
+    color: #B9BBBE;
     box-sizing: border-box;
     cursor: pointer;
 }
