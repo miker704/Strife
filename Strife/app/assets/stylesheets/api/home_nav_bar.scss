@@ -119,7 +119,7 @@
     margin: 0 8px;
     padding: 2px 8px;
     cursor: default;
-    color: var(--interactive-active);
+    color: #FFFFFF;
     forced-color-adjust: none;
     box-sizing: border-box;
     position: relative;
@@ -130,7 +130,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    background-color: var(--background-modifier-selected);
+    background-color: hsla(217, 7.6%, 33.5%, 0.6);
 }
 
 
