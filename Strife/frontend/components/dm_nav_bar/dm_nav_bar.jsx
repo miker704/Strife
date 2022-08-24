@@ -50,6 +50,7 @@ class DmNavBar extends React.Component {
     renderDmServerPFP (dmServerMembers) {
         let dmServerPFP = "";
         let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
+        let group_Chat_Photo = "https://strife-seeds.s3.amazonaws.com/group_chat_icon.svg";
         if (dmServerMembers.length === 2) {
             for (let i of dmServerMembers) {
                 if (i.id !== this.props.currentUser.id) {
@@ -61,18 +62,30 @@ class DmNavBar extends React.Component {
             dmServerPFP = dmServerMembers.at(-1);
         }
 
-        if (dmServerMembers.length === 2 && dmServerPFP.photo === undefined) {
+        if (dmServerMembers.length === 2) {
             console.log("dmserver photo is : ", default_Photo);
-            return default_Photo;
-        }
-        else if (dmServerMembers.length === 2 && dmServerPFP.photo !== undefined) {
-            console.log("using user profile pic: ", dmServerPFP.photo);
-            return dmServerPFP.photo;
+            if (dmServerPFP.photo !== undefined) {
+                // return dmServerPFP.photo;
+                return <img src={dmServerPFP.photo} alt="pfp" />
+
+            }
+            else if (dmServerPFP.photo === undefined) {
+                // return default_Photo;
+                return <img src={default_Photo} alt="pfp" />
+
+            }
 
         }
+        // else if (dmServerMembers.length === 2 && dmServerPFP.photo !== undefined) {
+        //     console.log("using user profile pic: ", dmServerPFP.photo);
+        //     return dmServerPFP.photo;
+
+        // }
         console.log("our dmServerPFP will be from user : ", dmServerPFP);
         // return dmServerPFP;
-        return default_Photo;
+        // return group_Chat_Photo;
+        return <img src={group_Chat_Photo} alt="pfp" className={`user-icon color-${dmServerPFP.color_tag}`} />
+
 
     }
 
@@ -221,7 +234,8 @@ class DmNavBar extends React.Component {
                     <div className="create-channel-div" onClick={() => this.toggleSearch()}>
                         <i className="fa-solid fa-plus" onClick={() => this.props.openModal("userSearch")} />
                         <div className="dm-tool-tip">
-                            <span>Create DM</span>
+                            {/* <span>Create DM</span> */}
+                            Create DM
                         </div>
                     </div>
                 </div>
@@ -234,18 +248,19 @@ class DmNavBar extends React.Component {
                         let dmServerName = this.generateDmServerName(dmServer);
                         let dmServerSubtitle = dmServerMembers.length > 2 ? `${dmServerMembers.length} Members` : "";
                         let dmServerPFP = this.renderDmServerPFP(dmServerMembers);
-                        console.log("dmServerPFP is : ",dmServerPFP);
+                        console.log("dmServerPFP is : ", dmServerPFP);
                         return (
 
                             <li className={`dm-server-li-item ${selectedDmServer}`} key={dmServerIndex}>
-                                <Link to={`/channels/dmServers/${dmServer.id}`}>
-                                    {/* <div id="username">
-                                        <img src={dmServerPFP} alt="pfp" />
-
-                                    </div> */}
-                                    <div className='user-icon color-3'> <i className="fa-brands fa-discord" /></div>
-                                    <h5 className='dm-server-name'>{dmServerName}</h5>
-                                    <p className='dm-server-subtitle'>{dmServerSubtitle}</p>
+                                <Link to={`/channels/@me/${dmServer.id}`}>
+                                    <div className='dm-server-pfp'>
+                                        {/* <img src={dmServerPFP} alt="pfp" /> */}
+                                        {dmServerPFP}
+                                        <div className='dm-server-name-wrapper'>
+                                        <h5 className='dm-server-name'>{dmServerName}</h5>
+                                        <p className='dm-server-subtitle'>{dmServerSubtitle}</p></div>
+                                    </div>
+                                    {/* <div className='user-icon color-3'> <i className="fa-brands fa-discord" /></div> */}
                                 </Link>
                             </li>
 
