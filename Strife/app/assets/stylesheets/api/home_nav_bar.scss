@@ -242,5 +242,38 @@
 
 
 .home-nav-tool-bar{
-    
+    forced-color-adjust: none;
+    -webkit-box-flex: 0;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex: 0 0 auto;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.invite-tool-bar{
+    forced-color-adjust: none;
+    display: flex;
+    box-sizing: border-box;
+}
+.invite-tool-bar-group-dm{
+    forced-color-adjust: none;
+    position: relative;
+    height: 24px;
+    width: auto;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    margin: 0 8px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+
+.inbox-tool-bar{
+
+}
+
+.help-tool-bar{
+
 }
