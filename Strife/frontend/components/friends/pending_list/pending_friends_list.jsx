@@ -11,7 +11,7 @@ class PendingFriendList extends React.Component {
 
 
     render () {
-        let outgoing_requests = this.props.ongoing;
+        let outgoing_requests = this.props.outgoing;
         let incoming_requests = this.props.incoming;
         let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
 
