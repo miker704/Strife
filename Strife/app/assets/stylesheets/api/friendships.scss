@@ -935,35 +935,35 @@ $off-grey: #B9BBBE;
     flex: 0 1 auto;
 }
 
-.add-friends-flex-text{
+.add-friends-flex-text {
     font-size: 16px;
     line-height: 20px;
     forced-color-adjust: none;
     text-align: center;
     margin-top: 8px;
     outline: 0;
-    color:hsl(214,4%,65.3%);
+    color: hsl(214, 4%, 65.3%);
     font-family: "Whitney";
 }
 
 
 
-.friend-msg-actions{
+.friend-msg-actions {
     forced-color-adjust: none;
     margin-left: 8px;
     display: flex;
     outline: 0;
 }
 
-.friend-msg-button{
+.friend-msg-button {
     forced-color-adjust: none;
     margin-left: 0;
     cursor: pointer;
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    color: hsl(216,3.7%,73.5%);
-    background-color: hsl(223,6.9%,19.8%);
+    color: hsl(216, 3.7%, 73.5%);
+    background-color: hsl(223, 6.9%, 19.8%);
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -973,21 +973,21 @@ $off-grey: #B9BBBE;
 
 }
 
-.icon-1WV{
+.icon-1WV {
     width: 20px;
     height: 20px;
     forced-color-adjust: none;
 }
 
 
-.friend-options-button{
+.friend-options-button {
     forced-color-adjust: none;
     cursor: pointer;
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    color: hsl(216,3.7%,73.5%);
-    background-color: hsl(223,6.9%,19.8%);
+    color: hsl(216, 3.7%, 73.5%);
+    background-color: hsl(223, 6.9%, 19.8%);
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -999,14 +999,14 @@ $off-grey: #B9BBBE;
 
 }
 
-.icon-1WVg{
+.icon-1WVg {
     width: 20px;
     height: 20px;
     forced-color-adjust: none;
 }
 
 
-.pending-request-actions{
+.pending-request-actions {
     forced-color-adjust: none;
     margin-left: 8px;
     display: flex;
@@ -1014,15 +1014,15 @@ $off-grey: #B9BBBE;
 }
 
 
-.pending-check-icon{
+.pending-check-icon {
     forced-color-adjust: none;
     margin-left: 0;
     cursor: pointer;
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    color: hsl(216,3.7%,73.5%);
-    background-color: hsl(223,6.9%,19.8%);
+    color: hsl(216, 3.7%, 73.5%);
+    background-color: hsl(223, 6.9%, 19.8%);
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -1032,14 +1032,14 @@ $off-grey: #B9BBBE;
 }
 
 
-.pending-deny-icon{
+.pending-deny-icon {
     forced-color-adjust: none;
     cursor: pointer;
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    color: hsl(216,3.7%,73.5%);
-    background-color: hsl(223,6.9%,19.8%);
+    color: hsl(216, 3.7%, 73.5%);
+    background-color: hsl(223, 6.9%, 19.8%);
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -1048,4 +1048,66 @@ $off-grey: #B9BBBE;
     margin-left: 10px;
     outline: 0;
 
+}
+
+.pending-request-actions-tool-tip {
+    // display: none;
+    visibility: hidden;
+    position: absolute;
+    // top: -40px;
+    background: #23272a;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 4px;
+    border-radius: 4px;
+    width: fit-content;
+    color: #B9BBBE;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translate(0px, -27px);
+
+}
+
+.pending-request-actions-tool-tip-triangle {
+    // display: none;
+    visibility: hidden;
+    position: absolute;
+    // top: -12px;
+    height: 0;
+    width: 0;
+    border-style: solid;
+    border-color: #23272a transparent transparent transparent;
+    border-width: 5px 5px 0 5px;
+    transform: translate(0px, -12px);
+}
+
+// .pending-request-actions:hover .pending-request-actions-tool-tip,
+// .pending-request-actions:hover .pending-request-actions-tool-tip-triangle {
+//     // display: block;
+//     visibility: visible;
+// }
+
+
+.pending-deny-icon:hover .pending-request-actions-tool-tip,
+.pending-deny-icon:hover .pending-request-actions-tool-tip-triangle {
+    visibility: visible;
+    z-index: 10;
+
+}
+
+.pending-check-icon:hover .pending-request-actions-tool-tip,
+.pending-check-icon:hover .pending-request-actions-tool-tip-triangle {
+    visibility: visible;
+    z-index: 10;
+
+
+}
+
+.pending-request-actions .pending-deny-icon:hover {
+    color: #ED4245;
+    filter: brightness(1.3);
+}
+
+.pending-request-actions .pending-check-icon:hover {
+    color: #3BA55D;
+    filter: brightness(1.3);
 }
