@@ -21,7 +21,14 @@ class BlockedList extends React.Component {
         if (allBlockedUsers.length === 0) {
             return (
                 <div className="friend-index-container">
-
+                        <div className="empty-state-container">
+                            <div className="blocked-users-empty">
+                                <div className="blocked-users-flex">
+                                    <img className="cant-block-wumpus" alt="img" />
+                                    <div className="block-wumpus-text">You can't unblock the Wumpus.</div>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             )
         }
