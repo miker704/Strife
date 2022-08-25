@@ -171,6 +171,8 @@ class FriendsHomePageContainer extends React.Component {
                         {this.renderAllFriendShips()}
                         {this.renderAllFriendShipsOnline()}
                         {this.renderBlockList()}
+                        {this.renderPendingList()}
+                        {this.renderAddFriend()}
 
                     </div>
                     <div className="active-now-section-wrapper">
