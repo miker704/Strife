@@ -15,7 +15,7 @@ class PendingFriendList extends React.Component {
 
     }
 
-    deleteFriendShip(){
+    deleteFriendShip(friend){
 
     }
 
