@@ -117,3 +117,40 @@
     overflow: hidden;
     font-family: "Whitney";
 }
+
+
+
+
+.friendship-index-container{
+    height: calc(100% - 48px);
+    padding-right: 3px;
+    display: flex;
+    flex-direction: column;
+}
+
+.friend-index{
+    overflow: hidden auto;
+}
+
+.all-friends{
+
+}
+
+.friend-index-item-wrapper{
+    margin: 0px 30px 0px 20px;
+    padding: 0px 10px;
+}
+
+
+.friend-index-item{
+    border-top: 1px solid #ffffff0f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 62px;
+}
+
+.friend-info{
+    display: flex;
+    align-items: center;
+}
