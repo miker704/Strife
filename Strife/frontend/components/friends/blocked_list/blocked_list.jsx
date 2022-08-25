@@ -91,7 +91,7 @@ class BlockedList extends React.Component {
 
         }
         else {
-            // if (allBlockedUsers.length === 0) {
+         
             return (
                 <div className="friend-index-container">
                     <div className="empty-state-container">
@@ -104,7 +104,7 @@ class BlockedList extends React.Component {
                     </div>
                 </div>
             )
-            // }
+            
         }
 
 
