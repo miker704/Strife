@@ -92,7 +92,9 @@ class FriendsHomePageContainer extends React.Component {
 
     renderAddFriend(){
         if(this.state.Add_Friend === true){
-            
+            return (
+                <AddFriendsContainer/>
+            )
         }
     }
 
