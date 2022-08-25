@@ -4,6 +4,17 @@ import React from "react";
 class AddFriends extends React.Component{
     constructor(props){
         super(props);
+        this.submissionBlocker = this.submissionBlocker.bind(this);
+
+    }
+
+    submissionBlocker () {
+        if (document.getElementById("servernameInput").value === "" || document.getElementById("servernameInput").value === null) {
+            document.getElementById("serverCreateButton").disabled = true;
+        }
+        else {
+            document.getElementById("serverCreateButton").disabled = false;
+        }
     }
     render(){
         return (
@@ -19,7 +30,7 @@ class AddFriends extends React.Component{
                                     <input className="add-friend-input-bar" type="text" />
                                 </div>
                                 <button className="add-friend-button">
-                                    <div className="add-friend-button-text"></div>
+                                    <div className="add-friend-button-text">Send Friend Request</div>
                                 </button>
                             </div>
                         </form>
