@@ -126,7 +126,7 @@ $off-grey: #B9BBBE;
 
 
 .friend-index-container {
-    height: calc(100% - 48px);
+    height: calc(100% - 0px);
     padding-right: 3px;
     display: flex;
     flex-direction: column;
@@ -134,7 +134,7 @@ $off-grey: #B9BBBE;
 }
 
 .friend-index {
-    overflow: hidden auto;
+    overflow: hidden scroll;
 }
 
 .all-friends {
@@ -151,7 +151,25 @@ $off-grey: #B9BBBE;
 .friend-index-item-wrapper {
     margin: 0px 30px 0px 20px;
     padding: 0px 10px;
+    // overflow: hidden scroll;
+    height: 92vh;
 }
+
+.friend-index::-webkit-scrollbar {
+    width: 8px;
+}
+
+.friend-index::-webkit-scrollbar-thumb {
+    background: rgb(30, 35, 40);
+    border-radius: 8px;
+}
+
+
+.friend-index::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgb(40, 45, 50);
+}
+
 
 
 .friend-index-item {
@@ -461,6 +479,8 @@ $off-grey: #B9BBBE;
     line-height: 32px;
     height: 30px;
     padding: 0 8px;
+    outline: none;
+
 
 }
 
