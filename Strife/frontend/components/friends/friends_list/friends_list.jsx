@@ -79,7 +79,7 @@ class FriendShipIndex extends React.Component {
                                                                 </div>
                                                             </div>
                                                         </div>
-
+                                                        <div><p>hellowoerld</p></div>
                                                     </div>
                                                 </div>
 
