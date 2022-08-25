@@ -3,6 +3,8 @@ import React from "react";
 class PendingFriendList extends React.Component {
     constructor (props) {
         super(props);
+        this.updateFriendShip = this.updateFriendShip.bind(this);
+        this.deleteFriendShip = this.deleteFriendShip.bind(this);
     }
 
     componentDidMount () {
@@ -29,7 +31,7 @@ class PendingFriendList extends React.Component {
                             {
                                 incoming_requests.map((friend, friendIdx) => {
                                     return (
-                                        <li className="friend-index-item" key={friendIdx}>
+                                        <li className="friend-index-item" key={friend.id}>
 
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
@@ -94,7 +96,7 @@ class PendingFriendList extends React.Component {
                             {
                                 outgoing_requests.map((friend, friendIdx) => {
                                     return (
-                                        <li className="friend-index-item" key={friendIdx}>
+                                        <li className="friend-index-item" key={friend.id}>
 
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
