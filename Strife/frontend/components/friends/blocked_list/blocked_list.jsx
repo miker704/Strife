@@ -14,7 +14,7 @@ class BlockedList extends React.Component {
         this.props.requestFriendships();
     }
 
-    removeBlockedPerson(){
+    removeBlockedPerson(blockedUser){
         
     }
 
