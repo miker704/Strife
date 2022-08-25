@@ -16,6 +16,8 @@ class FriendsHomePageContainer extends React.Component {
         this.handleClick = this.handleClick.bind(this);
         this.renderAllFriendShips = this.renderAllFriendShips.bind(this);
         this.renderAllFriendShipsOnline = this.renderAllFriendShipsOnline.bind(this);
+        this.resetForm = this.resetForm.bind(this);
+        this.openForm = this.openForm.bind(this);
 
     }
 
@@ -25,7 +27,27 @@ class FriendsHomePageContainer extends React.Component {
     }
 
 
-    handleClick (e) {
+    handleClick (formType) {
+        let formtypes = [
+            "online",
+            "All",
+            "Pending",
+            "Blocked",
+            "Add_Friend"
+        ];
+        for (let i of formtypes) {
+            this.resetForm(i);
+        }
+        this.openForm(formType);
+    }
+
+    resetForm (field) {
+        this.setState({ [field]: false })
+
+    }
+
+    openForm (field) {
+        this.setState({ [field]: true })
 
     }
 
@@ -37,10 +59,10 @@ class FriendsHomePageContainer extends React.Component {
         }
     }
 
-    renderAllFriendShipsOnline(){
-        if(this.state.online===true){
-            return(
-                <FriendShipIndexOnlineContainer/>
+    renderAllFriendShipsOnline () {
+        if (this.state.online === true) {
+            return (
+                <FriendShipIndexOnlineContainer />
             )
         }
     }
@@ -70,11 +92,11 @@ class FriendsHomePageContainer extends React.Component {
                         <h3 className="home-nav-bar-friends-text">Friends</h3>
                         <div className="home-friend-divider"></div>
                         <div className="friends-status-nav-bar">
-                            <div className="online-tab">Online</div>
-                            <div onClick={() => this.setState({ All: true })} className={`all-tab ${this.state.All ? "selected" : ""}`}>All</div>
-                            <div className="pending-tab">Pending</div>
-                            <div className="blocked-tab">Blocked</div>
-                            <div className="add-friend-tab"><span>Add Friend</span></div>
+                            <div onClick={() => this.handleClick("online")} className={`online-tab ${this.state.online ? "selected" : ""}`}>Online</div>
+                            <div onClick={() => this.handleClick("All")} className={`all-tab ${this.state.All ? "selected" : ""}`}>All</div>
+                            <div onClick={() => this.handleClick("Pending")} className={`pending-tab ${this.state.Pending ? "selected" : ""}`}>Pending</div>
+                            <div onClick={() => this.handleClick("Blocked")} className={`blocked-tab ${this.state.Blocked ? "selected" : ""}`} >Blocked</div>
+                            <div onClick={() => this.handleClick("Add_Friend")} className={`add-friend-tab ${this.state.Add_Friend ? "selected" : ""}`} ><span>Add Friend</span></div>
 
                         </div>
                     </div>
@@ -115,7 +137,7 @@ class FriendsHomePageContainer extends React.Component {
                 </div>
                 <div className="friend-list-sec-container">
                     {this.renderAllFriendShips()}
-
+                    {this.renderAllFriendShipsOnline()}
                     <div className="active-now-section-wrapper">
                         <div className="active-now-section">
                             <div className="active-now-section-scroller">
