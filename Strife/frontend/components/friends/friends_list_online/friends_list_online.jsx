@@ -15,21 +15,12 @@ class FriendShipIndexOnline extends React.Component {
     render () {
         let allFriends = this.props.friends;
         let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
-        console.log("all friends : ", allFriends);
-        console.log("this.props.friends-index : ", this.props);
         return (
-            // <div className="friend-index-item-wrapper">
-            //     <div className="friend-index-item">
-            //         <div className="friend-info">
-            //                 <p className="this-is-a-test">HELLOOOOOOOOOO</p>
-            //         </div>
-            //     </div>
-            // </div>
 
             <div className="friend-index-container">
                 <div className="friend-index">
                     <div className="all-friends">
-                        {`ALL FRIENDS - ${allFriends.length}`}
+                        {`ONLINE - ${allFriends.length}`}
                     </div>
                     <ul className="friend-index-item-wrapper">
                         {
