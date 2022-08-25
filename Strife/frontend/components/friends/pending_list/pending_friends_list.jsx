@@ -11,6 +11,12 @@ class PendingFriendList extends React.Component {
         this.props.requestFriendships();
     }
 
+    updateFriendShip(){
+        
+    }
+
+
+
 
     render () {
         let outgoing_requests = this.props.outgoing;
