@@ -61,7 +61,7 @@ class FriendsHomePageContainer extends React.Component {
                         <div className="home-friend-divider"></div>
                         <div className="friends-status-nav-bar">
                             <div className="online-tab">Online</div>
-                            <div onClick={() => this.setState({ All: true })} className={`all-tab ${this.state.All ? "selected":""}`}>All</div>
+                            <div onClick={() => this.setState({ All: true })} className={`all-tab ${this.state.All ? "selected" : ""}`}>All</div>
                             <div className="pending-tab">Pending</div>
                             <div className="blocked-tab">Blocked</div>
                             <div className="add-friend-tab"><span>Add Friend</span></div>
@@ -106,14 +106,18 @@ class FriendsHomePageContainer extends React.Component {
                 <div className="friend-list-sec-container">
 
                     <div className="active-now-section-wrapper">
-                            <div className="active-now-section">
-                                    <div className="active-now-section-scroller">
-                                                <div className="active-now-header"><h3>Active Now</h3></div>
-                                                <div className="empty-card">
-                                                    <h5 className="empty-card-header">It's quiet for now...</h5>
-                                                </div>
+                        <div className="active-now-section">
+                            <div className="active-now-section-scroller">
+                                <div className="active-now-header"><h3>Active Now</h3></div>
+                                <div className="empty-card">
+                                    <h5 className="empty-card-header">It's quiet for now...</h5>
+                                    <div className="empty-card-text">
+                                        When a friend starts an activity—like playing a game or hanging out on voice—we'll show it here!
                                     </div>
+                                </div>
+                                <div className="empty-card-div"></div>
                             </div>
+                        </div>
                     </div>
 
                     {this.renderAllFriendShips()}
