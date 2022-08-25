@@ -2,11 +2,12 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import FriendShipIndex from './friends_list';
 import { requestFriendships } from '../../../actions/friendship_actions';
+import { selectFriendStatus } from '../../../utils/selectors_api_util';
 
 const mSTP = (state) => {
     return {
         currentUser: state.entities.users[state.session.id],
-        friends: Object.values(state.entities.users)
+        friends: selectFriendStatus(state,3)
     }
 };
 
