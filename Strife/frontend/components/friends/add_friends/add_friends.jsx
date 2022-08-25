@@ -15,8 +15,8 @@ class AddFriends extends React.Component{
                         <form autoComplete="off">
                             <div className="add-friend-subtitle">You can add a friend with their STRIFE Tag. It's cAsE sEnSitIvE!</div>
                             <div className="add-friend-input-search-wrapper">
-                                <div className="add-fr"iend-input-search-inner-wrapper">
-                                    <input className="type="text" />
+                                <div className="add-friend-input-search-inner-wrapper">
+                                    <input className="add-friend-input-bar" type="text" />
                                 </div>
                             </div>
                         </form>
