@@ -19,7 +19,11 @@ class BlockedList extends React.Component{
         let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
 
         if(allFriends.length===0){
-                        
+                        return (
+                            <div className="friend-index-container">
+                                            
+                            </div>
+                        )
         }
         else{
             
