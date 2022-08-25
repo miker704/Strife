@@ -132,7 +132,7 @@ $off-grey: #B9BBBE;
     flex-direction: column;
     width: 105vh;
 
-    input[type="submit"]:disabled {
+    button[type="submit"]:disabled {
         cursor: not-allowed;
         opacity: .5;
         color: hsl(0, 0%, 100%);
