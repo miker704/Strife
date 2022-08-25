@@ -12,7 +12,9 @@ class PendingFriendList extends React.Component {
     }
 
     updateFriendShip(friend){
-
+        let substate = {
+            
+        }
     }
 
     deleteFriendShip(friend){
