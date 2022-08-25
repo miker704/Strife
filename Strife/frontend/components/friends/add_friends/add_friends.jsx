@@ -4,8 +4,23 @@ import React from "react";
 class AddFriends extends React.Component {
     constructor (props) {
         super(props);
+        this.state = {
+            user_strife_id_tag: ""
+        }
         this.submissionBlocker = this.submissionBlocker.bind(this);
+        this.handleInput = this.handleInput.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 
+    }
+
+    handleInput(field){
+        return (e) => {
+            this.setState({[field]: e.currentTaget.value});
+        }
+    }
+
+    handleSubmit(){
+        
     }
 
     submissionBlocker () {
@@ -27,9 +42,14 @@ class AddFriends extends React.Component {
                         <div className="add-friend-subtitle">You can add a friend with their STRIFE Tag. It's cAsE sEnSitIvE!</div>
                         <div className="add-friend-input-search-wrapper">
                             <div className="add-friend-input-search-inner-wrapper">
-                                <input className="add-friend-input-bar" type="text" />
+                                <input id="add-friend-input-bar" className="add-friend-input-bar" type="text" 
+                                onKeyUp={this.submissionBlocker} 
+                                onChange={this.handleInput("user_strife_id_tag")}
+                                value={this.state.user_strife_id_tag}
+                                placeholder="Enter a Username#0000"
+                                />
                             </div>
-                            <button type="submit" className="add-friend-button">
+                            <button type="submit" id="add-friend-button" className="add-friend-button">
                                 <div className="add-friend-button-text">Send Friend Request</div>
                             </button>
                         </div>
