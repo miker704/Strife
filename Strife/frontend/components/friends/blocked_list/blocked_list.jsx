@@ -1,8 +1,8 @@
 import React from "react";
 
 
-class BlockedList extends React.Component{
-    constructor(props){
+class BlockedList extends React.Component {
+    constructor (props) {
         super(props);
     }
 
@@ -13,33 +13,33 @@ class BlockedList extends React.Component{
     }
 
 
-    render(){
+    render () {
 
-        let allFriends = this.props.friends;
+        let allBlockedUsers = this.props.blockedUsers;
         let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
 
-        if(allFriends.length===0){
-                        return (
-                            <div className="friend-index-container">
-                                            
-                            </div>
-                        )
-        }
-        else{
-            
+        if (allBlockedUsers.length === 0) {
             return (
-        
                 <div className="friend-index-container">
-                        <div className="all-friends">
-                            {`BLOCKED USERS - ${allFriends.length}`}
-                        </div>
+
+                </div>
+            )
+        }
+        else {
+
+            return (
+
+                <div className="friend-index-container">
+                    <div className="all-friends">
+                        {`BLOCKED USERS - ${allBlockedUsers.length}`}
+                    </div>
                     <div className="friend-index">
                         <ul className="friend-index-item-wrapper">
                             {
-                                allFriends.map((friend, friendIdx) => {
+                                allBlockedUsers.map((friend, friendIdx) => {
                                     return (
                                         <li className="friend-index-item" key={friendIdx}>
-    
+
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
                                                     <div className="friend-info">
@@ -59,12 +59,12 @@ class BlockedList extends React.Component{
                                                             </div>
                                                         </div>
                                                     </div>
-    
+
                                                 </div>
                                             </div>
-    
-    
-    
+
+
+
                                         </li>
                                     )
                                 })
@@ -72,10 +72,10 @@ class BlockedList extends React.Component{
                         </ul>
                     </div>
                 </div>
-    
-    
+
+
             )
-        
+
         }
 
 
