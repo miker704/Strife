@@ -89,6 +89,9 @@ class FriendShipIndex extends React.Component {
                                                                     </path>
                                                                 </svg>
                                                             </div>
+                                                            <div className="friend-options-button">
+                                                                
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
