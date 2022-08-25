@@ -46,7 +46,6 @@ class PendingFriendList extends React.Component {
                                                         <div className="subtext">
                                                             <div className="subtext-inner">
                                                                 {`Incoming Friend Request`}
-                                                                {/* <div className={`${friend.online ? "circle-online" : "circle-offline"}`}></div> */}
                                                             </div>
                                                         </div>
                                                     </div>
