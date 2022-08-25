@@ -1,20 +1,23 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { selectFriendStatusOnline } from '../../../utils/selectors_api_util';
-import { requestFriendships } from '../../../actions/friendship_actions';
+import { selectFriendStatus } from '../../../utils/selectors_api_util';
+import { requestFriendships, updateFriendship, deleteFriendship } from '../../../actions/friendship_actions';
 import PendingFriendList from './pending_friends_list';
 
 const mSTP = (state) => {
     return {
         currentUser: state.entities.users[state.session.id],
-        friends: selectFriendStatusOnline(state,3)
+        ongoing: selectFriendStatus(state,1),
+        incoming: selectFriendStatus(state,2)
     }
 };
 
 
 const mDTP = (dispatch) => {
     return {
-        requestFriendships: () => dispatch(requestFriendships())
+        requestFriendships: () => dispatch(requestFriendships()),
+        updateFriendship: (ids) => dispatch(updateFriendship(ids)),
+        deleteFriendship: (ids) => dispatch(deleteFriendship(ids))
 
     }
 };
