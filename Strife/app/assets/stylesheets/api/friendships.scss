@@ -607,3 +607,32 @@ $off-grey: #B9BBBE;
     color: hsl(214,4%,65.3%);
 }
 
+.no_pending_requests-icon{
+    flex: 0 1 auto;
+    width: 433px;
+    height: 232px;
+    forced-color-adjust: none;
+    background-size: 100% 100%;
+    margin-bottom: 40px;
+    content: image_url('no_friend_requests.svg');
+}
+
+.no-friends-online-icon{
+    flex: 0 1 auto;
+    width: 433px;
+    height: 232px;
+    forced-color-adjust: none;
+    background-size: 100% 100%;
+    margin-bottom: 40px;
+    content: image_url('no_friends_online.svg');
+}
+
+.add-friends-icon{
+    flex: 0 1 auto;
+    width: 433px;
+    height: 232px;
+    forced-color-adjust: none;
+    background-size: 100% 100%;
+    margin-bottom: 40px;
+    content: image_url('add_friends_wumpus.svg');
+}
