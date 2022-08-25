@@ -104,6 +104,7 @@ class FriendsHomePageContainer extends React.Component {
 
                 </div>
                 <div className="friend-list-sec-container">
+                    {this.renderAllFriendShips()}
 
                     <div className="active-now-section-wrapper">
                         <div className="active-now-section">
@@ -120,7 +121,6 @@ class FriendsHomePageContainer extends React.Component {
                         </div>
                     </div>
 
-                    {this.renderAllFriendShips()}
 
                 </div>
 
