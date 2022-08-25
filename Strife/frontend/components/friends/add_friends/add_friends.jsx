@@ -18,6 +18,9 @@ class AddFriends extends React.Component{
                                 <div className="add-friend-input-search-inner-wrapper">
                                     <input className="add-friend-input-bar" type="text" />
                                 </div>
+                                <button className="add-friend-button">
+                                    <div className="add-friend-button-text"></div>
+                                </button>
                             </div>
                         </form>
                     </div>
