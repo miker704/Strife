@@ -27,7 +27,41 @@ class PendingFriendList extends React.Component {
                     <div className="friend-index">
                         <ul className="friend-index-item-wrapper">
                             {
-                                allFriends.map((friend, friendIdx) => {
+                                incoming_requests.map((friend, friendIdx) => {
+                                    return (
+                                        <li className="friend-index-item" key={friendIdx}>
+
+                                            <div className="friend-index-item-wrapper-inner">
+                                                <div className="friend-account-info-wrapper-super">
+                                                    <div className="friend-info">
+                                                        <img src={`${friend.photo === undefined ? default_Photo : friend.photo}`} alt="pfp" />
+                                                    </div>
+                                                    <div className="friend-account-info-wrapper">
+                                                        <div className="friend-account-info">
+                                                            <div className="friend-tag">
+                                                                {friend.username}
+                                                                <span>#{friend.strife_id_tag}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div className="subtext">
+                                                            <div className="subtext-inner">
+                                                                {`Incoming Friend Request`}
+                                                                {/* <div className={`${friend.online ? "circle-online" : "circle-offline"}`}></div> */}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+
+                                        </li>
+                                    )
+                                })
+                            }
+                            {
+                                outgoing_requests.map((friend, friendIdx) => {
                                     return (
                                         <li className="friend-index-item" key={friendIdx}>
 
@@ -60,6 +94,10 @@ class PendingFriendList extends React.Component {
                                     )
                                 })
                             }
+
+
+
+
                         </ul>
                     </div>
                 </div>
@@ -68,7 +106,7 @@ class PendingFriendList extends React.Component {
             )
         }
 
-        else  {
+        else {
             return (
                 <div className="friend-index-container">
                     <div className="empty-state-container">
