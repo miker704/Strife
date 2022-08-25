@@ -7,7 +7,7 @@ class FriendsHomePageContainer extends React.Component {
         super(props);
 
         this.state = {
-            online: false,
+            online: true,
             All: false,
             Pending: false,
             Blocked: false,
@@ -135,9 +135,12 @@ class FriendsHomePageContainer extends React.Component {
 
 
                 </div>
-                <div className="friend-list-sec-container">
-                    {this.renderAllFriendShips()}
-                    {this.renderAllFriendShipsOnline()}
+                <div className="friends-page-content-wrapper">
+                    <div className="friend-list-sec-container">
+                        {this.renderAllFriendShips()}
+                        {this.renderAllFriendShipsOnline()}
+
+                    </div>
                     <div className="active-now-section-wrapper">
                         <div className="active-now-section">
                             <div className="active-now-section-scroller">
@@ -152,8 +155,6 @@ class FriendsHomePageContainer extends React.Component {
                             </div>
                         </div>
                     </div>
-
-
                 </div>
 
 
