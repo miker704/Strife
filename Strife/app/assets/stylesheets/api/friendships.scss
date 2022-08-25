@@ -133,7 +133,14 @@
 }
 
 .all-friends{
-
+    margin: 24px 20px 8px 30px;
+    font-family: 'ABC Ginto Normal';
+    color: #B9BBBE;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    letter-spacing: 0.25px;
+    cursor: default;
 }
 
 .friend-index-item-wrapper{
@@ -154,3 +161,16 @@
     display: flex;
     align-items: center;
 }
+
+
+.friend-list-sec-container {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: calc(100vw - 310px);
+    height: 95vh;
+    transform: translate(309px, 34px);
+    background-color: #36393F;
+    z-index: -1;
+  }
+  
