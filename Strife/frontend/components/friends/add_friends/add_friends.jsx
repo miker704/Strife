@@ -5,7 +5,7 @@ class AddFriends extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            user_strife_id_tag: ""
+            user_strife_id_tag: "Username#0000"
         }
         this.submissionBlocker = this.submissionBlocker.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -15,7 +15,7 @@ class AddFriends extends React.Component {
 
     handleInput(field){
         return (e) => {
-            this.setState({[field]: e.currentTaget.value});
+            this.setState({[field]: e.currentTarget.value});
         }
     }
 
@@ -46,7 +46,7 @@ class AddFriends extends React.Component {
                                 onKeyUp={this.submissionBlocker} 
                                 onChange={this.handleInput("user_strife_id_tag")}
                                 value={this.state.user_strife_id_tag}
-                                placeholder="Enter a Username#0000"
+                                placeholder={this.state.user_strife_id_tag}
                                 />
                             </div>
                             <button type="submit" id="add-friend-button" className="add-friend-button">
