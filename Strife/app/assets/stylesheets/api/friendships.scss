@@ -883,7 +883,7 @@ $off-grey: #B9BBBE;
 
 }
 
-.empty-friends-container{
+.empty-friends-container {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -900,7 +900,7 @@ $off-grey: #B9BBBE;
 }
 
 
-.empty-friends-container-flex{
+.empty-friends-container-flex {
     width: 100%;
     height: 100%;
     max-width: 440px;
@@ -918,3 +918,30 @@ $off-grey: #B9BBBE;
     display: flex;
 }
 
+.add-friends-icon-2 {
+    flex: 0 1 auto;
+    width: 376px;
+    height: 162px;
+    forced-color-adjust: none;
+    background-size: 100% 100%;
+    margin-bottom: 40px;
+    content: image_url('add_friends_wumpus.svg');
+    outline: 0;
+}
+
+.add-friends-flex-text-wrapper {
+    outline: 0;
+    forced-color-adjust: none;
+    flex: 0 1 auto;
+}
+
+.add-friends-flex-text{
+    font-size: 16px;
+    line-height: 20px;
+    forced-color-adjust: none;
+    text-align: center;
+    margin-top: 8px;
+    outline: 0;
+    color:hsl(214,4%,65.3%);
+    font-family: "Whitney";
+}
