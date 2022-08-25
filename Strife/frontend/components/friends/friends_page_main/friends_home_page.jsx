@@ -13,8 +13,12 @@ class FriendsHomePageContainer extends React.Component {
             Blocked: false,
             Add_Friend: false
         }
+        this.handleClick = this.handleClick.bind(this);
     }
 
+    handleClick(e){
+        
+    }
 
 
     render () {
