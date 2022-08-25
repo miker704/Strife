@@ -131,6 +131,7 @@ $off-grey: #B9BBBE;
     display: flex;
     flex-direction: column;
     width: 105vh;
+    user-select: none;
 
     button[type="submit"]:disabled {
         cursor: not-allowed;
