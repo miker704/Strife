@@ -4,6 +4,8 @@ import React from "react";
 class BlockedList extends React.Component {
     constructor (props) {
         super(props);
+
+        this.removeBlockedPerson = this.removeBlockedPerson.bind(this);
     }
 
 
