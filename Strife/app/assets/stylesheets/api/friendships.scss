@@ -636,3 +636,55 @@ $off-grey: #B9BBBE;
     margin-bottom: 40px;
     content: image_url('add_friends_wumpus.svg');
 }
+
+
+
+
+
+//add friend section
+
+.add-friend-header-wrapper-1{
+    flex-shrink: 0;
+    border-bottom: 1px solid hsla(217, 7.6%, 33.5%, 0.48);
+    padding: 20px 30px;
+    forced-color-adjust: none;
+}
+
+.add-friend-header-1{
+    margin-bottom: 8px;
+    forced-color-adjust: none;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    flex: 1;
+    cursor: default;
+    -webkit-box-flex: 1;
+    font-family: "ABC Ginto Normal";
+
+}
+
+.add-friend-header-wrapper-2{
+    forced-color-adjust: none;
+    flex-shrink: 0;
+    padding: 20px 30px;
+}
+
+
+.add-friend-header-2{
+    forced-color-adjust: none;
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: "ABC Ginto Normal";
+    flex: 1;
+    cursor: default;
+    -webkit-box-flex: 1;
+
+}
+
+
