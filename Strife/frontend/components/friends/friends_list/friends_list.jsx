@@ -52,46 +52,48 @@ class FriendShipIndex extends React.Component {
                     </div>
                 </div>
 
+                <div className="all-friends">
+                    {`ALL FRIENDS - ${allFriends.length}`}
+                </div>
                 <div className="friend-index">
-                    <div className="all-friends">
-                        {`ALL FRIENDS - ${allFriends.length}`}
-                    </div>
-                    <ul className="friend-index-item-wrapper">
-                        {
-                            allFriends.map((friend, friendIdx) => {
-                                return (
-                                    <li className="friend-index-item" key={friendIdx}>
+                    <div className="friend-index-item-wrapper" >
+                        <ul >
+                            {
+                                allFriends.map((friend, friendIdx) => {
+                                    return (
+                                        <li className="friend-index-item" key={friendIdx}>
 
-                                        <div className="friend-index-item-wrapper-inner">
-                                            <div className="friend-account-info-wrapper-super">
-                                                <div className="friend-info">
-                                                    <img src={`${friend.photo === undefined ? default_Photo : friend.photo}`} alt="pfp" />
-                                                </div>
-                                                <div className="friend-account-info-wrapper">
-                                                    <div className="friend-account-info">
-                                                        <div className="friend-tag">
-                                                            {friend.username}
-                                                            <span>#{friend.strife_id_tag}</span>
+                                            <div className="friend-index-item-wrapper-inner">
+                                                <div className="friend-account-info-wrapper-super">
+                                                    <div className="friend-info">
+                                                        <img src={`${friend.photo === undefined ? default_Photo : friend.photo}`} alt="pfp" />
+                                                    </div>
+                                                    <div className="friend-account-info-wrapper">
+                                                        <div className="friend-account-info">
+                                                            <div className="friend-tag">
+                                                                {friend.username}
+                                                                <span>#{friend.strife_id_tag}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div className="subtext">
+                                                            <div className="subtext-inner">
+                                                                {`${friend.online ? "online" : "offline"}`}
+                                                                <div className={`${friend.online ? "circle-online" : "circle-offline"}`}></div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div className="subtext">
-                                                        <div className="subtext-inner">
-                                                            {`${friend.online ? "online" : "offline"}`}
-                                                            <div className={`${friend.online ? "circle-online" : "circle-offline"}`}></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
 
+                                                </div>
                                             </div>
-                                        </div>
 
 
 
-                                    </li>
-                                )
-                            })
-                        }
-                    </ul>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>
+                    </div>
                 </div>
             </div>
 
