@@ -23,7 +23,7 @@ class PendingFriendList extends React.Component {
                         <div className="blocked-users-empty">
                             <div className="blocked-users-flex">
                                 <img className="cant-block-wumpus" alt="img" />
-                                <div className="block-wumpus-text">You can't unblock the Wumpus.</div>
+                                <div className="block-wumpus-text">There are no pending friend requests. Here's Wumpus for now.</div>
                             </div>
                         </div>
                     </div>
