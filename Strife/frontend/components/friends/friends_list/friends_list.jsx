@@ -50,7 +50,10 @@ class FriendShipIndex extends React.Component {
                                                         </div>
                                                     </div>
                                                     <div className="subtext">
-                                                        <div className="subtext-inner">{`${friend.online ? "online" : "offline"}`}</div>
+                                                        <div className="subtext-inner">
+                                                            {`${friend.online ? "online" : "offline"}`}
+                                                            <div className={`${friend.online ? "circle-online" : "circle-offline"}`}></div>
+                                                        </div>
                                                     </div>
                                                 </div>
 
