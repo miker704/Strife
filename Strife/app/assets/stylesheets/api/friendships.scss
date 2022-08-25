@@ -138,7 +138,7 @@ $off-grey: #B9BBBE;
         color: hsl(0, 0%, 100%);
         background-color: hsl(235, 85.6%, 64.7%);
         forced-color-adjust: none;
-      }
+    }
 }
 
 .friend-index {
@@ -513,11 +513,11 @@ $off-grey: #B9BBBE;
 
 }
 
-.mag-icon1{
+.mag-icon1 {
     transform: rotate(0deg);
     opacity: 1;
     color: hsl(216, 3.7%, 73.5%);
-    transition: transform .1s ease-out,opacity .1s ease-out,-webkit-transform .1s ease-out;
+    transition: transform .1s ease-out, opacity .1s ease-out, -webkit-transform .1s ease-out;
     width: 100%;
     height: 100%;
     z-index: 2;
@@ -530,11 +530,11 @@ $off-grey: #B9BBBE;
 
 }
 
-.clear-mag-icon1{
+.clear-mag-icon1 {
     transform: rotate(90deg);
     opacity: 1;
     color: hsl(216, 3.7%, 73.5%);
-    transition: transform .1s ease-out,opacity .1s ease-out,-webkit-transform .1s ease-out;
+    transition: transform .1s ease-out, opacity .1s ease-out, -webkit-transform .1s ease-out;
     width: 100%;
     height: 100%;
     z-index: 2;
@@ -549,7 +549,7 @@ $off-grey: #B9BBBE;
 
 
 
-.empty-state-container{
+.empty-state-container {
     forced-color-adjust: none;
     position: relative;
     width: 100%;
@@ -559,7 +559,7 @@ $off-grey: #B9BBBE;
 
 
 
-.blocked-users-empty{
+.blocked-users-empty {
     opacity: 1;
     forced-color-adjust: none;
     position: absolute;
@@ -575,7 +575,7 @@ $off-grey: #B9BBBE;
 
 }
 
-.blocked-users-flex{
+.blocked-users-flex {
     width: 100%;
     height: 100%;
     max-width: 440px;
@@ -594,7 +594,7 @@ $off-grey: #B9BBBE;
     -webkit-box-align: center;
 }
 
-.cant-block-wumpus{
+.cant-block-wumpus {
     flex: 0 1 auto;
     width: 433px;
     height: 232px;
@@ -604,7 +604,7 @@ $off-grey: #B9BBBE;
     content: image_url('unblock_wumpus.svg');
 }
 
-.block-wumpus-text{
+.block-wumpus-text {
     flex: 0 1 auto;
     forced-color-adjust: none;
     font-size: 16px;
@@ -612,10 +612,10 @@ $off-grey: #B9BBBE;
     margin-top: 8px;
     line-height: 20px;
     text-align: center;
-    color: hsl(214,4%,65.3%);
+    color: hsl(214, 4%, 65.3%);
 }
 
-.no_pending_requests-icon{
+.no_pending_requests-icon {
     flex: 0 1 auto;
     width: 433px;
     height: 232px;
@@ -625,7 +625,7 @@ $off-grey: #B9BBBE;
     content: image_url('no_friend_requests.svg');
 }
 
-.no-friends-online-icon{
+.no-friends-online-icon {
     flex: 0 1 auto;
     width: 433px;
     height: 232px;
@@ -635,7 +635,7 @@ $off-grey: #B9BBBE;
     content: image_url('no_friends_online.svg');
 }
 
-.add-friends-icon{
+.add-friends-icon {
     flex: 0 1 auto;
     width: 433px;
     height: 232px;
@@ -651,14 +651,14 @@ $off-grey: #B9BBBE;
 
 //add friend section
 
-.add-friend-header-wrapper-1{
+.add-friend-header-wrapper-1 {
     flex-shrink: 0;
     border-bottom: 1px solid hsla(217, 7.6%, 33.5%, 0.48);
     padding: 20px 30px;
     forced-color-adjust: none;
 }
 
-.add-friend-header-1{
+.add-friend-header-1 {
     margin-bottom: 8px;
     forced-color-adjust: none;
     color: #FFFFFF;
@@ -673,14 +673,14 @@ $off-grey: #B9BBBE;
 
 }
 
-.add-friend-header-wrapper-2{
+.add-friend-header-wrapper-2 {
     forced-color-adjust: none;
     flex-shrink: 0;
     padding: 20px 30px;
 }
 
 
-.add-friend-header-2{
+.add-friend-header-2 {
     forced-color-adjust: none;
     margin: 0;
     color: #FFFFFF;
@@ -696,9 +696,9 @@ $off-grey: #B9BBBE;
 }
 
 
-.add-friend-subtitle{
+.add-friend-subtitle {
     forced-color-adjust: none;
-    color: hsl(216,3.7%,73.5%);
+    color: hsl(216, 3.7%, 73.5%);
     cursor: default;
     font-size: 14px;
     line-height: 20px;
@@ -707,7 +707,7 @@ $off-grey: #B9BBBE;
 
 }
 
-.add-friend-input-search-wrapper{
+.add-friend-input-search-wrapper {
     forced-color-adjust: none;
     -webkit-box-align: center;
     align-items: center;
@@ -716,12 +716,12 @@ $off-grey: #B9BBBE;
     padding: 0 12px;
     position: relative;
     border-radius: 8px;
-    background-color: hsl(216,7.2%,13.5%);
-    border: 1px solid hsla(0,0%,0%,0.3);
+    background-color: hsl(216, 7.2%, 13.5%);
+    border: 1px solid hsla(0, 0%, 0%, 0.3);
 
 }
 
-.add-friend-input-search-inner-wrapper{
+.add-friend-input-search-inner-wrapper {
     forced-color-adjust: none;
     background-color: transparent;
     border: none;
@@ -730,7 +730,7 @@ $off-grey: #B9BBBE;
     margin-right: 16px;
     padding: 4px 0;
     z-index: 1;
-    color: hsl(210,2.9%,86.7%);
+    color: hsl(210, 2.9%, 86.7%);
     font-size: 16px;
     font-weight: 500;
     letter-spacing: .04em;
@@ -744,7 +744,7 @@ $off-grey: #B9BBBE;
 
 }
 
-.add-friend-input-bar{
+.add-friend-input-bar {
     forced-color-adjust: none;
     background-color: unset;
     border: none;
@@ -766,7 +766,7 @@ $off-grey: #B9BBBE;
 
 }
 
-.add-friend-button{
+.add-friend-button {
     user-select: none;
     forced-color-adjust: none;
     box-sizing: border-box;
@@ -783,7 +783,7 @@ $off-grey: #B9BBBE;
     display: flex;
     -webkit-box-pack: center;
     position: relative;
-    transition: background-color .17s ease,color .17s ease;
+    transition: background-color .17s ease, color .17s ease;
     font-family: "Whitney";
     text-rendering: optimizeLegibility;
     outline: none;
@@ -792,13 +792,13 @@ $off-grey: #B9BBBE;
     min-height: 32px;
     width: auto;
     cursor: pointer;
-    color: hsl(0,0%,100%);
-    background-color: hsl(235,85.6%,64.7%);
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(235, 85.6%, 64.7%);
 
 
 }
 
-.add-friend-button-text{
+.add-friend-button-text {
     margin: 0 auto;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -810,7 +810,7 @@ $off-grey: #B9BBBE;
 }
 
 
-.add-friend-grid{
+.add-friend-grid {
     forced-color-adjust: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -820,7 +820,7 @@ $off-grey: #B9BBBE;
     row-gap: 20px;
 }
 
-.add-friend-grid-button-wrapper{
+.add-friend-grid-button-wrapper {
     forced-color-adjust: none;
     cursor: pointer;
     border-radius: 8px;
@@ -828,16 +828,16 @@ $off-grey: #B9BBBE;
     width: 100%;
     display: flex;
     -webkit-box-align: center;
-    border: 1px solid hsla(217,7.6%,33.5%,0.48);
-    background-color: hsl(223,6.9%,19.8%);
-    outline:0;
+    border: 1px solid hsla(217, 7.6%, 33.5%, 0.48);
+    background-color: hsl(223, 6.9%, 19.8%);
+    outline: 0;
     font-family: "Whitney";
     text-rendering: optimizeLegibility;
 
 
 }
 
-.add-friend-grid-button-icon{
+.add-friend-grid-button-icon {
     content: image_url('dont_Have_Server_Invite.svg');
     forced-color-adjust: none;
     display: flex;
@@ -849,26 +849,71 @@ $off-grey: #B9BBBE;
     justify-content: center;
     margin: 8px;
     border-radius: 8px;
-    background-color: hsl(139,47.3%,43.9%);
+    background-color: hsl(139, 47.3%, 43.9%);
     filter: saturate(1);
 
 }
-.add-friend-grid-button-text{
+
+.add-friend-grid-button-text {
     font-weight: 500;
     overflow: hidden;
     text-overflow: ellipsis;
     forced-color-adjust: none;
     font-size: 16px;
     line-height: 20px;
-    font-family:"Whitney";
-    color: hsl(210,2.9%,86.7%);
+    font-family: "Whitney";
+    color: hsl(210, 2.9%, 86.7%);
     outline: 0;
 
 }
 
-.arrow-3B{
+.arrow-3B {
     forced-color-adjust: none;
-    color: hsl(216,3.7%,73.5%);
+    color: hsl(216, 3.7%, 73.5%);
     margin-left: auto;
     margin-right: 16px;
+}
+
+.empty-state-container-2 {
+    flex: 1 1 auto;
+    position: relative;
+    -webkit-box-flex: 1;
+    forced-color-adjust: none;
+
+
+}
+
+.empty-friends-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+
+}
+
+
+.empty-friends-container-flex{
+    width: 100%;
+    height: 100%;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    forced-color-adjust: none;
+    flex: 1 1 auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    -webkit-box-align: center;
+    outline: 0;
+    display: flex;
 }
