@@ -18,10 +18,10 @@ class FriendShipIndexOnline extends React.Component {
         return (
 
             <div className="friend-index-container">
-                <div className="friend-index">
                     <div className="all-friends">
                         {`ONLINE - ${allFriends.length}`}
                     </div>
+                <div className="friend-index">
                     <ul className="friend-index-item-wrapper">
                         {
                             allFriends.map((friend, friendIdx) => {
