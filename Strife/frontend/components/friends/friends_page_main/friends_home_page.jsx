@@ -1,5 +1,6 @@
 import React from "react";
 import FriendShipIndexContainer from "../friends_list/friends_list_container";
+import FriendShipIndexOnlineContainer from "../friends_list_online/friends_list_online_container";
 
 class FriendsHomePageContainer extends React.Component {
     constructor (props) {
@@ -14,6 +15,8 @@ class FriendsHomePageContainer extends React.Component {
         }
         this.handleClick = this.handleClick.bind(this);
         this.renderAllFriendShips = this.renderAllFriendShips.bind(this);
+        this.renderAllFriendShipsOnline = this.renderAllFriendShipsOnline.bind(this);
+
     }
 
 
@@ -34,6 +37,13 @@ class FriendsHomePageContainer extends React.Component {
         }
     }
 
+    renderAllFriendShipsOnline(){
+        if(this.state.online===true){
+            return(
+                <FriendShipIndexOnlineContainer/>
+            )
+        }
+    }
 
     render () {
         console.log("friendShip props: ", this.props);
