@@ -1,6 +1,7 @@
 import React from "react";
 import FriendShipIndexContainer from "../friends_list/friends_list_container";
 import FriendShipIndexOnlineContainer from "../friends_list_online/friends_list_online_container";
+import BlockedListContainer from "../blocked_list/blocked_list_container";
 
 class FriendsHomePageContainer extends React.Component {
     constructor (props) {
