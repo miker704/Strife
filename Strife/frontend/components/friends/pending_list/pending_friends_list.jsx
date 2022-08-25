@@ -17,6 +17,7 @@ class PendingFriendList extends React.Component {
             friend_id: friend.id,
             friend_request_status: 3
         }
+        console.log("friendship update on substate: ", substate);
     }
 
     deleteFriendShip(friend){
