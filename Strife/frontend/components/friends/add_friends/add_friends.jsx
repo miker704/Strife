@@ -53,7 +53,12 @@ class AddFriends extends React.Component {
                 </div>
                 <div className="empty-state-container-2">
                     <div className="empty-friends-container">
-                        
+                        <div className="empty-friends-container-flex">
+                            <img className="add-friends-icon-2" alt="img" />
+                            <div className="add-friends-flex-text-wrapper">
+                                <div className="add-friends-flex-text">Wumpus is waiting on friends. You don't have to though!</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
