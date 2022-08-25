@@ -41,20 +41,20 @@ class BlockedList extends React.Component {
                     <div className="friend-index">
                         <ul className="friend-index-item-wrapper">
                             {
-                                allBlockedUsers.map((friend, friendIdx) => {
+                                allBlockedUsers.map((blockedUser, blockedUserIdx) => {
                                     return (
-                                        <li className="friend-index-item" key={friendIdx}>
+                                        <li className="friend-index-item" key={blockedUser.id}>
 
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
                                                     <div className="friend-info">
-                                                        <img src={`${friend.photo === undefined ? default_Photo : friend.photo}`} alt="pfp" />
+                                                        <img src={`${blockedUser.photo === undefined ? default_Photo : blockedUser.photo}`} alt="pfp" />
                                                     </div>
                                                     <div className="friend-account-info-wrapper">
                                                         <div className="friend-account-info">
                                                             <div className="friend-tag">
-                                                                {friend.username}
-                                                                <span>#{friend.strife_id_tag}</span>
+                                                                {blockedUser.username}
+                                                                <span>#{blockedUser.strife_id_tag}</span>
                                                             </div>
                                                         </div>
                                                         <div className="subtext">
@@ -69,7 +69,7 @@ class BlockedList extends React.Component {
                                             </div>
                                             <div className="pending-request-actions">
                                                 <div className="pending-deny-icon">
-                                                    <svg stroke="currentColor" fill="currentColor" strokeWidth="0"
+                                                    <svg onClick = {() => this.removeBlockedPerson(blockedUser)}stroke="currentColor" fill="currentColor" strokeWidth="0"
                                                         viewBox="0 0 352 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19
                                                      0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 
