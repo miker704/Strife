@@ -21,7 +21,9 @@ class PendingFriendList extends React.Component {
 
     deleteFriendShip(friend){
         let substate = {
-            
+            user_id: this.props.currentUser.id,
+            friend_id: friend.id,
+            friend_request_status: 3
         }
     }
 
