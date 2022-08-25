@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { selectFriendStatus } from '../../../utils/selectors_api_util';
-import { requestFriendships } from '../../../actions/friendship_actions';
+import { requestFriendships, removeFriendship } from '../../../actions/friendship_actions';
 import BlockedList from './blocked_list';
 
 const mSTP = (state) => {
@@ -14,8 +14,8 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
-        requestFriendships: () => dispatch(requestFriendships())
-
+        requestFriendships: () => dispatch(requestFriendships()),
+        removeFriendship: (ids) => dispatch(removeFriendship(ids))
     }
 };
 
