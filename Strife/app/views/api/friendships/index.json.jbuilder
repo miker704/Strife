@@ -5,9 +5,9 @@
     end
 end
 
-@user.ongoing_friend_requests.each do |ongoing|
-    json.set! ongoing.id do 
-        json.partial! 'api/users/user', user: ongoing
+@user.outgoing_friend_requests.each do |outgoing|
+    json.set! outgoing.id do 
+        json.partial! 'api/users/user', user: outgoing
     end
 end
 
