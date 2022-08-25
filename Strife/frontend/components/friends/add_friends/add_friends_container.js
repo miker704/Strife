@@ -7,7 +7,7 @@ import AddFriends from './add_friends';
 const mSTP = (state) => {
     return {
         currentUser: state.entities.users[state.session.id],
-        ongoing: selectFriendStatus(state,1),
+        outgoing: selectFriendStatus(state,1),
         incoming: selectFriendStatus(state,2)
     }
 };
