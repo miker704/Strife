@@ -16,26 +16,13 @@ class PendingFriendList extends React.Component {
         let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
 
 
-        if (outgoing_requests.length === 0 && incoming_requests.length === 0) {
-            return (
-                <div className="friend-index-container">
-                    <div className="empty-state-container">
-                        <div className="blocked-users-empty">
-                            <div className="blocked-users-flex">
-                                <img className="cant-block-wumpus" alt="img" />
-                                <div className="block-wumpus-text">There are no pending friend requests. Here's Wumpus for now.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )
-        }
 
-        else {
+
+        if (outgoing_requests.length > 0 && incoming_requests.length > 0) {
             return (
                 <div className="friend-index-container">
                     <div className="all-friends">
-                        {`ONLINE - ${allFriends.length}`}
+                        {`PENDING FRIEND REQUESTS - ${outgoing_requests.length + incoming_requests.length}`}
                     </div>
                     <div className="friend-index">
                         <ul className="friend-index-item-wrapper">
@@ -80,6 +67,25 @@ class PendingFriendList extends React.Component {
 
             )
         }
+
+        else  {
+            return (
+                <div className="friend-index-container">
+                    <div className="empty-state-container">
+                        <div className="blocked-users-empty">
+                            <div className="blocked-users-flex">
+                                <img className="cant-block-wumpus" alt="img" />
+                                <div className="block-wumpus-text">There are no pending friend requests. Here's Wumpus for now.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+
+
+
+
     }
 }
 
