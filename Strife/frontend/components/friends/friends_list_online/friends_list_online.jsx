@@ -17,15 +17,8 @@ class FriendShipIndexOnline extends React.Component {
         let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
 
 
-        // if(allFriends.length===0){
-        //     return (
-        //         <div className="friend-index-container">
-                        
-        //         </div>
-        //     )
-        // }
-        // else{
-
+       
+        if(allFriends.length > 0){
             return (
     
                 <div className="friend-index-container">
@@ -74,7 +67,22 @@ class FriendShipIndexOnline extends React.Component {
     
     
             )
-        // }
+        }
+        else{
+            return (
+                <div className="friend-index-container">
+                    <div className="empty-state-container">
+                        <div className="blocked-users-empty">
+                            <div className="blocked-users-flex">
+                                <img className="no-friends-online-icon" alt="img" />
+                                <div className="block-wumpus-text">No one's around to play with Wumpus.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+        
 
 
 
