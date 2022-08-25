@@ -17,6 +17,7 @@ class FriendsHomePageContainer extends React.Component {
         this.handleClick = this.handleClick.bind(this);
         this.renderAllFriendShips = this.renderAllFriendShips.bind(this);
         this.renderAllFriendShipsOnline = this.renderAllFriendShipsOnline.bind(this);
+        this.renderBlockList = this.renderBlockList.bind(this);
         this.resetForm = this.resetForm.bind(this);
         this.openForm = this.openForm.bind(this);
 
@@ -67,6 +68,16 @@ class FriendsHomePageContainer extends React.Component {
             )
         }
     }
+
+    renderBlockList(){
+        if(this.state.Blocked === true){
+            return (
+                <BlockedListContainer/>
+            )
+        }
+    }
+
+
 
     render () {
         console.log("friendShip props: ", this.props);
@@ -140,6 +151,7 @@ class FriendsHomePageContainer extends React.Component {
                     <div className="friend-list-sec-container">
                         {this.renderAllFriendShips()}
                         {this.renderAllFriendShipsOnline()}
+                        {this.renderBlockList()}
 
                     </div>
                     <div className="active-now-section-wrapper">
