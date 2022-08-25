@@ -738,5 +738,65 @@ $off-grey: #B9BBBE;
 
 .add-friend-input-bar{
     forced-color-adjust: none;
+    background-color: unset;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .04em;
+    line-height: 20px;
+    white-space: pre;
+    height: 40px;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 3px;
+    outline: none;
+    transition: border-color .2s ease-in-out;
+    color: hsl(210, 2.9%, 86.7%);
+    font-family: "Whitney";
+    text-rendering: optimizeLegibility;
+
+}
+
+.add-friend-button{
+    user-select: none;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    display: flex;
+    -webkit-box-pack: center;
+    position: relative;
+    transition: background-color .17s ease,color .17s ease;
+    font-family: "Whitney";
+    text-rendering: optimizeLegibility;
+    outline: none;
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+    width: auto;
+    cursor: pointer;
+    color: hsl(0,0%,100%);
+    background-color: hsl(235,85.6%,64.7%);
+
+
+}
+
+.add-friend-button-text{
+    margin: 0 auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    forced-color-adjust: none;
+    font-size: 14px;
+    font-family: "Whitney";
 
 }
