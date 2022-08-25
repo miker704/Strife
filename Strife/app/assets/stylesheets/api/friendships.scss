@@ -821,9 +821,22 @@ $off-grey: #B9BBBE;
 }
 
 .add-friend-grid-button-wrapper{
+    forced-color-adjust: none;
+    cursor: pointer;
+    border-radius: 8px;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    border: 1px solid hsla(217,7.6%,33.5%,0.48);
+    background-color: hsl(223,6.9%,19.8%);
+    outline:0;
+    font-family: "Whitney";
+    text-rendering: optimizeLegibility;
+
 
 }
 
-.add-friend-grid-button{
-
+.add-friend-grid-button-icon{
+    content: image_url('dont_Have_Server_Invite.svg');
 }
