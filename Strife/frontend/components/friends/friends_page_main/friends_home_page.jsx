@@ -82,7 +82,9 @@ class FriendsHomePageContainer extends React.Component {
 
     renderPendingList(){
         if(this.state.Pending === true){
-
+            return(
+                <PendingFriendListContainer/>
+            )
         }
     }
 
