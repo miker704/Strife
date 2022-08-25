@@ -1,9 +1,18 @@
 import React from "react";
+import finalPropsSelectorFactory from "react-redux/es/connect/selectorFactory";
 
 
 class FriendsHomePageContainer extends React.Component {
     constructor (props) {
         super(props);
+
+        this.state = {
+            online: false,
+            All: false,
+            Pending: false,
+            Blocked: false,
+            Add_Friend: false
+        }
     }
 
 
