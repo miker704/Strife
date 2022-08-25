@@ -18,6 +18,8 @@ class FriendsHomePageContainer extends React.Component {
         this.renderAllFriendShips = this.renderAllFriendShips.bind(this);
         this.renderAllFriendShipsOnline = this.renderAllFriendShipsOnline.bind(this);
         this.renderBlockList = this.renderBlockList.bind(this);
+        this.renderPendingList = this.renderPendingList.bind(this);
+        this.renderAddFriend = this.renderAddFriend.bind(this);
         this.resetForm = this.resetForm.bind(this);
         this.openForm = this.openForm.bind(this);
 
@@ -77,7 +79,17 @@ class FriendsHomePageContainer extends React.Component {
         }
     }
 
+    renderPendingList(){
+        if(this.state.Pending === true){
+            
+        }
+    }
 
+    renderAddFriend(){
+        if(this.state.Add_Friend === true){
+            
+        }
+    }
 
     render () {
         console.log("friendShip props: ", this.props);
