@@ -12,10 +12,12 @@ class PendingFriendList extends React.Component {
     }
 
     updateFriendShip(){
-        
+
     }
 
-
+    deleteFriendShip(){
+        
+    }
 
 
     render () {
