@@ -299,10 +299,10 @@
     background-color: #2f3136;
     transform: translate(75px, 0px);
     width: 234px;
-    padding-left: 5px;
+    // padding-left: 5px;
     top: 0;
     z-index: 2;
-    padding-right: 5px;
+    // padding-right: 5px;
     height: calc(100vh - 49px);
 
 }
@@ -352,6 +352,10 @@
     min-height: 0;
     -webkit-box-flex: 1;
     position: relative;
+    padding-left: 5px;
+    padding-right: 5px;
+
+
 }
 
 
