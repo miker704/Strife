@@ -51,6 +51,13 @@ class AddFriends extends React.Component {
                         </svg>
                     </button>
                 </div>
+                <div className="empty-state-container-2">
+                    <div className="empty-friends-container">
+                        
+                    </div>
+                </div>
+
+
             </div>
         )
     }
