@@ -246,17 +246,24 @@ $off-grey: #B9BBBE;
     color: hsl(216,3.7%,73.5%);
     font-size: 12px;
     margin-left: 12px;
+    display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // flex-direction: row;
 }
 
 .subtext-inner{
     white-space: nowrap;
     text-overflow: ellipsis;
-    overflow: hidden;
-    font-size: 14px;
+    // overflow: hidden;
     forced-color-adjust: none;
     font-size: 14px;
     font-family: "Whitney";
     color:#B9BBBE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
 }
 
 
