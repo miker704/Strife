@@ -20,15 +20,15 @@ class AddFriends extends React.Component {
     }
 
     handleSubmit(){
-        
+
     }
 
     submissionBlocker () {
-        if (document.getElementById("servernameInput").value === "" || document.getElementById("servernameInput").value === null) {
-            document.getElementById("serverCreateButton").disabled = true;
+        if (document.getElementById("add-friend-input-bar").value === "" || document.getElementById("add-friend-input-bar").value === null) {
+            document.getElementById("add-friend-button").disabled = true;
         }
         else {
-            document.getElementById("serverCreateButton").disabled = false;
+            document.getElementById("add-friend-button").disabled = false;
         }
     }
     render () {
@@ -38,7 +38,7 @@ class AddFriends extends React.Component {
                     <h2 className="add-friend-header-1">
                         Add Friend
                     </h2>
-                    <form autoComplete="off">
+                    <form autoComplete="off" onSubmit={this.handleSubmit}>
                         <div className="add-friend-subtitle">You can add a friend with their STRIFE Tag. It's cAsE sEnSitIvE!</div>
                         <div className="add-friend-input-search-wrapper">
                             <div className="add-friend-input-search-inner-wrapper">
