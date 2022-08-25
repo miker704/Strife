@@ -48,7 +48,6 @@ class BlockedList extends React.Component {
                                                         </div>
                                                         <div className="subtext">
                                                             <div className="subtext-inner">
-                                                                {/* {`${friend.online ? "online" : "offline"}`} */}
                                                                 Blocked
                                                                 <div className="circle-blocked"></div>
                                                             </div>
