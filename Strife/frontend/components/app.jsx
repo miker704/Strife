@@ -15,6 +15,7 @@ import DMNavBarContainer from './dm_nav_bar/dm_nav_bar_container.js';
 import EmptyMessagesContainer from './dm_messages/empty_messages_container.jsx';
 import DmMessagesContainer from './dm_messages/dm_messages_container.js';
 import FriendsHomePageContainer from './friends/friends_page_main/friends_home_page.jsx';
+import HomePageContainer from './friends/friends_page_main/friends_home_page_container.js';
 
 const App = () => (
     <div>
