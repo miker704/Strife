@@ -275,18 +275,22 @@ label.field-error {
 
 
 
-.circle-offline{
-  float: right;
-  background: #FFD700;
+.circle-offline {
+  // float: right;
+  background: hsl(214, 9.9%, 50.4%);
   border-radius: 50%;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
+  // transform: translate(43px, -14px);
+  transform: translate(5px, 1px);
 }
 
-.circle-online{
-  float: right;
-  background: #FFD700;
+.circle-online {
+  // float: right;
+  background: hsl(139, 47.3%, 43.9%);
   border-radius: 50%;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
+  // transform: translate(43px, -14px);
+  transform: translate(5px, 0px);
 }
