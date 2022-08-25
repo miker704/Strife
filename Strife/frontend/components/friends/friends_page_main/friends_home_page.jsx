@@ -104,6 +104,18 @@ class FriendsHomePageContainer extends React.Component {
 
                 </div>
                 <div className="friend-list-sec-container">
+
+                    <div className="active-now-section-wrapper">
+                            <div className="active-now-section">
+                                    <div className="active-now-section-scroller">
+                                                <div className="active-now-header"><h3>Active Now</h3></div>
+                                                <div className="empty-card">
+                                                    <h5 className="empty-card-header">It's quiet for now...</h5>
+                                                </div>
+                                    </div>
+                            </div>
+                    </div>
+
                     {this.renderAllFriendShips()}
 
                 </div>
