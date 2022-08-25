@@ -15,7 +15,12 @@ class BlockedList extends React.Component {
     }
 
     removeBlockedPerson(blockedUser){
-        
+        let substate = {
+            user_id: this.props.currentUser.id,
+            friend_id: blockedUser.id,
+            friend_request_status: 0
+        }
+        console.log("friendship delete on substate: ", substate);
     }
 
 
