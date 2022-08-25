@@ -15,7 +15,6 @@ class PendingFriendList extends React.Component {
         let substate = {
             user_id: this.props.currentUser.id,
             friend_id: friend.id,
-            friend_request_status: 3
         }
         console.log("friendship update on substate: ", substate);
     }
