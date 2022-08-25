@@ -1,6 +1,5 @@
 import React from "react";
-import finalPropsSelectorFactory from "react-redux/es/connect/selectorFactory";
-
+import FriendShipIndexContainer from "../friends_list/friends_list_container";
 
 class FriendsHomePageContainer extends React.Component {
     constructor (props) {
@@ -14,20 +13,30 @@ class FriendsHomePageContainer extends React.Component {
             Add_Friend: false
         }
         this.handleClick = this.handleClick.bind(this);
+        this.renderAllFriendShips = this.renderAllFriendShips.bind(this);
     }
 
-    
-    componentDidMount(){
+
+    componentDidMount () {
         this.props.requestFriendships();
     }
 
 
-    handleClick(e){
+    handleClick (e) {
 
+    }
+
+    renderAllFriendShips () {
+        if (this.state.All === true) {
+            return (
+                <FriendShipIndexContainer />
+            )
+        }
     }
 
 
     render () {
+        console.log("friendShip props: ", this.props);
         return (
             <div className="home-nav-bar-container">
                 <div className="home-nav-bar">
@@ -52,7 +61,7 @@ class FriendsHomePageContainer extends React.Component {
                         <div className="home-friend-divider"></div>
                         <div className="friends-status-nav-bar">
                             <div className="online-tab">Online</div>
-                            <div className="all-tab">All</div>
+                            <div onClick={() => this.setState({ All: true })} className={`all-tab ${this.state.All ? "selected":""}`}>All</div>
                             <div className="pending-tab">Pending</div>
                             <div className="blocked-tab">Blocked</div>
                             <div className="add-friend-tab"><span>Add Friend</span></div>
@@ -94,6 +103,12 @@ class FriendsHomePageContainer extends React.Component {
 
 
                 </div>
+                <div className="friend-list-sec-container">
+                    {this.renderAllFriendShips()}
+
+                </div>
+
+
             </div>
         )
     }
