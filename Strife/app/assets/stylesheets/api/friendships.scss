@@ -348,3 +348,23 @@ $off-grey: #B9BBBE;
     forced-color-adjust: none;
 }
 
+.empty-card-text{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: "Whitney";
+    color: hsl(216,3.7%,73.5%);
+    forced-color-adjust: none;
+
+}
+
+.empty-card-div{
+    forced-color-adjust: none;
+    position: absolute;
+    pointer-events: none;
+    min-height: 0px;
+    min-width: 1px;
+    flex: 0 0 auto;
+    height: 16px;
+}
+
