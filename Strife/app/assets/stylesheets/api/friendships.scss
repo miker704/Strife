@@ -125,7 +125,7 @@ $off-grey: #B9BBBE;
 
 
 
-.friendship-index-container {
+.friend-index-container {
     height: calc(100% - 48px);
     padding-right: 3px;
     display: flex;
@@ -178,7 +178,7 @@ $off-grey: #B9BBBE;
     border-radius: 50%;
 }
 
-.friend-index-item-wrapper-inner{
+.friend-index-item-wrapper-inner {
     forced-color-adjust: none;
     display: flex;
     justify-content: space-between;
@@ -191,13 +191,13 @@ $off-grey: #B9BBBE;
 
 }
 
-.friend-account-info-wrapper-super{
+.friend-account-info-wrapper-super {
     forced-color-adjust: none;
     display: flex;
     overflow: hidden;
 }
 
-.friend-account-info-wrapper{
+.friend-account-info-wrapper {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -206,7 +206,7 @@ $off-grey: #B9BBBE;
     forced-color-adjust: none;
 }
 
-.friend-account-info{
+.friend-account-info {
     display: flex;
     forced-color-adjust: none;
     overflow: hidden;
@@ -241,9 +241,9 @@ $off-grey: #B9BBBE;
     }
 }
 
-.subtext{
+.subtext {
     forced-color-adjust: none;
-    color: hsl(216,3.7%,73.5%);
+    color: hsl(216, 3.7%, 73.5%);
     font-size: 12px;
     margin-left: 12px;
     display: flex;
@@ -252,14 +252,14 @@ $off-grey: #B9BBBE;
     // flex-direction: row;
 }
 
-.subtext-inner{
+.subtext-inner {
     white-space: nowrap;
     text-overflow: ellipsis;
     // overflow: hidden;
     forced-color-adjust: none;
     font-size: 14px;
     font-family: "Whitney";
-    color:#B9BBBE;
+    color: #B9BBBE;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -268,7 +268,27 @@ $off-grey: #B9BBBE;
 
 
 
+.friends-page-content-wrapper {
+    flex-direction: row;
+    position: relative;
+    overflow: hidden;
+    forced-color-adjust: none;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    width: calc(100vw - 313px);
+    // height: 93vh;
+    height: 100vh;
+    transform: translate(309px, 48px);
+    align-content: center;
+    align-items: flex-end;
 
+
+
+
+
+
+}
 
 
 
@@ -278,40 +298,58 @@ $off-grey: #B9BBBE;
     left: 0px;
     position: absolute;
     width: calc(100vw - 310px);
-    height: 95vh;
-    transform: translate(309px, 34px);
+    // height: 95vh;
+    height: 93vh;
+
+    // transform: translate(309px, 34px);
+    // transform: translate(309px, 48px);
+
     background-color: #36393F;
     z-index: -1;
+
+
+    forced-color-adjust: none;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    overflow: hidden;
+
+
+
 }
 
 
 
-.active-now-section-wrapper{
+.active-now-section-wrapper {
     flex: 0 1 30%;
     min-width: 360px;
     max-width: 420px;
     -webkit-box-flex: 0;
-    background: hsl(223,6.95%,19.8%);
+    background: hsl(223, 6.95%, 19.8%);
     forced-color-adjust: none;
 }
 
 
-.active-now-section{
+.active-now-section {
     forced-color-adjust: none;
-    height:100%;
-    background-color: hsl(220,7.7%,22.9%);
+    height: 100%;
+    background-color: hsl(220, 7.7%, 22.9%);
 }
 
-.active-now-section-scroller{
+.active-now-section-scroller {
     overflow: hidden scroll;
     padding-right: 8px;
     forced-color-adjust: none;
     padding: 16px;
     height: 100%;
     margin-left: 2px;
-    border-left: 1px solid hsla(217,7.6%,33.5%,0.48);
+    border-left: 1px solid hsla(217, 7.6%, 33.5%, 0.48);
 }
-.active-now-header{
+
+.active-now-header {
     margin: 8px 0 16px;
     font-weight: 700;
     font-family: "ABC Ginto Normal";
@@ -321,9 +359,9 @@ $off-grey: #B9BBBE;
     line-height: 24px;
 }
 
-.empty-card{
+.empty-card {
     forced-color-adjust: none;
-    background: hsl(220,7.7%,22.9%);
+    background: hsl(220, 7.7%, 22.9%);
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -338,7 +376,7 @@ $off-grey: #B9BBBE;
 }
 
 
-.empty-card-header{
+.empty-card-header {
     font-size: 17px;
     line-height: 22px;
     font-family: "ABC Ginto Normal";
@@ -348,17 +386,17 @@ $off-grey: #B9BBBE;
     forced-color-adjust: none;
 }
 
-.empty-card-text{
+.empty-card-text {
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
     font-family: "Whitney";
-    color: hsl(216,3.7%,73.5%);
+    color: hsl(216, 3.7%, 73.5%);
     forced-color-adjust: none;
 
 }
 
-.empty-card-div{
+.empty-card-div {
     forced-color-adjust: none;
     position: absolute;
     pointer-events: none;
@@ -368,3 +406,19 @@ $off-grey: #B9BBBE;
     height: 16px;
 }
 
+
+
+
+
+
+.all-search-bar {
+    forced-color-adjust: none;
+    -webkit-box-flex: 0;
+    flex: none;
+    margin: 16px 20px 8px 30px;
+    display: flex;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: hsl(216, 7.2%, 13.5%);
+
+}
