@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //friendship bar
-.friends-nav-bar-wrapper{
+$off-grey: #B9BBBE;
+
+.friends-nav-bar-wrapper {
     position: relative;
     max-width: 225px;
     width: 215px;
@@ -16,11 +18,11 @@
     margin-top: 8px;
 }
 
-.friends-nav-bar{
+.friends-nav-bar {
     forced-color-adjust: none;
     padding-right: 8px;
     // color: #FFFFFF;
-    color: hsl(223,3.4%,60.2%);
+    color: hsl(223, 3.4%, 60.2%);
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -32,19 +34,20 @@
 
 }
 
-.friends-nav-bar:hover, .friends-nav-bar:focus-within{
+.friends-nav-bar:hover,
+.friends-nav-bar:focus-within {
     // filter: brightness(125%);
-    color: hsl(210,2.9%,86.7%);
-    background-color: hsla(217,7.6%,33.5%,0.4);
+    color: hsl(210, 2.9%, 86.7%);
+    background-color: hsla(217, 7.6%, 33.5%, 0.4);
 }
 
-.friends-nav-bar:active{
+.friends-nav-bar:active {
     color: #FFFFFF;
-    background-color: hsla(217,7.6%,33.5%,0.48);
+    background-color: hsla(217, 7.6%, 33.5%, 0.48);
 }
 
 
-.friends-nav-bar-link{
+.friends-nav-bar-link {
     align-items: center;
     color: inherit;
     forced-color-adjust: none;
@@ -60,7 +63,7 @@
 }
 
 
-.friend-avatar-wrapper{
+.friend-avatar-wrapper {
     forced-color-adjust: none;
     -webkit-box-flex: 1;
     flex-grow: 1;
@@ -72,7 +75,8 @@
     height: 42px;
     padding: 0 8px;
 }
-.friend-avatar{
+
+.friend-avatar {
     forced-color-adjust: none;
     flex: 0 0 auto;
     width: 32px;
@@ -86,7 +90,7 @@
     -webkit-box-pack: center;
 }
 
-.friend-avatar-text-wrapper{
+.friend-avatar-text-wrapper {
     forced-color-adjust: none;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -96,7 +100,7 @@
     -webkit-box-flex: 1;
 }
 
-.friend-avatar-text-inner{
+.friend-avatar-text-inner {
     align-items: center;
     justify-content: flex-start;
     -webkit-box-align: center;
@@ -105,7 +109,7 @@
     forced-color-adjust: none;
 }
 
-.friend-avatar-text{
+.friend-avatar-text {
     forced-color-adjust: none;
     font-size: 16px;
     line-height: 20px;
@@ -121,18 +125,18 @@
 
 
 
-.friendship-index-container{
+.friendship-index-container {
     height: calc(100% - 48px);
     padding-right: 3px;
     display: flex;
     flex-direction: column;
 }
 
-.friend-index{
+.friend-index {
     overflow: hidden auto;
 }
 
-.all-friends{
+.all-friends {
     margin: 24px 20px 8px 30px;
     font-family: 'ABC Ginto Normal';
     color: #B9BBBE;
@@ -143,24 +147,123 @@
     cursor: default;
 }
 
-.friend-index-item-wrapper{
+.friend-index-item-wrapper {
     margin: 0px 30px 0px 20px;
     padding: 0px 10px;
 }
 
 
-.friend-index-item{
+.friend-index-item {
     border-top: 1px solid #ffffff0f;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 62px;
+
+    &:hover .friend-tag>span {
+        visibility: visible;
+    }
 }
 
-.friend-info{
+.friend-info {
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
+
+
+.friend-info>img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+}
+
+.friend-index-item-wrapper-inner{
+    forced-color-adjust: none;
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    align-items: center;
+    -webkit-box-pack: justify;
+    flex-grow: 1;
+    -webkit-box-align: center;
+    -webkit-box-flex: 1;
+
+}
+
+.friend-account-info-wrapper-super{
+    forced-color-adjust: none;
+    display: flex;
+    overflow: hidden;
+}
+
+.friend-account-info-wrapper{
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    overflow: hidden;
+    forced-color-adjust: none;
+}
+
+.friend-account-info{
+    display: flex;
+    forced-color-adjust: none;
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    -webkit-box-align: end;
+    align-items: flex-end;
+    line-height: 1.1;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+
+}
+
+
+.friend-tag {
+    forced-color-adjust: none;
+    margin-left: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #FFFFFF;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    font-family: "Whitney";
+
+
+    span {
+        visibility: hidden;
+        font-size: 14px;
+        color: $off-grey;
+    }
+}
+
+.subtext{
+    forced-color-adjust: none;
+    color: hsl(216,3.7%,73.5%);
+    font-size: 12px;
+    margin-left: 12px;
+}
+
+.subtext-inner{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
+    forced-color-adjust: none;
+    font-size: 14px;
+    font-family: "Whitney";
+    color:#B9BBBE;
+}
+
+
+
+
+
+
 
 
 .friend-list-sec-container {
@@ -172,5 +275,4 @@
     transform: translate(309px, 34px);
     background-color: #36393F;
     z-index: -1;
-  }
-  
+}
