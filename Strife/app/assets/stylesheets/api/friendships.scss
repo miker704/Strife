@@ -696,5 +696,29 @@ $off-grey: #B9BBBE;
     line-height: 20px;
     font-weight: 400;
     font-family: "Whitney";
+
+}
+
+.add-friend-input-search-wrapper{
+    forced-color-adjust: none;
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    margin-top: 16px;
+    padding: 0 12px;
+    position: relative;
+    border-radius: 8px;
+    background-color: hsl(216,7.2%,13.5%);
+    border: 1px solid hsla(0,0%,0%,0.3);
+
+}
+
+.add-friend-input-search-inner-wrapper{
+    forced-color-adjust: none;
     
+}
+
+.add-friend-input-bar{
+    forced-color-adjust: none;
+
 }
