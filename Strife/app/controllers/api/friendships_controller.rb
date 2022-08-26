@@ -22,7 +22,7 @@ class Api::FriendshipsController < ApplicationController
         #create a friend request 
         
         @friend_request = Friendship.new(
-            user_id: user.id,
+            user_id: params[:friendship][:user_id],
             friend_id: params[:friendship][:friend_id], 
             friend_request_status: 1
         )
@@ -30,7 +30,7 @@ class Api::FriendshipsController < ApplicationController
         #this request on the friend to be added the roles are reveres when a user confirms/denies friendship
         @friend_request_reply = Friendship.new(
             user_id: params[:friendship][:friend_id], 
-            friend_id: user.id,
+            friend_id: params[:friendship][:user_id],
             friend_request_status: 2
         )
         render :show
@@ -39,7 +39,7 @@ class Api::FriendshipsController < ApplicationController
 
     def block_User
         @block_User = Friendship.new( 
-            user_id: user.id, 
+            user_id: friendship_params[:user_id], 
             friend_id: params[:friendship][:friend_id],
             friend_request_status: -1
         )
@@ -52,7 +52,7 @@ class Api::FriendshipsController < ApplicationController
     def update
         @friendship = Friendship.find_by(user_id: friendship_params[:user_id], friend_id: friendship_params[:friend_id])
         #check status of friendship on the other users end
-        friend = Friendship.find_by(user_id: friendship_params[:friend_id], friend_id: user.id)
+        friend = Friendship.find_by(user_id: friendship_params[:friend_id], friend_id: friendship_params[:user_id])
 
         if @friendship.update(friend_request_status:3) && friend.update(friend_request_status:3)
          render :show
@@ -65,8 +65,18 @@ class Api::FriendshipsController < ApplicationController
     def destroy
         @friendship = Friendship.find_by(user_id: friendship_params[:user_id], friend_id: friendship_params[:friend_id])
         
-        friend = Friendship.find_by(user_id: friendship_params[:friend_id], friend_id: user.id)
-        debugger
+        # if user is block destroy the blocked user from there blocked list if both users block each other
+        # each user must unblock the other themselves
+        if @friendship.friend_request_status == -1
+            @friendship.destroy
+            render :show
+            return
+            #return out of this function to avoid continuing and receiveinng errors
+        end
+
+        #if user friendship status !== -1 they are unfriends render the friends relationship to user
+        friend = Friendship.find_by(user_id: friendship_params[:friend_id], friend_id: friendship_params[:user_id])
+        
         if @friendship.destroy && friend.destroy
            render :show
         else
