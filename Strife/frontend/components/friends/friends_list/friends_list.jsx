@@ -108,6 +108,8 @@ class FriendShipIndex extends React.Component {
                                                                 </path>
                                                             </g>
                                                         </svg>
+                                                        <div className="pending-request-actions-tool-tip">Accept</div>
+                                                        <div className="pending-request-actions-tool-tip-triangle"></div>
                                                     </div>
                                                 </div>
 
