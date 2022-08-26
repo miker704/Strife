@@ -5,7 +5,7 @@ import FriendsHomePageContainer from './friends_home_page';
 
 const mSTP = (state) => {
     return {
-        
+        errors: state.errors.friendship
     }
 }
 
