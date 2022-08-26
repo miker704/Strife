@@ -7,7 +7,7 @@ import { selectFriendStatus } from '../../../utils/selectors_api_util';
 const mSTP = (state) => {
     return {
         currentUser: state.entities.users[state.session.id],
-        friends: selectFriendStatus(state,3),
+        friends: selectFriendStatus(state, 3),
         errors: state.errors.friendship
     }
 };
@@ -15,8 +15,8 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
-        requestFriendships: () => dispatch(requestFriendships())
-
+        requestFriendships: () => dispatch(requestFriendships()),
+        receiveFriendshipErrors: () => dispatch(receiveFriendshipErrors())
     }
 };
 
