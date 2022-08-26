@@ -15,7 +15,8 @@ const errorsReducer = combineReducers({
     channel: channelErrorsReducer,
     message: messageErrorsReducer,
     dmMessage: dm_MessageErrorsReducer,
-    dmServer: dmServerErrorsReducer
+    dmServer: dmServerErrorsReducer,
+    friendship: friendshipErrorsReducer
 })
 
 
