@@ -8,9 +8,11 @@ class PendingFriendList extends React.Component {
     }
 
 
-    // componentWillUnmount () {
-    //     this.props.removeFriendshipErrors();
-    // }
+    componentWillUnmount () {
+        if (this.props.errors.length > 0) {
+            this.props.removeFriendshipErrors();
+        }
+    }
 
     updateFriendShip (friend) {
         let substate = {
