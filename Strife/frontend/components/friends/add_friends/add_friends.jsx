@@ -13,6 +13,10 @@ class AddFriends extends React.Component {
 
     }
 
+    componentDidMount(){
+        this.props.requestFriendships();
+    }
+
     handleInput(field){
         return (e) => {
             this.setState({[field]: e.currentTarget.value});
