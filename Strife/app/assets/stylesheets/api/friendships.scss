@@ -1105,12 +1105,13 @@ $off-grey: #B9BBBE;
     width: fit-content;
     color: #B9BBBE;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    transform: translate(0px, -35px);
+    transform: translate(0px, -42px);
     display:flex;
     text-align: center;
     justify-content: center;
     align-items: center;
     z-index: 6;
+    font-family: "Whitney";
 
 
 }
@@ -1125,7 +1126,7 @@ $off-grey: #B9BBBE;
     border-style: solid;
     border-color: #191919 transparent transparent transparent;
     border-width: 6px 6px 0 6px;
-    transform: translate(0px, -22px);
+    transform: translate(0px, -24px);
     // background-color: #191919;
 }
 
