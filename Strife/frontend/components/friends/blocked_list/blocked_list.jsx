@@ -8,10 +8,6 @@ class BlockedList extends React.Component {
         this.removeBlockedPerson = this.removeBlockedPerson.bind(this);
     }
 
-
-
-
-
     componentWillUnmount () {
         if (this.props.errors.length > 0) {
 
