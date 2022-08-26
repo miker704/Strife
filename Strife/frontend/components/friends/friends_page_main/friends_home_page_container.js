@@ -3,7 +3,11 @@ import { withRouter } from 'react-router';
 import { requestFriendships, removeFriendshipErrors } from '../../../actions/friendship_actions';
 import FriendsHomePageContainer from './friends_home_page';
 
-
+const mSTP = (state) => {
+    return {
+        
+    }
+}
 
 const mDTP  = (dispatch) => {
     return {
