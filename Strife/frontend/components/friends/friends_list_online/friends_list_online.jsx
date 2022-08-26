@@ -8,7 +8,7 @@ class FriendShipIndexOnline extends React.Component {
     }
 
     componentDidMount () {
-        // this.props.requestFriendships();
+        this.props.requestFriendships();
     }
 
   
