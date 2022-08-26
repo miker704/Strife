@@ -11,6 +11,8 @@ class FriendShipIndexOnline extends React.Component {
         this.props.requestFriendships();
     }
 
+   
+
 
     render () {
         let allFriends = this.props.friends;
