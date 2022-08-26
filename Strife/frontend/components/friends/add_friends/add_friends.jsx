@@ -17,9 +17,9 @@ class AddFriends extends React.Component {
         this.props.requestFriendships();
     }
 
-    componentWillUnmount(){
-        this.props.removeFriendshipErrors();
-    }
+    // componentWillUnmount(){
+    //     this.props.removeFriendshipErrors();
+    // }
 
     handleInput(field){
         return (e) => {
