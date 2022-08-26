@@ -19,7 +19,7 @@ const mDTP = (dispatch) => {
         requestFriendships: () => dispatch(requestFriendships()),
         updateFriendship: (ids) => dispatch(updateFriendship(ids)),
         deleteFriendship: (ids) => dispatch(deleteFriendship(ids))
-
+        removeFriendshipErrors: () => dispatch(removeFriendshipErrors())
     }
 };
 
