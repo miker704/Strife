@@ -33,9 +33,9 @@ class FriendsHomePageContainer extends React.Component {
         this.props.requestFriendships();
     }
 
-    componentWillUnmount(){
-        this.props.removeFriendshipErrors();
-    }
+    // componentWillUnmount(){
+    //     this.props.removeFriendshipErrors();
+    // }
 
 
     handleClick (formType) {
