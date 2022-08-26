@@ -1098,14 +1098,20 @@ $off-grey: #B9BBBE;
     position: absolute;
     // top: -40px;
     background: #191919;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 600;
     padding: 4px 4px;
     border-radius: 4px;
     width: fit-content;
     color: #B9BBBE;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    transform: translate(0px, -27px);
+    transform: translate(0px, -35px);
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+
 
 }
 
@@ -1118,8 +1124,8 @@ $off-grey: #B9BBBE;
     width: 0;
     border-style: solid;
     border-color: #191919 transparent transparent transparent;
-    border-width: 5px 5px 0 5px;
-    transform: translate(0px, -12px);
+    border-width: 9px 6px 0 6px;
+    transform: translate(0px, -19px);
     // background-color: #191919;
 }
 
