@@ -4,7 +4,7 @@ export const createFriendship = (account_ids) => $.ajax({ url: `/api/friendships
 
 export const updateFriendship = (account_ids) => 
 $.ajax({
-    url: `/api/friendships/`,
+    url: `/api/friendships`,
     method: "PATCH",
     data: {friendship: account_ids}
 });
@@ -12,7 +12,7 @@ $.ajax({
 
 export const deleteFriendship = (account_ids) => 
 $.ajax({
-    url: `/api/friendships/`,
+    url: `/api/friendships`,
     method: "DELETE",
     data: {friendship: account_ids}
 });
