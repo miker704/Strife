@@ -10,13 +10,16 @@ class BlockedList extends React.Component {
 
 
 
-   
 
-    componentWillUnmount(){
-        this.props.removeFriendshipErrors();
+
+    componentWillUnmount () {
+        if (this.props.errors.length > 0) {
+
+            this.props.removeFriendshipErrors();
+        }
     }
 
-    removeBlockedPerson(blockedUser){
+    removeBlockedPerson (blockedUser) {
         let substate = {
             user_id: this.props.currentUser.id,
             friend_id: blockedUser.id,
@@ -30,7 +33,7 @@ class BlockedList extends React.Component {
         let allBlockedUsers = this.props.blockedUsers;
         let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
 
-      
+
         if (allBlockedUsers.length > 0) {
 
             return (
@@ -70,7 +73,7 @@ class BlockedList extends React.Component {
                                             </div>
                                             <div className="pending-request-actions">
                                                 <div className="pending-deny-icon">
-                                                    <svg onClick = {() => this.removeBlockedPerson(blockedUser)}stroke="currentColor" fill="currentColor" strokeWidth="0"
+                                                    <svg onClick={() => this.removeBlockedPerson(blockedUser)} stroke="currentColor" fill="currentColor" strokeWidth="0"
                                                         viewBox="0 0 352 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19
                                                      0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 
@@ -102,7 +105,7 @@ class BlockedList extends React.Component {
 
         }
         else {
-         
+
             return (
                 <div className="friend-index-container">
                     <div className="empty-state-container">
@@ -115,7 +118,7 @@ class BlockedList extends React.Component {
                     </div>
                 </div>
             )
-            
+
         }
 
 
