@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { selectFriendStatus } from '../../../utils/selectors_api_util';
-import { requestFriendships, deleteFriendship } from '../../../actions/friendship_actions';
+import { requestFriendships, deleteFriendship, receiveFriendshipErrors } from '../../../actions/friendship_actions';
 import BlockedList from './blocked_list';
 
 const mSTP = (state) => {
     return {
         currentUser: state.entities.users[state.session.id],
-        blockedUsers: selectFriendStatus(state,-1)
+        blockedUsers: selectFriendStatus(state,-1),
+        errors: state.errors.friendship
     }
 };
 
