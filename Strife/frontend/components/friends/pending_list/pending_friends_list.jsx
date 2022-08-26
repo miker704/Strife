@@ -12,7 +12,7 @@ class PendingFriendList extends React.Component {
     }
 
     componentWillUnmount () {
-        this.props.removeFrienshipErrors();
+        this.props.removeFriendshipErrors();
     }
 
     updateFriendShip (friend) {
