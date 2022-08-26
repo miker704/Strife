@@ -11,7 +11,11 @@ class PendingFriendList extends React.Component {
         this.props.requestFriendships();
     }
 
-    updateFriendShip(friend){
+    componentWillUnmount () {
+
+    }
+
+    updateFriendShip (friend) {
         let substate = {
             user_id: this.props.currentUser.id,
             friend_id: friend.id,
@@ -19,13 +23,13 @@ class PendingFriendList extends React.Component {
         console.log("friendship update on substate: ", substate);
     }
 
-    deleteFriendShip(friend){
+    deleteFriendShip (friend) {
         let substate = {
             user_id: this.props.currentUser.id,
             friend_id: friend.id,
         }
         console.log("friendship delete on substate: ", substate);
-        
+
 
     }
 
