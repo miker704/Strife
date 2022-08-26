@@ -28,7 +28,7 @@ export const receiveFriendshipErrors = (errors) => {
 }
 
 
-export const removeSessionErrors = () => {
+export const removeFriendshipErrors = () => {
     return {
         type: REMOVE_FRIENDSHIP_ERRORS
     }
