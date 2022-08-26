@@ -6,6 +6,17 @@ class Api::FriendshipsController < ApplicationController
         @friendships =  @user.friendships.all
         render :index
     end
+
+
+    def show
+        # @friendship =  Friendship.find_by(user_id: friendship_params[:user_id], friend_id: friendship_params[:friend_id]);
+        @friendship =  Friendship.find(params[:id])
+        if @friendship
+            render :show
+        else
+            render json: @friendship.errors.full_messages, status: 404
+        end
+    end
     
     def create
         #create a friend request 
@@ -40,10 +51,10 @@ class Api::FriendshipsController < ApplicationController
     end
     
     def destroy
-      
         @friendship = Friendship.find_by(user_id: friendship_params[:user_id], friend_id: friendship_params[:friend_id])
-     
+        
         friend = Friendship.find_by(user_id: friendship_params[:friend_id], friend_id: user.id)
+        debugger
         if @friendship.destroy && friend.destroy
            render :show
         else
@@ -55,7 +66,7 @@ class Api::FriendshipsController < ApplicationController
 
 
     def friendship_params
-        return params.require(:friendship).permit(:user_id,:friend_id)
+        return params.require(:friendships).permit(:user_id,:friend_id)
     end
 
 end
