@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { selectFriendStatus } from '../../../utils/selectors_api_util';
-import { requestFriendships, updateFriendship, deleteFriendship } from '../../../actions/friendship_actions';
+import { requestFriendships, updateFriendship, deleteFriendship, removeFriendshipErrors } from '../../../actions/friendship_actions';
 import AddFriends from './add_friends';
 
 const mSTP = (state) => {
