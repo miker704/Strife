@@ -40,11 +40,11 @@ class Api::FriendshipsController < ApplicationController
     def block_User
         @block_User = Friendship.new( 
             user_id: user.id, 
-            friend_id: params[:friendship][:friend_id]
+            friend_id: params[:friendship][:friend_id],
             friend_request_status: -1
         )
 
-        
+
     end
 
 
