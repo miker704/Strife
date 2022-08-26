@@ -20,7 +20,19 @@ export const removeFriendship = (friendship) => {
         friendship
     }
 };
+export const receiveSessionErrors = (errors) => {
+    return {
+        type: RECEIVE_SESSION_ERRORS,
+        errors
+    }
+}
 
+
+export const removeSessionErrors = () => {
+    return {
+        type: REMOVE_SESSION_ERRORS
+    }
+}
 export const requestFriendships = () => (dispatch) =>
     FRIENDSHIP_API_UTIL.requestFriendships().then((users) => dispatch(receiveUsers(users)));
 
