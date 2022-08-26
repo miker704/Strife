@@ -156,7 +156,7 @@ class PendingFriendList extends React.Component {
                                                           12.28-32.19 0-44.48L242.72 256z">
                                                         </path>
                                                     </svg>
-                                                    <div className="pending-request-actions-tool-tip">Ignore</div>
+                                                    <div className="pending-request-actions-tool-tip">Cancel</div>
                                                     <div className="pending-request-actions-tool-tip-triangle"></div>
                                                 </div>
                                             </div>
