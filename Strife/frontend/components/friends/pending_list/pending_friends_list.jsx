@@ -30,7 +30,7 @@ class PendingFriendList extends React.Component {
             friend_id: friend.id,
         }
         console.log("friendship delete on substate: ", substate);
-        this.props.deleteFriendShip(substate);
+        this.props.deleteFriendship(substate);
 
     }
 
