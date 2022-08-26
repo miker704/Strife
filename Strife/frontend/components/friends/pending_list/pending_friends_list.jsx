@@ -20,7 +20,6 @@ class PendingFriendList extends React.Component {
             user_id: this.props.currentUser.id,
             friend_id: friend.id,
         }
-        console.log("friendship update on substate: ", substate);
         this.props.updateFriendship(substate);
     }
 
@@ -29,7 +28,6 @@ class PendingFriendList extends React.Component {
             user_id: this.props.currentUser.id,
             friend_id: friend.id,
         }
-        console.log("friendship delete on substate: ", substate);
         this.props.deleteFriendship(substate);
 
     }
