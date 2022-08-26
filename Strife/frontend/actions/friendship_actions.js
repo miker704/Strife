@@ -30,7 +30,7 @@ export const receiveSessionErrors = (errors) => {
 
 export const removeSessionErrors = () => {
     return {
-        type: REMOVE_SESSION_ERRORS
+        type: REMOVE_FRIENDSHIP_ERRORS
     }
 }
 export const requestFriendships = () => (dispatch) =>
