@@ -191,24 +191,17 @@ $off-grey: #B9BBBE;
 
 
     //
-    // display: flex;
-    // -webkit-box-orient: horizontal;
-    // -webkit-box-direction: normal;
-    // flex-direction: row;
-    // margin-left: 30px;
-    // margin-right: 20px;
-    // font-weight: 500;
-    // font-size: 16px;
-    // line-height: 20px;
-    // overflow: hidden;
-    // box-sizing: border-box;
-    // cursor: pointer;
-    // border-top: 1px solid hsla(217, 7.6%, 33.5%, 0.48);
-
-
-
-
-
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-top: 1px solid hsla(217, 7.6%, 33.5%, 0.48);
 
     &:hover .friend-tag>span {
         visibility: visible;
@@ -222,7 +215,6 @@ $off-grey: #B9BBBE;
     box-shadow: none;
     border-radius: 8px;
     border-color: #0000;
-    margin: 0 10px 0 20px;
     padding: 16px 10px;
     background: hsla(217, 7.6%, 33.5%, 0.4);
     forced-color-adjust: none;
