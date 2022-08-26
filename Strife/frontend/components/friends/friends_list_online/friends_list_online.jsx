@@ -7,11 +7,14 @@ class FriendShipIndexOnline extends React.Component {
         super(props)
     }
 
-   
 
-    // componentWillUnmount(){
-    //     this.props.removeFriendshipErrors();
-    // }
+
+    componentWillUnmount () {
+        if (this.props.errors.length > 0) {
+
+            this.props.removeFriendshipErrors();
+        }
+    }
 
 
     render () {
