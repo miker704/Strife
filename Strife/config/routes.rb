@@ -16,8 +16,10 @@ Rails.application.routes.draw do
     resources :channels, only: [:show, :update, :create, :destroy]
     resources :channel_memberships, only: [:create, :destroy]
     resources :messages, only: [:create, :update, :destroy]
-    resources :friendships, only: [:index,:create, :update, :destroy]
-    resources :dm_members, only: [:create,:destory]
+    resources :friendships, only: [:index,:create,:show, :update, :destroy]
+              patch 'friendships', to: 'friendships#update'
+              delete 'friendships', to: 'friendships#destroy'
+    resources :dm_members, only: [:create,:destroy]
     resources :dm_messages, only: [:create, :update, :destroy]
     resources :dm_servers, only: [:index, :show, :create, :update, :destroy]
 
