@@ -16,7 +16,8 @@ const mSTP = (state) => {
 const mDTP = (dispatch) => {
     return {
         requestFriendships: () => dispatch(requestFriendships()),
-        removeBlockedUser: (ids) => dispatch(deleteFriendship(ids))
+        removeBlockedUser: (ids) => dispatch(deleteFriendship(ids)),
+        receiveFriendshipErrors: () => dispatch(receiveFriendshipErrors())
     }
 };
 
