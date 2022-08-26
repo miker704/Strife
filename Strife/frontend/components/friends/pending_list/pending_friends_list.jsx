@@ -25,6 +25,7 @@ class PendingFriendList extends React.Component {
             friend_id: friend.id,
         }
         console.log("friendship delete on substate: ", substate);
+        
 
     }
 
