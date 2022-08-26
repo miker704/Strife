@@ -7,9 +7,6 @@ class PendingFriendList extends React.Component {
         this.deleteFriendShip = this.deleteFriendShip.bind(this);
     }
 
-    // componentDidMount () {
-    //     this.props.requestFriendships();
-    // }
 
     // componentWillUnmount () {
     //     this.props.removeFriendshipErrors();
