@@ -17,6 +17,10 @@ class AddFriends extends React.Component {
         this.props.requestFriendships();
     }
 
+    componentWillUnmount(){
+        this.props.removeFriendshipErrors();
+    }
+
     handleInput(field){
         return (e) => {
             this.setState({[field]: e.currentTarget.value});
