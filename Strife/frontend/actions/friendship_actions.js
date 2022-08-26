@@ -20,7 +20,7 @@ export const removeFriendship = (friendship) => {
         friendship
     }
 };
-export const receiveSessionErrors = (errors) => {
+export const receiveFriendshipErrors = (errors) => {
     return {
         type: RECEIVE_FRIENDSHIP_ERRORS,
         errors
