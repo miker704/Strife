@@ -4,9 +4,14 @@ import React from "react";
 class BlockedList extends React.Component {
     constructor (props) {
         super(props);
-
+       
         this.removeBlockedPerson = this.removeBlockedPerson.bind(this);
     }
+
+    componentDidMount () {
+            // this.props.requestFriendships();
+    }
+   
 
     componentWillUnmount () {
         if (this.props.errors.length > 0) {
