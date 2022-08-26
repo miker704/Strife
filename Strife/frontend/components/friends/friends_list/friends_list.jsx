@@ -11,6 +11,9 @@ class FriendShipIndex extends React.Component {
         this.props.requestFriendships();
     }
 
+    componentWillUnmount(){
+        this.props.removeFriendshipErrors();
+    }
 
     render () {
         let allFriends = this.props.friends;
