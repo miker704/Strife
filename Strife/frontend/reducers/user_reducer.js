@@ -10,6 +10,9 @@ const receiveUsers = (state, users) => {
     let nextState = Object.assign({}, state);
     for (let [id, user] of Object.entries(users)) {
         nextState[id] = user;
+        // console.log("nextstate.[id] : ",nextState[id]);
+        // console.log("user : ",user);
+
     }
     return nextState;
 }
@@ -51,7 +54,6 @@ const userReducer = (state = {}, action) => {
         case RECEIVE_DM_SERVERS:
             return action.dmservers.users;
             
-
         case REMOVE_FRIENDSHIP:
             newState = Object.assign({}, state);
             user = newState[action.friendship.friend_id];
