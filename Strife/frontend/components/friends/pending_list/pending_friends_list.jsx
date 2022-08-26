@@ -43,7 +43,7 @@ class PendingFriendList extends React.Component {
 
 
 
-        if (outgoing_requests.length > 0 && incoming_requests.length > 0) {
+        if (outgoing_requests.length + incoming_requests.length > 0) {
             return (
                 <div className="friend-index-container">
                     <div className="all-friends">
