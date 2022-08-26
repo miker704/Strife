@@ -14,6 +14,10 @@ class BlockedList extends React.Component {
         this.props.requestFriendships();
     }
 
+    componentWillUnmount(){
+        this.props.removeFriendshipErrors();
+    }
+
     removeBlockedPerson(blockedUser){
         let substate = {
             user_id: this.props.currentUser.id,
