@@ -16,7 +16,6 @@ const mSTP = (state) => {
 const mDTP = (dispatch) => {
     return {
         requestFriendships: () => dispatch(requestFriendships()),
-        receiveFriendshipErrors: () => dispatch(receiveFriendshipErrors())
     }
 };
 
