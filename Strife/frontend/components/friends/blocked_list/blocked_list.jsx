@@ -10,9 +10,7 @@ class BlockedList extends React.Component {
 
 
 
-    componentDidMount () {
-        this.props.requestFriendships();
-    }
+   
 
     componentWillUnmount(){
         this.props.removeFriendshipErrors();
