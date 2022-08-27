@@ -296,7 +296,7 @@
     outline: 0;
 }
 
-.create-dm-user-user-name-wrapper {
+.create-dm-user-username-wrapper {
     margin-right: 4px;
     forced-color-adjust: none;
     font-size: 14px;
@@ -398,4 +398,34 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+
+.create-dm-check-box-wrapper{
+    flex: 0 0 auto;
+    -webkit-box-flex: 0;
+    forced-color-adjust: none;
+    align-items: center;
+    -webkit-box-align: center;
+    display: flex;
+    position: relative;
+    user-select: none;
+    font-size: 16px;
+    max-width: 100%;
+    outline: 0;
+
+}
+
+.create-dm-check-box{
+    width: 22px;
+    height: 22px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    justify-content: center;
+    -webkit-box-pack: center;
+    border-radius: 6px;
+    flex: 0 0 auto;
+    border-width: 1px;
+    border-style: solid;
+    -webkit-box-flex: 0;
+    border-color: hsl(218,4.6%,46.9%);
 }
