@@ -26,7 +26,7 @@ class DmNavBar extends React.Component {
         this.setState({ createDmModal: true })
     }
 
-    closeSearch () {
+    closeCreateDmModal () {
         this.setState({ createDmModal: false })
     }
 
