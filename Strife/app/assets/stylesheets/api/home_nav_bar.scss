@@ -417,10 +417,11 @@
 
 .inbox-tool-bar .home-bar-tool-tip{
     width: 94px;
-    transform: translate(-44px, 3px);
+    transform: translate(-15px, 3px);
 }
 
 .inbox-tool-bar .home-bar-tool-tip-triangle{
-    transform: translate(2px, -6px);
-    rotate: 66deg;
+    transform: translate(1px, -4px);
+    rotate: 56deg;
+    border-width: 12px 6px 0 6px;
 }
