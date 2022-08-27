@@ -218,6 +218,8 @@ class FriendsHomePageContainer extends React.Component {
                                          -0.00195312 9V18C-0.00195312 19.103 0.894047 20 1.99805 20H2.99805Z">
                                     </path>
                                 </svg>
+                                <div className="pending-request-actions-tool-tip">Message</div>
+                                <div className="pending-request-actions-tool-tip-triangle"></div>
                             </div>
                             <div className="home-friend-divider"></div>
                         </div>
