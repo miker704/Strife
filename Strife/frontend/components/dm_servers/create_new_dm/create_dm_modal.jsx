@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useRef, useEffect } from "react";
 
 const CreateDmModal = ({
-    top, dmServers, currentUser, friends, createDmServers, history
+    top, dmServers, setShowPopup, currentUser, friends, createDmServers, history
 }) => {
     const inputRef = useRef();
     const popupRef = useRef();
