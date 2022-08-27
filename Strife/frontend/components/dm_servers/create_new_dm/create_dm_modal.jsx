@@ -12,7 +12,8 @@ const CreateDmModal = ({
     const isSelected = (friend) => selectedFriends.map(friend => friend.id).includes(friend.id);
     const findIfSelected = (toAdd) => selectedFriends.findIndex(friend => friend.id === toAdd.id);
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
-
+    let count = selectedFriends.length;
+    
     return (
         <div className="clear-modal-wrapper">
             <div className="create-dm-modal-popup">
