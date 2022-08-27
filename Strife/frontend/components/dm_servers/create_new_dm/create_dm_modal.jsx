@@ -45,7 +45,8 @@ const CreateDmModal = ({
             }
         }
 
-
+        const dmMemberInfo = [...selectedFriends];
+        console.log("dmMembersinfo : ",dmMemberInfo);
     }
 
 
