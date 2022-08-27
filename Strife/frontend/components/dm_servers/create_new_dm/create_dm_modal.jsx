@@ -23,7 +23,7 @@ const CreateDmModal = ({
                             <div className="create-dm-search-bar-wrapper">
                                 <div className="create-dm-search-bar-outer-wrapper">
                                     <div className="create-dm-search-bar-inner-wrapper">
-                                        <input className="create-dm-search-bar" type="text" name="" id="" />
+                                        <input className="create-dm-search-bar" type="text" name="" id="" placeholder="Type the username of a friend"/>
                                     </div>
                                 </div>
                             </div>
@@ -33,7 +33,12 @@ const CreateDmModal = ({
                                 <div className="create-dm-ul-list-div"></div>
                                 {friends.map(friend => {
                                     if (friend.username.includes(searchText)){
-                                        return (<li key={friend.id}>{friend.username}</li>)
+                                        return (
+                                        
+                                        <li key={friend.id}>{friend.username}</li>
+                                        
+                                        
+                                        )
                                     }
                                     else{
                                         return(
