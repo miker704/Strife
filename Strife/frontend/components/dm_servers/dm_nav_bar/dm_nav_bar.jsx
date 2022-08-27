@@ -21,7 +21,7 @@ class DmNavBar extends React.Component {
         const keys = {
           27: () => {
             e.preventDefault();
-            this.closeAllSubMods();
+            this.closeCreateDmModal ();
             window.removeEventListener('keyup', this.handleESC, false);
     
           },
