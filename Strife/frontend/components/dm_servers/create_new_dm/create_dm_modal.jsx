@@ -54,6 +54,11 @@ const CreateDmModal = ({
                                                 return (
                                                     <div className="mini-box" key={friend.id}>
                                                         {friend.username}
+                                                        <svg className="close-3-lUJg" aria-label="Remove" aria-hidden="false" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                                            <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 
+                                                            12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z">
+                                                            </path>
+                                                        </svg>
                                                     </div>
                                                 )
                                             })
@@ -101,7 +106,7 @@ const CreateDmModal = ({
                                                         </div>
                                                     </div>
                                                     <span className="create-dm-check-box-wrapper">
-                                                        <div className={`create-dm-check-box ${isSelected(friend) ? "checked":""}`}>
+                                                        <div className={`create-dm-check-box ${isSelected(friend) ? "checked" : ""}`}>
                                                             <svg aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 24 24">
                                                                 <path fill="transparent" fillRule="evenodd" clipRule="evenodd" d="M8.99991 16.17L4.82991 
                                                             12L3.40991 13.41L8.99991 19L20.9999 7.00003L19.5899 5.59003L8.99991 16.17Z">
