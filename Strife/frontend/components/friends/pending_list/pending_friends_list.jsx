@@ -70,7 +70,7 @@ class PendingFriendList extends React.Component {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div className="all-friends">
                         {`PENDING FRIEND REQUESTS - ${outgoing_requests.length + incoming_requests.length}`}
                     </div>
@@ -78,7 +78,9 @@ class PendingFriendList extends React.Component {
                         <div className="friend-index-item-wrapper">
 
 
-                            <ul className="pending-ul-list">
+                            {/* <ul className="pending-ul-list"> */}
+                            <ul >
+
                                 {
                                     incoming_requests.map((friend, friendIdx) => {
                                         return (
@@ -109,7 +111,7 @@ class PendingFriendList extends React.Component {
                                                 <div className="pending-request-actions">
 
                                                     <div className="pending-check-icon">
-                                                        <svg onClick={() => this.updateFriendShip(friend)} stroke="currentColor" fill="currentColor" 
+                                                        <svg onClick={() => this.updateFriendShip(friend)} stroke="currentColor" fill="currentColor"
                                                             viewBox="0 0 512 512" height="1em" width="1em">
                                                             <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998
                                                      26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 
@@ -123,7 +125,7 @@ class PendingFriendList extends React.Component {
 
 
                                                     <div className="pending-deny-icon">
-                                                        <svg className="icon-1WVg" onClick={() => this.deleteFriendShip(friend)} stroke="currentColor" fill="currentColor" strokeWidth="0"
+                                                        {/* <svg className="icon-1WVg" onClick={() => this.deleteFriendShip(friend)} stroke="currentColor" fill="currentColor" strokeWidth="0"
                                                             viewBox="0 0 352 512" height="1em" width="1em">
                                                             <path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19
                                                      0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 
@@ -133,6 +135,11 @@ class PendingFriendList extends React.Component {
                                                         22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07
                                                          100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28
                                                           12.28-32.19 0-44.48L242.72 256z">
+                                                            </path>
+                                                        </svg> */}
+                                                        <svg onClick={() => this.deleteFriendShip(friend)} className="icon-1WV" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                                            <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 
+                                                        18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z">
                                                             </path>
                                                         </svg>
                                                         <div className="pending-request-actions-tool-tip">Ignore</div>
