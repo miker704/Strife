@@ -78,7 +78,6 @@ const CreateDmModal = ({
 
         console.log("dmmemebers ids : ",memberIds);
 
-        console.log("leaving modal");
         return;
     }
 
