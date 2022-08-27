@@ -242,6 +242,8 @@ class FriendsHomePageContainer extends React.Component {
                                         10 10H8C8 7.795 9.795 6 12 6C14.205 6 16 7.795 16 10C16 11.861 14.723 13.429 13 13.875Z">
                                     </path>
                                 </svg>
+                                <div className="home-bar-tool-tip">Message</div>
+                                <div className="home-bar-tool-tip-triangle"></div>
                             </div>
                         </a>
                     </div>
