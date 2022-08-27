@@ -52,7 +52,11 @@ const CreateDmModal = ({
                                         {
                                             selectedFriends.map(friend => {
                                                 return (
-                                                    <div className="mini-box" key={friend.id}>
+                                                    <div
+                                                        className="mini-box"
+                                                        key={friend.id}
+                                                        onClick={() => {toggleSelection(friend)}}
+                                                    >
                                                         {friend.username}
                                                         <svg className="close-3-icon" aria-label="Remove" aria-hidden="false" role="img" width="24" height="24" viewBox="0 0 24 24">
                                                             <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 
