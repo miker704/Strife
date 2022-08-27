@@ -239,8 +239,11 @@
 
 }
 
-.create-dm-friend-wrapper:hover{
-    
+.create-dm-friend-wrapper:hover {
+    background-color: hsla(217, 7.6%, 33.5%, 0.3);
+    color: hsl(0, 0%, 100%);
+    flex: 1 1 auto;
+    border-radius: 4px;
 }
 
 
