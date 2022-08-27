@@ -37,7 +37,15 @@ class FriendsHomePageContainer extends React.Component {
 
     }
 
+    handleSubmit () {
+        setTimeout(() => {
+            if (this.props.errors.length === 0) {
+                this.closeCreateDmModal();
+            }
 
+        }, 1000);
+
+    }
 
     toggleCreateDmModal () {
         this.setState({ createDmModal: true })
