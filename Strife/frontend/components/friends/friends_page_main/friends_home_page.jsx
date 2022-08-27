@@ -28,6 +28,8 @@ class FriendsHomePageContainer extends React.Component {
         this.resetForm = this.resetForm.bind(this);
         this.openForm = this.openForm.bind(this);
         this.renderCreateDMModal = this.renderCreateDMModal.bind(this);
+        this.toggleCreateDmModal = this.toggleCreateDmModal.bind(this);
+
 
 
     }
