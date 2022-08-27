@@ -46,7 +46,11 @@ const CreateDmModal = ({
         }
 
         const dmMemberInfo = [...selectedFriends];
+        //deep copy
+        const deepCopydmMemberInfo;
         console.log("dmMembersinfo : ",dmMemberInfo);
+        console.log("dmMembersinfoDeepCopy : ",deepCopydmMemberInfo);
+
     }
 
 
