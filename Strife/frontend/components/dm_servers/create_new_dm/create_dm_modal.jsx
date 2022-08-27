@@ -12,8 +12,6 @@ const CreateDmModal = ({
     //     setPopupTop(e.currentTarget.getBoundingClientRect().top)
     //     setShowPopup(!showPopup);
     //   };
-    // closeHookModalOnOutsideClick(popupRef,setShowPopup);
-    // closeOnEsc(setShowPopup);
 
 
     const [searchText, setSearchText] = useState("");
