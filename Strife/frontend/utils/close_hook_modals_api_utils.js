@@ -28,3 +28,15 @@ export const closeOnEsc = (setBoolean) => {
     }, []);
 }
 
+export const closeHookModalOnOutsideClick = (ref, setBoolean) => {
+    const checkOutsideClick = (e) => {
+        if (ref.current && !ref.current.containes(e.target)) {
+            setBoolean(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener("click", checkOutsideClick);
+        return () => document.removeEventListener("click", checkOutsideClick);
+    }, []);
+}
