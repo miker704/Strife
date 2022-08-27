@@ -66,7 +66,7 @@ class FriendShipIndexOnline extends React.Component {
                             {
                                 allFriends.map((friend, friendIdx) => {
                                     return (
-                                        <li className="friend-index-item" key={friendIdx}>
+                                        <li className="friend-index-item" key={friend.id}>
 
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
