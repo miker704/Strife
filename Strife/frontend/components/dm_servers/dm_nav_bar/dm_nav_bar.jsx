@@ -242,7 +242,6 @@ class DmNavBar extends React.Component {
                             </div>
                         </div>
                     </div>
-                    {/* {this.renderCreateDMModal()} */}
                     {/* {this.renderSearch()} */}
                     <ul className="dm-nav-bar-list">
                         {this.props.dmServers.map((dmServer, dmServerIndex) => {
