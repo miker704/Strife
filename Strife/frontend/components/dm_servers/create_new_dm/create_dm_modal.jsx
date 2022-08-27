@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useRef, useEffect } from "react";
 
 const CreateDmModal = ({
-    top, dmServers, setShowPopup, currentUser, friends, createDmServer, history, createDmMember
+    top, dmServers, setShowPopup, currentUser, friends, action, history, createDmMember
 }) => {
     const inputRef = useRef();
     const popupRef = useRef();
@@ -78,8 +78,8 @@ const CreateDmModal = ({
 
         // });
         
-        createDmServer(submissionState).then((action) =>{
-            newDmServer = action.dmServer;
+        action(submissionState).then((action) =>{
+            newDmServer = action.dmserver;
             console.log("newDmServer is : ", newDmServer);
             history.push(`/channels/@me/${newDmServer.id}`);
         })
