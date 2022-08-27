@@ -80,7 +80,11 @@ const CreateDmModal = ({
                                     if (friend.username.includes(searchText)) {
                                         return (
 
-                                            <li className="create-dm-friend-wrapper" key={friend.id}>
+                                            <li className="create-dm-friend-wrapper" key={friend.id}
+                                                onClick={() => {
+                                                    toggleSelection(friend);
+                                                    inputRef.current.focus();
+                                                }}>
                                                 <div className="create-dm-friend-inner-wrapper">
                                                     <div className="create-dm-avatar-info">
                                                         <img src={`${friend.photo === undefined ? default_Photo : friend.photo}`} alt="pfp" />
