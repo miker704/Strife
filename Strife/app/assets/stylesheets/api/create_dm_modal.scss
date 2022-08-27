@@ -1,4 +1,5 @@
 $error-red: #ED4245;
+
 .clear-modal-wrapper {
     // bottom: 0;
     // background: none !important;
@@ -508,18 +509,23 @@ $error-red: #ED4245;
 }
 
 
-.num-of-dm-members-selected.cDMS-error{
+.num-of-dm-members-selected.cDMS-error {
     color: $error-red;
 }
 
 
-.create-dm-check-box.checked{
+.create-dm-check-box.checked {
     border-color: hsl(217, 7.6%, 33.5%);
-    svg path{
-        fill:hsl(217,7.6%,33.5%);
+
+    svg path {
+        fill: hsl(217, 7.6%, 33.5%);
     }
 }
 
-.close-3-icon{
-    
+.close-3-icon {
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+    box-sizing: border-box;
+    forced-color-adjust: none;
 }
