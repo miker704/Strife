@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { requestFriendships, removeFriendshipErrors } from '../../../actions/friendship_actions';
+import { removeDmServerErrors } from '../../../actions/dm_server_actions';
 import FriendsHomePageContainer from './friends_home_page';
 
 const mSTP = (state) => {
