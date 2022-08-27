@@ -30,21 +30,6 @@ class DmNavBar extends React.Component {
         this.setState({ createDmModal: false })
     }
 
-    renderSearch () {
-        if (this.state.search) {
-            return (
-                <div>
-                    <div id="edit-modal-container" onClick={() => this.closeSearch()}>
-                        <UserSearchContainer />
-                        <button id="user-search-exit-x" onClick={() => this.closeSearch()}>
-                            <i className="fa-solid fa-xmark" />
-                        </button>
-                    </div>
-                </div>
-            )
-        }
-    }
-
 
     renderDmServerPFP (dmServerMembers) {
         let dmServerPFP = "";
