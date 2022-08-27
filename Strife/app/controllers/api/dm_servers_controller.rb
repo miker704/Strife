@@ -33,7 +33,7 @@ class Api::DmServersController < ApplicationController
             puts 'dm_server_dm_members'
             # puts @dm_server.dm_members
 
-            render :create
+            render :show
         else
                 render json: @dm_server.errors.full_messages, status: 400
         end
