@@ -41,10 +41,7 @@ const CreateDmModal = ({
                                         )
                                     }
                                     else{
-                                        return(
-                                        <li key={friend.id}>{friend.strife_id_tag}</li>
-                                    
-                                        )
+                                        return null;
                                     }
                                                 })
 
