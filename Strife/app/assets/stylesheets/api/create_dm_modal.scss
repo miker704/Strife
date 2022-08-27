@@ -107,5 +107,25 @@
     height: 38px;
     min-width: 96px;
     min-height: 38px;
-    
+    width: 100%;
+    forced-color-adjust: none;
+    user-select: none;
+    outline: 0;
+    transition: background-color .17s ease,color .17s ease;
+    text-rendering: optimizeLegibility;
+    font-family: "Whitney";
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    display: flex;
+    -webkit-box-pack: center;
+    position: relative;
 }
