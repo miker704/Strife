@@ -32,22 +32,25 @@ class DmNavBar extends React.Component {
         }
     }
 
-    handleSubmit(){
-            setTimeout(() => {
-              if (this.props.errors.length === 0) {
-                this.closeCreateDmModal ();
-              }
-        
-            }, 1000);
-        
+    handleSubmit () {
+        setTimeout(() => {
+            if (this.props.errors.length === 0) {
+                this.closeCreateDmModal();
+            }
+
+        }, 1000);
+
     }
 
     componentDidMount () {
+        this.mounted = true;
 
         this.props.fetchUserDmServers(this.props.currentUser.id);
 
     }
     componentWillUnmount () {
+        this.mounted = false;
+
         this.props.removeDmServerErrors();
     }
 
@@ -128,7 +131,7 @@ class DmNavBar extends React.Component {
             return (
 
                 <div className="clear-modal-wrapper" onClick={() => this.closeCreateDmModal()}>
-                    <div onSubmit={ () =>this.handleSubmit()}>
+                    <div onSubmit={() => this.handleSubmit()}>
                         <CreateDmModalContainer />
                     </div>
                 </div>
