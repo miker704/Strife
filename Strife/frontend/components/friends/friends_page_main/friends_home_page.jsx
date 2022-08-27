@@ -42,6 +42,12 @@ class FriendsHomePageContainer extends React.Component {
     toggleCreateDmModal () {
         this.setState({ createDmModal: true })
     }
+    closeCreateDmModal () {
+        if (this.mounted) {
+            this.setState({ createDmModal: false })
+            window.removeEventListener('keyup', this.handleESC, false);
+        }
+    }
 
 
 
@@ -50,7 +56,7 @@ class FriendsHomePageContainer extends React.Component {
         this.props.requestFriendships();
     }
 
-    componentWillUnmount(){
+    componentWillUnmount () {
         this.mounted = false;
         this.props.removeFriendshipErrors();
     }
@@ -96,26 +102,26 @@ class FriendsHomePageContainer extends React.Component {
         }
     }
 
-    renderBlockList(){
-        if(this.state.Blocked === true){
+    renderBlockList () {
+        if (this.state.Blocked === true) {
             return (
-                <BlockedListContainer/>
+                <BlockedListContainer />
             )
         }
     }
 
-    renderPendingList(){
-        if(this.state.Pending === true){
-            return(
-                <PendingFriendListContainer/>
+    renderPendingList () {
+        if (this.state.Pending === true) {
+            return (
+                <PendingFriendListContainer />
             )
         }
     }
 
-    renderAddFriend(){
-        if(this.state.Add_Friend === true){
+    renderAddFriend () {
+        if (this.state.Add_Friend === true) {
             return (
-                <AddFriendsContainer/>
+                <AddFriendsContainer />
             )
         }
     }
