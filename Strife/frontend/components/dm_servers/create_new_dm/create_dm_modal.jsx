@@ -46,8 +46,6 @@ const CreateDmModal = ({
             console.log("curr dmserver: ", dmServer);
             console.log("dmMembers of current dmServer: ", arr);
         }
-        // console.log("dmServer trying to created : ", memberIds);
-        // createDmServer: (dmserver) => dispatch(createDmServer(dmserver)),
     }
 
 
