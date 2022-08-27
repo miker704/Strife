@@ -19,4 +19,12 @@ class DmServer < ApplicationRecord
     has_many :dm_messages, class_name: "DmMessage", foreign_key: "dm_server_id", dependent: :destroy
     has_many :dm_members, class_name: "DmMember", foreign_key: "dm_server_id"
     has_many :members, through: :dm_members, source: :member
+    # after_create :add_dm_members
+
+    # def add_dm_members
+    #     self.dm_members.each do |member| 
+            
+    #     end
+    # end
+
 end
