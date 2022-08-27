@@ -12,6 +12,9 @@ class createDmModal extends React.Component{
                             <div className="create-dm-header-sec">
                                     <h2 className="create-dm-header-h2">Select Friends</h2>
                                     <div className="num-of-dm-members-selected">You can add x more friends.</div>
+                                    <div className="create-dm-search-bar-wrapper">
+                                            
+                                    </div>
                             </div>
                             <div className="create-dm-scroller">
 
