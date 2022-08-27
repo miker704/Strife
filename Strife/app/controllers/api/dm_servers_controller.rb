@@ -31,7 +31,7 @@ class Api::DmServersController < ApplicationController
             puts 'dm_server members'
             puts @dm_server.members
             puts 'dm_server_dm_members'
-            puts @dm_server.dm_members
+            # puts @dm_server.dm_members
 
             render :create
         else

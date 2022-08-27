@@ -64,7 +64,8 @@ const CreateDmModal = ({
         }
         let submissionState = {
             owner_id: currentUser.id,
-            dm_server_name: dmServerName
+            dm_server_name: dmServerName,
+            dm_member_ids: memberIds
         }
 
         console.log("dmserver substate: ",submissionState);
