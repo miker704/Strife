@@ -10,7 +10,7 @@ class createDmModal extends React.Component{
                     <div className="create-dm-modal-focus-lock">
                         <div className="create-dm-modal">
                             <div className="create-dm-header-sec">
-
+                                    <h2>Select Friends</h2>
                             </div>
                             <div className="create-dm-scroller">
 
