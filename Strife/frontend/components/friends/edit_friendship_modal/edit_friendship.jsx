@@ -7,9 +7,11 @@ class EditFriendshipModal extends React.Component{
     render(){
         return (
             <div>
-                
+
             </div>
         )
     }
 
 }
+
+export default EditFriendshipModal;
