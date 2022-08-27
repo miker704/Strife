@@ -10,7 +10,7 @@ class DmNavBar extends React.Component {
         }
 
         this.toggleCreateDmModal = this.toggleCreateDmModal.bind(this);
-        this.closeSearch = this.closeSearch.bind(this);
+        this.closeCreateDmModal = this.closeCreateDmModal.bind(this);
         this.generateDmServerName = this.generateDmServerName.bind(this);
         this.renderDmServerPFP = this.renderDmServerPFP.bind(this);
     }
