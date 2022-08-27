@@ -45,8 +45,7 @@ const CreateDmModal = ({
 
 
     return (
-        // <div className="clear-modal-wrapper" >
-            <div className="create-dm-modal-popup">
+            <div className="create-dm-modal-popup" onClick={e => e.stopPropagation()}>
                 <div className="create-dm-modal-focus-lock">
                     <div className="create-dm-modal">
                         <div className="create-dm-header-sec">
@@ -153,7 +152,6 @@ const CreateDmModal = ({
                     </div>
                 </div>
             </div>
-        // </div>
     )
 }
 
