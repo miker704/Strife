@@ -37,6 +37,24 @@ class FriendsHomePageContainer extends React.Component {
 
     }
 
+    handleESC (e) {
+        const keys = {
+            27: () => {
+                e.preventDefault();
+                this.closeCreateDmModal();
+                window.removeEventListener('keyup', this.handleESC, false);
+
+            },
+        };
+        if (keys[e.keyCode]) {
+            keys[e.keyCode]();
+        }
+    }
+
+
+
+
+
     handleSubmit () {
         setTimeout(() => {
             if (this.props.errors.length === 0) {
