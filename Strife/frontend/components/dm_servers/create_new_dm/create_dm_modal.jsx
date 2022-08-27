@@ -17,7 +17,9 @@ class createDmModal extends React.Component{
                             </div>
                             <div className="create-dm-footer"></div>
                             <div className="create-dm-button-sec">
-                                
+                                <button className="create-dm-button">
+
+                                </button>
                             </div>
                         </div>
                     </div>
