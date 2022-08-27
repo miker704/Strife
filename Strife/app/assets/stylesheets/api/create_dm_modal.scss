@@ -89,11 +89,11 @@
     line-height: 16px;
     margin-top: 4px;
     font-weight: 400;
-    color: hsl(216,3.7%,73.5%);
+    color: hsl(216, 3.7%, 73.5%);
 
 }
 
-.create-dm-search-bar-wrapper{
+.create-dm-search-bar-wrapper {
     forced-color-adjust: none;
     outline: 0;
     flex: 1 1 auto;
@@ -107,12 +107,12 @@
     display: flex;
 }
 
-.create-dm-search-bar-outer-wrapper{
+.create-dm-search-bar-outer-wrapper {
     forced-color-adjust: none;
     outline: 0;
     border-radius: 4px;
     overflow: hidden;
-    background-color: hsl(216,7.2%,13.5%);
+    background-color: hsl(216, 7.2%, 13.5%);
     display: flex;
     box-sizing: border-box;
     flex: 1;
@@ -121,7 +121,7 @@
 }
 
 
-.create-dm-search-bar-inner-wrapper{
+.create-dm-search-bar-inner-wrapper {
     forced-color-adjust: none;
     outline: 0;
     overflow: hidden scroll;
@@ -138,7 +138,7 @@
     display: flex;
 }
 
-.mini-box{
+.mini-box {
     font-size: 16px;
     line-height: 32px;
     height: 30px;
@@ -158,12 +158,12 @@
     cursor: pointer;
     transition: none;
     background-color: hsl(220, 7.7%, 22.9%);
-    color: hsl(210,2.9%,86.7%);
+    color: hsl(210, 2.9%, 86.7%);
     text-decoration: none;
 }
 
 
-.create-dm-search-bar{
+.create-dm-search-bar {
     outline: none;
     font-size: 16px;
     line-height: 32px;
@@ -179,7 +179,7 @@
     min-width: 48px;
     margin: 1px;
     appearance: none;
-    color: hsl(210,2.9%,86.7%);
+    color: hsl(210, 2.9%, 86.7%);
     text-rendering: optimizeLegibility;
     font-weight: 400;
     font-size: 16px;
@@ -201,7 +201,7 @@
 
 }
 
-.create-dm-ul-list{
+.create-dm-ul-list {
     height: 602px;
     forced-color-adjust: none;
     position: relative;
@@ -209,14 +209,14 @@
     outline: 0;
 }
 
-.create-dm-ul-list-div{
+.create-dm-ul-list-div {
     outline: 0;
     forced-color-adjust: none;
     height: 0px;
 }
 
 
-.create-dm-friend-wrapper{
+.create-dm-friend-wrapper {
     cursor: pointer;
     padding: 1px 0;
     margin: 0 4px 0 12px;
@@ -225,7 +225,7 @@
 
 }
 
-.create-dm-friend-inner-wrapper{
+.create-dm-friend-inner-wrapper {
     forced-color-adjust: none;
     outline: 0;
     display: flex;
@@ -247,11 +247,11 @@
     font-weight: 500;
     border-radius: 3px;
     flex: 1 1 auto;
-    color: hsl(216,3.7%,73.5%);
+    color: hsl(216, 3.7%, 73.5%);
 
 }
 
-.create-dm-avatar{
+.create-dm-avatar {
     width: 32px;
     height: 32px;
     flex-shrink: 0;
@@ -262,7 +262,7 @@
     outline: 0;
 }
 
-.create-dm-user-info{
+.create-dm-user-info {
     flex: 1 1 auto;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -337,7 +337,7 @@
     -webkit-box-pack: center;
     position: relative;
     background-color: hsl(235, 85.6%, 64.7%);
-
+    color: #FFFFFF;
 }
 
 .create-dm-button-text {
