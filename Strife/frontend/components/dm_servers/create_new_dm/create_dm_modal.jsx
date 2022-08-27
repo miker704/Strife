@@ -63,7 +63,8 @@ const CreateDmModal = ({
             dmServerName = newDmsServerName.join(", ");
         }
         let submissionState = {
-
+            owner_id: currentUser.id,
+            dm_server_name: dmServerName
         }
         console.log("leaving modal");
         return;
