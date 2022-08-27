@@ -515,7 +515,7 @@ $error-red: #ED4245;
 
 .create-dm-check-box.checked{
     border-color: hsl(217, 7.6%, 33.5%);
-    svg{
+    svg path{
         fill:hsl(217,7.6%,33.5%);
     }
 }
