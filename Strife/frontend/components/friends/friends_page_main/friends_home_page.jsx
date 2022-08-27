@@ -62,7 +62,8 @@ class FriendsHomePageContainer extends React.Component {
         if (this.props.errors.length > 0) {
             this.props.removeFriendshipErrors();
         }
-
+        if(this.props.dmServerErrors.length > 0){
+            this.props.removeDmServerErrors();
 
     }
 
