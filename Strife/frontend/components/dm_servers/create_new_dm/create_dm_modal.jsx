@@ -49,7 +49,7 @@ const CreateDmModal = ({
                                                             <span className="create-dm-user-user-name">
                                                                 {friend.username}
                                                             </span>
-                                                            <span>{friend.strife_id_tag}</span>
+                                                            <span>#{friend.strife_id_tag}</span>
                                                         </div>
                                                     </div>
                                                     <span className="create-dm-check-box-wrapper">
