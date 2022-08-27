@@ -15,7 +15,9 @@ class FriendsHomePageContainer extends React.Component {
             All: false,
             Pending: false,
             Blocked: false,
-            Add_Friend: false
+            Add_Friend: false,
+            createDmModal: false
+
         }
         this.handleClick = this.handleClick.bind(this);
         this.renderAllFriendShips = this.renderAllFriendShips.bind(this);
