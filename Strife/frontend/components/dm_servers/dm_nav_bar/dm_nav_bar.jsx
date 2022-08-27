@@ -6,7 +6,6 @@ class DmNavBar extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
-            search: false,
             createDmModal: false
         }
 
