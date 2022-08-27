@@ -61,7 +61,7 @@ class ModalManager extends React.Component {
                 //     <EditUserNameContainer />
                 // </div>)
                 // renderedModal = <UserSearchContainer/>
-                    renderedModal = <CreateDmModal/>
+                    renderedModal = <CreateDmModalContainer/>
 
                 break;
 
