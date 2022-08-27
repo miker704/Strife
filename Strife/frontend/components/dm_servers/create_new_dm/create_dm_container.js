@@ -18,7 +18,7 @@ const mSTP = (state) => {
 const mDTP = (dispatch) => {
     return {
         requestFriendships: () => dispatch(requestFriendships()),
-        createDmServer: (dmserver) => dispatch(createDmServer(dmserver)),
+        action: (dmserver) => dispatch(createDmServer(dmserver)),
         createDmMember: (dm_member) => dispatch(createDmMember(dm_member)),
         removeDmServerErrors: () => dispatch(removeDmServerErrors())
     }
