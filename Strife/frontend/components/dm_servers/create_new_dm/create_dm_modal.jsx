@@ -63,7 +63,6 @@ const CreateDmModal = ({
             dmServerName = newDmsServerName.join(", ");
         }
 
-        console.log("dmserver name is : ", dmServerName);
 
     }
 
