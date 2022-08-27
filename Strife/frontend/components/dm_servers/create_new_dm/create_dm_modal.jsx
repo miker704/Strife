@@ -72,7 +72,6 @@ const CreateDmModal = ({
 
         createDmServer(submissionState).then((action) => {
             newDmServer = action.dmserver;
-            console.log("newDmServer is : ", newDmServer);
             history.push(`/channels/@me/${newDmServer.id}`);
         })
 
