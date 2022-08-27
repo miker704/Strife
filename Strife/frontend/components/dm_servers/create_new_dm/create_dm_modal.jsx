@@ -49,6 +49,18 @@ const CreateDmModal = ({
                             <div className="create-dm-search-bar-wrapper">
                                 <div className="create-dm-search-bar-outer-wrapper">
                                     <div className="create-dm-search-bar-inner-wrapper">
+                                        {
+                                            selectedFriends.map(friend => {
+                                                return (
+                                                    <div className="mini-box" key={friend.id}>
+                                                        {friend.username}
+                                                    </div>
+                                                )
+                                            })
+                                        }
+
+
+
                                         <input className="create-dm-search-bar" type="text" name="" id="" placeholder="Type the username of a friend" />
                                     </div>
                                 </div>
