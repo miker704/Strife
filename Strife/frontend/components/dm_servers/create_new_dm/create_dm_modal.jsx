@@ -38,7 +38,7 @@ const CreateDmModal = ({
 
                                             <li className="create-dm-friend-wrapper" key={friend.id}>
                                                 <div className="create-dm-friend-inner-wrapper">
-                                                    <div className="create-dm-avatar">
+                                                    <div className="create-dm-avatar-info">
                                                         <img src={`${friend.photo === undefined ? default_Photo : friend.photo}`} alt="pfp" />
                                                     </div>
                                                     <div className="create-dm-user-info">
