@@ -95,7 +95,7 @@ class DmNavBar extends React.Component {
         if (this.state.createDmModal === true) {
             return (
 
-                <div className="clear-modal-wrapper" onClick={() => this.closeModal()}>
+                <div className="clear-modal-wrapper" onClick={() => this.closeCreateDmModal()}>
 
                     <CreateDmModalContainer />
 
