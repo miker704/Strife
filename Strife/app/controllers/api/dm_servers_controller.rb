@@ -17,6 +17,16 @@ class Api::DmServersController < ApplicationController
         # else
         #     render json: @dm_servers.errors.full_messages, status: 400
         # end
+
+        found_existing_dm_server = current_user.dm_servers.includes(:members).select{|dms| dms.member_ids.sort === dm_server_params[:dm_member_ids].map(&:to_i)}
+
+        if found_existing_dm_server[0]
+            @dm_server = found_existing_dm_server[0]
+            render :show
+            return 
+        end
+
+
         @dm_server = DmServer.create(
             owner_id: current_user.id,
             dm_server_name: params[:dm_server][:dm_server_name]
@@ -47,10 +57,10 @@ class Api::DmServersController < ApplicationController
     end
 
     def show
-        # @dm_server = DmServer.find_by(id: params[:id])
+        @dm_server = DmServer.find_by(id: params[:id])
         @current_user = current_user
 
-        @dm_server = @current_user.dm_servers.includes(:members,:dm_messages).find_by(id: params[:id])
+        # @dm_server = @current_user.dm_servers.includes(:members,:dm_messages).find_by(id: params[:id])
         render :show
     end
     
