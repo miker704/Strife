@@ -1,15 +1,24 @@
 $error-red: #ED4245;
 .clear-modal-wrapper {
-    bottom: 0;
-    background: none !important;
-    pointer-events: none;
-    z-index: 1002;
-    outline: 0;
+    // bottom: 0;
+    // background: none !important;
+    // pointer-events: none;
+    // z-index: 1002;
+    // outline: 0;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // forced-color-adjust: none;
+    // right: 0;
+
+    z-index: 3;
     position: absolute;
     top: 0;
     left: 0;
-    forced-color-adjust: none;
-    right: 0;
+    height: calc(100vh);
+    width: calc(100vw);
+    background-color: #0000;
+    transform: translate(-75px, 0px);
 
 }
 

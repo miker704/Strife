@@ -129,10 +129,12 @@ class DmNavBar extends React.Component {
 
         return (
             <div className='dm-server-nav-bar1'>
+                {this.renderCreateDMModal()}
                 {/* {this.renderCreateDMModal()} */}
                 <div className='dm-nav-bar-search-bar'>
                     <button type='button' className='dm-nav-bar-search-bar-button'>Find or start a conversation</button>
                 </div>
+
                 <div className='dm-nav-bar-scroller'>
 
 
@@ -241,7 +243,7 @@ class DmNavBar extends React.Component {
                             </div>
                         </div>
                     </div>
-                    {this.renderCreateDMModal()}
+                    {/* {this.renderCreateDMModal()} */}
                     {/* {this.renderSearch()} */}
                     <ul className="dm-nav-bar-list">
                         {this.props.dmServers.map((dmServer, dmServerIndex) => {
