@@ -37,14 +37,14 @@ const CreateDmModal = ({
     const handleDmServerCreation = () => {
         const memberIds = [currentUser.id, ...selectedFriends.map((friend) => parseInt(friend.id))].sort((a, b) => a - b);
         for (let dmServer of dmServers) {
-            if (dmMembersArray(dmServer.members.sort((a, b) => a - b), memberIds)) {
-                    if(history.location.pathname !== `/channels/@me/${dmServer.id}`){
-                        history.push(`/channels/@me/${dmServer.id}`);
-                    }
-                    return;
+            if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
+                if (history.location.pathname !== `/channels/@me/${dmServer.id}`) {
+                    history.push(`/channels/@me/${dmServer.id}`);
+                }
+                return;
             }
         }
-        console.log("dmServer trying to created : ",dmMembersArray);
+        console.log("dmServer trying to created : ", dmMembersArray);
 
     }
 
@@ -151,7 +151,7 @@ const CreateDmModal = ({
                     </div>
                     <div className="create-dm-footer"></div>
                     <div className="create-dm-button-sec">
-                        <button className="create-dm-button" onClick={handleDmServerCreation}  type="submit" disabled={count > 9 || count === 0}>
+                        <button className="create-dm-button" onClick={handleDmServerCreation} type="submit" disabled={count > 9 || count === 0}>
                             <div className="create-dm-button-text">Create Group DM</div>
                         </button>
                     </div>
