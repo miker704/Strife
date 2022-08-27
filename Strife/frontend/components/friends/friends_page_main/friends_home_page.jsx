@@ -42,6 +42,7 @@ class FriendsHomePageContainer extends React.Component {
     toggleCreateDmModal () {
         this.setState({ createDmModal: true })
     }
+    
     closeCreateDmModal () {
         if (this.mounted) {
             this.setState({ createDmModal: false })
