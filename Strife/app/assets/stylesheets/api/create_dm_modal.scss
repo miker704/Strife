@@ -89,8 +89,23 @@
 
 .create-dm-button-sec{
 
+        flex: 1 1 auto;
+        forced-color-adjust: none;
+        padding: 20px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        -webkit-box-align: stretch;
+        display: flex;
+        outline: 0;
 }
 
-.create-dm-button{
 
+.create-dm-button{
+    height: 38px;
+    min-width: 96px;
+    min-height: 38px;
+    
 }
