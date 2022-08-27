@@ -39,7 +39,7 @@ const CreateDmModal = ({
         for (let dmServer of dmServers) {
             if (dmMembersArray(dmServer.members.sort((a, b) => a - b), memberIds)) {
                     if(history.location.pathname !== `/channels/@me/${dmServer.id}`){
-                        
+                        history.push(`/channels/@me/${dmServer.id}`);
                     }
             }
         }
