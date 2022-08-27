@@ -119,9 +119,9 @@ class DmNavBar extends React.Component {
             return (
 
                 <div className="clear-modal-wrapper" onClick={() => this.closeCreateDmModal()}>
-
-                    <CreateDmModalContainer />
-
+                    <div onSubmit={ () =>this.handleSubmit()}>
+                        <CreateDmModalContainer />
+                    </div>
                 </div>
             )
         }
