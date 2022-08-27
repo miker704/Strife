@@ -56,12 +56,7 @@ const CreateDmModal = ({
                 newDmsServerName.push(member.username);
             }
         }
-        for (let i of dmMemberArray) {
-
-            if (i.id !== this.props.currentUser.id) {
-                dmServerNameArray.push(i.username)
-            }
-        }
+        
         if (dmServerNameArray.length === 1) {
             dmServerName = dmServerNameArray.join();
         }
