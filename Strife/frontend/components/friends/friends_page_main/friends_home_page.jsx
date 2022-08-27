@@ -218,8 +218,8 @@ class FriendsHomePageContainer extends React.Component {
                                          -0.00195312 9V18C-0.00195312 19.103 0.894047 20 1.99805 20H2.99805Z">
                                     </path>
                                 </svg>
-                                <div className="pending-request-actions-tool-tip">Message</div>
-                                <div className="pending-request-actions-tool-tip-triangle"></div>
+                                <div className="home-bar-tool-tip">Message</div>
+                                <div className="home-bar-tool-tip-triangle"></div>
                             </div>
                             <div className="home-friend-divider"></div>
                         </div>
@@ -229,6 +229,8 @@ class FriendsHomePageContainer extends React.Component {
                                     19V5C21 3.89 20.1 3 19 3ZM19 15H15C15 16.66 13.65 18 12 18C10.35 18 9 16.66 9 15H4.99V5H19V15Z" fill="currentColor">
                                 </path>
                             </svg>
+                            <div className="home-bar-tool-tip">Message</div>
+                            <div className="home-bar-tool-tip-triangle"></div>
                         </div>
                         <a className="help-tool-bar" href="https://support.discord.com" target="_blank">
                             <div className="help-tool-bar-icon-wrapper">
