@@ -13,7 +13,26 @@ const CreateDmModal = ({
     const findIfSelected = (toAdd) => selectedFriends.findIndex(friend => friend.id === toAdd.id);
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
     let count = selectedFriends.length;
-    
+
+
+    const toggleSelection = (friend) => {
+        const idx = findIfSelected(friend);
+        if (idx > -1) {
+            setSelectedFriends(prevState => {
+                const newState = [...prevState];
+                newState.splice(idx, 1);
+                return newState;
+            });
+        }
+        else {
+            selectedFriends(prevState => [...prevState, friend]);
+            setSearchText("");
+        }
+    }
+
+
+
+
     return (
         <div className="clear-modal-wrapper">
             <div className="create-dm-modal-popup">
