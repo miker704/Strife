@@ -14,6 +14,7 @@ class DmNavBar extends React.Component {
         this.generateDmServerName = this.generateDmServerName.bind(this);
         this.renderDmServerPFP = this.renderDmServerPFP.bind(this);
         this.handleESC = this.handleESC.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
 
