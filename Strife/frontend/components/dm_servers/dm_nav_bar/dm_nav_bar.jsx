@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 // import UserSearchContainer from "../../components/user_search/user_search_container.jsx"
-
+import CreateDmModal from '../create_new_dm/create_dm_modal';
 
 class DmNavBar extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
-            search: false
+            search: false,
+            createDmModal: false
         }
 
         this.toggleSearch = this.toggleSearch.bind(this);
@@ -107,6 +108,15 @@ class DmNavBar extends React.Component {
         return dmServerName;
     }
 
+    renderCreateDMModal(){
+        if(this.state.createDmModal===true){
+            return (
+                <CreateDmModal/>
+            )
+        }
+    }
+
+
     render () {
         // console.log("dmserver props: ", this.props);
         console.log("dmusers", this.props.dmUsers);
@@ -118,6 +128,7 @@ class DmNavBar extends React.Component {
 
         return (
                 <div className='dm-server-nav-bar1'>
+                    {this.renderCreateDMModal()}
                     <div className='dm-nav-bar-search-bar'>
                         <button type='button' className='dm-nav-bar-search-bar-button'>Find or start a conversation</button>
                     </div>
@@ -223,7 +234,7 @@ class DmNavBar extends React.Component {
                         <div className="dm-list-header">
                             <h4>DIRECT MESSAGES</h4>
                             <div className="create-channel-div" onClick={() => this.toggleSearch()}>
-                                <i className="fa-solid fa-plus" onClick={() => this.props.openModal("userSearch")} />
+                                <i className="fa-solid fa-plus" onClick={() => this.setState({createDmModal: true})} />
                                 <div className="dm-tool-tip">
                                     Create DM
                                 </div>
