@@ -10,13 +10,33 @@ class Api::DmServersController < ApplicationController
     end
     
     def create 
-        @dm_server = DmServer.new()
-        @current_user = current_user
+        # @dm_server = DmServer.new()
+        # @current_user = current_user
+        # if @dm_server.save
+        #     render :create
+        # else
+        #     render json: @dm_servers.errors.full_messages, status: 400
+        # end
+        @dm_server = DmServer.create(
+            owner_id: current_user.id,
+            dm_server_name: params[:dm_server][:dm_server_name]
+        )
         if @dm_server.save
+
+            dm_members = params[:dm_server][:dm_member_ids]
+            dm_members.each do |dm_member|
+                DmMember.create!(dm_server_id: @dm_server.id, dm_member_id: dm_member)
+            end
+
+            puts 'dm_server members'
+            puts @dm_server.members
+
             render :create
         else
-            render json: @dm_servers.errors.full_messages, status: 400
+                render json: @dm_server.errors.full_messages, status: 400
         end
+
+
 
     end
 
