@@ -1,12 +1,22 @@
 import React from "react";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { closeOnEsc, closeHookModalOnOutsideClick } from "../../../utils/close_hook_modals_api_utils";
 
 const CreateDmModal = ({
-    top, dmServers, setShowPopup, currentUser, friends, createDmServers, history
+    top, dmServers, currentUser, friends, createDmServers, history
 }) => {
     const inputRef = useRef();
     const popupRef = useRef();
+    const [showPopup, setShowPopup] = useState(false);
+    const [popupTop, setPopupTop] = useState(0);
+    // const togglePopup = (e) => {
+    //     setPopupTop(e.currentTarget.getBoundingClientRect().top)
+    //     setShowPopup(!showPopup);
+    //   };
+    closeHookModalOnOutsideClick(popupRef,setShowPopup);
+    closeOnEsc(setShowPopup);
+
+
     const [searchText, setSearchText] = useState("");
     const [selectedFriends, setSelectedFriends] = useState([]);
     const isSelected = (friend) => selectedFriends.map(friend => friend.id).includes(friend.id);
@@ -35,7 +45,7 @@ const CreateDmModal = ({
 
 
     return (
-        <div className="clear-modal-wrapper">
+        // <div className="clear-modal-wrapper" >
             <div className="create-dm-modal-popup">
                 <div className="create-dm-modal-focus-lock">
                     <div className="create-dm-modal">
@@ -143,7 +153,7 @@ const CreateDmModal = ({
                     </div>
                 </div>
             </div>
-        </div>
+        // </div>
     )
 }
 
