@@ -5,6 +5,14 @@ import CreateDmModal from './create_dm_modal';
 
 const mSTP = (state) =>{
     return {
-        
+
     }
 }
+
+const mDTP = (dispatch) =>{
+    return {
+
+    }
+}
+
+
