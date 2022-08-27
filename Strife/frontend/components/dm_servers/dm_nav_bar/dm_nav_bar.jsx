@@ -59,7 +59,7 @@ class DmNavBar extends React.Component {
     }
 
     closeCreateDmModal () {
-        if (this.mounted === true) {
+        if (this.mounted) {
             this.setState({ createDmModal: false })
             window.removeEventListener('keyup', this.handleESC, false);
         }
