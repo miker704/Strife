@@ -251,6 +251,39 @@
 
 }
 
+.create-dm-avatar{
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    margin: 0;
+    forced-color-adjust: none;
+    position: relative;
+    border-radius: 50%;
+    outline: 0;
+}
+
+.create-dm-user-info{
+    flex: 1 1 auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    forced-color-adjust: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    -webkit-box-pack: start;
+    align-items: baseline;
+    -webkit-box-align: baseline;
+    display: flex;
+    outline: 0;
+}
+
+
+
 
 
 
@@ -290,7 +323,7 @@
     text-rendering: optimizeLegibility;
     font-family: "Whitney";
     box-sizing: border-box;
-    background: none;
+    // background: none;
     border: none;
     border-radius: 3px;
     font-size: 14px;
@@ -303,6 +336,8 @@
     display: flex;
     -webkit-box-pack: center;
     position: relative;
+    background-color: hsl(235, 85.6%, 64.7%);
+
 }
 
 .create-dm-button-text {
