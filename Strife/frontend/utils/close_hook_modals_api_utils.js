@@ -14,3 +14,17 @@ export const closeHookModalOnESC = (closeHookModal) => {
     }, []);
 
 }
+
+export const closeOnEsc = (setBoolean) => {
+    const checkForEsc = (e) => {
+        if (e.keyCode === 27) {
+            setBoolean(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener("keydown", checkForEsc);
+        return () => document.removeEventListener("keydown", checkForEsc);
+    }, []);
+}
+
