@@ -47,7 +47,7 @@ const CreateDmModal = ({
 
         const dmMemberInfo = [...selectedFriends];
         //deep copy
-        const deepCopydmMemberInfo;
+        const deepCopydmMemberInfo = JSON.parse(JSON.stringify(selectedFriends));
         console.log("dmMembersinfo : ",dmMemberInfo);
         console.log("dmMembersinfoDeepCopy : ",deepCopydmMemberInfo);
 
