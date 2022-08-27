@@ -23,14 +23,16 @@ class Api::DmServersController < ApplicationController
         )
         if @dm_server.save
 
-            dm_members = params[:dm_server][:dm_member_ids]
-            dm_members.each do |dm_member|
+            d1_members = params[:dm_server][:dm_member_ids]
+            puts 'd1_members'
+            puts d1_members
+            d1_members.each do |dm_member|
                 DmMember.create!(dm_server_id: @dm_server.id, dm_member_id: dm_member)
             end
 
-            puts 'dm_server members'
-            puts @dm_server.members
-            puts 'dm_server_dm_members'
+            # puts 'dm_server members'
+            # puts @dm_server.members
+            # puts 'dm_server_dm_members'
             # puts @dm_server.dm_members
 
             render :show
