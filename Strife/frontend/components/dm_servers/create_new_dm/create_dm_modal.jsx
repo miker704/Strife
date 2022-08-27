@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
-import { closeOnEsc, closeHookModalOnOutsideClick } from "../../../utils/close_hook_modals_api_utils";
 
 const CreateDmModal = ({
     top, dmServers, currentUser, friends, createDmServers, history
@@ -13,8 +12,8 @@ const CreateDmModal = ({
     //     setPopupTop(e.currentTarget.getBoundingClientRect().top)
     //     setShowPopup(!showPopup);
     //   };
-    closeHookModalOnOutsideClick(popupRef,setShowPopup);
-    closeOnEsc(setShowPopup);
+    // closeHookModalOnOutsideClick(popupRef,setShowPopup);
+    // closeOnEsc(setShowPopup);
 
 
     const [searchText, setSearchText] = useState("");
