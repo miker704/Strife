@@ -178,7 +178,6 @@ class FriendsHomePageContainer extends React.Component {
 
 
     render () {
-        console.log("friendShip props: ", this.props);
         return (
             <div className="home-nav-bar-container">
                 <div className="home-nav-bar">
