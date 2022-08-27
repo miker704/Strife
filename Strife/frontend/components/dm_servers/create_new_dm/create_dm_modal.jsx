@@ -25,7 +25,7 @@ const CreateDmModal = ({
             });
         }
         else {
-            selectedFriends(prevState => [...prevState, friend]);
+            setSelectedFriends(prevState => [...prevState, friend]);
             setSearchText("");
         }
     }
