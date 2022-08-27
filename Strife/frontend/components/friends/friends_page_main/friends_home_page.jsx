@@ -44,6 +44,7 @@ class FriendsHomePageContainer extends React.Component {
     }
 
     componentWillUnmount(){
+        this.mounted = false;
         this.props.removeFriendshipErrors();
     }
 
