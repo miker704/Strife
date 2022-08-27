@@ -155,6 +155,10 @@ $off-grey: #B9BBBE;
     font-weight: 600;
     letter-spacing: 0.25px;
     cursor: default;
+
+
+    transform: translate(0px, 15px);
+
 }
 
 .friend-index-item-wrapper {
@@ -162,6 +166,8 @@ $off-grey: #B9BBBE;
     // padding: 0px 10px;
     // overflow: hidden scroll;
     height: 92vh;
+    transform: translate(0px, 22px);
+
 }
 
 
