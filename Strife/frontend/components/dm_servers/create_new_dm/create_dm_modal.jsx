@@ -45,12 +45,39 @@ const CreateDmModal = ({
             }
         }
 
-        const dmMemberInfo = [...selectedFriends];
+        // const dmMemberInfo = [...selectedFriends];
         //deep copy
-        const deepCopydmMemberInfo = JSON.parse(JSON.stringify(selectedFriends));
-        console.log("dmMembersinfo : ",dmMemberInfo);
-        console.log("dmMembersinfoDeepCopy : ",deepCopydmMemberInfo);
+        const dmMemberInfo = JSON.parse(JSON.stringify(selectedFriends));
+        // console.log("dmMembersinfo : ",dmMemberInfo);
+        console.log("dmMembersinfoDeepCopy : ",dmMemberInfo);
+        let newDmsServerName = [];
+        for(let member of dmMemberInfo ){
+            if(member.id !== currentUser.id){
+                newDmsServerName.push(member.username);
+            }
+        }
+        for (let i of dmMemberArray) {
 
+            if (i.id !== this.props.currentUser.id) {
+                dmServerNameArray.push(i.username)
+            }
+        }
+        if (dmServerNameArray.length === 1) {
+            dmServerName = dmServerNameArray.join();
+        }
+        else {
+            dmServerName = dmServerNameArray.join(", ");
+        }
+
+
+        if (dmServer.dm_server_name === null) {
+            let subState = {
+                dm_server_name: dmServerName
+            };
+            // this.props.updateDmServer(dmServer.id,subState);
+            console.log("substate: ", subState);
+        }
+        return dmServerName;
     }
 
 
