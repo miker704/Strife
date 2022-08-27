@@ -68,9 +68,6 @@ const CreateDmModal = ({
             dm_member_ids: memberIds
         }
 
-        console.log("dmserver substate: ",submissionState);
-
-
         let newDmServer;
      
         action(submissionState).then((action) =>{
