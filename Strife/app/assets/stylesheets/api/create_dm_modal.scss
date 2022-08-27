@@ -274,6 +274,29 @@
     position: relative;
     border-radius: 50%;
     outline: 0;
+
+
+    flex: 0 0 auto;
+    margin-right: 12px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-flex: 0;
+    -webkit-box-pack: center;
+}
+
+.create-dm-avatar-info {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.create-dm-avatar-info>img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
 }
 
 .create-dm-user-info {
@@ -400,7 +423,7 @@
     overflow: hidden;
 }
 
-.create-dm-check-box-wrapper{
+.create-dm-check-box-wrapper {
     flex: 0 0 auto;
     -webkit-box-flex: 0;
     forced-color-adjust: none;
@@ -415,7 +438,7 @@
 
 }
 
-.create-dm-check-box{
+.create-dm-check-box {
     width: 22px;
     height: 22px;
     forced-color-adjust: none;
@@ -427,10 +450,9 @@
     border-width: 1px;
     border-style: solid;
     -webkit-box-flex: 0;
-    border-color: hsl(218,4.6%,46.9%);
+    border-color: hsl(218, 4.6%, 46.9%);
     -webkit-box-align: center;
     align-items: center;
     display: flex;
     outline: 0;
 }
-
