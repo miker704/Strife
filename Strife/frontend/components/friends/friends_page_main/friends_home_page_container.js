@@ -19,5 +19,5 @@ const mDTP  = (dispatch) => {
     };
 };
 
-const HomePageContainer = withRouter(connect(null,mDTP)(FriendsHomePageContainer));
+const HomePageContainer = withRouter(connect(mSTP,mDTP)(FriendsHomePageContainer));
 export default HomePageContainer;
