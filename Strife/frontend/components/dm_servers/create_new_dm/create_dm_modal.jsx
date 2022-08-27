@@ -70,11 +70,15 @@ const CreateDmModal = ({
         console.log("dmserver substate: ",submissionState);
 
 
-        let newDmServer;
-        createDmServer(submissionState);
+        // let newDmServer;
+        // createDmServer(submissionState).then((action) => {
+        //     newDmServer = action.dmserver;
+        //     console.log("newDMServer : ",newDmServer);
+
+        // });
 
 
-
+        console.log("dmmemebers ids : ",memberIds);
 
         console.log("leaving modal");
         return;
