@@ -210,6 +210,7 @@ class FriendsHomePageContainer extends React.Component {
                         </div>
                     </div>
                     <div className="home-nav-tool-bar">
+                        {this.renderCreateDMModal()}
                         <div className="invite-tool-bar">
                             <div className="invite-tool-bar-group-dm">
                                 <svg onClick={() => toggleCreateDmModal()} x="0" y="0" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
