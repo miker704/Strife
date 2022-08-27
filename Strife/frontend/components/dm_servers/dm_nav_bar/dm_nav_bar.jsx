@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 // import UserSearchContainer from "../../components/user_search/user_search_container.jsx"
 import CreateDmModalContainer from '../create_new_dm/create_dm_container';
 
@@ -108,10 +109,10 @@ class DmNavBar extends React.Component {
         return dmServerName;
     }
 
-    renderCreateDMModal(){
-        if(this.state.createDmModal===true){
+    renderCreateDMModal () {
+        if (this.state.createDmModal === true) {
             return (
-                <CreateDmModalContainer/>
+                <CreateDmModalContainer />
             )
         }
     }
@@ -124,58 +125,58 @@ class DmNavBar extends React.Component {
         // console.log("dmServers navbar dmServerId : ", this.props.dmServerId);
 
 
-    
+
 
         return (
-                <div className='dm-server-nav-bar1'>
-                    {this.renderCreateDMModal()}
-                    <div className='dm-nav-bar-search-bar'>
-                        <button type='button' className='dm-nav-bar-search-bar-button'>Find or start a conversation</button>
-                    </div>
-                    <div className='dm-nav-bar-scroller'>
+            <div className='dm-server-nav-bar1'>
+                {this.renderCreateDMModal()}
+                <div className='dm-nav-bar-search-bar'>
+                    <button type='button' className='dm-nav-bar-search-bar-button'>Find or start a conversation</button>
+                </div>
+                <div className='dm-nav-bar-scroller'>
 
 
-                        <div className='friends-nav-bar-wrapper'>
-                            <div className='friends-nav-bar'>
-                                <Link className='friends-nav-bar-link' to={`/channels/@me`}>
+                    <div className='friends-nav-bar-wrapper'>
+                        <div className='friends-nav-bar'>
+                            <Link className='friends-nav-bar-link' to={`/channels/@me`}>
 
-                                    <div className='friend-avatar-wrapper'>
-                                        <div className='friend-avatar'>
-                                            <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
-                                                <g fill="none" fillRule="evenodd">
-                                                    <path fill="currentColor" fillRule="nonzero"
-                                                        d="M0.5,0 L0.5,1.5 C0.5,5.65 2.71,9.28 6,11.3 L6,16 L21,16 L21,14 C21,11.34 
+                                <div className='friend-avatar-wrapper'>
+                                    <div className='friend-avatar'>
+                                        <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                            <g fill="none" fillRule="evenodd">
+                                                <path fill="currentColor" fillRule="nonzero"
+                                                    d="M0.5,0 L0.5,1.5 C0.5,5.65 2.71,9.28 6,11.3 L6,16 L21,16 L21,14 C21,11.34 
                                                 15.67,10 13,10 C13,10 12.83,10 12.75,10 C8,10 4,6 4,1.5 L4,0 L0.5,0 Z M13,0 
                                                 C10.790861,0 9,1.790861 9,4 C9,6.209139 10.790861,8 13,8 C15.209139,8 17,6.209139 
                                                 17,4 C17,1.790861 15.209139,0 13,0 Z" transform="translate(2 4)">
 
-                                                    </path>
-                                                    <path d="M0,0 L24,0 L24,24 L0,24 L0,0 Z M0,0 L24,0 L24,24 L0,24 
+                                                </path>
+                                                <path d="M0,0 L24,0 L24,24 L0,24 L0,0 Z M0,0 L24,0 L24,24 L0,24 
                                                 L0,0 Z M0,0 L24,0 L24,24 L0,24 L0,0 Z">
-                                                    </path>
-                                                </g>
-                                            </svg>
+                                                </path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div className='friend-avatar-text-wrapper'>
+                                        <div className='friend-avatar-text-inner'>
+                                            <div className='friend-avatar-text'>Friends</div>
                                         </div>
-                                        <div className='friend-avatar-text-wrapper'>
-                                            <div className='friend-avatar-text-inner'>
-                                                <div className='friend-avatar-text'>Friends</div>
-                                            </div>
-                                        </div>
-
                                     </div>
 
+                                </div>
 
-                                </Link>
-                            </div>
+
+                            </Link>
                         </div>
+                    </div>
 
-                        <div className='nitro-nav-bar-wrapper'>
-                            <div className='nitro-nav-bar'>
-                                <div className='nitro-nav-bar-link'>
-                                    <div className='nitro-avatar-wrapper'>
-                                        <div className='nitro-avatar'>
-                                            <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
-                                                <path fill="currentColor" d="M2.98966977,9.35789159 C2.98966977,9.77582472 2.63442946,10.1240466 2.20807287,10.1240466 
+                    <div className='nitro-nav-bar-wrapper'>
+                        <div className='nitro-nav-bar'>
+                            <div className='nitro-nav-bar-link'>
+                                <div className='nitro-avatar-wrapper'>
+                                    <div className='nitro-avatar'>
+                                        <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M2.98966977,9.35789159 C2.98966977,9.77582472 2.63442946,10.1240466 2.20807287,10.1240466 
                                                 L1.78171628,10.1240466 C1.35535969,10.1240466 0.999948837,9.77582472 0.999948837,9.35789159 C0.999948837,8.93995846 
                                                 1.35535969,8.59173658 1.78171628,8.59173658 L2.20807287,8.59173658 C2.63442946,8.59173658 2.98966977,8.93995846 
                                                 2.98966977,9.35789159 Z M22.2467643,9.14892503 C24.0942527,12.9800344 22.3888264,17.5772989 18.3384388,19.3882867 
@@ -196,22 +197,22 @@ class DmNavBar extends React.Component {
                                                  C12.0142744,12.4227958 12.0142744,12.3530846 12.0852202,12.2138293 L13.5065225,9.84548582 C13.5774682,9.7062305 
                                                  13.7197008,9.7062305 13.7906465,9.7062305 L16.5619643,9.7062305 C16.7041969,9.63651925 16.7751426,9.7062305 
                                                  16.8462589,9.84548582 Z">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                        <div className='nitro-avatar-text-wrapper'>
-                                            <div className='nitro-avatar-text-inner'>
-                                                <div className='nitro-avatar-text'>
-                                                    Nitro
-                                                </div>
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div className='nitro-avatar-text-wrapper'>
+                                        <div className='nitro-avatar-text-inner'>
+                                            <div className='nitro-avatar-text'>
+                                                Nitro
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='strife-nitro-lbl1'>
-                                        <div className='strife-nitro-img1'>
-                                            <svg className='strife-nitro-clock1' aria-hidden="true" role="img" width="12" height="12" viewBox="0 0 20 20">
-                                                <g fill="none" fillRule="evenodd">
-                                                    <path fill="currentColor" d="M9.99999 1.66675C5.39699 1.66675 1.66666 5.39708
+                                </div>
+                                <div className='strife-nitro-lbl1'>
+                                    <div className='strife-nitro-img1'>
+                                        <svg className='strife-nitro-clock1' aria-hidden="true" role="img" width="12" height="12" viewBox="0 0 20 20">
+                                            <g fill="none" fillRule="evenodd">
+                                                <path fill="currentColor" d="M9.99999 1.66675C5.39699 1.66675 1.66666 5.39708
                                                      1.66666 10.0001C1.66666 14.6031 5.39699 18.3334 9.99999 18.3334C14.603 18.3334
                                                       18.3333 14.6031 18.3333 10.0001C18.3333 5.39708 14.603 1.66675 9.99999
                                                        1.66675ZM9.99999 4.66675C10.3685 4.66675 10.6667 4.96493 10.6667
@@ -220,64 +221,64 @@ class DmNavBar extends React.Component {
                                                           10.6148C9.71333 10.6043 9.68989 10.5874 9.66646 10.5731C9.46724 10.4572
                                                            9.33312 10.2463 9.33312 10.0002V5.3335C9.33312 4.965 9.6315 4.66675
                                                             9.99999 4.66675Z">
-                                                    </path></g>
-                                            </svg>
+                                                </path></g>
+                                        </svg>
 
-                                            1 month free</div>
-                                    </div>
+                                        1 month free</div>
                                 </div>
                             </div>
                         </div>
-
-                        <br />
-
-                        <div className="dm-list-header">
-                            <h4>DIRECT MESSAGES</h4>
-                            <div className="create-channel-div" onClick={() => this.toggleSearch()}>
-                                <i className="fa-solid fa-plus" onClick={() => this.setState({createDmModal: true})} />
-                                <div className="dm-tool-tip">
-                                    Create DM
-                                </div>
-                            </div>
-                        </div>
-                        {/* {this.renderSearch()} */}
-                        <ul className="dm-nav-bar-list">
-                            {this.props.dmServers.map((dmServer, dmServerIndex) => {
-                                let selectedDmServer = this.props.dmServerId === dmServer.id.toString()
-                                    ? "selected-dm-server" : "";
-
-                                let dmServerMembers = Object.values(dmServer.members);
-                                let dmServerName = this.generateDmServerName(dmServer);
-                                let dmServerSubtitle = dmServerMembers.length > 2 ? `${dmServerMembers.length} Members` : "";
-                                let dmServerPFP = this.renderDmServerPFP(dmServerMembers);
-
-                                return (
-
-                                    <Link to={`/channels/@me/${dmServer.id}`}
-                                        className={selectedDmServer}
-                                        onClick={() => this.props.fetchDmServer(dmServer.id)}
-                                        key={dmServer.id}
-                                    >
-                                        <li className={`dm-server-li-item ${selectedDmServer}`} key={dmServerIndex}>
-                                            <div className='dm-server-pfp'>
-                                                {dmServerPFP}
-                                                <div className='dm-server-name-wrapper'>
-                                                    <h5 className='dm-server-name'>{dmServerName}</h5>
-                                                    <p className='dm-server-subtitle'>{dmServerSubtitle}</p></div>
-                                            </div>
-                                        </li>
-                                    </Link>
-
-
-
-                                )
-
-                            })
-                            }
-                        </ul>
-
                     </div>
+
+                    <br />
+
+                    <div className="dm-list-header">
+                        <h4>DIRECT MESSAGES</h4>
+                        <div className="create-channel-div" onClick={() => this.toggleSearch()}>
+                            <i className="fa-solid fa-plus" onClick={() => this.setState({ createDmModal: true })} />
+                            <div className="dm-tool-tip">
+                                Create DM
+                            </div>
+                        </div>
+                    </div>
+                    {/* {this.renderSearch()} */}
+                    <ul className="dm-nav-bar-list">
+                        {this.props.dmServers.map((dmServer, dmServerIndex) => {
+                            let selectedDmServer = this.props.dmServerId === dmServer.id.toString()
+                                ? "selected-dm-server" : "";
+
+                            let dmServerMembers = Object.values(dmServer.members);
+                            let dmServerName = this.generateDmServerName(dmServer);
+                            let dmServerSubtitle = dmServerMembers.length > 2 ? `${dmServerMembers.length} Members` : "";
+                            let dmServerPFP = this.renderDmServerPFP(dmServerMembers);
+
+                            return (
+
+                                <Link to={`/channels/@me/${dmServer.id}`}
+                                    className={selectedDmServer}
+                                    onClick={() => this.props.fetchDmServer(dmServer.id)}
+                                    key={dmServer.id}
+                                >
+                                    <li className={`dm-server-li-item ${selectedDmServer}`} key={dmServerIndex}>
+                                        <div className='dm-server-pfp'>
+                                            {dmServerPFP}
+                                            <div className='dm-server-name-wrapper'>
+                                                <h5 className='dm-server-name'>{dmServerName}</h5>
+                                                <p className='dm-server-subtitle'>{dmServerSubtitle}</p></div>
+                                        </div>
+                                    </li>
+                                </Link>
+
+
+
+                            )
+
+                        })
+                        }
+                    </ul>
+
                 </div>
+            </div>
         )
     }
 }
