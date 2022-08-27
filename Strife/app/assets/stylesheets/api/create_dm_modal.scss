@@ -282,7 +282,7 @@
     outline: 0;
 }
 
-.create-dm-user-user-name{
+.create-dm-user-user-name-wrapper{
     margin-right: 4px;
     forced-color-adjust: none;
     font-size: 14px;
@@ -295,8 +295,18 @@
 }
 
 .create-dm-user-strife-tag{
-
+    outline: 0;
+    opacity: 0.5;
+    forced-color-adjust: none;
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    overflow: hidden;
+    line-height: 1.1;
 }
+
 
 
 
