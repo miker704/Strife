@@ -157,7 +157,7 @@ $off-grey: #B9BBBE;
     cursor: default;
 
 
-        // transform: translate(0px, 15px);
+    transform: translate(0px, 15px);
 
 }
 
@@ -166,6 +166,7 @@ $off-grey: #B9BBBE;
     // padding: 0px 10px;
     // overflow: hidden scroll;
     height: 92vh;
+    transform: translate(0px, 22px);
 }
 
 
@@ -1202,27 +1203,27 @@ $off-grey: #B9BBBE;
     }
 }
 
-.friend-index-container.block {
+// .friend-index-container.block {
     // transform: translate(0px, 20px);
 
-    .friend-index-item-wrapper {
-        height: 92vh;
-        transform: translate(0px, 22px);
-    }
+    // .friend-index-item-wrapper {
+    //     height: 92vh;
+    //     transform: translate(0px, 22px);
+    // }
 
-    .all-friends {
-        margin: 24px 20px 8px 30px;
-        font-family: 'ABC Ginto Normal';
-        color: #B9BBBE;
-        font-size: 12px;
-        line-height: 16px;
-        font-weight: 600;
-        letter-spacing: 0.25px;
-        cursor: default;
-        transform: translate(0px, 15px);
-    }
+    // .all-friends {
+    //     margin: 24px 20px 8px 30px;
+    //     font-family: 'ABC Ginto Normal';
+    //     color: #B9BBBE;
+    //     font-size: 12px;
+    //     line-height: 16px;
+    //     font-weight: 600;
+    //     letter-spacing: 0.25px;
+    //     cursor: default;
+    //     transform: translate(0px, 15px);
+    // }
 
     // .all-search-bar {
     //     transform: translate(0px, 10px);
     // }
-}
+// }
