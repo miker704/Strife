@@ -58,9 +58,7 @@ const CreateDmModal = ({
                                                 )
                                             })
                                         }
-
-
-
+                                        
                                         <input className="create-dm-search-bar" type="text" name="" id="" placeholder="Type the username of a friend" />
                                     </div>
                                 </div>
