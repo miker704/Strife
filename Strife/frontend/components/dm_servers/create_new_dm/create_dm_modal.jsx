@@ -6,8 +6,7 @@ const CreateDmModal = ({
 }) => {
     const inputRef = useRef();
     const popupRef = useRef();
-    const [showPopup, setShowPopup] = useState(false);
-    const [popupTop, setPopupTop] = useState(0);
+    
 
 
     const [searchText, setSearchText] = useState("");
