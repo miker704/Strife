@@ -13,7 +13,25 @@ class DmNavBar extends React.Component {
         this.closeCreateDmModal = this.closeCreateDmModal.bind(this);
         this.generateDmServerName = this.generateDmServerName.bind(this);
         this.renderDmServerPFP = this.renderDmServerPFP.bind(this);
+        this.handleESC = this.handleESC.bind(this);
     }
+
+
+    handleESC (e) {
+        const keys = {
+          27: () => {
+            e.preventDefault();
+            this.closeAllSubMods();
+            window.removeEventListener('keyup', this.handleESC, false);
+    
+          },
+        };
+        if (keys[e.keyCode]) {
+          keys[e.keyCode]();
+        }
+      }
+    
+
 
     componentDidMount () {
         this.props.fetchUserDmServers(this.props.currentUser.id);
