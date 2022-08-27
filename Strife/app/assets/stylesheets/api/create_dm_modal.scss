@@ -497,3 +497,8 @@ $error-red: #ED4245;
     display: flex;
     outline: 0;
 }
+
+
+.num-of-dm-members-selected.cDMS-error{
+    color: $error-red;
+}
