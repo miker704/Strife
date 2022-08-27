@@ -384,3 +384,8 @@
     z-index: 10;
 }
 
+.inbox-tool-bar:hover .home-bar-tool-tip,
+.inbox-tool-bar:hover .home-bar-tool-tip-triangle {
+    visibility: visible;
+    z-index: 10;
+}
