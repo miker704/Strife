@@ -371,7 +371,7 @@
     width: 0;
     border-style: solid;
     border-color: #191919 transparent transparent transparent;
-    border-width: 12px 6px 0 6px;
+    border-width: 6px 6px 0 6px;
 }
 
 .invite-tool-bar-group-dm:hover .home-bar-tool-tip,
@@ -405,6 +405,7 @@
 
 
 .invite-tool-bar-group-dm  .home-bar-tool-tip{
+    width: 94px;
     transform: translate(-44px, 3px);
 }
 
@@ -415,7 +416,7 @@
 }
 
 .inbox-tool-bar .home-bar-tool-tip{
-    width: 94px;
+    // width: 94px;
     transform: translate(-15px, 3px);
 }
 
