@@ -34,6 +34,9 @@ const CreateDmModal = ({
 
     const dmMemberArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
 
+    const handleDmServerCreation = () => {
+        
+    }
 
 
 
