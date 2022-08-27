@@ -58,8 +58,17 @@ const CreateDmModal = ({
                                                 )
                                             })
                                         }
-                                        
-                                        <input className="create-dm-search-bar" type="text" name="" id="" placeholder="Type the username of a friend" />
+
+                                        <input
+                                            className="create-dm-search-bar"
+                                            autoFocus ref={inputRef}
+                                            spellCheck={false}
+                                            type="text"
+                                            value={searchText}
+                                            onChange={(e) => setSearchText(e.currentTarget.value)}
+                                            placeholder="Type the username of a friend"
+                                        />
+
                                     </div>
                                 </div>
                             </div>
