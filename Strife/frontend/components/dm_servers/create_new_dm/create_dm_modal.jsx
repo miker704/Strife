@@ -11,6 +11,7 @@ const CreateDmModal = ({
     const [selectedFriends, setSelectedFriends] = useState([]);
     const isSelected = (friend) => selectedFriends.map(friend => friend.id).includes(friend.id);
     const findIfSelected = (toAdd) => selectedFriends.findIndex(friend => friend.id === toAdd.id);
+    let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
 
     return (
         <div className="clear-modal-wrapper">
@@ -23,7 +24,7 @@ const CreateDmModal = ({
                             <div className="create-dm-search-bar-wrapper">
                                 <div className="create-dm-search-bar-outer-wrapper">
                                     <div className="create-dm-search-bar-inner-wrapper">
-                                        <input className="create-dm-search-bar" type="text" name="" id="" placeholder="Type the username of a friend"/>
+                                        <input className="create-dm-search-bar" type="text" name="" id="" placeholder="Type the username of a friend" />
                                     </div>
                                 </div>
                             </div>
@@ -32,18 +33,41 @@ const CreateDmModal = ({
                             <ul className="create-dm-ul-list">
                                 <div className="create-dm-ul-list-div"></div>
                                 {friends.map(friend => {
-                                    if (friend.username.includes(searchText)){
+                                    if (friend.username.includes(searchText)) {
                                         return (
-                                        
-                                        <li key={friend.id}>{friend.username}</li>
-                                        
-                                        
+
+                                            <li className="create-dm-friend-wrapper" key={friend.id}>
+                                                <div className="create-dm-friend-inner-wrapper">
+                                                    <div className="create-dm-avatar">
+                                                        <img src={`${friend.photo === undefined ? default_Photo : friend.photo}`} alt="pfp" />
+                                                    </div>
+                                                    <div className="create-dm-user-info">
+                                                        <strong className="create-dm-user-username-wrapper">
+                                                            {friend.username}
+                                                        </strong>
+                                                        <div className="create-dm-user-strife-tag">
+                                                            <span className="create-dm-user-user-name">
+                                                                {friend.username}
+                                                            </span>
+                                                            <span>{friend.strife_id_tag}</span>
+                                                        </div>
+                                                    </div>
+                                                    <span className="create-dm-check-box-wrapper">
+                                                        <div className="create-dm-check-box">
+                                                        <svg aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 24 24"><path fill="transparent" fill-rule="evenodd" clip-rule="evenodd" d="M8.99991 16.17L4.82991 12L3.40991 13.41L8.99991 19L20.9999 7.00003L19.5899 5.59003L8.99991 16.17Z"></path></svg>
+                                                        </div>
+                                                    </span>
+                                                </div>
+
+                                            </li>
+
+
                                         )
                                     }
-                                    else{
+                                    else {
                                         return null;
                                     }
-                                                })
+                                })
 
                                 }
                             </ul>
