@@ -11,8 +11,8 @@
     flex-direction: column;
     background-color: hsl(220, 7.7%, 22.9%);
 
-   
-  
+
+
 }
 
 
@@ -257,14 +257,17 @@
 }
 
 
-.online-tab.selected,.all-tab.selected,.pending-tab.selected,.blocked-tab.selected{
-      background-color: hsla(217, 7.6%, 33.5%, 0.6);
-      color: #FFFFFF;
+.online-tab.selected,
+.all-tab.selected,
+.pending-tab.selected,
+.blocked-tab.selected {
+    background-color: hsla(217, 7.6%, 33.5%, 0.6);
+    color: #FFFFFF;
 }
 
-.add-friend-tab.selected{
+.add-friend-tab.selected {
     background-color: transparent;
-    color:hsl(139, 51.6%, 52.5%);
+    color: hsl(139, 51.6%, 52.5%);
 }
 
 
@@ -372,8 +375,9 @@
     transform: translate(0px, -24px);
     // background-color: #191919;
 }
+
 .invite-tool-bar-group-dm:hover .home-bar-tool-tip,
-.invite-tool-bar-group-dm:hover .home-bar-tool-tip-triangle{
+.invite-tool-bar-group-dm:hover .home-bar-tool-tip-triangle {
     visibility: visible;
     z-index: 10;
 }
@@ -384,8 +388,8 @@
     z-index: 10;
 }
 
-.inbox-tool-bar:hover .home-bar-tool-tip,
-.inbox-tool-bar:hover .home-bar-tool-tip-triangle {
+.help-tool-bar:hover .home-bar-tool-tip,
+.help-tool-bar:hover .home-bar-tool-tip-triangle {
     visibility: visible;
     z-index: 10;
 }
