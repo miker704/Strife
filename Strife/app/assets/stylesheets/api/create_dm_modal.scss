@@ -157,7 +157,26 @@
 
 
 .create-dm-search-bar{
-    
+    outline: none;
+    font-size: 16px;
+    line-height: 32px;
+    height: 30px;
+    padding: 0 8px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    background: #0000;
+    border: none;
+    resize: none;
+    -webkit-box-flex: 1;
+    flex: 1;
+    min-width: 48px;
+    margin: 1px;
+    appearance: none;
+    color: hsl(210,2.9%,86.7%);
+    text-rendering: optimizeLegibility;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: "Whitney";
 }
 
 
