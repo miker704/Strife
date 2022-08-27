@@ -511,3 +511,11 @@ $error-red: #ED4245;
 .num-of-dm-members-selected.cDMS-error{
     color: $error-red;
 }
+
+
+.create-dm-check-box.checked{
+    border-color: hsl(217, 7.6%, 33.5%);
+    svg{
+        fill:hsl(217,7.6%,33.5%);
+    }
+}
