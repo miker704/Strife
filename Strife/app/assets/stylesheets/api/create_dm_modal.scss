@@ -87,8 +87,19 @@
 }
 
 .create-dm-search-bar-wrapper{
-
+    forced-color-adjust: none;
+    outline: 0;
+    flex: 1 1 auto;
+    margin-top: 20px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    display: flex;
 }
+
 
 .create-dm-search-bar{
     
