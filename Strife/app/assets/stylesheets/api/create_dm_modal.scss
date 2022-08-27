@@ -39,7 +39,14 @@
     -ms-flex-direction: column;
     background-color: hsl(220, 7.7%, 22.9%);
     box-shadow: 0 0 0 1px hsla(216, 7.2%, 13.5%, 0.6), 0 2px 10px 0 hsla(0, 0%, 0%, 0.2);
-
+    
+    button[type="submit"]:disabled {
+        cursor: not-allowed;
+        opacity: .5;
+        color: hsl(0, 0%, 100%);
+        background-color: hsl(235, 85.6%, 64.7%);
+        forced-color-adjust: none;
+    }
 }
 
 .create-dm-header-sec {
