@@ -41,7 +41,8 @@ const CreateDmModal = ({
                         <div className="create-dm-header-sec">
                             <h2 className="create-dm-header-h2">Select Friends</h2>
                             <div className="num-of-dm-members-selected">
-                                You can add {`${count}`} more friends.
+                                {/* You can add {`${count <= 8 ? 9-count :}`} more friends. */}
+                                {count <= 8 ? `You can add ${9-count} more friends.` : `This group has a 10 member limit.`}
                             </div>
                             <div className="create-dm-search-bar-wrapper">
                                 <div className="create-dm-search-bar-outer-wrapper">
