@@ -7,7 +7,8 @@ import { createDmServer, removeDmServerErrors } from '../../../actions/dm_server
 
 const mSTP = (state) => {
     return {
-        friends: selectFriendStatus(state, 3)
+        friends: selectFriendStatus(state, 3),
+        errors: state.errors.dmserver
     }
 }
 
