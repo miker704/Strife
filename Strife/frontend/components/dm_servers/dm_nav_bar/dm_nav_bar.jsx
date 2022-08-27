@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-// import UserSearchContainer from "../../components/user_search/user_search_container.jsx"
 import CreateDmModalContainer from '../create_new_dm/create_dm_container';
 
 class DmNavBar extends React.Component {
