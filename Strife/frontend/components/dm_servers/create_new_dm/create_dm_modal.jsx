@@ -62,8 +62,11 @@ const CreateDmModal = ({
         else {
             dmServerName = newDmsServerName.join(", ");
         }
+        let submissionState = {
 
-
+        }
+        console.log("leaving modal");
+        return;
     }
 
 
