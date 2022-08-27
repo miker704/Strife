@@ -215,6 +215,34 @@
 
 }
 
+.create-dm-scroller::-webkit-scrollbar {
+    width: 5px;
+}
+
+.create-dm-scroller::-webkit-scrollbar-thumb {
+    background: rgb(30, 35, 40);
+    border-radius: 5px;
+    visibility: hidden;
+}
+
+.create-dm-scroller:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+.create-dm-scroller::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgb(40, 45, 50);
+    visibility: hidden;
+
+}
+
+.create-dm-scroller:hover::-webkit-scrollbar-track {
+    visibility: visible;
+}
+
+
+
+
 .create-dm-ul-list {
     height: 602px;
     forced-color-adjust: none;
