@@ -48,7 +48,7 @@ class Api::DmServersController < ApplicationController
 
     private
     def dm_server_params
-        return params.require(:dm_server).permit(:owner_id,:dm_server_name)
+        return params.require(:dm_server).permit(:owner_id,:dm_server_name, dm_member_ids:[])
     end
 
 end
