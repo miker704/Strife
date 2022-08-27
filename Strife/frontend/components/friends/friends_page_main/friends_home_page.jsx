@@ -39,6 +39,7 @@ class FriendsHomePageContainer extends React.Component {
 
 
     componentDidMount () {
+        this.mounted = true;
         this.props.requestFriendships();
     }
 
