@@ -151,7 +151,7 @@ const CreateDmModal = ({
                     </div>
                     <div className="create-dm-footer"></div>
                     <div className="create-dm-button-sec">
-                        <button className="create-dm-button" onSubmit={handleDmServerCreation}  type="submit" disabled={count > 9 || count === 0}>
+                        <button className="create-dm-button" onClick={handleDmServerCreation}  type="submit" disabled={count > 9 || count === 0}>
                             <div className="create-dm-button-text">Create Group DM</div>
                         </button>
                     </div>
