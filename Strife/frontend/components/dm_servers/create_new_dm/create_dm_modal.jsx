@@ -37,7 +37,9 @@ const CreateDmModal = ({
     const handleDmServerCreation = () => {
         const memberIds = [currentUser.id, ...selectedFriends.map((friend) => parseInt(friend.id))].sort((a,b) => a-b);
         for(let dmServer of dmServers){
-            if (dmMembersArray(dmServer.members))
+            if (dmMembersArray(dmServer.members.sort((a,b)=>a-b),memberIds)){
+                
+            }
         }
     }
 
