@@ -6,8 +6,8 @@ class createDmModal extends React.Component{
     }
     render(){
         return (
-            <div>
-                
+            <div className="create-dm-modal-popup">
+                    <div className="create-dm-"></div>
             </div>
         )
     }
