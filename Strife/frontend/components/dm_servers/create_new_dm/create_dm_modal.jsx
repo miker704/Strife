@@ -8,7 +8,7 @@ const CreateDmModal = ({
     const popupRef = useRef();
 
 
-
+    const [cancel] = useState(false);
     const [searchText, setSearchText] = useState("");
     const [selectedFriends, setSelectedFriends] = useState([]);
     const isSelected = (friend) => selectedFriends.map(friend => friend.id).includes(friend.id);
@@ -35,7 +35,10 @@ const CreateDmModal = ({
     const dmMemberArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
 
     const handleDmServerCreation = () => {
-        
+        const memberIds = [currentUser.id, ...selectedFriends.map((friend) => parseInt(friend.id))].sort((a,b) => a-b);
+        for(let i of dmServers){
+            
+        }
     }
 
 
