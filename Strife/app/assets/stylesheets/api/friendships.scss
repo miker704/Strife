@@ -1196,12 +1196,12 @@ $off-grey: #B9BBBE;
     }
 }
 
-.friend-index-container.block{
+.friend-index-container.block {
     // transform: translate(0px, 20px);
 
     .friend-index-item-wrapper {
         height: 92vh;
-        transform: translate(0px, 28px);
+        transform: translate(0px, 22px);
     }
 
     .all-friends {
@@ -1213,6 +1213,10 @@ $off-grey: #B9BBBE;
         font-weight: 600;
         letter-spacing: 0.25px;
         cursor: default;
-        transform: translate(0px, 20px);
+        transform: translate(0px, 15px);
+    }
+
+    .all-search-bar {
+        transform: translate(0px, 10px);
     }
 }
