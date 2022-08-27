@@ -66,6 +66,16 @@ const CreateDmModal = ({
             owner_id: currentUser.id,
             dm_server_name: dmServerName
         }
+
+        console.log("dmserver substate: ",submissionState);
+
+
+        let newDmServer;
+        
+
+
+
+
         console.log("leaving modal");
         return;
     }
