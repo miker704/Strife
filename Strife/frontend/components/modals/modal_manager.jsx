@@ -7,7 +7,7 @@ import EditUserEmailContainer from "../users/user_edit_email_form/user_edit_emai
 import EditUserPhoneNumberContainer from "../users/user_edit_phone_number_form/user_edit_phone_number_container.js";
 import EditUserNameContainer from "../users/user_edit_username_form/user_edit_username_container.js";
 import UserSearchContainer from "../users/user_search_modal/user_search_container.js";
-import CreateDmModal from "../dm_servers/create_new_dm/create_dm_modal.jsx";
+import CreateDmModalContainer from "../dm_servers/create_new_dm/create_dm_container.js";
 
 
 class ModalManager extends React.Component {
