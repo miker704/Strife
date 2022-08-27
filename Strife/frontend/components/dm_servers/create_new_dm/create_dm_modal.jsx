@@ -1,6 +1,6 @@
 import React from "react";
 
-class createDmModal extends React.Component{
+class CreateDmModal extends React.Component{
     constructor(props){
         super(props);
     }
@@ -21,7 +21,7 @@ class createDmModal extends React.Component{
                                     </div>
                             </div>
                             <div className="create-dm-scroller">
-                                        
+
                             </div>
                             <div className="create-dm-footer"></div>
                             <div className="create-dm-button-sec">
@@ -36,4 +36,4 @@ class createDmModal extends React.Component{
     }
 }
 
-export default createDmModal;
+export default CreateDmModal;
