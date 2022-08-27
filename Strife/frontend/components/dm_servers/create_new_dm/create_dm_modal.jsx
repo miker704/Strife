@@ -1,24 +1,25 @@
 import React from "react";
 
-class CreateDmModal extends React.Component{
-    constructor(props){
+class CreateDmModal extends React.Component {
+    constructor (props) {
         super(props);
     }
-    render(){
+    render () {
         return (
-            <div className="create-dm-modal-popup">
+            <div className="clear-modal-wrapper">
+                <div className="create-dm-modal-popup">
                     <div className="create-dm-modal-focus-lock">
                         <div className="create-dm-modal">
                             <div className="create-dm-header-sec">
-                                    <h2 className="create-dm-header-h2">Select Friends</h2>
-                                    <div className="num-of-dm-members-selected">You can add x more friends.</div>
-                                    <div className="create-dm-search-bar-wrapper">
-                                            <div className="create-dm-search-bar-outer-wrapper">
-                                                <div className="create-dm-search-bar-inner-wrapper">
-                                                    <input className="create-dm-search-bar"type="text" name="" id="" />
-                                                </div>
-                                            </div>
+                                <h2 className="create-dm-header-h2">Select Friends</h2>
+                                <div className="num-of-dm-members-selected">You can add x more friends.</div>
+                                <div className="create-dm-search-bar-wrapper">
+                                    <div className="create-dm-search-bar-outer-wrapper">
+                                        <div className="create-dm-search-bar-inner-wrapper">
+                                            <input className="create-dm-search-bar" type="text" name="" id="" />
+                                        </div>
                                     </div>
+                                </div>
                             </div>
                             <div className="create-dm-scroller">
 
@@ -31,6 +32,7 @@ class CreateDmModal extends React.Component{
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
         )
     }
