@@ -49,31 +49,24 @@ const CreateDmModal = ({
         //deep copy
         const dmMemberInfo = JSON.parse(JSON.stringify(selectedFriends));
         // console.log("dmMembersinfo : ",dmMemberInfo);
-        console.log("dmMembersinfoDeepCopy : ",dmMemberInfo);
+        console.log("dmMembersinfoDeepCopy : ", dmMemberInfo);
         let newDmsServerName = [];
         let dmServerName = "";
-        for(let member of dmMemberInfo ){
-            if(member.id !== currentUser.id){
+        for (let member of dmMemberInfo) {
+            if (member.id !== currentUser.id) {
                 newDmsServerName.push(member.username);
             }
         }
-        
+
         if (newDmsServerName.length === 1) {
             dmServerName = newDmsServerName.join();
         }
         else {
-            dmServerName = dmServerNameArray.join(", ");
+            dmServerName = newDmsServerName.join(", ");
         }
 
+        console.log("dmserver name is : ", dmServerName);
 
-        if (dmServer.dm_server_name === null) {
-            let subState = {
-                dm_server_name: dmServerName
-            };
-            // this.props.updateDmServer(dmServer.id,subState);
-            console.log("substate: ", subState);
-        }
-        return dmServerName;
     }
 
 
