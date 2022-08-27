@@ -47,8 +47,10 @@ class Api::DmServersController < ApplicationController
     end
 
     def show
-        @dm_server = DmServer.find_by(id: params[:id])
+        # @dm_server = DmServer.find_by(id: params[:id])
         @current_user = current_user
+
+        @dm_server = @current_user.dm_servers.includes(:members,:dm_messages).find_by(id: params[:id])
         render :show
     end
     
