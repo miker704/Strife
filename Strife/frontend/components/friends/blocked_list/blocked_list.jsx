@@ -39,7 +39,7 @@ class BlockedList extends React.Component {
 
             return (
 
-                <div className="friend-index-container">
+                <div className="friend-index-container block">
 
 
                     <div className="all-search-bar">
@@ -102,7 +102,7 @@ class BlockedList extends React.Component {
                                             </div>
                                             <div className="pending-request-actions">
                                                 <div className="pending-deny-icon">
-                                                    <svg onClick={() => this.removeBlockedPerson(blockedUser)} stroke="currentColor" fill="currentColor" strokeWidth="0"
+                                                    {/* <svg onClick={() => this.removeBlockedPerson(blockedUser)} stroke="currentColor" fill="currentColor" strokeWidth="0"
                                                         viewBox="0 0 352 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19
                                                      0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 
@@ -113,7 +113,15 @@ class BlockedList extends React.Component {
                                                          100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28
                                                           12.28-32.19 0-44.48L242.72 256z">
                                                         </path>
+                                                    </svg> */}
+
+
+                                                    <svg class="icon-1WV" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                                        <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 
+                                                        18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z">
+                                                        </path>
                                                     </svg>
+
                                                     <div className="pending-request-actions-tool-tip">Remove</div>
                                                     <div className="pending-request-actions-tool-tip-triangle"></div>
                                                 </div>
