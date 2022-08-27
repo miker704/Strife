@@ -130,7 +130,6 @@ class DmNavBar extends React.Component {
         return (
             <div className='dm-server-nav-bar1'>
                 {this.renderCreateDMModal()}
-                {/* {this.renderCreateDMModal()} */}
                 <div className='dm-nav-bar-search-bar'>
                     <button type='button' className='dm-nav-bar-search-bar-button'>Find or start a conversation</button>
                 </div>
