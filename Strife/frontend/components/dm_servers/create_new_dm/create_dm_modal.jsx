@@ -41,6 +41,7 @@ const CreateDmModal = ({
                     if(history.location.pathname !== `/channels/@me/${dmServer.id}`){
                         history.push(`/channels/@me/${dmServer.id}`);
                     }
+                    return;
             }
         }
     }
