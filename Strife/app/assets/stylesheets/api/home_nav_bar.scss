@@ -351,7 +351,7 @@
     width: fit-content;
     color: #B9BBBE;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    transform: translate(0px, 30px);
+    // transform: translate(0px, 30px);
     display: flex;
     text-align: center;
     justify-content: center;
@@ -407,12 +407,12 @@
 
 .invite-tool-bar-group-dm  .home-bar-tool-tip{
     width: 94px;
-
+    transform: translate(-44px, 0px);
 }
 
 .invite-tool-bar-group-dm  .home-bar-tool-tip-triangle{
     transform: translate(-25px, 0px);
-    
+    rotate: 66deg;
 }
 
 .inbox-tool-bar .home-bar-tool-tip{
