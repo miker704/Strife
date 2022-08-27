@@ -29,6 +29,7 @@ class FriendsHomePageContainer extends React.Component {
         this.openForm = this.openForm.bind(this);
         this.renderCreateDMModal = this.renderCreateDMModal.bind(this);
         this.toggleCreateDmModal = this.toggleCreateDmModal.bind(this);
+        this.closeCreateDmModal = this.closeCreateDmModal.bind(this);
 
 
 
