@@ -8,10 +8,6 @@ const CreateDmModal = ({
     const popupRef = useRef();
     const [showPopup, setShowPopup] = useState(false);
     const [popupTop, setPopupTop] = useState(0);
-    // const togglePopup = (e) => {
-    //     setPopupTop(e.currentTarget.getBoundingClientRect().top)
-    //     setShowPopup(!showPopup);
-    //   };
 
 
     const [searchText, setSearchText] = useState("");
