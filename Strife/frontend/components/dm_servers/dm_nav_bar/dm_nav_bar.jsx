@@ -22,7 +22,7 @@ class DmNavBar extends React.Component {
         this.props.removeDmServerErrors();
     }
 
-    toggleSearch () {
+    toggleCreateDmModal () {
         this.setState({ createDmModal: true })
     }
 
