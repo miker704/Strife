@@ -42,7 +42,7 @@ class FriendsHomePageContainer extends React.Component {
     toggleCreateDmModal () {
         this.setState({ createDmModal: true })
     }
-    
+
     closeCreateDmModal () {
         if (this.mounted) {
             this.setState({ createDmModal: false })
@@ -59,7 +59,11 @@ class FriendsHomePageContainer extends React.Component {
 
     componentWillUnmount () {
         this.mounted = false;
-        this.props.removeFriendshipErrors();
+        if (this.props.errors.length > 0) {
+            this.props.removeFriendshipErrors();
+        }
+
+
     }
 
 
