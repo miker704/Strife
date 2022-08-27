@@ -19,22 +19,24 @@ class DmNavBar extends React.Component {
 
     handleESC (e) {
         const keys = {
-          27: () => {
-            e.preventDefault();
-            this.closeCreateDmModal ();
-            window.removeEventListener('keyup', this.handleESC, false);
-    
-          },
+            27: () => {
+                e.preventDefault();
+                this.closeCreateDmModal();
+                window.removeEventListener('keyup', this.handleESC, false);
+
+            },
         };
         if (keys[e.keyCode]) {
-          keys[e.keyCode]();
+            keys[e.keyCode]();
         }
-      }
-    
+    }
+
 
 
     componentDidMount () {
+
         this.props.fetchUserDmServers(this.props.currentUser.id);
+
     }
     componentWillUnmount () {
         this.props.removeDmServerErrors();
@@ -111,6 +113,7 @@ class DmNavBar extends React.Component {
 
     renderCreateDMModal () {
         if (this.state.createDmModal === true) {
+            window.addEventListener('keyup', this.handleESC, false);
             return (
 
                 <div className="clear-modal-wrapper" onClick={() => this.closeCreateDmModal()}>
@@ -241,7 +244,7 @@ class DmNavBar extends React.Component {
                     <div className="dm-list-header">
                         <h4>DIRECT MESSAGES</h4>
                         <div className="create-channel-div" onClick={() => this.toggleCreateDmModal()}>
-                            <i className="fa-solid fa-plus"/>
+                            <i className="fa-solid fa-plus" />
                             {/* onClick={() => this.setState({ createDmModal: true })} */}
                             <div className="dm-tool-tip">
                                 Create DM
