@@ -71,13 +71,18 @@ const CreateDmModal = ({
         console.log("dmserver substate: ",submissionState);
 
 
-        // let newDmServer;
+        let newDmServer;
         // createDmServer(submissionState).then((action) => {
         //     newDmServer = action.dmserver;
         //     console.log("newDMServer : ",newDmServer);
 
         // });
-
+        
+        createDmServer(submissionState).then((action) =>{
+            newDmServer = action.dmserver;
+            console.log("newDmServer is : ", newDmServer);
+            history.push(`/channels/@me/${newDmServer.id}`);
+        })
 
         console.log("dmmemebers ids : ",memberIds);
 
