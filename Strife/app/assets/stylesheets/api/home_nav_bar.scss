@@ -372,14 +372,14 @@
     transform: translate(0px, -24px);
     // background-color: #191919;
 }
-.invite-tool-bar-group-dm:hover .pending-request-actions-tool-tip,
-.friend-msg-button:hover .pending-request-actions-tool-tip-triangle {
+.invite-tool-bar-group-dm:hover .home-bar-tool-tip,
+.invite-tool-bar-group-dm:hover .home-bar-tool-tip-triangle{
     visibility: visible;
     z-index: 10;
 }
 
-.friend-options-button:hover .pending-request-actions-tool-tip,
-.friend-options-button:hover .pending-request-actions-tool-tip-triangle {
+.friend-options-button:hover .home-bar-tool-tip,
+.friend-options-button:hover .home-bar-tool-tip-triangle {
     visibility: visible;
     z-index: 10;
 }
