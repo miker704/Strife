@@ -26,11 +26,11 @@ class DmNavBar extends React.Component {
     }
 
     toggleSearch () {
-        this.setState({ search: true })
+        this.setState({ createDmModal: true })
     }
 
     closeSearch () {
-        this.setState({ search: false })
+        this.setState({ createDmModal: false })
     }
 
     renderSearch () {
@@ -113,7 +113,7 @@ class DmNavBar extends React.Component {
         if (this.state.createDmModal === true) {
             return (
 
-                <div className="clear-modal-wrapper" >
+                <div className="clear-modal-wrapper" onClick={() => this.closeModal()}>
 
                     <CreateDmModalContainer />
 
