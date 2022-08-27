@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useRef } from "react";
-
+import { closeOnEsc, closeHookModalOnOutsideClick } from "../../../utils/close_hook_modals_api_utils";
 
 const CreateDmModal = ({
     top, dmServers, setShowPopup, currentUser, friends, createDmServers, history
@@ -30,7 +30,7 @@ const CreateDmModal = ({
         }
     }
 
-    
+
 
 
 
