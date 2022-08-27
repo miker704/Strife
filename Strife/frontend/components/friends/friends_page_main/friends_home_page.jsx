@@ -38,6 +38,13 @@ class FriendsHomePageContainer extends React.Component {
     }
 
 
+
+    toggleCreateDmModal () {
+        this.setState({ createDmModal: true })
+    }
+
+
+
     componentDidMount () {
         this.mounted = true;
         this.props.requestFriendships();
