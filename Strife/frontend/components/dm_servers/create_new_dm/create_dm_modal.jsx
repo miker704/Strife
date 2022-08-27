@@ -51,14 +51,15 @@ const CreateDmModal = ({
         // console.log("dmMembersinfo : ",dmMemberInfo);
         console.log("dmMembersinfoDeepCopy : ",dmMemberInfo);
         let newDmsServerName = [];
+        let dmServerName = "";
         for(let member of dmMemberInfo ){
             if(member.id !== currentUser.id){
                 newDmsServerName.push(member.username);
             }
         }
         
-        if (dmServerNameArray.length === 1) {
-            dmServerName = dmServerNameArray.join();
+        if (newDmsServerName.length === 1) {
+            dmServerName = newDmsServerName.join();
         }
         else {
             dmServerName = dmServerNameArray.join(", ");
