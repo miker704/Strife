@@ -102,6 +102,24 @@ class FriendsHomePageContainer extends React.Component {
         }
     }
 
+    renderCreateDMModal () {
+        if (this.state.createDmModal === true) {
+            window.addEventListener('keyup', this.handleESC, false);
+            return (
+
+                <div className="clear-modal-wrapper" onClick={() => this.closeCreateDmModal()}>
+                    <div onSubmit={() => this.handleSubmit()}>
+                        <CreateDmModalContainer />
+                    </div>
+                </div>
+            )
+        }
+    }
+
+
+
+
+
     render () {
         console.log("friendShip props: ", this.props);
         return (
