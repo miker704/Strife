@@ -48,8 +48,6 @@ const CreateDmModal = ({
         // const dmMemberInfo = [...selectedFriends];
         //deep copy
         const dmMemberInfo = JSON.parse(JSON.stringify(selectedFriends));
-        // console.log("dmMembersinfo : ",dmMemberInfo);
-        console.log("dmMembersinfoDeepCopy : ", dmMemberInfo);
         let newDmsServerName = [];
         let dmServerName = "";
         for (let member of dmMemberInfo) {
