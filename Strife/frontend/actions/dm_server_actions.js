@@ -63,7 +63,11 @@ export const createDmServer = (dmserver) => (dispatch) =>
 
 
 export const updateDmServer = (dmserverId, dmserver) => (dispatch) =>
-    DM_SERVER_API_UTIL.updateDmServer(dmserverId, dmserver).then((dmserver) => { dispatch(receiveDmServer(dmserver)) }, (err) => { dispatch(receiveDmServerErrors(err.responseJSON)) })
+    DM_SERVER_API_UTIL.updateDmServer(dmserverId, dmserver).then((dmserver) => {
+        dispatch(removeDmServerErrors())
+        return dispatch(receiveDmServer(dmserver))
+    },
+        (err) => { dispatch(receiveDmServerErrors(err.responseJSON)) })
 
 export const deleteDmServer = (dmserverId) => (dispatch) =>
     DM_SERVER_API_UTIL.deleteDmServer(dmserverId).then(() => { dispatch(removeDmServer(dmserverId)) }) 
