@@ -11,9 +11,9 @@ import UserNavContainer from './users/user_nav/user_nav_container';
 import ServerNavBarContainer from './server/server_nav_bar/server_nav_bar_container';
 import ModalManagerContainer from './modals/modal_manager_container';
 import UserProfileContainer from './users/user_profile/user_profile_container';
-import DMNavBarContainer from './dm_nav_bar/dm_nav_bar_container.js';
-import EmptyMessagesContainer from './dm_messages/empty_messages_container.jsx';
-import DmMessagesContainer from './dm_messages/dm_messages_container.js';
+import DMNavBarContainer from './dm_servers/dm_nav_bar/dm_nav_bar_container.js';
+import EmptyMessagesContainer from './dm_servers/dm_messages/empty_messages_container.jsx';
+import DmMessagesContainer from './dm_servers/dm_messages/dm_messages_container.js';
 import FriendsHomePageContainer from './friends/friends_page_main/friends_home_page.jsx';
 import HomePageContainer from './friends/friends_page_main/friends_home_page_container.js';
 

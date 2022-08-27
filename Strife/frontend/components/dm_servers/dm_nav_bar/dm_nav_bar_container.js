@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { fetchDmServers, updateDmServer, removeDmServerErrors, fetchDmServer } from "../../actions/dm_server_actions";
-import { openModal } from "../../actions/modal_actions";
+import { fetchDmServers, updateDmServer, removeDmServerErrors, fetchDmServer } from "../../../actions/dm_server_actions";
+import { openModal } from "../../../actions/modal_actions";
 import DmNavBar from "./dm_nav_bar";
 
 const mSTP = (state, ownProps) => {

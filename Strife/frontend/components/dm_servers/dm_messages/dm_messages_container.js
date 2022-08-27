@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { fetchDmServer } from "../../actions/dm_server_actions.js";
-import { createDmMessage } from "../../actions/dm_messages_actions.js";
+import { fetchDmServer } from "../../../actions/dm_server_actions.js";
+import { createDmMessage } from "../../../actions/dm_messages_actions.js";
 import DmMessages from "./dm_messages.jsx";
 
 const mSTP = (state, ownProps) => {
