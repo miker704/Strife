@@ -36,9 +36,7 @@ const CreateDmModal = ({
 
     const handleDmServerCreation = () => {
         const memberIds = [currentUser.id, ...selectedFriends.map((friend) => parseInt(friend.id))].sort((a, b) => a - b);
-        // const dmMembersTobeAdded = (Object.values(dmServer.members);
         for (let dmServer of dmServers) {
-            let arr = Object.values(dmServer.members);
             if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
                 if (history.location.pathname !== `/channels/@me/${dmServer.id}`) {
                     history.push(`/channels/@me/${dmServer.id}`);
