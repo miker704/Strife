@@ -72,12 +72,7 @@ const CreateDmModal = ({
 
 
         let newDmServer;
-        // createDmServer(submissionState).then((action) => {
-        //     newDmServer = action.dmserver;
-        //     console.log("newDMServer : ",newDmServer);
-
-        // });
-        
+     
         action(submissionState).then((action) =>{
             newDmServer = action.dmserver;
             console.log("newDmServer is : ", newDmServer);
