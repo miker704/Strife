@@ -76,8 +76,6 @@ const CreateDmModal = ({
             history.push(`/channels/@me/${newDmServer.id}`);
         })
 
-        console.log("dmmemebers ids : ",memberIds);
-
         return;
     }
 
