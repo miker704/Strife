@@ -43,9 +43,9 @@ const CreateDmModal = ({
                 }
                 return;
             }
-            console.log("curr dmserver: ", dmServer);
-            console.log("dmMembers of current dmServer: ", arr);
         }
+
+
     }
 
 
