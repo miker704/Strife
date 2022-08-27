@@ -15,13 +15,13 @@ class createDmModal extends React.Component{
                                     <div className="create-dm-search-bar-wrapper">
                                             <div className="create-dm-search-bar-outer-wrapper">
                                                 <div className="create-dm-search-bar-inner-wrapper">
-                                                    
+                                                    <input className="create-dm-search-bar"type="text" name="" id="" />
                                                 </div>
                                             </div>
                                     </div>
                             </div>
                             <div className="create-dm-scroller">
-
+                                        
                             </div>
                             <div className="create-dm-footer"></div>
                             <div className="create-dm-button-sec">
