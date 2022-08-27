@@ -39,7 +39,7 @@ class BlockedList extends React.Component {
 
             return (
 
-                <div className="friend-index-container block">
+                <div className="friend-index-container">
 
 
                     <div className="all-search-bar">
