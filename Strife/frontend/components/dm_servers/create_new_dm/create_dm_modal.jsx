@@ -66,7 +66,6 @@ const CreateDmModal = ({
 
         }
         console.log("leaving modal");
-        setShowPopup(false);
         return;
     }
 
