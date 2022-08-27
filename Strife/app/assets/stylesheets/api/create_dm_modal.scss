@@ -131,6 +131,29 @@
     display: flex;
 }
 
+.mini-box{
+    font-size: 16px;
+    line-height: 32px;
+    height: 30px;
+    padding: 0 8px;
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    border-radius: 2px;
+    text-align: center;
+    margin: 1px;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    display: flex;
+    -webkit-box-align: center;
+    flex-direction: row;
+    cursor: pointer;
+    transition: none;
+    background-color: hsl(220, 7.7%, 22.9%);
+    color: hsl(210,2.9%,86.7%);
+    text-decoration: none;
+}
 
 
 .create-dm-search-bar{
