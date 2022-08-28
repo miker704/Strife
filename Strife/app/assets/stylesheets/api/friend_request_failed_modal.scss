@@ -11,3 +11,25 @@
     opacity: 0.85;
     background: hsl(0, 0%, 0%);
 }
+
+.frfm-wrapper{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    min-height: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    display: flex;
+    -webkit-box-pack: center;
+    align-items: center;
+    -webkit-box-align: center;
+    outline: 0;
+    forced-color-adjust: none;
+}
+
