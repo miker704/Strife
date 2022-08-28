@@ -88,13 +88,18 @@ class AddFriends extends React.Component {
     handleSubmit () {
 
         let userInfo = this.state.user_strife_id_tag;
-        userInfo = userInfo.split('#');
-        let userStrifeId = userInfo[1];
-
-        if (userStrifeId === '' || userStrifeId.length !== 4) {
-            userStrifeId = '-000'
+        
+        if(userInfo.includes('#')){
+            userInfo = userInfo.split('#').pop();
+        }
+        else{
+            userInfo = '-000';
         }
 
+        let userStrifeId = userInfo.length === 4 ? userInfo : '-000';
+        console.log("userinfo: ",userInfo);
+        console.log("id: ",userStrifeId)
+    
         let newFriend;
 
         this.props.fetchUserByStrifeId(userStrifeId).then((action) => {
