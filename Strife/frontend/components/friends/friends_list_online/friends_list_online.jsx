@@ -14,7 +14,6 @@ class FriendShipIndexOnline extends React.Component {
 
 
     liveSearch () {
-        // let allFriendShips = document.querySelectorAll('.friend-index-item');
         let allFriendShips = document.querySelectorAll('.friend-tag');
         let search_query = document.getElementById('input-all-friends').value;
         let numberOfFriends = document.getElementById('num-of-friends');
