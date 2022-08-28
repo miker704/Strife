@@ -3,9 +3,9 @@ import { RECEIVE_FRIENDSHIP_ERRORS,REMOVE_FRIENDSHIP_ERRORS } from "../actions/f
 const friendshipErrorsReducer = (state = [], action) => {
         Object.freeze(state);
 
-        switch(action){
+        switch(action.type){
             case RECEIVE_FRIENDSHIP_ERRORS:
-                return action.errors
+                return action.errors;
             case REMOVE_FRIENDSHIP_ERRORS:
                 return [];
             default:
