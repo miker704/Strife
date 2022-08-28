@@ -13,41 +13,41 @@ class AddFriends extends React.Component {
 
     }
 
-    componentDidMount(){
+    componentDidMount () {
         this.props.requestFriendships();
     }
 
-    componentWillUnmount(){
-        if(this.props.errors.length > 0){
+    componentWillUnmount () {
+        if (this.props.errors.length > 0) {
 
             this.props.removeFriendshipErrors();
         }
 
-        if(this.props.sessionErrors.length> 0 ){
+        if (this.props.sessionErrors.length > 0) {
             this.props.removeSessionErrors();
         }
     }
 
-    handleInput(field){
+    handleInput (field) {
         return (e) => {
-            this.setState({[field]: e.currentTarget.value});
+            this.setState({ [field]: e.currentTarget.value });
         }
     }
 
-    handleSubmit(){
+    handleSubmit () {
 
         let userInfo = this.state.user_strife_id_tag;
-        userInfo= userInfo.split('#');
+        userInfo = userInfo.split('#');
         let userStrifeId = userInfo[1];
         console.log("userinfo : ", userInfo);
-        console.log("userstifeid : ", userStrifeId );
+        console.log("userstifeid : ", userStrifeId);
 
 
-            let subState = {
-                user_strife_id_tag: this.state.user_strife_id_tag
-            }
-            console.log("this is our substate: ", subState);
-            this.props.fetchUserByStrifeId
+        let subState = {
+            user_strife_id_tag: this.state.user_strife_id_tag
+        }
+        console.log("this is our substate: ", subState);
+        this.props.fetchUserByStrifeId
     }
 
     submissionBlocker () {
@@ -69,11 +69,11 @@ class AddFriends extends React.Component {
                         <div className="add-friend-subtitle">You can add a friend with their STRIFE Tag. It's cAsE sEnSitIvE!</div>
                         <div className="add-friend-input-search-wrapper">
                             <div className="add-friend-input-search-inner-wrapper">
-                                <input id="add-friend-input-bar" className="add-friend-input-bar" type="text" 
-                                onKeyUp={this.submissionBlocker} 
-                                onChange={this.handleInput("user_strife_id_tag")}
-                                value={this.state.user_strife_id_tag}
-                                placeholder={this.state.user_strife_id_tag}
+                                <input id="add-friend-input-bar" className="add-friend-input-bar" type="text"
+                                    onKeyUp={this.submissionBlocker}
+                                    onChange={this.handleInput("user_strife_id_tag")}
+                                    value={this.state.user_strife_id_tag}
+                                    placeholder={this.state.user_strife_id_tag}
                                 />
                             </div>
                             <button type="submit" id="add-friend-button" className="add-friend-button">
@@ -88,7 +88,7 @@ class AddFriends extends React.Component {
                     </h2>
                 </div>
                 <div className="add-friend-grid">
-                    <button type="button" className="add-friend-grid-button-wrapper" onClick={()=> this.props.openModal("userSearch")}>
+                    <button type="button" className="add-friend-grid-button-wrapper" onClick={() => this.props.openModal("userSearch")}>
                         <img className="add-friend-grid-button-icon" alt="expserv" />
                         <div className="add-friend-grid-button-text">Explore Public Servers</div>
                         <svg className="arrow-3B" fill="none" height="20" viewBox="0 0 20 20" width="20">
