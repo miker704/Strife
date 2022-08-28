@@ -139,3 +139,14 @@
     text-align: center;
     font-family: "Whitney";
 }
+
+.frfm-div-sep{
+    position: absolute;
+    pointer-events: none;
+    min-height: 0px;
+    min-width: 1px;
+    flex: 0 0 auto;
+    height: 20px;
+    forced-color-adjust: none;
+    outline: 0;
+}
