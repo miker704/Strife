@@ -46,15 +46,35 @@ class DownloadApps extends React.Component {
                                         <li className="platforms-li-item">
                                             <div className="platforms-li-item-inner-wrapper">
                                                 <div className="platforms-icon-wrap">
-                                                    <div className="platform-apple-icon"></div>
-                                                    <div className="platform-apple-icon-active"></div>
+                                                    <div className="platform-windows-icon"></div>
+                                                    <div className="platform-windows-icon-active"></div>
                                                 </div>
                                                 <div>
                                                     <h3 className="da-icon-header">
-                                                        MacOS
+                                                        Windows
                                                     </h3>
                                                     <div className="download-app-buttons">
-                                                        <a target="_blank" className="download-app-buttons-anchor" href="https://discord.com/api/download?platform=osx">Download</a>
+                                                        <a target="_blank" className="download-app-buttons-anchor" href="https://discord.com/api/download?platform=win">Download</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li className="platforms-li-item">
+                                            <div className="platforms-li-item-inner-wrapper">
+                                                <div className="platforms-icon-wrap">
+                                                    <div className="platform-linux-icon"></div>
+                                                    <div className="platform-linux-icon-active"></div>
+                                                </div>
+                                                <div>
+                                                    <h3 className="da-icon-header">
+                                                        Linux
+                                                    </h3>
+                                                    <div className="download-app-buttons">
+                                                        <a target="_blank" className="download-app-buttons-anchor-2" 
+                                                        href="https://discord.com/api/download?platform=linux&amp;format=deb">Deb</a>
+
+                                                        <a target="_blank" className="download-app-buttons-anchor-3"
+                                                         href="https://discord.com/api/download?platform=linux&format=tar.gz">Tar</a>
                                                     </div>
                                                 </div>
                                             </div>
