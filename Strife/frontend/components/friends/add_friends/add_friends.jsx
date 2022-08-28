@@ -44,10 +44,10 @@ class AddFriends extends React.Component {
 
 
         let subState = {
-            user_strife_id_tag: this.state.user_strife_id_tag
+            user_strife_id_tag: userStrifeId
         }
         console.log("this is our substate: ", subState);
-        this.props.fetchUserByStrifeId
+        this.props.fetchUserByStrifeId(subState);
     }
 
     submissionBlocker () {
