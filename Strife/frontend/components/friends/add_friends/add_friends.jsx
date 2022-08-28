@@ -28,6 +28,9 @@ class AddFriends extends React.Component {
         if (this.mounted) {
 
             this.setState({ friend_req_error: false });
+            this.props.removeSessionErrors();
+            window.removeEventListener('keyup', this.handleESC, false);
+
         }
 
     }
@@ -113,11 +116,17 @@ class AddFriends extends React.Component {
 
 
     renderFriendRequestErrorModal () {
-        if (this.props.sessionErrors.length > 0 && this.state.friend_req_error === true) {
-            return (
+        if (this.props.sessionErrors.length > 0) {
+            // this.openFriendReqErrorModal();
+            // window.addEventListener('keyup', this.handleESC, false);
 
-                <FriendRequestErrorModal />
-            )
+            // return (
+            //     <div>
+            //         <FriendRequestErrorModal />
+            //     </div>
+            // )
+
+            this.props.openModal('frf-error')
         }
     }
 
