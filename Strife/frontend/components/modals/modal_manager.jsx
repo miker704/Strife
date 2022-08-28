@@ -8,7 +8,7 @@ import EditUserPhoneNumberContainer from "../users/user_edit_phone_number_form/u
 import EditUserNameContainer from "../users/user_edit_username_form/user_edit_username_container.js";
 import UserSearchContainer from "../users/user_search_modal/user_search_container.js";
 import CreateDmModalContainer from "../dm_servers/create_new_dm/create_dm_container.js";
-
+import FriendRequestErrorModal from "../friends/friend_request_error_modal/friend_request_error_modal.jsx";
 
 class ModalManager extends React.Component {
     constructor (props) {
@@ -53,6 +53,10 @@ class ModalManager extends React.Component {
             case 'userProfile':
                 renderedModal = <UserProfileContainer />
                 break;
+
+            case 'frf-error':
+                renderedModal = <FriendRequestErrorModal/>
+                break;
             // case "SearchServerForm":
             //     renderedModal = <EditServerFormContainer />
             //     break;
@@ -60,8 +64,8 @@ class ModalManager extends React.Component {
                 // renderedModal = (<div className="modal-child-component" onClick={e => e.stopPropagation()}>
                 //     <EditUserNameContainer />
                 // </div>)
-                renderedModal = <UserSearchContainer/>
-                    // renderedModal = <CreateDmModalContainer/>
+                renderedModal = <UserSearchContainer />
+                // renderedModal = <CreateDmModalContainer/>
 
                 break;
 
