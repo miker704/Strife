@@ -13,7 +13,9 @@ class FriendRequestErrorModal extends React.Component{
                                 <form className="form-class-200">
                                     <div className="form-content-1">
                                         <div className="form-content-1-inner">
-                                            
+                                            <h2 className="form-content-1-header">
+                                                Friend Request Failed
+                                            </h2>
                                         </div>
                                     </div>
                                 </form>
