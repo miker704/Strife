@@ -530,3 +530,18 @@ $error-red: #ED4245;
     box-sizing: border-box;
     forced-color-adjust: none;
 }
+
+
+
+.clear-modal-wrapper.homeBar{
+    transform: translate(-309px, -1px);
+    height: 100vh;
+    width: 99.5vw;
+
+    .create-dm-modal-popup{
+        // transform: translate(240px, -145px);
+        top: 42px;
+        right: 125px;
+        left: unset;
+    }
+}
