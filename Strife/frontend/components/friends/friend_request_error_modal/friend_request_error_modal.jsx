@@ -21,9 +21,9 @@ class FriendRequestErrorModal extends React.Component {
 
     render () {
         return (
-            <div className="frfm-backdrop" onClick={e => e.stopPropagation()}>
+            <div className="frfm-backdrop" >
                 <div className="frfm-wrapper">
-                    <div className="frfm">
+                    <div className="frfm" onClick={e => e.stopPropagation}>
                         <div className="frfm-inner">
                             <div className="form-class-200">
                                 <div className="form-content-1">
@@ -40,13 +40,13 @@ class FriendRequestErrorModal extends React.Component {
                                 </div>
 
                                 <div className="frfm-button-sec">
-                                    <button type="submit" onClick={() => { this.props.closeModal(); this.props.removeSessionErrors() }} className="frfm-button">Okay</button>
+                                    <button type="button" onClick={() => { this.props.closeModal();  }} className="frfm-button">Okay</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+             </div>
         )
     }
 }
