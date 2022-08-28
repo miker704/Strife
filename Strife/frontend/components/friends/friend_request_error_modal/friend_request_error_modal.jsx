@@ -21,6 +21,7 @@ class FriendRequestErrorModal extends React.Component {
                                             any spaces, and numbers are correct.
                                         </div>
                                     </div>
+                                    <div className="frfm-div-sep"></div>
                                 </div>
                             </form>
                         </div>
