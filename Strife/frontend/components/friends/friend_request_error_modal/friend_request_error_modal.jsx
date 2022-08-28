@@ -23,6 +23,10 @@ class FriendRequestErrorModal extends React.Component {
                                     </div>
                                     <div className="frfm-div-sep"></div>
                                 </div>
+
+                                <div className="frfm-button-sec">
+                                    <button type="submit" className="frfm-button">Okay</button>
+                                </div>
                             </form>
                         </div>
                     </div>
