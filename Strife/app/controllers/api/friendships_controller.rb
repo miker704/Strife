@@ -33,7 +33,13 @@ class Api::FriendshipsController < ApplicationController
             friend_id: current_user.id,
             friend_request_status: 2
         )
-        render :show
+
+        if @friend_request.save && @friend_request_reply.save
+
+            render :show
+        else
+            render json: [@friend_request_reply.errors.full_messages, @friend_request.errors.full_messages], status: 422
+        end
 
     end
 
