@@ -30,7 +30,10 @@ class AddFriends extends React.Component {
     handleSubmit(){
 
         let userInfo = this.state.user_strife_id_tag;
+        userInfo= userInfo.split('#');
+        let userStrifeId = userInfo[1];
         console.log("userinfo : ", userInfo);
+        console.log("userstifeid : ", userStrifeId );
 
 
             let subState = {
