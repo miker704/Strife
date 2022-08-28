@@ -12,7 +12,7 @@
     background: hsl(0, 0%, 0%);
 }
 
-.frfm-wrapper{
+.frfm-wrapper {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -33,7 +33,7 @@
     forced-color-adjust: none;
 }
 
-.frfm{
+.frfm {
     forced-color-adjust: none;
     outline: 0;
     min-height: 0;
@@ -42,5 +42,27 @@
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    
+
+}
+
+.frfm-inner {
+    forced-color-adjust: none;
+    outline: 0;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    border-radius: 4px;
+    margin: 0 auto;
+    pointer-events: all;
+    position: relative;
+    background-color: hsl(220, 7.7%, 22.9%);
+    width: 440px;
+    max-height: 720px;
+    min-height: 200px;
+    word-wrap: break-word;
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 1px hsla(216, 7.2%, 13.5%, 0.6), 0 2px 10px 0 hsla(0, 0%, 0%, 0.2);
+
 }
