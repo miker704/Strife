@@ -16,7 +16,7 @@ class AddFriends extends React.Component {
 
     }
 
-    handleSubmit () {
+    handleModalSubmit () {
         setTimeout(() => {
             if (this.props.errors.length === 0) {
                 this.closeCreateDmModal();
