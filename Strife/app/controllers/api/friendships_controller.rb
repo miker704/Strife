@@ -52,7 +52,7 @@ class Api::FriendshipsController < ApplicationController
             friend_request_status: -1
         )
         if @blocked_User.save
-            render :show
+            render :blocked
         else
             render json: @blocked_User.errors.full_messages, status: 422
         end
