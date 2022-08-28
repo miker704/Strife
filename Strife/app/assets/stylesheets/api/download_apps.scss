@@ -189,6 +189,40 @@
 .platforms-li-item:hover {
     transform: scale(1.025);
     border-color: hsl(235, 85.6%, 64.7%);
+
+    .platform-apple-icon {
+        // visibility: hidden;
+        opacity: 0;
+    }
+
+    .platform-apple-icon-active {
+        opacity: unset;
+    }
+
+    .platform-windows-icon {
+        // visibility: hidden;
+        opacity: 0;
+    }
+
+    .platform-windows-icon-active {
+        opacity: unset;
+    }
+
+    .platform-linux-icon {
+        // visibility: hidden;
+        opacity: 0;
+    }
+
+    .platform-linux-icon-active {
+        opacity: unset;
+    }
+
+    .download-app-buttons-anchor,
+    .download-app-buttons-anchor-2,
+    .download-app-buttons-anchor-3 {
+        background-color: hsl(235, 85.6%, 64.7%);
+    }
+
 }
 
 
@@ -242,6 +276,72 @@
     outline: 0;
 }
 
+
+
+
+.platform-windows-icon {
+    transition: opacity .3s ease-in-out;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: image_url('windows.svg');
+    align-self: center;
+    outline: 0;
+}
+
+.platform-windows-icon-active {
+    content: image_url('windows-blue.svg');
+    opacity: 0;
+    forced-color-adjust: none;
+    transition: opacity .3s ease-in-out;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    outline: 0;
+}
+
+
+
+
+
+.platform-linux-icon {
+    transition: opacity .3s ease-in-out;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: image_url('linux.svg');
+    align-self: center;
+    outline: 0;
+}
+
+.platform-linux-icon-active {
+    content: image_url('linux-blue.svg');
+    opacity: 0;
+    forced-color-adjust: none;
+    transition: opacity .3s ease-in-out;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    outline: 0;
+}
+
+
+
+
+
+
+
+
 .da-icon-header {
     forced-color-adjust: none;
     color: #060607;
@@ -277,3 +377,40 @@
 }
 
 
+.download-app-buttons-anchor-2 {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    text-decoration: none;
+    outline: 0;
+    forced-color-adjust: none;
+    background-color: #747f8d;
+    text-align: center;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 12px 0;
+    margin-top: 16px;
+    transition: background-color .3s ease-in-out;
+    color: hsl(0, 0%, 100%);
+    width: 65px;
+}
+
+.download-app-buttons-anchor-3 {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    text-decoration: none;
+    outline: 0;
+    forced-color-adjust: none;
+    background-color: #747f8d;
+    text-align: center;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 12px 0;
+    margin-top: 16px;
+    transition: background-color .3s ease-in-out;
+    color: hsl(0, 0%, 100%);
+    width: 65px;
+    margin-left: 12px;
+
+}
