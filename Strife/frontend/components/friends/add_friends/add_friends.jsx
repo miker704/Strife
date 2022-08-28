@@ -17,9 +17,16 @@ class AddFriends extends React.Component {
         this.props.requestFriendships();
     }
 
-    // componentWillUnmount(){
-    //     this.props.removeFriendshipErrors();
-    // }
+    componentWillUnmount(){
+        if(this.props.errors.length > 0){
+
+            this.props.removeFriendshipErrors();
+        }
+
+        if(this.props.sessionErrors.length> 0 ){
+            this.props.removeSessionErrors();
+        }
+    }
 
     handleInput(field){
         return (e) => {
@@ -40,6 +47,7 @@ class AddFriends extends React.Component {
                 user_strife_id_tag: this.state.user_strife_id_tag
             }
             console.log("this is our substate: ", subState);
+            this.props.fetchUserByStrifeId
     }
 
     submissionBlocker () {
