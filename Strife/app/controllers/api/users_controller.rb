@@ -127,6 +127,10 @@ class Api::UsersController < ApplicationController
         # userinfo = params[:user_strife_id_tag]
         # userinfo = userinfo.split("#")
         # userinfo = userinfo[1].to_i
+        puts 'id tag'
+        puts params[:user_strife_id_tag]
+
+
         @user = User.find_by(strife_id_tag: params[:user_strife_id_tag])
 
         if @user
