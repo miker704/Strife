@@ -124,9 +124,9 @@ class Api::UsersController < ApplicationController
 
 
     def fetch_via_strife_id
-        if(params[:user_strife_id_tag] == '00-1')
+        if(params[:user_strife_id_tag] == '-000')
             render json: ['Please enter proper format username + # + STRIFE ID Tag.'], status: 404
-
+            return
         end
 
         @user = User.find_by(strife_id_tag: params[:user_strife_id_tag].to_i)
