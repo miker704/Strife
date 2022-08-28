@@ -5,7 +5,8 @@ class AddFriends extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            user_strife_id_tag: "Username#0000"
+            user_strife_id_tag: "Username#0000",
+            friend_req_error: false
         }
         this.submissionBlocker = this.submissionBlocker.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -14,13 +15,19 @@ class AddFriends extends React.Component {
         this.renderFriendRequestErrorModal = this.renderFriendRequestErrorModal.bind(this);
         this.handleESC = this.handleESC.bind(this);
         this.handleModalSubmit = this.handleModalSubmit.bind(this);
+        this.openFriendReqErrorModal = this.openFriendReqErrorModal.bind(this);
 
+    }
+
+
+    openFriendReqErrorModal () {
+        this.setState({ friend_req_error: true });
     }
 
     handleModalSubmit () {
         setTimeout(() => {
             if (this.props.errors.length === 0) {
-                this.closeCreateDmModal();
+                this.setState({ friend_req_error: false });
             }
 
         }, 1000);
@@ -96,11 +103,11 @@ class AddFriends extends React.Component {
     }
 
 
-    renderFriendRequestErrorModal(){
-        if(this.props.sessionErrors.length >0 ){
+    renderFriendRequestErrorModal () {
+        if (this.props.sessionErrors.length > 0 && this.state.friend_req_error === true) {
             return (
-            
-                <FriendRequestErrorModal/>
+
+                <FriendRequestErrorModal />
             )
         }
     }
