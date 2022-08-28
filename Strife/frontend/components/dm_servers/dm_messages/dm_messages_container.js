@@ -25,7 +25,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch, ownProps) => {
     return {
-
+        fetchDmServer: () => dispatch(fetchDmServer(ownProps.match.params.dmServerId)),
+        createDmMessage: (dmmessage) => dispatch(createDmMessage(dmmessage))
     }
 }
 
