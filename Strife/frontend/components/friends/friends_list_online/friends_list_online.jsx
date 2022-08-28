@@ -24,7 +24,7 @@ class FriendShipIndexOnline extends React.Component {
             if (allFriendShips[i].innerText.toLowerCase().includes(search_query.toLowerCase())) {
                 allFriendShips[i].classList.remove("is-hidden");
                 foundCount++;
-                numberOfFriends.innerHTML = `BLOCKED USERS - ${foundCount}`;
+                numberOfFriends.innerHTML = `ONLINE - ${foundCount}`;
 
             }
             else {
