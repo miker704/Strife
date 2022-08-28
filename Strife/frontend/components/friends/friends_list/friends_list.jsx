@@ -1,5 +1,4 @@
 import React from "react";
-import { compose } from "redux";
 
 
 
@@ -11,48 +10,31 @@ class FriendShipIndex extends React.Component {
             noResultsFound: false
         }
         this.liveSearch = this.liveSearch.bind(this);
-        this.renderNoResults = this.renderNoResults.bind(this);
     }
 
-
-    renderNoResults () {
-        if (this.noResultsFound) {
-            return (
-                <div className="friend-index-container">
-                    <div className="empty-state-container">
-                        <div className="blocked-users-empty">
-                            <div className="blocked-users-flex">
-                                <img className="add-friends-icon" alt="img" />
-                                <div className="block-wumpus-text">You have no friends. Here's Wumpus for now.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )
-        }
-    }
 
 
     liveSearch () {
         let allFriendShips = document.querySelectorAll('.friend-index-item');
-        console.log("this is all this lists li elements : ", allFriendShips);
         let search_query = document.getElementById('input-all-friends').value;
+        let numberOfFriends = document.getElementById('num-of-friends');
         let count = 0;
+        let foundCount = 0;
         for (let i = 0; i < allFriendShips.length; i++) {
             if (allFriendShips[i].innerText.toLowerCase().includes(search_query.toLowerCase())) {
                 allFriendShips[i].classList.remove("is-hidden");
-                console.log("is-NOT-hidden");
+                foundCount++;
+                numberOfFriends.innerHTML = `ALL FRIENDS - ${foundCount}`;
+
             }
             else {
                 allFriendShips[i].classList.add("is-hidden");
-                console.log("is-hidden");
                 count++;
 
             }
         }
 
         if (count === allFriendShips.length) {
-            console.log(" no results found !");
             this.setState({ noResultsFound: true });
         }
 
@@ -83,7 +65,16 @@ class FriendShipIndex extends React.Component {
                 <div className="friend-index-container">
                     <div className="all-search-bar">
                         <div className="all-search-bar-inner">
-                            <input id="input-all-friends" className="input-all-friends" type="search" placeholder="Search" onInput={() => this.liveSearch()} onChange={e => this.setState({ noResultsFound:false })} value={this.state.searchText} />
+                            <input id="input-all-friends" className="input-all-friends" type="search" placeholder="Search"
+                                onInput={() => this.liveSearch()}
+                                onChange={e => {
+                                    this.setState({ noResultsFound: false })
+                                    this.setState({ searchText: e.currentTarget.value })
+                                }
+                                }
+                                value={this.state.searchText} />
+
+
                             <div className="magnify-icon-wrapper">
                                 <div className="magnify-icon">
                                     <svg className="mag-icon1" aria-label="Search" aria-hidden="false" role="img" width="24" height="24" viewBox="0 0 24 24">
@@ -104,10 +95,13 @@ class FriendShipIndex extends React.Component {
                             </div>
                         </div>
                     </div>
+                    <div className="all-friends">
+                        {`ALL FRIENDS - ${0}`}
+                    </div>
                     <div className="empty-state-container">
                         <div className="blocked-users-empty">
                             <div className="blocked-users-flex">
-                                <img className="add-friends-icon" alt="img" />
+                                <img className="no-friends-online-icon" alt="img" />
                                 <div className="block-wumpus-text">Wumpus looked, but couldn't find anyone with that name.</div>
                             </div>
                         </div>
@@ -126,7 +120,7 @@ class FriendShipIndex extends React.Component {
 
                     <div className="all-search-bar">
                         <div className="all-search-bar-inner">
-                            <input id="input-all-friends" className="input-all-friends" type="search" placeholder="Search" onInput={() => this.liveSearch()} onChange={e => this.setState({ searchText: e.currentTarget.value})} value={this.state.searchText} />
+                            <input id="input-all-friends" className="input-all-friends" type="search" placeholder="Search" onInput={() => this.liveSearch()} onChange={e => this.setState({ searchText: e.currentTarget.value })} value={this.state.searchText} />
                             <div className="magnify-icon-wrapper">
                                 <div className="magnify-icon">
                                     <svg className="mag-icon1" aria-label="Search" aria-hidden="false" role="img" width="24" height="24" viewBox="0 0 24 24">
@@ -148,7 +142,7 @@ class FriendShipIndex extends React.Component {
                         </div>
                     </div>
 
-                    <div className="all-friends">
+                    <div id="num-of-friends" className="all-friends">
                         {`ALL FRIENDS - ${allFriends.length}`}
                     </div>
                     <div className="friend-index">
