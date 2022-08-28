@@ -28,6 +28,11 @@ class AddFriends extends React.Component {
     }
 
     handleSubmit(){
+
+        let userInfo = this.state.user_strife_id_tag;
+        console.log("userinfo : ", userInfo);
+
+
             let subState = {
                 user_strife_id_tag: this.state.user_strife_id_tag
             }
