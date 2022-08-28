@@ -16,6 +16,16 @@ class AddFriends extends React.Component {
 
     }
 
+    handleSubmit () {
+        setTimeout(() => {
+            if (this.props.errors.length === 0) {
+                this.closeCreateDmModal();
+            }
+
+        }, 1000);
+
+    }
+
     handleESC (e) {
         const keys = {
             27: () => {
