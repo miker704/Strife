@@ -16,6 +16,7 @@ class AddFriends extends React.Component {
         this.handleESC = this.handleESC.bind(this);
         this.handleModalSubmit = this.handleModalSubmit.bind(this);
         this.openFriendReqErrorModal = this.openFriendReqErrorModal.bind(this);
+        this.closeFriendReqErrorModal = this.closeFriendReqErrorModal.bind(this);
 
     }
 
@@ -23,11 +24,19 @@ class AddFriends extends React.Component {
     openFriendReqErrorModal () {
         this.setState({ friend_req_error: true });
     }
+    closeFriendReqErrorModal () {
+        if (this.mounted) {
+
+            this.setState({ friend_req_error: false });
+        }
+
+    }
+
 
     handleModalSubmit () {
         setTimeout(() => {
             if (this.props.errors.length === 0) {
-                this.setState({ friend_req_error: false });
+                this.closeFriendReqErrorModal();
             }
 
         }, 1000);
