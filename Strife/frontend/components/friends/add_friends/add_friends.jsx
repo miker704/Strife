@@ -16,10 +16,14 @@ class AddFriends extends React.Component {
     }
 
     componentDidMount () {
+        this.mounted = true;
+
         this.props.requestFriendships();
     }
 
     componentWillUnmount () {
+        this.mounted = false;
+
         if (this.props.errors.length > 0) {
 
             this.props.removeFriendshipErrors();
@@ -64,12 +68,25 @@ class AddFriends extends React.Component {
             document.getElementById("add-friend-button").disabled = false;
         }
     }
+
+
+    renderFriendRequestErrorModal(){
+        if(this.props.sessionErrors.length >0 ){
+            return (
+            
+                <FriendRequestErrorModal/>
+            )
+        }
+    }
+
+
     render () {
 
         let friendRequestErrors = this.props.sessionErrors.length > 0 ? "frf-ERROR" : "";
 
         return (
             <div className="friend-index-container">
+                {this.renderFriendRequestErrorModal()}
                 <div className="add-friend-header-wrapper-1">
                     <h2 className="add-friend-header-1">
                         Add Friend
@@ -92,7 +109,6 @@ class AddFriends extends React.Component {
                         <div className={friendRequestErrors}>{this.renderFriendRequestErrors()}</div>
                     </form>
                 </div>
-                {}
                 <div className="add-friend-header-wrapper-2">
                     <h2 className="add-friend-header-2">
                         Other places to find friends
