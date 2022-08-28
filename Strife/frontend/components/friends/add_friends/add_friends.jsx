@@ -69,7 +69,7 @@ class AddFriends extends React.Component {
                     </h2>
                 </div>
                 <div className="add-friend-grid">
-                    <button type="button" className="add-friend-grid-button-wrapper">
+                    <button type="button" className="add-friend-grid-button-wrapper" onClick={()=> this.props.openModal("userSearch")}>
                         <img className="add-friend-grid-button-icon" alt="expserv" />
                         <div className="add-friend-grid-button-text">Explore Public Servers</div>
                         <svg className="arrow-3B" fill="none" height="20" viewBox="0 0 20 20" width="20">
