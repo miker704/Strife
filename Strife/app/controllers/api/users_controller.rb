@@ -123,6 +123,22 @@ class Api::UsersController < ApplicationController
     end
 
 
+    def fetch_via_strife_id
+        userinfo = params[:usernameStrifeIdTag]
+        userinfo = userinfo.split("#")
+        userinfo = userinfo[1].to_i
+        @user = User.find_by(strife_id_tag: userinfo)
+
+        if @user
+            render :show
+        else
+            render json: @user.error.full_messages, status: 400
+        end
+
+
+    end
+    
+
     def disable_Account
         @user = User.find_by(id: params[:id])
         if !@user.is_password?(params[:user][:password])
