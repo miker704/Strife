@@ -11,7 +11,8 @@ const mSTP = (state) => {
         currentUser: state.entities.users[state.session.id],
         outgoing: selectFriendStatus(state, 1),
         incoming: selectFriendStatus(state, 2),
-        errors: state.errors.friendship
+        errors: state.errors.friendship,
+        sessionErrors: state.errors.session
     }
 };
 
