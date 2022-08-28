@@ -42,7 +42,7 @@
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-
+    user-select: none;
 }
 
 .frfm-inner {
@@ -114,6 +114,18 @@
 }
 
 .form-content-1-header{
-    
+    font-family: "ABC Ginto Normal";
+    flex: 1;
+    cursor: default;
+    -webkit-box-flex: 1;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    forced-color-adjust: none;
+    color: hsl(0, 0%, 100%);
 }
 
