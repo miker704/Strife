@@ -261,7 +261,6 @@ class DmNavBar extends React.Component {
                         <h4>DIRECT MESSAGES</h4>
                         <div className="create-channel-div" onClick={() => this.toggleCreateDmModal()}>
                             <i className="fa-solid fa-plus" />
-                            {/* onClick={() => this.setState({ createDmModal: true })} */}
                             <div className="dm-tool-tip">
                                 Create DM
                             </div>
