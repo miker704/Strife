@@ -94,7 +94,7 @@
 }
 
 
-.close-da{
+.close-da {
     forced-color-adjust: none;
     color: #4f5660;
     position: absolute;
@@ -125,18 +125,155 @@
     text-rendering: optimizeLegibility;
 }
 
-.close-da-contents{
+.close-da-contents {
     outline: 0;
     forced-color-adjust: none;
-    
+
 
 }
 
-.close-da-icon{
+.close-da-icon {
     forced-color-adjust: none;
 }
 
+.platform-wraps {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    display: flex;
+    outline: 0;
+    forced-color-adjust: none;
+    flex-direction: column;
+}
 
 
+.platform-wraps-h3 {
+    outline: 0;
+    forced-color-adjust: none;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 32px;
+    color: #060607;
+    -webkit-box-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: "ABC Ginto Normal";
+
+}
+
+.platforms-ul {
+    display: flex;
+    list-style: none;
+    forced-color-adjust: none;
+}
+
+.platforms-li-item {
+    forced-color-adjust: none;
+    backface-visibility: hidden;
+    border: 2px solid #747f8d;
+    padding: 32px 12px 12px;
+    position: relative;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    transition: all .3s ease-in-out;
+    flex-direction: column;
+    flex-shrink: 0;
+    border-radius: 8px;
+    margin-left: 15px;
+    height: 260px;
+    width: 196px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.platforms-li-item:hover {
+    transform: scale(1.025);
+    border-color: hsl(235, 85.6%, 64.7%);
+}
+
+
+.platforms-li-item-inner-wrapper {
+    forced-color-adjust: none;
+    justify-content: space-between;
+    -webkit-box-flex: 1;
+    -webkit-box-pack: justify;
+    flex-grow: 1;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    outline: 0;
+}
+
+.platforms-icon-wrap {
+    forced-color-adjust: none;
+    align-self: center;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    outline: 0;
+
+
+}
+
+.platform-apple-icon {
+    transition: opacity .3s ease-in-out;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: image_url('macos.svg');
+    align-self: center;
+    outline: 0;
+}
+
+.platform-apple-icon-active {
+    content: image_url('macos-blue.svg');
+    opacity: 0;
+    forced-color-adjust: none;
+    transition: opacity .3s ease-in-out;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    outline: 0;
+}
+
+.da-icon-header {
+    forced-color-adjust: none;
+    color: #060607;
+    text-align: center;
+    font-weight: 500;
+    font-family: "ABC Ginto Normal";
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.download-app-buttons {
+    outline: 0;
+    display: flex;
+    forced-color-adjust: none;
+
+}
+
+.download-app-buttons-anchor {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    text-decoration: none;
+    outline: 0;
+    forced-color-adjust: none;
+    background-color: #747f8d;
+    text-align: center;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 12px 0;
+    margin-top: 16px;
+    transition: background-color .3s ease-in-out;
+    color: hsl(0, 0%, 100%);
+}
 
 
