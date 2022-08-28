@@ -65,7 +65,7 @@ class AddFriends extends React.Component {
     }
     render () {
 
-        let friendRequestErrors = this.props.sessionErrors.length > 0 ? "ERROR" : "";
+        let friendRequestErrors = this.props.sessionErrors.length > 0 ? "frf-ERROR" : "";
 
         return (
             <div className="friend-index-container">
@@ -75,7 +75,7 @@ class AddFriends extends React.Component {
                     </h2>
                     <form autoComplete="off" onSubmit={this.handleSubmit}>
                         <div className="add-friend-subtitle">You can add a friend with their STRIFE Tag. It's cAsE sEnSitIvE!</div>
-                        <div className={`add-friend-input-search-wrapper ${this.props.sessionErrors.length > 0 ? "ERROR" : ""}`}>
+                        <div className={`add-friend-input-search-wrapper ${this.props.sessionErrors.length > 0 ? "frf-ERROR" : ""}`}>
                             <div className="add-friend-input-search-inner-wrapper">
                                 <input id="add-friend-input-bar" className="add-friend-input-bar" type="text"
                                     onKeyUp={this.submissionBlocker}
