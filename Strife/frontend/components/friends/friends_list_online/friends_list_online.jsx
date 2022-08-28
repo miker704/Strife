@@ -94,7 +94,7 @@ class FriendShipIndexOnline extends React.Component {
                         </div>
                     </div>
                     <div className="all-friends">
-                        {`BLOCKED USERS - ${0}`}
+                        {`ONLINE - ${0}`}
                     </div>
                     <div className="empty-state-container">
                         <div className="blocked-users-empty">
