@@ -31,7 +31,7 @@ class AddFriends extends React.Component {
 
 
     renderFriendRequestErrors (){
-        
+
     }
 
 
@@ -47,14 +47,6 @@ class AddFriends extends React.Component {
         let userInfo = this.state.user_strife_id_tag;
         userInfo = userInfo.split('#');
         let userStrifeId = userInfo[1];
-        console.log("userinfo : ", userInfo);
-        console.log("userstifeid : ", userStrifeId);
-
-
-        let subState = {
-            user_strife_id_tag: this.state.user_strife_id_tag
-        }
-        console.log("this is our substate: ", subState);
         this.props.fetchUserByStrifeId(userStrifeId);
     }
 
