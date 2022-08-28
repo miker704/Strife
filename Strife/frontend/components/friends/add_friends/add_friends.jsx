@@ -97,8 +97,6 @@ class AddFriends extends React.Component {
         }
 
         let userStrifeId = userInfo.length === 4 ? userInfo : '-000';
-        console.log("userinfo: ",userInfo);
-        console.log("id: ",userStrifeId)
     
         let newFriend;
 
