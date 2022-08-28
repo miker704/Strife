@@ -5,15 +5,24 @@ class DownloadApps extends React.Component {
     constructor (props) {
         super(props);
     }
+
+    componentDidMount () {
+        window.addEventListener('keyup', this.props.handleESC, false);
+
+    }
+
+    componentWillUnmount () {
+        window.removeEventListener('keyup', this.props.handleESC, false);
+    }
+
+
     render () {
         return (
-            <div className="da-layer">
-                <div className="da-backdrop"></div>
                 <div className="da-flex-layer">
-                    <div className="da-focus-lock">
+                    <div className="da-focus-lock" onClick={e => e.stopPropagation()}>
                         <div className="da-dl-apps">
                             <div className="da-dl-apps-inner">
-                                <button type="button" className="close-da">
+                                <button type="button" className="close-da" onClick={() => this.props.closeModal()}>
                                     <div className="close-da-contents">
                                         <svg className="close-da-icon" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                             <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12
@@ -122,10 +131,11 @@ class DownloadApps extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
         )
     }
 
 }
 
 export default DownloadApps;
+
+
