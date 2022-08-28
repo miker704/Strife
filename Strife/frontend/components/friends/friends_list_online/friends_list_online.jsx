@@ -228,11 +228,6 @@ class FriendShipIndexOnline extends React.Component {
                 </div>
             )
         }
-
-
-
-
-
     }
 }
 
