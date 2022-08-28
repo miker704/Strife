@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { selectFriendStatus } from '../../../utils/selectors_api_util';
 import { requestFriendships, updateFriendship, deleteFriendship, removeFriendshipErrors } from '../../../actions/friendship_actions';
-import { openModal } from '../../../actions/modal_actions';
+import { openModal,closeModal } from '../../../actions/modal_actions';
 import { fetchUserByStrifeId, removeSessionErrors } from '../../../actions/session_actions';
 import AddFriends from './add_friends';
 
@@ -25,7 +25,8 @@ const mDTP = (dispatch) => {
         deleteFriendship: (ids) => dispatch(deleteFriendship(ids)),
         removeFriendshipErrors: () => dispatch(removeFriendshipErrors()),
         openModal: (modal) => dispatch(openModal(modal)),
-        removeSessionErrors: () => dispatch(removeSessionErrors())
+        removeSessionErrors: () => dispatch(removeSessionErrors()),
+        closeModal: () => dispatch(closeModal())
     }
 };
 
