@@ -52,6 +52,9 @@ class AddFriends extends React.Component {
         if (this.props.sessionErrors.includes('User Does not exists with that STRIFE ID Tag !')) {
             return "Hm, didn't work. Double check that the capitalization, spelling, any spaces, and numbers are correct.";
         }
+        else if (this.props.sessionErrors.includes('Please enter proper format username + # + STRIFE ID Tag.')) {
+            return "Please enter proper format username + # + STRIFE ID Tag."
+        }
         else {
             return "";
         }
@@ -60,9 +63,6 @@ class AddFriends extends React.Component {
     renderFriendRequestFailedErrors () {
         if (this.props.errors.includes('Friend has already been taken.')) {
             return "You have sent a friend request or added this user already!";
-        }
-        else if (this.props.errors.includes('Please enter proper format username + # + STRIFE ID Tag.')) {
-            return "Please enter proper format username + # + STRIFE ID Tag."
         }
         else {
             return "";
@@ -91,7 +91,7 @@ class AddFriends extends React.Component {
         userInfo = userInfo.split('#');
         let userStrifeId = userInfo[1];
 
-        if(userStrifeId === '' || userStrifeId.length !== 4){
+        if (userStrifeId === '' || userStrifeId.length !== 4) {
             userStrifeId = '-000'
         }
 
