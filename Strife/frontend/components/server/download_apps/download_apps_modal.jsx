@@ -22,6 +22,45 @@ class DownloadApps extends React.Component {
                                         </svg>
                                     </div>
                                 </button>
+                                <div className="platform-wraps">
+                                    <h3 className="platform-wraps-h3">
+                                        Get Discord at Home
+                                    </h3>
+                                    <ul className="platforms-ul">
+                                        <li className="platforms-li-item">
+                                            <div className="platforms-li-item-inner-wrapper">
+                                                <div className="platforms-icon-wrap">
+                                                    <div className="platform-apple-icon"></div>
+                                                    <div className="platform-apple-icon-active"></div>
+                                                </div>
+                                                <div>
+                                                    <h3 className="da-icon-header">
+                                                        MacOS
+                                                    </h3>
+                                                    <div className="download-app-buttons">
+                                                        <a target="_blank" className="download-app-buttons-anchor" href="https://discord.com/api/download?platform=osx">Download</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li className="platforms-li-item">
+                                            <div className="platforms-li-item-inner-wrapper">
+                                                <div className="platforms-icon-wrap">
+                                                    <div className="platform-apple-icon"></div>
+                                                    <div className="platform-apple-icon-active"></div>
+                                                </div>
+                                                <div>
+                                                    <h3 className="da-icon-header">
+                                                        MacOS
+                                                    </h3>
+                                                    <div className="download-app-buttons">
+                                                        <a target="_blank" className="download-app-buttons-anchor" href="https://discord.com/api/download?platform=osx">Download</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
