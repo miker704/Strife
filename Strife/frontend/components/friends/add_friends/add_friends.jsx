@@ -30,13 +30,13 @@ class AddFriends extends React.Component {
     }
 
 
-    renderFriendRequestErrors (){
-            if(this.props.sessionErrors.includes('User Does not exists with that STRIFE ID Tag !')){
-                return "Hm, didn't work. Double check that the capitalization, spelling, any spaces, and numbers are correct.";
-            }
-            else{
-                return "";
-            }
+    renderFriendRequestErrors () {
+        if (this.props.sessionErrors.includes('User Does not exists with that STRIFE ID Tag !')) {
+            return "Hm, didn't work. Double check that the capitalization, spelling, any spaces, and numbers are correct.";
+        }
+        else {
+            return "";
+        }
     }
 
 
@@ -75,8 +75,8 @@ class AddFriends extends React.Component {
                     </h2>
                     <form autoComplete="off" onSubmit={this.handleSubmit}>
                         <div className="add-friend-subtitle">You can add a friend with their STRIFE Tag. It's cAsE sEnSitIvE!</div>
-                        <div className="add-friend-input-search-wrapper">
-                            <div className={`add-friend-input-search-inner-wrapper ${this.props.sessionErrors.length>0 ? "ERROR": ""}`}>
+                        <div className={`add-friend-input-search-wrapper ${this.props.sessionErrors.length > 0 ? "ERROR" : ""}`}>
+                            <div className="add-friend-input-search-inner-wrapper">
                                 <input id="add-friend-input-bar" className="add-friend-input-bar" type="text"
                                     onKeyUp={this.submissionBlocker}
                                     onChange={this.handleInput("user_strife_id_tag")}
