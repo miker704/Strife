@@ -4,8 +4,30 @@ import React from "react";
 
 class FriendShipIndex extends React.Component {
     constructor (props) {
-        super(props)
+        super(props);
+        this.state = {
+            searchText: ""
+        }
+        this.liveSearch = this.liveSearch.bind(this);
     }
+
+
+    liveSearch () {
+        let allFriendShips = document.querySelectorAll('.friend-index-item');
+        let search_query = document.getElementById('input-all-friends').value;
+        for (let i = 0; i < allFriendShips.length; i++) {
+            if (allFriendShips[i].innerText.toLowerCase().includes(search_query.toLowerCase())) {
+                allFriendShips[i].classList.remove("is-hidden");
+            }
+            else {
+                allFriendShips[i].classList.add("is-hidden");
+            }
+        }
+
+
+    }
+
+
 
     componentDidMount () {
         this.props.requestFriendships();
@@ -21,9 +43,6 @@ class FriendShipIndex extends React.Component {
     render () {
         let allFriends = this.props.friends;
         let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
-        console.log("all friends : ", allFriends);
-        console.log("this.props.friends-index : ", this.props);
-
 
         if (allFriends.length > 0) {
             return (
@@ -33,7 +52,7 @@ class FriendShipIndex extends React.Component {
 
                     <div className="all-search-bar">
                         <div className="all-search-bar-inner">
-                            <input className="input-all-friends" type="text" placeholder="Search" />
+                            <input id="input-all-friends" className="input-all-friends" type="search" placeholder="Search" onInput={() => this.liveSearch()} onChange={e => this.setState({ searchText: e.currentTarget.value })} value={this.state.searchText} />
                             <div className="magnify-icon-wrapper">
                                 <div className="magnify-icon">
                                     <svg className="mag-icon1" aria-label="Search" aria-hidden="false" role="img" width="24" height="24" viewBox="0 0 24 24">
