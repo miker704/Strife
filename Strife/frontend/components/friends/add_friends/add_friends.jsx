@@ -122,7 +122,7 @@ class AddFriends extends React.Component {
                 this.props.removeSessionErrors();
                 this.props.openModal('frf-error');
                 return;
-            }, 1000)
+            }, 1250)
         }
 
     }
