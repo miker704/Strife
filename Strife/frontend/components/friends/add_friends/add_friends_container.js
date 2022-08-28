@@ -3,6 +3,7 @@ import { withRouter } from 'react-router';
 import { selectFriendStatus } from '../../../utils/selectors_api_util';
 import { requestFriendships, updateFriendship, deleteFriendship, removeFriendshipErrors } from '../../../actions/friendship_actions';
 import { openModal } from '../../../actions/modal_actions';
+import { fetchUserByStrifeId } from '../../../actions/session_actions';
 import AddFriends from './add_friends';
 
 const mSTP = (state) => {
@@ -17,6 +18,7 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
+        fetchUserByStrifeId: (user) => dispatch(fetchUserByStrifeId(user)),
         requestFriendships: () => dispatch(requestFriendships()),
         updateFriendship: (ids) => dispatch(updateFriendship(ids)),
         deleteFriendship: (ids) => dispatch(deleteFriendship(ids)),
