@@ -66,3 +66,15 @@
     box-shadow: 0 0 0 1px hsla(216, 7.2%, 13.5%, 0.6), 0 2px 10px 0 hsla(0, 0%, 0%, 0.2);
 
 }
+
+.form-class-200{
+    forced-color-adjust: none;
+    height: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    word-wrap: break-word;
+}
+
