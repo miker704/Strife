@@ -59,8 +59,10 @@ class AddFriends extends React.Component {
 
     renderFriendRequestFailedErrors () {
         if (this.props.errors.includes('Friend has already been taken.')) {
-            // console.log("failed error hit");
             return "You have sent a friend request or added this user already!";
+        }
+        else if (this.props.errors.includes('Please enter proper format username + # + STRIFE ID Tag.')) {
+            return "Please enter proper format username + # + STRIFE ID Tag."
         }
         else {
             return "";
@@ -89,13 +91,16 @@ class AddFriends extends React.Component {
         userInfo = userInfo.split('#');
         let userStrifeId = userInfo[1];
         let newFriend;
+        console.log("userinfo: ", userInfo);
+        console.log("userStifeId: ", userStrifeId)
+
         this.props.fetchUserByStrifeId(userStrifeId).then((action) => {
             newFriend = action.user;
             console.log("new friend is : ", newFriend);
             this.props.createFriendship({ friend_id: newFriend.id, user_id: this.props.currentUser.id }).then(() => {
 
                 this.setState({ friendRequestSuccess: true });
-            }, this.renderFriendRequestFailedErrors());
+            });
         })
     }
 
