@@ -38,7 +38,7 @@ export const requestFriendships = () => (dispatch) =>
 
 
 export const createFriendship = (account_ids) => (dispatch) =>
-    FRIENDSHIP_API_UTIL.createFriendship(account_ids).then((friendship) => dispatch(receiveFriendship(friendship)), err => dispatch(receiveFriendshipErrors(err.responseJSON)));
+    FRIENDSHIP_API_UTIL.createFriendship(account_ids).then((friendship) => (dispatch(receiveFriendship(friendship))), (err) => (dispatch(receiveFriendshipErrors(err.responseJSON))));
 
 
 export const updateFriendship = (account_ids) => (dispatch) =>
