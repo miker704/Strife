@@ -164,7 +164,7 @@ class FriendsHomePageContainer extends React.Component {
             window.addEventListener('keyup', this.handleESC, false);
             return (
 
-                <div className="clear-modal-wrapper" onClick={() => this.closeCreateDmModal()}>
+                <div className="clear-modal-wrapper homeBar" onClick={() => this.closeCreateDmModal()}>
                     <div onSubmit={() => this.handleSubmit()}>
                         <CreateDmModalContainer />
                     </div>
@@ -209,8 +209,8 @@ class FriendsHomePageContainer extends React.Component {
 
                         </div>
                     </div>
+                    {this.renderCreateDMModal()}
                     <div className="home-nav-tool-bar">
-                        {this.renderCreateDMModal()}
                         <div className="invite-tool-bar">
                             <div className="invite-tool-bar-group-dm">
                                 <svg onClick={() => this.toggleCreateDmModal()} x="0" y="0" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
