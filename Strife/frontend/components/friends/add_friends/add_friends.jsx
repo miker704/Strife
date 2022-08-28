@@ -1,73 +1,25 @@
 import React from "react";
-import FriendRequestErrorModal from "../friend_request_error_modal/friend_request_error_modal";
 
 class AddFriends extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
             user_strife_id_tag: "Username#0000",
-            friend_req_error: false
         }
         this.submissionBlocker = this.submissionBlocker.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderFriendRequestErrors = this.renderFriendRequestErrors.bind(this);
         this.renderFriendRequestErrorModal = this.renderFriendRequestErrorModal.bind(this);
-        this.handleESC = this.handleESC.bind(this);
-        this.handleModalSubmit = this.handleModalSubmit.bind(this);
-        this.openFriendReqErrorModal = this.openFriendReqErrorModal.bind(this);
-        this.closeFriendReqErrorModal = this.closeFriendReqErrorModal.bind(this);
 
-    }
-
-
-    openFriendReqErrorModal () {
-        this.setState({ friend_req_error: true });
-    }
-    closeFriendReqErrorModal () {
-        if (this.mounted) {
-
-            this.setState({ friend_req_error: false });
-            this.props.removeSessionErrors();
-            window.removeEventListener('keyup', this.handleESC, false);
-
-        }
-
-    }
-
-
-    handleModalSubmit () {
-        setTimeout(() => {
-            if (this.props.sessionErrors.length === 0) {
-                this.closeFriendReqErrorModal();
-            }
-
-        }, 1000);
-
-    }
-
-    handleESC (e) {
-        const keys = {
-            27: () => {
-                e.preventDefault();
-                this.closeFriendReqErrorModal();
-                window.removeEventListener('keyup', this.handleESC, false);
-
-            },
-        };
-        if (keys[e.keyCode]) {
-            keys[e.keyCode]();
-        }
     }
 
     componentDidMount () {
-        this.mounted = true;
 
         this.props.requestFriendships();
     }
 
     componentWillUnmount () {
-        this.mounted = false;
 
         if (this.props.errors.length > 0) {
 
