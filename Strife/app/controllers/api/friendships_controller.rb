@@ -22,7 +22,7 @@ class Api::FriendshipsController < ApplicationController
         #create a friend request 
        
         
-        @friend_request = Friendship.create(
+        @friendship = Friendship.create(
             user_id: current_user.id,
             friend_id: params[:friendship][:friend_id], 
             friend_request_status: 1
@@ -35,7 +35,7 @@ class Api::FriendshipsController < ApplicationController
             friend_request_status: 2
         )
         
-        if @friend_request.save && @friend_request_reply.save
+        if @friendship.save && @friend_request_reply.save
 
             render :show
         else
