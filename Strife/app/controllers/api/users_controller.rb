@@ -128,15 +128,15 @@ class Api::UsersController < ApplicationController
         # userinfo = userinfo.split("#")
         # userinfo = userinfo[1].to_i
         puts 'id tag'
-        puts params[:user_strife_id_tag]
+        id_tag= params[:user_strife_id_tag]
+        puts id_tag.to_i
 
-
-        @user = User.find_by(strife_id_tag: params[:user_strife_id_tag])
+        @user = User.find_by(strife_id_tag: params[:user_strife_id_tag].to_i)
 
         if @user
             render :show
         else
-            render json: ["User Does not exists with that STRIFE ID Tag !"], status: 400
+            render json: ["User Does not exists with that STRIFE ID Tag !"], status: 404
         end
 
 
