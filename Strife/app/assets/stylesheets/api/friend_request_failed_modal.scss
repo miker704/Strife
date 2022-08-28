@@ -97,3 +97,20 @@
 
 }
 
+.form-content-1-inner{
+    forced-color-adjust: none;
+    height: 100%;
+    flex: 1 1 auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    -webkit-box-pack: center;
+    align-items: stretch;
+    outline: 0;
+    -webkit-box-align: stretch;
+    display: flex;
+}
+
+
