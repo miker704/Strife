@@ -65,7 +65,7 @@ export const removeSessionErrors = () => {
 }
 
 export const receiveUserSearch = (users) => {
-    return{
+    return {
         type: RECEIVE_USER_SEARCH,
         users
     }
@@ -96,7 +96,7 @@ export const removeUserAccount = userId => (dispatch) =>
 
 //search up a user 
 export const searchUsers = username => (dispatch) =>
-SessionAPIUtil.searchUsers(username).then((users) => (dispatch(receiveUserSearch(users))), (err) => dispatch(receiveSessionErrors(err.responseJSON)));
+    SessionAPIUtil.searchUsers(username).then((users) => (dispatch(receiveUserSearch(users))), (err) => dispatch(receiveSessionErrors(err.responseJSON)));
 
 export const removePhoneNumber = user => (dispatch) =>
     SessionAPIUtil.removePhoneNumber(user).then((user) => (dispatch(receiveCurrentUser(user))), (err) => dispatch(receiveSessionErrors(err.responseJSON)));
@@ -121,7 +121,8 @@ export const disableUserAccount = user => (dispatch) =>
 
 
 export const fetchUserByStrifeId = user_strife_id_tag => (dispatch) =>
-        SessionAPIUtil.fetchUserByStrifeId(user_strife_id_tag).then((user) => (
-            dispatch(receiveUser(user))
-        ),
-        err => dispatch(receiveSessionErrors(err.responseJSON)));
+    SessionAPIUtil.fetchUserByStrifeId(user_strife_id_tag).then((user) => {
+
+        return dispatch(receiveUser(user))
+    },
+        (err) => { dispatch(receiveSessionErrors(err.responseJSON)) });
