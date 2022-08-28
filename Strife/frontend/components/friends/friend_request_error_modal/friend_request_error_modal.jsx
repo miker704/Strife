@@ -3,8 +3,6 @@ import React from "react";
 class FriendRequestErrorModal extends React.Component {
     constructor (props) {
         super(props);
-        this.cancel = false;
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
 
@@ -20,14 +18,6 @@ class FriendRequestErrorModal extends React.Component {
 
 
 
-    handleSubmit () {
-        if (this.cancel === true) {
-
-            this.props.closeModal();
-            this.props.removeSessionErrors();
-
-        }
-    }
 
     render () {
         return (
@@ -35,7 +25,7 @@ class FriendRequestErrorModal extends React.Component {
                 <div className="frfm-wrapper" onClick={e => e.stopPropagation}>
                     <div className="frfm">
                         <div className="frfm-inner">
-                            <form className="form-class-200" onSubmit={this.handleSubmit}>
+                            <div className="form-class-200">
                                 <div className="form-content-1">
                                     <div className="form-content-1-inner">
                                         <h2 className="form-content-1-header">
@@ -50,9 +40,9 @@ class FriendRequestErrorModal extends React.Component {
                                 </div>
 
                                 <div className="frfm-button-sec">
-                                    <button type="submit" onClick={() => this.cancel = true} className="frfm-button">Okay</button>
+                                    <button type="submit" onClick={() => {this.props.closeModal(); this.props.removeSessionErrors()}} className="frfm-button">Okay</button>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
