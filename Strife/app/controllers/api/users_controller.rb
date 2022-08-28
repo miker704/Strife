@@ -132,7 +132,7 @@ class Api::UsersController < ApplicationController
         if @user
             render :show
         else
-            render json: @user.error.full_messages, status: 400
+            render json: ["User Does not exists with that STRIFE ID Tag !"], status: 400
         end
 
 
