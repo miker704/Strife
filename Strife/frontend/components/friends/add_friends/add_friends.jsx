@@ -1,5 +1,5 @@
 import React from "react";
-
+import FriendRequestErrorModal from "../friend_request_error_modal/friend_request_error_modal";
 
 class AddFriends extends React.Component {
     constructor (props) {
@@ -11,6 +11,7 @@ class AddFriends extends React.Component {
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderFriendRequestErrors = this.renderFriendRequestErrors.bind(this);
+        this.renderFriendRequestErrorModal = this.renderFriendRequestErrorModal.bind(this);
 
     }
 
@@ -91,6 +92,7 @@ class AddFriends extends React.Component {
                         <div className={friendRequestErrors}>{this.renderFriendRequestErrors()}</div>
                     </form>
                 </div>
+                {}
                 <div className="add-friend-header-wrapper-2">
                     <h2 className="add-friend-header-2">
                         Other places to find friends
