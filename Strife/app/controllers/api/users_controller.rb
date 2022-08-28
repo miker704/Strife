@@ -124,13 +124,7 @@ class Api::UsersController < ApplicationController
 
 
     def fetch_via_strife_id
-        # userinfo = params[:user_strife_id_tag]
-        # userinfo = userinfo.split("#")
-        # userinfo = userinfo[1].to_i
-        puts 'id tag'
-        id_tag= params[:user_strife_id_tag]
-        puts id_tag.to_i
-
+       
         @user = User.find_by(strife_id_tag: params[:user_strife_id_tag].to_i)
 
         if @user
