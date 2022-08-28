@@ -4,9 +4,42 @@ import React from "react";
 class BlockedList extends React.Component {
     constructor (props) {
         super(props);
-
+        this.state = {
+            searchText: "",
+            noResultsFound: false
+        }
+        this.liveSearch = this.liveSearch.bind(this);
         this.removeBlockedPerson = this.removeBlockedPerson.bind(this);
     }
+
+    liveSearch () {
+        let allFriendShips = document.querySelectorAll('.friend-index-item');
+        let search_query = document.getElementById('input-all-friends').value;
+        let numberOfFriends = document.getElementById('num-of-friends');
+        let count = 0;
+        let foundCount = 0;
+        for (let i = 0; i < allFriendShips.length; i++) {
+            if (allFriendShips[i].innerText.toLowerCase().includes(search_query.toLowerCase())) {
+                allFriendShips[i].classList.remove("is-hidden");
+                foundCount++;
+                numberOfFriends.innerHTML = `ALL FRIENDS - ${foundCount}`;
+
+            }
+            else {
+                allFriendShips[i].classList.add("is-hidden");
+                count++;
+
+            }
+        }
+
+        if (count === allFriendShips.length) {
+            this.setState({ noResultsFound: true });
+        }
+
+    }
+
+
+
 
     componentDidMount () {
         this.props.requestFriendships();
