@@ -70,11 +70,48 @@ class DownloadApps extends React.Component {
                                                         Linux
                                                     </h3>
                                                     <div className="download-app-buttons">
-                                                        <a target="_blank" className="download-app-buttons-anchor-2" 
-                                                        href="https://discord.com/api/download?platform=linux&amp;format=deb">Deb</a>
+                                                        <a target="_blank" className="download-app-buttons-anchor-2"
+                                                            href="https://discord.com/api/download?platform=linux&amp;format=deb">Deb</a>
 
                                                         <a target="_blank" className="download-app-buttons-anchor-3"
-                                                         href="https://discord.com/api/download?platform=linux&format=tar.gz">Tar</a>
+                                                            href="https://discord.com/api/download?platform=linux&format=tar.gz">Tar</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div className="mobile-platforms">
+                                    <h3 className="mobile-header">Or on the go</h3>
+                                    <ul className="platforms-ul">
+                                        <li className="platforms-li-item">
+                                            <div className="platforms-li-item-inner-wrapper">
+                                                <div className="platforms-icon-wrap">
+                                                    <div className="platform-apple-ios-icon"></div>
+                                                    <div className="platform-apple-ios-icon-active"></div>
+                                                </div>
+                                                <div>
+                                                    <h3 className="da-icon-header">
+                                                        Apple iOS
+                                                    </h3>
+                                                    <div className="download-app-buttons">
+                                                        <a target="_blank" className="download-app-buttons-anchor" href="https://itunes.apple.com/app/discord/id985746746">Download</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li className="platforms-li-item">
+                                            <div className="platforms-li-item-inner-wrapper">
+                                                <div className="platforms-icon-wrap">
+                                                    <div className="platform-android-icon"></div>
+                                                    <div className="platform-android-icon-active"></div>
+                                                </div>
+                                                <div>
+                                                    <h3 className="da-icon-header">
+                                                        Android
+                                                    </h3>
+                                                    <div className="download-app-buttons">
+                                                        <a target="_blank" className="download-app-buttons-anchor" href="https://play.google.com/store/apps/details?id=com.discord">Download</a>
                                                     </div>
                                                 </div>
                                             </div>

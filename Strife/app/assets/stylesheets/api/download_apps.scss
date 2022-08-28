@@ -151,11 +151,11 @@
     forced-color-adjust: none;
     text-align: center;
     align-items: center;
-    margin-bottom: 32px;
+    margin-bottom: 7px;
     color: #060607;
     -webkit-box-align: center;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 24px;
     font-family: "ABC Ginto Normal";
 
@@ -217,6 +217,22 @@
         opacity: unset;
     }
 
+    .platform-android-icon {
+        // visibility: hidden;
+        opacity: 0;
+    }
+
+    .platform-android-icon-active {
+        opacity: unset;
+    }
+    .platform-apple-ios-icon {
+        // visibility: hidden;
+        opacity: 0;
+    }
+
+    .platform-apple-ios-icon-active {
+        opacity: unset;
+    }
     .download-app-buttons-anchor,
     .download-app-buttons-anchor-2,
     .download-app-buttons-anchor-3 {
@@ -335,8 +351,58 @@
     outline: 0;
 }
 
+.platform-apple-ios-icon {
+    transition: opacity .3s ease-in-out;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: image_url('apple.svg');
+    align-self: center;
+    outline: 0;
+}
+
+.platform-apple-ios-icon-active {
+    content: image_url('apple-blue.svg');
+    opacity: 0;
+    forced-color-adjust: none;
+    transition: opacity .3s ease-in-out;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    outline: 0;
+}
 
 
+.platform-android-icon {
+    transition: opacity .3s ease-in-out;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: image_url('android.svg');
+    align-self: center;
+    outline: 0;
+}
+
+.platform-android-icon-active {
+    content: image_url('android-blue.svg');
+    opacity: 0;
+    forced-color-adjust: none;
+    transition: opacity .3s ease-in-out;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    outline: 0;
+}
 
 
 
@@ -414,3 +480,38 @@
     margin-left: 12px;
 
 }
+
+
+
+
+
+.mobile-platforms{
+    outline: 0;
+   -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    forced-color-adjust: none;
+    margin-top: 32px;
+}
+
+.mobile-header{
+    font-size: 18px;
+    line-height: 4px;
+    font-family: "ABC Ginto Normal";
+    font-weight: 500;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #060607;
+    -webkit-box-align: center;
+    text-align: center;
+    forced-color-adjust: none;
+
+
+}
+
+
+
+
