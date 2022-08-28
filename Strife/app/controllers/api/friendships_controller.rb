@@ -22,14 +22,14 @@ class Api::FriendshipsController < ApplicationController
         #create a friend request 
        
         
-        @friend_request = Friendship.new(
+        @friend_request = Friendship.create(
             user_id: current_user.id,
             friend_id: params[:friendship][:friend_id], 
             friend_request_status: 1
         )
 
         #this request on the friend to be added the roles are reveres when a user confirms/denies friendship
-        @friend_request_reply = Friendship.new(
+        @friend_request_reply = Friendship.create(
             user_id: params[:friendship][:friend_id], 
             friend_id: current_user.id,
             friend_request_status: 2
@@ -46,12 +46,16 @@ class Api::FriendshipsController < ApplicationController
     end
 
     def block_User
-        @block_User = Friendship.new( 
+        @blocked_User = Friendship.new( 
             user_id: friendship_params[:user_id], 
             friend_id: params[:friendship][:friend_id],
             friend_request_status: -1
         )
-
+        if @blocked_User.save
+            render :show
+        else
+            render json: @blocked_User.errors.full_messages, status: 422
+        end
 
     end
 
