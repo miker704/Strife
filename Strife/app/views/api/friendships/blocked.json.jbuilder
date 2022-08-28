@@ -1,0 +1,1 @@
+json.extract! @blocked_User, :id, :user_id, :friend_id, :friend_request_status
