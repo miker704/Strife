@@ -4,7 +4,8 @@ class AddFriends extends React.Component {
         super(props);
         this.state = {
             user_strife_id_tag: "Username#0000",
-            FRF_Modal: false
+            FRF_Modal: false,
+            friendRequestSuccess: false,
         }
         this.submissionBlocker = this.submissionBlocker.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -13,7 +14,8 @@ class AddFriends extends React.Component {
         this.renderFriendRequestErrorModal = this.renderFriendRequestErrorModal.bind(this);
         this.openFRFErrorModal = this.openFRFErrorModal.bind(this);
         this.closeFRFErrorModal = this.closeFRFErrorModal.bind(this);
-
+        this.renderFriendRequestSuccess = this.renderFriendRequestSuccess.bind(this);
+        this.renderFriendRequestFailedErrors = this.renderFriendRequestFailedErrors.bind(this); 
 
     }
 
@@ -55,7 +57,14 @@ class AddFriends extends React.Component {
         }
     }
 
-
+    renderFriendRequestSuccess () {
+        if (this.state.friendRequestSuccess === true) {
+            return "Friend Request Sent.";
+        }
+        else {
+            return "";
+        }
+    }
 
     handleInput (field) {
         return (e) => {
@@ -68,7 +77,13 @@ class AddFriends extends React.Component {
         let userInfo = this.state.user_strife_id_tag;
         userInfo = userInfo.split('#');
         let userStrifeId = userInfo[1];
-        this.props.fetchUserByStrifeId(userStrifeId)
+        let newFriend;
+        this.props.fetchUserByStrifeId(userStrifeId).then((action) => {
+            newFriend = action.user;
+            console.log("new friend is : ", newFriend);
+            this.props.updateFriendship({ friend_id: newFriend.id, user_id: this.props.currentUser.id });
+            this.setState({ friendRequestSuccess: true });
+        })
     }
 
     submissionBlocker () {
@@ -97,7 +112,8 @@ class AddFriends extends React.Component {
     render () {
 
         let friendRequestErrors = this.props.sessionErrors.length > 0 ? "frf-ERROR" : "";
-
+        let friendRequestSuccess = this.state.friendRequestSuccess === true ? "frs-display" : "";
+        let friendRequestFailed = this.props.errors.length > 0 ? "frf-ERROR" : "";
         return (
             <div className="friend-index-container">
                 {this.renderFriendRequestErrorModal()}
@@ -121,6 +137,10 @@ class AddFriends extends React.Component {
                             </button>
                         </div>
                         <div className={friendRequestErrors}>{this.renderFriendRequestErrors()}</div>
+                        <div className={friendRequestSuccess}>{this.renderFriendRequestSuccess()}</div>
+                        <div className={friendRequestFailed}>{this.renderFriendRequestFailedErrors()}</div>
+
+
                     </form>
                 </div>
                 <div className="add-friend-header-wrapper-2">
