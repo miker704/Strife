@@ -1,5 +1,4 @@
 import React from "react";
-import FriendRequestErrorModalContainer from "../friend_request_error_modal/friend_request_error_modal_container";
 class AddFriends extends React.Component {
     constructor (props) {
         super(props);
@@ -21,7 +20,6 @@ class AddFriends extends React.Component {
     componentDidMount () {
 
         this.mounted = true;
-        // this.props.requestFriendships();
     }
     openFRFErrorModal () {
 
@@ -86,14 +84,11 @@ class AddFriends extends React.Component {
     renderFriendRequestErrorModal () {
 
         if (this.props.sessionErrors.length > 0) {
-            // return (
             setTimeout(() => {
                 this.props.removeSessionErrors();
                 this.props.openModal('frf-error');
                 return;
             }, 1000)
-            // <FriendRequestErrorModalContainer />
-            // )
         }
 
     }
