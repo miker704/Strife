@@ -35,7 +35,7 @@ class AddFriends extends React.Component {
 
     handleModalSubmit () {
         setTimeout(() => {
-            if (this.props.errors.length === 0) {
+            if (this.props.sessionErrors.length === 0) {
                 this.closeFriendReqErrorModal();
             }
 
@@ -47,7 +47,7 @@ class AddFriends extends React.Component {
         const keys = {
             27: () => {
                 e.preventDefault();
-                this.closeCreateDmModal();
+                this.closeFriendReqErrorModal();
                 window.removeEventListener('keyup', this.handleESC, false);
 
             },
