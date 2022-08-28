@@ -9,7 +9,7 @@ import EditUserNameContainer from "../users/user_edit_username_form/user_edit_us
 import UserSearchContainer from "../users/user_search_modal/user_search_container.js";
 import CreateDmModalContainer from "../dm_servers/create_new_dm/create_dm_container.js";
 import FriendRequestErrorModalContainer from "../friends/friend_request_error_modal/friend_request_error_modal_container.js";
-
+import DownloadApps from "../server/download_apps/download_apps_modal.jsx";
 
 class ModalManager extends React.Component {
     constructor (props) {
@@ -56,7 +56,11 @@ class ModalManager extends React.Component {
                 break;
 
             case 'frf-error':
-                renderedModal = <FriendRequestErrorModalContainer/>
+                renderedModal = <FriendRequestErrorModalContainer />
+                break;
+
+            case 'downloadApps':
+                renderedModal = <DownloadApps />
                 break;
             // case "SearchServerForm":
             //     renderedModal = <EditServerFormContainer />
