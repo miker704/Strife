@@ -1,26 +1,42 @@
 import React from "react";
-
+import FriendRequestErrorModalContainer from "../friend_request_error_modal/friend_request_error_modal_container";
 class AddFriends extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
             user_strife_id_tag: "Username#0000",
+            FRF_Modal: false
         }
         this.submissionBlocker = this.submissionBlocker.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderFriendRequestErrors = this.renderFriendRequestErrors.bind(this);
         this.renderFriendRequestErrorModal = this.renderFriendRequestErrorModal.bind(this);
+        this.openFRFErrorModal = this.openFRFErrorModal.bind(this);
+        this.closeFRFErrorModal = this.closeFRFErrorModal.bind(this);
+
 
     }
 
     componentDidMount () {
 
-        this.props.requestFriendships();
+        this.mounted = true;
+        // this.props.requestFriendships();
+    }
+    openFRFErrorModal () {
+
+        this.setState({ FRF_Modal: true });
+    }
+
+    closeFRFErrorModal () {
+        if (this.mounted) {
+            this.props.removeSessionErrors();
+            this.setState({ FRF_Modal: false });
+        }
     }
 
     componentWillUnmount () {
-
+        this.mounted = false;
         if (this.props.errors.length > 0) {
 
             this.props.removeFriendshipErrors();
@@ -54,7 +70,7 @@ class AddFriends extends React.Component {
         let userInfo = this.state.user_strife_id_tag;
         userInfo = userInfo.split('#');
         let userStrifeId = userInfo[1];
-        this.props.fetchUserByStrifeId(userStrifeId);
+        this.props.fetchUserByStrifeId(userStrifeId)
     }
 
     submissionBlocker () {
@@ -68,14 +84,18 @@ class AddFriends extends React.Component {
 
 
     renderFriendRequestErrorModal () {
-        if (this.props.sessionErrors.length > 0) {
-          
-            this.props.openModal('frf-error');
 
+        if (this.props.sessionErrors.length > 0) {
+            // return (
+            setTimeout(() => {
+                this.props.openModal('frf-error');
+                this.props.removeSessionErrors();
+                return;
+            }, 1000)
+            // <FriendRequestErrorModalContainer />
+            // )
         }
-        else {
-            this.props.closeModal()
-        }
+
     }
 
 
@@ -114,7 +134,7 @@ class AddFriends extends React.Component {
                     </h2>
                 </div>
                 <div className="add-friend-grid">
-                    <button type="button" className="add-friend-grid-button-wrapper" onClick={() => this.props.openModal("userSearch")}>
+                    <button type="button" className="add-friend-grid-button-wrapper" >
                         <img className="add-friend-grid-button-icon" alt="expserv" />
                         <div className="add-friend-grid-button-text">Explore Public Servers</div>
                         <svg className="arrow-3B" fill="none" height="20" viewBox="0 0 20 20" width="20">
