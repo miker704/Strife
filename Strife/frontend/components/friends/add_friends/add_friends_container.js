@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 import { selectFriendStatus } from '../../../utils/selectors_api_util';
 import { requestFriendships, updateFriendship, deleteFriendship, removeFriendshipErrors } from '../../../actions/friendship_actions';
 import { openModal } from '../../../actions/modal_actions';
-import { fetchUserByStrifeId } from '../../../actions/session_actions';
+import { fetchUserByStrifeId, removeSessionErrors } from '../../../actions/session_actions';
 import AddFriends from './add_friends';
 
 const mSTP = (state) => {
