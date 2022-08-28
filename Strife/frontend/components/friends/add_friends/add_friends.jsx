@@ -117,17 +117,12 @@ class AddFriends extends React.Component {
 
     renderFriendRequestErrorModal () {
         if (this.props.sessionErrors.length > 0) {
-            // this.openFriendReqErrorModal();
-            // window.addEventListener('keyup', this.handleESC, false);
+          
+            this.props.openModal('frf-error');
 
-            // return (
-            //     <div>
-            //         <FriendRequestErrorModal />
-            //     </div>
-            // )
-                    this.props.openModal('frf-error');
-
-            // this.props.removeSessionErrors();
+        }
+        else {
+            this.props.closeModal()
         }
     }
 
