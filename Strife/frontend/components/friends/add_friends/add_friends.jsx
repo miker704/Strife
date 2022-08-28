@@ -28,7 +28,10 @@ class AddFriends extends React.Component {
     }
 
     handleSubmit(){
-
+            let subState = {
+                user_strife_id_tag: this.state.user_strife_id_tag
+            }
+            console.log("this is our substate: ", subState);
     }
 
     submissionBlocker () {
