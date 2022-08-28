@@ -13,7 +13,15 @@ class DownloadApps extends React.Component {
                     <div className="da-focus-lock">
                         <div className="da-dl-apps">
                             <div className="da-dl-apps-inner">
-
+                                <button type="button" className="close-da">
+                                    <div className="close-da-contents">
+                                        <svg className="close-da-icon" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12
+                                             13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </button>
                             </div>
                         </div>
                     </div>
