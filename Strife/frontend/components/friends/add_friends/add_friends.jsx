@@ -15,6 +15,20 @@ class AddFriends extends React.Component {
 
     }
 
+    handleESC (e) {
+        const keys = {
+            27: () => {
+                e.preventDefault();
+                this.closeCreateDmModal();
+                window.removeEventListener('keyup', this.handleESC, false);
+
+            },
+        };
+        if (keys[e.keyCode]) {
+            keys[e.keyCode]();
+        }
+    }
+
     componentDidMount () {
         this.mounted = true;
 
