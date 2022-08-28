@@ -13,6 +13,7 @@ class AddFriends extends React.Component {
         this.renderFriendRequestErrors = this.renderFriendRequestErrors.bind(this);
         this.renderFriendRequestErrorModal = this.renderFriendRequestErrorModal.bind(this);
         this.handleESC = this.handleESC.bind(this);
+        this.handleModalSubmit = this.handleModalSubmit.bind(this);
 
     }
 
