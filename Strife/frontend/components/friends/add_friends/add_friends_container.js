@@ -9,8 +9,8 @@ import AddFriends from './add_friends';
 const mSTP = (state) => {
     return {
         currentUser: state.entities.users[state.session.id],
-        outgoing: selectFriendStatus(state,1),
-        incoming: selectFriendStatus(state,2),
+        outgoing: selectFriendStatus(state, 1),
+        incoming: selectFriendStatus(state, 2),
         errors: state.errors.friendship
     }
 };
@@ -23,7 +23,8 @@ const mDTP = (dispatch) => {
         updateFriendship: (ids) => dispatch(updateFriendship(ids)),
         deleteFriendship: (ids) => dispatch(deleteFriendship(ids)),
         removeFriendshipErrors: () => dispatch(removeFriendshipErrors()),
-        openModal: (modal) => dispatch(openModal(modal))
+        openModal: (modal) => dispatch(openModal(modal)),
+        removeSessionErrors: () => dispatch(removeSessionErrors())
     }
 };
 
