@@ -26,18 +26,18 @@ export const removePhoneNumber = (user) => $.ajax({ url: `/api/users/${user.id}/
 
 export const changePassword = (user) => $.ajax({ url: `/api/users/${user.id}/changePassword/`, method: "PATCH", data: { user } });
 
-export const changeUserPFP = (userId,formData) => 
-$.ajax({ 
-    url: `/api/users/${userId}/changeUserPFP/`,
-     method: "PATCH", 
-     data:  formData ,
-     contentType: false,
-     processData: false
+export const changeUserPFP = (userId, formData) =>
+    $.ajax({
+        url: `/api/users/${userId}/changeUserPFP/`,
+        method: "PATCH",
+        data: formData,
+        contentType: false,
+        processData: false
     });
 
 export const disableAccount = (user) => $.ajax({ url: `/api/users/${user.id}/disableAccount/`, method: "PATCH", data: { user } });
 
 
-export const fetchUser = (userId) => $.ajax({ url: `/api/users/${userId}/`, method: "GET"});
-export const fetchUsers = () => $.ajax({ url: `/api/users/`, method: "GET"});
-export const fetchUserByStrifeId = (user) => $.ajax({url:`/api/fetchbystrifeId/${user}`, method: "GET"});
+export const fetchUser = (userId) => $.ajax({ url: `/api/users/${userId}/`, method: "GET" });
+export const fetchUsers = () => $.ajax({ url: `/api/users/`, method: "GET" });
+export const fetchUserByStrifeId = (user) => $.ajax({ url: `/api/fetchbystrifeId/${user}`, method: "GET", data: { user } });
