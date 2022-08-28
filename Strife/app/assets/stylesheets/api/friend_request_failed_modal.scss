@@ -67,7 +67,7 @@
 
 }
 
-.form-class-200{
+.form-class-200 {
     forced-color-adjust: none;
     height: 100%;
     display: -webkit-box;
@@ -76,5 +76,24 @@
     -webkit-box-direction: normal;
     flex-direction: column;
     word-wrap: break-word;
+}
+
+.form-content-1 {
+    position: relative;
+    z-index: 0;
+    border-radius: 5px 5px 0 0;
+    padding-left: 16px;
+    box-sizing: border-box;
+    min-height: 0;
+    -webkit-box-flex: 1;
+    outline: 0;
+    forced-color-adjust: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    overflow: hidden scroll;
+    padding-right: 8px;
+
+
 }
 
