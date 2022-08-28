@@ -22,27 +22,25 @@ class Api::FriendshipsController < ApplicationController
         #create a friend request 
        
         
-        @friend_request = Friendship.create(
+        @friend_request = Friendship.new(
             user_id: current_user.id,
             friend_id: params[:friendship][:friend_id], 
             friend_request_status: 1
         )
 
         #this request on the friend to be added the roles are reveres when a user confirms/denies friendship
-        @friend_request_reply = Friendship.create(
+        @friend_request_reply = Friendship.new(
             user_id: params[:friendship][:friend_id], 
             friend_id: current_user.id,
             friend_request_status: 2
         )
-
+        
         if @friend_request.save && @friend_request_reply.save
 
             render :show
         else
-            friendShip_Errors = @friend_request.errors.full_messages.length > 0 ?  
-            @friend_request.errors.full_messages : @friend_request_reply.errors.full_messages.length > 0 ?
-            @friend_request_reply.errors.full_messages : ['Friend has already been taken']
-            render json: friendShip_Errors, status: 422
+          
+            render json: ['Friend has already been taken.'], status: 422
         end
 
     end
