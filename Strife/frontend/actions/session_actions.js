@@ -120,7 +120,7 @@ export const disableUserAccount = user => (dispatch) =>
         (err) => (dispatch(receiveSessionErrors(err.responseJSON))));
 
 
-export const fetchbystrifeId = user => (dispatch) =>
+export const fetchUserByStrifeId = user => (dispatch) =>
         SessionAPIUtil.fetchUserByStrifeId(user).then((user) => (
             dispatch(receiveUser(user))
         ),
