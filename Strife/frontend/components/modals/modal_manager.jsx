@@ -60,8 +60,8 @@ class ModalManager extends React.Component {
                 // renderedModal = (<div className="modal-child-component" onClick={e => e.stopPropagation()}>
                 //     <EditUserNameContainer />
                 // </div>)
-                // renderedModal = <UserSearchContainer/>
-                    renderedModal = <CreateDmModalContainer/>
+                renderedModal = <UserSearchContainer/>
+                    // renderedModal = <CreateDmModalContainer/>
 
                 break;
 
