@@ -12,6 +12,36 @@ class FriendShipIndexOnline extends React.Component {
         this.liveSearch = this.liveSearch.bind(this);
     }
 
+
+    liveSearch () {
+        // let allFriendShips = document.querySelectorAll('.friend-index-item');
+        let allFriendShips = document.querySelectorAll('.friend-tag');
+        let search_query = document.getElementById('input-all-friends').value;
+        let numberOfFriends = document.getElementById('num-of-friends');
+        let count = 0;
+        let foundCount = 0;
+        for (let i = 0; i < allFriendShips.length; i++) {
+            if (allFriendShips[i].innerText.toLowerCase().includes(search_query.toLowerCase())) {
+                allFriendShips[i].classList.remove("is-hidden");
+                foundCount++;
+                numberOfFriends.innerHTML = `BLOCKED USERS - ${foundCount}`;
+
+            }
+            else {
+                allFriendShips[i].classList.add("is-hidden");
+                count++;
+
+            }
+        }
+
+        if (count === allFriendShips.length) {
+            this.setState({ noResultsFound: true });
+        }
+
+    }
+
+
+
     componentDidMount () {
         this.props.requestFriendships();
     }
