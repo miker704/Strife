@@ -92,7 +92,7 @@ class AddFriends extends React.Component {
         let userStrifeId = userInfo[1];
 
         if(userStrifeId === '' || userStrifeId.length !== 4){
-            userStrifeId = '????'
+            userStrifeId = '-000'
         }
 
         let newFriend;

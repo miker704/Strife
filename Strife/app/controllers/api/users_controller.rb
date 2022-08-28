@@ -124,7 +124,7 @@ class Api::UsersController < ApplicationController
 
 
     def fetch_via_strife_id
-        if(params[:user_strife_id_tag] == ????)
+        if(params[:user_strife_id_tag] == '00-1')
             render json: ['Please enter proper format username + # + STRIFE ID Tag.'], status: 404
 
         end
