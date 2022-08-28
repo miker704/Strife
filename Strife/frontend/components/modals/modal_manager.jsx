@@ -48,9 +48,6 @@ class ModalManager extends React.Component {
                 </div>)
 
                 break;
-            case 'downloadApps':
-                renderedModal = <EditServerFormContainer />
-                break;
             case 'userProfile':
                 renderedModal = <UserProfileContainer />
                 break;
