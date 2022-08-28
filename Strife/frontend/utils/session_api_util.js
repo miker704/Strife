@@ -40,4 +40,4 @@ export const disableAccount = (user) => $.ajax({ url: `/api/users/${user.id}/dis
 
 export const fetchUser = (userId) => $.ajax({ url: `/api/users/${userId}/`, method: "GET" });
 export const fetchUsers = () => $.ajax({ url: `/api/users/`, method: "GET" });
-export const fetchUserByStrifeId = (user) => $.ajax({ url: `/api/fetchbystrifeId/${user}`, method: "GET", data: { user } });
+export const fetchUserByStrifeId = (user_strife_id_tag) => $.ajax({ url: `/api/fetchbystrifeId/${user_strife_id_tag}`, method: "GET", data: { user_strife_id_tag } });
