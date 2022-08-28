@@ -31,7 +31,12 @@ class AddFriends extends React.Component {
 
 
     renderFriendRequestErrors (){
-
+            if(this.props.sessionErrors.includes('User Does not exists with that STRIFE ID Tag !')){
+                return "";
+            }
+            else{
+                return "";
+            }
     }
 
 
