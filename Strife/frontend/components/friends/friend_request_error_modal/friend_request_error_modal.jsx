@@ -7,7 +7,7 @@ class FriendRequestErrorModal extends React.Component {
     render () {
         return (
             <div className="frfm-backdrop">
-                <div className="frfm-wrapper">
+                <div className="frfm-wrapper" onClick={e => e.stopPropagation}>
                     <div className="frfm">
                         <div className="frfm-inner">
                             <form className="form-class-200">
