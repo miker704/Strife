@@ -9,6 +9,7 @@ Rails.application.routes.draw do
               patch '/users/:id/changeUserPFP/', to: 'users#change_User_PFP', as: 'change_User_PFP'
               patch '/users/:id/disableAccount/', to: 'users#disable_Account', as: 'disable_Account'
               get   '/search/:username', to: 'users#search', as: 'user_search'
+              get    '/fetchbystrifeId/:userinfo', to: 'users#fetch_via_strife_id', as: 'fetch_via_strife_id'
     resource  :session, only: [:create, :destroy]
     resources :servers, only: [:index, :show, :create, :update, :destroy]
               post '/servers/join/', to: 'servers#join_server', as: 'join_server'
