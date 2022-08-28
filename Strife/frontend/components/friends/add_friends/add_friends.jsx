@@ -29,6 +29,13 @@ class AddFriends extends React.Component {
         }
     }
 
+
+    renderFriendRequestErrors (){
+        
+    }
+
+
+
     handleInput (field) {
         return (e) => {
             this.setState({ [field]: e.currentTarget.value });
