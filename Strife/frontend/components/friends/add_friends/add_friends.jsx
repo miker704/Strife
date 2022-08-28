@@ -58,7 +58,8 @@ class AddFriends extends React.Component {
     }
 
     renderFriendRequestFailedErrors () {
-        if (this.props.errors.length > 0) {
+        if (this.props.errors.includes('Friend has already been taken.')) {
+            // console.log("failed error hit");
             return "You have sent a friend request or added this user already!";
         }
         else {
@@ -94,7 +95,7 @@ class AddFriends extends React.Component {
             this.props.createFriendship({ friend_id: newFriend.id, user_id: this.props.currentUser.id }).then(() => {
 
                 this.setState({ friendRequestSuccess: true });
-            });
+            }, this.renderFriendRequestFailedErrors());
         })
     }
 
