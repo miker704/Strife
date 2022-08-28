@@ -10,6 +10,7 @@ class AddFriends extends React.Component {
         this.submissionBlocker = this.submissionBlocker.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderFriendRequestErrors = this.renderFriendRequestErrors.bind(this);
 
     }
 
