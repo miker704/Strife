@@ -4,7 +4,12 @@ import React from "react";
 
 class FriendShipIndexOnline extends React.Component {
     constructor (props) {
-        super(props)
+        super(props);
+        this.state = {
+            searchText: "",
+            noResultsFound: false
+        }
+        this.liveSearch = this.liveSearch.bind(this);
     }
 
     componentDidMount () {
