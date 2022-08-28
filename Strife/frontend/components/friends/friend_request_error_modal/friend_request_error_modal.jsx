@@ -7,10 +7,24 @@ class FriendRequestErrorModal extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+
+    componentDidMount () {
+        window.addEventListener('keyup', this.props.handleESC, false);
+
+    }
+
+    componentWillUnmount () {
+        window.removeEventListener('keyup', this.props.handleESC, false);
+        this.props.removeSessionErrors();
+    }
+
+
+
     handleSubmit () {
         if (this.cancel === true) {
 
             this.props.closeModal();
+            this.props.removeSessionErrors();
 
         }
     }
