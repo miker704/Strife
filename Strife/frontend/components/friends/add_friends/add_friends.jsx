@@ -80,6 +80,7 @@ class AddFriends extends React.Component {
                                 <div className="add-friend-button-text">Send Friend Request</div>
                             </button>
                         </div>
+                        <div className="user-not-found-error"></div>
                     </form>
                 </div>
                 <div className="add-friend-header-wrapper-2">
