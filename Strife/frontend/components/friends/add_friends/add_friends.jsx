@@ -88,8 +88,8 @@ class AddFriends extends React.Component {
         if (this.props.sessionErrors.length > 0) {
             // return (
             setTimeout(() => {
-                this.props.openModal('frf-error');
                 this.props.removeSessionErrors();
+                this.props.openModal('frf-error');
                 return;
             }, 1000)
             // <FriendRequestErrorModalContainer />
