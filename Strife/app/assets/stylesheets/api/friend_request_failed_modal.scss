@@ -97,7 +97,7 @@
 
 }
 
-.form-content-1-inner{
+.form-content-1-inner {
     forced-color-adjust: none;
     height: 100%;
     flex: 1 1 auto;
@@ -113,7 +113,7 @@
     display: flex;
 }
 
-.form-content-1-header{
+.form-content-1-header {
     font-family: "ABC Ginto Normal";
     flex: 1;
     cursor: default;
@@ -129,3 +129,13 @@
     color: hsl(0, 0%, 100%);
 }
 
+.form-content-1-subtext {
+    forced-color-adjust: none;
+    outline: 0;
+    color: hsl(210, 2.9%, 86.7%);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    font-family: "Whitney";
+}
