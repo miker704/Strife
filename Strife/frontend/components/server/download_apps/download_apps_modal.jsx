@@ -7,8 +7,17 @@ class DownloadApps extends React.Component {
     }
     render () {
         return (
-            <div>
+            <div className="da-layer">
+                <div className="da-backdrop"></div>
+                <div className="da-flex-layer">
+                    <div className="da-focus-lock">
+                        <div className="da-dl-apps">
+                            <div className="da-dl-apps-inner">
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
