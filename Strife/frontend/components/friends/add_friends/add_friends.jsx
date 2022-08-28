@@ -15,7 +15,7 @@ class AddFriends extends React.Component {
         this.openFRFErrorModal = this.openFRFErrorModal.bind(this);
         this.closeFRFErrorModal = this.closeFRFErrorModal.bind(this);
         this.renderFriendRequestSuccess = this.renderFriendRequestSuccess.bind(this);
-        this.renderFriendRequestFailedErrors = this.renderFriendRequestFailedErrors.bind(this); 
+        this.renderFriendRequestFailedErrors = this.renderFriendRequestFailedErrors.bind(this);
 
     }
 
@@ -56,6 +56,16 @@ class AddFriends extends React.Component {
             return "";
         }
     }
+
+    renderFriendRequestFailedErrors () {
+        if (this.props.errors.length > 0) {
+            return "You have sent a friend request or added this user already!";
+        }
+        else {
+            return "";
+        }
+    }
+
 
     renderFriendRequestSuccess () {
         if (this.state.friendRequestSuccess === true) {
