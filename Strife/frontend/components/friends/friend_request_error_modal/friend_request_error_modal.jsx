@@ -9,7 +9,9 @@ class FriendRequestErrorModal extends React.Component {
 
     handleSubmit () {
         if (this.cancel === true) {
-            return;
+
+            this.props.closeModal();
+
         }
     }
 
