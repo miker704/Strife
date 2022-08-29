@@ -55,7 +55,7 @@ const FriendShipIndexOnline = ({
 
     const handlePopupShow = (e) => {
         setPopupTop(e.currentTarget.getBoundingClientRect().top);
-        setPopupTop(!showPopup);
+        setShowPopup(!showPopup);
     }
 
     //this function handles routing to an existing chat 1 on 1 dm chats and navigates to the dmserver if it exists
@@ -191,6 +191,7 @@ const FriendShipIndexOnline = ({
 
                                 if (friend.username.includes(searchText)) {
                                     return (
+                                        
                                         <li className="friend-index-item" key={friend.id}>
 
                                             <div className="friend-index-item-wrapper-inner">
@@ -228,23 +229,29 @@ const FriendShipIndexOnline = ({
                                                     <div className="pending-request-actions-tool-tip">Message</div>
                                                     <div className="pending-request-actions-tool-tip-triangle"></div>
                                                 </div>
-                                                <div className="friend-options-button" onClick={() =>  openModal("friendOptions")}>
+                                                <div className="friend-options-button" onClick={handlePopupShow}>
                                                     <svg className="icon-1WVg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                                         <g fill="none" fillRule="evenodd">
                                                             <path d="M24 0v24H0V0z">
                                                             </path>
                                                             <path fill="currentColor" d="M12 16c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2
                                                                  .8954305-2 2-2zm0-6c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2
-                                                                  2-2zm0-6c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2z">
+                                                                 2-2zm0-6c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2z">
                                                             </path>
                                                         </g>
                                                     </svg>
                                                     <div className="pending-request-actions-tool-tip">More</div>
                                                     <div className="pending-request-actions-tool-tip-triangle"></div>
                                                 </div>
-                                                    {/* { showPopup && <EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setPopupTop={setShowPopup}/>} */}
 
                                             </div>
+                                                { showPopup ? 
+                                                <div >
+                                                    <EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setPopupTop={setShowPopup}/>
+
+                                                </div>: ("")
+                                                
+                                                }
 
 
                                         </li>
