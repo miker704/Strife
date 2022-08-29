@@ -22,7 +22,7 @@ const mDTP = (dispatch) => {
     }
 };
 
-const EditFriendshipModalContainer1 = withRouter(connect(mSTP, mDTP)(EditFriendshipModal));
-export default EditFriendshipModalContainer1;
+const EditFriendshipModalContainer = withRouter(connect(mSTP, mDTP)(EditFriendshipModal));
+export default EditFriendshipModalContainer;
 
 
