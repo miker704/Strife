@@ -170,7 +170,8 @@ class FriendShipIndex extends React.Component {
 
                     <div className="all-search-bar">
                         <div className="all-search-bar-inner">
-                            <input id="input-all-friends"
+                            <input
+                                id="input-all-friends"
                                 className="input-all-friends"
                                 type="search"
                                 placeholder="Search"
