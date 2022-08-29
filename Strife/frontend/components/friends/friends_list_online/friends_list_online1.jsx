@@ -38,10 +38,12 @@ const FriendShipIndexOnline1 = ({
 
 
     const handleDm = () => {
-        
+
     }
 
-    
+    const userOptions = () => {
+        
+    }
 
     const gatherMatches = () => {
 
