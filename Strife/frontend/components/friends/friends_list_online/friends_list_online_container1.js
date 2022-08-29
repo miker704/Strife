@@ -5,25 +5,24 @@ import { selectFriendStatusOnline, selectFriendStatus } from '../../../utils/sel
 import { requestFriendships, removeFriendshipErrors } from '../../../actions/friendship_actions';
 import { createDmServer, removeDmServerErrors } from '../../../actions/dm_server_actions';
 
+
 const mSTP = (state) => {
     return {
         currentUser: state.entities.users[state.session.id],
         friends: selectFriendStatusOnline(state, 3),
-        allfriends: selectFriendStatus(state, 3),
         errors: state.errors.friendship,
         dmServerErrors: state.errors.dmServer,
-        dmServers: Object.values(state.entities.dmServers)
+        dmServers: Object.values(state.entities.dmServers),
     }
 };
 
 
-const mDTP = (dispatch) => {
+const mDTP = (dispatch, state) => {
     return {
         requestFriendships: () => dispatch(requestFriendships()),
         removeFriendshipErrors: () => dispatch(removeFriendshipErrors()),
         removeDmServerErrors: () => dispatch(removeDmServerErrors()),
-        createDmServer: (dmserver) => dispatch(createDmServer(dmserver))
-
+        createDmServer: (dmserver) => dispatch(createDmServer(dmserver)),
     }
 };
 
