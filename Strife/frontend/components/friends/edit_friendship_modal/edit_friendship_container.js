@@ -22,7 +22,7 @@ const mDTP = (dispatch) => {
     }
 };
 
-const FriendShipIndexOnlineContainer1 = withRouter(connect(mSTP, mDTP)(FriendShipIndexOnline1));
-export default FriendShipIndexOnlineContainer1;
+const EditFriendshipModalContainer1 = withRouter(connect(mSTP, mDTP)(EditFriendshipModal));
+export default EditFriendshipModalContainer1;
 
 
