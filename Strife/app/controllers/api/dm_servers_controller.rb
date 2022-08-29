@@ -28,6 +28,15 @@ class Api::DmServersController < ApplicationController
         @dm_server.member_ids = dm_server_params[:dm_member_ids]
 
         if @dm_server.save
+
+
+            # dm_Members_to_add = dm_server_params[:dm_member_ids]
+            # dm_Members_to_add.each do |member_id|
+            #     DmMember.create!(dm_server_id: @dm_server.id,dm_member_id: member_id)
+            # end
+
+
+
             render :show
         else
                 render json: @dm_server.errors.full_messages, status: 400
@@ -46,7 +55,16 @@ class Api::DmServersController < ApplicationController
     
     def update
         @dm_server = DmServer.find(params[:id])
-       
+        # dm_Members_to_add = dm_server_params[:dm_member_ids]
+        
+        # if(dm_Members_to_add.length != @dm_server.members.length){
+        #     dm_Members_to_add.each do |member_id|
+            
+        #         DmMember.create!(dm_server_id: @dm_server.id,dm_member_id: member_id)
+        #     end
+        # }
+
+
         if @dm_server && @dm_server.update(dm_server_params)
             puts 'updated name'
             render :show
