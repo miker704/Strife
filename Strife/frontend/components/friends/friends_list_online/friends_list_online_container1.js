@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import FriendShipIndexOnline1 from './friends_list_online1';
-import { selectFriendStatusOnline, selectFriendStatus } from '../../../utils/selectors_api_util';
+import { selectFriendStatusOnline } from '../../../utils/selectors_api_util';
 import { requestFriendships, removeFriendshipErrors } from '../../../actions/friendship_actions';
 import { createDmServer, removeDmServerErrors } from '../../../actions/dm_server_actions';
 
