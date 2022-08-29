@@ -10,6 +10,8 @@ import UserSearchContainer from "../users/user_search_modal/user_search_containe
 import CreateDmModalContainer from "../dm_servers/create_new_dm/create_dm_container.js";
 import FriendRequestErrorModalContainer from "../friends/friend_request_error_modal/friend_request_error_modal_container.js";
 import DownloadAppsContainer from "../server/download_apps/download_apps_container.js";
+import EditFriendshipModalContainer from "../friends/edit_friendship_modal/edit_friendship_container.js";
+
 
 
 class ModalManager extends React.Component {
@@ -60,10 +62,17 @@ class ModalManager extends React.Component {
             case 'downloadApps':
                 renderedModal = <DownloadAppsContainer />
                 break;
-          
+
             case 'userSearch':
-           
+
                 renderedModal = <UserSearchContainer />
+
+                break;
+
+
+            case 'friendOptions':
+
+                renderedModal = </>
 
                 break;
 
