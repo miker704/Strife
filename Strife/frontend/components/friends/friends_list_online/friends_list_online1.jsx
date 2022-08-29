@@ -325,7 +325,7 @@ const FriendShipIndexOnline1 = ({
         )
     }
 }
-
+// componenet using react class before converting to react hooks 
 // class FriendShipIndexOnline1 extends React.Component {
 //     constructor (props) {
 //         super(props);
