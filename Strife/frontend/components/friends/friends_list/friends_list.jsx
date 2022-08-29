@@ -26,6 +26,11 @@ class FriendShipIndex extends React.Component {
 
 
     setSearchText(){
+
+    }
+
+
+    setSelectedFriends(){
         
     }
 
