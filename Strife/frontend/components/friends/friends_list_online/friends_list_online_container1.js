@@ -22,6 +22,8 @@ const mDTP = (dispatch) => {
         removeFriendshipErrors: () => dispatch(removeFriendshipErrors()),
         removeDmServerErrors: () => dispatch(removeDmServerErrors()),
         fetchDmServer: () => dispatch(fetchDmServer()),
+        createDmServer: (dmserver) => dispatch(createDmServer(dmserver)),
+
     }
 };
 
