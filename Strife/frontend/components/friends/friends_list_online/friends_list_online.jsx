@@ -81,7 +81,7 @@ const FriendShipIndexOnline = ({
     }
 
     const friendOptions = (friend) => {
-
+        console.log("in opening friend options modal");
     }
 
     const gatherMatches = () => {
