@@ -49,6 +49,14 @@ const FriendShipIndexOnline = ({
         }
     }, [])
 
+
+
+
+    const handlePopupShow = (e) => {
+        setPopupTop(e.currentTarget.getBoundingClientRect().top);
+        setPopupTop(!showPopup);
+    }
+
     //this function handles routing to an existing chat 1 on 1 dm chats and navigates to the dmserver if it exists
     //else if generates it 
     const handleDm = (friend) => {
@@ -94,7 +102,7 @@ const FriendShipIndexOnline = ({
         console.log("in opening friend options modal");
         return (
             <div>
-                <EditFriendshipModalContainer/>
+                { showPopup && <EditFriendshipModalContainer friend={friend}/>}
             </div>
         )
     }
