@@ -142,7 +142,7 @@ const FriendShipIndexOnline = ({
         return (
 
             <div className="friend-index-container">
-
+                    
 
                 <div className="all-search-bar">
                     <div className="all-search-bar-inner">
@@ -193,7 +193,7 @@ const FriendShipIndexOnline = ({
                                     return (
                                         
                                         <li className="friend-index-item" key={friend.id}>
-
+                                             { showPopup && <EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setPopupTop={setShowPopup}/>}
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
                                                     <div className="friend-info">
@@ -245,13 +245,7 @@ const FriendShipIndexOnline = ({
                                                 </div>
 
                                             </div>
-                                                { showPopup ? 
-                                                <div >
-                                                    <EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setPopupTop={setShowPopup}/>
-
-                                                </div>: ("")
-                                                
-                                                }
+                                                {/* { showPopup &&<EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setPopupTop={setShowPopup}/>} */}
 
 
                                         </li>
