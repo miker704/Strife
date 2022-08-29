@@ -268,36 +268,6 @@ const FriendShipIndexOnline = ({
 
 export default FriendShipIndexOnline;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import React from "react";
 
 
