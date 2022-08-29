@@ -296,20 +296,20 @@ class FriendShipIndex extends React.Component {
             )
         }
 
-        else {
-            return (
-                <div className="friend-index-container">
-                    <div className="empty-state-container">
-                        <div className="blocked-users-empty">
-                            <div className="blocked-users-flex">
-                                <img className="add-friends-icon" alt="img" />
-                                <div className="block-wumpus-text">You have no friends. Here's Wumpus for now.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )
-        }
+        // else {
+        //     return (
+        //         <div className="friend-index-container">
+        //             <div className="empty-state-container">
+        //                 <div className="blocked-users-empty">
+        //                     <div className="blocked-users-flex">
+        //                         <img className="add-friends-icon" alt="img" />
+        //                         <div className="block-wumpus-text">You have no friends. Here's Wumpus for now.</div>
+        //                     </div>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     )
+        // }
 
 
     }
