@@ -91,10 +91,7 @@ const FriendShipIndexOnline1 = ({
             return friend.username.toLowerCase().includes(searchText.toLowerCase())
         })
         setSelectedFriends(filteredSearchArray);
-        console.log("selected friends length : ", selectedFriends.length)
-        console.log("selected friends contents : ", selectedFriends);
         let numberOfFriends = document.getElementById('num-of-friends');
-        // numberOfFriends.innerHTML = `ONLINE - ${selectedFriends.length}`;
         console.log("searchtext: ", searchText)
         if (searchText === "") {
             console.log("select text blank")
