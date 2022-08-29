@@ -78,7 +78,7 @@ const CreateDmModal = ({
         return;
     }
 
-    
+
 
     return (
         <div className="create-dm-modal-popup" onClick={e => e.stopPropagation()}>
