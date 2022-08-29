@@ -22,14 +22,12 @@ const FriendShipIndexOnline1 = ({
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
     const dmMembersArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
 
-    updateOnlineStatus = () => {
-        
-    }
+   
 
     useEffect(() => {
-        // requestFriendships();
-        console.log("updating friends: ", friends);
-
+        requestFriendships();
+        // console.log("updating friends: ", friends);
+        
 
         return function cleanup () {
             if (errors.length > 0) {
@@ -39,7 +37,7 @@ const FriendShipIndexOnline1 = ({
                 removeDmServerErrors();
             }
         }
-    }, [friends])
+    }, [])
 
     //this function handles routing to an existing chat 1 on 1 dm chats and navigates to the dmserver if it exists
     //else if generates it 
@@ -241,7 +239,7 @@ const FriendShipIndexOnline1 = ({
                                     console.log("no match ");
 
                                     return (
-                                        <div className="friend-index-container" key={1}>
+                                        <div className="friend-index-container" key={-1}>
 
                                             <div className="empty-state-container">
                                                 <div className="blocked-users-empty">
