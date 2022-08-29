@@ -16,9 +16,10 @@ class EditFriendshipModal extends React.Component {
                             <div className="fo-item-container">
                                 <div className="fo-item-name">Start Voice Call</div>
                             </div>
-                            <div className="fo-item-container">
-                                <div className="fo-item-name-red">Remove Friend</div>
+                            <div className="fo-item-container red">
+                                <div className="fo-item-name">Remove Friend</div>
                             </div>
+                            <div className="fo-options-bottom-div"></div>
                         </div>
                     </div>
                 </div>
