@@ -173,6 +173,7 @@ class FriendShipIndex extends React.Component {
                             <input
                                 id="input-all-friends"
                                 className="input-all-friends"
+                                spellCheck={false}
                                 type="search"
                                 placeholder="Search"
                                 // onInput={() => this.liveSearch()}
