@@ -71,7 +71,6 @@ const FriendShipIndexOnline1 = ({
             dm_server_name: dmServerName,
             dm_member_ids: memberIds
         }
-        console.log("this is the new dmserver state: ", submissionState);
         let newDmServer;
         createDmServer(submissionState).then((action) => {
             newDmServer = action.dmserver;
