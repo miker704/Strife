@@ -5,7 +5,7 @@ import BlockedListContainer from "../blocked_list/blocked_list_container.js";
 import PendingFriendListContainer from "../pending_list/pending_friends_list_container.js";
 import AddFriendsContainer from "../add_friends/add_friends_container.js";
 import CreateDmModalContainer from "../../dm_servers/create_new_dm/create_dm_container.js";
-import FriendShipIndexOnlineContainer1 from "../friends_list_online/friends_list_online_container1";
+import FriendShipIndexOnlineContainer1 from "../friends_list_online/friends_list_online_container1.js";
 
 
 class FriendsHomePageContainer extends React.Component {
