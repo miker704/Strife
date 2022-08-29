@@ -40,10 +40,11 @@ const FriendShipIndexOnline1 = ({
     //this function handles routing to an existing chat 1 on 1 dm chats and navigates to the dmserver if it exists
     //else if generates it 
     const handleDm = (friend) => {
-        let member_ids = [currentUser.id, friend.id];
+        // debugger
+        const memberIds = [currentUser.id, parseInt(friend.id)].sort((a, b) => a - b);
         let new_dm_members = [currentUser, friend];
-        for (let dmServer in dmServers) {
-            if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), member_ids)) {
+        for (let dmServer of dmServers) {
+            if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
                 if (history.location.pathname !== `/channels/@me/${dmServer.id}`) {
                     history.push(`/channels/@me/${dmServer.id}`);
                 }
@@ -55,7 +56,7 @@ const FriendShipIndexOnline1 = ({
         let newDmServerName = [];
         let dmServerName = "";
         for (let member of dmMemberInfo) {
-            if (member.id !== currentUser.id){
+            if (member.id !== currentUser.id) {
                 newDmServerName.push(member.username);
             }
         }
@@ -68,11 +69,12 @@ const FriendShipIndexOnline1 = ({
         let submissionState = {
             owner_id: currentUser.id,
             dm_server_name: dmServerName,
-            dm_member_ids: member_ids
+            dm_member_ids: memberIds
         }
-        console.log("this is the new dmserver state: ",submissionState);
+        console.log("this is the new dmserver state: ", submissionState);
         let newDmServer;
         // createDmServer
+        return;
     }
 
     const userOptions = (friend) => {
@@ -169,6 +171,8 @@ const FriendShipIndexOnline1 = ({
     // }
 
     if (allFriends.length > 0) {
+        console.log("dmservers: [] = ", dmServers);
+        console.log("currentuser : ", currentUser);
         return (
 
             <div className="friend-index-container">
@@ -247,7 +251,7 @@ const FriendShipIndexOnline1 = ({
                                             </div>
 
                                             <div className="friend-msg-actions">
-                                                <div className="friend-msg-button">
+                                                <div className="friend-msg-button" onClick={() => handleDm(friend)}>
                                                     <svg className="icon-1WV" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                         <path fill="currentColor" d="M4.79805 3C3.80445 3 2.99805 3.8055 2.99805 
                                                             4.8V15.6C2.99805 16.5936 3.80445 17.4 4.79805 17.4H7.49805V21L11.098 
