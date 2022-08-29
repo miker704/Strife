@@ -54,7 +54,25 @@ const FriendShipIndexOnline1 = ({
         const dmMemberInfo = JSON.parse(JSON.stringify(new_dm_members));
         let newDmServerName = [];
         let dmServerName = "";
-
+        for (let member of dmMemberInfo) {
+            if (member.id !== currentUser.id){
+                newDmServerName.push(member.username);
+            }
+        }
+        if (newDmServerName.length === 1) {
+            dmServerName = newDmServerName.join();
+        }
+        else {
+            dmServerName = newDmServerName.join(", ");
+        }
+        let submissionState = {
+            owner_id: currentUser.id,
+            dm_server_name: dmServerName,
+            dm_member_ids: member_ids
+        }
+        console.log("this is the new dmserver state: ",submissionState);
+        let newDmServer;
+        // createDmServer
     }
 
     const userOptions = (friend) => {
