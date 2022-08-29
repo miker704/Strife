@@ -56,7 +56,7 @@ class FriendShipIndex extends React.Component {
     render () {
         let allFriends = this.props.friends;
         let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
-
+        console.log("dmservers =[] = ", this.props.dmServers);
 
         if (this.state.noResultsFound) {
             return (
