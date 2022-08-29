@@ -37,6 +37,10 @@ const FriendShipIndexOnline1 = ({
     },[])
 
 
+    const handleDm = () => {
+        
+    }
+
     
 
     const gatherMatches = () => {
