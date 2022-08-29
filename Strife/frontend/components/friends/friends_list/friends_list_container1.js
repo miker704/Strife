@@ -4,7 +4,7 @@ import FriendShipIndex1 from './friends_list1';
 import { requestFriendships, removeFriendshipErrors } from '../../../actions/friendship_actions';
 import { selectFriendStatus } from '../../../utils/selectors_api_util';
 import { openModal } from '../../../actions/modal_actions';
-import { createDmServer } from '../../../actions/dm_server_actions';
+import { createDmServer, removeDmServerErrors } from '../../../actions/dm_server_actions';
 
 const mSTP = (state) => {
     return {
