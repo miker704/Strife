@@ -1,5 +1,5 @@
 import React from "react";
-import FriendShipIndexContainer from "../friends_list/friends_list_container";
+import FriendShipIndexContainer from "../friends_list/friends_list_container.js";
 import FriendShipIndexOnlineContainer from "../friends_list_online/friends_list_online_container";
 import BlockedListContainer from "../blocked_list/blocked_list_container";
 import PendingFriendListContainer from "../pending_list/pending_friends_list_container";
