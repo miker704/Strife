@@ -3,6 +3,8 @@ import { withRouter } from 'react-router';
 import FriendShipIndexOnline from './friends_list_online';
 import { selectFriendStatusOnline } from '../../../utils/selectors_api_util';
 import { requestFriendships, removeFriendshipErrors } from '../../../actions/friendship_actions';
+import { createDmServer, removeDmServerErrors } from '../../../actions/dm_server_actions';
+
 
 const mSTP = (state) => {
     return {
