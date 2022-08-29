@@ -19,6 +19,15 @@ class FriendShipIndex extends React.Component {
     }
 
 
+
+    gatherMatches(){
+        
+    }
+
+
+
+
+
     handleDm(friend){
         const memberIds = [this.currentUser.id, friend.id];
 
