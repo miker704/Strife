@@ -7,7 +7,8 @@ const EditFriendshipModal = ({
     errors,
     requestFriendships,
     removeFriendshipErrors,
-    deleteFriendship
+    deleteFriendship,
+    friend
 }) => {
 
     return (
