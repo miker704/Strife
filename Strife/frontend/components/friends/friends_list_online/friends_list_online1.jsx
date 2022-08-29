@@ -40,7 +40,7 @@ const FriendShipIndexOnline1 = ({
     //this function handles routing to an existing chat 1 on 1 dm chats and navigates to the dmserver if it exists
     //else if generates it 
     const handleDm = (friend) => {
-        console.log("pass through : ",friend)
+        console.log("pass through : ", friend)
         // debugger
         const memberIds = [currentUser.id, parseInt(friend.id)].sort((a, b) => a - b);
         let new_dm_members = [currentUser, friend];
@@ -74,7 +74,10 @@ const FriendShipIndexOnline1 = ({
         }
         console.log("this is the new dmserver state: ", submissionState);
         let newDmServer;
-        // createDmServer
+        createDmServer(submissionState).then((action) => {
+            newDmServer = action.dmserver;
+            history.push(`/channels/@me/${newDmServer.id}`);
+        });
         return;
     }
 
@@ -115,7 +118,7 @@ const FriendShipIndexOnline1 = ({
 
     }
 
-   
+
 
     if (allFriends.length > 0) {
         console.log("dmservers: [] = ", dmServers);
