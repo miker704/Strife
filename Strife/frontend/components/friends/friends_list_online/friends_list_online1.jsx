@@ -15,7 +15,6 @@ const FriendShipIndexOnline1 = ({
 
     const inputRef = useRef();
     const [searchText, setSearchText] = useState("");
-    // const [noResultsFound] = useState(false);
     const [selectedFriends, setSelectedFriends] = useState([]);
     let allFriends = friends;
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
