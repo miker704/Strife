@@ -115,11 +115,6 @@ const FriendShipIndexOnline1 = ({
 
     }
 
-
-
-
-
-
    
 
     if (allFriends.length > 0) {
