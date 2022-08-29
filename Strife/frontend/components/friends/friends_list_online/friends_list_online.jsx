@@ -236,7 +236,9 @@ const FriendShipIndexOnline = ({
                                         </li>
                                     )
 
-                                } else {
+                                } 
+                                
+                                else {
                                     document.getElementById('num-of-friends').innerHTML = `ONLINE - ${0}`;
 
                                     return (
