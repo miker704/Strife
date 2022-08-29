@@ -137,8 +137,6 @@ const FriendShipIndexOnline = ({
 
 
     if (allFriends.length > 0) {
-        console.log("dmservers: [] = ", dmServers);
-        console.log("currentuser : ", currentUser);
         return (
 
             <div className="friend-index-container">
