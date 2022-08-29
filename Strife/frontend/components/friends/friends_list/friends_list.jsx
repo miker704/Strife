@@ -15,6 +15,7 @@ class FriendShipIndex extends React.Component {
         this.openOptions = this.openOptions.bind(this);
         this.gatherMatches = this.gatherMatches.bind(this);
         this.setSearchText = this.setSearchText.bind(this);
+        this.setSelectedFriends = this.setSelectedFriends.bind(this);
     }
 
 
