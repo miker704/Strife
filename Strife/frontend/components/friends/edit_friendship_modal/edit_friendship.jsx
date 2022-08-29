@@ -11,13 +11,16 @@ const EditFriendshipModal = ({
     friend,
     setShowPopup,
     history,
-    user
+    user,
+    top
 }) => {
 
+    const popupRef = useRef();
+    console.log("hellllllllooooooo ? ? ?  ??  ?? ")
     return (
         <div className="fo-layer">
             <div className="fo-theme">
-                <div className="fo-flex-wrapper">
+                <div className="fo-flex-wrapper" ref={popupRef}>
                     <div className="fo-scroller">
                         <div className="fo-item-container">
                             <div className="fo-item-name">Start Video Call</div>
