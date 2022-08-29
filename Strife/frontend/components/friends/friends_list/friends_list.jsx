@@ -10,6 +10,7 @@ class FriendShipIndex extends React.Component {
             noResultsFound: false
         }
         this.liveSearch = this.liveSearch.bind(this);
+        this.handleDm = this.handleDm.bind(this);
     }
 
 
