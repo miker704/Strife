@@ -21,6 +21,29 @@ class FriendShipIndex extends React.Component {
 
 
     gatherMatches(){
+        let searchArray = this.props.friends;
+        let searchedText = this.state.searchText;
+        let filteredSearchArray = searchArray.filter((friend) => {
+            return friend.username.toLowerCase().includes(searchedText.toLowerCase());
+        })
+
+        this.setSelectedFriends(filteredSearchArray);
+        let numberOfFriends = document.getElementById('num-of-friends');
+        if (this.state.searchText === "") {
+            numberOfFriends.innerHTML = `ALL FRIENDS - ${friends.length}`;
+        }
+        else if (this.state.searchText === "" && this.state.selectedFriends.length === 0) {
+            numberOfFriends.innerHTML = `ALL FRIENDS - ${friends.length}`;
+        }
+        else if (this.state.selectedFriends.length > 0) {
+
+            numberOfFriends.innerHTML = `ALL FRIENDS - ${selectedFriends.length}`;
+        }
+        else {
+            numberOfFriends.innerHTML = `ALL FRIENDS - ${friends.length}`;
+        }
+
+
 
     }
 
@@ -31,7 +54,7 @@ class FriendShipIndex extends React.Component {
 
 
     setSelectedFriends(){
-        
+
     }
 
 
