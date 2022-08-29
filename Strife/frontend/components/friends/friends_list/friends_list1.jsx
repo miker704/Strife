@@ -22,9 +22,8 @@ const FriendShipIndex1 = (props) => {
     gatherMatches = () => {
         console.log("inside gather search")
         let searchArray = this.props.friends;
-        let searchedText = this.state.searchText;
         let filteredSearchArray = searchArray.filter((friend) => {
-            return friend.username.toLowerCase().includes(this.state.searchText.toLowerCase());
+            return friend.username.toLowerCase().includes(searchText.toLowerCase());
         })
 
 
