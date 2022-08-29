@@ -93,7 +93,9 @@ const FriendShipIndexOnline = ({
     const friendOptions = (friend) => {
         console.log("in opening friend options modal");
         return (
-            <EditFriendshipModalContainer/>
+            <div>
+                <EditFriendshipModalContainer/>
+            </div>
         )
     }
 
