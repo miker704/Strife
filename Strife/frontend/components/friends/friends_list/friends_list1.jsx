@@ -13,6 +13,21 @@ const FriendShipIndex1 = (props) => {
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
 
 
+    useEffect(() => {
+        props.requestFriendships();
+
+
+        return function cleanup(){
+            if(props.errors.length > 0){
+                props.removeFriendshipErrors();
+            }
+            if(props.dmServerErrors.length > 0){
+                props.removeDmServerErrors();
+            }
+        }
+
+    },[])
+
 
     handleDm = (friend) => {
         const memberIds = [currentUser.id, friend.id];
