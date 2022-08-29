@@ -1,17 +1,19 @@
-// import React from "react";
+import React from "react";
 
-// class EditFriendshipModal extends React.Component{
-//     constructor(props){
-//         super(props);
-//     }
-//     render(){
-//         return (
-//             <div>
+class EditFriendshipModal extends React.Component{
+    constructor(props){
+        super(props);
+    }
+    render(){
+        return (
+            <div>
 
-//             </div>
-//         )
-//     }
+            </div>
+        )
+    }
 
-// }
+}
 
-// export default EditFriendshipModal;
+export default EditFriendshipModal;
+
+
