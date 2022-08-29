@@ -264,6 +264,7 @@ const FriendShipIndexOnline = ({
 
         )
     }
+    
     else {
         return (
             <div className="friend-index-container">
