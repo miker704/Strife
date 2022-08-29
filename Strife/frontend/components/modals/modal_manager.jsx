@@ -60,15 +60,10 @@ class ModalManager extends React.Component {
             case 'downloadApps':
                 renderedModal = <DownloadAppsContainer />
                 break;
-            // case "SearchServerForm":
-            //     renderedModal = <EditServerFormContainer />
-            //     break;
+          
             case 'userSearch':
-                // renderedModal = (<div className="modal-child-component" onClick={e => e.stopPropagation()}>
-                //     <EditUserNameContainer />
-                // </div>)
+           
                 renderedModal = <UserSearchContainer />
-                // renderedModal = <CreateDmModalContainer/>
 
                 break;
 
