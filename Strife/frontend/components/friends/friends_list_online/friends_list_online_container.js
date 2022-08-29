@@ -24,6 +24,7 @@ const mDTP = (dispatch) => {
         removeFriendshipErrors: () => dispatch(removeFriendshipErrors()),
         removeDmServerErrors: () => dispatch(removeDmServerErrors()),
         createDmServer: (dmserver) => dispatch(createDmServer(dmserver)),
+        openModal: (modal) => dispatch(openModal(modal))
     }
 };
 
