@@ -13,6 +13,7 @@ class FriendShipIndex extends React.Component {
         this.handleDm = this.handleDm.bind(this);
         this.openOptions = this.openOptions.bind(this);
         this.gatherMatches = this.gatherMatches.bind(this);
+        this.setSearchText = this.setSearchText.bind(this);
     }
 
 
