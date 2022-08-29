@@ -29,7 +29,7 @@ const FriendShipIndex1 = (props) => {
 
         console.log("filter: ", filteredSearchArray);
 
-        this.setSelectedFriends(filteredSearchArray);
+        setSelectedFriends(filteredSearchArray);
 
 
 
