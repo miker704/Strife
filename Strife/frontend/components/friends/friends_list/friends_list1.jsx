@@ -35,19 +35,19 @@ const FriendShipIndex1 = (props) => {
 
 
         let numberOfFriends = document.getElementById('num-of-friends');
-        if (this.state.searchText === "") {
+        if (searchText === "") {
 
-            numberOfFriends.innerHTML = `ALL FRIENDS - ${this.props.friends.length}`;
+            numberOfFriends.innerHTML = `ALL FRIENDS - ${friends.length}`;
         }
-        else if (this.state.searchText === "" && this.state.selectedFriends.length === 0) {
-            numberOfFriends.innerHTML = `ALL FRIENDS - ${this.props.friends.length}`;
+        else if (searchText === "" && selectedFriends.length === 0) {
+            numberOfFriends.innerHTML = `ALL FRIENDS - ${friends.length}`;
         }
-        else if (this.state.selectedFriends.length > 0) {
+        else if (selectedFriends.length > 0) {
 
-            numberOfFriends.innerHTML = `ALL FRIENDS - ${this.state.selectedFriends.length}`;
+            numberOfFriends.innerHTML = `ALL FRIENDS - ${selectedFriends.length}`;
         }
         else {
-            numberOfFriends.innerHTML = `ALL FRIENDS - ${this.props.friends.length}`;
+            numberOfFriends.innerHTML = `ALL FRIENDS - ${friends.length}`;
         }
 
 
