@@ -193,7 +193,7 @@ const FriendShipIndexOnline = ({
                                     return (
                                         
                                         <li className="friend-index-item" key={friend.id}>
-                                             { showPopup && <EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setPopupTop={setShowPopup}/>}
+                                             { showPopup && <EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setShowPopup={setShowPopup}/>}
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
                                                     <div className="friend-info">
@@ -245,7 +245,6 @@ const FriendShipIndexOnline = ({
                                                 </div>
 
                                             </div>
-                                                {/* { showPopup &&<EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setPopupTop={setShowPopup}/>} */}
 
 
                                         </li>
