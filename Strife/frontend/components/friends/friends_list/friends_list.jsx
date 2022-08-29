@@ -48,8 +48,8 @@ class FriendShipIndex extends React.Component {
     }
 
 
-    setSearchText(){
-
+    setSearchText(field){
+        return (e) => {this.setState({searchText: e.currentTarget.value})};
     }
 
 
