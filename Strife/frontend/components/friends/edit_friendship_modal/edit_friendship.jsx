@@ -16,6 +16,12 @@ const EditFriendshipModal = ({
 }) => {
 
     const popupRef = useRef();
+
+    closeHookModalOnOutsideClick(popupRef,setShowPopup);
+    closeOnEsc(setShowPopup);
+
+
+
     return (
         <div className="fo-layer" >
             <div className="fo-theme" style={{ top: `${top}px` }} ref={popupRef}>
