@@ -40,9 +40,9 @@ const FriendShipIndexOnline1 = ({
 
     const handleDm = (friend) => {
             let member_ids = [currentUser.id, friend.id];
-            let existing_DmServer = dmServers.map((dmServer) =>{
-
-            })
+            for(let dmServer in dmServers){
+                
+            }
     }
 
     const userOptions = (friend) => {
