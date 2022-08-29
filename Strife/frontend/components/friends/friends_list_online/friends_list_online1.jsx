@@ -99,7 +99,6 @@ const FriendShipIndexOnline1 = ({
             numberOfFriends.innerHTML = `ONLINE - ${friends.length}`;
         }
         else if (selectedFriends.length > 0) {
-            console.log("selectfrieds ");
 
             numberOfFriends.innerHTML = `ONLINE - ${selectedFriends.length}`;
         }
