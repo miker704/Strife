@@ -132,7 +132,7 @@ class FriendsHomePageContainer extends React.Component {
     renderAllFriendShipsOnline () {
         if (this.state.online === true) {
             return (
-                <FriendShipIndexOnlineContainer1 />
+                <FriendShipIndexOnlineContainer />
             )
         }
     }
