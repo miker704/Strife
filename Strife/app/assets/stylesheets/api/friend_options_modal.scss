@@ -1,0 +1,64 @@
+.fo-layer {
+    forced-color-adjust: none;
+    bottom: 0;
+    background: none !important;
+    pointer-events: none;
+    z-index: 1002;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    outline: 0;
+}
+
+
+
+.fo-theme {
+    position: absolute;
+    left: 986px;
+    top: 183px;
+    forced-color-adjust: none;
+}
+
+.fo-flex-wrapper {
+    min-width: 188px;
+    max-width: 320px;
+    forced-color-adjust: none;
+    outline: 0;
+    border-radius: 4px;
+    display: flex;
+    height: auto;
+    cursor: default;
+    max-height: calc(100vh - 32px);
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.24);
+    background: hsl(225, 7.7%, 10.2%);
+
+
+}
+
+.fo-scroller{
+    forced-color-adjust: none;
+    outline: 0;
+    overflow: hidden scroll;
+    padding-right: 0px;
+    padding: 6px 8px;
+    box-sizing: border-box;
+    min-height: 0;
+    -webkit-box-flex: 1;
+    position: relative;
+    flex: 1 1 auto;
+}
+
+.fo-item-container{
+    forced-color-adjust: none;
+    outline: 0;
+}
+
+
+.fo-item-container:hover{
+
+    
+}
