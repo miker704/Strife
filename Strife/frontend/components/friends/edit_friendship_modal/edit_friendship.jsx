@@ -1,7 +1,14 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
 
-const EditFriendshipModal = (props) => {
+const EditFriendshipModal = ({
+    currentUser,
+    friends,
+    errors,
+    requestFriendships,
+    removeFriendshipErrors,
+    deleteFriendship
+}) => {
 
     return (
         <div className="fo-layer">
