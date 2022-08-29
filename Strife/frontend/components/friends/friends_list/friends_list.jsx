@@ -280,6 +280,19 @@ class FriendShipIndex extends React.Component {
 
                                         else {
                                             document.getElementById('num-of-friends').innerHTML = `ALL FRIENDS - ${0}`;
+                                            return (
+                                                <div className="friend-index-container" key={-1}>
+
+                                                    <div className="empty-state-container">
+                                                        <div className="blocked-users-empty">
+                                                            <div className="blocked-users-flex">
+                                                                <img className="no-friends-online-icon" alt="img" />
+                                                                <div className="block-wumpus-text">Wumpus looked, but couldn't find anyone with that name.</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            )
                                         }
 
 
