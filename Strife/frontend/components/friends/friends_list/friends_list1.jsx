@@ -69,7 +69,7 @@ const FriendShipIndex1 = (props) => {
                             id="input-all-friends"
                             className="input-all-friends"
                             spellCheck={false}
-                            autoFocus ref={this.searchInput}
+                            autoFocus ref={inputRef}
                             type="search"
                             placeholder="Search"
                             onChange={(e) => {
