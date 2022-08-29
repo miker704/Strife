@@ -22,7 +22,9 @@ class FriendShipIndex1 extends React.Component {
         this.setSelectedFriends = this.setSelectedFriends.bind(this);
     }
 
-    
+    focusSearchInput() {
+        this.searchInput.current.focus();
+    }
 
     gatherMatches () {
         console.log("inside gather search")
@@ -187,6 +189,7 @@ class FriendShipIndex1 extends React.Component {
                                 id="input-all-friends"
                                 className="input-all-friends"
                                 spellCheck={false}
+                                autoFocus ref={this.searchInput}
                                 type="search"
                                 placeholder="Search"
                                 // onInput={() => this.liveSearch()}
