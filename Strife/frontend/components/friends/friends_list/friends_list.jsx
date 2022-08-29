@@ -20,7 +20,7 @@ class FriendShipIndex extends React.Component {
 
 
 
-    gatherMatches(){
+    gatherMatches () {
         let searchArray = this.props.friends;
         let searchedText = this.state.searchText;
         let filteredSearchArray = searchArray.filter((friend) => {
@@ -48,22 +48,22 @@ class FriendShipIndex extends React.Component {
     }
 
 
-    setSearchText(searchText){
-        return (e) => {this.setState({searchText: e.currentTarget.value})};
+    setSearchText (searchText) {
+        return (e) => { this.setState({ searchText: e.currentTarget.value }) };
     }
 
 
-    setSelectedFriends(selectedFriends){
-        return (e) => {this.setState({selectedFriends: selectedFriends})};
+    setSelectedFriends (selectedFriends) {
+        return (e) => { this.setState({ selectedFriends: selectedFriends }) };
     }
 
 
-    handleDm(friend){
+    handleDm (friend) {
         const memberIds = [this.currentUser.id, friend.id];
 
     }
 
-    openOptions(){
+    openOptions () {
 
     }
 
@@ -170,7 +170,15 @@ class FriendShipIndex extends React.Component {
 
                     <div className="all-search-bar">
                         <div className="all-search-bar-inner">
-                            <input id="input-all-friends" className="input-all-friends" type="search" placeholder="Search" onInput={() => this.liveSearch()} onChange={e => this.setState({ searchText: e.currentTarget.value })} value={this.state.searchText} />
+                            <input id="input-all-friends"
+                                className="input-all-friends"
+                                type="search"
+                                placeholder="Search"
+                                onInput={() => this.liveSearch()}
+                                onChange={e => this.setState({ searchText: e.currentTarget.value })}
+                                value={this.state.searchText}
+                            />
+
                             <div className="magnify-icon-wrapper">
                                 <div className="magnify-icon">
                                     <svg className="mag-icon1" aria-label="Search" aria-hidden="false" role="img" width="24" height="24" viewBox="0 0 24 24">
