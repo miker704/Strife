@@ -103,7 +103,6 @@ const FriendShipIndexOnline1 = ({
             numberOfFriends.innerHTML = `ONLINE - ${selectedFriends.length}`;
         }
         else {
-            console.log("selected friends and search text blank")
             numberOfFriends.innerHTML = `ONLINE - ${friends.length}`;
         }
 
