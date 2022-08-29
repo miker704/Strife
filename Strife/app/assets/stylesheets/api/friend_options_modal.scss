@@ -1,27 +1,14 @@
 .fo-layer {
     forced-color-adjust: none;
-    // bottom: 0;
     background: none !important;
-    pointer-events: none;
     z-index: 1002;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // right: 0;
-    // outline: 0;
-
-
-
     transform: translate(-309px, -176px);
     height: 99.5vh;
     width: 99.5vw;
     position: absolute;
     top: 0;
     left: 0;
-    // height: calc(100vh);
-    // width: calc(100vw);
     background-color: transparent;
-    // transform: translate(-75px, 0px);
 
 
 }
@@ -33,11 +20,16 @@
     left: 986px;
     top: 183px;
     forced-color-adjust: none;
+    transform: translate3d(-165px, 28px, 0px);
+    width: 165px;
+    height: 116px;
 }
 
 .fo-flex-wrapper {
-    min-width: 188px;
-    max-width: 320px;
+    min-width: 165px;
+    max-width: 165px;
+    min-height: 116px;
+    max-height: 116px;
     forced-color-adjust: none;
     outline: 0;
     border-radius: 4px;
@@ -87,7 +79,7 @@
     box-sizing: border-box;
     color: hsl(216, 3.7%, 73.5%);
     border-color: hsl(216, 3.7%, 73.5%);
-
+    font-family: "Whitney";
 
 }
 
