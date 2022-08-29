@@ -72,7 +72,6 @@ const FriendShipIndex1 = (props) => {
                             autoFocus ref={this.searchInput}
                             type="search"
                             placeholder="Search"
-                            // onInput={() => this.liveSearch()}
                             onChange={(e) => {
                                 setSearchText(e.currentTarget.value);
                                 gatherMatches();
