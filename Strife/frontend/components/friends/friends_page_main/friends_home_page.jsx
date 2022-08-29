@@ -6,6 +6,8 @@ import PendingFriendListContainer from "../pending_list/pending_friends_list_con
 import AddFriendsContainer from "../add_friends/add_friends_container";
 import CreateDmModalContainer from "../../dm_servers/create_new_dm/create_dm_container";
 import FriendShipIndexOnlineContainer1 from "../friends_list_online/friends_list_online_container1";
+import FriendShipIndexOnlineContainer from "../friends_list_online/friends_list_online_container";
+
 
 class FriendsHomePageContainer extends React.Component {
     constructor (props) {
