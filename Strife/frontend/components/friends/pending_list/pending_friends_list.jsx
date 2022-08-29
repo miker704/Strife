@@ -15,17 +15,17 @@ class PendingFriendList extends React.Component {
 
 
     liveSearch () {
-        let allFriendShips = document.querySelectorAll('.friend-tag');
+        let allFriendShips = document.querySelectorAll('.friend-index-item');
         let search_query = document.getElementById('input-all-friends').value;
         let numberOfFriends = document.getElementById('num-of-friends');
         let count = 0;
         let foundCount = 0;
         for (let i = 0; i < allFriendShips.length; i++) {
             if (allFriendShips[i].innerText.toLowerCase().includes(search_query.toLowerCase())) {
+
                 allFriendShips[i].classList.remove("is-hidden");
                 foundCount++;
-                numberOfFriends.innerHTML = `ONLINE - ${foundCount}`;
-
+                numberOfFriends.innerHTML = `PENDING FRIEND REQUESTS - ${foundCount}`;
             }
             else {
                 allFriendShips[i].classList.add("is-hidden");
