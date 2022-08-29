@@ -10,6 +10,10 @@ class FriendShipIndex1 extends React.Component {
             noResultsFound: false,
             selectedFriends: []
         }
+
+        this.searchInput = React.createRef();
+        this.focusSearchInput = this.focusSearchInput.bind(this);
+
         this.liveSearch = this.liveSearch.bind(this);
         this.handleDm = this.handleDm.bind(this);
         this.openOptions = this.openOptions.bind(this);
@@ -18,17 +22,24 @@ class FriendShipIndex1 extends React.Component {
         this.setSelectedFriends = this.setSelectedFriends.bind(this);
     }
 
-
+    
 
     gatherMatches () {
         console.log("inside gather search")
         let searchArray = this.props.friends;
         let searchedText = this.state.searchText;
         let filteredSearchArray = searchArray.filter((friend) => {
-            return friend.username.toLowerCase().includes(searchedText.toLowerCase());
+            return friend.username.toLowerCase().includes(this.state.searchText.toLowerCase());
         })
 
-        this.setSelectedFriends(filteredSearchArray);
+
+        console.log("filter: ",filteredSearchArray);
+
+        // this.setSelectedFriends(filteredSearchArray);
+
+        this.setState({selectedFriends:filteredSearchArray});
+
+
         let numberOfFriends = document.getElementById('num-of-friends');
         if (this.state.searchText === "") {
 
@@ -281,7 +292,7 @@ class FriendShipIndex1 extends React.Component {
                                         else {
                                             document.getElementById('num-of-friends').innerHTML = `ALL FRIENDS - ${0}`;
                                             return (
-                                                <div className="friend-index-container" key={-100}>
+                                                <div className="friend-index-container" key={friendIdx}>
 
                                                     <div className="empty-state-container">
                                                         <div className="blocked-users-empty">
