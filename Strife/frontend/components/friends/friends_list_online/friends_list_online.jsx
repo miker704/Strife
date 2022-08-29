@@ -98,11 +98,11 @@ const FriendShipIndexOnline = ({
         return;
     }
 
-    const friendOptions = (friend) => {
+    let friendOptions = (friend) => {
         console.log("in opening friend options modal");
         return (
-            <div>
-                { showPopup && <EditFriendshipModalContainer friend={friend}/>}
+            <div className="modal-struct">
+                { showPopup && <EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setPopupTop={setShowPopup}/>}
             </div>
         )
     }
