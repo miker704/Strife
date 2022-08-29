@@ -48,7 +48,7 @@ class FriendShipIndex extends React.Component {
     }
 
 
-    setSearchText (searchText) {
+    setSearchText (e) {
         return (e) => { this.setState({ searchText: e.currentTarget.value }) };
     }
 
@@ -176,7 +176,7 @@ class FriendShipIndex extends React.Component {
                                 type="search"
                                 placeholder="Search"
                                 onInput={() => this.liveSearch()}
-                                onChange={e => this.setState({ searchText: e.currentTarget.value })}
+                                onChange={(e) => this.setSearchText(e.currentTarget.value)}
                                 value={this.state.searchText}
                             />
 
