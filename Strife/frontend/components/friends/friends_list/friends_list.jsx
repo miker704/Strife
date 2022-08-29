@@ -177,7 +177,12 @@ class FriendShipIndex extends React.Component {
                                 type="search"
                                 placeholder="Search"
                                 // onInput={() => this.liveSearch()}
-                                onChange={(e) => this.setSearchText(e.currentTarget.value)}
+                                onChange={(e) => {
+                                    this.setSearchText(e.currentTarget.value);
+                                    this.gatherMatches();
+                                
+                                
+                                }}
                                 value={this.state.searchText}
                             />
 
