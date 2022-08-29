@@ -7,8 +7,10 @@ const FriendShipIndexOnline1 = ({
     errors,
     dmServerErrors,
     dmServers,
+    createDmServer,
     requestFriendships,
     removeFriendshipErrors,
+    removeDmServerErrors,
     history,
 
 }) => {
@@ -27,6 +29,9 @@ const FriendShipIndexOnline1 = ({
         return function cleanup () {
             if (errors.length > 0) {
                 removeFriendshipErrors();
+            }
+            if(dmServerErrors.length > 0){
+                removeDmServerErrors();
             }
         }
     },[])
