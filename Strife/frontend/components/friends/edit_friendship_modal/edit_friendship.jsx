@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
-
+import { closeHookModalOnOutsideClick, closeOnEsc } from "../../../utils/close_hook_modals_api_utils";
 const EditFriendshipModal = ({
     currentUser,
     friends,
@@ -16,10 +16,9 @@ const EditFriendshipModal = ({
 }) => {
 
     const popupRef = useRef();
-    console.log("hellllllllooooooo ? ? ?  ??  ?? ")
     return (
         <div className="fo-layer" >
-            <div className="fo-theme"style={{ top: `${top}px` }} ref={popupRef}>
+            <div className="fo-theme" style={{ top: `${top}px` }} ref={popupRef}>
                 <div className="fo-flex-wrapper" >
                     <div className="fo-scroller">
                         <div className="fo-item-container">
