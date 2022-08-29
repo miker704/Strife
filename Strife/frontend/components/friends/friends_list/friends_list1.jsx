@@ -2,7 +2,7 @@ import React from "react";
 
 
 
-class FriendShipIndex extends React.Component {
+class FriendShipIndex1 extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
@@ -328,4 +328,4 @@ class FriendShipIndex extends React.Component {
     }
 }
 
-export default FriendShipIndex;
+export default FriendShipIndex1;
