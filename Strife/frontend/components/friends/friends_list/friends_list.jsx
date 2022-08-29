@@ -53,7 +53,7 @@ class FriendShipIndex extends React.Component {
     }
 
 
-    setSelectedFriends (selectedFriends) {
+    setSelectedFriends (e) {
         return (e) => { this.setState({ selectedFriends: selectedFriends }) };
     }
 
