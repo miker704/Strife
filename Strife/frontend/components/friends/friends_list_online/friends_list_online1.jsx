@@ -92,13 +92,10 @@ const FriendShipIndexOnline1 = ({
         })
         setSelectedFriends(filteredSearchArray);
         let numberOfFriends = document.getElementById('num-of-friends');
-        console.log("searchtext: ", searchText)
         if (searchText === "") {
-            console.log("select text blank")
             numberOfFriends.innerHTML = `ONLINE - ${friends.length}`;
         }
         else if (searchText === "" && selectedFriends.length === 0) {
-            console.log("search text and selectfrieds blank render friends props");
             numberOfFriends.innerHTML = `ONLINE - ${friends.length}`;
         }
         else if (selectedFriends.length > 0) {
