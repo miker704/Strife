@@ -31,7 +31,6 @@ const FriendShipIndex1 = (props) => {
 
         // this.setSelectedFriends(filteredSearchArray);
 
-        this.setState({ selectedFriends: filteredSearchArray.slice() });
 
 
         let numberOfFriends = document.getElementById('num-of-friends');
