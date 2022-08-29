@@ -72,7 +72,7 @@ class ModalManager extends React.Component {
 
             case 'friendOptions':
 
-                renderedModal = </>
+                renderedModal = <EditFriendshipModalContainer/>
 
                 break;
 
