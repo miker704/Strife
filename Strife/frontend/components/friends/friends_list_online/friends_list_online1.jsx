@@ -31,18 +31,30 @@ const FriendShipIndexOnline1 = ({
             if (errors.length > 0) {
                 removeFriendshipErrors();
             }
-            if(dmServerErrors.length > 0){
+            if (dmServerErrors.length > 0) {
                 removeDmServerErrors();
             }
         }
-    },[])
+    }, [])
 
-
+    //this function handles routing to an existing chat 1 on 1 dm chats and navigates to the dmserver if it exists
+    //else if generates it 
     const handleDm = (friend) => {
-            let member_ids = [currentUser.id, friend.id];
-            for(let dmServer in dmServers){
-                
+        let member_ids = [currentUser.id, friend.id];
+        let new_dm_members = [currentUser, friend];
+        for (let dmServer in dmServers) {
+            if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), member_ids)) {
+                if (history.location.pathname !== `/channels/@me/${dmServer.id}`) {
+                    history.push(`/channels/@me/${dmServer.id}`);
+                }
+                return;
             }
+        }
+        // if dmserver does not already exists create one
+        const dmMemberInfo = JSON.parse(JSON.stringify(new_dm_members));
+        let newDmServerName = [];
+        let dmServerName = "";
+
     }
 
     const userOptions = (friend) => {
@@ -254,7 +266,7 @@ const FriendShipIndexOnline1 = ({
 
                                     return (
                                         <div className="friend-index-container" key={1}>
-                                          
+
                                             <div className="empty-state-container">
                                                 <div className="blocked-users-empty">
                                                     <div className="blocked-users-flex">
