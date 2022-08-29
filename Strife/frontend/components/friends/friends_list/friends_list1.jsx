@@ -61,7 +61,7 @@ const FriendShipIndex1 = (props) => {
             numberOfFriends.innerHTML = `ALL FRIENDS - ${selectedFriends.length}`;
         }
         else {
-            numberOfFriends.innerHTML = `ALL FRIENDS - ${friends.length}`;
+            numberOfFriends.innerHTML = `ALL FRIENDS - ${props.friends.length}`;
         }
 
 
