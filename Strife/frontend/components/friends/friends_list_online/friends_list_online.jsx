@@ -2,7 +2,7 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
 import EditFriendshipModalContainer from "../edit_friendship_modal/edit_friendship_container";
-
+import EditFriendshipModal from "../edit_friendship_modal/edit_friendship";
 
 
 const FriendShipIndexOnline = ({
@@ -15,6 +15,7 @@ const FriendShipIndexOnline = ({
     requestFriendships,
     removeFriendshipErrors,
     removeDmServerErrors,
+    openModal,
     history,
 
 }) => {
@@ -102,7 +103,8 @@ const FriendShipIndexOnline = ({
         console.log("in opening friend options modal");
         return (
             <div className="modal-struct">
-                { showPopup && <EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setPopupTop={setShowPopup}/>}
+                {/* { showPopup && <EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setPopupTop={setShowPopup}/>} */}
+                <EditFriendshipModal user={currentUser} friend={friend} top={popupTop} setPopupTop={setShowPopup}/>
             </div>
         )
     }
@@ -226,7 +228,7 @@ const FriendShipIndexOnline = ({
                                                     <div className="pending-request-actions-tool-tip">Message</div>
                                                     <div className="pending-request-actions-tool-tip-triangle"></div>
                                                 </div>
-                                                <div className="friend-options-button" onClick={handlePopupShow}>
+                                                <div className="friend-options-button" onClick={() => friendOptions(friend)}>
                                                     <svg className="icon-1WVg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                                         <g fill="none" fillRule="evenodd">
                                                             <path d="M24 0v24H0V0z">
@@ -240,7 +242,7 @@ const FriendShipIndexOnline = ({
                                                     <div className="pending-request-actions-tool-tip">More</div>
                                                     <div className="pending-request-actions-tool-tip-triangle"></div>
                                                 </div>
-                                                    { showPopup && <EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setPopupTop={setShowPopup}/>}
+                                                    {/* { showPopup && <EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setPopupTop={setShowPopup}/>} */}
 
                                             </div>
 
