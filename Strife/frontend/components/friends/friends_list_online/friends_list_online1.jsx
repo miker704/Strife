@@ -25,8 +25,9 @@ const FriendShipIndexOnline1 = ({
 
 
     useEffect(() => {
-        requestFriendships();
-
+        // requestFriendships();
+        console.log("updating friends: ",friends);
+        friends;
         return function cleanup () {
             if (errors.length > 0) {
                 removeFriendshipErrors();
@@ -35,7 +36,7 @@ const FriendShipIndexOnline1 = ({
                 removeDmServerErrors();
             }
         }
-    }, [])
+    }, [friends])
 
     //this function handles routing to an existing chat 1 on 1 dm chats and navigates to the dmserver if it exists
     //else if generates it 
