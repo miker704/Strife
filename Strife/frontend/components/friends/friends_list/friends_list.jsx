@@ -21,11 +21,13 @@ class FriendShipIndex extends React.Component {
 
 
     gatherMatches(){
-        
+
     }
 
 
-
+    setSearchText(){
+        
+    }
 
 
     handleDm(friend){
