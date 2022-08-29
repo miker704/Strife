@@ -1,14 +1,29 @@
 .fo-layer {
     forced-color-adjust: none;
-    bottom: 0;
+    // bottom: 0;
     background: none !important;
     pointer-events: none;
     z-index: 1002;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // outline: 0;
+
+
+
+    transform: translate(-309px, -176px);
+    height: 99.5vh;
+    width: 99.5vw;
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    outline: 0;
+    // height: calc(100vh);
+    // width: calc(100vw);
+    background-color: transparent;
+    // transform: translate(-75px, 0px);
+
+
 }
 
 
@@ -42,7 +57,7 @@
 .fo-scroller {
     forced-color-adjust: none;
     outline: 0;
-    overflow: hidden scroll;
+    // overflow: hidden scroll;
     padding-right: 0px;
     padding: 6px 8px;
     box-sizing: border-box;
@@ -80,7 +95,7 @@
 .fo-item-container:hover {
     background-color: hsl(235, 46.7%, 44.1%);
     color: hsl(0, 0%, 100%);
-    background-color:  hsl(235,51.4%,52.4%);
+    background-color: hsl(235, 51.4%, 52.4%);
 }
 
 .fo-item-name {
@@ -110,7 +125,7 @@
     color: hsl(359, 82.6%, 59.45);
 }
 
-.fo-item-container.red:hover{
-    background-color:hsl(359, 66.7%, 54.1%);
+.fo-item-container.red:hover {
+    background-color: hsl(359, 66.7%, 54.1%);
     color: hsl(0, 0%, 100%);
 }
