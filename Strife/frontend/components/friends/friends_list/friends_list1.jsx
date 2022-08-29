@@ -30,7 +30,7 @@ const FriendShipIndex1 = (props) => {
 
 
     handleDm = (friend) => {
-        const memberIds = [currentUser.id, friend.id];
+        const memberIds = [props.currentUser.id, friend.id];
 
     }
 
