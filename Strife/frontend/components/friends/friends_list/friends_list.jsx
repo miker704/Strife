@@ -16,10 +16,12 @@ class FriendShipIndex extends React.Component {
 
 
     handleDm(){
-        
+
     }
 
-
+    openOptions(){
+        
+    }
 
     liveSearch () {
         let allFriendShips = document.querySelectorAll('.friend-index-item');
