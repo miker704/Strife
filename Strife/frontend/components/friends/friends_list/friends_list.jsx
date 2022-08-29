@@ -11,6 +11,7 @@ class FriendShipIndex extends React.Component {
         }
         this.liveSearch = this.liveSearch.bind(this);
         this.handleDm = this.handleDm.bind(this);
+        this.openOptions = this.openOptions.bind(this);
     }
 
 
