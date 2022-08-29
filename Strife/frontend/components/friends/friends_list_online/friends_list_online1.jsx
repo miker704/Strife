@@ -29,7 +29,7 @@ const FriendShipIndexOnline1 = ({
                 removeFriendshipErrors();
             }
         }
-    })
+    },[])
 
 
     
