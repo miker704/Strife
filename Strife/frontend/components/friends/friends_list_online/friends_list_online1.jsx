@@ -22,12 +22,15 @@ const FriendShipIndexOnline1 = ({
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
     const dmMembersArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
 
-
+    updateOnlineStatus = () => {
+        
+    }
 
     useEffect(() => {
         // requestFriendships();
-        console.log("updating friends: ",friends);
-        friends;
+        console.log("updating friends: ", friends);
+
+
         return function cleanup () {
             if (errors.length > 0) {
                 removeFriendshipErrors();
