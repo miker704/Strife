@@ -7,65 +7,20 @@ class FriendShipIndex extends React.Component {
         super(props);
         this.state = {
             searchText: "",
-            noResultsFound: false,
-            selectedFriends: []
+            noResultsFound: false
         }
         this.liveSearch = this.liveSearch.bind(this);
         this.handleDm = this.handleDm.bind(this);
         this.openOptions = this.openOptions.bind(this);
-        this.gatherMatches = this.gatherMatches.bind(this);
-        this.setSearchText = this.setSearchText.bind(this);
-        this.setSelectedFriends = this.setSelectedFriends.bind(this);
     }
 
 
-
-    gatherMatches () {
-        console.log("inside gather search")
-        let searchArray = this.props.friends;
-        let searchedText = this.state.searchText;
-        let filteredSearchArray = searchArray.filter((friend) => {
-            return friend.username.toLowerCase().includes(searchedText.toLowerCase());
-        })
-
-        this.setSelectedFriends(filteredSearchArray);
-        let numberOfFriends = document.getElementById('num-of-friends');
-        if (this.state.searchText === "") {
-
-            numberOfFriends.innerHTML = `ALL FRIENDS - ${this.props.friends.length}`;
-        }
-        else if (this.state.searchText === "" && this.state.selectedFriends.length === 0) {
-            numberOfFriends.innerHTML = `ALL FRIENDS - ${this.props.friends.length}`;
-        }
-        else if (this.state.selectedFriends.length > 0) {
-
-            numberOfFriends.innerHTML = `ALL FRIENDS - ${this.state.selectedFriends.length}`;
-        }
-        else {
-            numberOfFriends.innerHTML = `ALL FRIENDS - ${this.props.friends.length}`;
-        }
-
-
-
-    }
-
-
-    setSearchText (e) {
-        return (e) => { this.setState({ searchText: e.currentTarget.value }) };
-    }
-
-
-    setSelectedFriends (e) {
-        return (e) => { this.setState({ selectedFriends: selectedFriends }) };
-    }
-
-
-    handleDm (friend) {
+    handleDm(friend){
         const memberIds = [this.currentUser.id, friend.id];
 
     }
 
-    openOptions () {
+    openOptions(){
 
     }
 
@@ -172,22 +127,7 @@ class FriendShipIndex extends React.Component {
 
                     <div className="all-search-bar">
                         <div className="all-search-bar-inner">
-                            <input
-                                id="input-all-friends"
-                                className="input-all-friends"
-                                spellCheck={false}
-                                type="search"
-                                placeholder="Search"
-                                // onInput={() => this.liveSearch()}
-                                onChange={(e) => {
-                                    this.setState({ searchText: e.currentTarget.value });
-                                    this.gatherMatches();
-
-
-                                }}
-                                value={this.state.searchText}
-                            />
-
+                            <input id="input-all-friends" className="input-all-friends" type="search" placeholder="Search" onInput={() => this.liveSearch()} onChange={e => this.setState({ searchText: e.currentTarget.value })} value={this.state.searchText} />
                             <div className="magnify-icon-wrapper">
                                 <div className="magnify-icon">
                                     <svg className="mag-icon1" aria-label="Search" aria-hidden="false" role="img" width="24" height="24" viewBox="0 0 24 24">
@@ -217,87 +157,62 @@ class FriendShipIndex extends React.Component {
                             <ul >
                                 {
                                     allFriends.map((friend, friendIdx) => {
+                                        return (
+                                            <li className="friend-index-item" key={friend.id}>
 
-                                        if (friend.username.includes(this.state.searchText)) {
-
-                                            return (
-                                                <li className="friend-index-item" key={friend.id}>
-
-                                                    <div className="friend-index-item-wrapper-inner">
-                                                        <div className="friend-account-info-wrapper-super">
-                                                            <div className="friend-info">
-                                                                <img src={`${friend.photo === undefined ? default_Photo : friend.photo}`} alt="pfp" />
-                                                            </div>
-                                                            <div className="friend-account-info-wrapper">
-                                                                <div className="friend-account-info">
-                                                                    <div className="friend-tag">
-                                                                        {friend.username}
-                                                                        <span>#{friend.strife_id_tag}</span>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="subtext">
-                                                                    <div className="subtext-inner">
-                                                                        {`${friend.online ? "online" : "offline"}`}
-                                                                        <div className={`${friend.online ? "circle-online" : "circle-offline"}`}></div>
-                                                                    </div>
+                                                <div className="friend-index-item-wrapper-inner">
+                                                    <div className="friend-account-info-wrapper-super">
+                                                        <div className="friend-info">
+                                                            <img src={`${friend.photo === undefined ? default_Photo : friend.photo}`} alt="pfp" />
+                                                        </div>
+                                                        <div className="friend-account-info-wrapper">
+                                                            <div className="friend-account-info">
+                                                                <div className="friend-tag">
+                                                                    {friend.username}
+                                                                    <span>#{friend.strife_id_tag}</span>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="friend-msg-actions">
-                                                        <div className="friend-msg-button">
-                                                            <svg className="icon-1WV" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                                <path fill="currentColor" d="M4.79805 3C3.80445 3 2.99805 3.8055 2.99805 
-                                                                    4.8V15.6C2.99805 16.5936 3.80445 17.4 4.79805 17.4H7.49805V21L11.098 
-                                                                    17.4H19.198C20.1925 17.4 20.998 16.5936 20.998 15.6V4.8C20.998 3.8055 
-                                                                    20.1925 3 19.198 3H4.79805Z">
-                                                                </path>
-                                                            </svg>
-                                                            <div className="pending-request-actions-tool-tip">Message</div>
-                                                            <div className="pending-request-actions-tool-tip-triangle"></div>
-                                                        </div>
-                                                        <div className="friend-options-button">
-                                                            <svg className="icon-1WVg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
-                                                                <g fill="none" fillRule="evenodd">
-                                                                    <path d="M24 0v24H0V0z">
-                                                                    </path>
-                                                                    <path fill="currentColor" d="M12 16c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2
-                                                                         .8954305-2 2-2zm0-6c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2
-                                                                          2-2zm0-6c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2z">
-                                                                    </path>
-                                                                </g>
-                                                            </svg>
-                                                            <div className="pending-request-actions-tool-tip">More</div>
-                                                            <div className="pending-request-actions-tool-tip-triangle"></div>
-                                                        </div>
-                                                    </div>
-
-
-
-                                                </li>
-                                            )
-                                        }
-
-                                        else {
-                                            document.getElementById('num-of-friends').innerHTML = `ALL FRIENDS - ${0}`;
-                                            return (
-                                                <div className="friend-index-container" key={-1}>
-
-                                                    <div className="empty-state-container">
-                                                        <div className="blocked-users-empty">
-                                                            <div className="blocked-users-flex">
-                                                                <img className="no-friends-online-icon" alt="img" />
-                                                                <div className="block-wumpus-text">Wumpus looked, but couldn't find anyone with that name.</div>
+                                                            <div className="subtext">
+                                                                <div className="subtext-inner">
+                                                                    {`${friend.online ? "online" : "offline"}`}
+                                                                    <div className={`${friend.online ? "circle-online" : "circle-offline"}`}></div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            )
-                                        }
+                                                <div className="friend-msg-actions">
+                                                    <div className="friend-msg-button">
+                                                        <svg className="icon-1WV" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                            <path fill="currentColor" d="M4.79805 3C3.80445 3 2.99805 3.8055 2.99805 
+                                                                4.8V15.6C2.99805 16.5936 3.80445 17.4 4.79805 17.4H7.49805V21L11.098 
+                                                                17.4H19.198C20.1925 17.4 20.998 16.5936 20.998 15.6V4.8C20.998 3.8055 
+                                                                20.1925 3 19.198 3H4.79805Z">
+                                                            </path>
+                                                        </svg>
+                                                        <div className="pending-request-actions-tool-tip">Message</div>
+                                                        <div className="pending-request-actions-tool-tip-triangle"></div>
+                                                    </div>
+                                                    <div className="friend-options-button">
+                                                        <svg className="icon-1WVg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                                            <g fill="none" fillRule="evenodd">
+                                                                <path d="M24 0v24H0V0z">
+                                                                </path>
+                                                                <path fill="currentColor" d="M12 16c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2
+                                                                     .8954305-2 2-2zm0-6c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2
+                                                                      2-2zm0-6c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2z">
+                                                                </path>
+                                                            </g>
+                                                        </svg>
+                                                        <div className="pending-request-actions-tool-tip">More</div>
+                                                        <div className="pending-request-actions-tool-tip-triangle"></div>
+                                                    </div>
+                                                </div>
 
 
 
-
+                                            </li>
+                                        )
                                     })
                                 }
                             </ul>
