@@ -31,7 +31,7 @@ class FriendShipIndex extends React.Component {
         this.setSelectedFriends(filteredSearchArray);
         let numberOfFriends = document.getElementById('num-of-friends');
         if (this.state.searchText === "") {
-            
+
             numberOfFriends.innerHTML = `ALL FRIENDS - ${this.props.friends.length}`;
         }
         else if (this.state.searchText === "" && this.state.selectedFriends.length === 0) {
@@ -180,10 +180,10 @@ class FriendShipIndex extends React.Component {
                                 placeholder="Search"
                                 // onInput={() => this.liveSearch()}
                                 onChange={(e) => {
-                                    this.setState({searchText: e.currentTarget.value});
+                                    this.setState({ searchText: e.currentTarget.value });
                                     this.gatherMatches();
-                                
-                                
+
+
                                 }}
                                 value={this.state.searchText}
                             />
@@ -218,11 +218,11 @@ class FriendShipIndex extends React.Component {
                                 {
                                     allFriends.map((friend, friendIdx) => {
 
-                                        if(friend.username.includes(this.state.searchText)){
+                                        if (friend.username.includes(this.state.searchText)) {
 
                                             return (
                                                 <li className="friend-index-item" key={friend.id}>
-    
+
                                                     <div className="friend-index-item-wrapper-inner">
                                                         <div className="friend-account-info-wrapper-super">
                                                             <div className="friend-info">
@@ -271,14 +271,14 @@ class FriendShipIndex extends React.Component {
                                                             <div className="pending-request-actions-tool-tip-triangle"></div>
                                                         </div>
                                                     </div>
-    
-    
-    
+
+
+
                                                 </li>
                                             )
                                         }
 
-                                        else{
+                                        else {
                                             document.getElementById('num-of-friends').innerHTML = `ALL FRIENDS - ${0}`;
                                         }
 
