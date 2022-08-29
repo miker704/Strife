@@ -15,12 +15,13 @@ class FriendShipIndex extends React.Component {
     }
 
 
-    handleDm(){
-
+    handleDm(friend){
+        const memberIds = [this.currentUser.id, friend.id];
+        
     }
 
     openOptions(){
-        
+
     }
 
     liveSearch () {
