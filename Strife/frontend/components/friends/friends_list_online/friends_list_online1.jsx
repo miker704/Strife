@@ -224,7 +224,6 @@ const FriendShipIndexOnline1 = ({
 
                                 } else {
                                     document.getElementById('num-of-friends').innerHTML = `ONLINE - ${0}`;
-                                    console.log("no match ");
 
                                     return (
                                         <div className="friend-index-container" key={-1}>
