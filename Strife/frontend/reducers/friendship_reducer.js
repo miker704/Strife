@@ -1,6 +1,6 @@
 import { LOGOUT_CURRENT_USER, RECEIVE_CURRENT_USER, REMOVE_CURRENT_USER, RECEIVE_USER, RECEIVE_USERS } from "../actions/session_actions.js";
 import { selectFriendStatus, selectFriendStatusOnline, 
-    selectOnlineFriends, 
+    
     selectAllFriends, selectBlockedUsers, selectFriendRequests} from "../utils/selectors_api_util.js";
 import {
     RECEIVE_FRIENDSHIP,
@@ -17,7 +17,7 @@ import {
 
 
 
-const receiveFriends = (state, friendships, online, status) => {
+const receiveFriends = (state, friendships) => {
     if (!friendships) { return state; }
     let nextState = Object.assign({}, state);
 
@@ -32,7 +32,17 @@ const receiveFriends = (state, friendships, online, status) => {
 
 
 
+ const selectOnlineFriends = (state, friendships) => {
+     if (!friendships) { return state; }
+    let nextState = Object.assign({}, state);
 
+    for (let [id, friendship] of Object.entries(friendships)) {
+        
+        nextState[id] = friendship;
+
+    }
+    return nextState;
+}
 
 
 
@@ -48,8 +58,8 @@ const friendshipReducer = (state = {}, action) => {
     switch (action.type) {
 
         case RECEIVE_ALL_ONLINE_FRIENDS:
-            let friends = receiveFriends(state,action.friendships);
-            let onlineFriends = selectOnlineFriends(state)
+            // let friends = receiveFriends(state,action.friendships);
+            // let onlineFriends = selectOnlineFriends(state)
             return action.friendships;
 
         case RECEIVE_ALL_BLOCKED_USERS:

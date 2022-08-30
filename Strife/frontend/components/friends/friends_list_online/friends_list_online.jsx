@@ -33,6 +33,7 @@ const FriendShipIndexOnline = ({
     const dmMembersArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
 
    console.log("online friends: ", onlineFriends)
+   console.log("friends>: ",friends);
 
     useEffect(() => {
         requestFriendships();
