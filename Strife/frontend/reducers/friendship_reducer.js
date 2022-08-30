@@ -17,20 +17,23 @@ import {
 const friendshipReducer = (state = {}, action) => {
 
     Object.freeze(state);
-    let newState;
+    let nextState = Object.assign({}, state);
+
 
     switch (action.type) {
 
 
         case RECEIVE_ALL_BLOCKED_USERS:
+
         case RECEIVE_ALL_FRIENDS:
         case RECEIVE_ALL_FRIEND_REQUESTS:
         case RECEIVE_ALL_ONLINE_FRIENDS:
 
 
 
-        case 'RECEIVE_ONLINE_FRIENDS':
-            return Object.assign({}, state, action.payload);
+
+        // case 'RECEIVE_ONLINE_FRIENDS':
+        //     return Object.assign({}, state, action.payload);
 
         default:
             return state;
