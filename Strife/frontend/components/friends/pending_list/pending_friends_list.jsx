@@ -173,7 +173,7 @@ class PendingFriendList extends React.Component {
                         </div>
                     </div>
 
-                    <div className="friend-index">
+                    <div className="friend-index" id='ul-fiiw'>
                         <div className="friend-index-item-wrapper">
 
 
