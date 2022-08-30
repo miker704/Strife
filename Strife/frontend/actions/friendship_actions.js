@@ -13,12 +13,14 @@ export const RECEIVE_ALL_ONLINE_FRIENDS = "RECEIVE_ALL_ONLINE_FRIENDS";
 
 export const receiveOnlineFriends = (friendship) => {
     return {
-            type: RECEIVE_ALL_ONLINE_FRIENDS,
-            friendship
+        type: RECEIVE_ALL_ONLINE_FRIENDS,
+        friendship
     }
 }
 
-export const receiveFriendRequests = (friendship) => {}
+export const receiveFriendRequests = (friendship) => {
+
+}
 
 export const receiveFriendship = (friendship) => {
     return {
