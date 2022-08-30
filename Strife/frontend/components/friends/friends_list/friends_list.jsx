@@ -49,6 +49,10 @@ class FriendShipIndex extends React.Component {
             numberOfFriends.innerHTML = `BLOCKED USERS - ${0}`;
 
         }
+        else {
+            document.getElementById('no-match').classList.add('is-hidden')
+            document.getElementById('ul-fiiw').classList.remove('is-hidden')
+        }
 
     }
 
