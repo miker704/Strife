@@ -61,5 +61,5 @@ export const selectBlockedUsers = (state, status) => {
         }
     }
   
-    return friends.sort((a, b) => a.username > b.username ? 1 : -1);
+    return blockedUsers.sort((a, b) => a.username > b.username ? 1 : -1);
 }
