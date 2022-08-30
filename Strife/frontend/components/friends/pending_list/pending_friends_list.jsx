@@ -82,9 +82,7 @@ class PendingFriendList extends React.Component {
         let incoming_requests = this.props.incoming;
         let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
 
-        if (this.state.noResultsFound) {
-            return (
-                <div className="friend-index-container">
+      
                     <div className="all-search-bar">
                         <div className="all-search-bar-inner">
                             <input id="input-all-friends" className="input-all-friends" type="search" placeholder="Search"
