@@ -5,6 +5,7 @@ import {
     REMOVE_FRIENDSHIP,
     RECEIVE_ALL_BLOCKED_USERS,
     RECEIVE_ALL_FRIENDS,
+    RECEIVE_ALL_FRIEND_REQUESTS
 
 } from '../actions/friendship_actions.js';
 
