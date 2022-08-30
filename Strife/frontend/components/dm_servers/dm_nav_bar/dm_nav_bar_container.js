@@ -8,7 +8,6 @@ const mSTP = (state, ownProps) => {
 
     return {
         currentUser: state.entities.users[state.session.id],
-        dmUsers: Object.values(state.entities.users),
         dmServers: Object.values(state.entities.dmServers),
         dmServerId: ownProps.match.params.dmServerId,
         errors: state.errors.dmServer
