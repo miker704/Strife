@@ -15,12 +15,12 @@ class FriendShipIndex extends React.Component {
     }
 
 
-    handleDm(friend){
+    handleDm (friend) {
         const memberIds = [this.currentUser.id, friend.id];
 
     }
 
-    openOptions(){
+    openOptions () {
 
     }
 
@@ -152,6 +152,19 @@ class FriendShipIndex extends React.Component {
                     <div id="num-of-friends" className="all-friends">
                         {`ALL FRIENDS - ${allFriends.length}`}
                     </div>
+
+
+                    <div id="no-match" className="empty-state-container">
+                        <div className="blocked-users-empty">
+                            <div className="blocked-users-flex">
+                                <img className="no-friends-online-icon" alt="img" />
+                                <div className="block-wumpus-text">Wumpus looked, but couldn't find anyone with that name.</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                     <div className="friend-index">
                         <div className="friend-index-item-wrapper" >
                             <ul >
