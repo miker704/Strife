@@ -69,7 +69,7 @@ const friendshipReducer = (state = {}, action) => {
 
     switch (action.type) {
 
-        case RECEIVE_ALL_ONLINE_FRIENDS:
+        // case RECEIVE_ALL_ONLINE_FRIENDS:
             // return selectOnlineFriends(state, action.friendships);
         // return action.friendships;
 
