@@ -187,7 +187,7 @@ const FriendShipIndex1 = (props) => {
                                 else {
                                     document.getElementById('num-of-friends').innerHTML = `ALL FRIENDS - ${0}`;
                                     return (
-                                        <div className="friend-index-container" key={friend.id}>
+                                        <div className="friend-index-container" key={friendIdx}>
 
                                             <div className="empty-state-container">
                                                 <div className="blocked-users-empty">

@@ -150,7 +150,7 @@ const FriendShipIndexOnline = ({
                             onChange={(e) => {
 
                                 setSearchText(e.currentTarget.value);
-                                gatherMatches();
+                                // gatherMatches();
                             }
                             }
                             value={searchText} />
@@ -190,7 +190,7 @@ const FriendShipIndexOnline = ({
                                 if (friend.username.includes(searchText)) {
                                     return (
                                         
-                                        <li className="friend-index-item" key={friend.id}>
+                                        <li id="fii" className="friend-index-item" key={friend.id}>
                                              { showPopup && <EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setShowPopup={setShowPopup}/>}
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
@@ -251,21 +251,22 @@ const FriendShipIndexOnline = ({
                                 } 
                                 
                                 else {
-                                    document.getElementById('num-of-friends').innerHTML = `ONLINE - ${0}`;
+                                    // document.getElementById('num-of-friends').innerHTML = `ONLINE - ${0}`;
+                                        document.getElementById()
+                                    // return (
+                                    //     <div className="friend-index-container" key={friend.id}>
 
-                                    return (
-                                        <div className="friend-index-container" key={-1}>
-
-                                            <div className="empty-state-container">
-                                                <div className="blocked-users-empty">
-                                                    <div className="blocked-users-flex">
-                                                        <img className="no-friends-online-icon" alt="img" />
-                                                        <div className="block-wumpus-text">Wumpus looked, but couldn't find anyone with that name.</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    )
+                                    //         <div className="empty-state-container">
+                                    //             <div className="blocked-users-empty">
+                                    //                 <div className="blocked-users-flex">
+                                    //                     <img className="no-friends-online-icon" alt="img" />
+                                    //                     <div className="block-wumpus-text">Wumpus looked, but couldn't find anyone with that name.</div>
+                                    //                 </div>
+                                    //             </div>
+                                    //         </div>
+                                    //     </div>
+                                    // )
+                                    return null;
                                 }
                             })
                         }
