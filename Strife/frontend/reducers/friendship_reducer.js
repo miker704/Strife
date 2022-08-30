@@ -15,7 +15,13 @@ import {
 } from '../actions/friendship_actions.js';
 
 
-
+// this file is redacted as filtering friends on status via a selectors without writing back end code
+// specifically just slows down  the app as requesting users and filtering is easier will each
+// friend type pulls the same amount of users as request all users but the action causes the db to pull
+// all users just like request all users despite if the friendaction would give less so its 
+// best to uses request all users then filter as its more dryer and does not permantley modify state 
+// (i.e changing from online taB to friendrequests tab basically casuses state.friends 6to only have online friends
+// its best to call on action and filter after ) 
 
 
 
