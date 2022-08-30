@@ -35,7 +35,7 @@ export const selectAllFriends = (state, status) => {
 export const selectOnlineFriends = (state, status) => {
     const onlineFriends = [];
     for (let friend of Object.values(state.entities.friendships)) {
-        if (friend.friend_request_status === status && friend.online === true) {
+        if (friend.friend_request_status === 3 && friend.online === true) {
             onlineFriends.push(friend);
         }
     }
