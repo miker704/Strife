@@ -37,7 +37,6 @@ const userReducer = (state = {}, action) => {
             // console.log("users before receive users : ", action.users);
             // return receiveUsers(state, action.users);
             newState = Object.assign({}, state, action.users);
-            // return action.users;;
 
         case RECEIVE_FRIENDSHIP:
             newState = Object.assign({}, state);
