@@ -7,7 +7,6 @@ class FriendShipIndex extends React.Component {
         super(props);
         this.state = {
             searchText: "",
-            noResultsFound: false
         }
         this.liveSearch = this.liveSearch.bind(this);
         this.handleDm = this.handleDm.bind(this);
@@ -165,7 +164,7 @@ class FriendShipIndex extends React.Component {
 
 
 
-                    <div className="friend-index">
+                    <div className="friend-index" id='ul-fiiw'>
                         <div className="friend-index-item-wrapper" >
                             <ul >
                                 {
