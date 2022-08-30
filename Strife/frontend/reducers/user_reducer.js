@@ -34,7 +34,6 @@ const userReducer = (state = {}, action) => {
             return Object.assign({}, state, { [action.user.id]: action.user });
 
         case RECEIVE_USERS:
-            // console.log("users before receive users : ", action.users);
             // return receiveUsers(state, action.users);
             newState = Object.assign({}, state, action.users);
 
