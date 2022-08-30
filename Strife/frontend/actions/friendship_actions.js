@@ -95,4 +95,4 @@ export const requestFriendRequests = () => (dispatch) =>
 export const requestBlockedUsers = () => (dispatch) =>
 FRIENDSHIP_API_UTIL.requestBlockedUsers()
 export const requestAllFriendships = () => (dispatch) =>
-FRIENDSHIP_API_UTIL.
+FRIENDSHIP_API_UTIL.requestAllFriendships
