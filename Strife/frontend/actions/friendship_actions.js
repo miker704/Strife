@@ -99,4 +99,4 @@ export const requestBlockedUsers = () => (dispatch) =>
 
 export const requestAllFriendships = () => (dispatch) =>
     FRIENDSHIP_API_UTIL.requestAllFriendships().then((friendships) =>
-        dispatch(receiveAllFriends(friendship)), err => dispatch(receiveFriendshipErrors(err.responseJSON)));
+        dispatch(receiveAllFriends(friendships)), err => dispatch(receiveFriendshipErrors(err.responseJSON)));
