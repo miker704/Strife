@@ -40,7 +40,7 @@ export const selectOnlineFriends = (state, status) => {
         }
     }
   
-    return friends.sort((a, b) => a.username > b.username ? 1 : -1);
+    return onlineFriends.sort((a, b) => a.username > b.username ? 1 : -1);
 }
 
 export const selectFriendRequests = (state, status) => {
