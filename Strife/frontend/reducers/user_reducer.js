@@ -9,7 +9,6 @@ const receiveUsers = (state, users) => {
     if (!users) { return state; }
     let nextState = Object.assign({}, state);
     
-    console.log(Object.entries(users));
     for (let [id, user] of Object.entries(users)) {
         
         nextState[id] = user;
