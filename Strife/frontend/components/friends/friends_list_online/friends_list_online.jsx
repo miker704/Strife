@@ -25,6 +25,9 @@ const FriendShipIndexOnline = ({
     const [selectedFriends, setSelectedFriends] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
     const [popupTop, setPopupTop] = useState(0);
+    const [popupLeft, setPopupLeft] = useState(0);
+    const [popupRight, setPopupRight] = useState(0);
+    const [popupBottom, setPopupBottom] = useState(0);
 
 
 
@@ -33,6 +36,7 @@ const FriendShipIndexOnline = ({
     let allFriends = friends;
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
     const dmMembersArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
+    let mousePos = {};
 
    
 
@@ -54,7 +58,20 @@ const FriendShipIndexOnline = ({
 
 
     const handlePopupShow = (e) => {
+
+       
         setPopupTop(e.currentTarget.getBoundingClientRect().top);
+        setPopupLeft(e.currentTarget.getBoundingClientRect().left)
+
+        setPopupRight(e.currentTarget.getBoundingClientRect().right)
+        setPopupBottom(e.currentTarget.getBoundingClientRect().bottom)
+
+        console.log("popUpTop: ",popupTop);
+        console.log("popUpBottom: ",popupBottom);
+        console.log("popUpLeft: ",popupLeft);
+        console.log("popUpRight: ",popupRight);
+
+
         setShowPopup(!showPopup);
     }
 
@@ -98,13 +115,13 @@ const FriendShipIndexOnline = ({
         });
         return;
     }
-
+    // left={popupTop-mousePos.y}
     let friendOptions = (friend) => {
         console.log("in opening friend options modal");
         return (
             <div className="modal-struct">
                 {/* { showPopup && <EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setPopupTop={setShowPopup}/>} */}
-                <EditFriendshipModal user={currentUser} friend={friend} top={popupTop} setPopupTop={setShowPopup}/>
+                <EditFriendshipModal user={currentUser} friend={friend} top={popupTop} left={popupLeft} bottom={popupBottom} right={popupRight}  setPopupTop={setShowPopup}/>
             </div>
         )
     }
@@ -191,7 +208,7 @@ const FriendShipIndexOnline = ({
                                     return (
                                         
                                         <li id="fii" className="friend-index-item" key={friend.id}>
-                                             { showPopup && <EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setShowPopup={setShowPopup}/>}
+                                             { showPopup && <EditFriendshipModalContainer user={currentUser} left={popupLeft} bottom={popupBottom} right={popupRight} friend={friend} top={popupTop} setShowPopup={setShowPopup}/>}
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
                                                     <div className="friend-info">
@@ -252,7 +269,7 @@ const FriendShipIndexOnline = ({
                                 
                                 else {
                                     // document.getElementById('num-of-friends').innerHTML = `ONLINE - ${0}`;
-                                        document.getElementById()
+                                        // document.getElementById('fii').
                                     // return (
                                     //     <div className="friend-index-container" key={friend.id}>
 
