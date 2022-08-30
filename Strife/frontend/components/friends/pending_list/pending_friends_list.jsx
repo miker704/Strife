@@ -36,7 +36,7 @@ class PendingFriendList extends React.Component {
         if (count === allFriendShips.length) {
             document.getElementById('ul-fiiw').classList.add('is-hidden')
             document.getElementById('no-match').classList.remove('is-hidden')
-            numberOfFriends.innerHTML = `BLOCKED USERS - ${0}`;
+            numberOfFriends.innerHTML = `PENDING FRIEND REQUESTS - ${0}`;
 
         }
         else {
