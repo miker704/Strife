@@ -98,5 +98,5 @@ dispatch(receiveAllBlockedUsers(friendship))
 
 
 export const requestAllFriendships = () => (dispatch) =>
-    FRIENDSHIP_API_UTIL.requestAllFriendships().then((friendship)) =>
+    FRIENDSHIP_API_UTIL.requestAllFriendships().then((friendship) =>
 dispatch(receiveAllFriends(friendship))
