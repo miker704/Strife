@@ -47,6 +47,9 @@ const friendshipReducer = (state = {}, action) => {
 export default friendshipReducer;
 
 
+
+//THUNK ASYC FUNCTION
+
 export async function grabLiveUsers (dispatch, getState) {
 
     const response = await fetch('api/friendships').then((res) => res.json());
