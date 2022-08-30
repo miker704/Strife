@@ -1,6 +1,6 @@
 import { LOGOUT_CURRENT_USER, RECEIVE_CURRENT_USER, REMOVE_CURRENT_USER, RECEIVE_USER, RECEIVE_USERS } from "../actions/session_actions.js";
 
-import { RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP } from '../actions/friendship_actions.js';
+import { RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP, RECEIVE_ALL_BLOCKED_USERS } from '../actions/friendship_actions.js';
 
 
 //this reducer is an attempt to use async actions to fetch changes to online friends live 
@@ -13,7 +13,7 @@ const friendshipReducer = (state = {}, action) => {
 
     switch (action.type) {
 
-        
+
 
 
         case 'RECEIVE_ONLINE_FRIENDS':
