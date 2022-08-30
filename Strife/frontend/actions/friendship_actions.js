@@ -89,7 +89,7 @@ export const requestAllOnlineFriends = () => (dispatch) =>
 
 export const requestFriendRequests = () => (dispatch) =>
     FRIENDSHIP_API_UTIL.requestFriendRequests().then((friendships) =>
-        dispatch(receiveFriendRequests(friendship)), err => dispatch(receiveFriendshipErrors(err.responseJSON)));
+        dispatch(receiveFriendRequests(friendships)), err => dispatch(receiveFriendshipErrors(err.responseJSON)));
 
 
 export const requestBlockedUsers = () => (dispatch) =>
