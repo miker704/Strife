@@ -8,10 +8,13 @@ import { RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP } from '../actions/friendship_act
 const receiveUsers = (state, users) => {
     if (!users) { return state; }
     let nextState = Object.assign({}, state);
+    
+    console.log("user object");
     for (let [id, user] of Object.entries(users)) {
+        
         nextState[id] = user;
         console.log("id",`${id}` );
-        console.log("user",user );
+        console.log("user: ",user );
 
     }
     return nextState;
