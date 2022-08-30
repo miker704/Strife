@@ -29,6 +29,8 @@ const friendshipReducer = (state = {}, action) => {
             return action.friendship;
 
         case RECEIVE_ALL_FRIENDS:
+            return action.friendship
+            
         case RECEIVE_ALL_FRIEND_REQUESTS:
 
 
