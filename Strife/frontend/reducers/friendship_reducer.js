@@ -73,8 +73,8 @@ const friendshipReducer = (state = {}, action) => {
             // return selectOnlineFriends(state, action.friendships);
         // return action.friendships;
 
-        case RECEIVE_ALL_BLOCKED_USERS:
-            return action.friendships;
+        // case RECEIVE_ALL_BLOCKED_USERS:
+        //     return action.friendships;
 
         case RECEIVE_ALL_FRIENDS:
             return action.friendships;
