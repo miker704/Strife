@@ -90,7 +90,6 @@ class PendingFriendList extends React.Component {
                             <input id="input-all-friends" className="input-all-friends" type="search" placeholder="Search"
                                 onInput={() => this.liveSearch()}
                                 onChange={e => {
-                                    this.setState({ noResultsFound: false })
                                     this.setState({ searchText: e.currentTarget.value })
                                 }
                                 }
