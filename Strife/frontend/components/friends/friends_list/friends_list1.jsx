@@ -17,16 +17,16 @@ const FriendShipIndex1 = (props) => {
         props.requestFriendships();
 
 
-        return function cleanup(){
-            if(props.errors.length > 0){
+        return function cleanup () {
+            if (props.errors.length > 0) {
                 props.removeFriendshipErrors();
             }
-            if(props.dmServerErrors.length > 0){
+            if (props.dmServerErrors.length > 0) {
                 props.removeDmServerErrors();
             }
         }
 
-    },[])
+    }, [])
 
 
     const handleDm = (friend) => {
