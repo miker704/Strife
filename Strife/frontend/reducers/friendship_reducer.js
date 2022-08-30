@@ -23,7 +23,7 @@ const friendshipReducer = (state = {}, action) => {
 
 
         case RECEIVE_ALL_BLOCKED_USERS:
-        case RECEIVE_ALL_BLOCKED_USERS:
+        case RECEIVE_ALL_FRIENDS:
         case RECEIVE_ALL_BLOCKED_USERS:
         case RECEIVE_ALL_BLOCKED_USERS:
         case RECEIVE_ALL_BLOCKED_USERS:
