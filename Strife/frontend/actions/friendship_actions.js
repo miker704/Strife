@@ -60,6 +60,9 @@ export const removeFriendshipErrors = () => {
         type: REMOVE_FRIENDSHIP_ERRORS
     }
 }
+
+
+
 export const requestFriendships = () => (dispatch) =>
     FRIENDSHIP_API_UTIL.requestFriendships().then((users) => dispatch(receiveUsers(users)), err => dispatch(receiveFriendshipErrors(err.responseJSON)));
 
