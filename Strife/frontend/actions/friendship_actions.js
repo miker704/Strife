@@ -93,4 +93,4 @@ export const requestFriendRequests = () => (dispatch) =>
 
 
 export const requestBlockedUsers = () => (dispatch) =>
-export const requestAllFriendships = () => 
+export const requestAllFriendships = () => (dispatch) =>
