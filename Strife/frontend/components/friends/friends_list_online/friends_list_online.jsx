@@ -103,7 +103,7 @@ const FriendShipIndexOnline = ({
         return (
             <div className="modal-struct">
                 {/* { showPopup && <EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setPopupTop={setShowPopup}/>} */}
-                <EditFriendshipModal user={currentUser} friend={friend} top={popupTop} left={popupLeft} bottom={popupBottom} right={popupRight}  setPopupTop={setShowPopup}/>
+                <EditFriendshipModal user={currentUser} friend={friend} top={popupTop} left={popupLeft}  setPopupTop={setShowPopup}/>
             </div>
         )
     }
