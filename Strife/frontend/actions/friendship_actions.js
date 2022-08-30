@@ -5,6 +5,11 @@ export const RECEIVE_FRIENDSHIP = 'UPDATE_FRIENDSHIP';
 export const REMOVE_FRIENDSHIP = 'REMOVE_FRIENDSHIP';
 export const RECEIVE_FRIENDSHIP_ERRORS = "RECEIVE_FRIENDSHIP_ERRORS";
 export const REMOVE_FRIENDSHIP_ERRORS = "REMOVE_FRIENDSHIP_ERRORS";
+export const RECEIVE_ALL_FRIENDS = "RECEIVE_ALL_FRIENDS";
+
+
+
+
 
 
 export const receiveFriendship = (friendship) => {
