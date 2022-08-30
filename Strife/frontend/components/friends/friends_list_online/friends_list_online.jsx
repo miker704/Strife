@@ -18,6 +18,7 @@ const FriendShipIndexOnline = ({
     openModal,
     history,
     requestAllOnlineFriends,
+    onlineFriends
 
 }) => {
 
