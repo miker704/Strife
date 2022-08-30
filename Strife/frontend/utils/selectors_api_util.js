@@ -57,7 +57,7 @@ export const selectBlockedUsers = (state, status) => {
     const blockedUsers = [];
     for (let blockedUser of Object.values(state.entities.friendships)) {
         if (blockedUser.friend_request_status === status) {
-            blockedUsers.push(user);
+            blockedUsers.push(blockedUser);
         }
     }
   
