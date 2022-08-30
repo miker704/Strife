@@ -84,3 +84,5 @@ export const deleteFriendship = (account_ids) => (dispatch) =>
     FRIENDSHIP_API_UTIL.deleteFriendship(account_ids).then((friendship) => dispatch(removeFriendship(friendship)), err => dispatch(receiveFriendshipErrors(err.responseJSON)));
 
     export const receiveOnlineFriends = () => $.ajax({ url: `/api/friendships/`, method: 'GET' });
+    export const requestFriendRequests = () => $.ajax({ url: `/api/friendships/`, method: 'GET' });
+  
