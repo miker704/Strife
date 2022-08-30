@@ -5,7 +5,6 @@ class PendingFriendList extends React.Component {
         super(props);
         this.state = {
             searchText: "",
-            noResultsFound: false
         }
         this.updateFriendShip = this.updateFriendShip.bind(this);
         this.deleteFriendShip = this.deleteFriendShip.bind(this);
