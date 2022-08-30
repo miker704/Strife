@@ -32,7 +32,9 @@ export const receiveAllBlockedUsers = (friendship) => {
     }
 }
 
-export const receiveAllFriends = () => {{}}
+export const receiveAllFriends = () => {{
+    
+}}
 
 
 export const receiveFriendship = (friendship) => {
