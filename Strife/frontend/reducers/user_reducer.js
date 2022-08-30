@@ -1,6 +1,6 @@
 import { LOGOUT_CURRENT_USER, RECEIVE_CURRENT_USER, REMOVE_CURRENT_USER, RECEIVE_USER, RECEIVE_USERS } from "../actions/session_actions.js";
 import { RECEIVE_DM_MEMBER } from "../actions/dm_member_actions.js";
-import { RECEIVE_DM_SERVERS } from '../actions/dm_server_actions.js';
+import { RECEIVE_DM_SERVER } from '../actions/dm_server_actions.js';
 import { RECEIVE_SERVER } from '../actions/server_actions.js';
 import { RECEIVE_SERVER_MEMBERSHIP } from '../actions/server_membership_actions.js';
 import { RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP } from '../actions/friendship_actions.js';
@@ -48,7 +48,7 @@ const userReducer = (state = {}, action) => {
             return action.servermembership.users;
         case RECEIVE_DM_MEMBER:
             return Object.assign({}, state, { [action.dm_member.user.id]: action.dm_member.user });
-        case RECEIVE_DM_SERVERS:
+        case RECEIVE_DM_SERVER:
             return action.dmservers.users;
 
         case REMOVE_FRIENDSHIP:
