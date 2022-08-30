@@ -45,7 +45,7 @@ const selectOnlineFriends = (state, friendships) => {
     let nextState = Object.assign({}, state);
 
     for (let [id, friendship] of Object.entries(friendships)) {
-      
+
         if (friendship.online === true && friendship.friend_request_status === 3) {
 
             nextState[id] = friendship;
@@ -70,14 +70,14 @@ const friendshipReducer = (state = {}, action) => {
     switch (action.type) {
 
         // case RECEIVE_ALL_ONLINE_FRIENDS:
-            // return selectOnlineFriends(state, action.friendships);
+        // return selectOnlineFriends(state, action.friendships);
         // return action.friendships;
 
         // case RECEIVE_ALL_BLOCKED_USERS:
         //     return action.friendships;
 
         case RECEIVE_ALL_FRIENDS:
-            return receiveFriends(state,action.friendships);
+            return receiveFriends(state, action.friendships);
 
         // case RECEIVE_ALL_FRIEND_REQUESTS:
         //     return action.friendships;
