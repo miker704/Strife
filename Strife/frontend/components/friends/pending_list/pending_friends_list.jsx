@@ -34,7 +34,14 @@ class PendingFriendList extends React.Component {
         }
 
         if (count === allFriendShips.length) {
-            this.setState({ noResultsFound: true });
+            document.getElementById('ul-fiiw').classList.add('is-hidden')
+            document.getElementById('no-match').classList.remove('is-hidden')
+            numberOfFriends.innerHTML = `BLOCKED USERS - ${0}`;
+
+        }
+        else {
+            document.getElementById('no-match').classList.add('is-hidden')
+            document.getElementById('ul-fiiw').classList.remove('is-hidden')
         }
 
     }
