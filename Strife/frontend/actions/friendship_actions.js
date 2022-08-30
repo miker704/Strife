@@ -32,7 +32,7 @@ export const receiveAllBlockedUsers = (friendships) => {
     }
 }
 
-export const receiveAllFriends = (friendships) => {
+export const receiveAllFriends = () => {
     return {
         type: RECEIVE_ALL_FRIENDS,
         friendships
@@ -70,10 +70,7 @@ export const removeFriendshipErrors = () => {
 
 
 export const requestFriendships = () => (dispatch) =>
-    FRIENDSHIP_API_UTIL.requestFriendships().then((friendships) => dispatch(
-        // receiveUsers(users)),
-        receiveAllFriends(friendships)),
-         err => dispatch(receiveFriendshipErrors(err.responseJSON)));
+    FRIENDSHIP_API_UTIL.requestFriendships().then((users) => dispatch(receiveUsers(users)), err => dispatch(receiveFriendshipErrors(err.responseJSON)));
 
 
 export const createFriendship = (account_ids) => (dispatch) =>
