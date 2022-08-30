@@ -29,7 +29,7 @@ export const selectFriends = (state, status) => {
             allFriends.push(user);
         }
     }
-    return friends.sort((a, b) => a.username > b.username ? 1 : -1);
+    return allFriends.sort((a, b) => a.username > b.username ? 1 : -1);
 }
 
 export const selectOnlineFriends = (state, status) => {
