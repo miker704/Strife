@@ -11,7 +11,7 @@ const receiveUsers = (state, users) => {
     for (let [id, user] of Object.entries(users)) {
         nextState[id] = user;
         console.log("id,user",`${id}` );
-        console.log("id,user",`${id}` );
+        console.log("user",`${id}` );
 
     }
     return nextState;
