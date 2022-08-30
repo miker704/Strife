@@ -25,6 +25,7 @@ const mDTP = (dispatch) => {
         removeDmServerErrors: () => dispatch(removeDmServerErrors()),
         createDmServer: (dmserver) => dispatch(createDmServer(dmserver)),
         openModal: (modal) => dispatch(openModal(modal)),
+        requestAllOnlineFriends:
     }
 };
 
