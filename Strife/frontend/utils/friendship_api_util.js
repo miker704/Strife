@@ -17,3 +17,5 @@ $.ajax({
     data: {friendship: account_ids}
 });
 
+export const receiveOnlineFriends = () => $.ajax({ url: `/api/friendships/`, method: 'GET' });
+
