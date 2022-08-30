@@ -32,7 +32,7 @@ const FriendShipIndexOnline = ({
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
     const dmMembersArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
 
-   
+   console.log("online friends: ", onlineFriends)
 
     useEffect(() => {
         requestFriendships();
