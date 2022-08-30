@@ -8,9 +8,9 @@ import { RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP } from '../actions/friendship_act
 const receiveUsers = (state, users) => {
     if (!users) { return state; }
     let nextState = Object.assign({}, state);
-    
+
     for (let [id, user] of Object.entries(users)) {
-        
+
         nextState[id] = user;
 
     }
