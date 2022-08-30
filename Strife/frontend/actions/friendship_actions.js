@@ -85,11 +85,7 @@ export const deleteFriendship = (account_ids) => (dispatch) =>
 
 export const requestAllOnlineFriends = () => (dispatch) => 
 FRIENDSHIP_API_UTIL.requestAllOnlineFriends().then((onlineFriends) => 
-dispatch(receiveAllOnlineFriends(onlineFriends)), err => dispatch(receiveFriendshipErrors(err.responseJSON))
-
-
-console.log("onlinefriends: ",onlineFriends))
-
+dispatch(receiveAllOnlineFriends(onlineFriends)), err => dispatch(receiveFriendshipErrors(err.responseJSON)));
 
 
 
