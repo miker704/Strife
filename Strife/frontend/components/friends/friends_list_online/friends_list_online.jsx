@@ -37,7 +37,6 @@ const FriendShipIndexOnline = ({
 
     useEffect(() => {
         requestFriendships();
-        requestAllOnlineFriends();
 
         return function cleanup () {
             if (errors.length > 0) {
