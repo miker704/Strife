@@ -28,7 +28,7 @@ export const receiveFriendRequests = (friendship) => {
 export const receiveAllBlockedUsers = (friendships) => {
     return {
         type: RECEIVE_ALL_BLOCKED_USERS,
-        friendship
+        friendships
     }
 }
 
