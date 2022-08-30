@@ -47,7 +47,7 @@ export const selectFriendRequests = (state, status) => {
     const friendRequests = [];
     for (let friend of Object.values(state.entities.friendships)) {
         if (friend.friend_request_status === status) {
-            friends.push(friend);
+            friendRequests.push(friend);
         }
     }
     return friendRequests.sort((a, b) => a.username > b.username ? 1 : -1);
