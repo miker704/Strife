@@ -6,7 +6,6 @@ class BlockedList extends React.Component {
         super(props);
         this.state = {
             searchText: "",
-            noResultsFound: false
         }
         this.liveSearch = this.liveSearch.bind(this);
         this.removeBlockedPerson = this.removeBlockedPerson.bind(this);
