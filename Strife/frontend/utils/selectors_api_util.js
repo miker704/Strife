@@ -50,7 +50,7 @@ export const selectFriendRequests = (state, status) => {
             friends.push(user);
         }
     }
-    return friends.sort((a, b) => a.username > b.username ? 1 : -1);
+    return friendRequests.sort((a, b) => a.username > b.username ? 1 : -1);
 }
 
 export const selectBlockedUsers = (state, status) => {
