@@ -34,7 +34,7 @@ export const receiveAllBlockedUsers = (friendship) => {
 
 export const receiveAllFriends = () => {
     return {
-        type: RECEIVE_ALL_FRIENDS
+        type: RECEIVE_ALL_FRIENDS,
     }
 }
 
