@@ -70,7 +70,7 @@ export const removeFriendshipErrors = () => {
 
 
 export const requestFriendships = () => (dispatch) =>
-    FRIENDSHIP_API_UTIL.requestFriendships().then((users) => dispatch(
+    FRIENDSHIP_API_UTIL.requestFriendships().then((friendships) => dispatch(
         // receiveUsers(users)),
         receiveAllFriends(friendships)),
          err => dispatch(receiveFriendshipErrors(err.responseJSON)));
