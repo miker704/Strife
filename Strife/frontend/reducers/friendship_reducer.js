@@ -48,8 +48,8 @@ const friendshipReducer = (state = {}, action) => {
     switch (action.type) {
 
         case RECEIVE_ALL_ONLINE_FRIENDS:
-            let onlineFriends = receiveFriends(state,action.friendships);
-
+            let friends = receiveFriends(state,action.friendships);
+            onlineFriends = selectOnlineFriends(state)
             return action.friendships;
 
         case RECEIVE_ALL_BLOCKED_USERS:
