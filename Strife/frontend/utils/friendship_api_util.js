@@ -17,4 +17,3 @@ $.ajax({
     data: {friendship: account_ids}
 });
 
-//i am pausing dev on friendships rn as its not as important right now
