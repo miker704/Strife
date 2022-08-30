@@ -38,6 +38,10 @@ const receiveFriends = (state, friendships) => {
 
     for (let [id, friendship] of Object.entries(friendships)) {
         console.log("friendship : {} ", friendship);
+        console.log("friendship.online ?  : {} ", friendship.online);
+        console.log("friendship.friend_request_status ?  : {} ", friendship.friend_request_status);
+
+
         nextState[id] = friendship;
 
     }
