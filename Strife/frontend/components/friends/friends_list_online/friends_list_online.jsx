@@ -63,13 +63,7 @@ const FriendShipIndexOnline = ({
         setPopupTop(e.currentTarget.getBoundingClientRect().top);
         setPopupLeft(e.currentTarget.getBoundingClientRect().left)
 
-        setPopupRight(e.currentTarget.getBoundingClientRect().right)
-        setPopupBottom(e.currentTarget.getBoundingClientRect().bottom)
 
-        console.log("popUpTop: ",popupTop);
-        console.log("popUpBottom: ",popupBottom);
-        console.log("popUpLeft: ",popupLeft);
-        console.log("popUpRight: ",popupRight);
 
 
         setShowPopup(!showPopup);
