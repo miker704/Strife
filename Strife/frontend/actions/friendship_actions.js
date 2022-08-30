@@ -92,5 +92,5 @@ export const requestFriendRequests = () => (dispatch) =>
         dispatch(receiveFriendRequests(friendship)), err => dispatch(receiveFriendshipErrors(err.responseJSON)));
 
 
-export const requestBlockedUsers = () => 
+export const requestBlockedUsers = () => (dispatch) =>
 export const requestAllFriendships = () => 
