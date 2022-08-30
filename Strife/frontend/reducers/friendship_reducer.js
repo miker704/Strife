@@ -22,12 +22,13 @@ const friendshipReducer = (state = {}, action) => {
 
     switch (action.type) {
 
+        case RECEIVE_ALL_ONLINE_FRIENDS:
+            return action.friendship
 
         case RECEIVE_ALL_BLOCKED_USERS:
 
         case RECEIVE_ALL_FRIENDS:
         case RECEIVE_ALL_FRIEND_REQUESTS:
-        case RECEIVE_ALL_ONLINE_FRIENDS:
 
 
 
