@@ -32,7 +32,7 @@ export const selectAllFriends = (state, status) => {
     return allFriends.sort((a, b) => a.username > b.username ? 1 : -1);
 }
 
-export const selectOnlineFriends = (state, status) => {
+export const selectOnlineFriends = (state) => {
     const onlineFriends = [];
     for (let friend of Object.values(state.entities.friendships)) {
         if (friend.friend_request_status === 3 && friend.online === true) {
