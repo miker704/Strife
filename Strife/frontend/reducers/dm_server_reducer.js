@@ -12,7 +12,9 @@ const dmServerReducer = (state = {}, action) => {
             nextState[action.dmserver.id] = action.dmserver
             return nextState;
         case RECEIVE_DM_SERVERS:
-            return action.dmservers.dm_servers;
+            // return action.dmservers.dm_servers;
+            return action.dmservers;
+
         case REMOVE_DM_SERVER:
             delete nextState[action.dmserverId]
             return nextState
