@@ -235,6 +235,7 @@ const FriendShipIndex1 = (props) => {
 
 
 
+export default FriendShipIndex1;
 
 
 
@@ -580,4 +581,4 @@ const FriendShipIndex1 = (props) => {
 //     }
 // }
 
-export default FriendShipIndex1;
+// export default FriendShipIndex1;
