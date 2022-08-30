@@ -11,6 +11,29 @@ import {
 } from '../actions/friendship_actions.js';
 
 
+
+
+
+
+const receiveUsers = (state, users) => {
+    if (!users) { return state; }
+    let nextState = Object.assign({}, state);
+
+    for (let [id, user] of Object.entries(users)) {
+
+        nextState[id] = user;
+
+    }
+    return nextState;
+}
+
+
+
+
+
+
+
+
 //this reducer is an attempt to use async actions to fetch changes to online friends live 
 // custom Thunk Function
 
