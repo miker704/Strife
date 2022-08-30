@@ -21,7 +21,7 @@ export const receiveAllOnlineFriends = (friendship) => {
 export const receiveFriendRequests = (friendship) => {
     return {
         type: RECEIVE_ALL_FRIEND_REQUESTS,
-        friendship
+        friendships
     }
 }
 
