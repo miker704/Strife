@@ -25,6 +25,12 @@ export const receiveFriendRequests = (friendship) => {
     }
 }
 
+export const receiveAllBlockedUsers = () => {
+
+}
+
+
+
 export const receiveFriendship = (friendship) => {
     return {
         type: RECEIVE_FRIENDSHIP,
