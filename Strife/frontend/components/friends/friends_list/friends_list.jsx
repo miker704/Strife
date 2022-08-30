@@ -119,7 +119,7 @@ class FriendShipIndex extends React.Component {
                     </div>
 
 
-                    <div id="no-match" className="empty-state-container">
+                    <div id="no-match"  className="empty-state-container is-hidden">
                         <div className="blocked-users-empty">
                             <div className="blocked-users-flex">
                                 <img className="no-friends-online-icon" alt="img" />
