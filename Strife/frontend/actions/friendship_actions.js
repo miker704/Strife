@@ -18,6 +18,7 @@ export const receiveOnlineFriends = (friendship) => {
     }
 }
 
+export const receiveFriendRequests = (friendship) => {}
 
 export const receiveFriendship = (friendship) => {
     return {
