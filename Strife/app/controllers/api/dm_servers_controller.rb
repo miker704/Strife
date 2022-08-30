@@ -3,9 +3,14 @@ class Api::DmServersController < ApplicationController
 
     def index
         # the user has to be signed in in order to see their own dm servers as these are unique to them 
-        @current_user = current_user
+        @dm_servers = DmServer.all
+        puts @dm_servers
+        
+        @current_user = userId ? current_user : false
         # return the dm pairs of thje user 'private chats'
-        @dm_servers = @current_user.dm_servers.includes(:members)
+        @dm_servers = @current_user.dm_servers.includes(:members) if(@current_user)
+        puts @dm_servers
+        
         render :index
     end
     
@@ -85,6 +90,10 @@ class Api::DmServersController < ApplicationController
     private
     def dm_server_params
         return params.require(:dm_server).permit(:owner_id,:dm_server_name, dm_member_ids:[])
+    end
+
+    def userId
+        return params[:user]
     end
 
 end
