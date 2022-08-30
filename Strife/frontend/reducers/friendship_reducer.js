@@ -37,7 +37,7 @@ const receiveFriends = (state, friendships) => {
     let nextState = Object.assign({}, state);
 
     for (let [id, friendship] of Object.entries(friendships)) {
-        
+        console.log("friendship : {} ", friendship);
         nextState[id] = friendship;
 
     }
@@ -60,7 +60,8 @@ const friendshipReducer = (state = {}, action) => {
         case RECEIVE_ALL_ONLINE_FRIENDS:
             // let friends = receiveFriends(state,action.friendships);
             // let onlineFriends = selectOnlineFriends(state)
-            return action.friendships;
+            return selectOnlineFriends(state, action.friendships);
+            // return action.friendships;
 
         case RECEIVE_ALL_BLOCKED_USERS:
             return action.friendships;
