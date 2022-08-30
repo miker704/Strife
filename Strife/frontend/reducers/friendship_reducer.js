@@ -13,6 +13,8 @@ const friendshipReducer = (state = {}, action) => {
 
     switch (action.type) {
 
+        
+
 
         case 'RECEIVE_ONLINE_FRIENDS':
             return Object.assign({}, state, action.payload);
