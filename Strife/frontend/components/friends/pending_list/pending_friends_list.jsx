@@ -82,7 +82,9 @@ class PendingFriendList extends React.Component {
         let incoming_requests = this.props.incoming;
         let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
 
-      
+        if (this.state.noResultsFound) {
+            return (
+                <div className="friend-index-container">
                     <div className="all-search-bar">
                         <div className="all-search-bar-inner">
                             <input id="input-all-friends" className="input-all-friends" type="search" placeholder="Search"
@@ -162,6 +164,15 @@ class PendingFriendList extends React.Component {
                     <div id="num-of-friends" className="all-friends">
                         {`PENDING FRIEND REQUESTS - ${outgoing_requests.length + incoming_requests.length}`}
                     </div>
+                    <div id="no-match" className="empty-state-container is-hidden">
+                        <div className="blocked-users-empty">
+                            <div className="blocked-users-flex">
+                                <img className="no-friends-online-icon" alt="img" />
+                                <div className="block-wumpus-text">Wumpus looked, but couldn't find anyone with that name.</div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="friend-index">
                         <div className="friend-index-item-wrapper">
 
