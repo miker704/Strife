@@ -35,7 +35,6 @@ const userReducer = (state = {}, action) => {
 
         case RECEIVE_USERS:
             // return receiveUsers(state, action.users);
-            newState = Object.assign({}, state, action.users);
 
         case RECEIVE_FRIENDSHIP:
             newState = Object.assign({}, state);
