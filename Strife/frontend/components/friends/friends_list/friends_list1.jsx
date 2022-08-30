@@ -34,7 +34,7 @@ const FriendShipIndex1 = (props) => {
 
     }
 
-    gatherMatches = () => {
+    const gatherMatches = () => {
         console.log("inside gather search")
         let searchArray = props.friends;
         let filteredSearchArray = searchArray.filter((friend) => {
