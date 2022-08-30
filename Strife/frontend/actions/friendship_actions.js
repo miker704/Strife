@@ -89,6 +89,6 @@ export const requestAllOnlineFriends = () => (dispatch) =>
 
 export const requestFriendRequests = () => (dispatch) =>
     FRIENDSHIP_API_UTIL.requestFriendRequests().then((friendship) => 
-    dispatch())
+    dispatch(receiveFriendRequests(friendship)), err => dispatch)
 export const requestBlockedUsers = () => $.ajax({ url: `/api/friendships/`, method: 'GET' });
 export const requestAllFriendships = () => $.ajax({ url: `/api/friendships/`, method: 'GET' });
