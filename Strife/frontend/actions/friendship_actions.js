@@ -93,4 +93,4 @@ export const requestFriendRequests = () => (dispatch) =>
 
 
 export const requestBlockedUsers = () => 
-export const requestAllFriendships = () => $.ajax({ url: `/api/friendships/`, method: 'GET' });
+export const requestAllFriendships = () => 
