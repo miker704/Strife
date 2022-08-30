@@ -43,8 +43,7 @@ class FriendShipIndex extends React.Component {
             }
         }
 
-        if (count === allFriendShips.length) {
-        }
+       
 
     }
 
