@@ -34,6 +34,7 @@ const userReducer = (state = {}, action) => {
             return Object.assign({}, state, { [action.user.id]: action.user });
 
         case RECEIVE_USERS:
+            
             return receiveUsers(state, action.users);
 
         case RECEIVE_FRIENDSHIP:
