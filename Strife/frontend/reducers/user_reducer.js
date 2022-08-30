@@ -10,7 +10,7 @@ const receiveUsers = (state, users) => {
     let nextState = Object.assign({}, state);
     for (let [id, user] of Object.entries(users)) {
         nextState[id] = user;
-      
+
 
     }
     return nextState;
@@ -34,7 +34,10 @@ const userReducer = (state = {}, action) => {
             return Object.assign({}, state, { [action.user.id]: action.user });
 
         case RECEIVE_USERS:
-            return receiveUsers(state, action.users);
+            // console.log("users before receive users : ", action.users);
+            // return receiveUsers(state, action.users);
+            newState = Object.assign({}, state, action.users);
+            // return action.users;;
 
         case RECEIVE_FRIENDSHIP:
             newState = Object.assign({}, state);
