@@ -32,7 +32,7 @@ export const receiveAllBlockedUsers = (friendship) => {
     }
 }
 
-export const receiveAllFriends = (friendships) => {
+export const receiveAllFriends = (friendship) => {
     return {
 
     }
