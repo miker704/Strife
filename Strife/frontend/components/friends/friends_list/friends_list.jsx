@@ -76,7 +76,16 @@ class FriendShipIndex extends React.Component {
 
                     <div className="all-search-bar">
                         <div className="all-search-bar-inner">
-                            <input id="input-all-friends" className="input-all-friends" type="search" placeholder="Search" onInput={() => this.liveSearch()} onChange={e => this.setState({ searchText: e.currentTarget.value })} value={this.state.searchText} />
+                            <input 
+                            id="input-all-friends" 
+                            className="input-all-friends" 
+                            type="search"
+                             placeholder="Search" 
+                             onInput={() => this.liveSearch()} 
+                             onChange={e => this.setState({ searchText: e.currentTarget.value })} 
+                             value={this.state.searchText} 
+                             />
+                             
                             <div className="magnify-icon-wrapper">
                                 <div className="magnify-icon">
                                     <svg className="mag-icon1" aria-label="Search" aria-hidden="false" role="img" width="24" height="24" viewBox="0 0 24 24">
