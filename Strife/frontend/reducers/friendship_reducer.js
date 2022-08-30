@@ -81,8 +81,8 @@ const friendshipReducer = (state = {}, action) => {
         case RECEIVE_ALL_FRIENDS:
             return action.friendships;
 
-        case RECEIVE_ALL_FRIEND_REQUESTS:
-            return action.friendships;
+        // case RECEIVE_ALL_FRIEND_REQUESTS:
+        //     return action.friendships;
 
         // case 'RECEIVE_ONLINE_FRIENDS':
         //     return Object.assign({}, state, action.payload);
