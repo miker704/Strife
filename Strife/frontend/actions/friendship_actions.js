@@ -11,7 +11,9 @@ export const RECEIVE_ALL_BLOCKED_USERS = "RECEIVE_ALL_BLOCKED_USERS";
 export const RECEIVE_ALL_ONLINE_FRIENDS = "RECEIVE_ALL_ONLINE_FRIENDS";
 
 
-
+export const receiveOnlineFriends = (friendship) => {
+    
+}
 
 
 export const receiveFriendship = (friendship) => {
