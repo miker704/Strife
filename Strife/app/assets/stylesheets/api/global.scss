@@ -379,7 +379,7 @@ label.field-error {
 
 
 [role=tooltip],
-.hidetooltip.hidetooltip.hidetooltip + [role=tooltip] {
+.hidetooltip.hidetooltip.hidetooltip+[role=tooltip] {
   visibility: hidden;
   position: absolute;
   top: 2rem;
@@ -387,13 +387,15 @@ label.field-error {
   background: black;
   color: white;
 }
+
 [aria-describedby]:hover,
 [aria-describedby]:focus {
   position: relative;
 }
-[aria-describedby]:hover + [role=tooltip],
-[aria-describedby]:focus + [role=tooltip] {
- visibility: visible;
+
+[aria-describedby]:hover+[role=tooltip],
+[aria-describedby]:focus+[role=tooltip] {
+  visibility: visible;
 }
 
 
@@ -403,4 +405,47 @@ label.field-error {
   margin-left: 8px;
   display: flex;
   outline: 0;
+
+
+
+  .friend-msg-button {
+    forced-color-adjust: none;
+    margin-left: 0;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: hsl(216, 3.7%, 73.5%);
+    background-color: hsl(223, 6.9%, 19.8%);
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    outline: 0;
+
+  }
+
+
+
+
+  .friend-options-button {
+    forced-color-adjust: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: hsl(216, 3.7%, 73.5%);
+    background-color: hsl(223, 6.9%, 19.8%);
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-left: 10px;
+    outline: 0;
+
+
+  }
+
 }
