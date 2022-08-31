@@ -62,7 +62,7 @@ defaultServerChannel = Channel.create!(channel_name: "not_general" , server_id: 
 
 
 spencer = User.create(
-    email: "Iascone@.com",
+    email: "Iascone@aa.com",
     username: "Iascone",
     password: "great TA",
     birthday: Date.new(1990,03,10),
