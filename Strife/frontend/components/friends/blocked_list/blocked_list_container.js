@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { selectFriendStatus } from '../../../utils/selectors_api_util';
+import { selectFriendStatus, selectAllFriends } from '../../../utils/selectors_api_util';
 import { requestFriendships, deleteFriendship, removeFriendshipErrors } from '../../../actions/friendship_actions';
 import BlockedList from './blocked_list';
 
