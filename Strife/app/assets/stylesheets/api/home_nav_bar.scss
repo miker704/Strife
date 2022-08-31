@@ -271,8 +271,11 @@
 }
 
 
-.online-tab:hover, .all-tab:hover, .pending-tab:hover, .blocked-tab:hover{
-    
+.online-tab:hover,
+.all-tab:hover,
+.pending-tab:hover,
+.blocked-tab:hover {
+    color: hsl(210, 2.9%, 86.7%);
 }
 
 
@@ -398,35 +401,35 @@
     z-index: 10;
 }
 
-.help-tool-bar .home-bar-tool-tip{
+.help-tool-bar .home-bar-tool-tip {
     transform: translate(-25px, 2px);
 
 }
 
-.help-tool-bar .home-bar-tool-tip-triangle{
+.help-tool-bar .home-bar-tool-tip-triangle {
     transform: translate(-1px, -5px);
     rotate: 60deg;
 
 }
 
 
-.invite-tool-bar-group-dm  .home-bar-tool-tip{
+.invite-tool-bar-group-dm .home-bar-tool-tip {
     width: 94px;
     transform: translate(-44px, 3px);
 }
 
-.invite-tool-bar-group-dm  .home-bar-tool-tip-triangle{
+.invite-tool-bar-group-dm .home-bar-tool-tip-triangle {
     transform: translate(2px, -6px);
     rotate: 56deg;
 
 }
 
-.inbox-tool-bar .home-bar-tool-tip{
+.inbox-tool-bar .home-bar-tool-tip {
     // width: 94px;
     transform: translate(-15px, 3px);
 }
 
-.inbox-tool-bar .home-bar-tool-tip-triangle{
+.inbox-tool-bar .home-bar-tool-tip-triangle {
     transform: translate(1px, -4px);
     rotate: 56deg;
 }
