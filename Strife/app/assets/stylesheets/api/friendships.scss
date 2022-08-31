@@ -1293,7 +1293,7 @@ $off-grey: #B9BBBE;
     color: #B9BBBE !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
     font-family: "Whitney" !important;
-    
+
 }
 
 
@@ -1306,21 +1306,14 @@ $off-grey: #B9BBBE;
     color: #B9BBBE !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
     font-family: "Whitney" !important;
+    width: fit-content !important;
 }
 
 
-.remove-message-tool-tip{
-    
-}
+.remove-message-tool-tip {}
 
-.cancel-message-tool-tip{
+.cancel-message-tool-tip {}
 
-}
+.accept-message-tool-tip {}
 
-.accept-message-tool-tip{
-
-}
-
-.ignore-message-tool-tip{
-    
-}
+.ignore-message-tool-tip {}
