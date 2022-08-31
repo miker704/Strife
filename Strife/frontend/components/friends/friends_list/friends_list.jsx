@@ -170,7 +170,7 @@ class FriendShipIndex extends React.Component {
                                                         </svg>
                                                         {/* <div className="pending-request-actions-tool-tip">Message</div> */}
                                                         {/* <div className="pending-request-actions-tool-tip-triangle"></div> */}
-                                                    <ReactTooltip className = "message-tool-tip" textColor="#B9BBBE" backgroundColor="#191919" id ="Message" place="top" effect="solid">Message</ReactTooltip>
+                                                        <ReactTooltip className="message-tool-tip" textColor="#B9BBBE" backgroundColor="#191919" id="Message" place="top" effect="solid">Message</ReactTooltip>
 
                                                     </div>
                                                     <div data-tip data-for="More" className="friend-options-button" onClick={() => this.props.openModal("friendOptions")}>
