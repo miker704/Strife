@@ -83,15 +83,20 @@
 .dm-tool-tip {
     visibility: hidden;
     font-size: 10px;
-    width: 50px;
-    height: 30px;
+    // width: 50px;
+    width: 55px;
+    height: 28px;
+
+    // height: 30px;
     position: absolute;
     background-color: rgb(25, 25, 28);
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translate(-20px, -55px);
+    // transform: translate(-20px, -55px);
+    transform: translate(-22px, -51px);
+
     color: rgb(225, 225, 225);
     z-index: 6;
     font-family: "Whitney";
