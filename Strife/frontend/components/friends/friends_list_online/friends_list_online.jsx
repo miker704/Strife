@@ -3,7 +3,7 @@ import React from "react";
 import { useState, useRef, useEffect } from "react";
 import EditFriendshipModalContainer from "../edit_friendship_modal/edit_friendship_container";
 import EditFriendshipModal from "../edit_friendship_modal/edit_friendship";
-
+import ReactTooltip from "react-tooltip";
 
 const FriendShipIndexOnline = ({
     currentUser,
@@ -215,7 +215,7 @@ const FriendShipIndexOnline = ({
                                             </div>
 
                                             <div className="friend-msg-actions">
-                                                <div className="friend-msg-button" onClick={() => handleDm(friend)}>
+                                                <div data-tip data-for = "Message" className="friend-msg-button" onClick={() => handleDm(friend)}>
                                                     <svg className="icon-1WV" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                         <path fill="currentColor" d="M4.79805 3C3.80445 3 2.99805 3.8055 2.99805 
                                                             4.8V15.6C2.99805 16.5936 3.80445 17.4 4.79805 17.4H7.49805V21L11.098 
@@ -223,8 +223,8 @@ const FriendShipIndexOnline = ({
                                                             20.1925 3 19.198 3H4.79805Z">
                                                         </path>
                                                     </svg>
-                                                    <div className="pending-request-actions-tool-tip">Message</div>
-                                                    <div className="pending-request-actions-tool-tip-triangle"></div>
+                                                    {/* <div data-tip data-for="Message" className="pending-request-actions-tool-tip">Message</div> */}
+                                                    {/* <div className="pending-request-actions-tool-tip-triangle"></div> */}
                                                 </div>
                                                 <div className="friend-options-button" onClick={handlePopupShow}>
                                                     <svg className="icon-1WVg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
@@ -271,6 +271,7 @@ const FriendShipIndexOnline = ({
                         }
                     </ul>
                 </div>
+                <ReactTooltip id ="Message" place="top" effect="solid">Message</ReactTooltip>
             </div>
 
 
