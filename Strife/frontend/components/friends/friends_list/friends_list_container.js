@@ -10,7 +10,7 @@ const mSTP = (state) => {
     return {
         currentUser: state.entities.users[state.session.id],
         // friends: selectFriendStatus(state, 3),
-        friends: selectOnlineFriends(state, 3),
+        friends: selectAllFriends(state, 3),
         dmServers: Object.values(state.entities.dmServers),
         errors: state.errors.friendship,
         dmServerErrors: state.errors.dmServer
