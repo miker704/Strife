@@ -271,7 +271,7 @@ const FriendShipIndexOnline = ({
                         }
                     </ul>
                 </div>
-                <ReactTooltip id ="Message" place="top" effect="solid">Message</ReactTooltip>
+                <ReactTooltip className = "message-tool-tip" textColor="#B9BBBE" backgroundColor="#191919" id ="Message" place="top" effect="solid">Message</ReactTooltip>
             </div>
 
 
