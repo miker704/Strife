@@ -8,6 +8,8 @@ const mSTP = (state) => {
     return {
         currentUser: state.entities.users[state.session.id],
         blockedUsers: selectFriendStatus(state, -1),
+        blockedUsers: selectFriendStatus(state, -1),
+
         errors: state.errors.friendship
     }
 };
