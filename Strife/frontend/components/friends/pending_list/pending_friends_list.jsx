@@ -158,7 +158,7 @@ class PendingFriendList extends React.Component {
 
                                                 <div className="pending-request-actions">
 
-                                                    <div className="pending-check-icon">
+                                                    <div className="pending-check-icon green-button">
                                                         <svg onClick={() => this.updateFriendShip(friend)} stroke="currentColor" fill="currentColor"
                                                             viewBox="0 0 512 512" height="1em" width="1em">
                                                             <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998
@@ -172,7 +172,7 @@ class PendingFriendList extends React.Component {
                                                     </div>
 
 
-                                                    <div className="pending-deny-icon">
+                                                    <div className="pending-deny-icon red-button">
                                                         <svg onClick={() => this.deleteFriendShip(friend)} className="icon-1WVC" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                                             <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 
                                                         18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z">
