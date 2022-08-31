@@ -378,18 +378,6 @@ label.field-error {
 
 
 
-
-
-.friend-message-actions {
-  forced-color-adjust: none;
-  margin-left: 8px;
-  display: flex;
-  outline: 0;
-}
-
-
-
-
 [role=tooltip],
 .hidetooltip.hidetooltip.hidetooltip + [role=tooltip] {
   visibility: hidden;
@@ -406,4 +394,13 @@ label.field-error {
 [aria-describedby]:hover + [role=tooltip],
 [aria-describedby]:focus + [role=tooltip] {
  visibility: visible;
+}
+
+
+
+.friend-message-actions {
+  forced-color-adjust: none;
+  margin-left: 8px;
+  display: flex;
+  outline: 0;
 }
