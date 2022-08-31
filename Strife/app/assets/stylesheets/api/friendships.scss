@@ -1189,8 +1189,8 @@ $off-grey: #B9BBBE;
 
 }
 
-.friend-msg-button:hover,
-.friend-options-button:hover {
+.friend-msg-button:hover svg,
+.friend-options-button:hover svg {
     filter: brightness(1.3);
     
 }
