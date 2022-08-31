@@ -171,7 +171,8 @@ $error-red: #ED4245;
     width: 5px;
 }
 
-.create-dm-scroller::-webkit-scrollbar-thumb {
+.create-dm-search-bar-inner-wrapper
+::-webkit-scrollbar-thumb {
     background: rgb(30, 35, 40);
     border-radius: 5px;
     visibility: hidden;
