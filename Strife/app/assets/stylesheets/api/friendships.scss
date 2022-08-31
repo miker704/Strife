@@ -383,7 +383,10 @@ $off-grey: #B9BBBE;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    flex-direction: column;
+
+    // flex-direction: column;
+    flex-direction: row;
+    
     -webkit-box-flex: 1;
     flex: 1 1 auto;
     overflow: hidden;
