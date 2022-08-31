@@ -239,7 +239,7 @@ const FriendShipIndexOnline = ({
                                                         </g>
                                                     </svg>
                                                     {/* <div className="pending-request-actions-tool-tip">More</div> */}
-                                                    <ReactTooltip className = "more-message-tool-tip" textColor="#B9BBBE" backgroundColor="#191919" id ="Message" place="top" effect="solid">More`</ReactTooltip>
+                                                    <ReactTooltip className = "more-message-tool-tip" textColor="#B9BBBE" backgroundColor="#191919" id ="More" place="top" effect="solid">More</ReactTooltip>
 
                                                     {/* <div className="pending-request-actions-tool-tip-triangle"></div> */}
                                                 </div>
