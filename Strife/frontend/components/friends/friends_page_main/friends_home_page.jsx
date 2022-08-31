@@ -262,7 +262,6 @@ class FriendsHomePageContainer extends React.Component {
                         {this.renderPendingList()}
                         {this.renderAddFriend()}
 
-                    </div>
                     <div className="active-now-section-wrapper">
                         <div className="active-now-section">
                             <div className="active-now-section-scroller">
@@ -278,6 +277,7 @@ class FriendsHomePageContainer extends React.Component {
                         </div>
                     </div>
                 </div>
+                    </div>
 
 
             </div>
