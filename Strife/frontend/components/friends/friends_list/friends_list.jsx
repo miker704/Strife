@@ -1,7 +1,6 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
 
-
 class FriendShipIndex extends React.Component {
     constructor (props) {
         super(props);
