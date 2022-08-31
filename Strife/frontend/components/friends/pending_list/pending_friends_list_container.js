@@ -10,7 +10,7 @@ const mSTP = (state) => {
         // outgoing: selectFriendStatus(state, 1),
         // incoming: selectFriendStatus(state, 2),
         outgoing: selectAllFriends(state, 1),
-        incoming: selectFriendStatus(state, 2),
+        incoming: selectAllFriends(state, 2),
         errors: state.errors.friendship
     }
 };
