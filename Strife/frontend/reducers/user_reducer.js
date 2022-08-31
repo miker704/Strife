@@ -38,11 +38,11 @@ const userReducer = (state = {}, action) => {
 
             return receiveUsers(state, action.users);
 
-        case RECEIVE_FRIENDSHIP:
-            newState = Object.assign({}, state);
-            user = newState[action.friendship.friend_id];
-            user.friend_request_status = action.friendship.friend_request_status;
-            return newState;
+        // case RECEIVE_FRIENDSHIP:
+        //     newState = Object.assign({}, state);
+        //     user = newState[action.friendship.friend_id];
+        //     user.friend_request_status = action.friendship.friend_request_status;
+        //     return newState;
         case RECEIVE_SERVER:
             // return action.servers.users;
             return action.server.users
@@ -53,11 +53,11 @@ const userReducer = (state = {}, action) => {
         case RECEIVE_DM_SERVER:
             return action.dmserver.users;
 
-        case REMOVE_FRIENDSHIP:
-            newState = Object.assign({}, state);
-            user = newState[action.friendship.friend_id];
-            user.friend_request_status = 0;
-            return newState;
+        // case REMOVE_FRIENDSHIP:
+        //     newState = Object.assign({}, state);
+        //     user = newState[action.friendship.friend_id];
+        //     user.friend_request_status = 0;
+        //     return newState;
 
         case REMOVE_CURRENT_USER:
             return {};
