@@ -183,7 +183,8 @@ $error-red: #ED4245;
     visibility: visible;
 }
 
-.create-dm-scroller::-webkit-scrollbar-track {
+.create-dm-search-bar-inner-wrapper
+::-webkit-scrollbar-track {
     border-radius: 10px;
     background: rgb(40, 45, 50);
     visibility: hidden;
