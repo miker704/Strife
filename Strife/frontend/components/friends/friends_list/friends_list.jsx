@@ -160,7 +160,7 @@ class FriendShipIndex extends React.Component {
                                                     </div>
                                                 </div>
                                                 <div className="friend-msg-actions">
-                                                    <div className="friend-msg-button">
+                                                    <div data-tip data-for = "Message" className="friend-msg-button">
                                                         <svg className="icon-1WV" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                             <path fill="currentColor" d="M4.79805 3C3.80445 3 2.99805 3.8055 2.99805 
                                                                 4.8V15.6C2.99805 16.5936 3.80445 17.4 4.79805 17.4H7.49805V21L11.098 
