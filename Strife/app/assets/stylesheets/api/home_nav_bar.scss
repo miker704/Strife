@@ -279,8 +279,8 @@
     background-color: hsla(217, 7.6%, 33.5%, 0.4);
 }
 
-.add-friend-tab:hover{
-    background-color: hsl(139,47.1%,33.3%);
+.add-friend-tab:hover {
+    background-color: hsl(139, 47.1%, 33.3%);
     color: #FFFFFF;
 
 }
@@ -300,6 +300,11 @@
     forced-color-adjust: none;
     display: flex;
     box-sizing: border-box;
+}
+
+
+.invite-tool-bar-group-dm:hover svg {
+    color: hsl(210, 2.9%, 86.7%);
 }
 
 .invite-tool-bar-group-dm {
