@@ -21,19 +21,14 @@ const EditFriendshipModal = ({
     closeHookModalOnOutsideClick(popupRef, setShowPopup);
     closeOnEsc(setShowPopup);
 
-    const stylePos = {
-        top: `${top}px`,
-        left: `${left}px`,
-        postion: "absolute",
-    }
+   
 
     return (
         <div className="fo-layer" >
-            {/* <div className="fo-theme" style={{ top: `${top}px` }} ref={popupRef}> */}
-            <div className="fo-theme" style={stylePos} ref={popupRef}>
+            <div className="fo-theme" style={{ top: `${top}px` }} ref={popupRef}>
 
                 <div className="fo-flex-wrapper" >
-                    <div className="fo-scroller" style={{ paddingRight: `${0}px` }}>
+                    <div className="fo-scroller" >
                         <div className="fo-item-container">
                             <div className="fo-item-name">Start Video Call</div>
                         </div>
