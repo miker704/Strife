@@ -96,7 +96,7 @@ const friendshipReducer = (state = {}, action) => {
 
 
         case REMOVE_FRIENDSHIP:
-            newState = Object.assign({}, state);
+            nextState = Object.assign({}, state);
             user = nextState[action.friendship.friend_id];
             user.friend_request_status = 0;
             return newState;
