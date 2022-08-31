@@ -84,13 +84,24 @@ const friendshipReducer = (state = {}, action) => {
 
         // case 'RECEIVE_ONLINE_FRIENDS':
         //     return Object.assign({}, state, action.payload);
+
+
+
+        case RECEIVE_FRIENDSHIP:
+            newState = Object.assign({}, state);
+            user = newState[action.friendship.friend_id];
+            user.friend_request_status = action.friendship.friend_request_status;
+            return newState;
+
+
+
         case REMOVE_FRIENDSHIP:
             newState = Object.assign({}, state);
             user = newState[action.friendship.friend_id];
             user.friend_request_status = 0;
             return newState;
 
-            
+
         default:
             return state;
     }
