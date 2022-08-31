@@ -161,7 +161,41 @@ $error-red: #ED4245;
     padding: 1px;
     box-sizing: border-box;
     display: flex;
+    max-height: 130px;
+    overflow: hidden scroll;
 }
+
+
+
+.create-dm-search-bar-inner-wrapper::-webkit-scrollbar {
+    width: 5px;
+}
+
+.create-dm-scroller::-webkit-scrollbar-thumb {
+    background: rgb(30, 35, 40);
+    border-radius: 5px;
+    visibility: hidden;
+}
+
+.create-dm-scroller:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+.create-dm-scroller::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgb(40, 45, 50);
+    visibility: hidden;
+
+}
+
+.create-dm-scroller:hover::-webkit-scrollbar-track {
+    visibility: visible;
+}
+
+
+
+
+
 
 .mini-box {
     font-size: 16px;
