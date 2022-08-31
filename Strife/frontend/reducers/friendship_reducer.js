@@ -99,7 +99,7 @@ const friendshipReducer = (state = {}, action) => {
             nextState = Object.assign({}, state);
             user = nextState[action.friendship.friend_id];
             user.friend_request_status = 0;
-            return newState;
+            return nextState;
 
 
         default:
