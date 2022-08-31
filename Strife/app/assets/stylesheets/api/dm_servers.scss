@@ -125,25 +125,25 @@
 .dm-nav-bar-list {
     height: 84%;
     width: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
+    // overflow-y: auto;
+    // overflow-x: hidden;
     // overflow: hidden scroll;
-
+    overflow-x: clip;
 }
 
-.dm-nav-bar-list::-webkit-scrollbar {
-    width: 5px;
-}
+// .dm-nav-bar-list::-webkit-scrollbar {
+//     width: 5px;
+// }
 
-.dm-nav-bar-list::-webkit-scrollbar-thumb {
-    background: rgb(30, 35, 40);
-    border-radius: 5px;
-}
+// .dm-nav-bar-list::-webkit-scrollbar-thumb {
+//     background: rgb(30, 35, 40);
+//     border-radius: 5px;
+// }
 
-.dm-nav-bar-list::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background: rgb(40, 45, 50)
-}
+// .dm-nav-bar-list::-webkit-scrollbar-track {
+//     border-radius: 10px;
+//     background: rgb(40, 45, 50)
+// }
 
 
 
@@ -209,7 +209,10 @@
     font-family: "Whitney";
     font-size: 16px;
     overflow-x: hidden;
-    max-width: 180px;
+    max-width: 170px;
+    overflow: hidden;
+    // position: relative;
+    // text-overflow: ellipsis;
 }
 
 .dm-server-subtitle {
@@ -247,6 +250,7 @@
     min-width: 0;
     -webkit-box-flex: 1;
     forced-color-adjust: none;
+    line-height: 20px;
 }
 
 
@@ -321,14 +325,14 @@
     position: relative;
 }
 
-.dm-nav-bar-search-bar-button{
+.dm-nav-bar-search-bar-button {
     width: 100%;
     height: 28px;
     overflow: hidden;
     border-radius: 4px;
     box-shadow: none;
     color: hsl(214, 4%, 65.3%);
-    background-color: hsl(216,7.2%,13.5%);
+    background-color: hsl(216, 7.2%, 13.5%);
     text-align: left;
     text-overflow: ellipsis;
     font-size: 14px;
@@ -342,7 +346,7 @@
     border-color: transparent;
 }
 
-.dm-nav-bar-scroller{
+.dm-nav-bar-scroller {
     overflow: hidden scroll;
     padding-right: 0px;
     forced-color-adjust: none;
@@ -385,7 +389,3 @@
 .dm-nav-bar-scroller:hover::-webkit-scrollbar-track {
     visibility: visible;
 }
-
-
-
-
