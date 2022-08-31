@@ -375,3 +375,35 @@ label.field-error {
   forced-color-adjust: none;
   color: #47c46f;
 }
+
+
+
+
+
+.friend-message-actions {
+  forced-color-adjust: none;
+  margin-left: 8px;
+  display: flex;
+  outline: 0;
+}
+
+
+
+
+[role=tooltip],
+.hidetooltip.hidetooltip.hidetooltip + [role=tooltip] {
+  visibility: hidden;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: black;
+  color: white;
+}
+[aria-describedby]:hover,
+[aria-describedby]:focus {
+  position: relative;
+}
+[aria-describedby]:hover + [role=tooltip],
+[aria-describedby]:focus + [role=tooltip] {
+ visibility: visible;
+}
