@@ -89,7 +89,7 @@ const friendshipReducer = (state = {}, action) => {
 
         case RECEIVE_FRIENDSHIP:
             nextState = Object.assign({}, state);
-            user = newState[action.friendship.friend_id];
+            user = nextState[action.friendship.friend_id];
             user.friend_request_status = action.friendship.friend_request_status;
             return newState;
 
