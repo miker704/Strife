@@ -65,7 +65,7 @@ const friendshipReducer = (state = {}, action) => {
 
     Object.freeze(state);
     let nextState = Object.assign({}, state);
-
+    let user;
 
     switch (action.type) {
 
