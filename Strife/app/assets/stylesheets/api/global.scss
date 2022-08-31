@@ -431,8 +431,8 @@ label.field-error {
 
     &:hover {
 
-      .hover-label,
-      .hover-triangle {
+      .pending-request-actions-tool-tip ,
+      .pending-request-actions-tool-tip-triangle {
         display: block;
       }
 
@@ -468,8 +468,8 @@ label.field-error {
 
     &:hover {
 
-      .hover-label,
-      .hover-triangle {
+      .pending-request-actions-tool-tip ,
+      .pending-request-actions-tool-tip-triangle {
         display: block;
       }
 
@@ -481,8 +481,8 @@ label.field-error {
   }
 
   .pending-request-actions-tool-tip {
-    // display: none;
-    visibility: hidden;
+    display: none;
+    // visibility: hidden;
     position: absolute;
     // top: -40px;
     background: #191919;
@@ -494,10 +494,10 @@ label.field-error {
     color: #B9BBBE;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     transform: translate(0px, -42px);
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // text-align: center;
+    // justify-content: center;
+    // align-items: center;
     z-index: 6;
     font-family: "Whitney";
 
@@ -505,8 +505,8 @@ label.field-error {
   }
 
   .pending-request-actions-tool-tip-triangle {
-    // display: none;
-    visibility: hidden;
+    display: none;
+    // visibility: hidden;
     position: absolute;
     // top: -12px;
     height: 0;
