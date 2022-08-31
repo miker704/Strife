@@ -168,7 +168,7 @@ class FriendShipIndex extends React.Component {
                                                                 20.1925 3 19.198 3H4.79805Z">
                                                             </path>
                                                         </svg>
-                                                        <div className="pending-request-actions-tool-tip">Message</div>
+                                                        {/* <div className="pending-request-actions-tool-tip">Message</div> */}
                                                         {/* <div className="pending-request-actions-tool-tip-triangle"></div> */}
                                                     </div>
                                                     <div className="friend-options-button" onClick={() => this.props.openModal("friendOptions")}>
