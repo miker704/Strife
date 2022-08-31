@@ -1069,17 +1069,35 @@ $off-grey: #B9BBBE;
 }
 
 
-.friend-msg-button:hover .pending-request-actions-tool-tip,
-.friend-msg-button:hover .pending-request-actions-tool-tip-triangle {
-    visibility: visible;
-    z-index: 10;
+// .friend-msg-button:hover .pending-request-actions-tool-tip,
+// .friend-msg-button:hover .pending-request-actions-tool-tip-triangle {
+//     visibility: visible;
+//     z-index: 10;
+// }
+
+// .friend-options-button:hover .pending-request-actions-tool-tip,
+// .friend-options-button:hover .pending-request-actions-tool-tip-triangle {
+//     visibility: visible;
+//     z-index: 10;
+// }
+
+.friend-msg-actions .friend-msg-button:hover .pending-request-actions-tool-tip,
+.friend-msg-actions .friend-msg-button:hover .pending-request-actions-tool-tip-triangle,
+.friend-msg-actions .friend-options-button:hover .pending-request-actions-tool-tip,
+.friend-msg-actions .friend-options-button:hover .pending-request-actions-tool-tip-triangle,
+
+.pending-request-actions .pending-check-icon:hover .pending-request-actions-tool-tip,
+.pending-request-actions .pending-check-icon:hover .pending-request-actions-tool-tip-triangle,
+.pending-request-actions .pending-deny-icon:hover .pending-request-actions-tool-tip,
+.pending-request-actions .pending-deny-icon:hover .pending-request-actions-tool-tip-triangle,
+
+
+
+{
+    display: block;
 }
 
-.friend-options-button:hover .pending-request-actions-tool-tip,
-.friend-options-button:hover .pending-request-actions-tool-tip-triangle {
-    visibility: visible;
-    z-index: 10;
-}
+
 
 
 .pending-request-actions {
@@ -1130,7 +1148,7 @@ $off-grey: #B9BBBE;
 
 .pending-request-actions-tool-tip {
     // display: none;
-    visibility: hidden;
+    // visibility: hidden;
     position: absolute;
     // top: -40px;
     background: #191919;
