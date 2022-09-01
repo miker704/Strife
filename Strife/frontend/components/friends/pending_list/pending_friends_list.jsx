@@ -171,7 +171,7 @@ class PendingFriendList extends React.Component {
                                                         {/* <div className="pending-request-actions-tool-tip">Accept</div> */}
                                                         {/* <div className="pending-request-actions-tool-tip-triangle"></div> */}
                                                         <ReactTooltip className="accept-message-tool-tip" textColor="#B9BBBE"
-                                                            backgroundColor="#191919" id="Remove-Blocked-User" place="top" effect="solid">
+                                                            backgroundColor="#191919" id="accept-friend-request" place="top" effect="solid">
                                                             Remove
                                                         </ReactTooltip>
                                                     </div>
