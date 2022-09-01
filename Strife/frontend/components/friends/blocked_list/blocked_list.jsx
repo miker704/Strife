@@ -159,7 +159,7 @@ class BlockedList extends React.Component {
                                                         </path>
                                                     </svg>
                                                     {/* <div className="pending-request-actions-tool-tip">Remove</div> */}
-                                                    <div className="pending-request-actions-tool-tip-triangle"></div>
+                                                    {/* <div className="pending-request-actions-tool-tip-triangle"></div> */}
                                                 </div>
                                             </div>
 
