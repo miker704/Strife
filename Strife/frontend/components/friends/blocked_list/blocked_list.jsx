@@ -73,7 +73,7 @@ class BlockedList extends React.Component {
 
         let allBlockedUsers = this.props.blockedUsers;
         let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
-   
+
 
         if (allBlockedUsers.length > 0) {
 
@@ -160,6 +160,10 @@ class BlockedList extends React.Component {
                                                     </svg>
                                                     {/* <div className="pending-request-actions-tool-tip">Remove</div> */}
                                                     {/* <div className="pending-request-actions-tool-tip-triangle"></div> */}
+                                                    <ReactTooltip className="message-tool-tip" textColor="#B9BBBE"
+                                                        backgroundColor="#191919" id="Message" place="top" effect="solid">
+                                                        Message
+                                                    </ReactTooltip>
                                                 </div>
                                             </div>
 
