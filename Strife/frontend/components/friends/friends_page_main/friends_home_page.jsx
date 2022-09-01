@@ -125,7 +125,7 @@ class FriendsHomePageContainer extends React.Component {
     renderAllFriendShips () {
         if (this.state.All === true) {
             return (
-                <FriendShipIndexContainer />
+                <FriendShipIndexContainer1 />
             )
         }
     }
