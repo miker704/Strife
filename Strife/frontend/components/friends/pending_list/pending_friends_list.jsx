@@ -231,7 +231,7 @@ class PendingFriendList extends React.Component {
                                                             </path>
                                                         </svg>
                                                         {/* <div className="pending-request-actions-tool-tip">Cancel</div> */}
-                                                        <ReactTooltip className="remove-message-tool-tip" textColor="#B9BBBE"
+                                                        <ReactTooltip className="cancel-message-tool-tip" textColor="#B9BBBE"
                                                             backgroundColor="#191919" id="Remove-Blocked-User" place="top" effect="solid">
                                                             Cancel
                                                         </ReactTooltip>
