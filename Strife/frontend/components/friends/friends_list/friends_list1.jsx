@@ -165,7 +165,7 @@ const FriendShipIndex1 = (props) => {
                                                         Message
                                                     </ReactTooltip>
                                                 </div>
-                                                <div className="friend-options-button">
+                                                <div data-tip data-for="More" className="friend-options-button">
                                                     <svg className="icon-1WVg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                                         <g fill="none" fillRule="evenodd">
                                                             <path d="M24 0v24H0V0z">
