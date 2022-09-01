@@ -264,7 +264,7 @@ class DmNavBar extends React.Component {
                             {/* <div className="dm-tool-tip">
                                 Create DM
                             </div> */}
-                            <ReactTooltip className="remove-message-tool-tip" textColor="#B9BBBE"
+                            <ReactTooltip className="create-dm-message-tool-tip" textColor="#B9BBBE"
                                 backgroundColor="#191919" id="create-dm" place="top" effect="solid">
                                 Remove
                             </ReactTooltip>
