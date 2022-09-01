@@ -100,12 +100,6 @@ const FriendShipIndexOnline = ({
     // left={popupTop-mousePos.y}
     let friendOptions = (friend) => {
         console.log("in opening friend options modal");
-        return (
-            <div className="modal-struct">
-                {/* { showPopup && <EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setPopupTop={setShowPopup}/>} */}
-                <EditFriendshipModal user={currentUser} friend={friend} top={popupTop} left={popupLeft}  setPopupTop={setShowPopup}/>
-            </div>
-        )
     }
 
     const gatherMatches = () => {
