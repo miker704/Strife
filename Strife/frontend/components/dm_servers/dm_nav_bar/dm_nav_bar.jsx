@@ -260,12 +260,12 @@ class DmNavBar extends React.Component {
                         <h4>DIRECT MESSAGES</h4>
                         <div className="create-channel-div" onClick={() => this.toggleCreateDmModal()}>
                             <i className="fa-solid fa-plus" />
-                            <div className="dm-tool-tip">
+                            {/* <div className="dm-tool-tip">
                                 Create DM
-                            </div>
+                            </div> */}
                             <ReactTooltip className="remove-message-tool-tip" textColor="#B9BBBE"
                                 backgroundColor="#191919" id="Remove-Blocked-User" place="top" effect="solid">
-                                Remove
+                                Create DM
                             </ReactTooltip>
                         </div>
                     </div>
