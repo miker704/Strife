@@ -160,8 +160,7 @@ const FriendShipIndex1 = (props) => {
                                                                     20.1925 3 19.198 3H4.79805Z">
                                                         </path>
                                                     </svg>
-                                                    <div className="pending-request-actions-tool-tip">Message</div>
-                                                    <div className="pending-request-actions-tool-tip-triangle"></div>
+                                                  
                                                 </div>
                                                 <div className="friend-options-button">
                                                     <svg className="icon-1WVg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
