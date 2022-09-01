@@ -45,12 +45,13 @@ const FriendShipIndex1 = (props) => {
 
     const liveSearch = () => {
         let allFriendShips = document.querySelectorAll('.friend-index-item');
-        let search_query = document.getElementById('input-all-friends').value;
+        // let search_query = document.getElementById('input-all-friends').value;
+        let searchQuery = searchText
         let numberOfFriends = document.getElementById('num-of-friends');
         let count = 0;
         let foundCount = 0;
         for (let i = 0; i < allFriendShips.length; i++) {
-            if (allFriendShips[i].innerText.toLowerCase().includes(search_query.toLowerCase())) {
+            if (allFriendShips[i].innerText.toLowerCase().includes(searchQuery.toLowerCase())) {
                 allFriendShips[i].classList.remove("is-hidden");
                 foundCount++;
                 numberOfFriends.innerHTML = `ALL FRIENDS - ${foundCount}`;
@@ -127,9 +128,10 @@ const FriendShipIndex1 = (props) => {
                             autoFocus ref={inputRef}
                             type="search"
                             placeholder="Search"
+                            onInput={() => liveSearch()}
                             onChange={(e) => {
                                 setSearchText(e.currentTarget.value);
-                                gatherMatches();
+                                // gatherMatches();
 
 
                             }}
