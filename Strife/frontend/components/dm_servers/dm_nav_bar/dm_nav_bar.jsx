@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CreateDmModalContainer from '../create_new_dm/create_dm_container';
+import ReactTooltip from "react-tooltip";
 
 class DmNavBar extends React.Component {
     constructor (props) {
