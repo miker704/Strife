@@ -59,8 +59,7 @@ class Api::FriendshipsController < ApplicationController
 
     end
 
-
-
+   
     def update
         @friendship = Friendship.find_by(user_id: friendship_params[:user_id], friend_id: friendship_params[:friend_id])
         #check status of friendship on the other users end
@@ -101,6 +100,10 @@ class Api::FriendshipsController < ApplicationController
 
     def friendship_params
         return params.require(:friendship).permit(:user_id,:friend_id)
+    end
+
+    def userId
+        return params[:user]
     end
 
 end
