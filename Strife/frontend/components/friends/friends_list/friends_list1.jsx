@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
 import ReactTooltip from "react-tooltip";
+import EditFriendshipModalContainer from "../edit_friendship_modal/edit_friendship_container";
 
 
 
