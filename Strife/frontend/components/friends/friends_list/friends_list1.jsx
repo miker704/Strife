@@ -46,8 +46,8 @@ const FriendShipIndex1 = (props) => {
     let liveSearch = () => {
         console.log("in live search");
         let allFriendShips = document.querySelectorAll('.friend-index-item');
-        // let search_query = document.getElementById('input-all-friends').value;
-        let search_query = searchText;
+        let search_query = document.getElementById('input-all-friends').value;
+        // let search_query = searchText;
         let numberOfFriends = document.getElementById('num-of-friends');
         let count = 0;
         let foundCount = 0;
@@ -128,6 +128,7 @@ const FriendShipIndex1 = (props) => {
                             className="input-all-friends"
                             type="search"
                             placeholder="Search"
+                            autoFocus ref={inputRef}
                             onInput={() => liveSearch()}
                             onChange={e => setSearchText( e.currentTarget.value )}
                             value={searchText}
