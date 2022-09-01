@@ -130,6 +130,7 @@ const FriendShipIndex1 = (props) => {
 
                                     return (
                                         <li className="friend-index-item" key={friend.id}>
+                                            {this.state.showPopup && <EditFriendshipModalContainer user={this.props.currentUser} friend={friend} top={this.state.popUpTop} setShowPopup={true} />}
 
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
