@@ -8,7 +8,8 @@ class FriendShipIndex extends React.Component {
         super(props);
         this.state = {
             searchText: "",
-            friendOptions: false
+            friendOptions: false,
+            popUpTop: 0
         }
         this.liveSearch = this.liveSearch.bind(this);
         this.handleDm = this.handleDm.bind(this);
