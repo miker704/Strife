@@ -97,10 +97,7 @@ const FriendShipIndexOnline = ({
         });
         return;
     }
-    // left={popupTop-mousePos.y}
-    let friendOptions = (friend) => {
-        console.log("in opening friend options modal");
-    }
+  
 
     const gatherMatches = () => {
 
