@@ -31,6 +31,12 @@ const FriendShipIndex1 = (props) => {
     }, [])
 
 
+    const handlePopupShow = (e) => {
+
+        setPopupTop(e.currentTarget.getBoundingClientRect().top);
+        setShowPopup(!showPopup);
+    }
+
     const handleDm = (friend) => {
         const memberIds = [props.currentUser.id, friend.id];
 
@@ -122,101 +128,101 @@ const FriendShipIndex1 = (props) => {
                 </div>
                 <div className="friend-index">
                     <div className="friend-index-item-wrapper" >
-                    <ul >
-                        {
-                            allFriends.map((friend, friendIdx) => {
+                        <ul >
+                            {
+                                allFriends.map((friend, friendIdx) => {
 
-                                if (friend.username.includes(searchText)) {
+                                    if (friend.username.includes(searchText)) {
 
-                                    return (
-                                        <li className="friend-index-item" key={friend.id}>
-                                            {this.state.showPopup && <EditFriendshipModalContainer user={this.props.currentUser} friend={friend} top={this.state.popUpTop} setShowPopup={true} />}
+                                        return (
+                                            <li className="friend-index-item" key={friend.id}>
+                                                {this.state.showPopup && <EditFriendshipModalContainer user={this.props.currentUser} friend={friend} top={this.state.popUpTop} setShowPopup={true} />}
 
-                                            <div className="friend-index-item-wrapper-inner">
-                                                <div className="friend-account-info-wrapper-super">
-                                                    <div className="friend-info">
-                                                        <img src={`${friend.photo === undefined ? default_Photo : friend.photo}`} alt="pfp" />
-                                                    </div>
-                                                    <div className="friend-account-info-wrapper">
-                                                        <div className="friend-account-info">
-                                                            <div className="friend-tag">
-                                                                {friend.username}
-                                                                <span>#{friend.strife_id_tag}</span>
-                                                            </div>
+                                                <div className="friend-index-item-wrapper-inner">
+                                                    <div className="friend-account-info-wrapper-super">
+                                                        <div className="friend-info">
+                                                            <img src={`${friend.photo === undefined ? default_Photo : friend.photo}`} alt="pfp" />
                                                         </div>
-                                                        <div className="subtext">
-                                                            <div className="subtext-inner">
-                                                                {`${friend.online ? "online" : "offline"}`}
-                                                                <div className={`${friend.online ? "circle-online" : "circle-offline"}`}></div>
+                                                        <div className="friend-account-info-wrapper">
+                                                            <div className="friend-account-info">
+                                                                <div className="friend-tag">
+                                                                    {friend.username}
+                                                                    <span>#{friend.strife_id_tag}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="subtext">
+                                                                <div className="subtext-inner">
+                                                                    {`${friend.online ? "online" : "offline"}`}
+                                                                    <div className={`${friend.online ? "circle-online" : "circle-offline"}`}></div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div className="friend-msg-actions">
-                                                <div data-tip data-for="Message" className="friend-msg-button">
-                                                    <svg className="icon-1WV" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                        <path fill="currentColor" d="M4.79805 3C3.80445 3 2.99805 3.8055 2.99805 
+                                                <div className="friend-msg-actions">
+                                                    <div data-tip data-for="Message" className="friend-msg-button">
+                                                        <svg className="icon-1WV" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                            <path fill="currentColor" d="M4.79805 3C3.80445 3 2.99805 3.8055 2.99805 
                                                                     4.8V15.6C2.99805 16.5936 3.80445 17.4 4.79805 17.4H7.49805V21L11.098 
                                                                     17.4H19.198C20.1925 17.4 20.998 16.5936 20.998 15.6V4.8C20.998 3.8055 
                                                                     20.1925 3 19.198 3H4.79805Z">
-                                                        </path>
-                                                    </svg>
-                                                    <ReactTooltip className="message-tool-tip" textColor="#B9BBBE"
-                                                        backgroundColor="#191919" id="Message" place="top" effect="solid">
-                                                        Message
-                                                    </ReactTooltip>
-                                                </div>
-                                                <div data-tip data-for="More" className="friend-options-button">
-                                                    <svg className="icon-1WVg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
-                                                        <g fill="none" fillRule="evenodd">
-                                                            <path d="M24 0v24H0V0z">
                                                             </path>
-                                                            <path fill="currentColor" d="M12 16c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2
+                                                        </svg>
+                                                        <ReactTooltip className="message-tool-tip" textColor="#B9BBBE"
+                                                            backgroundColor="#191919" id="Message" place="top" effect="solid">
+                                                            Message
+                                                        </ReactTooltip>
+                                                    </div>
+                                                    <div data-tip data-for="More" className="friend-options-button">
+                                                        <svg className="icon-1WVg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                                            <g fill="none" fillRule="evenodd">
+                                                                <path d="M24 0v24H0V0z">
+                                                                </path>
+                                                                <path fill="currentColor" d="M12 16c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2
                                                                          .8954305-2 2-2zm0-6c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2
                                                                           2-2zm0-6c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2z">
-                                                            </path>
-                                                        </g>
-                                                    </svg>
+                                                                </path>
+                                                            </g>
+                                                        </svg>
 
-                                                    <ReactTooltip className="more-message-tool-tip"
-                                                        textColor="#B9BBBE" backgroundColor="#191919"
-                                                        id="More" place="top" effect="solid">
-                                                        More
-                                                    </ReactTooltip>
+                                                        <ReactTooltip className="more-message-tool-tip"
+                                                            textColor="#B9BBBE" backgroundColor="#191919"
+                                                            id="More" place="top" effect="solid">
+                                                            More
+                                                        </ReactTooltip>
 
+                                                    </div>
                                                 </div>
-                                            </div>
 
 
 
-                                        </li>
-                                    )
-                                }
+                                            </li>
+                                        )
+                                    }
 
-                                else {
-                                    document.getElementById('num-of-friends').innerHTML = `ALL FRIENDS - ${0}`;
-                                    return (
-                                        <div className="friend-index-container" key={friendIdx}>
+                                    else {
+                                        document.getElementById('num-of-friends').innerHTML = `ALL FRIENDS - ${0}`;
+                                        return (
+                                            <div className="friend-index-container" key={friendIdx}>
 
-                                            <div className="empty-state-container">
-                                                <div className="blocked-users-empty">
-                                                    <div className="blocked-users-flex">
-                                                        <img className="no-friends-online-icon" alt="img" />
-                                                        <div className="block-wumpus-text">Wumpus looked, but couldn't find anyone with that name.</div>
+                                                <div className="empty-state-container">
+                                                    <div className="blocked-users-empty">
+                                                        <div className="blocked-users-flex">
+                                                            <img className="no-friends-online-icon" alt="img" />
+                                                            <div className="block-wumpus-text">Wumpus looked, but couldn't find anyone with that name.</div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    )
-                                }
+                                        )
+                                    }
 
 
 
 
-                            })
-                        }
-                    </ul>
+                                })
+                            }
+                        </ul>
                     </div>
                 </div>
             </div>
