@@ -19,7 +19,7 @@ const EditFriendshipModal = ({
 
     closeHookModalOnOutsideClick(popupRef, setShowPopup);
     closeOnEsc(setShowPopup);
-
+    console.log("showPopupTop: ",setShowPopup);
    
 
     return (

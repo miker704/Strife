@@ -24,7 +24,12 @@ class FriendShipIndex extends React.Component {
     }
 
     openOptions (e) {
-        this.setState({showPopup:true, popUpTop: e.currentTarget.getBoundingClientRect().top});
+        
+        this.setState({ popUpTop: e.currentTarget.getBoundingClientRect().top});
+    }
+
+    setShowPopup (showPopup){
+        return this.setState({showPopup:true});
     }
 
     liveSearch () {
