@@ -159,7 +159,7 @@ class PendingFriendList extends React.Component {
 
                                                 <div className="pending-request-actions">
 
-                                                    <div data-tip data-for="ignore-friend-request" className="pending-check-icon green-button">
+                                                    <div data-tip data-for="accept-friend-request" className="pending-check-icon green-button">
                                                         <svg onClick={() => this.updateFriendShip(friend)} stroke="currentColor" fill="currentColor"
                                                             viewBox="0 0 512 512" height="1em" width="1em">
                                                             <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998
