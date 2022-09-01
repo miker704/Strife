@@ -24,11 +24,12 @@ class FriendShipIndex extends React.Component {
     }
 
     openOptions (e) {
-        
+
         this.setState({ popUpTop: e.currentTarget.getBoundingClientRect().top});
+        this.setShowPopup();
     }
 
-    setShowPopup (showPopup){
+    setShowPopup (){
         return this.setState({showPopup:true});
     }
 
