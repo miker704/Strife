@@ -26,7 +26,6 @@ const FriendShipIndexOnline = ({
     const [selectedFriends, setSelectedFriends] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
     const [popupTop, setPopupTop] = useState(0);
-    const [popupLeft, setPopupLeft] = useState(0);
     let allFriends = friends;
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
     const dmMembersArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
