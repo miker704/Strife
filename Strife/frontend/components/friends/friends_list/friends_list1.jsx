@@ -180,7 +180,7 @@ const FriendShipIndex1 = (props) => {
                             {
                                 allFriends.map((friend, friendIdx) => {
 
-                                    if (friend.username.includes(searchText)) {
+                                    // if (friend.username.includes(searchText)) {
 
                                         return (
                                             <li className="friend-index-item" key={friend.id}>
@@ -246,29 +246,30 @@ const FriendShipIndex1 = (props) => {
 
                                             </li>
                                         )
-                                    }
+                                    // }
 
-                                    else {
-                                        document.getElementById('num-of-friends').innerHTML = `ALL FRIENDS - ${0}`;
-                                        return (
-                                            <div className="friend-index-container" key={friendIdx}>
+                                    // else {
+                                    //     document.getElementById('num-of-friends').innerHTML = `ALL FRIENDS - ${0}`;
+                                    //     return (
+                                    //         <div className="friend-index-container" key={friendIdx}>
 
-                                                <div className="empty-state-container">
-                                                    <div className="blocked-users-empty">
-                                                        <div className="blocked-users-flex">
-                                                            <img className="no-friends-online-icon" alt="img" />
-                                                            <div className="block-wumpus-text">Wumpus looked, but couldn't find anyone with that name.</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        )
-                                    }
-
-
+                                    //             <div className="empty-state-container">
+                                    //                 <div className="blocked-users-empty">
+                                    //                     <div className="blocked-users-flex">
+                                    //                         <img className="no-friends-online-icon" alt="img" />
+                                    //                         <div className="block-wumpus-text">Wumpus looked, but couldn't find anyone with that name.</div>
+                                    //                     </div>
+                                    //                 </div>
+                                    //             </div>
+                                    //         </div>
+                                    //     )
+                                    // }
 
 
-                                })
+
+
+                                }
+                                )
                             }
                         </ul>
                     </div>
