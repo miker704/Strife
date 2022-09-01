@@ -186,7 +186,7 @@ class FriendShipIndex extends React.Component {
                                                         </ReactTooltip>
 
                                                     </div>
-                                                    <div data-tip data-for="More" className="friend-options-button" onClick={(e) => this.openOptions}>
+                                                    <div data-tip data-for="More" className="friend-options-button" onClick={(e) => this.openOptions()}>
                                                         <svg className="icon-1WVg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                                             <g fill="none" fillRule="evenodd">
                                                                 <path d="M24 0v24H0V0z">
