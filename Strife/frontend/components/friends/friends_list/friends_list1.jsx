@@ -126,7 +126,7 @@ const FriendShipIndex1 = (props) => {
                             id="input-all-friends"
                             className="input-all-friends"
                             spellCheck={false}
-                            autoFocus ref={inputRef}
+                            // autoFocus ref={inputRef}
                             type="search"
                             placeholder="Search"
                             onInput={() => liveSearch()}
