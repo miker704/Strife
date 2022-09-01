@@ -121,8 +121,8 @@ const FriendShipIndex1 = (props) => {
                     {`ALL FRIENDS - ${allFriends.length}`}
                 </div>
                 <div className="friend-index">
-                    {/* <div className="friend-index-item-wrapper" > */}
-                    <ul className="friend-index-item-wrapper" >
+                    <div className="friend-index-item-wrapper" >
+                    <ul >
                         {
                             allFriends.map((friend, friendIdx) => {
 
@@ -217,7 +217,7 @@ const FriendShipIndex1 = (props) => {
                             })
                         }
                     </ul>
-                    {/* </div> */}
+                    </div>
                 </div>
             </div>
 
