@@ -147,7 +147,7 @@ class FriendShipIndex extends React.Component {
                                     allFriends.map((friend, friendIdx) => {
                                         return (
                                             <li className="friend-index-item" key={friend.id}>
-                                                {this.state.showPopup && <EditFriendshipModalContainer user={this.props.currentUser} friend={friend} top={this.state.popUpTop} setShowPopup={setShowPopup} />}
+                                                {this.state.showPopup && <EditFriendshipModalContainer user={this.props.currentUser} friend={friend} top={this.state.popUpTop} setShowPopup={true} />}
                                                 <div className="friend-index-item-wrapper-inner">
                                                     <div className="friend-account-info-wrapper-super">
                                                         <div className="friend-info">
@@ -186,7 +186,7 @@ class FriendShipIndex extends React.Component {
                                                         </ReactTooltip>
 
                                                     </div>
-                                                    <div data-tip data-for="More" className="friend-options-button" onClick={(e) => this.openOptions()}>
+                                                    <div data-tip data-for="More" className="friend-options-button" onClick={(e) => this.openOptions(e)}>
                                                         <svg className="icon-1WVg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                                             <g fill="none" fillRule="evenodd">
                                                                 <path d="M24 0v24H0V0z">
