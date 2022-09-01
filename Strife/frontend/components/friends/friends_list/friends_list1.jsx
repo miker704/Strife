@@ -176,6 +176,7 @@ const FriendShipIndex1 = (props) => {
                                                             </path>
                                                         </g>
                                                     </svg>
+                                                    <ReactTooltip className = "more-message-tool-tip" textColor="#B9BBBE" backgroundColor="#191919" id ="More" place="top" effect="solid">More</ReactTooltip>
                                                 </div>
                                             </div>
 
