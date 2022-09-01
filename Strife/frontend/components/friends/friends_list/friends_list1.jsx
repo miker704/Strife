@@ -46,13 +46,13 @@ const FriendShipIndex1 = (props) => {
     const liveSearch = () => {
         console.log("in live search");
         let allFriendShips = document.querySelectorAll('.friend-index-item');
-        // let search_query = document.getElementById('input-all-friends').value;
+        let search_query = document.getElementById('input-all-friends').value;
         let searchQuery = searchText
         let numberOfFriends = document.getElementById('num-of-friends');
         let count = 0;
         let foundCount = 0;
         for (let i = 0; i < allFriendShips.length; i++) {
-            if (allFriendShips[i].innerText.toLowerCase().includes(searchQuery.toLowerCase())) {
+            if (allFriendShips[i].innerText.toLowerCase().includes(search_query.toLowerCase())) {
                 allFriendShips[i].classList.remove("is-hidden");
                 foundCount++;
                 numberOfFriends.innerHTML = `ALL FRIENDS - ${foundCount}`;
