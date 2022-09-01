@@ -184,7 +184,7 @@ class PendingFriendList extends React.Component {
                                                             </path>
                                                         </svg>
                                                         {/* <div className="pending-request-actions-tool-tip">Ignore</div> */}
-                                                        <div className="pending-request-actions-tool-tip-triangle"></div>
+                                                        {/* <div className="pending-request-actions-tool-tip-triangle"></div> */}
                                                     </div>
                                                 </div>
 
