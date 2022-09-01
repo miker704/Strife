@@ -126,7 +126,7 @@ const FriendShipIndex1 = (props) => {
                 <div id="num-of-friends" className="all-friends">
                     {`ALL FRIENDS - ${allFriends.length}`}
                 </div>
-                
+
                 <div id="no-match" className="empty-state-container is-hidden">
                     <div className="blocked-users-empty">
                         <div className="blocked-users-flex">
@@ -137,7 +137,7 @@ const FriendShipIndex1 = (props) => {
                 </div>
 
 
-                <div className="friend-index">
+                <div className="friend-index" id='ul-fiiw'>
                     <div className="friend-index-item-wrapper" >
                         <ul >
                             {
