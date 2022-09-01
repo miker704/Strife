@@ -1,4 +1,4 @@
-import { LOGOUT_CURRENT_USER, RECEIVE_CURRENT_USER, REMOVE_CURRENT_USER, RECEIVE_USER, RECEIVE_USERS } from "../actions/session_actions.js";
+import { LOGOUT_CURRENT_USER, RECEIVE_CURRENT_USER, REMOVE_CURRENT_USER, RECEIVE_USER, RECEIVE_USERS,RECEIVE_FRIENDS } from "../actions/session_actions.js";
 import { RECEIVE_DM_MEMBER } from "../actions/dm_member_actions.js";
 import { RECEIVE_DM_SERVER } from '../actions/dm_server_actions.js';
 import { RECEIVE_SERVER } from '../actions/server_actions.js';
@@ -34,15 +34,15 @@ const userReducer = (state = {}, action) => {
         case RECEIVE_USER:
             return Object.assign({}, state, { [action.user.id]: action.user });
 
-        case RECEIVE_USERS:
+        case RECEIVE_FRIENDS:
 
             return receiveUsers(state, action.users);
 
-        // case RECEIVE_FRIENDSHIP:
-        //     newState = Object.assign({}, state);
-        //     user = newState[action.friendship.friend_id];
-        //     user.friend_request_status = action.friendship.friend_request_status;
-        //     return newState;
+        case RECEIVE_FRIENDSHIP:
+            newState = Object.assign({}, state);
+            user = newState[action.friendship.friend_id];
+            user.friend_request_status = action.friendship.friend_request_status;
+            return newState;
         case RECEIVE_SERVER:
             // return action.servers.users;
             return action.server.users
@@ -53,11 +53,11 @@ const userReducer = (state = {}, action) => {
         case RECEIVE_DM_SERVER:
             return action.dmserver.users;
 
-        // case REMOVE_FRIENDSHIP:
-        //     newState = Object.assign({}, state);
-        //     user = newState[action.friendship.friend_id];
-        //     user.friend_request_status = 0;
-        //     return newState;
+        case REMOVE_FRIENDSHIP:
+            newState = Object.assign({}, state);
+            user = newState[action.friendship.friend_id];
+            user.friend_request_status = 0;
+            return newState;
 
         case REMOVE_CURRENT_USER:
             return {};
