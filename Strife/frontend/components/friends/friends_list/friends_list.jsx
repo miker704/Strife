@@ -141,7 +141,7 @@ class FriendShipIndex extends React.Component {
                                     allFriends.map((friend, friendIdx) => {
                                         return (
                                             <li className="friend-index-item" key={friend.id}>
-                                                {this.state.showPopup && <EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setShowPopup={setShowPopup} />}
+                                                {this.state.showPopup && <EditFriendshipModalContainer user={this.props.currentUser} friend={friend} top={this.state.popUpTop} setShowPopup={setShowPopup} />}
                                                 <div className="friend-index-item-wrapper-inner">
                                                     <div className="friend-account-info-wrapper-super">
                                                         <div className="friend-info">
