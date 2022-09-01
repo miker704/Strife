@@ -13,7 +13,6 @@ const EditFriendshipModal = ({
     history,
     user,
     top,
-    left,
 }) => {
 
     const popupRef = useRef();
