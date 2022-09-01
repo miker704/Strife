@@ -44,6 +44,7 @@ const FriendShipIndex1 = (props) => {
 
 
     const liveSearch = () => {
+        console.log("in live search");
         let allFriendShips = document.querySelectorAll('.friend-index-item');
         // let search_query = document.getElementById('input-all-friends').value;
         let searchQuery = searchText
