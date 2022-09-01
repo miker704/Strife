@@ -136,7 +136,7 @@ const FriendShipIndex1 = (props) => {
 
                                         return (
                                             <li className="friend-index-item" key={friend.id}>
-                                                {showPopup && <EditFriendshipModalContainer user={currentUser} friend={friend} top={popupTop} setShowPopup={setShowPopup} />}
+                                                {showPopup && <EditFriendshipModalContainer user={props.currentUser} friend={friend} top={popupTop} setShowPopup={setShowPopup} />}
 
                                                 <div className="friend-index-item-wrapper-inner">
                                                     <div className="friend-account-info-wrapper-super">
