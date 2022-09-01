@@ -52,7 +52,6 @@ const FriendShipIndexOnline = ({
     const handlePopupShow = (e) => {
 
         setPopupTop(e.currentTarget.getBoundingClientRect().top);
-        setPopupLeft(e.currentTarget.getBoundingClientRect().left)
         setShowPopup(!showPopup);
     }
 
