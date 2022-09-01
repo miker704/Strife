@@ -176,7 +176,6 @@ const FriendShipIndex1 = (props) => {
                                                             </path>
                                                         </g>
                                                     </svg>
-                                                    <div className="pending-request-actions-tool-tip">More</div>
                                                     <div className="pending-request-actions-tool-tip-triangle"></div>
                                                 </div>
                                             </div>
