@@ -21,3 +21,5 @@ export const requestAllOnlineFriends = () => $.ajax({ url: `/api/friendships/`, 
 export const requestFriendRequests = () => $.ajax({ url: `/api/friendships/`, method: 'GET' });
 export const requestBlockedUsers = () => $.ajax({ url: `/api/friendships/`, method: 'GET' });
 export const requestAllFriendships = () => $.ajax({ url: `/api/friendships/`, method: 'GET' });
+
+
