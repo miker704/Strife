@@ -4,6 +4,8 @@ import * as SessionAPIUtil from "../utils/session_api_util.js"
 
 export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_USERS = "RECEIVE_USERS";
+export const RECEIVE_FRIENDS = "RECEIVE_FRIENDS";
+
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const REMOVE_CURRENT_USER = "REMOVE_CURRENT_USER";
@@ -22,7 +24,7 @@ export const receiveUser = user => {
 
 export const receiveUsers = users => {
     return {
-        type: RECEIVE_USERS,
+        type: RECEIVE_FRIENDS,
         users
     }
 }
@@ -123,6 +125,6 @@ export const disableUserAccount = user => (dispatch) =>
 export const fetchUserByStrifeId = user_strife_id_tag => (dispatch) =>
     SessionAPIUtil.fetchUserByStrifeId(user_strife_id_tag).then((user) => {
 
-        return dispatch(receiveUser(user))
+        return dispatch(receiveUser(user));
     },
         (err) => { dispatch(receiveSessionErrors(err.responseJSON)) });
