@@ -86,20 +86,20 @@ const friendshipReducer = (state = {}, action) => {
         //     return Object.assign({}, state, action.payload);
 
 
+        // case RECEIVE_FRIENDSHIP:
+        //     nextState = Object.assign({}, state);
+        //     user = nextState[action.friendship.friend_id];
+        //     // console.log("user: ", user);
+        //     user.friend_request_status = action.friendship.friend_request_status;
+        //     return nextState;
 
-        case RECEIVE_FRIENDSHIP:
-            nextState = Object.assign({}, state);
-            user = nextState[action.friendship.friend_id];
-            user.friend_request_status = action.friendship.friend_request_status;
-            return nextState;
 
 
-
-        case REMOVE_FRIENDSHIP:
-            nextState = Object.assign({}, state);
-            user = nextState[action.friendship.friend_id];
-            user.friend_request_status = 0;
-            return nextState;
+        // case REMOVE_FRIENDSHIP:
+        //     nextState = Object.assign({}, state);
+        //     user = nextState[action.friendship.friend_id];
+        //     user.friend_request_status = 0;
+        //     return nextState;
 
 
         default:
