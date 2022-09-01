@@ -41,7 +41,6 @@ export const receiveAllFriends = (friendships) => {
 
 
 export const receiveFriendship = (friendship) => {
-    console.log("receive friendship is dispatchingh: ",friendship);
     return {
         type: RECEIVE_FRIENDSHIP,
         friendship
