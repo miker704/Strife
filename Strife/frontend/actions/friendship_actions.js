@@ -41,6 +41,7 @@ export const receiveAllFriends = (friendships) => {
 
 
 export const receiveFriendship = (friendship) => {
+    console.log("receive friendship is dispatchingh: ",friendship);
     return {
         type: RECEIVE_FRIENDSHIP,
         friendship
@@ -69,11 +70,11 @@ export const removeFriendshipErrors = () => {
 
 
 
-// export const requestFriendships = () => (dispatch) =>
-//     FRIENDSHIP_API_UTIL.requestFriendships().then((users) => dispatch(receiveUsers(users)), err => dispatch(receiveFriendshipErrors(err.responseJSON)));
-
 export const requestFriendships = () => (dispatch) =>
-    FRIENDSHIP_API_UTIL.requestFriendships().then((friendships) =>   dispatch(receiveAllFriends(friendships)), err => dispatch(receiveFriendshipErrors(err.responseJSON)));
+    FRIENDSHIP_API_UTIL.requestFriendships().then((users) => dispatch(receiveUsers(users)), err => dispatch(receiveFriendshipErrors(err.responseJSON)));
+
+// export const requestFriendships = () => (dispatch) =>
+//     FRIENDSHIP_API_UTIL.requestFriendships().then((friendships) =>   dispatch(receiveAllFriends(friendships)), err => dispatch(receiveFriendshipErrors(err.responseJSON)));
 
 export const createFriendship = (account_ids) => (dispatch) =>
     FRIENDSHIP_API_UTIL.createFriendship(account_ids).then((friendship) => (dispatch(receiveFriendship(friendship))), (err) => (dispatch(receiveFriendshipErrors(err.responseJSON))));
