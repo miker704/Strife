@@ -231,7 +231,6 @@ class PendingFriendList extends React.Component {
                                                             </path>
                                                         </svg>
                                                         {/* <div className="pending-request-actions-tool-tip">Cancel</div> */}
-                                                        {/* <div aria-label="Cancel" role={"button"} className="pending-request-actions-tool-tip">Cancel</div> */}
 
                                                         <div className="pending-request-actions-tool-tip-triangle"></div>
                                                     </div>
