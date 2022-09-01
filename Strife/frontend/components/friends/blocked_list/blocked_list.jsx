@@ -162,7 +162,7 @@ class BlockedList extends React.Component {
                                                     {/* <div className="pending-request-actions-tool-tip-triangle"></div> */}
                                                     <ReactTooltip className="message-tool-tip" textColor="#B9BBBE"
                                                         backgroundColor="#191919" id="Message" place="top" effect="solid">
-                                                        Message
+                                                        Remove
                                                     </ReactTooltip>
                                                 </div>
                                             </div>
