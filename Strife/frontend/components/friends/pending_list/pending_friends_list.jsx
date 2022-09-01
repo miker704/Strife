@@ -232,7 +232,7 @@ class PendingFriendList extends React.Component {
                                                         </svg>
                                                         {/* <div className="pending-request-actions-tool-tip">Cancel</div> */}
 
-                                                        <div className="pending-request-actions-tool-tip-triangle"></div>
+                                                        {/* <div className="pending-request-actions-tool-tip-triangle"></div> */}
                                                     </div>
                                                 </div>
 
