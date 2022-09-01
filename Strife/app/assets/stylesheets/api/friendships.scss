@@ -1335,7 +1335,17 @@ $off-grey: #B9BBBE;
 
 }
 
-.cancel-message-tool-tip {}
+.cancel-message-tool-tip {
+    background: #191919 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    color: #B9BBBE !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    width: fit-content !important;
+}
 
 .accept-message-tool-tip {}
 
