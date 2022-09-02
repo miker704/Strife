@@ -21,6 +21,12 @@ const EditFriendshipModal = ({
 
     const handleDeleteFriendShip = () => {
         console.log("friend =: ", friend);
+        
+        // deleteFriendship({user_id:currentUser.id, friend_id: friend.id}).then(() =>{
+        //     console.log("deleted friend");
+            
+        // });
+        return;
     }
 
 
