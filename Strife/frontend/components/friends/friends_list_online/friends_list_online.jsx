@@ -221,7 +221,7 @@ const FriendShipIndexOnline = ({
                                                 <div data-tip data-for = "More" 
                                                      className="friend-options-button" 
                                                      onClick={(e) => {
-                                                                        handleSelected(friend),
+                                                                        handleSelected(friend);
                                                                         friendRef.current.focus();
                                                                         handlePopupShow(e)
                                                                     }}
