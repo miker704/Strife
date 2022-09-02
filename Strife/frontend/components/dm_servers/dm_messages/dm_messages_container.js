@@ -22,10 +22,7 @@ const mSTP = (state, ownProps) => {
         dmServer: state.entities.dmServers[ownProps.match.params.dmServerId],
         errors: state.errors.dmMessage,
         dmServerMembers: selectDmMembers(state,ownProps.match.params.dmServerId),
-        // dmServer: dm
-        // dmMembersSelect: selectDmMembers(state,"dmServers",ownProps.match.params.dmServerId)
-        // dmMembersDirect: Object.values(state.entities.dmServers[ownProps.match.params.dmServerId].members)
-        // dmMembersDirect: state.entities.dmServers[ownProps.match.params.dmServerId].members
+        
 
 
     }
