@@ -10,7 +10,7 @@ const mSTP = (state) => {
     //current discord loading messages as of sep 2, 2022
     const randomLoadingMessage = [
         "Strife was almost called Bonfire before we picked our name. It was meant to be nice and cozy.",
-        "Loading",
+        "Loading ...",
         "Strife was almost called Wyvern before we picked our name. Not too proud of that one.",
         "Strife is a Discord Clone made by Michael R. for App Academy Fullstack Project.",
         "Strife is a full blown clone of Discord.",
@@ -29,7 +29,7 @@ const mSTP = (state) => {
         "The character on our 404 page is a robot hamster named Nelly.",
         "You can play our version of the Snake game on our 404 page by pressing a ~secret~ button.",
         "There's a very small—and we mean small—chance you can get a secret ringtone when calling someone. Good luck!",
-        ""
+        "Our old Partner mascot was an elf named Springle. He recently retired.",
 
     ]
 
