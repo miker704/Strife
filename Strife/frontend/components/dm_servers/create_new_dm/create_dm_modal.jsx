@@ -36,11 +36,11 @@ const CreateDmModal = ({
 
         return function cleanup () {
             if (errors.length > 0) {
+                removeFriendshipErrors();
             }
             if (dmServerErrors.length > 0) {
                 
                 removeDmServerErrors();
-                removeFriendshipErrors();
             }
         }
     }, []);
