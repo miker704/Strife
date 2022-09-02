@@ -4,5 +4,9 @@ import DmServerMemberList from "./dm_server_list";
 
 
 const mSTP = (state) => {
+
+}
+
+const mDTP = (dispatch) => {
     
 }
