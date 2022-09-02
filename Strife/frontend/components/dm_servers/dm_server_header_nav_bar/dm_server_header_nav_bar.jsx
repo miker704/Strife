@@ -28,6 +28,9 @@ class DmServerHeaderNavBar extends React.Component {
                     <div className="dms-hbar-name">
                         <h3 className="dms-hbar-name-header"></h3>
                     </div>
+                    <div className="dms-member-online-status">
+
+                    </div>
 
                 </div>
             </div>
