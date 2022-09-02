@@ -174,9 +174,19 @@
 }
 
 .dmshbar-search-bar-wrapper{
-    
+    forced-color-adjust: none;
+    margin: 0 8px;
+    box-sizing: border-box;
+    outline: 0;
 }
 
-.dmshbar-search-bar{
+.dmshbar-search-bar-inner-wrapper{
+    forced-color-adjust: none;
+    position: relative;
+    overflow: visible;
+    z-index: 100;
+    -webkit-app-region: no-drag;
+    box-sizing: border-box;
+    outline: 0;
 
 }
