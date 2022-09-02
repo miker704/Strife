@@ -8,6 +8,10 @@ class DmServerHeaderNavBar extends React.Component {
         this.handleDmServerName = this.handleDmServerName.bind(this);
     }
 
+    handleDmServerName(){
+        
+    }
+
     render () {
         return (
             <div className="dm-server-header-bar">
