@@ -73,7 +73,7 @@ class DmServerHeaderNavBar extends React.Component {
                         </div>
                         <div className="dmshbar-search-bar-wrapper">
                             <div className="dmshbar-search-bar-inner-wrapper">
-
+                                <div className="dmshbar-search-bar"></div>
                             </div>
                         </div>
                         <div className="dmshb-tool-icon-wrapper">
