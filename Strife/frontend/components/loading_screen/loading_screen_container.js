@@ -44,7 +44,8 @@ const mSTP = (state) => {
         "Hide muted channels in a server by right clicking the server name.",
         "Highlight text in your chat bar to bold, use italics, and more.",
         "Share what you're playing by using the Game Activity settings.",
-        "Type /tenor or /giphy + anything to find a GIF for that topic!"
+        "Type /tenor or /giphy + anything to find a GIF for that topic!",
+        "Drag and drop servers on top of each other to create server folders."
 
 
     ]
