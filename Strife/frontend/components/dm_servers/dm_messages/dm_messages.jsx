@@ -59,7 +59,7 @@ class DmMessages extends React.Component {
                                     Start Voice Call
                                 </ReactTooltip>
                             </div>
-                            <div className="dmshb-tool-icon-wrapper">
+                            <div className="dmshb-tool-icon-wrapper" data-tip data-for="start-video-call">
                                 <svg x="0" y="0" className="icon-webcall" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M21.526 8.149C21.231 7.966 20.862 7.951
                          20.553 8.105L18 9.382V7C18 5.897 17.103 5 16 5H4C2.897 5 2 5.897 2 
@@ -68,6 +68,15 @@ class DmMessages extends React.Component {
                          15.851C21.82 15.668 22 15.347 22 15V9C22 8.653 21.82 8.332 21.526 8.149Z">
                                     </path>
                                 </svg>
+                                <ReactTooltip
+                                    className="start-video-call-message-tool-tip"
+                                    textColor="#B9BBBE"
+                                    backgroundColor="#191919"
+                                    id="start-video-call"
+                                    place="top"
+                                    effect="solid">
+                                    Start Video Call
+                                </ReactTooltip>
                             </div>
                             <div className="dmshb-tool-icon-wrapper">
                                 <svg x="0" y="0" className="icon-pin-messages" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
