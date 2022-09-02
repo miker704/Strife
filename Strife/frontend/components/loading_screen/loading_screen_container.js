@@ -75,6 +75,7 @@ const mSTP = (state) => {
 
     const pickRandomLoadingMessage = () => {
         const msgIdx = Math.floor(Math.random() * randomLoadingMessages.length);
+        return randomLoadingMessages[msgIdx];
     }
 
 
