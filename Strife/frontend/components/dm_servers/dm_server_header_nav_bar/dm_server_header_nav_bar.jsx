@@ -6,9 +6,9 @@ class DmServerHeaderNavBar extends React.Component {
     constructor (props) {
         super(props);
         this.handleDmServerName = this.handleDmServerName.bind(this);
-        // this.state ={
-        //     dmServerName: ""
-        // }
+        this.state ={
+            dmServerName: ""
+        }
     }
 
     handleDmServerName () {
@@ -16,11 +16,16 @@ class DmServerHeaderNavBar extends React.Component {
         let dmMembersInServer = Object.values(this.props.dmServerMembers);
         if (dmMembersInServer.length > 2) {
             document.getElementById("groupChat").classList.remove('is-hidden');
+            document.getElementById("groupchatname").classList.remove('is-hidden');
             document.getElementById("normDm").classList.add('is-hidden');
+            document.getElementById("normal-chat").classList.add('is-hidden');
         }
         else if(dmMembersInServer.length === 2){
             document.getElementById("normDm").classList.remove('is-hidden');
+            document.getElementById("normal-chat").classList.remove('is-hidden');
             document.getElementById("groupChat").classList.add('is-hidden');
+            document.getElementById("groupchatname").classList.add('is-hidden');
+
 
         }
         // if(this.props.dmServer.dm_server_name === null || this.props.dmServer.dm_server_name === ""){
@@ -36,6 +41,7 @@ class DmServerHeaderNavBar extends React.Component {
                 dmServerName = dmServerName.join(", ");
             }
         // }
+        this.setState({dmServerName:dmServerName});
         return dmServerName;
     }
 
@@ -83,14 +89,15 @@ class DmServerHeaderNavBar extends React.Component {
                         </svg>
                     </div>
 
-                    <div className="dms-hbar-name">
+                    <div id="normal-chat"className="dms-hbar-name">
                         <h3 className="dms-hbar-name-header">{this.handleDmServerName()}</h3>
                     </div>
 
-                    <div className="group-chat-container">
+                    <div id="groupchatname" className="group-chat-container is-hidden">
                             <div className="outer-group-chat-name">
                                 <div className="inner-group-chat-container">
-                                    <input className = "group-name-input" type="text" />
+                                    <input className = "group-name-input" type="text" placeholder={this.state.dmServerName} value={this.state.dmServerName}/>
+                                    <div className="input-group-name">{this.handleDmServerName()}</div>
                                 </div>
                             </div>
                     </div>
