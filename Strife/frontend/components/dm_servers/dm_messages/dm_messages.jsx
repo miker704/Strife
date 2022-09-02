@@ -40,7 +40,7 @@ class DmMessages extends React.Component {
                         <div className="dmshb-tool-bar">
 
 
-                            <div className="dmshb-tool-icon-wrapper">
+                            <div className="dmshb-tool-icon-wrapper" data-tip data-for="start-voice-call" >
                                 <svg x="0" y="0" className="icon-phone" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                     <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M11 5V3C16.515 3 21 7.486 21 13H19C19 
                         8.589 15.411 5 11 5ZM17 13H15C15 10.795 13.206 9 11 9V7C14.309 7 17 9.691 17 13ZM11 11V13H13C13 
@@ -49,6 +49,15 @@ class DmMessages extends React.Component {
                         14.938 9 18 13 18V17C13 16.447 13.447 16 14 16Z">
                                     </path>
                                 </svg>
+                                <ReactTooltip
+                                    className="more-message-tool-tip"
+                                    textColor="#B9BBBE"
+                                    backgroundColor="#191919"
+                                    id="More"
+                                    place="top"
+                                    effect="solid">
+                                    More
+                                </ReactTooltip>
                             </div>
                             <div className="dmshb-tool-icon-wrapper">
                                 <svg x="0" y="0" className="icon-webcall" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
