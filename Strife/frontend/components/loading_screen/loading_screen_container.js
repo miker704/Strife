@@ -49,7 +49,7 @@ const mSTP = (state) => {
         "Click the compass in your server list to find new servers.",
         "Group DMs can have up to ten members.",
         "Click your avatar in the lower-left corner to set a custom status.",
-        ""
+        "You can temporarily mute a server or channel by right-clicking it.",
 
 
     ]
