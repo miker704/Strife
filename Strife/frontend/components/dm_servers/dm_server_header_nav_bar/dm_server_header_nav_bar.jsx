@@ -21,7 +21,7 @@ class DmServerHeaderNavBar extends React.Component {
             oneToOne.classList.add('is-hidden');
         }
      
-        if(this.props.dmServer.dm_server_name === null || this.props.dmServer.dm_server_name === ""){
+        // if(this.props.dmServer.dm_server_name === null || this.props.dmServer.dm_server_name === ""){
             for(let member of Object.values(this.props.dmServerMembers)){
                 if (member.id !== this.props.currentUser.id) {
                     dmServerName.push(member.username);
@@ -33,7 +33,7 @@ class DmServerHeaderNavBar extends React.Component {
             else {
                 dmServerName = dmServerName.join(", ");
             }
-        }
+        // }
         return dmServerName;
     }
 
@@ -61,7 +61,7 @@ class DmServerHeaderNavBar extends React.Component {
                     </div>
                     <div id="groupChat" className="group-dm-chat-icon-wrapper is-hidden">
                         <svg x="0" y="0" className="group-dm-chat-icon" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
-                            <path fill="currentColor" fillrule="evenodd" clipRule="evenodd" d="M14 8.00598C14 10.211 12.206 12.006 10 
+                            <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M14 8.00598C14 10.211 12.206 12.006 10 
                              12.006C7.795 12.006 6 10.211 6 8.00598C6 5.80098 7.794 4.00598 10 4.00598C12.206 4.00598 14 5.80098 
                                 14 8.00598ZM2 19.006C2 15.473 5.29 13.006 10 13.006C14.711 13.006 18 15.473 18 19.006V20.006H2V19.006Z">
 
@@ -82,7 +82,7 @@ class DmServerHeaderNavBar extends React.Component {
                     </div>
 
                     <div className="dms-hbar-name">
-                        <h3 className="dms-hbar-name-header">member name #{this.handleDmServerName()}</h3>
+                        <h3 className="dms-hbar-name-header">{this.handleDmServerName()}</h3>
                     </div>
                     <div className="dms-member-online-status">
 
