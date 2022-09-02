@@ -78,15 +78,24 @@ class DmMessages extends React.Component {
                                     Start Video Call
                                 </ReactTooltip>
                             </div>
-                            <div className="dmshb-tool-icon-wrapper">
+                            <div className="dmshb-tool-icon-wrapper" data-tip data-for="pin-messages">
                                 <svg x="0" y="0" className="icon-pin-messages" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M22 12L12.101 2.10101L10.686 3.51401L12.101 4.92901L7.15096 9.87801V9.88001L5.73596
                          8.46501L4.32196 9.88001L8.56496 14.122L2.90796 19.778L4.32196 21.192L9.97896 15.536L14.222 19.778L15.636 
                          18.364L14.222 16.95L19.171 12H19.172L20.586 13.414L22 12Z">
                                     </path>
                                 </svg>
+                                <ReactTooltip
+                                    className="pinned-messages-tool-tip"
+                                    textColor="#B9BBBE"
+                                    backgroundColor="#191919"
+                                    id="pin-messages"
+                                    place="top"
+                                    effect="solid">
+                                    Start Video Call
+                                </ReactTooltip>
                             </div>
-                            <div className="dmshb-tool-icon-wrapper">
+                            <div className="dmshb-tool-icon-wrapper" data-tip data-for="pin-messages">
                                 <svg x="0" y="0" className="icon-add-members" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                     <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M21 3H24V5H21V8H19V5H16V3H19V0H21V3ZM10 
                         12C12.205 12 14 10.205 14 8C14 5.795 12.205 4 10 4C7.795 4 6 5.795 6 8C6 10.205 7.795 12 10 12ZM10 13C5.289 13
