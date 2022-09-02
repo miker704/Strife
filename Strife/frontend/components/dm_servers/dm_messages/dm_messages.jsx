@@ -54,7 +54,7 @@ class DmMessages extends React.Component {
                                     textColor="#B9BBBE"
                                     backgroundColor="#191919"
                                     id="start-voice-call"
-                                    place="top"
+                                    place="bottom"
                                     effect="solid">
                                     Start Voice Call
                                 </ReactTooltip>
