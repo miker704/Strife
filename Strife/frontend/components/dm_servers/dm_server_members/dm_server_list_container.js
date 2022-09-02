@@ -3,13 +3,13 @@ import { withRouter } from "react-router";
 import DmServerMemberList from "./dm_server_list";
 
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
     return {
 
     }
 }
 
-const mDTP = (dispatch) => {
+const mDTP = (dispatch, ownProps) => {
     return {
 
     }
