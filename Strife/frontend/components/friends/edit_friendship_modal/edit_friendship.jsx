@@ -28,8 +28,8 @@ const EditFriendshipModal = ({
 
 
     useEffect(() => {
+       
         requestFriendships();
-
 
         return function cleanup () {
             if (errors.length > 0) {
