@@ -54,6 +54,7 @@ const mSTP = (state) => {
         "The top-most role for a user defines that user's color.",
         "Hover a GIF and click the star to save it to your favorites.",
         "Click a server name in the emoji picker to hide that server's emoji.",
+        "Characters like @, #, !, and * will narrow Quick Switcher results.",
         ""
 
 
