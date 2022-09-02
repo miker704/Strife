@@ -2,8 +2,68 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.dm-members-index-container{
-    width:240px;
+.dm-members-index-container-wrap {
+    width: 240px;
     flex-shrink: 0;
     background-color: #36393F;
+}
+
+
+.dm-members-index-container-wrapper {
+    min-width: 240px;
+    position: relative;
+    max-height: 100%;
+    forced-color-adjust: none;
+    outline: 0;
+    display: flex;
+}
+
+.dm-members-index-container {
+    overflow: hidden scroll;
+    padding-right: 0px;
+    forced-color-adjust: none;
+    background-color: hsl(223, 6.9%, 19.8%);
+    width: 240px;
+    padding: 0 0 20px;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    height: auto;
+    position: relative;
+    box-sizing: border-box;
+    min-height: 0;
+    outline: 0;
+}
+
+.dm-members-index-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.dm-members-index-container::-webkit-scrollbar-corner {
+    background-color: #0000;
+}
+
+.dm-members-index-container::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    border: 2px solid #0000;
+    border-radius: 4px;
+    background-color: hsl(216, 7.2%, 13.5%);
+    min-height: 40px;
+}
+
+.dm-members-index-container::-webkit-scrollbar-thumb,
+.dm-members-index-container::-webkit-scrollbar-track {
+    visibility: hidden;
+}
+
+.dm-members-index-container::-webkit-scrollbar-track {
+    border-color: #FFFFFF;
+    ;
+    background-color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+}
+
+
+.dm-members-header-title{
+
 }
