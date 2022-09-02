@@ -17,3 +17,4 @@ const mDTP = (state,ownProps) => {
 }
 
 const DmServerHeaderNavBarContainer = withRouter(connect(mSTP,mDTP)(DmServerHeaderNavBar));
+export default DmServerHeaderNavBarContainer;
