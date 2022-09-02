@@ -47,6 +47,7 @@ const mSTP = (state) => {
         "Type /tenor or /giphy + anything to find a GIF for that topic!",
         "Drag and drop servers on top of each other to create server folders.",
         "Click the compass in your server list to find new servers.",
+        "Group DMs can have up to ten members.",
         ""
 
 
