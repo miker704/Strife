@@ -11,7 +11,7 @@ class Api::FriendshipsController < ApplicationController
     def show
         # @friendship =  Friendship.find_by(user_id: friendship_params[:user_id], friend_id: friendship_params[:friend_id]);
         @friendship =  Friendship.find(params[:id])
-        if @friendship
+        if @friendship 
             render :show
         else
             render json: @friendship.errors.full_messages, status: 404
