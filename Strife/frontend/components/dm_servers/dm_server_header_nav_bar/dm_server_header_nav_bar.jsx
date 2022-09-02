@@ -31,7 +31,7 @@ class DmServerHeaderNavBar extends React.Component {
                     <div className="dms-member-online-status">
 
                     </div>
-
+                        <div className="dmshb-spacer"></div>
                 </div>
             </div>
         )
