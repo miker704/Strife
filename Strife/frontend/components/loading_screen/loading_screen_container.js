@@ -28,7 +28,9 @@ const mSTP = (state) => {
         "Our HypeSquad program has three houses you can be sorted in to by taking the in-app quiz: Bravery, Balance, and Brilliance.",
         "The character on our 404 page is a robot hamster named Nelly.",
         "You can play our version of the Snake game on our 404 page by pressing a ~secret~ button.",
-        
+        "There's a very small—and we mean small—chance you can get a secret ringtone when calling someone. Good luck!",
+        ""
+
     ]
 
     
