@@ -20,11 +20,26 @@ const EditFriendshipModal = ({
     closeHookModalOnOutsideClick(popupRef, setShowPopup);
     closeOnEsc(setShowPopup);
     // console.log("showPopupTop: ",setShowPopup);
-//    console.log("props: ",friend);
-//    console.log("currebt: ",currentUser);
+    //    console.log("props: ",friend);
+    //    console.log("currebt: ",currentUser);
     const handleDeleteFriendShip = () => {
-            console.log("friend =: ", friend);
+        console.log("friend =: ", friend);
     }
+
+
+    useEffect(() => {
+        props.requestFriendships();
+
+
+        return function cleanup () {
+            if (props.errors.length > 0) {
+               removeFriendshipErrors();
+            }
+        }
+
+    }, []);
+
+
 
     return (
         <div className="fo-layer" >
