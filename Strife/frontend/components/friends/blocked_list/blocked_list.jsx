@@ -49,7 +49,7 @@ class BlockedList extends React.Component {
 
 
     componentDidMount () {
-        this.props.requestFriendships();
+        // this.props.requestFriendships();
     }
 
 
