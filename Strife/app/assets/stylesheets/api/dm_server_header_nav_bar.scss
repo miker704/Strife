@@ -473,3 +473,27 @@
     color: hsl(210, 2.9%, 86.7%);
 
 }
+
+
+.group-dm-chat-icon-wrapper{
+    position: relative;
+    height: 24px;
+    width: auto;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    margin: 0 8px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.group-dm-chat-icon{
+    color: hsl(216, 3.7%, 73.5%);
+    display: block;
+    width: 24px;
+    height: 24px;
+    -webkit-app-region: no-drag;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+}
+
