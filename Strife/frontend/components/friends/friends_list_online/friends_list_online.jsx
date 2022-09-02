@@ -310,8 +310,6 @@ const FriendShipIndexOnline = ({
                                         </li>
                                     )
 
-                                
-                                
                             })
                         }
                     </ul>
