@@ -220,7 +220,7 @@ const FriendShipIndex1 = (props) => {
                             {
                                 allFriends.map((friend, friendIdx) => {
                                     return (
-                                        <li className="friend-index-item" key={friend.id}>
+                                        <li className="friend-index-item" key={friend.id}  autoFocus ref={friendRef}>
                                             {showPopup && <EditFriendshipModalContainer user={props.currentUser} friend={friend} top={popupTop} setShowPopup={setShowPopup} />}
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
