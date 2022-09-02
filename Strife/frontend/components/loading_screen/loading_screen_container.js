@@ -38,7 +38,8 @@ const mSTP = (state) => {
         "Change each participant's volume by right-clicking them in a call.",
         "You can drag and drop files onto Discord to upload them.",
         "You can join up to 100 servers.",
-        ""
+        "You can create channel categories to group and organize your channels.",
+        
 
     ]
 
