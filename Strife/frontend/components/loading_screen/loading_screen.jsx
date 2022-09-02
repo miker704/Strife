@@ -7,6 +7,11 @@ class LoadingScreen extends React.Component{
         this.loadingMessage = this.props.selectedLoadingMsg;
     }
     
+    render(){
+        
+    }
+
+
 }
 
 export default LoadingScreen;
