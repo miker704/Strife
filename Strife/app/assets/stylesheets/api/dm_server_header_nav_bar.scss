@@ -21,3 +21,17 @@
     user-select: none;
     color: hsl(210,2.9%,86.7%);
 }
+
+.dm-server-bar-children{
+    align-items: center;
+    min-width: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    display: flex;
+    -webkit-box-align: center;
+    flex: 1 1 auto;
+    position: relative;
+    -webkit-box-flex: 1;
+}
+
