@@ -73,7 +73,9 @@ const mSTP = (state) => {
 
     ]
 
-    
+    const pickRandomLoadingMessage = () => {
+        
+    }
 
 
 
