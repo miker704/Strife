@@ -23,7 +23,8 @@ const mDTP = (dispatch) => {
         requestFriendships: () => dispatch(requestFriendships()),
         createDmServer: (dmserver) => dispatch(createDmServer(dmserver)),
         createDmMember: (dm_member) => dispatch(createDmMember(dm_member)),
-        removeDmServerErrors: () => dispatch(removeDmServerErrors())
+        removeDmServerErrors: () => dispatch(removeDmServerErrors()),
+        removeFriendshipErrors: () => dispatch(removeFriendshipErrors())
     }
 }
 
