@@ -56,7 +56,7 @@ const mSTP = (state) => {
         "Click a server name in the emoji picker to hide that server's emoji.",
         "Characters like @, #, !, and * will narrow Quick Switcher results.",
         "You can type /tableflip and /unflip to spice up your messages.",
-        ""
+        "You can use Streamer Mode to hide personal details while streaming.",
 
 
     ]
