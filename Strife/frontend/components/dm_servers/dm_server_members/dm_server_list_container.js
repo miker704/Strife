@@ -11,6 +11,8 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
-        
+
     }
 }
+
+const DmServerMemberListContainer = withRouter(connect(mSTP,mDTP)(DmServerMemberList));
