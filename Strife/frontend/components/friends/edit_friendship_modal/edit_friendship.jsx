@@ -21,6 +21,8 @@ const EditFriendshipModal = ({
     closeOnEsc(setShowPopup);
     // console.log("showPopupTop: ",setShowPopup);
    console.log("props: ",friend);
+   console.log("currebt: ",currentUser);
+
 
     return (
         <div className="fo-layer" >
