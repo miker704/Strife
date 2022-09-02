@@ -6,7 +6,7 @@ class DmMessages extends React.Component {
         super(props);
     }
     componentDidMount(){
-        
+
     }
     render () {
         console.log("dmserver messages props", this.props);
@@ -79,7 +79,7 @@ class DmMessages extends React.Component {
                             <div className="dmshbar-search-bar-wrapper">
                                 <div className="dmshbar-search-bar-inner-wrapper">
                                     <div className="dmshbar-search-bar">
-                                        <div>
+                                        <div className="draft-edit">
 
                                         </div>
                                     </div>
