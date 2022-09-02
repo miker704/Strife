@@ -1,3 +1,7 @@
+
+
+
+// old componenet implemented via classes uising react hooks for this component
 // import React from "react";
 // import ReactTooltip from "react-tooltip";
 // import EditFriendshipModalContainer from "../edit_friendship_modal/edit_friendship_container";
