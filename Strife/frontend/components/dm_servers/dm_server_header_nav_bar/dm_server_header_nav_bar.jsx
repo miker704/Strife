@@ -6,7 +6,13 @@ class DmServerHeaderNavBar extends React.Component{
         super(props);
     }
 
-    
+    render(){
+        return (
+            <div>
+                
+            </div>
+        )
+    }
 }
 
 
