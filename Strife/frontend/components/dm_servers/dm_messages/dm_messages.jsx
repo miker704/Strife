@@ -195,8 +195,10 @@ class DmMessages extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="empty-messages-container is-hidden">Hello World</div>
-                <div><p>Hey not empty</p></div>
+                {/* <div className="empty-messages-container is-hidden">Hello World</div> */}
+                {/* <div><p>Hey not empty</p></div> */}
+                <div className="empty-messages-container">Hello World</div>
+
 
             </div>
         )
