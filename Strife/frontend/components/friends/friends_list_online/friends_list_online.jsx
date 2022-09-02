@@ -133,7 +133,11 @@ const FriendShipIndexOnline = ({
 
                 <div className="all-search-bar">
                     <div className="all-search-bar-inner">
-                        <input id="input-all-friends" className="input-all-friends" type="search" placeholder="Search"
+                        <input 
+                            id="input-all-friends"
+                            className="input-all-friends"
+                            type="search"
+                            placeholder="Search"
                             autoFocus ref={inputRef}
                             spellCheck={false}
                             onChange={(e) => {
