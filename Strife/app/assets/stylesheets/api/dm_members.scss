@@ -82,3 +82,29 @@
     flex: 1 1 auto;
     color: hsl(223,3.4%,60.2%);
 }
+
+.dm-member-item{
+    position: relative;
+    max-width: 224px;
+    margin-left: 8px;
+    forced-color-adjust: none;
+    background-color: hsl(223,6.9%,19.8%);
+    box-sizing: border-box;
+    display: block;
+    padding: 1px 0;
+    border-radius: 4px;
+    transition: none;
+    color: hsl(223,3.4%,60.2%);
+    outline:0;
+}
+
+
+.dm-member-avatar{
+
+}
+
+
+
+.dm-member-item:hover{
+
+}
