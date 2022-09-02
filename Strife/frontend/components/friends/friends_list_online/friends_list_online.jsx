@@ -141,7 +141,6 @@ const FriendShipIndexOnline = ({
                             onChange={(e) => {
 
                                 setSearchText(e.currentTarget.value);
-                                // gatherMatches();
                             }
                             }
                             value={searchText} />
