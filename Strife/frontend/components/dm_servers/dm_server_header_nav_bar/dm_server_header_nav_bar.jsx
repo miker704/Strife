@@ -11,7 +11,7 @@ class DmServerHeaderNavBar extends React.Component {
             <div className="dm-server-header-bar">
                 <div className="dm-server-bar-children">
                     <div className="dms-children-icon-wrapper">
-                        <svg x="0" y="0" class="icon-2xnN2Y" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                        <svg x="0" y="0" className="icon-at-sym" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M12 2C6.486 2 2 6.486 2 12C2 17.515 6.486 22 12 22C14.039 
                             22 15.993 21.398 17.652 20.259L16.521 18.611C15.195 19.519 13.633 20 12 20C7.589 20 4 
                             16.411 4 12C4 7.589 7.589 4 12 4C16.411 4 20 7.589 20 12V12.782C20 14.17 19.402 15 18.4
