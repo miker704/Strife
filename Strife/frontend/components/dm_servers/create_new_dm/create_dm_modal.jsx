@@ -11,7 +11,8 @@ const CreateDmModal = ({
     createDmServer,
     history,
     createDmMember,
-    requestFriendships
+    requestFriendships,
+    removeDmServerErrors,
 }) => {
     const inputRef = useRef();
     const popupRef = useRef();
