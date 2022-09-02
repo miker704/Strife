@@ -48,7 +48,7 @@ const FriendShipIndexOnline = ({
 
 
     const handleSelected = (friend) => {
-
+        toggleSelected(friend);
     }
 
     const handlePopupShow = (e) => {
