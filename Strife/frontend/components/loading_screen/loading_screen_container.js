@@ -65,7 +65,7 @@ const mSTP = (state) => {
         "Use $[](keyboardShortcutsHook) to bring up the list of keyboard shortcuts.",
         "$[](messageNewlineHook) to make a new line without sending your message.",
         "Holding $[](shiftHook) while clicking emoji allows you to send multiple emoji.",
-        ""
+        "You can press $[](upHook) to quickly edit your most recent message."
 
 
     ]
