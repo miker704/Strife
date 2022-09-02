@@ -46,7 +46,7 @@ class DmServerHeaderNavBar extends React.Component {
                             </svg>
                         </div>
                         <div className="dmshb-tool-icon-wrapper">
-                            <svg x="0" y="0" className="icon-2xnN2Y" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                            <svg x="0" y="0" className="icon-webcall" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M21.526 8.149C21.231 7.966 20.862 7.951
                              20.553 8.105L18 9.382V7C18 5.897 17.103 5 16 5H4C2.897 5 2 5.897 2 
                              7V17C2 18.104 2.897 19 4 19H16C17.103 19 18 18.104 18 17V14.618L20.553 
