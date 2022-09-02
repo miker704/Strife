@@ -19,5 +19,5 @@ const mDTP = (dispatch) => {
 
 
 
-const LoadingScreenContainer = withRouter(connect()());
+const LoadingScreenContainer = withRouter(connect(mSTP,mDTP)(LoadingScreen));
 export default LoadingScreenContainer;
