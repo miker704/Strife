@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef} from "react";
 
 
-const DmServerMemberList = ({}) => {
+const DmServerMemberList = ({props}) => {
 
 }
 
