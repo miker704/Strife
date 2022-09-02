@@ -218,7 +218,8 @@ const FriendShipIndexOnline = ({
                                                     {/* <div data-tip data-for="Message" className="pending-request-actions-tool-tip">Message</div> */}
                                                     {/* <div className="pending-request-actions-tool-tip-triangle"></div> */}
                                                 </div>
-                                                <div data-tip data-for = "More" className="friend-options-button" 
+                                                <div data-tip data-for = "More" 
+                                                     className="friend-options-button" 
                                                      onClick={(e) => {
                                                                         handleSelected(friend),
                                                                         friendRef.current.focus();
