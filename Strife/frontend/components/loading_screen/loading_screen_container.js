@@ -34,7 +34,6 @@ const mSTP = (state) => {
         "You can play our version of the Snake game on our 404 page by pressing a ~secret~ button.",
         "There's a very small—and we mean small—chance you can get a secret ringtone when calling someone. Good luck!",
         "Our old Partner mascot was an elf named Springle. He recently retired.",
-
         //tips
         "You can type /nick to quickly change your nickname in a server.",
         "Type a plus sign before an emoji name to turn it into a reaction.",
