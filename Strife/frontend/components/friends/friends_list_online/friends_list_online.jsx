@@ -207,7 +207,7 @@ const FriendShipIndexOnline = ({
                 <div id="num-of-friends" className="all-friends">
                     {`ONLINE - ${allFriends.length}`}
                 </div>
-                <div className="friend-index">
+                <div className="friend-index" id='ul-fiiw'>
                     <ul className="friend-index-item-wrapper">
                         {
 
