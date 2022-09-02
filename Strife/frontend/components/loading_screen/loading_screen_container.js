@@ -55,6 +55,7 @@ const mSTP = (state) => {
         "Hover a GIF and click the star to save it to your favorites.",
         "Click a server name in the emoji picker to hide that server's emoji.",
         "Characters like @, #, !, and * will narrow Quick Switcher results.",
+        "You can type /tableflip and /unflip to spice up your messages.",
         ""
 
 
