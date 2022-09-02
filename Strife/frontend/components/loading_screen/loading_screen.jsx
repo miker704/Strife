@@ -7,3 +7,5 @@ class LoadingScreen extends React.Component{
     }
     
 }
+
+export default LoadingScreen;
