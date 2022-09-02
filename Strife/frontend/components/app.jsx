@@ -16,6 +16,7 @@ import EmptyMessagesContainer from './dm_servers/dm_messages/empty_messages_cont
 import DmMessagesContainer from './dm_servers/dm_messages/dm_messages_container.js';
 import FriendsHomePageContainer from './friends/friends_page_main/friends_home_page.jsx';
 import HomePageContainer from './friends/friends_page_main/friends_home_page_container.js';
+import LoadingScreenContainer from './loading_screen/loading_screen_container.js';
 
 const App = () => (
     <div>
