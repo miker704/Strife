@@ -80,7 +80,14 @@ class DmMessages extends React.Component {
                                 <div className="dmshbar-search-bar-inner-wrapper">
                                     <div className="dmshbar-search-bar">
                                         <div className="draft-edit">
-
+                                            <div className="public-draft-edit">
+                                                <div className="public-draft-edit-placeholder">Search</div>
+                                            </div>
+                                            <div className="public-draft-editor-container">
+                                                <div className="public-draft-editor-container-placeholder">
+                                                    <div className="data-contents"></div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
