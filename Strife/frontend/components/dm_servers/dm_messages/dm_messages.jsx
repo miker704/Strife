@@ -85,7 +85,13 @@ class DmMessages extends React.Component {
                                             </div>
                                             <div className="public-draft-editor-container">
                                                 <div className="public-draft-editor-container-placeholder">
-                                                    <div className="data-contents"></div>
+                                                    <div className="data-contents">
+                                                        <div className="data-block">
+                                                            <div className="data-key-offset">
+                                                                <span className="data-key-offset2"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
