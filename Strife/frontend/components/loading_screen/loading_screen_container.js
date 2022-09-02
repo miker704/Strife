@@ -19,9 +19,9 @@ const mSTP = (state) => {
         "Strife started as a game company making a mobile game called Fates Forever.",
         "Strife's official birthday is June 19, 2022.",
         "We came up with the idea of Strife Nitro over morning breakfast potatoes.",
-
-        "Strife is a synom for discord",
-
+        "Strife is a synonym for discord",
+        "Discord - disagreement between people.",
+        "Strife - angry or bitter disagreement over fundamental issues; conflict",
         "Our mascot, Wumpus, was originally created as a character with no friends :(",
         "In Strife's early days, light theme was the only theme. Scary times.",
         "In the ancient days, Strife started as a browser-only app.",
