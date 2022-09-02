@@ -28,7 +28,7 @@ const EditFriendshipModal = ({
 
 
     useEffect(() => {
-        props.requestFriendships();
+        requestFriendships();
 
 
         return function cleanup () {
