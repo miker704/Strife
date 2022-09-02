@@ -22,7 +22,11 @@ const mSTP = (state) => {
 
         "Strife is a synom for discord",
 
-        ""
+        "Our mascot, Wumpus, was originally created as a character with no friends :(",
+        "In Discord's early days, light theme was the only theme. Scary times.",
+        "In the ancient days, Discord started as a browser-only app.",
+        "Our HypeSquad program has three houses you can be sorted in to by taking the in-app quiz: Bravery, Balance, and Brilliance.",
+        "The character on our 404 page is a robot hamster named Nelly.",
     ]
 
     
