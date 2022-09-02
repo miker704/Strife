@@ -24,7 +24,7 @@
     width: calc(100vw - 310px);
     transform: translate(309px, 0px);
     box-shadow: 0 1px 0 hsla(240, 11.1%, 1.8%, 0.2), 0 1.5px 0 hsla(240, 7.7%, 2.5%, 0.05), 0 2px 0 hsla(240, 11.1%, 1.8%, 0.05);
-
+    user-select: none;
 
 }
 
@@ -605,7 +605,7 @@
     -webkit-app-region: no-drag;
     background: #0000;
     box-sizing: border-box;
-    opacity: 0;
+    // opacity: 0;
     forced-color-adjust: none;
     font-family: "ABC Ginto Normal";
     font-weight: 500;
