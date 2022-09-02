@@ -145,7 +145,9 @@ const FriendShipIndexOnline = ({
                                 setSearchText(e.currentTarget.value);
                             }
                             }
-                            value={searchText} />
+                            value={searchText} 
+                            
+                            />
                         <div className="magnify-icon-wrapper">
                             <div className="magnify-icon">
                                 <svg className="mag-icon1" aria-label="Search" aria-hidden="false" role="img" width="24" height="24" viewBox="0 0 24 24">
