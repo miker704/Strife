@@ -6,7 +6,7 @@ class DmServerHeaderNavBar extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            DmServerName: this.props.dmServer.dm_server_name
+            DmServerName:""
         }
         this.handleDmServerName = this.handleDmServerName.bind(this);
         this.handleDmServerName2 = this.handleDmServerName2.bind(this);
@@ -19,10 +19,12 @@ class DmServerHeaderNavBar extends React.Component {
         return this.setState({ DmServerName: name });
     }
     handleInput (e) {
-        return (e) => { this.setState({ DmServerName: e.current.target.value }) };
+        return (e) => { this.setState({ DmServerName: e.currentTarget.value }) };
     }
-
-
+ 
+    componentDidMount(){
+        this.props.fetchDmServer(this.props.dmServerId);
+    }
 
 
     handleDmServerName () {
@@ -85,7 +87,7 @@ class DmServerHeaderNavBar extends React.Component {
     render () {
 
         console.log("these are the dmheader navbbar props: ", this.props);
-
+        console.log("dmServer : ", this.props.dmServer);
         return (
             <div className="dm-server-header-bar">
                 {this.handleDmServerName()}
@@ -134,12 +136,13 @@ class DmServerHeaderNavBar extends React.Component {
                     <div id="groupchatname" className="group-chat-container is-hidden">
                         <div className="outer-group-chat-name">
                             <div className="inner-group-chat-container">
-                                <input className="group-name-input"
+                                {/* <input className="group-name-input"
                                     type="text"
-                                    onChange={(e) => this.handleInput()}
-                                    placeholder={`${this.state.DmServerName}`}
-                                    value={this.state.DmServerName}
-                                />
+                                    // onChange={this.handleInput()}
+                                    // placeholder={this.handleDmServerName2()}
+                                    // value={this.state.DmServerName}
+                                    // onSubmit={() => console.log("hello the name is : ",this.state.DmServerName)}
+                                /> */}
                                 <div className="input-group-name">{this.handleDmServerName2()}</div>
                             </div>
                         </div>
