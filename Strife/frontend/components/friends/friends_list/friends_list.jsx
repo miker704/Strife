@@ -255,7 +255,6 @@ const FriendShipIndex = (props) => {
                                                      className="friend-options-button" 
                                                      onClick={(e) => {
                                                         handleSelected(friend); 
-                                                        friendRef.current.focus(); 
                                                         handlePopupShow(e)
                                                     }}
                                                      >
