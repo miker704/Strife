@@ -6,9 +6,16 @@ import LoadingScreen from "./loading_screen";
 
 const mSTP = (state) => {
 
-    const randomLoadingMessage = {
-        
-    }
+
+    //current discord loading messages as of sep 2, 2022
+    const randomLoadingMessage = [
+        "Strife was almost called Bonfire before we picked our name. It was meant to be nice and cozy.",
+        "Loading",
+        ""
+
+    ]
+
+    
 
 
 
