@@ -11,6 +11,7 @@ const CreateDmModal = ({
     createDmServer,
     history,
     createDmMember,
+    friendshipErrors,
     errors,
     requestFriendships,
     removeDmServerErrors,
