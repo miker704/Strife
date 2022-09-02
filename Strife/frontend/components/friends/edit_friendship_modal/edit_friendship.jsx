@@ -26,6 +26,7 @@ const EditFriendshipModal = ({
         //     console.log("deleted friend");
             
         // });
+        setShowPopup(false);
         return;
     }
 
