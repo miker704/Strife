@@ -7,7 +7,7 @@ class DmMessages extends React.Component {
         super(props);
     }
     componentDidMount () {
-            this.props.fetchDmServer(this.props.dmServerId);
+        this.props.fetchDmServer(this.props.dmServerId);
     }
     render () {
         console.log("dmserver messages props", this.props);
@@ -199,7 +199,7 @@ class DmMessages extends React.Component {
                 {/* <div className="empty-messages-container is-hidden">Hello World</div> */}
                 {/* <div><p>Hey not empty</p></div> */}
 
-                <DmServerHeaderNavBarContainer dmServerMembers = {this.props.dmServerMembers}/>
+                <DmServerHeaderNavBarContainer dmServerMembers={this.props.dmServerMembers} dmServer={this.props.dmServer} />
 
                 <div className="empty-messages-container is-hidden"></div>
                 <div className="dm-messages-container">
@@ -207,7 +207,7 @@ class DmMessages extends React.Component {
                         {
                             Object.values(this.props.dmServerMembers).map((dmMember, dmMemberIdx) => {
                                 return (
-                                <li key={dmMember.id}>{dmMember.username}</li>)
+                                    <li key={dmMember.id}>{dmMember.username}</li>)
                             })
                         }
 
