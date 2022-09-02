@@ -62,7 +62,7 @@ const FriendShipIndex1 = (props) => {
         let newDmServerName = [];
         let dmServerName = "";
         for (let member of dmMemberInfo) {
-            if (member.id !== currentUser.id) {
+            if (member.id !== props.currentUser.id) {
                 newDmServerName.push(member.username);
             }
         }
