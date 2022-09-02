@@ -26,7 +26,7 @@ class DmServerHeaderNavBar extends React.Component {
                         </svg>
                     </div>
                     <div className="dms-hbar-name">
-                        
+                        <h3 className="dms-hbar-name-header"></h3>
                     </div>
 
                 </div>
