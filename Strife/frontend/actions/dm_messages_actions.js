@@ -26,7 +26,7 @@ export const receiveDmMessageErrors = (errors) => {
     }
 }
 
-export const removeMessageErrors = () => {
+export const removeDmMessageErrors = () => {
     return {
         type: REMOVE_DM_MESSAGE_ERRORS,
 
