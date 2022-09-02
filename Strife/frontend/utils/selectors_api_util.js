@@ -78,5 +78,5 @@ export const selectDmMembers = (state, type, id) => {
     }
 
 
-    return members.sort((a, b) => a.username > b.username ? 1 : -1)''
+    return members.sort((a, b) => a.username > b.username ? 1 : -1);
 };
