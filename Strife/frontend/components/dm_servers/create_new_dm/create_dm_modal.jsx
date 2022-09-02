@@ -13,6 +13,8 @@ const CreateDmModal = ({
     createDmMember,
     requestFriendships,
     removeDmServerErrors,
+    removeFriendshipErrors
+    
 }) => {
     const inputRef = useRef();
     const popupRef = useRef();
