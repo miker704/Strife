@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import EditFriendshipModal from './edit_friendship';
-import { selectFriendStatusOnline, selectOnlineFriends} from '../../../utils/selectors_api_util';
+import { selectFriendStatusOnline} from '../../../utils/selectors_api_util';
 import { requestFriendships, removeFriendshipErrors, deleteFriendship} from '../../../actions/friendship_actions';
 
 
