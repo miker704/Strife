@@ -66,13 +66,17 @@ export const selectBlockedUsers = (state, status) => {
 
 
 
-export const selectDmMembers = (state, type, id) => {
-    const memberIds = state.entities[type][id]?.members;
-    if (!memberIds) return [];
-  
-    const members = [];
-    for (let memberId of memberIds) {
-      members.push(state.entities.users[memberId]);
+  export const selectDmMembers = (state,id) => {
+    const memberIds = state.entities.dmServers[id]?.members;
+    if(!memberIds){
+        console.log("fail");
+        return [];
     }
-    return members.sort((a,b) => a.username > b.username ? 1 : -1);
+    else{
+        console.log("memberIds: ",memberIds);
+        console.table(memberIds);
+
+        return memberIds;
+    }
+ 
   };
