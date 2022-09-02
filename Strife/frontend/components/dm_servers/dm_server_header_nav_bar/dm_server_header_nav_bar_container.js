@@ -4,6 +4,9 @@ import { withRouter } from "react-router";
 
 
 const mSTP = (state, ownProps) => {
+    return {
+        
+    }
 
 }
 
