@@ -57,3 +57,13 @@
     -webkit-app-region: no-drag;
     color: hsl(213,4.1%,57.5%);
 }
+
+.dms-hbar-name{
+    forced-color-adjust: none;
+    flex: 0 0 auto;
+    min-width: auto;
+    margin: 0 8px 0 0;
+    -webkit-box-flex: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
