@@ -20,7 +20,7 @@ const EditFriendshipModal = ({
     closeHookModalOnOutsideClick(popupRef, setShowPopup);
     closeOnEsc(setShowPopup);
     // console.log("showPopupTop: ",setShowPopup);
-   
+   console.log("props: ",friend);
 
     return (
         <div className="fo-layer" >
