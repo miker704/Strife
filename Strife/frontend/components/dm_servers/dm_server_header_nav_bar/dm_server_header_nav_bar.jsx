@@ -9,10 +9,13 @@ class DmServerHeaderNavBar extends React.Component {
     }
 
     handleDmServerName(){
-        
+
     }
 
     render () {
+
+        console.log("these are the dmheader navbbar props: ", this.props);
+
         return (
             <div className="dm-server-header-bar">
             <div className="dm-server-bar-children">
