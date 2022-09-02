@@ -38,7 +38,7 @@ const EditFriendshipModal = ({
                         <div className="fo-item-container">
                             <div className="fo-item-name">Start Voice Call</div>
                         </div>
-                        <div className="fo-item-container red" onClick={() => console.log(`${friend}`)}>
+                        <div className="fo-item-container red" onClick={() => console.log(`${friend.id}`)}>
                             <div className="fo-item-name">Remove Friend</div>
                         </div>
                         <div className="fo-options-bottom-div"></div>
