@@ -34,7 +34,8 @@ const mSTP = (state) => {
         //tips
         "You can type /nick to quickly change your nickname in a server.",
         "Type a plus sign before an emoji name to turn it into a reaction.",
-        ""
+        "Right click to pin messages in a channel or DM to save them for later.",
+        
 
     ]
 
