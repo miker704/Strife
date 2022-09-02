@@ -47,22 +47,7 @@ class DmServerHeaderNavBar extends React.Component {
 
 
         }
-        // if(this.props.dmServer.dm_server_name === null || this.props.dmServer.dm_server_name === ""){
-        // for (let member of Object.values(this.props.dmServerMembers)) {
-        //     if (member.id !== this.props.currentUser.id) {
-        //         dmServerName.push(member.username);
-        //     }
-        // }
-        // if (dmServerName.length === 1) {
-        //     dmServerName = dmServerName.join();
-        // }
-        // else {
-        //     dmServerName = dmServerName.join(", ");
-        // }
-        // // }
-        // // this.setState({ dmServerName: dmServerName });
-
-        // return dmServerName;
+  
     }
 
     handleDmServerName2 () {
