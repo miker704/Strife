@@ -199,7 +199,7 @@ class DmMessages extends React.Component {
                 {/* <div className="empty-messages-container is-hidden">Hello World</div> */}
                 {/* <div><p>Hey not empty</p></div> */}
 
-
+                <DmServerHeaderNavBarContainer dmServerMembers = {this.props.dmServerMembers}/>
 
                 <div className="empty-messages-container is-hidden"></div>
                 <div className="dm-messages-container">
