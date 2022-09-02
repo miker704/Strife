@@ -9,7 +9,11 @@ class DmServerHeaderNavBar extends React.Component{
     render(){
         return (
             <div className="dm-server-header-bar">
-                    <div className="dm-server-bar-children"></div>
+                    <div className="dm-server-bar-children">
+                        <div className="dms-children-icon-wrapper">
+                            
+                        </div>
+                    </div>
             </div>
         )
     }
