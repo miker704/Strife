@@ -26,7 +26,7 @@ const FriendShipIndexOnline = ({
     const [selectedFriends, setSelectedFriends] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
     const [popupTop, setPopupTop] = useState(0);
-    const [toggleSelected,selectFriend] = useState([]);
+    const [selectFriend,toggleSelected] = useState([]);
     let allFriends = friends;
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
     const dmMembersArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
@@ -218,7 +218,7 @@ const FriendShipIndexOnline = ({
                                                     {/* <div data-tip data-for="Message" className="pending-request-actions-tool-tip">Message</div> */}
                                                     {/* <div className="pending-request-actions-tool-tip-triangle"></div> */}
                                                 </div>
-                                                <div data-tip data-for = "More" className="friend-options-button" onClick={() => handleSelected(friend)}>
+                                                <div data-tip data-for = "More" className="friend-options-button" onClick={(e) => {handleSelected(friend), handlePopupShow}}>
                                                     <svg className="icon-1WVg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                                         <g fill="none" fillRule="evenodd">
                                                             <path d="M24 0v24H0V0z">
