@@ -92,16 +92,25 @@ class DmMessages extends React.Component {
                                     id="pin-messages"
                                     place="top"
                                     effect="solid">
-                                    Start Video Call
+                                    Pinned Messages
                                 </ReactTooltip>
                             </div>
-                            <div className="dmshb-tool-icon-wrapper" data-tip data-for="pin-messages">
+                            <div className="dmshb-tool-icon-wrapper" data-tip data-for="dmshb-invite-members">
                                 <svg x="0" y="0" className="icon-add-members" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                     <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M21 3H24V5H21V8H19V5H16V3H19V0H21V3ZM10 
                         12C12.205 12 14 10.205 14 8C14 5.795 12.205 4 10 4C7.795 4 6 5.795 6 8C6 10.205 7.795 12 10 12ZM10 13C5.289 13
                          2 15.467 2 19V20H18V19C18 15.467 14.711 13 10 13Z">
                                     </path>
                                 </svg>
+                                <ReactTooltip
+                                    className="dmshb-invite-members-tool-tip"
+                                    textColor="#B9BBBE"
+                                    backgroundColor="#191919"
+                                    id="dmshb-invite-members"
+                                    place="top"
+                                    effect="solid">
+                                    Start Video Call
+                                </ReactTooltip>
                             </div>
                             <div className="dmshbar-search-bar-wrapper" >
                                 <div className="dmshbar-search-bar-inner-wrapper">
@@ -150,6 +159,15 @@ class DmMessages extends React.Component {
                                  19V5C21 3.89 20.1 3 19 3ZM19 15H15C15 16.66 13.65 18 12 18C10.35 18 9 16.66 9 15H4.99V5H19V15Z" fill="currentColor">
                                     </path>
                                 </svg>
+                                <ReactTooltip
+                                    className="pinned-messages-tool-tip"
+                                    textColor="#B9BBBE"
+                                    backgroundColor="#191919"
+                                    id="pin-messages"
+                                    place="top"
+                                    effect="solid">
+                                    Start Video Call
+                                </ReactTooltip>
                             </div>
                             {/* <div className="dmshb-tool-icon-wrapper">
 
@@ -166,6 +184,15 @@ class DmMessages extends React.Component {
                                     </svg>
                                     <div className="home-bar-tool-tip">Help</div>
                                     <div className="home-bar-tool-tip-triangle"></div>
+                                    <ReactTooltip
+                                        className="pinned-messages-tool-tip"
+                                        textColor="#B9BBBE"
+                                        backgroundColor="#191919"
+                                        id="pin-messages"
+                                        place="top"
+                                        effect="solid">
+                                        Start Video Call
+                                    </ReactTooltip>
                                 </div>
                             </a>
 
