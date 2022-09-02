@@ -6,6 +6,7 @@ import DmServerMemberList from "./dm_server_list";
 const mSTP = (state, ownProps) => {
     return {
 
+        dmMembers: state.entities.dmServers[ownProps.match.params.dmServerId].members
     }
 }
 
@@ -15,5 +16,5 @@ const mDTP = (dispatch, ownProps) => {
     }
 }
 
-const DmServerMemberListContainer = withRouter(connect(mSTP,mDTP)(DmServerMemberList));
+const DmServerMemberListContainer = withRouter(connect(mSTP, mDTP)(DmServerMemberList));
 export default DmServerMemberListContainer;
