@@ -13,6 +13,14 @@ class DmServerHeaderNavBar extends React.Component {
         this.handleInput = this.handleInput.bind(this);
     }
 
+    setDMServerName(){
+
+    }
+    handleInput(){
+        
+    }
+
+
     handleDmServerName () {
         let dmServerName = [];
         let dmMembersInServer = Object.values(this.props.dmServerMembers);
