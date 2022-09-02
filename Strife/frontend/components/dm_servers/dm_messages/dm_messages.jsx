@@ -5,7 +5,9 @@ class DmMessages extends React.Component {
     constructor (props) {
         super(props);
     }
-
+    componentDidMount(){
+        
+    }
     render () {
         console.log("dmserver messages props", this.props);
 
