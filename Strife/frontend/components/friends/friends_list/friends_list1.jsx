@@ -47,8 +47,8 @@ const FriendShipIndex1 = (props) => {
     }
 
     const handleDm = (friend) => {
-        const memberIds = [currentUser.id, parseInt(friend.id)].sort((a, b) => a - b);
-        let new_dm_members = [currentUser, friend];
+        const memberIds = [props.currentUser.id, parseInt(friend.id)].sort((a, b) => a - b);
+        let new_dm_members = [props.currentUser, friend];
         for (let dmServer of props.dmServers) {
             if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
                 if (history.location.pathname !== `/channels/@me/${dmServer.id}`) {
