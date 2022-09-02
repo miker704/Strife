@@ -58,6 +58,7 @@ const mSTP = (state) => {
         "You can type /tableflip and /unflip to spice up your messages.",
         "You can use Streamer Mode to hide personal details while streaming.",
         //keybind tips
+        "$[](quickSwitcherHook) to quickly find a previous conversation or channel.",
         ""
 
 
