@@ -8,7 +8,7 @@ const mSTP = (state) => {
 
 
     //current discord loading messages as of sep 2, 2022
-    const randomLoadingMessage = [
+    const randomLoadingMessages = [
         "Welcome to Strife",
         "Welcome to $TR!F3",
         "Strife`s alternative spelling is STRIFE or $TR!F3",
@@ -74,7 +74,7 @@ const mSTP = (state) => {
     ]
 
     const pickRandomLoadingMessage = () => {
-        
+        const msgIdx = Math.floor(Math.random() * randomLoadingMessages.length);
     }
 
 
