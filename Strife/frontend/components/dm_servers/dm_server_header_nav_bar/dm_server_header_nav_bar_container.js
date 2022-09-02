@@ -6,3 +6,7 @@ import { withRouter } from "react-router";
 const mSTP = (state) => {
 
 }
+
+const mDTP = (state,ownProps) => {
+    
+}
