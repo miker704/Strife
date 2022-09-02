@@ -6,15 +6,35 @@ class DmServerHeaderNavBar extends React.Component {
     constructor (props) {
         super(props);
         this.handleDmServerName = this.handleDmServerName.bind(this);
+        // this.state ={
+        //     dmServerName: ""
+        // }
     }
 
     handleDmServerName () {
+        let groupIcon = document.getElementById("groupChat");
+        let oneToOne = document.getElementById("oneToOne");
+        let dmServerName = [];
+        
         if (Object.values(this.props.dmServerMembers).length > 2) {
-            return "Group Chat";
+            groupIcon.classList.remove('is-hidden');
+            oneToOne.classList.add('is-hidden');
         }
-        else {
-            return "DM Chat";
+     
+        if(this.props.dmServer.dm_server_name === null || this.props.dmServer.dm_server_name === ""){
+            for(let member of Object.values(this.props.dmServerMembers)){
+                if (member.id !== this.props.currentUser.id) {
+                    dmServerName.push(member.username);
+                }
+            }
+            if (dmServerName.length === 1) {
+                dmServerName = dmServerName.join();
+            }
+            else {
+                dmServerName = dmServerName.join(", ");
+            }
         }
+        return dmServerName;
     }
 
     render () {
