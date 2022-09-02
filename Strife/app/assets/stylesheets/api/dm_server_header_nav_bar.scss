@@ -481,7 +481,14 @@
     width: fit-content !important;
 }
 
-.icon-hide-group-chat{
+.icon-hide-group-chat {
+    display: block;
+    width: 24px;
+    height: 24px;
+    -webkit-app-region: no-drag;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    color: hsl(216, 3.7%, 73.5%);
 
 }
 
@@ -584,7 +591,7 @@
     font-weight: 500;
 }
 
-.input-group-name{
+.input-group-name {
     color: hsl(210, 2.9%, 86.7%);
     font-size: 16px;
     line-height: 32px;
