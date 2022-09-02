@@ -5,7 +5,7 @@ import EditFriendshipModalContainer from "../edit_friendship_modal/edit_friendsh
 
 
 
-const FriendShipIndex1 = (props) => {
+const FriendShipIndex = (props) => {
     const inputRef = useRef();
     const friendRef = useRef();
     const [searchText, setSearchText] = useState("");
