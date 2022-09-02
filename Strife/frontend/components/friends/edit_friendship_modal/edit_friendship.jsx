@@ -32,7 +32,7 @@ const EditFriendshipModal = ({
 
 
         return function cleanup () {
-            if (props.errors.length > 0) {
+            if (errors.length > 0) {
                removeFriendshipErrors();
             }
         }
