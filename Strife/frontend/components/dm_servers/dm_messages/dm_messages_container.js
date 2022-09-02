@@ -17,7 +17,8 @@ const mSTP = (state, ownProps) => {
         otherUsers: state.entities.users[ownProps.match.params.otherUserId],
         dmMembers: state.entities.users,
         dmServerId: ownProps.match.params.dmServerId,
-        errors: state.errors.dmMessage
+        errors: state.errors.dmMessage,
+        dmMembersDirect: Object.values(state.entities.dmServers[ownProps.match.params.dmServerId].members)
 
     }
 }
