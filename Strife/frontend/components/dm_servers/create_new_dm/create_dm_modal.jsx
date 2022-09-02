@@ -138,7 +138,6 @@ const CreateDmModal = ({
 
                                             <li className="create-dm-friend-wrapper" key={friend.id}
                                                 onClick={() => {
-                                                    console.log("friend in dm: ",friend)
                                                     toggleSelection(friend);
                                                     inputRef.current.focus();
                                                 }}>
