@@ -14,6 +14,7 @@ const mSTP = (state) => {
         // friends: selectAllFriends(state, 3),
 
         errors: state.errors.dmserver,
+        friendshipErrors: state.errors.friendship
     }
 }
 
