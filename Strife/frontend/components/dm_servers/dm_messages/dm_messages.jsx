@@ -90,7 +90,7 @@ class DmMessages extends React.Component {
                                     textColor="#B9BBBE"
                                     backgroundColor="#191919"
                                     id="pin-messages"
-                                    place="top"
+                                    place="bottom"
                                     effect="solid">
                                     Pinned Messages
                                 </ReactTooltip>
