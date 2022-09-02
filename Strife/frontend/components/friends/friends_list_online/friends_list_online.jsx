@@ -131,36 +131,7 @@ const FriendShipIndexOnline = ({
 
     }
 
-    const gatherMatches = () => {
-        let searchArray = props.friends;
-        let filteredSearchArray = searchArray.filter((friend) => {
-            return friend.username.toLowerCase().includes(searchText.toLowerCase());
-        })
-
-        setSelectedFriends(filteredSearchArray);
-        let numberOfFriends = document.getElementById('num-of-friends');
-        if (searchText === "") {
-
-            numberOfFriends.innerHTML = `ALL FRIENDS - ${props.friends.length}`;
-        }
-        else if (searchText === "" && selectedFriends.length === 0) {
-            numberOfFriends.innerHTML = `ALL FRIENDS - ${props.friends.length}`;
-        }
-        else if (selectedFriends.length > 0) {
-
-            numberOfFriends.innerHTML = `ALL FRIENDS - ${selectedFriends.length}`;
-        }
-        else {
-            numberOfFriends.innerHTML = `ALL FRIENDS - ${props.friends.length}`;
-        }
-
-    }
-
-
-
-
-
-
+   
     const gatherMatches = () => {
 
 
