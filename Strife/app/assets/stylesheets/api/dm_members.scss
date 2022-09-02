@@ -64,7 +64,7 @@
 }
 
 
-.dm-members-header-title{
+.dm-members-header-title {
     padding: 24px 8px 0 16px;
     height: 40px;
     forced-color-adjust: none;
@@ -80,25 +80,25 @@
     font-weight: 500;
     -webkit-box-flex: 1;
     flex: 1 1 auto;
-    color: hsl(223,3.4%,60.2%);
+    color: hsl(223, 3.4%, 60.2%);
 }
 
-.dm-member-item{
+.dm-member-item {
     position: relative;
     max-width: 224px;
     margin-left: 8px;
     forced-color-adjust: none;
-    background-color: hsl(223,6.9%,19.8%);
+    background-color: hsl(223, 6.9%, 19.8%);
     box-sizing: border-box;
     display: block;
     padding: 1px 0;
     border-radius: 4px;
     transition: none;
-    color: hsl(223,3.4%,60.2%);
-    outline:0;
+    color: hsl(223, 3.4%, 60.2%);
+    outline: 0;
 }
 
-.dm-member-layout{
+.dm-member-layout {
     outline: 0;
     align-items: center;
     border-radius: 4px;
@@ -110,7 +110,7 @@
 
 }
 
-.dm-member-avatar{
+.dm-member-avatar {
     flex: 0 0 auto;
     width: 32px;
     height: 32px;
@@ -127,7 +127,7 @@
     overflow: hidden;
 }
 
-.dm-member-avatar-inner-wrapper{
+.dm-member-avatar-inner-wrapper {
     width: 32px;
     height: 32px;
     forced-color-adjust: none;
@@ -136,6 +136,74 @@
     border-radius: 50%;
 }
 
-.dm-member-item:hover{
+.dm-member-avatar-img {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    outline: 0;
+    forced-color-adjust: none;
+}
 
+
+
+.dm-member-item:hover {}
+
+.dm-member-info-wrapper {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    forced-color-adjust: none;
+    flex: 1 1 auto;
+    min-width: 0;
+    -webkit-box-flex: 1;
+    outline: 0;
+}
+
+.dm-member-username-wrapper {
+    outline: 0;
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    forced-color-adjust: none;
+}
+
+.dm-member-username-div {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    -webkit-box-flex: 0;
+    flex: 0 1 auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    outline: 0;
+
+    forced-color-adjust: none;
+}
+
+.dm-member-username-span {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    outline: 0;
+
+    forced-color-adjust: none;
+}
+
+.dm-member-username {}
+
+.dm-server-group-owner-icon {
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    position: relative;
+    top: 1px;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    margin-left: 4px;
+    forced-color-adjust: none;
+    color: hsl(38, 95.7%, 54.1%);
 }
