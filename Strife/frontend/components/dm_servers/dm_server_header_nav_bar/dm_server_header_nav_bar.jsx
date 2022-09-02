@@ -5,6 +5,7 @@ import ReactTooltip from "react-tooltip";
 class DmServerHeaderNavBar extends React.Component {
     constructor (props) {
         super(props);
+        this.handleDmServerName = this.handleDmServerName.bind(this);
     }
 
     render () {
