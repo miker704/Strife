@@ -216,7 +216,7 @@ const FriendShipIndexOnline = ({
                                 if (friend.username.includes(searchText)) {
                                     return (
                                         
-                                        <li id="fii" className="friend-index-item" key={friend.id} autoFocus ref={friendRef}>
+                                        <li id="fii" className="friend-index-item" key={friend.id} >
                                             { showPopup && <EditFriendshipModalContainer user={currentUser} friend={selectFriend} top={popupTop} setShowPopup={setShowPopup}/>}
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
