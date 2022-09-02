@@ -190,3 +190,23 @@
     outline: 0;
 
 }
+
+.dmshbar-search-bar{
+    transition: width .25s ease;
+    forced-color-adjust: none;
+    outline: 0;
+    box-shadow: none;
+    cursor: text;
+    overflow: hidden;
+    padding: 0 2px;
+    align-items: stretch;
+    height: 24px;
+    width: 144px;
+    border-radius: 4px;
+    display: flex;
+    -webkit-box-align: stretch;
+    box-sizing: border-box;
+    color: hsl(210,2.9%,86.7%);
+    background-color: hsl(216,7.2%,13.5%);
+
+}
