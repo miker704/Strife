@@ -5,10 +5,12 @@ import ReactTooltip from "react-tooltip";
 class DmServerHeaderNavBar extends React.Component {
     constructor (props) {
         super(props);
-        this.handleDmServerName = this.handleDmServerName.bind(this);
         this.state = {
             DmServerName: ""
         }
+        this.handleDmServerName = this.handleDmServerName.bind(this);
+        this.setDMServerName = this.setDMServerName.bind(this);
+        this.handleInput = this.handleInput.bind(this);
     }
 
     handleDmServerName () {
@@ -45,6 +47,9 @@ class DmServerHeaderNavBar extends React.Component {
         }
         // }
         // this.setState({ dmServerName: dmServerName });
+        if (dmMembersInServer.length > 2) {
+            this.setDMServerName(dmServerName);
+        }
         return dmServerName;
     }
 
@@ -99,7 +104,7 @@ class DmServerHeaderNavBar extends React.Component {
                     <div id="groupchatname" className="group-chat-container is-hidden">
                         <div className="outer-group-chat-name">
                             <div className="inner-group-chat-container">
-                                <input className="group-name-input" type="text"  />
+                                <input className="group-name-input" type="text" />
                                 <div className="input-group-name">{this.handleDmServerName()}</div>
                             </div>
                         </div>
