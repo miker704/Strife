@@ -22,6 +22,7 @@ const FriendShipIndex = (props) => {
 
     useEffect(() => {
         props.requestFriendships();
+        // props.requestAllFriendships()
 
 
         return function cleanup () {
