@@ -216,7 +216,6 @@ const FriendShipIndexOnline = ({
 
                             allFriends.map((friend, friendIdx) => {
 
-                                if (friend.username.includes(searchText)) {
                                     return (
                                         
                                         <li id="fii" className="friend-index-item" key={friend.id} >
@@ -287,7 +286,6 @@ const FriendShipIndexOnline = ({
                                         </li>
                                     )
 
-                                } 
                                 
                                 
                             })
