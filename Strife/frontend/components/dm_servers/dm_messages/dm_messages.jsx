@@ -10,6 +10,7 @@ class DmMessages extends React.Component {
     }
     render () {
         console.log("dmserver messages props", this.props);
+        console.log("dmmembers via selector : ", this.props.dmMembersSelect)
 
         return (
             <div className="dm-messages-wrapper">
@@ -202,7 +203,7 @@ class DmMessages extends React.Component {
 
                 <div className="empty-messages-container is-hidden"></div>
                 <div className="dm-messages-container">
-                    
+
                 </div>
 
             </div>
