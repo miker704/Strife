@@ -31,6 +31,9 @@ const mSTP = (state) => {
         "There's a very small—and we mean small—chance you can get a secret ringtone when calling someone. Good luck!",
         "Our old Partner mascot was an elf named Springle. He recently retired.",
 
+        //tips
+        "You can type /nick to quickly change your nickname in a server.",
+
     ]
 
     
