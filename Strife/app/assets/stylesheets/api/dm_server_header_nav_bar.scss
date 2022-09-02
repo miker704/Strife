@@ -67,3 +67,21 @@
     box-sizing: border-box;
     outline: 0;
 }
+.dms-hbar-name-header{
+    justify-content: flex-start;
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-box-pack: start;
+    cursor: pointer;
+    forced-color-adjust: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    font-size: 17px;
+    line-height: 22px;
+    font-weight: 500;
+    font-family: "ABC Ginto Normal";
+
+}
