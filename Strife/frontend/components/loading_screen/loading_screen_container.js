@@ -52,6 +52,7 @@ const mSTP = (state) => {
         "You can temporarily mute a server or channel by right-clicking it.",
         "A red mic icon means that person has been muted by a server admin.",
         "The top-most role for a user defines that user's color.",
+        "Hover a GIF and click the star to save it to your favorites.",
         ""
 
 
