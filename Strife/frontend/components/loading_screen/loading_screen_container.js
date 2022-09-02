@@ -63,6 +63,7 @@ const mSTP = (state) => {
         "$[](markServerUnreadHook) to mark an entire server as read.",
         "$[](navigateUnreadHook) or $[](downHook) will navigate between unread channels.",
         "Use $[](keyboardShortcutsHook) to bring up the list of keyboard shortcuts.",
+        "$[](messageNewlineHook) to make a new line without sending your message.",
         ""
 
 
