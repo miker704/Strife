@@ -6,6 +6,8 @@ import { selectDmMembers } from "../../../utils/selectors_api_util.js";
 import DmMessages from "./dm_messages.jsx";
 
 const mSTP = (state, ownProps) => {
+
+
     return {
         dmMessage: {
             body: "",
@@ -15,10 +17,10 @@ const mSTP = (state, ownProps) => {
         dmMessages: Object.values(state.entities.dmMessages),
         currentUserId: state.session.id,
         dmMessagesIds: Object.keys(state.entities.dmMessages),
-        otherUsers: state.entities.users[ownProps.match.params.otherUserId],
-        dmMembers: Object.values(state.entities.users),
+        dmMembers: state.entities.dmServers[ownProps.match.params.dmServerId],
         dmServerId: ownProps.match.params.dmServerId,
         errors: state.errors.dmMessage,
+        dmServerMembers: selectDmMembers(state,ownProps.match.params.dmServerId),
         // dmServer: dm
         // dmMembersSelect: selectDmMembers(state,"dmServers",ownProps.match.params.dmServerId)
         // dmMembersDirect: Object.values(state.entities.dmServers[ownProps.match.params.dmServerId].members)
