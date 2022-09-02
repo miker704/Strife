@@ -19,6 +19,7 @@ const EditFriendshipModal = ({
     console.log("entered")
     closeHookModalOnOutsideClick(popupRef, setShowPopup);
     closeOnEsc(setShowPopup);
+    
     const handleDeleteFriendShip = () => {
         console.log("friend =: ", friend);
     }
