@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useRef, useEffect } from "react";
 
 const CreateDmModal = ({
-    top, dmServers, setShowPopup, currentUser, friends, createDmServer, history, createDmMember
+    top, dmServers, setShowPopup, currentUser, friends, createDmServer, history, createDmMember,
 }) => {
     const inputRef = useRef();
     const popupRef = useRef();
@@ -16,6 +16,19 @@ const CreateDmModal = ({
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
     let count = selectedFriends.length;
 
+
+    useEffect(() => {
+        requestFriendships();
+
+        return function cleanup () {
+            if (errors.length > 0) {
+                removeFriendshipErrors();
+            }
+            if (dmServerErrors.length > 0) {
+                removeDmServerErrors();
+            }
+        }
+    }, []);
 
     const toggleSelection = (friend) => {
         const idx = findIfSelected(friend);
