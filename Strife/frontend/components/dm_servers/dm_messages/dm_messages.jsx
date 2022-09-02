@@ -1,5 +1,5 @@
 import React from "react";
-
+import ReactTooltip from "react-tooltip";
 
 class DmMessages extends React.Component {
     constructor (props) {
