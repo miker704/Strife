@@ -51,7 +51,7 @@ const FriendShipIndex1 = (props) => {
         let new_dm_members = [props.currentUser, friend];
         for (let dmServer of props.dmServers) {
             if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
-                if (history.location.pathname !== `/channels/@me/${dmServer.id}`) {
+                if (props.history.location.pathname !== `/channels/@me/${dmServer.id}`) {
                     history.push(`/channels/@me/${dmServer.id}`);
                 }
                 return;
@@ -80,7 +80,7 @@ const FriendShipIndex1 = (props) => {
         let newDmServer;
         props.createDmServer(submissionState).then((action) => {
             newDmServer = action.dmserver;
-            history.push(`/channels/@me/${newDmServer.id}`);
+            props.history.push(`/channels/@me/${newDmServer.id}`);
         });
 
         console.log("dmstate: ", submissionState)
