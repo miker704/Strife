@@ -35,6 +35,10 @@ const FriendShipIndex1 = (props) => {
 
     }, [])
 
+    const handleSelected = (friend) => {
+        toggleSelected(friend);
+    }
+
 
     const handlePopupShow = (e) => {
 
