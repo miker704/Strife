@@ -75,7 +75,7 @@ const FriendShipIndex1 = (props) => {
         });
         return;
     }
-  
+
 
 
     const liveSearch = () => {
@@ -148,7 +148,7 @@ const FriendShipIndex1 = (props) => {
 
 
 
-    
+
     if (allFriends.length > 0) {
         return (
 
@@ -164,7 +164,7 @@ const FriendShipIndex1 = (props) => {
                             placeholder="Search"
                             autoFocus ref={inputRef}
                             onInput={() => liveSearch()}
-                            onChange={e => setSearchText( e.currentTarget.value )}
+                            onChange={e => setSearchText(e.currentTarget.value)}
                             value={searchText}
                         />
 
