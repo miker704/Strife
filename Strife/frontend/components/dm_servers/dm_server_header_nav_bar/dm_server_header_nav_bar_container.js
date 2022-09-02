@@ -5,7 +5,8 @@ import { withRouter } from "react-router";
 
 const mSTP = (state, ownProps) => {
     return {
-
+        errors: state.errors.dmServer,
+        dmMessageErrors: state.errors.dmMessage
     }
 
 }
