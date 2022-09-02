@@ -10,7 +10,6 @@ class DmMessages extends React.Component {
     }
     render () {
         console.log("dmserver messages props", this.props);
-        console.log("dmmembers via selector : ", this.props.dmMembersSelect)
 
         return (
             <div className="dm-messages-wrapper">
