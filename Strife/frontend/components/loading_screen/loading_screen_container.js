@@ -40,7 +40,7 @@ const mSTP = (state) => {
         "You can join up to 100 servers.",
         "You can create channel categories to group and organize your channels.",
         "Link your favorite social media accounts in the connections settings.",
-        "Customize Discord's appearance in the user settings menu.",
+        "Customize Strife's appearance in the user settings menu.",
         "Hide muted channels in a server by right clicking the server name.",
         "Highlight text in your chat bar to bold, use italics, and more.",
         "Share what you're playing by using the Game Activity settings.",
