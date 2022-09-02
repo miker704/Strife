@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router";
 
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
 
 }
 
 const mDTP = (state,ownProps) => {
-    
+
 }
