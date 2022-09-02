@@ -16,10 +16,11 @@ const mSTP = (state, ownProps) => {
         currentUserId: state.session.id,
         dmMessagesIds: Object.keys(state.entities.dmMessages),
         otherUsers: state.entities.users[ownProps.match.params.otherUserId],
-        dmMembers: state.entities.users,
+        dmMembers: Object.values(state.entities.users),
         dmServerId: ownProps.match.params.dmServerId,
         errors: state.errors.dmMessage,
-        // dmMembersSelect: selectDmMembers(state,ownProps.match.params.dmServerId)
+        // dmServer: dm
+        // dmMembersSelect: selectDmMembers(state,"dmServers",ownProps.match.params.dmServerId)
         // dmMembersDirect: Object.values(state.entities.dmServers[ownProps.match.params.dmServerId].members)
         // dmMembersDirect: state.entities.dmServers[ownProps.match.params.dmServerId].members
 
