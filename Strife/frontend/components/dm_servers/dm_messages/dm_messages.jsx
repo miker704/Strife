@@ -73,7 +73,7 @@ class DmMessages extends React.Component {
                                     textColor="#B9BBBE"
                                     backgroundColor="#191919"
                                     id="start-video-call"
-                                    place="top"
+                                    place="bottom"
                                     effect="solid">
                                     Start Video Call
                                 </ReactTooltip>
