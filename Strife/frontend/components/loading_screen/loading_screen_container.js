@@ -59,6 +59,8 @@ const mSTP = (state) => {
         "You can use Streamer Mode to hide personal details while streaming.",
         //keybind tips
         "$[](quickSwitcherHook) to quickly find a previous conversation or channel.",
+        "$[](markUnreadHook) a message to mark it as unread.",
+        "$[](markServerUnreadHook) to mark an entire server as read.",
         ""
 
 
