@@ -207,6 +207,9 @@ const FriendShipIndexOnline = ({
                 <div id="num-of-friends" className="all-friends">
                     {`ONLINE - ${allFriends.length}`}
                 </div>
+
+
+
                 <div className="friend-index" id='ul-fiiw'>
                     <ul className="friend-index-item-wrapper">
                         {
@@ -286,24 +289,7 @@ const FriendShipIndexOnline = ({
 
                                 } 
                                 
-                                else {
-                                    // document.getElementById('num-of-friends').innerHTML = `ONLINE - ${0}`;
-                                        // document.getElementById('fii').
-                                    // return (
-                                    //     <div className="friend-index-container" key={friend.id}>
-
-                                    //         <div className="empty-state-container">
-                                    //             <div className="blocked-users-empty">
-                                    //                 <div className="blocked-users-flex">
-                                    //                     <img className="no-friends-online-icon" alt="img" />
-                                    //                     <div className="block-wumpus-text">Wumpus looked, but couldn't find anyone with that name.</div>
-                                    //                 </div>
-                                    //             </div>
-                                    //         </div>
-                                    //     </div>
-                                    // )
-                                    return null;
-                                }
+                                
                             })
                         }
                     </ul>
