@@ -39,6 +39,7 @@ const mSTP = (state) => {
         "You can drag and drop files onto Discord to upload them.",
         "You can join up to 100 servers.",
         "You can create channel categories to group and organize your channels.",
+        "Link your favorite social media accounts in the connections settings.",
         ""
 
     ]
