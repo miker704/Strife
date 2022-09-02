@@ -37,7 +37,8 @@ const mSTP = (state) => {
         "Right click to pin messages in a channel or DM to save them for later.",
         "Change each participant's volume by right-clicking them in a call.",
         "You can drag and drop files onto Discord to upload them.",
-        ""
+        "You can join up to 100 servers",
+        
 
     ]
 
