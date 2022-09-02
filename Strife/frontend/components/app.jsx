@@ -65,6 +65,8 @@ const App = () => (
 
         {/* <ProtectedRoute path="/channels/:serverId/:channelId" component={ChannelNavBarContainer} /> */}
         <ProtectedRoute path="/users/:userId" component={UserProfileContainer}/>
+        <ProtectedRoute path="/loading/" component={LoadingScreenContainer}/>
+        
 
     </Switch>
 
