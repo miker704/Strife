@@ -3,5 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .dm-messages-wrapper{
-    
+    display: flex;
+    forced-color-adjust: none;
+    width: 100%;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    background-color: #36393f;
 }
