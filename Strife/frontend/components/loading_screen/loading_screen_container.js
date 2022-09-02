@@ -27,6 +27,8 @@ const mSTP = (state) => {
         "In the ancient days, Discord started as a browser-only app.",
         "Our HypeSquad program has three houses you can be sorted in to by taking the in-app quiz: Bravery, Balance, and Brilliance.",
         "The character on our 404 page is a robot hamster named Nelly.",
+        "You can play our version of the Snake game on our 404 page by pressing a ~secret~ button.",
+        
     ]
 
     
