@@ -52,6 +52,7 @@ class PendingFriendList extends React.Component {
 
     componentDidMount () {
         this.props.requestFriendships();
+        // this.props.requestAllFriendships();
     }
 
     componentWillUnmount () {
