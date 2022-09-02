@@ -78,10 +78,10 @@ const FriendShipIndex1 = (props) => {
             dm_member_ids: memberIds
         }
         let newDmServer;
-        // createDmServer(submissionState).then((action) => {
-        //     newDmServer = action.dmserver;
-        //     history.push(`/channels/@me/${newDmServer.id}`);
-        // });
+        createDmServer(submissionState).then((action) => {
+            newDmServer = action.dmserver;
+            history.push(`/channels/@me/${newDmServer.id}`);
+        });
 
         console.log("dmstate: ", submissionState)
         return;
