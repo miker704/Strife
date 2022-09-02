@@ -5,7 +5,7 @@ class DmMessages extends React.Component {
     constructor (props) {
         super(props);
     }
-    componentDidMount(){
+    componentDidMount () {
 
     }
     render () {
@@ -95,16 +95,52 @@ class DmMessages extends React.Component {
                                                 </div>
                                             </div>
                                         </div>
+                                        <div className="dmshbar-mag-icon-container">
+                                            <div className="mag-container">
+                                                <svg className="mag-icon-2-visible" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                                    <path fill="currentColor" d="M21.707 20.293L16.314 14.9C17.403 13.504 18 11.799 18 10C18
+                                                 7.863 17.167 5.854 15.656 4.344C14.146 2.832 12.137 2 10 2C7.863 2 5.854 2.832 4.344 
+                                                 4.344C2.833 5.854 2 7.863 2 10C2 12.137 2.833 14.146 4.344 15.656C5.854 17.168 7.863 
+                                                 18 10 18C11.799 18 13.504 17.404 14.9 16.314L20.293 21.706L21.707 20.293ZM10 16C8.397
+                                                  16 6.891 15.376 5.758 14.243C4.624 13.11 4 11.603 4 10C4 8.398 4.624 6.891 5.758
+                                                   5.758C6.891 4.624 8.397 4 10 4C11.603 4 13.109 4.624 14.242 5.758C15.376 6.891 
+                                                   16 8.398 16 10C16 11.603 15.376 13.11 14.242 14.243C13.109 15.376 11.603 16 10 16Z">
+                                                    </path>
+                                                </svg>
+                                                <svg className="mag-icon-2" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                                    <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 
+                                                    13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="dmshb-tool-icon-wrapper">
-
+                                <svg x="0" y="0" className="icon-dms-inbox" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M19 3H4.99C3.88 3 3.01 3.89 3.01 5L3 19C3 20.1 3.88 21 4.99 21H19C20.1 21 21 20.1 21
+                                 19V5C21 3.89 20.1 3 19 3ZM19 15H15C15 16.66 13.65 18 12 18C10.35 18 9 16.66 9 15H4.99V5H19V15Z" fill="currentColor">
+                                    </path>
+                                </svg>
                             </div>
-                            <div className="dmshb-tool-icon-wrapper">
+                            {/* <div className="dmshb-tool-icon-wrapper">
 
-                            </div>
-
+                            </div> */}
+                            <a className="help-tool-bar" href="https://support.discord.com" target="_blank">
+                                <div className="help-tool-bar-icon-wrapper">
+                                    <svg x="0" y="0" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                        <path fill="currentColor" d="M12 2C6.486 2 2 6.487 2 12C2 17.515 6.486 22 12 22C17.514 22 22 17.515
+                                     22 12C22 6.487 17.514 2 12 2ZM12 18.25C11.31 18.25 10.75 17.691 10.75 17C10.75 16.31 11.31
+                                      15.75 12 15.75C12.69 15.75 13.25 16.31 13.25 17C13.25 17.691 12.69 18.25 12 18.25ZM13
+                                       13.875V15H11V12H12C13.104 12 14 11.103 14 10C14 8.896 13.104 8 12 8C10.896 8 10 8.896
+                                        10 10H8C8 7.795 9.795 6 12 6C14.205 6 16 7.795 16 10C16 11.861 14.723 13.429 13 13.875Z">
+                                        </path>
+                                    </svg>
+                                    <div className="home-bar-tool-tip">Help</div>
+                                    <div className="home-bar-tool-tip-triangle"></div>
+                                </div>
+                            </a>
 
                         </div>
                     </div>
