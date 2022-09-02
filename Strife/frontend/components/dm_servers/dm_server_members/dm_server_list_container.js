@@ -16,3 +16,4 @@ const mDTP = (dispatch) => {
 }
 
 const DmServerMemberListContainer = withRouter(connect(mSTP,mDTP)(DmServerMemberList));
+export default DmServerMemberListContainer;
