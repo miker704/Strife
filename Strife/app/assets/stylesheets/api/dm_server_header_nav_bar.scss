@@ -2,24 +2,44 @@
 
 .dm-server-header-bar{
     flex: 0 0 auto;
-    z-index: 100;
     background: hsl(220,7.7%,22.9%);
     forced-color-adjust: none;
-    position: relative;
     -webkit-box-flex: 0;
     box-sizing: border-box;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
     min-width: 0;
-    width: 100%;
-    height: 48px;
+    user-select: none;
+    color: hsl(210,2.9%,86.7%);
+    // height: 48px;
+    height: 50px;
+
     padding: 0 8px;
     font-size: 16px;
     line-height: 20px;
     cursor: default;
-    user-select: none;
-    color: hsl(210,2.9%,86.7%);
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: calc(100vw - 310px);
+    transform: translate(309px, 0px);
+    box-shadow: 0 1px 0 hsla(240, 11.1%, 1.8%, 0.2), 0 1.5px 0 hsla(240, 7.7%, 2.5%, 0.05), 0 2px 0 hsla(240, 11.1%, 1.8%, 0.05);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 .dm-server-bar-children{
