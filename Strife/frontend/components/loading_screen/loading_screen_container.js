@@ -11,4 +11,4 @@ import { withRouter } from "react-router";
 
 
 
-const LoadingScreenContainer = 
+const LoadingScreenContainer = withRouter(connect()());
