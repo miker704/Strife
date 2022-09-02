@@ -11,6 +11,7 @@ class LoadingScreen extends React.Component{
         return (
             <div className="loading-screen-wrapper">
                 <img src="" alt="" />
+                <h1>{this.loadingMessage}</h1>
             </div>
         )
     }
