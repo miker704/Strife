@@ -19,7 +19,7 @@ const EditFriendshipModal = ({
     console.log("entered")
     closeHookModalOnOutsideClick(popupRef, setShowPopup);
     closeOnEsc(setShowPopup);
-    console.log("showPopupTop: ",setShowPopup);
+    // console.log("showPopupTop: ",setShowPopup);
    
 
     return (
