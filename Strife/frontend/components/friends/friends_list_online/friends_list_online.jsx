@@ -219,7 +219,10 @@ const FriendShipIndexOnline = ({
 
 
                 <div className="friend-index" id='ul-fiiw'>
-                    <ul className="friend-index-item-wrapper">
+
+                    <div className="friend-index-item-wrapper" >
+
+                    <ul>
                         {
 
                             allFriends.map((friend, friendIdx) => {
@@ -313,8 +316,9 @@ const FriendShipIndexOnline = ({
                         }
                     </ul>
                 </div>
-               
             </div>
+               
+        </div>
 
 
         )
