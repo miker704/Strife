@@ -42,7 +42,8 @@ const mSTP = (state) => {
         "Link your favorite social media accounts in the connections settings.",
         "Customize Discord's appearance in the user settings menu.",
         "Hide muted channels in a server by right clicking the server name.",
-        ""
+        "Highlight text in your chat bar to bold, use italics, and more.",
+        
 
     ]
 
