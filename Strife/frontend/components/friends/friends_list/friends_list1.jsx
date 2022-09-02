@@ -52,7 +52,7 @@ const FriendShipIndex1 = (props) => {
         for (let dmServer of props.dmServers) {
             if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
                 if (props.history.location.pathname !== `/channels/@me/${dmServer.id}`) {
-                    history.push(`/channels/@me/${dmServer.id}`);
+                    props.history.push(`/channels/@me/${dmServer.id}`);
                 }
                 return;
             }
