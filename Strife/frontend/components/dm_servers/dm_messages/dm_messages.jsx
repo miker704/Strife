@@ -103,7 +103,7 @@ class DmMessages extends React.Component {
                                     </path>
                                 </svg>
                             </div>
-                            <div className="dmshbar-search-bar-wrapper">
+                            <div className="dmshbar-search-bar-wrapper" >
                                 <div className="dmshbar-search-bar-inner-wrapper">
                                     <div className="dmshbar-search-bar">
                                         <div className="draft-edit">
@@ -144,7 +144,7 @@ class DmMessages extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="dmshb-tool-icon-wrapper">
+                            <div className="dmshb-tool-icon-wrapper" data-tip data-for="pin-messages">
                                 <svg x="0" y="0" className="icon-dms-inbox" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M19 3H4.99C3.88 3 3.01 3.89 3.01 5L3 19C3 20.1 3.88 21 4.99 21H19C20.1 21 21 20.1 21
                                  19V5C21 3.89 20.1 3 19 3ZM19 15H15C15 16.66 13.65 18 12 18C10.35 18 9 16.66 9 15H4.99V5H19V15Z" fill="currentColor">
@@ -155,7 +155,7 @@ class DmMessages extends React.Component {
 
                             </div> */}
                             <a className="help-tool-bar" href="https://support.discord.com" target="_blank">
-                                <div className="help-tool-bar-icon-wrapper">
+                                <div className="help-tool-bar-icon-wrapper" data-tip data-for="pin-messages">
                                     <svg x="0" y="0" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                         <path fill="currentColor" d="M12 2C6.486 2 2 6.487 2 12C2 17.515 6.486 22 12 22C17.514 22 22 17.515
                                      22 12C22 6.487 17.514 2 12 2ZM12 18.25C11.31 18.25 10.75 17.691 10.75 17C10.75 16.31 11.31
