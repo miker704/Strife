@@ -124,19 +124,12 @@ const FriendShipIndex = (props) => {
     }
 
     const gatherMatches = () => {
-        console.log("inside gather search")
         let searchArray = props.friends;
         let filteredSearchArray = searchArray.filter((friend) => {
             return friend.username.toLowerCase().includes(searchText.toLowerCase());
         })
 
-
-        console.log("filter: ", filteredSearchArray);
-
         setSelectedFriends(filteredSearchArray);
-
-
-
         let numberOfFriends = document.getElementById('num-of-friends');
         if (searchText === "") {
 
@@ -152,8 +145,6 @@ const FriendShipIndex = (props) => {
         else {
             numberOfFriends.innerHTML = `ALL FRIENDS - ${props.friends.length}`;
         }
-
-
 
     }
 
