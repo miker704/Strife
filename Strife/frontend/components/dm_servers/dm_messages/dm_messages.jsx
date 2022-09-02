@@ -1,17 +1,24 @@
 import React from "react";
 
 
-class DmMessages extends React.Component{
-    constructor(props){
+class DmMessages extends React.Component {
+    constructor (props) {
         super(props);
     }
 
-    render(){
+    render () {
         console.log("dmserver messages props", this.props);
-        return(
-            <div className="empty-messages-container">Hello World</div>
 
-        )
+        if (this.props.dmMessages.length === 0) {
+            return (
+
+                <div className="empty-messages-container">Hello World</div>
+
+            )
+        }
+
+
+       
     }
 }
 
