@@ -73,7 +73,7 @@ const FriendShipIndex1 = (props) => {
             dmServerName = newDmServerName.join(", ");
         }
         let submissionState = {
-            owner_id: currentUser.id,
+            owner_id: props.currentUser.id,
             dm_server_name: dmServerName,
             dm_member_ids: memberIds
         }
