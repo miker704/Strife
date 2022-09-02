@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import FriendShipIndex from './friends_list';
 import { requestFriendships, removeFriendshipErrors } from '../../../actions/friendship_actions';
-import { selectFriendStatus, selectAllFriends } from '../../../utils/selectors_api_util';
+import { selectFriendStatus} from '../../../utils/selectors_api_util';
 import { openModal } from '../../../actions/modal_actions';
 import { createDmServer, removeDmServerErrors } from '../../../actions/dm_server_actions';
 
