@@ -24,7 +24,7 @@ export const receiveUser = user => {
 
 export const receiveUsers = users => {
     return {
-        type: RECEIVE_FRIENDS,
+        type: RECEIVE_USERS,
         users
     }
 }
