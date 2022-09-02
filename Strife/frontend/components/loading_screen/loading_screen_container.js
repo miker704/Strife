@@ -61,6 +61,7 @@ const mSTP = (state) => {
         "$[](quickSwitcherHook) to quickly find a previous conversation or channel.",
         "$[](markUnreadHook) a message to mark it as unread.",
         "$[](markServerUnreadHook) to mark an entire server as read.",
+        "$[](navigateUnreadHook) or $[](downHook) will navigate between unread channels.",
         ""
 
 
