@@ -20,10 +20,10 @@ const EditFriendshipModal = ({
     closeHookModalOnOutsideClick(popupRef, setShowPopup);
     closeOnEsc(setShowPopup);
     // console.log("showPopupTop: ",setShowPopup);
-   console.log("props: ",friend);
-   console.log("currebt: ",currentUser);
-    const handleDeleteFriendShip = (friend) => {
-
+//    console.log("props: ",friend);
+//    console.log("currebt: ",currentUser);
+    const handleDeleteFriendShip = () => {
+            console.log("friend =: ", friend);
     }
 
     return (
@@ -38,7 +38,7 @@ const EditFriendshipModal = ({
                         <div className="fo-item-container">
                             <div className="fo-item-name">Start Voice Call</div>
                         </div>
-                        <div className="fo-item-container red" onClick={() => console.log(`${friend.id}`)}>
+                        <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
                             <div className="fo-item-name">Remove Friend</div>
                         </div>
                         <div className="fo-options-bottom-div"></div>
