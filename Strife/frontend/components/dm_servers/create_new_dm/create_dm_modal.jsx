@@ -15,7 +15,8 @@ const CreateDmModal = ({
     errors,
     requestFriendships,
     removeDmServerErrors,
-    removeFriendshipErrors
+    removeFriendshipErrors,
+    requestAllFriendships
 
 }) => {
     const inputRef = useRef();
@@ -32,8 +33,8 @@ const CreateDmModal = ({
 
 
     useEffect(() => {
-        requestFriendships();
-
+        // requestFriendships();
+        requestAllFriendships();
         return function cleanup () {
             if (errors.length > 0) {
                 removeFriendshipErrors();
