@@ -4,9 +4,11 @@ import DmServerMemberList from "./dm_server_list";
 
 
 const mSTP = (state) => {
-
+    return {
+        
+    }
 }
 
 const mDTP = (dispatch) => {
-    
+
 }
