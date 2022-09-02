@@ -22,7 +22,9 @@ const EditFriendshipModal = ({
     // console.log("showPopupTop: ",setShowPopup);
    console.log("props: ",friend);
    console.log("currebt: ",currentUser);
+    const handleDeleteFriendShip = (friend) => {
 
+    }
 
     return (
         <div className="fo-layer" >
@@ -36,7 +38,7 @@ const EditFriendshipModal = ({
                         <div className="fo-item-container">
                             <div className="fo-item-name">Start Voice Call</div>
                         </div>
-                        <div className="fo-item-container red">
+                        <div className="fo-item-container red" onClick={() => console.log(`${friend}`)}>
                             <div className="fo-item-name">Remove Friend</div>
                         </div>
                         <div className="fo-options-bottom-div"></div>
