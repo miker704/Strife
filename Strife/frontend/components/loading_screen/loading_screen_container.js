@@ -41,6 +41,7 @@ const mSTP = (state) => {
         "You can create channel categories to group and organize your channels.",
         "Link your favorite social media accounts in the connections settings.",
         "Customize Discord's appearance in the user settings menu.",
+        "Hide muted channels in a server by right clicking the server name.",
         ""
 
     ]
