@@ -12,15 +12,17 @@ class DmServerHeaderNavBar extends React.Component {
     }
 
     handleDmServerName () {
-        let groupIcon = document.getElementById("groupChat");
-        let oneToOne = document.getElementById("oneToOne");
         let dmServerName = [];
-        
-        if (Object.values(this.props.dmServerMembers).length > 2) {
-            groupIcon.classList.remove('is-hidden');
-            oneToOne.classList.add('is-hidden');
+        let dmMembersInServer = Object.values(this.props.dmServerMembers);
+        if (dmMembersInServer.length > 2) {
+            document.getElementById("groupChat").classList.remove('is-hidden');
+            document.getElementById("normDm").classList.add('is-hidden');
         }
-     
+        else if(dmMembersInServer.length === 2){
+            document.getElementById("normDm").classList.remove('is-hidden');
+            document.getElementById("groupChat").classList.add('is-hidden');
+
+        }
         // if(this.props.dmServer.dm_server_name === null || this.props.dmServer.dm_server_name === ""){
             for(let member of Object.values(this.props.dmServerMembers)){
                 if (member.id !== this.props.currentUser.id) {
@@ -44,7 +46,7 @@ class DmServerHeaderNavBar extends React.Component {
         return (
             <div className="dm-server-header-bar">
                 <div className="dm-server-bar-children">
-                    <div id="oneToOne" className="dms-children-icon-wrapper">
+                    <div id="normDm" className="dms-children-icon-wrapper">
                         <svg x="0" y="0" className="icon-at-sym" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M12 2C6.486 2 2 6.486 2 12C2 17.515 6.486 22 12 22C14.039 
                 22 15.993 21.398 17.652 20.259L16.521 18.611C15.195 19.519 13.633 20 12 20C7.589 20 4 
