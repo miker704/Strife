@@ -27,7 +27,7 @@ const EditFriendshipModal = ({
             <div className="fo-theme" style={{ top: `${top}px` }} ref={popupRef}>
 
                 <div className="fo-flex-wrapper" >
-                    <div className="fo-scroller" >
+                    <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
                         <div className="fo-item-container">
                             <div className="fo-item-name">Start Video Call</div>
                         </div>
