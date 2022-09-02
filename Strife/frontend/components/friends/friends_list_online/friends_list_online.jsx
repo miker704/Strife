@@ -260,7 +260,15 @@ const FriendShipIndexOnline = ({
                                                             20.1925 3 19.198 3H4.79805Z">
                                                         </path>
                                                     </svg>
-                                                    <ReactTooltip className = "message-tool-tip" textColor="#B9BBBE" backgroundColor="#191919" id ="Message" place="top" effect="solid">Message</ReactTooltip>
+                                                    <ReactTooltip 
+                                                        className = "message-tool-tip"
+                                                        textColor="#B9BBBE" 
+                                                        backgroundColor="#191919"
+                                                        id ="Message"
+                                                        place="top"
+                                                        effect="solid">
+                                                                        Message
+                                                    </ReactTooltip>
                                                     
                                                 </div>
                                                 <div data-tip data-for = "More" 
