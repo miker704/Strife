@@ -10,7 +10,7 @@ class LoadingScreen extends React.Component{
     render(){
         return (
             <div className="loading-screen-wrapper">
-                <img src="" alt="" />
+                <img className = "loading-screen-img" alt="loadingimg" />
                 <h1>{this.loadingMessage}</h1>
             </div>
         )
