@@ -5,8 +5,16 @@ import LoadingScreen from "./loading_screen";
 
 
 const mSTP = (state) => {
-    return {
 
+    const randomLoadingMessage = {
+        
+    }
+
+
+
+
+    return {
+        
     }
 }
 
