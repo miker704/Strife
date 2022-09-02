@@ -15,7 +15,6 @@ const FriendShipIndexOnline = ({
     removeDmServerErrors,
     openModal,
     history,
-    requestAllOnlineFriends,
     onlineFriends
 
 }) => {
