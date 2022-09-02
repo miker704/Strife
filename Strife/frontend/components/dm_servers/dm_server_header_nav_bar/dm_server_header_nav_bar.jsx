@@ -32,6 +32,9 @@ class DmServerHeaderNavBar extends React.Component {
 
                     </div>
                         <div className="dmshb-spacer"></div>
+                        <div className="dmshb-tool-bar">
+                            
+                        </div>
                 </div>
             </div>
         )
