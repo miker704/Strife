@@ -73,8 +73,6 @@ export const selectBlockedUsers = (state, status) => {
         return [];
     }
     else{
-        console.log("memberIds: ",memberIds);
-        console.table(memberIds);
 
         return memberIds;
     }
