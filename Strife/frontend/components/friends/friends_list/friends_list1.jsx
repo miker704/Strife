@@ -221,7 +221,7 @@ const FriendShipIndex1 = (props) => {
                                 allFriends.map((friend, friendIdx) => {
                                     return (
                                         <li className="friend-index-item" key={friend.id}  autoFocus ref={friendRef}>
-                                            {showPopup && <EditFriendshipModalContainer user={props.currentUser} friend={friend} top={popupTop} setShowPopup={setShowPopup} />}
+                                            {showPopup && <EditFriendshipModalContainer user={props.currentUser} friend={selectFriend} top={popupTop} setShowPopup={setShowPopup} />}
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
                                                     <div className="friend-info">
@@ -266,7 +266,7 @@ const FriendShipIndex1 = (props) => {
                                                         handlePopupShow(e)
                                                     }}
                                                      >
-                                                        
+
                                                     <svg className="icon-1WVg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                                         <g fill="none" fillRule="evenodd">
                                                             <path d="M24 0v24H0V0z">
