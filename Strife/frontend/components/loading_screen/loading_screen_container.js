@@ -10,6 +10,8 @@ const mSTP = (state) => {
     //current discord loading messages as of sep 2, 2022
     const randomLoadingMessage = [
         "Welcome to Strife",
+        "Welcome to $TR!F3",
+        "Strife`s alternative spelling is STRIFE or $TR!F3",
         "Strife was almost called Bonfire before we picked our name. It was meant to be nice and cozy.",
         "Beep...bo...boo...bee...bop...bo...boo...bop...bo...boo...beep",
         "Loading ...",
