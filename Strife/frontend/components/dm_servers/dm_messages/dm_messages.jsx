@@ -107,7 +107,7 @@ class DmMessages extends React.Component {
                                     textColor="#B9BBBE"
                                     backgroundColor="#191919"
                                     id="dmshb-invite-members"
-                                    place="top"
+                                    place="bottom"
                                     effect="solid">
                                     Add Friends to DM
                                 </ReactTooltip>
@@ -164,7 +164,7 @@ class DmMessages extends React.Component {
                                     textColor="#B9BBBE"
                                     backgroundColor="#191919"
                                     id="inbox-messages-tip"
-                                    place="top"
+                                    place="bottom"
                                     effect="solid">
                                         Inbox
                                 </ReactTooltip>
@@ -185,7 +185,7 @@ class DmMessages extends React.Component {
                                         textColor="#B9BBBE"
                                         backgroundColor="#191919"
                                         id="help-messages-tip"
-                                        place="top"
+                                        place="bottom"
                                         effect="solid">
                                         Help
                                     </ReactTooltip>
