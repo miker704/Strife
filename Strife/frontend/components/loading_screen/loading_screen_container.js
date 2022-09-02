@@ -50,6 +50,8 @@ const mSTP = (state) => {
         "Group DMs can have up to ten members.",
         "Click your avatar in the lower-left corner to set a custom status.",
         "You can temporarily mute a server or channel by right-clicking it.",
+        "A red mic icon means that person has been muted by a server admin.",
+        ""
 
 
     ]
