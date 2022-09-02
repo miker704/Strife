@@ -14,7 +14,7 @@ const CreateDmModal = ({
     requestFriendships,
     removeDmServerErrors,
     removeFriendshipErrors
-    
+
 }) => {
     const inputRef = useRef();
     const popupRef = useRef();
@@ -34,10 +34,11 @@ const CreateDmModal = ({
 
         return function cleanup () {
             if (errors.length > 0) {
-                removeFriendshipErrors();
-            }
-            if (dmServerErrors.length > 0) {
                 removeDmServerErrors();
+            }
+            if (friendshipErrors.length > 0) {
+
+                removeFriendshipErrors();
             }
         }
     }, []);
