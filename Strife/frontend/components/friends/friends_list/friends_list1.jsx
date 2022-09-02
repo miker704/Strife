@@ -11,6 +11,8 @@ const FriendShipIndex1 = (props) => {
     const [searchText, setSearchText] = useState("");
     const [selectedFriends, setSelectedFriends] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
+    const [selectFriend,toggleSelected] = useState([]);
+
     // const [setSelectedFriend, setShowPopup] = useState(false);
     const dmMembersArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
 
