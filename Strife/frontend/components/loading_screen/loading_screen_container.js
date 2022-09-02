@@ -78,13 +78,13 @@ const mSTP = (state) => {
         return randomLoadingMessages[msgIdx];
     }
 
-    const selectLoadingMsg = pickRandomLoadingMessage();
+    const selectedLoadingMsg = pickRandomLoadingMessage();
 
 
 
     return {
         currentUser: state.entities.users[state.session.id],
-        selectLoadingMsg: selectLoadingMsg
+        selectedLoadingMsg: selectedLoadingMsg
     }
 }
 
