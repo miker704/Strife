@@ -1,5 +1,6 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
+import DmServerHeaderNavBarContainer from "../dm_server_header_nav_bar/dm_server_header_nav_bar_container";
 
 class DmMessages extends React.Component {
     constructor (props) {
@@ -13,7 +14,7 @@ class DmMessages extends React.Component {
 
         return (
             <div className="dm-messages-wrapper">
-                <div className="dm-server-header-bar">
+                {/* <div className="dm-server-header-bar">
                     <div className="dm-server-bar-children">
                         <div className="dms-children-icon-wrapper">
                             <svg x="0" y="0" className="icon-at-sym" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
@@ -194,7 +195,7 @@ class DmMessages extends React.Component {
 
                         </div>
                     </div>
-                </div>
+                </div> */}
                 {/* <div className="empty-messages-container is-hidden">Hello World</div> */}
                 {/* <div><p>Hey not empty</p></div> */}
 
