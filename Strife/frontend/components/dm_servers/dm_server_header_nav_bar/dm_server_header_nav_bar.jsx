@@ -7,7 +7,7 @@ class DmServerHeaderNavBar extends React.Component {
         super(props);
         this.handleDmServerName = this.handleDmServerName.bind(this);
         this.state = {
-            dmServerName: ""
+            DmServerName: ""
         }
     }
 
@@ -17,6 +17,7 @@ class DmServerHeaderNavBar extends React.Component {
         if (dmMembersInServer.length > 2) {
             document.getElementById("groupChat").classList.remove('is-hidden');
             document.getElementById("groupchatname").classList.remove('is-hidden');
+            document.getElementById("hide-group-chat").classList.remove('is-hidden');
             document.getElementById("normDm").classList.add('is-hidden');
             document.getElementById("normal-chat").classList.add('is-hidden');
         }
@@ -25,6 +26,8 @@ class DmServerHeaderNavBar extends React.Component {
             document.getElementById("normal-chat").classList.remove('is-hidden');
             document.getElementById("groupChat").classList.add('is-hidden');
             document.getElementById("groupchatname").classList.add('is-hidden');
+            document.getElementById("hide-group-chat").classList.add('is-hidden');
+
 
 
         }
@@ -41,7 +44,7 @@ class DmServerHeaderNavBar extends React.Component {
             dmServerName = dmServerName.join(", ");
         }
         // }
-        this.setState({ dmServerName: dmServerName });
+        // this.setState({ dmServerName: dmServerName });
         return dmServerName;
     }
 
@@ -96,7 +99,7 @@ class DmServerHeaderNavBar extends React.Component {
                     <div id="groupchatname" className="group-chat-container is-hidden">
                         <div className="outer-group-chat-name">
                             <div className="inner-group-chat-container">
-                                <input className="group-name-input" type="text" placeholder={this.state.dmServerName} value={this.state.dmServerName} />
+                                <input className="group-name-input" type="text"  />
                                 <div className="input-group-name">{this.handleDmServerName()}</div>
                             </div>
                         </div>
