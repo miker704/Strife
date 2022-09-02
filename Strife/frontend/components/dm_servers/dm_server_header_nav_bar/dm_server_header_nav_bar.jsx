@@ -8,8 +8,8 @@ class DmServerHeaderNavBar extends React.Component{
 
     render(){
         return (
-            <div>
-                
+            <div className="dm-server-header-bar">
+
             </div>
         )
     }
