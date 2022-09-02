@@ -50,13 +50,13 @@ class DmMessages extends React.Component {
                                     </path>
                                 </svg>
                                 <ReactTooltip
-                                    className="more-message-tool-tip"
+                                    className="start-voice-call-message-tool-tip"
                                     textColor="#B9BBBE"
                                     backgroundColor="#191919"
-                                    id="More"
+                                    id="start-voice-call"
                                     place="top"
                                     effect="solid">
-                                    More
+                                    Start Voice Call
                                 </ReactTooltip>
                             </div>
                             <div className="dmshb-tool-icon-wrapper">
