@@ -6,7 +6,7 @@ class DmMessages extends React.Component {
         super(props);
     }
     componentDidMount () {
-
+            this.props.fetchDmServer(this.props.dmServerId);
     }
     render () {
         console.log("dmserver messages props", this.props);
@@ -166,10 +166,10 @@ class DmMessages extends React.Component {
                                     id="inbox-messages-tip"
                                     place="bottom"
                                     effect="solid">
-                                        Inbox
+                                    Inbox
                                 </ReactTooltip>
                             </div>
-                         
+
                             <a className="help-tool-bar" href="https://support.discord.com" target="_blank">
                                 <div className="help-tool-bar-icon-wrapper" data-tip data-for="help-messages-tip">
                                     <svg x="0" y="0" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
@@ -197,11 +197,22 @@ class DmMessages extends React.Component {
                 </div>
                 {/* <div className="empty-messages-container is-hidden">Hello World</div> */}
                 {/* <div><p>Hey not empty</p></div> */}
-                
-            
+
+
 
                 <div className="empty-messages-container is-hidden"></div>
                 <div className="dm-messages-container">
+                    <ul>
+                        {
+                            this.props.dmMembers.map((dmMember, dmMemberIdx) => {
+                                return (
+                                <li key={dmMember.id}>{dmMember.username}</li>)
+                            })
+                        }
+
+
+                    </ul>
+
 
                 </div>
 
