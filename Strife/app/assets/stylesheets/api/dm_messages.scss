@@ -13,4 +13,14 @@
     background-color: #36393f;
 }
 
-
+.dm-messages-container {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: calc(100vw - 310px);
+    height: 100vh;
+    transform: translate(309px, 0px);
+    background-color: #36393F;
+    z-index: -1;
+  }
+  
