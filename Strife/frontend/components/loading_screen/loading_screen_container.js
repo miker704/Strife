@@ -10,7 +10,7 @@ const mSTP = (state) => {
     //current discord loading messages as of sep 2, 2022
     const randomLoadingMessage = [
         "Strife was almost called Bonfire before we picked our name. It was meant to be nice and cozy.",
-        "Beep...bo...boo...bee...bop...bo...boo...bop...bo...boo...beep"
+        "Beep...bo...boo...bee...bop...bo...boo...bop...bo...boo...beep",
         "Loading ...",
         "Strife was almost called Wyvern before we picked our name. Not too proud of that one.",
         "Strife is a Discord Clone made by Michael R. for App Academy Fullstack Project.",
