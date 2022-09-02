@@ -97,9 +97,66 @@ const FriendShipIndexOnline = ({
         return;
     }
   
+    const liveSearch = () => {
+        let allFriendShips = document.querySelectorAll('.friend-index-item');
+        let search_query = document.getElementById('input-all-friends').value;
+        // let search_query = searchText;
+        let numberOfFriends = document.getElementById('num-of-friends');
+        let count = 0;
+        let foundCount = 0;
+        for (let i = 0; i < allFriendShips.length; i++) {
+            if (allFriendShips[i].innerText.toLowerCase().includes(search_query.toLowerCase())) {
+                allFriendShips[i].classList.remove("is-hidden");
+                foundCount++;
+                numberOfFriends.innerHTML = `ALL FRIENDS - ${foundCount}`;
+
+            }
+            else {
+                allFriendShips[i].classList.add("is-hidden");
+                count++;
+
+            }
+        }
+
+        if (count === allFriendShips.length) {
+            document.getElementById('ul-fiiw').classList.add('is-hidden')
+            document.getElementById('no-match').classList.remove('is-hidden')
+            numberOfFriends.innerHTML = `ALL FRIENDS - ${0}`;
+
+        }
+        else {
+            document.getElementById('no-match').classList.add('is-hidden')
+            document.getElementById('ul-fiiw').classList.remove('is-hidden')
+        }
+
+    }
+
+    const gatherMatches = () => {
+        let searchArray = props.friends;
+        let filteredSearchArray = searchArray.filter((friend) => {
+            return friend.username.toLowerCase().includes(searchText.toLowerCase());
+        })
+
+        setSelectedFriends(filteredSearchArray);
+        let numberOfFriends = document.getElementById('num-of-friends');
+        if (searchText === "") {
+
+            numberOfFriends.innerHTML = `ALL FRIENDS - ${props.friends.length}`;
+        }
+        else if (searchText === "" && selectedFriends.length === 0) {
+            numberOfFriends.innerHTML = `ALL FRIENDS - ${props.friends.length}`;
+        }
+        else if (selectedFriends.length > 0) {
+
+            numberOfFriends.innerHTML = `ALL FRIENDS - ${selectedFriends.length}`;
+        }
+        else {
+            numberOfFriends.innerHTML = `ALL FRIENDS - ${props.friends.length}`;
+        }
+
+    }
 
 
-    
 
 
 
