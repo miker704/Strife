@@ -17,7 +17,7 @@ export const selectFriendStatusOnline = (state, status) => {
             friends.push(user);
         }
     }
-  
+
     return friends.sort((a, b) => a.username > b.username ? 1 : -1);
 }
 
@@ -39,7 +39,7 @@ export const selectOnlineFriends = (state, status) => {
             onlineFriends.push(friend);
         }
     }
-  
+
     return onlineFriends.sort((a, b) => a.username > b.username ? 1 : -1);
 }
 
@@ -60,6 +60,23 @@ export const selectBlockedUsers = (state, status) => {
             blockedUsers.push(blockedUser);
         }
     }
-  
+
     return blockedUsers.sort((a, b) => a.username > b.username ? 1 : -1);
 }
+
+
+
+export const selectDmMembers = (state, type, id) => {
+    const dmMembers = state.entities[type][id]?.members;
+    if (!dmMembers) {
+        console.log("failed");
+        return [];
+    }
+    const members = [];
+    for (let member of dmMembers) {
+        members.push(state.entities.user[member.id]);
+    }
+
+
+    return members.sort((a, b) => a.username > b.username ? 1 : -1)''
+};
