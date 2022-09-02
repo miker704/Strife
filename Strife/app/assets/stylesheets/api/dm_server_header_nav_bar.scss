@@ -73,7 +73,7 @@
     box-sizing: border-box;
     outline: 0;
     // max-width: 150px;
-    
+
 }
 
 .dms-hbar-name-header {
@@ -328,7 +328,7 @@
 
 }
 
-.dmshbar-mag-icon-container{
+.dmshbar-mag-icon-container {
     width: 24px;
     height: 24px;
     forced-color-adjust: none;
@@ -342,7 +342,7 @@
     outline: 0;
 }
 
-.mag-container{
+.mag-container {
     forced-color-adjust: none;
     box-sizing: border-box;
     position: relative;
@@ -351,7 +351,8 @@
     outline: 0;
 
 }
-.mag-icon-2-visible{
+
+.mag-icon-2-visible {
     transform: rotate(0deg);
     opacity: 1;
     box-sizing: border-box;
@@ -362,13 +363,13 @@
     width: 100%;
     height: 100%;
     z-index: 2;
-    transition: transform .1s ease-out,opacity .1s ease-out,-webkit-transform .1s ease-out;
-    color: hsl(214,4%,65.3%);
+    transition: transform .1s ease-out, opacity .1s ease-out, -webkit-transform .1s ease-out;
+    color: hsl(214, 4%, 65.3%);
 
 
 }
 
-.mag-icon-2{
+.mag-icon-2 {
     forced-color-adjust: none;
     box-sizing: border-box;
     position: absolute;
@@ -378,12 +379,12 @@
     width: 100%;
     height: 100%;
     z-index: 2;
-    transition: transform .1s ease-out,opacity .1s ease-out,-webkit-transform .1s ease-out;
+    transition: transform .1s ease-out, opacity .1s ease-out, -webkit-transform .1s ease-out;
     transform: rotate(90deg);
-    color: hsl(214,4%,65.3%);
+    color: hsl(214, 4%, 65.3%);
 }
 
-.icon-dms-inbox{
+.icon-dms-inbox {
     color: hsl(216, 3.7%, 73.5%);
     display: block;
     width: 24px;
@@ -405,6 +406,7 @@
     font-family: "Whitney" !important;
     width: fit-content !important;
 }
+
 .start-video-call-message-tool-tip {
     background: #191919 !important;
     font-size: 14px !important;
@@ -416,6 +418,7 @@
     font-family: "Whitney" !important;
     width: fit-content !important;
 }
+
 .pinned-messages-tool-tip {
     background: #191919 !important;
     font-size: 14px !important;
@@ -427,6 +430,7 @@
     font-family: "Whitney" !important;
     width: fit-content !important;
 }
+
 .dmshb-inbox-message-tool-tip {
     background: #191919 !important;
     font-size: 14px !important;
@@ -438,6 +442,7 @@
     font-family: "Whitney" !important;
     width: fit-content !important;
 }
+
 .dmshb-help-tool-tip {
     background: #191919 !important;
     font-size: 14px !important;
@@ -451,6 +456,7 @@
     text-align: center !important;
     // overflow: hidden !important;
 }
+
 .dmshb-invite-members-tool-tip {
     background: #191919 !important;
     font-size: 14px !important;
@@ -477,7 +483,7 @@
 }
 
 
-.group-dm-chat-icon-wrapper{
+.group-dm-chat-icon-wrapper {
     position: relative;
     height: 24px;
     width: auto;
@@ -489,7 +495,7 @@
     outline: 0;
 }
 
-.group-dm-chat-icon{
+.group-dm-chat-icon {
     color: hsl(216, 3.7%, 73.5%);
     display: block;
     width: 24px;
@@ -499,7 +505,7 @@
     box-sizing: border-box;
 }
 
-.group-chat-container{
+.group-chat-container {
     position: relative;
     min-width: 0;
     forced-color-adjust: none;
@@ -514,13 +520,74 @@
 
 }
 
-.outer-group-chat-name{
+.outer-group-chat-name {
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    flex: 0 1 auto;
+    padding: 0 4px 0 0;
+    max-width: 100%;
+    margin-left: -6px;
+    position: relative;
+    min-width: 0;
 
 }
-.inner-group-chat-container{
+
+.inner-group-chat-container {
+    font-family: "ABC Ginto Normal";
+    font-weight: 500;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    position: relative;
+    outline: 0;
+
 
 }
 
-.group-name-input{
-    
+.group-name-input {
+    font-size: 16px;
+    line-height: 32px;
+    height: 32px;
+    padding: 0 6px;
+    border: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre;
+    border-radius: 3px;
+    -webkit-app-region: no-drag;
+    background: #0000;
+    box-sizing: border-box;
+    outline: 0;
+    color: hsl(210, 2.9%, 86.7%);
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    opacity: 0;
+    font-family: "ABC Ginto Normal";
+    font-weight: 500;
+}
+
+.input-group-name{
+    color: hsl(210, 2.9%, 86.7%);
+    font-size: 16px;
+    line-height: 32px;
+    height: 32px;
+    padding: 0 6px;
+    border: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre;
+    border-radius: 3px;
+    -webkit-app-region: no-drag;
+    background: #0000;
+    box-sizing: border-box;
+    opacity: 0;
+    forced-color-adjust: none;
+    font-family: "ABC Ginto Normal";
+    font-weight: 500;
+
 }
