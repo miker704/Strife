@@ -11,7 +11,7 @@ const CreateDmModal = ({
     createDmServer,
     history,
     createDmMember,
-    friendshipErrors,
+    dmServerErrors,
     errors,
     requestFriendships,
     removeDmServerErrors,
@@ -36,10 +36,10 @@ const CreateDmModal = ({
 
         return function cleanup () {
             if (errors.length > 0) {
-                removeDmServerErrors();
             }
-            if (friendshipErrors.length > 0) {
-
+            if (dmServerErrors.length > 0) {
+                
+                removeDmServerErrors();
                 removeFriendshipErrors();
             }
         }
