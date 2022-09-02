@@ -86,6 +86,15 @@ class DmServerHeaderNavBar extends React.Component {
                     <div className="dms-hbar-name">
                         <h3 className="dms-hbar-name-header">{this.handleDmServerName()}</h3>
                     </div>
+
+                    <div className="group-chat-container">
+                            <div className="outer-group-chat-name">
+                                <div className="inner-group-chat-container">
+                                    <input className = "group-name-input" type="text" />
+                                </div>
+                            </div>
+                    </div>
+
                     <div className="dms-member-online-status">
 
                     </div>
