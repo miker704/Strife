@@ -104,6 +104,19 @@
     -webkit-box-flex: 1;
     box-sizing: border-box;
     outline: 0;
+}
 
+.dmshb-tool-bar{
+    forced-color-adjust: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    min-width: 0;
+    box-sizing: border-box;
+    outline: 0;
 
 }
+
+
