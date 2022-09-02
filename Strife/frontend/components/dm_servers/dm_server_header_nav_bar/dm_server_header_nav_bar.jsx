@@ -31,15 +31,31 @@ class DmServerHeaderNavBar extends React.Component {
                     <div className="dms-member-online-status">
 
                     </div>
-                        <div className="dmshb-spacer"></div>
-                        <div className="dmshb-tool-bar">
+                    <div className="dmshb-spacer"></div>
+                    <div className="dmshb-tool-bar">
 
-                            <div className="dmshb-tool-icon-wrapper">
-                                
-                            </div>
-
+                        
+                        <div className="dmshb-tool-icon-wrapper">
 
                         </div>
+                        <div className="dmshb-tool-icon-wrapper">
+
+                        </div>
+                        <div className="dmshb-tool-icon-wrapper">
+
+                        </div>
+                        <div className="dmshb-tool-icon-wrapper">
+
+                        </div>
+                        <div className="dmshb-tool-icon-wrapper">
+
+                        </div>
+                        <div className="dmshb-tool-icon-wrapper">
+
+                        </div>
+
+
+                    </div>
                 </div>
             </div>
         )
