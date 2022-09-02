@@ -48,6 +48,7 @@ const mSTP = (state) => {
         "Drag and drop servers on top of each other to create server folders.",
         "Click the compass in your server list to find new servers.",
         "Group DMs can have up to ten members.",
+        "Click your avatar in the lower-left corner to set a custom status.",
         ""
 
 
