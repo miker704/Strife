@@ -204,10 +204,10 @@ class DmMessages extends React.Component {
                 <div className="dm-messages-container">
                     <ul>
                         {
-                            this.props.dmMembers.map((dmMember, dmMemberIdx) => {
-                                return (
-                                <li key={dmMember.id}>{dmMember.username}</li>)
-                            })
+                            // this.props.dmMembers.map((dmMember, dmMemberIdx) => {
+                            //     return (
+                            //     <li key={dmMember.id}>{dmMember.username}</li>)
+                            // })
                         }
 
 
