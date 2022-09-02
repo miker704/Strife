@@ -10,6 +10,9 @@ const FriendShipIndex1 = (props) => {
     const [searchText, setSearchText] = useState("");
     const [selectedFriends, setSelectedFriends] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
+    // const [setSelectedFriend, setShowPopup] = useState(false);
+    const dmMembersArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
+
     const [popupTop, setPopupTop] = useState(0);
     let allFriends = props.friends;
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
@@ -212,7 +215,7 @@ const FriendShipIndex1 = (props) => {
                                 allFriends.map((friend, friendIdx) => {
                                     return (
                                         <li className="friend-index-item" key={friend.id}>
-                                            {showPopup && <EditFriendshipModalContainer user={props.currentUser} friend={friend} top={popupTop} setShowPopup={setShowPopup} />}
+                                            {showPopup && <EditFriendshipModalContainer user={props.currentUser} friend={friend.id} top={popupTop} setShowPopup={setShowPopup} />}
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
                                                     <div className="friend-info">
