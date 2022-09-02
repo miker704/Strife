@@ -66,14 +66,14 @@ export const selectBlockedUsers = (state, status) => {
 
 
 
-export const selectDmMembers = (state, type, id) => {
-    const dmMembers = state.entities[type][id]?.members;
-    if (!dmMembers) {
-        console.log("failed");
-        return [];
-    }
+export const selectDmMembers = (state,id) => {
+    // const dmMembers = state.entities.dmServers[id]?.members;
+    // if (!dmMembers) {
+    //     console.log("failed");
+    //     return [];
+    // }
     const members = [];
-    for (let member of dmMembers) {
+    for (let member of Object.values(state.entities.dmServers)) {
         members.push(state.entities.user[member.id]);
     }
 
