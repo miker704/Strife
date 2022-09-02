@@ -38,12 +38,47 @@ const FriendShipIndex1 = (props) => {
     }
 
     const handleDm = (friend) => {
-        const memberIds = [props.currentUser.id, friend.id];
-
+        const memberIds = [currentUser.id, parseInt(friend.id)].sort((a, b) => a - b);
+        let new_dm_members = [currentUser, friend];
+        for (let dmServer of props.dmServers) {
+            if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
+                if (history.location.pathname !== `/channels/@me/${dmServer.id}`) {
+                    history.push(`/channels/@me/${dmServer.id}`);
+                }
+                return;
+            }
+        }
+        // if dmserver does not already exists create one
+        const dmMemberInfo = JSON.parse(JSON.stringify(new_dm_members));
+        let newDmServerName = [];
+        let dmServerName = "";
+        for (let member of dmMemberInfo) {
+            if (member.id !== currentUser.id) {
+                newDmServerName.push(member.username);
+            }
+        }
+        if (newDmServerName.length === 1) {
+            dmServerName = newDmServerName.join();
+        }
+        else {
+            dmServerName = newDmServerName.join(", ");
+        }
+        let submissionState = {
+            owner_id: currentUser.id,
+            dm_server_name: dmServerName,
+            dm_member_ids: memberIds
+        }
+        let newDmServer;
+        createDmServer(submissionState).then((action) => {
+            newDmServer = action.dmserver;
+            history.push(`/channels/@me/${newDmServer.id}`);
+        });
+        return;
     }
+  
 
 
-    let liveSearch = () => {
+    const liveSearch = () => {
         let allFriendShips = document.querySelectorAll('.friend-index-item');
         let search_query = document.getElementById('input-all-friends').value;
         // let search_query = searchText;
