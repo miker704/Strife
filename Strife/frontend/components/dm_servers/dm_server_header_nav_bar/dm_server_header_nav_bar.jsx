@@ -9,7 +9,12 @@ class DmServerHeaderNavBar extends React.Component {
     }
 
     handleDmServerName(){
-
+        if(Object.values(this.props.dmServerMembers).length > 2){
+            return  "Group Chat";
+        }
+        else{
+            return "DM Chat";
+        }
     }
 
     render () {
@@ -35,7 +40,7 @@ class DmServerHeaderNavBar extends React.Component {
                     </svg>
                 </div>
                 <div className="dms-hbar-name">
-                    <h3 className="dms-hbar-name-header">member name</h3>
+                    <h3 className="dms-hbar-name-header">member name #{this.handleDmServerName()}</h3>
                 </div>
                 <div className="dms-member-online-status">
 
