@@ -22,6 +22,7 @@ const FriendShipIndexOnline = ({
 }) => {
 
     const inputRef = useRef();
+    const friendRef = useRef();
     const [searchText, setSearchText] = useState("");
     const [selectedFriends, setSelectedFriends] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
