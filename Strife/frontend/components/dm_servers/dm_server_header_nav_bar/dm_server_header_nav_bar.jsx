@@ -1,5 +1,6 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
+import { requestFriendships } from "../../../utils/friendship_api_util";
 
 
 class DmServerHeaderNavBar extends React.Component {
@@ -13,11 +14,11 @@ class DmServerHeaderNavBar extends React.Component {
         this.handleInput = this.handleInput.bind(this);
     }
 
-    setDMServerName(){
-
+    setDMServerName(name){
+        return this.setState({DmServerName:name});
     }
-    handleInput(){
-        
+    handleInput(e){
+        return (e) => {this.setState({DmServerName: e.current.target.value})};
     }
 
 
@@ -112,7 +113,12 @@ class DmServerHeaderNavBar extends React.Component {
                     <div id="groupchatname" className="group-chat-container is-hidden">
                         <div className="outer-group-chat-name">
                             <div className="inner-group-chat-container">
-                                <input className="group-name-input" type="text" />
+                                <input className="group-name-input" 
+                                    type="text" 
+                                    onChange={(e) => this.handleInput} 
+                                    placeholder={`${this.state.DmServerName}`}
+                                    value={this.state.DmServerName}
+                                    />
                                 <div className="input-group-name">{this.handleDmServerName()}</div>
                             </div>
                         </div>
