@@ -1,8 +1,8 @@
 //header navbar that diosplays on top of the screen of each dm server
 
-.dm-server-header-bar{
+.dm-server-header-bar {
     flex: 0 0 auto;
-    background: hsl(220,7.7%,22.9%);
+    background: hsl(220, 7.7%, 22.9%);
     forced-color-adjust: none;
     -webkit-box-flex: 0;
     box-sizing: border-box;
@@ -11,7 +11,7 @@
     align-items: center;
     min-width: 0;
     user-select: none;
-    color: hsl(210,2.9%,86.7%);
+    color: hsl(210, 2.9%, 86.7%);
     // height: 48px;
     height: 50px;
 
@@ -30,7 +30,7 @@
 
 }
 
-.dm-server-bar-children{
+.dm-server-bar-children {
     align-items: center;
     min-width: 0;
     overflow: hidden;
@@ -43,7 +43,7 @@
     -webkit-box-flex: 1;
 }
 
-.dms-children-icon-wrapper{
+.dms-children-icon-wrapper {
     forced-color-adjust: none;
     position: relative;
     height: 24px;
@@ -56,17 +56,17 @@
 
 }
 
-.icon-at-sym{
+.icon-at-sym {
     forced-color-adjust: none;
     box-sizing: border-box;
     display: block;
     width: 24px;
     height: 24px;
     -webkit-app-region: no-drag;
-    color: hsl(213,4.1%,57.5%);
+    color: hsl(213, 4.1%, 57.5%);
 }
 
-.dms-hbar-name{
+.dms-hbar-name {
     forced-color-adjust: none;
     flex: 0 0 auto;
     min-width: auto;
@@ -75,7 +75,8 @@
     box-sizing: border-box;
     outline: 0;
 }
-.dms-hbar-name-header{
+
+.dms-hbar-name-header {
     justify-content: flex-start;
     overflow: hidden;
     white-space: nowrap;
@@ -94,7 +95,7 @@
 
 }
 
-.dms-member-online-status{
+.dms-member-online-status {
     forced-color-adjust: none;
     -webkit-box-flex: 0;
     flex: 0 0 auto;
@@ -106,7 +107,7 @@
     outline: 0;
 }
 
-.dmshb-spacer{
+.dmshb-spacer {
     forced-color-adjust: none;
     flex: 1 1 auto;
     -webkit-box-flex: 1;
@@ -114,7 +115,7 @@
     outline: 0;
 }
 
-.dmshb-tool-bar{
+.dmshb-tool-bar {
     forced-color-adjust: none;
     display: flex;
     -webkit-box-align: center;
@@ -127,7 +128,7 @@
 
 }
 
-.dmshb-tool-icon-wrapper{
+.dmshb-tool-icon-wrapper {
     forced-color-adjust: none;
     outline: 0;
     position: relative;
@@ -140,19 +141,19 @@
     box-sizing: border-box;
 }
 
-.icon-phone{
- color: hsl(216,3.7%,73.5%);
- display: block;
- width: 24px;
- height: 24px;
- -webkit-app-region: no-drag;
- forced-color-adjust: none;
- box-sizing: border-box;
+.icon-phone {
+    color: hsl(216, 3.7%, 73.5%);
+    display: block;
+    width: 24px;
+    height: 24px;
+    -webkit-app-region: no-drag;
+    forced-color-adjust: none;
+    box-sizing: border-box;
 
 }
 
-.icon-webcall{
-    color: hsl(216,3.7%,73.5%);
+.icon-webcall {
+    color: hsl(216, 3.7%, 73.5%);
     display: block;
     width: 24px;
     height: 24px;
@@ -161,8 +162,8 @@
     box-sizing: border-box;
 }
 
-.icon-pin-messages{
-    color: hsl(216,3.7%,73.5%);
+.icon-pin-messages {
+    color: hsl(216, 3.7%, 73.5%);
     display: block;
     width: 24px;
     height: 24px;
@@ -171,8 +172,8 @@
     box-sizing: border-box;
 }
 
-.icon-add-members{
-    color: hsl(216,3.7%,73.5%);
+.icon-add-members {
+    color: hsl(216, 3.7%, 73.5%);
     display: block;
     width: 24px;
     height: 24px;
@@ -181,14 +182,14 @@
     box-sizing: border-box;
 }
 
-.dmshbar-search-bar-wrapper{
+.dmshbar-search-bar-wrapper {
     forced-color-adjust: none;
     margin: 0 8px;
     box-sizing: border-box;
     outline: 0;
 }
 
-.dmshbar-search-bar-inner-wrapper{
+.dmshbar-search-bar-inner-wrapper {
     forced-color-adjust: none;
     position: relative;
     overflow: visible;
@@ -199,7 +200,7 @@
 
 }
 
-.dmshbar-search-bar{
+.dmshbar-search-bar {
     transition: width .25s ease;
     forced-color-adjust: none;
     outline: 0;
@@ -214,11 +215,12 @@
     display: flex;
     -webkit-box-align: stretch;
     box-sizing: border-box;
-    color: hsl(210,2.9%,86.7%);
-    background-color: hsl(216,7.2%,13.5%);
+    color: hsl(210, 2.9%, 86.7%);
+    background-color: hsl(216, 7.2%, 13.5%);
 
 }
-.draft-edit{
+
+.draft-edit {
     flex: 1;
     font-size: 14px;
     font-weight: 500;
@@ -232,29 +234,94 @@
     text-align: initial;
     box-sizing: border-box;
     outline: 0;
-    
+
 
 }
 
-.public-draft-edit{
-
-}
-
-.public-draft-edit-placeholder{
-
-}
-.public-draft-editor-container{
-
-}
-
-.public-draft-editor-container-placeholder{
-
-}
-
-.data-contents{
-
+.public-draft-edit {
+    padding-left: 4px;
+    outline: 0;
+    forced-color-adjust: none;
+    position: absolute;
+    z-index: 1;
+    box-sizing: content-box;
+    padding-bottom: 20px;
+    padding-right: 2px;
+    color: hsl(214, 4%, 65.3%);
 }
 
 
+.public-draft-edit-placeholder {
+    white-space: pre-wrap;
+    outline: 0;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+}
+
+.public-draft-editor-container {
+    border: none;
+    overflow: hidden;
+    border-radius: 2px;
+    height: 20px;
+    forced-color-adjust: none;
+    background-color: #fff0;
+    position: relative;
+    z-index: 1;
+    outline: 0;
+    box-sizing: border-box;
+    text-align: initial;
+}
 
 
+
+.public-draft-editor-container-placeholder {
+    outline: none;
+    user-select: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-sizing: content-box;
+    padding-bottom: 20px;
+    padding-left: 2px;
+    padding-right: 2px;
+    -webkit-user-modify: read-write-plaintext-only;
+    forced-color-adjust: none;
+    height: inherit;
+    text-align: initial;
+    outline: 0;
+
+}
+
+.data-contents {
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+
+}
+
+.data-block {
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    outline: 0;
+}
+
+.data-key-offset {
+    display: inline-block;
+    min-width: 1px;
+    white-space: pre;
+    direction: ltr;
+    text-align: left;
+    position: relative;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+
+}
+
+.data-key-offset2 {
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    min-width: 1px;
+
+}
