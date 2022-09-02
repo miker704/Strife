@@ -1,25 +1,28 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
-import { requestFriendships } from "../../../utils/friendship_api_util";
 
 
 class DmServerHeaderNavBar extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            DmServerName: ""
+            DmServerName: this.props.dmServer.dm_server_name
         }
         this.handleDmServerName = this.handleDmServerName.bind(this);
+        this.handleDmServerName2 = this.handleDmServerName2.bind(this);
+
         this.setDMServerName = this.setDMServerName.bind(this);
         this.handleInput = this.handleInput.bind(this);
     }
 
-    setDMServerName(name){
-        return this.setState({DmServerName:name});
+    setDMServerName (name) {
+        return this.setState({ DmServerName: name });
     }
-    handleInput(e){
-        return (e) => {this.setState({DmServerName: e.current.target.value})};
+    handleInput (e) {
+        return (e) => { this.setState({ DmServerName: e.current.target.value }) };
     }
+
+
 
 
     handleDmServerName () {
@@ -43,6 +46,26 @@ class DmServerHeaderNavBar extends React.Component {
 
         }
         // if(this.props.dmServer.dm_server_name === null || this.props.dmServer.dm_server_name === ""){
+        // for (let member of Object.values(this.props.dmServerMembers)) {
+        //     if (member.id !== this.props.currentUser.id) {
+        //         dmServerName.push(member.username);
+        //     }
+        // }
+        // if (dmServerName.length === 1) {
+        //     dmServerName = dmServerName.join();
+        // }
+        // else {
+        //     dmServerName = dmServerName.join(", ");
+        // }
+        // // }
+        // // this.setState({ dmServerName: dmServerName });
+
+        // return dmServerName;
+    }
+
+    handleDmServerName2 () {
+        let dmServerName = [];
+        let dmMembersInServer = Object.values(this.props.dmServerMembers);
         for (let member of Object.values(this.props.dmServerMembers)) {
             if (member.id !== this.props.currentUser.id) {
                 dmServerName.push(member.username);
@@ -54,13 +77,10 @@ class DmServerHeaderNavBar extends React.Component {
         else {
             dmServerName = dmServerName.join(", ");
         }
-        // }
-        // this.setState({ dmServerName: dmServerName });
-        if (dmMembersInServer.length > 2) {
-            this.setDMServerName(dmServerName);
-        }
+        
         return dmServerName;
     }
+
 
     render () {
 
@@ -68,6 +88,7 @@ class DmServerHeaderNavBar extends React.Component {
 
         return (
             <div className="dm-server-header-bar">
+                {this.handleDmServerName()}
                 <div className="dm-server-bar-children">
                     <div id="normDm" className="dms-children-icon-wrapper">
                         <svg x="0" y="0" className="icon-at-sym" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
@@ -107,19 +128,19 @@ class DmServerHeaderNavBar extends React.Component {
                     </div>
 
                     <div id="normal-chat" className="dms-hbar-name">
-                        <h3 className="dms-hbar-name-header">{this.handleDmServerName()}</h3>
+                        <h3 className="dms-hbar-name-header">{this.handleDmServerName2()}</h3>
                     </div>
 
                     <div id="groupchatname" className="group-chat-container is-hidden">
                         <div className="outer-group-chat-name">
                             <div className="inner-group-chat-container">
-                                <input className="group-name-input" 
-                                    type="text" 
-                                    onChange={(e) => this.handleInput} 
+                                <input className="group-name-input"
+                                    type="text"
+                                    onChange={(e) => this.handleInput()}
                                     placeholder={`${this.state.DmServerName}`}
                                     value={this.state.DmServerName}
-                                    />
-                                <div className="input-group-name">{this.handleDmServerName()}</div>
+                                />
+                                <div className="input-group-name">{this.handleDmServerName2()}</div>
                             </div>
                         </div>
                     </div>
