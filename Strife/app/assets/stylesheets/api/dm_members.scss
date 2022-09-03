@@ -193,7 +193,11 @@
     forced-color-adjust: none;
 }
 
-.dm-member-username {}
+.dm-member-username {
+    forced-color-adjust: none;
+    outline: 0;
+
+}
 
 .dm-server-group-owner-icon {
     -webkit-box-flex: 0;
