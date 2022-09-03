@@ -77,7 +77,7 @@ const EditFriendshipModal = ({
 
     let lastEditOption;
 
-    switch (friend.status) { }
+    switch (friend.friend_request_status) { }
 
 
 
