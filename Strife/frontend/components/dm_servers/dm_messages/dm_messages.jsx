@@ -15,7 +15,7 @@ class DmMessages extends React.Component {
     renderDmMemberContainer () {
         if (Object.values(this.props.dmServerMembers).length > 2) {
             return (
-                <DmServerMemberListContainer />
+                <DmServerMemberListContainer dmServerMembers={this.props.dmServerMembers} />
             )
         }
     }
@@ -26,7 +26,8 @@ class DmMessages extends React.Component {
         console.log(this.props.dmServer);
 
         return (
-            <div className="dm-messages-wrapper">
+            // <div className="dm-messages-wrapper">
+            <div className="dm-server-container">
 
 
                 <DmServerHeaderNavBarContainer dmServerMembers={this.props.dmServerMembers} />
