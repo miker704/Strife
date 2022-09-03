@@ -144,6 +144,7 @@ class DmNavBar extends React.Component {
     render () {
         // console.log("dmserver props: ", this.props);
         // console.log("dmServers: ", this.props.dmServers);
+
         // console.log("dmServers navbar dmServerId : ", this.props.dmServerId);
 
 
