@@ -23,8 +23,7 @@ const mSTP = (state, ownProps) => {
         dmServer: state.entities.dmServers[ownProps.match.params.dmServerId],
         errors: state.errors.dmMessage,
         dmServerMembers: selectDmMembers(state,ownProps.match.params.dmServerId),
-        dmServerErrors : state.errors.dmServer,
-        // dmServers: Object.values(state.entites.dmServers) 
+        dmServerErrors : state.errors.dmServer
 
     }
 }
