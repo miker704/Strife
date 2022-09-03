@@ -1,9 +1,9 @@
-import { LOGOUT_CURRENT_USER, RECEIVE_CURRENT_USER, REMOVE_CURRENT_USER, RECEIVE_USER, RECEIVE_USERS,RECEIVE_FRIENDS } from "../actions/session_actions.js";
+import { LOGOUT_CURRENT_USER, RECEIVE_CURRENT_USER, REMOVE_CURRENT_USER, RECEIVE_USER, RECEIVE_USERS, RECEIVE_FRIENDS } from "../actions/session_actions.js";
 import { RECEIVE_DM_MEMBER } from "../actions/dm_member_actions.js";
 import { RECEIVE_DM_SERVER } from '../actions/dm_server_actions.js';
 import { RECEIVE_SERVER } from '../actions/server_actions.js';
 import { RECEIVE_SERVER_MEMBERSHIP } from '../actions/server_membership_actions.js';
-import { RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP } from '../actions/friendship_actions.js';
+import { RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP, RECEIVE_BLOCKED_USER } from '../actions/friendship_actions.js';
 
 const receiveUsers = (state, users) => {
     if (!users) { return state; }
@@ -43,6 +43,14 @@ const userReducer = (state = {}, action) => {
             user = newState[action.friendship.friend_id];
             user.friend_request_status = action.friendship.friend_request_status;
             return newState;
+
+        case RECEIVE_FRIENDSHIP:
+            newState = Object.assign({}, state);
+            user = newState[action.friendship.friend_id];
+            user.friend_request_status = action.friendship.friend_request_status;
+            return newState;
+
+
         case RECEIVE_SERVER:
             // return action.servers.users;
             return action.server.users
