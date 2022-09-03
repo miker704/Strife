@@ -103,26 +103,28 @@ class DmNavBar extends React.Component {
         let dmServerNameArray = [];
         let dmServerName = "";
         let dmMemberArray = Object.values(dmServer.members);
-        for (let i of dmMemberArray) {
 
-            if (i.id !== this.props.currentUser.id) {
-                dmServerNameArray.push(i.username)
+        if (dmServer.dm_server_name !== null) {
+            dmServerName = dmServer.dm_server_name;
+            // return dmServerName;
+        }
+        else if (dmServer.dm_server_name === null) {
+
+            for (let i of dmMemberArray) {
+
+                if (i.id !== this.props.currentUser.id) {
+                    dmServerNameArray.push(i.username)
+                }
             }
-        }
-        if (dmServerNameArray.length === 1) {
-            dmServerName = dmServerNameArray.join();
-        }
-        else {
-            dmServerName = dmServerNameArray.join(", ");
+            if (dmServerNameArray.length === 1) {
+                dmServerName = dmServerNameArray.join();
+            }
+            else {
+                dmServerName = dmServerNameArray.join(", ");
+            }
+
         }
 
-
-        if (dmServer.dm_server_name === null) {
-            let subState = {
-                dm_server_name: dmServerName
-            };
-            // this.props.updateDmServer(dmServer.id,subState);
-        }
         return dmServerName;
     }
 

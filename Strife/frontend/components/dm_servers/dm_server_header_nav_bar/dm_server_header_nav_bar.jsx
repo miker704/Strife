@@ -55,9 +55,9 @@ const DmServerHeaderNavBar = ({
         e.preventDefault();
         if (DmServerName !== displayName) {
             //run update
-            console.log("display name: ", displayName);
-            console.log("dmname: ", DmServerName)
-            console.log("dmServerid", dmServer.id);
+            // console.log("display name: ", displayName);
+            // console.log("dmname: ", DmServerName)
+            // console.log("dmServerid", dmServer.id);
             updateDmServer(dmServer.id,{dm_server_name: DmServerName});
         }
         setShowEdit(false);
