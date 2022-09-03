@@ -23,3 +23,9 @@ export const requestBlockedUsers = () => $.ajax({ url: `/api/friendships/`, meth
 export const requestAllFriendships = () => $.ajax({ url: `/api/friendships/`, method: 'GET' });
 
 
+export const blockUser = (account_ids) =>
+    $.ajax({
+        url: `/api/friendships/blockuser/`,
+        method: "POST",
+        data: { friendship: account_ids }
+    });
