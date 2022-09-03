@@ -10,6 +10,8 @@ const EditFriendshipModal = ({
     deleteFriendship,
     friend,
     setShowPopup,
+    blockUser,
+    updateFriendship,
     history,
     user,
     top,
@@ -32,6 +34,8 @@ const EditFriendshipModal = ({
         });
         return;
     }
+
+    
 
     const handleBlockUser = () => {
         console.log("blocking this user now")
