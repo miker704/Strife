@@ -39,7 +39,6 @@ const EditFriendshipModal = ({
 
     useEffect(() => {
 
-        // requestFriendships();
 
         return function cleanup () {
             if (errors.length > 0) {
@@ -60,7 +59,7 @@ const EditFriendshipModal = ({
 
     let lastEditOption;
 
-    switch (friend.status)
+    switch (friend.status){}
 
 
 
