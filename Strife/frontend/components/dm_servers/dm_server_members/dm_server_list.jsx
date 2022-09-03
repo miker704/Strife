@@ -1,10 +1,13 @@
 import { useState, useEffect, useRef } from "react";
+import { render } from "react-dom";
 import UserNavBar from "../../users/user_nav/user_nav_bar";
+import React from "react";
 
-
-const DmServerMemberList = ({ props }) => {
-
-
+class DmServerMemberList extends React.Component {
+    constructor(props){
+        super(props)
+    }
+    render(){
     return (
         <div className="dm-members-index-container-wrapper">
             <div className="dm-members-index-container">
@@ -50,7 +53,7 @@ const DmServerMemberList = ({ props }) => {
             </div>
         </div>
     )
-
+    }
 
 }
 
