@@ -31,3 +31,10 @@
     z-index: -1;
   }
 
+
+
+  .dm-server-content-container { 
+    height: calc(100% - 48px);
+    display: flex;
+    justify-content: space-between;
+}
