@@ -83,8 +83,8 @@ export const requestFriendships = () => (dispatch) =>
 
 export const createFriendship = (account_ids) => (dispatch) =>
     FRIENDSHIP_API_UTIL.createFriendship(account_ids).then((friendship) => {
-         dispatch(removeFriendshipErrors());
-         return dispatch(receiveFriendship(friendship));
+        dispatch(removeFriendshipErrors());
+        return dispatch(receiveFriendship(friendship));
     }, (err) => (dispatch(receiveFriendshipErrors(err.responseJSON))));
 
 
@@ -111,3 +111,12 @@ export const requestBlockedUsers = () => (dispatch) =>
 export const requestAllFriendships = () => (dispatch) =>
     FRIENDSHIP_API_UTIL.requestAllFriendships().then((friendships) =>
         dispatch(receiveAllFriends(friendships)), err => dispatch(receiveFriendshipErrors(err.responseJSON)));
+
+
+
+
+export const blockUser = (account_ids) => (dispatch) =>
+    FRIENDSHIP_API_UTIL.blockUser(account_ids).then((friendship) => {
+        dispatch(removeFriendshipErrors());
+        return dispatch(receiveBlockedUser(friendship));
+    }, (err) => (dispatch(receiveFriendshipErrors(err.responseJSON))));
