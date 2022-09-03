@@ -18,6 +18,9 @@ const DmServerHeaderNavBar = ({
     updateDmServer
 
 }) => {
+    if(!dmServer){
+        return null;
+    }
 
     let displayName;
     if (dmServer.dm_server_name === null) {
@@ -45,12 +48,23 @@ const DmServerHeaderNavBar = ({
     }, [dmServer?.id])
 
 
-    // if
+    const inputRef = useRef();
+    useEffect(() => {
+        if (showEdit) {
+            inputRef.current?.focus();
+        }
+    })
+
 
 
     const handleEditName = (e) => {
-            
+            e.preventDefault();
+            if(DmServerName !== displayName){
+                //run update
+            }
+            setShowEdit(false);
     }
+
 
 
 
@@ -79,11 +93,8 @@ const DmServerHeaderNavBar = ({
     console.log("dmserver : ");
     console.log("dmserver : ");
 
-    // let dmServerProps = Object.values(dmServer);
     let membersOfthisServer = Object.values(dmServerMembers);
-    // let displayName = membersOfthisServer.filter(member => member.id !== currentUser.id).map(member => member.username).join(", ")
 
-    // let membersOfthisServer = [];
 
 
 
@@ -131,19 +142,29 @@ const DmServerHeaderNavBar = ({
                     <h3 className="dms-hbar-name-header">{displayName}</h3>
                 </div>
 
-                <div id="groupchatname" className={`group-chat-container ${membersOfthisServer.length < 3 ? "is-hidden" : ""}`}>
+                <div id="groupchatname" 
+                    className={`group-chat-container ${membersOfthisServer.length < 3 ? "is-hidden" : ""}`}
+                    onClick ={() => {if(membersOfthisServer.length>2){setShowEdit(true)}}}
+                    onBlur = {() =>{
+                        setShowEdit(false);
+                        setDMServerName(displayName);
+                    }}
+                    >
                     <div className="outer-group-chat-name">
                         <div className="inner-group-chat-container">
+                            <form onSubmit={handleEditName}>
                             <input id="gni" className="group-name-input"
-                                type="submit"
-
+                                type="text"
+                                spellCheck={false}
+                                ref = {inputRef}
                                 onChange={(e) => setDMServerName(e.currentTarget.value)}
                                 placeholder={displayName}
                                 value={DmServerName}
-                                onSubmit={() => console.log("hello the name is : ", DmServerName)}
                             />
-                            <div id="ign" className="input-group-name">
-                                {displayName}</div>
+                            </form>
+                            <div id="ign" className={`input-group-name`}>
+                                {displayName}
+                            </div>
                         </div>
                     </div>
                 </div>
