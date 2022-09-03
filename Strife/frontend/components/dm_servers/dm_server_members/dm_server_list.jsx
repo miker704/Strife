@@ -4,12 +4,16 @@ import React from "react";
 
 
 
-const DmServerMemberList = ({ props }) => {
+const DmServerMemberList = ({ 
+    
+    props 
 
 
+}
+) => {
 
 
-
+console.log("dmmemberlist props : ");
     return (
         <div className="dm-members-index-container-wrapper">
             <div className="dm-members-index-container">
