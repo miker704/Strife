@@ -18,11 +18,13 @@ const DmServerHeaderNavBar = ({
     updateDmServer
 
 }) => {
-    if(!dmServer){
+    if (!dmServer) {
         return null;
     }
 
-    let displayName;
+    let displayName="";
+    // let displayName ="";
+
     if (dmServer.dm_server_name === null) {
         displayName = Object.values(dmServerMembers).filter(member => member.id !== currentUser.id).map(member => member.username).join(", ")
     }
@@ -30,13 +32,13 @@ const DmServerHeaderNavBar = ({
         displayName = dmServer.dm_server_name
     }
     const [showEdit, setShowEdit] = useState(false);
-    const [DmServerName, setDMServerName] = useState(displayName);
+    const [DmServerName, setDMServerName] = useState("");
     useEffect(() => {
         if (dmServer?.id) {
 
             fetchDmServer(dmServerId);
+            setDMServerName(displayName);
         }
-        setDMServerName(displayName);
         return function cleanup () {
             if (errors.length > 0) {
                 removeDmServerErrors();
@@ -48,24 +50,25 @@ const DmServerHeaderNavBar = ({
     }, [dmServer?.id])
 
 
+
+    const handleEditName = (e) => {
+        e.preventDefault();
+        if (DmServerName !== displayName) {
+            //run update
+            console.log("display name: ", displayName);
+            console.log("dmname: ", DmServerName)
+            console.log("dmServerid", dmServer.id);
+            updateDmServer(dmServer.id,{dm_server_name: DmServerName});
+        }
+        setShowEdit(false);
+    }
+
     const inputRef = useRef();
     useEffect(() => {
         if (showEdit) {
             inputRef.current?.focus();
         }
     })
-
-
-
-    const handleEditName = (e) => {
-            e.preventDefault();
-            if(DmServerName !== displayName){
-                //run update
-            }
-            setShowEdit(false);
-    }
-
-
 
 
 
@@ -86,12 +89,10 @@ const DmServerHeaderNavBar = ({
 
         return dmServerName;
     }
-    console.log("dmserver : ", dmServer);
-    console.log("dmservermembers : ", dmServerMembers);
-    console.log("dmserverId : ", dmServerId);
-    // console.log("dmserverName : ", dmServer.dm_server_name === undefined ? "" : dmServer.dm_server_name);
-    console.log("dmserver : ");
-    console.log("dmserver : ");
+    // console.log("dmserver : ", dmServer);
+    // console.log("dmservermembers : ", dmServerMembers);
+    // console.log("dmserverId : ", dmServerId);
+
 
     let membersOfthisServer = Object.values(dmServerMembers);
 
@@ -142,25 +143,25 @@ const DmServerHeaderNavBar = ({
                     <h3 className="dms-hbar-name-header">{displayName}</h3>
                 </div>
 
-                <div id="groupchatname" 
+                <div id="groupchatname"
                     className={`group-chat-container ${membersOfthisServer.length < 3 ? "is-hidden" : ""}`}
-                    onClick ={() => {if(membersOfthisServer.length>2){setShowEdit(true)}}}
-                    onBlur = {() =>{
+                    onClick={() => { if (membersOfthisServer.length > 2) { setShowEdit(true) } }}
+                    onBlur={() => {
                         setShowEdit(false);
                         setDMServerName(displayName);
                     }}
-                    >
+                >
                     <div className="outer-group-chat-name">
                         <div className="inner-group-chat-container">
                             <form onSubmit={handleEditName}>
-                            <input id="gni" className="group-name-input"
-                                type="text"
-                                spellCheck={false}
-                                ref = {inputRef}
-                                onChange={(e) => setDMServerName(e.currentTarget.value)}
-                                placeholder={displayName}
-                                value={DmServerName}
-                            />
+                                <input id="gni" className="group-name-input"
+                                    type="text"
+                                    spellCheck={false}
+                                    ref={inputRef}
+                                    onChange={(e) => setDMServerName(e.currentTarget.value)}
+                                    placeholder={displayName}
+                                    value={DmServerName}
+                                />
                             </form>
                             <div id="ign" className={`input-group-name`}>
                                 {displayName}
