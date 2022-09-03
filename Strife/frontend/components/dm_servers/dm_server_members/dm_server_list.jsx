@@ -4,7 +4,7 @@ import React from "react";
 
 
 
-const DmServerMemberList ({props}) => {
+const DmServerMemberList = ({ props }) => {
 
 
 
