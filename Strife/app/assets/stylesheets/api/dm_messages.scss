@@ -24,19 +24,3 @@
     z-index: -1;
   }
 
-  .dm-server-container{
-  width: calc(100vw - 310px);
-  display: flex;
-  forced-color-adjust: none;
-  /* width: 100%; */
-  overflow: hidden;
-  /* -webkit-box-orient: vertical; */
-  /* -webkit-box-direction: normal; */
-  flex-direction: column;
-  height: 100vh;
-  transform: translate(309px, 0px);
-  background-color: #36393f;
-  flex: 1;
-  position: absolute;
-  justify-content: flex-start;
-}
