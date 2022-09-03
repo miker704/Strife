@@ -1,6 +1,7 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
 import DmServerHeaderNavBarContainer from "../dm_server_header_nav_bar/dm_server_header_nav_bar_container";
+import DmServerMemberListContainer from "../dm_server_members/dm_server_list_container";
 
 class DmMessages extends React.Component {
     constructor (props) {
@@ -18,6 +19,8 @@ class DmMessages extends React.Component {
                 
               
                 <DmServerHeaderNavBarContainer dmServerMembers={this.props.dmServerMembers}  />
+                {/* <DmServerHeaderNavBarContainer  /> */}
+                
 
                 <div className="empty-messages-container is-hidden"></div>
                 <div className="dm-messages-container">
@@ -33,8 +36,8 @@ class DmMessages extends React.Component {
                     </ul>
 
 
+                    {/* <DmServerMemberListContainer/> */}
                 </div>
-
             </div>
         )
 
