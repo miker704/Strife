@@ -44,10 +44,10 @@ const userReducer = (state = {}, action) => {
             user.friend_request_status = action.friendship.friend_request_status;
             return newState;
 
-        case RECEIVE_FRIENDSHIP:
+        case RECEIVE_BLOCKED_USER:
             newState = Object.assign({}, state);
             user = newState[action.friendship.friend_id];
-            user.friend_request_status = action.friendship.friend_request_status;
+            user.friend_request_status = 0;
             return newState;
 
 
