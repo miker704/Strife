@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { fetchDmServer } from "../../../actions/dm_server_actions.js";
+import { fetchDmServer, fetchDmServers } from "../../../actions/dm_server_actions.js";
 import { createDmMessage } from "../../../actions/dm_messages_actions.js";
 import { selectDmMembers } from "../../../utils/selectors_api_util.js";
 import DmMessages from "./dm_messages.jsx";
@@ -23,8 +23,8 @@ const mSTP = (state, ownProps) => {
         dmServer: state.entities.dmServers[ownProps.match.params.dmServerId],
         errors: state.errors.dmMessage,
         dmServerMembers: selectDmMembers(state,ownProps.match.params.dmServerId),
-        dmServerErrors : state.errors.dmServer
-
+        dmServerErrors : state.errors.dmServer,
+        // dmServers: Object.values(state.entites.dmServers) 
 
     }
 }
@@ -32,6 +32,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch, ownProps) => {
     return {
+        fetchDmServers: (userId) => dispatch(fetchDmServers(userId)),
         fetchDmServer: () => dispatch(fetchDmServer(ownProps.match.params.dmServerId)),
         createDmMessage: (dmmessage) => dispatch(createDmMessage(dmmessage))
     }
