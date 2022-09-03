@@ -98,6 +98,14 @@
     outline: 0;
 }
 
+
+.dm-member-item:hover {
+    background-color: hsl(223, 6.9%, 19.8%);
+    color: hsl(210, 2.9%, 86.7%);
+}
+
+
+
 .dm-member-layout {
     outline: 0;
     align-items: center;
@@ -146,7 +154,7 @@
 
 
 
-.dm-member-item:hover {}
+
 
 .dm-member-info-wrapper {
     white-space: nowrap;
