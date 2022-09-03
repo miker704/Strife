@@ -18,7 +18,7 @@ const EditFriendshipModal = ({
 }) => {
 
 
-    if(friend.id === currentUser.id){
+    if (friend.id === currentUser.id) {
         return null;
     }
 
@@ -35,7 +35,23 @@ const EditFriendshipModal = ({
         return;
     }
 
-    
+    const handleupdateFriendShip = () => {
+
+        deleteFriendship({ user_id: currentUser.id, friend_id: friend.id }).then(() => {
+            setShowPopup(false);
+
+        });
+        return;
+    }
+
+    const handleBlockUser = () => {
+
+        deleteFriendship({ user_id: currentUser.id, friend_id: friend.id }).then(() => {
+            setShowPopup(false);
+
+        });
+        return;
+    }
 
     const handleBlockUser = () => {
         console.log("blocking this user now")
@@ -57,13 +73,13 @@ const EditFriendshipModal = ({
         <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
             <div className="fo-item-name">Block User</div>
         </div>
-    ):
-    ("");
+    ) :
+        ("");
 
 
     let lastEditOption;
 
-    switch (friend.status){}
+    switch (friend.status) { }
 
 
 
