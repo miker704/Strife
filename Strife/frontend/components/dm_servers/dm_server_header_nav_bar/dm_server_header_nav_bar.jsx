@@ -4,7 +4,7 @@ import ReactTooltip from "react-tooltip";
 
 import { useEffect, useState, useRef } from "react";
 
-const DmServerHeaderNavBar = ({ 
+const DmServerHeaderNavBar = ({
 
     errors,
     dmMessageErrors,
@@ -16,27 +16,27 @@ const DmServerHeaderNavBar = ({
     removeDmServerErrors,
     removeDmMessageErrors,
     updateDmServer
-    
+
 }) => {
-    
+
     let displayName;
-    if(dmServer.dm_server_name === null){
+    if (dmServer.dm_server_name === null) {
         displayName = Object.values(dmServerMembers).filter(member => member.id !== currentUser.id).map(member => member.username).join(", ")
     }
-    else if(dmServer.dm_server_name !== null || dmServer.dm_server_name !== undefined || dmServer.dm_server_name !== "" ){
+    else if (dmServer.dm_server_name !== null || dmServer.dm_server_name !== undefined || dmServer.dm_server_name !== "") {
         displayName = dmServer.dm_server_name
     }
     const [showEdit, setShowEdit] = useState(false);
     const [DmServerName, setDMServerName] = useState(displayName);
     useEffect(() => {
-        if(dmServer?.id){
+        if (dmServer?.id) {
 
             fetchDmServer(dmServerId);
         }
         setDMServerName(displayName);
         return function cleanup () {
             if (errors.length > 0) {
-                     removeDmServerErrors();
+                removeDmServerErrors();
             }
             if (dmMessageErrors.length > 0) {
                 removeDmMessageErrors()
@@ -48,10 +48,12 @@ const DmServerHeaderNavBar = ({
     // if
 
 
-    
+    const handleEditName = (e) => {
+            
+    }
 
-  
-    
+
+
 
     const handleDmServerName2 = () => {
         let dmServerName = [];
@@ -70,9 +72,9 @@ const DmServerHeaderNavBar = ({
 
         return dmServerName;
     }
-    console.log("dmserver : ",dmServer);
-    console.log("dmservermembers : ",dmServerMembers);
-    console.log("dmserverId : ",dmServerId);
+    console.log("dmserver : ", dmServer);
+    console.log("dmservermembers : ", dmServerMembers);
+    console.log("dmserverId : ", dmServerId);
     // console.log("dmserverName : ", dmServer.dm_server_name === undefined ? "" : dmServer.dm_server_name);
     console.log("dmserver : ");
     console.log("dmserver : ");
@@ -126,7 +128,7 @@ const DmServerHeaderNavBar = ({
                 </div>
 
                 <div id="normal-chat" className={`dms-hbar-name ${membersOfthisServer.length > 2 ? "is-hidden" : ""}`}>
-                    <h3 className="dms-hbar-name-header">{handleDmServerName2()}</h3>
+                    <h3 className="dms-hbar-name-header">{displayName}</h3>
                 </div>
 
                 <div id="groupchatname" className={`group-chat-container ${membersOfthisServer.length < 3 ? "is-hidden" : ""}`}>
@@ -134,19 +136,14 @@ const DmServerHeaderNavBar = ({
                         <div className="inner-group-chat-container">
                             <input id="gni" className="group-name-input"
                                 type="submit"
-                                onInput={(e) => {
-                                    document.getElementById('ign').visibility === 'visible' ?
-                                        document.getElementById('ign').visibility = 'hidden' :
-                                        document.getElementById('ign').visibility = 'visible'
 
-                                }}
-                                onChange={ (e) => setDMServerName(e.currentTarget.value)}
-                                placeholder={handleDmServerName2()}
+                                onChange={(e) => setDMServerName(e.currentTarget.value)}
+                                placeholder={displayName}
                                 value={DmServerName}
                                 onSubmit={() => console.log("hello the name is : ", DmServerName)}
                             />
                             <div id="ign" className="input-group-name">
-                                {handleDmServerName2()}</div>
+                                {displayName}</div>
                         </div>
                     </div>
                 </div>
@@ -351,7 +348,7 @@ const DmServerHeaderNavBar = ({
 
 
 }
-export  default DmServerHeaderNavBar;
+export default DmServerHeaderNavBar;
 
 
 
