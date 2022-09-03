@@ -26,31 +26,18 @@ class DmMessages extends React.Component {
         console.log(this.props.dmServer);
 
         return (
-            // <div className="dm-messages-wrapper">
             <div className="dm-server-container">
-
 
                 <DmServerHeaderNavBarContainer dmServerMembers={this.props.dmServerMembers} />
 
                 {/* <DmServerMemberListContainer/> */}
                 {/* {this.renderDmMemberContainer()} */}
 
-                <div className="empty-messages-container is-hidden"></div>
-                <div className="dm-messages-container">
-                    <ul>
-                        {
-                            Object.values(this.props.dmServerMembers).map((dmMember, dmMemberIdx) => {
-                                return (
-                                    <li key={dmMember.id}>{dmMember.username}</li>)
-                            })
-                        }
-
-
-                    </ul>
-
+                {/* <div className="dm-messages-container"> */}
+                <div className="dm-server-content-container">
                     {this.renderDmMemberContainer()}
-
                 </div>
+                {/* <div className="empty-messages-container is-hidden"></div> */}
             </div>
         )
 
