@@ -18,7 +18,7 @@ const mSTP = (state, ownProps) => {
         currentUserId: state.session.id,
         currentUser: state.entities.users[state.session.id],
         dmMessagesIds: Object.keys(state.entities.dmMessages),
-        dmMembers: state.entities.dmServers[ownProps.match.params.dmServerId],
+        // dmMembers: state.entities.dmServers[ownProps.match.params.dmServerId],
         dmServerId: ownProps.match.params.dmServerId,
         dmServer: state.entities.dmServers[ownProps.match.params.dmServerId],
         errors: state.errors.dmMessage,
