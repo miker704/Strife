@@ -5,15 +5,30 @@ import React from "react";
 
 
 const DmServerMemberList = ({ 
-    
-    props 
-
-
+    dmServerId,
+    dmServerMembers,
+    errors,
+    dmServer,
+    currentUser,
+    fetchDmServer
 }
+
 ) => {
 
+        let dmServerMemberList = Object.values(dmServerMembers);
+        let DmServerOwner = dmServer.owner_id;
 
+console.log("dmmemberlist props dmid : ",dmServerId);
+console.log("dmmemberlist props : dmServerMembers: ", dmServerMembers);
+console.log("dmmemberlist props dmServer: ",dmServer.owner_id);
+console.log("dmmemberlist props dmServerMembersList: ", dmServerMemberList);
 console.log("dmmemberlist props : ");
+console.log("dmmemberlist props : ");
+
+
+
+
+
     return (
         <div className="dm-members-index-container-wrapper">
             <div className="dm-members-index-container">
