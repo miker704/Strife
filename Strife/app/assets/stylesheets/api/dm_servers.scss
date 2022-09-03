@@ -3,17 +3,11 @@
 // // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
-
-
 .dm-server-container{
     width: calc(100vw - 310px);
     display: flex;
     forced-color-adjust: none;
-    /* width: 100%; */
     overflow: hidden;
-    /* -webkit-box-orient: vertical; */
-    /* -webkit-box-direction: normal; */
     flex-direction: column;
     height: 100vh;
     transform: translate(309px, 0px);
@@ -23,3 +17,17 @@
     justify-content: flex-start;
   }
   
+
+
+  
+.dm-server-container-wrapper {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: calc(100vw - 310px);
+    height: 100vh;
+    transform: translate(309px, 0px);
+    background-color: #36393F;
+    z-index: -1;
+  }
+
