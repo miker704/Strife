@@ -17,11 +17,11 @@ class DmMessages extends React.Component {
 
         return (
             <div className="dm-messages-wrapper">
-                
-              
-                <DmServerHeaderNavBarContainer dmServerMembers={this.props.dmServerMembers}  />
-                    <DmServerMemberListContainer/>
-                
+
+
+                <DmServerHeaderNavBarContainer dmServerMembers={this.props.dmServerMembers} />
+                <DmServerMemberListContainer />
+
 
                 <div className="empty-messages-container is-hidden"></div>
                 <div className="dm-messages-container">
@@ -41,7 +41,7 @@ class DmMessages extends React.Component {
             </div>
         )
 
-        
+
 
 
     }
