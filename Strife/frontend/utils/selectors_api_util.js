@@ -69,12 +69,23 @@ export const selectBlockedUsers = (state, status) => {
   export const selectDmMembers = (state,id) => {
     const memberIds = state.entities.dmServers[id]?.members;
     if(!memberIds){
-        console.log("fail");
         return [];
     }
     else{
 
         return memberIds;
+    }
+ 
+  };
+
+
+  export const extractDmServerProps = (state,id) => {
+    const dmsprops = state.entities.dmServers[id]
+    if(!dmsprops){
+        return [];
+    }
+    else{
+        return dmsprops;
     }
  
   };
