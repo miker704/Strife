@@ -37,16 +37,7 @@ const EditFriendshipModal = ({
 
     const handleupdateFriendShip = () => {
 
-        deleteFriendship({ user_id: currentUser.id, friend_id: friend.id }).then(() => {
-            setShowPopup(false);
-
-        });
-        return;
-    }
-
-    const handleBlockUser = () => {
-
-        deleteFriendship({ user_id: currentUser.id, friend_id: friend.id }).then(() => {
+        updateFriendship({ user_id: currentUser.id, friend_id: friend.id }).then(() => {
             setShowPopup(false);
 
         });
@@ -55,8 +46,15 @@ const EditFriendshipModal = ({
 
     const handleBlockUser = () => {
         console.log("blocking this user now")
+
+        blockUser({ user_id: currentUser.id, friend_id: friend.id }).then(() => {
+            setShowPopup(false);
+
+        });
+        return;
     }
 
+  
     useEffect(() => {
 
 
