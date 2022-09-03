@@ -36,7 +36,7 @@ const DmServerHeaderNavBar = ({
     useEffect(() => {
         if (dmServer?.id) {
 
-            fetchDmServer(dmServerId);
+            // fetchDmServer(dmServerId);
             setDMServerName(displayName);
         }
         return function cleanup () {
@@ -92,6 +92,12 @@ const DmServerHeaderNavBar = ({
     // console.log("dmserver : ", dmServer);
     // console.log("dmservermembers : ", dmServerMembers);
     // console.log("dmserverId : ", dmServerId);
+    // console.log("this.props for header bar dmServer: ", dmServer);
+    // console.log("this.props for header bar errors: ", errors);
+    // console.log("this.props for header bar dmmessageErrrors: ", dmMessageErrors);
+    // console.log("this.props for header bar currentuser: ", currentUser);
+    // console.log("this.props for header bar  dmserverID: ", dmServerId);
+    // console.log("this.props for header bar dmMembers: ", dmServerMembers);
 
 
     let membersOfthisServer = Object.values(dmServerMembers);
