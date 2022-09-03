@@ -67,6 +67,12 @@ export const removeFriendshipErrors = () => {
     }
 }
 
+export const receiveBlockedUser = (friendship) => {
+    return {
+        type: BLOCKED_USER,
+        friendship
+    }
+}
 
 
 export const requestFriendships = () => (dispatch) =>

@@ -15,31 +15,54 @@ const EditFriendshipModal = ({
     top,
 }) => {
 
+
+    if(friend.id === currentUser.id){
+        return null;
+    }
+
     const popupRef = useRef();
     closeHookModalOnOutsideClick(popupRef, setShowPopup);
     closeOnEsc(setShowPopup);
 
     const handleDeleteFriendShip = () => {
-        
-        deleteFriendship({user_id:currentUser.id, friend_id: friend.id}).then(() =>{
+
+        deleteFriendship({ user_id: currentUser.id, friend_id: friend.id }).then(() => {
             setShowPopup(false);
-            
+
         });
         return;
     }
 
+    const handleBlockUser = () => {
+        console.log("blocking this user now")
+    }
 
     useEffect(() => {
-       
+
         // requestFriendships();
 
         return function cleanup () {
             if (errors.length > 0) {
-               removeFriendshipErrors();
+                removeFriendshipErrors();
             }
         }
 
     }, []);
+
+    let lastOption = friend.friend_request_status === 3 ? (
+
+        <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
+            <div className="fo-item-name">Block User</div>
+        </div>
+    ):
+    ("");
+
+
+    let lastEditOption;
+
+    switch (friend.status)
+
+
 
 
 
@@ -58,6 +81,7 @@ const EditFriendshipModal = ({
                         <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
                             <div className="fo-item-name">Remove Friend</div>
                         </div>
+
                         <div className="fo-options-bottom-div"></div>
                     </div>
                 </div>
