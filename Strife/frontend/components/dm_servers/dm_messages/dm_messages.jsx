@@ -19,7 +19,6 @@ class DmMessages extends React.Component {
                 
               
                 <DmServerHeaderNavBarContainer dmServerMembers={this.props.dmServerMembers}  />
-                {/* <DmServerHeaderNavBarContainer  /> */}
                 
 
                 <div className="empty-messages-container is-hidden"></div>
