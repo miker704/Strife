@@ -24,3 +24,26 @@
     z-index: -1;
   }
 
+
+.dm-messages-container-wrapper{
+    display: flex;
+    forced-color-adjust: none;
+    width: 100%;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    background-color: #36393f;
+}
+
+
+.soe{
+        /* top: 0px; */
+    /* left: 0px; */
+    /* position: absolute; */
+    width: calc(100vw - 310px);
+    height: 100vh;
+    /* transform: translate(309px, 0px); */
+    background-color: #36393F;
+    z-index: -1;
+}
