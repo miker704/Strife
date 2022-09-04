@@ -2,8 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { render } from "react-dom";
 import React from "react";
 import ReactTooltip from "react-tooltip";
-import UserOptionsModalContainer from "../../friends/user_options/user_options_container";
-
+import UserOptionsModalContainer from '../../friends/user_options/user_options_container.js';
 
 const DmServerMemberList = ({
     dmServerId,
