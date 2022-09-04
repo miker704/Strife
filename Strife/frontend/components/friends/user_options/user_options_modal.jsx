@@ -37,10 +37,7 @@ const UserOptionsModal = ({
     closeHookModalOnOutsideClick(popupRef, setShowPopup);
     closeOnEsc(setShowPopup);
 
-
     const handleDm = () => {
-        console.log("send message request to : ");
-        console.log("member: ", member);
 
         const memberIds = [currentUser.id, parseInt(member.id)].sort((a, b) => a - b);
         let new_dm_members = [currentUser, member];
@@ -73,11 +70,10 @@ const UserOptionsModal = ({
             dm_member_ids: memberIds
         }
         let newDmServer;
-        // createDmServer(submissionState).then((action) => {
-        //     newDmServer = action.dmserver;
-        //     history.push(`/channels/@me/${newDmServer.id}`);
-        // });
-        console.log("handleDmSubstate: ", submissionState);
+        createDmServer(submissionState).then((action) => {
+            newDmServer = action.dmserver;
+            history.push(`/channels/@me/${newDmServer.id}`);
+        });
         return;
 
     }
