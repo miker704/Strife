@@ -55,10 +55,14 @@ const UserOptionsModal = ({
         console.log("send friend request to : ");
         console.log("member: ", member);
         let subState = {
-            friend_id: member.id, 
-            user_id: currentUser.id 
+            friend_id: member.id,
+            user_id: currentUser.id
         }
         console.log("handlecreateFriendship: ", subState);
+        createFriendship({user_id: currentUser.id, friend_id: member.id}).then(() => {
+            setShowPopup(false);
+
+        })
 
     }
 
@@ -104,8 +108,8 @@ const UserOptionsModal = ({
         // });
 
         let subState = {
-            friend_id: member.id, 
-            user_id: currentUser.id 
+            friend_id: member.id,
+            user_id: currentUser.id
         }
         console.log("handleblockuser: ", subState);
 
@@ -117,7 +121,7 @@ const UserOptionsModal = ({
         console.log("kickiiing this user now")
         console.log("member: ", member);
         let subState = {
-            dm_member_id: member.id, 
+            dm_member_id: member.id,
             dm_server_id: DmServerId
         }
         console.log("handlekickuser: ", subState);
