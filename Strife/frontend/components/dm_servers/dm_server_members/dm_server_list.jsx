@@ -24,13 +24,19 @@ const DmServerMemberList = ({
 
 
     const inputRef = useRef();
-    const friendRef = useRef();
-    const [searchText, setSearchText] = useState("");
-    const [selectedFriends, setSelectedFriends] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
     const [popupTop, setPopupTop] = useState(0);
-    const [selectFriend,toggleSelected] = useState([]);
+    const [selectMember,toggleSelected] = useState([]);
 
+    const handleSelected = (member) => {
+        toggleSelected(member);
+    }
+
+    const handlePopupShow = (e) => {
+
+        setPopupTop(e.currentTarget.getBoundingClientRect().top);
+        setShowPopup(!showPopup);
+    }
 
 
     return (
