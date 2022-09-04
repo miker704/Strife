@@ -214,7 +214,7 @@ const UserOptionsModal = ({
                         <div className="fo-item-container" onClick={() => handleDm()}>
                             <div className="fo-item-name">Message</div>
                         </div>
-                        <div className="fo-item-container" onClick={() => handleUpdateFriendShip()}>
+                        <div className="fo-item-container green" onClick={() => handleUpdateFriendShip()}>
                             <div className="fo-item-name">Accept Friend Request</div>
                         </div>
                         <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
