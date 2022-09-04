@@ -42,7 +42,7 @@ const DmServerMemberList = ({
         <div className="dm-members-index-container-wrapper">
             <div className="dm-members-index-container">
                 <h2 className="dm-members-header-title">{`MEMBERS - ${dmServerMemberList.length}`}</h2>
-                <ul>
+                <ul className="ul-padding">
                     {
                         dmServerMemberList.map((dmMember, dmMemberIdx) => {
 
