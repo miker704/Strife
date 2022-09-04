@@ -12,6 +12,8 @@ const mSTP = (state) => {
         friends: selectFriendStatusOnline(state, 3),
         errors: state.errors.friendship,
         dmServerErrors: state.errors.dmServer,
+        dmServers: Object.values(state.entities.dmServers),
+
 
     }
 };
