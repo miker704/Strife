@@ -84,7 +84,6 @@ const FriendShipIndex = (props) => {
             props.history.push(`/channels/@me/${newDmServer.id}`);
         });
 
-        console.log("dmstate: ", submissionState)
         return;
     }
 
