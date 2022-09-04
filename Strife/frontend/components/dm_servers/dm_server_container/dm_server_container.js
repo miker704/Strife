@@ -3,7 +3,8 @@ import { withRouter } from "react-router";
 import { fetchDmServer, fetchDmServers } from "../../../actions/dm_server_actions.js";
 import { createDmMessage } from "../../../actions/dm_messages_actions.js";
 import { selectDmMembers } from "../../../utils/selectors_api_util.js";
-import DmMessages from "./dm_messages.jsx";
+import DmServer from "./dm_server.jsx";
+
 
 const mSTP = (state, ownProps) => {
 
@@ -38,5 +39,5 @@ const mDTP = (dispatch, ownProps) => {
 }
 
 
-const DmMessagesContainer = withRouter(connect(mSTP, mDTP)(DmMessages));
-export default DmMessagesContainer;
+const DmServerContainer = withRouter(connect(mSTP, mDTP)(DmServer));
+export default DmServerContainer;
