@@ -3,21 +3,23 @@ import { useState, useRef, useEffect } from "react";
 import { closeHookModalOnOutsideClick, closeOnEsc } from "../../../utils/close_hook_modals_api_utils";
 
 const UserOptionsModal = ({
-    currentUser,
-    friends,
-    errors,
-    requestFriendships,
-    removeFriendshipErrors,
-    removeDmServerErrors,
-    deleteFriendship,
-    member,
+    top,
     setShowPopup,
+    currentUser,
+    member,
+    user,
+    friends,
+    requestFriendships,
+    createFriendship,
     blockUser,
     updateFriendship,
-    history,
+    deleteFriendship,
+    
+    errors,
+    removeFriendshipErrors,
     dmServerErrors,
-    user,
-    top,
+    removeDmServerErrors,
+    history,
 }) => {
 
 
