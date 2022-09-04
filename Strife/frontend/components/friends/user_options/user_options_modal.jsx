@@ -71,10 +71,10 @@ const UserOptionsModal = ({
         }
         console.log("handledeleteFriendship: ", subState);
 
-        // deleteFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
-        //     setShowPopup(false);
+        deleteFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
+            setShowPopup(false);
 
-        // });
+        });
         return;
     }
 
