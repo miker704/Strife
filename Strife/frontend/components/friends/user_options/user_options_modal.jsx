@@ -39,6 +39,7 @@ const UserOptionsModal = ({
 
     const handleDeleteFriendShip = () => {
         console.log("hello");
+        console.log("member: ", member);
         // deleteFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
         //     setShowPopup(false);
 
@@ -89,9 +90,10 @@ const UserOptionsModal = ({
     let EditOptions = "";
 
     switch (member.friend_request_status) {
-
+        //if group owner allow kicking of user 
         case -1:
         //remove block only -> no message
+        console.log("blocked usere");
         EditOptions = (
             <div className="fo-flex-wrapper" >
                 <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >        
@@ -101,8 +103,8 @@ const UserOptionsModal = ({
                     <div className="fo-options-bottom-div"></div>
                 </div>
             </div>
-            )
-
+            );
+            break;
 
 
 
@@ -139,7 +141,7 @@ const UserOptionsModal = ({
 
 
 
-
+    console.log("memberSelected: ",member);
 
     return (
         <div className="fo-layer2" >
