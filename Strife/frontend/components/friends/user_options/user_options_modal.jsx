@@ -15,6 +15,7 @@ const UserOptionsModal = ({
     updateFriendship,
     deleteFriendship,
     createDmServer,
+    kickUserfromGroupChat,
     errors,
     removeFriendshipErrors,
     dmServerErrors,
