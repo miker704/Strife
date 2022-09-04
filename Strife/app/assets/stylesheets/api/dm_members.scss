@@ -54,6 +54,10 @@
     min-height: 40px;
 }
 
+.dm-members-index-container:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
 .dm-members-index-container::-webkit-scrollbar-thumb,
 .dm-members-index-container::-webkit-scrollbar-track {
     visibility: hidden;
@@ -66,8 +70,13 @@
     border: 2px solid #FFFFFF;
 }
 
-.ul-padding{
-    padding-bottom: 5px;
+.ul-padding {
+    padding-top: 10px;
+    /* padding-top: 7.5px; */
+    /* padding-left: 7.5px; */
+    /* padding-bottom: 7.5px; */
+    /* border-radius: 5px;*/
+
 }
 
 .dm-members-header-title {
