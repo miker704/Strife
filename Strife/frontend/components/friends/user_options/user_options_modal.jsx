@@ -199,9 +199,7 @@ const UserOptionsModal = ({
                         <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
                             <div className="fo-item-name">Remove Friend</div>
                         </div>
-                        <div className="fo-item-container red" onClick={() => handleKickUser()}>
-                            <div className="fo-item-name">Kick User</div>
-                        </div>
+                            {kickUserOption}
                         <div className="fo-options-bottom-div"></div>
                     </div>
                 </div>
@@ -221,7 +219,7 @@ const UserOptionsModal = ({
                         <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
                             <div className="fo-item-name">Remove Friend</div>
                         </div>
-
+                            {kickUserOption}
                         <div className="fo-options-bottom-div"></div>
                     </div>
                 </div>
