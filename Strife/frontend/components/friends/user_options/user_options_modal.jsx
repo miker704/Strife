@@ -50,11 +50,12 @@ const UserOptionsModal = ({
     }
 
     const handleupdateFriendShip = () => {
+        console.log("updates friend ");
+        console.log("member: ", member);
+        // updateFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
+        //     setShowPopup(false);
 
-        updateFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
-            setShowPopup(false);
-
-        });
+        // });
         return;
     }
 
