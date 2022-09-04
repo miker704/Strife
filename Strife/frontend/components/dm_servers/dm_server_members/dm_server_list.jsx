@@ -32,7 +32,7 @@ console.log("dmmemberlist props : ");
     return (
         <div className="dm-members-index-container-wrapper">
             <div className="dm-members-index-container">
-                <h2 className="dm-members-header-title"></h2>
+                <h2 className="dm-members-header-title">{`MEMBERS - ${dmServerMemberList.length}`}</h2>
                 <ul>
                     <li className="dm-member-item">
                         <div className="dm-member-layout">
