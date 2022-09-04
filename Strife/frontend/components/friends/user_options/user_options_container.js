@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import EditFriendshipModal from './edit_friendship';
 import { selectFriendStatusOnline} from '../../../utils/selectors_api_util';
 import { requestFriendships, removeFriendshipErrors, deleteFriendship, updateFriendship , blockUser} from '../../../actions/friendship_actions';
-
+import UserOptionsModal from './user_options_container';
 
 const mSTP = (state) => {
     return {
@@ -25,7 +24,7 @@ const mDTP = (dispatch) => {
     }
 };
 
-const EditFriendshipModalContainer = withRouter(connect(mSTP, mDTP)(EditFriendshipModal));
-export default EditFriendshipModalContainer;
+const EUserOptionsModalContainer = withRouter(connect(mSTP, mDTP)(UserOptionsModal));
+export default UserOptionsModalContainer;
 
 
