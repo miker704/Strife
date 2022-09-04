@@ -35,7 +35,7 @@ class DmMessages extends React.Component {
 
                 {/* <div className="dm-messages-container"> */}
                 <div className="dm-server-content-container">
-                    <div className="dm-messages-container">
+                    <div className="dm-messages-container-wrapper">
                         <p>vdfrdgrsdgwre</p>
                         <p>vdfrdgrsdgwre</p>
                         <p>vdfrdgrsdgwre</p>
