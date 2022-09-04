@@ -35,6 +35,17 @@ class DmMessages extends React.Component {
 
                 {/* <div className="dm-messages-container"> */}
                 <div className="dm-server-content-container">
+                    <div className="dm-messages-container">
+                        <p>vdfrdgrsdgwre</p>
+                        <p>vdfrdgrsdgwre</p>
+                        <p>vdfrdgrsdgwre</p>
+                        <p>vdfrdgrsdgwre</p>
+                        <p>vdfrdgrsdgwre</p>
+                        <p>vdfrdgrsdgwre</p>
+                        <p>vdfrdgrsdgwre</p>
+                        <p>vdfrdgrsdgwre</p>
+                        <p>vdfrdgrsdgwre</p>
+                    </div>
                     {this.renderDmMemberContainer()}
                 </div> 
                 {/* <div className="empty-messages-container is-hidden"></div> */}
