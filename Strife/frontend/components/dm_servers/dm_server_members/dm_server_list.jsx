@@ -26,7 +26,7 @@ const DmServerMemberList = ({
     const inputRef = useRef();
     const [showPopup, setShowPopup] = useState(false);
     const [popupTop, setPopupTop] = useState(0);
-    const [selectedMember,toggleSelected] = useState([]);
+    const [selectedMember, toggleSelected] = useState([]);
 
     const handleSelected = (member) => {
         toggleSelected(member);
@@ -49,8 +49,23 @@ const DmServerMemberList = ({
 
                             return (
 
-                                <li className="dm-member-item" key={dmMember.id} onClick={() => setPopupTop(true)}>
-                                    {showPopup && <UserOptionsModalContainer user={currentUser} member={selectedMember} top={popupTop} setShowPopup={setShowPopup}/>}
+
+
+
+
+
+                                <li className="dm-member-item" key={dmMember.id}
+                                    onClick={(e) => {
+                                        handleSelected(friend);
+                                        handlePopupShow(e);
+                                    }}>
+                                    {
+                                        showPopup && <UserOptionsModalContainer
+                                            user={currentUser} member={selectedMember}
+                                            top={popupTop} setShowPopup={setShowPopup} />
+
+                                    }
+
                                     <div className="dm-member-layout">
                                         <div className="dm-member-avatar">
                                             <div className="dm-member-avatar-inner-wrapper">
