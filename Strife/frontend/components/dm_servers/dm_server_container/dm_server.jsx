@@ -3,7 +3,7 @@ import ReactTooltip from "react-tooltip";
 import DmServerHeaderNavBarContainer from "../dm_server_header_nav_bar/dm_server_header_nav_bar_container";
 import DmServerMemberListContainer from "../dm_server_members/dm_server_list_container";
 
-class DmMessages extends React.Component {
+class DmServer extends React.Component {
     constructor (props) {
         super(props);
         this.renderDmMemberContainer = this.renderDmMemberContainer.bind(this);
@@ -21,8 +21,7 @@ class DmMessages extends React.Component {
     }
 
     render () {
-        console.log("dmserver messages props", this.props);
-        // console.log("dmservers: ", this.props.dmServers);
+        console.log("dmserver props", this.props);
         console.log(this.props.dmServer);
 
         return (
@@ -30,10 +29,7 @@ class DmMessages extends React.Component {
 
                 <DmServerHeaderNavBarContainer dmServerMembers={this.props.dmServerMembers} />
 
-                {/* <DmServerMemberListContainer/> */}
-                {/* {this.renderDmMemberContainer()} */}
 
-                {/* <div className="dm-messages-container"> */}
                 <div className="dm-server-content-container">
                     <div className="dm-messages-container-wrapper">
                         <p>vdfrdgrsdgwre</p>
@@ -46,6 +42,8 @@ class DmMessages extends React.Component {
                         <p>vdfrdgrsdgwre</p>
                         <p>vdfrdgrsdgwre</p>
                     </div>
+
+                    {/* insert dmmesages contianer here */}
                     {this.renderDmMemberContainer()}
                 </div> 
                 {/* <div className="empty-messages-container is-hidden"></div> */}
@@ -58,4 +56,4 @@ class DmMessages extends React.Component {
     }
 }
 
-export default DmMessages;
+export default DmServer;
