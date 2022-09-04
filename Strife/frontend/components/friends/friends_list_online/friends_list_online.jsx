@@ -162,7 +162,9 @@ const FriendShipIndexOnline = ({
         return (
 
             <div className="friend-index-container">
-                    
+                
+             { showPopup && <EditFriendshipModalContainer user={currentUser} friend={selectFriend} top={popupTop} setShowPopup={setShowPopup}/>}
+                 
 
                 <div className="all-search-bar">
                     <div className="all-search-bar-inner">
@@ -227,9 +229,10 @@ const FriendShipIndexOnline = ({
                             allFriends.map((friend, friendIdx) => {
 
                                     return (
-                                        
+                                            
                                         <li id="fii" className="friend-index-item" key={friend.id} >
-                                            { showPopup && <EditFriendshipModalContainer user={currentUser} friend={selectFriend} top={popupTop} setShowPopup={setShowPopup}/>}
+                                            {/* { showPopup && 
+                                            <div> <EditFriendshipModalContainer user={currentUser} friend={selectFriend} top={popupTop} setShowPopup={setShowPopup} key={friend.id}/></div>} */}
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
                                                     <div className="friend-info">
