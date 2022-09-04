@@ -16,7 +16,7 @@ const DmServerMemberList = ({
 ) => {
 
     let dmServerMemberList = Object.values(dmServerMembers);
-    let DmServerOwner = dmServer.owner_id;
+    const DmServerOwner = dmServer.owner_id;
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
 
 
@@ -43,7 +43,9 @@ const DmServerMemberList = ({
             {
                 showPopup && <UserOptionsModalContainer
                     user={currentUser} member={selectedMember}
-                    top={popupTop} setShowPopup={setShowPopup} />
+                    top={popupTop} setShowPopup={setShowPopup} 
+                    DmServerOwner={DmServerOwner}
+                    />
 
             }
             <div className="dm-members-index-container">
