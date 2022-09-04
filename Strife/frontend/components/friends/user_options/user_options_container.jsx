@@ -9,7 +9,7 @@ const UserOptionsModal = ({
     requestFriendships,
     removeFriendshipErrors,
     deleteFriendship,
-    friend,
+    member,
     setShowPopup,
     blockUser,
     updateFriendship,
@@ -19,7 +19,7 @@ const UserOptionsModal = ({
 }) => {
 
 
-    if (friend.id === currentUser.id) {
+    if (member.id === currentUser.id) {
         return null;
     }
 
@@ -29,7 +29,7 @@ const UserOptionsModal = ({
 
     const handleDeleteFriendShip = () => {
 
-        deleteFriendship({ user_id: currentUser.id, friend_id: friend.id }).then(() => {
+        deleteFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
             setShowPopup(false);
 
         });
@@ -38,7 +38,7 @@ const UserOptionsModal = ({
 
     const handleupdateFriendShip = () => {
 
-        updateFriendship({ user_id: currentUser.id, friend_id: friend.id }).then(() => {
+        updateFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
             setShowPopup(false);
 
         });
@@ -48,7 +48,7 @@ const UserOptionsModal = ({
     const handleBlockUser = () => {
         console.log("blocking this user now")
 
-        blockUser({ user_id: currentUser.id, friend_id: friend.id }).then(() => {
+        blockUser({ user_id: currentUser.id, friend_id: member.id }).then(() => {
             setShowPopup(false);
 
         });
@@ -67,7 +67,7 @@ const UserOptionsModal = ({
 
     }, []);
 
-    let lastOption = friend.friend_request_status === 3 ? (
+    let lastOption = member.friend_request_status === 3 ? (
 
         <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
             <div className="fo-item-name">Block User</div>
@@ -78,7 +78,7 @@ const UserOptionsModal = ({
 
     let lastEditOption;
 
-    switch (friend.friend_request_status) { }
+    switch (member.friend_request_status) { }
 
 
 
