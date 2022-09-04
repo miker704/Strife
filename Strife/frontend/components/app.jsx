@@ -17,6 +17,7 @@ import DmMessagesContainer from './dm_servers/dm_messages/dm_messages_container.
 import FriendsHomePageContainer from './friends/friends_page_main/friends_home_page.jsx';
 import HomePageContainer from './friends/friends_page_main/friends_home_page_container.js';
 import LoadingScreenContainer from './loading_screen/loading_screen_container.js';
+import DmServerContainer from './dm_servers/dm_server_container/dm_server_container.js';
 
 const App = () => (
     <div>
@@ -53,6 +54,9 @@ const App = () => (
     {/* render proper component for messages type or friends list */}
     <Switch>
         <ProtectedRoute path="/channels/@me/:dmServerId" component={DmMessagesContainer}/>
+
+        <ProtectedRoute path="/channels/@me/:dmServerId" component={DmMessagesContainer}/>
+
         {/* <ProtectedRoute path="/channels/@me/dmServers/:dmServerId" component={DmMessagesContainer}/> */}
         {/* <ProtectedRoute path="/channels/@me" component={EmptyMessagesContainer}/> */}
         <ProtectedRoute path="/channels/@me" component={HomePageContainer}/>
