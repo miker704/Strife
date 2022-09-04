@@ -31,6 +31,8 @@ const UserOptionsModal = ({
     }
 
     const popupRef = useRef();
+    const dmMembersArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
+
     closeHookModalOnOutsideClick(popupRef, setShowPopup);
     closeOnEsc(setShowPopup);
 
@@ -38,6 +40,11 @@ const UserOptionsModal = ({
     const handleDm = () => {
         console.log("send message request to : ");
         console.log("member: ", member);
+        let subState = {
+
+        }
+
+
     }
 
 
@@ -199,7 +206,7 @@ const UserOptionsModal = ({
                         <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
                             <div className="fo-item-name">Remove Friend</div>
                         </div>
-                            {kickUserOption}
+                        {kickUserOption}
                         <div className="fo-options-bottom-div"></div>
                     </div>
                 </div>
@@ -219,7 +226,7 @@ const UserOptionsModal = ({
                         <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
                             <div className="fo-item-name">Remove Friend</div>
                         </div>
-                            {kickUserOption}
+                        {kickUserOption}
                         <div className="fo-options-bottom-div"></div>
                     </div>
                 </div>
