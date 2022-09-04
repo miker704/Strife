@@ -53,7 +53,7 @@ const App = () => (
 
     {/* render proper component for messages type or friends list */}
     <Switch>
-        <ProtectedRoute path="/channels/@me/:dmServerId" component={DmMessagesContainer}/>
+        {/* <ProtectedRoute path="/channels/@me/:dmServerId" component={DmMessagesContainer}/> */}
 
         <ProtectedRoute path="/channels/@me/:dmServerId" component={DmMessagesContainer}/>
 
