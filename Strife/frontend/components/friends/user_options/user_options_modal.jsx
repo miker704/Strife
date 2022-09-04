@@ -103,7 +103,8 @@ const UserOptionsModal = ({
         // });
 
         let subState = {
-
+            friend_id: member.id, 
+            user_id: currentUser.id 
         }
         console.log("handleblockuser: ", subState);
 
