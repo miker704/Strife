@@ -140,7 +140,7 @@ const UserOptionsModal = ({
 
         case 2:
         // messgae, approve, deny request
-        console.log("out going friend-request");
+        console.log("incoming friend-request");
         EditOptions = (
             <div className="fo-flex-wrapper2" >
                 <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >        
