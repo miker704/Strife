@@ -110,6 +110,19 @@ const UserOptionsModal = ({
 
         case 0:
         // add friend, block friend, message
+        console.log("not a friend");
+        EditOptions = (
+            <div className="fo-flex-wrapper2" >
+                <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >        
+                    <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
+                        <div className="fo-item-name">Unblock User</div>
+                    </div>
+                    <div className="fo-options-bottom-div"></div>
+                </div>
+            </div>
+            );
+            break;
+
         case 1:
         //message, cancel request
         case 2:
