@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { selectFriendStatus, selectAllFriends } from '../../../utils/selectors_api_util';
+import { selectAllFriends } from '../../../utils/selectors_api_util';
 import { requestFriendships, removeFriendshipErrors , requestAllFriendships} from '../../../actions/friendship_actions'; 
 import { createDmServer, removeDmServerErrors } from '../../../actions/dm_server_actions';
 import { createDmMember } from '../../../actions/dm_member_actions';
