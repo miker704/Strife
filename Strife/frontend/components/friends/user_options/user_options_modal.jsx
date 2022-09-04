@@ -15,7 +15,7 @@ const UserOptionsModal = ({
     blockUser,
     updateFriendship,
     deleteFriendship,
-    DmServerId, 
+    DmServerId,
     createDmServer,
     kickUserfromGroupChat,
     errors,
@@ -90,7 +90,7 @@ const UserOptionsModal = ({
             if (errors.length > 0) {
                 removeFriendshipErrors();
             }
-            if(dmServerErrors.length > 0){
+            if (dmServerErrors.length > 0) {
                 removeDmServerErrors();
             }
         }
@@ -115,9 +115,6 @@ const UserOptionsModal = ({
                         <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
                             <div className="fo-item-name">Unblock User</div>
                         </div>
-                        {/* <div className="fo-item-container red" onClick={() => handleKickUser()}>
-                            <div className="fo-item-name">Kick User</div>
-                        </div> */}
                         {kickUserOption}
                         <div className="fo-options-bottom-div"></div>
                     </div>
@@ -241,8 +238,8 @@ const UserOptionsModal = ({
 
     console.log("memberSelected: ", member);
 
-    console.log("DmServerOwner user options : ",DmServerOwner);
-    console.log("DmServerId from user options : ",DmServerId);
+    console.log("DmServerOwner user options : ", DmServerOwner);
+    console.log("DmServerId from user options : ", DmServerId);
 
     return (
         <div className="fo-layer2" >
