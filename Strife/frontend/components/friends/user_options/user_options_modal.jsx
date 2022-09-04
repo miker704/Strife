@@ -99,9 +99,9 @@ const UserOptionsModal = ({
 
     let EditOptions = "";
 
-    // let kickUserOption = (<div className="fo-item-container red" onClick={() => handleKickUser()}>
-    //     <div className="fo-item-name">Kick User</div>
-    // </div>) : ("")
+    let kickUserOption = currentUser.id === DmServerOwner ? (<div className="fo-item-container red" onClick={() => handleKickUser()}>
+        <div className="fo-item-name">Kick User</div>
+    </div>) : ("")
 
 
     switch (member.friend_request_status) {
