@@ -101,6 +101,9 @@ const UserOptionsModal = ({
     const handleKickUser = () => {
         console.log("kickiiing this user now")
         console.log("member: ", member);
+        let subState = {
+
+        }
     }
 
     useEffect(() => {
