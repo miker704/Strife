@@ -87,15 +87,6 @@ const UserOptionsModal = ({
 
     }, []);
 
-    let lastOption = member.friend_request_status === 3 ? (
-
-        <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
-            <div className="fo-item-name">Block User</div>
-        </div>
-    ) :
-        ("");
-
-
     let EditOptions = "";
 
     switch (member.friend_request_status) {
@@ -126,13 +117,13 @@ const UserOptionsModal = ({
         EditOptions = (
             <div className="fo-flex-wrapper2" >
                 <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >        
-                    <div className="fo-item-container">
+                    <div className="fo-item-container" onClick={() => handleDm()}>
                         <div className="fo-item-name">Message</div>
                     </div>
                     <div className="fo-item-container">
                         <div className="fo-item-name">Send Friend Request</div>
                     </div>
-                    <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
+                    <div className="fo-item-container red" onClick={() => handleKickUser()}>
                         <div className="fo-item-name">Kick User</div>
                     </div>
                     <div className="fo-options-bottom-div"></div>
