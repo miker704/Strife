@@ -51,6 +51,9 @@ const UserOptionsModal = ({
     const handleCreateFriendShip = () => {
         console.log("send friend request to : ");
         console.log("member: ", member);
+        let subState = {
+
+        }
     }
 
     const handleDeleteFriendShip = () => {
