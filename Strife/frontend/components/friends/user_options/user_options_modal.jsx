@@ -120,7 +120,7 @@ const UserOptionsModal = ({
                     <div className="fo-item-container" onClick={() => handleDm()}>
                         <div className="fo-item-name">Message</div>
                     </div>
-                    <div className="fo-item-container">
+                    <div className="fo-item-container" onClick={() => handleCreateFriendShip()}>
                         <div className="fo-item-name">Send Friend Request</div>
                     </div>
                     <div className="fo-item-container red" onClick={() => handleKickUser()}>
