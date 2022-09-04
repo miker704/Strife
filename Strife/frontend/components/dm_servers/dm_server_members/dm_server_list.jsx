@@ -40,6 +40,12 @@ const DmServerMemberList = ({
 
     return (
         <div className="dm-members-index-container-wrapper">
+            {
+                showPopup && <UserOptionsModalContainer
+                    user={currentUser} member={selectedMember}
+                    top={popupTop} setShowPopup={setShowPopup} />
+
+            }
             <div className="dm-members-index-container">
                 <h2 className="dm-members-header-title">{`MEMBERS - ${dmServerMemberList.length}`}</h2>
                 <ul className="ul-padding">
@@ -54,12 +60,7 @@ const DmServerMemberList = ({
                                         handleSelected(dmMember);
                                         handlePopupShow(e);
                                     }}>
-                                    {
-                                        showPopup && <UserOptionsModalContainer
-                                            user={currentUser} member={selectedMember}
-                                            top={popupTop} setShowPopup={setShowPopup} />
 
-                                    }
 
                                     <div className="dm-member-layout">
                                         <div className="dm-member-avatar">
