@@ -167,7 +167,7 @@
 }
 
 .fo-item-container.red {
-    color: hsl(359, 82.6%, 59.45);
+    color: hsl(359, 82.6%, 59.45%);
 }
 
 
@@ -176,7 +176,8 @@
     color: hsl(0, 0%, 100%);
 }
 .fo-item-container.green {
-    color: hsl(359, 82.6%, 59.45);
+    // color: #3BA55D;
+    color: hsl(139, 47%, 44%)
 }
 
 .fo-item-container.green:hover {
