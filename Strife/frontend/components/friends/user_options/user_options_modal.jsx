@@ -7,6 +7,7 @@ const UserOptionsModal = ({
     setShowPopup,
     currentUser,
     member,
+    DmServerOwner,
     user,
     friends,
     requestFriendships,
