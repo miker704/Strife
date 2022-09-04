@@ -28,11 +28,11 @@ const UserOptionsModal = ({
     closeOnEsc(setShowPopup);
 
     const handleDeleteFriendShip = () => {
+        console.log("hello");
+        // deleteFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
+        //     setShowPopup(false);
 
-        deleteFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
-            setShowPopup(false);
-
-        });
+        // });
         return;
     }
 
