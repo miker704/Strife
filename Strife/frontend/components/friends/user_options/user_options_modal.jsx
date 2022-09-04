@@ -85,8 +85,8 @@ const UserOptionsModal = ({
 
 
     return (
-        <div className="fo-layer" >
-            <div className="fo-theme" style={{ top: `${top}px` }} ref={popupRef}>
+        <div className="fo-layer2" >
+            <div className="fo-theme2" style={{ top: `${top}px` }} ref={popupRef}>
 
                 <div className="fo-flex-wrapper" >
                     <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
