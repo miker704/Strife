@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { selectFriendStatusOnline} from '../../../utils/selectors_api_util';
 import { requestFriendships, removeFriendshipErrors, deleteFriendship, updateFriendship , blockUser} from '../../../actions/friendship_actions';
-import UserOptionsModal from './user_options_container';
+import UserOptionsModal from './user_options_modal';
 
 const mSTP = (state) => {
     return {
