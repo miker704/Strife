@@ -222,4 +222,4 @@ const InviteToDmModal = ({
     )
 }
 
-export default CreateDmModal;
+export default InviteToDmModal;
