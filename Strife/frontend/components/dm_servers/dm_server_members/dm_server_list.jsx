@@ -20,16 +20,6 @@ const DmServerMemberList = ({
     let DmServerOwner = dmServer.owner_id;
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
 
-    console.log("dmmemberlist props dmid : ", dmServerId);
-    console.log("dmmemberlist props : dmServerMembers: ", dmServerMembers);
-    console.log("dmmemberlist props dmServer: ", dmServer.owner_id);
-    console.log("dmmemberlist props dmServerMembersList: ", dmServerMemberList);
-    console.log("dmmemberlist props : ");
-    console.log("dmmemberlist props : ");
-
-
-
-
 
     return (
         <div className="dm-members-index-container-wrapper">
