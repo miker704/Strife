@@ -54,7 +54,8 @@ const UserOptionsModal = ({
         console.log("send friend request to : ");
         console.log("member: ", member);
         let subState = {
-
+            friend_id: member.id, 
+            user_id: currentUser.id 
         }
         console.log("handlecreateFriendship: ", subState);
 
