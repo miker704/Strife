@@ -157,7 +157,7 @@ const FriendShipIndex = (props) => {
 
 
             <div className="friend-index-container">
-
+                     {showPopup && <EditFriendshipModalContainer user={props.currentUser} friend={selectFriend} top={popupTop} setShowPopup={setShowPopup} />}
                 <div className="all-search-bar">
                     <div className="all-search-bar-inner">
                         <input
@@ -215,7 +215,7 @@ const FriendShipIndex = (props) => {
                                 allFriends.map((friend, friendIdx) => {
                                     return (
                                         <li className="friend-index-item" key={friend.id} >
-                                            {showPopup && <EditFriendshipModalContainer user={props.currentUser} friend={selectFriend} top={popupTop} setShowPopup={setShowPopup} />}
+                                           
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
                                                     <div className="friend-info">
