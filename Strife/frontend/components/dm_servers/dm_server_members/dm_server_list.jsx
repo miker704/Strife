@@ -54,11 +54,12 @@ const DmServerMemberList = ({
                                                 <div className="dm-member-username-div">
                                                     <span className="dm-member-username-span">
                                                         <span className="dm-member-username">
-                                                            username
+                                                            {dmMember.username}
                                                         </span>
                                                     </span>
                                                 </div>
-                                                <svg aria-label="Group Owner" className={`dm-server-group-owner-icon is-hidden`}
+                                                <svg aria-label="Group Owner" 
+                                                    className={`dm-server-group-owner-icon ${dmMember.id === DmServerOwner ? "" :"is-hidden"}`}
                                                     aria-hidden="false" role="img" width="24" height="24" viewBox="0 0 16 16">
                                                     <path fillRule="evenodd" clipRule="evenodd" d="M13.6572 5.42868C13.8879 5.29002 14.1806 5.30402 14.3973 5.46468C14.6133 5.62602
                                              14.7119 5.90068 14.6473 6.16202L13.3139 11.4954C13.2393 11.7927 12.9726 12.0007 12.6666 12.0007H3.33325C3.02725 12.0007 2.76058 
