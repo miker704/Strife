@@ -101,6 +101,8 @@ const UserOptionsModal = ({
         let subState = {
 
         }
+        console.log("handleblockuser: ", subState);
+
         return;
     }
 
