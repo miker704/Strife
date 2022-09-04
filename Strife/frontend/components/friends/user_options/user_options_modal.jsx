@@ -239,6 +239,8 @@ const UserOptionsModal = ({
 
     console.log("memberSelected: ", member);
 
+    console.log("DmServerOwner user options : ",DmServerOwner);
+
     return (
         <div className="fo-layer2" >
             <div className="fo-theme2" style={{ top: `${top}px` }} ref={popupRef}>
