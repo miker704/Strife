@@ -59,6 +59,9 @@ const UserOptionsModal = ({
     const handleDeleteFriendShip = () => {
         console.log("delete friend ");
         console.log("member: ", member);
+        let subState = {
+
+        }
         // deleteFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
         //     setShowPopup(false);
 
