@@ -109,7 +109,7 @@ const UserOptionsModal = ({
 }
 
 
-export default EditFriendshipModal;
+export default UserOptionsModal;
 
 
 
