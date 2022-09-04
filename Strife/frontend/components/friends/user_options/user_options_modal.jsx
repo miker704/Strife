@@ -61,11 +61,12 @@ const UserOptionsModal = ({
 
     const handleBlockUser = () => {
         console.log("blocking this user now")
+        console.log("member: ", member);
 
-        blockUser({ user_id: currentUser.id, friend_id: member.id }).then(() => {
-            setShowPopup(false);
+        // blockUser({ user_id: currentUser.id, friend_id: member.id }).then(() => {
+        //     setShowPopup(false);
 
-        });
+        // });
         return;
     }
 
