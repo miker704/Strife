@@ -65,7 +65,7 @@ const UserOptionsModal = ({
         return;
     }
 
-  
+
     useEffect(() => {
 
 
@@ -86,16 +86,40 @@ const UserOptionsModal = ({
         ("");
 
 
-    let lastEditOption;
+    let EditOptions = "";
 
     switch (member.friend_request_status) {
 
+        case -1:
+        //remove block only -> no message
+        case 0:
+        // add friend, block friend, message
+        case 1:
+        //message, cancel request
+        case 2:
+        // messgae, approve, deny request
+        case 3:
+        //messgae, delete friend
 
 
+        default:
+            EditOptions = (<div className="fo-flex-wrapper" >
+                <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
+                    <div className="fo-item-container">
+                        <div className="fo-item-name">Message</div>
+                    </div>
+                    <div className="fo-item-container">
+                        <div className="fo-item-name">Start Voice Call</div>
+                    </div>
+                    <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
+                        <div className="fo-item-name">Remove Friend</div>
+                    </div>
 
+                    <div className="fo-options-bottom-div"></div>
+                </div>
+            </div>)
 
-
-     }
+    }
 
 
 
@@ -105,7 +129,7 @@ const UserOptionsModal = ({
         <div className="fo-layer2" >
             <div className="fo-theme2" style={{ top: `${top}px` }} ref={popupRef}>
 
-                <div className="fo-flex-wrapper" >
+                {/* <div className="fo-flex-wrapper" >
                     <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
                         <div className="fo-item-container">
                             <div className="fo-item-name">Message</div>
@@ -120,6 +144,9 @@ const UserOptionsModal = ({
                         <div className="fo-options-bottom-div"></div>
                     </div>
                 </div>
+             */}
+                {EditOptions}
+            
             </div>
         </div>
     )
