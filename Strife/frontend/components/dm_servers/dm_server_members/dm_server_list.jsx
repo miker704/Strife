@@ -51,7 +51,7 @@ const DmServerMemberList = ({
 
                                 <li className="dm-member-item" key={dmMember.id}
                                     onClick={(e) => {
-                                        handleSelected(friend);
+                                        handleSelected(dmMember);
                                         handlePopupShow(e);
                                     }}>
                                     {
