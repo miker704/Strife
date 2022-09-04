@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { selectFriendStatusOnline} from '../../../utils/selectors_api_util';
-import { requestFriendships, removeFriendshipErrors, deleteFriendship, updateFriendship , blockUser} from '../../../actions/friendship_actions';
+import { requestFriendships, removeFriendshipErrors, deleteFriendship, updateFriendship , blockUser, createFriendship} from '../../../actions/friendship_actions';
+import { createDmServer, receiveDmServerErrors } from '../../../actions/dm_server_actions';
+import { createDmMember, deleteDmMember } from '../../../actions/dm_member_actions';
 import UserOptionsModal from './user_options_modal';
 
 const mSTP = (state) => {
@@ -9,6 +11,8 @@ const mSTP = (state) => {
         currentUser: state.entities.users[state.session.id],
         friends: selectFriendStatusOnline(state, 3),
         errors: state.errors.friendship,
+        dmServerErrors: state.errors.dmServer,
+
     }
 };
 
