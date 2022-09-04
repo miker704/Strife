@@ -26,8 +26,8 @@ const mDTP = (dispatch) => {
         blockUser: (ids) => dispatch(blockUser(ids)),
         updateFriendship: (ids) => dispatch(updateFriendship(ids)),
         createFriendship: (ids) => dispatch(createFriendship(ids)),
-        kickUserfromGroupChat: (dm_memberId, dm_member) => dispatch(deleteDmMember(dm_memberId, dm_member))
-
+        kickUserfromGroupChat: (dm_memberId, dm_member) => dispatch(deleteDmMember(dm_memberId, dm_member)),
+        createDmServer: (dmserver) => dispatch(createDmServer(dmserver))
     }
 };
 
