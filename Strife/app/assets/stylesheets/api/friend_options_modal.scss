@@ -55,6 +55,26 @@
     max-height: 116px;
 }
 
+.fo-flex-wrapper2 {
+    min-width: 188px;
+    max-width: 188px;
+    min-height: 20px;
+    max-height: 116px;
+    forced-color-adjust: none;
+    outline: 0;
+    border-radius: 4px;
+    display: flex;
+    height: auto;
+    cursor: default;
+    max-height: calc(100vh - 32px);
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.24);
+    background: hsl(225, 7.7%, 10.2%);
+
+
+}
 
 
 
