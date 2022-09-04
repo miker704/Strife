@@ -40,13 +40,44 @@ const UserOptionsModal = ({
     const handleDm = () => {
         console.log("send message request to : ");
         console.log("member: ", member);
-        const memberIds = [currentUser.id, member.id];
-        let subState = {
+
+        const memberIds = [currentUser.id, parseInt(member.id)].sort((a, b) => a - b);
+        let new_dm_members = [currentUser, member];
+        for (let dmServer of props.dmServers) {
+            if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
+                if (history.location.pathname !== `/channels/@me/${dmServer.id}`) {
+                    history.push(`/channels/@me/${dmServer.id}`);
+                }
+                return;
+            }
+        }
+        // if dmserver does not already exists create one
+        const dmMemberInfo = JSON.parse(JSON.stringify(new_dm_members));
+        let newDmServerName = [];
+        let dmServerName = "";
+        for (let member of dmMemberInfo) {
+            if (member.id !== currentUser.id) {
+                newDmServerName.push(member.username);
+            }
+        }
+        if (newDmServerName.length === 1) {
+            dmServerName = newDmServerName.join();
+        }
+        else {
+            dmServerName = newDmServerName.join(", ");
+        }
+        let submissionState = {
             owner_id: currentUser.id,
+            // dm_server_name: dmServerName,
             dm_member_ids: memberIds
         }
-        console.log("handleDmSubstate: ", subState);
-
+        let newDmServer;
+        // createDmServer(submissionState).then((action) => {
+        //     newDmServer = action.dmserver;
+        //     history.push(`/channels/@me/${newDmServer.id}`);
+        // });
+        console.log("handleDmSubstate: ", submissionState);
+        return;
 
     }
 
@@ -59,7 +90,7 @@ const UserOptionsModal = ({
             user_id: currentUser.id
         }
         console.log("handlecreateFriendship: ", subState);
-        createFriendship({user_id: currentUser.id, friend_id: member.id}).then(() => {
+        createFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
             setShowPopup(false);
 
         })
