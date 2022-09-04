@@ -108,7 +108,6 @@ const UserOptionsModal = ({
 
     useEffect(() => {
 
-
         return function cleanup () {
             if (errors.length > 0) {
                 removeFriendshipErrors();
