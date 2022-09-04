@@ -241,6 +241,7 @@ const UserOptionsModal = ({
     console.log("memberSelected: ", member);
 
     console.log("DmServerOwner user options : ",DmServerOwner);
+    console.log("DmServerId from user options : ",DmServerId);
 
     return (
         <div className="fo-layer2" >
