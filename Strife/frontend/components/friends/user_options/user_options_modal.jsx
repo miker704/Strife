@@ -95,7 +95,7 @@ const UserOptionsModal = ({
         //remove block only -> no message
         console.log("blocked usere");
         EditOptions = (
-            <div className="fo-flex-wrapper" >
+            <div className="fo-flex-wrapper2" >
                 <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >        
                     <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
                         <div className="fo-item-name">Unblock User</div>
