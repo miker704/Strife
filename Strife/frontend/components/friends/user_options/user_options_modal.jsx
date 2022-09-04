@@ -65,7 +65,8 @@ const UserOptionsModal = ({
         console.log("delete friend ");
         console.log("member: ", member);
         let subState = {
-
+            user_id: currentUser.id,
+            friend_id: member.id,
         }
         console.log("handledeleteFriendship: ", subState);
 
