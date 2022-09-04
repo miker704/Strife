@@ -92,114 +92,117 @@ const UserOptionsModal = ({
     switch (member.friend_request_status) {
         //if group owner allow kicking of user 
         case -1:
-        //remove block only -> no message
-        console.log("blocked usere");
-        EditOptions = (
-            <div className="fo-flex-wrapper2" >
-                <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >        
-                    <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
-                        <div className="fo-item-name">Unblock User</div>
+            //remove block only -> no message
+            console.log("blocked usere");
+            EditOptions = (
+                <div className="fo-flex-wrapper2" >
+                    <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
+                        <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
+                            <div className="fo-item-name">Unblock User</div>
+                        </div>
+                        <div className="fo-item-container red" onClick={() => handleKickUser()}>
+                            <div className="fo-item-name">Kick User</div>
+                        </div>
+                        <div className="fo-options-bottom-div"></div>
                     </div>
-                    <div className="fo-item-container red" onClick={() => handleKickUser()}>
-                        <div className="fo-item-name">Kick User</div>
-                    </div>
-                    <div className="fo-options-bottom-div"></div>
                 </div>
-            </div>
             );
             break;
 
 
 
         case 0:
-        // add friend, block friend, message
-        console.log("not a friend");
-        EditOptions = (
-            <div className="fo-flex-wrapper2" >
-                <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >        
-                    <div className="fo-item-container" onClick={() => handleDm()}>
-                        <div className="fo-item-name">Message</div>
+            // add friend, block friend, message
+            console.log("not a friend");
+            EditOptions = (
+                <div className="fo-flex-wrapper2" >
+                    <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
+                        <div className="fo-item-container" onClick={() => handleDm()}>
+                            <div className="fo-item-name">Message</div>
+                        </div>
+                        <div className="fo-item-container" onClick={() => handleCreateFriendShip()}>
+                            <div className="fo-item-name">Send Friend Request</div>
+                        </div>
+                        <div className="fo-item-container red" onClick={() => handleKickUser()}>
+                            <div className="fo-item-name">Kick User</div>
+                        </div>
+                        <div className="fo-item-container red" onClick={() => handleBlockUser()}>
+                            <div className="fo-item-name">Block User</div>
+                        </div>
+                        <div className="fo-options-bottom-div"></div>
                     </div>
-                    <div className="fo-item-container" onClick={() => handleCreateFriendShip()}>
-                        <div className="fo-item-name">Send Friend Request</div>
-                    </div>
-                    <div className="fo-item-container red" onClick={() => handleKickUser()}>
-                        <div className="fo-item-name">Kick User</div>
-                    </div>
-                    <div className="fo-options-bottom-div"></div>
                 </div>
-            </div>
             );
             break;
 
         case 1:
-        //message, cancel request
-        console.log("out going friend-request");
-        EditOptions = (
-            <div className="fo-flex-wrapper2" >
-                <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >        
-                    <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
-                        <div className="fo-item-name">Unblock User</div>
+            //message, cancel request
+            console.log("out going friend-request");
+            EditOptions = (
+                <div className="fo-flex-wrapper2" >
+                    <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
+                        <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
+                            <div className="fo-item-name">Unblock User</div>
+                        </div>
+                        <div className="fo-options-bottom-div"></div>
                     </div>
-                    <div className="fo-options-bottom-div"></div>
                 </div>
-            </div>
             );
             break;
 
         case 2:
-        // messgae, approve, deny request
-        console.log("incoming friend-request");
-        EditOptions = (
-            <div className="fo-flex-wrapper2" >
-                <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >        
-                    <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
-                        <div className="fo-item-name">Unblock User</div>
+            // messgae, approve, deny request
+            console.log("incoming friend-request");
+            EditOptions = (
+                <div className="fo-flex-wrapper2" >
+                    <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
+                        <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
+                            <div className="fo-item-name">Unblock User</div>
+                        </div>
+                        <div className="fo-options-bottom-div"></div>
                     </div>
-                    <div className="fo-options-bottom-div"></div>
                 </div>
-            </div>
             );
             break;
         case 3:
-        //messgae, delete friend
-        console.log("friend");
-        EditOptions = (
-            <div className="fo-flex-wrapper2" >
-                <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >        
-                    <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
-                        <div className="fo-item-name">Unblock User</div>
+            //messgae, delete friend
+            console.log("friend");
+            EditOptions = (
+                <div className="fo-flex-wrapper2" >
+                    <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
+                        <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
+                            <div className="fo-item-name">Unblock User</div>
+                        </div>
+                        <div className="fo-options-bottom-div"></div>
                     </div>
-                    <div className="fo-options-bottom-div"></div>
                 </div>
-            </div>
             );
             break;
 
         default:
             EditOptions = (
-            <div className="fo-flex-wrapper" >
-                <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
-                    <div className="fo-item-container">
-                        <div className="fo-item-name">Message</div>
-                    </div>
-                    <div className="fo-item-container">
-                        <div className="fo-item-name">Start Voice Call</div>
-                    </div>
-                    <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
-                        <div className="fo-item-name">Remove Friend</div>
-                    </div>
+                <div className="fo-flex-wrapper" >
+                    <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
+                        <div className="fo-item-container">
+                            <div className="fo-item-name">Message</div>
+                        </div>
+                        <div className="fo-item-container">
+                            <div className="fo-item-name">Start Voice Call</div>
+                        </div>
+                        <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
+                            <div className="fo-item-name">Remove Friend</div>
+                        </div>
 
-                    <div className="fo-options-bottom-div"></div>
+                        <div className="fo-options-bottom-div"></div>
+                    </div>
                 </div>
-            </div>
             )
 
     }
 
 
 
-    console.log("memberSelected: ",member);
+    console.log("memberSelected: ", member);
 
     return (
         <div className="fo-layer2" >
@@ -222,7 +225,7 @@ const UserOptionsModal = ({
                 </div>
              */}
                 {EditOptions}
-            
+
             </div>
         </div>
     )
