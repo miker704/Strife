@@ -40,9 +40,10 @@ const UserOptionsModal = ({
     const handleDm = () => {
         console.log("send message request to : ");
         console.log("member: ", member);
+        const memberIds = [currentUser.id, member.id];
         let subState = {
             owner_id: currentUser.id,
-            dm_member_ids: member.id
+            dm_member_ids: memberIds
         }
         console.log("handleDmSubstate: ", subState);
 
