@@ -85,10 +85,10 @@ const UserOptionsModal = ({
             user_id: currentUser.id,
             friend_id: member.id,
         }
-        // updateFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
-        //     setShowPopup(false);
+        updateFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
+            setShowPopup(false);
 
-        // });
+        });
         console.log("handleupdateFriendship: ", subState);
 
         return;
