@@ -17,6 +17,7 @@ const DmServerMemberList = ({
 
     let dmServerMemberList = Object.values(dmServerMembers);
     let DmServerOwner = dmServer.owner_id;
+    let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
 
     console.log("dmmemberlist props dmid : ", dmServerId);
     console.log("dmmemberlist props : dmServerMembers: ", dmServerMembers);
@@ -38,14 +39,13 @@ const DmServerMemberList = ({
                         dmServerMemberList.map((dmMember, dmMemberIdx) => {
 
                             return (
-                                
+
                                 <li className="dm-member-item" key={dmMember.id}>
                                     <div className="dm-member-layout">
                                         <div className="dm-member-avatar">
                                             <div className="dm-member-avatar-inner-wrapper">
                                                 <div className="dm-member-avatar-img">
-                                                    {/* <img src="" alt="" /> */}
-                                                    image
+                                                    <img src={`${dmMember.photo === undefined ? default_Photo : dmMember.photo}`} alt="dsmPFP" />
                                                 </div>
                                             </div>
                                         </div>
