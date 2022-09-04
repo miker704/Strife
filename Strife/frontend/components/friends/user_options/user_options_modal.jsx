@@ -8,6 +8,7 @@ const UserOptionsModal = ({
     errors,
     requestFriendships,
     removeFriendshipErrors,
+    removeDmServerErrors,
     deleteFriendship,
     member,
     setShowPopup,
@@ -83,6 +84,9 @@ const UserOptionsModal = ({
         return function cleanup () {
             if (errors.length > 0) {
                 removeFriendshipErrors();
+            }
+            if(dmServerErrors.length > 0){
+                removeDmServerErrors();
             }
         }
 
