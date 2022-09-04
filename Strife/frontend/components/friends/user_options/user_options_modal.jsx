@@ -84,6 +84,8 @@ const UserOptionsModal = ({
         //     setShowPopup(false);
 
         // });
+        console.log("handleupdateFriendship: ", subState);
+
         return;
     }
 
