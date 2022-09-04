@@ -92,6 +92,20 @@ const UserOptionsModal = ({
 
         case -1:
         //remove block only -> no message
+        EditOptions = (
+            <div className="fo-flex-wrapper" >
+                <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >        
+                    <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
+                        <div className="fo-item-name">Unblock User</div>
+                    </div>
+                    <div className="fo-options-bottom-div"></div>
+                </div>
+            </div>
+            )
+
+
+
+
         case 0:
         // add friend, block friend, message
         case 1:
@@ -103,7 +117,8 @@ const UserOptionsModal = ({
 
 
         default:
-            EditOptions = (<div className="fo-flex-wrapper" >
+            EditOptions = (
+            <div className="fo-flex-wrapper" >
                 <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
                     <div className="fo-item-container">
                         <div className="fo-item-name">Message</div>
@@ -117,7 +132,8 @@ const UserOptionsModal = ({
 
                     <div className="fo-options-bottom-div"></div>
                 </div>
-            </div>)
+            </div>
+            )
 
     }
 
