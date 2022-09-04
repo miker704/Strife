@@ -113,6 +113,8 @@ const UserOptionsModal = ({
         let subState = {
 
         }
+        console.log("handlekickuser: ", subState);
+
     }
 
     useEffect(() => {
