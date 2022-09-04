@@ -16,6 +16,8 @@
     forced-color-adjust: none;
     outline: 0;
     display: flex;
+    user-select: none;
+
 }
 
 .dm-members-index-container {
@@ -32,6 +34,7 @@
     box-sizing: border-box;
     min-height: 0;
     outline: 0;
+    user-select: none;
 }
 
 .dm-members-index-container::-webkit-scrollbar {
@@ -100,7 +103,7 @@
 
 
 .dm-member-item:hover {
-    background-color: hsl(223, 6.9%, 19.8%);
+    background-color: #3b3f45;
     color: hsl(210, 2.9%, 86.7%);
 }
 
