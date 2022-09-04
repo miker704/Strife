@@ -30,5 +30,5 @@ const mDTP = (dispatch) => {
 }
 
 
-const CreateDmModalContainer = withRouter(connect(mSTP, mDTP)(CreateDmModal));
-export default CreateDmModalContainer;
+const InviteToDmModalContainer = withRouter(connect(mSTP, mDTP)(InviteToDmModal));
+export default InviteToDmModalContainer;
