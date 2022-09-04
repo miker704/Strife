@@ -21,6 +21,18 @@ const DmServerMemberList = ({
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
 
 
+
+
+    const inputRef = useRef();
+    const friendRef = useRef();
+    const [searchText, setSearchText] = useState("");
+    const [selectedFriends, setSelectedFriends] = useState([]);
+    const [showPopup, setShowPopup] = useState(false);
+    const [popupTop, setPopupTop] = useState(0);
+    const [selectFriend,toggleSelected] = useState([]);
+
+
+
     return (
         <div className="dm-members-index-container-wrapper">
             <div className="dm-members-index-container">
@@ -31,7 +43,7 @@ const DmServerMemberList = ({
 
                             return (
 
-                                <li className="dm-member-item" key={dmMember.id}>
+                                <li className="dm-member-item" key={dmMember.id} onClick={() => setPopupTop(true)}>
                                     <div className="dm-member-layout">
                                         <div className="dm-member-avatar">
                                             <div className="dm-member-avatar-inner-wrapper">
