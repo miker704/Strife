@@ -89,6 +89,11 @@ const UserOptionsModal = ({
 
     let EditOptions = "";
 
+    // let kickUserOption = (<div className="fo-item-container red" onClick={() => handleKickUser()}>
+    //     <div className="fo-item-name">Kick User</div>
+    // </div>) : ("")
+
+
     switch (member.friend_request_status) {
         //if group owner allow kicking of user 
         case -1:
@@ -162,7 +167,7 @@ const UserOptionsModal = ({
             EditOptions = (
                 <div className="fo-flex-wrapper2" >
                     <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
-                    <div className="fo-item-container" onClick={() => handleDm()}>
+                        <div className="fo-item-container" onClick={() => handleDm()}>
                             <div className="fo-item-name">Message</div>
                         </div>
                         <div className="fo-item-container" onClick={() => handleUpdateFriendShip()}>
