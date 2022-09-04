@@ -24,7 +24,7 @@ const mDTP = (dispatch) => {
     }
 };
 
-const EUserOptionsModalContainer = withRouter(connect(mSTP, mDTP)(UserOptionsModal));
+const UserOptionsModalContainer = withRouter(connect(mSTP, mDTP)(UserOptionsModal));
 export default UserOptionsModalContainer;
 
 
