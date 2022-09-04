@@ -116,7 +116,8 @@ const UserOptionsModal = ({
         console.log("kickiiing this user now")
         console.log("member: ", member);
         let subState = {
-
+            dm_member_id: member.id, 
+            dm_server_id: DmServerId
         }
         console.log("handlekickuser: ", subState);
 
