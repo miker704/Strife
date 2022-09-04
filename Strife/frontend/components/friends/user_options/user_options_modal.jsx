@@ -29,16 +29,18 @@ const UserOptionsModal = ({
 
 
     const handleDm = () => {
-
+        console.log("send message request to : ");
+        console.log("member: ", member);
     }
 
 
     const handleCreateFriendShip = () => {
-
+        console.log("send friend request to : ");
+        console.log("member: ", member);
     }
 
     const handleDeleteFriendShip = () => {
-        console.log("hello");
+        console.log("delete friend ");
         console.log("member: ", member);
         // deleteFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
         //     setShowPopup(false);
