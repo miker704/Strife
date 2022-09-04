@@ -247,22 +247,6 @@ const UserOptionsModal = ({
         <div className="fo-layer2" >
             <div className="fo-theme2" style={{ top: `${top}px` }} ref={popupRef}>
 
-                {/* <div className="fo-flex-wrapper" >
-                    <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
-                        <div className="fo-item-container">
-                            <div className="fo-item-name">Message</div>
-                        </div>
-                        <div className="fo-item-container">
-                            <div className="fo-item-name">Start Voice Call</div>
-                        </div>
-                        <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
-                            <div className="fo-item-name">Remove Friend</div>
-                        </div>
-
-                        <div className="fo-options-bottom-div"></div>
-                    </div>
-                </div>
-             */}
                 {EditOptions}
 
             </div>
