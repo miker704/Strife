@@ -6,11 +6,21 @@ import DmServerMemberListContainer from "../dm_server_members/dm_server_list_con
 class DmServer extends React.Component {
     constructor (props) {
         super(props);
+        this.state = {
+            hideMembersList: false
+        }
         this.renderDmMemberContainer = this.renderDmMemberContainer.bind(this);
+        this.setHideMembersList = this.setHideMembersList.bind(this);
+
     }
     componentDidMount () {
         this.props.fetchDmServer(this.props.dmServerId);
     }
+
+    setHideMembersList () {
+        this.setState({ hideMembersList: false });
+    }
+
 
     renderDmMemberContainer () {
         if (Object.values(this.props.dmServerMembers).length > 2) {
@@ -45,7 +55,7 @@ class DmServer extends React.Component {
 
                     {/* insert dmmesages contianer here */}
                     {this.renderDmMemberContainer()}
-                </div> 
+                </div>
                 {/* <div className="empty-messages-container is-hidden"></div> */}
             </div>
         )
