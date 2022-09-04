@@ -43,7 +43,7 @@ const UserOptionsModal = ({
 
         const memberIds = [currentUser.id, parseInt(member.id)].sort((a, b) => a - b);
         let new_dm_members = [currentUser, member];
-        for (let dmServer of props.dmServers) {
+        for (let dmServer of dmServers) {
             if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
                 if (history.location.pathname !== `/channels/@me/${dmServer.id}`) {
                     history.push(`/channels/@me/${dmServer.id}`);
