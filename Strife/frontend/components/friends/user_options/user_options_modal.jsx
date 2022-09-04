@@ -55,6 +55,8 @@ const UserOptionsModal = ({
         let subState = {
 
         }
+        console.log("handlecreateFriendship: ", subState);
+
     }
 
     const handleDeleteFriendShip = () => {
