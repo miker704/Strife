@@ -3,6 +3,8 @@ import ReactTooltip from "react-tooltip";
 import DmServerHeaderNavBarContainer from "../dm_server_header_nav_bar/dm_server_header_nav_bar_container";
 import DmServerMemberListContainer from "../dm_server_members/dm_server_list_container";
 
+
+
 class DmServer extends React.Component {
     constructor (props) {
         super(props);
@@ -18,15 +20,17 @@ class DmServer extends React.Component {
     }
 
     setHideMembersList () {
-        this.setState({ hideMembersList: false });
+        this.setState({ hideMembersList: !this.state.hideMembersList });
     }
 
 
     renderDmMemberContainer () {
         if (Object.values(this.props.dmServerMembers).length > 2) {
-            return (
-                <DmServerMemberListContainer dmServerMembers={this.props.dmServerMembers} />
-            )
+            if (this.state.hideMembersList === false) {
+                return (
+                    <DmServerMemberListContainer dmServerMembers={this.props.dmServerMembers} />
+                )
+            }
         }
     }
 
@@ -37,7 +41,7 @@ class DmServer extends React.Component {
         return (
             <div className="dm-server-container">
 
-                <DmServerHeaderNavBarContainer dmServerMembers={this.props.dmServerMembers} />
+                <DmServerHeaderNavBarContainer  isViz={this.setHideMembersList} dmServerMembers={this.props.dmServerMembers} />
 
 
                 <div className="dm-server-content-container">
