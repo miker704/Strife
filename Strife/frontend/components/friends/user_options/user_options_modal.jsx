@@ -27,6 +27,16 @@ const UserOptionsModal = ({
     closeHookModalOnOutsideClick(popupRef, setShowPopup);
     closeOnEsc(setShowPopup);
 
+
+    const handleDm = () => {
+
+    }
+
+
+    const handleCreateFriendShip = () => {
+
+    }
+
     const handleDeleteFriendShip = () => {
         console.log("hello");
         // deleteFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
@@ -78,7 +88,14 @@ const UserOptionsModal = ({
 
     let lastEditOption;
 
-    switch (member.friend_request_status) { }
+    switch (member.friend_request_status) {
+
+
+
+
+
+
+     }
 
 
 
@@ -91,7 +108,7 @@ const UserOptionsModal = ({
                 <div className="fo-flex-wrapper" >
                     <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
                         <div className="fo-item-container">
-                            <div className="fo-item-name">Start Video Call</div>
+                            <div className="fo-item-name">Message</div>
                         </div>
                         <div className="fo-item-container">
                             <div className="fo-item-name">Start Voice Call</div>
