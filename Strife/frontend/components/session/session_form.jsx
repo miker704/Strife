@@ -45,7 +45,11 @@ class SessionForm extends React.Component {
             }
         }
 
-        this.props.processForm(submissionState);
+        this.props.processForm(submissionState).then(() => {
+                setTimeout(() => {
+                    this.props.history.push("/loading/");
+                }, 10)
+        });
     }
 
     handleInput(field) {
