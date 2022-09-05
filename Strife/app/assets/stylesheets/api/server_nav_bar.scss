@@ -2,7 +2,9 @@
   height: 100vh;
   // height: auto;
   // height:fit-content;
-  width: 225px;
+  width: 77px;
+  // width: 225px;
+
   position: absolute;
   // position:;
   background-color: rgb(32, 34, 37);
@@ -35,7 +37,8 @@
   // height: calc(100vh-55px);
   // height: auto;
   // height:--webkit-fill-avaliable
-  height: Calc(100vh - 55px);
+  // height: Calc(100vh - 55px);
+  height: calc(100vh - 8px);
   // height: calc(auto-55px);
 
 }
