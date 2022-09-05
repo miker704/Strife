@@ -177,7 +177,7 @@ class ChannelNavBar extends React.Component {
                                                 <div className="main-channel-h2">Voice Channels</div>
                                             </h2>
                                         </div>
-                                        <div className="channel-plus-div">
+                                        <div className="channel-plus-div" data-tip data-for="create-channel-tool-tip">
                                             <button type="button" className="add-channel-button">
                                                 <div className="add-channel-button-inner">
                                                     <svg className="addButtonIcon" aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 18 18">
@@ -185,6 +185,16 @@ class ChannelNavBar extends React.Component {
                                                             points="15 10 10 10 10 15 8 15 8 10 3 10 3 8 8 8 8 3 10 3 10 8 15 8">
                                                         </polygon>
                                                     </svg>
+                                                    <ReactTooltip
+                                                        className="channel-nav-bar-tool-tip"
+                                                        textColor="#B9BBBE"
+                                                        backgroundColor="#191919"
+                                                        id="create-channel-tool-tip"
+                                                        place="top"
+                                                        effect="solid">
+                                                        Create Channel
+                                                    </ReactTooltip>
+
                                                 </div>
                                             </button>
                                         </div>
