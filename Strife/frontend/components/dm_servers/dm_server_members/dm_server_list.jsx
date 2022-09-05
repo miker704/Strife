@@ -10,18 +10,54 @@ const DmServerMemberList = ({
     errors,
     dmServer,
     currentUser,
-    fetchDmServer
+    fetchDmServer,
+    requestFriendships,
+    dmServerUsers
 }
 
 ) => {
+
+    if (!dmServer) {
+        return null;
+    }
 
     let dmServerMemberList = Object.values(dmServerMembers);
     const DmServerOwner = dmServer.owner_id;
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
     console.log("dmserverId : ", dmServer.id);
 
+    // useEffect(() => {
+    //     console.log("useffect called from dmservers list ");
+    //     requestFriendships();
+    //     // return function cleanup () {
+    //     //     if (errors.length > 0) {
+    //     //         removeFriendshipErrors();
+    //     //     }
+    //     //     if (dmServerErrors.length > 0) {
+    //     //         removeDmServerErrors();
+    //     //     }
+    //     // }
+    //     // if(Object.values(dmServerMembers).friend_request_status){
+
+    //     // }
 
 
+    // }, []);
+    useEffect(() => {
+    
+        if (dmServer?.id) {
+            console.log("useffect called in dmserver list")
+            fetchDmServer(dmServerId);
+        }
+    
+      
+    }, [dmServer?.id ])
+
+
+    // console.log("dmmemberlist props: ", dmServerMemberList);
+    // console.log("dmserver current state from member list: ", dmServer);
+    // console.log("dmserver current state from member list: ", dmServer.users);
+    // console.log("dmServersUsers: ",dmServerUsers);
 
     const inputRef = useRef();
     const [showPopup, setShowPopup] = useState(false);
@@ -44,9 +80,10 @@ const DmServerMemberList = ({
             {
                 showPopup && <UserOptionsModalContainer
                     user={currentUser} member={selectedMember}
-                    top={popupTop} setShowPopup={setShowPopup} 
+                    top={popupTop} setShowPopup={setShowPopup}
                     DmServerOwner={DmServerOwner} DmServerId={dmServer.id}
-                    />
+                   
+                />
 
             }
             <div className="dm-members-index-container">
