@@ -9,9 +9,17 @@ class ServerMessages extends React.Component {
 
     render(){
         return (
-        <div className="server-chat-container">
+        <main className="server-chat-container">
+                  <div className="message-wrapper">
+                    <div className="chat-scroller">
 
-        </div>
+                    </div>
+                  </div>
+
+                  <form className="chat-input-form">
+
+                  </form>
+        </main>
         )
     }
 }
