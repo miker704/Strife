@@ -9,7 +9,7 @@ class DmMessages extends React.Component {
 
         this.state = {
             newDmMessage: this.props.dmMessage,
-            dmMessage: this.props.dmMessages,
+            dmMessages: this.props.DmMessages,
             dmMessageIds: this.props.dmMessageIds
         }
 
@@ -45,6 +45,23 @@ class DmMessages extends React.Component {
     unsubscribe () {
         this.subscription.unsubscribe();
     }
+
+
+    subscribe(){
+
+        const dmMessageHandler = {
+            recieved(data){
+                //if incoming data is a message object ensure it can be edited or added to this chat room
+                if(Object.values(data).length > 1){
+                    if(this.state.dmMessageIds.includes(data.id.toString())){
+                        let dmMessages
+                    }
+                }
+            }
+        }
+
+    }
+
 
 
 
