@@ -22,6 +22,6 @@ ChannelMembershipAPI.createChannelMembership(channelmembership).then((channelmem
 dispatch(receiveChannelMembership(channelmembership)))
 
 
- export const deleteServerMembership = (channelmembershipId,channelmembership) => (dispatch) => 
+ export const deleteChannelMembership = (channelmembershipId,channelmembership) => (dispatch) => 
  ChannelMembershipAPI.deleteChannelMembership(channelmembershipId,channelmembership).then((channelmembershiphash) =>
   dispatch(removeChannelMembership(channelmembershiphash)))
