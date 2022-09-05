@@ -68,16 +68,6 @@ const ServerHeaderNavBar = ({
     //     }
     // })
 
-
-
-
-
-
-
-
-
-
-
     return (
         <div className="server-header-bar">
             <div className="server-bar-children">
