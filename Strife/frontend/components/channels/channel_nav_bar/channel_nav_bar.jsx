@@ -5,7 +5,6 @@ class ChannelNavBar extends React.Component {
     constructor (props) {
         super(props);
 
-        this.state
 
     }
 
@@ -13,7 +12,7 @@ class ChannelNavBar extends React.Component {
     render () {
         let default_profile_pic = this.props.currentUser.photo === undefined ? "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png" : this.props.currentUser.photo;
 
-
+        console.log("channel: ",this.props.server);
         if (this.props.server) {
             return (
 
@@ -24,7 +23,7 @@ class ChannelNavBar extends React.Component {
                             <div className="channel-nav-bar-top-container-header">
                                 <div className="channel-nav-bar-header-content">
                                     <h1 className="channel-nav-bar-h1">
-                                        servername
+                                        {this.props.server.server_name}
                                     </h1>
                                     <div className="channel-nav-bar-top-button">
 
@@ -54,7 +53,6 @@ class ChannelNavBar extends React.Component {
                             <ul className="ul-channels">
 
                                 <li className="channel-li-item-cat">
-                                    channel catagory
                                     <div className="channel-li-icon">
                                         <div className="main-channel-content">
                                             <svg className="channel-icon-arrow" width="24" height="24" viewBox="0 0 24 24">
@@ -79,6 +77,16 @@ class ChannelNavBar extends React.Component {
                                         </div>
                                     </div>
                                 </li>
+
+                                <li className="default-channel-item">
+                                    <div className="def-channel-wrap">
+                                        <div className="def-channel-content">
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+
+
                             </ul>
                         </div>
                     </div>
