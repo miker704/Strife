@@ -11,6 +11,7 @@
     -webkit-box-flex: 0;
     flex: 0 0 auto;
     background: hsl(223, 6.9%, 19.8%);
+    user-select: none;
 }
 
 .channel-nav-bar-container-wrapper {
@@ -199,15 +200,17 @@
 .channel-nav-scroller:hover {
     scrollbar-color: hsl(216, 7.2%, 13.5%) hsla(0, 0%, 0%, 0);
 }
-.channel-nav-scroller::-webkit-scrollbar{
+
+.channel-nav-scroller::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
 
-.channel-nav-scroller::-webkit-scrollbar-corner{
+.channel-nav-scroller::-webkit-scrollbar-corner {
     background-color: #0000;
 }
-.channel-nav-scroller::-webkit-scrollbar-thumb{
+
+.channel-nav-scroller::-webkit-scrollbar-thumb {
     background-clip: padding-box;
     border: 2px solid #0000;
     border-radius: 4px;
@@ -215,16 +218,154 @@
     min-height: 40px;
 }
 
-.channel-nav-scroller::-webkit-scrollbar-thumb, .channel-nav-scroller::-webkit-scrollbar-track{
-  visibility: hidden;
+.channel-nav-scroller::-webkit-scrollbar-thumb,
+.channel-nav-scroller::-webkit-scrollbar-track {
+    visibility: hidden;
 }
 
 
-.channel-nav-scroller::-webkit-scrollbar-track{
+.channel-nav-scroller::-webkit-scrollbar-track {
     border-color: hsla(0, 0%, 0%, 0);
-    background-color:  hsla(0, 0%, 0%, 0);
-    border: 2px solid  hsla(0, 0%, 0%, 0);
+    background-color: hsla(0, 0%, 0%, 0);
+    border: 2px solid hsla(0, 0%, 0%, 0);
 }
 
+
+
+.ul-channels {
+    height: auto;
+    position: relative;
+    forced-color-adjust: none;
+}
+
+.channel-li-item-cat {
+    forced-color-adjust: none;
+    position: relative;
+    padding-top: 16px;
+
+}
+
+.channel-li-icon {
+    forced-color-adjust: none;
+    cursor: pointer;
+    outline: 0;
+    color: hsl(223, 3.4%, 60.2%);
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 24px;
+    padding-right: 8px;
+    padding-left: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    cursor: default;
+}
+
+.channel-li-icon:hover {
+    color: #dcddde;
+}
+
+.main-channel-content {
+    forced-color-adjust: none;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    overflow: hidden;
+    outline: 0;
+
+}
+
+
+.channel-icon-arrow {
+    position: absolute;
+    left: 2px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    forced-color-adjust: none;
+    transition: transform .2s ease-out, -webkit-transform .2s ease-out;
+}
+
+.main-channel-content-h2 {
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: .02em;
+    font-family: "ABC Ginto Normal";
+    font-weight: 500;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    color: hsl(223, 3.4%, 60.2%);
+}
+
+.main-channel-h2 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: relative;
+    forced-color-adjust: none;
+    outline: 0;
+}
+
+.channel-plus-div {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    forced-color-adjust: none;
+    outline: 0;
+
+}
+
+.add-channel-button {
+    display: block;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    forced-color-adjust: none;
+    background: #0000;
+    color: currentColor;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    font-family: "Whitney";
+    text-rendering: optimizeLegibility;
+    position: relative;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    user-select: none;
+
+}
+
+.addButtonIcon:hover {
+    color: hsl(210, 2.9%, 86.7%);
+}
+
+.add-channel-button-inner {
+    forced-color-adjust: none;
+    outline: 0;
+
+}
 
 
