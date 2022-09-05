@@ -16,7 +16,6 @@ class DmServer extends React.Component {
 
     }
     componentDidMount () {
-        console.log("dmserver mount called")
         this.props.fetchDmServer(this.props.dmServerId);
     }
 
