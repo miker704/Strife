@@ -46,12 +46,40 @@ class ChannelNavBar extends React.Component {
                         <div className="channel-post-container">
                             <div className="channel-unread">
                                 <div className="channel-unread-top">
-                                        <span className="channel-unread-text"></span>
+                                    <span className="channel-unread-text"></span>
                                 </div>
                             </div>
                         </div>
                         <div className="channel-nav-scroller">
+                            <ul className="ul-channels">
 
+                                <li className="channel-li-item-cat">
+                                    channel catagory
+                                    <div className="channel-li-icon">
+                                        <div className="main-channel-content">
+                                            <svg className="channel-icon-arrow" width="24" height="24" viewBox="0 0 24 24">
+                                                <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M16.59 8.59004L12 13.17L7.41
+                                                     8.59004L6 10L12 16L18 10L16.59 8.59004Z">
+                                                </path>
+                                            </svg>
+                                            <h2 className="main-channel-content-h2">
+                                                <div className="main-channel-h2">Text Channels</div>
+                                            </h2>
+                                        </div>
+                                        <div className="channel-plus-div">
+                                            <button type="button" className="add-channel-button">
+                                                <div className="add-channel-button-inner">
+                                                    <svg className="addButtonIcon" aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 18 18">
+                                                        <polygon fillRule="nonzero" fill="currentColor"
+                                                            points="15 10 10 10 10 15 8 15 8 10 3 10 3 8 8 8 8 3 10 3 10 8 15 8">
+                                                        </polygon>
+                                                    </svg>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
