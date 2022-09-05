@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.server-chat-container-wrapper{
+.server-chat-container-wrapper {
     forced-color-adjust: none;
     outline: 0;
     align-items: stretch;
@@ -407,10 +407,12 @@
 }
 
 .chat-input-text-area-scroller::-webkit-scrollbar-thumb {
-    background-color: hsla(225,7.7%,10.2%,0.6);
+    background-color: hsla(225, 7.7%, 10.2%, 0.6);
     border-radius: 8px;
 }
-.chat-input-text-area-scroller::-webkit-scrollbar-thumb, .chat-input-text-area-scroller::-webkit-scrollbar-track {
+
+.chat-input-text-area-scroller::-webkit-scrollbar-thumb,
+.chat-input-text-area-scroller::-webkit-scrollbar-track {
     background-clip: padding-box;
     border: 4px solid #0000;
 }
@@ -429,12 +431,12 @@
     margin-bottom: 12px;
     min-height: 16px;
     position: absolute;
-    -webkit-transition: opacity .125s ease-in,-webkit-transform .125s cubic-bezier(.48,1.93,1,.68);
-    transition: opacity .125s ease-in,-webkit-transform .125s cubic-bezier(.48,1.93,1,.68);
-    transition: opacity .125s ease-in,transform .125s cubic-bezier(.48,1.93,1,.68);
-    transition: opacity .125s ease-in,transform .125s cubic-bezier(.48,1.93,1,.68),-webkit-transform .125s cubic-bezier(.48,1.93,1,.68);
+    -webkit-transition: opacity .125s ease-in, -webkit-transform .125s cubic-bezier(.48, 1.93, 1, .68);
+    transition: opacity .125s ease-in, -webkit-transform .125s cubic-bezier(.48, 1.93, 1, .68);
+    transition: opacity .125s ease-in, transform .125s cubic-bezier(.48, 1.93, 1, .68);
+    transition: opacity .125s ease-in, transform .125s cubic-bezier(.48, 1.93, 1, .68), -webkit-transform .125s cubic-bezier(.48, 1.93, 1, .68);
     opacity: 1;
-    will-change: opacity,transform;
+    will-change: opacity, transform;
     left: auto;
     right: 4px;
     outline: 0;
@@ -446,7 +448,7 @@
     min-width: 120px;
 }
 
-.inner-attach-button{
+.inner-attach-button {
     forced-color-adjust: none;
     padding-left: 16px;
     display: flex;
@@ -454,7 +456,7 @@
     outline: 0;
 }
 
-.uploadinput{
+.uploadinput {
     outline: 0;
     position: relative;
     width: 0;
@@ -464,7 +466,7 @@
 
 }
 
-.file-input{
+.file-input {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -480,7 +482,7 @@
 }
 
 
-.attach-wrapper{
+.attach-wrapper {
     forced-color-adjust: none;
     outline: 0;
     position: sticky;
@@ -489,7 +491,7 @@
     align-self: stretch;
 }
 
-.attach-wrapper-button{
+.attach-wrapper-button {
     cursor: pointer;
     forced-color-adjust: none;
     height: 44px;
@@ -521,7 +523,7 @@
 
 }
 
-.attach-wrapper-button-content{
+.attach-wrapper-button-content {
     forced-color-adjust: none;
     height: 24px;
     outline: 0;
@@ -529,18 +531,18 @@
 }
 
 
-.attachButtonPlus{
+.attachButtonPlus {
     transform-origin: 50% 50%;
     width: 24px;
     height: 24px;
-    fill: hsl(216,3.7%,73.5%);
+    fill: hsl(216, 3.7%, 73.5%);
 }
 
 
-.inner-scroller-text-area{
+.inner-scroller-text-area {
     forced-color-adjust: none;
     outline: 0;
-    color:hsl(210, 2.9%, 86.7%);
+    color: hsl(210, 2.9%, 86.7%);
     background-color: #0000;
     resize: none;
     border: none;
@@ -556,7 +558,56 @@
     position: relative;
 }
 
+.server-chat-box-placeholder {
+    forced-color-adjust: none;
+    outline: 0;
+    padding-bottom: 11px;
+    padding-top: 11px;
+    padding-right: 10px;
+    position: absolute;
+    left: 0;
+    right: 10px;
 
-.inner-scroller-buttons{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: hsl(218, 4.6%, 46.9%);
+    user-select: none;
+    pointer-events: none;
 
+
+
+}
+
+.server-message-chat-box-area {
+    user-select: text;
+    color: hsl(210, 2.9%, 86.7%);
+    font-size: 1rem;
+    line-height: 1.375rem;
+    text-align: left;
+    word-break: break-word;
+    white-space: break-spaces!important;
+    caret-color: hsl(210, 2.9%, 86.7%);
+    left: 0;
+    right: 10px;
+    padding-right: 10px;
+    padding-bottom: 11px;
+    padding-top: 11px;
+    forced-color-adjust: none;
+    overflow-wrap: break-word;
+    position: relative;
+    outline: none;
+}
+
+.inner-scroller-buttons {
+    margin-right: -6px;
+    forced-color-adjust: none;
+    flex-direction: row;
+    height: 44px;
+    position: sticky;
+    top: 0;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    outline: 0;
 }
