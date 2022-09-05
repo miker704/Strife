@@ -147,16 +147,16 @@ const UserOptionsModal = ({
 
     const handleBlockUser = () => {
 
-        // blockUser({ user_id: currentUser.id, friend_id: member.id }).then(() => {
-        //     setShowPopup(false);
-
-        // });
-
+        
         let subState = {
             friend_id: member.id,
             user_id: currentUser.id
         }
+        
+        blockUser({ user_id: currentUser.id, friend_id: member.id }).then(() => {
+            setShowPopup(false);
 
+        });
         return;
     }
 
