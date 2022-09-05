@@ -128,3 +128,11 @@ export const fetchUserByStrifeId = user_strife_id_tag => (dispatch) =>
         return dispatch(receiveUser(user));
     },
         (err) => { dispatch(receiveSessionErrors(err.responseJSON)) });
+
+
+
+
+export const fetchUser = (userId) => (dispatch) => 
+SessionAPIUtil.fetchUser(userId).then((user) =>{
+    return dispatch(receiveUser(user));
+}, (err) => {dispatch(receiveSessionErrors(err.responseJSON))});
