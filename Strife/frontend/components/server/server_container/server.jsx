@@ -32,21 +32,7 @@ class Server extends React.Component {
             return (
                 <div className="server-base">
 
-                    <div className="server-content">
-
-                        {/* <ChannelNavBarContainer /> */}
-
-                        <div className="server-chat">
-
-
                         <ServerHeaderNavBarContainer isViz={this.setHideMembersList} />
-
-                        </div>
-
-
-
-
-                    </div>
 
                 </div>
             )
