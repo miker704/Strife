@@ -42,15 +42,16 @@ const DmServerMemberList = ({
 
 
     // }, []);
-    useEffect(() => {
+
+    // useEffect(() => {
     
-        if (dmServer?.id) {
-            console.log("useffect called in dmserver list")
-            fetchDmServer(dmServerId);
-        }
+    //     if (dmServer?.id) {
+    //         console.log("useffect called in dmserver list")
+    //         fetchDmServer(dmServerId);
+    //     }
     
       
-    }, [dmServer?.id ])
+    // }, [dmServer?.id ])
 
 
     // console.log("dmmemberlist props: ", dmServerMemberList);
