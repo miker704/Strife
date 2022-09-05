@@ -43,7 +43,16 @@ class ChannelNavBar extends React.Component {
 
                         </div>
                         <div className="channel-nav-sep"><div></div></div>
+                        <div className="channel-post-container">
+                            <div className="channel-unread">
+                                <div className="channel-unread-top">
+                                        <span className="channel-unread-text"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="channel-nav-scroller">
 
+                        </div>
                     </div>
 
 
