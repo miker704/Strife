@@ -3,14 +3,14 @@ import React from "react";
 
 
 class ServerMessages extends React.Component {
-    constructor(props){
+    constructor (props) {
         super(props);
     }
 
-    render(){
+    render () {
         return (
-        <main className="server-chat-container">
-                  <div className="message-wrapper">
+            <main className="server-chat-container">
+                <div className="message-wrapper">
                     <div className="chat-scroller">
                         <div className="chat-scroller-content">
                             <ol className="chat-scroller-inner">
@@ -28,11 +28,11 @@ class ServerMessages extends React.Component {
                                                     <span className="chat-member-username">insert username here</span>
                                                 </span>
                                                 <span className="chat-message-timestamp-wrap">
-                                                            <time className="chat-message-timestamp">
-                                                                    <i className="chat-message-timestamp-i">
-                                                                        insert time stamp here
-                                                                    </i>
-                                                            </time>
+                                                    <time className="chat-message-timestamp">
+                                                        <i className="chat-message-timestamp-i">
+                                                            insert time stamp here
+                                                        </i>
+                                                    </time>
                                                 </span>
                                             </h2>
                                             <div className="chat-message">insert message content here
@@ -46,24 +46,38 @@ class ServerMessages extends React.Component {
                             </ol>
                         </div>
                     </div>
-                  </div>
+                </div>
 
-                  <form className="chat-input-form">
-                            <div className="chat-input-text-area">
-                                    <div className="chat-input-text-area-scroller">
-                                        <div className="innner-attach-button">
-                                            <div className="uploadinput"></div>
-                                            <div className="attach-wrapper"></div>
-                                            <div className="inner-scroller-text-area"></div>
-                                            <div className="inner-scroller-buttons"></div>
+                <form className="chat-input-form">
+                    <div className="chat-input-text-area">
+                        <div className="chat-input-text-area-scroller">
+                            <div className="innner-attach-button">
+                                <div className="uploadinput">
+                                    <input type="file" className="file-input" />
+                                </div>
+                                <div className="attach-wrapper">
+                                    <button type="button" className="attach-wrapper-button">
+                                        <div className="attach-wrapper-button-content">
+                                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                                <path className="attachButtonPlus" fill="currentColor"
+                                                    d="M12 2.00098C6.486 2.00098 2 6.48698 2 12.001C2 17.515 6.486 22.001
+                                                         12 22.001C17.514 22.001 22 17.515 22 12.001C22 6.48698 17.514 2.00098
+                                                          12 2.00098ZM17 13.001H13V17.001H11V13.001H7V11.001H11V7.00098H13V11.001H17V13.001Z">
+                                                </path>
+                                            </svg>
                                         </div>
-                                    </div>
-                                    <div className="chat-input-text-area-sticker">
-
-                                    </div>
+                                    </button>
+                                </div>
+                                <div className="inner-scroller-text-area"></div>
+                                <div className="inner-scroller-buttons"></div>
                             </div>
-                  </form>
-        </main>
+                        </div>
+                        <div className="chat-input-text-area-sticker">
+
+                        </div>
+                    </div>
+                </form>
+            </main>
         )
     }
 }
