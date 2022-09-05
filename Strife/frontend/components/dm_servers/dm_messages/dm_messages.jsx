@@ -3,14 +3,12 @@ import ReactTooltip from "react-tooltip";
 import {createConsumer} from "@rails/actioncable"
 
 
-
-
 class DmMessages extends React.Component {
     constructor (props) {
         super(props);
 
         this.state = {
-            newMessgae: this.props.message,
+            newDmMessage: this.props.dmMessage,
             dmMessage: this.props.dmMessages,
             dmMessageIds: this.props.dmMessageIds
         }
