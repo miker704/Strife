@@ -12,7 +12,9 @@ class ServerMessages extends React.Component {
         <main className="server-chat-container">
                   <div className="message-wrapper">
                     <div className="chat-scroller">
-
+                        <div className="chat-scroller-content">
+                            
+                        </div>
                     </div>
                   </div>
 
