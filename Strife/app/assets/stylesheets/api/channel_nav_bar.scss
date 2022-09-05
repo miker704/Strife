@@ -61,7 +61,7 @@
     color: #FFFFFF;
 }
 
-.channel-nav-bar-top-container-header:hover{
+.channel-nav-bar-top-container-header:hover {
     background-color: hsla(217, 7.6%, 33.5%, 0.4);
 }
 
@@ -78,7 +78,7 @@
     forced-color-adjust: none;
 }
 
-.channel-nav-bar-top-button{
+.channel-nav-bar-top-button {
     position: absolute;
     left: 0;
     right: 0;
@@ -91,22 +91,33 @@
 
 }
 
-.channel-nav-chevron{
+.channel-nav-chevron {
     outline: 0;
     forced-color-adjust: none;
     position: relative;
     z-index: 4;
 }
-.icon-chevron{
+
+.icon-chevron {
     forced-color-adjust: none;
     position: relative;
     top: 3px;
     opacity: .8;
-    transition: transform .2s ease-out,stroke-dasharray .2s ease-out,-webkit-transform .2s ease-out;
+    transition: transform .2s ease-out, stroke-dasharray .2s ease-out, -webkit-transform .2s ease-out;
     margin-left: 4px;
+
+    path {
+        stroke-width: 2px;
+        stroke-dasharray: 7;
+        stroke-dashoffset: 1;
+        transition: stroke-dasharray .2s ease;
+    }
+
+
+
 }
 
-.channel-nav-sep{
+.channel-nav-sep {
     forced-color-adjust: none;
     outline: 0;
 }
