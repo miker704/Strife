@@ -32,3 +32,20 @@
     flex: 1 1 auto;
 
 }
+
+
+.server-chat {
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    background: hsl(220,7.7%,22.9%);
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    outline: 0;
+    forced-color-adjust: none;
+}
