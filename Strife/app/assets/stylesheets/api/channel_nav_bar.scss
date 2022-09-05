@@ -553,7 +553,19 @@
     forced-color-adjust: none;
     color: hsl(216,3.7%,73.5%);
 }
-.create-channel-invite-icon:hover, .channel-gear-icon:hover{
+
+.open-chat-icon{
+    width: 16px;
+    height: 16px;
+    display: block;
+    color: hsl(216,3.7%,73.5%);
+    cursor: pointer;
+    line-height: 0;
+    forced-color-adjust: none;
+
+
+}
+.create-channel-invite-icon:hover, .channel-gear-icon:hover, .open-chat-icon:hover{
     color: hsl(210, 2.9%, 86.7%);
     
 }
