@@ -107,7 +107,18 @@
 
 
 .chat-scroller-content{
-    
+    outline: 0;
+    display: flex;
+    overflow-anchor: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    min-height: 100%;
+    forced-color-adjust: none;
 }
 
 
