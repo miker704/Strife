@@ -361,6 +361,23 @@
     color: hsl(210, 2.9%, 86.7%);
 }
 
+.icon-speaker{
+    display: block;
+    width: 20px;
+    height: 20px;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    forced-color-adjust: none;
+    color: hsl(213,4.1%,57.5%);
+}
+
+.icon-speaker:hover{
+    color: hsl(210, 2.9%, 86.7%);
+
+}
+
+
+
 .add-channel-button-inner {
     forced-color-adjust: none;
     outline: 0;
@@ -547,7 +564,7 @@
     display: none;
 }
 
-.voice-channels{
+.voice-channels-children{
     position: relative;
     padding-top: 16px;
     forced-color-adjust: none;
