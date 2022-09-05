@@ -1,3 +1,34 @@
 // Place all the styles related to the api::Servers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.server-base{
+
+    forced-color-adjust: none;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    overflow: hidden;
+    flex-direction: column;
+    position: relative;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    outline: 0;
+}
+
+.server-content{
+    outline: 0;
+    position: relative;
+    forced-color-adjust: none;
+    display: flex;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    min-width: 0;
+    min-height: 0;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+
+}
