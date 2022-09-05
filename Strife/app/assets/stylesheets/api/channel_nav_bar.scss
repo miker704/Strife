@@ -13,3 +13,20 @@
     background: hsl(223, 6.9%, 19.8%);
 }
 
+.channel-nav-bar-container{
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    min-height: 0;
+    position: relative;
+    background-color: hsl(223, 6.9%, 19.8%);
+    forced-color-adjust: none;
+
+}
