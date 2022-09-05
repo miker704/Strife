@@ -357,7 +357,8 @@
 
 }
 
-.main-channel-content-h2:hover{
+.main-channel-content-h2:hover,
+.default-channel-name-cont:hover {
     color: hsl(210, 2.9%, 86.7%);
 
 }
@@ -366,17 +367,17 @@
     color: hsl(210, 2.9%, 86.7%);
 }
 
-.icon-speaker{
+.icon-speaker {
     display: block;
     width: 20px;
     height: 20px;
     -webkit-box-flex: 0;
     flex: 0 0 auto;
     forced-color-adjust: none;
-    color: hsl(213,4.1%,57.5%);
+    color: hsl(213, 4.1%, 57.5%);
 }
 
-.icon-speaker:hover{
+.icon-speaker:hover {
     color: hsl(210, 2.9%, 86.7%);
 
 }
@@ -389,13 +390,13 @@
 
 }
 
-.default-channel-item{
+.default-channel-item {
     forced-color-adjust: none;
     position: relative;
     transition: opacity .2s ease-in-out;
 }
 
-.def-channel-wrap{
+.def-channel-wrap {
     padding: 1px 0;
     overflow: visible;
     position: relative;
@@ -403,7 +404,7 @@
     forced-color-adjust: none;
 }
 
-.def-channel-content{
+.def-channel-content {
     position: relative;
     box-sizing: border-box;
     padding: 0 8px;
@@ -425,24 +426,26 @@
 
 }
 
-.default-channel-item:hover{
-  background-color: #3A3C43;
-  color: #FFFFFF;
-  .child-buttons{
-    visibility: visible;
-  }
+.default-channel-item:hover {
+    background-color: #3A3C43;
+    color: #FFFFFF;
+
+    .child-buttons {
+        visibility: visible;
+    }
 
 }
 
 .default-channel-item.selected-channel {
     background-color: #42474d;
     color: #FFFFFF;
-    .child-buttons{
+
+    .child-buttons {
         visibility: visible;
     }
 }
 
-.def-channel-a{
+.def-channel-a {
     forced-color-adjust: none;
     outline: 0;
     text-decoration: none;
@@ -461,25 +464,30 @@
     // color: hsl(197,100%,47.8%);
 }
 
-.def-channel-icon-container{
+.def-channel-icon-container {
     position: relative;
     margin-right: 6px;
     outline: 0;
     forced-color-adjust: none;
 }
 
-.icon-2W8DHg{
+.icon-2W8DHg {
     display: block;
     width: 20px;
     height: 20px;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-    color: hsl(213,4.1%,57.5%);
+    color: hsl(213, 4.1%, 57.5%);
     forced-color-adjust: none;
 }
 
-.default-channel-name-cont{
+.icon-2W8DHg:hover {
+    color: hsl(210, 2.9%, 86.7%);
+}
+
+
+.default-channel-name-cont {
     outline: 0;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -492,11 +500,11 @@
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     white-space: normal;
-    color: hsl(223,3.4%,60.2%);
+    color: hsl(223, 3.4%, 60.2%);
     forced-color-adjust: none;
 }
 
-.default-channel-name{
+.default-channel-name {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -504,7 +512,7 @@
     forced-color-adjust: none;
 }
 
-.child-buttons{
+.child-buttons {
     visibility: hidden;
     display: -webkit-box;
     display: flex;
@@ -518,7 +526,7 @@
     outline: 0;
 }
 
-.create-channel-invite-icon-wrapper{
+.create-channel-invite-icon-wrapper {
     display: block;
     forced-color-adjust: none;
     padding: 6px 2px;
@@ -530,7 +538,7 @@
 }
 
 
-.channel-setttings-wrapper{
+.channel-setttings-wrapper {
     display: block;
     forced-color-adjust: none;
     padding: 6px 2px;
@@ -539,49 +547,54 @@
     line-height: 0;
     outline: 0;
 }
-.channel-gear-icon{
+
+.channel-gear-icon {
     cursor: pointer;
     line-height: 0;
     width: 16px;
     height: 16px;
     display: block;
     forced-color-adjust: none;
-    color: hsl(216,3.7%,73.5%);
+    color: hsl(216, 3.7%, 73.5%);
 }
 
-.create-channel-invite-icon{
+.create-channel-invite-icon {
     cursor: pointer;
     line-height: 0;
     width: 16px;
     height: 16px;
     display: block;
     forced-color-adjust: none;
-    color: hsl(216,3.7%,73.5%);
+    color: hsl(216, 3.7%, 73.5%);
 }
 
-.open-chat-icon{
+.open-chat-icon {
     width: 16px;
     height: 16px;
     display: block;
-    color: hsl(216,3.7%,73.5%);
+    color: hsl(216, 3.7%, 73.5%);
     cursor: pointer;
     line-height: 0;
     forced-color-adjust: none;
 
 
 }
-.create-channel-invite-icon:hover, .channel-gear-icon:hover, .open-chat-icon:hover{
+
+.create-channel-invite-icon:hover,
+.channel-gear-icon:hover,
+.open-chat-icon:hover {
     color: hsl(210, 2.9%, 86.7%);
-    
+
 }
-.channel-info-sep{
+
+.channel-info-sep {
     outline: 0;
     forced-color-adjust: none;
     margin-left: 12px;
     display: none;
 }
 
-.voice-channels-children{
+.voice-channels-children {
     position: relative;
     padding-top: 16px;
     forced-color-adjust: none;
