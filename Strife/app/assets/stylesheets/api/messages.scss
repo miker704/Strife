@@ -405,4 +405,24 @@
 }
 
 
-.chat-input-text-area-sticker {}
+.chat-input-text-area-sticker {
+    bottom: 100%;
+    margin-bottom: 12px;
+    min-height: 16px;
+    position: absolute;
+    -webkit-transition: opacity .125s ease-in,-webkit-transform .125s cubic-bezier(.48,1.93,1,.68);
+    transition: opacity .125s ease-in,-webkit-transform .125s cubic-bezier(.48,1.93,1,.68);
+    transition: opacity .125s ease-in,transform .125s cubic-bezier(.48,1.93,1,.68);
+    transition: opacity .125s ease-in,transform .125s cubic-bezier(.48,1.93,1,.68),-webkit-transform .125s cubic-bezier(.48,1.93,1,.68);
+    opacity: 1;
+    will-change: opacity,transform;
+    left: auto;
+    right: 4px;
+    outline: 0;
+    forced-color-adjust: none;
+    transform: translateY(12px);
+    opacity: 0;
+    pointer-events: none;
+    right: 40px;
+    min-width: 120px;
+}
