@@ -1,6 +1,6 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
-import {createConsumer} from "@rails/actioncable"
+import { createConsumer } from "@rails/actioncable"
 
 
 class DmMessages extends React.Component {
@@ -14,7 +14,7 @@ class DmMessages extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.subscription ="";
+        this.subscription = "";
         this.subscribe = this.subscribe.bind(this);
         this.unsubscribe = this.unsubscribe.bind(this);
         this.scrollToBottomOfChat = this.scrollToBottomOfChat.bind(this);
@@ -31,7 +31,7 @@ class DmMessages extends React.Component {
 
 
     //remove listening of subscription 
-    componentWillUnmount(){
+    componentWillUnmount () {
 
         this.unsubscribe();
 
@@ -39,6 +39,11 @@ class DmMessages extends React.Component {
 
     scrollToBottomOfChat = (speed) => {
 
+    }
+
+
+    unsubscribe () {
+        this.subscription.unsubscribe();
     }
 
 
