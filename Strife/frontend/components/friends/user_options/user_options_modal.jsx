@@ -10,6 +10,7 @@ const UserOptionsModal = ({
     DmServerOwner,
     user,
     friends,
+    fetchUser,
     requestFriendships,
     createFriendship,
     blockUser,
@@ -18,6 +19,8 @@ const UserOptionsModal = ({
     DmServerId,
     dmServers,
     createDmServer,
+    dmServerId,
+    fetchDmServer,
     kickUserfromGroupChat,
     errors,
     removeFriendshipErrors,
@@ -27,9 +30,43 @@ const UserOptionsModal = ({
 }) => {
 
 
+    
     if (member.id === currentUser.id) {
         return null;
     }
+    const [memberStatus, setMemberStatus] = useState([])
+
+    useEffect(() => {
+        // requestFriendships();
+        // fetchDmServer(dmServerId)
+    
+        // (async () => {
+        //     // const response = await fetch(`api/users/${member.id}`).then((res) => res.json());
+        //     // console.log("response : ", response);
+        //     // setMemberStatus(response);
+
+        // })();
+
+        fetchUser(member.id).then((action) => {
+           const newfriend = action.user
+            setMemberStatus(newfriend);
+
+        })
+
+        return function cleanup () {
+            if (errors.length > 0) {
+                removeFriendshipErrors();
+            }
+            if (dmServerErrors.length > 0) {
+                removeDmServerErrors();
+            }
+            // requestFriendships();
+            // fetchDmServer(dmServerId)
+            // requestFriendships();
+        }
+
+    }, []);
+
 
     const popupRef = useRef();
     const dmMembersArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
@@ -80,13 +117,7 @@ const UserOptionsModal = ({
 
 
     const handleCreateFriendShip = () => {
-        console.log("send friend request to : ");
-        console.log("member: ", member);
-        let subState = {
-            friend_id: member.id,
-            user_id: currentUser.id
-        }
-        console.log("handlecreateFriendship: ", subState);
+      
         createFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
             setShowPopup(false);
 
@@ -95,13 +126,7 @@ const UserOptionsModal = ({
     }
 
     const handleDeleteFriendShip = () => {
-        console.log("delete friend ");
-        console.log("member: ", member);
-        let subState = {
-            user_id: currentUser.id,
-            friend_id: member.id,
-        }
-        console.log("handledeleteFriendship: ", subState);
+   
 
         deleteFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
             setShowPopup(false);
@@ -111,24 +136,16 @@ const UserOptionsModal = ({
     }
 
     const handleUpdateFriendShip = () => {
-        console.log("updates friend ");
-        console.log("member: ", member);
-        let subState = {
-            user_id: currentUser.id,
-            friend_id: member.id,
-        }
+   
         updateFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
             setShowPopup(false);
 
         });
-        console.log("handleupdateFriendship: ", subState);
 
         return;
     }
 
     const handleBlockUser = () => {
-        console.log("blocking this user now")
-        console.log("member: ", member);
 
         // blockUser({ user_id: currentUser.id, friend_id: member.id }).then(() => {
         //     setShowPopup(false);
@@ -139,35 +156,23 @@ const UserOptionsModal = ({
             friend_id: member.id,
             user_id: currentUser.id
         }
-        console.log("handleblockuser: ", subState);
 
         return;
     }
 
 
     const handleKickUser = () => {
-        console.log("kickiiing this user now")
-        console.log("member: ", member);
         let subState = {
             dm_member_id: member.id,
             dm_server_id: DmServerId
         }
-        console.log("handlekickuser: ", subState);
-
+        kickUserfromGroupChat(member.id,subState).then(()=>{
+            setShowPopup(false);
+        });
+        return;
     }
 
-    useEffect(() => {
 
-        return function cleanup () {
-            if (errors.length > 0) {
-                removeFriendshipErrors();
-            }
-            if (dmServerErrors.length > 0) {
-                removeDmServerErrors();
-            }
-        }
-
-    }, []);
 
     let EditOptions = "";
 
@@ -176,11 +181,10 @@ const UserOptionsModal = ({
     </div>) : ("")
 
 
-    switch (member.friend_request_status) {
+    switch (memberStatus.friend_request_status) {
         //if group owner allow kicking of user 
         case -1:
             //remove block only -> no message
-            console.log("blocked usere");
             EditOptions = (
                 <div className="fo-flex-wrapper2" >
                     <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
@@ -198,7 +202,6 @@ const UserOptionsModal = ({
 
         case 0:
             // add friend, block friend, message
-            console.log("not a friend");
             EditOptions = (
                 <div className="fo-flex-wrapper2" >
                     <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
@@ -221,7 +224,6 @@ const UserOptionsModal = ({
 
         case 1:
             //message, cancel request
-            console.log("out going friend-request");
             EditOptions = (
                 <div className="fo-flex-wrapper2" >
                     <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
@@ -240,7 +242,6 @@ const UserOptionsModal = ({
 
         case 2:
             // messgae, approve, deny request
-            console.log("incoming friend-request");
             EditOptions = (
                 <div className="fo-flex-wrapper2" >
                     <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
@@ -261,7 +262,6 @@ const UserOptionsModal = ({
             break;
         case 3:
             //messgae, delete friend
-            console.log("friend");
             EditOptions = (
                 <div className="fo-flex-wrapper2" >
                     <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
@@ -298,13 +298,6 @@ const UserOptionsModal = ({
             )
 
     }
-
-
-
-    console.log("memberSelected: ", member);
-
-    console.log("DmServerOwner user options : ", DmServerOwner);
-    console.log("DmServerId from user options : ", DmServerId);
 
     return (
         <div className="fo-layer2" >
