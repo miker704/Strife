@@ -16,8 +16,17 @@ class DmServer extends React.Component {
 
     }
     componentDidMount () {
+        console.log("dmserver mount called")
         this.props.fetchDmServer(this.props.dmServerId);
     }
+
+    // componentDidUpdate(prevProps){
+    //     console.log("dmserver compdidupdate");
+    //         if(prevProps.dmServerMembers !== this.props.dmServerMembers){
+    //             return;
+    //         }
+       
+    // }
 
     setHideMembersList () {
         this.setState({ hideMembersList: !this.state.hideMembersList });
@@ -28,7 +37,8 @@ class DmServer extends React.Component {
         if (Object.values(this.props.dmServerMembers).length > 2) {
             if (this.state.hideMembersList === false) {
                 return (
-                    <DmServerMemberListContainer dmServerMembers={this.props.dmServerMembers} />
+                    <DmServerMemberListContainer dmServerMembers={this.props.dmServerMembers}  />
+                    
                 )
             }
         }
@@ -37,6 +47,7 @@ class DmServer extends React.Component {
     render () {
         console.log("dmserver props", this.props);
         console.log(this.props.dmServer);
+        // console.log(this.props.dmServer.id)
 
         return (
             <div className="dm-server-container">
