@@ -370,7 +370,7 @@ const DmServerHeaderNavBar = ({
 
 
 }
-export default DmServerHeaderNavBar;
+export default ServerHeaderNavBar;
 
 
 
