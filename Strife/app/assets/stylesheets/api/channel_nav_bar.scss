@@ -7,11 +7,12 @@
     forced-color-adjust: none;
     flex-direction: column;
     min-height: 0;
-    width: 240px;
+    width: 225px;
     -webkit-box-flex: 0;
     flex: 0 0 auto;
     background: hsl(223, 6.9%, 19.8%);
     user-select: none;
+    transform: translate(75px, 0px);
 }
 
 .channel-nav-bar-container-wrapper {
