@@ -1,0 +1,614 @@
+//header navbar that diosplays on top of the screen of each dm server
+
+.dm-server-header-bar {
+    flex: 0 0 auto;
+    background: hsl(220, 7.7%, 22.9%);
+    forced-color-adjust: none;
+    -webkit-box-flex: 0;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    min-width: 0;
+    user-select: none;
+    color: hsl(210, 2.9%, 86.7%);
+    height: 48px;
+    padding: 0 8px;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: default;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    // position: absolute;
+    width: calc(100vw - 310px);
+    // transform: translate(309px, 0px);
+    box-shadow: 0 1px 0 hsla(240, 11.1%, 1.8%, 0.2), 0 1.5px 0 hsla(240, 7.7%, 2.5%, 0.05), 0 2px 0 hsla(240, 11.1%, 1.8%, 0.05);
+    user-select: none;
+
+}
+
+.dm-server-bar-children {
+    align-items: center;
+    min-width: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    display: flex;
+    -webkit-box-align: center;
+    flex: 1 1 auto;
+    position: relative;
+    -webkit-box-flex: 1;
+}
+
+.dms-children-icon-wrapper {
+    forced-color-adjust: none;
+    position: relative;
+    height: 24px;
+    width: auto;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    margin: 0 8px;
+    box-sizing: border-box;
+    outline: 0;
+
+}
+
+.icon-at-sym {
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    display: block;
+    width: 24px;
+    height: 24px;
+    -webkit-app-region: no-drag;
+    color: hsl(213, 4.1%, 57.5%);
+}
+
+.dms-hbar-name {
+    forced-color-adjust: none;
+    flex: 0 0 auto;
+    min-width: auto;
+    margin: 0 8px 0 0;
+    -webkit-box-flex: 0;
+    box-sizing: border-box;
+    outline: 0;
+    // max-width: 150px;
+
+}
+
+.dms-hbar-name-header {
+    justify-content: flex-start;
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-box-pack: start;
+    cursor: pointer;
+    forced-color-adjust: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    font-size: 17px;
+    line-height: 22px;
+    font-weight: 500;
+    font-family: "ABC Ginto Normal";
+
+}
+
+.dms-member-online-status {
+    forced-color-adjust: none;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    align-items: center;
+    display: flex;
+    -webkit-box-align: center;
+    margin-right: 8px;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.dmshb-spacer {
+    forced-color-adjust: none;
+    flex: 1 1 auto;
+    -webkit-box-flex: 1;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.dmshb-tool-bar {
+    forced-color-adjust: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    min-width: 0;
+    box-sizing: border-box;
+    outline: 0;
+    align-content: center;
+    flex-direction: row;
+
+}
+
+.dmshb-tool-icon-wrapper {
+    forced-color-adjust: none;
+    outline: 0;
+    position: relative;
+    height: 24px;
+    width: auto;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    margin: 0 8px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.icon-phone {
+    color: hsl(216, 3.7%, 73.5%);
+    display: block;
+    width: 24px;
+    height: 24px;
+    -webkit-app-region: no-drag;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+
+}
+
+.icon-webcall {
+    color: hsl(216, 3.7%, 73.5%);
+    display: block;
+    width: 24px;
+    height: 24px;
+    -webkit-app-region: no-drag;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+}
+
+.icon-pin-messages {
+    color: hsl(216, 3.7%, 73.5%);
+    display: block;
+    width: 24px;
+    height: 24px;
+    -webkit-app-region: no-drag;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+}
+
+.icon-add-members {
+    color: hsl(216, 3.7%, 73.5%);
+    display: block;
+    width: 24px;
+    height: 24px;
+    -webkit-app-region: no-drag;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+}
+
+.dmshbar-search-bar-wrapper {
+    forced-color-adjust: none;
+    margin: 0 8px;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.dmshbar-search-bar-inner-wrapper {
+    forced-color-adjust: none;
+    position: relative;
+    overflow: visible;
+    z-index: 100;
+    -webkit-app-region: no-drag;
+    box-sizing: border-box;
+    outline: 0;
+
+}
+
+.dmshbar-search-bar {
+    transition: width .25s ease;
+    forced-color-adjust: none;
+    outline: 0;
+    box-shadow: none;
+    cursor: text;
+    overflow: hidden;
+    padding: 0 2px;
+    align-items: stretch;
+    height: 24px;
+    width: 144px;
+    border-radius: 4px;
+    display: flex;
+    -webkit-box-align: stretch;
+    box-sizing: border-box;
+    color: hsl(210, 2.9%, 86.7%);
+    background-color: hsl(216, 7.2%, 13.5%);
+
+}
+
+.draft-edit {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    padding: 2px 0;
+    forced-color-adjust: none;
+    position: relative;
+    height: inherit;
+    text-align: initial;
+    box-sizing: border-box;
+    outline: 0;
+
+
+}
+
+.public-draft-edit {
+    padding-left: 4px;
+    outline: 0;
+    forced-color-adjust: none;
+    position: absolute;
+    z-index: 1;
+    box-sizing: content-box;
+    padding-bottom: 20px;
+    padding-right: 2px;
+    color: hsl(214, 4%, 65.3%);
+}
+
+
+.public-draft-edit-placeholder {
+    white-space: pre-wrap;
+    outline: 0;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+}
+
+.public-draft-editor-container {
+    border: none;
+    overflow: hidden;
+    border-radius: 2px;
+    height: 20px;
+    forced-color-adjust: none;
+    background-color: #fff0;
+    position: relative;
+    z-index: 1;
+    outline: 0;
+    box-sizing: border-box;
+    text-align: initial;
+}
+
+
+
+.public-draft-editor-container-placeholder {
+    outline: none;
+    user-select: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-sizing: content-box;
+    padding-bottom: 20px;
+    padding-left: 2px;
+    padding-right: 2px;
+    -webkit-user-modify: read-write-plaintext-only;
+    forced-color-adjust: none;
+    height: inherit;
+    text-align: initial;
+    outline: 0;
+
+}
+
+.data-contents {
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+
+}
+
+.data-block {
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    outline: 0;
+}
+
+.data-key-offset {
+    display: inline-block;
+    min-width: 1px;
+    white-space: pre;
+    direction: ltr;
+    text-align: left;
+    position: relative;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+
+}
+
+.data-key-offset2 {
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    min-width: 1px;
+
+}
+
+.dmshbar-mag-icon-container {
+    width: 24px;
+    height: 24px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: text;
+    outline: 0;
+}
+
+.mag-container {
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    outline: 0;
+
+}
+
+.mag-icon-2-visible {
+    transform: rotate(0deg);
+    opacity: 1;
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: transform .1s ease-out, opacity .1s ease-out, -webkit-transform .1s ease-out;
+    color: hsl(214, 4%, 65.3%);
+
+
+}
+
+.mag-icon-2 {
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: transform .1s ease-out, opacity .1s ease-out, -webkit-transform .1s ease-out;
+    transform: rotate(90deg);
+    color: hsl(214, 4%, 65.3%);
+}
+
+.icon-dms-inbox {
+    color: hsl(216, 3.7%, 73.5%);
+    display: block;
+    width: 24px;
+    height: 24px;
+    -webkit-app-region: no-drag;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+}
+
+
+.start-voice-call-message-tool-tip {
+    background: #191919 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    color: #B9BBBE !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    width: fit-content !important;
+}
+
+.start-video-call-message-tool-tip {
+    background: #191919 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    color: #B9BBBE !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    width: fit-content !important;
+}
+
+.pinned-messages-tool-tip {
+    background: #191919 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    color: #B9BBBE !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    width: fit-content !important;
+}
+
+.dmshb-inbox-message-tool-tip {
+    background: #191919 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    color: #B9BBBE !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    width: fit-content !important;
+}
+
+.dmshb-help-tool-tip {
+    background: #191919 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 4px 8px !important;
+    border-radius: 4px !important;
+    color: #B9BBBE !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    width: 27px !important;
+    text-align: center !important;
+    // overflow: hidden !important;
+}
+
+.dmshb-invite-members-tool-tip {
+    background: #191919 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    color: #B9BBBE !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    width: fit-content !important;
+}
+
+.dmshb-hide-members-tool-tip {
+    background: #191919 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    color: #B9BBBE !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    width: fit-content !important;
+}
+
+.icon-hide-group-chat {
+    display: block;
+    width: 24px;
+    height: 24px;
+    -webkit-app-region: no-drag;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    color: hsl(216, 3.7%, 73.5%);
+
+}
+
+.icon-hide-group-chat:hover,
+.icon-dms-inbox:hover,
+.icon-add-members:hover,
+.icon-webcall:hover,
+.icon-pin-messages:hover,
+.icon-phone:hover {
+    color: hsl(210, 2.9%, 86.7%);
+
+}
+
+
+.group-dm-chat-icon-wrapper {
+    position: relative;
+    height: 24px;
+    width: auto;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    margin: 0 8px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.group-dm-chat-icon {
+    color: hsl(216, 3.7%, 73.5%);
+    display: block;
+    width: 24px;
+    height: 24px;
+    -webkit-app-region: no-drag;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+}
+
+.group-chat-container {
+    position: relative;
+    min-width: 0;
+    forced-color-adjust: none;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    outline: 0;
+
+}
+
+.outer-group-chat-name {
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    flex: 0 1 auto;
+    padding: 0 4px 0 0;
+    max-width: 100%;
+    margin-left: -6px;
+    position: relative;
+    min-width: 0;
+
+}
+
+.inner-group-chat-container {
+    font-family: "ABC Ginto Normal";
+    font-weight: 500;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    position: relative;
+    outline: 0;
+
+
+}
+
+.group-name-input {
+    font-size: 16px;
+    line-height: 32px;
+    height: 32px;
+    padding: 0 6px;
+    border: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre;
+    border-radius: 3px;
+    -webkit-app-region: no-drag;
+    background: #0000;
+    box-sizing: border-box;
+    // outline: 0;
+    color: hsl(210, 2.9%, 86.7%);
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    // opacity: 0;
+    font-family: "ABC Ginto Normal";
+    font-weight: 500;
+}
+
+.input-group-name {
+    color: hsl(210, 2.9%, 86.7%);
+    font-size: 16px;
+    line-height: 32px;
+    height: 32px;
+    padding: 0 6px;
+    border: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre;
+    border-radius: 3px;
+    -webkit-app-region: no-drag;
+    background: #0000;
+    box-sizing: border-box;
+    opacity: 0;
+    forced-color-adjust: none;
+    font-family: "ABC Ginto Normal";
+    font-weight: 500;
+    visibility: visible;
+
+}
