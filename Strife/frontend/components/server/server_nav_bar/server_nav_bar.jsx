@@ -31,14 +31,14 @@ class ServerNavBar extends React.Component {
     render () {
         
         let goHome = this.props.serverId === "@me" ? "selected-Server" : "unselected-Server";
-        console.log("server currentUser props: ",this.props.currentUser);
-        console.log("server navbar props: ",this.props);
-        console.log("server navbar serverid: ",this.props.serverId);
+        // console.log("server currentUser props: ",this.props.currentUser);
+        // console.log("server navbar props: ",this.props);
+        // console.log("server navbar serverid: ",this.props.serverId);
         
-        console.log("server navbar gohome: ",goHome);
+        // console.log("server navbar gohome: ",goHome);
 
-        console.log(this.props.servers);
-        console.log(this.props.serverId);
+        // console.log(this.props.servers);
+        // console.log(this.props.serverId);
 
         let userServer = this.props.servers.map((server, serverIndex) => {
             let serverNavBarClassTag = this.props.serverId === server.id.toString() ? "selected-Server" : "unselected-Server";
