@@ -51,7 +51,7 @@ class ServerMessages extends React.Component {
                 <form className="chat-input-form">
                     <div className="chat-input-text-area">
                         <div className="chat-input-text-area-scroller">
-                            <div className="innner-attach-button">
+                            <div className="inner-attach-button">
                                 <div className="uploadinput">
                                     <input type="file" className="file-input" />
                                 </div>
@@ -70,7 +70,7 @@ class ServerMessages extends React.Component {
                                 </div>
                                 <div className="inner-scroller-text-area">
                                     <div>
-                                        
+
                                     </div>
                                 </div>
                                 <div className="inner-scroller-buttons"></div>
