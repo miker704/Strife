@@ -18,6 +18,7 @@ import FriendsHomePageContainer from './friends/friends_page_main/friends_home_p
 import HomePageContainer from './friends/friends_page_main/friends_home_page_container.js';
 import LoadingScreenContainer from './loading_screen/loading_screen_container.js';
 import DmServerContainer from './dm_servers/dm_server_container/dm_server_container.js';
+import ServerContainer from './server/server_container/server_container.js';
 
 const App = () => (
     <div>
@@ -51,7 +52,7 @@ const App = () => (
         {/* <ProtectedRoute path="/channels/@me/:dmServerId" component={DmMessagesContainer}/> */}
 
         <ProtectedRoute path="/channels/@me/:dmServerId" component={DmServerContainer}/>
-        <ProtectedRoute path = "/channels/:serverId/:channelId" component={ChannelNavBarContainer} />
+        <ProtectedRoute path = "/channels/:serverId/:channelId" component={ServerContainer} />
         {/* <ProtectedRoute path="/channels/@me/dmServers/:dmServerId" component={DmMessagesContainer}/> */}
         {/* <ProtectedRoute path="/channels/@me" component={EmptyMessagesContainer}/> */}
         <ProtectedRoute path="/channels/@me" component={HomePageContainer}/>
