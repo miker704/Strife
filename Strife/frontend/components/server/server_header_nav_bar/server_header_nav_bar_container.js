@@ -1,4 +1,4 @@
-import DmServerHeaderNavBar from "./dm_server_header_nav_bar";
+import ServerHeaderNavBar from "./server_header_nav_bar";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { removeDmMessageErrors, } from "../../../actions/dm_messages_actions";
@@ -28,5 +28,5 @@ const mDTP = (dispatch,ownProps) => {
     }
 }
 
-const DmServerHeaderNavBarContainer = withRouter(connect(mSTP, mDTP)(DmServerHeaderNavBar));
-export default DmServerHeaderNavBarContainer;
+const ServerHeaderNavBarContainer = withRouter(connect(mSTP, mDTP)(ServerHeaderNavBar));
+export default ServerHeaderNavBarContainer;
