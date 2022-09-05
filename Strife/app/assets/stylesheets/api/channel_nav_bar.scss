@@ -257,7 +257,6 @@
     padding-right: 8px;
     padding-left: 16px;
     display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -437,6 +436,7 @@
     min-width: 0;
     padding: 6px 0;
     cursor: pointer;
+    // color: hsl(197,100%,47.8%);
 }
 
 .def-channel-icon-container{
@@ -547,3 +547,9 @@
     display: none;
 }
 
+.voice-channels{
+    position: relative;
+    padding-top: 16px;
+    forced-color-adjust: none;
+
+}
