@@ -14,7 +14,9 @@ class ServerMessages extends React.Component {
                     <div className="chat-scroller">
                         <div className="chat-scroller-content">
                             <ol className="chat-scroller-inner">
-                                
+                                <div className="chat-divider">
+                                    <span className="chat-divider-content"></span>
+                                </div>
                             </ol>
                         </div>
                     </div>
