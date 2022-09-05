@@ -17,6 +17,7 @@ class DmMessages extends React.Component {
         this.subscription ="";
         this.subscribe = this.subscribe.bind(this);
         this.unsubscribe = this.unsubscribe.bind(this);
+        this.scrollToBottomOfChat = this.scrollToBottomOfChat.bind(this);
 
 
     }
@@ -25,6 +26,8 @@ class DmMessages extends React.Component {
         this.props.fetchDmServer();
         this.subscribe();
     }
+
+
 
 
 
