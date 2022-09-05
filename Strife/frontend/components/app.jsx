@@ -35,6 +35,7 @@ const App = () => (
     <Switch>
         <ProtectedRoute path="/channels/@me/:dmServerId" component={DMNavBarContainer}/>
         <ProtectedRoute path="/channels/@me" component={DMNavBarContainer}/>
+        <ProtectedRoute path = "/channels/:serverId/:channelId" component={ChannelNavBarContainer} />
         
 
         
