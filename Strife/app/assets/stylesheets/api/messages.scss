@@ -426,3 +426,118 @@
     right: 40px;
     min-width: 120px;
 }
+
+.inner-attach-button{
+    forced-color-adjust: none;
+    padding-left: 16px;
+    display: flex;
+    position: relative;
+    outline: 0;
+}
+
+.uploadinput{
+    outline: 0;
+    position: relative;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    forced-color-adjust: none;
+
+}
+
+.file-input{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    font-size: 0px;
+    forced-color-adjust: none;
+    outline: 0;
+    text-rendering: optimizeLegibility;
+    font-family: "Whitney";
+}
+
+
+.attach-wrapper{
+    forced-color-adjust: none;
+    outline: 0;
+    position: sticky;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    align-self: stretch;
+}
+
+.attach-wrapper-button{
+    cursor: pointer;
+    forced-color-adjust: none;
+    height: 44px;
+    padding: 10px 16px;
+    position: sticky;
+    top: 0;
+    margin-left: -16px;
+    width: auto;
+    background: #0000;
+    color: currentColor;
+    border: 0;
+    margin: 0;
+    outline: 0;
+    font-family: "Whitney";
+    text-rendering: optimizeLegibility;
+
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    user-select: none;
+
+}
+
+.attach-wrapper-button-content{
+    forced-color-adjust: none;
+    height: 24px;
+    outline: 0;
+    cursor: pointer;
+}
+
+
+.attachButtonPlus{
+    transform-origin: 50% 50%;
+    width: 24px;
+    height: 24px;
+    fill: hsl(216,3.7%,73.5%);
+}
+
+
+.inner-scroller-text-area{
+    forced-color-adjust: none;
+    outline: 0;
+    color:hsl(210, 2.9%, 86.7%);
+    background-color: #0000;
+    resize: none;
+    border: none;
+    appearance: none;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.375rem;
+    width: 100%;
+    height: 44px;
+    min-height: 44px;
+    padding: 0;
+    position: relative;
+}
+
+
+.inner-scroller-buttons{
+
+}
