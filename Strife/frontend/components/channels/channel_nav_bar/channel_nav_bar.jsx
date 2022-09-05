@@ -16,18 +16,38 @@ class ChannelNavBar extends React.Component {
 
         if (this.props.server) {
             return (
-                <div id="channel-nav-bar">
-                    <div id="channel-nav-sep">
 
-                        <div id="channel-nav-bar-server-name">
-                            <h5>{this.props.server.server_name}</h5>
+                <div className="channel-nav-bar">
 
-                        </div>
+                    <div className="channel-nav-bar-container">
 
 
-
+                        
                     </div>
+
+
                 </div>
+
+
+
+
+
+
+
+
+
+                // <div id="channel-nav-bar">
+                //     <div id="channel-nav-sep">
+
+                //         <div id="channel-nav-bar-server-name">
+                //             <h5>{this.props.server.server_name}</h5>
+
+                //         </div>
+
+
+
+                //     </div>
+                // </div>
             )
         }
         else {
