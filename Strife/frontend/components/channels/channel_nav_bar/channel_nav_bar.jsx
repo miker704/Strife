@@ -42,7 +42,7 @@ class ChannelNavBar extends React.Component {
                             </div>
 
                         </div>
-
+                        <div className="channel-nav-sep"><div></div></div>
 
                     </div>
 
