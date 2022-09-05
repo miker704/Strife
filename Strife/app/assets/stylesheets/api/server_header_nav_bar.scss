@@ -1,6 +1,6 @@
 //header navbar that diosplays on top of the screen of each dm server
 
-.dm-server-header-bar {
+.server-header-bar {
     flex: 0 0 auto;
     background: hsl(220, 7.7%, 22.9%);
     forced-color-adjust: none;
@@ -28,7 +28,7 @@
 
 }
 
-.dm-server-bar-children {
+.server-bar-children {
     align-items: center;
     min-width: 0;
     overflow: hidden;
@@ -41,7 +41,7 @@
     -webkit-box-flex: 1;
 }
 
-.dms-children-icon-wrapper {
+.server-children-icon-wrapper {
     forced-color-adjust: none;
     position: relative;
     height: 24px;
@@ -54,17 +54,17 @@
 
 }
 
-.icon-at-sym {
-    forced-color-adjust: none;
-    box-sizing: border-box;
-    display: block;
-    width: 24px;
-    height: 24px;
-    -webkit-app-region: no-drag;
-    color: hsl(213, 4.1%, 57.5%);
-}
+// .icon-server-hashtag {
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     display: block;
+//     width: 24px;
+//     height: 24px;
+//     -webkit-app-region: no-drag;
+//     color: hsl(213, 4.1%, 57.5%);
+// }
 
-.dms-hbar-name {
+.server-hbar-name {
     forced-color-adjust: none;
     flex: 0 0 auto;
     min-width: auto;
@@ -76,7 +76,7 @@
 
 }
 
-.dms-hbar-name-header {
+.server-hbar-name-header {
     justify-content: flex-start;
     overflow: hidden;
     white-space: nowrap;
@@ -95,7 +95,7 @@
 
 }
 
-.dms-member-online-status {
+.server-member-online-status {
     forced-color-adjust: none;
     -webkit-box-flex: 0;
     flex: 0 0 auto;
@@ -107,7 +107,7 @@
     outline: 0;
 }
 
-.dmshb-spacer {
+.shb-spacer {
     forced-color-adjust: none;
     flex: 1 1 auto;
     -webkit-box-flex: 1;
@@ -115,7 +115,7 @@
     outline: 0;
 }
 
-.dmshb-tool-bar {
+.shb-tool-bar {
     forced-color-adjust: none;
     display: flex;
     -webkit-box-align: center;
@@ -130,7 +130,7 @@
 
 }
 
-.dmshb-tool-icon-wrapper {
+.shb-tool-icon-wrapper {
     forced-color-adjust: none;
     outline: 0;
     position: relative;
@@ -143,7 +143,7 @@
     box-sizing: border-box;
 }
 
-.icon-phone {
+.icon-server-hashtag {
     color: hsl(216, 3.7%, 73.5%);
     display: block;
     width: 24px;
@@ -154,7 +154,7 @@
 
 }
 
-.icon-webcall {
+.icon-thread {
     color: hsl(216, 3.7%, 73.5%);
     display: block;
     width: 24px;
@@ -174,7 +174,7 @@
     box-sizing: border-box;
 }
 
-.icon-add-members {
+.icon-ns {
     color: hsl(216, 3.7%, 73.5%);
     display: block;
     width: 24px;
@@ -184,14 +184,14 @@
     box-sizing: border-box;
 }
 
-.dmshbar-search-bar-wrapper {
+.shbar-search-bar-wrapper {
     forced-color-adjust: none;
     margin: 0 8px;
     box-sizing: border-box;
     outline: 0;
 }
 
-.dmshbar-search-bar-inner-wrapper {
+.shbar-search-bar-inner-wrapper {
     forced-color-adjust: none;
     position: relative;
     overflow: visible;
@@ -202,7 +202,7 @@
 
 }
 
-.dmshbar-search-bar {
+.shbar-search-bar {
     transition: width .25s ease;
     forced-color-adjust: none;
     outline: 0;
@@ -328,7 +328,7 @@
 
 }
 
-.dmshbar-mag-icon-container {
+.shbar-mag-icon-container {
     width: 24px;
     height: 24px;
     forced-color-adjust: none;
@@ -395,7 +395,7 @@
 }
 
 
-.start-voice-call-message-tool-tip {
+.thread-tool-tip {
     background: #191919 !important;
     font-size: 14px !important;
     font-weight: 600 !important;
@@ -407,7 +407,7 @@
     width: fit-content !important;
 }
 
-.start-video-call-message-tool-tip {
+.Notification-Settings-tool-tip {
     background: #191919 !important;
     font-size: 14px !important;
     font-weight: 600 !important;
@@ -431,7 +431,7 @@
     width: fit-content !important;
 }
 
-.dmshb-inbox-message-tool-tip {
+.shb-inbox-message-tool-tip {
     background: #191919 !important;
     font-size: 14px !important;
     font-weight: 600 !important;
@@ -443,7 +443,7 @@
     width: fit-content !important;
 }
 
-.dmshb-help-tool-tip {
+.shb-help-tool-tip {
     background: #191919 !important;
     font-size: 14px !important;
     font-weight: 600 !important;
@@ -469,7 +469,7 @@
     width: fit-content !important;
 }
 
-.dmshb-hide-members-tool-tip {
+.shb-hide-members-tool-tip {
     background: #191919 !important;
     font-size: 14px !important;
     font-weight: 600 !important;
@@ -481,7 +481,7 @@
     width: fit-content !important;
 }
 
-.icon-hide-group-chat {
+.icon-hide-members-list{
     display: block;
     width: 24px;
     height: 24px;
@@ -492,123 +492,14 @@
 
 }
 
-.icon-hide-group-chat:hover,
+.icon-hide-members-list:hover,
 .icon-dms-inbox:hover,
 .icon-add-members:hover,
-.icon-webcall:hover,
+.icon-ns:hover,
 .icon-pin-messages:hover,
-.icon-phone:hover {
+.icon-thread:hover {
     color: hsl(210, 2.9%, 86.7%);
 
 }
 
 
-.group-dm-chat-icon-wrapper {
-    position: relative;
-    height: 24px;
-    width: auto;
-    -webkit-box-flex: 0;
-    flex: 0 0 auto;
-    margin: 0 8px;
-    forced-color-adjust: none;
-    box-sizing: border-box;
-    outline: 0;
-}
-
-.group-dm-chat-icon {
-    color: hsl(216, 3.7%, 73.5%);
-    display: block;
-    width: 24px;
-    height: 24px;
-    -webkit-app-region: no-drag;
-    forced-color-adjust: none;
-    box-sizing: border-box;
-}
-
-.group-chat-container {
-    position: relative;
-    min-width: 0;
-    forced-color-adjust: none;
-    -webkit-box-flex: 1;
-    flex: 1 1 auto;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: start;
-    justify-content: flex-start;
-    box-sizing: border-box;
-    outline: 0;
-
-}
-
-.outer-group-chat-name {
-    forced-color-adjust: none;
-    outline: 0;
-    box-sizing: border-box;
-    -webkit-box-flex: 0;
-    flex: 0 1 auto;
-    padding: 0 4px 0 0;
-    max-width: 100%;
-    margin-left: -6px;
-    position: relative;
-    min-width: 0;
-
-}
-
-.inner-group-chat-container {
-    font-family: "ABC Ginto Normal";
-    font-weight: 500;
-    forced-color-adjust: none;
-    box-sizing: border-box;
-    display: flex;
-    -webkit-box-flex: 1;
-    flex: 1 1 auto;
-    position: relative;
-    outline: 0;
-
-
-}
-
-.group-name-input {
-    font-size: 16px;
-    line-height: 32px;
-    height: 32px;
-    padding: 0 6px;
-    border: none;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: pre;
-    border-radius: 3px;
-    -webkit-app-region: no-drag;
-    background: #0000;
-    box-sizing: border-box;
-    // outline: 0;
-    color: hsl(210, 2.9%, 86.7%);
-    position: absolute;
-    left: 0px;
-    width: 100%;
-    // opacity: 0;
-    font-family: "ABC Ginto Normal";
-    font-weight: 500;
-}
-
-.input-group-name {
-    color: hsl(210, 2.9%, 86.7%);
-    font-size: 16px;
-    line-height: 32px;
-    height: 32px;
-    padding: 0 6px;
-    border: none;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: pre;
-    border-radius: 3px;
-    -webkit-app-region: no-drag;
-    background: #0000;
-    box-sizing: border-box;
-    opacity: 0;
-    forced-color-adjust: none;
-    font-family: "ABC Ginto Normal";
-    font-weight: 500;
-    visibility: visible;
-
-}
