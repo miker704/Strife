@@ -32,7 +32,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch, ownProps) => {
     return {
         fetchDmServers: (userId) => dispatch(fetchDmServers(userId)),
-        fetchDmServer: () => dispatch(fetchDmServer(ownProps.match.params.dmServerId)),
+        fetchDmServer: () => {dispatch(fetchDmServer(ownProps.match.params.dmServerId))},
         createDmMessage: (dmmessage) => dispatch(createDmMessage(dmmessage))
     }
 }
