@@ -42,12 +42,7 @@ const App = () => (
         {/* <ProtectedRoute path="/channels/:serverId/:channelId" component={ChannelNavBarContainer} /> */}
     </Switch>
 
-    {/* <Switch>
-    <ProtectedRoute path="/channels/@me" component={UserNavContainer} />
-
-
-
-    </Switch> */}
+   
 
 
 
@@ -56,7 +51,7 @@ const App = () => (
         {/* <ProtectedRoute path="/channels/@me/:dmServerId" component={DmMessagesContainer}/> */}
 
         <ProtectedRoute path="/channels/@me/:dmServerId" component={DmServerContainer}/>
-
+        <ProtectedRoute path = "/channels/:serverId/:channelId" component={ChannelNavBarContainer} />
         {/* <ProtectedRoute path="/channels/@me/dmServers/:dmServerId" component={DmMessagesContainer}/> */}
         {/* <ProtectedRoute path="/channels/@me" component={EmptyMessagesContainer}/> */}
         <ProtectedRoute path="/channels/@me" component={HomePageContainer}/>
