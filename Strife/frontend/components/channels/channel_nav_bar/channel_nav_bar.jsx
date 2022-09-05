@@ -54,7 +54,7 @@ class ChannelNavBar extends React.Component {
                         <div className="channel-nav-scroller">
                             <ul className="ul-channels">
 
-                                <li className="channel-li-item-cat">
+                                <li className="channel-li-item-cat" draggable={true}>
                                     <div className="channel-li-icon">
                                         <div className="main-channel-content">
                                             <svg className="channel-icon-arrow" width="24" height="24" viewBox="0 0 24 24">
@@ -89,7 +89,7 @@ class ChannelNavBar extends React.Component {
                                     </div>
                                 </li>
 
-                                <li className="default-channel-item">
+                                <li className="default-channel-item" draggable={true}>
                                     <div className="def-channel-wrap">
                                         <div className="def-channel-content">
                                             <Link to={`/channels/${this.props.server.id}/`} className="def-channel-a">
@@ -165,7 +165,7 @@ class ChannelNavBar extends React.Component {
                                     </div>
                                 </li>
 
-                                <li className="channel-li-item-cat">
+                                <li className="channel-li-item-cat" draggable={true}>
                                     <div className="channel-li-icon">
                                         <div className="main-channel-content">
                                             <svg className="channel-icon-arrow" width="24" height="24" viewBox="0 0 24 24">
@@ -200,7 +200,7 @@ class ChannelNavBar extends React.Component {
                                         </div>
                                     </div>
                                 </li>
-                                <li className="default-channel-item">
+                                <li className="default-channel-item" draggable={true}>
                                     <div className="def-channel-wrap">
                                         <div className="def-channel-content">
                                             <Link to={`/channels/${this.props.server.id}/`} className="def-channel-a">
