@@ -68,7 +68,11 @@ class ServerMessages extends React.Component {
                                         </div>
                                     </button>
                                 </div>
-                                <div className="inner-scroller-text-area"></div>
+                                <div className="inner-scroller-text-area">
+                                    <div>
+                                        
+                                    </div>
+                                </div>
                                 <div className="inner-scroller-buttons"></div>
                             </div>
                         </div>
