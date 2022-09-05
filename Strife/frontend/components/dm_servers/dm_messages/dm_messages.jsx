@@ -23,7 +23,7 @@ class DmMessages extends React.Component {
     componentDidMount () {
         // this.props.fetchDmServer(this.props.dmServerId);
         this.props.fetchDmServer();
-        this
+        this.subscribe();
     }
 
 
