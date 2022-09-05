@@ -15,6 +15,16 @@
 # end
 
 
+# json.users do
+#     @dm_servers.members.each do |member|
+#         json.set! member.id do 
+#             json.partial! 'api/users/user', user: member
+#             json.photo url_for(member.photo) if member.photo.attached?
+#         end
+#     end
+# end
+
+
 
 
 
@@ -54,3 +64,14 @@
 #     end
 # end
 
+# json.users do
+#     @dm_servers.each do |dm_server|
+#         membersOfDmServer = dm_server.members
+#         membersOfDmServer.each do |member|
+#             json.set! member.id do
+#                 json.partial! 'api/users/user', user: member
+#                 json.photo url_for(member.photo) if member.photo.attached?
+#             end
+#         end
+#     end
+# end
