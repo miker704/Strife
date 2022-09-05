@@ -381,3 +381,91 @@
     outline: 0;
     forced-color-adjust: none;
 }
+
+.def-channel-content{
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 8px;
+    margin-left: 8px;
+    border-radius: 4px;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    forced-color-adjust: none;
+    outline: 0;
+}
+
+.selected-channel {
+    background-color: #3A3C43;
+    color: #FFFFFF;
+
+}
+
+.default-channel-item.selected-channel {
+    background-color: #3A3C43;
+    color: #FFFFFF;
+}
+
+.def-channel-a{
+    forced-color-adjust: none;
+    outline: 0;
+    text-decoration: none;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    min-width: 0;
+    padding: 6px 0;
+    cursor: pointer;
+}
+
+.def-channel-icon-container{
+    position: relative;
+    margin-right: 6px;
+    outline: 0;
+    forced-color-adjust: none;
+}
+
+.icon-2W8DHg{
+    display: block;
+    width: 20px;
+    height: 20px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    color: hsl(213,4.1%,57.5%);
+    forced-color-adjust: none;
+}
+
+.default-channel-name-cont{
+    outline: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: relative;
+    font-size: 16px;
+    font-family: "Whitney";
+    line-height: 20px;
+    font-weight: 500;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    white-space: normal;
+    color: hsl(223,3.4%,60.2%);
+    forced-color-adjust: none;
+}
+
+.default-channel-name{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    outline: 0;
+    forced-color-adjust: none;
+}
