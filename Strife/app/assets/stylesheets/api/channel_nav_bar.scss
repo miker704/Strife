@@ -368,4 +368,16 @@
 
 }
 
+.default-channel-item{
+    forced-color-adjust: none;
+    position: relative;
+    transition: opacity .2s ease-in-out;
+}
 
+.def-channel-wrap{
+    padding: 1px 0;
+    overflow: visible;
+    position: relative;
+    outline: 0;
+    forced-color-adjust: none;
+}
