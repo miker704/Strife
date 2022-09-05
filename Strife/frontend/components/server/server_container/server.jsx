@@ -6,7 +6,9 @@ class Server extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
+            hideMembersList: false
         }
+        this.setHideMembersList = this.setHideMembersList.bind(this);
 
     }
 
@@ -15,6 +17,10 @@ class Server extends React.Component {
         this.props.removeChannelErrors();
     }
 
+
+    setHideMembersList () {
+        this.setState({ hideMembersList: !this.state.hideMembersList });
+    }
 
 
 
@@ -33,7 +39,7 @@ class Server extends React.Component {
                         <div className="server-chat">
 
 
-                            <ServerHeaderNavBarContainer/>
+                            <ServerHeaderNavBarContainer isViz={this.setHideMembersList}/>
 
                         </div>
 
