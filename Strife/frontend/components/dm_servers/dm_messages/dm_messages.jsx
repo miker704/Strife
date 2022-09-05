@@ -21,7 +21,7 @@ class DmMessages extends React.Component {
 
 
     }
-    
+
     //mount correct dmServer and start subscription listening 
     componentDidMount () {
         // this.props.fetchDmServer(this.props.dmServerId);
@@ -30,7 +30,7 @@ class DmMessages extends React.Component {
     }
 
 
-    //remove listening os subscription 
+    //remove listening of subscription 
     componentWillUnmount(){
 
         this.unsubscribe();
