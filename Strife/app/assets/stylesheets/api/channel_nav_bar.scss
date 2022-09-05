@@ -399,14 +399,26 @@
 }
 
 .selected-channel {
-    background-color: #3A3C43;
+    background-color: #42474d;
     color: #FFFFFF;
 
 }
 
+.default-channel-item:hover{
+  background-color: #3A3C43;
+  color: #FFFFFF;
+  .child-buttons{
+    visibility: visible;
+  }
+
+}
+
 .default-channel-item.selected-channel {
-    background-color: #3A3C43;
+    background-color: #42474d;
     color: #FFFFFF;
+    .child-buttons{
+        visibility: visible;
+    }
 }
 
 .def-channel-a{
@@ -468,4 +480,63 @@
     text-overflow: ellipsis;
     outline: 0;
     forced-color-adjust: none;
+}
+
+.child-buttons{
+    visibility: hidden;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    forced-color-adjust: none;
+    outline: 0;
+}
+
+.create-channel-invite-icon-wrapper{
+    display: block;
+    forced-color-adjust: none;
+    padding: 6px 2px;
+    position: relative;
+    cursor: pointer;
+    line-height: 0;
+    outline: 0;
+
+}
+
+
+.channel-setttings-wrapper{
+    display: block;
+    forced-color-adjust: none;
+    padding: 6px 2px;
+    position: relative;
+    cursor: pointer;
+    line-height: 0;
+    outline: 0;
+}
+.channel-gear-icon{
+    cursor: pointer;
+    line-height: 0;
+    width: 16px;
+    height: 16px;
+    display: block;
+    forced-color-adjust: none;
+    color: hsl(216,3.7%,73.5%);
+}
+
+.create-channel-invite-icon{
+    cursor: pointer;
+    line-height: 0;
+    width: 16px;
+    height: 16px;
+    display: block;
+    forced-color-adjust: none;
+    color: hsl(216,3.7%,73.5%);
+}
+.create-channel-invite-icon:hover, .channel-gear-icon:hover{
+    color: hsl(210, 2.9%, 86.7%);
+    
 }
