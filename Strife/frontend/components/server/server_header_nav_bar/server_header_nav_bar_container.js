@@ -1,30 +1,57 @@
 import ServerHeaderNavBar from "./server_header_nav_bar";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { removeDmMessageErrors, } from "../../../actions/dm_messages_actions";
-import { removeDmServerErrors, updateDmServer, fetchDmServer } from "../../../actions/dm_server_actions";
-import { selectDmMembers, extractDmServerProps } from "../../../utils/selectors_api_util.js";
+import { fetchChannel, createChannel, updateChannel, deleteChannel, removeChannelErrors } from "../../../actions/channel_actions.js";
+import { fetchServer, fetchServers, removeServerErrors, deleteServer, updateServer } from "../../../actions/server_actions.js";
+import { createChannelMembership, deleteChannelMembership } from "../../../actions/channel_membership_actions.js";
+import { createServerMembership, deleteServerMembership } from "../../../actions/server_membership_actions.js";
+import { openModal } from "../../../actions/modal_actions.js";
 
 const mSTP = (state, ownProps) => {
     return {
-        errors: state.errors.dmServer,
-        dmMessageErrors: state.errors.dmMessage,
         currentUser: state.entities.users[state.session.id],
-        // dmServer: state.entities.dmServers[ownProps.match.params.dmServerId],
-        dmServer: extractDmServerProps(state,ownProps.match.params.dmServerId),
-
-        dmServerId: ownProps.match.params.dmServerId,
-        dmServerMembers: selectDmMembers(state,ownProps.match.params.dmServerId),
+        server: state.entities.servers[ownProps.match.params.serverId],
+        channels: Object.values(state.entities.channels),
+        currentChannelId: ownProps.match.params.channelId,
+        serverId: ownProps.match.params.serverId,
+        errors: state.errors.server,
+        channelErrors: state.errors.channel
     }
 
 }
 
 const mDTP = (dispatch,ownProps) => {
     return {
-        fetchDmServer: () => dispatch(fetchDmServer(ownProps.match.params.dmServerId)),
-        removeDmServerErrors: () => dispatch(removeDmServerErrors()),
-        removeDmMessageErrors: () => dispatch(removeDmMessageErrors()),
-        updateDmServer: (dmServerId, dmServer) => dispatch(updateDmServer(dmServerId, dmServer))
+        //server api functions
+        fetchServer: serverId => dispatch(fetchServer(serverId)),
+        fetchUserServers: (user) => dispatch(fetchServers(user)),
+        fetchServers: () => dispatch(fetchServers()),
+        updateServer: (server) => dispatch(updateServer(server)),
+        deleteServer: (serverId) => dispatch(deleteServer(serverId)),
+        removeServerErrors: () => dispatch(removeServerErrors()),
+        
+        
+        //channel api functions
+        
+        fetchChannel: (channelId) => { dispatch(fetchChannel(channelId)) },
+        createChannel: (channel) => dispatch(createChannel(channel)),
+        updateChannel: (channel) => dispatch(updateChannel(channel)),
+        deleteChannel: (channelId) => dispatch(deleteChannel(channelId)),
+        removeChannelErrors: () => dispatch(removeChannelErrors()),
+
+        //server membership api functions
+
+        createServerMembership: (servermembership) => dispatch(createServerMembership(servermembership)),
+        deleteServerMembership: (servermembershipId, servermembership) => 
+        dispatch(deleteServerMembership(servermembershipId,servermembership)),
+
+        //channel membership api functions 
+        createChannelMembership: (channelmembership) => dispatch(createChannelMembership(channelmembership)),
+        deleteChannelMembership: (channelmembershipId,channelmembership) => 
+        dispatch(deleteChannelMembership(channelmembershipId,channelmembership)),
+
+        // modal api functions
+        openModal: modal => dispatch(openModal(modal)),
     }
 }
 
