@@ -29,7 +29,20 @@
 }
 
 .chat-scroller{
-
+    overflow-anchor: none;
+    overflow-y: scroll;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    outline: 0;
+    box-sizing: border-box;
+    min-height: 0;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    outline: 0;
+    overflow-x: hidden;
 }
 
 .chat-input-form{
