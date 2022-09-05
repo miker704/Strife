@@ -13,10 +13,7 @@ class Api::DmMembersController < ApplicationController
     
     def destroy
         @dm_membership = DmMember.find_by(dm_member_params)
-        puts 'dmmemberships is '
-        puts @dm_membership
-        puts @dm_membership.dm_member_id
-        puts @dm_membership.dm_server_id
+    
         # @dm_membership = DmMember.find_by(id: params[:id])
         @dm_server = DmServer.find_by(id: @dm_membership.dm_server_id)
         # if @dm_membership.dm_member_id == current_user.id
