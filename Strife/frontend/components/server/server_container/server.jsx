@@ -34,12 +34,12 @@ class Server extends React.Component {
 
                     <div className="server-content">
 
-                        <ChannelNavBarContainer />
+                        {/* <ChannelNavBarContainer /> */}
 
                         <div className="server-chat">
 
 
-                            <ServerHeaderNavBarContainer isViz={this.setHideMembersList}/>
+                        <ServerHeaderNavBarContainer isViz={this.setHideMembersList} />
 
                         </div>
 
