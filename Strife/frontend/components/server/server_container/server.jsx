@@ -9,7 +9,10 @@ class Server extends React.Component {
         }
 
     }
+    
     componentWillUnmount () {
+        this.props.removeServerErrors();
+        this.props.removeChannelErrors();
     }
 
 
@@ -24,7 +27,7 @@ class Server extends React.Component {
                 <div className="server-base">
 
                     <div className="server-content">
-                            
+
 
 
                     </div>
