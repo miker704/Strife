@@ -1,6 +1,6 @@
 import React from "react";
 import ChannelNavBarContainer from "../../channels/channel_nav_bar/channel_nav_bar_container";
-
+import ServerHeaderNavBarContainer from "../server_header_nav_bar/server_header_nav_bar_container";
 
 class Server extends React.Component {
     constructor (props) {
@@ -32,8 +32,8 @@ class Server extends React.Component {
 
                         <div className="server-chat">
 
-                            
 
+                            <ServerHeaderNavBarContainer/>
 
                         </div>
 
