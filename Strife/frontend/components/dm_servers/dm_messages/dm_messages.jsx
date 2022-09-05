@@ -28,6 +28,16 @@ class DmMessages extends React.Component {
     }
 
 
+    componentWillUnmount(){
+
+        this.unsubscribe();
+        
+    }
+
+    scrollToBottomOfChat = (speed) => {
+
+    }
+
 
 
 
