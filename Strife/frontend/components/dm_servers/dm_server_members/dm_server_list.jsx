@@ -24,7 +24,6 @@ const DmServerMemberList = ({
     let dmServerMemberList = Object.values(dmServerMembers);
     const DmServerOwner = dmServer.owner_id;
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
-    console.log("dmserverId : ", dmServer.id);
 
     // useEffect(() => {
     //     console.log("useffect called from dmservers list ");
