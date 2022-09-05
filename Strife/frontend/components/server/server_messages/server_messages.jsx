@@ -50,7 +50,8 @@ class ServerMessages extends React.Component {
 
                   <form className="chat-input-form">
                             <div className="chat-input-text-area">
-
+                                    <div className="chat-input-text-area-scroller"></div>
+                                    <div className="chat-input-text-area-sticker"></div>
                             </div>
                   </form>
         </main>
