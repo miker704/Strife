@@ -3,19 +3,36 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.server-base{
+// .server-base{
 
-    forced-color-adjust: none;
+//     forced-color-adjust: none;
+//     display: flex;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+//     overflow: hidden;
+//     flex-direction: column;
+//     position: relative;
+//     -webkit-box-flex: 1;
+//     flex-grow: 1;
+//     outline: 0;
+// }
+
+
+.server-base {
+    width: calc(100vw - 310px);
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
+    forced-color-adjust: none;
     overflow: hidden;
     flex-direction: column;
-    position: relative;
-    -webkit-box-flex: 1;
-    flex-grow: 1;
-    outline: 0;
+    height: 100vh;
+    transform: translate(309px, 0px);
+    background-color: #36393f;
+    flex: 1;
+    position: absolute;
+    justify-content: flex-start;
+    // transform: translate(308px, -640px);
 }
+
 
 .server-content{
     outline: 0;
