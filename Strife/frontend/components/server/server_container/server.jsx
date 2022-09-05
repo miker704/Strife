@@ -28,7 +28,17 @@ class Server extends React.Component {
 
                     <div className="server-content">
 
-                        <ChannelNavBarContainer/>
+                        <ChannelNavBarContainer />
+                        
+                        <div>
+
+
+
+
+                        </div>
+
+
+
 
                     </div>
 
