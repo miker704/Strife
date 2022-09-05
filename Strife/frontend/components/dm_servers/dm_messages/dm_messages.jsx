@@ -9,7 +9,7 @@ class DmMessages extends React.Component {
 
         this.state = {
             newDmMessage: this.props.dmMessage,
-            dmMessages: this.props.DmMessages,
+            DmMessages: this.props.DmMessages,
             dmMessageIds: this.props.dmMessageIds
         }
 
@@ -26,17 +26,21 @@ class DmMessages extends React.Component {
     componentDidMount () {
         // this.props.fetchDmServer(this.props.dmServerId);
         this.props.fetchDmServer();
-        this.subscribe();
+        // this.subscribe();
     }
 
 
     //remove listening of subscription 
     componentWillUnmount () {
 
-        this.unsubscribe();
+        // this.unsubscribe();
 
     }
 
+    handleSubmit(){
+
+    }
+    
     scrollToBottomOfChat = (speed) => {
 
     }
@@ -47,29 +51,55 @@ class DmMessages extends React.Component {
     }
 
 
-    subscribe(){
+    subscribe () {
 
         const dmMessageHandler = {
-            recieved(data){
+            recieved (incomingDmMessages) {
                 //if incoming data is a message object ensure it can be edited or added to this chat room
-                if(Object.values(data).length > 1){
-                    if(this.state.dmMessageIds.includes(data.id.toString())){
-                        let dmMessages
+                //this condition is also to load any messages sent or saved in the db 
+                if (Object.values(incomingDmMessages).length > 1) {
+                    if (this.state.dmMessageIds.includes(incomingDmMessages.id.toString())) {
+                        let dmMessages = this.state.DmMessages;
+                        let DMMessagesCollection = new Array();
+                        dmMessages.forEach((dmmessage) =>{
+                            //if match occurs set it to current dmMessage state
+                            if(dmmessage.id === incomingDmMessages.id){
+                                dmmessage.body = incomingDmMessages.body;
+                                //push it to dmMessages state array
+                            }
+                            DMMessagesCollection.push(dmmessage);
+                        })
+                        //update the state 
+                        this.setState({["messages"]: DMMessagesCollection});
                     }
+                    else{
+                        //if there arent any messages in the dmserver set up for message creation
+                        //get author name of message within this dmServer
+                        incomingDmMessages.authorName = this.props.dmServer.members[incomingDmMessages.sender_id].username;
+                        //rename it so that it can be editable
+                        incomingDmMessages.senderId = incomingDmMessages.sender_id;
+                        //grab time stamps from the backend
+                        let timeStamp = new Date(incomingDmMessages.created_at)
+                    }
+
                 }
             }
         }
 
     }
 
+    subscription(){
 
+    }
 
+    
 
 
     render () {
         console.log("dmserver messages props", this.props);
-        // console.log("dmservers: ", this.props.dmServers);
+        console.log("dmservers: ", this.props.dmServers);
         console.log(this.props.dmServer);
+        console.log('dmserver.memberss : ', this.props.dmMembers )
 
         return (
 
