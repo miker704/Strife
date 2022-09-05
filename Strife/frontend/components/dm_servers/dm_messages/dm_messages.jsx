@@ -21,6 +21,8 @@ class DmMessages extends React.Component {
 
 
     }
+    
+    //mount correct dmServer and start subscription listening 
     componentDidMount () {
         // this.props.fetchDmServer(this.props.dmServerId);
         this.props.fetchDmServer();
@@ -28,10 +30,11 @@ class DmMessages extends React.Component {
     }
 
 
+    //remove listening os subscription 
     componentWillUnmount(){
 
         this.unsubscribe();
-        
+
     }
 
     scrollToBottomOfChat = (speed) => {
