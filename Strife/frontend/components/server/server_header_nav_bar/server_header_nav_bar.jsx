@@ -4,7 +4,7 @@ import ReactTooltip from "react-tooltip";
 
 import { useEffect, useState, useRef } from "react";
 
-const DmServerHeaderNavBar = ({
+const ServerHeaderNavBar = ({
     props,
     errors,
     dmMessageErrors,
