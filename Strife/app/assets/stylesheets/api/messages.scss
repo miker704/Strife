@@ -2,6 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.server-chat-container-wrapper{
+    forced-color-adjust: none;
+    outline: 0;
+    align-items: stretch;
+    position: relative;
+    justify-content: stretch;
+    -webkit-box-align: stretch;
+    flex-direction: row;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+    -webkit-box-flex: 1;
+
+}
+
 .server-chat-container {
     forced-color-adjust: none;
     position: relative;
