@@ -70,7 +70,25 @@ class ServerMessages extends React.Component {
                                 </div>
                                 <div className="inner-scroller-text-area">
                                     <div>
-
+                                        <div className="server-chat-box-placeholder">
+                                            Message #general or #channel name
+                                        </div>
+                                        <div role={"textbox"} spellCheck={true} aria-haspopup={"listbox"} aria-invalid={"false"}
+                                            aria-autocomplete={"list"} data-can-focus="true" autoCorrect="off"
+                                            className="server-message-chat-box-area" aria-label="Message #general"
+                                            aria-multiline="true" data-slate-editor="true" data-slate-node="value"
+                                            contentEditable="true" zindex={-1}>
+                                            <div data-slate-node="element">
+                                                <span data-slate-node="text">
+                                                    <span data-slate-leaf="true" className="empty-text-sc">
+                                                        <span data-slate-zero-width="n" data-slate-length="0">
+                                                            "&#xFEFF;"
+                                                            <br />
+                                                        </span>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="inner-scroller-buttons"></div>
