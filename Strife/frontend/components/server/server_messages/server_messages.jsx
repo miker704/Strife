@@ -32,6 +32,7 @@ class ServerMessages extends React.Component {
 
     handleSubmit () {
         console.log("the message is : ", this.state.value);
+        this.setState({value:''});
         window.removeEventListener('keyup', this.handleEnter, false);
 
     }
