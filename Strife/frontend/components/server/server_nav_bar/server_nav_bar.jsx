@@ -47,7 +47,7 @@ class ServerNavBar extends React.Component {
                     <div className="server-nav-bar-a">
                         <Link to={`/channels/${server.id}/${server.general_channel_id}`}
                         
-                            onClick={() => this.props.fetchServer(server.id).then((action) => console.log("action.server = ",action.server))} 
+                            onClick={() => this.props.fetchServer(server.id)} 
                             className={serverNavBarClassTag}>
                             {/* <p className="server-name-initials">{server.server_name.charAt(0)}</p> */}
                             <p className="server-name-initials">{this.splitServerName(server.server_name, server.server_icon)}</p>
