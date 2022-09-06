@@ -5,7 +5,24 @@ import React from "react";
 class ServerMessages extends React.Component {
     constructor (props) {
         super(props);
+        this.state = {
+            value: ''
+        }
+
+        this.printMsg = this.printMsg.bind(this);
+        this.handleInput = this.handleInput.bind(this);
+
     }
+
+    printMsg () {
+            console.log("the message is : ", this.state.value);
+    }
+
+    handleInput(e){
+        return (e) => { this.setState({value: e.currentTarget.value})}
+    }
+
+
 
     render () {
         return (
@@ -49,7 +66,7 @@ class ServerMessages extends React.Component {
                         </div>
                     </div>
 
-                    <form className="chat-input-form">
+                    <form className="chat-input-form" onSubmit={this.printMsg}>
                         <div className="chat-input-text-area">
                             <div className="chat-input-text-area-scroller">
                                 <div className="inner-attach-button">
@@ -74,7 +91,7 @@ class ServerMessages extends React.Component {
                                             <div className="server-chat-box-placeholder">
                                                 Message #general or #channel name
                                             </div>
-                                            <div role={"textbox"} spellCheck={true} aria-haspopup={"listbox"} aria-invalid={"false"}
+                                            {/* <div role={"textbox"} spellCheck={true} aria-haspopup={"listbox"} aria-invalid={"false"}
                                                 aria-autocomplete={"list"} data-can-focus="true" autoCorrect="off"
                                                 className="server-message-chat-box-area" aria-label="Message #general"
                                                 aria-multiline="true" data-slate-editor="true" data-slate-node="value"
@@ -89,7 +106,21 @@ class ServerMessages extends React.Component {
                                                         </span>
                                                     </span>
                                                 </div>
-                                            </div>
+                                            </div> */}
+                                            <textarea 
+                                                    value={this.state.value} 
+                                                    onChange={this.handleInput()} 
+                                                    className="server-message-chat-box-area"
+                                                    rows="100" 
+                                                    cols="88"
+                                                    minLength={1}
+                                                    maxLength={2000}
+                                                    placeholder={"Message #general or #channel name"}
+                                                    spellCheck={false}
+                                                    />
+                                            <input className="txt-inpt" type="submit" />
+                                            {/* <input value={this.state.value} onChange={this.handleInput()} className="server-message-chat-box-area" type="text"  /> */}
+
                                         </div>
                                     </div>
                                     <div className="inner-scroller-buttons">
@@ -165,11 +196,11 @@ class ServerMessages extends React.Component {
                                         </div>
                                         <div className="button-chat-input-wrap">
                                             <button type="button" className="send-gift-button happyface">
-                                            <div className="chat-button-contents">
-                                                <div className="chat-button-wrapper">
-                                                    <i className="fa-regular fa-face-smile-wink fa-xl"></i>
+                                                <div className="chat-button-contents">
+                                                    <div className="chat-button-wrapper">
+                                                        <i className="fa-regular fa-face-smile-wink fa-xl"></i>
+                                                    </div>
                                                 </div>
-                                            </div>
                                             </button>
                                         </div>
 
