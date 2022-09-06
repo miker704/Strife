@@ -34,8 +34,8 @@
     -webkit-box-flex: 1;
     flex: 1 1 auto;
 
-    textarea{
-        resize: none;
+    textarea {
+        // resize: none;
         outline: 0;
         border: none;
 
@@ -605,7 +605,7 @@
     overflow-wrap: break-word;
     position: relative;
     outline: none;
-    
+
     background-color: #40444b;
 }
 
@@ -718,7 +718,7 @@
     -webkit-app-region: no-drag;
     forced-color-adjust: none;
     box-sizing: border-box;
-    transform: translate(-2px, 10px)!important;
+    transform: translate(-2px, 10px) !important;
 }
 
 // .send-gift-button.happyface{
@@ -741,10 +741,10 @@
 }
 
 
-.server-message-chat-box-area::-webkit-scrollbar{
+.server-message-chat-box-area::-webkit-scrollbar {
     display: none;
 }
 
-.txt-inpt{
-    
+.txt-inpt {
+    color: transparent;
 }
