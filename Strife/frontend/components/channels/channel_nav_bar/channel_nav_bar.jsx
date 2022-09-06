@@ -118,7 +118,7 @@ class ChannelNavBar extends React.Component {
                                                 </div>
                                             </Link>
                                             <div className="child-buttons">
-                                                <div className="create-channel-invite-icon-wrapper" data-tip data-for="create-channel-invite-tool-tip">
+                                                <div className="create-channel-invite-icon-wrapper" data-tip data-for="create-channel-invite-tool-tip1">
                                                     <svg className="create-channel-invite-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
                                                         <path fill="currentColor" d="M14 2H16V3H14V5H13V3H11V2H13V0H14V2Z"></path>
                                                         <path fill="currentColor" d="M6.5 8.00667C7.88 8.00667 9 6.88667 9 5.50667C9 4.12667 7.88 3.00667 6.5 
@@ -132,7 +132,7 @@ class ChannelNavBar extends React.Component {
                                                         className="channel-nav-bar-tool-tip"
                                                         textColor="#B9BBBE"
                                                         backgroundColor="#191919"
-                                                        id="create-channel-invite-tool-tip"
+                                                        id="create-channel-invite-tool-tip1"
                                                         place="top"
                                                         effect="solid">
                                                         Create Invite
@@ -177,7 +177,7 @@ class ChannelNavBar extends React.Component {
                                                 <div className="main-channel-h2">Voice Channels</div>
                                             </h2>
                                         </div>
-                                        <div className="channel-plus-div" data-tip data-for="create-channel-tool-tip">
+                                        <div className="channel-plus-div" data-tip data-for="create-channel-tool-tip2">
                                             <button type="button" className="add-channel-button">
                                                 <div className="add-channel-button-inner">
                                                     <svg className="addButtonIcon" aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 18 18">
@@ -189,7 +189,7 @@ class ChannelNavBar extends React.Component {
                                                         className="channel-nav-bar-tool-tip"
                                                         textColor="#B9BBBE"
                                                         backgroundColor="#191919"
-                                                        id="create-channel-tool-tip"
+                                                        id="create-channel-tool-tip2"
                                                         place="top"
                                                         effect="solid">
                                                         Create Channel
@@ -250,7 +250,7 @@ class ChannelNavBar extends React.Component {
                                                         Open Chat
                                                     </ReactTooltip>
                                                 </div>
-                                                <div className="create-channel-invite-icon-wrapper" data-tip data-for="create-channel-tool-tip">
+                                                <div className="create-channel-invite-icon-wrapper" data-tip data-for="create-channel-invite-tool-tip3">
 
                                                     <svg className="create-channel-invite-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
                                                         <path fill="currentColor" d="M14 2H16V3H14V5H13V3H11V2H13V0H14V2Z"></path>
@@ -265,13 +265,13 @@ class ChannelNavBar extends React.Component {
                                                         className="channel-nav-bar-tool-tip"
                                                         textColor="#B9BBBE"
                                                         backgroundColor="#191919"
-                                                        id="create-channel-invite-tool-tip"
+                                                        id="create-channel-invite-tool-tip3"
                                                         place="top"
                                                         effect="solid">
                                                         Create Invite
                                                     </ReactTooltip>
                                                 </div>
-                                                <div className="channel-settings-wrapper" data-tip data-for="channel-settings-tool-tip">
+                                                <div className="channel-settings-wrapper" data-tip data-for="channel-settings-tool-tip2">
                                                     <svg className="channel-gear-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
                                                         <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M14 7V9C14 9 12.5867 9 12.5733 
                                                         9.00667C12.42 9.58667 12.1733 10.1267 11.84 10.6067L12.74 11.5067L11.4933 12.7533L10.5933 11.8533C10.1133
@@ -286,7 +286,7 @@ class ChannelNavBar extends React.Component {
                                                         className="channel-nav-bar-tool-tip"
                                                         textColor="#B9BBBE"
                                                         backgroundColor="#191919"
-                                                        id="channel-settings-tool-tip"
+                                                        id="channel-settings-tool-tip2"
                                                         place="top"
                                                         effect="solid">
                                                         Edit Channel
