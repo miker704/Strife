@@ -22,7 +22,7 @@ class ServerMessages extends React.Component {
                 13: () => {
                     e.preventDefault();
                     this.handleSubmit();
-                    window.removeEventListener('keyup', handleKeyEnter, false);
+                    window.removeEventListener('keyup', this.handleEnter, false);
                 },
             };
             if (keys[e.keyCode]) {
@@ -32,7 +32,7 @@ class ServerMessages extends React.Component {
 
     handleSubmit () {
         console.log("the message is : ", this.state.value);
-        window.removeEventListener('keyup', this.props.handleEnter, false);
+        window.removeEventListener('keyup', this.handleEnter, false);
 
     }
 
