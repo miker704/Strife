@@ -22,6 +22,9 @@ class ChannelNavBar extends React.Component {
         event.preventDefault();
     }
 
+    // componentDidMount(){
+    //     this.props.fetchChannel(this.props.currentChannelId);
+    // }
 
     openDropBox () {
         if (this.openMod === true) {
@@ -50,7 +53,22 @@ class ChannelNavBar extends React.Component {
     render () {
         let default_profile_pic = this.props.currentUser.photo === undefined ? "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png" : this.props.currentUser.photo;
 
-        console.log("channel: ", this.props.server);
+        console.log("channel nav bar current server: ", this.props.server);
+        console.log("channel nav bar current serverID: ", this.props.serverId);
+        console.log("channel nav bar current channelID: ", this.props.currentChannelId),
+        console.log("channel nav bar current channel: ", this.props.currentChannel)
+        console.log("channel nav bar channels : ",this.props.channels)
+        console.log("channel nav bar props : ", this.props)
+
+
+
+
+
+
+
+
+
+
         if (this.props.server) {
             return (
 
