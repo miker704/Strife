@@ -11,6 +11,7 @@ class Server extends React.Component {
         this.setHideMembersList = this.setHideMembersList.bind(this);
 
     }
+    
 
     componentWillUnmount () {
         this.props.removeServerErrors();
