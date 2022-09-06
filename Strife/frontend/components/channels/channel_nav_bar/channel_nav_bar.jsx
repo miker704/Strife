@@ -7,8 +7,44 @@ class ChannelNavBar extends React.Component {
     constructor (props) {
         super(props);
 
-
+        this.state = { value: 'coconut', openMod: false };
+        this.openDropBox = this.openDropBox.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
+
+    handleChange (event) {
+        this.setState({ value: event.target.value });
+    }
+
+    handleSubmit (event) {
+        alert('Your favorite flavor is: ' + this.state.value);
+        event.preventDefault();
+    }
+
+
+    openDropBox () {
+        if (this.openMod === true) {
+                console.log("hello")
+            return (
+                <div style={"background:blue;"}>
+                    <form onSubmit={this.handleSubmit}>
+                        <label>
+                            Pick your favorite flavor:
+                            <select value={this.state.value} onChange={this.handleChange}>
+                                <option value="grapefruit">Grapefruit</option>
+                                <option value="lime">Lime</option>
+                                <option value="coconut">Coconut</option>
+                                <option value="mango">Mango</option>
+                            </select>
+                        </label>
+                        <input type="submit" value="Submit" />
+                    </form>
+                </div>
+            )
+        }
+    }
+
 
 
     render () {
@@ -19,7 +55,6 @@ class ChannelNavBar extends React.Component {
             return (
 
                 <div className="channel-nav-bar">
-
                     <div className="channel-nav-bar-container-wrapper">
                         <div className="channel-nav-bar-top-container">
                             <div className="channel-nav-bar-top-container-header">
@@ -30,8 +65,8 @@ class ChannelNavBar extends React.Component {
                                     <div className="channel-nav-bar-top-button">
 
                                     </div>
-                                    <div className="channel-nav-chevron">
-                                        <svg width="18" height="18" className="icon-chevron">
+                                    <div className="channel-nav-chevron" >
+                                        <svg width="18" height="18" className="icon-chevron" onClick={() => this.setState({ openMod: true })}>
                                             <g fill="none" fillRule="evenodd">
                                                 <path d="M0 0h18v18H0"></path>
                                                 <path stroke="currentColor" d="M4.5 4.5l9 9" strokeLinecap="round"></path>
@@ -41,6 +76,7 @@ class ChannelNavBar extends React.Component {
                                     </div>
                                 </div>
                             </div>
+                            {this.openDropBox()}
 
                         </div>
                         <div className="channel-nav-sep"><div></div></div>
