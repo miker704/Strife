@@ -88,9 +88,9 @@ class ServerMessages extends React.Component {
                                     </div>
                                     <div className="inner-scroller-text-area">
                                         <div>
-                                            <div className="server-chat-box-placeholder">
-                                                Message #general or #channel name
-                                            </div>
+                                            {/* <div className="server-chat-box-placeholder"> */}
+                                                {/* Message #general or #channel name */}
+                                            {/* </div> */}
                                             {/* <div role={"textbox"} spellCheck={true} aria-haspopup={"listbox"} aria-invalid={"false"}
                                                 aria-autocomplete={"list"} data-can-focus="true" autoCorrect="off"
                                                 className="server-message-chat-box-area" aria-label="Message #general"
