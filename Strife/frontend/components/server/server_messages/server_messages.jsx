@@ -118,7 +118,7 @@ class ServerMessages extends React.Component {
                                                     placeholder={"Message #general or #channel name"}
                                                     spellCheck={false}
                                                     />
-                                            <input className="txt-inpt" type="submit" />
+                                                    <input className="txt-inpt" type="submit" />
                                             {/* <input value={this.state.value} onChange={this.handleInput()} className="server-message-chat-box-area" type="text"  /> */}
 
                                         </div>
