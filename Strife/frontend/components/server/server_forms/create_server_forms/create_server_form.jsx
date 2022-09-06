@@ -211,7 +211,9 @@ class CreateServerForm extends React.Component {
         this.props.action(serverSubmission).then((action) => {
             newServer = action.server;
             // newServer = action.server.server;
-
+            console.log("new server = : ", newServer);
+            console.log("new server.id = : ", newServer.id);
+            console.log("new server genchannelid = : ", newServer.general_CHANNEL_ID);
 
 
             //
@@ -246,6 +248,8 @@ class CreateServerForm extends React.Component {
                 this.closeModalTransitionOut();
 
             }, 100);
+        }).then(() => {
+            this.props.history.push(`/channels/${newServer.id}/${newServer.general_CHANNEL_ID}`);
         })
 
 
