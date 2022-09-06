@@ -19,13 +19,7 @@ class DmServer extends React.Component {
         this.props.fetchDmServer(this.props.dmServerId);
     }
 
-    // componentDidUpdate(prevProps){
-    //     console.log("dmserver compdidupdate");
-    //         if(prevProps.dmServerMembers !== this.props.dmServerMembers){
-    //             return;
-    //         }
-
-    // }
+   
 
     setHideMembersList () {
         this.setState({ hideMembersList: !this.state.hideMembersList });
