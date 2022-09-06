@@ -14,3 +14,17 @@ export const handleKeyUp = (e) => {
         keys[e.keyCode]();
     }
 }
+
+
+export const handleKeyEnter = (e) => {
+    const keys = {
+        13: () => {
+            e.preventDefault();
+            dispatch(closeModal());
+            window.removeEventListener('keyup', handleKeyEnter, false);
+        },
+    };
+    if (keys[e.keyCode]) {
+        keys[e.keyCode]();
+    }
+}
