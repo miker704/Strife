@@ -249,7 +249,7 @@ class CreateServerForm extends React.Component {
 
             }, 100);
         }).then(() => {
-            this.props.history.push(`/channels/${newServer.id}/${newServer.general_CHANNEL_ID}`);
+            this.props.history.push(`/channels/${newServer.id}/${newServer.general_channel_id}`);
         })
 
 
