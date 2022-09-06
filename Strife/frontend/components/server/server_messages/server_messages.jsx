@@ -11,7 +11,8 @@ class ServerMessages extends React.Component {
 
         this.printMsg = this.printMsg.bind(this);
         this.handleInput = this.handleInput.bind(this);
-
+        this.handleEnter = this.handleEnter.bind(this);
+    
     }
 
     printMsg () {
@@ -107,7 +108,7 @@ class ServerMessages extends React.Component {
                                                     </span>
                                                 </div>
                                             </div> */}
-                                            {/* <textarea
+                                            <textarea
                                                 value={this.state.value}
                                                 onChange={this.handleInput()}
                                                 className="server-message-chat-box-area"
@@ -119,15 +120,15 @@ class ServerMessages extends React.Component {
                                                 spellCheck={false}
                                                 onSubmit={this.printMsg()}
                                             />
-                                            <input className="txt-inpt" type="submit" /> */}
-                                            <input
+                                            <input className="txt-inpt" type="submit" />
+                                            {/* <input
                                                 value={this.state.value}
                                                 onChange={this.handleInput()}
                                                 minLength={1}
                                                 maxLength={2000}
                                                 placeholder={"Message #general or #channel name"}
                                                 spellCheck={false}
-                                                className="server-message-chat-box-area" type="text" />
+                                                className="server-message-chat-box-area" type="text" /> */}
 
                                         </div>
                                     </div>
