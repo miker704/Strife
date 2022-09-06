@@ -34,9 +34,9 @@ class Server extends React.Component {
 
                         <ServerHeaderNavBarContainer isViz={this.setHideMembersList} />
                         <div className="server-content">
-                            <div className="server-chat">
+                            {/* <div className="server-chat"> */}
                                 <ServerMessages/>
-                            </div>
+                            {/* </div> */}
                         </div>
                 </div>
             )
