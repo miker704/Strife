@@ -708,13 +708,20 @@
 
 .fa-face-smile-wink {
     color: hsl(216, 3.7%, 73.5%);
-    display: block;
+    display: block !important;
     width: 24px;
     height: 24px;
     -webkit-app-region: no-drag;
     forced-color-adjust: none;
     box-sizing: border-box;
+    transform: translate(-2px, 10px)!important;
 }
+
+// .send-gift-button.happyface{
+//     padding: 4px;
+//     margin-left: 4px;
+//     margin-right: 4px;
+// }
 
 
 .present-icon:hover,
