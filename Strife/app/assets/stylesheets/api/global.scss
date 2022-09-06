@@ -103,6 +103,13 @@ label.field-error {
   z-index: -1;
 }
 
+
+.icon-custom {
+  width: 1em;
+  height: 1em;
+  vertical-align: -.125em;
+}
+
 .theme-dark {
   --saturation-factor: 1;
   --brand-experiment: hsl(235, calc(var(--saturation-factor, 1)*85.6%), 64.7%);
