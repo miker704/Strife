@@ -9,14 +9,31 @@ class ServerMessages extends React.Component {
             value: ''
         }
 
-        this.printMsg = this.printMsg.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleEnter = this.handleEnter.bind(this);
+
     
     }
 
-    printMsg () {
+
+    handleEnter (e) {
+            const keys = {
+                13: () => {
+                    e.preventDefault();
+                    this.handleSubmit();
+                    window.removeEventListener('keyup', handleKeyEnter, false);
+                },
+            };
+            if (keys[e.keyCode]) {
+                keys[e.keyCode]();
+            }
+    }
+
+    handleSubmit () {
         console.log("the message is : ", this.state.value);
+        window.removeEventListener('keyup', this.props.handleEnter, false);
+
     }
 
     handleInput (e) {
@@ -67,7 +84,7 @@ class ServerMessages extends React.Component {
                         </div>
                     </div>
 
-                    <form className="chat-input-form" onSubmit={this.printMsg}>
+                    <form className="chat-input-form" onSubmit={this.handleSubmit}>
                         <div className="chat-input-text-area">
                             <div className="chat-input-text-area-scroller">
                                 <div className="inner-attach-button">
@@ -118,9 +135,13 @@ class ServerMessages extends React.Component {
                                                 maxLength={2000}
                                                 placeholder={"Message #general or #channel name"}
                                                 spellCheck={false}
-                                                onSubmit={this.printMsg()}
+                                                // onSubmit={this.printMsg()}
+                                                onInput={() => {
+                                                    console.log("activated listener");
+                                                    window.addEventListener('keyup', this.handleEnter, false);
+                                                }}
                                             />
-                                            <input className="txt-inpt" type="submit" />
+                                            {/* <input className="txt-inpt" type="submit" /> */}
                                             {/* <input
                                                 value={this.state.value}
                                                 onChange={this.handleInput()}
