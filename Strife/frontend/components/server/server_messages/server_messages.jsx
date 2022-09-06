@@ -9,6 +9,7 @@ class ServerMessages extends React.Component {
 
     render () {
         return (
+            <div className="server-chat-container-wrapper">
             <main className="server-chat-container">
                 <div className="message-wrapper">
                     <div className="chat-scroller">
@@ -91,7 +92,16 @@ class ServerMessages extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="inner-scroller-buttons"></div>
+                                <div className="inner-scroller-buttons">
+                                    <button type="button" className="send-gift-button">
+                                        <div className="chat-button-contents">
+                                            <div className="chat-button-wrapper">
+
+                                            </div>
+                                        </div>
+                                    </button>
+
+                                </div>
                             </div>
                         </div>
                         <div className="chat-input-text-area-sticker">
@@ -100,6 +110,7 @@ class ServerMessages extends React.Component {
                     </div>
                 </form>
             </main>
+            </div>
         )
     }
 }
