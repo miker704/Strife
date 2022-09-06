@@ -33,6 +33,14 @@
     min-height: 0;
     -webkit-box-flex: 1;
     flex: 1 1 auto;
+
+    textarea{
+        resize: none;
+        outline: 0;
+        border: none;
+
+    }
+
 }
 
 .message-wrapper {
@@ -597,6 +605,8 @@
     overflow-wrap: break-word;
     position: relative;
     outline: none;
+    
+    background-color: #40444b;
 }
 
 .inner-scroller-buttons {
@@ -728,4 +738,13 @@
 .fa-face-smile-wink:hover {
 
     color: #ffc959;
+}
+
+
+.server-message-chat-box-area::-webkit-scrollbar{
+    display: none;
+}
+
+.txt-inpt{
+    
 }
