@@ -164,11 +164,13 @@ class ServerMessages extends React.Component {
                                             </button>
                                         </div>
                                         <div className="button-chat-input-wrap">
+                                            <button type="button" className="send-gift-button happyface">
                                             <div className="chat-button-contents">
                                                 <div className="chat-button-wrapper">
-                                                    <i class="fa-regular fa-face-smile-wink"></i>
+                                                    <i class="fa-regular fa-face-smile-wink fa-xl"></i>
                                                 </div>
                                             </div>
+                                            </button>
                                         </div>
 
                                     </div>
