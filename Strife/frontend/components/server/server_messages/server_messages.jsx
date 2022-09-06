@@ -15,11 +15,11 @@ class ServerMessages extends React.Component {
     }
 
     printMsg () {
-            console.log("the message is : ", this.state.value);
+        console.log("the message is : ", this.state.value);
     }
 
-    handleInput(e){
-        return (e) => { this.setState({value: e.currentTarget.value})}
+    handleInput (e) {
+        return (e) => { this.setState({ value: e.currentTarget.value }) }
     }
 
 
@@ -107,19 +107,27 @@ class ServerMessages extends React.Component {
                                                     </span>
                                                 </div>
                                             </div> */}
-                                            <textarea 
-                                                    value={this.state.value} 
-                                                    onChange={this.handleInput()} 
-                                                    className="server-message-chat-box-area"
-                                                    rows="100" 
-                                                    cols="88"
-                                                    minLength={1}
-                                                    maxLength={2000}
-                                                    placeholder={"Message #general or #channel name"}
-                                                    spellCheck={false}
-                                                    />
-                                                    <input className="txt-inpt" type="submit" />
-                                            {/* <input value={this.state.value} onChange={this.handleInput()} className="server-message-chat-box-area" type="text"  /> */}
+                                            {/* <textarea
+                                                value={this.state.value}
+                                                onChange={this.handleInput()}
+                                                className="server-message-chat-box-area"
+                                                rows="100"
+                                                cols="88"
+                                                minLength={1}
+                                                maxLength={2000}
+                                                placeholder={"Message #general or #channel name"}
+                                                spellCheck={false}
+                                                onSubmit={this.printMsg()}
+                                            />
+                                            <input className="txt-inpt" type="submit" /> */}
+                                            <input
+                                                value={this.state.value}
+                                                onChange={this.handleInput()}
+                                                minLength={1}
+                                                maxLength={2000}
+                                                placeholder={"Message #general or #channel name"}
+                                                spellCheck={false}
+                                                className="server-message-chat-box-area" type="text" />
 
                                         </div>
                                     </div>
