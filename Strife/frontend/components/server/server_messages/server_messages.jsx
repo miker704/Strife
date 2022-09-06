@@ -19,7 +19,7 @@ class ServerMessages extends React.Component {
                                         <span className="chat-divider-content"></span>
                                     </div>
                                     <li className="chat-message-item">
-                                        <div className="message-wrapper">
+                                        <div className="message-wrapper1">
                                             <div className="message-wrapper-contents">
                                                 <div className="chat-member-avatar-img">
                                                     insert img here
@@ -83,7 +83,7 @@ class ServerMessages extends React.Component {
                                                     <span data-slate-node="text">
                                                         <span data-slate-leaf="true" className="empty-text-sc">
                                                             <span data-slate-zero-width="n" data-slate-length="0">
-                                                                "&#xFEFF;"
+                                                                &#xFEFF;
                                                                 <br />
                                                             </span>
                                                         </span>
@@ -167,7 +167,7 @@ class ServerMessages extends React.Component {
                                             <button type="button" className="send-gift-button happyface">
                                             <div className="chat-button-contents">
                                                 <div className="chat-button-wrapper">
-                                                    <i class="fa-regular fa-face-smile-wink fa-xl"></i>
+                                                    <i className="fa-regular fa-face-smile-wink fa-xl"></i>
                                                 </div>
                                             </div>
                                             </button>
