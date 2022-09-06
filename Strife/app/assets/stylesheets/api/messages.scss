@@ -612,7 +612,7 @@
     outline: 0;
 }
 
-.chat-button-contents{
+.chat-button-contents {
     outline: 0;
     padding: 4px;
     margin-left: 4px;
@@ -626,7 +626,7 @@
     forced-color-adjust: none;
 }
 
-.chat-button-wrapper{
+.chat-button-wrapper {
     opacity: 1;
     transform: none;
     forced-color-adjust: none;
@@ -674,3 +674,57 @@
 
 .emoji-button {}
 
+
+
+.sticker-icon {
+    color: hsl(216, 3.7%, 73.5%);
+    display: block;
+    width: 24px;
+    height: 24px;
+    -webkit-app-region: no-drag;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+}
+
+.icongif {
+    color: hsl(216, 3.7%, 73.5%);
+    display: block;
+    width: 24px;
+    height: 24px;
+    -webkit-app-region: no-drag;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+}
+
+.present-icon {
+    color: hsl(216, 3.7%, 73.5%);
+    display: block;
+    width: 24px;
+    height: 24px;
+    -webkit-app-region: no-drag;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+}
+
+.fa-face-smile-wink {
+    color: hsl(216, 3.7%, 73.5%);
+    display: block;
+    width: 24px;
+    height: 24px;
+    -webkit-app-region: no-drag;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+}
+
+
+.present-icon:hover,
+.icongif:hover,
+.sticker-icon:hover {
+    color: hsl(210, 2.9%, 86.7%);
+
+}
+
+.fa-face-smile-wink:hover {
+
+    color: #ffc959;
+}
