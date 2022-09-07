@@ -243,6 +243,7 @@
 #user-settings-icons div:hover .user-settings-toggle2 {
     visibility: visible;
 }
+
 #user-settings-icons div:hover .user-settings-toggle1 {
     visibility: visible;
 }
@@ -351,7 +352,7 @@
         button[type="button"]:disabled {
             cursor: not-allowed;
             opacity: 0.5;
-            
+
         }
 
     }
@@ -574,7 +575,22 @@
     line-height: 16px;
 }
 
-.upm-twitter, .upm-facebook, .upm-instagram{
+.user-profile-item-logout-sec {
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    align-items: center;
+    -webkit-box-align: center;
+    justify-content: space-between;
+    -webkit-box-pack: justify;
+    display: flex;
+    color: hsl(216, 3.7%, 73.5%);
+}
+
+
+.upm-twitter,
+.upm-facebook,
+.upm-instagram {
     forced-color-adjust: none;
     box-sizing: border-box;
     text-decoration: none;
@@ -584,11 +600,16 @@
     cursor: pointer;
     outline: 0;
 }
-.upm-twitter-icon, .upm-facebook-icon, .upm-instagram-icon, .upm-logout-icon{
+
+.upm-twitter-icon,
+.upm-facebook-icon,
+.upm-instagram-icon,
+.upm-logout-icon {
     forced-color-adjust: none;
     cursor: pointer;
     color: #B9BBBE;
-    .path{
+
+    .path {
         forced-color-adjust: none;
         transition: color .15s ease;
         box-sizing: border-box;
@@ -1220,21 +1241,21 @@
 
 
 
-.user-profile-rs-inner-wrapper::-webkit-scrollbar-track{
+.user-profile-rs-inner-wrapper::-webkit-scrollbar-track {
     border-radius: 10px;
     width: 12px;
     background-color: #2d3338;
 }
 
 
-.user-profile-rs-inner-wrapper::-webkit-scrollbar{
+.user-profile-rs-inner-wrapper::-webkit-scrollbar {
     width: 12px;
     // height:100%;
 
 }
 
 
-.user-profile-rs-inner-wrapper::-webkit-scrollbar-thumb{
+.user-profile-rs-inner-wrapper::-webkit-scrollbar-thumb {
     // visibility: hidden;
     background: #202225;
     border-radius: 5px;
@@ -1698,7 +1719,7 @@
     text-decoration: none;
 }
 
-#username>img{
+#username>img {
     height: 32px;
     width: 32px;
     border-radius: 50%;
