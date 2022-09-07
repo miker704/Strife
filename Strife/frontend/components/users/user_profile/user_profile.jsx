@@ -653,7 +653,6 @@ class UserProfile extends React.Component {
                     <div className="user-profile-socials">
 
                       <a className="upm-twitter" title="Twitter" href="https://twitter.com/discord/" target="_blank">
-                        {/* <i className="fa-brands fa-twitter fa-lg"></i> */}
                         <svg className="upm-twitter-icon" width="20" height="16" viewBox="0 0 20 16" aria-hidden="true" role="img">
                           <g fill="none" fillRule="evenodd">
                             <path fill="currentColor" d="M1,14.1538462 L1.95,14.1538462 C3.73125,14.1538462 5.5125,13.5384615
@@ -673,7 +672,6 @@ class UserProfile extends React.Component {
                       </a>
 
                       <a className="upm-facebook" href="https://www.facebook.com/discord/" title="Facebook" target="_blank">
-                        {/* <i className="fa-brands fa-facebook-square fa-lg"></i> */}
                         <svg className="upm-facebook-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" role="img">
                           <g fill="none" fillRule="evenodd">
                             <path fill="currentColor" d="M0,1.99406028 C0,0.892771196 0.894513756,0 1.99406028,0 L14.0059397,0 C15.1072288,0 16,0.894513756 16,1.99406028 
@@ -690,7 +688,6 @@ class UserProfile extends React.Component {
 
 
                       <a className="upm-instagram" href="https://www.instagram.com/discord/" title="Instagram" target="_blank">
-                        {/* <i className="fa-brands fa-instagram fa-lg"></i> */}
 
                         <svg className="upm-instagram-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" role="img">
                           <g fill="none" fillRule="evenodd">
