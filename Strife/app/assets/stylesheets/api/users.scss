@@ -473,6 +473,11 @@
 .user-profile-item:hover {
     color: hsl(210, 2.9%, 86.7%);
     background-color: hsla(217, 7.6%, 33.5%, 0.4);
+
+    svg {
+        color: #dcddde;
+
+    }
 }
 
 .user-profile-item-list {
@@ -584,7 +589,6 @@
     justify-content: space-between;
     -webkit-box-pack: justify;
     display: flex;
-    color: hsl(216, 3.7%, 73.5%);
 }
 
 
