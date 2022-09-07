@@ -679,9 +679,7 @@ class UserProfile extends React.Component {
                             <rect width="16" height="16"></rect>
                           </g>
                         </svg>
-
-
-
+                        
                       </a>
 
 
