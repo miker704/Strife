@@ -543,7 +543,7 @@ class UserProfile extends React.Component {
 
   render () {
 
-    let default_profile_pic = this.props.currentUser.photo === undefined ? <img className="user-avatar-img" />  :  <img src={this.props.currentUser.photo} alt="pfp" />
+    let default_profile_pic = this.props.currentUser.photo === undefined ? <img className="user-avatar-img" /> : <img src={this.props.currentUser.photo} alt="pfp" />
     // let default_profile_pic = this.props.currentUser.photo === undefined ? "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png" : this.props.currentUser.photo;
     let scrambledEmail = this.state.reveal1 === "Reveal" ? this.scrambleEmail() : this.props.currentUser.email;
     let scramblePhone = this.state.reveal === "Reveal" ? this.scramblePhoneNumber() : this.props.currentUser.phone_number;
@@ -600,10 +600,10 @@ class UserProfile extends React.Component {
                     <li className="user-profile-item" ><div className="strife-nitro-lbl">
                       Nitro
                       <div className="strife-nitro-img">
-                                        <svg className='strife-nitro-clock1'
-                                               aria-hidden="true" role="img" width="12" height="12" viewBox="0 0 20 20">
-                                                <g fill="none" fillRule="evenodd">
-                                                    <path fill="currentColor" d="M9.99999 1.66675C5.39699 1.66675 1.66666 5.39708
+                        <svg className='strife-nitro-clock1'
+                          aria-hidden="true" role="img" width="12" height="12" viewBox="0 0 20 20">
+                          <g fill="none" fillRule="evenodd">
+                            <path fill="currentColor" d="M9.99999 1.66675C5.39699 1.66675 1.66666 5.39708
                                                      1.66666 10.0001C1.66666 14.6031 5.39699 18.3334 9.99999 18.3334C14.603 18.3334
                                                       18.3333 14.6031 18.3333 10.0001C18.3333 5.39708 14.603 1.66675 9.99999
                                                        1.66675ZM9.99999 4.66675C10.3685 4.66675 10.6667 4.96493 10.6667
@@ -612,8 +612,8 @@ class UserProfile extends React.Component {
                                                           10.6148C9.71333 10.6043 9.68989 10.5874 9.66646 10.5731C9.46724 10.4572
                                                            9.33312 10.2463 9.33312 10.0002V5.3335C9.33312 4.965 9.6315 4.66675
                                                             9.99999 4.66675Z">
-                                                            </path></g>
-                                          </svg>    
+                            </path></g>
+                        </svg>
                         1 month free</div>
                     </div></li>
                     <li className="user-profile-item">Server Boost</li>
@@ -646,9 +646,33 @@ class UserProfile extends React.Component {
                     <div className="user-settings-separator"></div>
                     <div className="user-profile-socials">
 
-                      <a href="https://twitter.com/discord/" target="_blank"><i className="fa-brands fa-twitter fa-lg"></i></a>
-                      <a href="https://www.instagram.com/discord/" target="_blank"> <i className="fa-brands fa-instagram fa-lg"></i></a>
-                      <a href="https://www.facebook.com/discord/" target="_blank"><i className="fa-brands fa-facebook-square fa-lg"></i></a>
+                      <a className ="upm-twitter" title="Twitter" href="https://twitter.com/discord/" target="_blank">
+                        {/* <i className="fa-brands fa-twitter fa-lg"></i> */}
+                        <svg className="upm-twitter-icon" width="20" height="16" viewBox="0 0 20 16" aria-hidden="true" role="img">
+                          <g fill="none" fillRule="evenodd">
+                            <path  fill="currentColor" d="M1,14.1538462 L1.95,14.1538462 C3.73125,14.1538462 5.5125,13.5384615
+                                      6.81875,12.4307692 C5.15625,12.4307692 3.73125,11.2 3.1375,9.6 C3.375,9.6 3.6125,9.72307692 3.85,9.72307692 
+                                      C4.20625,9.72307692 4.5625,9.72307692 4.91875,9.6 C3.1375,9.23076923 1.7125,7.63076923 1.7125,5.66153846 C2.1875,5.90769231 
+                                      2.78125,6.15384615 3.49375,6.15384615 C2.425,5.41538462 1.83125,4.18461538 1.83125,2.70769231 C1.83125,1.96923077 2.06875,1.23076923
+                                      2.30625,0.615384615 C4.20625,3.07692308 7.05625,4.67692308 10.38125,4.8 C10.2625,4.67692308 10.2625,4.30769231 10.2625,4.06153846
+                                      C10.2625,1.84615385 12.04375,0 14.18125,0 C15.25,0 16.31875,0.492307692 17.03125,1.23076923 C17.8625,1.10769231 18.8125,0.738461538 
+                                      19.525,0.246153846 C19.2875,1.23076923 18.575,1.96923077 17.8625,2.46153846 C18.575,2.46153846 19.2875,2.21538462 20,1.84615385 
+                                      C19.525,2.70769231 18.8125,3.32307692 18.1,3.93846154 L18.1,4.43076923 C18.1,9.84615385 14.18125,16 6.9375,16 
+                                      C4.68125,16 2.6625,15.3846154 1,14.1538462 Z">
+                            </path>
+                            <rect width="20" height="16"></rect>
+                          </g>
+                        </svg>
+
+                      </a>
+
+                      <a href="https://www.instagram.com/discord/" target="_blank">
+                        <i className="fa-brands fa-instagram fa-lg"></i>
+                      </a>
+
+                      <a href="https://www.facebook.com/discord/" target="_blank">
+                        <i className="fa-brands fa-facebook-square fa-lg"></i>
+                      </a>
 
                     </div>
                     <div className="version-number">
