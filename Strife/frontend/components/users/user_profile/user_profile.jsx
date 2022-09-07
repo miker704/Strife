@@ -666,13 +666,15 @@ class UserProfile extends React.Component {
 
                       </a>
 
+                      <a href="https://www.facebook.com/discord/" title="Facebook" target="_blank">
+                        <i className="fa-brands fa-facebook-square fa-lg"></i>
+                      </a>
+
+
                       <a href="https://www.instagram.com/discord/" target="_blank">
                         <i className="fa-brands fa-instagram fa-lg"></i>
                       </a>
 
-                      <a href="https://www.facebook.com/discord/" target="_blank">
-                        <i className="fa-brands fa-facebook-square fa-lg"></i>
-                      </a>
 
                     </div>
                     <div className="version-number">
