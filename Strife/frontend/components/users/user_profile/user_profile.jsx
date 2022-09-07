@@ -641,7 +641,7 @@ class UserProfile extends React.Component {
                     <div className="user-settings-separator"></div>
                     <li className="user-profile-item" onClick={() => this.handleLogout()}>
                       <span>Log Out</span>
-                      <i className="fa-solid fa-arrow-right"></i>
+                      {/* <i className="fa-solid fa-arrow-right"></i> */}
                     </li>
                     <div className="user-settings-separator"></div>
                     <div className="user-profile-socials">
