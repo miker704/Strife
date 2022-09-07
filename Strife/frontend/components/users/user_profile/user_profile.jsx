@@ -646,11 +646,11 @@ class UserProfile extends React.Component {
                     <div className="user-settings-separator"></div>
                     <div className="user-profile-socials">
 
-                      <a className ="upm-twitter" title="Twitter" href="https://twitter.com/discord/" target="_blank">
+                      <a className="upm-twitter" title="Twitter" href="https://twitter.com/discord/" target="_blank">
                         {/* <i className="fa-brands fa-twitter fa-lg"></i> */}
                         <svg className="upm-twitter-icon" width="20" height="16" viewBox="0 0 20 16" aria-hidden="true" role="img">
                           <g fill="none" fillRule="evenodd">
-                            <path  fill="currentColor" d="M1,14.1538462 L1.95,14.1538462 C3.73125,14.1538462 5.5125,13.5384615
+                            <path fill="currentColor" d="M1,14.1538462 L1.95,14.1538462 C3.73125,14.1538462 5.5125,13.5384615
                                       6.81875,12.4307692 C5.15625,12.4307692 3.73125,11.2 3.1375,9.6 C3.375,9.6 3.6125,9.72307692 3.85,9.72307692 
                                       C4.20625,9.72307692 4.5625,9.72307692 4.91875,9.6 C3.1375,9.23076923 1.7125,7.63076923 1.7125,5.66153846 C2.1875,5.90769231 
                                       2.78125,6.15384615 3.49375,6.15384615 C2.425,5.41538462 1.83125,4.18461538 1.83125,2.70769231 C1.83125,1.96923077 2.06875,1.23076923
@@ -666,12 +666,26 @@ class UserProfile extends React.Component {
 
                       </a>
 
-                      <a className ="upm-facebook" href="https://www.facebook.com/discord/" title="Facebook" target="_blank">
+                      <a className="upm-facebook" href="https://www.facebook.com/discord/" title="Facebook" target="_blank">
                         {/* <i className="fa-brands fa-facebook-square fa-lg"></i> */}
+                        <svg className="upm-facebook-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" role="img">
+                          <g fill="none" fillRule="evenodd">
+                            <path fill="currentColor" d="M0,1.99406028 C0,0.892771196 0.894513756,0 1.99406028,0 L14.0059397,0 C15.1072288,0 16,0.894513756 16,1.99406028 
+                                  L16,14.0059397 C16,15.1072288 15.1054862,16 14.0059397,16 L1.99406028,16 C0.892771196,16 0,15.1054862 0,14.0059397 L0,1.99406028 Z M8.23182341,16 L10.3991764,16 
+                                  L10.3991764,9.93141161 L12.5663127,9.93141161 L13,7.76405862 L10.3991764,7.76405862 L10.3246195,6.3468265 C10.3246195,5.66107601 10.5049432,5.17342158 11.4698488,5.17342158 
+                                  L12.974642,5.17385505 L12.974642,3.12202197 C12.7618079,3.09319618 12.3142495,3 11.4644304,3 C9.69001851,3 8.18500859,4.20353112 
+                                  8.18500859,6.23043964 L8.23182341,7.76405862 L6.06425368,7.76405862 L6.06425368,9.93141161 L8.23182341,9.93141161 L8.23182341,16 Z">
+                            </path>
+                            <rect width="16" height="16"></rect>
+                          </g>
+                        </svg>
+
+
+
                       </a>
 
 
-                      <a className ="upm-instagram" href="https://www.instagram.com/discord/" title = "Instagram" target="_blank">
+                      <a className="upm-instagram" href="https://www.instagram.com/discord/" title="Instagram" target="_blank">
                         {/* <i className="fa-brands fa-instagram fa-lg"></i> */}
                       </a>
 
