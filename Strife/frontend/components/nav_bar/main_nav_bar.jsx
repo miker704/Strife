@@ -10,7 +10,7 @@ export default ({ currentUser, logoutUser }) => {
          <>
         <div className="mainhome-navbar-icons">
           <div className="homenavbar-icons home-nav-friends-icon">
-            <i className="fas fa-user-friends friend-navbar-icon"></i>Friends
+            {/* <i class Name="fas fa-user-friends friend-navbar-icon"></i>Friends */}
           </div>
           <div className="home-nav-br"></div>
           <div className="homenavbar-icons">Online</div>
@@ -20,10 +20,10 @@ export default ({ currentUser, logoutUser }) => {
           <div className="homenavbar-icons add-a-friend-button">Add Friend</div>
         </div>
         <div className="friends-navbar-inbox">
-          <i className="fas fa-comments nav-icon"></i>
+          {/* <i class Name="fas fa-comments nav-icon"></i> */}
           <div className="home-nav-br"></div>
-          <i className="fas fa-inbox nav-icon"></i>
-          <i className="fas fa-question-circle nav-icon"></i>
+          {/* <i class Name="fas fa-inbox nav-icon"></i> */}
+          {/* <i class Name="fas fa-question-circle nav-icon"></i> */}
         </div>
       </>
             <p>hello, {currentUser.username}</p>
