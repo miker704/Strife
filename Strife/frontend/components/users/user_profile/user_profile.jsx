@@ -593,6 +593,7 @@ class UserProfile extends React.Component {
                     <li className="user-profile-item">Profiles</li>
                     <li className="user-profile-item">Privacy & Safety</li>
                     <li className="user-profile-item">Authorized Apps</li>
+                    <li className="user-profile-item">Devices</li>
                     <li className="user-profile-item">Connections</li>
                     <div className="user-settings-separator"></div>
                     <li><h3 className="user-profile-header3">Billing Settings</h3></li>
