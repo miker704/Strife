@@ -616,6 +616,21 @@
     }
 }
 
+.upm-twitter-icon:hover,
+.upm-facebook-icon:hover,
+.upm-instagram-icon:hover,
+.upm-logout-icon:hover {
+    forced-color-adjust: none;
+    cursor: pointer;
+    color: #dcddde;
+
+    .path {
+        forced-color-adjust: none;
+        transition: color .15s ease;
+        box-sizing: border-box;
+    }
+}
+
 
 
 .version-number {
