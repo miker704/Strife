@@ -81,7 +81,6 @@ class ServerNavBar extends React.Component {
                     <li key="home-Bubbles" className="server-bubbles">
                         <div className="server-nav-bar-a">
                             <Link className={goHome} to={`/channels/@me`}>
-                                {/* <i className="fa-brands fa-discord home-Bubbles" /> */}
 
                                 <svg className="home-Bubbles" aria-hidden="true" role="img" width="28" height="20" viewBox="0 0 28 20">
                                     <path fill="currentColor" d="M23.0212 1.67671C21.3107 0.879656 19.5079 0.318797 17.6584 0C17.4062 
