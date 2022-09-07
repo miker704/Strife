@@ -666,7 +666,7 @@ class UserProfile extends React.Component {
 
                       </a>
 
-                      <a href="https://www.facebook.com/discord/" title="Facebook" target="_blank">
+                      <a className ="upm-facebook" href="https://www.facebook.com/discord/" title="Facebook" target="_blank">
                         <i className="fa-brands fa-facebook-square fa-lg"></i>
                       </a>
 
