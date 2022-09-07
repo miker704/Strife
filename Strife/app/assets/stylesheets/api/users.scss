@@ -569,7 +569,33 @@
     padding-left: 10px;
     padding-top: 5px;
 
+    padding: 8px 10px;
+    font-size: 12px;
+    line-height: 16px;
 }
+
+.upm-twitter{
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 0 2px;
+    margin-right: 8px;
+    color: hsl(216, 3.7%, 73.5%);
+    cursor: pointer;
+    outline: 0;
+}
+.upm-twitter-icon{
+    forced-color-adjust: none;
+    cursor: pointer;
+    color: #B9BBBE;
+    .path{
+        forced-color-adjust: none;
+        transition: color .15s ease;
+        box-sizing: border-box;
+    }
+}
+
+
 
 .version-number {
     color: #A3A6AA;
