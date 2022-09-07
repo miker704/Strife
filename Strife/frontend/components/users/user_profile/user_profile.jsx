@@ -642,6 +642,11 @@ class UserProfile extends React.Component {
                     <li className="user-profile-item" onClick={() => this.handleLogout()}>
                       <span>Log Out</span>
                       {/* <i className="fa-solid fa-arrow-right"></i> */}
+                      <svg className = "upm-logout-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M18 2H7C5.897 2 5 2.898 5 4V11H12.59L10.293 8.708L11.706 7.292L16.414 11.991L11.708 16.706L10.292 15.294L12.582 
+                                13H5V20C5 21.103 5.897 22 7 22H18C19.103 22 20 21.103 20 20V4C20 2.898 19.103 2 18 2Z">
+                        </path>
+                      </svg>
                     </li>
                     <div className="user-settings-separator"></div>
                     <div className="user-profile-socials">
@@ -686,7 +691,7 @@ class UserProfile extends React.Component {
                       <a className="upm-instagram" href="https://www.instagram.com/discord/" title="Instagram" target="_blank">
                         {/* <i className="fa-brands fa-instagram fa-lg"></i> */}
 
-                        <svg className = "upm-instagram-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" role="img">
+                        <svg className="upm-instagram-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" role="img">
                           <g fill="none" fillRule="evenodd">
                             <path fill="currentColor"
                               d="M4.70012698,0.0531746 C3.84888888,0.092 3.2675238,0.22720635 2.7588254,0.42492063 C2.23292063,0.62926983 1.78692063,0.90273016 
