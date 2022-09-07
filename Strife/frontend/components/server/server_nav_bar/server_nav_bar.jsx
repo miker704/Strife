@@ -109,7 +109,6 @@ class ServerNavBar extends React.Component {
                     <li className="server-bubbles" key="serverSearch">
                         <div className="server-nav-bar-a">
                             <button id="search-servers" onClick={() => this.props.openModal('serverSearch')}>
-                                {/* <i className="fa-solid fa-compass" /> */}
                                 <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M12 10.9C11.39 10.9 10.9 11.39 10.9 12C10.9 12.61 11.39 13.1 12 
                                                                 13.1C12.61 13.1 13.1 12.61 13.1 12C13.1 11.39 12.61 10.9 12 10.9ZM12 
