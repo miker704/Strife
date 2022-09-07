@@ -10,12 +10,12 @@ class ServerNavBar extends React.Component {
 
     componentDidMount () {
         this.props.fetchUserServers(this.props.currentUser.id);
-      
+
     }
 
 
     renderModal (modalName) {
-       
+
         this.props.openModal(modalName);
     }
 
@@ -27,15 +27,15 @@ class ServerNavBar extends React.Component {
 
         return serverNameAcronym;
     }
-    
+
     render () {
-        
+
         let goHome = this.props.serverId === "@me" ? "selected-Server" : "unselected-Server";
-        console.log("server currentUser props: ",this.props.currentUser);
-        console.log("server navbar props: ",this.props);
-        console.log("server navbar serverid: ",this.props.serverId);
-        
-        console.log("server navbar gohome: ",goHome);
+        console.log("server currentUser props: ", this.props.currentUser);
+        console.log("server navbar props: ", this.props);
+        console.log("server navbar serverid: ", this.props.serverId);
+
+        console.log("server navbar gohome: ", goHome);
 
         console.log(this.props.servers);
         console.log(this.props.serverId);
@@ -43,11 +43,13 @@ class ServerNavBar extends React.Component {
         let userServer = this.props.servers.map((server, serverIndex) => {
             let serverNavBarClassTag = this.props.serverId === server.id.toString() ? "selected-Server" : "unselected-Server";
             return (
-                <li className="server-bubbles" key={serverIndex}>
+                // <li className="server-bubbles" key={serverIndex}>
+                // <li className="server-bubbles" key={serverIndex}>
+                <li className="server-bubbles" key={server.id}>
                     <div className="server-nav-bar-a">
                         <Link to={`/channels/${server.id}/${server.general_channel_id}`}
-                        
-                            onClick={() => this.props.fetchServer(server.id)} 
+
+                            onClick={() => this.props.fetchServer(server.id)}
                             className={serverNavBarClassTag}>
                             {/* <p className="server-name-initials">{server.server_name.charAt(0)}</p> */}
                             <p className="server-name-initials">{this.splitServerName(server.server_name, server.server_icon)}</p>
@@ -60,7 +62,7 @@ class ServerNavBar extends React.Component {
                         {/* {"{ server icon : "} {server.server_icon} {"} "} */}
                         {/* {"{ server public status : "} {server.public} {"} "} */}
                         {/* {"{ server invite code : "} {server.invite_code} {"}} "} */}
-     
+
                         {/* <p>{`/channels/${server.id}/${server.general_channel_id}`}</p> */}
                         {/* </p> */}
 
@@ -95,7 +97,12 @@ class ServerNavBar extends React.Component {
                             {/* <button id="create-server" onClick={() => this.props.openModal('createServerForm')}> */}
                             <button id="create-server" onClick={() => this.renderModal('createServerForm')}>
 
-                                <i className="fa-solid fa-plus" />
+                                {/* <i className="fa-solid fa-plus" /> */}
+                                <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M20 11.1111H12.8889V4H11.1111V11.1111H4V12.8889H11.1111V20H12.8889V12.8889H20V11.1111Z">
+                                    </path>
+                                </svg>
+
                             </button>
                         </div>
                         <div className="server-nav-bar-tool-kit">Add a Server</div>
@@ -110,9 +117,9 @@ class ServerNavBar extends React.Component {
                     </li>
 
                     {/* <li> */}
-                        <div className="bottom-server-bubble-seperator-container">
-                            <div className="bottom-server-bubble-seperator"></div>
-                        </div>
+                    <div className="bottom-server-bubble-seperator-container">
+                        <div className="bottom-server-bubble-seperator"></div>
+                    </div>
                     {/* </li> */}
 
 
@@ -123,7 +130,7 @@ class ServerNavBar extends React.Component {
 
                         <div className="server-nav-bar-a">
                             <button id="download-apps" onClick={() => this.props.openModal('downloadApps')} >
-                                 {/* onClick={() => this.props.openModal('downloadApps')} */}
+                                {/* onClick={() => this.props.openModal('downloadApps')} */}
                                 <svg fill="currentColor" aria-hidden="false" width="24" height="24" viewBox="0 0 24 24">
                                     <path d="M16.293 9.293L17.707 10.707L12 16.414L6.29297 10.707L7.70697 9.293L11 
                                          12.586V2H13V12.586L16.293 9.293ZM18 20V18H20V20C20 21.102 19.104 22 18 22H6C4.896 22 4 21.102 4 
