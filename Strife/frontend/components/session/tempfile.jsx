@@ -380,7 +380,6 @@ return (
         <div className="dm-list-header">
             <h4>DIRECT MESSAGES</h4>
             <div className="create-channel-div" onClick={() => this.toggleSearch()}>
-                <i className="fa-solid fa-plus" onClick={() => this.props.openModal("userSearch")} />
                 <div className="dm-tool-tip">
                     {/* <span>Create DM</span> */}
                     Create DM
