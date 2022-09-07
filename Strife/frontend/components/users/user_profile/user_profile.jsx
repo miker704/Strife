@@ -671,7 +671,7 @@ class UserProfile extends React.Component {
                       </a>
 
 
-                      <a href="https://www.instagram.com/discord/" target="_blank">
+                      <a href="https://www.instagram.com/discord/" title = "Instagram" target="_blank">
                         <i className="fa-brands fa-instagram fa-lg"></i>
                       </a>
 
