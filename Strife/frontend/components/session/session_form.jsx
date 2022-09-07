@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 class SessionForm extends React.Component {
 
-    constructor(props) {
+    constructor (props) {
         super(props);
         this.state = this.props.formType === 'Sign In' ? { email: "", password: "" } : { email: "", username: "", password: "", birthday: "", month: "", day: "", year: "" };
         this.handleInput = this.handleInput.bind(this);
@@ -20,12 +20,12 @@ class SessionForm extends React.Component {
         this.birthdayErrors = this.birthdayErrors.bind(this);
         this.loginAsDemoUser1 = this.loginAsDemoUser1.bind(this);
         this.loginAsDemoUser2 = this.loginAsDemoUser2.bind(this);
-      
+
 
     }
-   
 
-    handleSubmit(e) {
+
+    handleSubmit (e) {
         e.preventDefault();
         // this.props.removeErrors();
         let submissionState = {};
@@ -46,20 +46,20 @@ class SessionForm extends React.Component {
         }
 
         this.props.processForm(submissionState).then(() => {
-                // setTimeout(() => {
-                    this.props.history.push("/loading/");
-                // }, 10)
+            // setTimeout(() => {
+            this.props.history.push("/loading/");
+            // }, 10)
         });
     }
 
-    handleInput(field) {
+    handleInput (field) {
         return (e) => {
             this.setState({ [field]: e.currentTarget.value }, () => { this.setState({ birthday: this.state.month + "/" + this.state.day + "/" + this.state.year }) })
         }
     }
 
 
-    errors() {
+    errors () {
 
         return (
             <ul>
@@ -70,12 +70,12 @@ class SessionForm extends React.Component {
         )
     }
 
-    componentWillUnmount() {
+    componentWillUnmount () {
         this.props.removeSessionErrors();
-        
+
     }
 
-    loginAsDemoUser1() {
+    loginAsDemoUser1 () {
         let demoUser = {
             email: 'DemoUser1@strife.com',
             password: 'qwerty1234'
@@ -84,13 +84,14 @@ class SessionForm extends React.Component {
         this.setState({ password: demoUser.password })
         this.props.processForm(demoUser).then(() => {
             // setTimeout(() => {
-                this.props.history.push("/loading/");
+            this.props.history.push("/loading/");
             // }, 10)
-    });
+        });
         // this.props.processForm(this.state)
+
     }
 
-    loginAsDemoUser2() {
+    loginAsDemoUser2 () {
         let demoUser = {
             email: 'DemoUser2@strife.com',
             password: 'QWERTY1234'
@@ -100,7 +101,7 @@ class SessionForm extends React.Component {
     }
 
 
-    userNameErrors() {
+    userNameErrors () {
 
         let USERNAME_ERRORS = ['Username is too short (minimum is 2 characters)', 'Username is too long (maximum is 32 characters)', 'Username Must be between 2 and 32 in length', "Username can't be blank"]
         if (this.props.formType === "Sign Up") {
@@ -119,7 +120,7 @@ class SessionForm extends React.Component {
         return "";
     }
 
-    emailErrors() {
+    emailErrors () {
         const EMAIL_ERRORS = ['Email Not well formed email address', "Must be 320 or fewer in Length", "Email can't be blank", "Email has already been taken", "Login or password is invalid"];
 
         if (this.props.formType === "Sign In") {
@@ -148,7 +149,7 @@ class SessionForm extends React.Component {
         return "";
     }
 
-    passwordErrors() {
+    passwordErrors () {
         const PASSWORD_ERRORS = ['Password is too long (maximum is 72 characters)', "Password is too short (minimum is 8 characters)", "Password can't be blank", 'Login or password is invalid'];
         if (this.props.formType === "Sign In") {
             if (this.props.errors.includes('Login or password is invalid')) {
@@ -171,7 +172,7 @@ class SessionForm extends React.Component {
         return "";
     }
 
-    birthdayErrors() {
+    birthdayErrors () {
         const BIRTHDAY_ERRORS = ["Birthday can't be blank"]
 
         if (this.props.formType === "Sign Up") {
@@ -185,7 +186,7 @@ class SessionForm extends React.Component {
     }
 
 
-    render() {
+    render () {
 
         //assign variables to change classname tags depending if an error has occcured or not
 
@@ -263,22 +264,22 @@ class SessionForm extends React.Component {
 
         const demoLogins = this.props.formType === "Sign Up" ? ("") : (
 
-                <div className="demologins">
-                
-             
-                <img className="wumpuslogin"  />
+            <div className="demologins">
 
-                        {signInAsDemoUser1}
-                    <div className="demologin-text">
-                        <h2>Login with a Demo account</h2>
-                        <p> and take a tour of Strife  </p>
-                    </div>
 
-                    {/* {signInAsDemoUser1} */}
+                <img className="wumpuslogin" />
 
-                 
-
+                {signInAsDemoUser1}
+                <div className="demologin-text">
+                    <h2>Login with a Demo account</h2>
+                    <p> and take a tour of Strife  </p>
                 </div>
+
+                {/* {signInAsDemoUser1} */}
+
+
+
+            </div>
 
 
         )
@@ -391,7 +392,7 @@ class SessionForm extends React.Component {
                                 </label>
                                 <input id="password" type="password" className={passwordErrorTag} onChange={this.handleInput('password')} /> */}
 
-                                {forgotPassword}
+                            {forgotPassword}
                             {/* </div> */}
 
 
@@ -409,7 +410,7 @@ class SessionForm extends React.Component {
                             </div>
                         </form>
                     </div>
-                 
+
                     {demoLogins}
                 </div>
             </div>
