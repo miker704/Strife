@@ -790,9 +790,26 @@ h6 .link {
     line-height: 24px;
 }
 
-.foot-social-flex {
+.footer-social-flex {
     margin-top: 24px;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
+
+}
+
+.footer-social-flex:hover {
+    color: hsl(210, 2.9%, 86.7%);
+
+    svg {
+        color: #dcddde;
+
+    }
+}
+
+
+
+.footer-social-link {
+    text-decoration: none;
+
 }
