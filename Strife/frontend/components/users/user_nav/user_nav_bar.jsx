@@ -101,22 +101,15 @@ class UserNavBar extends React.Component {
       <div className="user-nav-bar">
         <div id="username">
 
-          {/* <div className={`user-icon color-${this.props.currentUser.color_tag}`}>
-            <i className="fa-brands fa-discord" />
-          </div> */}
-          {/* <img className="user-avatar-img" /> */}
-
-          {/* <img src={default_profile_pic} alt="pfp" /> */}
-
-          <div 
-            className={`${this.props.currentUser.photo === undefined ? 
-            `user-pfp-svg-render color-${this.props.currentUser.color_tag}`:
-            `user-PFP`
-            }`}
+          <div
+            className={`${this.props.currentUser.photo === undefined ?
+              `user-pfp-svg-render color-${this.props.currentUser.color_tag}` :
+              `user-PFP`
+              }`}
           >
 
             <img src={rendered_User_PFP} alt="pfp" />
-         
+
           </div>
 
 
