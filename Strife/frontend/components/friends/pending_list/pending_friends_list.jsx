@@ -1,5 +1,6 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
+import default_User_PFP from "../../../../app/assets/images/discord_PFP.svg";
 
 class PendingFriendList extends React.Component {
     constructor (props) {
@@ -83,6 +84,8 @@ class PendingFriendList extends React.Component {
         let outgoing_requests = this.props.outgoing;
         let incoming_requests = this.props.incoming;
         let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
+        let rendered_User_PFP = default_User_PFP;
+
 
         if (outgoing_requests.length + incoming_requests.length > 0) {
             return (
@@ -138,8 +141,10 @@ class PendingFriendList extends React.Component {
 
                                                 <div className="friend-index-item-wrapper-inner">
                                                     <div className="friend-account-info-wrapper-super">
-                                                        <div className="friend-info">
-                                                            <img src={`${friend.photo === undefined ? default_Photo : friend.photo}`} alt="pfp" />
+                                                        
+                                                        <div className={`${friend.photo === undefined ?
+                                                            `user-pfp-svg-render color-${friend.color_tag}` : `friend-info`}`}>
+                                                            <img src={`${friend.photo === undefined ? rendered_User_PFP : friend.photo}`} alt="pfp" />
                                                         </div>
                                                         <div className="friend-account-info-wrapper">
                                                             <div className="friend-account-info">
@@ -169,8 +174,7 @@ class PendingFriendList extends React.Component {
                                                 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
                                                             </path>
                                                         </svg>
-                                                        {/* <div className="pending-request-actions-tool-tip">Accept</div> */}
-                                                        {/* <div className="pending-request-actions-tool-tip-triangle"></div> */}
+                                                       
                                                         <ReactTooltip className="accept-message-tool-tip" textColor="#B9BBBE"
                                                             backgroundColor="#191919" id="accept-friend-request" place="top" effect="solid">
                                                             Accept
@@ -184,8 +188,7 @@ class PendingFriendList extends React.Component {
                                                         18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z">
                                                             </path>
                                                         </svg>
-                                                        {/* <div className="pending-request-actions-tool-tip">Ignore</div> */}
-                                                        {/* <div className="pending-request-actions-tool-tip-triangle"></div> */}
+                                                        
                                                         <ReactTooltip className="ignore-message-tool-tip" textColor="#B9BBBE"
                                                             backgroundColor="#191919" id="ignore-friend-request" place="top" effect="solid">
                                                             Ignore
@@ -204,9 +207,12 @@ class PendingFriendList extends React.Component {
 
                                                 <div className="friend-index-item-wrapper-inner">
                                                     <div className="friend-account-info-wrapper-super">
-                                                        <div className="friend-info">
-                                                            <img src={`${friend.photo === undefined ? default_Photo : friend.photo}`} alt="pfp" />
+
+                                                        <div className={`${friend.photo === undefined ?
+                                                            `user-pfp-svg-render color-${friend.color_tag}` : `friend-info`}`}>
+                                                            <img src={`${friend.photo === undefined ? rendered_User_PFP : friend.photo}`} alt="pfp" />
                                                         </div>
+
                                                         <div className="friend-account-info-wrapper">
                                                             <div className="friend-account-info">
                                                                 <div className="friend-tag">
@@ -231,12 +237,10 @@ class PendingFriendList extends React.Component {
                                                         18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z">
                                                             </path>
                                                         </svg>
-                                                        {/* <div className="pending-request-actions-tool-tip">Cancel</div> */}
                                                         <ReactTooltip className="cancel-message-tool-tip" textColor="#B9BBBE"
                                                             backgroundColor="#191919" id="cancel-friend-request" place="top" effect="solid">
                                                             Cancel
                                                         </ReactTooltip>
-                                                        {/* <div className="pending-request-actions-tool-tip-triangle"></div> */}
                                                     </div>
                                                 </div>
 
