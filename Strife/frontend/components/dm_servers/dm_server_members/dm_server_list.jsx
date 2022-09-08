@@ -106,10 +106,7 @@ const DmServerMemberList = ({
                                     <div className="dm-member-layout">
                                         <div className="dm-member-avatar">
                                             <div className="dm-member-avatar-inner-wrapper">
-                                                {/* <div className="dm-member-avatar-img">
-                                                    <img src={`${dmMember.photo === undefined ? default_Photo : dmMember.photo}`} alt="dsmPFP" />
-                                                </div> */}
-
+                                            
                                                 <div className={`${dmMember.photo === undefined ?
                                                     `user-pfp-svg-render color-${dmMember.color_tag}` :
                                                     `dm-member-avatar-img`}`}>
