@@ -10,6 +10,7 @@ import DisableUserAccountContainer from "../user_disable_account_form/user_disab
 import DeleteUserAccountContainer from "../user_delete_account_form/user_delete_account_container.js"
 import default_PFP from "/app/assets/images/defaultProfilePic.png";
 
+
 class UserProfile extends React.Component {
 
   constructor (props) {
@@ -543,7 +544,10 @@ class UserProfile extends React.Component {
 
   render () {
 
-    let default_profile_pic = this.props.currentUser.photo === undefined ? <img className="user-avatar-img" /> : <img src={this.props.currentUser.photo} alt="pfp" />
+    let default_profile_pic = this.props.currentUser.photo === undefined ?
+      <div className={`user-avatar-img-svg-render color-${this.props.currentUser.color_tag}`}>
+        <img className="user-avatar-img-svg" />
+      </div> : <img src={this.props.currentUser.photo} alt="pfp" />
     // let default_profile_pic = this.props.currentUser.photo === undefined ? "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png" : this.props.currentUser.photo;
     let scrambledEmail = this.state.reveal1 === "Reveal" ? this.scrambleEmail() : this.props.currentUser.email;
     let scramblePhone = this.state.reveal === "Reveal" ? this.scramblePhoneNumber() : this.props.currentUser.phone_number;
@@ -641,7 +645,7 @@ class UserProfile extends React.Component {
                     <div className="user-settings-separator"></div>
                     <li className="user-profile-item" onClick={() => this.handleLogout()}>
                       <div className="user-profile-item-logout-sec">
-                         Log Out
+                        Log Out
                         <svg className="upm-logout-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
                           <path fill="currentColor" d="M18 2H7C5.897 2 5 2.898 5 4V11H12.59L10.293 8.708L11.706 7.292L16.414 11.991L11.708 16.706L10.292 15.294L12.582 
                                 13H5V20C5 21.103 5.897 22 7 22H18C19.103 22 20 21.103 20 20V4C20 2.898 19.103 2 18 2Z">
