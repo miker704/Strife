@@ -134,8 +134,13 @@ class BlockedList extends React.Component {
 
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
-                                                    <div className="friend-info">
+                                                    {/* <div className="friend-info">
                                                         <img src={`${blockedUser.photo === undefined ? default_Photo : blockedUser.photo}`} alt="pfp" />
+                                                    </div> */}
+
+                                                    <div className={`${friend.photo === undefined ? 
+                                                    `user-pfp-svg-render color-${friend.color_tag}`:`friend-info`}`}>
+                                                        <img src={`${friend.photo === undefined ? rendered_User_PFP : friend.photo}`} alt="pfp" />
                                                     </div>
                                                     <div className="friend-account-info-wrapper">
                                                         <div className="friend-account-info">
