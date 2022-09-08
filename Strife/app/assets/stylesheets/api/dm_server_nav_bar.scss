@@ -1,5 +1,3 @@
-
-
 .dm-server-nav-bar2 {
     top: 0px;
     left: 0px;
@@ -103,6 +101,12 @@
     cursor: pointer;
     transform: translate(-8px, 0px);
     z-index: 20;
+}
+
+.create-channel-div:hover {
+    svg {
+        color: hsl(210, 2.9%, 86.7%);
+    }
 }
 
 .create-channel-div:hover .dm-tool-tip {
@@ -391,20 +395,20 @@
     visibility: visible;
 }
 
-.dm-add-button{
+.dm-add-button {
     flex: 0;
     width: 16px;
     height: 16px;
     margin-left: 0;
     margin-right: 2px;
     -webkit-box-flex: 0;
-    color : hsl(216,3.7%,73.5%);
+    color: hsl(216, 3.7%, 73.5%);
     forced-color-adjust: none;
     display: block;
     -webkit-app-region: no-drag;
     cursor: pointer;
 }
+
 .dm-add-button:hover {
     color: hsl(210, 2.9%, 86.7%);
 }
-
