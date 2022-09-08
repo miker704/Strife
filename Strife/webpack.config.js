@@ -5,7 +5,7 @@ module.exports = {
   entry: './frontend/strife.jsx',
 
   output: {
-    path: path.resolve(__dirname, 'app', 'assets', 'javascripts','images'),
+    path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
     filename: './bundle.js',
   },
   module: {
