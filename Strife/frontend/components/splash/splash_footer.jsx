@@ -98,13 +98,6 @@ class SplashFooter extends React.Component {
 
             </div>
 
-
-            {/* <i className="fa-brands fa-twitter fa-lg"></i>{"    "}
-            <i className="fa-brands fa-instagram fa-lg"></i>{"    "}
-            <i className="fa-brands fa-facebook-square fa-lg"></i>{"    "}
-            <i className="fa-brands fa-youtube fa-lg"></i> */}
-
-
           </div>
           <h6> <a className="link" href="https://www.linkedin.com/in/michael-ramoutar/"
             target="_blank"> LinkedIn  </a></h6>
