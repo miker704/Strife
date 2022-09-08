@@ -75,6 +75,7 @@ class BlockedList extends React.Component {
 
         let allBlockedUsers = this.props.blockedUsers;
         let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
+        let rendered_User_PFP = default_User_PFP;
 
 
         if (allBlockedUsers.length > 0) {
