@@ -708,6 +708,7 @@ a.bwd:hover {
 
     font-family: "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     line-height: 18px;
+    display: flex;
 
 }
 
@@ -715,6 +716,7 @@ a.bwd:hover {
     content: image_url("discord-flag.png");
     width: 16px;
     height: 16px;
+    padding-right: 10px;
 }
 
 #footer-title h4 {
@@ -791,50 +793,35 @@ h6 .link {
 }
 
 .footer-social-flex {
-    margin-top: 24px;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
+    color: #FFFFFF;
+
 
 }
-
-.footer-social-flex:hover {
-    color: hsl(210, 2.9%, 86.7%);
-
-    svg {
-        color: #dcddde;
-
-    }
-}
-
-
-.footer-twitter-icon, .footer-youtube-icon, .footer-facebook-icon, .footer-instagram-icon{
-    forced-color-adjust: none;
-    cursor: pointer;
-    color: #B9BBBE;
-    display: block;
-    .path {
-        forced-color-adjust: none;
-        transition: color .15s ease;
-        box-sizing: border-box;
-    }
-}
-
-.footer-twitter-icon:hover, .footer-youtube-icon:hover, .footer-facebook-icon:hover, .footer-instagram-icon:hover{
-    forced-color-adjust: none;
-    cursor: pointer;
-    color: #dcddde;
-
-    .path {
-        forced-color-adjust: none;
-        transition: color .15s ease;
-        box-sizing: border-box;
-    }
-}
-
 
 
 .footer-social-link {
     text-decoration: none;
 
+}
+
+
+
+.footer-twitter-icon,
+.footer-youtube-icon,
+.footer-facebook-icon,
+.footer-instagram-icon {
+    forced-color-adjust: none;
+    cursor: pointer;
+    color: #FFFFFF;
+    display: block;
+    padding: 2px;
+
+    .path {
+        forced-color-adjust: none;
+        transition: color .15s ease;
+        box-sizing: border-box;
+    }
 }
