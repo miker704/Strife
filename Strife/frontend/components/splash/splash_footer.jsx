@@ -23,7 +23,7 @@ class SplashFooter extends React.Component {
             <div className="foot-social-flex">
 
               <a className="footer-social-link" href="https://twitter.com/discord" target="_blank">
-                <svg width="24" height="24" viewBox="0 0 24 24" class="socialIcon-38NB2e">
+                <svg width="24" height="24" viewBox="0 0 24 24" className="footer-twitter-icon">
                   <path fill="currentColor" d="M8.2177 20.2976C15.798 20.2976 19.9327 14.0329 19.9327 8.58261V8.05011C20.7362 7.46091 21.435 
                 6.74089 22 5.92012C21.2567 6.26235 20.4637 6.48437 19.6507 6.57791C20.5139 6.06164 21.1597 5.24885 21.4675 4.2913C20.6598
                  4.76183 19.7822 5.10021 18.8677 5.29365C17.3053 3.64491 14.7069 3.56109 13.0415 5.10571C11.9701 6.10222 
