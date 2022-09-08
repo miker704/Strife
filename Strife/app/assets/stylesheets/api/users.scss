@@ -897,6 +897,24 @@
 
 }
 
+.user-avatar-img-svg {
+    content: image_url("discord_PFP.svg");
+    height: 40px;
+    width: 80px;
+   
+
+}
+
+.user-avatar-img-svg-render{
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+
 .account-card-username-div {
     forced-color-adjust: none;
     display: flex;
