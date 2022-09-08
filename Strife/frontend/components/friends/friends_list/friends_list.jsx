@@ -19,6 +19,7 @@ const FriendShipIndex = (props) => {
     const [popupTop, setPopupTop] = useState(0);
     let allFriends = props.friends;
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
+    let rendered_User_PFP = default_User_PFP;
 
 
     useEffect(() => {
