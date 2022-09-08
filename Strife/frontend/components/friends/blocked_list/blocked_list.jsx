@@ -1,5 +1,6 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
+import default_User_PFP from "../../../../app/assets/images/discord_PFP.svg";
 
 
 class BlockedList extends React.Component {
