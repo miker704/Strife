@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import React from "react";
 import ReactTooltip from "react-tooltip";
 import UserOptionsModalContainer from '../../friends/user_options/user_options_container.js';
+import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
 
 const DmServerMemberList = ({
     dmServerId,
@@ -24,7 +25,7 @@ const DmServerMemberList = ({
     let dmServerMemberList = Object.values(dmServerMembers);
     const DmServerOwner = dmServer.owner_id;
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
-
+    let default_DMSM_PFP = user_Default_PFP;
     // useEffect(() => {
     //     console.log("useffect called from dmservers list ");
     //     requestFriendships();
@@ -44,13 +45,13 @@ const DmServerMemberList = ({
     // }, []);
 
     // useEffect(() => {
-    
+
     //     if (dmServer?.id) {
     //         console.log("useffect called in dmserver list")
     //         fetchDmServer(dmServerId);
     //     }
-    
-      
+
+
     // }, [dmServer?.id ])
 
 
@@ -82,7 +83,7 @@ const DmServerMemberList = ({
                     user={currentUser} member={selectedMember}
                     top={popupTop} setShowPopup={setShowPopup}
                     DmServerOwner={DmServerOwner} DmServerId={dmServer.id}
-                   
+
                 />
 
             }
@@ -108,6 +109,14 @@ const DmServerMemberList = ({
                                                 <div className="dm-member-avatar-img">
                                                     <img src={`${dmMember.photo === undefined ? default_Photo : dmMember.photo}`} alt="dsmPFP" />
                                                 </div>
+
+                                                <div className={`${dmMember.photo === undefined ?
+                                                    `user-pfp-svg-render color ${dmMember.color_tag}` :
+                                                    `dm-member-avatar-img`}`}>
+                                                    <img src={`${dmMember.photo === undefined ? default_DMSM_PFP : dmMember.photo}`} alt="dsmPFP" />
+                                                </div>
+
+
                                             </div>
                                         </div>
                                         <div className="dm-member-info-wrapper">
