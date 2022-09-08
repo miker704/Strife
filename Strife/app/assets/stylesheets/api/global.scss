@@ -433,3 +433,23 @@ label.field-error {
   border-radius: 50%;
   scale: 0.65;
 }
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -.125em;
+}
+
+
+
+.user-PFP {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.user-PFP>img {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
