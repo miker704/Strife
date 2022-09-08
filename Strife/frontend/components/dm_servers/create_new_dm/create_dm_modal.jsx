@@ -42,7 +42,7 @@ const CreateDmModal = ({
                 removeFriendshipErrors();
             }
             if (dmServerErrors.length > 0) {
-                
+
                 removeDmServerErrors();
             }
         }
@@ -176,6 +176,12 @@ const CreateDmModal = ({
                                                     <div className="create-dm-avatar-info">
                                                         <img src={`${friend.photo === undefined ? default_Photo : friend.photo}`} alt="pfp" />
                                                     </div>
+                                                    <div className={`${friend.photo === undefined ?
+                                                        `user-pfp-svg-render color-${friend.color_tag}` :
+                                                        `create-dm-avatar-info`}`}>
+                                                        <img src={`${friend.photo === undefined ? rendered_User_PFP : friend.photo}`} alt="dsmPFP" />
+                                                    </div>
+
                                                     <div className="create-dm-user-info">
                                                         <strong className="create-dm-user-username-wrapper">
                                                             {friend.username}
