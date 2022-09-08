@@ -86,6 +86,7 @@
     display: flex;
     // width: 124px;
     // grid-row: 2/12;
+    transform: translate(0px, -5px);
 }
 
 #website-banner {
@@ -171,7 +172,7 @@
     // content: image_url('home2.png');
     background-image: image_url('home2.png');
     // background-image: image_url('hiresbackground.png');
-   
+
     // display: block;
 
     // position: absolute;
@@ -185,6 +186,7 @@
 
 
 }
+
 // 2560*626 if screen is  1440p - 4k res 
 @media only screen and (min-width:1400px) {
     #splash-banner {
@@ -667,7 +669,7 @@ a.bwd:hover {
     // min-height: 400px;
     //recentlly added
     min-height: 510px;
-    
+
     width: 90%;
     padding-right: 5%;
     padding-left: 5%;
@@ -683,8 +685,8 @@ a.bwd:hover {
 }
 
 
-.fa-brands{
-    padding:2px;
+.fa-brands {
+    padding: 2px;
 }
 
 #footer-content {
@@ -695,7 +697,7 @@ a.bwd:hover {
     padding-top: 5%;
     border-bottom: 1px solid #5865F2;
     //recently added
-    max-width:1260px;
+    max-width: 1260px;
     width: 100%;
 }
 
@@ -733,7 +735,7 @@ a.bwd:hover {
     align-content: center;
     padding-top: 20px;
     //recently added
-    max-width:1260px;
+    max-width: 1260px;
     width: 100%;
 }
 
@@ -786,4 +788,11 @@ h6 .link {
     font-family: "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     padding-top: 8px;
     line-height: 24px;
+}
+
+.foot-social-flex {
+    margin-top: 24px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
 }
