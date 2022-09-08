@@ -206,23 +206,19 @@ const FriendShipIndexOnline = ({
                         {
 
                             allFriends.map((friend, friendIdx) => {
-                                    let default_User_PFP = "";
+                                   
+                                
                                     return (
                                             
                                         <li id="fii" className="friend-index-item" key={friend.id} >
-                                            {/* { showPopup && 
-                                            <div> <EditFriendshipModalContainer user={currentUser} friend={selectFriend} top={popupTop} setShowPopup={setShowPopup} key={friend.id}/></div>} */}
+                                           
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
-
                                                     
-                                                    {/* <div className="friend-info"> */}
                                                     <div className={`${friend.photo === undefined ? 
                                                     `user-pfp-svg-render color-${friend.color_tag}`:`friend-info`}`}>
                                                         <img src={`${friend.photo === undefined ? rendered_User_PFP : friend.photo}`} alt="pfp" />
                                                     </div>
-
-
 
                                                     <div className="friend-account-info-wrapper">
                                                         <div className="friend-account-info">
