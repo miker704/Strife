@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import default_PFP from "/app/assets/images/defaultProfilePic.png";
-
+import default_user_PFP from "../../../../app/assets/images/discord_PFP.svg";
 
 class UserNavBar extends React.Component {
   constructor (props) {
@@ -39,7 +39,7 @@ class UserNavBar extends React.Component {
     let headphone_component_className = this.state.deafen === false ? "" : "";
     let default_profile_pic = this.props.currentUser.photo === undefined ? "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png" : this.props.currentUser.photo;
     // let default_profile_pic = this.props.currentUser.photo === undefined ? default_PFP : this.props.currentUser.photo;
-
+    let rendered_User_PFP = this.props.currentUser.photo === undefined ? default_user_PFP : this.props.currentUser.photo;
 
     let mic_component = this.state.micMute === false ?
       (<svg onClick={() => this.setState({ micMute: true })} className="svg-microphone" width="20" height="20" viewBox="0 0 20 20">
