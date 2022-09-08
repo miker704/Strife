@@ -91,7 +91,7 @@
     align-items: center;
     justify-content: center;
     // transform: translate(-20px, -55px);
-    transform: translate(-22px, -51px);
+    transform: translate(-20px, -51px);
 
     color: rgb(225, 225, 225);
     z-index: 6;
@@ -391,5 +391,20 @@
     visibility: visible;
 }
 
-
+.dm-add-button{
+    flex: 0;
+    width: 16px;
+    height: 16px;
+    margin-left: 0;
+    margin-right: 2px;
+    -webkit-box-flex: 0;
+    color : hsl(216,3.7%,73.5%);
+    forced-color-adjust: none;
+    display: block;
+    -webkit-app-region: no-drag;
+    cursor: pointer;
+}
+.dm-add-button:hover {
+    color: hsl(210, 2.9%, 86.7%);
+}
 
