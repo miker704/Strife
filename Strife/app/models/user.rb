@@ -188,9 +188,9 @@ class User < ApplicationRecord
 
     # allows the text coloring to be different depending on if an account is a person or a chat bot
     # this also allows a user to change there text color when messaging however bots can
-    # have only one text color dedicated for itself
+    # have only one text color dedicated for itself for now this is to color the default pfp svg image
     def ensure_color_tag
-        self.color_tag ||= rand(1..5).to_s
+        self.color_tag ||= rand(1..9).to_s
     end
 
 
