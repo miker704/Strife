@@ -21,8 +21,8 @@ class DmNavBar extends React.Component {
     }
 
 
-    setShowPopUp(){
-
+    setShowPopUp () {
+        this.setState({ showPopUp: !this.state.showPopUp });
     }
 
 
@@ -269,8 +269,8 @@ class DmNavBar extends React.Component {
                     <div className="dm-list-header">
                         <h4>DIRECT MESSAGES</h4>
                         <div className="create-channel-div" onClick={() => this.toggleCreateDmModal()}>
-                           
-                            <svg x="0" y="0" aria-hidden="true" className= "dm-add-button" role="img" width="24" height="24" viewBox="0 0 18 18">
+
+                            <svg x="0" y="0" aria-hidden="true" className="dm-add-button" role="img" width="24" height="24" viewBox="0 0 18 18">
                                 <polygon fillRule="nonzero" fill="currentColor" points="15 10 10 10 10 15 8 15 8 10 3 10 3 8 8 8 8 3 10 3 10 8 15 8"></polygon>
                             </svg>
 
