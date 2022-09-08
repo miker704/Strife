@@ -246,6 +246,20 @@
     border-radius: 50%;
 }
 
+.dm-server-pfp-icon{
+    display: flex;
+    align-items: center;
+}
+
+
+.dm-server-pfp-icon>img{
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+}
+
+
+
 
 .dm-server-name-wrapper {
     white-space: nowrap;
