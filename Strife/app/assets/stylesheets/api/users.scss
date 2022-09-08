@@ -280,8 +280,27 @@
 }
 
 .color-6 {
+    background-color: blue;
+}
+
+.color-7 {
+    background-color: #000000;
+}
+
+.color-8 {
+    background-color: purple;
+}
+
+
+.color-9 {
+    background-color:cyan;
+}
+
+.color-10 {
+    
     background-color: #005a17;
 }
+
 
 .user-icon {
     font-size: 18px;
@@ -289,6 +308,25 @@
     width: 30px;
     border-radius: 50%;
 }
+
+
+.user-PFP {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    border-radius: 50%;
+    width: 32px;
+    overflow: hidden;
+}
+
+
+.user-PFP>img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    scale: 0.65;
+}
+
 
 // .fa-discord {
 //     transform: translate(1px, 2px);
