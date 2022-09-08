@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
 import { closeHookModalOnOutsideClick, closeOnEsc } from "../../../utils/close_hook_modals_api_utils";
-
+import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
 const CreateDmModal = ({
 
     top,
