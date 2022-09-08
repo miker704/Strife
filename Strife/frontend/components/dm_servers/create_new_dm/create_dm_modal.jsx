@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
+import { closeHookModalOnOutsideClick, closeOnEsc } from "../../../utils/close_hook_modals_api_utils";
 
 const CreateDmModal = ({
 
@@ -21,7 +22,7 @@ const CreateDmModal = ({
 }) => {
     const inputRef = useRef();
     const popupRef = useRef();
-
+    // closeOnEsc(setShowPopup);
 
     const [cancel] = useState(false);
     const [searchText, setSearchText] = useState("");
