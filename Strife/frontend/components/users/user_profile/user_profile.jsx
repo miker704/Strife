@@ -761,7 +761,9 @@ class UserProfile extends React.Component {
 
                   <div className="my-account-container">
 
-                    <div className="account-card-banner">{accountEditingLockedMessage}</div>
+                    <div className={`account-card-banner color-${this.props.currentUser.color_tag}`}>
+                      {accountEditingLockedMessage}
+                    </div>
 
 
                     <div className="account-card-user-info">
