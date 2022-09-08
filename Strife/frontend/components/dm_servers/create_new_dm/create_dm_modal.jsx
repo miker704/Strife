@@ -30,7 +30,7 @@ const CreateDmModal = ({
     const isSelected = (friend) => selectedFriends.map(friend => friend.id).includes(friend.id);
     const findIfSelected = (toAdd) => selectedFriends.findIndex(friend => friend.id === toAdd.id);
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
-    let rendered_User_PFP = default_User_PFP;
+    let rendered_User_PFP = user_Default_PFP;
     let count = selectedFriends.length;
 
 
@@ -173,9 +173,9 @@ const CreateDmModal = ({
                                                     inputRef.current.focus();
                                                 }}>
                                                 <div className="create-dm-friend-inner-wrapper">
-                                                    <div className="create-dm-avatar-info">
+                                                    {/* <div className="create-dm-avatar-info">
                                                         <img src={`${friend.photo === undefined ? default_Photo : friend.photo}`} alt="pfp" />
-                                                    </div>
+                                                    </div> */}
                                                     <div className={`${friend.photo === undefined ?
                                                         `user-pfp-svg-render color-${friend.color_tag}` :
                                                         `create-dm-avatar-info`}`}>
