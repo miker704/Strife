@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CreateDmModalContainer from '../create_new_dm/create_dm_container';
+import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
 
 class DmNavBar extends React.Component {
     constructor (props) {
@@ -98,7 +99,13 @@ class DmNavBar extends React.Component {
                 return <img src={dmServerPFP.photo} alt="pfp" />
             }
             else if (dmServerPFP.photo === undefined) {
-                return <img src={default_Photo} alt="pfp" />
+                // return <img src={default_Photo} alt="pfp" />
+
+                <div className={`${friend.photo === undefined ? 
+                    `user-pfp-svg-render color-${friend.color_tag}`:`friend-info`}`}>
+                        <img src={`${friend.photo === undefined ? rendered_User_PFP : friend.photo}`} alt="pfp" />
+                    </div>
+
             }
 
         }
@@ -305,6 +312,18 @@ class DmNavBar extends React.Component {
                                                 <h5 className='dm-server-name'>{dmServerName}</h5>
                                                 <p className='dm-server-subtitle'>{dmServerSubtitle}</p></div>
                                         </div>
+                                        {/* <div className='dm-server-pfp'>
+                                            {dmServerPFP}
+                                        </div>
+                                            <div className='dm-server-name-wrapper'>
+                                                <h5 className='dm-server-name'>{dmServerName}</h5>
+                                                <p className='dm-server-subtitle'>{dmServerSubtitle}</p>
+                                            </div> */}
+
+
+
+
+
                                     </li>
                                 </Link>
 
