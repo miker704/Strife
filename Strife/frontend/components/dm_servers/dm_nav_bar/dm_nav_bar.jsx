@@ -16,6 +16,7 @@ class DmNavBar extends React.Component {
         this.handleESC = this.handleESC.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderCreateDMModal = this.renderCreateDMModal.bind(this);
+        this.setShowPopup = this.setShowPopup.bind(this);
     }
 
 
