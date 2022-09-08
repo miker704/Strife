@@ -18,27 +18,21 @@ class ModalManager extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            serverPublic: false
+            specialFeatures: 0
         }
-        this.setPublicTrue = this.setPublicTrue.bind(this);
-        this.setPublicFalse = this.setPublicFalse.bind(this);
-        console.log(
-            "modal call"
-        )
+        this.setModalSpecialFeatures = this.setModalSpecialFeatures.bind(this);
+        console.log("modal call");
     }
 
-    setPublicTrue () {
-        this.setState({ serverPublic: true });
+    //this function is to set special modal background/ positioning for different modals that need it 
+    setModalSpecialFeatures (modifier) {
+        this.setState({ specialFeatures: modifier });
     }
 
-    setPublicFalse () {
-        this.setState({ serverPublic: false });
 
-    }
 
     render () {
         let renderedModal;
-        let subModal;
         // using a switch statement to reduce slow down of processing multiple if statemnets with similar
         // or little complex condtions also to dry up the code
         switch (this.props.modal) {
@@ -72,7 +66,7 @@ class ModalManager extends React.Component {
 
             case 'friendOptions':
 
-                renderedModal = <EditFriendshipModalContainer/>
+                renderedModal = <EditFriendshipModalContainer />
 
                 break;
 
@@ -93,7 +87,6 @@ class ModalManager extends React.Component {
                     {renderedModal}
                 </div> */}
                 {renderedModal}
-                {subModal}
             </div>
 
 
