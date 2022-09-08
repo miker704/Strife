@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
 import EditFriendshipModalContainer from "../edit_friendship_modal/edit_friendship_container";
+import default_User_PFP from "../../../../app/assets/images/discord_PFP.svg";
 import ReactTooltip from "react-tooltip";
 
 const FriendShipIndexOnline = ({
@@ -28,6 +29,7 @@ const FriendShipIndexOnline = ({
     const [selectFriend,toggleSelected] = useState([]);
     let allFriends = friends;
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
+    let rendered_User_PFP = default_User_PFP;
     const dmMembersArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
 
 
@@ -204,7 +206,7 @@ const FriendShipIndexOnline = ({
                         {
 
                             allFriends.map((friend, friendIdx) => {
-
+                                    let default_User_PFP = "";
                                     return (
                                             
                                         <li id="fii" className="friend-index-item" key={friend.id} >
@@ -212,9 +214,16 @@ const FriendShipIndexOnline = ({
                                             <div> <EditFriendshipModalContainer user={currentUser} friend={selectFriend} top={popupTop} setShowPopup={setShowPopup} key={friend.id}/></div>} */}
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
-                                                    <div className="friend-info">
-                                                        <img src={`${friend.photo === undefined ? default_Photo : friend.photo}`} alt="pfp" />
+
+                                                    
+                                                    {/* <div className="friend-info"> */}
+                                                    <div className={`${friend.photo === undefined ? 
+                                                    `user-pfp-svg-render color-${friend.color_tag}`:`friend-info`}`}>
+                                                        <img src={`${friend.photo === undefined ? rendered_User_PFP : friend.photo}`} alt="pfp" />
                                                     </div>
+
+
+
                                                     <div className="friend-account-info-wrapper">
                                                         <div className="friend-account-info">
                                                             <div className="friend-tag">
