@@ -22,7 +22,7 @@ class SplashFooter extends React.Component {
             <span id="flag-span"><img className="flag" /> English, USA <br /></span><br />
             <div className="foot-social-flex">
 
-              <a className="footer-social-link" href="https://twitter.com/discord" target="_blank">
+              <a className="footer-social-link" href="https://twitter.com/discord" target="_blank" title="Discord on Twitter">
                 <svg width="24" height="24" viewBox="0 0 24 24" className="footer-twitter-icon">
                   <path fill="currentColor" d="M8.2177 20.2976C15.798 20.2976 19.9327 14.0329 19.9327 8.58261V8.05011C20.7362 7.46091 21.435 
                 6.74089 22 5.92012C21.2567 6.26235 20.4637 6.48437 19.6507 6.57791C20.5139 6.06164 21.1597 5.24885 21.4675 4.2913C20.6598
@@ -36,13 +36,13 @@ class SplashFooter extends React.Component {
               </a>
 
 
-              <a className="footer-social-link" href="https://www.instagram.com/discord/" target="_blank">
+              <a className="footer-social-link" href="https://www.instagram.com/discord/" target="_blank" title="Discord on Instagram">
 
               </a>
-              <a className="footer-social-link" href="https://www.facebook.com/discord/" target="_blank">
+              <a className="footer-social-link" href="https://www.facebook.com/discord/" target="_blank" title="Discord on Facebook">
 
               </a>
-              <a className="footer-social-link" href="https://www.youtube.com/discord/" target="_blank">
+              <a className="footer-social-link" href="https://www.youtube.com/discord/" target="_blank" title="Discord on Youtube">
 
               </a>
 
