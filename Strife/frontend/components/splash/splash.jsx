@@ -3,11 +3,11 @@ import NavBarContainer from "../nav_bar/nav_bar_container";
 import { Link } from "react-router-dom";
 class Splash extends React.Component {
 
-    constructor(props) {
+    constructor (props) {
         super(props);
 
     }
-    render() {
+    render () {
 
 
         return (
@@ -28,17 +28,21 @@ class Splash extends React.Component {
 
                             <div className="banner-button-container">
 
-                                <a id="fake-download-windows" href="app/assets/images/discord_Strife_logo.png" download="STRIFE.EXE"><span >
+                                <a id="fake-download-windows" href="app/assets/images/discord_Strife_logo.png" download="STRIFE.EXE">
 
-                                    <span id="change-down-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" className="change-down-icon">
+                                        <g fill="currentColor">
+                                            <path d="M17.707 10.708L16.293 9.29398L13 12.587V2.00098H11V12.587L7.70697 9.29398L6.29297 10.708L12 16.415L17.707 10.708Z">
+                                            </path>
+                                            <path d="M18 18.001V20.001H6V18.001H4V20.001C4 21.103 4.897 22.001 6 22.001H18C19.104 22.001 20 21.103 20 20.001V18.001H18Z">
+                                            </path>
+                                        </g>
+                                    </svg>
 
-                                        <i id="movedown-icon" className="fa-solid fa-download">{"     "}</i>
-                                    </span>
+                                    Download for Windows
+                                </a>
 
-                                    Download for Windows</span></a>
-                                {"    "}
                                 <Link id="open-Strife_banner" to="/register"><span >Open Strife in your browser</span></Link>
-
 
                             </div>
 
@@ -118,13 +122,20 @@ class Splash extends React.Component {
                             {/* <h4 className="bottom-windows-div-header">Ready to start your journey?</h4> */}
                         </div>
                         <h4 className="bottom-windows-div-header">Ready to start your journey?</h4>
-                        <a className="bwd" href="app/assets/images/discord_Strife_logo.png" download="STRIFE.EXE">
-                            <span id="change-down-icon">
 
-                                <i id="movedown-icon2" className="fa-solid fa-download">{"     "}</i>
-
-
-                            </span> Download for Windows</a>
+                        <div className="banner-button-container">
+                            <a className="bwd" href="app/assets/images/discord_Strife_logo.png" download="STRIFE.EXE">
+                                <svg width="24" height="24" viewBox="0 0 24 24" className="change-down-icon">
+                                    <g fill="currentColor">
+                                        <path d="M17.707 10.708L16.293 9.29398L13 12.587V2.00098H11V12.587L7.70697 9.29398L6.29297 10.708L12 16.415L17.707 10.708Z">
+                                        </path>
+                                        <path d="M18 18.001V20.001H6V18.001H4V20.001C4 21.103 4.897 22.001 6 22.001H18C19.104 22.001 20 21.103 20 20.001V18.001H18Z">
+                                        </path>
+                                    </g>
+                                </svg>
+                                Download for Windows
+                            </a>
+                        </div>
                     </div>
                 </div>
 
