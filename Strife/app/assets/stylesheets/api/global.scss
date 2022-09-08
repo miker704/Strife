@@ -103,11 +103,18 @@ label.field-error {
   z-index: -1;
 }
 
+.icon-custom-fa-solid-discord-banner {
+  width: 33px;
+  height: 27px;
+  transform: translate(0px, 8px);
 
-.icon-custom {
+}
+
+.icon-custom-fa-solid {
   width: 1em;
   height: 1em;
   vertical-align: -.125em;
+  font-weight: 900;
 }
 
 .theme-dark {
@@ -405,261 +412,24 @@ label.field-error {
   visibility: visible;
 }
 
+.flex-pfps {
+  display: flex;
+  flex-direction: row;
 
+}
 
-// .friend-msg-actions {
-//   forced-color-adjust: none;
-//   margin-left: 8px;
-//   display: flex;
-//   outline: 0;
+.user-pfp-svg-render {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  border-radius: 50%;
+  width: 32px;
+  overflow: hidden;
+}
 
-
-
-//   .friend-msg-button {
-//     forced-color-adjust: none;
-//     margin-left: 0;
-//     cursor: pointer;
-//     width: 36px;
-//     height: 36px;
-//     border-radius: 50%;
-//     color: hsl(216, 3.7%, 73.5%);
-//     background-color: hsl(223, 6.9%, 19.8%);
-//     display: flex;
-//     -webkit-box-align: center;
-//     align-items: center;
-//     -webkit-box-pack: center;
-//     justify-content: center;
-//     outline: 0;
-
-
-//     &:last-child {
-//       margin-left: 10px;
-//     }
-
-//     &:hover {
-
-//       .pending-request-actions-tool-tip,
-//       .pending-request-actions-tool-tip-triangle {
-//         display: block;
-//       }
-
-//       svg {
-//         filter: brightness(1.3);
-//       }
-//     }
-//   }
-
-
-
-
-//   .friend-options-button {
-//     forced-color-adjust: none;
-//     cursor: pointer;
-//     width: 36px;
-//     height: 36px;
-//     border-radius: 50%;
-//     color: hsl(216, 3.7%, 73.5%);
-//     background-color: hsl(223, 6.9%, 19.8%);
-//     display: flex;
-//     -webkit-box-align: center;
-//     align-items: center;
-//     -webkit-box-pack: center;
-//     justify-content: center;
-//     margin-left: 10px;
-//     outline: 0;
-
-
-//     &:last-child {
-//       margin-left: 10px;
-//     }
-
-//     &:hover {
-
-//       .pending-request-actions-tool-tip,
-//       .pending-request-actions-tool-tip-triangle {
-//         display: block;
-//       }
-
-//       svg {
-//         filter: brightness(1.3);
-//       }
-//     }
-
-//   }
-
-//   .pending-request-actions-tool-tip {
-//     display: none;
-//     // visibility: hidden;
-//     position: absolute;
-//     // top: -40px;
-//     background: #191919;
-//     font-size: 14px;
-//     font-weight: 600;
-//     padding: 6px 12px;
-//     border-radius: 4px;
-//     width: fit-content;
-//     color: #B9BBBE;
-//     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-//     transform: translate(0px, -42px);
-//     // display: flex;
-//     // text-align: center;
-//     // justify-content: center;
-//     // align-items: center;
-//     z-index: 6;
-//     font-family: "Whitney";
-
-
-//   }
-
-//   .pending-request-actions-tool-tip-triangle {
-//     display: none;
-//     // visibility: hidden;
-//     position: absolute;
-//     // top: -12px;
-//     height: 0;
-//     width: 0;
-//     border-style: solid;
-//     border-color: #191919 transparent transparent transparent;
-//     border-width: 6px 6px 0 6px;
-//     transform: translate(0px, -24px);
-//     // background-color: #191919;
-//   }
-
-
-
-// }
-
-
-// .pending-request-actions {
-//   forced-color-adjust: none;
-//   margin-left: 8px;
-//   display: flex;
-//   outline: 0;
-
-
-//   .pending-check-icon {
-//     forced-color-adjust: none;
-//     margin-left: 0;
-//     cursor: pointer;
-//     width: 36px;
-//     height: 36px;
-//     border-radius: 50%;
-//     color: hsl(216, 3.7%, 73.5%);
-//     background-color: hsl(223, 6.9%, 19.8%);
-//     display: flex;
-//     -webkit-box-align: center;
-//     align-items: center;
-//     -webkit-box-pack: center;
-//     justify-content: center;
-//     outline: 0;
-//     // position: relative;
-
-//     &:last-child {
-//       margin-left: 10px;
-//     }
-
-
-//     &:hover {
-
-//       .pending-request-actions-tool-tip,
-//       .pending-request-actions-tool-tip-triangle {
-//         display: block;
-//       }
-
-//       svg {
-//         filter: brightness(1.3);
-//       }
-//     }
-
-
-//   }
-
-
-//   .pending-deny-icon {
-//     forced-color-adjust: none;
-//     cursor: pointer;
-//     width: 36px;
-//     height: 36px;
-//     border-radius: 50%;
-//     color: hsl(216, 3.7%, 73.5%);
-//     background-color: hsl(223, 6.9%, 19.8%);
-//     display: flex;
-//     -webkit-box-align: center;
-//     align-items: center;
-//     -webkit-box-pack: center;
-//     justify-content: center;
-//     margin-left: 10px;
-//     outline: 0;
-
-//     &:last-child {
-//       margin-left: 10px;
-//     }
-
-
-//     &:hover {
-
-//       .pending-request-actions-tool-tip,
-//       .pending-request-actions-tool-tip-triangle {
-//         display: block;
-//       }
-
-//       svg {
-//         filter: brightness(1.3);
-//       }
-//     }
-
-//   }
-
-
-
-//   .pending-request-actions-tool-tip {
-//     display: none;
-//     // visibility: hidden;
-//     position: absolute;
-//     // top: -40px;
-//     background: #191919;
-//     font-size: 14px;
-//     font-weight: 600;
-//     padding: 6px 12px;
-//     border-radius: 4px;
-//     width: fit-content;
-//     color: #B9BBBE;
-//     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-//     transform: translate(0px, -42px);
-//     // display: flex;
-//     // text-align: center;
-//     // justify-content: center;
-//     // align-items: center;
-//     z-index: 6;
-//     font-family: "Whitney";
-
-
-//   }
-
-//   .pending-request-actions-tool-tip-triangle {
-//     display: none;
-//     // visibility: hidden;
-//     position: absolute;
-//     // top: -12px;
-//     height: 0;
-//     width: 0;
-//     border-style: solid;
-//     border-color: #191919 transparent transparent transparent;
-//     border-width: 6px 6px 0 6px;
-//     transform: translate(0px, -24px);
-//     // background-color: #191919;
-//   }
-
-//   .red-button:hover {
-//     color: #ED4245;
-
-//   }
-
-//   .green-button:hover {
-//     color: #3BA55D;
-
-
-//   }
-
-
-// }
+.user-pfp-svg-render>img {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  scale: 0.65;
+}
