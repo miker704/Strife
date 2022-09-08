@@ -81,6 +81,7 @@ class DmNavBar extends React.Component {
     renderDmServerPFP (dmServerMembers) {
         let dmServerPFP = "";
         let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
+        let default_DMS_PFP = user_Default_PFP;
         let group_Chat_Photo = "https://strife-seeds.s3.amazonaws.com/group_chat_icon.svg";
         if (dmServerMembers.length === 2) {
             for (let i of dmServerMembers) {
@@ -96,21 +97,26 @@ class DmNavBar extends React.Component {
 
         if (dmServerMembers.length === 2) {
             if (dmServerPFP.photo !== undefined) {
-                return <img src={dmServerPFP.photo} alt="pfp" />
+                return <div className='friend-info'>
+                    <img src={dmServerPFP.photo} alt="pfp" />
+                </div>
+
             }
             else if (dmServerPFP.photo === undefined) {
                 // return <img src={default_Photo} alt="pfp" />
 
-                <div className={`${friend.photo === undefined ? 
-                    `user-pfp-svg-render color-${friend.color_tag}`:`friend-info`}`}>
-                        <img src={`${friend.photo === undefined ? rendered_User_PFP : friend.photo}`} alt="pfp" />
-                    </div>
+                return <div className={`user-pfp-svg-render color-${dmServerPFP.color_tag}`}>
+                    <img src={default_DMS_PFP} alt="pfp" />
+                </div>
 
             }
 
         }
 
-        return <img src={group_Chat_Photo} alt="pfp" className={`user-icon color-${dmServerPFP.color_tag}`} />
+
+        return <div className='friend-info'>
+            <img src={group_Chat_Photo} alt="pfp" className={`user-icon color-${dmServerPFP.color_tag}`} />
+        </div>
 
 
     }
@@ -306,19 +312,19 @@ class DmNavBar extends React.Component {
                                     key={dmServer.id}
                                 >
                                     <li className={`dm-server-li-item ${selectedDmServer}`} key={dmServerIndex}>
-                                        <div className='dm-server-pfp'>
+                                        {/* <div className='dm-server-pfp'>
                                             {dmServerPFP}
                                             <div className='dm-server-name-wrapper'>
                                                 <h5 className='dm-server-name'>{dmServerName}</h5>
                                                 <p className='dm-server-subtitle'>{dmServerSubtitle}</p></div>
-                                        </div>
-                                        {/* <div className='dm-server-pfp'>
+                                        </div> */}
+                                        <div className='dm-server-pfp'>
                                             {dmServerPFP}
                                         </div>
-                                            <div className='dm-server-name-wrapper'>
-                                                <h5 className='dm-server-name'>{dmServerName}</h5>
-                                                <p className='dm-server-subtitle'>{dmServerSubtitle}</p>
-                                            </div> */}
+                                        <div className='dm-server-name-wrapper'>
+                                            <h5 className='dm-server-name'>{dmServerName}</h5>
+                                            <p className='dm-server-subtitle'>{dmServerSubtitle}</p>
+                                        </div>
 
 
 
