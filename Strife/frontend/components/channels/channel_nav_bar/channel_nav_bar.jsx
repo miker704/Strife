@@ -31,7 +31,7 @@ class ChannelNavBar extends React.Component {
         if (this.state.openMod === true) {
                 console.log("hello")
             return (
-                <div style={{background:"blue;"}}>
+                <div style={{background:"blue"}}>
                     <form onSubmit={this.handleSubmit}>
                         <label>
                             Pick your favorite flavor:
@@ -85,7 +85,7 @@ class ChannelNavBar extends React.Component {
 
                                     </div>
                                     <div className="channel-nav-chevron" >
-                                        <svg width="18" height="18" className="icon-chevron" onClick={() => this.setState({ openMod: true })}>
+                                        <svg width="18" height="18" className="icon-chevron" onClick={() => this.setState({ openMod: !this.state.openMod })}>
                                             <g fill="none" fillRule="evenodd">
                                                 <path d="M0 0h18v18H0"></path>
                                                 <path stroke="currentColor" d="M4.5 4.5l9 9" strokeLinecap="round"></path>
