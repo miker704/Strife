@@ -18,7 +18,7 @@ class ModalManager extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            specialFeatures: 0
+            setSpecialFeatures : 0
         }
         this.setModalSpecialFeatures = this.setModalSpecialFeatures.bind(this);
         console.log("modal call");
@@ -26,13 +26,14 @@ class ModalManager extends React.Component {
 
     //this function is to set special modal background/ positioning for different modals that need it 
     setModalSpecialFeatures (modifier) {
-        this.setState({ specialFeatures: modifier });
+        this.setState({ setSpecialFeatures: modifier });
     }
 
 
 
     render () {
         let renderedModal;
+        let modalMod=0;
         // using a switch statement to reduce slow down of processing multiple if statemnets with similar
         // or little complex condtions also to dry up the code
         switch (this.props.modal) {
@@ -70,6 +71,13 @@ class ModalManager extends React.Component {
 
                 break;
 
+
+            case 'createDmModal':
+
+                renderedModal = <CreateDmModalContainer/>
+
+                break;
+
             default:
                 return null;
         }
@@ -81,8 +89,13 @@ class ModalManager extends React.Component {
             return null;
         }
 
+        if(this.props.modal === "createDmModal"){
+            modalMod=1;
+        }
+
+
         return (
-            <div className="modal-struct" onClick={this.props.closeModal}>
+            <div className={`modal-struct-${modalMod}`} onClick={this.props.closeModal}>
                 {/* <div className="modal-child-component" onClick={e => e.stopPropagation()}>
                     {renderedModal}
                 </div> */}
