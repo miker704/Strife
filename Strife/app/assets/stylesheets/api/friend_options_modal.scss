@@ -112,6 +112,23 @@
     flex: 1 1 auto;
 }
 
+.fo-scroller-2 {
+    forced-color-adjust: none;
+    outline: 0;
+    // overflow: hidden scroll;
+    padding-right: 0px;
+    box-sizing: border-box;
+    min-height: 0;
+    -webkit-box-flex: 1;
+    position: relative;
+    flex: 1 1 auto;
+}
+
+
+
+
+
+
 .fo-item-container {
     forced-color-adjust: none;
     outline: 0;
