@@ -740,6 +740,22 @@
     color: #ffc959;
 }
 
+.smiley-face-icon{
+    color: hsl(216, 3.7%, 73.5%);
+    display: block !important;
+    width: 24px;
+    height: 24px;
+    -webkit-app-region: no-drag;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    // transform: translate(-2px, 10px) !important;
+}
+
+.smiley-face-icon:hover{
+    color: #ffc959;
+}
+
+
 
 .server-message-chat-box-area::-webkit-scrollbar {
     display: none;
