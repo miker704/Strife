@@ -19,7 +19,7 @@ const ServerMembersList = ({
    
 
     const popUpRef = useRef();
-     
+    let render_User_PFP = user_Default_PFP;
 
 
     const sortOfflineMembers = () =>{
