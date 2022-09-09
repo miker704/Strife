@@ -1,11 +1,15 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
-
-
 import { useEffect, useState, useRef } from "react";
 
 const ServerMembersList = ({
-   
+    currentUser,
+    serverId,
+    errors,
+    server,
+    fetchServer,
+    removeServerErrors,
+    deleteServerMembership,
     isViz
 
 }) => {
@@ -21,6 +25,7 @@ const ServerMembersList = ({
 
 
 
+    console.log("servermember list props server : ", server);
 
 
     return (
