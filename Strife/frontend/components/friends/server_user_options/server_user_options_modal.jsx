@@ -8,6 +8,7 @@ const ServerUserOptionsModal = ({
     currentUser,
     member,
     DmServerOwner,
+    ServerOwner,
     user,
     friends,
     fetchUser,
@@ -35,28 +36,20 @@ const ServerUserOptionsModal = ({
     removeChannelErrors,
     removeServerErrors,
     history,
+    serverType
 }) => {
 
 
-    
-    if (member.id === currentUser.id) {
-        return null;
-    }
+
+    // if (member.id === currentUser.id) {
+    //     return null;
+    // }
     const [memberStatus, setMemberStatus] = useState([])
 
     useEffect(() => {
-        // requestFriendships();
-        // fetchDmServer(dmServerId)
-    
-        // (async () => {
-        //     // const response = await fetch(`api/users/${member.id}`).then((res) => res.json());
-        //     // console.log("response : ", response);
-        //     // setMemberStatus(response);
-
-        // })();
 
         fetchUser(member.id).then((action) => {
-           const newfriend = action.user
+            const newfriend = action.user
             setMemberStatus(newfriend);
 
         })
@@ -67,6 +60,12 @@ const ServerUserOptionsModal = ({
             }
             if (dmServerErrors.length > 0) {
                 removeDmServerErrors();
+            }
+            if (serverErrors.length > 0) {
+                removeServerErrors();
+            }
+            if (channelErrors.length > 0) {
+                removeChannelErrors();
             }
             // requestFriendships();
             // fetchDmServer(dmServerId)
@@ -125,7 +124,7 @@ const ServerUserOptionsModal = ({
 
 
     const handleCreateFriendShip = () => {
-      
+
         createFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
             setShowPopup(false);
 
@@ -134,7 +133,7 @@ const ServerUserOptionsModal = ({
     }
 
     const handleDeleteFriendShip = () => {
-   
+
 
         deleteFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
             setShowPopup(false);
@@ -144,7 +143,7 @@ const ServerUserOptionsModal = ({
     }
 
     const handleUpdateFriendShip = () => {
-   
+
         updateFriendship({ user_id: currentUser.id, friend_id: member.id }).then(() => {
             setShowPopup(false);
 
@@ -155,12 +154,12 @@ const ServerUserOptionsModal = ({
 
     const handleBlockUser = () => {
 
-        
+
         let subState = {
             friend_id: member.id,
             user_id: currentUser.id
         }
-        
+
         blockUser({ user_id: currentUser.id, friend_id: member.id }).then(() => {
             setShowPopup(false);
 
@@ -174,19 +173,31 @@ const ServerUserOptionsModal = ({
             dm_member_id: member.id,
             dm_server_id: DmServerId
         }
-        kickUserfromGroupChat(member.id,subState).then(()=>{
+        kickUserfromGroupChat(member.id, subState).then(() => {
             setShowPopup(false);
         });
         return;
     }
 
+    const handleBanUser = () => {
+        console.log("sent user to ban world");
+        deleteServerMembership(member.id, { user_id: member.id, server_id: server.id }).then(() => {
+                setShowPopup(false);
+        })
+    }
 
 
     let EditOptions = "";
 
-    let kickUserOption = currentUser.id === DmServerOwner ? (<div className="fo-item-container red" onClick={() => handleKickUser()}>
+    let kickUserOption = currentUser.id === DmServerOwner && serverType === 'DM_SERVER' ? (<div className="fo-item-container red" onClick={() => handleKickUser()}>
         <div className="fo-item-name">Kick User</div>
+    </div>) : ("");
+
+
+    let banUserFromServerTag = currentUser.id === ServerOwner && serverType === 'SERVER' ? (<div className="fo-item-container red" onClick={() => handleBanUser()}>
+        <div className="fo-item-name">Ban User</div>
     </div>) : ("")
+
 
 
     switch (memberStatus.friend_request_status) {
@@ -200,6 +211,7 @@ const ServerUserOptionsModal = ({
                             <div className="fo-item-name">Unblock User</div>
                         </div>
                         {kickUserOption}
+                        {banUserFromServerTag}
                         <div className="fo-options-bottom-div"></div>
                     </div>
                 </div>
@@ -224,6 +236,7 @@ const ServerUserOptionsModal = ({
                             <div className="fo-item-name">Block User</div>
                         </div>
                         {kickUserOption}
+                        {banUserFromServerTag}
                         <div className="fo-options-bottom-div"></div>
                     </div>
                 </div>
@@ -242,6 +255,7 @@ const ServerUserOptionsModal = ({
                             <div className="fo-item-name">Cancel Friend Request</div>
                         </div>
                         {kickUserOption}
+                        {banUserFromServerTag}
                         <div className="fo-options-bottom-div"></div>
                     </div>
                 </div>
@@ -263,6 +277,7 @@ const ServerUserOptionsModal = ({
                             <div className="fo-item-name">Ignore Friend Request</div>
                         </div>
                         {kickUserOption}
+                        {banUserFromServerTag}
                         <div className="fo-options-bottom-div"></div>
                     </div>
                 </div>
@@ -280,6 +295,7 @@ const ServerUserOptionsModal = ({
                             <div className="fo-item-name">Remove Friend</div>
                         </div>
                         {kickUserOption}
+                        {banUserFromServerTag}
                         <div className="fo-options-bottom-div"></div>
                     </div>
                 </div>
@@ -300,6 +316,7 @@ const ServerUserOptionsModal = ({
                             <div className="fo-item-name">Remove Friend</div>
                         </div>
                         {kickUserOption}
+                        {banUserFromServerTag}
                         <div className="fo-options-bottom-div"></div>
                     </div>
                 </div>
