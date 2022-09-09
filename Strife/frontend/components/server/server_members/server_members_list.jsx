@@ -5,76 +5,18 @@ import ReactTooltip from "react-tooltip";
 import { useEffect, useState, useRef } from "react";
 
 const ServerMembersList = ({
-    // props,
-    // errors,
-    // dmMessageErrors,
-    // currentUser,
-    // dmServer,
-    // dmServerId,
-    // dmServerMembers,
-    // fetchDmServer,
-    // removeDmServerErrors,
-    // removeDmMessageErrors,
-    // updateDmServer,
+   
     isViz
 
 }) => {
-    // if (!dmServer) {
-    //     return null;
-    // }
-
-    // let displayName="";
-    // // let displayName ="";
-
-    // if (dmServer.dm_server_name === null) {
-    //     displayName = Object.values(dmServerMembers).filter(member => member.id !== currentUser.id).map(member => member.username).join(", ")
-    // }
-    // else if (dmServer.dm_server_name !== null || dmServer.dm_server_name !== undefined || dmServer.dm_server_name !== "") {
-    //     displayName = dmServer.dm_server_name
-    // }
-    // const [showEdit, setShowEdit] = useState(false);
-    // const [DmServerName, setDMServerName] = useState("");
-    // useEffect(() => {
-    //     if (dmServer?.id) {
-
-    //         // fetchDmServer(dmServerId);
-    //         setDMServerName(displayName);
-    //     }
-    //     return function cleanup () {
-    //         if (errors.length > 0) {
-    //             removeDmServerErrors();
-    //         }
-    //         if (dmMessageErrors.length > 0) {
-    //             removeDmMessageErrors()
-    //         }
-    //     }
-    // }, [dmServer?.id])
-
-
-
-    // const handleEditName = (e) => {
-    //     e.preventDefault();
-    //     if (DmServerName !== displayName) {
-    //         //run update
-    //         updateDmServer(dmServer.id,{dm_server_name: DmServerName});
-    //     }
-    //     setShowEdit(false);
-    // }
-
-    // const inputRef = useRef();
-    // useEffect(() => {
-    //     if (showEdit) {
-    //         inputRef.current?.focus();
-    //     }
-    // })
-
+   
 
     const sortOfflineMembers = () =>{
 
     }
 
     const sortOnlineMembers = () => {
-        
+
     }
 
 
@@ -84,12 +26,12 @@ const ServerMembersList = ({
     return (
         <div className="dm-members-index-container-wrapper">
             {
-                showPopup && <UserOptionsModalContainer
-                    user={currentUser} member={selectedMember}
-                    top={popupTop} setShowPopup={setShowPopup}
-                    DmServerOwner={DmServerOwner} DmServerId={dmServer.id}
+                // showPopup && <UserOptionsModalContainer
+                //     user={currentUser} member={selectedMember}
+                //     top={popupTop} setShowPopup={setShowPopup}
+                //     DmServerOwner={DmServerOwner} DmServerId={dmServer.id}
 
-                />
+                // />
 
             }
             <div className="dm-members-index-container">
