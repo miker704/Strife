@@ -29,6 +29,7 @@ const InviteToDmModal = ({
     const isSelected = (friend) => selectedFriends.map(friend => friend.id).includes(friend.id);
     const findIfSelected = (toAdd) => selectedFriends.findIndex(friend => friend.id === toAdd.id);
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
+    let rendered_User_PFP = user_Default_PFP;
     let count = selectedFriends.length;
 
 
@@ -180,7 +181,7 @@ const InviteToDmModal = ({
                                                         `create-dm-avatar-info`}`}>
                                                         <img src={`${friend.photo === undefined ? rendered_User_PFP : friend.photo}`} alt="dsmPFP" />
                                                     </div>
-                                                    
+
                                                     <div className="create-dm-user-info">
                                                         <strong className="create-dm-user-username-wrapper">
                                                             {friend.username}
