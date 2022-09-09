@@ -65,14 +65,11 @@ class DmNavBar extends React.Component {
     }
 
     toggleCreateDmModal () {
-        // document.getElementById('itbgdm').style = "z-index:-1;";
         this.setState({ createDmModal: true })
     }
 
     closeCreateDmModal () {
         if (this.mounted) {
-            // document.getElementById('itbgdm').style = "z-index:auto;";
-            console.log("closing modal");
             this.setState({ createDmModal: false })
             window.removeEventListener('keyup', this.handleESC, false);
         }
