@@ -29,7 +29,7 @@ const ServerMembersList = ({
 
 
     return (
-        <div className="dm-members-index-container-wrapper">
+        <div className="server-members-index-container-wrapper">
             {
                 // showPopup && <UserOptionsModalContainer
                 //     user={currentUser} member={selectedMember}
@@ -39,46 +39,46 @@ const ServerMembersList = ({
                 // />
 
             }
-            <div className="dm-members-index-container">
-                <h2 className="dm-members-header-title">{`MEMBERS - ${dmServerMemberList.length}`}</h2>
-                <ul className="ul-padding">
+            <div className="server-members-index-container">
+                <h2 className="server-members-header-title">{`MEMBERS - ${dmServerMemberList.length}`}</h2>
+                <ul className="server-members-ul-padding">
                     {
                         dmServerMemberList.map((dmMember, dmMemberIdx) => {
 
                             return (
 
 
-                                <li className="dm-member-item" key={dmMember.id}
+                                <li className="server-member-item" key={dmMember.id}
                                     onClick={(e) => {
                                         handleSelected(dmMember);
                                         handlePopupShow(e);
                                     }}>
 
 
-                                    <div className="dm-member-layout">
-                                        <div className="dm-member-avatar">
-                                            <div className="dm-member-avatar-inner-wrapper">
+                                    <div className="server-member-layout">
+                                        <div className="server-member-avatar">
+                                            <div className="server-member-avatar-inner-wrapper">
                                             
                                                 <div className={`${dmMember.photo === undefined ?
                                                     `user-pfp-svg-render color-${dmMember.color_tag}` :
-                                                    `dm-member-avatar-img`}`}>
-                                                    <img src={`${dmMember.photo === undefined ? default_DMSM_PFP : dmMember.photo}`} alt="dsmPFP" />
+                                                    `server-member-avatar-img`}`}>
+                                                    <img src={`${dmMember.photo === undefined ? default_DMSM_PFP : dmMember.photo}`} alt="SMPFP" />
                                                 </div>
 
 
                                             </div>
                                         </div>
-                                        <div className="dm-member-info-wrapper">
-                                            <div className="dm-member-username-wrapper">
-                                                <div className="dm-member-username-div">
-                                                    <span className="dm-member-username-span">
-                                                        <span className="dm-member-username">
+                                        <div className="server-member-info-wrapper">
+                                            <div className="server-member-username-wrapper">
+                                                <div className="server-member-username-div">
+                                                    <span className="server-member-username-span">
+                                                        <span className="server-member-username">
                                                             {dmMember.username}
                                                         </span>
                                                     </span>
                                                 </div>
-                                                <svg aria-label="Group Owner" data-tip data-for="group-owner-tip"
-                                                    className={`dm-server-group-owner-icon ${dmMember.id === DmServerOwner ? "" : "is-hidden"}`}
+                                                <svg aria-label="Server Owner" data-tip data-for="server-owner-tip"
+                                                    className={`server-group-owner-icon ${dmMember.id === DmServerOwner ? "" : "is-hidden"}`}
                                                     aria-hidden="false" role="img" width="24" height="24" viewBox="0 0 16 16">
                                                     <path fillRule="evenodd" clipRule="evenodd" d="M13.6572 5.42868C13.8879 5.29002 14.1806 5.30402 14.3973 5.46468C14.6133 5.62602
                                                             14.7119 5.90068 14.6473 6.16202L13.3139 11.4954C13.2393 11.7927 12.9726 12.0007 12.6666 12.0007H3.33325C3.02725 12.0007 2.76058 
@@ -93,13 +93,13 @@ const ServerMembersList = ({
                                                 </svg>
 
                                                 <ReactTooltip
-                                                    className="dmshb-group-owner-tool-tip"
+                                                    className="server-group-owner-tool-tip"
                                                     textColor="#B9BBBE"
                                                     backgroundColor="#191919"
-                                                    id="group-owner-tip"
+                                                    id="server-owner-tip"
                                                     place="top"
                                                     effect="solid">
-                                                    Group Owner
+                                                    Server Owner
                                                 </ReactTooltip>
                                             </div>
                                         </div>
