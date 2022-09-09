@@ -1,6 +1,9 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
 import { useEffect, useState, useRef } from "react";
+import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
+
+
 
 const ServerMembersList = ({
     currentUser,
