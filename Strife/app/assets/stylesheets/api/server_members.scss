@@ -2,14 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.dm-members-index-container-wrap {
+.server-members-index-container-wrap {
     width: 240px;
     flex-shrink: 0;
     background-color: #36393F;
 }
 
 
-.dm-members-index-container-wrapper {
+.server-members-index-container-wrapper {
     min-width: 240px;
     position: relative;
     max-height: 100%;
@@ -20,7 +20,7 @@
 
 }
 
-.dm-members-index-container {
+.server-members-index-container {
     overflow: hidden scroll;
     padding-right: 0px;
     forced-color-adjust: none;
@@ -37,16 +37,16 @@
     user-select: none;
 }
 
-.dm-members-index-container::-webkit-scrollbar {
+.server-members-index-container::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
 
-.dm-members-index-container::-webkit-scrollbar-corner {
+.server-members-index-container::-webkit-scrollbar-corner {
     background-color: #0000;
 }
 
-.dm-members-index-container::-webkit-scrollbar-thumb {
+.server-members-index-container::-webkit-scrollbar-thumb {
     background-clip: padding-box;
     border: 2px solid #0000;
     border-radius: 4px;
@@ -54,23 +54,23 @@
     min-height: 40px;
 }
 
-.dm-members-index-container:hover::-webkit-scrollbar-thumb {
+.server-members-index-container:hover::-webkit-scrollbar-thumb {
     visibility: visible;
 }
 
-.dm-members-index-container::-webkit-scrollbar-thumb,
-.dm-members-index-container::-webkit-scrollbar-track {
+.server-members-index-container::-webkit-scrollbar-thumb,
+.server-members-index-container::-webkit-scrollbar-track {
     visibility: hidden;
 }
 
-.dm-members-index-container::-webkit-scrollbar-track {
+.server-members-index-container::-webkit-scrollbar-track {
     border-color: #FFFFFF;
     ;
     background-color: #FFFFFF;
     border: 2px solid #FFFFFF;
 }
 
-.ul-padding {
+.server-members-ul-padding {
     padding-top: 10px;
     /* padding-top: 7.5px; */
     /* padding-left: 7.5px; */
@@ -79,7 +79,7 @@
 
 }
 
-.dm-members-header-title {
+.server-members-header-title {
     padding: 24px 8px 0 16px;
     height: 40px;
     forced-color-adjust: none;
@@ -98,7 +98,7 @@
     color: hsl(223, 3.4%, 60.2%);
 }
 
-.dm-member-item {
+.server-member-item {
     position: relative;
     max-width: 224px;
     margin-left: 8px;
@@ -114,14 +114,14 @@
 }
 
 
-.dm-member-item:hover {
+.server-member-item:hover {
     background-color: #3b3f45;
     color: hsl(210, 2.9%, 86.7%);
 }
 
 
 
-.dm-member-layout {
+.server-member-layout {
     outline: 0;
     align-items: center;
     border-radius: 4px;
@@ -133,7 +133,7 @@
 
 }
 
-.dm-member-avatar {
+.server-member-avatar {
     flex: 0 0 auto;
     width: 32px;
     height: 32px;
@@ -150,7 +150,7 @@
     overflow: hidden;
 }
 
-.dm-member-avatar-inner-wrapper {
+.server-member-avatar-inner-wrapper {
     width: 32px;
     height: 32px;
     forced-color-adjust: none;
@@ -167,14 +167,14 @@
 //     forced-color-adjust: none;
 // }
 
-.dm-member-avatar-img {
+.server-member-avatar-img {
     display: flex;
     align-items: center;
     overflow: hidden;
 }
 
 
-.dm-member-avatar-img>img {
+.server-member-avatar-img>img {
     height: 32px;
     width: 32px;
     border-radius: 50%;
@@ -184,7 +184,7 @@
 
 
 
-.dm-member-info-wrapper {
+.server-member-info-wrapper {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -195,7 +195,7 @@
     outline: 0;
 }
 
-.dm-member-username-wrapper {
+.server-member-username-wrapper {
     outline: 0;
     display: flex;
     -webkit-box-pack: start;
@@ -205,7 +205,7 @@
     forced-color-adjust: none;
 }
 
-.dm-member-username-div {
+.server-member-username-div {
     font-size: 16px;
     line-height: 20px;
     font-weight: 500;
@@ -219,7 +219,7 @@
     forced-color-adjust: none;
 }
 
-.dm-member-username-span {
+.server-member-username-span {
     display: block;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -229,13 +229,13 @@
     forced-color-adjust: none;
 }
 
-.dm-member-username {
+.server-member-username {
     forced-color-adjust: none;
     outline: 0;
 
 }
 
-.dm-server-group-owner-icon {
+.server-group-owner-icon {
     -webkit-box-flex: 0;
     flex: 0 0 auto;
     position: relative;
@@ -248,7 +248,7 @@
     color: hsl(38, 95.7%, 54.1%);
 }
 
-.dmshb-group-owner-tool-tip {
+.server-group-owner-tool-tip {
     background: #191919 !important;
     font-size: 14px !important;
     font-weight: 600 !important;
