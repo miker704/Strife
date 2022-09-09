@@ -46,7 +46,7 @@
 }
 
 
-.modal-struct {
+.modal-struct-0 {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -57,6 +57,16 @@
 
 }
 
+.modal-struct-1 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #0000;
+  z-index: 10;
+
+}
 
 .modal-child-component {
   position: absolute;
