@@ -19,12 +19,17 @@ import HomePageContainer from './friends/friends_page_main/friends_home_page_con
 import LoadingScreenContainer from './loading_screen/loading_screen_container.js';
 import DmServerContainer from './dm_servers/dm_server_container/dm_server_container.js';
 import ServerContainer from './server/server_container/server_container.js';
+import TestPageContainer from './nav_bar/test_container.js';
+
 
 const App = () => (
     <div>
 
         <Route path='/' component={ModalManagerContainer}></Route>
         {/* <ProtectedRoute path="/channels/@me" component={ServerNavBarContainer} /> */}
+        <ProtectedRoute path="/testing" component={TestPageContainer}/>
+
+
         <ProtectedRoute path="/channels/:serverId/" component={ServerNavBarContainer} />
 
         <ProtectedRoute path="/channels/" component={UserNavContainer}/>
