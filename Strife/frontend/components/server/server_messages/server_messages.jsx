@@ -130,7 +130,7 @@ class ServerMessages extends React.Component {
                                                 value={this.state.value}
                                                 onChange={this.handleInput()}
                                                 className="server-message-chat-box-area"
-                                                rows="100"
+                                                rows="24"
                                                 cols="88"
                                                 minLength={1}
                                                 maxLength={2000}
