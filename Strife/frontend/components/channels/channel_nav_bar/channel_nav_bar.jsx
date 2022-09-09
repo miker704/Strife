@@ -20,6 +20,7 @@ class ChannelNavBar extends React.Component {
     handleSubmit (event) {
         alert('Your favorite flavor is: ' + this.state.value);
         event.preventDefault();
+        this.setState({openMod: false});
     }
 
     // componentDidMount(){
@@ -27,10 +28,10 @@ class ChannelNavBar extends React.Component {
     // }
 
     openDropBox () {
-        if (this.openMod === true) {
+        if (this.state.openMod === true) {
                 console.log("hello")
             return (
-                <div style={"background:blue;"}>
+                <div style={{background:"blue;"}}>
                     <form onSubmit={this.handleSubmit}>
                         <label>
                             Pick your favorite flavor:
