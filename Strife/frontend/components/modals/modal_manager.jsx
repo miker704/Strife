@@ -75,6 +75,7 @@ class ModalManager extends React.Component {
             case 'createDmModal':
 
                 renderedModal = <CreateDmModalContainer/>
+                modalMod=1;
 
                 break;
 
@@ -89,9 +90,6 @@ class ModalManager extends React.Component {
             return null;
         }
 
-        if(this.props.modal === "createDmModal"){
-            modalMod=1;
-        }
 
 
         return (
