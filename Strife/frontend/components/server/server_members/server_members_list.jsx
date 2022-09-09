@@ -68,6 +68,19 @@ const ServerMembersList = ({
     //     }
     // })
 
+
+    const sortOfflineMembers = () =>{
+
+    }
+
+    const sortOnlineMembers = () => {
+        
+    }
+
+
+
+
+
     return (
         <div className="dm-members-index-container-wrapper">
             {
