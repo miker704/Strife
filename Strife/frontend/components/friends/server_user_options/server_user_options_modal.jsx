@@ -404,7 +404,7 @@ const ServerUserOptionsModal = ({
     return (
 
         <div className="user-profile-card-layer-container">
-            <div className="upc-popout" onClick={(e) => e.stopPropagation()}>
+            <div className="upc-popout" onClick={(e) => e.stopPropagation()} style={{ top: `${top}px` }} ref={popupRef}>
                 <div className="upc-inner-wrapper">
                     <div className="user-mini-upc">
                         <div className="upc-header-wrapper">
