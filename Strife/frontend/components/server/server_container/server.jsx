@@ -40,7 +40,10 @@ class Server extends React.Component {
                             {/* <div className="server-chat"> */}
                                 <ServerMessages/>
                             {/* </div> */}
+
+                            {this.state.hideMembersList && <ServerMembersListContainer/>}
                         </div>
+
                 </div>
             )
 
