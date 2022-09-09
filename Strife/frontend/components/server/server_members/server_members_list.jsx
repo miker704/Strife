@@ -18,6 +18,10 @@ const ServerMembersList = ({
 }) => {
    
 
+    const popUpRef = useRef();
+     
+
+
     const sortOfflineMembers = () =>{
 
     }
