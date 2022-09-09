@@ -1,4 +1,3 @@
-import ServerHeaderNavBar from "./server_header_nav_bar";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { fetchChannel, createChannel, updateChannel, deleteChannel, removeChannelErrors } from "../../../actions/channel_actions.js";
