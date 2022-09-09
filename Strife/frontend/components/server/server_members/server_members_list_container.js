@@ -5,7 +5,7 @@ import { fetchServer, fetchServers, removeServerErrors, deleteServer, updateServ
 import { createChannelMembership, deleteChannelMembership } from "../../../actions/channel_membership_actions.js";
 import { createServerMembership, deleteServerMembership } from "../../../actions/server_membership_actions.js";
 import { openModal } from "../../../actions/modal_actions.js";
-import ServerMembersList from "./server_members";
+import ServerMembersList from "./server_members_list.jsx";
 
 const mSTP = (state, ownProps) => {
     return {
