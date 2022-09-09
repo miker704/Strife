@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
+import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
 
 const InviteToDmModal = ({
 
