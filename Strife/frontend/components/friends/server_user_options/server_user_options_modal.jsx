@@ -181,9 +181,9 @@ const ServerUserOptionsModal = ({
 
     const handleBanUser = () => {
         console.log("sent user to ban world");
-        deleteServerMembership(member.id, { user_id: member.id, server_id: server.id }).then(() => {
-                setShowPopup(false);
-        })
+        // deleteServerMembership(member.id, { user_id: member.id, server_id: server.id }).then(() => {
+        //         setShowPopup(false);
+        // })
     }
 
 
