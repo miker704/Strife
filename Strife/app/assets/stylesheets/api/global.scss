@@ -379,6 +379,48 @@ label.field-error {
   transform: translate(5px, 0px);
 }
 
+
+.circle-0 {
+  // float: right;
+  background: hsl(214, 9.9%, 50.4%);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  // transform: translate(43px, -14px);
+  transform: translate(5px, 1px);
+}
+
+.circle-2 {
+  // float: right;
+  background: hsl(139, 47.3%, 43.9%);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  // transform: translate(43px, -14px);
+  transform: translate(5px, 0px);
+
+
+  width: 20px;
+  height: 20px;
+  transform: translate(60px, -25px);
+}
+
+
+.circle-1 {
+  // float: right;
+  background: red;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  // transform: translate(43px, -14px);
+  transform: translate(5px, 0px);
+}
+
+
+
+
+
+
 .frf-ERROR {
   font-size: 14px;
   line-height: 20px;
