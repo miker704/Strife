@@ -2,7 +2,7 @@ import React from "react";
 import ReactTooltip from "react-tooltip";
 import { useEffect, useState, useRef } from "react";
 import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
-
+import ServerUserOptionsModalContainer from "../../friends/server_user_options/server_user_options_modal_container";
 
 
 const ServerMembersList = ({
@@ -17,9 +17,22 @@ const ServerMembersList = ({
 
 }) => {
    
+    const [showPopup, setShowPopup] = useState(false);
+    const [popupTop, setPopupTop] = useState(0);
+    const [selectedMember, toggleSelected] = useState([]);
 
     const popUpRef = useRef();
     let render_User_PFP = user_Default_PFP;
+
+    const handleSelected = (member) => {
+        toggleSelected(member);
+    }
+
+    const handlePopupShow = (e) => {
+
+        setPopupTop(e.currentTarget.getBoundingClientRect().top);
+        setShowPopup(!showPopup);
+    }
 
 
     const sortOfflineMembers = () =>{
