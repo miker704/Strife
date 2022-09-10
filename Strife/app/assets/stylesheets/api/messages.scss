@@ -38,7 +38,9 @@
         resize: none;
         outline: 0;
         border: none;
-
+        min-width: 565px;
+        /* max-width: 1000px; */
+        width: 98%;
     }
 
 }
@@ -146,6 +148,7 @@
     align-items: stretch;
     min-height: 100%;
     forced-color-adjust: none;
+    position: relative;
 }
 
 .chat-scroller-inner {
