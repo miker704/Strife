@@ -130,8 +130,8 @@ class ServerMessages extends React.Component {
                                                 value={this.state.value}
                                                 onChange={this.handleInput()}
                                                 className="server-message-chat-box-area"
-                                                rows="24"
-                                                cols="88"
+                                                rows="1"
+                                                cols="1"
                                                 minLength={1}
                                                 maxLength={2000}
                                                 placeholder={"Message #general or #channel name"}
@@ -254,7 +254,7 @@ class ServerMessages extends React.Component {
                         </div>
                     </form>
                 </main>
-            </div>
+             </div>
         )
     }
 }
