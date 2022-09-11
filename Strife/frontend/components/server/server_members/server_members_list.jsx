@@ -77,7 +77,7 @@ const ServerMembersList = ({
                 showPopup && <ServerUserOptionsModalContainer
                     serverType={'SERVER'} member={selectedMember}
                     ServerOwner={ServerOwner}
-                    top={popupTop} setShowPopup={setShowPopup} />
+                    top={popupTop} setShowPopup={setShowPopup} ServerID= {server.id} />
 
             }
             <div className="server-members-index-container">
