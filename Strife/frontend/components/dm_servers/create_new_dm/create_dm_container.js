@@ -5,6 +5,7 @@ import { selectFriendStatus, selectAllFriends } from '../../../utils/selectors_a
 import { requestFriendships, removeFriendshipErrors , requestAllFriendships} from '../../../actions/friendship_actions'; 
 import { createDmServer, removeDmServerErrors } from '../../../actions/dm_server_actions';
 import { createDmMember } from '../../../actions/dm_member_actions';
+import { closeModal } from '../../../actions/modal_actions';
 
 const mSTP = (state) => {
     return {
@@ -25,7 +26,8 @@ const mDTP = (dispatch) => {
         createDmServer: (dmserver) => dispatch(createDmServer(dmserver)),
         createDmMember: (dm_member) => dispatch(createDmMember(dm_member)),
         removeDmServerErrors: () => dispatch(removeDmServerErrors()),
-        removeFriendshipErrors: () => dispatch(removeFriendshipErrors())
+        removeFriendshipErrors: () => dispatch(removeFriendshipErrors()),
+        closeModal: () => dispatch(closeModal())
     }
 }
 
