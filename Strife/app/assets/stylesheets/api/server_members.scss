@@ -70,14 +70,14 @@
     border: 2px solid #FFFFFF;
 }
 
-.server-members-ul-padding {
-    padding-top: 10px;
+// .server-members-ul-padding {
+    // padding-top: 10px;
     /* padding-top: 7.5px; */
     /* padding-left: 7.5px; */
     /* padding-bottom: 7.5px; */
     /* border-radius: 5px;*/
 
-}
+// }
 
 .server-members-header-title {
     padding: 24px 8px 0 16px;
@@ -96,6 +96,7 @@
     -webkit-box-flex: 1;
     flex: 1 1 auto;
     color: hsl(223, 3.4%, 60.2%);
+    margin-bottom: 5px;
 }
 
 .server-member-item {
