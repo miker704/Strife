@@ -2,7 +2,7 @@ import { LOGOUT_CURRENT_USER, RECEIVE_CURRENT_USER, REMOVE_CURRENT_USER, RECEIVE
 import { RECEIVE_DM_MEMBER } from "../actions/dm_member_actions.js";
 import { RECEIVE_DM_SERVER } from '../actions/dm_server_actions.js';
 import { RECEIVE_SERVER } from '../actions/server_actions.js';
-import { RECEIVE_SERVER_MEMBERSHIP } from '../actions/server_membership_actions.js';
+import { RECEIVE_SERVER_MEMBERSHIP, REMOVE_SERVER_MEMBERSHIP } from '../actions/server_membership_actions.js';
 import { RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP, RECEIVE_BLOCKED_USER } from '../actions/friendship_actions.js';
 
 const receiveUsers = (state, users) => {
@@ -66,6 +66,14 @@ const userReducer = (state = {}, action) => {
             user = newState[action.friendship.friend_id];
             user.friend_request_status = 0;
             return newState;
+
+
+        // case REMOVE_SERVER_MEMBERSHIP:
+
+        
+        //     newState = Object.assign({}, state);
+        //     newState[action.membershiphash.id] = action.membershiphash.id;
+        //     return newState;
 
         case REMOVE_CURRENT_USER:
             return {};
