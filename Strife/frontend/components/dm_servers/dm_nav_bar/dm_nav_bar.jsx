@@ -156,7 +156,7 @@ class DmNavBar extends React.Component {
 
                 <div className="clear-modal-wrapper" onClick={() => this.closeCreateDmModal()}>
                     <div onSubmit={() => this.handleSubmit()}>
-                        <CreateDmModalContainer />
+                        <CreateDmModalContainer setShowPopUp={this.setShowPopUp} />
                     </div>
                 </div>
             )
@@ -175,7 +175,10 @@ class DmNavBar extends React.Component {
 
         return (
             <div className='dm-server-nav-bar'>
-                {this.renderCreateDMModal()}
+                {/* {this.renderCreateDMModal()} */}
+
+                { this.state.showPopUp && <CreateDmModalContainer setShowPopUp={this.setShowPopUp} />}
+                
                 <div className='dm-nav-bar-search-bar'>
                     <button type='button' className='dm-nav-bar-search-bar-button'>Find or start a conversation</button>
                 </div>
@@ -282,7 +285,9 @@ class DmNavBar extends React.Component {
                     <div className="dm-list-header">
                         <h4>DIRECT MESSAGES</h4>
                         {/* <div className="create-channel-div" onClick={() => this.toggleCreateDmModal()}> */}
-                        <div className="create-channel-div" onClick={() => this.props.openModal('createDmModal')}>
+                        <div className="create-channel-div" onClick={() => this.setShowPopUp()}>
+
+                        {/* <div className="create-channel-div" onClick={() => this.props.openModal('createDmModal')}> */}
 
 
                             <svg x="0" y="0" aria-hidden="true" className="dm-add-button" role="img" width="24" height="24" viewBox="0 0 18 18">
