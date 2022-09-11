@@ -13,7 +13,18 @@ end
 #         end
 #     end
 # end
-
+    @servers.each do |server|
+        json.set! server.id do
+          server.members.each do |member|
+            json.users do 
+                json.set! member.id do
+                    json.partial! 'api/users/user', user: member
+                    json.photo url_for(member.photo) if member.photo.attached?
+                end
+            end
+          end
+        end
+    end
 
 
 @servers.each do |server|
