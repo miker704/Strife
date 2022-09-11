@@ -25,7 +25,9 @@ const serverReducer = (state = {}, action) => {
         return nextState;
         case REMOVE_SERVER_MEMBERSHIP:
 
-            delete nextState[action.membershiphash.server.id];
+            // delete nextState[action.membershiphash.server.id];
+            nextState[action.membershiphash.id]= action.membershiphash;
+
             return nextState;
         case LOGOUT_CURRENT_USER:
             return {};
