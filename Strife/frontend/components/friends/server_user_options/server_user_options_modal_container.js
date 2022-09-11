@@ -1,17 +1,17 @@
 import ServerUserOptionsModal from "./server_user_options_modal";
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { selectFriendStatusOnline} from '../../../utils/selectors_api_util';
-import { requestFriendships, removeFriendshipErrors, deleteFriendship, updateFriendship , blockUser, createFriendship} from '../../../actions/friendship_actions';
-import { createDmServer, removeDmServerErrors, fetchDmServer } from '../../../actions/dm_server_actions';
-import { createDmMember, deleteDmMember} from '../../../actions/dm_member_actions';
+import { selectFriendStatusOnline } from '../../../utils/selectors_api_util';
+import { requestFriendships, removeFriendshipErrors, deleteFriendship, updateFriendship, blockUser, createFriendship } from '../../../actions/friendship_actions';
+import { createDmServer, removeDmServerErrors, fetchDmServer, deleteDmServer } from '../../../actions/dm_server_actions';
+import { createDmMember, deleteDmMember } from '../../../actions/dm_member_actions';
 import { createChannelMembership, deleteChannelMembership } from "../../../actions/channel_membership_actions";
 import { createServerMembership, deleteServerMembership } from "../../../actions/server_membership_actions";
 import { fetchUser } from '../../../actions/session_actions';
-import { removeServerErrors } from "../../../actions/server_actions";
-import { removeChannelErrors } from "../../../actions/channel_actions";
+import { removeServerErrors, fetchServer } from "../../../actions/server_actions";
+import { removeChannelErrors, fetchChannel } from "../../../actions/channel_actions";
 
-const mSTP = (state,ownProps) => {
+const mSTP = (state, ownProps) => {
     return {
         currentUser: state.entities.users[state.session.id],
         friends: selectFriendStatusOnline(state, 3),
@@ -19,6 +19,11 @@ const mSTP = (state,ownProps) => {
         dmServerErrors: state.errors.dmServer,
         dmServerId: ownProps.match.params.dmServerId,
         dmServers: Object.values(state.entities.dmServers),
+        serverId: ownProps.match.params.serverId,
+        channelId: ownProps.match.params.channelId,
+        channels: Object.values(state.entities.channels),
+        servers: Object.values(state.entities.servers),
+
         serverErrors: state.errors.server,
         channelErrors: state.errors.channel
 
@@ -26,7 +31,7 @@ const mSTP = (state,ownProps) => {
 };
 
 
-const mDTP = (dispatch,ownProps) => {
+const mDTP = (dispatch, ownProps) => {
     return {
         fetchUser: (memberId) => dispatch(fetchUser(memberId)),
         requestFriendships: () => dispatch(requestFriendships()),
@@ -39,16 +44,19 @@ const mDTP = (dispatch,ownProps) => {
         kickUserfromGroupChat: (dm_memberId, dm_member) => dispatch(deleteDmMember(dm_memberId, dm_member)),
         createDmServer: (dmserver) => dispatch(createDmServer(dmserver)),
         fetchDmServer: () => dispatch(fetchDmServer(ownProps.match.params.dmServerId)),
+        deleteDmServer: (dmServerId) => dispatch(deleteDmServer(dmServerId)),
 
+        fetchServer: () => dispatch(fetchServer(ownProps.match.params.serverId)),
+        fetchChannel: () => dispatch(fetchChannel(ownProps.match.params.channelId)),
 
         createServerMembership: (servermembership) => dispatch(createServerMembership(servermembership)),
-        deleteServerMembership: (servermembershipId, servermembership) => 
-        dispatch(deleteServerMembership(servermembershipId,servermembership)),
+        deleteServerMembership: (servermembershipId, servermembership) =>
+            dispatch(deleteServerMembership(servermembershipId, servermembership)),
 
         //channel membership api functions 
         createChannelMembership: (channelmembership) => dispatch(createChannelMembership(channelmembership)),
-        deleteChannelMembership: (channelmembershipId,channelmembership) => 
-        dispatch(deleteChannelMembership(channelmembershipId,channelmembership)),
+        deleteChannelMembership: (channelmembershipId, channelmembership) =>
+            dispatch(deleteChannelMembership(channelmembershipId, channelmembership)),
 
 
         removeChannelErrors: () => dispatch(removeChannelErrors()),
