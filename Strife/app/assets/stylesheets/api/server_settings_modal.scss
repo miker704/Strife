@@ -1,0 +1,1283 @@
+//server settings modal similar layout to the user profile modal (using most of its styling
+//  already these here are styles exclusive to the server options modal)
+
+
+.server-op-item-flex {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    forced-color-adjust: none;
+    flex-wrap: nowrap;
+    display: flex;
+    outline: 0;
+    user-select: none;
+
+}
+
+.server-op-item-flex-jcc {
+    flex: 1 1 50%;
+    margin-left: 0;
+    margin-right: 10px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    outline: 0;
+    display: flex;
+}
+
+.server-op-item-flex-child {
+    flex: 1 1 auto;
+    outline: 0;
+    margin-right: 10px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    margin-left: 0;
+
+}
+
+.server-image-uploader {
+    text-align: center;
+    font-size: 12px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.server-image-uploader-inner {
+    outline: 0;
+    forced-color-adjust: none;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 50%;
+    background-color: hsl(235, 85.6%, 64.7%);
+    display: inline-block;
+    width: 138px;
+    height: 138px;
+    width: 100px;
+    height: 100px;
+    background-size: 100% 100%;
+    box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.24);
+}
+
+.server-image-uploader-inner>* {
+    outline: 0;
+    box-sizing: border-box;
+    align-items: center;
+    pointer-events: none;
+    color: hsl(0, 0%, 100%);
+    justify-content: center;
+    -webkit-box-align: center;
+    display: flex;
+    -webkit-box-pack: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    forced-color-adjust: none;
+    font-family: "Whitney";
+}
+
+.image-uploader-acro {
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    font-size: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.server-op-image-uploader-hint {
+    visibility: hidden;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 12px;
+    white-space: pre;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    outline: 0;
+
+}
+
+
+.server-op-image-uploader-hint:hover {
+    visibility: visible;
+
+}
+
+.server-op-pfp-input {
+    font-family: "Whitney";
+    text-rendering: optimizeLegibility;
+    outline: 0;
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    pointer-events: auto;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    font-size: 0px;
+}
+
+
+.server-op-image-uploader-fp {
+    font-family: "Whitney";
+    font-size: 10px;
+    color: hsl(214, 4%, 65.3%);
+    margin-top: 10px;
+    display: block;
+    box-sizing: border-box;
+    strong{
+        padding-left: 2px;
+    }
+}
+
+.server-op-image-uploader-icon {
+    background-color: hsl(210, 2.9%, 86.7%);
+    forced-color-adjust: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 2px 4px 0 hsla(0, 0%, 0%, .2);
+    box-shadow: 0 2px 4px 0 hsla(0, 0%, 0%, .2);
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: 0;
+    box-sizing: border-box;
+    background-image: image_url('uploadimghint.svg');
+
+}
+
+
+.server-op-item-flex-vertical {
+    flex: 1 1 auto;
+    max-width: 180px;
+    margin-right: 0;
+    margin-left: 10px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    outline: 0;
+    display: flex;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: start;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.server-op-icon-rec-s {
+    margin-bottom: 8px;
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    color: hsl(216, 3.7%, 73.5%);
+    cursor: default;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: "Whitney";
+
+}
+
+.server-op-pfp-upload-button {
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    cursor: default;
+    width: auto;
+    height: 38px;
+    min-width: 96px;
+    min-height: 38px;
+    transition: color .17s ease, background-color .17s ease, border-color .17s ease;
+    border-width: 1px;
+    border-style: solid;
+    font-family: "Whitney";
+    text-rendering: optimizeLegibility;
+
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    user-select: none;
+    color: hsl(0, 0%, 100%);
+    border-color: hsl(217, 7.6%, 33.5%);
+
+}
+
+.server-op-pfp-upload-button:hover{
+    background-color: hsl(217, 7.6%, 33.5%);
+    border-color: hsl(217, 7.6%, 33.5%);
+    color: hsl(0, 0%, 100%);
+}
+
+.server-op-iubt {
+    margin: 0 auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    box-sizing: border-box;
+    outline: 0;
+    forced-color-adjust: none;
+}
+
+.server-op-item-margin-bottom {
+    outline: 0;
+    forced-color-adjust: none;
+    margin-right: 0;
+    margin-left: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    flex: 1 1 50%;
+}
+
+.server-op-item-margin-bottom-h5 {
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    outline: 0;
+    color: hsl(216, 3.7%, 73.5%);
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 16px;
+    -webkit-box-flex: 1;
+    flex: 1;
+    cursor: default;
+    font-family: "ABC Ginto Normal";
+}
+
+.server-op-name-input-wrapper {
+    outline: 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    box-sizing: border-box;
+    forced-color-adjust: none;
+}
+
+.server-op-name-input {
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 40px;
+    font-size: 16px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 3px;
+    color: hsl(210, 2.9%, 86.7%);
+    background-color: hsl(216, 7.2%, 13.5%);
+    border: none;
+    transition: border-color .2s ease-in-out;
+    font-family: "Whitney";
+    text-rendering: optimizeLegibility;
+    font-weight: 400;
+
+
+}
+
+.server-op-divider {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid #0000;
+    box-sizing: border-box;
+    outline: 0;
+    forced-color-adjust: none;
+    border-color: hsla(218, 4.6%, 46.9%, 0.3);
+}
+
+.server-op-divider-flex-js {
+    flex: 1 1 auto;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    display: flex;
+    outline: 0;
+}
+
+.server-op-flexchild1 {
+    flex: 1 1 50%;
+    margin-left: 0;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    margin-right: 10px;
+    outline: 0;
+
+}
+
+.server-op-div-fjs-h5 {
+    outline: 0;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: hsl(216, 3.7%, 73.5%);
+    font-family: "ABC Ginto Normal";
+    flex: 1;
+    -webkit-box-flex: 1;
+    cursor: default;
+
+}
+
+.select-box-look-filled {
+    outline: 0;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    border: 1px solid #0000;
+    padding: 8px 8px 8px 12px;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 4px;
+    color: hsl(210, 2.9%, 86.7%);
+    font-weight: 500;
+    border-color: hsl(216, 7.2%, 13.5%);
+    background-color: hsl(216, 7.2%, 13.5%);
+}
+
+.s-b-value {
+    outline: 0;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    gap: 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.s-b-value-flex {
+    flex: 1 1 auto;
+    outline: 0;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    display: flex;
+
+}
+
+.sb-value-inner {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    forced-color-adjust: none;
+    margin: 0 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: "Whitney";
+    font-weight: 400;
+    color: hsl(210, 2.9%, 86.7%);
+    outline: 0;
+
+}
+
+.sb-value-inner-bolden {
+    outline: 0;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    font-family: "Whitney";
+    box-sizing: border-box;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: hsl(216, 2.1%, 53.9%);
+    margin-left: 8px;
+    min-width: 48px;
+    text-transform: uppercase;
+    forced-color-adjust: none;
+    font-weight: 600;
+}
+
+
+
+.server-op-divider-icons-wrap {
+    box-sizing: border-box;
+    outline: 0;
+    forced-color-adjust: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 4px;
+
+}
+
+.select-box-look-disabled {
+    outline: 0;
+    border: 1px solid #0000;
+    padding: 8px 8px 8px 12px;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 4px;
+    color: hsl(210, 2.9%, 86.7%);
+    font-weight: 500;
+    cursor: not-allowed;
+    opacity: .6;
+    forced-color-adjust: none;
+    border-color: hsl(216, 7.2%, 13.5%);
+    background-color: hsl(216, 7.2%, 13.5%);
+}
+
+.inactive-sub-info {
+    forced-color-adjust: none;
+    outline: 0;
+    margin-top: 8px;
+    box-sizing: border-box;
+    cursor: default;
+    color: hsl(216, 3.7%, 73.5%);
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: "Whitney";
+
+}
+
+
+
+.server-op-margin-top-container {
+    forced-color-adjust: none;
+    margin-top: 20px;
+    display: flex;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    margin-bottom: 20px;
+    -webkit-box-orient: vertical;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.icon-hash-sop {
+    box-sizing: border-box;
+    align-self: center;
+    min-width: 16px;
+    opacity: .3;
+    forced-color-adjust: none;
+}
+
+.sop-label-row {
+    outline: 0;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    flex-direction: row;
+    width: 100%;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    forced-color-adjust: none;
+
+}
+
+.sop-label {
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    flex: 1;
+    display: block;
+    overflow: hidden;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #FFFFFF;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 500;
+    word-wrap: break-word;
+    -webkit-box-flex: 1;
+    cursor: pointer;
+    forced-color-adjust: none;
+    font-family: "Whitney";
+}
+
+.sop-slide-control {
+    position: relative;
+    width: 40px;
+    height: 24px;
+    outline: 0;
+    border-radius: 14px;
+    cursor: pointer;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    opacity: 1;
+    background-color: hsl(139, 47.3%, 43.9%);
+}
+
+.slider-32CRPX {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 28px;
+    height: 18px;
+    margin: 3px;
+    box-sizing: border-box;
+    cursor: pointer;
+    forced-color-adjust: none;
+    left: 12px;
+}
+
+.sop-slider {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    outline: 0;
+    height: 100%;
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    font-family: "Whitney";
+    text-rendering: optimizeLegibility;
+    border-radius: 14px;
+    cursor: pointer;
+
+
+}
+
+
+.sop-radio-item, .sop-radio-item1 {
+    outline: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    margin-bottom: 8px;
+    cursor: pointer;
+    border-radius: 3px;
+    display: block;
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    color: hsl(216, 3.7%, 73.5%);
+    background-color: hsl(223, 6.9%, 19.8%);
+}
+
+.sop-radio-item[aria-check=true], .sop-radio-item1 {
+    background-color: hsla(217, 7.6%, 33.5%, 0.6);
+    color: #FFFFFF;
+
+}
+
+.sop-radio-item:hover{
+    background-color: hsla(217, 7.6%, 33.5%, 0.4);
+    color: hsl(210, 2.9%, 86.7%);
+}
+
+.sop-radio-item-inner {
+    padding: 10px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    border-left: 3px solid transparent;
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 8px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    outline: 0;
+}
+
+.sop-radio-info {
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    margin-right: 8px;
+    width: 100%;
+    display: grid;
+    grid-gap: 4px;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.sop-text-med {
+    font-family: "Whitney";
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    outline: 0;
+    strong{
+        padding-left: 2px;
+    }
+}
+
+.sop-section-title {
+    outline: 0;
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    display: flex;
+}
+
+.sop-section-header {
+    outline: 0;
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: "ABC Ginto Normal";
+    -webkit-box-flex: 1;
+    flex: 1;
+    cursor: default;
+
+}
+
+.sop-display-children {
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    outline: 0;
+}
+
+.server-op-divider-flex-js2 {
+    flex: 1 1 auto;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    display: flex;
+    outline: 0;
+}
+
+.server-op-divider-flex-horz {
+    flex: 1 1 50%;
+    margin-right: 10px;
+    margin-left: 10px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    display: flex;
+    outline: 0;
+}
+
+.server-op-divider-flex-horz:first-child {
+    margin-left: 0;
+}
+
+.server-op-horz-martop-container {
+    display: flex;
+    -webkit-box-direction: normal;
+    box-sizing: border-box;
+    outline: 0;
+    flex-direction: column;
+    -webkit-box-orient: vertical;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    forced-color-adjust: none;
+}
+
+
+.server-op-horz-label-wrapper {
+    outline: 0;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-direction: normal;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-align: start;
+    forced-color-adjust: none;
+}
+
+.server-op-horz-label {
+    flex: 1;
+    display: block;
+    overflow: hidden;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #FFFFFF;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 500;
+    word-wrap: break-word;
+    cursor: pointer;
+    -webkit-box-flex: 1;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    outline: 0;
+    font-family: "Whitney";
+
+}
+
+.control-123 {
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    outline: 0;
+    flex: 0 0 auto;
+    -webkit-box-flex: 0;
+}
+
+.control-inner {
+    position: relative;
+    width: 40px;
+    height: 24px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    outline: 0;
+    border-radius: 14px;
+    cursor: pointer;
+    opacity: 1;
+    background-color: hsl(218, 4.6%, 46.9%);
+}
+
+.flex-child-boost-ex {
+    flex: 1 1 50%;
+    margin-right: 0;
+    margin-left: 10px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.flex-child-boost-ex-img {
+    content: image_url("boostexample.png");
+    width: 320px;
+    height: 252px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.sbb-op-flex {
+    forced-color-adjust: none;
+    flex: 1 1 50%;
+    box-sizing: border-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    outline: 0;
+    display: flex;
+
+}
+
+.sbb-flex-child {
+    flex: 1 1 50%;
+    margin-right: 10px;
+    forced-color-adjust: none;
+    margin-left: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+
+
+.faint-server-boost-icon-super-wrapper {
+    outline: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    forced-color-adjust: none;
+}
+
+.faint-server-boost-icon-wrapper {
+    padding: 1px 2px;
+    border-radius: 16px;
+    forced-color-adjust: none;
+    margin-left: 4px;
+    height: 18px;
+    background-color: hsl(220, 6.8%, 17.3%);
+    display: flex;
+    margin-top: -1px;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.faint-server-boost-icon {
+    flex: 0 0 auto;
+    position: relative;
+    top: 1px;
+    width: 14px;
+    height: 14px;
+    margin-right: 3px;
+    box-sizing: border-box;
+    forced-color-adjust: none;
+}
+
+.faint-boost-h3 {
+    font-family: "ABC Ginto Normal";
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    color: inherit;
+    forced-color-adjust: none;
+    margin-right: 4px;
+}
+
+.faint-boost-sub {
+    forced-color-adjust: none;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+    color: hsl(216, 3.7%, 73.5%);
+    cursor: default;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    outline: 0;
+    font-family: "Whitney";
+}
+
+.faint-boost-sub2 {
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    color: hsl(216, 3.7%, 73.5%);
+    cursor: default;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    outline: 0;
+    font-family: "Whitney";
+
+}
+
+.faint-anchor {
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: 0;
+    cursor: pointer;
+    color: hsl(197, 100%, 47.8%);
+    padding-left:2px;
+}
+
+.faint-boost-shiny-button {
+    cursor: pointer;
+    margin-top: 16px;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: auto;
+    forced-color-adjust: none;
+    cursor: pointer;
+    color: #FFFFFF;
+    background-color: hsl(139, 47.1%, 33.3%);
+    height: 38px;
+    min-width: 96px;
+    min-height: 38px;
+    transition: background-color .17s ease, color .17s ease;
+    outline: 0;
+    font-family: "Whitney";
+    text-rendering: optimizeLegibility;
+
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    -webkit-user-select: none;
+    user-select: none;
+
+}
+
+.faint-boost-shiny-button:active{
+    background-color: hsl(138,46.9%,22.2%);
+}
+.faint-boost-shiny-button:hover{
+    background-color: hsl(138,46.8%,24.3%);
+}
+
+
+.shiny-button-contents {
+    margin: 0 auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    forced-color-adjust: none;
+    align-items: center;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: 0;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.shiny-button-icon {
+    margin-right: 4px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+}
+
+.shiny-button-container {
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    left: -50%;
+    position: absolute;
+    top: -50%;
+    bottom: 0;
+    right: 0;
+    animation-delay: .75s;
+    animation-duration: 2s;
+    animation-name: Shine-2gtL99;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    color: hsla(0, 0%, 100%, 0.1);
+    outline: 0;
+    pointer-events: none;
+}
+
+
+
+@-webkit-keyframes Shine-2gtL99 {
+    0% {
+        -webkit-transform: translate3d(-50%, 0, 0);
+        transform: translate3d(-50%, 0, 0)
+    }
+
+    to {
+        -webkit-transform: translate3d(200%, 0, 0);
+        transform: translate3d(200%, 0, 0)
+    }
+}
+
+@keyframes Shine-2gtL99 {
+    0% {
+        -webkit-transform: translate3d(-50%, 0, 0);
+        transform: translate3d(-50%, 0, 0)
+    }
+
+    to {
+        -webkit-transform: translate3d(200%, 0, 0);
+        transform: translate3d(200%, 0, 0)
+    }
+}
+
+@-webkit-keyframes InstantShine-19EOUM {
+    0% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+
+    to {
+        -webkit-transform: translate3d(200%, 0, 0);
+        transform: translate3d(200%, 0, 0)
+    }
+}
+
+@keyframes InstantShine-19EOUM {
+    0% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+
+    to {
+        -webkit-transform: translate3d(200%, 0, 0);
+        transform: translate3d(200%, 0, 0)
+    }
+}
+
+
+
+
+
+
+
+.shiny-button-flex {
+    flex: 1 1 auto;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    background-color: currentColor;
+    height: 300%;
+    position: relative;
+    top: -100%;
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+    width: 56px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-align: center;
+    display: flex;
+    outline: 0;
+}
+
+.shiny-button-inner{
+    outline: 0;
+    background-color: currentColor;
+    height: 100%;
+    width: 16px;
+    box-sizing: border-box;
+    forced-color-adjust: none;
+}
+
+.faint-boost-flex-child{
+    flex: 1 1 50%;
+    margin-right: 0;
+    margin-left: 10px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.faint-upsell{
+    cursor: pointer;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.faint-img-uploader{
+    forced-color-adjust: none;
+    cursor: not-allowed;
+    text-align: center;
+    font-size: 12px;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.faint-img-upload{
+    forced-color-adjust: none;
+    background-color: hsl(217,7.6%,33.5%);
+    background-image: none;
+    border-radius: 4px;
+    background-image: linear-gradient(45deg,hsl(221,70%,55.5%),hsl(269,83.8%,71%));
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 100%;
+    height: 180px;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.faint-img-acyro{
+    font-size: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    forced-color-adjust: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    pointer-events: none;
+    color:#FFFFFF;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.faint-img-icon{
+    background-image: none;
+    background-color: hsl(0,0%,100%);
+    position: absolute;
+    forced-color-adjust: none;
+    opacity: 1%;
+    top: 0;
+    right: 0;
+    left: auto;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 2px 4px 0 hsla(0,0%,0%,0.2);
+    box-shadow: 0 2px 4px 0 hsla(0,0%,0%,0.2);
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+.radioIconForeground{
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+}
+
+.faint-h5{
+    display: flex;
+    margin-bottom: 8px;
+    forced-color-adjust: none;
+    color: hsl(216,3.7%,73.5%);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    -webkit-box-flex: 1;
+    flex: 1;
+    cursor: default;
+    text-transform: uppercase;
+    font-family: "ABC Ginto Normal";
+}
+
+.faint-server-invite-text1{
+    margin-bottom: 8px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    color: hsl(216, 3.7%, 73.5%);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    cursor: default;
+    font-family: "Whitney";
+}
+
+.faint-server-invite-text2{
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    color: hsl(216, 3.7%, 73.5%);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    cursor: default;
+    font-family: "Whitney";
+}
+
+.inactive-sub-info-2{
+    margin-bottom: 20px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    color:hsl(216, 3.7%, 73.5%);
+    cursor: default;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: "Whintey";
+
+
+}
+
+
+// .inactive-sub-info-2{
+//     margin-bottom: 20px;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     color:hsl(216, 3.7%, 73.5%);
+//     cursor: default;
+//     font-size: 14px;
+//     line-height: 20px;
+//     font-weight: 400;
+//     font-family: "Whintey";
+//     margin-bottom: 20px;
+    
+
+// }
+
+.s-b-value-flex1{
+    flex: 1 1 auto;
+    outline: 0;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    align-items: baseline;
+    display: flex;
+}
