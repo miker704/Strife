@@ -10,6 +10,7 @@ const ServerUserOptionsModal = ({
     member,
     DmServerOwner,
     ServerOwner,
+    ServerID,
     user,
     friends,
     fetchUser,
@@ -21,6 +22,8 @@ const ServerUserOptionsModal = ({
     DmServerId,
     dmServers,
     createDmServer,
+    deleteDmServer,
+    dmServerMembers,
     dmServerId,
     fetchDmServer,
     kickUserfromGroupChat,
@@ -37,6 +40,10 @@ const ServerUserOptionsModal = ({
     removeChannelErrors,
     removeServerErrors,
     history,
+    serverId,
+    channelId,
+    fetchChannel,
+    fetchServer,
     serverType
 }) => {
     let USER_PFP = user_Default_PFP;
@@ -46,11 +53,16 @@ const ServerUserOptionsModal = ({
         </div>) :
         (<img src={member.photo} alt="upfp" />);
 
+    const popupRef = useRef();
+    const dmMembersArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
+    closeHookModalOnOutsideClick(popupRef, setShowPopup);
+    closeOnEsc(setShowPopup);
+
     if (member.id === currentUser.id) {
 
         return (
             <div className="user-profile-card-layer-container">
-                <div className="upc-popout" onClick={(e) => e.stopPropagation()}>
+                <div className="upc-popout" onClick={(e) => e.stopPropagation()} style={{ top: `${top}px` }} ref={popupRef}>
                     <div className="upc-inner-wrapper">
                         <div className="user-mini-upc">
                             <div className="upc-header-wrapper">
@@ -91,7 +103,7 @@ const ServerUserOptionsModal = ({
                                                     `upc-pfp-icon-hover-wrapper color-${member.color_tag}` :
                                                     `upc-pfp-icon-hover-wrapper`}`}>
                                                 {rendered_PFP}
-                                                <div className={`${member.currentUser.online ? `circle-2` : `circle-0`}`} />
+                                                <div className={`${member.online ? `circle-2` : `circle-0`}`} />
                                             </div>
                                         </div>
                                     </div>
@@ -110,11 +122,7 @@ const ServerUserOptionsModal = ({
                                 </div>
                                 <div className="upc-seper"></div>
                             </div>
-                            {/* <div className="upc-footer">
-                                <div className="upc-input-wrapper">
-                                    <input maxLength={999} className="upc-input" type="text" placeholder={`Message @${member.username} (disabled)`} disabled />
-                                </div>
-                            </div> */}
+
                         </div>
                     </div>
                 </div>
@@ -148,15 +156,21 @@ const ServerUserOptionsModal = ({
             // requestFriendships();
             // fetchDmServer(dmServerId)
             // requestFriendships();
+
+
+            // if(serverType === "SERVER"){
+            //     console.log("hello")
+            //     fetchServer();
+            //     fetchChannel();
+            // }
         }
 
     }, []);
 
 
-    const popupRef = useRef();
-    const dmMembersArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
-    closeHookModalOnOutsideClick(popupRef, setShowPopup);
-    closeOnEsc(setShowPopup);
+
+
+
 
     const handleDm = () => {
 
@@ -250,17 +264,38 @@ const ServerUserOptionsModal = ({
             dm_member_id: member.id,
             dm_server_id: DmServerId
         }
-        kickUserfromGroupChat(member.id, subState).then(() => {
-            setShowPopup(false);
-        });
+
+        console.log("dmserversmembers .length: ", dmServerMembers);
+
+        if (Object.values(dmServerMembers).length - 1 === 2) {
+            console.log("deleting group chat there are only 2 members")
+            // kickUserfromGroupChat(member.id, subState).then(() => {
+            //     setShowPopup(false);
+            // });
+            deleteDmServer(DmServerId).then(() => {
+                history.push(`/channels/@me`);
+            })
+        }
+        else {
+
+            kickUserfromGroupChat(member.id, subState).then(() => {
+                setShowPopup(false);
+            });
+        }
+
+
         return;
     }
 
     const handleBanUser = () => {
-        console.log("sent user to ban world");
-        // deleteServerMembership(member.id, { user_id: member.id, server_id: server.id }).then(() => {
-        //         setShowPopup(false);
-        // })
+        let subState = { user_id: member.id, server_id: ServerID };
+
+        deleteServerMembership(member.id, subState).then(() => {
+            fetchChannel(channelId);
+            fetchServer(serverId);
+            setShowPopup(false);
+        })
+        return;
     }
 
 
@@ -276,22 +311,21 @@ const ServerUserOptionsModal = ({
     </div>) : ("")
 
 
-
     switch (memberStatus.friend_request_status) {
         //if group owner allow kicking of user 
         case -1:
             //remove block only -> no message
             EditOptions = (
-              
-                    <div className="fo-scroller-2">
-                        <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
-                            <div className="fo-item-name">Unblock User</div>
-                        </div>
-                        {kickUserOption}
-                        {banUserFromServerTag}
-                        <div className="fo-options-bottom-div"></div>
+
+                <div className="fo-scroller-2">
+                    <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
+                        <div className="fo-item-name">Unblock User</div>
                     </div>
-               
+                    {kickUserOption}
+                    {banUserFromServerTag}
+                    <div className="fo-options-bottom-div"></div>
+                </div>
+
             );
             break;
 
@@ -300,103 +334,103 @@ const ServerUserOptionsModal = ({
         case 0:
             // add friend, block friend, message
             EditOptions = (
-               
-                    <div className="fo-scroller-2">
-                        <div className="fo-item-container" onClick={() => handleDm()}>
-                            <div className="fo-item-name">Message</div>
-                        </div>
-                        <div className="fo-item-container green" onClick={() => handleCreateFriendShip()}>
-                            <div className="fo-item-name">Send Friend Request</div>
-                        </div>
 
-                        <div className="fo-item-container red" onClick={() => handleBlockUser()}>
-                            <div className="fo-item-name">Block User</div>
-                        </div>
-                        {kickUserOption}
-                        {banUserFromServerTag}
-                        <div className="fo-options-bottom-div"></div>
+                <div className="fo-scroller-2">
+                    <div className="fo-item-container" onClick={() => handleDm()}>
+                        <div className="fo-item-name">Message</div>
                     </div>
-             
+                    <div className="fo-item-container green" onClick={() => handleCreateFriendShip()}>
+                        <div className="fo-item-name">Send Friend Request</div>
+                    </div>
+
+                    <div className="fo-item-container red" onClick={() => handleBlockUser()}>
+                        <div className="fo-item-name">Block User</div>
+                    </div>
+                    {kickUserOption}
+                    {banUserFromServerTag}
+                    <div className="fo-options-bottom-div"></div>
+                </div>
+
             );
             break;
 
         case 1:
             //message, cancel request
             EditOptions = (
-             
-                    <div className="fo-scroller-2">
-                        <div className="fo-item-container" onClick={() => handleDm()}>
-                            <div className="fo-item-name">Message</div>
-                        </div>
-                        <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
-                            <div className="fo-item-name">Cancel Friend Request</div>
-                        </div>
-                        {kickUserOption}
-                        {banUserFromServerTag}
-                        <div className="fo-options-bottom-div"></div>
+
+                <div className="fo-scroller-2">
+                    <div className="fo-item-container" onClick={() => handleDm()}>
+                        <div className="fo-item-name">Message</div>
                     </div>
-            
+                    <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
+                        <div className="fo-item-name">Cancel Friend Request</div>
+                    </div>
+                    {kickUserOption}
+                    {banUserFromServerTag}
+                    <div className="fo-options-bottom-div"></div>
+                </div>
+
             );
             break;
 
         case 2:
             // messgae, approve, deny request
             EditOptions = (
-               
-                    <div className="fo-scroller-2">
-                        <div className="fo-item-container" onClick={() => handleDm()}>
-                            <div className="fo-item-name">Message</div>
-                        </div>
-                        <div className="fo-item-container green" onClick={() => handleUpdateFriendShip()}>
-                            <div className="fo-item-name">Accept Friend Request</div>
-                        </div>
-                        <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
-                            <div className="fo-item-name">Ignore Friend Request</div>
-                        </div>
-                        {kickUserOption}
-                        {banUserFromServerTag}
-                        <div className="fo-options-bottom-div"></div>
+
+                <div className="fo-scroller-2">
+                    <div className="fo-item-container" onClick={() => handleDm()}>
+                        <div className="fo-item-name">Message</div>
                     </div>
-              
+                    <div className="fo-item-container green" onClick={() => handleUpdateFriendShip()}>
+                        <div className="fo-item-name">Accept Friend Request</div>
+                    </div>
+                    <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
+                        <div className="fo-item-name">Ignore Friend Request</div>
+                    </div>
+                    {kickUserOption}
+                    {banUserFromServerTag}
+                    <div className="fo-options-bottom-div"></div>
+                </div>
+
             );
             break;
         case 3:
             //messgae, delete friend
             EditOptions = (
-           
-                    <div className="fo-scroller-2">
-                        <div className="fo-item-container" onClick={() => handleDm()}>
-                            <div className="fo-item-name">Message</div>
-                        </div>
-                        <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
-                            <div className="fo-item-name">Remove Friend</div>
-                        </div>
-                        {kickUserOption}
-                        {banUserFromServerTag}
-                        <div className="fo-options-bottom-div"></div>
+
+                <div className="fo-scroller-2">
+                    <div className="fo-item-container" onClick={() => handleDm()}>
+                        <div className="fo-item-name">Message</div>
                     </div>
-           
+                    <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
+                        <div className="fo-item-name">Remove Friend</div>
+                    </div>
+                    {kickUserOption}
+                    {banUserFromServerTag}
+                    <div className="fo-options-bottom-div"></div>
+                </div>
+
             );
             break;
 
         default:
             EditOptions = (
-              
-                    <div className="fo-scroller-2">
-                        <div className="fo-item-container">
-                            <div className="fo-item-name">Message</div>
-                        </div>
-                        <div className="fo-item-container">
-                            <div className="fo-item-name">Start Voice Call</div>
-                        </div>
-                        <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
-                            <div className="fo-item-name">Remove Friend</div>
-                        </div>
-                        {kickUserOption}
-                        {banUserFromServerTag}
-                        <div className="fo-options-bottom-div"></div>
+
+                <div className="fo-scroller-2">
+                    <div className="fo-item-container">
+                        <div className="fo-item-name">Message</div>
                     </div>
-           
+                    <div className="fo-item-container">
+                        <div className="fo-item-name">Start Voice Call</div>
+                    </div>
+                    <div className="fo-item-container red" onClick={() => handleDeleteFriendShip()}>
+                        <div className="fo-item-name">Remove Friend</div>
+                    </div>
+                    {kickUserOption}
+                    {banUserFromServerTag}
+                    <div className="fo-options-bottom-div"></div>
+                </div>
+
             )
 
     }
@@ -404,7 +438,7 @@ const ServerUserOptionsModal = ({
     return (
 
         <div className="user-profile-card-layer-container">
-            <div className="upc-popout" onClick={(e) => e.stopPropagation()} style={{ top: `${top}px` }} ref={popupRef}>
+            <div className="upc-popout" onClick={(e) => e.stopPropagation()} style={{ top: `${top * 0.60}px` }} ref={popupRef}>
                 <div className="upc-inner-wrapper">
                     <div className="user-mini-upc">
                         <div className="upc-header-wrapper">
