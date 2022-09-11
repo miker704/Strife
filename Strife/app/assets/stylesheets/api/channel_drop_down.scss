@@ -1,0 +1,238 @@
+//this is the file for the server/channel edit settings modal
+
+
+.channel-drop-down-layer {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: none !important;
+    pointer-events: none;
+    z-index: 1002;
+    outline: 0;
+    forced-color-adjust: none;
+    user-select: none;
+}
+
+
+.channel-drop-down-pop-up {
+    forced-color-adjust: none;
+    position: absolute;
+    top: 56px;
+    left: 82px;
+}
+
+.channel-drop-down-pop-up-animate {
+    forced-color-adjust: none;
+    outline: 0;
+    transition: transform .12s ease-out, opacity .12s ease-out, -webkit-transform .12s ease-out;
+    transform: scale(1);
+    opacity: 1;
+    transform-origin: top center;
+}
+
+
+.channel-drop-menu {
+    outline: 0;
+    forced-color-adjust: none;
+    width: 220px;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    display: flex;
+    height: auto;
+    cursor: default;
+    max-height: calc(100vh - 32px);
+    box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.24);
+    background: hsl(225, 7.7%, 10.2%);
+    border-radius: 4px;
+}
+
+.channel-drop-scroller {
+    overflow: hidden scroll;
+    padding-right: 0px;
+    forced-color-adjust: none;
+    outline: 0;
+    padding: 6px 8px;
+    position: relative;
+    box-sizing: border-box;
+    min-height: 0;
+    flex: 1 1 auto;
+
+}
+
+
+.channel-drop-scroller::-webkit-scrollbar-track {
+    border-color: hsla(0, 0%, 0%, 0);
+    background-color: hsla(0, 0%, 0%, 0);
+    border: 2px solid hsla(0, 0%, 0%, 0);
+}
+
+.channel-drop-scroller::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    border: 2px solid #0000;
+    border-radius: 4px;
+    background-color: hsl(216, 7.2%, 13.5%);
+    min-height: 40px;
+}
+
+.channel-drop-scroller::-webkit-scrollbar-corner {
+    background-color: #0000;
+}
+
+.channel-drop-scroller::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+
+.channel-drop-item {
+    forced-color-adjust: none;
+    outline: 0;
+    color: hsl(216, 3.7%, 73.5%);
+    position: relative;
+    margin: 2px 0;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    min-height: 32px;
+    padding: 6px 8px;
+    border-color: hsl(216, 3.7%, 73.5%);
+    font-family: "Whitney";
+
+}
+
+
+
+.server-boost-label {
+    forced-color-adjust: none;
+    outline: 0;
+    flex: 1 1 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-family: "Whitney";
+    line-height: 18px;
+    cursor: pointer;
+    color: hsl(216, 3.7%, 73.5%);
+
+}
+
+.server-boost-icon-container {
+    forced-color-adjust: none;
+    outline: 0;
+    flex: 0 0 auto;
+    height: 18px;
+    width: 18px;
+    margin-left: 8px;
+    -webkit-box-flex: 0;
+}
+
+.server-boost-icon {
+    width: 18px;
+    height: 18px;
+    forced-color-adjust: none;
+    color: hsl(302, 100%, 72.5%);
+}
+
+.channel-drop-sep {
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    margin: 4px;
+    border-bottom: 1px solid hsla(217, 7.6%, 33.5%, 0.48);
+}
+
+
+.channel-drop-item.group2 {
+    color: hsl(235, 86.1%, 77.5%);
+}
+
+.server-boost-label.ip {
+    color: hsl(235, 86.1%, 77.5%);
+}
+
+
+.icon-ipcd {
+    width: 18px;
+    height: 18px;
+    forced-color-adjust: none;
+}
+
+
+.channel-drop-down-wrapper {
+    user-select: none;
+    outline: 0;
+    forced-color-adjust: none;
+
+}
+
+
+
+
+.channel-drop-down-container {
+    user-select: none;
+    outline: 0;
+    forced-color-adjust: none;
+
+}
+
+.channel-drop-down-modal {
+    user-select: none;
+    outline: 0;
+    forced-color-adjust: none;
+
+}
+
+.icon-cd-gear,
+.icon-cd-cc,
+.icon-cd-ccat,
+.icon-cd-ce,
+.icon-cd-ns,
+.icon-cd-ps,
+.icon-cd-esp,
+.icon-cd-hmc,
+.icon-cd-rr {
+    width: 18px;
+    height: 18px;
+    forced-color-adjust: none;
+}
+
+.channel-drop-item.redclr {
+    color: hsl(359, 82.6%, 59.45%) !important;
+
+    .server-boost-label {
+        color: hsl(359, 82.6%, 59.45%) !important;
+
+    }
+}
+
+.channel-drop-item.redclr:hover {
+    background-color: hsl(359, 66.7%, 54.1%);
+    color: hsl(0, 0%, 100%) !important;
+    .server-boost-label {
+        color: hsl(0, 0%, 100%) !important;
+
+
+    }
+}
+
+.channel-drop-item:hover {
+    background-color: hsl(235, 46.7%, 44.1%);
+    color: hsl(0, 0%, 100%) !important;
+    .server-boost-label {
+        color: hsl(0, 0%, 100%) !important;
+
+
+    }
+}
