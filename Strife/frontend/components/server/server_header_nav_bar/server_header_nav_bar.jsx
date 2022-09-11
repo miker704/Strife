@@ -71,7 +71,6 @@ const ServerHeaderNavBar = ({
     return (
         <div className="server-header-bar">
             <div className="server-bar-children">
-                {/* <div id="normDm" className={`server-children-icon-wrapper ${membersOfthisServer.length > 2 ? "is-hidden" : ""}`}> */}
                 <div id="normDm" className={`server-children-icon-wrapper`}>
 
                     <svg width="24" height="24" viewBox="0 0 24 24" className="icon-server-hashtag" x="0" y="0" aria-hidden="true" role="img">
@@ -90,10 +89,8 @@ const ServerHeaderNavBar = ({
                 </div>
 
 
-                {/* <div id="normal-chat" className={`server-hbar-name ${membersOfthisServer.length > 2 ? "is-hidden" : ""}`}> */}
                 <div id="normal-chat" className={`server-hbar-name`}>
 
-                    {/* <h3 className="server-hbar-name-header">{displayName}</h3> */}
                     <h3 className="server-hbar-name-header">channelname</h3>
 
                 </div>
