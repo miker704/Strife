@@ -14,5 +14,5 @@ export const updateDmServer = (dmserverId,dmserver) =>
 
 
 export const deleteDmServer = (dmserverId) =>
-    $.ajax({ url: `/api/servers/${dmserverId}`, method: "DELETE" })
+    $.ajax({ url: `/api/dm_servers/${dmserverId}`, method: "DELETE" })
 
