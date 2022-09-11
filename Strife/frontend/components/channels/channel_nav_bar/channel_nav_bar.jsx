@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
-
+import ChannelDropDownContainer from "../channel_drop_down/channel_drop_down_container";
 
 class ChannelNavBar extends React.Component {
     constructor (props) {
         super(props);
 
-        this.state = { value: 'coconut', openMod: false };
+        this.state = { value: 'coconut', openMod: false, currentChannel : {} };
         this.openDropBox = this.openDropBox.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -20,31 +20,56 @@ class ChannelNavBar extends React.Component {
     handleSubmit (event) {
         alert('Your favorite flavor is: ' + this.state.value);
         event.preventDefault();
-        this.setState({openMod: false});
+        this.setState({ openMod: false });
     }
 
-    // componentDidMount(){
-    //     this.props.fetchChannel(this.props.currentChannelId);
-    // }
+    componentDidMount () {
+        this.props.fetchServer(this.props.serverId);
+        this.props.fetchChannel(this.props.currentChannelId);
+    }
+    componentDidUpdate (prevProps, prevState) {
+        console.log("in comp did update")
+        // if(prevProps.currentChannel !== this.props.currentChannel){
+        //     console.log("in comp did update condtionsd")
+        //     this.props.fetchChannel(this.props.currentChannelId);
+
+        //     return
+        // }
+        console.log("prevprops channel : ", prevProps.currentChannel);
+        console.log("props channel : ", this.props.currentChannel);
+
+        if (prevProps.currentChannel !== this.props.currentChannel) {
+            console.log("in comp did update condtionsd")
+            // this.props.fetchChannel(this.props.currentChannelId);
+            fetch(`/api/channels/${this.props.currentChannelId}`).then((channel) => channel.json()).then((data) => {
+                this.setState({ currentChannel: data });
+                // this.props.currentChannel = data;
+            })
+            return
+        }
+    }
 
     openDropBox () {
         if (this.state.openMod === true) {
-                console.log("hello")
+            console.log("hello")
+            // return (
+            //     <div style={{ background: "blue" }}>
+            //         <form onSubmit={this.handleSubmit}>
+            //             <label>
+            //                 Pick your favorite flavor:
+            //                 <select value={this.state.value} onChange={this.handleChange}>
+            //                     <option value="grapefruit">Grapefruit</option>
+            //                     <option value="lime">Lime</option>
+            //                     <option value="coconut">Coconut</option>
+            //                     <option value="mango">Mango</option>
+            //                 </select>
+            //             </label>
+            //             <input type="submit" value="Submit" />
+            //         </form>
+            //     </div>
+            // )
             return (
-                <div style={{background:"blue"}}>
-                    <form onSubmit={this.handleSubmit}>
-                        <label>
-                            Pick your favorite flavor:
-                            <select value={this.state.value} onChange={this.handleChange}>
-                                <option value="grapefruit">Grapefruit</option>
-                                <option value="lime">Lime</option>
-                                <option value="coconut">Coconut</option>
-                                <option value="mango">Mango</option>
-                            </select>
-                        </label>
-                        <input type="submit" value="Submit" />
-                    </form>
-                </div>
+                <ChannelDropDownContainer/>
             )
         }
     }
@@ -57,8 +82,10 @@ class ChannelNavBar extends React.Component {
         console.log("channel nav bar current server: ", this.props.server);
         console.log("channel nav bar current serverID: ", this.props.serverId);
         console.log("channel nav bar current channelID: ", this.props.currentChannelId),
-        console.log("channel nav bar current channel: ", this.props.currentChannel)
-        console.log("channel nav bar channels : ",this.props.channels)
+            console.log("channel nav bar current channel: ", this.props.currentChannel)
+            console.log("channel nav bar current channel from state : ", this.state.currentChannel)
+        console.log("channel nav bar channels : ", this.props.channels)
+
         console.log("channel nav bar props : ", this.props)
 
 
@@ -74,6 +101,8 @@ class ChannelNavBar extends React.Component {
             return (
 
                 <div className="channel-nav-bar">
+                            {this.openDropBox()}
+
                     <div className="channel-nav-bar-container-wrapper">
                         <div className="channel-nav-bar-top-container">
                             <div className="channel-nav-bar-top-container-header">
@@ -95,7 +124,6 @@ class ChannelNavBar extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            {this.openDropBox()}
 
                         </div>
                         <div className="channel-nav-sep"><div></div></div>
