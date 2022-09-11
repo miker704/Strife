@@ -4,7 +4,7 @@ import React from "react";
 import ReactTooltip from "react-tooltip";
 import UserOptionsModalContainer from '../../friends/user_options/user_options_container.js';
 import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
-
+import ServerUserOptionsModalContainer from "../../friends/server_user_options/server_user_options_modal_container.js";
 const DmServerMemberList = ({
     dmServerId,
     dmServerMembers,
@@ -71,7 +71,27 @@ const DmServerMemberList = ({
 
     const handlePopupShow = (e) => {
 
-        setPopupTop(e.currentTarget.getBoundingClientRect().top);
+        // setPopupTop(e.currentTarget.getBoundingClientRect().top);
+
+        let currTop = e.currentTarget.getBoundingClientRect().top
+
+        if(currTop > 640){
+            currTop/=3;
+            setPopupTop(currTop);
+        }
+        else if(currTop >101 && currTop < 639){
+            currTop/=2;
+            setPopupTop(currTop);
+        }
+
+        else if(currTop <=100){
+            setPopupTop(currTop*0.095);
+        }
+        else {
+            setPopupTop(currTop);
+        }
+
+
         setShowPopup(!showPopup);
     }
 
@@ -79,12 +99,20 @@ const DmServerMemberList = ({
     return (
         <div className="dm-members-index-container-wrapper">
             {
-                showPopup && <UserOptionsModalContainer
+                // showPopup && <UserOptionsModalContainer
+                //     user={currentUser} member={selectedMember}
+                //     top={popupTop} setShowPopup={setShowPopup}
+                //     DmServerOwner={DmServerOwner} DmServerId={dmServer.id}
+
+                // />
+
+
+                showPopup && <ServerUserOptionsModalContainer
                     user={currentUser} member={selectedMember}
                     top={popupTop} setShowPopup={setShowPopup}
                     DmServerOwner={DmServerOwner} DmServerId={dmServer.id}
+                    serverType={'DM_SERVER'} dmServerMembers={dmServerMembers} />
 
-                />
 
             }
             <div className="dm-members-index-container">
