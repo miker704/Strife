@@ -23,12 +23,12 @@ const mSTP = (state, ownProps) => {
 };
 
 
-const mDTP = (dispatch) => {
+const mDTP = (dispatch, ownProps) => {
     return {
-        fetchChannel: (channelId) => { dispatch(fetchChannel(channelId)) },
+        fetchChannel: (channelId) => { dispatch(fetchChannel(ownProps.match.params.channelId)) },
         openModal: modal => dispatch(openModal(modal)),
         fetchServers: () => dispatch(fetchServers()),
-        fetchServer: serverId => dispatch(fetchServer(serverId)),
+        fetchServer: (serverId) => dispatch(fetchServer(ownProps.match.params.serverId)),
         deleteServer: serverId => dispatch(deleteServer(serverId)),
         removeChannelMembership: (channelmembershiphash) => dispatch(removeChannelMembership(channelmembershiphash)),
         removeServerMembership: (membershiphash) => dispatch(removeServerMembership(membershiphash))
