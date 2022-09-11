@@ -13,9 +13,11 @@ class Api::ServerMembershipsController < ApplicationController
     def destroy
         @server_Membership = ServerMembership.find_by(server_membership_params)
         @server = Server.find_by(id: @server_Membership.server_id)
+        @user = User.find_by(id: @server_Membership.user_id)
         if @server_Membership
             @server_Membership.destroy
             render 'api/servers/show'
+            # render 'api/users/show'
         else
             render json:  @server_Membership.errors.full_messages, status: 401
         end
