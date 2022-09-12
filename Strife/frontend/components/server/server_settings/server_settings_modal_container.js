@@ -7,30 +7,61 @@ import { createChannelMembership, deleteChannelMembership } from "../../../actio
 import { createServerMembership, deleteServerMembership } from "../../../actions/server_membership_actions.js";
 import { openModal, closeModal } from "../../../actions/modal_actions.js";
 import { handleKeyUp } from "../../../utils/modal_api_util";
+import { logoutUser, removeSessionErrors } from "../../../actions/session_actions";
+
+const extractServerProps = (state, ownProps) => {
+    let locationString = ownProps.location.pathname;
+    console.log("locationString: ", locationString)
+    let newLoc = locationString.split('/channels/').join('').split('/');
+    console.log("newloc: ", newLoc)
+    return newLoc;
+}
+
+
 
 const mSTP = (state, ownProps) => {
 
+    const getIds = extractServerProps(state, ownProps);
+    console.log("ownProps: ", ownProps);
 
     return {
+        // currentUser: state.entities.users[state.session.id],
+        // server: state.entities.servers[ownProps.location.pathname.serverId],
+        // server: state.entities.servers[this.props.serverId],
+        // server: state.entities.servers[parseInt(getIds[0])],
+        // channels: Object.values(state.entities.channels),
+        // currentChannelId: ownProps.match.params.channelId,
+        // serverId: ownProps.serverId,
+        // errors: state.errors.server,
+        // channelErrors: state.errors.channel,
+        // servers: state.entities.servers
+
         currentUser: state.entities.users[state.session.id],
-        server: state.entities.servers[ownProps.match.params.serverId],
+        server: state.entities.servers[parseInt(getIds[0])],
+        channel: state.entities.channels[parseInt(getIds[1])],
         channels: Object.values(state.entities.channels),
-        currentChannelId: ownProps.match.params.channelId,
-        serverId: ownProps.match.params.serverId,
+        currentChannelId: getIds[1],
+        serverId: getIds[0],
         errors: state.errors.server,
-        channelErrors: state.errors.channel
-
-
+        channelErrors: state.errors.channel,
+        sessionErrors: state.errors.session,
+        servers: state.entities.servers
 
     }
 }
 
 
 const mDTP = (dispatch, ownProps) => {
+
+
+
     return {
 
+        //logout user
+        logoutUser: () => { dispatch(logoutUser()) },
+        removeSessionErrors: () => dispatch(removeSessionErrors()),
         //server api functions
-        fetchServer: () => dispatch(fetchServer(ownProps.match.params.serverId)),
+        fetchServer: (serverId) => dispatch(fetchServer(serverId)),
         fetchUserServers: (user) => dispatch(fetchServers(user)),
         fetchServers: () => dispatch(fetchServers()),
         updateServer: (server) => dispatch(updateServer(server)),
