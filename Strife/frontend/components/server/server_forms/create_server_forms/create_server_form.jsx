@@ -211,9 +211,7 @@ class CreateServerForm extends React.Component {
         this.props.action(serverSubmission).then((action) => {
             newServer = action.server;
             // newServer = action.server.server;
-            console.log("new server = : ", newServer);
-            console.log("new server.id = : ", newServer.id);
-            console.log("new server genchannelid = : ", newServer.general_CHANNEL_ID);
+           
 
 
             //
@@ -425,7 +423,6 @@ class CreateServerForm extends React.Component {
     }
 
     render () {
-        console.log("this.state", this.state);
 
         let serverErrorTag = this.props.errors.length > 0 ? "server-error" : "";
         let form_state = "";
