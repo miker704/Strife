@@ -5,7 +5,8 @@ import { fetchChannel, createChannel, updateChannel, deleteChannel, removeChanne
 import { fetchServer, fetchServers, removeServerErrors, deleteServer, updateServer } from "../../../actions/server_actions.js";
 import { createChannelMembership, deleteChannelMembership } from "../../../actions/channel_membership_actions.js";
 import { createServerMembership, deleteServerMembership } from "../../../actions/server_membership_actions.js";
-import { openModal } from "../../../actions/modal_actions.js";
+import { openModal, closeModal } from "../../../actions/modal_actions.js";
+import { handleKeyUp } from "../../../utils/modal_api_util";
 
 const mSTP = (state, ownProps) => {
 
@@ -16,10 +17,9 @@ const mSTP = (state, ownProps) => {
         channels: Object.values(state.entities.channels),
         currentChannelId: ownProps.match.params.channelId,
         serverId: ownProps.match.params.serverId,
-        dmServers: Object.values(state.entities.dmServers),
         errors: state.errors.server,
         channelErrors: state.errors.channel
-        
+
 
 
     }
@@ -36,10 +36,10 @@ const mDTP = (dispatch, ownProps) => {
         updateServer: (server) => dispatch(updateServer(server)),
         deleteServer: (serverId) => dispatch(deleteServer(serverId)),
         removeServerErrors: () => dispatch(removeServerErrors()),
-        
-        
+
+
         //channel api functions
-        
+
         fetchChannel: (channelId) => { dispatch(fetchChannel(channelId)) },
         createChannel: (channel) => dispatch(createChannel(channel)),
         updateChannel: (channel) => dispatch(updateChannel(channel)),
@@ -49,16 +49,19 @@ const mDTP = (dispatch, ownProps) => {
         //server membership api functions
 
         createServerMembership: (servermembership) => dispatch(createServerMembership(servermembership)),
-        deleteServerMembership: (servermembershipId, servermembership) => 
-        dispatch(deleteServerMembership(servermembershipId,servermembership)),
+        deleteServerMembership: (servermembershipId, servermembership) =>
+            dispatch(deleteServerMembership(servermembershipId, servermembership)),
 
         //channel membership api functions 
         createChannelMembership: (channelmembership) => dispatch(createChannelMembership(channelmembership)),
-        deleteChannelMembership: (channelmembershipId,channelmembership) => 
-        dispatch(deleteChannelMembership(channelmembershipId,channelmembership)),
+        deleteChannelMembership: (channelmembershipId, channelmembership) =>
+            dispatch(deleteChannelMembership(channelmembershipId, channelmembership)),
 
         // modal api functions
         openModal: modal => dispatch(openModal(modal)),
+        closeModal: () => dispatch(closeModal()),
+        handleESC: (e) => handleKeyUp(e),
+
     }
 }
 
