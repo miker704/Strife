@@ -11,14 +11,14 @@ import CreateDmModalContainer from "../dm_servers/create_new_dm/create_dm_contai
 import FriendRequestErrorModalContainer from "../friends/friend_request_error_modal/friend_request_error_modal_container.js";
 import DownloadAppsContainer from "../server/download_apps/download_apps_container.js";
 import EditFriendshipModalContainer from "../friends/edit_friendship_modal/edit_friendship_container.js";
-
-
+import ChannelDropDownContainer from "../channels/channel_drop_down/channel_drop_down_container.js";
+import ServerSettingsModalContainer from "../server/server_settings/server_settings_modal_container.js";
 
 class ModalManager extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            setSpecialFeatures : 0
+            setSpecialFeatures: 0
         }
         this.setModalSpecialFeatures = this.setModalSpecialFeatures.bind(this);
         console.log("modal call");
@@ -33,7 +33,7 @@ class ModalManager extends React.Component {
 
     render () {
         let renderedModal;
-        let modalMod=0;
+        let modalMod = 0;
         // using a switch statement to reduce slow down of processing multiple if statemnets with similar
         // or little complex condtions also to dry up the code
         switch (this.props.modal) {
@@ -74,8 +74,23 @@ class ModalManager extends React.Component {
 
             case 'createDmModal':
 
-                renderedModal = <CreateDmModalContainer/>
-                modalMod=1;
+                renderedModal = <CreateDmModalContainer />
+                modalMod = 1;
+
+                break;
+
+
+            case 'ServerSettings':
+
+                renderedModal = <ServerSettingsModalContainer/>
+                modalMod = 0;
+
+                break;
+
+            case 'ChannelDropDown':
+
+                renderedModal = <ChannelDropDownContainer/>
+                modalMod = 1;
 
                 break;
 
