@@ -1,15 +1,20 @@
 import React from "react";
 import { useRef, useEffect, useState } from "react";
+import { openModal } from "../../../actions/modal_actions";
+import { closeHookModalOnOutsideClick, closeOnEsc } from "../../../utils/close_hook_modals_api_utils";
+
+const ChannelDropDown = (props) => {
 
 
-const ChannelDropDown = ({ props }) => {
 
-
+    const popUpRef = useRef();
+    closeHookModalOnOutsideClick(popUpRef, props.setShowPopUp);
+    closeOnEsc(props.setShowPopUp);
 
 
     return (
         <div className="channel-drop-down-layer">
-            <div className="channel-drop-down-pop-up">
+            <div className="channel-drop-down-pop-up" onClick={(e) => e.stopPropagation()} ref={popUpRef}>
                 <div className="channel-drop-down-pop-up-animate">
                     <div className="channel-drop-menu">
                         <div className="channel-drop-scroller">
@@ -40,7 +45,7 @@ const ChannelDropDown = ({ props }) => {
                                         </svg>
                                     </div>
                                 </div>
-                                <div className="channel-drop-item">
+                                <div className="channel-drop-item" onClick={() => props.openModal('ServerSettings')}>
                                     <div className="server-boost-label">Server Settings</div>
                                     <div className="server-boost-icon-container">
                                         <svg className="icon-cd-gear" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
@@ -119,7 +124,7 @@ const ChannelDropDown = ({ props }) => {
                             </div>
                             <div className="channel-drop-sep"></div>
                             <div role={"group"}>
-                                <div className="channel-drop-item">
+                                <div className="channel-drop-item" onClick={() => props.openModal('ServerSettings')}>
                                     <div className="server-boost-label">Edit Server Profile</div>
                                     <div className="server-boost-icon-container">
                                         <svg className="icon-cd-esp" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
@@ -156,6 +161,21 @@ const ChannelDropDown = ({ props }) => {
                                         </svg>
                                     </div>
                                 </div>
+                                <div className="channel-drop-item redclr">
+                                    <div className="server-boost-label">Leave Server</div>
+                                    <div className="server-boost-icon-container">
+                                        <svg className="icon-cd-ls" aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M10.418 13L12.708 15.294L11.292 16.706L6.586 11.991L11.294 7.292L12.707
+                                         8.708L10.41 11H21.949C21.446 5.955 17.177 2 12 2C6.486 2 2 6.487 2 12C2 17.513 6.486 22 12
+                                          22C17.177 22 21.446 18.046 21.949 13H10.418Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+
+
+
+
                             </div>
                         </div>
                     </div>
