@@ -7,11 +7,12 @@
     right: 0;
     bottom: 0;
     background: none !important;
-    pointer-events: none;
+    // pointer-events: none;
     z-index: 1002;
     outline: 0;
     forced-color-adjust: none;
     user-select: none;
+    position: absolute;
 }
 
 
@@ -19,7 +20,9 @@
     forced-color-adjust: none;
     position: absolute;
     top: 56px;
-    left: 82px;
+    left: 7px;
+    z-index: 1005;
+
 }
 
 .channel-drop-down-pop-up-animate {
@@ -46,6 +49,8 @@
     box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.24);
     background: hsl(225, 7.7%, 10.2%);
     border-radius: 4px;
+    z-index: 1006;
+
 }
 
 .channel-drop-scroller {
