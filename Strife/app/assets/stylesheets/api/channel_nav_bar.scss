@@ -153,6 +153,23 @@
 
 }
 
+.icon-chevron-X{
+    transform: translate3d(0,-3px,0) rotate(-90deg);
+    forced-color-adjust: none;
+    position: relative;
+    top: 3px;
+    opacity: .8;
+    transition: transform .2s ease-out, stroke-dasharray .2s ease-out, -webkit-transform .2s ease-out;
+    margin-left: 4px;
+    path {
+        stroke-width: 2px;
+        stroke-dasharray: 14;
+        stroke-dashoffset: 1;
+        transition: stroke-dasharray .2s ease;
+    }
+
+}
+
 .channel-nav-sep {
     forced-color-adjust: none;
     outline: 0;
