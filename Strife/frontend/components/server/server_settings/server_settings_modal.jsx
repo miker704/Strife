@@ -1,8 +1,118 @@
 import React from "react";
 import { useEffect, useRef, useState } from "react";
+import finalPropsSelectorFactory from "react-redux/es/connect/selectorFactory";
+import { useHistory, useLocation, useRouteMatch, useParams } from "react-router";
+
+const ServerSettingsModal = (props) => {
+
+    useEffect(() => {
+
+        // if(!props.server?.id){
+        //     console.log("sevrr id null ")
+        //     props.fetchServer();
+        //     props.fetchChannel();
+        // }
 
 
-const ServerSettingsModal = ( props ) => {
+        window.addEventListener('keyup', props.handleESC, false);
+
+        return function cleanUp () {
+            // if (props.errors.length > 0) {
+            props.removeServerErrors();
+            // window.removeEventListener('keyup', props.handleESC, false);
+            // }
+            // if(props.channelErrors.length>0){
+            props.removeChannelErrors();
+            // window.removeEventListener('keyup', props.handleESC, false);
+            // }
+            // if(props.sessionErrors.length>0){
+            props.removeSessionErrors();
+            // window.removeEventListener('keyup', props.handleESC, false);
+            // }
+            window.removeEventListener('keyup', props.handleESC, false);
+
+        }
+    }, [])
+
+
+    const [newServerName, setNewServerName] = useState("");
+    const [serverDeletion, setServerDeletion] = useState(false);
+
+    const handleCloseModal = () => {
+        let modalToClose = document.getElementById("user-profile");
+        modalToClose.classList.add("transition-out");
+        setTimeout(() => {
+            props.removeServerErrors();
+            props.closeModal();
+        }, 100);
+    }
+
+    const handleNameChangeSubmit = () => {
+
+        let subState = {
+            id: props.server.id,
+            server_name: newServerName
+        };
+
+        props.updateServer(subState);
+    }
+
+
+    const handleLogout = () => {
+        props.closeModal();
+        props.logoutUser();
+    }
+
+    const renderServerNameErrors = () => {
+
+        let serverNameErrorList = [
+            'Server owner You already have a server with that name already',
+            "Server name can't be blank",
+            'Server name is too short (minimum is 2 characters)',
+            'Server name is too long (maximum is 100 characters)'
+
+        ];
+
+
+        let serverNameErrorMessages = {
+            0: " - You already own a Server with that name already",
+            1: " - Server name can't be blank",
+            2: ' - Must be between 2 and 100 in length',
+            3: " - Must be between 2 and 100 in length",
+        }
+
+        for (let i = 0; i < serverNameErrorList.length; i++) {
+            if (props.errors.includes(serverNameErrorList[i])) {
+                return serverNameErrorMessages[i];
+            }
+        }
+
+        return "";
+
+    }
+
+    const splitServerName = () => {
+        return props.server.server_name.split(" ").map((parts) => parts[0]).join("");
+    }
+
+    const handleRenderDeleteModal = () => {
+        if (serverDeletion) {
+            console.log("serverdeletion called");
+        }
+    }
+
+    const handleChangeServerPFP = () => {
+
+    }
+
+    let serverNameErrorsTag = props.errors.length > 0 ? "server-error" : "";
+
+    console.log("server settings modal props : ", props);
+    console.log("history is : ", props.history);
+
+
+
+
 
 
     return (
@@ -18,13 +128,8 @@ const ServerSettingsModal = ( props ) => {
 
                                 <ul className="user-profile-item-list">
 
-                                    <li><h3 className="user-profile-header3">Server Name</h3></li>
-
-
-
+                                    <li><h3 className="user-profile-header3">{`${props.server.server_name}`}</h3></li>
                                     <li className="user-profile-item">Overview</li>
-
-
                                     <li className="user-profile-item">Roles</li>
                                     <li className="user-profile-item">Emoji</li>
                                     <li className="user-profile-item">Stickers</li>
@@ -55,11 +160,10 @@ const ServerSettingsModal = ( props ) => {
                                     </li>
                                     <div className="user-settings-separator"></div>
                                     <li><h3 className="user-profile-header3">User Management</h3></li>
-
                                     <li className="user-profile-item">Members</li>
                                     <li className="user-profile-item">Invites</li>
                                     <div className="user-settings-separator"></div>
-                                    <li className="user-profile-item">
+                                    <li className="user-profile-item" onClick={() => setServerDeletion(!serverDeletion)}>
                                         <div className="user-profile-item-logout-sec">
                                             Delete Server
                                             <svg className="upm-logout-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
@@ -70,7 +174,7 @@ const ServerSettingsModal = ( props ) => {
                                             </svg>
                                         </div>
                                     </li>
-                                    <li className="user-profile-item" >
+                                    <li className="user-profile-item" onClick={() => handleLogout()} >
                                         <div className="user-profile-item-logout-sec">
                                             Log Out
                                             <svg className="upm-logout-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
@@ -81,34 +185,26 @@ const ServerSettingsModal = ( props ) => {
                                         </div>
                                     </li>
                                     <div className="user-settings-separator"></div>
-
                                     <div className="version-number">
                                         <span>Stable 140575 (12c29a3)</span>
                                         <br />
                                         <span>Windows 11 64-bit</span>
 
                                     </div>
-
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-
+                {handleRenderDeleteModal()}
 
                 <div className="user-profile-right-side-wrapper">
                     <div className="user-profile-rs-inner-wrapper">
-
                         <div className="user-profile-right-side">
-
-
                             <div className="user-profile-header1-div">
                                 <h1 className="user-profile-header1">Server Overview</h1>
                             </div>
-
                             <div className="my-account-container-wrapper">
-
-
                                 <div className="server-op-item-flex">
                                     <div className="server-op-item-flex-jcc">
                                         <div className="server-op-item-flex-child">
@@ -116,7 +212,10 @@ const ServerSettingsModal = ( props ) => {
                                                 <div className="server-image-uploader-inner">
 
                                                     <span aria-hidden="true">
-                                                        <div className="image-uploader-acro">servername</div>
+                                                        <div
+                                                            className={`image-uploader-acro ${props.server.server_icon === null ? `` : `is-hidden`}`}>
+                                                            {`${splitServerName()}`}
+                                                        </div>
                                                     </span>
                                                     <div className="server-op-image-uploader-hint">
                                                         Change Icon
@@ -147,10 +246,22 @@ const ServerSettingsModal = ( props ) => {
                                         </div>
                                     </div>
                                     <div className="server-op-item-margin-bottom">
-                                        <h5 className="server-op-item-margin-bottom-h5">Server Name</h5>
+                                        <h5 className="server-op-item-margin-bottom-h5">
+                                            <label className={serverNameErrorsTag}>SERVER NAME{`${renderServerNameErrors()}`}</label>
+                                        </h5>
                                         <div className="server-op-name-input-wrapper">
-                                            <input className="server-op-name-input" type="text" maxLength={100} placeholder="servernameplaceholder" />
-                                            <button type="button" className="faint-boost-shiny-button">
+                                            <input
+                                                className="server-op-name-input"
+                                                type="text"
+                                                maxLength={101}
+                                                minLength={1}
+                                                placeholder={`${props.server.server_name}`}
+                                                onChange={(e) => setNewServerName(e.currentTarget.value)}
+                                                value={newServerName}
+                                            />
+
+
+                                            <button type="submit" className="faint-boost-shiny-button" onClick={() => handleNameChangeSubmit()}>
                                                 <div className="shiny-button-contents">
                                                     <svg className="shiny-button-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 8 12">
                                                         <path d="M4 0L0 4V8L4 12L8 8V4L4 0ZM7 7.59L4 10.59L1 7.59V4.41L4 1.41L7 4.41V7.59Z" fill="currentColor">
@@ -167,6 +278,7 @@ const ServerSettingsModal = ( props ) => {
                                                 </div>
                                             </button>
                                         </div>
+                                        <h5 className="server-op-item-margin-bottom-h5-2">Server Invite Code :{`${` `}`}{`${props.server.invite_code}`}</h5>
                                     </div>
                                 </div>
                                 <div className="server-op-divider">
@@ -253,7 +365,7 @@ const ServerSettingsModal = ( props ) => {
                                                         </path>
                                                     </svg>
                                                 </svg>
-                                                <input type="checkbox" className="sop-slider" checked />
+                                                {/* <input type="checkbox" className="sop-slider" checked /> */}
                                             </div>
                                         </div>
                                     </div>
@@ -272,7 +384,7 @@ const ServerSettingsModal = ( props ) => {
                                                         </path>
                                                     </svg>
                                                 </svg>
-                                                <input type="checkbox" className="sop-slider" checked />
+                                                {/* <input type="checkbox" className="sop-slider" checked /> */}
                                             </div>
                                         </div>
                                     </div>
@@ -291,7 +403,7 @@ const ServerSettingsModal = ( props ) => {
                                                         </path>
                                                     </svg>
                                                 </svg>
-                                                <input type="checkbox" className="sop-slider" checked />
+                                                {/* <input type="checkbox" className="sop-slider" checked /> */}
                                             </div>
                                         </div>
                                     </div>
@@ -310,7 +422,7 @@ const ServerSettingsModal = ( props ) => {
                                                         </path>
                                                     </svg>
                                                 </svg>
-                                                <input type="checkbox" className="sop-slider" checked />
+                                                {/* <input type="checkbox" className="sop-slider" checked /> */}
                                             </div>
                                         </div>
                                     </div>
@@ -564,7 +676,7 @@ const ServerSettingsModal = ( props ) => {
 
                             <div className="tool-x-to-esc-button-wrapper">
                                 <div className="inner-tool-container">
-                                    <div className="x-to-esc-button" >
+                                    <div className="x-to-esc-button" onClick={() => handleCloseModal()}>
                                         <svg role="img" width="18" height="18" viewBox="0 0 24 24">
                                             <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 
                                   12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z">
@@ -588,5 +700,12 @@ const ServerSettingsModal = ( props ) => {
 
 
 }
+
+
+
+
+
+
+
 
 export default ServerSettingsModal;
