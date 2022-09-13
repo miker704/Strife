@@ -31,6 +31,10 @@ class Server < ApplicationRecord
     has_many :channels, class_name: "Channel", foreign_key: "server_id", dependent: :destroy
     has_many :server_members, class_name: "ServerMembership", foreign_key: "server_id", dependent: :destroy
     has_many :members, through: :server_members, source: :user
+
+
+    has_one_attached :server_Icon
+
     after_create :create_Default_Channel
     after_create :create_OwnerShip
     after_create :generate_Server_Invitation_Code
