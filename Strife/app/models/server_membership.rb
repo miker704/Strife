@@ -21,4 +21,19 @@ class ServerMembership < ApplicationRecord
     belongs_to :server, class_name: "Server", foreign_key: "server_id"
     belongs_to :user, class_name: "User", foreign_key: "user_id"
 
+    before_destroy :destroy_Channel_MemberShips
+
+    def destroy_Channel_MemberShips
+            @user = User.find(self.user_id)
+            if @user
+                @server = Server.find(self.server_id)
+                 @server.channels.each do |channel|
+                     @found = channel.channel_members.find_by(channel_id: channel.id, receiver_id:self.user_id)
+                     if @found
+                        ChannelMembership.find(@found.id).destroy
+                     end
+                 end
+            end
+    end
+
 end
