@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { openModal, closeModal } from "../../../../actions/modal_actions";
-import { createServer, removeServerErrors, joinServer } from "../../../../actions/server_actions";
+import { createServer, removeServerErrors, joinServer, fetchServer } from "../../../../actions/server_actions";
 import CreateServerForm from "./create_server_form.jsx";
 import { createChannel, removeChannelErrors } from "../../../../actions/channel_actions";
 import { handleKeyUp } from "../../../../utils/modal_api_util";
@@ -23,6 +23,7 @@ const mDTP = (dispatch) => {
     return {
         action: (server) => dispatch(createServer(server)),
         // createServer: (server) => dispatch(createServer(server)),
+        fetchJoinedServer: (serverId) => dispatch(fetchServer(serverId)),
         removeServerErrors: () => dispatch(removeServerErrors()),
         openModal: (modal) => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal()),
