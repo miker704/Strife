@@ -75,6 +75,39 @@
     box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.24);
 }
 
+
+// .server-image-uploader-inner:hover {
+//     box-shadow: 0 8px 16px hsla(0, 0%, 0%, 24%), inset 0 0 120px #0009;
+//     background: rgba(0, 0, 0, 0.8);
+//     box-shadow: none;
+
+//     .server-op-image-uploader-hint {
+//         visibility: visible;
+//         box-shadow: 0 8px 16px hsla(0, 0%, 0%, 24%), inset 0 0 120px #0009;
+//         background: rgba(0, 0, 0, 0.8);
+//         box-shadow: none;
+//     }
+// }
+
+.server-image-uploader:hover {
+
+    .server-op-image-uploader-hint {
+        visibility: visible;
+        // box-shadow: 0 8px 16px hsla(0, 0%, 0%, 24%), inset 0 0 120px #0009;
+
+    }
+}
+
+.server-image-uploader:hover img {
+    box-shadow: 0 8px 16px hsla(0, 0%, 0%, 24%), inset 0 0 120px #0009;
+
+}
+
+
+
+
+
+
 .server-image-uploader-inner>* {
     outline: 0;
     box-sizing: border-box;
@@ -147,7 +180,8 @@
     margin-top: 10px;
     display: block;
     box-sizing: border-box;
-    strong{
+
+    strong {
         padding-left: 2px;
     }
 }
@@ -245,7 +279,7 @@
 
 }
 
-.server-op-pfp-upload-button:hover{
+.server-op-pfp-upload-button:hover {
     background-color: hsl(217, 7.6%, 33.5%);
     border-color: hsl(217, 7.6%, 33.5%);
     color: hsl(0, 0%, 100%);
@@ -286,6 +320,7 @@
     cursor: default;
     font-family: "ABC Ginto Normal";
 }
+
 .server-op-item-margin-bottom-h5-2 {
     box-sizing: border-box;
     forced-color-adjust: none;
@@ -617,7 +652,8 @@
 }
 
 
-.sop-radio-item, .sop-radio-item1 {
+.sop-radio-item,
+.sop-radio-item1 {
     outline: 0;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -632,13 +668,14 @@
     background-color: hsl(223, 6.9%, 19.8%);
 }
 
-.sop-radio-item[aria-check=true], .sop-radio-item1 {
+.sop-radio-item[aria-check=true],
+.sop-radio-item1 {
     background-color: hsla(217, 7.6%, 33.5%, 0.6);
     color: #FFFFFF;
 
 }
 
-.sop-radio-item:hover{
+.sop-radio-item:hover {
     background-color: hsla(217, 7.6%, 33.5%, 0.4);
     color: hsl(210, 2.9%, 86.7%);
 }
@@ -679,7 +716,8 @@
     box-sizing: border-box;
     forced-color-adjust: none;
     outline: 0;
-    strong{
+
+    strong {
         padding-left: 2px;
     }
 }
@@ -941,7 +979,7 @@
     outline: 0;
     cursor: pointer;
     color: hsl(197, 100%, 47.8%);
-    padding-left:2px;
+    padding-left: 2px;
 }
 
 .faint-boost-shiny-button {
@@ -982,11 +1020,12 @@
 
 }
 
-.faint-boost-shiny-button:active{
-    background-color: hsl(138,46.9%,22.2%);
+.faint-boost-shiny-button:active {
+    background-color: hsl(138, 46.9%, 22.2%);
 }
-.faint-boost-shiny-button:hover{
-    background-color: hsl(138,46.8%,24.3%);
+
+.faint-boost-shiny-button:hover {
+    background-color: hsl(138, 46.8%, 24.3%);
 }
 
 
@@ -1108,7 +1147,7 @@
     outline: 0;
 }
 
-.shiny-button-inner{
+.shiny-button-inner {
     outline: 0;
     background-color: currentColor;
     height: 100%;
@@ -1117,7 +1156,7 @@
     forced-color-adjust: none;
 }
 
-.faint-boost-flex-child{
+.faint-boost-flex-child {
     flex: 1 1 50%;
     margin-right: 0;
     margin-left: 10px;
@@ -1126,14 +1165,14 @@
     outline: 0;
 }
 
-.faint-upsell{
+.faint-upsell {
     cursor: pointer;
     forced-color-adjust: none;
     box-sizing: border-box;
     outline: 0;
 }
 
-.faint-img-uploader{
+.faint-img-uploader {
     forced-color-adjust: none;
     cursor: not-allowed;
     text-align: center;
@@ -1142,12 +1181,12 @@
     outline: 0;
 }
 
-.faint-img-upload{
+.faint-img-upload {
     forced-color-adjust: none;
-    background-color: hsl(217,7.6%,33.5%);
+    background-color: hsl(217, 7.6%, 33.5%);
     background-image: none;
     border-radius: 4px;
-    background-image: linear-gradient(45deg,hsl(221,70%,55.5%),hsl(269,83.8%,71%));
+    background-image: linear-gradient(45deg, hsl(221, 70%, 55.5%), hsl(269, 83.8%, 71%));
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
@@ -1157,7 +1196,7 @@
     flex-shrink: 0;
 }
 
-.faint-img-acyro{
+.faint-img-acyro {
     font-size: 40px;
     overflow: hidden;
     white-space: nowrap;
@@ -1174,14 +1213,14 @@
     -webkit-box-align: center;
     align-items: center;
     pointer-events: none;
-    color:#FFFFFF;
+    color: #FFFFFF;
     box-sizing: border-box;
     outline: 0;
 }
 
-.faint-img-icon{
+.faint-img-icon {
     background-image: none;
-    background-color: hsl(0,0%,100%);
+    background-color: hsl(0, 0%, 100%);
     position: absolute;
     forced-color-adjust: none;
     opacity: 1%;
@@ -1193,8 +1232,8 @@
     background-repeat: no-repeat;
     background-position: 50%;
     border-radius: 50%;
-    -webkit-box-shadow: 0 2px 4px 0 hsla(0,0%,0%,0.2);
-    box-shadow: 0 2px 4px 0 hsla(0,0%,0%,0.2);
+    -webkit-box-shadow: 0 2px 4px 0 hsla(0, 0%, 0%, 0.2);
+    box-shadow: 0 2px 4px 0 hsla(0, 0%, 0%, 0.2);
     display: -webkit-box;
     display: flex;
     -webkit-box-pack: center;
@@ -1205,17 +1244,17 @@
     box-sizing: border-box;
 }
 
-.radioIconForeground{
+.radioIconForeground {
     forced-color-adjust: none;
     box-sizing: border-box;
     color: #FFFFFF;
 }
 
-.faint-h5{
+.faint-h5 {
     display: flex;
     margin-bottom: 8px;
     forced-color-adjust: none;
-    color: hsl(216,3.7%,73.5%);
+    color: hsl(216, 3.7%, 73.5%);
     font-size: 12px;
     line-height: 16px;
     font-weight: 500;
@@ -1226,7 +1265,7 @@
     font-family: "ABC Ginto Normal";
 }
 
-.faint-server-invite-text1{
+.faint-server-invite-text1 {
     margin-bottom: 8px;
     forced-color-adjust: none;
     box-sizing: border-box;
@@ -1238,7 +1277,7 @@
     font-family: "Whitney";
 }
 
-.faint-server-invite-text2{
+.faint-server-invite-text2 {
     forced-color-adjust: none;
     box-sizing: border-box;
     color: hsl(216, 3.7%, 73.5%);
@@ -1249,11 +1288,11 @@
     font-family: "Whitney";
 }
 
-.inactive-sub-info-2{
+.inactive-sub-info-2 {
     margin-bottom: 20px;
     forced-color-adjust: none;
     box-sizing: border-box;
-    color:hsl(216, 3.7%, 73.5%);
+    color: hsl(216, 3.7%, 73.5%);
     cursor: default;
     font-size: 14px;
     line-height: 20px;
@@ -1275,11 +1314,11 @@
 //     font-weight: 400;
 //     font-family: "Whintey";
 //     margin-bottom: 20px;
-    
+
 
 // }
 
-.s-b-value-flex1{
+.s-b-value-flex1 {
     flex: 1 1 auto;
     outline: 0;
     forced-color-adjust: none;
