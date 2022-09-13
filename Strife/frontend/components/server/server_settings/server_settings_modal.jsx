@@ -10,7 +10,6 @@ const ServerSettingsModal = (props) => {
     const [serverIconPhoto, setServerIconPhoto] = useState('');
     const [removeServerIcon, setRemoveServerIcon] = useState(false)
     let file_Input = null;
-    console.log("serverIconurl step 1 is : ", serverIconPhotoUrl);
 
     useEffect(() => {
 
@@ -167,10 +166,7 @@ const ServerSettingsModal = (props) => {
     let serverNameErrorsTag = props.errors.length > 0 ? "server-error" : "";
     let fileProcessingErrorsTag;
 
-    console.log("server settings modal props : ", props);
-    console.log("history is : ", props.history);
 
-    console.log("serverIconurl step 2 is : ", serverIconPhotoUrl);
 
 
     let defaultMessage = "We recommend an image of at least 512x512 for the server.";
