@@ -1,9 +1,16 @@
 import React from "react";
 import { useEffect, useRef, useState } from "react";
-import finalPropsSelectorFactory from "react-redux/es/connect/selectorFactory";
 import { useHistory, useLocation, useRouteMatch, useParams } from "react-router";
 
 const ServerSettingsModal = (props) => {
+
+    const [newServerName, setNewServerName] = useState("");
+    const [serverDeletion, setServerDeletion] = useState(false);
+    const [serverIconPhotoUrl, setServerIconPhotoUrl] = useState(props.server.server_Icon);
+    const [serverIconPhoto, setServerIconPhoto] = useState('');
+    const [removeServerIcon, setRemoveServerIcon] = useState(false)
+    let file_Input = null;
+    console.log("serverIconurl step 1 is : ", serverIconPhotoUrl);
 
     useEffect(() => {
 
@@ -15,6 +22,7 @@ const ServerSettingsModal = (props) => {
 
 
         window.addEventListener('keyup', props.handleESC, false);
+        file_Input = document.querySelector('input[type=file]');
 
         return function cleanUp () {
             // if (props.errors.length > 0) {
@@ -35,8 +43,21 @@ const ServerSettingsModal = (props) => {
     }, [])
 
 
-    const [newServerName, setNewServerName] = useState("");
-    const [serverDeletion, setServerDeletion] = useState(false);
+    const handleServerIconRemoval = () => {
+        if (props.server_Icon) {
+            setRemoveServerIcon(true)
+        }
+        setServerIconPhotoUrl("");
+        setServerIconPhoto(null);
+
+        const formData = new FormData();
+        formData.append('server[server_Icon_Remove]', removeServerIcon);
+        props.updateServer(props.server.id, formData)
+
+    }
+
+
+
 
     const handleCloseModal = () => {
         let modalToClose = document.getElementById("user-profile");
@@ -50,11 +71,12 @@ const ServerSettingsModal = (props) => {
     const handleNameChangeSubmit = () => {
 
         let subState = {
-            id: props.server.id,
             server_name: newServerName
         };
+        let formData = new FormData();
+        formData.append('server[server_name]', newServerName);
 
-        props.updateServer(subState);
+        props.updateServer(props.server.id, formData);
     }
 
 
@@ -92,7 +114,10 @@ const ServerSettingsModal = (props) => {
     }
 
     const splitServerName = () => {
-        return props.server.server_name.split(" ").map((parts) => parts[0]).join("");
+        //reduce server acryo name to 5 max chars/ initials
+        let serverAcryo = props.server.server_name.split(" ").map((parts) => parts[0]).join("");
+
+        return serverAcryo.length > 5 ? serverAcryo.slice(0, 5) : serverAcryo;
     }
 
     const handleRenderDeleteModal = () => {
@@ -101,18 +126,54 @@ const ServerSettingsModal = (props) => {
         }
     }
 
-    const handleChangeServerPFP = () => {
+    const handleSubmitServerPFP = (e) => {
+        e.preventDefault();
+        let formData = new FormData();
+        //throw in name of server regardless if we are updateing the name or not
+        formData.append('server[server_name]', props.server.server_name);
+        if (serverIconPhoto) {
+            formData.append('server[server_Icon]', serverIconPhoto);
+        }
+
+        props.updateServer(props.server.id, formData);
 
     }
 
+
+    const handleFileInput = (e) => {
+        const fileReader = new FileReader();
+        const file = e.currentTarget.files[0];
+        console.log("file input- : ", file);
+        fileReader.onloadend = () => {
+            setServerIconPhotoUrl(fileReader.result);
+            setServerIconPhoto(file);
+        }
+
+        if (file) {
+            fileReader.readAsDataURL(file);
+        }
+        else {
+            setServerIconPhotoUrl('');
+            setServerIconPhoto(null);
+        }
+    }
+
+
+    const fileProcessingErrors = () => {
+
+    }
+
+
     let serverNameErrorsTag = props.errors.length > 0 ? "server-error" : "";
+    let fileProcessingErrorsTag;
 
     console.log("server settings modal props : ", props);
     console.log("history is : ", props.history);
 
+    console.log("serverIconurl step 2 is : ", serverIconPhotoUrl);
 
 
-
+    let defaultMessage = "We recommend an image of at least 512x512 for the server.";
 
 
     return (
@@ -209,25 +270,36 @@ const ServerSettingsModal = (props) => {
                                     <div className="server-op-item-flex-jcc">
                                         <div className="server-op-item-flex-child">
                                             <div className="server-image-uploader">
-                                                <div className="server-image-uploader-inner">
+                                                <div className="server-image-uploader-inner" >
+                                                    <img
+                                                        className={`server-image-uploader-inner ${serverIconPhotoUrl === undefined ?
+                                                            `is-hidden` : ``}`}
+                                                        src={serverIconPhotoUrl}
+                                                        alt={serverIconPhotoUrl}
+                                                    />
 
                                                     <span aria-hidden="true">
                                                         <div
-                                                            className={`image-uploader-acro ${props.server.server_icon === null ? `` : `is-hidden`}`}>
+                                                            className={`image-uploader-acro ${serverIconPhotoUrl === undefined ||
+                                                            serverIconPhotoUrl === ''? `` : `is-hidden`}`}>
                                                             {`${splitServerName()}`}
                                                         </div>
                                                     </span>
                                                     <div className="server-op-image-uploader-hint">
                                                         Change Icon
                                                     </div>
-                                                    <input className="server-op-pfp-input" accept=".jpg, .jpeg, .svg, .png, .gif" type="file" />
+                                                    <input className="server-op-pfp-input" accept=".jpg, .jpeg, .svg, .png, .gif" type="file" onChange={(e) => handleFileInput(e)} />
                                                     <div className="server-op-image-uploader-icon"></div>
                                                 </div>
 
-                                                <div className="server-op-image-uploader-fp">
+                                                <div className={`server-op-image-uploader-fp ${serverIconPhotoUrl === undefined ? `` : `is-hidden`}`}>
                                                     Minimum Size:
                                                     <strong>128x128</strong>
                                                 </div>
+                                                <a role={"button"} onClick={() => handleServerIconRemoval()} type="submit" className={`remove-server-icon-button ${serverIconPhotoUrl === undefined ? `is-hidden` : ``}`}>
+                                                    Remove
+                                                </a>
+
                                             </div>
 
                                         </div>
@@ -236,11 +308,10 @@ const ServerSettingsModal = (props) => {
                                             <div className="server-op-icon-rec-s">
                                                 We recommend an image of at least 512x512 for the server.
                                             </div>
-                                            <button type="button" className="server-op-pfp-upload-button">
+                                            <button type="submit" className="server-op-pfp-upload-button" onClick={(e) => handleSubmitServerPFP(e)}>
 
                                                 <div className="server-op-iubt">Upload Image
-                                                    <input className="server-op-pfp-input" accept=".jpg, .jpeg, .svg, .png, .gif" type="file" />
-
+                                                    {/* <input className="server-op-pfp-input" accept=".jpg, .jpeg, .svg, .png, .gif" type="file" /> */}
                                                 </div>
                                             </button>
                                         </div>
@@ -257,6 +328,7 @@ const ServerSettingsModal = (props) => {
                                                 minLength={1}
                                                 placeholder={`${props.server.server_name}`}
                                                 onChange={(e) => setNewServerName(e.currentTarget.value)}
+                                                spellCheck={false}
                                                 value={newServerName}
                                             />
 
