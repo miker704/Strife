@@ -61,13 +61,28 @@ class Api::UsersController < ApplicationController
     #addPFP
     def change_User_PFP
         @user = User.find_by(id: params[:id])
-        if @user.update(user_params)
-            @user.save!
-            render :show
-        else
-             process_File_Error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['cannot process file']
-            render json: process_File_Error, status: 400
-        end
+
+            if @user
+                if user_params[:remove_PFP]
+                    @user.photo.purge
+                    @user.save!
+                    render :show
+                elsif @user.update(user_params)
+                     @user.save!    
+                    render :show
+                else
+                    process_File_Error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['cannot process file']
+                    render json: process_File_Error, status: 400
+                end
+
+                # if @user.update(user_params)
+                #     @user.save!
+                #     render :show
+            else
+
+                process_File_Error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['cannot process file']
+                render json: process_File_Error, status: 400
+            end
     end
 
     def change_Password
@@ -166,7 +181,7 @@ class Api::UsersController < ApplicationController
 
     private
     def user_params
-        return params.require(:user).permit(:email,:username,:birthday,:password,:online,:phone_number,:photo)
+        return params.require(:user).permit(:email,:username,:birthday,:password,:online,:phone_number,:photo,:remove_PFP)
     end
 
     
