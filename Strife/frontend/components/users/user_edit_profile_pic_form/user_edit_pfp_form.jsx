@@ -20,7 +20,7 @@ class EditUserPFP extends React.Component {
         this.handleInput = this.handleInput.bind(this);
         this.handleFileInput = this.handleFileInput.bind(this);
         this.fileProcessingErrors = this.fileProcessingErrors.bind(this);
-        this.setRemovePFP = this.setRemovePFP.bind(this);
+        this.handleRemovePFPSubmission = this.handleRemovePFPSubmission.bind(this);
     }
 
 
@@ -29,7 +29,21 @@ class EditUserPFP extends React.Component {
     }
 
 
+    handleRemovePFPSubmission (e) {
+        e.preventDefault();
 
+        if (this.props.currentUser.photo) {
+            this.setState({
+                remove_PFP: true,
+                photo: null,
+                photo_url: ''
+            })
+        }
+        let formData = new FormData();
+        formData.append('user[remove_PFP]', this.state.remove_PFP);
+        this.props.changeUserPFP(this.props.currentUser.id, formData);
+
+    }
 
     fileProcessingErrors () {
         if (this.props.errors.includes('cannot process file')) {
@@ -82,19 +96,19 @@ class EditUserPFP extends React.Component {
 
         let formData = new FormData();
 
-     
+
 
         let submissionState = {};
-        formData.append('user[username]',this.props.currentUser.username);
+        formData.append('user[username]', this.props.currentUser.username);
         if (this.state.photo) {
             formData.append('user[photo]', this.state.photo);
-             submissionState = {
+            submissionState = {
                 id: this.props.currentUser.id,
                 photo: this.state.photo
             }
         }
-       
-        this.props.changeUserPFP(this.props.currentUser.id,formData);
+
+        this.props.changeUserPFP(this.props.currentUser.id, formData);
 
         this.setState({
             submit: true,
@@ -103,7 +117,7 @@ class EditUserPFP extends React.Component {
 
     render () {
 
-        
+
         let fileErrorTag = this.props.errors.length > 0 ? "field-error" : "";
 
 
@@ -126,10 +140,23 @@ class EditUserPFP extends React.Component {
                             <div className="username-form-input-sec">
                                 <div className="username-input-wrapper1">
 
-                                    <div className="user-pfp-wrapper" onClick={() => this.file_input.click()}>
+                                    <div
+                                        className={`user-pfp-wrapper ${this.state.photo_url === undefined ||
+                                            this.state.photo_url === '' ? `svgwrap color-${this.props.currentUser.color_tag}` : ``}`}
+                                        onClick={() => this.file_input.click()}>
                                         <p className="user-pfp-header">Upload new avatar</p>
                                         <img className="img-upload-hint-icon" />
-                                        <img className="user-pfp" id="display-user-pfp" src={this.state.photo_url} alt={this.state.photo_url} />
+                                        <img
+                                            className={`${this.state.photo_url === undefined ||
+                                                this.state.photo_url === '' ?
+                                                `user-pfp-svgwr` : `user-pfp`}`}
+                                            id="display-user-pfp"
+                                            src={`${this.state.photo_url === undefined ||
+                                                this.state.photo_url === '' ?
+                                                user_Default_PFP : this.state.photo_url}`}
+
+                                            alt={'defaultUserPFP'} />
+                                        {/* <img className="user-pfp" id="display-user-pfp" src={this.state.photo_url} alt={this.state.photo_url} /> */}
                                     </div>
 
                                     <input type='file' accept=".jpg, .jpeg, .svg, .png, .gif" onChange={this.handleFileInput} />
@@ -140,7 +167,14 @@ class EditUserPFP extends React.Component {
                         <div className="username-edit-sep"></div>
                     </div>
                     <div className="username-edit-button-sec">
-                        <button type="submit" className="username-edit-submit-button">Save</button>
+                        <button type="submit"
+                            className={`username-edit-submit-button ${this.props.currentUser.photo === undefined ? `` : `is-hidden`}`}>
+                            Save
+                        </button>
+                        <button type="button" onClick={(e) => this.handleRemovePFPSubmission(e)}
+                            className={`username-edit-submit-button ${this.props.currentUser.photo !== undefined ? `` : `is-hidden`}`}>
+                            Remove
+                        </button>
                         <button type="submit" onClick={() => this.cancel = true} className="username-edit-cancel-button">Cancel</button>
                     </div>
 
