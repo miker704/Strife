@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, Redirect } from 'react-router-dom'
-
+import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
 
 class EditUserPFP extends React.Component {
     constructor (props) {
@@ -9,6 +9,7 @@ class EditUserPFP extends React.Component {
             photo: '',
             photo_url: this.props.currentUser.photo,
             submit: false,
+            remove_PFP: false
 
         }
 
@@ -19,6 +20,7 @@ class EditUserPFP extends React.Component {
         this.handleInput = this.handleInput.bind(this);
         this.handleFileInput = this.handleFileInput.bind(this);
         this.fileProcessingErrors = this.fileProcessingErrors.bind(this);
+        this.setRemovePFP = this.setRemovePFP.bind(this);
     }
 
 
