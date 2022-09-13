@@ -22,6 +22,7 @@ class ModalManager extends React.Component {
         }
         this.setModalSpecialFeatures = this.setModalSpecialFeatures.bind(this);
         console.log("modal call");
+
     }
 
     //this function is to set special modal background/ positioning for different modals that need it 
@@ -32,6 +33,7 @@ class ModalManager extends React.Component {
 
 
     render () {
+        console.log("modal manager props: ", this.props);
         let renderedModal;
         let modalMod = 0;
         // using a switch statement to reduce slow down of processing multiple if statemnets with similar
@@ -82,14 +84,20 @@ class ModalManager extends React.Component {
 
             case 'ServerSettings':
 
-                renderedModal = <ServerSettingsModalContainer/>
+                //props and state doNOT get passed in modal manager however location still gets passed
+                // and can be accessed so we can manipulate this to get the props and state we need back to 
+                // use server settings
+                const serverId = this.props.history.location.pathname.split('/');
+                // renderedModal = <ServerSettingsModalContainer serverId={serverId[2]} currentChannelId={serverId[3]} />
+                renderedModal = <ServerSettingsModalContainer />
+
                 modalMod = 0;
 
                 break;
 
             case 'ChannelDropDown':
 
-                renderedModal = <ChannelDropDownContainer/>
+                renderedModal = <ChannelDropDownContainer />
                 modalMod = 1;
 
                 break;
