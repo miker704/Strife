@@ -211,7 +211,7 @@ class CreateServerForm extends React.Component {
         this.props.action(serverSubmission).then((action) => {
             newServer = action.server;
             // newServer = action.server.server;
-           
+
 
 
             //
@@ -379,11 +379,10 @@ class CreateServerForm extends React.Component {
                 else {
 
                     this.props.joinServer(invite).then((action) => {
+                        let joinedServer = action.server;
 
-                        // setTimeout(() => {
-                        //     this.props.removeServerErrors();
-                        //     this.props.closeModal();
-                        // }, 100);
+                        this.props.history.push(`/channels/${joinedServer.id}/${joinedServer.general_channel_id}`);
+
                         this.closeModalTransitionOut();
 
                     });
