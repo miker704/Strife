@@ -31,10 +31,20 @@ class Api::ServersController < ApplicationController
 
     def update
         @server = Server.find(params[:id])
-        if @server && @server.update(server_params)
-          render :show
+
+        if @server
+            if server_params[:server_Icon_Remove]
+                @server.server_Icon.purge
+                render :show
+            elsif @server.update(server_params)
+                render :show
+            else
+                 render json: @server.errors.full_messages, status: 400
+            end
+
+        # if @server && @server.update(server_params)
+        #   render :show
         else
-    
           render json: @server.errors.full_messages, status: 400
         end
     end
@@ -42,7 +52,7 @@ class Api::ServersController < ApplicationController
 
     def join_server
         @current_user = userId
-        @server = Server.find_by(invite_code: params[:inviteCode])
+        @server = Server.find_by(invite_code: params[:inviteCode].downcase)
         
         if @server
             if (@server.members.find_by(id: current_user.id))
@@ -60,8 +70,11 @@ class Api::ServersController < ApplicationController
                             receiver_id: current_user.id
                         )
                     end
-                        @servers = current_user.servers_joined
-                        render json: @servers, include: %i[channels members]
+                        # @servers = current_user.servers_joined
+                        # render json: @servers, include: %i[channels members]
+                        # render json: @servers
+                        render :show
+
                 end
             end
         else
@@ -91,7 +104,7 @@ class Api::ServersController < ApplicationController
     
     private
         def server_params
-            return params.require(:server).permit(:server_name,:server_owner_id,:public)
+            return params.require(:server).permit(:server_name,:server_owner_id,:public,:server_Icon, :server_Icon_Remove)
         end
         def userId
             return params[:user]
