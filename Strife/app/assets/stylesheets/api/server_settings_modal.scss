@@ -103,8 +103,21 @@
 
 }
 
+.remove-server-icon-button {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    color: hsl(216, 3.7%, 73.5%);
+}
 
-
+.remove-server-icon-button:hover {
+    color: hsl(210, 2.9%, 86.7%);
+}
 
 
 
