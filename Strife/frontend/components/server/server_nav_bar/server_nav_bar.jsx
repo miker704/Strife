@@ -23,9 +23,13 @@ class ServerNavBar extends React.Component {
     splitServerName (serverName, serverIcon) {
         //if the server owner has given a server icon to there server set the servericon url to fill the 
         //bubble instead of the name of the server
-        const serverNameAcronym = serverIcon ? serverIcon : serverName.split(" ").map((parts) => parts[0]).join("");
+        // const serverNameAcronym = serverIcon ? serverIcon : serverName.split(" ").map((parts) => parts[0]).join("");
 
-        return serverNameAcronym;
+        // return serverNameAcronym;
+
+        let serverAcryo = serverName.split(" ").map((parts) => parts[0]).join("");
+
+        return serverAcryo.length > 5 ? serverAcryo.slice(0, 5) : serverAcryo;
     }
 
     render () {
