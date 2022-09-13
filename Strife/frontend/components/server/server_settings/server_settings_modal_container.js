@@ -64,7 +64,7 @@ const mDTP = (dispatch, ownProps) => {
         fetchServer: (serverId) => dispatch(fetchServer(serverId)),
         fetchUserServers: (user) => dispatch(fetchServers(user)),
         fetchServers: () => dispatch(fetchServers()),
-        updateServer: (server) => dispatch(updateServer(server)),
+        updateServer: (serverId,formData) => dispatch(updateServer(serverId,formData)),
         deleteServer: (serverId) => dispatch(deleteServer(serverId)),
         removeServerErrors: () => dispatch(removeServerErrors()),
 
