@@ -61,19 +61,8 @@ class Api::UsersController < ApplicationController
     #addPFP
     def change_User_PFP
         @user = User.find_by(id: params[:id])
-        # debugger
-        # puts 'current backend params : '
-        # puts user_params
-        # puts 'current backend params[photo] : '
-        # data_ = params[:user][:username]
-        # puts data_
-        # if user_params[:photo] 
         if @user.update(user_params)
-            # @user.photo = user_params[:photo]
             @user.save!
-            # @user.photo
-            puts 'update photo sucessful'
-
             render :show
         else
              process_File_Error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['cannot process file']
