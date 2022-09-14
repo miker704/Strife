@@ -68,14 +68,21 @@
 
 }
 
+// .modal-child-component {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+
+// }
 .modal-child-component {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+  height: 87%;
+  width: 36%;
 }
-
 
 label.field-error {
   color: #f38688;
