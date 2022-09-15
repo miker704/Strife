@@ -13,7 +13,8 @@ const DeleteServerModal = (props) => {
 
                 <div className="delete-server-modal-inner-wrapper">
                     <div id="delete-server-modal" className="delete-server-modal" >
-                        <form onSubmit={this.handleSubmit}>
+                        {/* <form onSubmit={this.handleSubmit}> */}
+                        <form>
 
 
                             <div className="delete-server-form-header-wrapper">
@@ -38,12 +39,12 @@ const DeleteServerModal = (props) => {
 
                                 <div className="server-name-section">
                                     <h5 className="server-name-header1">
-                                        <label className={passwordErrorTag}>Enter Server Name{ }</label>
+                                        {/* <label className={passwordErrorTag}>Enter Server Name{ }</label> */}
                                     </h5>
                                     <div className="input-server-name-wrapper">
                                         <input
-                                            value={this.state.serverName}
-                                            onChange={() => this.handleInput("serverName")}
+                                            // value={this.state.serverName}
+                                            // onChange={() => this.handleInput("serverName")}
                                             type="text"
                                             className="input-server-name"
                                             spellCheck={false}
@@ -57,7 +58,9 @@ const DeleteServerModal = (props) => {
                             </div>
                             <div className="delete-server-button-sec">
                                 <button type="submit" className="delete-server-submit-button">Delete Server</button>
-                                <button type="submit" onClick={() => this.cancel = true} className="delete-server-cancel-button">Cancel</button>
+                                <button type="submit" className="delete-server-cancel-button">Cancel</button>
+
+                                {/* <button type="submit" onClick={() => this.cancel = true} className="delete-server-cancel-button">Cancel</button> */}
                             </div>
 
                         </form>
