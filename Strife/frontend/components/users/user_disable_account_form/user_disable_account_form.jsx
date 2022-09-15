@@ -68,7 +68,6 @@ class DisableUserAccountForm extends React.Component {
 
     render () {
 
-
         let hasServers = this.state.hasServers === true ? (<div id="edit-userInfo-model" className="edit-userInfo-model" >
             <div className="remove-phone-form-header-wrapper">
                 <div className="remove-phone-header">
