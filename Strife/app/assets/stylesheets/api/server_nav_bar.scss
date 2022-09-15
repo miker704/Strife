@@ -59,7 +59,7 @@
   }
 }
 
-.server-nav-bar .server-nav-bar-list-item:hover{
+.server-nav-bar .server-nav-bar-list-item:hover {
   .pill-box {
     color: #fff;
     background-color: #fff;
@@ -120,17 +120,19 @@
   border-radius: 30%;
 
 }
-#no-purple:hover img{
+
+#no-purple:hover img {
   border-radius: 30%;
   background-color: #202225;
   transition: background .4s ease-out, border-radius .4s ease-out;
 }
 
-.server-nav-bar a#purple-hover:hover{
+.server-nav-bar a#purple-hover:hover {
   background-color: #5865F2;
 
 }
-.server-nav-bar a#no-purple:hover{
+
+.server-nav-bar a#no-purple:hover {
   background-color: #202225;
   transition-property: border-radius;
 
@@ -318,6 +320,11 @@
 .selected-Server {
   background-color: #5865F2;
   border-radius: 30%;
+}
+
+.selected-Server#no-purple {
+  border-radius: 30%;
+  background: none;
 }
 
 //server nav bar modals
