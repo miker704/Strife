@@ -142,7 +142,6 @@ const ServerSettingsModal = (props) => {
     const handleFileInput = (e) => {
         const fileReader = new FileReader();
         const file = e.currentTarget.files[0];
-        console.log("file input- : ", file);
         fileReader.onloadend = () => {
             setServerIconPhotoUrl(fileReader.result);
             setServerIconPhoto(file);
@@ -158,19 +157,15 @@ const ServerSettingsModal = (props) => {
     }
 
 
-    const fileProcessingErrors = () => {
-
-    }
-
 
     let serverNameErrorsTag = props.errors.length > 0 ? "server-error" : "";
-    let fileProcessingErrorsTag;
-
-
-
-
-    let defaultMessage = "We recommend an image of at least 512x512 for the server.";
-
+    let existingServerImageIcon = serverIconPhotoUrl === undefined || serverIconPhotoUrl === ''?
+        ('') :
+        (<img
+            className={`server-image-uploader-inner`}
+            src={serverIconPhotoUrl}
+            alt={serverIconPhotoUrl}
+        />)
 
     return (
         <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
@@ -267,24 +262,25 @@ const ServerSettingsModal = (props) => {
                                         <div className="server-op-item-flex-child">
                                             <div className="server-image-uploader">
                                                 <div className="server-image-uploader-inner" >
-                                                    <img
+                                                    {/* <img
                                                         className={`server-image-uploader-inner ${serverIconPhotoUrl === undefined ?
                                                             `is-hidden` : ``}`}
                                                         src={serverIconPhotoUrl}
                                                         alt={serverIconPhotoUrl}
-                                                    />
+                                                    /> */}
+                                                    {existingServerImageIcon}
 
                                                     <span aria-hidden="true">
                                                         <div
                                                             className={`image-uploader-acro ${serverIconPhotoUrl === undefined ||
-                                                            serverIconPhotoUrl === ''? `` : `is-hidden`}`}>
+                                                                serverIconPhotoUrl === '' ? `` : `is-hidden`}`}>
                                                             {`${splitServerName()}`}
                                                         </div>
                                                     </span>
                                                     <div className="server-op-image-uploader-hint">
                                                         Change Icon
                                                     </div>
-                                                    <input className="server-op-pfp-input" accept=".jpg, .jpeg, .svg, .png, .gif" type="file" onChange={(e) => handleFileInput(e)} />
+                                                    <input className="server-op-pfp-input" accept=".jpg, .jpeg, .png, .gif" type="file" onChange={(e) => handleFileInput(e)} />
                                                     <div className="server-op-image-uploader-icon"></div>
                                                 </div>
 
