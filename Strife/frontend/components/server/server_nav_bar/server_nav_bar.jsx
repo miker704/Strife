@@ -20,11 +20,10 @@ class ServerNavBar extends React.Component {
     }
 
 
-    splitServerName (serverName, serverIcon) {
+    splitServerName (serverName) {
         //if the server owner has given a server icon to there server set the servericon url to fill the 
         //bubble instead of the name of the server
         // const serverNameAcronym = serverIcon ? serverIcon : serverName.split(" ").map((parts) => parts[0]).join("");
-
         // return serverNameAcronym;
 
         let serverAcryo = serverName.split(" ").map((parts) => parts[0]).join("");
@@ -35,42 +34,40 @@ class ServerNavBar extends React.Component {
     render () {
 
         let goHome = this.props.serverId === "@me" ? "selected-Server" : "unselected-Server";
-        // console.log("server currentUser props: ", this.props.currentUser);
-        // console.log("server navbar props: ", this.props);
-        // console.log("server navbar serverid: ", this.props.serverId);
-
-        // console.log("server navbar gohome: ", goHome);
-
-        console.log(this.props.servers);
-        console.log(this.props.serverId);
 
         let userServer = this.props.servers.map((server, serverIndex) => {
             let serverNavBarClassTag = this.props.serverId === server.id.toString() ? "selected-Server" : "unselected-Server";
+            let serverAcryo = server.server_Icon === undefined ?
+                (
+                    <svg width="48" height="48" viewBox="0 0 48 48" className="purple-bubbles" >
+                        <defs>
+                            <path d="M48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24Z" >
+                            </path>
+                        </defs>
+                        <foreignObject x="0" y="0" width="48" height="48">
+                            <div className="bubble-wrap" >
+                                <div className="server-Acryo" >{this.splitServerName(server.server_name)}</div>
+                            </div>
+                        </foreignObject>
+                    </svg>
+                ) : ("");
+
+            let serverIcon = server.server_Icon !== undefined ?
+                (<div className="bubble-wrap"><img className="bubble-img" src={server.server_Icon} alt="SPFP" /></div>) : ("");
+
+
             return (
-                // <li className="server-bubbles" key={serverIndex}>
-                // <li className="server-bubbles" key={serverIndex}>
                 <li className="server-bubbles" key={server.id}>
-                    <div className="server-nav-bar-a">
+                    <div className="server-nav-bar-list-item">
                         <Link to={`/channels/${server.id}/${server.general_channel_id}`}
-
                             onClick={() => this.props.fetchServer(server.id)}
-                            className={serverNavBarClassTag}>
-                            {/* <p className="server-name-initials">{server.server_name.charAt(0)}</p> */}
-                            <p className="server-name-initials">{this.splitServerName(server.server_name, server.server_icon)}</p>
-
+                            className={serverNavBarClassTag}
+                            id={`${server.server_Icon === undefined ? `purple-hover` : `no-purple`}`}>
+                            <div className="pill-box"><span className="pill-box-item"></span></div>
+                            {serverAcryo}
+                            {serverIcon}
                         </Link>
-                        {/* <span> */}
-                        {/* <p>{serverIndex}{": {{ server id : "} {server.id} {"} "} */}
-                        {/* {"{ server_owner_id : "} {server.server_owner_id} {"} "} */}
-                        {/* {"{ server name : "} {server.server_name} {"} "} */}
-                        {/* {"{ server icon : "} {server.server_icon} {"} "} */}
-                        {/* {"{ server public status : "} {server.public} {"} "} */}
-                        {/* {"{ server invite code : "} {server.invite_code} {"}} "} */}
 
-                        {/* <p>{`/channels/${server.id}/${server.general_channel_id}`}</p> */}
-                        {/* </p> */}
-
-                        {/* </span> */}
                     </div>
                     <div className="server-nav-bar-tool-kit">{server.server_name}</div>
                 </li>
@@ -83,9 +80,9 @@ class ServerNavBar extends React.Component {
             <div className="server-nav-bar">
                 <ul className="server-nav-bar-list">
                     <li key="home-Bubbles" className="server-bubbles">
-                        <div className="server-nav-bar-a">
-                            <Link className={goHome} to={`/channels/@me`}>
-
+                        <div className="server-nav-bar-list-item">
+                            <Link id="purple-hover" className={goHome} to={`/channels/@me`}>
+                                <div className="pill-box"><span className="pill-box-item"></span></div>
                                 <svg className="home-Bubbles" aria-hidden="true" role="img" width="28" height="20" viewBox="0 0 28 20">
                                     <path fill="currentColor" d="M23.0212 1.67671C21.3107 0.879656 19.5079 0.318797 17.6584 0C17.4062 
                                     0.461742 17.1749 0.934541 16.9708 1.4184C15.003 1.12145 12.9974 1.12145 11.0283 1.4184C10.819 
@@ -102,9 +99,6 @@ class ServerNavBar extends React.Component {
                                      13.6383Z">
                                     </path>
                                 </svg>
-
-
-
                             </Link>
                         </div>
                         <div className="server-nav-bar-tool-kit">HOME</div>
@@ -116,22 +110,21 @@ class ServerNavBar extends React.Component {
                     {userServer}
 
                     <li className="server-bubbles" key="createServer">
-                        <div className="server-nav-bar-a">
-                            {/* <button id="create-server" onClick={() => this.props.openModal('createServerForm')}> */}
+                        <div className="server-nav-bar-list-item">
                             <button id="create-server" onClick={() => this.renderModal('createServerForm')}>
-
+                                <div id="fill-pill" className="pill-box"><span className="pill-box-item"></span></div>
                                 <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M20 11.1111H12.8889V4H11.1111V11.1111H4V12.8889H11.1111V20H12.8889V12.8889H20V11.1111Z">
                                     </path>
                                 </svg>
-
                             </button>
                         </div>
                         <div className="server-nav-bar-tool-kit">Add a Server</div>
                     </li>
                     <li className="server-bubbles" key="serverSearch">
-                        <div className="server-nav-bar-a">
+                        <div className="server-nav-bar-list-item">
                             <button id="search-servers" onClick={() => this.props.openModal('serverSearch')}>
+                                <div id="fill-pill" className="pill-box"><span className="pill-box-item"></span></div>
                                 <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M12 10.9C11.39 10.9 10.9 11.39 10.9 12C10.9 12.61 11.39 13.1 12 
                                                                 13.1C12.61 13.1 13.1 12.61 13.1 12C13.1 11.39 12.61 10.9 12 10.9ZM12 
@@ -144,28 +137,21 @@ class ServerNavBar extends React.Component {
                         <div className="server-nav-bar-tool-kit">Explore Public Servers</div>
                     </li>
 
-                    {/* <li> */}
                     <div className="bottom-server-bubble-seperator-container">
                         <div className="bottom-server-bubble-seperator"></div>
                     </div>
-                    {/* </li> */}
 
 
                     <li className="server-bubbles" key="downloadApps">
-                        {/* <div className="bottom-server-bubble-seperator-container">
-                            <div className="server-bubble-seperator"></div>
-                        </div> */}
-
-                        <div className="server-nav-bar-a">
+                        <div className="server-nav-bar-list-item">
                             <button id="download-apps" onClick={() => this.props.openModal('downloadApps')} >
-                                {/* onClick={() => this.props.openModal('downloadApps')} */}
+                                <div id="fill-pill" className="pill-box"><span className="pill-box-item"></span></div>
                                 <svg fill="currentColor" aria-hidden="false" width="24" height="24" viewBox="0 0 24 24">
                                     <path d="M16.293 9.293L17.707 10.707L12 16.414L6.29297 10.707L7.70697 9.293L11 
                                          12.586V2H13V12.586L16.293 9.293ZM18 20V18H20V20C20 21.102 19.104 22 18 22H6C4.896 22 4 21.102 4 
                                          20V18H6V20H18Z">
                                     </path>
                                 </svg>
-
                             </button>
                         </div>
                         <div className="server-nav-bar-tool-kit">Download Apps</div>
