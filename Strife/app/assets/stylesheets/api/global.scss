@@ -1,5 +1,13 @@
 //this  is a global file that reference styles that will be used across multiple files
 
+#root,
+body {
+  background-color: hsl(216, 7.2%, 13.5%);
+  text-rendering: optimizeLegibility;
+  forced-color-adjust: none;
+}
+
+
 
 .x-To-Close {
   // color: white;
@@ -521,3 +529,6 @@ label.field-error {
   width: 32px;
   border-radius: 50%;
 }
+
+
+
