@@ -8,7 +8,6 @@ class CreateServerForm extends React.Component {
             server_owner_id: this.props.currentUser.id,
             server_name: `${this.props.currentUser.username}'s server`,
             public: true, //true by default
-            server_icon: "", // empty by default until aws functionality is implemented
             form_number: 1,
             forward: true,
             joiningServer: false,
@@ -75,7 +74,6 @@ class CreateServerForm extends React.Component {
         //     server_owner_id: this.props.currentUser.id,
         //     server_name: `${this.props.currentUser.username}'s server`,
         //     public: true, //true by default
-        //     server_icon: "", // empty by default until aws functionality is implemented
         //     form_number: 1,
         //     forward: true,
         //     joiningServer: false,
@@ -106,7 +104,7 @@ class CreateServerForm extends React.Component {
 
     stopProc (e) {
         e.preventDefault();
-        console.log("calling to input an image file");
+        // console.log("calling to input an image file");
     }
 
 
@@ -219,7 +217,6 @@ class CreateServerForm extends React.Component {
                 server_owner_id: this.props.currentUser.id,
                 server_name: this.state.server_name,
                 public: this.state.public, //true by default
-                server_icon: this.state.server_icon, // empty by default until aws functionality is implemented,
 
             }
 
@@ -238,7 +235,6 @@ class CreateServerForm extends React.Component {
                 server_owner_id: this.props.currentUser.id,
                 server_name: this.state.server_name,
                 public: this.state.public, //true by default
-                server_icon: this.state.server_icon, // empty by default until aws functionality is implemented,
 
             }
             createServerFormData.append(`server[server_owner_id]`, this.props.currentUser.id);
@@ -251,12 +247,8 @@ class CreateServerForm extends React.Component {
 
         }
 
-        console.log("in server creation submit the current state is now : ", this.state);
-        console.log('the forms data: ');
 
-        for (let section of createServerFormData.entries()) {
-            console.log(section[0] + ' - ' + section[1]);
-        }
+       
 
 
         let newServer;
@@ -478,8 +470,7 @@ class CreateServerForm extends React.Component {
     }
 
     render () {
-        console.log("server icon url :", this.state.server_Icon_Url);
-        console.log("icon : ", this.state.server_Icon);
+
         let serverErrorTag = this.props.errors.length > 0 ? "server-error" : "";
         let form_state = "";
         this.inviteCodeErrorMessage = "";
