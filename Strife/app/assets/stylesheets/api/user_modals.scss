@@ -98,7 +98,7 @@
     user-select: none;
 }
 
-.edit-userInfo-model input[type=file]{
+.edit-userInfo-model input[type=file] {
     display: none;
 }
 
@@ -508,6 +508,11 @@
     color: #FFFFFF;
 }
 
+.username-edit-cancel-button:hover {
+    text-decoration: underline;
+}
+
+
 .username-edit-submit-button {
     forced-color-adjust: none;
     color: #FFFFFF;
@@ -535,6 +540,10 @@
     display: flex;
     -webkit-box-pack: center;
 
+}
+
+.username-edit-submit-button:hover {
+    background-color: hsl(235, 51.4%, 52.4%);
 }
 
 .username-edit-sep {
@@ -885,7 +894,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 .user-pfp-wrapper.svgwrap {
@@ -898,7 +907,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    
+
 }
 
 
@@ -940,7 +949,7 @@
     object-position: center;
 }
 
-.user-pfp-svgwr{
+.user-pfp-svgwr {
     border-radius: 50%;
     width: 100px;
     height: 50px;
@@ -972,4 +981,3 @@
     -webkit-box-align: center;
     align-items: center;
 }
-
