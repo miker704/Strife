@@ -5,73 +5,36 @@ import { closeHookModalOnESC, closeHookModalOnOutsideClick } from "../../../util
 const LeaveServerModal = (props) => {
 
 
-    
+
 
     return (
-        <div className="delete-server-modal-wrapper"  >
-            <div className="delete-server-flex-box">
-
-                <div className="delete-server-modal-inner-wrapper">
-                    <div id="delete-server-modal" className="delete-server-modal" >
-                        {/* <form onSubmit={this.handleSubmit}> */}
-                        <form>
-
-
-                            <div className="delete-server-form-header-wrapper">
-                                <h2 className="delete-server-form-header">
-                                    Delete{` `}{`'server_name'`}
-                                </h2>
+        <div className="leave-server-wrapper"  >
+            <div className="leave-server-backdrop"></div>
+            <div className="leave-server-layer">
+                <div id="leave-server-focus-lock" className="leave-server-focus-lock" >
+                    <div className="leave-server-root" >
+                        <div className="leave-server-flex" >
+                            <h2 className="remove-phone-header">
+                                Leave 'Shot from the point'
+                            </h2>
+                        </div>
+                        <div className="leave-server-content-scroll-base" >
+                            <div className="leave-server-text">
+                                Are you sure you want to leave {` `}
+                                <strong>shot from the point</strong>
+                                ? You won't be able to rejoin this server unless you are re-invited.
                             </div>
-
-                            <div className="delete-server-scroll-base">
-                                <div className="delete-server-warning-card">
-                                    <div className="delete-server-warning-text">
-                                        Are You sure that you want to delete{` `}
-                                        <strong>server_name</strong>?
-                                        This action cannot be undone.
-                                    </div>
-
-                                </div>
-                                <div className="delete-server-sep"></div>
-
-
-
-
-                                <div className="server-name-section">
-                                    <h5 className="server-name-header1">
-                                        {/* <label className={passwordErrorTag}>Enter Server Name{ }</label> */}
-                                    </h5>
-                                    <div className="input-server-name-wrapper">
-                                        <input
-                                            // value={this.state.serverName}
-                                            // onChange={() => this.handleInput("serverName")}
-                                            type="text"
-                                            className="input-server-name"
-                                            spellCheck={false}
-                                            autoComplete="off"
-
-                                        />
-                                    </div>
-                                </div>
-                                <div className="delete-server-sep"></div>
-
-                            </div>
-                            <div className="delete-server-button-sec">
-                                <button type="submit" className="delete-server-submit-button">Delete Server</button>
-                                <button type="submit" className="delete-server-cancel-button">Cancel</button>
-
-                                {/* <button type="submit" onClick={() => this.cancel = true} className="delete-server-cancel-button">Cancel</button> */}
-                            </div>
-
-                        </form>
+                            <div className="username-edit-sep"></div>
+                        </div>
+                        {/* <form onSubmit={this.handleSubmit} className="leave-server-button-flex-wrapper"> */}
+                            {/* <button type="submit" onClick={() => this.cancel = true} className="delete-server-submit-button">Leave Server</button> */}
+                            {/* <button type="submit" onClick={() => this.cancel = true} className="username-edit-cancel-button">cancel</button> */}
+                        {/* </form> */}
                     </div>
                 </div>
-
-
-
-
             </div>
         </div>
+
 
     )
 
