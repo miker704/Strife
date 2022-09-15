@@ -22,11 +22,163 @@
 
 
 
-.server-nav-bar a:hover {
-  background-color: #5865F2;
-  border-radius: 30%;
+// .server-nav-bar a:hover {
+//   background-color: #5865F2;
+//   border-radius: 30%;
+// }
+.pill-box {
+  position: relative;
+  overflow: hidden;
+  width: 8px;
+  height: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  contain: layout size;
+  position: absolute;
+  left: 0;
+  forced-color-adjust: none;
+  // top: 0;
+  outline: 0;
 }
 
+.blob-contain {
+  position: relative;
+  transform: translateY(1px) translateZ(0);
+  backface-visibility: hidden;
+}
+
+.unselected-Server:hover {
+  .pill-box {
+    color: #fff;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 24px;
+  }
+}
+
+.server-nav-bar .server-nav-bar-list-item:hover{
+  .pill-box {
+    color: #fff;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 24px;
+  }
+}
+
+.selected-Server {
+  .pill-box {
+    color: #fff !important;
+    background-color: #fff !important;
+    border-radius: 5px !important;
+    height: 48px !important;
+  }
+}
+
+.pill-box-item {
+  outline: 0;
+  forced-color-adjust: none;
+  background-color: #FFFFFF;
+  position: absolute;
+  display: block;
+  width: 8px;
+  border-radius: 0 4px 4px 0;
+  margin-left: -4px;
+
+}
+
+.bubble-wrap {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  forced-color-adjust: none;
+  outline: 0;
+  transition: background-color .1s ease-out, color .1s ease-out;
+}
+
+
+
+.bubble-img {
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+
+  object-fit: cover;
+  // pointer-events: none;
+  forced-color-adjust: none;
+
+}
+
+
+.server-nav-bar a:hover {
+  // background-color: #5865F2;
+  border-radius: 30%;
+
+}
+#no-purple:hover img{
+  border-radius: 30%;
+  background-color: #202225;
+  transition: background .4s ease-out, border-radius .4s ease-out;
+}
+
+.server-nav-bar a#purple-hover:hover{
+  background-color: #5865F2;
+
+}
+.server-nav-bar a#no-purple:hover{
+  background-color: #202225;
+  transition-property: border-radius;
+
+}
+
+.server-nav-bar-list-item {
+  forced-color-adjust: none;
+  position: relative;
+  margin: 0 0 8px;
+  display: flex;
+  justify-content: center;
+  width: 75px;
+  outline: 0;
+}
+
+
+.server-nav-bar-list-item:active {
+  position: relative;
+  transform: translateY(1px) translateZ(0);
+  backface-visibility: hidden;
+}
+
+.server-Acryo {
+  font-size: 16px;
+  forced-color-adjust: none;
+  outline: 0;
+  font-weight: 500;
+  line-height: 1.2em;
+  white-space: nowrap;
+  transition: background-color .15s ease-out, color .15s ease-out;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  font-family: "Whitney";
+
+}
+
+.purple-bubbles {
+  box-sizing: border-box;
+  // position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  forced-color-adjust: none;
+}
 
 
 
