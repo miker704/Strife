@@ -32,7 +32,6 @@ const DeleteServerModal = (props) => {
             props.deleteServer(props.server.id).then(() => {
                 props.fetchUserServers(props.currentUser.id);
             });
-            console.log("Deletion verifcation success")
         })
         props.removeServerErrors()
 
@@ -62,7 +61,6 @@ const DeleteServerModal = (props) => {
     }
 
     let serverNameErrorsTag = props.errors.length > 0 ? "server-error" : "";
-    console.log("deleteServer props: ", props);
 
     return (
         <div className="delete-server-modal-wrapper"  >
