@@ -35,7 +35,6 @@ const LeaveServerModal = (props) => {
         return;
     }
 
-    console.log("leave server props : ", props);
 
     return (
         <div className="leave-server-wrapper"  >
