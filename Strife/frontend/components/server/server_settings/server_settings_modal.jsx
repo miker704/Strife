@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useRef, useState } from "react";
-import { useHistory, useLocation, useRouteMatch, useParams } from "react-router";
 import DeleteServerModalContainer from "../delete_server_modal/delete_server_modal_container";
 
 
@@ -21,9 +20,6 @@ const ServerSettingsModal = (props) => {
         //     props.fetchServer();
         //     props.fetchChannel();
         // }
-
-
-
 
         window.addEventListener('keyup', props.handleESC, false);
         file_Input = document.querySelector('input[type=file]');
@@ -181,7 +177,6 @@ const ServerSettingsModal = (props) => {
 
     return (
         <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
-            {/* {serverDeletion && <DeleteServerModalContainer setServerDeletion={setServerDeletion}/>} */}
             {renderServerDeletionModal()}
             <div className="user-profile" id="user-profile">
                 <div className="sidebar">
