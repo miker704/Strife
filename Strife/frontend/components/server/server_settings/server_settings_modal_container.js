@@ -11,9 +11,7 @@ import { logoutUser, removeSessionErrors } from "../../../actions/session_action
 
 const extractServerProps = (state, ownProps) => {
     let locationString = ownProps.location.pathname;
-    console.log("locationString: ", locationString)
     let newLoc = locationString.split('/channels/').join('').split('/');
-    console.log("newloc: ", newLoc)
     return newLoc;
 }
 
@@ -22,19 +20,9 @@ const extractServerProps = (state, ownProps) => {
 const mSTP = (state, ownProps) => {
 
     const getIds = extractServerProps(state, ownProps);
-    console.log("ownProps: ", ownProps);
 
     return {
-        // currentUser: state.entities.users[state.session.id],
-        // server: state.entities.servers[ownProps.location.pathname.serverId],
-        // server: state.entities.servers[this.props.serverId],
-        // server: state.entities.servers[parseInt(getIds[0])],
-        // channels: Object.values(state.entities.channels),
-        // currentChannelId: ownProps.match.params.channelId,
-        // serverId: ownProps.serverId,
-        // errors: state.errors.server,
-        // channelErrors: state.errors.channel,
-        // servers: state.entities.servers
+        
 
         currentUser: state.entities.users[state.session.id],
         server: state.entities.servers[parseInt(getIds[0])],
