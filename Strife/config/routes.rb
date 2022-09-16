@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resource  :session, only: [:create, :destroy]
     resources :servers, only: [:index, :show, :create, :update, :destroy]
               post '/servers/join/', to: 'servers#join_server', as: 'join_server'
+              patch '/servers/:id/verifyDeletion/', to: 'servers#verify_Name', as: 'verify_Name'
     resources :server_memberships, only: [:create, :destroy]
     resources :channels, only: [:show, :update, :create, :destroy]
     resources :channel_memberships, only: [:create, :destroy]
