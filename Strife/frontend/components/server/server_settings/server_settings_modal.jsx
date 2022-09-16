@@ -155,7 +155,6 @@ const ServerSettingsModal = (props) => {
             )
         }
         else if (!serverDeletion) {
-            console.log("outside this render ")
             setTimeout(() => {
 
                 window.addEventListener('keyup', props.handleESC, false);
