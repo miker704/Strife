@@ -87,6 +87,18 @@ class Api::ServersController < ApplicationController
     end
 
    
+    def verify_Name
+        @server = Server.find(params[:id])
+        servername = params[:server][:server_name]
+        puts "server name #{@server.server_name}"
+        puts "server name params #{servername}"
+        if @server.server_name == params[:server][:server_name]
+            puts 'success'
+            render :show
+        else
+            render json: ["You didn't enter the server name correctly"], status: 401
+        end
+    end
 
 
 
@@ -94,9 +106,9 @@ class Api::ServersController < ApplicationController
     def destroy
         @server = Server.find(params[:id])
         @current_user=current_user
-        if @current_user.id == @server_owner_id
-         @server.destroy
-         render :show
+        if @current_user.id == @server.server_owner_id
+           @server.destroy!
+            # render :show
         else
             render json: ['You cannot destroy a server that is not yours !'], status: 401
         end
