@@ -14,10 +14,10 @@ import EditFriendshipModalContainer from "../friends/edit_friendship_modal/edit_
 import ChannelDropDownContainer from "../channels/channel_drop_down/channel_drop_down_container.js";
 import ServerSettingsModalContainer from "../server/server_settings/server_settings_modal_container.js";
 import LeaveServerModalContainer from "../server/leave_server_modal/leave_server_modal_container.js";
+import DeleteServerModalContainer from "../server/delete_server_modal/delete_server_modal_container.js";
+
 
 import CreateChannelModal from "../channels/create_channel_categories_modal/create_channel_modal.jsx";
-import DeleteServerModal from "../server/delete_server_modal/delete_server_modal.jsx";
-import LeaveServerModal from "../server/leave_server_modal/leave_server_modal.jsx";
 
 
 
@@ -117,7 +117,7 @@ class ModalManager extends React.Component {
 
             case 'DeleteServer':
 
-                renderedModal = <DeleteServerModal/>
+                renderedModal = <DeleteServerModalContainer/>
                 modalMod = 0;
 
                 break;
