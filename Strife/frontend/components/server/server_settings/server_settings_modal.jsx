@@ -1,6 +1,8 @@
 import React from "react";
 import { useEffect, useRef, useState } from "react";
 import { useHistory, useLocation, useRouteMatch, useParams } from "react-router";
+import DeleteServerModalContainer from "../delete_server_modal/delete_server_modal_container";
+
 
 const ServerSettingsModal = (props) => {
 
@@ -10,6 +12,7 @@ const ServerSettingsModal = (props) => {
     const [serverIconPhoto, setServerIconPhoto] = useState('');
     const [removeServerIcon, setRemoveServerIcon] = useState(false)
     let file_Input = null;
+    const [popUpShow, setPopUpShow] = useState(false);
 
     useEffect(() => {
 
@@ -20,25 +23,18 @@ const ServerSettingsModal = (props) => {
         // }
 
 
+
+
         window.addEventListener('keyup', props.handleESC, false);
         file_Input = document.querySelector('input[type=file]');
 
         return function cleanUp () {
-            // if (props.errors.length > 0) {
             props.removeServerErrors();
-            // window.removeEventListener('keyup', props.handleESC, false);
-            // }
-            // if(props.channelErrors.length>0){
             props.removeChannelErrors();
-            // window.removeEventListener('keyup', props.handleESC, false);
-            // }
-            // if(props.sessionErrors.length>0){
             props.removeSessionErrors();
-            // window.removeEventListener('keyup', props.handleESC, false);
-            // }
             window.removeEventListener('keyup', props.handleESC, false);
-
         }
+
     }, [])
 
 
@@ -119,11 +115,6 @@ const ServerSettingsModal = (props) => {
         return serverAcryo.length > 5 ? serverAcryo.slice(0, 5) : serverAcryo;
     }
 
-    const handleRenderDeleteModal = () => {
-        if (serverDeletion) {
-            console.log("serverdeletion called");
-        }
-    }
 
     const handleSubmitServerPFP = (e) => {
         e.preventDefault();
@@ -157,9 +148,30 @@ const ServerSettingsModal = (props) => {
     }
 
 
+    const renderServerDeletionModal = () => {
+        if (serverDeletion) {
+            window.removeEventListener('keyup', props.handleESC, false);
 
-    let serverNameErrorsTag = props.errors.length > 0 ? "server-error" : "";
-    let existingServerImageIcon = serverIconPhotoUrl === undefined || serverIconPhotoUrl === ''?
+            return (
+                <div>
+                    {serverDeletion && <DeleteServerModalContainer setServerDeletion={setServerDeletion} />}
+                </div>
+            )
+        }
+        else if (!serverDeletion) {
+            console.log("outside this render ")
+            setTimeout(() => {
+
+                window.addEventListener('keyup', props.handleESC, false);
+            }, 100)
+
+        }
+    }
+
+
+
+    let serverNameErrorsTag = props.errors.length > 0 ? "server-error-lite" : "";
+    let existingServerImageIcon = serverIconPhotoUrl === undefined || serverIconPhotoUrl === '' ?
         ('') :
         (<img
             className={`server-image-uploader-inner`}
@@ -169,14 +181,13 @@ const ServerSettingsModal = (props) => {
 
     return (
         <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
+            {/* {serverDeletion && <DeleteServerModalContainer setServerDeletion={setServerDeletion}/>} */}
+            {renderServerDeletionModal()}
             <div className="user-profile" id="user-profile">
-
                 <div className="sidebar">
                     <div className="sidebar-scrollbar">
                         <div className="sidebar-inner">
-
                             <div className="user-profile-left-side">
-
 
                                 <ul className="user-profile-item-list">
 
@@ -248,7 +259,6 @@ const ServerSettingsModal = (props) => {
                         </div>
                     </div>
                 </div>
-                {handleRenderDeleteModal()}
 
                 <div className="user-profile-right-side-wrapper">
                     <div className="user-profile-rs-inner-wrapper">
@@ -262,12 +272,7 @@ const ServerSettingsModal = (props) => {
                                         <div className="server-op-item-flex-child">
                                             <div className="server-image-uploader">
                                                 <div className="server-image-uploader-inner" >
-                                                    {/* <img
-                                                        className={`server-image-uploader-inner ${serverIconPhotoUrl === undefined ?
-                                                            `is-hidden` : ``}`}
-                                                        src={serverIconPhotoUrl}
-                                                        alt={serverIconPhotoUrl}
-                                                    /> */}
+
                                                     {existingServerImageIcon}
 
                                                     <span aria-hidden="true">
