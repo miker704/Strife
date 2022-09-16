@@ -16,6 +16,7 @@ export const closeHookModalOnESC = (closeHookModal) => {
 }
 
 export const closeOnEsc = (setBoolean) => {
+
     const checkForEsc = (e) => {
         if (e.keyCode === 27) {
             setBoolean(false);
@@ -29,6 +30,7 @@ export const closeOnEsc = (setBoolean) => {
 }
 
 export const closeHookModalOnOutsideClick = (ref, setBoolean) => {
+
     const checkOutsideClick = (e) => {
         if (ref.current && !ref.current.contains(e.target)) {
             setBoolean(false);
