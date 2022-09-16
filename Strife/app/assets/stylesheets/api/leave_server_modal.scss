@@ -51,6 +51,8 @@
     flex-direction: column;
     min-height: 0;
     max-width: 100%;
+    user-select: none;
+
 }
 
 .leave-server-root {
@@ -70,6 +72,7 @@
     pointer-events: all;
     position: relative;
     max-height: 100%;
+    user-select: none;
 }
 
 .leave-server-flex {
