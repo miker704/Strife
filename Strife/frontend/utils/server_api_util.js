@@ -32,3 +32,5 @@ export const updateServer = (serverId, formData) =>
 export const deleteServer = (serverId) => $.ajax({ url: `/api/servers/${serverId}`, method: "DELETE" });
 
 export const joinServer = (inviteCode) => $.ajax({ url: `/api/servers/join`, method: "POST", data: { inviteCode } });
+
+export const verifyName = (server) => $.ajax({ url: `/api/servers/${server.id}/verifyDeletion/`, method: "PATCH", data: { server } });
