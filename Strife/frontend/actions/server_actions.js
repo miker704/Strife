@@ -65,8 +65,8 @@ export const createServer = (server) => (dispatch) =>
     }
         , (err) => { dispatch(receiveServerErrors(err.responseJSON)) })
 
-export const updateServer = (server) => (dispatch) =>
-    ServerAPI.updateServer(server).then((server) => {
+export const updateServer = (serverId, formData) => (dispatch) =>
+    ServerAPI.updateServer(serverId, formData).then((server) => {
         dispatch(removeServerErrors())
         return dispatch(receiveServer(server))
     }
@@ -82,3 +82,9 @@ export const joinServer = (inviteCode) => (dispatch) =>
         return dispatch(receiveServer(server))
     },
         (err) => { dispatch(receiveServerErrors(err.responseJSON)) });
+
+
+export const verifyName = (server) => (dispatch) =>
+    ServerAPI.verifyName(server).then((server) => {
+        dispatch(receiveServer(server))
+    }, (err) => { dispatch(receiveServerErrors(err.responseJSON)) });
