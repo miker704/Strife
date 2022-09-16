@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { fetchChannel, deleteChannel, removeChannelErrors } from "../../../actions/channel_actions.js";
-import { fetchServer, fetchServers, removeServerErrors, deleteServer, updateServer } from "../../../actions/server_actions.js";
+import { fetchServer, fetchServers, removeServerErrors, deleteServer, verifyName, receiveServerErrors} from "../../../actions/server_actions.js";
 import { deleteChannelMembership } from "../../../actions/channel_membership_actions.js";
 import { deleteServerMembership } from "../../../actions/server_membership_actions.js";
 import { closeModal } from "../../../actions/modal_actions.js";
@@ -45,9 +45,9 @@ const mDTP = (dispatch, ownProps) => {
         //server api functions
         fetchServer: (serverId) => dispatch(fetchServer(serverId)),
         fetchUserServers: (user) => dispatch(fetchServers(user)),
-        deleteServer: (serverId,serverData) => dispatch(deleteServer(serverId,serverData)),
+        deleteServer: (serverId) => dispatch(deleteServer(serverId)),
         removeServerErrors: () => dispatch(removeServerErrors()),
-
+        verifyName: (server) => dispatch(verifyName(server)),
 
         //channel api functions
 
