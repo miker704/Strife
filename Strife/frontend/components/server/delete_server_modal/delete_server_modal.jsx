@@ -1,66 +1,101 @@
 import React from "react";
 import { useRef, useEffect, useState } from "react";
-import { closeHookModalOnESC, closeHookModalOnOutsideClick } from "../../../utils/close_hook_modals_api_utils";
+import { closeOnEsc, closeHookModalOnOutsideClick } from "../../../utils/close_hook_modals_api_utils";
 
 const DeleteServerModal = (props) => {
+    const popupRef = useRef();
+    closeHookModalOnOutsideClick(popupRef, props.setServerDeletion);
+    closeOnEsc(props.setServerDeletion);
+    const [confirmServerName, setConfirmServerName] = useState("");
 
 
-    
+    useEffect(() => {
+
+        return function cleanUp () {
+            props.removeServerErrors();
+            props.removeChannelErrors();
+        }
+
+    }, []);
+
+    const handleDeleteServerEXE = () => {
+
+        let subState = {
+            server_owner_id: props.server_owner_id,
+            server_name: confirmServerName
+        }
+        props.deleteServer(props.server.id, subState)
+
+    }
+    const renderServerNameErrors = () => {
+
+        let serverNameErrorList = [
+            "You didn't enter the server name correctly",
+            'You cannot destroy a server that is not yours !',
+
+        ];
+
+
+        let serverNameErrorMessages = {
+            0: "You didn't enter the server name correctly",
+            1: "You cannot destroy a server that is not yours !",
+        }
+
+        for (let i = 0; i < serverNameErrorList.length; i++) {
+            if (props.errors.includes(serverNameErrorList[i])) {
+                return serverNameErrorMessages[i];
+            }
+        }
+
+        return "";
+
+    }
+
+    let serverNameErrorsTag = props.errors.length > 0 ? "server-error" : "";
+    console.log("deleteServer props: ", props);
 
     return (
         <div className="delete-server-modal-wrapper"  >
             <div className="delete-server-flex-box">
-
-                <div className="delete-server-modal-inner-wrapper">
-                    <div id="delete-server-modal" className="delete-server-modal" >
-                        {/* <form onSubmit={this.handleSubmit}> */}
-                        <form>
-
-
+                <div className="delete-server-modal-inner-wrapper" >
+                    <div id="delete-server-modal" className="delete-server-modal" onClick={(e) => e.stopPropagation()} ref={popupRef}>
+                        <form onSubmit={handleDeleteServerEXE}>
                             <div className="delete-server-form-header-wrapper">
                                 <h2 className="delete-server-form-header">
-                                    Delete{` `}{`'server_name'`}
+                                    Delete{` `}{`'${props.server.server_name}'`}
                                 </h2>
                             </div>
-
                             <div className="delete-server-scroll-base">
                                 <div className="delete-server-warning-card">
                                     <div className="delete-server-warning-text">
                                         Are You sure that you want to delete{` `}
-                                        <strong>server_name</strong>?
+                                        <strong>{`${props.server.server_name}`}</strong>?
                                         This action cannot be undone.
                                     </div>
-
                                 </div>
                                 <div className="delete-server-sep"></div>
 
-
-
-
                                 <div className="server-name-section">
                                     <h5 className="server-name-header1">
-                                        {/* <label className={passwordErrorTag}>Enter Server Name{ }</label> */}
+                                        Enter Server Name
                                     </h5>
                                     <div className="input-server-name-wrapper">
                                         <input
-                                            // value={this.state.serverName}
-                                            // onChange={() => this.handleInput("serverName")}
+                                            value={confirmServerName}
+                                            onChange={(e) => setConfirmServerName(e.currentTarget.value)}
                                             type="text"
                                             className="input-server-name"
                                             spellCheck={false}
                                             autoComplete="off"
-
                                         />
                                     </div>
+                                    <label className={serverNameErrorsTag}>{renderServerNameErrors()}</label>
                                 </div>
                                 <div className="delete-server-sep"></div>
-
                             </div>
                             <div className="delete-server-button-sec">
                                 <button type="submit" className="delete-server-submit-button">Delete Server</button>
-                                <button type="submit" className="delete-server-cancel-button">Cancel</button>
-
-                                {/* <button type="submit" onClick={() => this.cancel = true} className="delete-server-cancel-button">Cancel</button> */}
+                                <button type="button" onClick={() => props.setServerDeletion(false)} className="delete-server-cancel-button">Cancel</button>
                             </div>
 
                         </form>
