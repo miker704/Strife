@@ -21,10 +21,20 @@ const DeleteServerModal = (props) => {
     const handleDeleteServerEXE = () => {
 
         let subState = {
+            id: props.server.id,
             server_owner_id: props.server_owner_id,
             server_name: confirmServerName
         }
-        props.deleteServer(props.server.id, subState)
+
+        props.verifyName(subState).then(() => {
+            props.closeModal();
+            props.history.push('/channels/@me');
+            props.deleteServer(props.server.id).then(() => {
+                props.fetchUserServers(props.currentUser.id);
+            });
+            console.log("Deletion verifcation success")
+        })
+        props.removeServerErrors()
 
     }
     const renderServerNameErrors = () => {
