@@ -20,7 +20,7 @@ class Channel < ApplicationRecord
 
     belongs_to :server, class_name: "Server", foreign_key: "server_id"
     has_many :messages, class_name: "Message", foreign_key: "channel_id", dependent: :destroy
-    has_many :channel_members, class_name: "ChannelMembership", foreign_key: "channel_id"
+    has_many :channel_members, class_name: "ChannelMembership", foreign_key: "channel_id", dependent: :destroy
     has_many :members, through: :channel_members, source: :member
 
     after_create :create_Channel_Membership
