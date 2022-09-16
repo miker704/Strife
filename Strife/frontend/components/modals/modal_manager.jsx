@@ -13,6 +13,13 @@ import DownloadAppsContainer from "../server/download_apps/download_apps_contain
 import EditFriendshipModalContainer from "../friends/edit_friendship_modal/edit_friendship_container.js";
 import ChannelDropDownContainer from "../channels/channel_drop_down/channel_drop_down_container.js";
 import ServerSettingsModalContainer from "../server/server_settings/server_settings_modal_container.js";
+import LeaveServerModalContainer from "../server/leave_server_modal/leave_server_modal_container.js";
+
+import CreateChannelModal from "../channels/create_channel_categories_modal/create_channel_modal.jsx";
+import DeleteServerModal from "../server/delete_server_modal/delete_server_modal.jsx";
+import LeaveServerModal from "../server/leave_server_modal/leave_server_modal.jsx";
+
+
 
 class ModalManager extends React.Component {
     constructor (props) {
@@ -40,9 +47,7 @@ class ModalManager extends React.Component {
         // or little complex condtions also to dry up the code
         switch (this.props.modal) {
             case 'createServerForm':
-                console.log("createServerForm called to be rendered")
 
-                // renderedModal =  <CreateServerFormContainer />
                 renderedModal = (<div className="modal-child-component" onClick={e => e.stopPropagation()}>
                     <CreateServerFormContainer />
                 </div>)
@@ -101,6 +106,28 @@ class ModalManager extends React.Component {
                 modalMod = 1;
 
                 break;
+
+            case 'CreateChannel':
+
+                renderedModal = <CreateChannelModal />
+                modalMod = 0;
+
+                break;
+
+
+            case 'DeleteServer':
+
+                renderedModal = <DeleteServerModal/>
+                modalMod = 0;
+
+                break;
+            case 'LeaveServer':
+
+                renderedModal = <LeaveServerModalContainer/>
+                modalMod = 0;
+
+                break;
+
 
             default:
                 return null;
