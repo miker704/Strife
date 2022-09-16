@@ -17,7 +17,7 @@ class DmServer < ApplicationRecord
     # validates :dm_server_name, allow_nil: true
     belongs_to :user, class_name: "User", foreign_key: "owner_id"
     has_many :dm_messages, class_name: "DmMessage", foreign_key: "dm_server_id", dependent: :destroy
-    has_many :dm_members, class_name: "DmMember", foreign_key: "dm_server_id"
+    has_many :dm_members, class_name: "DmMember", foreign_key: "dm_server_id", dependent: :destroy
     has_many :members, through: :dm_members, source: :member
     after_create :add_dm_members
 
