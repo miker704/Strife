@@ -16,29 +16,12 @@ const ChannelDropDown = (props) => {
     const [showChannelSettings, setShowChannelSettings] = useState(false);
     const [showLeaveServer, setShowLeaveServer] = useState(false);
 
-
-    const renderServerSettings = () => {
-        console.log("in function 1")
-        if (showServerSettings === true) {
-            console.log("hello in conddtion");
-            return (
-                <div>
-                    <ServerSettingsModalContainer
-                        setShowServerSettings={setShowServerSettings}
-
-                    />
-                </div>
-            )
-        }
-    }
-
     const serverOwnerId = props.server.server_owner_id;
     console.log('channel drop down props: ', props);
         return (
 
             <div className="channel-drop-down-layer">
                 <div className="channel-drop-down-pop-up" onClick={(e) => e.stopPropagation()} ref={popUpRef}>
-                {/* <div className="channel-drop-down-pop-up" onClick={(e) => e.stopPropagation()} > */}
 
                     <div className="channel-drop-down-pop-up-animate">
                         <div className="channel-drop-menu">
