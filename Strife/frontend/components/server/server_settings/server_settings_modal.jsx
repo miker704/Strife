@@ -186,7 +186,7 @@ const ServerSettingsModal = (props) => {
                                 <ul className="user-profile-item-list">
 
                                     <li><h3 className="user-profile-header3">{`${props.server.server_name}`}</h3></li>
-                                    <li className="user-profile-item">Overview</li>
+                                    <li className="user-profile-item force">Overview</li>
                                     <li className="user-profile-item">Roles</li>
                                     <li className="user-profile-item">Emoji</li>
                                     <li className="user-profile-item">Stickers</li>
