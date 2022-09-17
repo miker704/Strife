@@ -589,7 +589,7 @@ class UserProfile extends React.Component {
 
                     {/* <Link to={`/users/${this.props.currentUser.id}`}> */}
 
-                    <li className="user-profile-item">My Account</li>
+                    <li className="user-profile-item force">My Account</li>
 
                     {/* </Link> */}
 
