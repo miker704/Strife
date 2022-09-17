@@ -80,24 +80,25 @@ const CreateDmModal = ({
 
         // const dmMemberInfo = [...selectedFriends];
         //deep copy
-        const dmMemberInfo = JSON.parse(JSON.stringify(selectedFriends));
-        let newDmsServerName = [];
-        let dmServerName = "";
-        for (let member of dmMemberInfo) {
-            if (member.id !== currentUser.id) {
-                newDmsServerName.push(member.username);
-            }
-        }
+        // const dmMemberInfo = JSON.parse(JSON.stringify(selectedFriends));
+        // let newDmsServerName = [];
+        // let dmServerName = "";
+        // for (let member of dmMemberInfo) {
+        //     if (member.id !== currentUser.id) {
+        //         newDmsServerName.push(member.username);
+        //     }
+        // }
 
-        if (newDmsServerName.length === 1) {
-            dmServerName = newDmsServerName.join();
-        }
-        else {
-            dmServerName = newDmsServerName.join(", ");
-        }
+        // if (newDmsServerName.length === 1) {
+        //     dmServerName = newDmsServerName.join();
+        // }
+        // else {
+        //     dmServerName = newDmsServerName.join(", ");
+        // }
+
         let submissionState = {
             owner_id: currentUser.id,
-            dm_server_name: dmServerName,
+            // dm_server_name: dmServerName,
             dm_member_ids: memberIds
         }
 
@@ -125,7 +126,7 @@ const CreateDmModal = ({
                             <div className="create-dm-header-sec">
                                 <h2 className="create-dm-header-h2">Select Friends</h2>
                                 {count <= 8 ?
-                                    <div className="num-of-dm-members-selected">You can add {9 - count} more friends.</div>
+                                    <div className="num-of-dm-members-selected">You can add {9 - count} more {`${9 - count === 1 ? `friend` : `friends`}`}.</div>
                                     : <div className={`${count > 9 ? "num-of-dm-members-selected cDMS-error" : "num-of-dm-members-selected"}`}>
                                         This group has a 10 member limit.
                                     </div>
