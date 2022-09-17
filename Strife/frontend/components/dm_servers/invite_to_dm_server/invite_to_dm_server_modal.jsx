@@ -82,12 +82,7 @@ const InviteToDmModal = ({
         }
     })
 
-    console.log("invite dm dms: ", dmServer);
-    console.log("count - Object.values(dmServerMembers).length: ", count - (Object.values(dmServerMembers).length-1))
-    console.log("init count: ", count)
-    console.log("init dmmembers: ",  Object.values(dmServerMembers).length)
-    console.log("dmServerID : ", dmServerId);
-
+   
     return (
         <div className={`clear-modal-wrapper ${topBar === true ? `homeBar` : ``}`}>
 
@@ -97,6 +92,7 @@ const InviteToDmModal = ({
                         <form onSubmit={addNewDmMembers}>
                             <div className="create-dm-header-sec">
                                 <h2 className="create-dm-header-h2">Select Friends</h2>
+
                                 {count <= 8 ?
                                     <div className="num-of-dm-members-selected">You can add {9 - count} more {`${9 - count === 1 ? `friend` : `friends`}`}.</div>
                                     : <div className={`${count > 9 ? "num-of-dm-members-selected cDMS-error" : "num-of-dm-members-selected"}`}>
@@ -195,6 +191,8 @@ const InviteToDmModal = ({
                                 <button className="create-dm-button" type="submit" disabled={count > 9 || count - (Object.values(dmServerMembers).length-1) === 0}>
                                     <div className="create-dm-button-text">{`${Object.values(dmServerMembers).length === 2 ? `Create Group DM` : `Invite To Group DM`}`}</div>
                                 </button>
+                                <div className="ccm-small-txt-2">(Sending Invite Links (WIP))</div>
+
                             </div>
                         </form>
                     </div>
