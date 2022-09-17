@@ -578,4 +578,12 @@ $error-red: #ED4245;
         right: 125px;
         left: unset;
     }
+
+    .create-dm-modal-popup.dm-invite{
+        // transform: translate(240px, -145px);
+        top: 42px;
+        right: 300px;
+        left: unset;
+        transform: translate(50px, 0px);
+    }
 }
