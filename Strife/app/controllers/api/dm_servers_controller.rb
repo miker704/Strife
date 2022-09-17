@@ -69,7 +69,6 @@ class Api::DmServersController < ApplicationController
 
 
         if @dm_server && @dm_server.update(dm_server_params)
-            puts 'updated name'
             render :show
         else
             render json: @dm_server.errors.full_messages, status: 422
