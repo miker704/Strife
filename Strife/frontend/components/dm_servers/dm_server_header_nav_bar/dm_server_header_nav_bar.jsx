@@ -1,6 +1,6 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
-
+import InviteToDmModalContainer from "../invite_to_dm_server/invite_to_dm_server_container";
 
 import { useEffect, useState, useRef } from "react";
 
@@ -17,14 +17,13 @@ const DmServerHeaderNavBar = ({
     removeDmMessageErrors,
     updateDmServer,
     isViz
-  
+
 }) => {
     if (!dmServer) {
         return null;
     }
 
-    let displayName="";
-    // let displayName ="";
+    let displayName = "";
 
     if (dmServer.dm_server_name === null) {
         displayName = Object.values(dmServerMembers).filter(member => member.id !== currentUser.id).map(member => member.username).join(", ")
@@ -34,6 +33,11 @@ const DmServerHeaderNavBar = ({
     }
     const [showEdit, setShowEdit] = useState(false);
     const [DmServerName, setDMServerName] = useState("");
+    const [showPopUp, setShowPopUp] = useState(false);
+    const [popupTop, setPopupTop] = useState(0);
+
+
+
     useEffect(() => {
         if (dmServer?.id) {
 
@@ -56,7 +60,7 @@ const DmServerHeaderNavBar = ({
         e.preventDefault();
         if (DmServerName !== displayName) {
             //run update
-            updateDmServer(dmServer.id,{dm_server_name: DmServerName});
+            updateDmServer(dmServer.id, { dm_server_name: DmServerName });
         }
         setShowEdit(false);
     }
@@ -68,6 +72,12 @@ const DmServerHeaderNavBar = ({
         }
     })
 
+
+    const handlePopupShow = (e) => {
+        let currTop = e.currentTarget.getBoundingClientRect().top
+        setPopupTop(currTop);
+        setShowPopUp(!showPopUp);
+    }
 
 
     const handleDmServerName2 = () => {
@@ -87,16 +97,24 @@ const DmServerHeaderNavBar = ({
 
         return dmServerName;
     }
-  
+
 
 
     let membersOfthisServer = Object.values(dmServerMembers);
 
-    
 
 
     return (
         <div className="dm-server-header-bar">
+            {showPopUp && <InviteToDmModalContainer
+                top={popupTop}
+                setShowPopUp={setShowPopUp}
+                topBar={true}
+                dmServerMembers={dmServerMembers}
+                dmServer={dmServer}
+                dmServerId={dmServerId}
+            />}
+
             <div className="dm-server-bar-children">
                 <div id="normDm" className={`dms-children-icon-wrapper ${membersOfthisServer.length > 2 ? "is-hidden" : ""}`}>
                     <svg x="0" y="0" className="icon-at-sym" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
@@ -228,7 +246,13 @@ const DmServerHeaderNavBar = ({
                             Pinned Messages
                         </ReactTooltip>
                     </div>
-                    <div className="dmshb-tool-icon-wrapper" data-tip data-for="dmshb-invite-members">
+
+                    <div
+                        className="dmshb-tool-icon-wrapper"
+                        data-tip data-for="dmshb-invite-members"
+                        onClick={(e) => { handlePopupShow(e) }}
+
+                    >
                         <svg x="0" y="0" className="icon-add-members" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M21 3H24V5H21V8H19V5H16V3H19V0H21V3ZM10 
                             12C12.205 12 14 10.205 14 8C14 5.795 12.205 4 10 4C7.795 4 6 5.795 6 8C6 10.205 7.795 12 10 12ZM10 13C5.289 13
@@ -246,11 +270,11 @@ const DmServerHeaderNavBar = ({
                         </ReactTooltip>
                     </div>
 
-                    <div id="hide-group-chat" 
-                        className={`dmshb-tool-icon-wrapper ${membersOfthisServer.length < 3 ? "is-hidden" : ""}`} 
+                    <div id="hide-group-chat"
+                        className={`dmshb-tool-icon-wrapper ${membersOfthisServer.length < 3 ? "is-hidden" : ""}`}
                         data-tip data-for="hide-members-tip"
                         onClick={() => isViz()}
-                        >
+                    >
                         <svg x="0" y="0" className="icon-hide-group-chat" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M14 8.00598C14 10.211 12.206 12.006 10
                                                  12.006C7.795 12.006 6 10.211 6 8.00598C6 5.80098 7.794 4.00598 10 4.00598C12.206 4.00598 14 5.80098 14 
