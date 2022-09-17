@@ -2,8 +2,6 @@ import React from "react";
 import { useRef, useEffect, useState } from "react";
 import { openModal } from "../../../actions/modal_actions";
 import { closeHookModalOnOutsideClick, closeOnEsc } from "../../../utils/close_hook_modals_api_utils";
-import ServerSettingsModalContainer from "../../server/server_settings/server_settings_modal_container";
-import CreateChannelModal from "../create_channel_categories_modal/create_channel_modal";
 const ChannelDropDown = (props) => {
 
 
@@ -12,8 +10,6 @@ const ChannelDropDown = (props) => {
     closeHookModalOnOutsideClick(popUpRef, props.setShowPopUp);
     closeOnEsc(props.setShowPopUp);
 
-    const [showServerSettings, setShowServerSettings] = useState(false);
-    const [showChannelSettings, setShowChannelSettings] = useState(false);
     const [showLeaveServer, setShowLeaveServer] = useState(false);
 
     const serverOwnerId = props.server.server_owner_id;
