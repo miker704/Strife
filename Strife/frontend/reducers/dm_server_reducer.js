@@ -21,7 +21,7 @@ const dmServerReducer = (state = {}, action) => {
 
         case  RECEIVE_DM_MEMBER:
 
-        nextState[action.dm_member.dm_server.id]= action.dm_member.dm_server;
+        nextState[action.dm_member.id]= action.dm_member;
         return nextState;
 
         case REMOVE_DM_MEMBER:
