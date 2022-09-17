@@ -5,7 +5,7 @@ class Api::DmMembersController < ApplicationController
         @dm_server = DmServer.find_by(id: @dm_membership.dm_server_id)
         
         if @dm_membership.save
-          render :show
+          render 'api/dm_servers/show'
         else
           render json: @dm_membership.errors.full_messages, status: 400
         end
