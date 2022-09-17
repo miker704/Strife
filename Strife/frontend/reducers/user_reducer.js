@@ -56,8 +56,8 @@ const userReducer = (state = {}, action) => {
             return action.server.users
         case RECEIVE_SERVER_MEMBERSHIP:
             return action.servermembership.users;
-        case RECEIVE_DM_MEMBER:
-            return Object.assign({}, state, { [action.dm_member.user.id]: action.dm_member.user });
+        // case RECEIVE_DM_MEMBER:
+        //     return Object.assign({}, state, { [action.dm_member.user.id]: action.dm_member.user });
         case RECEIVE_DM_SERVER:
             return action.dmserver.users;
 
