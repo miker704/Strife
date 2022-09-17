@@ -7,45 +7,48 @@ export const REMOVE_CHANNEL_ERRORS = "REMOVE_CHANNEL_ERRORS";
 
 
 export const receiveChannel = (channelPayload) => {
-    return{
-            type: RECEIVE_CHANNEL,
-            channelPayload
+    return {
+        type: RECEIVE_CHANNEL,
+        channelPayload
     }
 }
 
 
 
 export const removeChannel = (channelPayload) => {
-    return{
-            type: REMOVE_CHANNEL,
-            channelPayload
-}
+    return {
+        type: REMOVE_CHANNEL,
+        channelPayload
+    }
 }
 
 export const receiveChannelErrors = (errors) => {
-    return{
+    return {
         type: RECEIVE_CHANNEL_ERRORS,
         errors
-    }}
+    }
+}
 
 
 export const removeChannelErrors = () => {
-    return{
+    return {
         type: REMOVE_CHANNEL_ERRORS,
-   
+
     }
 }
 
 export const fetchChannel = (channelId) => (dispatch) =>
-ChannelAPI.fetchChannel(channelId).then(channelPayload => (dispatch(receiveChannel(channelPayload))), err => (dispatch(receiveChannelErrors(err.responseJSON))))
+    ChannelAPI.fetchChannel(channelId).then((channelPayload) => {
+        return dispatch(receiveChannel(channelPayload))
+    }, err => (dispatch(receiveChannelErrors(err.responseJSON))))
 
 export const createChannel = (channel) => (dispatch) =>
-ChannelAPI.createChannel(channel).then((channelPayload) => {dispatch(removeChannelErrors()),dispatch(receiveChannel(channelPayload))},(err)=>{dispatch(receiveChannelErrors(err.responseJSON))})
+    ChannelAPI.createChannel(channel).then((channelPayload) => { dispatch(removeChannelErrors()), dispatch(receiveChannel(channelPayload)) }, (err) => { dispatch(receiveChannelErrors(err.responseJSON)) })
 
-export const updateChannel = (channel) =>  (dispatch) => 
-ChannelAPI.updateChannel(channel).then((channelPayload) => {dispatch(removeChannelErrors()),dispatch(receiveChannel(channelPayload))},(err)=>{dispatch(receiveChannelErrors(err.responseJSON))})
+export const updateChannel = (channel) => (dispatch) =>
+    ChannelAPI.updateChannel(channel).then((channelPayload) => { dispatch(removeChannelErrors()), dispatch(receiveChannel(channelPayload)) }, (err) => { dispatch(receiveChannelErrors(err.responseJSON)) })
 
-export const deleteChannel = (channelId) => (dispatch) => 
-ChannelAPI.deleteChannel(channelId).then(() => dispatch(removeChannel(channelId)))
+export const deleteChannel = (channelId) => (dispatch) =>
+    ChannelAPI.deleteChannel(channelId).then(() => dispatch(removeChannel(channelId)))
 
 
