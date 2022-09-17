@@ -1,0 +1,267 @@
+.channel-settings-img {
+    content: image_url('channelsettings.svg');
+    height: 165px;
+    width: 280px;
+    object-fit: cover;
+}
+
+.channel-settings-img-wrap {
+    margin-top: 60px;
+    flex: 1 1 auto;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    outline: 0;
+    display: flex;
+
+}
+
+.cs-inner-header-span {
+    color: hsl(216, 3.7%, 73.5%);
+    forced-color-adjust: none;
+    outline: 0;
+    margin-left: 4px;
+    box-sizing: border-box;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: "Whitney";
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+
+}
+
+.cs-channel-topic-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    outline: 0;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+}
+
+.cs-ip-maxlen {
+    position: relative;
+    outline: 0;
+    forced-color-adjust: none;
+}
+
+.cs-text-area {
+    textarea {
+        padding-right: 38.92px;
+        height: 77px;
+        forced-color-adjust: none;
+        box-sizing: border-box;
+        resize: none;
+        padding: 10px;
+        font-size: 16px;
+        box-sizing: border-box;
+        width: 100%;
+        border-radius: 3px;
+        color: hsl(210, 2.9%, 86.7%);
+        background-color: hsl(216, 7.2%, 13.5%);
+        border: none;
+        outline: 0;
+        font-family: "Whitney";
+        text-rendering: optimizeLegibility;
+        font-weight: 400;
+    }
+}
+
+.cs-text-area::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+.cs-text-area::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+.cs-text-area::-webkit-scrollbar-corner {
+    border: none;
+    background: none;
+}
+
+.cs-text-area::-webkit-scrollbar-thumb {
+    background-color: hsla(225, 7.7%, 10.2%, 0.6);
+    border-radius: 2px;
+    cursor: move;
+}
+
+
+.cs-text-area::-webkit-scrollbar-thumb {
+    background-color: hsl(216, 7.2%, 13.5%);
+}
+
+.cs-text-area::-webkit-scrollbar-thumb,
+.cs-text-area::-webkit-scrollbar-track {
+    border-radius: 7px;
+    background-clip: padding-box;
+    border: 3px solid transparent;
+}
+
+.cs-text-area::-webkit-scrollbar-track {
+    background-color: transparent;
+    border: none;
+}
+
+.cs-text-area::-webkit-scrollbar-track {
+    background-color: hsl(210, 9.8%, 20%);
+    border-width: initial;
+}
+
+.cs-text-area::-webkit-scrollbar-thumb,
+.cs-text-area::-webkit-scrollbar-track {
+    border-radius: 7px;
+    background-clip: padding-box;
+    border: 3px solid transparent;
+}
+
+
+
+.tmaxlen {
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    clip: rect(0 0 0 0);
+}
+
+.maxlen-textarea-cs {
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    color: hsl(214, 4%, 65.3%);
+    pointer-events: none;
+    position: absolute;
+    bottom: 12px;
+    right: 14px;
+    font-size: 12px;
+    font-family: "Whitney", Consolas, Andale Mono WT, Andale Mono, Lucida Console,
+        Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono,
+        Nimbus Mono L, Monaco, Courier New, Courier, monospace;
+
+}
+
+
+
+.cs-slowmode-slider {
+    forced-color-adjust: none;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    box-sizing: border-box;
+    margin-top: 20px;
+    outline: 0;
+}
+
+.cs-track {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    bottom: 0;
+    left: 5px;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.cs-mark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 24px;
+    margin-left: -12px;
+    user-select: none;
+    position: absolute;
+    box-sizing: border-box;
+    forced-color-adjust: none;
+    outline: 0;
+    top: -6px;
+    font-family: "Whitney";
+
+}
+
+.cs-mark-value {
+    forced-color-adjust: none;
+    padding-left: 1px;
+    font-weight: 700;
+    font-size: 10px;
+    margin-bottom: 4px;
+    min-height: 10px;
+    outline: 0;
+    box-sizing: border-box;
+    color: hsl(214, 4%, 65.3%);
+    font-family: "Whitney";
+}
+
+.cs-mark-dash {
+    height: 24px;
+    width: 2px;
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    background: hsl(217, 7.6%, 33.5%);
+
+}
+
+.cs-slider-bar {
+    forced-color-adjust: none;
+    outline: 0;
+    position: relative;
+    top: 16px;
+    height: 8px;
+    border-radius: 4px;
+    display: block;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: hsl(217, 7.6%, 33.5%);
+}
+
+.cs-slider-bar-fill {
+    forced-color-adjust: none;
+    outline: 0;
+    background: hsl(235, 85.6%, 64.7%);
+    height: 100%;
+    box-sizing: border-box;
+
+}
+
+.cs-track-bar {
+    forced-color-adjust: none;
+    outline: 0;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    bottom: 0;
+    left: 5px;
+    box-sizing: border-box;
+
+}
+
+.cs-grabber {
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    position: absolute;
+    width: 10px;
+    height: 24px;
+    margin-left: -5px;
+    top: 50%;
+    margin-top: -13px;
+    border-radius: 3px;
+    cursor: ew-resize;
+    box-shadow: 0 3px 1px 0 hsla(0, 0%, 0%, 0.05), 0 2px 2px 0 hsla(0, 0%, 0%, 0.1), 0 3px 3px 0 hsla(0, 0%, 0%, 0.05);
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid hsl(210, 2.9%, 86.7%);
+}
