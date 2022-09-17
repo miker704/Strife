@@ -17,7 +17,7 @@ import LeaveServerModalContainer from "../server/leave_server_modal/leave_server
 import DeleteServerModalContainer from "../server/delete_server_modal/delete_server_modal_container.js";
 
 
-import CreateChannelModal from "../channels/create_channel_categories_modal/create_channel_modal.jsx";
+import CreateChannelModal from "../channels/create_channel_modal/create_channel_modal.jsx";
 
 
 
