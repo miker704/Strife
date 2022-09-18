@@ -90,10 +90,7 @@ class Api::ServersController < ApplicationController
     def verify_Name
         @server = Server.find(params[:id])
         servername = params[:server][:server_name]
-        puts "server name #{@server.server_name}"
-        puts "server name params #{servername}"
         if @server.server_name == params[:server][:server_name]
-            puts 'success'
             render :show
         else
             render json: ["You didn't enter the server name correctly"], status: 401
