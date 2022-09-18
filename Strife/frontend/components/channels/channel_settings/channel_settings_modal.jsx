@@ -1,15 +1,92 @@
 import React from "react";
 import { useEffect, useRef, useState } from "react";
-
+import DeleteChannelModalContainer from "../delete_channel_modal/delete_channel_modal_container";
 
 const ChannelSettingsModal = (props) => {
 
+    const [value, setValue] = useState('');
+    const [count, setCount] = useState(1024);
+    const [newChannelName, setNewChannelName] = useState('');
+    const [newChannelTopic, setNewChannelTopic] = useState('');
+    const [channelDeletion, setChannelDeletion] = useState(false);
+
+
+    useEffect(() => {
+
+        window.addEventListener('keyup', props.handleESC, false);
+
+        return function cleanUp () {
+            props.removeServerErrors();
+            props.removeChannelErrors();
+            props.removeSessionErrors();
+            window.removeEventListener('keyup', props.handleESC, false);
+        }
+
+    }, [])
+
+
+    const renderChannelDeletionModal = () => {
+        if (channelDeletion) {
+            window.removeEventListener('keyup', props.handleESC, false);
+
+            return (
+                <div>
+                    {channelDeletion && <DeleteChannelModalContainer setChannelDeletion={setChannelDeletion} />}
+                </div>
+            )
+        }
+        else if (!channelDeletion) {
+            setTimeout(() => {
+
+                window.addEventListener('keyup', props.handleESC, false);
+            }, 100)
+
+        }
+    }
+
+    const updateChannelName = () => {
+        let subState = {
+            // id: props.channel.id,
+            channel_name: newChannelName,
+
+        }
+
+    }
+    const updateChannelTopic = () => {
+
+    }
+
+    const handleCloseModal = () => {
+        let modalToClose = document.getElementById("user-profile");
+        modalToClose.classList.add("transition-out");
+        setTimeout(() => {
+            props.removeServerErrors();
+            props.closeModal();
+        }, 100);
+    }
+    const handleLogout = () => {
+        props.closeModal();
+        props.logoutUser();
+    }
+
+
+    const renderChannelNameErrors = () => {
+        if (props.errors.includes('Only one channel in a server can have that name')) {
+            return 'A Channel of that name already exists in this server!';
+        }
+        else {
+            return '';
+        }
+    }
+
+
+    let channelNameErrorsTag = props.errors.length > 0 ? "server-error-lite" : "";
 
 
     return (
         <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
             <div className="user-profile" id="user-profile">
-
+                {renderChannelDeletionModal()}
                 <div className="sidebar">
                     <div className="sidebar-scrollbar">
                         <div className="sidebar-inner">
@@ -22,7 +99,7 @@ const ChannelSettingsModal = (props) => {
                                     <li className="user-profile-item">Integrations</li>
                                     <div className="user-settings-separator"></div>
                                     <li className="user-profile-item">
-                                        <div className="user-profile-item-logout-sec">
+                                        <div className="user-profile-item-logout-sec" onClick={() => setChannelDeletion(!channelDeletion)}>
                                             Delete Channel
                                             <svg className="upm-logout-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
                                                 <path fill="currentColor" d="M15 3.999V2H9V3.999H3V5.999H21V3.999H15Z"></path>
@@ -32,7 +109,7 @@ const ChannelSettingsModal = (props) => {
                                             </svg>
                                         </div>
                                     </li>
-                                    <li className="user-profile-item" >
+                                    <li className="user-profile-item" onClick={() => handleLogout()}>
                                         <div className="user-profile-item-logout-sec">
                                             Log Out
                                             <svg className="upm-logout-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
@@ -64,17 +141,25 @@ const ChannelSettingsModal = (props) => {
                             <div className="user-profile-header1-div">
                                 <h1 className="user-profile-header1">Overview</h1>
                             </div>
-
                             <div className="my-account-container-wrapper">
-
-
                                 <div className="server-op-item-flex">
-
                                     <div className="server-op-item-margin-bottom">
-                                        <h5 className="server-op-item-margin-bottom-h5">Channel Name </h5>
+                                        <h5 className="server-op-item-margin-bottom-h5">
+                                            <label className={channelNameErrorsTag}>CHANNEL NAME{`${renderChannelNameErrors()}`}</label>
+                                        </h5>
                                         {/* <div className="server-op-name-input-wrapper"> */}
-                                        <input className="server-op-name-input" type="text" maxLength={100} placeholder="servernameplaceholder" />
-                                        <button type="button" className="faint-boost-shiny-button">
+                                        <input
+                                            className="server-op-name-input"
+                                            type="text"
+                                            maxLength={100}
+                                            minLength={1}
+                                            placeholder="servernameplaceholder"
+                                            spellCheck={false}
+                                            value={newChannelName}
+                                            onChange={(e) => setNewChannelName(e.currentTarget.value)}
+                                        />
+
+                                        <button type="button" className="faint-boost-shiny-button" onClick={() => updateChannelName()}>
                                             <div className="shiny-button-contents">
                                                 <svg className="shiny-button-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 8 12">
                                                     <path d="M4 0L0 4V8L4 12L8 8V4L4 0ZM7 7.59L4 10.59L1 7.59V4.41L4 1.41L7 4.41V7.59Z" fill="currentColor">
@@ -94,7 +179,6 @@ const ChannelSettingsModal = (props) => {
                                     </div>
                                 </div>
 
-
                                 <div className="server-op-divider">
                                     <div className="server-op-divider-flex-js">
                                         <div className="server-op-flexchild1">
@@ -105,18 +189,27 @@ const ChannelSettingsModal = (props) => {
                                     <div className="cs-channel-topic-input-wrapper">
                                         <div className="cs-ip-maxlen">
                                             <div className="cs-text-area">
-                                                <textarea disabled id="cs-ta" spellCheck={false} value={this.state.value} maxLength={1024} onChange={(e) => this.setCount(e)}
+                                                <textarea
+                                                    disabled id="cs-ta"
+                                                    spellCheck={false}
+                                                    value={value}
+                                                    maxLength={1024}
+                                                    minLength={2}
+                                                    onChange={(e) => {
+                                                        setCount(e.currentTarget.value.length);
+                                                        setValue(e.currentTarget.value);
+                                                    }}
                                                     placeholder="Let everyone know how to use this channel! (STRIFE NITRO Required!)">
                                                 </textarea>
                                                 <span className="tmaxlen">Maximum 1024 characters.</span>
-                                                <div className="maxlen-textarea-cs">{`${this.state.count}`}</div>
+                                                <div className="maxlen-textarea-cs">{`${count}`}</div>
                                             </div>
 
                                         </div>
                                     </div>
                                     {/* <div className="server-op-name-input-wrapper"> */}
 
-                                    <button type="button" className="faint-boost-shiny-button" disabled>
+                                    <button type="button" className="faint-boost-shiny-button" disabled onClick={() => updateChannelTopic()}>
                                         <div className="shiny-button-contents">
                                             <svg className="shiny-button-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 8 12">
                                                 <path d="M4 0L0 4V8L4 12L8 8V4L4 0ZM7 7.59L4 10.59L1 7.59V4.41L4 1.41L7 4.41V7.59Z" fill="currentColor">
@@ -220,8 +313,6 @@ const ChannelSettingsModal = (props) => {
 
                                 <div>
                                     <div className="server-op-divider">
-
-
                                         <div className="sop-display-children">
                                             <div>
                                                 <div className="server-op-divider-flex-js2">
@@ -233,7 +324,8 @@ const ChannelSettingsModal = (props) => {
                                                                 </label>
                                                                 <div className="control-123">
                                                                     <div className="control-inner">
-                                                                        <svg className="slider-32CRPX" viewBox="0 0 28 20" preserveAspectRatio="xMinYMid meet" style={{ left: `${-3}px` }}>
+                                                                        <svg className="slider-32CRPX" viewBox="0 0 28 20"
+                                                                            preserveAspectRatio="xMinYMid meet" style={{ left: `${-3}px` }}>
                                                                             <rect fill="white" x="4" y="0" height="20" width="20" rx="10"></rect>
                                                                             <svg viewBox="0 0 20 20" fill="none">
                                                                                 <path fill="hsl(218, calc(var(--saturation-factor, 1) * 4.6%), 46.9%)"
@@ -276,14 +368,17 @@ const ChannelSettingsModal = (props) => {
                                                 </span>
                                                 <div className="server-op-divider-icons-wrap">
                                                     <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
-                                                        <path fill="currentColor" d="M16.59 8.59003L12 13.17L7.41 8.59003L6 10L12 16L18 10L16.59 8.59003Z"></path></svg>
+                                                        <path fill="currentColor" d="M16.59 8.59003L12 13.17L7.41 8.59003L6 10L12 16L18 10L16.59 8.59003Z">
+                                                        </path>
+                                                    </svg>
                                                 </div>
                                             </div>
                                         </div>
 
                                     </div>
                                     <div className="inactive-sub-info">
-                                        New threads will not show in the channel list after being inactive for the specified duration. (STRIFE NITRO Required!)
+                                        New threads will not show in the channel list after being
+                                        inactive for the specified duration. (STRIFE NITRO Required!)
                                     </div>
                                 </div>
 
@@ -303,7 +398,7 @@ const ChannelSettingsModal = (props) => {
 
                             <div className="tool-x-to-esc-button-wrapper">
                                 <div className="inner-tool-container">
-                                    <div className="x-to-esc-button" >
+                                    <div className="x-to-esc-button" onClick={() => handleCloseModal()}>
                                         <svg role="img" width="18" height="18" viewBox="0 0 24 24">
                                             <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 
                                   12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z">
