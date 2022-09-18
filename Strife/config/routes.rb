@@ -14,16 +14,15 @@ Rails.application.routes.draw do
     resources :servers, only: [:index, :show, :create, :update, :destroy]
               post '/servers/join/', to: 'servers#join_server', as: 'join_server'
               patch '/servers/:id/verifyDeletion/', to: 'servers#verify_Name', as: 'verify_Name'
-    resources :server_memberships, only: [:create, :show, :destroy]
+    resources :server_memberships, only: [:create, :destroy]
     resources :channels, only: [:show, :update, :create, :destroy]
-    resources :channel_memberships, only: [:create, :show, :destroy]
-    
+    resources :channel_memberships, only: [:create, :destroy]
     resources :messages, only: [:create, :update, :destroy]
     resources :friendships, only: [:index,:create,:show]
               patch 'friendships', to: 'friendships#update'
               delete 'friendships', to: 'friendships#destroy'
               post '/friendships/blockuser/', to: 'friendships#block_User', as: 'block_User'
-    resources :dm_members, only: [:create, :show, :destroy]
+    resources :dm_members, only: [:create,:destroy]
     resources :dm_messages, only: [:create, :update, :destroy]
     resources :dm_servers, only: [:index, :show, :create, :update, :destroy]
 
