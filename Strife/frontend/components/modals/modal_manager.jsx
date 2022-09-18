@@ -15,6 +15,7 @@ import ChannelDropDownContainer from "../channels/channel_drop_down/channel_drop
 import ServerSettingsModalContainer from "../server/server_settings/server_settings_modal_container.js";
 import LeaveServerModalContainer from "../server/leave_server_modal/leave_server_modal_container.js";
 import DeleteServerModalContainer from "../server/delete_server_modal/delete_server_modal_container.js";
+import InviteToServerModalContainer from "../server/invite_to_server_modal/invite_to_server_modal_container.js";
 
 
 import CreateChannelModal from "../channels/create_channel_modal/create_channel_modal.jsx";
@@ -40,7 +41,6 @@ class ModalManager extends React.Component {
 
 
     render () {
-        console.log("modal manager props: ", this.props);
         let renderedModal;
         let modalMod = 0;
         // using a switch statement to reduce slow down of processing multiple if statemnets with similar
@@ -117,13 +117,23 @@ class ModalManager extends React.Component {
 
             case 'DeleteServer':
 
-                renderedModal = <DeleteServerModalContainer/>
+                renderedModal = <DeleteServerModalContainer />
                 modalMod = 0;
 
                 break;
             case 'LeaveServer':
 
-                renderedModal = <LeaveServerModalContainer/>
+                renderedModal = <LeaveServerModalContainer />
+                modalMod = 0;
+
+                break;
+            case 'InviteToServer':
+
+                renderedModal = (
+                    <div className="modal-child-component" onClick={e => e.stopPropagation()}>
+                        <InviteToServerModalContainer />
+                    </div>
+                )
                 modalMod = 0;
 
                 break;
