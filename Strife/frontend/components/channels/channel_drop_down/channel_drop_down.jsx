@@ -10,6 +10,8 @@ const ChannelDropDown = (props) => {
     closeHookModalOnOutsideClick(popUpRef, props.setShowPopUp);
     closeOnEsc(props.setShowPopUp);
 
+    const [showServerSettings, setShowServerSettings] = useState(false);
+    const [showChannelSettings, setShowChannelSettings] = useState(false);
     const [showLeaveServer, setShowLeaveServer] = useState(false);
 
     const serverOwnerId = props.server.server_owner_id;
@@ -36,7 +38,11 @@ const ChannelDropDown = (props) => {
                                 </div>
                                 <div className="channel-drop-sep"></div>
                                 <div role={"group"}>
-                                    <div className="channel-drop-item group2">
+                                    <div className="channel-drop-item group2" 
+                                        onClick={() => {
+                                            props.openModal('InviteToServer');
+                                            props.setShowPopUp(false);
+                                        }}>
                                         <div className="server-boost-label ip">
                                             Invite People
                                         </div>
