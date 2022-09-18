@@ -3,7 +3,6 @@ import { Route, Switch, Routes, withRouter } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../utils/route_util.jsx';
 import SplashContainer from "./splash/splash_container";
 import NavBarContainer from './nav_bar/nav_bar_container';
-
 import SessionSignInFormContainer from './session/session_signin_form_container';
 import SessionSignUpFormContainer from './session/session_signup_form_container';
 import ChannelNavBarContainer from './channels/channel_nav_bar/channel_nav_bar_container';
@@ -19,7 +18,7 @@ import HomePageContainer from './friends/friends_page_main/friends_home_page_con
 import LoadingScreenContainer from './loading_screen/loading_screen_container.js';
 import DmServerContainer from './dm_servers/dm_server_container/dm_server_container.js';
 import ServerContainer from './server/server_container/server_container.js';
-import TestPageContainer from './nav_bar/test_container.js';
+import TestPageContainer from '../components/test_bench/test_container.js'
 
 
 const App = () => (
@@ -27,9 +26,10 @@ const App = () => (
 
         <Route path='/' component={ModalManagerContainer}></Route>
         {/* <ProtectedRoute path="/channels/@me" component={ServerNavBarContainer} /> */}
-        <ProtectedRoute path="/testing" component={TestPageContainer}/>
+        <ProtectedRoute exact path="/testing/" component={TestPageContainer}/>
 
-
+        {/* <ProtectedRoute path="/channels/" component={ServerNavBarContainer} /> */}
+        
         <ProtectedRoute path="/channels/:serverId/" component={ServerNavBarContainer} />
 
         <ProtectedRoute path="/channels/" component={UserNavContainer}/>
@@ -40,7 +40,7 @@ const App = () => (
     <Switch>
         <ProtectedRoute path="/channels/@me/:dmServerId" component={DMNavBarContainer}/>
         <ProtectedRoute path="/channels/@me" component={DMNavBarContainer}/>
-        <ProtectedRoute path = "/channels/:serverId/:channelId" component={ChannelNavBarContainer} />
+        {/* <ProtectedRoute path = "/channels/:serverId/:channelId" component={ChannelNavBarContainer} /> */}
         
 
         
