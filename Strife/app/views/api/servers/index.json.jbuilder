@@ -34,15 +34,15 @@ end
         server_channels.each do |channel|
             json.channels do
             json.set! channel.id do
-                json.channel_Memberships do
-                channelMemberships = channel.channel_members
-                channelMemberships.each do |channelmember|
-                    json.set! channelmember.id do                   
-                        json.extract! channelmember, :id, :channel_id, :receiver_id
+            #     json.channel_Memberships do
+            #     channelMemberships = channel.channel_members
+            #     channelMemberships.each do |channelmember|
+            #         json.set! channelmember.id do                   
+            #             json.extract! channelmember, :id, :channel_id, :receiver_id
         
-                    end
-                end
-            end
+            #         end
+            #     end
+            # end
                 json.extract! channel, :id, :server_id, :channel_name , :channel_members
             end
         end
