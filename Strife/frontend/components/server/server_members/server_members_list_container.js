@@ -1,8 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { fetchChannel, createChannel, updateChannel, deleteChannel, removeChannelErrors } from "../../../actions/channel_actions.js";
-import { fetchServer, fetchServers, removeServerErrors, deleteServer, updateServer } from "../../../actions/server_actions.js";
-import { createChannelMembership, deleteChannelMembership } from "../../../actions/channel_membership_actions.js";
+import { fetchChannel,removeChannelErrors } from "../../../actions/channel_actions.js";
+import { fetchServer, fetchServers, removeServerErrors} from "../../../actions/server_actions.js";
 import { createServerMembership, deleteServerMembership } from "../../../actions/server_membership_actions.js";
 import { openModal } from "../../../actions/modal_actions.js";
 import ServerMembersList from "./server_members_list.jsx";
@@ -13,9 +12,6 @@ const mSTP = (state, ownProps) => {
         serverId: ownProps.match.params.serverId,
         errors: state.errors.server,
         server: state.entities.servers[ownProps.match.params.serverId],
-
-
-        
         channels: Object.values(state.entities.channels),
         currentChannelId: ownProps.match.params.channelId,
         channelErrors: state.errors.channel
@@ -29,17 +25,11 @@ const mDTP = (dispatch,ownProps) => {
         fetchServer: serverId => dispatch(fetchServer(serverId)),
         fetchUserServers: (user) => dispatch(fetchServers(user)),
         fetchServers: () => dispatch(fetchServers()),
-        updateServer: (server) => dispatch(updateServer(server)),
-        deleteServer: (serverId) => dispatch(deleteServer(serverId)),
         removeServerErrors: () => dispatch(removeServerErrors()),
-        
         
         //channel api functions
         
         fetchChannel: (channelId) => { dispatch(fetchChannel(channelId)) },
-        createChannel: (channel) => dispatch(createChannel(channel)),
-        updateChannel: (channel) => dispatch(updateChannel(channel)),
-        deleteChannel: (channelId) => dispatch(deleteChannel(channelId)),
         removeChannelErrors: () => dispatch(removeChannelErrors()),
 
         //server membership api functions
@@ -47,11 +37,6 @@ const mDTP = (dispatch,ownProps) => {
         createServerMembership: (servermembership) => dispatch(createServerMembership(servermembership)),
         deleteServerMembership: (servermembershipId, servermembership) => 
         dispatch(deleteServerMembership(servermembershipId,servermembership)),
-
-        //channel membership api functions 
-        createChannelMembership: (channelmembership) => dispatch(createChannelMembership(channelmembership)),
-        deleteChannelMembership: (channelmembershipId,channelmembership) => 
-        dispatch(deleteChannelMembership(channelmembershipId,channelmembership)),
 
         // modal api functions
         openModal: modal => dispatch(openModal(modal)),
