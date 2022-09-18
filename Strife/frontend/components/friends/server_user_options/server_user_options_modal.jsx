@@ -265,13 +265,9 @@ const ServerUserOptionsModal = ({
             dm_server_id: DmServerId
         }
 
-        console.log("dmserversmembers .length: ", dmServerMembers);
 
         if (Object.values(dmServerMembers).length - 1 === 2) {
-            console.log("deleting group chat there are only 2 members")
-            // kickUserfromGroupChat(member.id, subState).then(() => {
-            //     setShowPopup(false);
-            // });
+          
             deleteDmServer(DmServerId).then(() => {
                 history.push(`/channels/@me`);
             })
@@ -291,8 +287,8 @@ const ServerUserOptionsModal = ({
         let subState = { user_id: member.id, server_id: ServerID };
 
         deleteServerMembership(member.id, subState).then(() => {
-            fetchChannel(channelId);
-            fetchServer(serverId);
+            // fetchChannel(channelId);
+            // fetchServer(serverId);
             setShowPopup(false);
         })
         return;
