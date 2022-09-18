@@ -1,6 +1,7 @@
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import ChannelNavBar from "./channel_nav_bar";
+import ChannelNavBar2 from "./channel_nav_bar2";
 import { fetchChannel } from "../../../actions/channel_actions";
 import { fetchServer, fetchServers, deleteServer } from "../../../actions/server_actions";
 import { removeServerMembership } from "../../../actions/server_membership_actions";
@@ -37,6 +38,6 @@ const mDTP = (dispatch, ownProps) => {
 }
 
 
-const ChannelNavBarContainer = withRouter(connect(mSTP, mDTP)(ChannelNavBar));
+const ChannelNavBarContainer = withRouter(connect(mSTP, mDTP)(ChannelNavBar2));
 
 export default ChannelNavBarContainer;
