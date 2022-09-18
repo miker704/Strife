@@ -30,7 +30,7 @@ const mDTP = (dispatch, ownProps) => {
     return {
 
         //server api functions
-        fetchServer: serverId => dispatch(fetchServer(serverId)),
+        fetchServer: () => dispatch(fetchServer(ownProps.match.params.serverId)),
         fetchUserServers: (user) => dispatch(fetchServers(user)),
         fetchServers: () => dispatch(fetchServers()),
         updateServer: (server) => dispatch(updateServer(server)),
