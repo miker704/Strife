@@ -20,8 +20,7 @@ const serverReducer = (state = {}, action) => {
             return nextState
 
         case RECEIVE_SERVER_MEMBERSHIP:
-
-        nextState[action.servermembership.server.id]= action.servermembership.server;
+        nextState[action.servermembership.id]= action.servermembership;
         return nextState;
         case REMOVE_SERVER_MEMBERSHIP:
 
