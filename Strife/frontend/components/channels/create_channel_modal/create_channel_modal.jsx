@@ -137,9 +137,9 @@ const CreateChannelModal = (props) => {
 
 
     return (
-        <div className="create-channel-modal-wrapper">
+        <div className="create-channel-modal-wrapper" >
             <div className="create-channel-modal-backdrop"></div>
-            <div className="create-channel-modal-layer">
+            <div className="create-channel-modal-layer"onClick={(e) => e.stopPropagation()}>
                 <form>
 
                     <div className="create-channel-modal-layer-focus-lock">
@@ -256,7 +256,8 @@ const CreateChannelModal = (props) => {
                                                                             <div className="ccm-med-text-def">
                                                                                 Voice
                                                                             </div>
-                                                                            <div className="ccm-small-txt-rad">Hang out together with voice, video, and screen share</div>
+                                                                            <div className="ccm-small-txt-rad">Hang out together with voice, video, and screen share </div>
+                                                                            <div className="ccm-small-txt-3">(STRIFE Nitro Required to access)</div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -297,6 +298,7 @@ const CreateChannelModal = (props) => {
                                                                     className="ccm-slider-input" type="checkbox"
                                                                     checked={selectPrivacy}
                                                                     onChange={ () => setSelectPrivacy(!selectPrivacy)}
+                                                                    disabled
                                                                 />
                                                             </div>
                                                         </div>
@@ -305,6 +307,7 @@ const CreateChannelModal = (props) => {
                                                         <div className="ccm-private-note-text">
                                                             Only selected members and roles will be able to view this channel.
                                                         </div>
+                                                        <div className="ccm-small-txt-3">(STRIFE Nitro Required)</div>
                                                     </div>
                                                 </div>
 
