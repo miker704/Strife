@@ -252,6 +252,7 @@ class CreateServerForm extends React.Component {
 
 
         let newServer;
+        let channel_type;
         //create the new server then if the server is using one of the performed templates 
         //create the channels to set up the server 
         // this.props.action(serverSubmission).then((action) => {
@@ -270,11 +271,20 @@ class CreateServerForm extends React.Component {
                 }
                 else {
 
+                    if (i === 'channelInfoNames' || i === 'channelTextNames') {
+                        channel_type = 1;
+                    }
+                    else if (i === 'channelVoiceNames') {
+                        channel_type = 2;
+    
+                    }
+
                     for (let e of serverChannelSetup[i]) {
                         let channelHash = new Object();
                         channelHash = {
                             server_id: newServer.id,
-                            channel_name: e
+                            channel_name: e,
+                            channel_type: channel_type
                         }
 
                         this.props.createChannelSetup(channelHash);
