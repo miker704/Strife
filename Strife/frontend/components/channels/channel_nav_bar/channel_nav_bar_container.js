@@ -6,7 +6,7 @@ import { fetchChannel } from "../../../actions/channel_actions";
 import { fetchServer, fetchServers, deleteServer } from "../../../actions/server_actions";
 import { removeServerMembership } from "../../../actions/server_membership_actions";
 import { removeChannelMembership } from "../../../actions/channel_membership_actions"
-import { openModal } from "../../../actions/modal_actions";
+import { openModal, openModalWithProps} from "../../../actions/modal_actions";
 
 const mSTP = (state, ownProps) => {
 
@@ -32,7 +32,9 @@ const mDTP = (dispatch, ownProps) => {
         fetchServer: (serverId) => dispatch(fetchServer(ownProps.match.params.serverId)),
         deleteServer: serverId => dispatch(deleteServer(serverId)),
         removeChannelMembership: (channelmembershiphash) => dispatch(removeChannelMembership(channelmembershiphash)),
-        removeServerMembership: (membershiphash) => dispatch(removeServerMembership(membershiphash))
+        removeServerMembership: (membershiphash) => dispatch(removeServerMembership(membershiphash)),
+        // openModalWithProps: (modal,modal_With_props) => dispatch(openModalWithProps(modal,modal_With_props))
+        openModalWithProps: (modal_With_props) => dispatch(openModalWithProps(modal_With_props))
 
     }
 }
