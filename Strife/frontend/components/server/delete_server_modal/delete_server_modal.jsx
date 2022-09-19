@@ -4,19 +4,37 @@ import { closeOnEsc, closeHookModalOnOutsideClick } from "../../../utils/close_h
 
 const DeleteServerModal = (props) => {
     const popupRef = useRef();
-    closeHookModalOnOutsideClick(popupRef, props.setServerDeletion);
-    closeOnEsc(props.setServerDeletion);
+    // closeHookModalOnOutsideClick(popupRef, props.setServerDeletion);
+    // closeOnEsc(props.setServerDeletion);
     const [confirmServerName, setConfirmServerName] = useState("");
 
 
     useEffect(() => {
-
+        window.addEventListener('keyup', handleESC, false);
         return function cleanUp () {
             props.removeServerErrors();
             props.removeChannelErrors();
+            window.removeEventListener('keyup', handleESC, false);
         }
 
     }, []);
+
+
+    const handleESC = (e) => {
+
+        const keys = {
+            27: () => {
+                e.preventDefault();
+                props.setServerDeletion(false);
+                window.removeEventListener('keyup', handleESC, false);
+
+            },
+        };
+        if (keys[e.keyCode]) {
+            keys[e.keyCode]();
+        }
+    }
+
 
     const handleDeleteServerEXE = () => {
 
@@ -63,7 +81,7 @@ const DeleteServerModal = (props) => {
     let serverNameErrorsTag = props.errors.length > 0 ? "server-error" : "";
 
     return (
-        <div className="delete-server-modal-wrapper"  >
+        <div className="delete-server-modal-wrapper" onClick={() => props.setServerDeletion(false)}>
             <div className="delete-server-flex-box">
                 <div className="delete-server-modal-inner-wrapper" >
                     <div id="delete-server-modal" className="delete-server-modal" onClick={(e) => e.stopPropagation()} ref={popupRef}>
