@@ -16,11 +16,8 @@ import ServerSettingsModalContainer from "../server/server_settings/server_setti
 import LeaveServerModalContainer from "../server/leave_server_modal/leave_server_modal_container.js";
 import DeleteServerModalContainer from "../server/delete_server_modal/delete_server_modal_container.js";
 import InviteToServerModalContainer from "../server/invite_to_server_modal/invite_to_server_modal_container.js";
-
-
-import CreateChannelModal from "../channels/create_channel_modal/create_channel_modal.jsx";
 import ChannelSettingsModalContainer from "../channels/channel_settings/channel_settings_modal_container.js";
-
+import CreateChannelModalContainer from "../channels/create_channel_modal/create_channel_modal_container.js";
 
 
 class ModalManager extends React.Component {
@@ -115,7 +112,9 @@ class ModalManager extends React.Component {
 
             case 'CreateChannel':
 
-                renderedModal = <CreateChannelModal />
+
+
+                renderedModal = <CreateChannelModalContainer/>
                 modalMod = 0;
 
                 break;
@@ -159,7 +158,6 @@ class ModalManager extends React.Component {
 
 
         if (!this.props.modal) {
-            console.log("returned null model");
             return null;
         }
 
