@@ -58,7 +58,9 @@ defaultServer = Server.create!(
 
 )
 
-defaultServerChannel = Channel.create!(channel_name: "not_general" , server_id: defaultServer.id)
+defaultServerChannel = Channel.create!(channel_name: "not_general" , server_id: defaultServer.id , channel_type:1)
+defaultServerChannel = Channel.create!(channel_name: "general-voice Chat" , server_id: defaultServer.id , channel_type:2)
+
 
 
 spencer = User.create(
@@ -158,9 +160,9 @@ Server7 = Server.create!(
 
 
 
-demoChannel = Channel.create!(channel_name: "Demo Channel", server_id: defaultServer.id)
-kinKaCircle = Channel.create!(channel_name: "Kin Ka's Circle", server_id: kinKaServer.id)
-ayceCircle = Channel.create!(channel_name: "Ayce's Circle", server_id: ayceServer.id)
+demoChannel = Channel.create!(channel_name: "Demo Channel", server_id: defaultServer.id, channel_type:1)
+kinKaCircle = Channel.create!(channel_name: "Kin Ka's Circle", server_id: kinKaServer.id, channel_type:1)
+ayceCircle = Channel.create!(channel_name: "Ayce's Circle", server_id: ayceServer.id, channel_type:1)
 
 
 ServerMembership.create(server_id: ayceServer.id , user_id: demouser1.id)
@@ -284,61 +286,53 @@ dm_membership_11 = DmMember.create!( dm_server_id: dm_server_5.id, dm_member_id:
 
 #data  for seeding users (Reserved)
 
-mikeR = User.create!(username: "MichaelR", email: "mikeR@strife.com", password: "Qwerty", birthday: Date.new(1996,10,10),)
-KrystalR = User.create!(username: "KrystalR", email: "KrystalR@strife.com", password: "Qwerty", birthday: Date.new(1997,08,10),)
+MichaelR = User.create!(username: "MichaelR", email: "mikeR@strife.com", password: "Qwerty1234", birthday: Date.new(1996,10,10))
+KrystalR = User.create!(username: "KrystalR", email: "KrystalR@strife.com", password: "Qwerty1234", birthday: Date.new(1997,8,10))
 
-vivian = User.create!(username: "Vivian", email: "vivianC@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
-mikeC = User.create!(username: "MichaelC", email: "mikeC@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
-MikeH = User.create!(username: "MichaelH", email: "MikeH@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
-VeraH = User.create!(username: "Vera", email: "VeraH@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
-EricB = User.create!(username: "Eric", email: "EricB@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
-EvanF = User.create!(username: "Evan", email: "EvanF@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
-AlanN = User.create!(username: "Alan", email: "AlanNg@strife.com", password: "Alan4TA", birthday: Date.new(1990,03,10),)
-LinS = User.create!(username: "LinShen", email: "LinS@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
-KevinN = User.create!(username: "Kevin", email: "KevinN@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
-madeleineP = User.create!(username: "Madeleine", email: "madeleineP@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
-TomLL = User.create!(username: "Tom", email: "TomLL@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
-Leo = User.create!(username: "Leo", email: "LeoC@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
-Karen = User.create!(username: "Karen", email: "KarenP@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
-Gabriel = User.create!(username: "Gabriel", email: "GabrielG@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
-David-allen = User.create!(username: "David-allen", email: "David-allen@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
-DavidZ = User.create!(username: "DavidZ", email: "DavidZ@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
-nikhilK = User.create!(username: "Nikhil", email: "nikhilK@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
-NaranI = User.create!(username: "Naran", email: "NaranI@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
-DuncanM = User.create!(username: "Duncan", email: "DuncanM@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
-AlisherP = User.create!(username: "Alisher", email: "AlisherP@strife.com", password: "Qwerty", birthday: Date.new(1990,03,10),)
+vivian = User.create!(username: "Vivian", email: "vivianC@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
+mikeC = User.create!(username: "MichaelC", email: "mikeC@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
+MikeH = User.create!(username: "MichaelH", email: "MikeH@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
+VeraH = User.create!(username: "Vera", email: "VeraH@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
+EricB = User.create!(username: "Eric", email: "EricB@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
+EvanF = User.create!(username: "Evan", email: "EvanF@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
+AlanN = User.create!(username: "Alan", email: "AlanNg@strife.com", password: "AlanNg4TA", birthday: Date.new(1990,03,10))
+LinS = User.create!(username: "LinShen", email: "LinS@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
+KevinN = User.create!(username: "Kevin", email: "KevinN@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
+madeleineP = User.create!(username: "Madeleine", email: "madeleineP@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
+TomLL = User.create!(username: "Tom", email: "TomLL@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
+Leo = User.create!(username: "Leo", email: "LeoC@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
+Karen = User.create!(username: "Karen", email: "KarenP@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
+Gabriel = User.create!(username: "Gabriel", email: "GabrielG@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
+David_allen = User.create!(username: "David-allen", email: "David-allen@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
+DavidZ = User.create!(username: "DavidZ", email: "DavidZ@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
+nikhilK = User.create!(username: "Nikhil", email: "nikhilK@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
+NaranI = User.create!(username: "Naran", email: "NaranI@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
+DuncanM = User.create!(username: "Duncan", email: "DuncanM@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
+AlisherP = User.create!(username: "Alisher", email: "AlisherP@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
 
 #test users
 
-bambi = User.create!(username: "bambi", email: "bambi@gmail.com", password: "bambi@gmail.com", birthday: Date.new(1990,03,10),)
+bambi = User.create!(username: "bambi", email: "bambi@gmail.com", password: "bambi@gmail.com", birthday: Date.new(1990,03,10))
 
-trish = User.create!(username: "trish@gmail.com", email: "trish@gmail.com", password: "trish@gmail.com", birthday: Date.new(1990,03,10),)
-rae=User.create!(username: "rae@gmail.com", email: "rae@gmail.com", password: "rae@gmail.com", birthday: Date.new(1990,03,10),)
-baatu=User.create!(username: "baatu@gmail.com", email: "baatu@gmail.com", password: "baatu@gmail.com", birthday: Date.new(1990,03,10),)
-cindy=User.create!(username: "cindy@gmail.com", email: "cindy@gmail.com", password: "cindy@gmail.com", birthday: Date.new(1990,03,10),)
-nora=User.create!(username: "nora@gmail.com", email: "nora@gmail.com", password: "nora@gmail.com", birthday: Date.new(1990,03,10),)
-ame=User.create!(username: "ame@gmail.com", email: "ame@gmail.com", password: "ame@gmail.com", birthday: Date.new(1990,03,10),)
-
-
-vinnie=User.create!(username: "vinnie@gmail.com", email: "vinnie@gmail.com", password: "vinnie@gmail.com", birthday: Date.new(1990,03,10),)
-carly=User.create!(username: "carly@gmail.com", email: "carly@gmail.com", password: "carly@gmail.com", birthday: Date.new(1990,03,10),)
-ruru=User.create!(username: "ruru@gmail.com", email: "ruru@gmail.com", password: "ruru@gmail.com", birthday: Date.new(1990,03,10),)
-danny=User.create!(username: "danny@gmail.com", email: "danny@gmail.com", password: "danny@gmail.com", birthday: Date.new(1990,03,10),)
+trish = User.create!(username: "trish@gmail.com", email: "trish@gmail.com", password: "trish@gmail.com", birthday: Date.new(1990,03,10))
+rae=User.create!(username: "rae@gmail.com", email: "rae@gmail.com", password: "rae@gmail.com", birthday: Date.new(1990,03,10))
+baatu=User.create!(username: "baatu@gmail.com", email: "baatu@gmail.com", password: "baatu@gmail.com", birthday: Date.new(1990,03,10))
+cindy=User.create!(username: "cindy@gmail.com", email: "cindy@gmail.com", password: "cindy@gmail.com", birthday: Date.new(1990,03,10))
+nora=User.create!(username: "nora@gmail.com", email: "nora@gmail.com", password: "nora@gmail.com", birthday: Date.new(1990,03,10))
+ame=User.create!(username: "ame@gmail.com", email: "ame@gmail.com", password: "ame@gmail.com", birthday: Date.new(1990,03,10))
 
 
-dee=User.create!(username: "dee@gmail.com", email: "dee@gmail.com", password: "dee@gmail.com", birthday: Date.new(1990,03,10),)
-will=User.create!(username: "will@gmail.com", email: "will@gmail.com", password: "will@gmail.com", birthday: Date.new(1990,03,10),)
+vinnie=User.create!(username: "vinnie@gmail.com", email: "vinnie@gmail.com", password: "vinnie@gmail.com", birthday: Date.new(1990,03,10))
+carly=User.create!(username: "carly@gmail.com", email: "carly@gmail.com", password: "carly@gmail.com", birthday: Date.new(1990,03,10))
+ruru=User.create!(username: "ruru@gmail.com", email: "ruru@gmail.com", password: "ruru@gmail.com", birthday: Date.new(1990,03,10))
+danny=User.create!(username: "danny@gmail.com", email: "danny@gmail.com", password: "danny@gmail.com", birthday: Date.new(1990,03,10))
 
-bald=User.create!(username: "baldstie@gmail.com", email: "baldstie@gmail.com", password: "baldstie@gmail.com", birthday: Date.new(1990,03,10),)
-jenny=User.create!(username: "jenny@gmail.com", email: "jenny@gmail.com", password: "jenny@gmail.com", birthday: Date.new(1990,03,10),)
-lumi=User.create!(username: "lumi@gmail.com", email: "lumi@gmail.com", password: "lumi@gmail.com", birthday: Date.new(1990,03,10),)
+dee=User.create!(username: "dee@gmail.com", email: "dee@gmail.com", password: "dee@gmail.com", birthday: Date.new(1990,03,10))
+will=User.create!(username: "will@gmail.com", email: "will@gmail.com", password: "will@gmail.com", birthday: Date.new(1990,03,10))
 
-
-
-
-
-
-
+bald=User.create!(username: "baldstie@gmail.com", email: "baldstie@gmail.com", password: "baldstie@gmail.com", birthday: Date.new(1990,03,10))
+jenny=User.create!(username: "jenny@gmail.com", email: "jenny@gmail.com", password: "jenny@gmail.com", birthday: Date.new(1990,03,10))
+lumi=User.create!(username: "lumi@gmail.com", email: "lumi@gmail.com", password: "lumi@gmail.com", birthday: Date.new(1990,03,10))
 
 
 #friends
@@ -354,7 +348,7 @@ f6 = Friendship.create!(friend_id: demouser1.id, user_id: mr_Wumpus.id, friend_r
  Friendship.create!(friend_id: kinKa.id, user_id: demouser1.id, friend_request_status: 3);
  Friendship.create!(friend_id: demouser1.id, user_id: kinKa.id, friend_request_status: 3);
  Friendship.create!(friend_id: jwong.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: jwong.id, friend_request_status: 3);.
+ Friendship.create!(friend_id: demouser1.id, user_id: jwong.id, friend_request_status: 3);
  Friendship.create!(friend_id: trish.id, user_id: demouser1.id, friend_request_status: 3);
  Friendship.create!(friend_id: demouser1.id, user_id: trish.id, friend_request_status: 3);
  Friendship.create!(friend_id: cindy.id, user_id: demouser1.id, friend_request_status: 3);
