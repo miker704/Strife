@@ -158,7 +158,7 @@ const ServerSettingsModal = (props) => {
             setTimeout(() => {
 
                 window.addEventListener('keyup', props.handleESC, false);
-            }, 100)
+            }, 1500)
 
         }
     }
