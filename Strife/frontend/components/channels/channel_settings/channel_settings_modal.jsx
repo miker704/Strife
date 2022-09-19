@@ -12,8 +12,15 @@ const ChannelSettingsModal = (props) => {
 
 
     useEffect(() => {
+        if (channelDeletion) {
+            window.removeEventListener('keyup', props.handleESC, false);
 
-        window.addEventListener('keyup', props.handleESC, false);
+        }
+        else {
+            // setTimeout(() => {
+                window.addEventListener('keyup', props.handleESC, false);
+            // }, 1000)
+        }
 
         return function cleanUp () {
             props.removeServerErrors();
@@ -22,7 +29,7 @@ const ChannelSettingsModal = (props) => {
             window.removeEventListener('keyup', props.handleESC, false);
         }
 
-    }, [])
+    }, [channelDeletion])
 
 
     const renderChannelDeletionModal = () => {
@@ -31,29 +38,31 @@ const ChannelSettingsModal = (props) => {
 
             return (
                 <div>
-                    {channelDeletion && <DeleteChannelModalContainer setChannelDeletion={setChannelDeletion} />}
+                    {channelDeletion && <DeleteChannelModalContainer currentChannel={props.channel}
+                        setChannelDeletion={setChannelDeletion} />}
                 </div>
             )
         }
-        else if (!channelDeletion) {
+        else if (channelDeletion === false) {
             setTimeout(() => {
 
                 window.addEventListener('keyup', props.handleESC, false);
-            }, 100)
+            }, 500)
 
         }
     }
 
     const updateChannelName = () => {
         let subState = {
-            // id: props.channel.id,
+            id: props.channel.id,
             channel_name: newChannelName,
 
         }
+        props.updateChannel(subState)
 
     }
     const updateChannelTopic = () => {
-
+        //tba at another time
     }
 
     const handleCloseModal = () => {
@@ -79,20 +88,37 @@ const ChannelSettingsModal = (props) => {
         }
     }
 
+    const channelTypeName = () => {
+        if (props.channel.channel_type === 1) {
+            return 'TEXT CHANNELS';
+        }
+        else {
+            return 'VOICE CHANNELS';
+        }
+    }
 
+
+    console.log("channel settings props: ", props)
     let channelNameErrorsTag = props.errors.length > 0 ? "server-error-lite" : "";
-
 
     return (
         <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
+            {channelDeletion && <DeleteChannelModalContainer currentChannel={props.channel}
+                setChannelDeletion={setChannelDeletion} />}
+
             <div className="user-profile" id="user-profile">
-                {renderChannelDeletionModal()}
                 <div className="sidebar">
                     <div className="sidebar-scrollbar">
                         <div className="sidebar-inner">
                             <div className="user-profile-left-side">
                                 <ul className="user-profile-item-list">
-                                    <li><h3 className="user-profile-header3">#Channel Name<span className="cs-inner-header-span">channeltype</span></h3></li>
+                                    <li><h3 className="user-profile-header3">
+                                        #{`${props.channel.channel_name}`}
+                                        <span className="cs-inner-header-span">
+                                            {`${channelTypeName()}`}
+                                        </span>
+                                    </h3>
+                                    </li>
                                     <li className="user-profile-item force">Overview</li>
                                     <li className="user-profile-item">Permissions</li>
                                     <li className="user-profile-item">Invites</li>
@@ -153,7 +179,7 @@ const ChannelSettingsModal = (props) => {
                                             type="text"
                                             maxLength={100}
                                             minLength={1}
-                                            placeholder="servernameplaceholder"
+                                            placeholder={`${props.channel.channel_name}`}
                                             spellCheck={false}
                                             value={newChannelName}
                                             onChange={(e) => setNewChannelName(e.currentTarget.value)}
