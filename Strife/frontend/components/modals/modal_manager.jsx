@@ -19,6 +19,7 @@ import InviteToServerModalContainer from "../server/invite_to_server_modal/invit
 
 
 import CreateChannelModal from "../channels/create_channel_modal/create_channel_modal.jsx";
+import ChannelSettingsModalContainer from "../channels/channel_settings/channel_settings_modal_container.js";
 
 
 
@@ -26,7 +27,7 @@ class ModalManager extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            setSpecialFeatures: 0
+            setSpecialFeatures: 0,
         }
         this.setModalSpecialFeatures = this.setModalSpecialFeatures.bind(this);
         console.log("modal call");
@@ -37,10 +38,15 @@ class ModalManager extends React.Component {
     setModalSpecialFeatures (modifier) {
         this.setState({ setSpecialFeatures: modifier });
     }
-
+  
 
 
     render () {
+
+        console.log("current modal props: ", this.props);
+        console.log(" modal : ", this.props.modal);
+        console.log(" modal props: ", this.props.modalProps);
+
         let renderedModal;
         let modalMod = 0;
         // using a switch statement to reduce slow down of processing multiple if statemnets with similar
@@ -124,6 +130,13 @@ class ModalManager extends React.Component {
             case 'LeaveServer':
 
                 renderedModal = <LeaveServerModalContainer />
+                modalMod = 0;
+
+                break;
+
+            case 'ChannelSettings':
+
+                renderedModal = <ChannelSettingsModalContainer mod_Channel_ID={this.props.modalProps} />
                 modalMod = 0;
 
                 break;
