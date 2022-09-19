@@ -4,6 +4,7 @@
 #
 #  id           :bigint           not null, primary key
 #  channel_name :string           not null
+#  channel_type :integer          not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  server_id    :integer          not null
@@ -16,7 +17,7 @@
 class Channel < ApplicationRecord
     validates :channel_name, :server_id, presence: true
     validates :channel_name, uniqueness: {scope: :server_id, message: 'Only one channel in a server can have that name'}
-
+    validates :channel_type, inclusion: {in: [1,2]}
 
     belongs_to :server, class_name: "Server", foreign_key: "server_id"
     has_many :messages, class_name: "Message", foreign_key: "channel_id", dependent: :destroy
