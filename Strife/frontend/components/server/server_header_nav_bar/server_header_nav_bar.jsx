@@ -1,72 +1,53 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
-
-
 import { useEffect, useState, useRef } from "react";
 
 const ServerHeaderNavBar = ({
     // props,
-    // errors,
-    // dmMessageErrors,
-    // currentUser,
-    // dmServer,
-    // dmServerId,
-    // dmServerMembers,
-    // fetchDmServer,
-    // removeDmServerErrors,
-    // removeDmMessageErrors,
-    // updateDmServer,
-    isViz
+    currentUser,
+    server,
+    channels,
+    currentChannelId,
+    serverId,
+    currentChannel,
+    isViz,
+    fetchServer,
+    errors,
+    channelErrors,
+    removeChannelErrors,
+    removeServerErrors,
+    fetchChannel
+
 
 }) => {
-    // if (!dmServer) {
+
+    // if(!currentChannel){
     //     return null;
     // }
+    const [channelName, setChannelName] = useState(''); 
 
-    // let displayName="";
-    // // let displayName ="";
+    useEffect(() => {
+        if (currentChannel?.id) {
+            fetchChannel(currentChannelId)
+            setChannelName(currentChannel.channel_name);
+        }
+        return function cleanup () {
+            if (errors.length > 0) {
+                removeServerErrors();
+            }
+            if (channelErrors.length > 0) {
+                removeChannelErrors()
+            }
+        }
+    }, [currentChannel?.id])
 
-    // if (dmServer.dm_server_name === null) {
-    //     displayName = Object.values(dmServerMembers).filter(member => member.id !== currentUser.id).map(member => member.username).join(", ")
-    // }
-    // else if (dmServer.dm_server_name !== null || dmServer.dm_server_name !== undefined || dmServer.dm_server_name !== "") {
-    //     displayName = dmServer.dm_server_name
-    // }
-    // const [showEdit, setShowEdit] = useState(false);
-    // const [DmServerName, setDMServerName] = useState("");
-    // useEffect(() => {
-    //     if (dmServer?.id) {
+   
 
-    //         // fetchDmServer(dmServerId);
-    //         setDMServerName(displayName);
-    //     }
-    //     return function cleanup () {
-    //         if (errors.length > 0) {
-    //             removeDmServerErrors();
-    //         }
-    //         if (dmMessageErrors.length > 0) {
-    //             removeDmMessageErrors()
-    //         }
-    //     }
-    // }, [dmServer?.id])
+    // console.log("servernav propps server : ", server)
+    // console.log("servernav propps :severId ", serverId)
+    // console.log("servernav propps :currentchannelId ", currentChannelId)
+    // console.log("servernav propps :currentchannel", currentChannel)
 
-
-
-    // const handleEditName = (e) => {
-    //     e.preventDefault();
-    //     if (DmServerName !== displayName) {
-    //         //run update
-    //         updateDmServer(dmServer.id,{dm_server_name: DmServerName});
-    //     }
-    //     setShowEdit(false);
-    // }
-
-    // const inputRef = useRef();
-    // useEffect(() => {
-    //     if (showEdit) {
-    //         inputRef.current?.focus();
-    //     }
-    // })
 
     return (
         <div className="server-header-bar">
@@ -91,7 +72,7 @@ const ServerHeaderNavBar = ({
 
                 <div id="normal-chat" className={`server-hbar-name`}>
 
-                    <h3 className="server-hbar-name-header">channelname</h3>
+                    <h3 className="server-hbar-name-header">{channelName}</h3>
 
                 </div>
 
@@ -163,7 +144,7 @@ const ServerHeaderNavBar = ({
                         </ReactTooltip>
                     </div>
 
-                   
+
 
                     <div
                         // className={`shb-tool-icon-wrapper ${membersOfthisServer.length < 3 ? "is-hidden" : ""}`} 
