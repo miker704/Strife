@@ -1,5 +1,5 @@
 json.channel do 
-    json.extract! @channel, :id, :server_id, :channel_name
+    json.extract! @channel, :id, :server_id, :channel_name, :channel_type
   end
 
 
