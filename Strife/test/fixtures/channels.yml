@@ -4,6 +4,7 @@
 #
 #  id           :bigint           not null, primary key
 #  channel_name :string           not null
+#  channel_type :integer          not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  server_id    :integer          not null
