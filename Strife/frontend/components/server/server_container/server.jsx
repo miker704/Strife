@@ -18,6 +18,7 @@ class Server extends React.Component {
         // setTimeout(() => {
 
         this.props.fetchServer(this.props.serverId);
+        // this.props.fetchChannel(this.props.currentChannelId)
         // },1)
     }
 
@@ -51,23 +52,29 @@ class Server extends React.Component {
             return (
 
                 <div className="server-main-base">
-                     {/* <div className="server-inner-base"> */}
-                         <ChannelNavBarContainer server={this.props.server} currentChannelId={this.props.currentChannelId} 
-                       serverId={this.props.serverId} channels={this.props.channels}
-                     />
-                        <div className="server-base">
+                    {/* <div className="server-inner-base"> */}
+                    <ChannelNavBarContainer server={this.props.server} currentChannelId={this.props.currentChannelId}
+                        serverId={this.props.serverId} channels={this.props.channels}
+                    />
+                    <div className="server-base">
 
-                            <ServerHeaderNavBarContainer isViz={this.setHideMembersList} />
-                            <div className="server-content">
-                                {/* <div className="server-chat"> */}
-                                <ServerMessages />
-                                {/* </div> */}
+                        <ServerHeaderNavBarContainer isViz={this.setHideMembersList}
+                            channels={this.props.channels}
+                            currentChannelId={this.props.currentChannelId}
+                            server={this.props.server}
+                            serverId={this.props.serverId}
+                            currentChannel={this.props.currentChannel}
+                        />
+                        <div className="server-content">
+                            {/* <div className="server-chat"> */}
+                            <ServerMessages />
+                            {/* </div> */}
 
-                                {!this.state.hideMembersList && <ServerMembersListContainer />}
-                            </div>
+                            {!this.state.hideMembersList && <ServerMembersListContainer />}
                         </div>
-                     {/* </div> */}
-                 </div>
+                    </div>
+                    {/* </div> */}
+                </div>
             )
 
         }
