@@ -43,7 +43,11 @@ export const fetchChannel = (channelId) => (dispatch) =>
     }, err => (dispatch(receiveChannelErrors(err.responseJSON))))
 
 export const createChannel = (channel) => (dispatch) =>
-    ChannelAPI.createChannel(channel).then((channelPayload) => { dispatch(removeChannelErrors()), dispatch(receiveChannel(channelPayload)) }, (err) => { dispatch(receiveChannelErrors(err.responseJSON)) })
+    ChannelAPI.createChannel(channel).then((channelPayload) => {
+        dispatch(removeChannelErrors());
+        return dispatch(receiveChannel(channelPayload))
+    },
+        (err) => { dispatch(receiveChannelErrors(err.responseJSON)) })
 
 export const updateChannel = (channel) => (dispatch) =>
     ChannelAPI.updateChannel(channel).then((channelPayload) => { dispatch(removeChannelErrors()), dispatch(receiveChannel(channelPayload)) }, (err) => { dispatch(receiveChannelErrors(err.responseJSON)) })
