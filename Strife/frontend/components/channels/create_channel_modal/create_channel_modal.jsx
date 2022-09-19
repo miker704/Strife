@@ -4,17 +4,30 @@ import { useState, useEffect, useRef } from "react";
 
 const CreateChannelModal = (props) => {
 
-    const [selectedOption, setSelectedOption] = useState('TextChannel');
+    // const [selectedOption, setSelectedOption] = useState('TextChannel');
+    const [selectedOption, setSelectedOption] = useState(1);
     const [selectPrivacy, setSelectPrivacy] = useState(false);
     const [channelName, setChannelName] = useState('');
-    let cancel = false;
+
+    useEffect(() => {
+
+        window.addEventListener('keyup', props.handleESC, false);
+
+        return function cleanUp () {
+            props.removeChannelErrors();
+            window.removeEventListener('keyup', props.handleESC, false);
+
+        }
 
 
+    }, [])
 
 
     let inner_input_icon;
 
-    if (selectedOption === 'TextChannel') {
+    // if (selectedOption === 'TextChannel') {
+
+    if (selectedOption === 1) {
         if (selectPrivacy === false) {
             inner_input_icon = (
                 <svg width="16" height="16" viewBox="0 0 24 24" className="ccm-input-hash" aria-hidden="true" role="img">
@@ -53,7 +66,8 @@ const CreateChannelModal = (props) => {
             );
         }
     }
-    else if (selectedOption === 'VoiceChannel') {
+    else if (selectedOption === 2) {
+        // else if (selectedOption === 'VoiceChannel') {
         if (selectPrivacy === false) {
             inner_input_icon = (
                 <svg className="ccm-input-ls" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
@@ -122,25 +136,62 @@ const CreateChannelModal = (props) => {
 
 
 
-
     const handleSubmit = () => {
+
+        // let channelType;
+        // if (selectedOption === 'TextChannel') {
+        //     channelType = 1;
+        // }
+        // else if (selectedOption === 'VoiceChannel') {
+        //     channelType = 2;
+        // }
+
+        let substate = {
+            channel_name: channelName,
+            channel_type: selectedOption,
+            server_id: props.server.id
+        }
+        //procedure create -> close -> push redirect
+        props.createChannel(substate).then((action) => {
+            const newChannel = action.channelPayload.channel;
+            props.closeModal();
+            props.history.push(`/channels/${props.server.id}/${newChannel.id}`)
+        })
 
     }
 
     const handleChange = (e) => {
         e.preventDefault();
-        console.log("before: ", selectedOption);
         setSelectedOption(e.currentTarget.value);
-        console.log("now: ", selectedOption);
     }
 
+    const renderChannelErrorMessages = () => {
 
+        let channelErrorMessagesArray = [
+            "Channel name can't be blank",
+            'Channel name Only one channel in a server can have that name'
+        ]
+
+        let channelErrorsResponse = {
+            0: " - Channel name can't be blank",
+            1: " - A channel with that name already exists in this server!"
+        }
+
+        for (let i = 0; i < channelErrorMessagesArray.length; i++) {
+            if (props.errors.includes(channelErrorMessagesArray[i])) {
+                return channelErrorsResponse[i];
+            }
+        }
+        return "";
+    }
+
+    const channelErrorsTag = props.errors.length > 0 ? "server-error-lite" : "";
 
     return (
         <div className="create-channel-modal-wrapper" >
             <div className="create-channel-modal-backdrop"></div>
-            <div className="create-channel-modal-layer"onClick={(e) => e.stopPropagation()}>
-                <form>
+            <div className="create-channel-modal-layer" onClick={(e) => e.stopPropagation()}>
+                <form onSubmit={handleSubmit}>
 
                     <div className="create-channel-modal-layer-focus-lock">
                         <div className="create-channel-modal">
@@ -156,7 +207,7 @@ const CreateChannelModal = (props) => {
                                                     in Text Channels
                                                 </div>
                                             </div>
-                                            <button type="button" className="ccm-close-button">
+                                            <button type="button" className="ccm-close-button" onClick={() => props.closeModal()}>
                                                 <div className="ccm-close-button-inner-wrapper">
                                                     <svg className="ccm-close-button-icon" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                                         <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z">
@@ -178,9 +229,15 @@ const CreateChannelModal = (props) => {
                                                             <div className="ccm-radio-bar-icon">
                                                                 <input
                                                                     id="1s-op"
-                                                                    type="radio" value={"TextChannel"}
-                                                                    checked={selectedOption === "TextChannel"}
-                                                                    onChange={() => setSelectedOption('TextChannel')} />
+                                                                    type="radio"
+                                                                    // value={"TextChannel"}
+                                                                    // checked={selectedOption === "TextChannel"}
+                                                                    // onChange={() => setSelectedOption('TextChannel')} 
+                                                                    value={1}
+                                                                    checked={selectedOption === 1}
+                                                                    onChange={() => setSelectedOption(1)}
+
+                                                                />
                                                                 <svg id="1s-op" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                                                     <path fillRule="evenodd" clipRule="evenodd" d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 
                                                                              4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 
@@ -189,7 +246,8 @@ const CreateChannelModal = (props) => {
                                                                     </path>
 
                                                                     <circle cx="12" cy="12" r="5" id="1s-op"
-                                                                        className={`radioIconFill ${selectedOption === 'TextChannel' ? `` : `is-hidden`}`}
+                                                                        // className={`radioIconFill ${selectedOption === 'TextChannel' ? `` : `is-hidden`}`}
+                                                                        className={`radioIconFill ${selectedOption === 1 ? `` : `is-hidden`}`}
                                                                         fill="currentColor"></circle>
                                                                 </svg>
                                                             </div>
@@ -225,9 +283,14 @@ const CreateChannelModal = (props) => {
                                                             <div className="ccm-radio-bar-icon">
                                                                 <input
                                                                     id="2s-op"
-                                                                    type="radio" value={'VoiceChannel'}
-                                                                    checked={selectedOption === 'VoiceChannel'}
-                                                                    onChange={() => setSelectedOption('VoiceChannel')} />
+                                                                    type="radio"
+                                                                    // value={'VoiceChannel'}
+                                                                    // checked={selectedOption === 'VoiceChannel'}
+                                                                    // onChange={() => setSelectedOption('VoiceChannel')} 
+                                                                    value={2}
+                                                                    checked={selectedOption === 2}
+                                                                    onChange={() => setSelectedOption(2)}
+                                                                />
 
                                                                 <svg id="2s-op" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                                                     <path fillRule="evenodd" clipRule="evenodd" d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 
@@ -236,8 +299,11 @@ const CreateChannelModal = (props) => {
                                                                         fill="currentColor">
                                                                     </path>
                                                                     <circle cx="12" cy="12" r="5" id="2s-op"
-                                                                        className={`radioIconFill ${selectedOption === 'VoiceChannel' ? `` : `is-hidden`}`}
-                                                                        fill="currentColor"></circle>
+                                                                        // className={`radioIconFill ${selectedOption === 'VoiceChannel' ? `` : `is-hidden`}`}
+                                                                        className={`radioIconFill ${selectedOption === 2 ? `` : `is-hidden`}`}
+                                                                        fill="currentColor">
+
+                                                                    </circle>
                                                                 </svg>
                                                             </div>
                                                             <div className="ccm-radio-bar-info">
@@ -267,14 +333,19 @@ const CreateChannelModal = (props) => {
                                                 </div>
                                             </div>
                                             <div className="ccm-name">
-                                                <label className="ccm-h5-cn">Channel Name</label>
+                                                <h5 className="ccm-h5-cn">
+                                                    <label className={channelErrorsTag}>
+                                                        Channel Name{` `}{`${renderChannelErrorMessages()}`}
+                                                    </label>
+                                                </h5>
+
                                                 <div className="ccm-input-wrapper">
 
                                                     {inner_input_icon}
 
 
 
-                                                    <input value={channelName}  spellCheck={false} onChange={(e) => setChannelName(e.currentTarget.value)} type="text" className="ccm-input-cn" placeholder="new-channel" />
+                                                    <input value={channelName} spellCheck={false} onChange={(e) => setChannelName(e.currentTarget.value)} type="text" className="ccm-input-cn" placeholder="new-channel" />
                                                 </div>
                                             </div>
 
@@ -297,7 +368,7 @@ const CreateChannelModal = (props) => {
                                                                 <input
                                                                     className="ccm-slider-input" type="checkbox"
                                                                     checked={selectPrivacy}
-                                                                    onChange={ () => setSelectPrivacy(!selectPrivacy)}
+                                                                    onChange={() => setSelectPrivacy(!selectPrivacy)}
                                                                     disabled
                                                                 />
                                                             </div>
@@ -316,7 +387,7 @@ const CreateChannelModal = (props) => {
                                         </div>
                                         <div className="ccm-submit-button-wrapper">
                                             <button type="submit" className="username-edit-submit-button">Create Channel</button>
-                                            <button type="submit" onClick={() => cancel = true} className="username-edit-cancel-button">Cancel</button>
+                                            <button type="submit" onClick={() => props.closeModal()} className="username-edit-cancel-button">Cancel</button>
                                         </div>
                                     </div>
                                 </div>
