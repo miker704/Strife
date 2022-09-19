@@ -4,7 +4,7 @@ import { fetchChannel, createChannel, updateChannel, deleteChannel, removeChanne
 import { fetchServer, fetchServers, removeServerErrors, deleteServer, updateServer } from "../../../actions/server_actions.js";
 import { createChannelMembership, deleteChannelMembership } from "../../../actions/channel_membership_actions.js";
 import { createServerMembership, deleteServerMembership } from "../../../actions/server_membership_actions.js";
-import { openModal } from "../../../actions/modal_actions.js";
+import { openModal, openModalWithProps } from "../../../actions/modal_actions.js";
 import ChannelDropDown from "./channel_drop_down.jsx";
 
 const mSTP = (state, ownProps) => {
@@ -52,6 +52,7 @@ const mDTP = (dispatch,ownProps) => {
 
         // modal api functions
         openModal: modal => dispatch(openModal(modal)),
+        openModalWithProps: (modal_with_props) => dispatch(openModalWithProps(modal_with_props))
     }
 }
 
