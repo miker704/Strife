@@ -1,15 +1,20 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { closeModal } from "../../actions/modal_actions";
+import { closeModal, openModalWithProps } from "../../actions/modal_actions";
 import ModalManager from "./modal_manager.jsx";
 
-const mSTP = (state) => {
+const mSTP = (state,ownProps) => {
     return {
-        modal: state.ui.modal
+        modal: state.ui.modal,
+        modalProps: state.ui.modalProps,
+
     }
 }
 const mDTP = (dispatch) => {
     return {
+        // openModalWithProps: (modal,modal_props) => dispatch(openModalWithProps(modal,modal_props)),
+        openModalWithProps: (modal_props) => dispatch(openModalWithProps(modal_props)),
+
         closeModal: ()=> dispatch(closeModal())
     }
 }
