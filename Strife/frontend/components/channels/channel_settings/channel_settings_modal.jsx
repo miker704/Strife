@@ -18,7 +18,7 @@ const ChannelSettingsModal = (props) => {
         }
         else {
             // setTimeout(() => {
-                window.addEventListener('keyup', props.handleESC, false);
+            window.addEventListener('keyup', props.handleESC, false);
             // }, 1000)
         }
 
@@ -80,12 +80,24 @@ const ChannelSettingsModal = (props) => {
 
 
     const renderChannelNameErrors = () => {
-        if (props.errors.includes('Only one channel in a server can have that name')) {
-            return 'A Channel of that name already exists in this server!';
+
+        let channelErrorMessagesArray = [
+            "Channel name can't be blank",
+            'Channel name Only one channel in a server can have that name'
+        ]
+
+        let channelErrorsResponse = {
+            0: " - Channel name can't be blank",
+            1: " - A channel with that name already exists in this server!"
         }
-        else {
-            return '';
+
+        for (let i = 0; i < channelErrorMessagesArray.length; i++) {
+            if (props.errors.includes(channelErrorMessagesArray[i])) {
+                return channelErrorsResponse[i];
+            }
         }
+        return "";
+        
     }
 
     const channelTypeName = () => {
@@ -98,7 +110,6 @@ const ChannelSettingsModal = (props) => {
     }
 
 
-    console.log("channel settings props: ", props)
     let channelNameErrorsTag = props.errors.length > 0 ? "server-error-lite" : "";
 
     return (
