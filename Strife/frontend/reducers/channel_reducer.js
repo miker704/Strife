@@ -15,6 +15,7 @@ const channelReducer = (state = {}, action) => {
 
         case RECEIVE_CHANNEL:
             nextState[action.channelPayload.channel.id] = action.channelPayload.channel;
+
             return nextState;
 
         case RECEIVE_CHANNEL_MEMBERSHIP:
