@@ -40,6 +40,6 @@ const mDTP = (dispatch, ownProps) => {
 }
 
 
-const ChannelNavBarContainer = withRouter(connect(mSTP, mDTP)(ChannelNavBar2));
+const ChannelNavBarContainer = withRouter(connect(mSTP, mDTP)(ChannelNavBar));
 
 export default ChannelNavBarContainer;
