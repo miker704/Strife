@@ -45,7 +45,7 @@ class Server < ApplicationRecord
 
     # ensure that with the creation of a new server there must be one channel called general
     def create_Default_Channel
-        general_channel = Channel.create(server_id: self.id, channel_name: "general")
+        general_channel = Channel.create(server_id: self.id, channel_name: "general", channel_type: 1)
        first_Channel_membership = ChannelMembership.create!(channel_id: general_channel.id, receiver_id: self.server_owner_id)
     end
 
