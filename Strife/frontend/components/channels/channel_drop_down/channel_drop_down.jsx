@@ -10,12 +10,8 @@ const ChannelDropDown = (props) => {
     closeHookModalOnOutsideClick(popUpRef, props.setShowPopUp);
     closeOnEsc(props.setShowPopUp);
 
-    const [showServerSettings, setShowServerSettings] = useState(false);
-    const [showChannelSettings, setShowChannelSettings] = useState(false);
-    const [showLeaveServer, setShowLeaveServer] = useState(false);
 
     const serverOwnerId = props.server.server_owner_id;
-    console.log('channel drop down props: ', props);
         return (
 
             <div className="channel-drop-down-layer">
