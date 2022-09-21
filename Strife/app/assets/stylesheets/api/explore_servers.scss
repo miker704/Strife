@@ -418,4 +418,412 @@
     font-weight: 500;
 }
 
+.guild-list {
+    forced-color-adjust: none;
+    outline: 0;
+    margin-top: 16px;
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(248px, 1fr));
+}
 
+.loaded-guilds {
+    position: relative;
+    forced-color-adjust: none;
+    outline: 0;
+}
+
+.guild-card {
+    forced-color-adjust: none;
+    outline: 0;
+    display: flex;
+    flex-direction: column;
+    height: 320px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+    transition: background .2s ease-out, opacity .2s ease-in, -webkit-box-shadow .2s ease-out, -webkit-transform .2s ease-out;
+    transition: box-shadow .2s ease-out, transform .2s ease-out, background .2s ease-out, opacity .2s ease-in;
+    transition: box-shadow .2s ease-out, transform .2s ease-out, background .2s ease-out, opacity .2s ease-in, -webkit-box-shadow .2s ease-out, -webkit-transform .2s ease-out;
+    cursor: pointer;
+    background-color: hsl(220, 6.8%, 17.3%);
+}
+
+.guild-card-splash {
+    forced-color-adjust: none;
+    outline: 0;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity .2s, -webkit-transform .2s ease-out;
+    transition: opacity .2s, transform .2s ease-out;
+    transition: opacity .2s, transform .2s ease-out, -webkit-transform .2s ease-out;
+    transform: scale(1);
+    opacity: 0;
+    opacity: 1;
+}
+
+.guild-card-splash-img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    forced-color-adjust: none;
+    outline: 0;
+
+}
+
+.action-buttons-layer {
+    display: none;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    right: 16px;
+    top: 128px;
+    forced-color-adjust: none;
+    outline: 0;
+}
+
+
+.guild-card:hover {
+    .action-buttons-layer {
+        display: flex;
+    }
+}
+
+.action-buttons-container {
+    forced-color-adjust: none;
+    outline: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.action-buttons-wrapper {
+    forced-color-adjust: none;
+    outline: 0;
+    background-color: hsl(220, 7.7%, 22.9%);
+    box-shadow: 0 0 0 1px hsla(240, 11.1%, 1.8%, 0.15);
+    display: grid;
+    grid-auto-flow: column;
+    box-sizing: border-box;
+    height: 32px;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: flex-start;
+    user-select: none;
+    transition: -webkit-box-shadow .1s ease-out;
+    transition: box-shadow .1s ease-out;
+    transition: box-shadow .1s ease-out, -webkit-box-shadow .1s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.action-button {
+    forced-color-adjust: none;
+    outline: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    padding: 4px;
+    min-width: 24px;
+    flex: 0 0 auto;
+    color: hsl(216, 3.7%, 73.5%);
+    cursor: pointer;
+    position: relative;
+}
+
+.action-button-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+    object-fit: contain;
+    forced-color-adjust: none;
+    outline: 0;
+}
+
+
+.guildIcon {
+    forced-color-adjust: none;
+    outline: 0;
+    position: absolute;
+    bottom: -21px;
+    left: 12px;
+}
+
+.guildIcon-img {
+    width: 48px;
+    height: 48px;
+    forced-color-adjust: none;
+    border-radius: 50%;
+}
+
+
+.guild-card-header {
+    forced-color-adjust: none;
+    outline: 0;
+    height: 143px;
+    position: relative;
+    display: block;
+    overflow: visible;
+    margin-bottom: 32px;
+}
+
+.guild-card-info {
+    forced-color-adjust: none;
+    outline: 0;
+    display: flex;
+    flex: 1 1 auto;
+    position: relative;
+    flex-direction: column;
+    align-content: stretch;
+    padding: 0 16px 16px;
+    overflow: hidden;
+
+}
+
+.guild-card-title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-weight: 600;
+    forced-color-adjust: none;
+    outline: 0;
+}
+
+.guild-card-star {
+    forced-color-adjust: none;
+    outline: 0;
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    margin-left: -2px;
+    width: 16px;
+    height: 16px;
+    color: hsl(139, 47.3%, 43.9%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+.guild-card-star-icon {
+    width: 100%;
+    forced-color-adjust: none;
+    height: 100%;
+}
+
+.guild-card-star-icon-2 {
+    width: 100%;
+    forced-color-adjust: none;
+    height: 100%;
+    color: #FFFFFF;
+}
+
+.guild-card-child-container {
+    forced-color-adjust: none;
+    outline: 0;
+    position: absolute;
+    top: -0.05px;
+    left: 0.05px;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.guild-card-h4-title {
+    forced-color-adjust: none;
+    outline: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    font-family: "ABC Ginto Normal";
+    font-size: 17px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+
+
+.guild-card-text {
+    forced-color-adjust: none;
+    outline: 0;
+    color: hsl(216, 3.7%, 73.5%);
+    flex: 1 1 auto;
+    overflow: hidden;
+    margin: 4px 0 16px;
+    font-family: "Whitney";
+    font-size: 14px;
+    line-height: 18px;
+}
+
+
+.guild-card-member-info {
+    forced-color-adjust: none;
+    outline: 0;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    font-family: "Whitney";
+
+}
+
+
+.guild-card-member-online-status {
+    forced-color-adjust: none;
+    outline: 0;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    margin-right: 4px;
+    flex-shrink: 0;
+    background-color: hsl(139, 47.3%, 43.9%);
+}
+
+.guild-card-member-offline-status {
+    forced-color-adjust: none;
+    outline: 0;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    margin-right: 4px;
+    flex-shrink: 0;
+    background-color: hsl(216, 3.7%, 73.5%);
+}
+
+.guild-card-member-count-txt {
+    forced-color-adjust: none;
+    outline: 0;
+    font-weight: 400;
+    color: hsl(216, 3.7%, 73.5%);
+    font-family: "Whitney";
+    font-size: 12px;
+    line-height: 16px;
+
+}
+
+
+.guild-card-member-count {
+    forced-color-adjust: none;
+    outline: 0;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+}
+
+
+.action-button-pop-up-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: var(--devtools-sidebar-width, 0);
+    bottom: 0;
+    background: none !important;
+    pointer-events: none;
+    z-index: 1002;
+    forced-color-adjust: none;
+    outline: 0;
+}
+
+.action-button-pop-up {
+    forced-color-adjust: none;
+    outline: 0;
+    position: absolute;
+    top: 285.966px;
+    right: 740px;
+    pointer-events: auto;
+}
+
+.action-button-pop-menu {
+    forced-color-adjust: none;
+    outline: 0;
+    min-width: 188px;
+    max-width: 320px;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    display: flex;
+    height: auto;
+    cursor: default;
+    max-height: calc(100vh - 32px);
+    box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.24);
+    background: hsl(225, 7.7%, 10.2%);
+    border-radius: 4px;
+}
+
+.action-button-scroller {
+    forced-color-adjust: none;
+    outline: 0;
+    overflow: hidden scroll;
+    padding-right: 0px;
+    padding: 6px 8px;
+    position: relative;
+    box-sizing: border-box;
+    min-height: 0;
+    flex: 1 1 auto;
+
+}
+
+.action-button-pop-up-item {
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 32px;
+    padding: 6px 8px;
+    position: relative;
+    margin: 2px 0;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    cursor: pointer;
+    border-color: hsl(216, 3.7%, 73.5%);
+    color: hsl(216, 3.7%, 73.5%);
+    font-family: "Whitney";
+
+}
+
+.action-button-pop-up-item:hover {
+    background-color: hsl(235, 46.7%, 44.1%);
+    color: hsl(0, 0%, 100%);
+}
+
+.action-button-strife-server-link {
+    forced-color-adjust: none;
+    outline: 0;
+    font-family: "Whitney";
+    flex: 1 1 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.action-button-pop-up-icon-wrapper {
+    forced-color-adjust: none;
+    outline: 0;
+    flex: 0 0 auto;
+    height: 18px;
+    width: 18px;
+    margin-left: 8px;
+}
+
+.action-button-pop-up-icon {
+    forced-color-adjust: none;
+    width: 18px;
+    height: 18px;
+}
