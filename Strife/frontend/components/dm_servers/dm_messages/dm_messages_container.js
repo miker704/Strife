@@ -4,15 +4,16 @@ import { fetchDmServer, fetchDmServers } from "../../../actions/dm_server_action
 import { createDmMessage } from "../../../actions/dm_messages_actions.js";
 import { selectDmMembers } from "../../../utils/selectors_api_util.js";
 import DmMessages from "./dm_messages.jsx";
+import DmMessages2 from "./dm_messages2.jsx";
+
 
 const mSTP = (state, ownProps) => {
-
 
     return {
         dmMessage: {
             body: "",
             sender_id: state.session.id,
-            dm_server_id: ownProps.match.params.dmServerId
+            dm_server_id: parseInt(ownProps.match.params.dmServerId)
         },
         DmMessages: Object.values(state.entities.dmMessages),
         currentUserId: state.session.id,
@@ -24,8 +25,8 @@ const mSTP = (state, ownProps) => {
         errors: state.errors.dmMessage,
         dmServerMembers: selectDmMembers(state,ownProps.match.params.dmServerId),
         dmServerErrors : state.errors.dmServer,
-        dmMembers: state.entities.users
-
+        dmMembers: state.entities.users,
+        dmServers : Object.values(state.entities.dmServers),
     }
 }
 
