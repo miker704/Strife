@@ -145,6 +145,7 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     after_initialize :ensure_strife_id_tag
     after_initialize :ensure_color_tag
+    after_create :create_Friendship_With_Bot
     # after_initialize :checkPhoto
     # SPIRE
 
@@ -194,7 +195,13 @@ class User < ApplicationRecord
     end
 
 
-    
+    def create_Friendship_With_Bot
+        if self.id != 1
+         Friendship.create!(friend_id: 1, user_id: self.id, friend_request_status: 3);
+         Friendship.create!(friend_id: self.id, user_id: 1, friend_request_status: 3);
+
+        end
+    end
 
 
 end
