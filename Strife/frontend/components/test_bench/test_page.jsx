@@ -117,1069 +117,273 @@ class TestPage extends React.Component {
         let passwordErrorTag = this.props.errors.length > 0 ? "field-error" : "";
 
 
-        let inner_input_icon;
-
-        if (this.state.selected_Option === 'TextChannel') {
-            if (this.state.private_Selected === false) {
-                inner_input_icon = (
-                    <svg width="16" height="16" viewBox="0 0 24 24" className="ccm-input-hash" aria-hidden="true" role="img">
-                        <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M5.88657 21C5.57547 21 5.3399 20.7189 
-                5.39427 20.4126L6.00001 17H2.59511C2.28449 17 2.04905 16.7198 2.10259 16.4138L2.27759 15.4138C2.31946 15.1746
-                2.52722 15 2.77011 15H6.35001L7.41001 9H4.00511C3.69449 9 3.45905 8.71977 3.51259 8.41381L3.68759 7.41381C3.72946
-                7.17456 3.93722 7 4.18011 7H7.76001L8.39677 3.41262C8.43914 3.17391 8.64664 3 8.88907 3H9.87344C10.1845
-                 3 10.4201 3.28107 10.3657 3.58738L9.76001 7H15.76L16.3968 3.41262C16.4391 3.17391 16.6466 3 16.8891
-                 3H17.8734C18.1845 3 18.4201 3.28107 18.3657 3.58738L17.76 7H21.1649C21.4755 7 21.711 7.28023 21.6574
-                    7.58619L21.4824 8.58619C21.4406 8.82544 21.2328 9 20.9899 9H17.41L16.35 15H19.7549C20.0655 15 20.301
-                    15.2802 20.2474 15.5862L20.0724 16.5862C20.0306 16.8254 19.8228 17 19.5799 17H16L15.3632 20.5874C15.3209
-                   20.8261 15.1134 21 14.8709 21H13.8866C13.5755 21 13.3399 20.7189 13.3943 20.4126L14 17H8.00001L7.36325 
-                    20.5874C7.32088 20.8261 7.11337 21 6.87094 21H5.88657ZM9.41045 9L8.35045 15H14.3504L15.4104 9H9.41045Z">
-                        </path>
-                    </svg>
-                )
-            }
-            else {
-                inner_input_icon = (
-                    <svg width="16" height="16" viewBox="0 0 24 24" className="ccm-input-hash-private">
-                        <path fill="currentColor" d="M14 8C14 7.44772 13.5523 7 13 7H9.76001L10.3657 3.58738C10.4201 
-                        3.28107 10.1845 3 9.87344 3H8.88907C8.64664 3 8.43914 3.17391 8.39677 3.41262L7.76001 7H4.18011C3.93722 
-                        7 3.72946 7.17456 3.68759 7.41381L3.51259 8.41381C3.45905 8.71977 3.69449 9 4.00511 9H7.41001L6.35001
-                         15H2.77011C2.52722 15 2.31946 15.1746 2.27759 15.4138L2.10259 16.4138C2.04905 16.7198 2.28449 17 
-                         2.59511 17H6.00001L5.39427 20.4126C5.3399 20.7189 5.57547 21 5.88657 21H6.87094C7.11337 21 7.32088
-                          20.8261 7.36325 20.5874L8.00001 17H14L13.3943 20.4126C13.3399 20.7189 13.5755 21 13.8866 21H14.8709C15.1134 21
-                           15.3209 20.8261 15.3632 20.5874L16 17H19.5799C19.8228 17 20.0306 16.8254 20.0724 16.5862L20.2474
-                            15.5862C20.301 15.2802 20.0655 15 19.7549 15H16.35L16.6758 13.1558C16.7823 12.5529 16.3186 12 15.7063 
-                            12C15.2286 12 14.8199 12.3429 14.7368 12.8133L14.3504 15H8.35045L9.41045 9H13C13.5523 9 14 8.55228 14 8Z">
-                        </path>
-                        <path fill="currentColor" d="M21.025 5V4C21.025 2.88 20.05 2 19 2C17.95 2 17 2.88 17 4V5C16.4477 5 
-                                16 5.44772 16 6V9C16 9.55228 16.4477 10 17 10H19H21C21.5523 10 22 9.55228 22 9V5.975C22 5.43652 21.5635
-                                 5 21.025 5ZM20 5H18V4C18 3.42857 18.4667 3 19 3C19.5333 3 20 3.42857 20 4V5Z">
-                        </path>
-                    </svg>
-                );
-            }
-        }
-        else if (this.state.selected_Option === 'VoiceChannel') {
-            if (this.state.private_Selected === false) {
-                inner_input_icon = (
-                    <svg className="ccm-input-ls" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
-                        <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M11.383 3.07904C11.009 2.92504 10.579 3.01004
-                         10.293 3.29604L6 8.00204H3C2.45 8.00204 2 8.45304 2 9.00204V15.002C2 15.552 2.45 16.002 3 16.002H6L10.293
-                          20.71C10.579 20.996 11.009 21.082 11.383 20.927C11.757 20.772 12 20.407 12 20.002V4.00204C12 3.59904
-                           11.757 3.23204 11.383 3.07904ZM14 5.00195V7.00195C16.757 7.00195 19 9.24595 19 12.002C19 14.759 16.757 
-                           17.002 14 17.002V19.002C17.86 19.002 21 15.863 21 12.002C21 8.14295 17.86 5.00195 14 5.00195ZM14 9.00195C15.654 
-                           9.00195 17 10.349 17 12.002C17 13.657 15.654 15.002 14 15.002V13.002C14.551 13.002 15 12.553 15 12.002C15 11.451
-                            14.551 11.002 14 11.002V9.00195Z" aria-hidden="true">
-                        </path>
-                    </svg>
-                )
-
-            }
-            else {
-                inner_input_icon = (
-                    <svg width="16" height="16" viewBox="0 0 24 24" className="ccm-input-ls-private">
-                        <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M15 12C15 12.0007 15 
-                                12.0013 15 12.002C15 12.553 14.551 13.002 14 13.002V15.002C15.654 15.002 17 13.657 17 12.002C17
-                                 12.0013 17 12.0007 17 12H15ZM19 12C19 12.0007 19 12.0013 19 12.002C19 14.759 16.757 17.002 14 
-                                 17.002V19.002C17.86 19.002 21 15.863 21 12.002C21 12.0013 21 12.0007 21 12H19ZM10.293 3.29604C10.579
-                                  3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23204 12 3.59904 12 4.00204V20.002C12 20.407 11.757 20.772
-                                   11.383 20.927C11.009 21.082 10.579 20.996 10.293 20.71L6 16.002H3C2.45 16.002 2 15.552 2 15.002V9.00204C2
-                                    8.45304 2.45 8.00204 3 8.00204H6L10.293 3.29604Z">
-                        </path>
-                        <path fill="currentColor" d="M21.025 5V4C21.025 2.88 20.05 2 19 2C17.95 2 17 2.88 17 4V5C16.4477 5 16 5.44772 16 6V9C16
-                         9.55228 16.4477 10 17 10H19H21C21.5523 10 22 9.55228 22 9V5.975C22 5.43652 21.5635 5 21.025 5ZM20 5H18V4C18 3.42857 
-                         18.4667 3 19 3C19.5333 3 20 3.42857 20 4V5Z">
-                        </path>
-                    </svg>
-                );
-            }
-        }
-
-
-        let slider_status = this.state.private_Selected === false ?
-            (
-                <svg className={`ccm-priv-slider`} viewBox="0 0 28 20" preserveAspectRatio="xMinYMid meet" style={{ left: "-3px" }}>
-                    <rect fill="white" x="4" y="0" height="20" width="20" rx="10"></rect>
-                    <svg viewBox="0 0 20 20" fill="none">
-                        <path fill="hsl(218, calc(var(--saturation-factor, 1) * 4.6%), 46.9%)" d="M5.13231 6.72963L6.7233
-                            5.13864L14.855 13.2704L13.264 14.8614L5.13231 6.72963Z">
-                        </path>
-                        <path fill="hsl(218, calc(var(--saturation-factor, 1) * 4.6%), 46.9%)" d="M13.2704 5.13864L14.8614
-                            6.72963L6.72963 14.8614L5.13864 13.2704L13.2704 5.13864Z">
-                        </path>
-                    </svg>
-                </svg>
-
-            ) :
-            (
-                <svg className="ccm-priv-slider" viewBox="0 0 28 20" preserveAspectRatio="xMinYMid meet" style={{ left: "12px" }}>
-                    <rect fill="white" x="4" y="0" height="20" width="20" rx="10"></rect>
-                    <svg viewBox="0 0 20 20" fill="none">
-                        <path fill="hsl(139, calc(var(--saturation-factor, 1) * 47.3%), 43.9%)"
-                            d="M7.89561 14.8538L6.30462 13.2629L14.3099 5.25755L15.9009 6.84854L7.89561 14.8538Z">
-                        </path>
-                        <path fill="hsl(139, calc(var(--saturation-factor, 1) * 47.3%), 43.9%)"
-                            d="M4.08643 11.0903L5.67742 9.49929L9.4485 13.2704L7.85751 14.8614L4.08643 11.0903Z">
-                        </path>
-                    </svg>
-                </svg>
-
-            );
-
-        console.log("test bench props : ", this.props);
-                console.log("server ", this.props.server);
-
-
-
-
-
-
-
-
-        let channels = {
-            "4": {
-
-                "id": 4,
-                "channel_name": "general",
-                "server_id": 3,
-                "channel_type": '1',
-                'channel_cat_name': 'text'
-
-            },
-            "14": {
-
-                "id": 14,
-                "channel_name": "Ayce's Circle",
-                "server_id": 3,
-                "channel_type": '1',
-                'channel_cat_name': 'text'
-
-            },
-            "1": {
-
-                "id": 1,
-                "channel_name": "school help",
-                "server_id": 3,
-                "channel_type": '2',
-                'channel_cat_name': 'school'
-
-            },
-            "2": {
-
-                "id": 2,
-                "channel_name": "AYCE CHAT",
-                "server_id": 3,
-                "channel_type": '2',
-                'channel_cat_name': 'voice'
-
-            },
-            "3": {
-
-                "id": 3,
-                "channel_name": "code help",
-                "server_id": 3,
-                "channel_type": '2',
-                'channel_cat_name': 'coding'
-
-            },
-            "5": {
-
-                "id": 5,
-                "channel_name": "coding",
-                "server_id": 3,
-                "channel_type": '1',
-                'channel_cat_name': 'coding'
-
-            },
-            "6": {
-
-                "id": 6,
-                "channel_name": "school",
-                "server_id": 3,
-                "channel_type": '1',
-                'channel_cat_name': 'school'
-
-            },
-            "7": {
-
-                "id": 7,
-                "channel_name": "text me",
-                "server_id": 3,
-                "channel_type": '1',
-                'channel_cat_name': 'text'
-
-            },
-            "8": {
-
-                "id": 8,
-                "channel_name": "group chat",
-                "server_id": 3,
-                "channel_type": '2',
-                'channel_cat_name': 'voice'
-
-            },
-            "9": {
-
-                "id": 9,
-                "channel_name": "general",
-                "server_id": 3,
-                "channel_type": '2',
-                'channel_cat_name': 'game chat'
-
-            },
-            "10": {
-
-                "id": 10,
-                "channel_name": "text",
-                "server_id": 3,
-                "channel_type": '1',
-                'channel_cat_name': 'default'
-
-            },
-
-        }
-
-
-        let cat_channels = [
-            [
-                "school",
-                [
-                    {
-                        "id": 1,
-                        "channel_name": "school help",
-                        "server_id": 3,
-                        "channel_type": "2",
-                        "channel_cat_name": "school"
-                    },
-                    {
-                        "id": 6,
-                        "channel_name": "school",
-                        "server_id": 3,
-                        "channel_type": "1",
-                        "channel_cat_name": "school"
-                    }
-                ]
-            ],
-            [
-                "voice",
-                [
-                    {
-                        "id": 2,
-                        "channel_name": "AYCE CHAT",
-                        "server_id": 3,
-                        "channel_type": "2",
-                        "channel_cat_name": "voice"
-                    },
-                    {
-                        "id": 8,
-                        "channel_name": "group chat",
-                        "server_id": 3,
-                        "channel_type": "2",
-                        "channel_cat_name": "voice"
-                    }
-                ]
-            ],
-            [
-                "coding",
-                [
-                    {
-                        "id": 3,
-                        "channel_name": "code help",
-                        "server_id": 3,
-                        "channel_type": "2",
-                        "channel_cat_name": "coding"
-                    },
-                    {
-                        "id": 5,
-                        "channel_name": "coding",
-                        "server_id": 3,
-                        "channel_type": "1",
-                        "channel_cat_name": "coding"
-                    }
-                ]
-            ],
-            [
-                "text",
-                [
-                    {
-                        "id": 4,
-                        "channel_name": "general",
-                        "server_id": 3,
-                        "channel_type": "1",
-                        "channel_cat_name": "text"
-                    },
-                    {
-                        "id": 7,
-                        "channel_name": "text me",
-                        "server_id": 3,
-                        "channel_type": "1",
-                        "channel_cat_name": "text"
-                    },
-                    {
-                        "id": 14,
-                        "channel_name": "Ayce's Circle",
-                        "server_id": 3,
-                        "channel_type": "1",
-                        "channel_cat_name": "text"
-                    }
-                ]
-            ],
-            [
-                "game chat",
-                [
-                    {
-                        "id": 9,
-                        "channel_name": "general",
-                        "server_id": 3,
-                        "channel_type": "2",
-                        "channel_cat_name": "game chat"
-                    }
-                ]
-            ],
-            [
-                "default",
-                [
-                    {
-                        "id": 10,
-                        "channel_name": "text",
-                        "server_id": 3,
-                        "channel_type": "1",
-                        "channel_cat_name": "default"
-                    }
-                ]
-            ]
-        ]
-
-        let voice_icon = <div className="def-channel-icon-container" >
-            <svg className="icon-speaker" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
-                <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M11.383 3.07904C11.009 2.92504 10.579 
-        3.01004 10.293 3.29604L6 8.00204H3C2.45 8.00204 2 8.45304 2 9.00204V15.002C2 15.552 2.45 16.002 3 16.002H6L10.293 
-        20.71C10.579 20.996 11.009 21.082 11.383 20.927C11.757 20.772 12 20.407 12 20.002V4.00204C12 3.59904 11.757 
-        3.23204 11.383 3.07904ZM14 5.00195V7.00195C16.757 7.00195 19 9.24595 19 12.002C19 14.759 16.757 17.002 14 
-        17.002V19.002C17.86 19.002 21 15.863 21 12.002C21 8.14295 17.86 5.00195 14 5.00195ZM14 9.00195C15.654 9.00195 
-        17 10.349 17 12.002C17 13.657 15.654 15.002 14 15.002V13.002C14.551 13.002 15 12.553 15 12.002C15 11.451 
-        14.551 11.002 14 11.002V9.00195Z" aria-hidden="true">
-                </path>
-            </svg>
-
-        </div>
-
-
-        let chat_icon = <div className="def-channel-icon-container">
-            <svg width="24" height="24" viewBox="0 0 24 24" className="icon-2W8DHg" aria-hidden="true" role="img">
-                <path fill="currentColor" fillRule="evenodd"
-                    clipRule="evenodd" d="M5.88657 21C5.57547 21 5.3399 20.7189 5.39427 20.4126L6.00001
-        17H2.59511C2.28449 17 2.04905 16.7198 2.10259 16.4138L2.27759 15.4138C2.31946 15.1746
-        2.52722 15 2.77011 15H6.35001L7.41001 9H4.00511C3.69449 9 3.45905 8.71977 3.51259 
-        8.41381L3.68759 7.41381C3.72946 7.17456 3.93722 7 4.18011 7H7.76001L8.39677 3.41262C8.43914
-        3.17391 8.64664 3 8.88907 3H9.87344C10.1845 3 10.4201 3.28107 10.3657 3.58738L9.76001
-        7H15.76L16.3968 3.41262C16.4391 3.17391 16.6466 3 16.8891 3H17.8734C18.1845 3 18.4201
-        3.28107 18.3657 3.58738L17.76 7H21.1649C21.4755 7 21.711 7.28023 21.6574 7.58619L21.4824
-        8.58619C21.4406 8.82544 21.2328 9 20.9899 9H17.41L16.35 15H19.7549C20.0655 15 20.301 15.2802
-        20.2474 15.5862L20.0724 16.5862C20.0306 16.8254 19.8228 17 19.5799 17H16L15.3632 20.5874C15.3209 20.8261
-        15.1134 21 14.8709 21H13.8866C13.5755 21 13.3399 20.7189 13.3943 20.4126L14 17H8.00001L7.36325
-        20.5874C7.32088 20.8261 7.11337 21 6.87094 21H5.88657ZM9.41045 9L8.35045 15H14.3504L15.4104
-        9H9.41045Z">
-                </path>
-            </svg>
-        </div>
-
-
-
-        let channels_Array = Object.values(channels);
-        console.log("channels type: ", typeof channels);
-        console.log("channels content");
-        console.table(channels);
-        console.log("channels to array : ", channels_Array);
-        console.log("channels to array : ", typeof channels_Array);
-
-        let channel_nav_bar_content = this.selectChannelTypes(channels_Array);
-
-        console.log("channel_nav_bar_content: ");
-        console.log(channel_nav_bar_content);
-        console.table(channel_nav_bar_content);
-        console.log("channel_nav type: ", typeof channel_nav_bar_content)
-
-        let channel_nav_bar_content_array = Object.entries(channel_nav_bar_content);
-        console.log("channel_nav_bar_contnet array  = : ", channel_nav_bar_content_array);
-        console.table(channel_nav_bar_content_array);
-
-        channel_nav_bar_content_array.map((channelCat, idx) => {
-            console.log("channel catergory: ", channelCat[0]);
-            channelCat[1].map((channel, channelidx) => {
-                console.log("channel name: ", channel);
-                console.log("channel name: ", channel.channel_name);
-
-            })
-        })
-
-
-        // return (
-
-
-        //     <div className="channel-nav-bar">
-        //         <div className="channel-nav-bar-container-wrapper">
-        //             <div className="channel-nav-bar-top-container">
-        //                 <div className="channel-nav-bar-top-container-header">
-        //                     <div className="channel-nav-bar-header-content">
-        //                         <h1 className="channel-nav-bar-h1">
-        //                             server name
-        //                         </h1>
-        //                         <div className="channel-nav-bar-top-button">
-
-        //                         </div>
-        //                         <div className="channel-nav-chevron" >
-        //                             <svg width="18" height="18" className="icon-chevron" >
-        //                                 <g fill="none" fillRule="evenodd">
-        //                                     <path d="M0 0h18v18H0"></path>
-        //                                     <path stroke="currentColor" d="M4.5 4.5l9 9" strokeLinecap="round"></path>
-        //                                     <path stroke="currentColor" d="M13.5 4.5l-9 9" strokeLinecap="round"></path>
-        //                                 </g>
-        //                             </svg>
-        //                         </div>
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //             <div className="channel-nav-sep"><div></div></div>
-        //             <div className="channel-post-container">
-        //                 <div className="channel-unread">
-        //                     <div className="channel-unread-top">
-        //                         <span className="channel-unread-text"></span>
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //             <div className="channel-nav-scroller">
-        //                 {
-        //                     channel_nav_bar_content_array.map((channel_category, category_idx) => {
-
-
-
-        //                         return (
-
-
-
-        //                             <ul className="ul-channels">
-
-        //                                 <li className="channel-li-item-cat" key={category_idx}>
-        //                                     <div className="channel-li-icon">
-        //                                         <div className="main-channel-content">
-        //                                             <svg className="channel-icon-arrow" width="24" height="24" viewBox="0 0 24 24">
-        //                                                 <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M16.59 8.59004L12 13.17L7.41
-        //                                          8.59004L6 10L12 16L18 10L16.59 8.59004Z">
-        //                                                 </path>
-        //                                             </svg>
-        //                                             <h2 className="main-channel-content-h2">
-        //                                                 <div className="main-channel-h2">{channel_category[0]}</div>
-        //                                             </h2>
-        //                                         </div>
-        //                                         <div className="channel-plus-div" >
-        //                                             <button type="button" className="add-channel-button">
-        //                                                 <div className="add-channel-button-inner">
-        //                                                     <svg className="addButtonIcon" aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 18 18">
-        //                                                         <polygon fillRule="nonzero" fill="currentColor"
-        //                                                             points="15 10 10 10 10 15 8 15 8 10 3 10 3 8 8 8 8 3 10 3 10 8 15 8">
-        //                                                         </polygon>
-        //                                                     </svg>
-        //                                                 </div>
-        //                                             </button>
-
-        //                                         </div>
-        //                                     </div>
-        //                                 </li>
-        //                                 {channel_category[1].map((channel, channelidx) => {
-        //                                     console.log("channel name: ", channel);
-        //                                     let icon = channel.channel_type === '1' ? chat_icon : voice_icon;
-
-        //                                     return (
-        //                                         <li className="default-channel-item" key={channel.id}>
-        //                                             <div className="def-channel-wrap">
-        //                                                 <div className="def-channel-content">
-        //                                                     <Link to={`/testing/`} className="def-channel-a">
-        //                                                         {icon}
-        //                                                         <div className="default-channel-name-cont">
-        //                                                             <div className="default-channel-name">
-        //                                                                 {channel.channel_name}
-        //                                                             </div>
-        //                                                         </div>
-        //                                                     </Link>
-        //                                                     <div className="child-buttons">
-        //                                                         <div className="create-channel-invite-icon-wrapper" >
-        //                                                             <svg className="create-channel-invite-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
-        //                                                                 <path fill="currentColor" d="M14 2H16V3H14V5H13V3H11V2H13V0H14V2Z"></path>
-        //                                                                 <path fill="currentColor" d="M6.5 8.00667C7.88 8.00667 9 6.88667 9 5.50667C9 4.12667 7.88 3.00667 6.5 
-        //                                             3.00667C5.12 3.00667 4 4.12667 4 5.50667C4 6.88667 5.12 8.00667 6.5 8.00667Z">
-
-        //                                                                 </path>
-        //                                                                 <path fill="currentColor" d="M6.5 8.34C3.26 8.34 1 9.98666 1 12.34V13.0067H12V12.34C12 9.98 9.74 8.34 6.5 8.34Z">
-        //                                                                 </path>
-        //                                                             </svg>
-
-        //                                                         </div>
-        //                                                         <div className="channel-settings-wrapper" >
-        //                                                             <svg className="channel-gear-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
-        //                                                                 <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M14 7V9C14 9 12.5867 9 12.5733 
-        //                                         9.00667C12.42 9.58667 12.1733 10.1267 11.84 10.6067L12.74 11.5067L11.4933 12.7533L10.5933 11.8533C10.1133
-        //                                          12.1867 9.57334 12.44 8.99334 12.5867V14H6.99334V12.58C6.41334 12.4333 5.87334 12.18 5.39334 11.8467L4.49333 
-        //                                          12.7467L3.24667 11.5L4.14667 10.6C3.81333 10.1267 3.56 9.58 3.41333 9H2V7H3.41333C3.56 6.42 3.81333 5.88 4.14667
-        //                                           5.4L3.24667 4.5L4.5 3.24667L5.4 4.14667C5.87334 3.81333 6.42 3.56 7 3.41333V2H9V3.41333C9.58 3.56667 10.12 
-        //                                           3.81333 10.6 4.14667L11.5067 3.25333L12.7533 4.5L11.8533 5.4C12.1867 5.87334 12.44 6.42 12.5867 7H14ZM8
-        //                                            10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10Z">
-        //                                                                 </path>
-        //                                                             </svg>
-
-        //                                                         </div>
-        //                                                         <div className="channel-info-sep"></div>
-        //                                                     </div>
-        //                                                 </div>
-        //                                             </div>
-        //                                         </li>
-
-        //                                     )
-
-
-
-
-        //                                 })}
-
-
-
-
-        //                             </ul>
-        //                         )
-
-
-        //                     })
-        //                 }
-        //                 {/* <ul className="ul-channels">
-
-        //                     <li className="channel-li-item-cat">
-        //                         <div className="channel-li-icon">
-        //                             <div className="main-channel-content">
-        //                                 <svg className="channel-icon-arrow" width="24" height="24" viewBox="0 0 24 24">
-        //                                     <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M16.59 8.59004L12 13.17L7.41
-        //                                      8.59004L6 10L12 16L18 10L16.59 8.59004Z">
-        //                                     </path>
-        //                                 </svg>
-        //                                 <h2 className="main-channel-content-h2">
-        //                                     <div className="main-channel-h2">Text Channels</div>
-        //                                 </h2>
-        //                             </div>
-        //                             <div className="channel-plus-div" >
-        //                                 <button type="button" className="add-channel-button">
-        //                                     <div className="add-channel-button-inner">
-        //                                         <svg className="addButtonIcon" aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 18 18">
-        //                                             <polygon fillRule="nonzero" fill="currentColor"
-        //                                                 points="15 10 10 10 10 15 8 15 8 10 3 10 3 8 8 8 8 3 10 3 10 8 15 8">
-        //                                             </polygon>
-        //                                         </svg>
-        //                                     </div>
-        //                                 </button>
-
-        //                             </div>
-        //                         </div>
-        //                     </li>
-
-        //                     <li className="default-channel-item">
-        //                         <div className="def-channel-wrap">
-        //                             <div className="def-channel-content">
-        //                                 <Link to={`/testing/`} className="def-channel-a">
-        //                                     <div className="def-channel-icon-container">
-        //                                         <svg width="24" height="24" viewBox="0 0 24 24" className="icon-2W8DHg" aria-hidden="true" role="img">
-        //                                             <path fill="currentColor" fillRule="evenodd"
-        //                                                 clipRule="evenodd" d="M5.88657 21C5.57547 21 5.3399 20.7189 5.39427 20.4126L6.00001
-        //                                          17H2.59511C2.28449 17 2.04905 16.7198 2.10259 16.4138L2.27759 15.4138C2.31946 15.1746
-        //                                           2.52722 15 2.77011 15H6.35001L7.41001 9H4.00511C3.69449 9 3.45905 8.71977 3.51259 
-        //                                           8.41381L3.68759 7.41381C3.72946 7.17456 3.93722 7 4.18011 7H7.76001L8.39677 3.41262C8.43914
-        //                                            3.17391 8.64664 3 8.88907 3H9.87344C10.1845 3 10.4201 3.28107 10.3657 3.58738L9.76001
-        //                                             7H15.76L16.3968 3.41262C16.4391 3.17391 16.6466 3 16.8891 3H17.8734C18.1845 3 18.4201
-        //                                              3.28107 18.3657 3.58738L17.76 7H21.1649C21.4755 7 21.711 7.28023 21.6574 7.58619L21.4824
-        //                                               8.58619C21.4406 8.82544 21.2328 9 20.9899 9H17.41L16.35 15H19.7549C20.0655 15 20.301 15.2802
-        //                                                20.2474 15.5862L20.0724 16.5862C20.0306 16.8254 19.8228 17 19.5799 17H16L15.3632 20.5874C15.3209 20.8261
-        //                                                 15.1134 21 14.8709 21H13.8866C13.5755 21 13.3399 20.7189 13.3943 20.4126L14 17H8.00001L7.36325
-        //                                                  20.5874C7.32088 20.8261 7.11337 21 6.87094 21H5.88657ZM9.41045 9L8.35045 15H14.3504L15.4104
-        //                                                   9H9.41045Z">
-        //                                             </path>
-        //                                         </svg>
-        //                                     </div>
-        //                                     <div className="default-channel-name-cont">
-        //                                         <div className="default-channel-name">
-        //                                             insert channel name here
-        //                                         </div>
-        //                                     </div>
-        //                                 </Link>
-        //                                 <div className="child-buttons">
-        //                                     <div className="create-channel-invite-icon-wrapper" >
-        //                                         <svg className="create-channel-invite-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
-        //                                             <path fill="currentColor" d="M14 2H16V3H14V5H13V3H11V2H13V0H14V2Z"></path>
-        //                                             <path fill="currentColor" d="M6.5 8.00667C7.88 8.00667 9 6.88667 9 5.50667C9 4.12667 7.88 3.00667 6.5 
-        //                                             3.00667C5.12 3.00667 4 4.12667 4 5.50667C4 6.88667 5.12 8.00667 6.5 8.00667Z">
-
-        //                                             </path>
-        //                                             <path fill="currentColor" d="M6.5 8.34C3.26 8.34 1 9.98666 1 12.34V13.0067H12V12.34C12 9.98 9.74 8.34 6.5 8.34Z">
-        //                                             </path>
-        //                                         </svg>
-
-        //                                     </div>
-        //                                     <div className="channel-settings-wrapper" >
-        //                                         <svg className="channel-gear-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
-        //                                             <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M14 7V9C14 9 12.5867 9 12.5733 
-        //                                         9.00667C12.42 9.58667 12.1733 10.1267 11.84 10.6067L12.74 11.5067L11.4933 12.7533L10.5933 11.8533C10.1133
-        //                                          12.1867 9.57334 12.44 8.99334 12.5867V14H6.99334V12.58C6.41334 12.4333 5.87334 12.18 5.39334 11.8467L4.49333 
-        //                                          12.7467L3.24667 11.5L4.14667 10.6C3.81333 10.1267 3.56 9.58 3.41333 9H2V7H3.41333C3.56 6.42 3.81333 5.88 4.14667
-        //                                           5.4L3.24667 4.5L4.5 3.24667L5.4 4.14667C5.87334 3.81333 6.42 3.56 7 3.41333V2H9V3.41333C9.58 3.56667 10.12 
-        //                                           3.81333 10.6 4.14667L11.5067 3.25333L12.7533 4.5L11.8533 5.4C12.1867 5.87334 12.44 6.42 12.5867 7H14ZM8
-        //                                            10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10Z">
-        //                                             </path>
-        //                                         </svg>
-
-        //                                     </div>
-        //                                     <div className="channel-info-sep"></div>
-        //                                 </div>
-        //                             </div>
-        //                         </div>
-        //                     </li>
-
-        //                     <li className="channel-li-item-cat">
-        //                         <div className="channel-li-icon">
-        //                             <div className="main-channel-content">
-        //                                 <svg className="channel-icon-arrow" width="24" height="24" viewBox="0 0 24 24">
-        //                                     <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M16.59 8.59004L12 13.17L7.41
-        //                                      8.59004L6 10L12 16L18 10L16.59 8.59004Z">
-        //                                     </path>
-        //                                 </svg>
-        //                                 <h2 className="main-channel-content-h2">
-        //                                     <div className="main-channel-h2">Voice Channels</div>
-        //                                 </h2>
-        //                             </div>
-        //                             <div className="channel-plus-div" >
-        //                                 <button type="button" className="add-channel-button">
-        //                                     <div className="add-channel-button-inner">
-        //                                         <svg className="addButtonIcon" aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 18 18">
-        //                                             <polygon fillRule="nonzero" fill="currentColor"
-        //                                                 points="15 10 10 10 10 15 8 15 8 10 3 10 3 8 8 8 8 3 10 3 10 8 15 8">
-        //                                             </polygon>
-        //                                         </svg>
-
-
-        //                                     </div>
-        //                                 </button>
-        //                             </div>
-        //                         </div>
-        //                     </li>
-        //                     <li className="default-channel-item">
-        //                         <div className="def-channel-wrap">
-        //                             <div className="def-channel-content">
-        //                                 <Link to={`/tetsing/`} className="def-channel-a">
-        //                                     <div className="def-channel-icon-container" >
-        //                                         <svg className="icon-speaker" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
-        //                                             <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M11.383 3.07904C11.009 2.92504 10.579 
-        //                                     3.01004 10.293 3.29604L6 8.00204H3C2.45 8.00204 2 8.45304 2 9.00204V15.002C2 15.552 2.45 16.002 3 16.002H6L10.293 
-        //                                     20.71C10.579 20.996 11.009 21.082 11.383 20.927C11.757 20.772 12 20.407 12 20.002V4.00204C12 3.59904 11.757 
-        //                                     3.23204 11.383 3.07904ZM14 5.00195V7.00195C16.757 7.00195 19 9.24595 19 12.002C19 14.759 16.757 17.002 14 
-        //                                     17.002V19.002C17.86 19.002 21 15.863 21 12.002C21 8.14295 17.86 5.00195 14 5.00195ZM14 9.00195C15.654 9.00195 
-        //                                     17 10.349 17 12.002C17 13.657 15.654 15.002 14 15.002V13.002C14.551 13.002 15 12.553 15 12.002C15 11.451 
-        //                                     14.551 11.002 14 11.002V9.00195Z" aria-hidden="true">
-        //                                             </path>
-        //                                         </svg>
-
-        //                                     </div>
-        //                                     <div className="default-channel-name-cont">
-        //                                         <div className="default-channel-name">
-        //                                             insert channel name here
-        //                                         </div>
-        //                                     </div>
-        //                                 </Link>
-        //                                 <div className="child-buttons">
-
-        //                                     <div className="create-channel-invite-icon-wrapper" >
-        //                                         <svg className="open-chat-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24" fill="none">
-        //                                             <path fill="currentColor" d="M4.79805 3C3.80445 3 2.99805 3.8055 2.99805 4.8V15.6C2.99805 16.5936 3.80445 
-        //                                     17.4 4.79805 17.4H7.49805V21L11.098 17.4H19.198C20.1925 17.4 20.998 16.5936 20.998 15.6V4.8C20.998 3.8055 
-        //                                     20.1925 3 19.198 3H4.79805Z">
-        //                                             </path>
-        //                                         </svg>
-
-        //                                     </div>
-        //                                     <div className="create-channel-invite-icon-wrapper" >
-
-        //                                         <svg className="create-channel-invite-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
-        //                                             <path fill="currentColor" d="M14 2H16V3H14V5H13V3H11V2H13V0H14V2Z"></path>
-        //                                             <path fill="currentColor" d="M6.5 8.00667C7.88 8.00667 9 6.88667 9 5.50667C9 4.12667 7.88 3.00667 6.5 
-        //                                             3.00667C5.12 3.00667 4 4.12667 4 5.50667C4 6.88667 5.12 8.00667 6.5 8.00667Z">
-
-        //                                             </path>
-        //                                             <path fill="currentColor" d="M6.5 8.34C3.26 8.34 1 9.98666 1 12.34V13.0067H12V12.34C12 9.98 9.74 8.34 6.5 8.34Z">
-        //                                             </path>
-        //                                         </svg>
-
-        //                                     </div>
-        //                                     <div className="channel-settings-wrapper" >
-        //                                         <svg className="channel-gear-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
-        //                                             <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M14 7V9C14 9 12.5867 9 12.5733 
-        //                                         9.00667C12.42 9.58667 12.1733 10.1267 11.84 10.6067L12.74 11.5067L11.4933 12.7533L10.5933 11.8533C10.1133
-        //                                          12.1867 9.57334 12.44 8.99334 12.5867V14H6.99334V12.58C6.41334 12.4333 5.87334 12.18 5.39334 11.8467L4.49333 
-        //                                          12.7467L3.24667 11.5L4.14667 10.6C3.81333 10.1267 3.56 9.58 3.41333 9H2V7H3.41333C3.56 6.42 3.81333 5.88 4.14667
-        //                                           5.4L3.24667 4.5L4.5 3.24667L5.4 4.14667C5.87334 3.81333 6.42 3.56 7 3.41333V2H9V3.41333C9.58 3.56667 10.12 
-        //                                           3.81333 10.6 4.14667L11.5067 3.25333L12.7533 4.5L11.8533 5.4C12.1867 5.87334 12.44 6.42 12.5867 7H14ZM8
-        //                                            10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10Z">
-        //                                             </path>
-        //                                         </svg>
-
-        //                                     </div>
-        //                                     <div className="channel-info-sep"></div>
-        //                                 </div>
-        //                             </div>
-        //                         </div>
-        //                     </li>
-
-        //                 </ul> */}
-        //             </div>
-        //         </div>
-
-
-        //     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // )
-
-
 
         return (
 
 
-            <div className="channel-nav-bar">
-                <div className="channel-nav-bar-container-wrapper">
-                    <div className="channel-nav-bar-top-container">
-                        <div className="channel-nav-bar-top-container-header">
-                            <div className="channel-nav-bar-header-content">
-                                <h1 className="channel-nav-bar-h1">
-                                    {/* {this.props.server.server_name} */}
-                                </h1>
-                                <div className="channel-nav-bar-top-button">
-
-                                </div>
-                                <div className="channel-nav-chevron" >
-                                    <svg width="18" height="18" className="icon-chevron" >
-                                        <g fill="none" fillRule="evenodd">
-                                            <path d="M0 0h18v18H0"></path>
-                                            <path stroke="currentColor" d="M4.5 4.5l9 9" strokeLinecap="round"></path>
-                                            <path stroke="currentColor" d="M13.5 4.5l-9 9" strokeLinecap="round"></path>
-                                        </g>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="channel-nav-sep"><div></div></div>
-                    <div className="channel-post-container">
-                        <div className="channel-unread">
-                            <div className="channel-unread-top">
-                                <span className="channel-unread-text"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="channel-nav-scroller">
-                        {
-                            channel_nav_bar_content_array.map((channel_category, category_idx) => {
-
-
-
-                                return (
-
-
-
-                                    <ul className="ul-channels">
-
-                                        <li className="channel-li-item-cat" key={category_idx}>
-                                            <div className="channel-li-icon">
-                                                <div className="main-channel-content">
-                                                    <svg className="channel-icon-arrow" width="24" height="24" viewBox="0 0 24 24">
-                                                        <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M16.59 8.59004L12 13.17L7.41
-                                                 8.59004L6 10L12 16L18 10L16.59 8.59004Z">
-                                                        </path>
-                                                    </svg>
-                                                    <h2 className="main-channel-content-h2">
-                                                        <div className="main-channel-h2">{channel_category[0]}</div>
-                                                    </h2>
+            <div className="empty-messages-container">
+                <div className="explore-server-base">
+                    <div className="explore-server-content">
+                        <div className="explore-server-sidebar">
+                            <div className="explore-server-sidebar-scroll-base">
+                                <h2 className="exsbar-def-header-h2">Discover</h2>
+                                <div className="explore-bar-item-cat selected-choice">
+                                    <div className="explore-bar-item-cat-inner">
+                                        <div className="explore-bar-item-cat-avatar">
+                                            <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                                <path fill="currentColor" d="M12 10.9C11.39 10.9 10.9 11.39 10.9 12C10.9 12.61 11.39 13.1 12 
+                                            13.1C12.61 13.1 13.1 12.61 13.1 12C13.1 11.39 12.61 10.9 12 10.9ZM12 2C6.48 2 2 6.48 2 12C2 
+                                            17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM14.19 14.19L6 18L9.81 9.81L18 6L14.19 14.19Z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div className="explore-bar-item-cat-content">
+                                            <div className="explore-bar-item-cat-nameAndDecos">
+                                                <div className="explore-bar-item-cat-nameAndDecos-wrap">
+                                                    Home
                                                 </div>
-                                                <div className="channel-plus-div" >
-                                                    <button type="button" className="add-channel-button">
-                                                        <div className="add-channel-button-inner">
-                                                            <svg className="addButtonIcon" aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 18 18">
-                                                                <polygon fillRule="nonzero" fill="currentColor"
-                                                                    points="15 10 10 10 10 15 8 15 8 10 3 10 3 8 8 8 8 3 10 3 10 8 15 8">
-                                                                </polygon>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="explore-bar-item-cat">
+                                    <div className="explore-bar-item-cat-inner">
+                                        <div className="explore-bar-item-cat-avatar">
+                                            <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                                <g fill="none" fillRule="evenodd">
+                                                    <path fill="currentColor" d="M5.79335761,5 L18.2066424,5 C19.7805584,5 21.0868816,6.21634264
+                                                 21.1990185,7.78625885 L21.8575059,17.0050826 C21.9307825,18.0309548 21.1585512,18.9219909 
+                                                 20.132679,18.9952675 C20.088523,18.9984215 20.0442685,19 20,19 C18.8245863,19 17.8000084,
+                                                 18.2000338 17.5149287,17.059715 L17,15 L7,15 L6.48507125,17.059715 C6.19999155,18.2000338 
+                                                 5.1754137,19 4,19 C2.97151413,19 2.13776159,18.1662475 2.13776159,17.1377616 C2.13776159,
+                                                 17.0934931 2.1393401,17.0492386 2.1424941,17.0050826 L2.80098151,7.78625885 C2.91311838,
+                                                 6.21634264 4.21944161,5 5.79335761,5 Z M14.5,10 C15.3284271,10 16,9.32842712 16,8.5 
+                                                 C16,7.67157288 15.3284271,7 14.5,7 C13.6715729,7 13,7.67157288 13,8.5 C13,9.32842712 
+                                                 13.6715729,10 14.5,10 Z M18.5,13 C19.3284271,13 20,12.3284271 20,11.5 C20,10.6715729 
+                                                 19.3284271,10 18.5,10 C17.6715729,10 17,10.6715729 17,11.5 C17,12.3284271 17.6715729,
+                                                 13 18.5,13 Z M6,9 L4,9 L4,11 L6,11 L6,13 L8,13 L8,11 L10,11 L10,9 L8,9 L8,7 L6,7 L6,9 Z">
+                                                    </path>
+                                                    <rect width="24" height="24"></rect>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <div className="explore-bar-item-cat-content">
+                                            <div className="explore-bar-item-cat-nameAndDecos">
+                                                <div className="explore-bar-item-cat-nameAndDecos-wrap">
+                                                    Gaming
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="explore-bar-item-cat">
+                                    <div className="explore-bar-item-cat-inner">
+                                        <div className="explore-bar-item-cat-avatar">
+                                            <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                                <path fill="currentColor" d="M19.396 3.29898C19.016 3.01598 18.524 2.93098 
+                                                18.07 3.06498L8.07 6.06498C7.435 6.25498 7 6.83998 7 7.50298V15.054C6.835
+                                                15.03 6.671 15.003 6.5 15.003C4.566 15.003 3 16.571 3 18.503C3 20.434 
+                                                4.566 22.003 6.5 22.003C8.434 22.003 10 20.434 10 18.503V8.61798L17
+                                                6.51798V13.054C16.835 13.03 16.671 13.003 16.5 13.003C14.566 13.003 
+                                                13 14.571 13 16.503C13 18.434 14.566 20.003 16.5 20.003C18.434 20.003
+                                                20 18.434 20 16.503V4.50298C20 4.02698 19.775 3.58198 19.396 3.29898Z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div className="explore-bar-item-cat-content">
+                                            <div className="explore-bar-item-cat-nameAndDecos">
+                                                <div className="explore-bar-item-cat-nameAndDecos-wrap">
+                                                    Music
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="explore-bar-item-cat">
+                                    <div className="explore-bar-item-cat-inner">
+                                        <div className="explore-bar-item-cat-avatar">
+                                            <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                                <path fill="currentColor" fillRule="evenodd" clipRule="evenodd"
+                                                    d="M22.447 8.11002L12.447 3.11002C12.166 2.96902 11.834 2.96902 11.552 
+                                                3.11002L1.552 8.11002C1.35 8.21002 1.197 8.38402 1.107 8.57302C1.046 8.69502
+                                                1 8.90202 1 9.00502V14.77C1 15.322 1.448 15.77 2 15.77C2.552 15.77 3 15.322
+                                                3 14.77V10.172L12.015 13.927L22.372 9.93302C22.737 9.78602 22.983 9.44002
+                                                22.999 9.04602C23.016 8.65202 22.799 8.28702 22.447 8.11002ZM12 
+                                                16.005C11.869 16.005 11.738 15.979 11.615 15.928L5 13.172V16.185C5 
+                                                16.564 5.214 16.91 5.553 17.08C5.7173 17.1621 5.88209 17.2461 6.04836 
+                                                17.3308C7.61773 18.1306 9.31996 18.998 12 18.998C14.6812 18.998 16.3872 18.1284 
+                                                17.956 17.3287C18.1208 17.2447 18.2842 17.1614 18.447 17.08C18.786 16.911 19 16.564 
+                                                19 16.186V13.385L12.359 15.939C12.243 15.982 12.122 16.005 12 16.005ZM1 18.005C1 
+                                                17.453 1.448 17.005 2 17.005C2.552 17.005 3 17.453 3 18.005V20.005C3 20.557
+                                                2.552 21.005 2 21.005C1.448 21.005 1 20.557 1 20.005V18.005Z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div className="explore-bar-item-cat-content">
+                                            <div className="explore-bar-item-cat-nameAndDecos">
+                                                <div className="explore-bar-item-cat-nameAndDecos-wrap">
+                                                    Education
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="explore-bar-item-cat">
+                                    <div className="explore-bar-item-cat-inner">
+                                        <div className="explore-bar-item-cat-avatar">
+                                            <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                                <path fill="currentColor" fillRule="evenodd" clipRule="evenodd"
+                                                    d="M18.6683 11.9964C19.5992 13.2208 20.3732 14.4331 20.9422 15.5701C22.5858 
+                                                    18.8593 22.0118 20.4688 21.2418 21.2398C20.895 21.5846 20.2596 21.9978 19.1951
+                                                    21.9978C17.3645 21.9978 14.7478 20.7553 12.0004 18.6683C9.25198 20.7553 6.63527
+                                                    21.9978 4.80569 21.9978C3.74111 21.9978 3.10478 21.5846 2.75896 21.2398C1.98792
+                                                    20.4677 1.41392 18.8593 3.05853 15.5701C3.62751 14.4331 4.40257 13.2218 5.33245
+                                                    11.9964C2.51569 8.28291 1.00176 4.51719 2.75896 2.75898C3.10578 2.41316 3.74111
+                                                    2 4.80569 2C6.63628 2 9.25298 3.24251 12.0004 5.32944C14.7488 3.24251 17.3655
+                                                    2 19.1951 2C20.2596 2 20.895 2.41216 21.2418 2.75898C22.999 4.51618 21.4851
+                                                    8.28191 18.6683 11.9964ZM19.8203 4.18042C19.6806 4.03969 19.4032 4.01053
+                                                    19.1951 4.01053C18.0481 4.01053 15.9933 4.9203 13.6209 6.64835C15.0262 
+                                                    7.86472 16.2346 9.08512 17.3655 10.395C19.752 7.13188 20.3541 4.71422 
+                                                    19.8203 4.18042ZM14.1325 14.1316C14.8654 13.3987 15.5108 12.689 16.0928 
+                                                    12.0024C15.4876 11.2856 14.8342 10.5689 14.1325 9.86621C13.4128 9.14744 12.701 
+                                                    8.51312 12.0004 7.92202C11.2997 8.51312 10.588 9.14744 9.86821 9.86621C9.16653 
+                                                    0.5689 8.51311 11.2856 7.90794 12.0024C8.48999 12.689 9.13637 13.3987 9.86821 
+                                                    14.1316C10.588 14.8513 11.2997 15.4856 12.0004 16.0747C12.701 15.4856 13.4128 
+                                                    14.8513 14.1325 14.1316ZM4.80569 4.01053C4.5986 4.01053 4.32115 4.03969 4.18142 
+                                                    4.18042C3.64661 4.71422 4.24977 7.13088 6.63628 10.394C7.83556 9.00469 9.05696 
+                                                    7.79435 10.3799 6.64735C8.00645 4.9203 5.95269 4.01053 4.80569 4.01053ZM4.18041 
+                                                    19.8183C4.32014 19.9581 4.5976 19.9872 4.80569 19.9872C5.95269 19.9872 8.00746 
+                                                    19.0785 10.3799 17.3514C8.98357 16.1421 7.7873 14.9348 6.6413 13.6078C5.92053 
+                                                    14.593 5.31133 15.56 4.85695 16.4688C3.79539 18.5909 3.9502 19.5881 4.18041 
+                                                    19.8183ZM19.1941 19.9872C19.4021 19.9872 19.6796 19.9581 19.8193 19.8183C20.0495
+                                                    19.5881 20.2044 18.5919 19.1428 16.4688C18.6884 15.559 18.0792 14.592 17.3584
+                                                    13.6078C16.2114 14.9358 15.0152 16.1431 13.6199 17.3514C15.9933 19.0785 18.0471 
+                                                    19.9872 19.1941 19.9872ZM14.0109 11.9984C14.0109 13.1088 13.1108 14.0089 12.0004 
+                                                    14.0089C10.89 14.0089 9.98984 13.1088 9.98984 11.9984C9.98984 10.888 10.89 9.98784 
+                                                    12.0004 9.98784C13.1108 9.98784 14.0109 10.888 14.0109 11.9984Z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div className="explore-bar-item-cat-content">
+                                            <div className="explore-bar-item-cat-nameAndDecos">
+                                                <div className="explore-bar-item-cat-nameAndDecos-wrap">
+                                                    Science & Tech
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="explore-bar-item-cat">
+                                    <div className="explore-bar-item-cat-inner">
+                                        <div className="explore-bar-item-cat-avatar">
+                                            <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                                <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M16.781
+                                                  2.27293L14.081 5.7126H9.919L7.219 2.27293L8.781 1L12 5.10008L15.219 1L16.781
+                                                  2.27293ZM4 6.73175H20C21.1 6.73175 22 7.649 22 8.77007V18.9617C22 20.0828 
+                                                  21.1 21 20 21H4C2.9 21 2 20.0828 2 18.9617V8.77007C2 7.649 2.9 6.73175 4 
+                                                  6.73175ZM4 18.9617H16V8.77007H4V18.9617ZM18 16.4138C18 16.9764 18.448 17.4329 
+                                                  19 17.4329C19.552 17.4329 20 16.9764 20 16.4138C20 15.8512 19.552 15.3946 19 
+                                                  15.3946C18.448 15.3946 18 15.8512 18 16.4138ZM18 11.318C18 11.8806 18.448 12.3371
+                                                  19 12.3371C19.552 12.3371 20 11.8806 20 11.318C20 10.7554 19.552 10.2988 19 
+                                                  10.2988C18.448 10.2988 18 10.7554 18 11.318Z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div className="explore-bar-item-cat-content">
+                                            <div className="explore-bar-item-cat-nameAndDecos">
+                                                <div className="explore-bar-item-cat-nameAndDecos-wrap">
+                                                    Entertainment
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="explore-bar-item-cat">
+                                    <div className="explore-bar-item-cat-inner">
+                                        <div className="explore-bar-item-cat-avatar">
+                                            <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path fillRule="evenodd" clipRule="evenodd" d="M13.25 18L13.25 6L11.75 6L11.75 18L13.25 18Z" fill="currentColor"></path>
+                                                <path fillRule="evenodd" clipRule="evenodd" d="M7 12.75C6.30964 12.75 5.75 13.3096 5.75 14V18H4.25V14C4.25 12.4812 5.48122
+                                                    11.25 7 11.25H18C19.5188 11.25 20.75 12.4812 20.75 14V18H19.25V14C19.25 13.3096 18.6904 12.75 18 12.75H7Z" fill="currentColor">
+                                                </path>
+                                                <path d="M12.5 7C11.1193 7 10 5.88071 10 4.5C10 3.11929 11.1193 2 12.5 2C13.8807 2 15 3.11929 15 4.5C15 5.88071 13.8807 7 12.5 7Z"
+                                                    fill="currentColor">
+                                                </path>
+                                                <path d="M20 22C18.6193 22 17.5 20.8807 17.5 19.5C17.5 18.1193 18.6193 17 20 17C21.3807 17 22.5 18.1193 22.5 19.5C22.5 20.8807
+                                                    21.3807 22 20 22Z" fill="currentColor">
+                                                </path>
+                                                <path d="M12.5 22C11.1193 22 10 20.8807 10 19.5C10 18.1193 11.1193 17 12.5 17C13.8807 17 15 18.1193 15 19.5C15 20.8807 13.8807
+                                                    22 12.5 22Z" fill="currentColor">
+                                                </path>
+                                                <path d="M5 22C3.61929 22 2.5 20.8807 2.5 19.5C2.5 18.1193 3.61929 17 5 17C6.38071
+                                                    17 7.5 18.1193 7.5 19.5C7.5 20.8807 6.38071 22 5 22Z" fill="currentColor">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div className="explore-bar-item-cat-content">
+                                            <div className="explore-bar-item-cat-nameAndDecos">
+                                                <div className="explore-bar-item-cat-nameAndDecos-wrap">
+                                                    Student Hubs
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div className="explore-server-page-wrapper">
+                            <div className="exs-drag-region"></div>
+                            <div className="exs-main-content-scroller-base">
+                                <div className="exs-view-wrapper">
+                                    <div className="exs-searchHeader">
+                                        <img className="exs-searchImg" alt="exsimg" />
+                                        <div className="exs-header-content-wrapper">
+                                            <div className="exs-header-content">
+                                                <h3 className="exs-search-title">Find Your Community on STRIFE</h3>
+                                                <div className="exs-search-subtitle">
+                                                    From gaming, to music, to learning, there's a place for you.
+                                                </div>
+                                                <div className="exs-search-content">
+                                                    <div className="exs-search">
+                                                        <div className="exs-search-box">
+                                                            <div className="exs-search-input-wrapper">
+                                                                <input className="exs-search-input" type="search" />
+                                                            </div>
+                                                            <svg className="exs-search-icon"
+                                                                aria-label="Search" aria-hidden="false" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                                                <path fill="currentColor" d="M21.707 20.293L16.314 14.9C17.403 13.504 18 11.799 18 10C18 
+                                                                7.863 17.167 5.854 15.656 4.344C14.146 2.832 12.137 2 10 2C7.863 2 5.854 2.832 4.344 4.344C2.833 
+                                                                5.854 2 7.863 2 10C2 12.137 2.833 14.146 4.344 15.656C5.854 17.168 7.863 18 10 18C11.799 18 
+                                                                13.504 17.404 14.9 16.314L20.293 21.706L21.707 20.293ZM10 16C8.397 16 6.891 15.376 5.758 
+                                                                14.243C4.624 13.11 4 11.603 4 10C4 8.398 4.624 6.891 5.758 5.758C6.891 4.624 8.397 4 10 
+                                                                4C11.603 4 13.109 4.624 14.242 5.758C15.376 6.891 16 8.398 16 10C16 11.603 15.376 13.11 14.242 
+                                                                14.243C13.109 15.376 11.603 16 10 16Z">
+                                                                </path>
                                                             </svg>
                                                         </div>
-                                                    </button>
 
-                                                </div>
-                                            </div>
-                                        </li>
-                                        {channel_category[1].map((channel, channelidx) => {
-                                            console.log("channel name: ", channel);
-                                            let icon = channel.channel_type === '1' ? chat_icon : voice_icon;
-
-                                            return (
-                                                <li className="default-channel-item" key={channel.id}>
-                                                    <div className="def-channel-wrap">
-                                                        <div className="def-channel-content">
-                                                            <Link to={`/testing/`} className="def-channel-a">
-                                                                {icon}
-                                                                <div className="default-channel-name-cont">
-                                                                    <div className="default-channel-name">
-                                                                        {channel.channel_name}
-                                                                    </div>
-                                                                </div>
-                                                            </Link>
-                                                            <div className="child-buttons">
-                                                                <div className="create-channel-invite-icon-wrapper" >
-                                                                    <svg className="create-channel-invite-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
-                                                                        <path fill="currentColor" d="M14 2H16V3H14V5H13V3H11V2H13V0H14V2Z"></path>
-                                                                        <path fill="currentColor" d="M6.5 8.00667C7.88 8.00667 9 6.88667 9 5.50667C9 4.12667 7.88 3.00667 6.5 
-                                                    3.00667C5.12 3.00667 4 4.12667 4 5.50667C4 6.88667 5.12 8.00667 6.5 8.00667Z">
-
-                                                                        </path>
-                                                                        <path fill="currentColor" d="M6.5 8.34C3.26 8.34 1 9.98666 1 12.34V13.0067H12V12.34C12 9.98 9.74 8.34 6.5 8.34Z">
-                                                                        </path>
-                                                                    </svg>
-
-                                                                </div>
-                                                                <div className="channel-settings-wrapper" >
-                                                                    <svg className="channel-gear-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
-                                                                        <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M14 7V9C14 9 12.5867 9 12.5733 
-                                                9.00667C12.42 9.58667 12.1733 10.1267 11.84 10.6067L12.74 11.5067L11.4933 12.7533L10.5933 11.8533C10.1133
-                                                 12.1867 9.57334 12.44 8.99334 12.5867V14H6.99334V12.58C6.41334 12.4333 5.87334 12.18 5.39334 11.8467L4.49333 
-                                                 12.7467L3.24667 11.5L4.14667 10.6C3.81333 10.1267 3.56 9.58 3.41333 9H2V7H3.41333C3.56 6.42 3.81333 5.88 4.14667
-                                                  5.4L3.24667 4.5L4.5 3.24667L5.4 4.14667C5.87334 3.81333 6.42 3.56 7 3.41333V2H9V3.41333C9.58 3.56667 10.12 
-                                                  3.81333 10.6 4.14667L11.5067 3.25333L12.7533 4.5L11.8533 5.4C12.1867 5.87334 12.44 6.42 12.5867 7H14ZM8
-                                                   10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10Z">
-                                                                        </path>
-                                                                    </svg>
-
-                                                                </div>
-                                                                <div className="channel-info-sep"></div>
-                                                            </div>
-                                                        </div>
                                                     </div>
-                                                </li>
 
-                                            )
-
-
-
-
-                                        })}
-
-
-
-
-                                    </ul>
-                                )
-
-
-                            })
-                        }
-                        {/* <ul className="ul-channels">
-
-                            <li className="channel-li-item-cat">
-                                <div className="channel-li-icon">
-                                    <div className="main-channel-content">
-                                        <svg className="channel-icon-arrow" width="24" height="24" viewBox="0 0 24 24">
-                                            <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M16.59 8.59004L12 13.17L7.41
-                                             8.59004L6 10L12 16L18 10L16.59 8.59004Z">
-                                            </path>
-                                        </svg>
-                                        <h2 className="main-channel-content-h2">
-                                            <div className="main-channel-h2">Text Channels</div>
-                                        </h2>
-                                    </div>
-                                    <div className="channel-plus-div" >
-                                        <button type="button" className="add-channel-button">
-                                            <div className="add-channel-button-inner">
-                                                <svg className="addButtonIcon" aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 18 18">
-                                                    <polygon fillRule="nonzero" fill="currentColor"
-                                                        points="15 10 10 10 10 15 8 15 8 10 3 10 3 8 8 8 8 3 10 3 10 8 15 8">
-                                                    </polygon>
-                                                </svg>
-                                            </div>
-                                        </button>
-
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li className="default-channel-item">
-                                <div className="def-channel-wrap">
-                                    <div className="def-channel-content">
-                                        <Link to={`/testing/`} className="def-channel-a">
-                                            <div className="def-channel-icon-container">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" className="icon-2W8DHg" aria-hidden="true" role="img">
-                                                    <path fill="currentColor" fillRule="evenodd"
-                                                        clipRule="evenodd" d="M5.88657 21C5.57547 21 5.3399 20.7189 5.39427 20.4126L6.00001
-                                                 17H2.59511C2.28449 17 2.04905 16.7198 2.10259 16.4138L2.27759 15.4138C2.31946 15.1746
-                                                  2.52722 15 2.77011 15H6.35001L7.41001 9H4.00511C3.69449 9 3.45905 8.71977 3.51259 
-                                                  8.41381L3.68759 7.41381C3.72946 7.17456 3.93722 7 4.18011 7H7.76001L8.39677 3.41262C8.43914
-                                                   3.17391 8.64664 3 8.88907 3H9.87344C10.1845 3 10.4201 3.28107 10.3657 3.58738L9.76001
-                                                    7H15.76L16.3968 3.41262C16.4391 3.17391 16.6466 3 16.8891 3H17.8734C18.1845 3 18.4201
-                                                     3.28107 18.3657 3.58738L17.76 7H21.1649C21.4755 7 21.711 7.28023 21.6574 7.58619L21.4824
-                                                      8.58619C21.4406 8.82544 21.2328 9 20.9899 9H17.41L16.35 15H19.7549C20.0655 15 20.301 15.2802
-                                                       20.2474 15.5862L20.0724 16.5862C20.0306 16.8254 19.8228 17 19.5799 17H16L15.3632 20.5874C15.3209 20.8261
-                                                        15.1134 21 14.8709 21H13.8866C13.5755 21 13.3399 20.7189 13.3943 20.4126L14 17H8.00001L7.36325
-                                                         20.5874C7.32088 20.8261 7.11337 21 6.87094 21H5.88657ZM9.41045 9L8.35045 15H14.3504L15.4104
-                                                          9H9.41045Z">
-                                                    </path>
-                                                </svg>
-                                            </div>
-                                            <div className="default-channel-name-cont">
-                                                <div className="default-channel-name">
-                                                    insert channel name here
                                                 </div>
-                                            </div>
-                                        </Link>
-                                        <div className="child-buttons">
-                                            <div className="create-channel-invite-icon-wrapper" >
-                                                <svg className="create-channel-invite-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
-                                                    <path fill="currentColor" d="M14 2H16V3H14V5H13V3H11V2H13V0H14V2Z"></path>
-                                                    <path fill="currentColor" d="M6.5 8.00667C7.88 8.00667 9 6.88667 9 5.50667C9 4.12667 7.88 3.00667 6.5 
-                                                    3.00667C5.12 3.00667 4 4.12667 4 5.50667C4 6.88667 5.12 8.00667 6.5 8.00667Z">
-
-                                                    </path>
-                                                    <path fill="currentColor" d="M6.5 8.34C3.26 8.34 1 9.98666 1 12.34V13.0067H12V12.34C12 9.98 9.74 8.34 6.5 8.34Z">
-                                                    </path>
-                                                </svg>
 
                                             </div>
-                                            <div className="channel-settings-wrapper" >
-                                                <svg className="channel-gear-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
-                                                    <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M14 7V9C14 9 12.5867 9 12.5733 
-                                                9.00667C12.42 9.58667 12.1733 10.1267 11.84 10.6067L12.74 11.5067L11.4933 12.7533L10.5933 11.8533C10.1133
-                                                 12.1867 9.57334 12.44 8.99334 12.5867V14H6.99334V12.58C6.41334 12.4333 5.87334 12.18 5.39334 11.8467L4.49333 
-                                                 12.7467L3.24667 11.5L4.14667 10.6C3.81333 10.1267 3.56 9.58 3.41333 9H2V7H3.41333C3.56 6.42 3.81333 5.88 4.14667
-                                                  5.4L3.24667 4.5L4.5 3.24667L5.4 4.14667C5.87334 3.81333 6.42 3.56 7 3.41333V2H9V3.41333C9.58 3.56667 10.12 
-                                                  3.81333 10.6 4.14667L11.5067 3.25333L12.7533 4.5L11.8533 5.4C12.1867 5.87334 12.44 6.42 12.5867 7H14ZM8
-                                                   10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10Z">
-                                                    </path>
-                                                </svg>
-
-                                            </div>
-                                            <div className="channel-info-sep"></div>
                                         </div>
+
+                                    </div>
+                                    <div>
+                                        <section className="guildListSection">
+                                                <h3 className="gls-h3">Featured communities</h3>
+                                        </section>
                                     </div>
                                 </div>
-                            </li>
-
-                            <li className="channel-li-item-cat">
-                                <div className="channel-li-icon">
-                                    <div className="main-channel-content">
-                                        <svg className="channel-icon-arrow" width="24" height="24" viewBox="0 0 24 24">
-                                            <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M16.59 8.59004L12 13.17L7.41
-                                             8.59004L6 10L12 16L18 10L16.59 8.59004Z">
-                                            </path>
-                                        </svg>
-                                        <h2 className="main-channel-content-h2">
-                                            <div className="main-channel-h2">Voice Channels</div>
-                                        </h2>
-                                    </div>
-                                    <div className="channel-plus-div" >
-                                        <button type="button" className="add-channel-button">
-                                            <div className="add-channel-button-inner">
-                                                <svg className="addButtonIcon" aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 18 18">
-                                                    <polygon fillRule="nonzero" fill="currentColor"
-                                                        points="15 10 10 10 10 15 8 15 8 10 3 10 3 8 8 8 8 3 10 3 10 8 15 8">
-                                                    </polygon>
-                                                </svg>
-
-
-                                            </div>
-                                        </button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="default-channel-item">
-                                <div className="def-channel-wrap">
-                                    <div className="def-channel-content">
-                                        <Link to={`/tetsing/`} className="def-channel-a">
-                                            <div className="def-channel-icon-container" >
-                                                <svg className="icon-speaker" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
-                                                    <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M11.383 3.07904C11.009 2.92504 10.579 
-                                            3.01004 10.293 3.29604L6 8.00204H3C2.45 8.00204 2 8.45304 2 9.00204V15.002C2 15.552 2.45 16.002 3 16.002H6L10.293 
-                                            20.71C10.579 20.996 11.009 21.082 11.383 20.927C11.757 20.772 12 20.407 12 20.002V4.00204C12 3.59904 11.757 
-                                            3.23204 11.383 3.07904ZM14 5.00195V7.00195C16.757 7.00195 19 9.24595 19 12.002C19 14.759 16.757 17.002 14 
-                                            17.002V19.002C17.86 19.002 21 15.863 21 12.002C21 8.14295 17.86 5.00195 14 5.00195ZM14 9.00195C15.654 9.00195 
-                                            17 10.349 17 12.002C17 13.657 15.654 15.002 14 15.002V13.002C14.551 13.002 15 12.553 15 12.002C15 11.451 
-                                            14.551 11.002 14 11.002V9.00195Z" aria-hidden="true">
-                                                    </path>
-                                                </svg>
-
-                                            </div>
-                                            <div className="default-channel-name-cont">
-                                                <div className="default-channel-name">
-                                                    insert channel name here
-                                                </div>
-                                            </div>
-                                        </Link>
-                                        <div className="child-buttons">
-
-                                            <div className="create-channel-invite-icon-wrapper" >
-                                                <svg className="open-chat-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                                    <path fill="currentColor" d="M4.79805 3C3.80445 3 2.99805 3.8055 2.99805 4.8V15.6C2.99805 16.5936 3.80445 
-                                            17.4 4.79805 17.4H7.49805V21L11.098 17.4H19.198C20.1925 17.4 20.998 16.5936 20.998 15.6V4.8C20.998 3.8055 
-                                            20.1925 3 19.198 3H4.79805Z">
-                                                    </path>
-                                                </svg>
-
-                                            </div>
-                                            <div className="create-channel-invite-icon-wrapper" >
-
-                                                <svg className="create-channel-invite-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
-                                                    <path fill="currentColor" d="M14 2H16V3H14V5H13V3H11V2H13V0H14V2Z"></path>
-                                                    <path fill="currentColor" d="M6.5 8.00667C7.88 8.00667 9 6.88667 9 5.50667C9 4.12667 7.88 3.00667 6.5 
-                                                    3.00667C5.12 3.00667 4 4.12667 4 5.50667C4 6.88667 5.12 8.00667 6.5 8.00667Z">
-
-                                                    </path>
-                                                    <path fill="currentColor" d="M6.5 8.34C3.26 8.34 1 9.98666 1 12.34V13.0067H12V12.34C12 9.98 9.74 8.34 6.5 8.34Z">
-                                                    </path>
-                                                </svg>
-
-                                            </div>
-                                            <div className="channel-settings-wrapper" >
-                                                <svg className="channel-gear-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
-                                                    <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M14 7V9C14 9 12.5867 9 12.5733 
-                                                9.00667C12.42 9.58667 12.1733 10.1267 11.84 10.6067L12.74 11.5067L11.4933 12.7533L10.5933 11.8533C10.1133
-                                                 12.1867 9.57334 12.44 8.99334 12.5867V14H6.99334V12.58C6.41334 12.4333 5.87334 12.18 5.39334 11.8467L4.49333 
-                                                 12.7467L3.24667 11.5L4.14667 10.6C3.81333 10.1267 3.56 9.58 3.41333 9H2V7H3.41333C3.56 6.42 3.81333 5.88 4.14667
-                                                  5.4L3.24667 4.5L4.5 3.24667L5.4 4.14667C5.87334 3.81333 6.42 3.56 7 3.41333V2H9V3.41333C9.58 3.56667 10.12 
-                                                  3.81333 10.6 4.14667L11.5067 3.25333L12.7533 4.5L11.8533 5.4C12.1867 5.87334 12.44 6.42 12.5867 7H14ZM8
-                                                   10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10Z">
-                                                    </path>
-                                                </svg>
-
-                                            </div>
-                                            <div className="channel-info-sep"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-
-                        </ul> */}
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-
             </div>
-
-
         )
 
 
