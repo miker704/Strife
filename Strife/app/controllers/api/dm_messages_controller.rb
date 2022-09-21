@@ -5,8 +5,11 @@ class Api::DmMessagesController < ApplicationController
     @dm_server = DmServer.find_by(id: @dm_message[:dm_server_id])
     if @dm_message.save
         #import actioncable
-        DmChannel.brodcast_to(@dm_server,@dm_message)
-        render :show
+        DmChannel.broadcast_to(@dm_server,@dm_message)
+      # DmChannel.broadcast_to @dm_server.id, from_template('api/dm_messages/show', DmMessage: @dm_message)
+      render :show
+
+        # render :show
     else
       render json: @dm_message.errors.full_messages, status: 400
     end
@@ -17,8 +20,8 @@ class Api::DmMessagesController < ApplicationController
     @dm_server = DmServer.find_by(id: @dm_message[:dm_server_id])
 
       if @dm_message.update(dm_message_params)
-        DmChannel.brodcast_to(@dm_server,@dm_message)
-        render: show
+        DmChannel.broadcast_to(@dm_server,@dm_message)
+        render :show
       else
         render json: @dm_message.errors.full_messages, status: 400
         # 422
@@ -30,7 +33,8 @@ class Api::DmMessagesController < ApplicationController
     @dm_server = DmServer.find_by(id: @dm_message[:dm_server_id])
 
     if @dm_message.destroy
-      DmChannel.brodcast_to(@dm_server,@dm_message)
+      DmChannel.broadcast_to(@dm_server,@dm_message)
+      
         render :show
     else
         render json: @dm_message.errors.full_messages, status: 400
