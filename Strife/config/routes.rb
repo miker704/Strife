@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   end
 
 
- 
+  mount ActionCable.server => "/cable"
 
   root to: 'static_pages#root'
 
