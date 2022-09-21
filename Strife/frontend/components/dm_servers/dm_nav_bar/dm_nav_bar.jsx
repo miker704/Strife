@@ -113,7 +113,7 @@ class DmNavBar extends React.Component {
 
 
         return <div className='friend-info'>
-            <img src={group_Chat_Photo} alt="pfp" className={`user-icon color-${dmServerPFP.color_tag}`} />
+            <img src={group_Chat_Photo} alt="pfp" className={`user-icon color-${dmServerPFP.color_tag === 7 ? 8 : dmServerPFP.color_tag}`} />
         </div>
 
 
