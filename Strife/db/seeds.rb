@@ -19,14 +19,17 @@ DmMessage.destroy_all
 
 
 #Strife Bot - mr.wumpus
+
 mr_Wumpus = User.create!(
     username: 'Mr.Wumpus',
     email: 'wumbo@strife.com',
     birthday: Date.new(1996,02,25),
     password: 'wumboing',
-    color_tag: 6,
-    strife_id_tag:0001
+    color_tag: 10,
+    strife_id_tag:0001,
+    online: true
 )
+mr_Wumpus.photo.attach(io: File.open('app/assets/images/discord_Strife_logo.png'), filename:'discord_Strife_logo.png')
 
 # demo user 1
 demouser1=User.create!(
@@ -35,7 +38,7 @@ demouser1=User.create!(
     birthday: Date.new(1996,02,25),
     password: 'qwerty1234',
 )
-
+demouser1.photo.attach(io: File.open('app/assets/images/loading.gif'), filename: 'loading.gif')
 # demo user 2
 demouser2=User.create!(
     username: 'DemoUser2',
@@ -188,16 +191,20 @@ dm_membership_4 = DmMember.create!( dm_server_id: dm_server_2.id, dm_member_id: 
 dm_membership_5 = DmMember.create!( dm_server_id: dm_server_3.id, dm_member_id: demouser1.id )
 dm_membership_6 = DmMember.create!( dm_server_id: dm_server_3.id, dm_member_id: ayce.id )
 
+
+DmMessage.create!(dm_server_id: dm_server_1.id, sender_id: mr_Wumpus.id, body:"This is the beginning of your direct message history with" )
 DmMessage.create!(dm_server_id: dm_server_1.id, sender_id: demouser2.id, body:"You should apply to App Academy. You would be a great software engineer." )
 DmMessage.create!(dm_server_id: dm_server_1.id, sender_id: demouser1.id, body:"Will do. Thanks for the advice and motivation." )
 DmMessage.create!(dm_server_id: dm_server_1.id, sender_id: demouser1.id, body:"Just wanted to update you. I have finished App Academy. It was hard, but fun. Thanks for all the support man." )
 DmMessage.create!(dm_server_id: dm_server_1.id, sender_id: demouser2.id, body:"Congrats!" )
 
+DmMessage.create!(dm_server_id: dm_server_2.id, sender_id: mr_Wumpus.id, body:"This is the beginning of your direct message history with" )
 DmMessage.create!(dm_server_id: dm_server_2.id, sender_id: stacy.id, body:"You should apply to App Academy. You would be a great software engineer." )
 DmMessage.create!(dm_server_id: dm_server_2.id, sender_id: demouser1.id, body:"Will do. Thanks for the advice and motivation." )
 DmMessage.create!(dm_server_id: dm_server_2.id, sender_id: demouser1.id, body:"Just wanted to update you. I have finished App Academy. It was hard, but fun. Thanks for all the support man." )
 DmMessage.create!(dm_server_id: dm_server_2.id, sender_id: stacy.id, body:"Congrats!" )
 
+DmMessage.create!(dm_server_id: dm_server_3.id, sender_id: mr_Wumpus.id, body:"This is the beginning of your direct message history with" )
 DmMessage.create!(dm_server_id: dm_server_3.id, sender_id: ayce.id, body:"You should apply to App Academy. You would be a great software engineer." )
 DmMessage.create!(dm_server_id: dm_server_3.id, sender_id: demouser1.id, body:"Will do. Thanks for the advice and motivation." )
 DmMessage.create!(dm_server_id: dm_server_3.id, sender_id: demouser1.id, body:"Just wanted to update you. I have finished App Academy. It was hard, but fun. Thanks for all the support man." )
@@ -284,6 +291,15 @@ dm_membership_9 = DmMember.create!( dm_server_id: dm_server_4.id, dm_member_id: 
 dm_membership_10 = DmMember.create!( dm_server_id: dm_server_5.id, dm_member_id: demouser1.id )
 dm_membership_11 = DmMember.create!( dm_server_id: dm_server_5.id, dm_member_id: test1.id )
 
+
+DmMessage.create!(dm_server_id: dm_server_4.id, sender_id: mr_Wumpus.id, body:"Welcome to the beginning of your Group Chat" )
+DmMessage.create!(dm_server_id: dm_server_4.id, sender_id: stacy.id, body:"You should apply to App Academy. You would be a great software engineer." )
+DmMessage.create!(dm_server_id: dm_server_4.id, sender_id: demouser1.id, body:"Will do. Thanks for the advice and motivation." )
+DmMessage.create!(dm_server_id: dm_server_4.id, sender_id: demouser2.id, body:"Hi!." )
+
+DmMessage.create!(dm_server_id: dm_server_5.id, sender_id: mr_Wumpus.id, body:"This is the beginning of your direct message history with" )
+DmMessage.create!(dm_server_id: dm_server_5.id, sender_id: test1.id, body:"You should apply to App Academy. You would be a great software engineer." )
+DmMessage.create!(dm_server_id: dm_server_5.id, sender_id: demouser1.id, body:"Will do. Thanks for the advice and motivation." )
 #data  for seeding users (Reserved)
 
 MichaelR = User.create!(username: "MichaelR", email: "mikeR@strife.com", password: "Qwerty1234", birthday: Date.new(1996,10,10))
@@ -341,8 +357,8 @@ f2 = Friendship.create!(friend_id: demouser1.id, user_id: demouser2.id, friend_r
 f3 = Friendship.create!(friend_id: stacy.id, user_id: demouser1.id, friend_request_status: 3);
 f4 = Friendship.create!(friend_id: demouser1.id, user_id: stacy.id, friend_request_status: 3);
 
-f5 = Friendship.create!(friend_id: mr_Wumpus.id, user_id: demouser1.id, friend_request_status: 3);
-f6 = Friendship.create!(friend_id: demouser1.id, user_id: mr_Wumpus.id, friend_request_status: 3);
+# f5 = Friendship.create!(friend_id: mr_Wumpus.id, user_id: demouser1.id, friend_request_status: 3);
+# f6 = Friendship.create!(friend_id: demouser1.id, user_id: mr_Wumpus.id, friend_request_status: 3);
  Friendship.create!(friend_id: spencer.id, user_id: demouser1.id, friend_request_status: 3);
  Friendship.create!(friend_id: demouser1.id, user_id: spencer.id, friend_request_status: 3);
  Friendship.create!(friend_id: kinKa.id, user_id: demouser1.id, friend_request_status: 3);
