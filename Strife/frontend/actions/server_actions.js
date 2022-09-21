@@ -1,12 +1,11 @@
 import * as ServerAPI from "../utils/server_api_util.js"
-
-
 export const RECEIVE_SERVER = "RECEIVE_SERVER";
 export const RECEIVE_SERVERS = "RECEIVE_SERVERS";
 export const REMOVE_SERVER = "REMOVE_SERVER";
 export const RECEIVE_SERVER_ERRORS = "RECEIVE_SERVER_ERRORS";
 export const REMOVE_SERVER_ERRORS = "REMOVE_SERVER_ERRORS";
 export const JOIN_SERVER = "JOIN_SERVER";
+export const EXPLORE_SERVERS = "EXPLORE_SERVERS";
 
 export const receiveServer = (server) => {
     return {
@@ -52,6 +51,14 @@ export const joinServerViaInvite = (inviteCode) => {
 }
 
 
+export const serverSearch = (servers) => {
+    return {
+        type : EXPLORE_SERVERS,
+        servers
+    }
+}
+
+
 export const fetchServers = (user) => (dispatch) =>
     ServerAPI.fetchServers(user).then((servers) => { dispatch(receiveServers(servers)) }, (err) => { dispatch(receiveServerErrors(err.responseJSON)) })
 
@@ -88,3 +95,7 @@ export const verifyName = (server) => (dispatch) =>
     ServerAPI.verifyName(server).then((server) => {
         dispatch(receiveServer(server))
     }, (err) => { dispatch(receiveServerErrors(err.responseJSON)) });
+
+
+export const exploreServers = () => dispatch => 
+    ServerAPI.exploreServers().then((servers) => dispatch(serverSearch(servers)));
