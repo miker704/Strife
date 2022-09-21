@@ -14,6 +14,8 @@ class Api::DmServersController < ApplicationController
     
     def create 
       
+        direct_message = 'This is the beginning of your direct message history with'
+        group_message = 'Welcome to the beginning of your Group Chat'
 
         found_existing_dm_server = current_user.dm_servers.includes(:members).select{|dms| dms.member_ids.sort === dm_server_params[:dm_member_ids].map(&:to_i)}
 
@@ -23,22 +25,23 @@ class Api::DmServersController < ApplicationController
             return 
         end
 
-
         @dm_server = DmServer.create(
             owner_id: current_user.id,
             dm_server_name: params[:dm_server][:dm_server_name]
         )
         @dm_server.member_ids = dm_server_params[:dm_member_ids]
 
+        
         if @dm_server.save
-
-
             # dm_Members_to_add = dm_server_params[:dm_member_ids]
             # dm_Members_to_add.each do |member_id|
             #     DmMember.create!(dm_server_id: @dm_server.id,dm_member_id: member_id)
             # end
-
-
+            if @dm_server.member_ids.length == 2
+                DmMessage.create!(body: direct_message, sender_id: 1, dm_server_id: @dm_server.id)
+            else
+                DmMessage.create!(body: group_message, sender_id: 1, dm_server_id: @dm_server.id)
+            end
 
             render :show
         else
