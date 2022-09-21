@@ -1,5 +1,4 @@
 import React from "react";
-import ReactTooltip from "react-tooltip";
 import DmServerHeaderNavBarContainer from "../dm_server_header_nav_bar/dm_server_header_nav_bar_container";
 import DmServerMemberListContainer from "../dm_server_members/dm_server_list_container";
 import DmMessagesContainer from "../dm_messages/dm_messages_container";
@@ -19,19 +18,15 @@ class DmServer extends React.Component {
         this.props.fetchDmServer(this.props.dmServerId);
     }
 
-   
-
     setHideMembersList () {
         this.setState({ hideMembersList: !this.state.hideMembersList });
     }
-
 
     renderDmMemberContainer () {
         if (Object.values(this.props.dmServerMembers).length > 2) {
             if (this.state.hideMembersList === false) {
                 return (
                     <DmServerMemberListContainer dmServerMembers={this.props.dmServerMembers} />
-
                 )
             }
         }
@@ -49,18 +44,7 @@ class DmServer extends React.Component {
 
 
                 <div className="dm-server-content-container">
-                    {/* <div className="dm-messages-container-wrapper">
-                        <p>vdfrdgrsdgwre</p>
-                        <p>vdfrdgrsdgwre</p>
-                        <p>vdfrdgrsdgwre</p>
-                        <p>vdfrdgrsdgwre</p>
-                        <p>vdfrdgrsdgwre</p>
-                        <p>vdfrdgrsdgwre</p>
-                        <p>vdfrdgrsdgwre</p>
-                        <p>vdfrdgrsdgwre</p>
-                        <p>vdfrdgrsdgwre</p>
-                    </div> */}
-
+               
                     <div className="dm-messages-container-wrapper">
                        <DmMessagesContainer/>
                     </div>
