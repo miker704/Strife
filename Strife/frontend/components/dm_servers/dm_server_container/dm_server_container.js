@@ -25,6 +25,8 @@ const mSTP = (state, ownProps) => {
         errors: state.errors.dmMessage,
         dmServerMembers: selectDmMembers(state,ownProps.match.params.dmServerId),
         dmServerErrors : state.errors.dmServer,
+        dmServers : Object.values(state.entities.dmServers)
+
 
     }
 }
