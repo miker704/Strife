@@ -1,0 +1,419 @@
+.explore-server-base {
+    forced-color-adjust: none;
+    overflow: hidden;
+    display: flex;
+    outline: 0;
+    flex-direction: column;
+    position: relative;
+    flex-grow: 1;
+    transform: translate(309px, 0px);
+    width: calc(100vw - 309px);
+    height: 100vh;
+
+}
+
+
+.explore-server-content {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-width: 0;
+    min-height: 0;
+    flex: 1 1 auto;
+    position: relative;
+    outline: 0;
+    forced-color-adjust: none;
+    user-select: none;
+}
+
+.explore-server-sidebar {
+    outline: 0;
+    forced-color-adjust: none;
+    // display: flex;
+    // overflow: hidden;
+    // flex-direction: column;
+    // min-height: 0;
+    // width: 240px;
+    // flex: 0 0 auto;
+
+    background: hsl(223, 6.9%, 19.8%);
+    user-select: none;
+    left: 0;
+    user-select: none;
+    flex: 1;
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    width: 234px;
+    z-index: 2;
+    top: 0;
+    height: calc(100vh - 49px);
+    transform: translate(75px, 0px);
+}
+
+.explore-server-sidebar-scroll-base {
+    position: relative;
+    box-sizing: border-box;
+    min-height: 0;
+    flex: 1 1 auto;
+    overflow: hidden scroll;
+    padding-right: 0px;
+    outline: 0;
+    forced-color-adjust: none;
+}
+
+
+.explore-server-sidebar-scroll-base::-webkit-scrollbar-track {
+    border-color: hsla(0, 0%, 0%, 0);
+    background-color: hsla(0, 0%, 0%, 0);
+    border: 2px solid hsla(0, 0%, 0%, 0);
+}
+
+.explore-server-sidebar-scroll-base::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    border: 2px solid #0000;
+    border-radius: 4px;
+    background-color: hsl(216, 7.2%, 13.5%);
+    min-height: 40px;
+}
+
+.explore-server-sidebar-scroll-base::-webkit-scrollbar-corner {
+    background-color: #0000;
+}
+
+.explore-server-sidebar-scroll-base::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.exsbar-def-header-h2 {
+    margin: 16px 0 16px 16px;
+    font-weight: 700;
+    forced-color-adjust: none;
+    outline: 0;
+    font-size: 25px;
+    line-height: 30px;
+    color: #FFFFFF;
+    font-family: "ABC Ginto Normal";
+}
+
+.explore-bar-item-cat {
+    color: hsl(216, 3.7%, 73.5%);
+    margin-left: 8px;
+    forced-color-adjust: none;
+    outline: 0;
+    display: block;
+    padding: 1px 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: none;
+}
+
+.explore-bar-item-cat:hover {
+    color: hsl(210, 2.9%, 86.7%);
+
+    .explore-bar-item-cat-inner {
+        background-color: hsla(217, 7.6%, 33.5%, 0.4);
+        cursor: pointer;
+    }
+}
+
+.explore-bar-item-cat.selected-choice {
+    color: hsl(0, 0%, 100%);
+
+    .explore-bar-item-cat-inner {
+        background-color: hsl(235, 85.6%, 64.7%);
+    }
+}
+
+.explore-bar-item-cat-inner {
+    height: auto;
+    padding: 5px 8px;
+    forced-color-adjust: none;
+    outline: 0;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    height: 42px;
+    padding: 0 8px;
+}
+
+.explore-bar-item-cat-avatar {
+    forced-color-adjust: none;
+    outline: 0;
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.explore-bar-item-cat-content {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    forced-color-adjust: none;
+    outline: 0;
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.explore-bar-item-cat-nameAndDecos {
+    forced-color-adjust: none;
+    outline: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.explore-bar-item-cat-nameAndDecos-wrap {
+    forced-color-adjust: none;
+    outline: 0;
+    white-space: normal;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    flex: 0 1 auto;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: "Whitney";
+}
+
+.explore-server-page-wrapper {
+    outline: 0;
+    width: 100%;
+    position: relative;
+    forced-color-adjust: none;
+    color: #FFFFFF;
+    background-color: hsl(220, 7.7%, 22.9%);
+}
+
+.exs-drag-region {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    outline: 0;
+    forced-color-adjust: none;
+}
+
+.exs-main-content-scroller-base {
+    height: 100%;
+    outline: 0;
+    forced-color-adjust: none;
+    padding: 32px;
+    overflow: hidden scroll;
+    padding-right: 16px;
+    text-rendering: optimizeLegibility;
+    position: relative;
+    box-sizing: border-box;
+    min-height: 0;
+    flex: 1 1 auto;
+    user-select: none;
+}
+
+.exs-main-content-scroller-base::-webkit-scrollbar-corner {
+    background-color: #0000;
+}
+
+.exs-main-content-scroller-base::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+}
+
+.exs-main-content-scroller-base::-webkit-scrollbar-thumb {
+    background-color: hsl(216, 7.2%, 13.5%);
+    min-height: 40px;
+}
+
+.exs-main-content-scroller-base::-webkit-scrollbar-thumb,
+.exs-main-content-scroller-base::-webkit-scrollbar-track {
+    border: 4px solid #0000;
+    background-clip: padding-box;
+    border-radius: 8px;
+}
+
+.exs-main-content-scroller-base::-webkit-scrollbar-track {
+    background-color: hsl(216, 7.2%, 13.5%);
+}
+
+.exs-main-content-scroller-base::-webkit-scrollbar-thumb,
+.exs-main-content-scroller-base::-webkit-scrollbar-track {
+    border: 4px solid #0000;
+    background-clip: padding-box;
+    border-radius: 8px;
+}
+
+
+.exs-main-content-scroller-base::-webkit-scrollbar-track {
+    background-color: hsl(210, 9.8%, 20%);
+}
+
+.exs-view-wrapper {
+    width: 100%;
+    height: 100%;
+    max-width: 1608px;
+    margin: 0 auto;
+    forced-color-adjust: none;
+    outline: 0;
+}
+
+.exs-searchHeader {
+    position: relative;
+    text-align: center;
+    margin-bottom: 32px;
+    min-height: 200px;
+    forced-color-adjust: none;
+    outline: 0;
+}
+
+.exs-searchImg {
+    display: inherit;
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    forced-color-adjust: none;
+    filter: 1;
+    content: image_url('exserverssearch.svg');
+    object-fit: contain;
+
+}
+
+.exs-header-content-wrapper {
+    forced-color-adjust: none;
+    outline: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.exs-header-content {
+    width: 100%;
+    min-width: 360px;
+    max-width: 720px;
+    margin: 0 240px;
+    forced-color-adjust: none;
+    outline: 0;
+
+}
+
+.exs-search-title {
+    forced-color-adjust: none;
+    outline: 0;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-family: "ABC Ginto Normal";
+    font-size: 25px;
+    line-height: 30px;
+
+}
+
+.exs-search-subtitle {
+    margin-top: 8px;
+    forced-color-adjust: none;
+    outline: 0;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: "Whitney";
+
+}
+
+.exs-search-content {
+    forced-color-adjust: none;
+    outline: 0;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 16px;
+
+}
+
+.exs-search {
+    forced-color-adjust: none;
+    outline: 0;
+    width: 100%;
+    max-width: 560px;
+    position: relative;
+    margin: auto auto 16px;
+}
+
+.exs-search-box {
+    forced-color-adjust: none;
+    outline: 0;
+    z-index: 2;
+    background-color: hsl(0, 0%, 100%);
+    padding-right: 8px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding-right: 16px;
+    border-radius: 3px;
+    border: 1px solid #0000;
+}
+
+.exs-search-input-wrapper {
+    forced-color-adjust: none;
+    outline: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.exs-search-input {
+    forced-color-adjust: none;
+    outline: 0;
+    font-size: 16px;
+    padding: 8px;
+    color: hsl(210, 9.8%, 20%);
+    border: none;
+    font-weight: 500;
+    background: #0000;
+    height: auto;
+    font-family: "Whitney";
+    text-rendering: optimizeLegibility;
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 3px;
+    border: none;
+    transition: border-color .2s ease-in-out;
+
+}
+
+.exs-search-icon {
+    color: hsla(217, 7.6%, 33.5%, 0.6);
+    forced-color-adjust: none;
+    width: 1.4em;
+    height: 1.4em;
+    flex-shrink: 0;
+    transition: color .2s ease;
+}
+
+.guildListSection {
+    width: 100%;
+    margin-bottom: 32px;
+    min-width: 580px;
+    forced-color-adjust: none;
+    outline: 0;
+}
+
+.gls-h3 {
+    forced-color-adjust: none;
+    outline: 0;
+    font-family: "ABC Ginto Normal";
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+}
