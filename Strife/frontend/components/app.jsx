@@ -18,6 +18,7 @@ import HomePageContainer from './friends/friends_page_main/friends_home_page_con
 import LoadingScreenContainer from './loading_screen/loading_screen_container.js';
 import DmServerContainer from './dm_servers/dm_server_container/dm_server_container.js';
 import ServerContainer from './server/server_container/server_container.js';
+import ExploreServersContainer from './server/server_search/server_search_container.js';
 import TestPageContainer from '../components/test_bench/test_container.js'
 
 
@@ -27,30 +28,19 @@ const App = () => (
         <Route path='/' component={ModalManagerContainer}></Route>
         {/* <ProtectedRoute path="/channels/@me" component={ServerNavBarContainer} /> */}
         <ProtectedRoute exact path="/testing/" component={TestPageContainer}/>
-
         {/* <ProtectedRoute path="/channels/" component={ServerNavBarContainer} /> */}
-        
         <ProtectedRoute path="/channels/:serverId/" component={ServerNavBarContainer} />
-
         <ProtectedRoute path="/channels/" component={UserNavContainer}/>
-        
-
-
 
     <Switch>
         <ProtectedRoute path="/channels/@me/:dmServerId" component={DMNavBarContainer}/>
         <ProtectedRoute path="/channels/@me" component={DMNavBarContainer}/>
         {/* <ProtectedRoute path = "/channels/:serverId/:channelId" component={ChannelNavBarContainer} /> */}
         
-
-        
         {/* <ProtectedRoute path="/channels/dmServers/:dmServerId" component={DMNavBarContainer}/> */}
 
         {/* <ProtectedRoute path="/channels/:serverId/:channelId" component={ChannelNavBarContainer} /> */}
     </Switch>
-
-   
-
 
 
     {/* render proper component for messages type or friends list */}
@@ -63,20 +53,19 @@ const App = () => (
         {/* <ProtectedRoute path="/channels/@me" component={EmptyMessagesContainer}/> */}
         <ProtectedRoute path="/channels/@me" component={HomePageContainer}/>
 
-
     </Switch>
 
-
+    {/* alt routes to other areas not involving main app */}
     <Switch>
 
         {/* <ProtectedRoute path="/channels/:serverId/:channelId" component={ChannelNavBarContainer} /> */}
         <ProtectedRoute path="/users/:userId" component={UserProfileContainer}/>
         <ProtectedRoute path="/loading/" component={LoadingScreenContainer}/>
-        
+        {/* <ProtectedRoute path = "/channels/guild-discovery/" component={ExploreServersContainer}/> */}
+        <ProtectedRoute path = "/channels/guild-discovery/" component={ExploreServersContainer}/>
+
 
     </Switch>
-
-
 
 
             {/* this is the user auth routes */}
