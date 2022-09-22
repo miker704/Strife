@@ -1,10 +1,9 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { fetchChannel, removeChannelErrors } from "../../../actions/channel_actions.js";
-import { fetchServer, fetchServers, removeServerErrors } from "../../../actions/server_actions.js";
+import { fetchServer, fetchServers, removeServerErrors, exploreServers } from "../../../actions/server_actions.js";
 import { createServerMembership} from "../../../actions/server_membership_actions.js";
 import { openModal, closeModal } from "../../../actions/modal_actions.js";
-import { handleKeyUp } from "../../../utils/modal_api_util";
 import ExploreServers from "./server_search";
 
 const extractServerProps = (state, ownProps) => {
@@ -31,7 +30,8 @@ const mSTP = (state, ownProps) => {
         errors: state.errors.server,
         channelErrors: state.errors.channel,
         sessionErrors: state.errors.session,
-        servers: state.entities.servers
+        servers: state.entities.servers,
+        unExploredServers: state.entities.unExploredServers
 
     }
 }
@@ -47,6 +47,7 @@ const mDTP = (dispatch, ownProps) => {
         fetchServer: (serverId) => dispatch(fetchServer(serverId)),
         fetchUserServers: (user) => dispatch(fetchServers(user)),
         fetchServers: () => dispatch(fetchServers()),
+        exploreServers: () => dispatch(exploreServers()),
         removeServerErrors: () => dispatch(removeServerErrors()),
         //channel api functions
         fetchChannel: (channelId) => { dispatch(fetchChannel(channelId)) },
@@ -56,7 +57,6 @@ const mDTP = (dispatch, ownProps) => {
         // modal api functions
         openModal: modal => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal()),
-        handleESC: (e) => handleKeyUp(e),
 
     }
 }
