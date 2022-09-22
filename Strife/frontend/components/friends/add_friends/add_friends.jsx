@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 class AddFriends extends React.Component {
     constructor (props) {
         super(props);
@@ -88,16 +90,16 @@ class AddFriends extends React.Component {
     handleSubmit () {
 
         let userInfo = this.state.user_strife_id_tag;
-        
-        if(userInfo.includes('#')){
+
+        if (userInfo.includes('#')) {
             userInfo = userInfo.split('#').pop();
         }
-        else{
+        else {
             userInfo = '-000';
         }
 
         let userStrifeId = userInfo.length === 4 ? userInfo : '-000';
-    
+
         let newFriend;
 
         this.props.fetchUserByStrifeId(userStrifeId).then((action) => {
@@ -171,7 +173,9 @@ class AddFriends extends React.Component {
                         Other places to find friends
                     </h2>
                 </div>
-                <div className="add-friend-grid">
+                
+                <Link className="unStyle" to={`/channels/guild-discovery/`}>
+                <div className="add-friend-grid" >
                     <button type="button" className="add-friend-grid-button-wrapper" >
                         <img className="add-friend-grid-button-icon" alt="expserv" />
                         <div className="add-friend-grid-button-text">Explore Public Servers</div>
@@ -182,6 +186,7 @@ class AddFriends extends React.Component {
                         </svg>
                     </button>
                 </div>
+                </Link>
                 <div className="empty-state-container-2">
                     <div className="empty-friends-container">
                         <div className="empty-friends-container-flex">
