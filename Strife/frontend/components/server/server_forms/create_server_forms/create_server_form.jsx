@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from 'react-router-dom';
 
 class CreateServerForm extends React.Component {
     constructor (props) {
@@ -248,7 +248,7 @@ class CreateServerForm extends React.Component {
         }
 
 
-       
+
 
 
         let newServer;
@@ -276,7 +276,7 @@ class CreateServerForm extends React.Component {
                     }
                     else if (i === 'channelVoiceNames') {
                         channel_type = 2;
-    
+
                     }
 
                     for (let e of serverChannelSetup[i]) {
@@ -731,7 +731,8 @@ class CreateServerForm extends React.Component {
                         <h3>https://strife.gg/8406eb38</h3>
                         <h3>https://strife.gg/default-server</h3>
                     </div>
-
+                    
+                    <Link className="unStyle" to={`/channels/guild-discovery/`} onClick={() => this.closeModalTransitionOut()}>
                     <div className="slide2-to-slide3-button-2">
 
                         <div className="img-container">
@@ -740,11 +741,13 @@ class CreateServerForm extends React.Component {
                             <div className="invite-code-examples">
                                 <h2>Don't have an invite?</h2>
                                 <div>Check out public communities in Server Discovery.</div>
+
+
                             </div>
                         </div>
                         <img className="arrow" />
                     </div>
-
+                    </Link>
 
                 </div>
                 <div className="back-button-join">
