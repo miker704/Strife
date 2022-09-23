@@ -27,7 +27,7 @@ class ModalManager extends React.Component {
             setSpecialFeatures: 0,
         }
         this.setModalSpecialFeatures = this.setModalSpecialFeatures.bind(this);
-        console.log("modal call");
+        // console.log("modal call");
 
     }
 
@@ -40,9 +40,9 @@ class ModalManager extends React.Component {
 
     render () {
 
-        console.log("current modal props: ", this.props);
-        console.log(" modal : ", this.props.modal);
-        console.log(" modal props: ", this.props.modalProps);
+        // console.log("current modal props: ", this.props);
+        // console.log(" modal : ", this.props.modal);
+        // console.log(" modal props: ", this.props.modalProps);
 
         let renderedModal;
         let modalMod = 0;
