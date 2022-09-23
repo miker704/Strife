@@ -561,6 +561,8 @@
     height: 48px;
     forced-color-adjust: none;
     border-radius: 50%;
+    border: 1px solid #292b2f;
+
 }
 
 
@@ -665,6 +667,7 @@
     font-family: "Whitney";
     font-size: 14px;
     line-height: 18px;
+    display: flex;
 }
 
 
@@ -728,7 +731,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    right: var(--devtools-sidebar-width, 0);
+    // right: 0;
     bottom: 0;
     background: none !important;
     pointer-events: none;
@@ -741,12 +744,14 @@
     forced-color-adjust: none;
     outline: 0;
     position: absolute;
-    top: 285.966px;
-    right: 740px;
+    // top: 285.966px;
+    // right: 740px;
+    top: 150px;
+    left: 95px;
     pointer-events: auto;
 }
 
-.action-button-pop-menu {
+.action-button-pop-up-menu {
     forced-color-adjust: none;
     outline: 0;
     min-width: 188px;
@@ -766,7 +771,7 @@
 .action-button-scroller {
     forced-color-adjust: none;
     outline: 0;
-    overflow: hidden scroll;
+    // overflow: hidden scroll;
     padding-right: 0px;
     padding: 6px 8px;
     position: relative;
@@ -826,4 +831,171 @@
     forced-color-adjust: none;
     width: 18px;
     height: 18px;
+}
+
+.flex-to-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+.faint-boost-shiny-button.join-server {
+    margin-top: 0px;
+    min-height: 30px;
+    height: 30px;
+    width: 110px;
+    min-width: 110px;
+    max-width: 110px;
+    max-height: 30px;
+}
+
+.guild-card {
+
+    button[type="submit"]:disabled,
+    button[type="button"]:disabled {
+        cursor: not-allowed;
+        opacity: .5;
+        color: hsl(0, 0%, 100%);
+        forced-color-adjust: none;
+    }
+}
+
+
+.purple-icon-bk {
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    // width: 100%;
+    // height: 100%;
+    forced-color-adjust: none;
+    fill: rgb(88, 101, 242);
+}
+
+.bubble-wrap-bk {
+    display: flex;
+    // width: 80%;
+    // height: 80%;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    forced-color-adjust: none;
+    outline: 0;
+    transition: background-color .1s ease-out, color .1s ease-out;
+}
+
+.server-Acryo-bk {
+    font-size: 16px;
+    forced-color-adjust: none;
+    outline: 0;
+    font-weight: 500;
+    line-height: 1.2em;
+    white-space: nowrap;
+    transition: background-color .15s ease-out, color .15s ease-out;
+    display: flex;
+    // width: 90%;
+    // height: 80%;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: "Whitney";
+}
+
+
+.guildIcon>svg {
+    background-color: rgb(88, 101, 242);
+    border-radius: 50%;
+    border: 1px solid #292b2f;
+
+    path {
+        fill: currentColor;
+    }
+}
+
+
+
+
+.guild-card-splash>svg {
+    background-color: rgb(88, 101, 242);
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    path {
+        fill: currentColor;
+    }
+
+    // color: #5865f2;
+    // overflow: hidden;
+    // border-radius: 50%;
+    // transform: translate(125px, -152px);
+}
+
+.guild-card-splash {
+    #defaultPFPg {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+        forced-color-adjust: none;
+        outline: 0;
+
+    }
+}
+
+
+.empty-server-state-container {
+    forced-color-adjust: none;
+    outline: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: hsl(223, 6.9%, 19.8%);
+    padding: 80px 0;
+    border-radius: 8px;
+    max-width: 900px;
+    min-width: 900px;
+}
+
+.epssc-h3 {
+    margin-top: 32px;
+    margin-bottom: 8px;
+    forced-color-adjust: none;
+    outline: 0;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 30px;
+    font-family: "ABC Ginto Normal";
+    color: #FFFFFF;
+}
+
+.epssc-st {
+    font-size: 16px;
+    line-height: 20px;
+    forced-color-adjust: none;
+    outline: 0;
+    font-weight: 400;
+    font-family: "Whitney";
+    color: hsl(216, 3.7%, 73.5%);
+
+}
+
+.no-servers-found-img {
+    background-image: image_url('noServersFound.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 314px;
+    height: 145px;
+    forced-color-adjust: none;
+    outline: 0;
+}
+
+.epssc-flex{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
