@@ -124,15 +124,6 @@ class User < ApplicationRecord
         relationShip ? relationShip.friend_request_status : 0
     end
 
-    # def checkPhoto
-    #     if self.profile_pic_url == nil 
-    #         self.profile_pic_url = ""
-    #     end
-    #      if self.photo == nil || self.photo == ""
-    #         self.photo = ""
-    #     end
-    # end
-
 
     #user auth and strife tag generation
 
@@ -146,7 +137,7 @@ class User < ApplicationRecord
     after_initialize :ensure_strife_id_tag
     after_initialize :ensure_color_tag
     after_create :create_Friendship_With_Bot
-    # after_initialize :checkPhoto
+
     # SPIRE
 
     def self.find_by_credentials(email,password)
