@@ -60,6 +60,7 @@ class Api::ServersController < ApplicationController
                 render json: @server.errors.full_messages, status: 422
                 # render json: ['You are already a member of this server'], status: 422
             else
+                
                 member = ServerMembership.create!(user_id: current_user.id, server_id: @server.id)
                 if member.save
                     all_channels = @server.channels
