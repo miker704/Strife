@@ -10,6 +10,7 @@ const dmMessageReducer = (state = {}, action) => {
     switch (action.type) {
 
         case RECEIVE_DM_MESSAGE:
+            console.log("dmMessage: ",action.dm_message);
             nextState[action.dm_message.id] = action.dm_message;
             return nextState;
         case REMOVE_DM_MESSAGE:
