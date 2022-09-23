@@ -55,24 +55,25 @@ export const joinServerViaInvite = (inviteCode) => {
 
 export const serverSearch = (servers) => {
     return {
-        type : EXPLORE_SERVERS,
+        type: EXPLORE_SERVERS,
         servers
     }
 }
 
 export const joinServerExplore = () => {
-    return{
-        type : JOINING_SERVER,
+    return {
+        type: JOINING_SERVER,
 
     }
 }
 
 export const clearUnexploredServers = () => {
     return {
-        type : REMOVE_UNEXPLORED_SERVERS,
+        type: REMOVE_UNEXPLORED_SERVERS,
         servers: {}
     }
 }
+
 
 
 export const fetchServers = (user) => (dispatch) =>
@@ -113,13 +114,14 @@ export const verifyName = (server) => (dispatch) =>
     }, (err) => { dispatch(receiveServerErrors(err.responseJSON)) });
 
 
-export const exploreServers = () => dispatch => 
+export const exploreServers = () => dispatch =>
     ServerAPI.exploreServers().then((servers) => dispatch(serverSearch(servers)));
 
 
-    export const joiningServer = (inviteCode) => (dispatch) =>
+export const joiningServer = (inviteCode) => (dispatch) =>
     ServerAPI.joinServer(inviteCode).then((server) => {
         dispatch(joinServerExplore());
         return dispatch(receiveServer(server))
     },
         (err) => { dispatch(receiveServerErrors(err.responseJSON)) });
+
