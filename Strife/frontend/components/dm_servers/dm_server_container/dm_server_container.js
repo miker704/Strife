@@ -5,7 +5,6 @@ import { createDmMessage } from "../../../actions/dm_messages_actions.js";
 import { selectDmMembers } from "../../../utils/selectors_api_util.js";
 import DmServer from "./dm_server.jsx";
 
-
 const mSTP = (state, ownProps) => {
 
 
@@ -23,10 +22,9 @@ const mSTP = (state, ownProps) => {
         dmServerId: ownProps.match.params.dmServerId,
         dmServer: state.entities.dmServers[ownProps.match.params.dmServerId],
         errors: state.errors.dmMessage,
-        dmServerMembers: selectDmMembers(state,ownProps.match.params.dmServerId),
-        dmServerErrors : state.errors.dmServer,
-        dmServers : Object.values(state.entities.dmServers)
-
+        dmServerMembers: selectDmMembers(state, ownProps.match.params.dmServerId),
+        dmServerErrors: state.errors.dmServer,
+        dmServers: Object.values(state.entities.dmServers),
 
     }
 }
