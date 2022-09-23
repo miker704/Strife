@@ -6,6 +6,11 @@ import DmServerContainer from "../dm_server_container/dm_server_container";
 
 
 const checkIfDmMember = (state, ownProps) => {
+
+    // const currentUser = state.session;
+
+    // return currentUser.dmServersJoined.find(dmsId => dmsId === parseInt(ownProps.match.params.dmServerId)) === undefined ? false : true;
+
     return Object.values(selectDmMembers(state, ownProps.match.params.dmServerId))
         .find(member => member.id === state.session.id) === undefined ? false : true;
 }
@@ -13,19 +18,21 @@ const checkIfDmMember = (state, ownProps) => {
 const mSTP = (state, ownProps) => {
     console.log("hello in dmserver -protected route");
     return {
-        isMember: checkIfDmMember(state, ownProps)
+        // isMember: checkIfDmMember(state, ownProps),
+        isMember: setTimeout(()=>{checkIfDmMember(state, ownProps)},1)
+
     }
 }
 
 const PROTECTED_DM_SERVER = ({ isMember, path, exact }) => {
-    if( isMember === false || isMember === undefined) {console.log(" INTRUDERS!"); /*return null;*/}
+    if (isMember === false || isMember === undefined) { console.log(" INTRUDERS!"); /*return null;*/ }
     return (
-    <Route
-        path={path}
-        exact={exact}
-        render={props => (
-            isMember ? <DmServerContainer {...props} /> : <Redirect to={`/channels/@me`} />
-        )} />
+        <Route
+            path={path}
+            exact={exact}
+            render={props => (
+                isMember ? <DmServerContainer {...props} /> : <Redirect to={`/channels/@me`} />
+            )} />
     )
 }
 
