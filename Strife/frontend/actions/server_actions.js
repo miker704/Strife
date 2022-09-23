@@ -6,6 +6,8 @@ export const RECEIVE_SERVER_ERRORS = "RECEIVE_SERVER_ERRORS";
 export const REMOVE_SERVER_ERRORS = "REMOVE_SERVER_ERRORS";
 export const JOIN_SERVER = "JOIN_SERVER";
 export const EXPLORE_SERVERS = "EXPLORE_SERVERS";
+export const REMOVE_UNEXPLORED_SERVERS = "REMOVE_UNEXPLORED_SERVERS";
+export const JOINING_SERVER = "JOINING_SERVER";
 
 export const receiveServer = (server) => {
     return {
@@ -58,6 +60,20 @@ export const serverSearch = (servers) => {
     }
 }
 
+export const joinServerExplore = () => {
+    return{
+        type : JOINING_SERVER,
+
+    }
+}
+
+export const clearUnexploredServers = () => {
+    return {
+        type : REMOVE_UNEXPLORED_SERVERS,
+        servers: {}
+    }
+}
+
 
 export const fetchServers = (user) => (dispatch) =>
     ServerAPI.fetchServers(user).then((servers) => { dispatch(receiveServers(servers)) }, (err) => { dispatch(receiveServerErrors(err.responseJSON)) })
@@ -99,3 +115,11 @@ export const verifyName = (server) => (dispatch) =>
 
 export const exploreServers = () => dispatch => 
     ServerAPI.exploreServers().then((servers) => dispatch(serverSearch(servers)));
+
+
+    export const joiningServer = (inviteCode) => (dispatch) =>
+    ServerAPI.joinServer(inviteCode).then((server) => {
+        dispatch(joinServerExplore());
+        return dispatch(receiveServer(server))
+    },
+        (err) => { dispatch(receiveServerErrors(err.responseJSON)) });
