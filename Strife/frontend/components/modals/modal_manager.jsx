@@ -18,7 +18,7 @@ import DeleteServerModalContainer from "../server/delete_server_modal/delete_ser
 import InviteToServerModalContainer from "../server/invite_to_server_modal/invite_to_server_modal_container.js";
 import ChannelSettingsModalContainer from "../channels/channel_settings/channel_settings_modal_container.js";
 import CreateChannelModalContainer from "../channels/create_channel_modal/create_channel_modal_container.js";
-
+import ActionButtonPopUpContainer from "../server/server_search/action_button_pop_up_container.js";
 
 class ModalManager extends React.Component {
     constructor (props) {
@@ -35,7 +35,7 @@ class ModalManager extends React.Component {
     setModalSpecialFeatures (modifier) {
         this.setState({ setSpecialFeatures: modifier });
     }
-  
+
 
 
     render () {
@@ -114,7 +114,7 @@ class ModalManager extends React.Component {
 
 
 
-                renderedModal = <CreateChannelModalContainer/>
+                renderedModal = <CreateChannelModalContainer />
                 modalMod = 0;
 
                 break;
@@ -137,6 +137,13 @@ class ModalManager extends React.Component {
 
                 renderedModal = <ChannelSettingsModalContainer mod_Channel_ID={this.props.modalProps} />
                 modalMod = 0;
+
+                break;
+
+            case 'ActionButton':
+
+                renderedModal = <ActionButtonPopUpContainer serverLink={this.props.modalProps.serverInvite} />
+                modalMod = 1;
 
                 break;
             case 'InviteToServer':
