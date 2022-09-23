@@ -33,8 +33,8 @@ class DmServer extends React.Component {
     }
 
     render () {
-        console.log("dmserver props", this.props);
-        console.log(this.props.dmServer);
+        // console.log("dmserver props", this.props);
+        // console.log(this.props.dmServer);
         // console.log(this.props.dmServer.id)
 
         return (
