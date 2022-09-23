@@ -13,7 +13,7 @@ const ExploreServers = (props) => {
             if(props.errors.length>0){
                 props.removeServerErrors();
             }
-            // props.clearUnexploredServers();
+            props.clearUnexploredServers();
         }
     }, []);
 
@@ -87,14 +87,12 @@ const ExploreServers = (props) => {
 
 
     const joinThisServer = (server) => {
-        console.log("joining said server", server);
         const serverSubState = {
             id: server.id,
             user_id: props.currentUser.id,
             server_name: server.server_name
 
         }
-        console.log("joined server : ", serverSubState);
         props.joiningServer(server.invite_code).then((action) => {
             const joinedServer = action.server;
             props.history.push(`/channels/${joinedServer.id}/${joinedServer.general_channel_id}`)
