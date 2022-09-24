@@ -101,15 +101,56 @@ class ServerSettingsModal extends React.Component {
 
 
 
-
-
-
+  
 
     render () {
 
         console.log("ServerSettings props: ", this.props);
         console.log("ServerSettings props: ", this.props.server);
-
+        let currentUser = {
+            "id": 2,
+            "username": "DemoUser1",
+            "email": "DemoUser1@strife.com",
+            "online": true,
+            "phone_number": null,
+            "strife_id_tag": "9897",
+            "color_tag": 5,
+            "photo": "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--45db13fbbcaa07ac3b995ef65337806f8b68cd73/loading.gif",
+            "friend_request_status": 0,
+            "ownedServers": [
+                1,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                17
+            ],
+            "serversJoined": [
+                1,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                17,
+                18,
+                28
+            ],
+            "dmServersJoined": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                7
+            ]
+        }
 
         return (
             <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
