@@ -4,34 +4,21 @@ import { Redirect, Route, withRouter } from "react-router-dom";
 import { selectDmMembers } from "../../../utils/selectors_api_util";
 import DmServerContainer from "../dm_server_container/dm_server_container";
 
-
-const checkIfDmMember = (state, ownProps) => {
-
-    // const currentUser = state.session;
-
-    // return currentUser.dmServersJoined.find(dmsId => dmsId === parseInt(ownProps.match.params.dmServerId)) === undefined ? false : true;
-
-    return Object.values(selectDmMembers(state, ownProps.match.params.dmServerId))
-        .find(member => member.id === state.session.id) === undefined ? false : true;
-}
-
 const mSTP = (state, ownProps) => {
-    console.log("hello in dmserver -protected route");
     return {
-        // isMember: checkIfDmMember(state, ownProps),
-        isMember: setTimeout(()=>{checkIfDmMember(state, ownProps)},1)
-
+        isMember: state.entities.users[state.session.id].dmServersJoined.includes(parseInt(ownProps.match.params.dmServerId))
     }
 }
 
 const PROTECTED_DM_SERVER = ({ isMember, path, exact }) => {
-    if (isMember === false || isMember === undefined) { console.log(" INTRUDERS!"); /*return null;*/ }
+    if (isMember === false || isMember === undefined) { console.warn('UNAUTHORIZED ACCESS ERROR : 401 -> REDIRECTING ...');/*return null;*/ }
+
     return (
         <Route
             path={path}
             exact={exact}
             render={props => (
-                isMember ? <DmServerContainer {...props} /> : <Redirect to={`/channels/@me`} />
+                isMember ? <DmServerContainer {...props} /> : <Redirect to={'/$TR!F3-INTRUSION-PREVENTION/'} />
             )} />
     )
 }
