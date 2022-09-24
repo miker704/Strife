@@ -43,7 +43,7 @@ const checkIfDmMember = (state, ownProps) => {
 
 const mSTP = (state, ownProps) => {
 
-    checkIfDmMember(state, ownProps);
+    // checkIfDmMember(state, ownProps);
 
     return {
         currentUser: state.entities.users[state.session.id],
@@ -55,6 +55,8 @@ const mSTP = (state, ownProps) => {
         channels: Object.values(state.entities.channels),
         dmServers: state.entities.dmServers,
         dmServersArray: Object.values(state.entities.dmServers),
+        isMember: state.entities.users[state.session.id].dmServersJoined,
+        
 
     }
 }
