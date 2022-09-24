@@ -6,8 +6,11 @@ class Api::DmMessagesController < ApplicationController
     if @dm_message.save
         #import actioncable
         DmChannel.broadcast_to(@dm_server,@dm_message)
-      # DmChannel.broadcast_to @dm_server.id, from_template('api/dm_messages/show', DmMessage: @dm_message)
+      # DmChannel.broadcast_to @dm_server, type: 'RECEIVE_DM_MESSAGE', **from_template("api/dm_messages/show", dm_message: @dm_message)
+      # DmChannel.broadcast_to @dm_server, from_template('api/dm_messages/show', dm_message: @dm_message)
+
       render :show
+      # render json: nil, status: :ok
 
         # render :show
     else
