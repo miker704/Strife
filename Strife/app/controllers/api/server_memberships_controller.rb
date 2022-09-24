@@ -3,7 +3,16 @@ class Api::ServerMembershipsController < ApplicationController
     def create
         @server_Membership = ServerMembership.new(server_membership_params)
         @server = Server.find_by(id: @server_Membership.server_id)
+        
         if @server_Membership.save
+            all_channels = @server.channels
+            all_channels.each do |channel|
+           
+                ChannelMembership.create!(
+                    channel_id: channel.id, 
+                    receiver_id: @server_Membership.user_id
+                )
+            end
           render "api/servers/show"
         else
           render json: @server_Membership.errors.full_messages, status: 400
