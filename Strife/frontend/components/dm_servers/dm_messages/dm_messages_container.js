@@ -5,6 +5,7 @@ import { createDmMessage } from "../../../actions/dm_messages_actions.js";
 import { selectDmMembers } from "../../../utils/selectors_api_util.js";
 import DmMessages from "./dm_messages.jsx";
 import DmMessages2 from "./dm_messages2.jsx";
+import DmMessages3 from "./dm_messages3.jsx";
 
 
 const mSTP = (state, ownProps) => {
