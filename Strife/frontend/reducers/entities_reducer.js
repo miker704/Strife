@@ -18,7 +18,7 @@ const EntitiesReducer = combineReducers({
     dmMessages: dmMessageReducer,
     userSearch: userSearchReducer,
     friendships: friendshipReducer,
-    unExploredServers: exploreServersReducer
+    unExploredServers: exploreServersReducer,
 });
 
 export default EntitiesReducer;
