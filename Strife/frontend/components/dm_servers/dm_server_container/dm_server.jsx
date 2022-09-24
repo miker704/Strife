@@ -36,27 +36,25 @@ class DmServer extends React.Component {
         // console.log("dmserver props", this.props);
         // console.log(this.props.dmServer);
         // console.log(this.props.dmServer.id)
-
-        return (
-            <div className="dm-server-container">
-
-                <DmServerHeaderNavBarContainer isViz={this.setHideMembersList} dmServerMembers={this.props.dmServerMembers} />
-
-
-                <div className="dm-server-content-container">
-               
-                    <div className="dm-messages-container-wrapper">
-                       <DmMessagesContainer/>
+        if (this.props.dmServer) {
+            return (
+                <div className="dm-server-container">
+                    <DmServerHeaderNavBarContainer isViz={this.setHideMembersList} dmServerMembers={this.props.dmServerMembers} />
+                    <div className="dm-server-content-container">
+                        <div className="dm-messages-container-wrapper">
+                            <DmMessagesContainer />
+                        </div>
+                        {this.renderDmMemberContainer()}
                     </div>
-
-                    {/* insert dmmesages contianer here */}
-                    {this.renderDmMemberContainer()}
                 </div>
-                {/* <div className="empty-messages-container is-hidden"></div> */}
-            </div>
-        )
-
-
+            )
+        }
+        else {
+            console.log(this.props.dmServer);
+            console.log("this.does not exist")
+            // return this.props.history.push('/channels/@me');
+            return null;
+        }
 
 
     }
