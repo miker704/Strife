@@ -16,12 +16,13 @@ import DmMessagesContainer from './dm_servers/dm_messages/dm_messages_container.
 import FriendsHomePageContainer from './friends/friends_page_main/friends_home_page.jsx';
 import HomePageContainer from './friends/friends_page_main/friends_home_page_container.js';
 import LoadingScreenContainer from './loading_screen/loading_screen_container.js';
+import IntrusionPreventionLoadingScreenContainer from './loading_screen/instrusion_loading_screen_container.js';
 import DmServerContainer from './dm_servers/dm_server_container/dm_server_container.js';
 import ServerContainer from './server/server_container/server_container.js';
 import ExploreServersContainer from './server/server_search/server_search_container.js';
-import TestPageContainer from '../components/test_bench/test_container.js'
 import PROTECTED_DM_SERVER_CONTAINER from './dm_servers/dm_server_security/protect_dm_server_container.js';
-
+import PROTECTED_SERVER_CONTAINER from './server/server_security/protect_server_container.js';
+import TestPageContainer from '../components/test_bench/test_container.js'
 
 const App = () => (
     <div>
@@ -50,8 +51,8 @@ const App = () => (
 
             {/* <ProtectedRoute path="/channels/@me/:dmServerId" component={DmServerContainer}/> */}
             <ProtectedRoute path="/channels/@me/:dmServerId" component={PROTECTED_DM_SERVER_CONTAINER}/>
-
-            <ProtectedRoute path="/channels/:serverId/:channelId" component={ServerContainer} />
+            <ProtectedRoute path="/channels/:serverId/:channelId" component={PROTECTED_SERVER_CONTAINER} />
+            {/* <ProtectedRoute path="/channels/:serverId/:channelId" component={ServerContainer} /> */}
             {/* <ProtectedRoute path="/channels/@me/dmServers/:dmServerId" component={DmMessagesContainer}/> */}
             {/* <ProtectedRoute path="/channels/@me" component={EmptyMessagesContainer}/> */}
             <ProtectedRoute path="/channels/@me" component={HomePageContainer} />
@@ -63,6 +64,7 @@ const App = () => (
 
             <ProtectedRoute path="/users/:userId" component={UserProfileContainer} />
             <ProtectedRoute path="/loading/" component={LoadingScreenContainer} />
+            <ProtectedRoute path='/$TR!F3-INTRUSION-PREVENTION/' component={IntrusionPreventionLoadingScreenContainer}/>
             <ProtectedRoute path="/channels/guild-discovery/" component={ExploreServersContainer} />
 
 
