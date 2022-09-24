@@ -19,21 +19,22 @@ const dmServerReducer = (state = {}, action) => {
             delete nextState[action.dmserverId]
             return nextState
 
-        case  RECEIVE_DM_MEMBER:
-
-        nextState[action.dm_member.id]= action.dm_member;
-        return nextState;
+        case RECEIVE_DM_MEMBER:
+            console.log("RECEIVE DM_MEMBER: ", action.dm_member);
+            nextState[action.dm_member.id] = action.dm_member;
+            return nextState;
 
         case REMOVE_DM_MEMBER:
 
             // delete nextState[action.dm_member_hash.dmserver.id];
-            nextState[action.dm_member_hash.id]= action.dm_member_hash
-           
+            console.log("REMOVE DM_MEMBER: ", action.dm_member_hash);
+            nextState[action.dm_member_hash.id] = action.dm_member_hash
+
             return nextState;
 
         default:
             return state;
     }
-   
+
 }
 export default dmServerReducer;
