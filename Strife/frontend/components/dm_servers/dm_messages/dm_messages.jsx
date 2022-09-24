@@ -8,14 +8,17 @@ import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
 
 const DmMessages = (props) => {
 
-    if(!props.dmServer){
+    if (!props.dmServer) {
         return null
+    }
+    if(props.dmServer.id === undefined){
+        null;
     }
 
     const scrollRef = useRef();
     const [value, setValue] = useState('');
     // const [placeholder, setPlaceHolder] = useState('');
-    const [dmMessages, setDmMessages] = useState(props.DmMessages);
+    const [dmMessages, setDmMessages] = useState([]);
     let placeholderText = '';
     let placeholder;
     const render_User_PFP = user_Default_PFP;
@@ -23,8 +26,8 @@ const DmMessages = (props) => {
 
 
     useEffect(() => {
-
-        props.fetchDmServer();
+        console.log("use effect call to fethc dmserver");
+        props.fetchDmServer(props.dmServer.id);
         const cable = createConsumer('ws://localhost:3000/cable');
         const trasmitParams = {
             channel: 'DmChannel',
@@ -34,6 +37,8 @@ const DmMessages = (props) => {
         const handlers = {
             received (data) {
                 // props.fetchDmServer()
+                console.log("data", data)
+
                 setDmMessages([...dmMessages, data])
                 console.log("dmMessages: ", dmMessages);
             },
@@ -58,14 +63,14 @@ const DmMessages = (props) => {
         return function cleanUp () {
             subscription.unsubscribe();
             // if(props.dmServer.id !== props.dmServerId){
-                // props.fetchDmServer()
-                // setDmMessages([])
+            // props.fetchDmServer()
+            // setDmMessages([])
             // }
         }
 
-    }, [props.dmServer.id, dmMessages])
+    }, [props.dmServer.id, dmMessages, props.dmServerMembers.length])
 
-// console.log('getparams:', getParams);
+    // console.log('getparams:', getParams);
     const submitMessage = (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -113,7 +118,7 @@ const DmMessages = (props) => {
         return formattedTime;
     }
 
-    const oneToOneChatFirstMessage = () =>  {
+    const oneToOneChatFirstMessage = () => {
         const members = Object.values(props.dmMembers);
         if (members.length === 2) {
             const otherUser = members.find((user) => user.id !== props.currentUser.id)
@@ -150,12 +155,12 @@ const DmMessages = (props) => {
 
 
 
-    let dmMessageOLLIMapping = dmMessages.map((dmMessage) => {
-        // const botMessage = dmMessage.sender_id === 1 &&
-        //     dmMessage.body === 'This is the beginning of your direct message history with' ?
-        //     oneToOneChatFirstMessage() : dmMessage.sender_id === 1 &&
-        //         dmMessage.body === 'Welcome to the beginning of your Group Chat' ?
-        //         renderGroupChatFirstMessage() : ('');
+    let dmMessageOLLIMapping = props.DmMessages.map((dmMessage) => {
+        const botMessage = dmMessage.sender_id === 1 &&
+            dmMessage.body === 'This is the beginning of your direct message history with' ?
+            oneToOneChatFirstMessage() : dmMessage.sender_id === 1 &&
+                dmMessage.body === 'Welcome to the beginning of your Group Chat' ?
+                renderGroupChatFirstMessage() : ('');
         {
             return (
 
@@ -163,12 +168,12 @@ const DmMessages = (props) => {
 
                     <div className="message-wrapper-contents">
                         <div className="message-wrapper1">
-                            {/* <div className={`${dmMessage.author[dmMessage.sender_id].photo === undefined ?
+                            <div className={`${dmMessage.author[dmMessage.sender_id].photo === undefined ?
                                 `chat-user-pfp-svg-render color-${dmMessage.author[dmMessage.sender_id].color_tag}` :
                                 `chat-member-avatar-img`}`}>
                                 <img src={`${dmMessage.author[dmMessage.sender_id].photo === undefined
-                                    ? render_User_PFP : dmMessage.author[dmMessage.sender_id].photo}`} alt="SMPFP" /> */}
-                            {/* </div> */}
+                                    ? render_User_PFP : dmMessage.author[dmMessage.sender_id].photo}`} alt="SMPFP" />
+                            </div>
                             <h2 className="chat-member-username-header">
                                 <span className="chat-member-username-wrap">
                                     <span className="chat-member-username">{dmMessage.authorName}</span>
@@ -181,7 +186,7 @@ const DmMessages = (props) => {
                             </h2>
                             <div className="chat-message">
                                 {dmMessage.body}
-                                {/* {botMessage} */}
+                                {botMessage}
                                 {/* <span className="mention-wrapper">{dmMessage.body}</span> */}
                             </div>
                         </div>
@@ -195,8 +200,8 @@ const DmMessages = (props) => {
     });
 
 
-    console.log("dmmessages hooks props: ",props);
-    console.log("dmmessages hooks state: ",dmMessages);
+    console.log("dmmessages hooks props: ", props);
+    console.log("dmmessages hooks state: ", dmMessages);
 
 
     return (
