@@ -11,6 +11,7 @@ const mSTP = (state,ownProps) => {
 }
 
 const PROTECTED_SERVER = ({ isMember, path, exact }) => {
+    console.log("inside protected server route");
     if (isMember === false || isMember === undefined) { console.warn('UNAUTHORIZED ACCESS ERROR : 401 -> REDIRECTING ...'); /*return null;*/ }
     return (
         <Route
