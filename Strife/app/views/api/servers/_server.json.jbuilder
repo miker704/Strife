@@ -5,6 +5,6 @@ json.general_channel_id server.channels.first.id
 json.server_Icon url_for(server.server_Icon) if server.server_Icon.attached?
 # json.channels server.channels.map{|channel| channel}
 
-json.server_memberships server.server_members
+# json.server_memberships server.server_members
 
 
