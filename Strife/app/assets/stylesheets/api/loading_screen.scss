@@ -28,3 +28,35 @@
     height: 150px;
     width: 150px;
 }
+
+.intrusion-warning {
+    color: hsl(359, 82.6%, 59.45%) !important;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.circle-wrap {
+    background: #00ea34;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 5px;
+    overflow: hidden;
+    padding: 25px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    box-shadow: 0 8px 92px hsl(0deg, 0%, 0% / 67%);
+    background-image: linear-gradient(37deg, #00ea34, #005a17);
+}
+
+.circle-wrap>img {
+    height: 200px;
+    width: 200px;
+    // filter: invert(1);
+    // filter: drop-shadow(2px 4px 6px black) invert(25);
+    filter: invert(1) drop-shadow(55px -54px 23px black);
+}
