@@ -20,7 +20,6 @@ class Api::DmMessagesController < ApplicationController
 
       DmChannel.broadcast_to @dm_server,
       from_template('api/dm_messages/show', dm_message: @dm_message)
-      # render :show
       render json: nil, status: :ok
 
         # render :show
