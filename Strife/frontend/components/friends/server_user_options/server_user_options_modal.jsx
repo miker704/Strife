@@ -275,6 +275,7 @@ const ServerUserOptionsModal = ({
         else {
 
             kickUserfromGroupChat(member.id, subState).then(() => {
+                fetchDmServer(DmServerId);
                 setShowPopup(false);
             });
         }
