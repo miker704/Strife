@@ -23,6 +23,7 @@ Rails.application.routes.draw do
               delete 'friendships', to: 'friendships#destroy'
               post '/friendships/blockuser/', to: 'friendships#block_User', as: 'block_User'
     resources :dm_members, only: [:create,:destroy]
+              get '/dm_members/dms_status', to: 'dm_members#show', as: 'dm_membership_status'
     resources :dm_messages, only: [:create, :update, :destroy]
     resources :dm_servers, only: [:index, :show, :create, :update, :destroy]
 
