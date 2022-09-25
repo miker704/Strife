@@ -54,11 +54,7 @@ const DmServerMemberList = ({
 
     // }, [dmServer?.id ])
 
-
-    // console.log("dmmemberlist props: ", dmServerMemberList);
-    // console.log("dmserver current state from member list: ", dmServer);
-    // console.log("dmserver current state from member list: ", dmServer.users);
-    // console.log("dmServersUsers: ",dmServerUsers);
+   
 
     const inputRef = useRef();
     const [showPopup, setShowPopup] = useState(false);
