@@ -1,159 +1,199 @@
 import React from "react";
-import { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router";
-import PrevPropsHook from "./use_PrevProps_Hook";
 import { createConsumer } from "@rails/actioncable"
 import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
-//hook attempt
+import ReactTooltip from "react-tooltip";
+import autosize from "autosize";
+import DMMessageEditContainer from "../dms_message_and_edit_component/dm_message_edit_container";
 
-const DmMessages = (props) => {
+class DmMessages extends React.Component {
+    constructor (props) {
+        super(props);
 
-    if (!props.dmServer) {
-        return null
+        this.state = {
+            newDmMessage: this.props.dmMessage,
+            DmMessages: this.props.DmMessages,
+            dmMessagesIds: this.props.dmMessagesIds,
+            value: ''
+        }
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.subscription = "";
+        this.subscribe = this.subscribe.bind(this);
+        this.unsubscribe = this.unsubscribe.bind(this);
+        // this.scrollToBottomOfChat = this.scrollToBottomOfChat.bind(this);
+        this.handleInput = this.handleInput.bind(this);
+        this.handleEnter = this.handleEnter.bind(this);
+        this.formatTime = this.formatTime.bind(this);
+        this.oneToOneChatFirstMessage = this.oneToOneChatFirstMessage.bind(this);
+        this.renderGroupChatFirstMessage = this.renderGroupChatFirstMessage.bind(this);
+        this.placeholderText = '';
     }
-    if (props.dmServer.id === undefined) {
-        null;
+    //mount correct dmServer and start subscription listening 
+    componentDidMount () {
+        this.props.fetchDmServer(this.props.dmServerId);
+        this.subscribe();
     }
 
-    const scrollRef = useRef();
-    
-    const [value, setValue] = useState('');
-    // const [placeholder, setPlaceHolder] = useState('');
-    const [dmMessages, setDmMessages] = useState([]);
 
+    //remove listening of subscription 
+    componentWillUnmount () {
 
-    const [prevDmMessages, setPrevDmMessages] = useState(props.DmMessages[0]);
-    const [prevStateDmMessages, setPrevStateDmMessages] = useState(dmMessages.length);
+        this.subscription?.unsubscribe();
 
-    const prevPropsDMS = PrevPropsHook(prevDmMessages);
-    const prevStateDMSLen = PrevPropsHook(dmMessages.length);
-
-
-    let placeholderText = '';
-    let placeholder;
-    const render_User_PFP = user_Default_PFP;
-    const getParams = useParams();
-
-
-    useEffect(() => {
-        // console.log("current dmMesaagesprops. lenghth UE", props.DmMessages.length);
-        // console.log("prevprops:UE ", prevPropsDMS);
+    }
 
 
 
+    scrollToBottomOfChat = (speed) => {
+        if (this.placeholder) {
+            this.placeholder.scrollIntoView({ behavior: speed });
+        }
+    }
 
 
-        console.log("use effect call to fethc dmserver");
-        props.reSyncCurrentUser(props.currentUserId).then((action) => {
-            let currUser = action.currentUser;
-            if (!currUser.dmServersJoined.includes(parseInt(props.dmServerId))) {
-                // props.fetchDmServers(props.currentUserId);
-                props.removeDmServer(props.dmServer.id);
-                props.history.push('/$TR!F3-INTRUSION-PREVENTION/');
+    unsubscribe () {
+        this.subscription.unsubscribe();
+    }
+
+
+    subscribe () {
+
+        //plug the cable
+        const cable = createConsumer('ws://localhost:3000/cable'); // /cable mounts to local host that rails server is running on 
+        this.subscription = cable.subscriptions.create(
+            { channel: 'DmChannel', id: this.props.dmServerId },
+            {
+
+                received: ({ dm_message }) => {
+
+                    this.props.reSyncCurrentUser(this.props.currentUserId).then((action) => {
+                        let currUser = action.currentUser;
+                        if (!currUser.dmServersJoined.includes(parseInt(this.props.dmServerId))) {
+                            this.props.removeDmServer(this.props.dmServer.id);
+                            this.props.history.push('/$TR!F3-INTRUSION-PREVENTION/');
+                        }
+                        else {
+
+                            this.props.fetchDmServer(this.props.dmServer.id);
+                        }
+
+                    })
+
+                    // this.props.receiveDmMessage(dm_message);
+                    // this.props.fetchDmServer(this.props.dmServerId);
+                    if (Object.values(dm_message).length > 1) {
+                        if (this.state.dmMessagesIds.includes(dm_message.id.toString())) {
+                            let dmMessages = this.state.DmMessages;
+                            let DMMessagesCollection = new Array();
+                            dmMessages.forEach((dmmessage) => {
+                                //if match occurs set it to current dmMessage state
+                                if (dmmessage.id === dm_message.id) {
+                                    dmmessage.body = dm_message.body;
+                                    //push it to dmMessages state array
+                                }
+                                DMMessagesCollection.push(dmmessage);
+                            })
+                            //update the state 
+                            this.setState({ ["DmMessages"]: DMMessagesCollection });
+                        }
+                        else {
+                            //if there arent any messages in the dmserver set up for message creation
+                            //get author name of message within this dmServer
+                            dm_message.authorName = this.props.dmServer.members[dm_message.sender_id].username;
+                            //rename it so that it can be editable
+                            dm_message.sender_Id = dm_message.sender_id;
+                            //grab time stamps from the backend
+                            let timeStamp = new Date(dm_message.created_at)
+                            let time = timeStamp.toLocaleTimeString();
+                            let date = timeStamp.toLocaleDateString();
+                            dm_message.created_at = date + " " + time;
+                            this.setState({ ["DmMessages"]: this.state.DmMessages.concat([dm_message]) })
+                            this.setState({ ["dmMessagesIds"]: this.state.dmMessagesIds.concat(dm_message.id.toString()) })
+                        }
+                    }
+                    else {
+                        let dmMessages = this.state.DmMessages
+                        let filteredDmMessages = dmMessages.filter(dm => dm.id !== dm_message)
+                        this.setState({ ['DmMessages']: filteredDmMessages });
+
+                    }
+
+                }
             }
-            else {
-
-                props.fetchDmServer(props.dmServer.id);
-            }
-
-        })
+        );
+    }
 
 
 
-
-        const cable = createConsumer('ws://localhost:3000/cable');
-        const trasmitParams = {
-            channel: 'DmChannel',
-            id: props.dmServer.id
+    componentDidUpdate (prevProps, prevState) {
+        if (prevProps.DmMessages[0] !== this.props.DmMessages[0]) {
+            this.scrollToBottomOfChat("auto");
         }
 
-        const handlers = {
-            received ({ dm_message, type }) {
-                // props.fetchDmServer()
-                console.log("data - dm_message : ", dm_message);
-                console.log("type: ", type);
-                setDmMessages([...dmMessages, dm_message])
-                props.receiveDmMessage(dm_message)
-                console.log("dmMessages: ", dmMessages);
+        if (prevState.DmMessages.length < this.state.DmMessages.length) {
+            this.scrollToBottomOfChat("smooth");
+        }
+        if (prevProps.dmMessagesIds.length !== this.props.dmMessagesIds.length) {
+            let DmMessages = this.props.DmMessages;
+            let dmMessagesIds = this.props.dmMessagesIds;
+            this.setState({ DmMessages });
+            this.setState({ dmMessagesIds });
+        }
+        if (prevProps.dmMessagesIds.length > 0 && this.props.dmMessagesIds.length > 0) {
+            if (prevProps.DmMessages[0].id !== this.props.DmMessages[0].id) {
+                this.props.fetchDmServer(this.props.dmServerId);
+                this.subscribe();
+                let DmMessages = this.props.DmMessages;
+                let dmMessagesIds = this.props.dmMessagesIds;
+                this.setState({ DmMessages });
+                this.setState({ dmMessagesIds });
+            }
+        }
+        if (prevProps.match.params.dmServerId !== this.props.match.params.dmServerId) {
+            let newDmMessage = this.state.newDmMessage
+            newDmMessage.body = '';
+            newDmMessage.dm_server_id = this.props.match.params.dmServerId;
+            this.setState({ newDmMessage });
+            this.props.fetchDmServer(this.props.dmServerId);
+            this.unsubscribe();
+            this.subscribe();
+        }
+    }
+
+
+    handleEnter (e) {
+        const keys = {
+            13: () => {
+                e.preventDefault();
+                this.handleSubmit(e);
+                window.removeEventListener('keyup', this.handleEnter, false);
             },
-            connected () {
-                console.log("connected");
-            },
-
-            disconnected () {
-                console.log("disconnected");
-
-            }
+        };
+        if (keys[e.keyCode]) {
+            keys[e.keyCode]();
         }
-        const subscription = cable.subscriptions.create(trasmitParams, handlers);
+    }
 
-        // if(props.DmMessages){
-        //     scrollToBottomOfChat("auto");
-        // }
-        // if(props.DmMessages.length !== dmMessages.length){
-        //     setDmMessages(props.DmMessages);
-        // }
-
-        return function cleanUp () {
-            subscription.unsubscribe();
-            // if(props.dmServer.id !== props.dmServerId){
-            // props.fetchDmServer()
-            // setDmMessages([])
-            // }
-        }
-
-    }, [props.dmServer.id, dmMessages, props.users.length])
-
-
-    useEffect(() => {
-        console.log(`messages props state: NOW: ${props.DmMessages.length}, BEFORE: ${prevPropsDMS}`)
-
-        if(props.DmMessages[0]  !== prevPropsDMS){
-            scrollToBottomOfChat("auto");
-            console.log("auto");
-        }
-        if (prevStateDMSLen < dmMessages.length) {
-            scrollToBottomOfChat("smooth");
-            console.log("smooth");
-
-        }
-
-    }, [props.DmMessages, dmMessages])
-
-
-
-
-
-
-
-    // console.log('getparams:', getParams);
-    const submitMessage = (e) => {
+    handleSubmit (e) {
         e.preventDefault();
         e.stopPropagation();
-        let dmMessagebody = value;
+        let dmMessagebody = this.state.value;
         if (dmMessagebody.length === 0) { return; }
-        const newDmMessage = {
-            body: value,
-            sender_id: props.currentUser.id,
-            dm_server_id: props.dmServer.id
-        }
-        // let modedMessage = this.state.newDmMessage;
-        // modedMessage.body = dmMessagebody;
-        // this.setState({ newDmMessage: modedMessage });
-        props.createDmMessage(newDmMessage);
-        // modedMessage.body = ''
-        setValue('');
-        // this.setState({ value: '', newDmMessage: modedMessage });
+        let modedMessage = this.state.newDmMessage;
+        modedMessage.body = dmMessagebody;
+        this.setState({ newDmMessage: modedMessage });
+        this.props.createDmMessage(this.state.newDmMessage);
+        modedMessage.body = ''
+        this.setState({ value: '', newDmMessage: modedMessage });
+
+    }
+
+    handleInput (e) {
+        return (e) => { this.setState({ value: e.currentTarget.value }) }
     }
 
 
-    const scrollToBottomOfChat = (speed) => {
-        if (placeholder) {
-            placeholder.scrollIntoView({ behavior: speed });
-        }
-    }
-
-    const formatTime = (timeOfCreation) => {
+    formatTime (timeOfCreation) {
         const date = new Date(timeOfCreation);
         const now = new Date();
         const startOfDay = new Date(
@@ -174,11 +214,12 @@ const DmMessages = (props) => {
         return formattedTime;
     }
 
-    const oneToOneChatFirstMessage = () => {
-        const members = Object.values(props.dmMembers);
+
+    oneToOneChatFirstMessage () {
+        const members = Object.values(this.props.dmMembers);
         if (members.length === 2) {
-            const otherUser = members.find((user) => user.id !== props.currentUser.id)
-            placeholderText = `@${otherUser.username}`;
+            const otherUser = members.find((user) => user.id !== this.props.currentUser.id)
+            this.placeholderText = `@${otherUser.username}`;
             return (
                 <strong className="otherUser">@{`${otherUser.username}`}</strong>
             )
@@ -187,17 +228,16 @@ const DmMessages = (props) => {
             return null;
         }
     }
-
-    const renderGroupChatFirstMessage = () => {
-        const members = Object.values(props.dmMembers);
+    renderGroupChatFirstMessage () {
+        const members = Object.values(this.props.dmMembers);
         let groupMembers = new Array();
         if (members.length > 2) {
             for (let member of members) {
-                if (member.id !== props.currentUser.id) {
+                if (member.id !== this.props.currentUser.id) {
                     groupMembers.push('@' + member.username);
                 }
             }
-            placeholderText = `${groupMembers.join(", ").split("@").join('')}`;
+            this.placeholderText = `${groupMembers.join(", ").split("@").join('')}`;
 
             return (
                 <strong className="otherUser">{` `}{`${groupMembers.join(", ")}`}</strong>
@@ -209,124 +249,174 @@ const DmMessages = (props) => {
     }
 
 
+    render () {
+
+        let dmMessageOLLIMapping = this.state.DmMessages.map((dmMessage) => {
+            // const botMessage = dmMessage.sender_id === 1 &&
+            //     dmMessage.body === 'This is the beginning of your direct message history with' ?
+            //     this.oneToOneChatFirstMessage() : dmMessage.sender_id === 1 &&
+            //         dmMessage.body === 'Welcome to the beginning of your Group Chat' ?
+            //         this.renderGroupChatFirstMessage() : ('');
+
+            {
+                return (
 
 
-    let dmMessageOLLIMapping = props.DmMessages.map((dmMessage) => {
-        const botMessage = dmMessage.sender_id === 1 &&
-            dmMessage.body === 'This is the beginning of your direct message history with' ?
-            oneToOneChatFirstMessage() : dmMessage.sender_id === 1 &&
-                dmMessage.body === 'Welcome to the beginning of your Group Chat' ?
-                renderGroupChatFirstMessage() : ('');
-        {
-            return (
+                    <DMMessageEditContainer
+                        dmMembers={this.props.dmMembers}
+                        currentUserId={this.props.currentUserId}
+                        dmMessage={dmMessage}
+                        renderGroupChatFirstMessage={this.renderGroupChatFirstMessage}
+                        oneToOneChatFirstMessage={this.oneToOneChatFirstMessage}
+                        formatTime={this.formatTime}
+                        dmServerId={this.props.dmServerId}
+                        key={dmMessage.id}
+                    />
 
-                <li className="chat-message-item" key={dmMessage.id}>
 
-                    <div className="message-wrapper-contents">
-                        <div className="message-wrapper1">
-                            <div className={`${dmMessage.author[dmMessage.sender_id].photo === undefined ?
-                                `chat-user-pfp-svg-render color-${dmMessage.author[dmMessage.sender_id].color_tag}` :
-                                `chat-member-avatar-img`}`}>
-                                <img src={`${dmMessage.author[dmMessage.sender_id].photo === undefined
-                                    ? render_User_PFP : dmMessage.author[dmMessage.sender_id].photo}`} alt="SMPFP" />
-                            </div>
-                            <h2 className="chat-member-username-header">
-                                <span className="chat-member-username-wrap">
-                                    <span className="chat-member-username">{dmMessage.authorName}</span>
-                                </span>
-                                <span className="chat-message-timestamp-wrap">
-                                    <p className="chat-message-timestamp">
-                                        {formatTime(dmMessage.created_at)}
-                                    </p>
-                                </span>
-                            </h2>
-                            <div className="chat-message">
-                                {dmMessage.body}
-                                {botMessage}
-                                {/* <span className="mention-wrapper">{dmMessage.body}</span> */}
+                    // <li className="chat-message-item" key={dmMessage.id}>
+
+                    //     <div className="message-wrapper-contents">
+                    //         <div className="message-wrapper1">
+                    //             <div className={`${dmMessage.author[dmMessage.sender_id].photo === undefined ?
+                    //                 `chat-user-pfp-svg-render color-${dmMessage.author[dmMessage.sender_id].color_tag}` :
+                    //                 `chat-member-avatar-img`}`}>
+                    //                 <img src={`${dmMessage.author[dmMessage.sender_id].photo === undefined
+                    //                     ? render_User_PFP : dmMessage.author[dmMessage.sender_id].photo}`} alt="SMPFP" />
+                    //             </div>
+                    //             <h2 className="chat-member-username-header">
+                    //                 <span className="chat-member-username-wrap">
+                    //                     <span className="chat-member-username">{dmMessage.authorName}</span>
+                    //                 </span>
+                    //                 <span className="chat-message-timestamp-wrap">
+                    //                     <p className="chat-message-timestamp">
+                    //                         {this.formatTime(dmMessage.created_at)}
+                    //                     </p>
+                    //                 </span>
+                    //             </h2>
+                    //             <div className="chat-message">
+                    //                 {dmMessage.body}
+                    //                 {botMessage}
+                    //                 {/* <span className="mention-wrapper">{dmMessage.body}</span> */}
+                    //             </div>
+                    //         </div>
+                    //         <div className={`message-accessories-button-wrapper ${this.props.currentUserId === dmMessage.sender_id ? ``:`is-hidden`}`}>
+                    //             <div className="message-accessories-button" data-tip data-for="edit-message">
+                    //                 <svg className="pen-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
+                    //                     <path fillRule="evenodd" clipRule="evenodd" d="M19.2929 9.8299L19.9409 9.18278C21.353 7.77064 
+                    //                                  21.353 5.47197 19.9409 4.05892C18.5287 2.64678 16.2292 2.64678 14.817 4.05892L14.1699 4.70694L19.2929 
+                    //                                  9.8299ZM12.8962 5.97688L5.18469 13.6906L10.3085 18.813L18.0201 11.0992L12.8962 5.97688ZM4.11851 
+                    //                                  20.9704L8.75906 19.8112L4.18692 15.239L3.02678 19.8796C2.95028 20.1856 3.04028 20.5105 3.26349 
+                    //                                  20.7337C3.48669 20.9569 3.8116 21.046 4.11851 20.9704Z" fill="currentColor">
+                    //                     </path>
+                    //                 </svg>
+
+                    //             </div>
+                    //             <div className="message-accessories-button" data-tip data-for="delete-message">
+                    //                 <svg className="trash-message-icon" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                    //                     <path fill="currentColor" d="M15 3.999V2H9V3.999H3V5.999H21V3.999H15Z">
+                    //                     </path>
+                    //                     <path fill="currentColor" d="M5 6.99902V18.999C5 20.101 5.897 20.999 7 20.999H17C18.103 20.999
+                    //                                 19 20.101 19 18.999V6.99902H5ZM11 17H9V11H11V17ZM15 17H13V11H15V17Z">
+                    //                     </path>
+                    //                 </svg>
+
+                    //             </div>
+                    //         </div>
+                    //     </div>
+                    //     <ReactTooltip
+                    //         className="thread-tool-tip"
+                    //         textColor="#B9BBBE"
+                    //         backgroundColor="#191919"
+                    //         id="edit-message"
+                    //         place="top"
+                    //         effect="solid">
+                    //         Edit
+                    //     </ReactTooltip>
+
+                    //     <ReactTooltip
+                    //         className="thread-tool-tip"
+                    //         textColor="#B9BBBE"
+                    //         backgroundColor="#191919"
+                    //         id="delete-message"
+                    //         place="top"
+                    //         effect="solid">
+                    //         Delete
+                    //     </ReactTooltip>
+                    // </li>
+                )
+            }
+
+
+        })
+
+        return (
+            <div className="server-chat-container-wrapper">
+                <main className="server-chat-container">
+                    <div className="message-wrapper">
+                        <div className="chat-scroller">
+                            <div className="chat-scroller-content">
+                                <ol className="chat-scroller-inner">
+                                    <div className="chat-divider">
+                                        <span className="chat-divider-content"></span>
+                                    </div>
+
+                                    {dmMessageOLLIMapping}
+
+                                    <div className="ol-scroller-spacer" ref={el => this.placeholder = el} />
+                                </ol>
                             </div>
                         </div>
-                        <div className="message-accessories"></div>
                     </div>
-                </li>
-            )
-        }
 
-
-    });
-
-
-    console.log("dmmessages hooks props: ", props);
-    console.log("dmmessages hooks state: ", dmMessages);
-    console.log("current dmMesaagesprops. lenghth ", props.DmMessages.length);
-    console.log("prevprops: ", prevPropsDMS);
-
-    return (
-        <div className="server-chat-container-wrapper">
-            <main className="server-chat-container">
-                <div className="message-wrapper">
-                    <div className="chat-scroller">
-                        <div className="chat-scroller-content">
-                            <ol className="chat-scroller-inner">
-                                <div className="chat-divider">
-                                    <span className="chat-divider-content"></span>
-                                </div>
-
-                                {dmMessageOLLIMapping}
-
-                                <div className="ol-scroller-spacer" ref={el => placeholder = el} />
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-
-                <form className="chat-input-form" onSubmit={submitMessage}>
-                    <div className="chat-input-text-area">
-                        <div className="chat-input-text-area-scroller">
-                            <div className="inner-attach-button">
-                                <div className="uploadinput">
-                                    <input type="file" className="file-input" disabled />
-                                </div>
-                                <div className="attach-wrapper">
-                                    <button type="button" className="attach-wrapper-button">
-                                        <div className="attach-wrapper-button-content">
-                                            <svg width="24" height="24" viewBox="0 0 24 24">
-                                                <path className="attachButtonPlus" fill="currentColor"
-                                                    d="M12 2.00098C6.486 2.00098 2 6.48698 2 12.001C2 17.515 6.486 22.001
+                    <form className="chat-input-form" onSubmit={this.handleSubmit}>
+                        <div className="chat-input-text-area">
+                            <div className="chat-input-text-area-scroller">
+                                <div className="inner-attach-button">
+                                    <div className="uploadinput">
+                                        <input type="file" className="file-input" />
+                                    </div>
+                                    <div className="attach-wrapper">
+                                        <button type="button" className="attach-wrapper-button">
+                                            <div className="attach-wrapper-button-content">
+                                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                                    <path className="attachButtonPlus" fill="currentColor"
+                                                        d="M12 2.00098C6.486 2.00098 2 6.48698 2 12.001C2 17.515 6.486 22.001
                                                          12 22.001C17.514 22.001 22 17.515 22 12.001C22 6.48698 17.514 2.00098
                                                           12 2.00098ZM17 13.001H13V17.001H11V13.001H7V11.001H11V7.00098H13V11.001H17V13.001Z">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div className="inner-scroller-text-area">
-                                    <div>
-
-                                        <textarea
-                                            value={value}
-                                            onChange={(e) => setValue(e.currentTarget.value)}
-                                            className="server-message-chat-box-area"
-                                            rows={value.split('\n').length}
-                                            minLength={1}
-                                            maxLength={2000}
-                                            placeholder={`Message ${placeholderText}`}
-                                            spellCheck={false}
-                                            onKeyDown={(e) => {
-                                                if (e.code === 'Enter' && !e.shiftKey) {
-                                                    submitMessage(e);
-                                                }
-                                            }}
-                                        />
-
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                        </button>
                                     </div>
-                                </div>
-                                <div className="inner-scroller-buttons">
-                                    <button type="button" className="send-gift-button">
-                                        <div className="chat-button-contents">
-                                            <div className="chat-button-wrapper">
-                                                <svg className="present-icon" width="24" height="24" aria-hidden="true" role="img" viewBox="0 0 24 24">
-                                                    <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M16.886 7.999H20C21.104 7.999 
+                                    <div className="inner-scroller-text-area">
+                                        <div>
+
+                                            <textarea
+                                                value={this.state.value}
+                                                onChange={this.handleInput()}
+                                                className="server-message-chat-box-area"
+                                                rows={this.state.value.split('\n').length}
+                                                minLength={1}
+                                                maxLength={2000}
+                                                placeholder={`Message ${this.placeholderText}`}
+                                                spellCheck={false}
+                                                onKeyDown={(e) => {
+                                                    if (e.code === 'Enter' && !e.shiftKey) {
+                                                        this.handleSubmit(e);
+                                                    }
+                                                }}
+                                            />
+                                   
+
+                                        </div>
+                                    </div>
+                                    <div className="inner-scroller-buttons">
+                                        <button type="button" className="send-gift-button">
+                                            <div className="chat-button-contents">
+                                                <div className="chat-button-wrapper">
+                                                    <svg className="present-icon" width="24" height="24" aria-hidden="true" role="img" viewBox="0 0 24 24">
+                                                        <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M16.886 7.999H20C21.104 7.999 
                                                 22 8.896 22 9.999V11.999H2V9.999C2 8.896 2.897 7.999 4 7.999H7.114C6.663 7.764 6.236 7.477 5.879
                                                  7.121C4.709 5.951 4.709 4.048 5.879 2.879C7.012 1.746 8.986 1.746 10.121 2.877C11.758 4.514 11.979 
                                                  7.595 11.998 7.941C11.9991 7.9525 11.9966 7.96279 11.9941 7.97304C11.992 7.98151 11.99 7.98995 11.99
@@ -338,36 +428,36 @@ const DmMessages = (props) => {
                                                   4C16.268 4 16.519 4.103 16.706 4.291C17.096 4.682 17.097 5.316 16.707 5.707C16.116 6.298 15.057 6.642 14.174 
                                                   6.824ZM3 13.999V19.999C3 21.102 3.897 21.999 5 21.999H11V13.999H3ZM13 13.999V21.999H19C20.104 21.999 21 21.102 
                                                   21 19.999V13.999H13Z">
-                                                    </path>
-                                                </svg>
+                                                        </path>
+                                                    </svg>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </button>
-                                    <div className="button-chat-input-wrap">
-                                        <button type="button" className="send-gift-button">
-                                            <div className="chat-button-contents">
-                                                <div className="chat-button-wrapper">
-                                                    <svg width="24" height="24" className="icongif" aria-hidden="true" role="img" viewBox="0 0 24 24">
-                                                        <path fill="currentColor" d="M2 2C0.895431 2 0 2.89543 0 4V20C0 21.1046 0.89543 22 2 
+                                        </button>
+                                        <div className="button-chat-input-wrap">
+                                            <button type="button" className="send-gift-button">
+                                                <div className="chat-button-contents">
+                                                    <div className="chat-button-wrapper">
+                                                        <svg width="24" height="24" className="icongif" aria-hidden="true" role="img" viewBox="0 0 24 24">
+                                                            <path fill="currentColor" d="M2 2C0.895431 2 0 2.89543 0 4V20C0 21.1046 0.89543 22 2 
                                                             22H22C23.1046 22 24 21.1046 24 20V4C24 2.89543 23.1046 2 22 2H2ZM9.76445 11.448V15.48C8.90045 
                                                             16.044 7.88045 16.356 6.74045 16.356C4.11245 16.356 2.66045 14.628 2.66045 12.072C2.66045 9.504 
                                                             4.23245 7.764 6.78845 7.764C7.80845 7.764 8.66045 8.004 9.32045 8.376L9.04445 10.164C8.42045 9.768 
                                                             7.68845 9.456 6.83645 9.456C5.40845 9.456 4.71245 10.512 4.71245 12.06C4.71245 13.62 5.43245 14.712 
                                                             6.86045 14.712C7.31645 14.712 7.64045 14.616 7.97645 14.448V12.972H6.42845V11.448H9.76445ZM11.5481 
                                                             7.92H13.6001V16.2H11.5481V7.92ZM20.4724 7.92V9.636H17.5564V11.328H19.8604V13.044H17.5564V16.2H15.5164V7.92H20.4724Z">
-                                                        </path>
-                                                    </svg>
+                                                            </path>
+                                                        </svg>
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                        </button>
-                                    </div>
-                                    <div className="button-chat-input-wrap">
-                                        <button type="button" className="send-gift-button">
-                                            <div className="chat-button-contents">
-                                                <div className="chat-button-wrapper">
-                                                    <svg width="24" height="24" className="sticker-icon" aria-hidden="true" role="img" viewBox="0 0 20 20">
-                                                        <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M12.0002 0.662583V5.40204C12.0002 
+                                            </button>
+                                        </div>
+                                        <div className="button-chat-input-wrap">
+                                            <button type="button" className="send-gift-button">
+                                                <div className="chat-button-contents">
+                                                    <div className="chat-button-wrapper">
+                                                        <svg width="24" height="24" className="sticker-icon" aria-hidden="true" role="img" viewBox="0 0 20 20">
+                                                            <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M12.0002 0.662583V5.40204C12.0002 
                                                             6.83974 13.1605 7.99981 14.5986 7.99981H19.3393C19.9245 7.99981 20.222 7.29584 19.8055 6.8794L13.1209 0.196569C12.7043 -0.219868 
                                                             12.0002 0.0676718 12.0002 0.662583ZM14.5759 10.0282C12.0336 10.0282 9.96986 7.96441 9.96986 5.42209V0.0583083H1.99397C0.897287 
                                                             0.0583083 0 0.955595 0 2.05228V18.0041C0 19.1007 0.897287 19.998 1.99397 19.998H17.9457C19.0424 19.998 19.9397 19.1007 19.9397 
@@ -376,9 +466,9 @@ const DmMessages = (props) => {
                                                             13.331C4.44559 13.9446 3.94821 14.442 3.33467 14.442C2.72112 14.442 2.22375 13.9446 2.22375 13.331C2.22375 12.7175 2.72112 12.2201 
                                                             3.33467 12.2201C3.94821 12.2201 4.44559 12.7175 4.44559 13.331ZM16.6657 14.442C17.2793 14.442 17.7766 13.9446 17.7766 13.331C17.7766 
                                                             12.7175 17.2793 12.2201 16.6657 12.2201C16.0522 12.2201 15.5548 12.7175 15.5548 13.331C15.5548 13.9446 16.0522 14.442 16.6657 14.442Z">
-                                                        </path>
-                                                        <path fill="currentColor" fillRule="evenodd" clipRule="evenodd"
-                                                            d="M12.0002 0.662583V5.40204C12.0002 6.83974 13.1605 7.99981 14.5986 7.99981H19.3393C19.9245 
+                                                            </path>
+                                                            <path fill="currentColor" fillRule="evenodd" clipRule="evenodd"
+                                                                d="M12.0002 0.662583V5.40204C12.0002 6.83974 13.1605 7.99981 14.5986 7.99981H19.3393C19.9245 
                                                                 7.99981 20.222 7.29584 19.8055 6.8794L13.1209 0.196569C12.7043 -0.219868 12.0002 0.0676718 
                                                                 12.0002 0.662583ZM14.5759 10.0282C12.0336 10.0282 9.96986 7.96441 9.96986 5.42209V0.0583083H1.99397C0.897287 0.0583083 0 0.955595 
                                                                 0 2.05228V18.0041C0 19.1007 0.897287 19.998 1.99397 19.998H17.9457C19.0424 19.998 19.9397 19.1007 19.9397 18.0041V10.0282H14.5759ZM12 
@@ -386,18 +476,19 @@ const DmMessages = (props) => {
                                                                 14.442C16.0522 14.442 15.5548 13.9446 15.5548 13.331C15.5548 12.7175 16.0522 12.2201 16.6657 12.2201C17.2793 12.2201 17.7766 
                                                                 12.7175 17.7766 13.331ZM2 
                                                                 12.2361L2.53532 11L5.62492 12.7835C5.79161 12.8797 5.79161 13.1203 5.62492 13.2165L2.53532 15L2 13.7639L3.32339 13L2 12.2361Z">
-                                                        </path>
-                                                    </svg>
+                                                            </path>
+                                                        </svg>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </button>
-                                    </div>
-                                    <div className="button-chat-input-wrap">
-                                        <button type="button" className="send-gift-button happyface">
-                                            <div className="chat-button-contents">
-                                                <div className="chat-button-wrapper">
-                                                    <svg className="smiley-face-icon" xmlns="http://www.w3.org/2000/svg" height="24" width={24} viewBox="0 0 512 512">
-                                                        <path fill="currentColor" d="M256 352C293.2 352 319.2 334.5 334.4 318.1C343.3 308.4 358.5 307.7 368.3 316.7C378 325.7 378.6 
+                                            </button>
+                                        </div>
+                                        <div className="button-chat-input-wrap">
+                                            <button type="button" className="send-gift-button happyface">
+                                                <div className="chat-button-contents">
+                                                    <div className="chat-button-wrapper">
+                                                        {/* <i className="fa-regular fa-face-smile-wink fa-xl"></i> */}
+                                                        <svg className="smiley-face-icon" xmlns="http://www.w3.org/2000/svg" height="24" width={24} viewBox="0 0 512 512">
+                                                            <path fill="currentColor" d="M256 352C293.2 352 319.2 334.5 334.4 318.1C343.3 308.4 358.5 307.7 368.3 316.7C378 325.7 378.6 
                                                         340.9 369.6 350.6C347.7 374.5 309.7 400 256 400C202.3 400 164.3 374.5 142.4 350.6C133.4 340.9 133.1 325.7 143.7 
                                                         316.7C153.5 307.7 168.7 308.4 177.6 318.1C192.8 334.5 218.8 352 256 352zM208.4 208C208.4 225.7 194 240 176.4 
                                                         240C158.7 240 144.4 225.7 144.4 208C144.4 190.3 158.7 176 176.4 176C194 176 208.4 190.3 208.4 208zM281.9 230.6C273.9 223
@@ -405,24 +496,25 @@ const DmMessages = (props) => {
                                                         230.6C381.2 238.1 368.6 237.7 361 229.7C355.6 223.8 346.3 220 335.6 220C324.1 220 315.7 223.8 310.2 229.7C302.7 237.7
                                                         290 238.1 281.9 230.6zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512
                                                         114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
-                                                    </svg>
+                                                        </svg>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </button>
-                                    </div>
+                                            </button>
+                                        </div>
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="chat-input-text-area-sticker">
+                            <div className="chat-input-text-area-sticker">
 
+                            </div>
                         </div>
-                    </div>
-                </form>
-            </main>
-        </div>
-    )
-
+                    </form>
+                </main>
+            </div>
+        )
+    }
 
 }
+
 export default DmMessages;
