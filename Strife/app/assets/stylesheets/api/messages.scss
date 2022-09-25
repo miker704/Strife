@@ -38,11 +38,12 @@
         /* max-width: 1000px; */
         width: 98%;
     }
+
     // textarea::placeholder{
     //     color: #ffc959;
     // }
 
-    
+
 
 }
 
@@ -201,13 +202,14 @@
     border-radius: 8px;
 }
 
-.otherUser{
+.otherUser {
     font-weight: 600;
     font-family: "Whitney";
     margin-left: 2px;
 }
 
-.chat-message-item, .dm-message-item {
+.chat-message-item,
+.dm-message-item {
     outline: none;
     forced-color-adjust: none;
     // display: flex;
@@ -219,7 +221,10 @@
 
 .chat-message-item:hover {
     background-color: hsla(240, 11.1%, 1.8%, 0.07);
-    ;
+
+    .message-accessories-button-wrapper {
+        display: flex;
+    }
 }
 
 .message-wrapper1 {
@@ -270,7 +275,7 @@
     width: 40px;
     border-radius: 50%;
     margin-top: calc(4px - 0.125rem);
-   
+
 }
 
 .chat-user-pfp-svg-render {
@@ -415,20 +420,7 @@
 
 }
 
-.message-accessories {
-    grid-auto-flow: row;
-    grid-row-gap: 0.25rem;
-    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-    text-indent: 0;
-    min-height: 0;
-    min-width: 0;
-    padding-top: 0.125rem;
-    padding-bottom: 0.125rem;
-    position: relative;
-    outline: 0;
-    forced-color-adjust: none;
-    display: none;
-}
+
 
 .ol-scroller-spacer {
     forced-color-adjust: none;
@@ -859,4 +851,145 @@
     height: 0.5rem;
     width: 1.25rem;
     background: linear-gradient(180deg, #36393f00 0, hsl(220, 7.7%, 22.9%));
+}
+
+//edit and delete buttons 
+.message-accessories {
+    grid-auto-flow: row;
+    grid-row-gap: 0.25rem;
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    text-indent: 0;
+    min-height: 0;
+    min-width: 0;
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+    position: relative;
+    outline: 0;
+    forced-color-adjust: none;
+    display: none;
+}
+
+.message-accessories-button-container {
+    outline: 0;
+    forced-color-adjust: none;
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+
+.message-accessories-button-layer {
+    outline: 0;
+    forced-color-adjust: none;
+    top: -16px;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    // top: -25px;
+    padding: 0 14px 0 32px;
+    opacity: 0;
+    pointer-events: none;
+
+}
+
+.message-accessories-button-wrapper {
+    outline: 0;
+    forced-color-adjust: none;
+    background-color: hsl(220, 7.7%, 22.9%);
+    box-shadow: 0 0 0 1px hsla(240, 11.1%, 1.8%, 0.15);
+    // display: grid;
+    // grid-auto-flow: column;
+    box-sizing: border-box;
+    height: 32px;
+    border-radius: 4px;
+    // align-items: center;
+    // justify-content: flex-start;
+
+    user-select: none;
+
+    transition: box-shadow .1s ease-out;
+    transition: box-shadow .1s ease-out, -webkit-box-shadow .1s ease-out;
+    // position: relative;
+    overflow: hidden;
+
+
+    display: none;
+    position: absolute;
+    // right: 10px;
+    right: 10px;
+
+    // transform: translateY(-50%);
+
+    transform: translateY(-200%);
+
+    // background-color: #36393F;
+    // box-shadow: 0 2px 2px rgb(0 0 0 / 10%);
+    // transition: box-shadow 0.1s ease-in-out;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #2f3136;
+    // border-radius: 5px;
+    overflow: hidden;
+    color: #B9BBBE;
+    cursor: pointer;
+
+
+
+}
+
+.message-accessories-button-wrapper:hover {
+    box-shadow: 0 0 0 1px hsla(240, 11.1%, 1.8%, 0.15), 0 4px 4px hsla(0, 0%, 0%, 0.16);
+}
+
+.message-accessories-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    padding: 4px;
+    min-width: 24px;
+    flex: 0 0 auto;
+    color: hsl(216, 3.7%, 73.5%);
+    cursor: pointer;
+    position: relative;
+    outline: 0;
+    forced-color-adjust: none;
+}
+
+.message-accessories-button:hover {
+    padding-top: 5px;
+    padding-bottom: 3px;
+    color: hsl(216, 3.7%, 73.5%);
+    background-color: hsla(217, 7.6%, 33.5%, 0.48);
+}
+
+.pen-icon {
+    forced-color-adjust: none;
+    width: 20px;
+    height: 20px;
+    display: block;
+    object-fit: contain;
+}
+
+.trash-message-icon {
+    forced-color-adjust: none;
+}
+
+.message-form-edit {
+    padding: 7px 0;
+    font-size: 12px;
+    font-weight: 400;
+    text-indent: 0;
+    color: hsl(210, 2.9%, 86.7%);
+    forced-color-adjust: none;
+    outline: 0;
+    font-family: "Whitney";
+
+    span {
+        color: hsl(197, 100%, 47.8%);
+        text-decoration: none;
+    }
+}
+
+.message-form-edit span:hover{
+    text-decoration: underline;
 }
