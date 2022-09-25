@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 class ServerMessages extends React.Component {
     constructor (props) {
         super(props);
@@ -142,16 +140,7 @@ class ServerMessages extends React.Component {
                                                     window.addEventListener('keyup', this.handleEnter, false);
                                                 }}
                                             />
-                                            {/* <input className="txt-inpt" type="submit" /> */}
-                                            {/* <input
-                                                value={this.state.value}
-                                                onChange={this.handleInput()}
-                                                minLength={1}
-                                                maxLength={2000}
-                                                placeholder={"Message #general or #channel name"}
-                                                spellCheck={false}
-                                                className="server-message-chat-box-area" type="text" /> */}
-
+                                           
                                         </div>
                                     </div>
                                     <div className="inner-scroller-buttons">
