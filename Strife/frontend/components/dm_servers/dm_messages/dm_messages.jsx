@@ -1,9 +1,9 @@
 import React from "react";
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router";
+import PrevPropsHook from "./use_PrevProps_Hook";
 import { createConsumer } from "@rails/actioncable"
 import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
-
 //hook attempt
 
 const DmMessages = (props) => {
@@ -11,14 +11,24 @@ const DmMessages = (props) => {
     if (!props.dmServer) {
         return null
     }
-    if(props.dmServer.id === undefined){
+    if (props.dmServer.id === undefined) {
         null;
     }
 
     const scrollRef = useRef();
+    
     const [value, setValue] = useState('');
     // const [placeholder, setPlaceHolder] = useState('');
     const [dmMessages, setDmMessages] = useState([]);
+
+
+    const [prevDmMessages, setPrevDmMessages] = useState(props.DmMessages[0]);
+    const [prevStateDmMessages, setPrevStateDmMessages] = useState(dmMessages.length);
+
+    const prevPropsDMS = PrevPropsHook(prevDmMessages);
+    const prevStateDMSLen = PrevPropsHook(dmMessages.length);
+
+
     let placeholderText = '';
     let placeholder;
     const render_User_PFP = user_Default_PFP;
@@ -26,8 +36,31 @@ const DmMessages = (props) => {
 
 
     useEffect(() => {
+        // console.log("current dmMesaagesprops. lenghth UE", props.DmMessages.length);
+        // console.log("prevprops:UE ", prevPropsDMS);
+
+
+
+
+
         console.log("use effect call to fethc dmserver");
-        props.fetchDmServer(props.dmServer.id);
+        props.reSyncCurrentUser(props.currentUserId).then((action) => {
+            let currUser = action.currentUser;
+            if (!currUser.dmServersJoined.includes(parseInt(props.dmServerId))) {
+                // props.fetchDmServers(props.currentUserId);
+                props.removeDmServer(props.dmServer.id);
+                props.history.push('/$TR!F3-INTRUSION-PREVENTION/');
+            }
+            else {
+
+                props.fetchDmServer(props.dmServer.id);
+            }
+
+        })
+
+
+
+
         const cable = createConsumer('ws://localhost:3000/cable');
         const trasmitParams = {
             channel: 'DmChannel',
@@ -35,11 +68,12 @@ const DmMessages = (props) => {
         }
 
         const handlers = {
-            received (data) {
+            received ({ dm_message, type }) {
                 // props.fetchDmServer()
-                console.log("data", data)
-
-                setDmMessages([...dmMessages, data])
+                console.log("data - dm_message : ", dm_message);
+                console.log("type: ", type);
+                setDmMessages([...dmMessages, dm_message])
+                props.receiveDmMessage(dm_message)
                 console.log("dmMessages: ", dmMessages);
             },
             connected () {
@@ -68,7 +102,29 @@ const DmMessages = (props) => {
             // }
         }
 
-    }, [props.dmServer.id, dmMessages, props.dmServerMembers.length])
+    }, [props.dmServer.id, dmMessages, props.users.length])
+
+
+    useEffect(() => {
+        console.log(`messages props state: NOW: ${props.DmMessages.length}, BEFORE: ${prevPropsDMS}`)
+
+        if(props.DmMessages[0]  !== prevPropsDMS){
+            scrollToBottomOfChat("auto");
+            console.log("auto");
+        }
+        if (prevStateDMSLen < dmMessages.length) {
+            scrollToBottomOfChat("smooth");
+            console.log("smooth");
+
+        }
+
+    }, [props.DmMessages, dmMessages])
+
+
+
+
+
+
 
     // console.log('getparams:', getParams);
     const submitMessage = (e) => {
@@ -202,7 +258,8 @@ const DmMessages = (props) => {
 
     console.log("dmmessages hooks props: ", props);
     console.log("dmmessages hooks state: ", dmMessages);
-
+    console.log("current dmMesaagesprops. lenghth ", props.DmMessages.length);
+    console.log("prevprops: ", prevPropsDMS);
 
     return (
         <div className="server-chat-container-wrapper">
@@ -339,7 +396,6 @@ const DmMessages = (props) => {
                                         <button type="button" className="send-gift-button happyface">
                                             <div className="chat-button-contents">
                                                 <div className="chat-button-wrapper">
-                                                    {/* <i className="fa-regular fa-face-smile-wink fa-xl"></i> */}
                                                     <svg className="smiley-face-icon" xmlns="http://www.w3.org/2000/svg" height="24" width={24} viewBox="0 0 512 512">
                                                         <path fill="currentColor" d="M256 352C293.2 352 319.2 334.5 334.4 318.1C343.3 308.4 358.5 307.7 368.3 316.7C378 325.7 378.6 
                                                         340.9 369.6 350.6C347.7 374.5 309.7 400 256 400C202.3 400 164.3 374.5 142.4 350.6C133.4 340.9 133.1 325.7 143.7 
