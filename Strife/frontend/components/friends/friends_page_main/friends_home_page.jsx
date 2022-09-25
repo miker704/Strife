@@ -89,8 +89,9 @@ class FriendsHomePageContainer extends React.Component {
 
     componentDidMount () {
         this.mounted = true;
-        // this.props.requestFriendships();
         this.props.requestAllFriendships();
+        //attempt to resync any need data to avoid being booted out or access servers with revoked or new memberships
+        this.props.reSyncCurrentUser(this.props.currentUser.id);
     }
 
     componentWillUnmount () {
