@@ -83,7 +83,9 @@ const FriendShipIndex = (props) => {
         let newDmServer;
         props.createDmServer(submissionState).then((action) => {
             newDmServer = action.dmserver;
-            props.history.push(`/channels/@me/${newDmServer.id}`);
+            props.reSyncCurrentUser(props.currentUserId).then(() => {
+                props.history.push(`/channels/@me/${newDmServer.id}`);
+            })
         });
 
         return;
