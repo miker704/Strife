@@ -1,5 +1,5 @@
 import React from "react";
-import CreateServerFormContainer from "../server/server_forms/create_server_forms/create_server_form_container.js";
+import CreateServerFormContainer from "../server/create_server_forms/create_server_form_container.js";
 import UserProfileContainer from "../users/user_profile/user_profile_container.js";
 import EditUserPFPContainer from "../users/user_edit_profile_pic_form/user_edit_pfp_container.js";
 import EditUserPasswordContainer from "../users/user_edit_password_form/user_edit_password_container.js";
@@ -19,7 +19,7 @@ import InviteToServerModalContainer from "../server/invite_to_server_modal/invit
 import ChannelSettingsModalContainer from "../channels/channel_settings/channel_settings_modal_container.js";
 import CreateChannelModalContainer from "../channels/create_channel_modal/create_channel_modal_container.js";
 import ActionButtonPopUpContainer from "../server/server_search/action_button_pop_up_container.js";
-import DeleteDmMessageModalContainer from "../dm_servers/dm_messages/delete_dm_message_modal_container.js";
+import DeleteDmMessageModalContainer from "../dm_servers/delete_dm_message_modal/delete_dm_message_modal_container.js";
 
 class ModalManager extends React.Component {
     constructor (props) {
