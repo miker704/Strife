@@ -33,16 +33,33 @@ export const removeDmMessageErrors = () => {
     }
 }
 
-//these are  getting alot more complicated for no reason 
+//removing received as the are no longer need they are being called at message received from AC
 
-export const createDmMessage = (dm_msg) => (dispatch) =>
-   DM_MESSAGEAPIUTIL.createDmMessage(dm_msg).then((dm_message) => dispatch(receiveDmMessage(dm_message)),
-        (err) => dispatch(receiveDmMessageErrors(err.responseJSON)))
 
-export const updateDmMessage = (dm_msg) => (dispatch) =>
-DM_MESSAGEAPIUTIL.updateDmMessage(dm_msg).then((dm_message) => dispatch(receiveDmMessage(dm_message)),
-        (err) => dispatch(receiveDmMessageErrors(err.responseJSON)))
+// export const createDmMessage = (dm_msg) => (dispatch) =>
+//    DM_MESSAGEAPIUTIL.createDmMessage(dm_msg).then((dm_message) => dispatch(receiveDmMessage(dm_message)),
+//         (err) => dispatch(receiveDmMessageErrors(err.responseJSON)))
+
+
+        export const createDmMessage = (dm_msg) => (dispatch) =>
+        DM_MESSAGEAPIUTIL.createDmMessage(dm_msg)
+        // .then((dm_message) => dispatch(receiveDmMessage(dm_message)),
+        //      (err) => dispatch(receiveDmMessageErrors(err.responseJSON)))
+
+
+// export const updateDmMessage = (dm_msg) => (dispatch) =>
+// DM_MESSAGEAPIUTIL.updateDmMessage(dm_msg).then((dm_message) => dispatch(receiveDmMessage(dm_message)),
+//         (err) => dispatch(receiveDmMessageErrors(err.responseJSON)))
+
+
+        export const updateDmMessage = (dm_msg) => (dispatch) =>
+        DM_MESSAGEAPIUTIL.updateDmMessage(dm_msg)
+
+
+// export const deleteDmMessage = (dm_msgId) => (dispatch) =>
+// DM_MESSAGEAPIUTIL.deleteDmMessage(dm_msgId).then((dm_messageId) => dispatch(removeDmMessage(dm_messageId)),
+//         (err) => dispatch(receiveDmMessageErrors(err.responseJSON)))
+
 
 export const deleteDmMessage = (dm_msgId) => (dispatch) =>
-DM_MESSAGEAPIUTIL.deleteDmMessage(dm_msgId).then((dm_messageId) => dispatch(removeDmMessage(dm_messageId)),
-        (err) => dispatch(receiveDmMessageErrors(err.responseJSON)))
+DM_MESSAGEAPIUTIL.deleteDmMessage(dm_msgId)
