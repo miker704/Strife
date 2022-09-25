@@ -5,11 +5,12 @@ import { selectFriendStatusOnline, selectOnlineFriends } from '../../../utils/se
 import { requestFriendships, removeFriendshipErrors, requestAllFriendships} from '../../../actions/friendship_actions';
 import { createDmServer, removeDmServerErrors } from '../../../actions/dm_server_actions';
 import { openModal } from '../../../actions/modal_actions';
-
+import { reSyncCurrentUser } from '../../../actions/session_actions';
 
 const mSTP = (state) => {
     return {
         currentUser: state.entities.users[state.session.id],
+        currentUserId: state.session.id,
         friends: selectFriendStatusOnline(state, 3),
         // friends: selectOnlineFriends(state, 3),
         errors: state.errors.friendship,
@@ -26,7 +27,8 @@ const mDTP = (dispatch) => {
         removeDmServerErrors: () => dispatch(removeDmServerErrors()),
         createDmServer: (dmserver) => dispatch(createDmServer(dmserver)),
         openModal: (modal) => dispatch(openModal(modal)),
-        requestAllFriendships: ()=> dispatch(requestAllFriendships())
+        requestAllFriendships: ()=> dispatch(requestAllFriendships()),
+        reSyncCurrentUser : (currentUserId) => dispatch(reSyncCurrentUser(currentUserId))
     }
 };
 
