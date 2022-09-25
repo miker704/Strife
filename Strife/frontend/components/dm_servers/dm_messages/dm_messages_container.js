@@ -1,8 +1,9 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { fetchDmServer, fetchDmServers } from "../../../actions/dm_server_actions.js";
-import { createDmMessage } from "../../../actions/dm_messages_actions.js";
+import { fetchDmServer, fetchDmServers, removeDmServer } from "../../../actions/dm_server_actions.js";
+import { createDmMessage, receiveDmMessage } from "../../../actions/dm_messages_actions.js";
 import { selectDmMembers } from "../../../utils/selectors_api_util.js";
+import { reSyncCurrentUser } from "../../../actions/session_actions.js";
 import DmMessages from "./dm_messages.jsx";
 import DmMessages2 from "./dm_messages2.jsx";
 import DmMessages3 from "./dm_messages3.jsx";
@@ -28,6 +29,7 @@ const mSTP = (state, ownProps) => {
         dmServerErrors : state.errors.dmServer,
         dmMembers: state.entities.users,
         dmServers : Object.values(state.entities.dmServers),
+        users: Object.values(state.entities.users)
     }
 }
 
@@ -36,10 +38,14 @@ const mDTP = (dispatch, ownProps) => {
     return {
         fetchDmServers: (userId) => dispatch(fetchDmServers(userId)),
         fetchDmServer: () => {dispatch(fetchDmServer(ownProps.match.params.dmServerId))},
-        createDmMessage: (dmmessage) => dispatch(createDmMessage(dmmessage))
+        createDmMessage: (dmmessage) => dispatch(createDmMessage(dmmessage)),
+        receiveDmMessage: (dm_message) => dispatch(receiveDmMessage(dm_message)),
+        reSyncCurrentUser: (currentUser) => dispatch(reSyncCurrentUser(currentUser)),
+        removeDmServer: (dmServerId) => dispatch(removeDmServer(dmServerId))
+        
     }
 }
 
 
-const DmMessagesContainer = withRouter(connect(mSTP, mDTP)(DmMessages));
+const DmMessagesContainer = withRouter(connect(mSTP, mDTP)(DmMessages3));
 export default DmMessagesContainer;
