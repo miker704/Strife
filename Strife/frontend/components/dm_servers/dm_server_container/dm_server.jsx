@@ -33,9 +33,6 @@ class DmServer extends React.Component {
     }
 
     render () {
-        // console.log("dmserver props", this.props);
-        // console.log(this.props.dmServer);
-        // console.log(this.props.dmServer.id)
         if (this.props.dmServer) {
             return (
                 <div className="dm-server-container">
@@ -50,9 +47,6 @@ class DmServer extends React.Component {
             )
         }
         else {
-            console.log(this.props.dmServer);
-            console.log("this.does not exist")
-            // return this.props.history.push('/channels/@me');
             return null;
         }
 
