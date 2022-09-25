@@ -9,9 +9,7 @@ const serverReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_SERVER:
-            // nextState[action.server.server.id] = action.server.server
             nextState[action.server.id] = action.server;
-
             return nextState;
         case RECEIVE_SERVERS:
             return action.servers;
@@ -23,8 +21,6 @@ const serverReducer = (state = {}, action) => {
         nextState[action.servermembership.id]= action.servermembership;
         return nextState;
         case REMOVE_SERVER_MEMBERSHIP:
-            // delete nextState[action.membershiphash.server.id];
-            // nextState[action.membershiphash.id].users= action.membershiphash.users;
             nextState[action.membershiphash.id]= action.membershiphash;
             return nextState;
         case LOGOUT_CURRENT_USER:
