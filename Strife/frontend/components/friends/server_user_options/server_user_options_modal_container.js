@@ -10,10 +10,12 @@ import { createServerMembership, deleteServerMembership } from "../../../actions
 import { fetchUser } from '../../../actions/session_actions';
 import { removeServerErrors, fetchServer } from "../../../actions/server_actions";
 import { removeChannelErrors, fetchChannel } from "../../../actions/channel_actions";
+import { reSyncCurrentUser } from "../../../actions/session_actions";
 
 const mSTP = (state, ownProps) => {
     return {
         currentUser: state.entities.users[state.session.id],
+        currentUserId: state.session.id,
         friends: selectFriendStatusOnline(state, 3),
         errors: state.errors.friendship,
         dmServerErrors: state.errors.dmServer,
@@ -23,7 +25,6 @@ const mSTP = (state, ownProps) => {
         channelId: ownProps.match.params.channelId,
         channels: Object.values(state.entities.channels),
         servers: Object.values(state.entities.servers),
-
         serverErrors: state.errors.server,
         channelErrors: state.errors.channel
 
@@ -60,7 +61,10 @@ const mDTP = (dispatch, ownProps) => {
 
 
         removeChannelErrors: () => dispatch(removeChannelErrors()),
-        removeServerErrors: () => dispatch(removeServerErrors())
+        removeServerErrors: () => dispatch(removeServerErrors()),
+
+        //reSync current user props
+        reSyncCurrentUser : (currentUserId) => dispatch(reSyncCurrentUser(currentUserId))
 
     }
 };
