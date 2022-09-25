@@ -6,13 +6,13 @@ import { Route, Redirect } from "react-router";
 
 const mSTP = (state,ownProps) => {
     return {
-        isMember: state.entities.users[state.session.id].serversJoined.includes(parseInt(ownProps.match.params.serverId))
+        isMember: state.currentUser.serversJoined.includes(parseInt(ownProps.match.params.serverId))
     }
 }
 
 const PROTECTED_SERVER = ({ isMember, path, exact }) => {
     console.log("inside protected server route");
-    if (isMember === false || isMember === undefined) { console.warn('UNAUTHORIZED ACCESS ERROR : 401 -> REDIRECTING ...'); /*return null;*/ }
+    if (isMember === false || isMember === undefined || isMember === null) { console.warn('UNAUTHORIZED ACCESS ERROR : 401 -> REDIRECTING ...'); /*return null;*/ }
     return (
         <Route
             path={path}
