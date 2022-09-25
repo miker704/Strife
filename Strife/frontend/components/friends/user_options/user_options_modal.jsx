@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
 import { closeHookModalOnOutsideClick, closeOnEsc } from "../../../utils/close_hook_modals_api_utils";
-
+//this modal is deprecated and replaced by the far superior multi-use server user options modal
 const UserOptionsModal = ({
     top,
     setShowPopup,
