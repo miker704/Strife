@@ -1,6 +1,9 @@
 import React from "react";
 import { createConsumer } from "@rails/actioncable"
 import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
+import ReactTooltip from "react-tooltip";
+import autosize from "autosize";
+import DMMessageEditContainer from "./dm_message_edit_container";
 
 class DmMessages3 extends React.Component {
     constructor (props) {
@@ -24,7 +27,6 @@ class DmMessages3 extends React.Component {
         this.oneToOneChatFirstMessage = this.oneToOneChatFirstMessage.bind(this);
         this.renderGroupChatFirstMessage = this.renderGroupChatFirstMessage.bind(this);
         this.placeholderText = '';
-        this.renderMessage = this.renderMessage.bind(this);
     }
     //mount correct dmServer and start subscription listening 
     componentDidMount () {
@@ -55,69 +57,79 @@ class DmMessages3 extends React.Component {
 
 
     subscribe () {
-        let that = this;
-        const handlers = {
-            received (incomingDmMessages) {
-                //if incoming data is a message object ensure it can be edited or added to this chat room
-                //this condition is also to load any messages sent or saved in the db 
-                console.log("in received");
-                console.log("incomingdmmessages: ", incomingDmMessages);
 
-                if (Object.values(incomingDmMessages).length > 1) {
-                    if (that.state.dmMessagesIds.includes(incomingDmMessages.id.toString())) {
-                        console.log("this.state.dmMessagesIds.includes(incomingDmMessages.id.toString())");
+        //plug the cable
+        const cable = createConsumer('ws://localhost:3000/cable'); // /cable mounts to local host that rails server is running on 
+        this.subscription = cable.subscriptions.create(
+            { channel: 'DmChannel', id: this.props.dmServerId },
+            {
 
-                        let dmMessages = that.state.DmMessages;
-                        let DMMessagesCollection = new Array();
-                        dmMessages.forEach((dmmessage) => {
-                            //if match occurs set it to current dmMessage state
-                            if (dmmessage.id === incomingDmMessages.id) {
-                                dmmessage.body = incomingDmMessages.body;
-                                //push it to dmMessages state array
-                            }
-                            DMMessagesCollection.push(dmmessage);
-                        })
-                        //update the state 
-                        console.log("DMMESSAGES COLLECTION: ",DMMessagesCollection);
-                        that.setState({ ["DmMessages"]: DMMessagesCollection });
+                received: ({ dm_message }) => {
+                    console.log("in received");
+                    console.log("dm_message ->->->->->->->-> : ", dm_message);
+
+                    this.props.reSyncCurrentUser(this.props.currentUserId).then((action) => {
+                        let currUser = action.currentUser;
+                        if (!currUser.dmServersJoined.includes(parseInt(this.props.dmServerId))) {
+                            this.props.removeDmServer(this.props.dmServer.id);
+                            this.props.history.push('/$TR!F3-INTRUSION-PREVENTION/');
+                        }
+                        else {
+
+                            this.props.fetchDmServer(this.props.dmServer.id);
+                        }
+
+                    })
+
+                    // this.props.receiveDmMessage(dm_message);
+                    // this.props.fetchDmServer(this.props.dmServerId);
+                    if (Object.values(dm_message).length > 1) {
+                        if (this.state.dmMessagesIds.includes(dm_message.id.toString())) {
+                            console.log("this.state.dmMessagesIds.includes(dm_message.id.toString())");
+
+                            let dmMessages = this.state.DmMessages;
+                            let DMMessagesCollection = new Array();
+                            dmMessages.forEach((dmmessage) => {
+                                //if match occurs set it to current dmMessage state
+                                if (dmmessage.id === dm_message.id) {
+                                    dmmessage.body = dm_message.body;
+                                    //push it to dmMessages state array
+                                }
+                                DMMessagesCollection.push(dmmessage);
+                            })
+                            //update the state 
+                            console.log("DMMESSAGES COLLECTION: ", DMMessagesCollection);
+                            this.setState({ ["DmMessages"]: DMMessagesCollection });
+                        }
+                        else {
+                            console.log("in else statemebt");
+                            //if there arent any messages in the dmserver set up for message creation
+                            //get author name of message within this dmServer
+                            dm_message.authorName = this.props.dmServer.members[dm_message.sender_id].username;
+                            //rename it so that it can be editable
+                            dm_message.sender_Id = dm_message.sender_id;
+                            //grab time stamps from the backend
+                            let timeStamp = new Date(dm_message.created_at)
+                            let time = timeStamp.toLocaleTimeString();
+                            let date = timeStamp.toLocaleDateString();
+                            dm_message.created_at = date + " " + time;
+                            this.setState({ ["DmMessages"]: this.state.DmMessages.concat([dm_message]) })
+                            this.setState({ ["dmMessagesIds"]: this.state.dmMessagesIds.concat(dm_message.id.toString()) })
+                        }
                     }
                     else {
-                        console.log("in else statemebt");
+                        console.log("in else flieter");
+                        let dmMessages = this.state.DmMessages
+                        let filteredDmMessages = dmMessages.filter(dm => dm.id !== dm_message)
+                        this.setState({ ['DmMessages']: filteredDmMessages });
 
-                        //if there arent any messages in the dmserver set up for message creation
-                        //get author name of message within this dmServer
-                        incomingDmMessages.authorName = that.props.dmServer.members[incomingDmMessages.sender_id].username;
-                        //rename it so that it can be editable
-                        incomingDmMessages.sender_Id = incomingDmMessages.sender_id;
-                        //grab time stamps from the backend
-                        let timeStamp = new Date(incomingDmMessages.created_at)
-                        let time = timeStamp.toLocaleTimeString();
-                        let date = timeStamp.toLocaleDateString();
-                        incomingDmMessages.created_at = date + " " + time;
-                        that.setState({ ["DmMessages"]: that.state.DmMessages.concat([incomingDmMessages]) })
-                        that.setState({ ["dmMessagesIds"]: that.state.dmMessagesIds.concat(incomingDmMessages.id.toString()) })
                     }
-
-                }
-                else {
-                    console.log("in else flieter");
-
-                    let dmMessages = that.state.DmMessages
-                    let filteredDmMessages = dmMessages.filter(dm => dm.id !== incomingDmMessages)
-                    that.setState({ ['DmMessages']: filteredDmMessages });
 
                 }
             }
-        }
-        //plug the cable
-        const cable = createConsumer('ws://localhost:3000/cable'); // /cable mounts to local host that rails server is running on 
-
-        const parametersToTransmit = {
-            channel: 'DmChannel',
-            id: this.props.dmServerId
-        };
-        this.subscription = cable.subscriptions.create(parametersToTransmit, handlers);
+        );
     }
+
 
 
     componentDidUpdate (prevProps, prevState) {
@@ -125,20 +137,16 @@ class DmMessages3 extends React.Component {
         if (prevProps.DmMessages[0] !== this.props.DmMessages[0]) {
             this.scrollToBottomOfChat("auto");
             console.log("auto");
-
         }
 
         if (prevState.DmMessages.length < this.state.DmMessages.length) {
             this.scrollToBottomOfChat("smooth");
             console.log("smooth");
-
         }
-
         if (prevProps.dmMessagesIds.length !== this.props.dmMessagesIds.length) {
             let DmMessages = this.props.DmMessages;
             let dmMessagesIds = this.props.dmMessagesIds;
             console.log("prevprops dmids ! == props.dfmids");
-
             this.setState({ DmMessages });
             this.setState({ dmMessagesIds });
         }
@@ -149,13 +157,10 @@ class DmMessages3 extends React.Component {
                 let DmMessages = this.props.DmMessages;
                 let dmMessagesIds = this.props.dmMessagesIds;
                 console.log("prevprops dm ! == props.dm");
-
                 this.setState({ DmMessages });
                 this.setState({ dmMessagesIds });
             }
         }
-
-
         if (prevProps.match.params.dmServerId !== this.props.match.params.dmServerId) {
             console.log("prevprops dmserverid ! == props.dmserverid");
             let newDmMessage = this.state.newDmMessage
@@ -257,30 +262,11 @@ class DmMessages3 extends React.Component {
         }
     }
 
-    renderMessage (message) {
-        // console.log("message to interpolate: ", message);
-        // let messagesplit = message.split(" ");
-        // console.log("mssz: ",messagesplit);
-        // let interpolate = messagesplit.find((str) => str.includes('@'));
-        // console.log("interpolate: ",interpolate);  
-        // let indexofInterpolate = messagesplit.indexOf(interpolate);
-        // console.log("indexofInterpolate)",indexofInterpolate);
-
-        //     return (
-        //         <div className="chat-message">
-        //         {/* {dmMessage.body} */}
-        //         <span className="mention-wrapper">{}</span>
-
-        //     </div>
-        //     )
-
-    }
-
 
     render () {
         console.log("dmserver messages props", this.props);
         console.log("current message state: ", this.state);
-        const render_User_PFP = user_Default_PFP;
+        // const render_User_PFP = user_Default_PFP;
 
         let dmMessageOLLIMapping = this.state.DmMessages.map((dmMessage) => {
             // const botMessage = dmMessage.sender_id === 1 &&
@@ -293,35 +279,89 @@ class DmMessages3 extends React.Component {
             {
                 return (
 
-                    <li className="chat-message-item" key={dmMessage.id}>
 
-                        <div className="message-wrapper-contents">
-                            <div className="message-wrapper1">
-                                {/* <div className={`${dmMessage.author[dmMessage.sender_id].photo === undefined ?
-                                    `chat-user-pfp-svg-render color-${dmMessage.author[dmMessage.sender_id].color_tag}` :
-                                    `chat-member-avatar-img`}`}>
-                                    <img src={`${dmMessage.author[dmMessage.sender_id].photo === undefined
-                                        ? render_User_PFP : dmMessage.author[dmMessage.sender_id].photo}`} alt="SMPFP" />
-                                </div> */}
-                                <h2 className="chat-member-username-header">
-                                    <span className="chat-member-username-wrap">
-                                        <span className="chat-member-username">{dmMessage.authorName}</span>
-                                    </span>
-                                    <span className="chat-message-timestamp-wrap">
-                                        <p className="chat-message-timestamp">
-                                            {this.formatTime(dmMessage.created_at)}
-                                        </p>
-                                    </span>
-                                </h2>
-                                <div className="chat-message">
-                                    {dmMessage.body}
-                                    {/* {botMessage} */}
-                                    {/* <span className="mention-wrapper">{dmMessage.body}</span> */}
-                                </div>
-                            </div>
-                            <div className="message-accessories"></div>
-                        </div>
-                    </li>
+                    <DMMessageEditContainer
+                        dmMembers={this.props.dmMembers}
+                        currentUserId={this.props.currentUserId}
+                        dmMessage={dmMessage}
+                        renderGroupChatFirstMessage={this.renderGroupChatFirstMessage}
+                        oneToOneChatFirstMessage={this.oneToOneChatFirstMessage}
+                        formatTime={this.formatTime}
+                        dmServerId={this.props.dmServerId}
+                        key={dmMessage.id}
+                    />
+
+
+                    // <li className="chat-message-item" key={dmMessage.id}>
+
+                    //     <div className="message-wrapper-contents">
+                    //         <div className="message-wrapper1">
+                    //             <div className={`${dmMessage.author[dmMessage.sender_id].photo === undefined ?
+                    //                 `chat-user-pfp-svg-render color-${dmMessage.author[dmMessage.sender_id].color_tag}` :
+                    //                 `chat-member-avatar-img`}`}>
+                    //                 <img src={`${dmMessage.author[dmMessage.sender_id].photo === undefined
+                    //                     ? render_User_PFP : dmMessage.author[dmMessage.sender_id].photo}`} alt="SMPFP" />
+                    //             </div>
+                    //             <h2 className="chat-member-username-header">
+                    //                 <span className="chat-member-username-wrap">
+                    //                     <span className="chat-member-username">{dmMessage.authorName}</span>
+                    //                 </span>
+                    //                 <span className="chat-message-timestamp-wrap">
+                    //                     <p className="chat-message-timestamp">
+                    //                         {this.formatTime(dmMessage.created_at)}
+                    //                     </p>
+                    //                 </span>
+                    //             </h2>
+                    //             <div className="chat-message">
+                    //                 {dmMessage.body}
+                    //                 {botMessage}
+                    //                 {/* <span className="mention-wrapper">{dmMessage.body}</span> */}
+                    //             </div>
+                    //         </div>
+                    //         <div className={`message-accessories-button-wrapper ${this.props.currentUserId === dmMessage.sender_id ? ``:`is-hidden`}`}>
+                    //             <div className="message-accessories-button" data-tip data-for="edit-message">
+                    //                 <svg className="pen-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
+                    //                     <path fillRule="evenodd" clipRule="evenodd" d="M19.2929 9.8299L19.9409 9.18278C21.353 7.77064 
+                    //                                  21.353 5.47197 19.9409 4.05892C18.5287 2.64678 16.2292 2.64678 14.817 4.05892L14.1699 4.70694L19.2929 
+                    //                                  9.8299ZM12.8962 5.97688L5.18469 13.6906L10.3085 18.813L18.0201 11.0992L12.8962 5.97688ZM4.11851 
+                    //                                  20.9704L8.75906 19.8112L4.18692 15.239L3.02678 19.8796C2.95028 20.1856 3.04028 20.5105 3.26349 
+                    //                                  20.7337C3.48669 20.9569 3.8116 21.046 4.11851 20.9704Z" fill="currentColor">
+                    //                     </path>
+                    //                 </svg>
+
+                    //             </div>
+                    //             <div className="message-accessories-button" data-tip data-for="delete-message">
+                    //                 <svg className="trash-message-icon" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                    //                     <path fill="currentColor" d="M15 3.999V2H9V3.999H3V5.999H21V3.999H15Z">
+                    //                     </path>
+                    //                     <path fill="currentColor" d="M5 6.99902V18.999C5 20.101 5.897 20.999 7 20.999H17C18.103 20.999
+                    //                                 19 20.101 19 18.999V6.99902H5ZM11 17H9V11H11V17ZM15 17H13V11H15V17Z">
+                    //                     </path>
+                    //                 </svg>
+
+                    //             </div>
+                    //         </div>
+                    //     </div>
+                    //     <ReactTooltip
+                    //         className="thread-tool-tip"
+                    //         textColor="#B9BBBE"
+                    //         backgroundColor="#191919"
+                    //         id="edit-message"
+                    //         place="top"
+                    //         effect="solid">
+                    //         Edit
+                    //     </ReactTooltip>
+
+                    //     <ReactTooltip
+                    //         className="thread-tool-tip"
+                    //         textColor="#B9BBBE"
+                    //         backgroundColor="#191919"
+                    //         id="delete-message"
+                    //         place="top"
+                    //         effect="solid">
+                    //         Delete
+                    //     </ReactTooltip>
+                    // </li>
                 )
             }
 
