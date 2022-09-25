@@ -11,6 +11,18 @@ class Api::DmMembersController < ApplicationController
         end
     end
     
+    def show
+        @dm_membership = DmMember.find_by(dm_member_params)
+        if @dm_membership
+            # render 'api/dm_members/show'
+            render json: true
+        else
+            render json: false
+        end
+    end
+
+
+
     def destroy
         @dm_membership = DmMember.find_by(dm_member_params)
     
