@@ -6,10 +6,12 @@ import { requestFriendships, removeFriendshipErrors , requestAllFriendships} fro
 import { createDmServer, removeDmServerErrors } from '../../../actions/dm_server_actions';
 import { createDmMember } from '../../../actions/dm_member_actions';
 import { closeModal } from '../../../actions/modal_actions';
+import { reSyncCurrentUser } from '../../../actions/session_actions';
 
 const mSTP = (state) => {
     return {
         currentUser: state.entities.users[state.session.id],
+        currentUserId: state.session.id,
         dmServers: Object.values(state.entities.dmServers),
         // friends: selectFriendStatus(state, 3),
         friends: selectAllFriends(state, 3),
@@ -27,7 +29,8 @@ const mDTP = (dispatch) => {
         createDmMember: (dm_member) => dispatch(createDmMember(dm_member)),
         removeDmServerErrors: () => dispatch(removeDmServerErrors()),
         removeFriendshipErrors: () => dispatch(removeFriendshipErrors()),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        reSyncCurrentUser:(currentUser)=> dispatch(reSyncCurrentUser(currentUser))
     }
 }
 
