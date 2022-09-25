@@ -5,8 +5,6 @@ import { createDmMessage, receiveDmMessage } from "../../../actions/dm_messages_
 import { selectDmMembers } from "../../../utils/selectors_api_util.js";
 import { reSyncCurrentUser } from "../../../actions/session_actions.js";
 import DmMessages from "./dm_messages.jsx";
-import DmMessages2 from "./dm_messages2.jsx";
-import DmMessages3 from "./dm_messages3.jsx";
 
 
 const mSTP = (state, ownProps) => {
@@ -47,5 +45,5 @@ const mDTP = (dispatch, ownProps) => {
 }
 
 
-const DmMessagesContainer = withRouter(connect(mSTP, mDTP)(DmMessages3));
+const DmMessagesContainer = withRouter(connect(mSTP, mDTP)(DmMessages));
 export default DmMessagesContainer;
