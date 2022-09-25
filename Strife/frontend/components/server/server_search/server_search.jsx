@@ -10,7 +10,7 @@ const ExploreServers = (props) => {
     useEffect(() => {
         props.exploreServers();
         return function cleanUp () {
-            if(props.errors.length>0){
+            if (props.errors.length > 0) {
                 props.removeServerErrors();
             }
             props.clearUnexploredServers();
@@ -95,7 +95,10 @@ const ExploreServers = (props) => {
         }
         props.joiningServer(server.invite_code).then((action) => {
             const joinedServer = action.server;
-            props.history.push(`/channels/${joinedServer.id}/${joinedServer.general_channel_id}`)
+            props.reSyncCurrentUser(props.currentUserId).then(() => {
+                props.history.push(`/channels/${joinedServer.id}/${joinedServer.general_channel_id}`)
+
+            })
         })
     }
 
