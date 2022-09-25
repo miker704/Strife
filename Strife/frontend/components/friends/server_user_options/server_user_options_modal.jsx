@@ -44,6 +44,8 @@ const ServerUserOptionsModal = ({
     channelId,
     fetchChannel,
     fetchServer,
+    currentUserId,
+    reSyncCurrentUser,
     serverType
 }) => {
     let USER_PFP = user_Default_PFP;
@@ -207,7 +209,10 @@ const ServerUserOptionsModal = ({
         let newDmServer;
         createDmServer(submissionState).then((action) => {
             newDmServer = action.dmserver;
-            history.push(`/channels/@me/${newDmServer.id}`);
+            reSyncCurrentUser(currentUserId).then(() => {
+                history.push(`/channels/@me/${newDmServer.id}`);
+            })
+
         });
         return;
 
@@ -267,7 +272,7 @@ const ServerUserOptionsModal = ({
 
 
         if (Object.values(dmServerMembers).length - 1 === 2) {
-          
+
             deleteDmServer(DmServerId).then(() => {
                 history.push(`/channels/@me`);
             })
