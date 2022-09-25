@@ -37,7 +37,7 @@ export const changeUserPFP = (userId, formData) =>
 
 export const disableAccount = (user) => $.ajax({ url: `/api/users/${user.id}/disableAccount/`, method: "PATCH", data: { user } });
 
-
+export const reSyncCurrentUser = (userId) => $.ajax({ url: `/api/users/${userId}/`, method: "GET" });
 export const fetchUser = (userId) => $.ajax({ url: `/api/users/${userId}/`, method: "GET" });
 export const fetchUsers = () => $.ajax({ url: `/api/users/`, method: "GET" });
 export const fetchUserByStrifeId = (user_strife_id_tag) => $.ajax({ url: `/api/fetchbystrifeId/${user_strife_id_tag}`, method: "GET", data: { user_strife_id_tag } });
