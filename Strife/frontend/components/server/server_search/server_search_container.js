@@ -3,6 +3,7 @@ import { withRouter } from "react-router";
 import { fetchServer, fetchServers, removeServerErrors, exploreServers, 
         clearUnexploredServers, joiningServer } from "../../../actions/server_actions.js";
 import { createServerMembership } from "../../../actions/server_membership_actions.js";
+import { reSyncCurrentUser } from "../../../actions/session_actions.js";
 import ExploreServers from "./server_search";
 
 
@@ -12,6 +13,7 @@ const mSTP = (state, ownProps) => {
     return {
 
         currentUser: state.entities.users[state.session.id],
+        currentUserId: state.session.id,
         channels: Object.values(state.entities.channels),
         errors: state.errors.server,
         servers: state.entities.servers,
@@ -37,7 +39,8 @@ const mDTP = (dispatch, ownProps) => {
         createServerMembership: (servermembership) => dispatch(createServerMembership(servermembership)),
         // modal api functions
         clearUnexploredServers: () => dispatch(clearUnexploredServers()),
-        joiningServer: (inviteCode) => dispatch(joiningServer(inviteCode))
+        joiningServer: (inviteCode) => dispatch(joiningServer(inviteCode)),
+        reSyncCurrentUser: (currentUserId) => dispatch(reSyncCurrentUser(currentUserId))
     }
 }
 
