@@ -14,7 +14,6 @@ const ChannelNavBar2 = (props) => {
 
     useEffect(() => {
 
-        //     console.log("channel changed")
         props.fetchServer();
         props.fetchChannel();
     }, [props.currentChannel?.id])
@@ -258,11 +257,6 @@ const ChannelNavBar2 = (props) => {
         }
     })
 
-
-
-    console.log("current channel : ", props.currentChannel);
-    console.log("channel nav props: ", props);
-    console.log("props.channels", props.channels)
 
     if (props.server) {
         return (
