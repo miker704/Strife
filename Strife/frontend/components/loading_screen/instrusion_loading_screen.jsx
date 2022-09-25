@@ -9,10 +9,7 @@ class IntrusionPreventionLoadingScreen extends React.Component {
 
 
     componentDidMount () {
-        // debugger
         this.props.fetchUser(this.props.currentUserId);
-        // this.props.fetchUsersServers(this.props.currentUserId);
-        // this.props.fetchUsersDmServers(this.props.currentUserId);
         if (this.props.history.location.pathname !== "/channels/@me") {
             setTimeout(() => {
                 this.props.history.push("/channels/@me");
@@ -25,6 +22,10 @@ class IntrusionPreventionLoadingScreen extends React.Component {
             <div className="loading-screen-wrapper" >
                 <div className="circle-wrap">
                     <img className="loading-screen-img" alt="loadingimg" />
+                    <div className="shiny-button-container">
+                         <div className="shiny-button-flex">
+                         </div>
+                     </div>
                 </div>
 
                 <h1 className="intrusion-warning">{this.loadingMessage}</h1>
