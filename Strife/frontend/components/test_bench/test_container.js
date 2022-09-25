@@ -6,44 +6,11 @@ import { fetchServer, fetchServers } from "../../actions/server_actions";
 import { fetchChannel } from "../../actions/channel_actions";
 import { fetchDmServers } from "../../actions/dm_server_actions";
 import { fetchDmMemberShipStatus } from "../../actions/dm_member_actions";
-const checkIfDmMember = (state, ownProps) => {
-
-    const holdDmServers = Object.values(state.entities.dmServers);
-    const currentUser = state.entities.users[state.session.id]
-
-    // const dmServer
-
-
-    console.log("holddmserver", holdDmServers);
-    console.log("curruser: ", currentUser);
-    console.log("state session: ", state.session);
-    console.log("session id: ", state.session.id);
-
-
-    for (let i of holdDmServers) {
-         Object.values(i.members).find(member => member.id === state.session.id) === undefined ? 
-         console.log(`not a member of`, i): console.log(`is a member of`, i);
-    }
-        // const currentDmServer = state.entities.dmServers[ownProps.match.params.dmServerId];
-        // console.log("currentdmServer is : ", currentDmServer);
-        // const dmMembers =  selectDmMembers(state,ownProps.match.params.dmServerId);
-        // console.log("satet session : ", state.session.id)
-        // console.log("dmembers: ",dmMembers);
-        // console.log("dmembersarr: ",Object.values(dmMembers))
-    
-        // const checkMembership = Object.values(dmMembers).find(dmMember => dmMember.id === state.session.id);
-        // console.log("membership ? : ",checkMembership);
-        // console.log("includes ? ", Object.values(dmMembers).includes(state.session.id));
-        // console.log("indexof ? ", Object.values(dmMembers).indexOf(state.session.id));
-    
-
-}
 
 
 
 const mSTP = (state, ownProps) => {
 
-    // checkIfDmMember(state, ownProps);
 
     return {
         currentUser: state.entities.users[state.session.id],
@@ -56,7 +23,7 @@ const mSTP = (state, ownProps) => {
         dmServers: state.entities.dmServers,
         dmServersArray: Object.values(state.entities.dmServers),
         isMember: state.entities.users[state.session.id].dmServersJoined,
-        selectedLoadingMsg: "$TR!F3 Intrusion Prevention - Warning You are Not Authorized to access this Server!",
+        selectedLoadingMsg: "$TR!F3 Intrusion Prevention System - Warning You are Not Authorized to access this Server!",
 
     }
 }
