@@ -16,7 +16,9 @@ const FriendShipIndexOnline = ({
     removeDmServerErrors,
     openModal,
     history,
-    requestAllFriendships
+    requestAllFriendships,
+    reSyncCurrentUser,
+    currentUserId
 
 }) => {
 
@@ -93,7 +95,9 @@ const FriendShipIndexOnline = ({
         let newDmServer;
         createDmServer(submissionState).then((action) => {
             newDmServer = action.dmserver;
-            history.push(`/channels/@me/${newDmServer.id}`);
+            reSyncCurrentUser(currentUserId).then(() => {
+                history.push(`/channels/@me/${newDmServer.id}`);
+            })
         });
         return;
     }
