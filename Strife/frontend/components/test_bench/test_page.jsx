@@ -101,13 +101,6 @@ class TestPage extends React.Component {
 
     }
 
-    checkDmMemberShip () {
-        const dmservers = Object.values(this.props.dmServers);
-        for (let dms of dmservers) {
-            let stat = this.props.fetchDmMemberShipStatus({ dm_member_id: this.props.currentUser.id, dm_server_id: dms.id });
-            console.log("status: ", stat);
-        }
-    }
 
 
     render () {
@@ -138,52 +131,35 @@ class TestPage extends React.Component {
         //         <p className="this-is-a-test">HELLO WORLD</p>
         //     </div>
         // )
-
+        // 
         // return (
         //     <div className="loading-screen-wrapper" >
+
         //         <div className="circle-wrap">
         //             <img className="loading-screen-img" alt="loadingimg" />
+        //             <div className="shiny-button-container">
+        //                 <div className="shiny-button-flex">
+        //                 </div>
+        //             </div>
         //         </div>
 
         //         <h1 className="intrusion-warning">{this.loadingMessage}</h1>
+        //         {/* <div className="shiny-button-inner"></div> */}
+
         //     </div >
         // )
-
         return (
-            <div className="empty-messages-container">
-                <p className="this-is-a-test">HELLO WORLD !!!!</p>
-
-                <div className="delete-message-modal-layer">
-                    <div className="delete-message-modal-backdrop"></div>
-                    <div className="delete-message-modal-inner-layer">
-                        <div className="delete-message-modal-focus-lock">
-                            <div className="delete-message-modal-root">
-                                <div className="delete-message-modal-inner-flex">
-                                    <h2 className="delete-msg-h2">Delete Message</h2>
-                                </div>
-                                <div className="delete-this-message-wrapper">
-                                    <div className="dtm-subtext">Are you sure you want to delete this message?</div>
-                                    <div className="delete-this-message-container">
-                                        <div className="delete-msg-box">
-
-                                        </div>
-                                    </div>
-                                    <div className="delete-server-sep"></div>
-                                </div>
-                                <div className="delete-server-button-sec">
-                                    <button type="submit" className="delete-server-submit-button">Delete Server</button>
-                                    <button type="button" className="delete-server-cancel-button">Cancel</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div className="loading-screen-wrapper">
+                <div className="circle-wrap">
+                    <img className="loading-screen-img" alt="loadingimg" />
+                    <div className="shiny-button-container">
+                         <div className="shiny-button-flex">
+                         </div>
+                     </div>
                 </div>
-
+                <h1 className="loading-screen-img-h2">{this.loadingMessage}</h1>
             </div>
         )
-
-
-
 
     }
 }
