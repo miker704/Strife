@@ -5,7 +5,7 @@ import { openModal, closeModal } from "../../actions/modal_actions";
 import { fetchServer, fetchServers } from "../../actions/server_actions";
 import { fetchChannel } from "../../actions/channel_actions";
 import { fetchDmServers } from "../../actions/dm_server_actions";
-
+import { fetchDmMemberShipStatus } from "../../actions/dm_member_actions";
 const checkIfDmMember = (state, ownProps) => {
 
     const holdDmServers = Object.values(state.entities.dmServers);
@@ -56,7 +56,7 @@ const mSTP = (state, ownProps) => {
         dmServers: state.entities.dmServers,
         dmServersArray: Object.values(state.entities.dmServers),
         isMember: state.entities.users[state.session.id].dmServersJoined,
-        
+        selectedLoadingMsg: "$TR!F3 Intrusion Prevention - Warning You are Not Authorized to access this Server!",
 
     }
 }
@@ -68,7 +68,9 @@ const mDTP = (dispatch) => {
         fetchServer: (serverId) => dispatch(fetchServer(serverId)),
         fetchChannel: (channelId) => dispatch(fetchChannel(channelId)),
         fetchDmServers: () => dispatch(fetchDmServers()),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        fetchDmMemberShipStatus: (dm_member) => dispatch(fetchDmMemberShipStatus(dm_member))
+
     }
 }
 
