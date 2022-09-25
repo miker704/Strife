@@ -351,7 +351,7 @@ class DmMessages2 extends React.Component {
                             <div className="chat-input-text-area-scroller">
                                 <div className="inner-attach-button">
                                     <div className="uploadinput">
-                                        <input type="file" className="file-input" />
+                                        <input type="file" className="file-input" disabled/>
                                     </div>
                                     <div className="attach-wrapper">
                                         <button type="button" className="attach-wrapper-button">
