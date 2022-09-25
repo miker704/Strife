@@ -33,7 +33,6 @@ const mDTP = (dispatch, ownProps) => {
         deleteServer: serverId => dispatch(deleteServer(serverId)),
         removeChannelMembership: (channelmembershiphash) => dispatch(removeChannelMembership(channelmembershiphash)),
         removeServerMembership: (membershiphash) => dispatch(removeServerMembership(membershiphash)),
-        // openModalWithProps: (modal,modal_With_props) => dispatch(openModalWithProps(modal,modal_With_props))
         openModalWithProps: (modal_With_props) => dispatch(openModalWithProps(modal_With_props))
 
     }
