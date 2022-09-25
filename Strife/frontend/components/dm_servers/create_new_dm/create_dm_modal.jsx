@@ -19,7 +19,9 @@ const CreateDmModal = ({
     removeFriendshipErrors,
     requestAllFriendships,
     closeModal,
-    topBar
+    topBar,
+    reSyncCurrentUser,
+    currentUserId
 
 }) => {
     const inputRef = useRef();
@@ -106,9 +108,12 @@ const CreateDmModal = ({
 
         createDmServer(submissionState).then((action) => {
             newDmServer = action.dmserver;
-            history.push(`/channels/@me/${newDmServer.id}`);
+            reSyncCurrentUser(currentUserId).then(() => {
+                history.push(`/channels/@me/${newDmServer.id}`);
+            })
         }).then(() => {
-            setShowPopUp()
+
+            setShowPopUp(false)
         })
 
         return;
