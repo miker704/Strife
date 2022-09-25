@@ -12,7 +12,7 @@ export const REMOVE_CURRENT_USER = "REMOVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const REMOVE_SESSION_ERRORS = "REMOVE_SESSION_ERRORS";
 export const RECEIVE_USER_SEARCH = "RECEIVE_USER_SEARCH";
-
+export const RESYNC_CURRENT_USER = "RESYNC_CURRENT_USER";
 
 
 export const receiveUser = user => {
@@ -73,6 +73,12 @@ export const receiveUserSearch = (users) => {
     }
 }
 
+export const reSyncUser = (currentUser) => {
+    return {
+        type : RESYNC_CURRENT_USER,
+        currentUser
+    }
+}
 
 //ajax dispatch
 
@@ -136,3 +142,10 @@ export const fetchUser = (userId) => (dispatch) =>
 SessionAPIUtil.fetchUser(userId).then((user) =>{
     return dispatch(receiveUser(user));
 }, (err) => {dispatch(receiveSessionErrors(err.responseJSON))});
+
+
+export const reSyncCurrentUser = (userId) => (dispatch) => 
+SessionAPIUtil.fetchUser(userId).then((user) =>{
+    return dispatch(reSyncUser(user));
+}, (err) => {dispatch(receiveSessionErrors(err.responseJSON))});
+
