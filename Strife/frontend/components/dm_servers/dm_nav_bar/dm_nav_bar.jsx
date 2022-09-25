@@ -83,7 +83,7 @@ class DmNavBar extends React.Component {
         let group_Chat_Photo = "https://strife-seeds.s3.amazonaws.com/group_chat_icon.svg";
         if (dmServerMembers.length === 2) {
             for (let i of dmServerMembers) {
-                if (i.id !== this.props.currentUser.id) {
+                if (i.id !== this.props.currentUserId) {
                     dmServerPFP = i;
                 }
             }
