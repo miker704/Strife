@@ -1,0 +1,33 @@
+import { connect } from "react-redux";
+import { withRouter } from "react-router";
+import { deleteMessage } from "../../../actions/message_actions";
+import { closeModal } from "../../../actions/modal_actions";
+import { handleKeyUp } from "../../../utils/modal_api_util";
+import DeleteServerChannelMessageModal from "./delete_server_message_modal";
+
+const mSTP = (state, ownProps) => {
+    
+    return {
+            currentUserId: state.session.id,
+            message: state.ui.modalProps.message,
+            serverId :state.ui.modalProps.serverId,    
+            channelId :state.ui.modalProps.channelId,      
+            renderGroupChatFirstMessage: state.ui.modalProps.renderGroupChatFirstMessage,
+            oneToOneChatFirstMessage:state.ui.modalProps.oneToOneChatFirstMessage,
+            formatTime:state.ui.modalProps.formatTime,
+    }
+}
+
+
+
+const mDTP = (dispatch) => {
+    return {
+        deleteMessage: (messageId) => dispatch(deleteMessage(messageId)),
+        closeModal: () => dispatch(closeModal()),
+        xscape: (e) => dispatch(handleKeyUp(e))
+    }
+}
+
+
+const DeleteServerChannelMessageModalContainer = withRouter(connect(mSTP, mDTP)(DeleteServerChannelMessageModal));
+export default DeleteServerChannelMessageModalContainer;
