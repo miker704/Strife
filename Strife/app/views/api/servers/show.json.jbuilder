@@ -66,9 +66,16 @@ json.server do
         #get eastern time zone
         est = Time.zone.utc_to_local(message.created_at)
         est = est + 4.hours
-        json.user_name message.user.username
         json.created_at est.strftime("%-m/%-d/%Y %-I:%M:%S %p")
         json.extract! message, :id, :channel_id, :author_id, :body
+        json.authorName message.user.username
+        # json.author do
+        #   json.set! message.user.id do
+        #   json.authorName message.user.username
+        #   json.color_tag message.user.color_tag
+        #   json.photo url_for(message.user.photo) if message.user.photo.attached?
+        #   end
+        # end
       end
     end
   end
