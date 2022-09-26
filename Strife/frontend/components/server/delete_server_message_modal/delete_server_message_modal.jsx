@@ -21,11 +21,7 @@ const DeleteServerChannelMessageModal = (props) => {
         })
     }
     const render_User_PFP = user_Default_PFP;
-    const botMessage = props.message.sender_id === 1 &&
-        props.dmMessage.body === 'This is the beginning of your direct message history with' ?
-        props.oneToOneChatFirstMessage() : props.dmMessage.sender_id === 1 &&
-            props.dmMessage.body === 'Welcome to the beginning of your Group Chat' ?
-            props.renderGroupChatFirstMessage() : ('');
+
 
     return (
         <div className="delete-message-modal-layer" onClick={() => props.closeModal()}>
@@ -44,25 +40,25 @@ const DeleteServerChannelMessageModal = (props) => {
 
                                         <div className="message-wrapper-contents">
                                             <div className="message-wrapper1">
-                                                <div className={`${props.dmMessage.author[props.dmMessage.sender_id].photo === undefined ?
-                                                    `chat-user-pfp-svg-render color-${props.dmMessage.author[props.dmMessage.sender_id].color_tag}` :
+                                                <div className={`${props.messageAuthor.photo === undefined ?
+                                                    `chat-user-pfp-svg-render color-${props.messageAuthor.color_tag}` :
                                                     `chat-member-avatar-img`}`}>
-                                                    <img src={`${props.dmMessage.author[props.dmMessage.sender_id].photo === undefined
-                                                        ? render_User_PFP : props.dmMessage.author[props.dmMessage.sender_id].photo}`} alt="SMPFP" />
+                                                    <img src={`${props.messageAuthor.photo === undefined
+                                                        ? render_User_PFP : props.messageAuthor.photo}`} alt="SMPFP" />
                                                 </div>
+
                                                 <h2 className="chat-member-username-header">
                                                     <span className="chat-member-username-wrap">
-                                                        <span className="chat-member-username">{props.dmMessage.authorName}</span>
+                                                        <span className="chat-member-username">{props.message.authorName}</span>
                                                     </span>
                                                     <span className="chat-message-timestamp-wrap">
                                                         <p className="chat-message-timestamp">
-                                                            {props.formatTime(props.dmMessage.created_at)}
+                                                            {props.formatTime(props.message.created_at)}
                                                         </p>
                                                     </span>
                                                 </h2>
                                                 <div className="chat-message">
-                                                    {props.dmMessage.body}
-                                                    {botMessage}
+                                                    {props.message.body}
                                                 </div>
                                             </div>
                                         </div>
@@ -73,7 +69,7 @@ const DeleteServerChannelMessageModal = (props) => {
                             <div className="delete-server-sep"></div>
                         </div>
                         <div className="delete-server-button-sec">
-                            <button type="submit" onClick={() => handleDelete()} className="delete-server-submit-button">Delete Server</button>
+                            <button type="submit" onClick={() => handleDelete()} className="delete-server-submit-button">Delete</button>
                             <button type="button" onClick={() => props.closeModal()} className="delete-server-cancel-button">Cancel</button>
                         </div>
                     </div>
