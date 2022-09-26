@@ -73,7 +73,7 @@ const DeleteDmMessageModal = (props) => {
                             <div className="delete-server-sep"></div>
                         </div>
                         <div className="delete-server-button-sec">
-                            <button type="submit" onClick={() => handleDelete()} className="delete-server-submit-button">Delete Server</button>
+                            <button type="submit" onClick={() => handleDelete()} className="delete-server-submit-button">Delete</button>
                             <button type="button" onClick={() => props.closeModal()} className="delete-server-cancel-button">Cancel</button>
                         </div>
                     </div>
