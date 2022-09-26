@@ -34,7 +34,6 @@ const ChannelNavBar = (props) => {
     const mapTextChannel = props.channels.map((channel) => {
         if (channel.channel_type === 1) {
             return (
-                // { showChannelSettings && <ChannelSettingsModalContainer />}
                 <li className="default-channel-item" key={channel.id}>
                     <div className="def-channel-wrap">
                         <div className="def-channel-content">
@@ -75,16 +74,17 @@ const ChannelNavBar = (props) => {
                                         <path fill="currentColor" d="M6.5 8.34C3.26 8.34 1 9.98666 1 12.34V13.0067H12V12.34C12 9.98 9.74 8.34 6.5 8.34Z">
                                         </path>
                                     </svg>
-                                    <ReactTooltip
-                                        className="channel-nav-bar-tool-tip"
-                                        textColor="#B9BBBE"
-                                        backgroundColor="#191919"
-                                        id="create-channel-invite-tool-tip1"
-                                        place="top"
-                                        effect="solid">
-                                        Create Invite
-                                    </ReactTooltip>
+
                                 </div>
+                                <ReactTooltip
+                                    className="channel-nav-bar-tool-tip"
+                                    textColor="#B9BBBE"
+                                    backgroundColor="#191919"
+                                    id="create-channel-invite-tool-tip1"
+                                    place="top"
+                                    effect="solid">
+                                    Create Invite
+                                </ReactTooltip>
                                 <div
                                     className={`channel-settings-wrapper ${props.currentUser.id === props.server.server_owner_id ?
                                         `` : `is-hidden`
@@ -243,7 +243,7 @@ const ChannelNavBar = (props) => {
 
 
 
-   
+
 
     if (props.server) {
         return (
