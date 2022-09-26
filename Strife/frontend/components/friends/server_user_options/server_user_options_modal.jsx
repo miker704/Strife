@@ -274,7 +274,9 @@ const ServerUserOptionsModal = ({
         if (Object.values(dmServerMembers).length - 1 === 2) {
 
             deleteDmServer(DmServerId).then(() => {
-                history.push(`/channels/@me`);
+                // history.push(`/channels/@me`);
+                history.push(`/loading/`);
+                
             })
         }
         else {
