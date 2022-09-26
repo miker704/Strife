@@ -159,7 +159,7 @@ class ModalManager extends React.Component {
             case 'DeleteServerChannelMessage':
                 renderedModal = <DeleteServerChannelMessageModalContainer />
                 modalMod = 0;
-
+                break;
 
             case 'InviteToServer':
 
