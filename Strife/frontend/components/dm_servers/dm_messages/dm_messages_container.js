@@ -27,7 +27,9 @@ const mSTP = (state, ownProps) => {
         dmServerErrors : state.errors.dmServer,
         dmMembers: state.entities.users,
         dmServers : Object.values(state.entities.dmServers),
-        users: Object.values(state.entities.users)
+        users: Object.values(state.entities.users),
+        isMember: state.currentUser.dmServersJoined.includes(parseInt(ownProps.match.params.dmServerId))
+
     }
 }
 
