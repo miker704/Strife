@@ -1,11 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { signUpUser,removeSessionErrors } from "../../actions/session_actions";
+import { signUpUser, removeSessionErrors } from "../../actions/session_actions";
 import SessionForm from "./session_form";
 import { Link } from "react-router-dom";
 
 
-const mSTP  = state => {
+const mSTP = state => {
     return {
         errors: state.errors.session,
         formType: 'Sign Up',
@@ -13,13 +13,13 @@ const mSTP  = state => {
     }
 }
 
-const mDTP = dispatch =>{
+const mDTP = dispatch => {
     return {
         processForm: (user) => dispatch(signUpUser(user)),
-        removeSessionErrors: () =>dispatch(removeSessionErrors())
+        removeSessionErrors: () => dispatch(removeSessionErrors())
 
     }
 }
 
-const SessionSignUpFormContainer = connect(mSTP,mDTP)(SessionForm);
+const SessionSignUpFormContainer = connect(mSTP, mDTP)(SessionForm);
 export default SessionSignUpFormContainer
