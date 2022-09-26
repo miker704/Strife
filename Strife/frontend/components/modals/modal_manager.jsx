@@ -20,6 +20,7 @@ import ChannelSettingsModalContainer from "../channels/channel_settings/channel_
 import CreateChannelModalContainer from "../channels/create_channel_modal/create_channel_modal_container.js";
 import ActionButtonPopUpContainer from "../server/server_search/action_button_pop_up_container.js";
 import DeleteDmMessageModalContainer from "../dm_servers/delete_dm_message_modal/delete_dm_message_modal_container.js";
+import DeleteServerChannelMessageModalContainer from "../server/delete_server_message_modal/delete_server_message_modal_container.js";
 
 class ModalManager extends React.Component {
     constructor (props) {
@@ -150,13 +151,15 @@ class ModalManager extends React.Component {
 
             case 'DeleteDmMessage':
 
-               
-
-
-                renderedModal = <DeleteDmMessageModalContainer/>
+                renderedModal = <DeleteDmMessageModalContainer />
                 modalMod = 0;
 
                 break;
+
+            case 'DeleteServerChannelMessage':
+                renderedModal = <DeleteServerChannelMessageModalContainer />
+                modalMod = 0;
+
 
             case 'InviteToServer':
 
