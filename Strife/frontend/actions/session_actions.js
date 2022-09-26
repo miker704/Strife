@@ -13,7 +13,7 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const REMOVE_SESSION_ERRORS = "REMOVE_SESSION_ERRORS";
 export const RECEIVE_USER_SEARCH = "RECEIVE_USER_SEARCH";
 export const RESYNC_CURRENT_USER = "RESYNC_CURRENT_USER";
-
+export const FETCH_STRIFE_BOT = "FETCH_$TR!F3_BOT";
 
 export const receiveUser = user => {
     return {
@@ -80,6 +80,13 @@ export const reSyncUser = (currentUser) => {
     }
 }
 
+export const receiveStrifeBot = (bot) => {
+    return {
+        type: FETCH_STRIFE_BOT,
+        bot
+    }
+}
+
 //ajax dispatch
 
 export const signUpUser = user => (dispatch) =>
@@ -141,6 +148,13 @@ export const fetchUserByStrifeId = user_strife_id_tag => (dispatch) =>
 export const fetchUser = (userId) => (dispatch) => 
 SessionAPIUtil.fetchUser(userId).then((user) =>{
     return dispatch(receiveUser(user));
+}, (err) => {dispatch(receiveSessionErrors(err.responseJSON))});
+
+
+
+export const fetchBot = (userId) => (dispatch) => 
+SessionAPIUtil.fetchUser(userId).then((user) =>{
+    return dispatch(receiveStrifeBot(user));
 }, (err) => {dispatch(receiveSessionErrors(err.responseJSON))});
 
 
