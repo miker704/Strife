@@ -12,9 +12,8 @@ const mSTP = (state, ownProps) => {
             message: state.ui.modalProps.message,
             serverId :state.ui.modalProps.serverId,    
             channelId :state.ui.modalProps.channelId,      
-            renderGroupChatFirstMessage: state.ui.modalProps.renderGroupChatFirstMessage,
-            oneToOneChatFirstMessage:state.ui.modalProps.oneToOneChatFirstMessage,
             formatTime:state.ui.modalProps.formatTime,
+            messageAuthor: state.ui.modalProps.messageAuthor
     }
 }
 
