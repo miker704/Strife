@@ -3,6 +3,7 @@ import ChannelNavBarContainer from "../../channels/channel_nav_bar/channel_nav_b
 import ServerHeaderNavBarContainer from "../server_header_nav_bar/server_header_nav_bar_container";
 import ServerMessages from "../server_messages/server_messages";
 import ServerMembersListContainer from "../server_members/server_members_list_container";
+import ServerChatRoomContainer from "../server_chat_room/server_chat_room_container";
 
 class Server extends React.Component {
     constructor (props) {
@@ -67,7 +68,8 @@ class Server extends React.Component {
                         />
                         <div className="server-content">
                             {/* <div className="server-chat"> */}
-                            <ServerMessages />
+                            {/* <ServerMessages /> */}
+                            <ServerChatRoomContainer/>
                             {/* </div> */}
 
                             {!this.state.hideMembersList && <ServerMembersListContainer />}
