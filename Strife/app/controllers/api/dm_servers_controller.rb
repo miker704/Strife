@@ -79,10 +79,22 @@ class Api::DmServersController < ApplicationController
 
     end
 
+    def async_redirect(dmServer,path)
+        DmChannel.broadcast_to(dmServer, head:302, path: path )
+    end
+    
+
     def destroy
         @dm_server = DmServer.find_by(id: params[:id])
         @current_user = current_user
-        @dm_server.destroy
+        if @dm_server
+            ## initiate redirects to loading container to resync state boots anyone remaining in chat
+            ## also ensures that everyone is removed LIVE via action cable
+            async_redirect(@dm_server, '/loading/')
+            ## destroy the dmServer render nothing 
+            @dm_server.destroy
+        end
+
     end
     
 
