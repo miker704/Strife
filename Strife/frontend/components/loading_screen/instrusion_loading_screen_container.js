@@ -9,7 +9,7 @@ import IntrusionPreventionLoadingScreen from "./instrusion_loading_screen";
 const mSTP = (state) => {
     return {
         currentUserId: state.session.id,
-        selectedLoadingMsg: "$TR!F3 Intrusion Prevention - Warning You are Not Authorized to access this Server!",
+        selectedLoadingMsg: "$TR!F3 Intrusion Prevention System - Warning You are Not Authorized to access this Server!",
     }
 }
 
@@ -18,7 +18,8 @@ const mDTP = (dispatch) => {
     return {
         fetchUsersServers: (currentUserId) => dispatch(fetchServers(currentUserId)),
         fetchUsersDmServers: (currentUserId) => dispatch(fetchDmServers(currentUserId)),
-        fetchUser: (currentUserId) => dispatch(fetchUser(currentUserId))
+        fetchUser: (currentUserId) => dispatch(fetchUser(currentUserId)),
+
     }
 }
 
