@@ -1,7 +1,8 @@
 import React from "react";
 import { createConsumer } from "@rails/actioncable"
 import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
-import ReactTooltip from "react-tooltip";
+import ServerMessagesContainer from "../server_messages/server_messages_container";
+
 
 class ServerChatRoom extends React.Component {
     constructor (props) {
@@ -9,9 +10,9 @@ class ServerChatRoom extends React.Component {
 
         this.state = {
             newMessage: this.props.newMessage,
-            ChannelMessages: this.props.messages,
-            ChannelMessageIds: this.props.messageIds,
-            value: ''
+            channelMessages: this.props.messages,
+            channelMessageIds: this.props.messageIds,
+            value: '',
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,23 +24,20 @@ class ServerChatRoom extends React.Component {
         this.handleEnter = this.handleEnter.bind(this);
         this.formatTime = this.formatTime.bind(this);
 
-
-        this.oneToOneChatFirstMessage = this.oneToOneChatFirstMessage.bind(this);
-        this.renderGroupChatFirstMessage = this.renderGroupChatFirstMessage.bind(this);
-        this.placeholderText = '';
+        // this.oneToOneChatFirstMessage = this.oneToOneChatFirstMessage.bind(this);
+        // this.renderGroupChatFirstMessage = this.renderGroupChatFirstMessage.bind(this);
     }
     //mount correct dmServer and start subscription listening 
     componentDidMount () {
-        this.props.fetchDmServer(this.props.dmServerId);
+        this.props.fetchServer(this.props.serverId);
+        this.props.fetchChannel(this.props.channelId);
         this.subscribe();
     }
 
 
     //remove listening of subscription 
     componentWillUnmount () {
-
         this.subscription?.unsubscribe();
-
     }
 
 
@@ -61,60 +59,56 @@ class ServerChatRoom extends React.Component {
         //plug the cable
         const cable = createConsumer('ws://localhost:3000/cable'); // /cable mounts to local host that rails server is running on 
         this.subscription = cable.subscriptions.create(
-            { channel: 'DmChannel', id: this.props.dmServerId },
+            { channel: 'ServerChannel', id: this.props.channelId },
             {
+                received: ({ message }) => {
 
-                received: ({ dm_message }) => {
+                    console.log("incoming message : ", message);
+                    console.table(message);
 
                     this.props.reSyncCurrentUser(this.props.currentUserId).then((action) => {
                         let currUser = action.currentUser;
-                        if (!currUser.dmServersJoined.includes(parseInt(this.props.dmServerId))) {
-                            this.props.removeDmServer(this.props.dmServer.id);
+                        if (!currUser.serversJoined.includes(parseInt(this.props.serverId))) {
+                            this.props.removeServer(this.props.server.id);
                             this.props.history.push('/$TR!F3-INTRUSION-PREVENTION/');
                         }
                         else {
-
-                            this.props.fetchDmServer(this.props.dmServer.id);
+                            // this.props.fetchServer(this.props.server.id);
+                            this.props.fetchChannel(this.props.channelId);
                         }
 
                     })
 
-                    // this.props.receiveDmMessage(dm_message);
-                    // this.props.fetchDmServer(this.props.dmServerId);
-                    if (Object.values(dm_message).length > 1) {
-                        if (this.state.dmMessagesIds.includes(dm_message.id.toString())) {
-                            let dmMessages = this.state.DmMessages;
-                            let DMMessagesCollection = new Array();
-                            dmMessages.forEach((dmmessage) => {
-                                //if match occurs set it to current dmMessage state
-                                if (dmmessage.id === dm_message.id) {
-                                    dmmessage.body = dm_message.body;
-                                    //push it to dmMessages state array
+                    if (Object.values(message).length > 1) {
+                        if (this.state.channelMessageIds.includes(message.id.toString())) {
+                            let messages = this.state.channelMessages;
+                            let CHANNELMessagesCollection = new Array();
+                            messages.forEach((msg) => {
+                                if (msg.id === message.id) {
+                                    msg.body = message.body;
                                 }
-                                DMMessagesCollection.push(dmmessage);
+                                CHANNELMessagesCollection.push(msg);
                             })
                             //update the state 
-                            this.setState({ ["DmMessages"]: DMMessagesCollection });
+                            this.setState({ ["channelMessages"]: CHANNELMessagesCollection });
                         }
                         else {
-                            //if there arent any messages in the dmserver set up for message creation
-                            //get author name of message within this dmServer
-                            dm_message.authorName = this.props.dmServer.members[dm_message.sender_id].username;
-                            //rename it so that it can be editable
-                            dm_message.sender_Id = dm_message.sender_id;
+                            console.log("in else message doesnt exists ???????????");
+                            message.authorName = this.props.server.users[message.author_id].username;
+                            message.author_id = message.author_id;
                             //grab time stamps from the backend
-                            let timeStamp = new Date(dm_message.created_at)
+                            let timeStamp = new Date(message.created_at)
                             let time = timeStamp.toLocaleTimeString();
                             let date = timeStamp.toLocaleDateString();
-                            dm_message.created_at = date + " " + time;
-                            this.setState({ ["DmMessages"]: this.state.DmMessages.concat([dm_message]) })
-                            this.setState({ ["dmMessagesIds"]: this.state.dmMessagesIds.concat(dm_message.id.toString()) })
+                            message.created_at = date + " " + time;
+                            this.setState({ ["channelMessages"]: this.state.channelMessages.concat([message]) })
+                            this.setState({ ["channelMessageIds"]: this.state.channelMessageIds.concat(message.id.toString()) })
                         }
                     }
                     else {
-                        let dmMessages = this.state.DmMessages
-                        let filteredDmMessages = dmMessages.filter(dm => dm.id !== dm_message)
-                        this.setState({ ['DmMessages']: filteredDmMessages });
+                        let channelMessages = this.state.channelMessages
+                        let filteredChannelMessages = channelMessages.filter(chMsg => chMsg.id !== message)
+                        this.setState({ ['channelMessages']: filteredChannelMessages });
 
                     }
 
@@ -126,37 +120,57 @@ class ServerChatRoom extends React.Component {
 
 
     componentDidUpdate (prevProps, prevState) {
-        if (prevProps.DmMessages[0] !== this.props.DmMessages[0]) {
+        if (prevProps.messages[0] !== this.props.messages[0]) {
             this.scrollToBottomOfChat("auto");
         }
 
-        if (prevState.DmMessages.length < this.state.DmMessages.length) {
+        if (prevState.channelMessages.length < this.state.channelMessages.length) {
             this.scrollToBottomOfChat("smooth");
         }
-        if (prevProps.dmMessagesIds.length !== this.props.dmMessagesIds.length) {
-            let DmMessages = this.props.DmMessages;
-            let dmMessagesIds = this.props.dmMessagesIds;
-            this.setState({ DmMessages });
-            this.setState({ dmMessagesIds });
+        if (prevProps.messageIds.length !== this.props.messageIds.length) {
+            let channelMessages = this.props.messages;
+            let channelMessageIds = this.props.messageIds;
+            this.setState({ channelMessages });
+            this.setState({ channelMessageIds });
         }
-        if (prevProps.dmMessagesIds.length > 0 && this.props.dmMessagesIds.length > 0) {
-            if (prevProps.DmMessages[0].id !== this.props.DmMessages[0].id) {
-                this.props.fetchDmServer(this.props.dmServerId);
+        if (prevProps.messageIds.length > 0 && this.props.messageIds.length > 0) {
+            if (prevProps.messages[0].id !== this.props.messages[0].id) {
+                // this.props.fetchServer(this.props.serverId);
+                this.props.fetchChannel(this.props.match.params.channelId);
+                this.unsubscribe();
                 this.subscribe();
-                let DmMessages = this.props.DmMessages;
-                let dmMessagesIds = this.props.dmMessagesIds;
-                this.setState({ DmMessages });
-                this.setState({ dmMessagesIds });
+                let channelMessages = this.props.messages;
+                let channelMessageIds = this.props.messageIds;
+                this.setState({ channelMessages });
+                this.setState({ channelMessageIds });
             }
         }
-        if (prevProps.match.params.dmServerId !== this.props.match.params.dmServerId) {
-            let newDmMessage = this.state.newDmMessage
-            newDmMessage.body = '';
-            newDmMessage.dm_server_id = this.props.match.params.dmServerId;
-            this.setState({ newDmMessage });
-            this.props.fetchDmServer(this.props.dmServerId);
+
+        if(Object.values(prevProps.server.channels).length !== Object.values(this.props.server.channels).length){
+            console.log("iside compdidupdatye new channel/ old channel");
+            this.props.fetchServer(this.props.match.params.serverId);
+            this.props.fetchChannel(this.props.match.params.channelId);
+            let channelMessages = this.props.messages;
+            let channelMessageIds = this.props.messageIds;
+            this.setState({ channelMessages });
+            this.setState({ channelMessageIds });
+
+        }
+
+        // if (prevProps.match.params.serverId !== this.props.match.params.serverId || prevProps.match.params.channelId !== this.props.match.params.channelId) {
+        if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
+            let newMessage = this.state.newMessage
+            newMessage.body = '';
+            newMessage.channel_id = this.props.match.params.channelId;
+            this.setState({ newMessage });
+            // this.props.fetchServer(this.props.serverId);
+            this.props.fetchChannel(this.props.match.params.channelId);
             this.unsubscribe();
             this.subscribe();
+            let channelMessages = this.props.messages;
+            let channelMessageIds = this.props.messageIds;
+            this.setState({ channelMessages });
+            this.setState({ channelMessageIds });
         }
     }
 
@@ -177,14 +191,14 @@ class ServerChatRoom extends React.Component {
     handleSubmit (e) {
         e.preventDefault();
         e.stopPropagation();
-        let dmMessagebody = this.state.value;
-        if (dmMessagebody.length === 0) { return; }
-        let modedMessage = this.state.newDmMessage;
-        modedMessage.body = dmMessagebody;
-        this.setState({ newDmMessage: modedMessage });
-        this.props.createDmMessage(this.state.newDmMessage);
+        let messageBody = this.state.value;
+        if (messageBody.length === 0) { return; }
+        let modedMessage = this.state.newMessage;
+        modedMessage.body = messageBody;
+        this.setState({ newMessage: modedMessage });
+        this.props.createMessage(this.state.newMessage);
         modedMessage.body = ''
-        this.setState({ value: '', newDmMessage: modedMessage });
+        this.setState({ value: '', newMessage: modedMessage });
 
     }
 
@@ -215,140 +229,49 @@ class ServerChatRoom extends React.Component {
     }
 
 
-    oneToOneChatFirstMessage () {
-        const members = Object.values(this.props.dmMembers);
-        if (members.length === 2) {
-            const otherUser = members.find((user) => user.id !== this.props.currentUser.id)
-            this.placeholderText = `@${otherUser.username}`;
-            return (
-                <strong className="otherUser">@{`${otherUser.username}`}</strong>
-            )
-        }
-        else {
-            return null;
-        }
-    }
-    renderGroupChatFirstMessage () {
-        const members = Object.values(this.props.dmMembers);
-        let groupMembers = new Array();
-        if (members.length > 2) {
-            for (let member of members) {
-                if (member.id !== this.props.currentUser.id) {
-                    groupMembers.push('@' + member.username);
-                }
-            }
-            this.placeholderText = `${groupMembers.join(", ").split("@").join('')}`;
-
-            return (
-                <strong className="otherUser">{` `}{`${groupMembers.join(", ")}`}</strong>
-            )
-        }
-        else {
-            return null;
-        }
-    }
-
-
     render () {
 
-        let dmMessageOLLIMapping = this.state.DmMessages.map((dmMessage) => {
-            const botMessage = dmMessage.sender_id === 1 &&
-                dmMessage.body === 'This is the beginning of your direct message history with' ?
-                this.oneToOneChatFirstMessage() : dmMessage.sender_id === 1 &&
-                    dmMessage.body === 'Welcome to the beginning of your Group Chat' ?
-                    this.renderGroupChatFirstMessage() : ('');
+        console.log("server chat room props : ", this.props);
+        console.log("server chat room state : ", this.state);
+        console.log("server members = ", this.props.serverMembers);
+        const serverMembers = this.props.serverMembers;
+        console.log("server members array= ", serverMembers);
+        //using a differnet approach than in dmservers as server state is not as sensitive and to try to increase 
+        //performance and reduce lag and  excessive memory allocation for unneed resources 
+        let messageOLLIMapping = this.state.channelMessages.map((message) => {
+            //attain member and their props directly from user/server members state and not from the  author info 
+            //attached to the message itself  in order to reduce slow downs
 
-            {
-                return (
-
-
-                    // <DMMessageEditContainer
-                    //     dmMembers={this.props.dmMembers}
-                    //     currentUserId={this.props.currentUserId}
-                    //     dmMessage={dmMessage}
-                    //     renderGroupChatFirstMessage={this.renderGroupChatFirstMessage}
-                    //     oneToOneChatFirstMessage={this.oneToOneChatFirstMessage}
-                    //     formatTime={this.formatTime}
-                    //     dmServerId={this.props.dmServerId}
-                    //     key={dmMessage.id}
-                    // />
-
-
-                    <li className="chat-message-item" key={dmMessage.id}>
-
-                        <div className="message-wrapper-contents">
-                            <div className="message-wrapper1">
-                                <div className={`${dmMessage.author[dmMessage.sender_id].photo === undefined ?
-                                    `chat-user-pfp-svg-render color-${dmMessage.author[dmMessage.sender_id].color_tag}` :
-                                    `chat-member-avatar-img`}`}>
-                                    <img src={`${dmMessage.author[dmMessage.sender_id].photo === undefined
-                                        ? render_User_PFP : dmMessage.author[dmMessage.sender_id].photo}`} alt="SMPFP" />
-                                </div>
-                                <h2 className="chat-member-username-header">
-                                    <span className="chat-member-username-wrap">
-                                        <span className="chat-member-username">{dmMessage.authorName}</span>
-                                    </span>
-                                    <span className="chat-message-timestamp-wrap">
-                                        <p className="chat-message-timestamp">
-                                            {this.formatTime(dmMessage.created_at)}
-                                        </p>
-                                    </span>
-                                </h2>
-                                <div className="chat-message">
-                                    {dmMessage.body}
-                                    {botMessage}
-                                    {/* <span className="mention-wrapper">{message.body}</span> */}
-                                </div>
-                            </div>
-                            <div className={`message-accessories-button-wrapper ${this.props.currentUserId === dmMessage.sender_id ? ``:`is-hidden`}`}>
-                                <div className="message-accessories-button" data-tip data-for="edit-message">
-                                    <svg className="pen-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
-                                        <path fillRule="evenodd" clipRule="evenodd" d="M19.2929 9.8299L19.9409 9.18278C21.353 7.77064 
-                                                     21.353 5.47197 19.9409 4.05892C18.5287 2.64678 16.2292 2.64678 14.817 4.05892L14.1699 4.70694L19.2929 
-                                                     9.8299ZM12.8962 5.97688L5.18469 13.6906L10.3085 18.813L18.0201 11.0992L12.8962 5.97688ZM4.11851 
-                                                     20.9704L8.75906 19.8112L4.18692 15.239L3.02678 19.8796C2.95028 20.1856 3.04028 20.5105 3.26349 
-                                                     20.7337C3.48669 20.9569 3.8116 21.046 4.11851 20.9704Z" fill="currentColor">
-                                        </path>
-                                    </svg>
-
-                                </div>
-                                <div className="message-accessories-button" data-tip data-for="delete-message">
-                                    <svg className="trash-message-icon" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M15 3.999V2H9V3.999H3V5.999H21V3.999H15Z">
-                                        </path>
-                                        <path fill="currentColor" d="M5 6.99902V18.999C5 20.101 5.897 20.999 7 20.999H17C18.103 20.999
-                                                    19 20.101 19 18.999V6.99902H5ZM11 17H9V11H11V17ZM15 17H13V11H15V17Z">
-                                        </path>
-                                    </svg>
-
-                                </div>
-                            </div>
-                        </div>
-                        <ReactTooltip
-                            className="thread-tool-tip"
-                            textColor="#B9BBBE"
-                            backgroundColor="#191919"
-                            id="edit-message"
-                            place="top"
-                            effect="solid">
-                            Edit
-                        </ReactTooltip>
-
-                        <ReactTooltip
-                            className="thread-tool-tip"
-                            textColor="#B9BBBE"
-                            backgroundColor="#191919"
-                            id="delete-message"
-                            place="top"
-                            effect="solid">
-                            Delete
-                        </ReactTooltip>
-                    </li>
-                )
+            //if in order to stop corruption since the find funct returns undefined if something is not found  check to see if that id === 1
+            //  which indicates a bot message set that message id to the bot 
+            let member = serverMembers.find(member => member.id === message.author_id)
+            if (member === undefined) {
+                member = Object.values(this.props.strifeBot)[0];
             }
+            return (
 
-
+                <ServerMessagesContainer
+                    key={message.id}
+                    strifeBot={this.props.strifeBot}
+                    currentUserId={this.props.currentUserId}
+                    message={message}
+                    messageAuthor={member}
+                    serverMembers={this.props.serverMembers}
+                    formatTime={this.formatTime}
+                    channelId={this.props.match.params.channelId}
+                    serverId={this.props.match.params.serverId}
+                    server={this.props.server}
+                    channel={this.props.channel}
+                    channelName={this.props.channelName}
+                />
+            )
         })
+
+
+
+
+
+
 
         return (
             <div className="server-chat-container-wrapper">
@@ -361,7 +284,7 @@ class ServerChatRoom extends React.Component {
                                         <span className="chat-divider-content"></span>
                                     </div>
 
-                                    {dmMessageOLLIMapping}
+                                    {messageOLLIMapping}
 
                                     <div className="ol-scroller-spacer" ref={el => this.placeholder = el} />
                                 </ol>
@@ -399,7 +322,8 @@ class ServerChatRoom extends React.Component {
                                                 rows={this.state.value.split('\n').length}
                                                 minLength={1}
                                                 maxLength={2000}
-                                                placeholder={`Message ${this.placeholderText}`}
+                                                autoFocus
+                                                placeholder={`Message #${this.props.channelName}`}
                                                 spellCheck={false}
                                                 onKeyDown={(e) => {
                                                     if (e.code === 'Enter' && !e.shiftKey) {
@@ -407,7 +331,7 @@ class ServerChatRoom extends React.Component {
                                                     }
                                                 }}
                                             />
-                                   
+
 
                                         </div>
                                     </div>
