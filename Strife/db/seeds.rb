@@ -152,17 +152,6 @@ Server7 = Server.create!(
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 demoChannel = Channel.create!(channel_name: "Demo Channel", server_id: defaultServer.id, channel_type:1)
 kinKaCircle = Channel.create!(channel_name: "Kin Ka's Circle", server_id: kinKaServer.id, channel_type:1)
 ayceCircle = Channel.create!(channel_name: "Ayce's Circle", server_id: ayceServer.id, channel_type:1)
@@ -174,10 +163,14 @@ ServerMembership.create(server_id: ayceServer.id , user_id: kinKa.id)
 ServerMembership.create(server_id: ayceServer.id , user_id: spencer.id)
 ServerMembership.create(server_id: ayceServer.id , user_id: stacy.id)
 
-Message.create(channel_id: ayceServer.id, author_id:demouser1.id, body: "hello?")
-Message.create(channel_id: ayceServer.id, author_id: demouser2.id, body: "hell0!")
-
-
+Message.create(channel_id: ayceCircle.id, author_id:demouser1.id, body: "hello?")
+Message.create(channel_id: ayceCircle.id, author_id: demouser2.id, body: "hell0!")
+Message.create(channel_id: ayceCircle.id, author_id:demouser1.id, body: "hello?")
+Message.create(channel_id: ayceCircle.id, author_id: demouser2.id, body: "hell0!")
+Message.create(channel_id: ayceCircle.id, author_id:demouser1.id, body: "hello?")
+Message.create(channel_id: ayceCircle.id, author_id: demouser2.id, body: "hell0!")
+Message.create(channel_id: ayceCircle.id, author_id: ayce.id, body: "attendance time!")
+Message.create(channel_id: ayceCircle.id, author_id: kinKa.id, body: "demo!?")
 
 dm_server_1 = DmServer.create!( owner_id: demouser1.id )
 dm_server_2 = DmServer.create!( owner_id: demouser1.id)
