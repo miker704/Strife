@@ -28,7 +28,7 @@ class Channel < ApplicationRecord
     after_create :create_Welcome_Message
 
     def create_Welcome_Message
-        Message.create(channel_id: self.id, author_id: 1, body: "Welcome to ##{self.channel_name} channel")
+        Message.create(channel_id: self.id, author_id: 1, body: "Welcome to ##{self.channel_name}!")
     end
     def create_Channel_Membership
         if channel_name != "general" 
