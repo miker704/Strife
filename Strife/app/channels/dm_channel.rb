@@ -16,4 +16,8 @@ class DmChannel < ApplicationCable::Channel
     #   type: 'REMOVE_USER',
     #   id: current_user.id
   end
+  
+ 
+
+
 end
