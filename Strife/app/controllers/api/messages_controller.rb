@@ -3,8 +3,11 @@ class Api::MessagesController < ApplicationController
         @message = Message.new(message_params)
         @channel = Channel.find_by(id: @message[:channel_id])
         if @message.save
-            ServerChannel.broadcast_to(@channel,@message)
-            render :show
+            ServerChannel.broadcast_to @channel,
+            from_template('api/messages/show', message: @message)
+            render json: nil, status: :ok
+
+            # render :show
         else
       
           render json: @message.errors.full_messages , status: 400
@@ -17,8 +20,9 @@ class Api::MessagesController < ApplicationController
         @channel = Channel.find_by(id: @message[:channel_id])
 
         if @message.update(message_params)
-            ServerChannel.broadcast_to(@channel,@message)
-          render :show
+            ServerChannel.broadcast_to @channel,
+            from_template('api/messages/show', message: @message)
+            render json: nil, status: :ok
         else
             render json: @message.errors.full_messages , status: 400
         end
@@ -31,8 +35,9 @@ class Api::MessagesController < ApplicationController
         @channel = Channel.find_by(id: @message[:channel_id])
 
         if @message.destroy
-             ServerChannel.broadcast_to(@channel,@message)
-          render :show
+            ServerChannel.broadcast_to @channel,
+            from_template('api/messages/show', message: @message)
+            render json: nil, status: :ok
         else
             render json: @message.errors.full_messages , status: 400
         end
