@@ -35,14 +35,30 @@ export const removeMessageErrors = () => {
 
 //these are  getting alot more complicated for no reason 
 
+// export const createMessage = (message) => (dispatch) =>
+//     MessageAPI.createMessage(message).then((message) => dispatch(receiveMessage(message)),
+//         (err) => dispatch(receiveMessageErrors(err.responseJSON)))
+
 export const createMessage = (message) => (dispatch) =>
-    MessageAPI.createMessage(message).then((message) => dispatch(receiveMessage(message)),
-        (err) => dispatch(receiveMessageErrors(err.responseJSON)))
+    MessageAPI.createMessage(message);
+
+
+
+
+// export const updateMessage = (message) => (dispatch) =>
+//     MessageAPI.updateMessage(message).then((message) => dispatch(receiveMessage(message)),
+//         (err) => dispatch(receiveMessageErrors(err.responseJSON)))
+
+
 
 export const updateMessage = (message) => (dispatch) =>
-    MessageAPI.updateMessage(message).then((message) => dispatch(receiveMessage(message)),
-        (err) => dispatch(receiveMessageErrors(err.responseJSON)))
+    MessageAPI.updateMessage(message);
+
+// export const deleteMessage = (messageId) => (dispatch) =>
+//     MessageAPI.deleteMessage(messageId).then((messagePayload) => dispatch(removeMessage(messagePayload)),
+//         (err) => dispatch(receiveMessageErrors(err.responseJSON)))
+
+
 
 export const deleteMessage = (messageId) => (dispatch) =>
-    MessageAPI.deleteMessage(messageId).then((messagePayload) => dispatch(removeMessage(messagePayload)),
-        (err) => dispatch(receiveMessageErrors(err.responseJSON)))
+    MessageAPI.deleteMessage(messageId);
