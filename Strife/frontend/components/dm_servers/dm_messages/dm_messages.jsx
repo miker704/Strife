@@ -64,61 +64,74 @@ class DmMessages extends React.Component {
             { channel: 'DmChannel', id: this.props.dmServerId },
             {
 
-                received: ({ dm_message }) => {
+                received: ({ dm_message, head, path }) => {
 
-                    this.props.reSyncCurrentUser(this.props.currentUserId).then((action) => {
-                        let currUser = action.currentUser;
-                        if (!currUser.dmServersJoined.includes(parseInt(this.props.dmServerId))) {
-                            this.props.removeDmServer(this.props.dmServer.id);
-                            this.props.history.push('/$TR!F3-INTRUSION-PREVENTION/');
-                        }
-                        else {
+                    //this is to boot everyone when the dmserver is deleted
+                    if (head === 302 && path === '/loading/') {
+                        this.props.history.push(`/loading/`);
+                    }
+                    // else if(this.props.currentUserId !== this.props.dmServer.owner_id) {
+                    else{
+                        // ensure individual membership is maintained if not boot the user that fails this
+                        // condition
+                        this.props.reSyncCurrentUser(this.props.currentUserId).then((action) => {
+                            let currUser = action.currentUser;
+                            if (!currUser.dmServersJoined.includes(parseInt(this.props.dmServerId))) {
+                                this.props.removeDmServer(this.props.dmServer.id);
+                                this.props.history.push('/$TR!F3-INTRUSION-PREVENTION/');
+                            }
+                            else {
 
-                            this.props.fetchDmServer(this.props.dmServer.id);
-                        }
+                                this.props.fetchDmServer(this.props.dmServer.id);
+                            }
 
-                    })
-
+                        })
+                    }
                     // this.props.receiveDmMessage(dm_message);
                     // this.props.fetchDmServer(this.props.dmServerId);
-                    if (Object.values(dm_message).length > 1) {
-                        if (this.state.dmMessagesIds.includes(dm_message.id.toString())) {
-                            let dmMessages = this.state.DmMessages;
-                            let DMMessagesCollection = new Array();
-                            dmMessages.forEach((dmmessage) => {
-                                //if match occurs set it to current dmMessage state
-                                if (dmmessage.id === dm_message.id) {
-                                    dmmessage.body = dm_message.body;
-                                    //push it to dmMessages state array
-                                }
-                                DMMessagesCollection.push(dmmessage);
-                            })
-                            //update the state 
-                            this.setState({ ["DmMessages"]: DMMessagesCollection });
+
+                    if (dm_message !== undefined) {
+                        if (Object.values(dm_message).length > 1) {
+                            if (this.state.dmMessagesIds.includes(dm_message.id.toString())) {
+                                let dmMessages = this.state.DmMessages;
+                                let DMMessagesCollection = new Array();
+                                dmMessages.forEach((dmmessage) => {
+                                    //if match occurs set it to current dmMessage state
+                                    if (dmmessage.id === dm_message.id) {
+                                        dmmessage.body = dm_message.body;
+                                        //push it to dmMessages state array
+                                    }
+                                    DMMessagesCollection.push(dmmessage);
+                                })
+                                //update the state 
+                                this.setState({ ["DmMessages"]: DMMessagesCollection });
+                            }
+                            else {
+                                //if there arent any messages in the dmserver set up for message creation
+                                //get author name of message within this dmServer
+                                dm_message.authorName = this.props.dmServer.members[dm_message.sender_id].username;
+                                //rename it so that it can be editable
+                                dm_message.sender_id = dm_message.sender_id;
+                                //grab time stamps from the backend
+                                let timeStamp = new Date(dm_message.created_at)
+                                let time = timeStamp.toLocaleTimeString();
+                                let date = timeStamp.toLocaleDateString();
+                                dm_message.created_at = date + " " + time;
+                                this.setState({ ["DmMessages"]: this.state.DmMessages.concat([dm_message]) })
+                                this.setState({ ["dmMessagesIds"]: this.state.dmMessagesIds.concat(dm_message.id.toString()) })
+                            }
                         }
                         else {
-                            //if there arent any messages in the dmserver set up for message creation
-                            //get author name of message within this dmServer
-                            dm_message.authorName = this.props.dmServer.members[dm_message.sender_id].username;
-                            //rename it so that it can be editable
-                            dm_message.sender_Id = dm_message.sender_id;
-                            //grab time stamps from the backend
-                            let timeStamp = new Date(dm_message.created_at)
-                            let time = timeStamp.toLocaleTimeString();
-                            let date = timeStamp.toLocaleDateString();
-                            dm_message.created_at = date + " " + time;
-                            this.setState({ ["DmMessages"]: this.state.DmMessages.concat([dm_message]) })
-                            this.setState({ ["dmMessagesIds"]: this.state.dmMessagesIds.concat(dm_message.id.toString()) })
+                            let dmMessages = this.state.DmMessages
+                            let filteredDmMessages = dmMessages.filter(dm => dm.id !== dm_message)
+                            this.setState({ ['DmMessages']: filteredDmMessages });
+
                         }
                     }
-                    else {
-                        let dmMessages = this.state.DmMessages
-                        let filteredDmMessages = dmMessages.filter(dm => dm.id !== dm_message)
-                        this.setState({ ['DmMessages']: filteredDmMessages });
 
-                    }
 
-                }
+                },
+
             }
         );
     }
@@ -142,6 +155,7 @@ class DmMessages extends React.Component {
         if (prevProps.dmMessagesIds.length > 0 && this.props.dmMessagesIds.length > 0) {
             if (prevProps.DmMessages[0].id !== this.props.DmMessages[0].id) {
                 this.props.fetchDmServer(this.props.dmServerId);
+                this.subscription.unsubscribe();
                 this.subscribe();
                 let DmMessages = this.props.DmMessages;
                 let dmMessagesIds = this.props.dmMessagesIds;
@@ -249,7 +263,9 @@ class DmMessages extends React.Component {
     }
 
 
+
     render () {
+
 
         let dmMessageOLLIMapping = this.state.DmMessages.map((dmMessage) => {
             // const botMessage = dmMessage.sender_id === 1 &&
@@ -407,7 +423,7 @@ class DmMessages extends React.Component {
                                                     }
                                                 }}
                                             />
-                                   
+
 
                                         </div>
                                     </div>
