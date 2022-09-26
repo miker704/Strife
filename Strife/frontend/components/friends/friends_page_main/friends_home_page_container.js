@@ -4,10 +4,13 @@ import { requestFriendships, removeFriendshipErrors, requestAllFriendships } fro
 import { removeDmServerErrors } from '../../../actions/dm_server_actions';
 import FriendsHomePageContainer from './friends_home_page';
 import { reSyncCurrentUser } from '../../../actions/session_actions';
+import { fetchDmServers } from '../../../actions/dm_server_actions';
+import { fetchServers } from '../../../actions/server_actions';
 
 const mSTP = (state) => {
     return {
         currentUser: state.entities.users[state.session.id],
+        currentUserId: state.session.id,
         errors: state.errors.friendship,
         dmServerErrors: state.errors.dmServer
     }
@@ -20,6 +23,8 @@ const mDTP  = (dispatch) => {
         removeDmServerErrors: () => dispatch(removeDmServerErrors()),
         requestAllFriendships: () => dispatch(requestAllFriendships()),
         reSyncCurrentUser: (currentUser) => dispatch(reSyncCurrentUser(currentUser)),
+        fetchUserDmServers: (currentUserId) => dispatch(fetchDmServers(currentUserId)),
+        fetchUserServers: (currentUserId) => dispatch(fetchServers(currentUserId))
     };
 };
 
