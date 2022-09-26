@@ -63,7 +63,6 @@ const DMMessageEdit = ({
     closeHookModalOnOutsideClick(popUpRef, closeEdit)
     const editInput = (
         <form onSubmit={handleEdit} className="message-form-edit" >
-            {/* <input type="text" spellCheck={false} value={body} ref={editRef} onChange={(e) => setBody(e.currentTarget.value)} /> */}
             <textarea
                 value={value}
                 onChange={(e) => setValue(e.currentTarget.value)}
