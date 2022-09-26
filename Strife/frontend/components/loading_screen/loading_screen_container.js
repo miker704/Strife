@@ -3,7 +3,6 @@ import { withRouter } from "react-router";
 import LoadingScreen from "./loading_screen";
 
 
-
 const mSTP = (state) => {
 
 
@@ -84,14 +83,14 @@ const mSTP = (state) => {
 
     return {
         currentUser: state.entities.users[state.session.id],
-        selectedLoadingMsg: selectedLoadingMsg
+        selectedLoadingMsg: selectedLoadingMsg,
+
     }
 }
 
 
 const mDTP = (dispatch) => {
     return {
-
     }
 }
 
