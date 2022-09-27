@@ -23,9 +23,6 @@ class ServerChatRoom extends React.Component {
         this.handleInput = this.handleInput.bind(this);
         this.handleEnter = this.handleEnter.bind(this);
         this.formatTime = this.formatTime.bind(this);
-
-        // this.oneToOneChatFirstMessage = this.oneToOneChatFirstMessage.bind(this);
-        // this.renderGroupChatFirstMessage = this.renderGroupChatFirstMessage.bind(this);
     }
     //mount correct dmServer and start subscription listening 
     componentDidMount () {
@@ -61,60 +58,74 @@ class ServerChatRoom extends React.Component {
         this.subscription = cable.subscriptions.create(
             { channel: 'ServerChannel', id: this.props.channelId },
             {
-                received: ({ message }) => {
+                received: ({ message, head, path }) => {
 
                     console.log("incoming message : ", message);
                     console.table(message);
-
-                    this.props.reSyncCurrentUser(this.props.currentUserId).then((action) => {
-                        let currUser = action.currentUser;
-                        if (!currUser.serversJoined.includes(parseInt(this.props.serverId))) {
-                            this.props.removeServer(this.props.server.id);
-                            this.props.history.push('/$TR!F3-INTRUSION-PREVENTION/');
-                        }
-                        else {
-                            // this.props.fetchServer(this.props.server.id);
-                            this.props.fetchChannel(this.props.channelId);
-                        }
-
-                    })
-
-                    if (Object.values(message).length > 1) {
-                        if (this.state.channelMessageIds.includes(message.id.toString())) {
-                            let messages = this.state.channelMessages;
-                            let CHANNELMessagesCollection = new Array();
-                            messages.forEach((msg) => {
-                                if (msg.id === message.id) {
-                                    msg.body = message.body;
-                                }
-                                CHANNELMessagesCollection.push(msg);
-                            })
-                            //update the state 
-                            this.setState({ ["channelMessages"]: CHANNELMessagesCollection });
-                        }
-                        else {
-                            console.log("in else message doesnt exists ???????????");
-                            message.authorName = this.props.server.users[message.author_id].username;
-                            message.author_id = message.author_id;
-                            //grab time stamps from the backend
-                            let timeStamp = new Date(message.created_at)
-                            let time = timeStamp.toLocaleTimeString();
-                            let date = timeStamp.toLocaleDateString();
-                            message.created_at = date + " " + time;
-                            this.setState({ ["channelMessages"]: this.state.channelMessages.concat([message]) })
-                            this.setState({ ["channelMessageIds"]: this.state.channelMessageIds.concat(message.id.toString()) })
-                        }
+                    if(head === 100 || head === 101){
+                        this.props.fetchServer(parseInt(this.props.serverId));
                     }
+
+                    if (head === 302 && path === '/loading/') {
+                        this.props.history.push(path);
+                    }
+
                     else {
-                        let channelMessages = this.state.channelMessages
-                        let filteredChannelMessages = channelMessages.filter(chMsg => chMsg.id !== message)
-                        this.setState({ ['channelMessages']: filteredChannelMessages });
+                        this.props.reSyncCurrentUser(this.props.currentUserId).then((action) => {
+                            let currUser = action.currentUser;
+                            if (!currUser.serversJoined.includes(parseInt(this.props.serverId))) {
+                                this.props.removeServer(this.props.server.id);
+                                this.props.history.push('/$TR!F3-INTRUSION-PREVENTION/');
+                            }
+                            else {
+                                // this.props.fetchServer(this.props.server.id);
+                                this.props.fetchChannel(this.props.channelId);
+                            }
 
+                        })
                     }
 
+
+
+
+                    if (message !== undefined) {
+                        if (Object.values(message).length > 1) {
+                            if (this.state.channelMessageIds.includes(message.id.toString())) {
+                                let messages = this.state.channelMessages;
+                                let CHANNELMessagesCollection = new Array();
+                                messages.forEach((msg) => {
+                                    if (msg.id === message.id) {
+                                        msg.body = message.body;
+                                    }
+                                    CHANNELMessagesCollection.push(msg);
+                                })
+                                //update the state 
+                                this.setState({ ["channelMessages"]: CHANNELMessagesCollection });
+                            }
+                            else {
+                                console.log("in else message doesnt exists ???????????");
+                                message.authorName = this.props.server.users[message.author_id].username;
+                                message.author_id = message.author_id;
+                                //grab time stamps from the backend
+                                let timeStamp = new Date(message.created_at)
+                                let time = timeStamp.toLocaleTimeString();
+                                let date = timeStamp.toLocaleDateString();
+                                message.created_at = date + " " + time;
+                                this.setState({ ["channelMessages"]: this.state.channelMessages.concat([message]) })
+                                this.setState({ ["channelMessageIds"]: this.state.channelMessageIds.concat(message.id.toString()) })
+                            }
+                        }
+                        else {
+                            let channelMessages = this.state.channelMessages
+                            let filteredChannelMessages = channelMessages.filter(chMsg => chMsg.id !== message)
+                            this.setState({ ['channelMessages']: filteredChannelMessages });
+
+                        }
+                    }
                 }
             }
         );
+
     }
 
 
@@ -146,7 +157,7 @@ class ServerChatRoom extends React.Component {
             }
         }
 
-        if(Object.values(prevProps.server.channels).length !== Object.values(this.props.server.channels).length){
+        if (Object.values(prevProps.server.channels).length !== Object.values(this.props.server.channels).length) {
             console.log("iside compdidupdatye new channel/ old channel");
             this.props.fetchServer(this.props.match.params.serverId);
             this.props.fetchChannel(this.props.match.params.channelId);
@@ -231,11 +242,8 @@ class ServerChatRoom extends React.Component {
 
     render () {
 
-        console.log("server chat room props : ", this.props);
-        console.log("server chat room state : ", this.state);
-        console.log("server members = ", this.props.serverMembers);
+       
         const serverMembers = this.props.serverMembers;
-        console.log("server members array= ", serverMembers);
         //using a differnet approach than in dmservers as server state is not as sensitive and to try to increase 
         //performance and reduce lag and  excessive memory allocation for unneed resources 
         let messageOLLIMapping = this.state.channelMessages.map((message) => {
