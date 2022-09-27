@@ -1,9 +1,10 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { fetchDmServer, fetchDmServers } from "../../../actions/dm_server_actions.js";
+import { fetchDmServer, fetchDmServers, removeDmServer } from "../../../actions/dm_server_actions.js";
 import { createDmMessage } from "../../../actions/dm_messages_actions.js";
 import { selectDmMembers } from "../../../utils/selectors_api_util.js";
 import DmServer from "./dm_server.jsx";
+import { reSyncCurrentUser } from "../../../actions/session_actions.js";
 
 const mSTP = (state, ownProps) => {
 
@@ -34,7 +35,10 @@ const mDTP = (dispatch, ownProps) => {
     return {
         fetchDmServers: (userId) => dispatch(fetchDmServers(userId)),
         fetchDmServer: () => dispatch(fetchDmServer(ownProps.match.params.dmServerId)),
-        createDmMessage: (dmmessage) => dispatch(createDmMessage(dmmessage))
+        createDmMessage: (dmmessage) => dispatch(createDmMessage(dmmessage)),
+        reSyncCurrentUser: (currentUserId) => dispatch(reSyncCurrentUser(currentUserId)),
+        removeDmServer: (dmServerId) => dispatch(removeDmServer(dmServerId))
+
     }
 }
 
