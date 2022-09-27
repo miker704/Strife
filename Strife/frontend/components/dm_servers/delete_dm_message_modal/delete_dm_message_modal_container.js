@@ -24,7 +24,8 @@ const mDTP = (dispatch) => {
     return {
         deleteDmMessage: (dm_messageId) => dispatch(deleteDmMessage(dm_messageId)),
         closeModal: () => dispatch(closeModal()),
-        xscape: (e) => dispatch(handleKeyUp(e))
+        handleESC: (e) => handleKeyUp(e),
+
     }
 }
 
