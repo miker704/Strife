@@ -98,13 +98,25 @@ class Api::ServersController < ApplicationController
         end
     end
 
-
+    def async_Server_Self_Destruct(server)
+        @response_Message = " #{server.server_name} self destructing redirecting everyone to home ...1...2...3..."
+        server.channels.each do |channel|
+            @message=Message.create!(body: @response_Message, author_id: 1, channel_id: channel.id)
+            ServerChannel.broadcast_to(channel, message: @message, head: 302, path: '/loading/')
+        end
+    end
 
     
     def destroy
         @server = Server.find(params[:id])
         @current_user=current_user
         if @current_user.id == @server.server_owner_id
+
+            #ban everyone
+
+
+
+
            @server.destroy!
             # render :show
         else
