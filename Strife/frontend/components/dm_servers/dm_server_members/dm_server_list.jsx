@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { render } from "react-dom";
 import React from "react";
 import ReactTooltip from "react-tooltip";
-import UserOptionsModalContainer from '../../friends/user_options/user_options_container.js';
 import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
 import ServerUserOptionsModalContainer from "../../friends/server_user_options/server_user_options_modal_container.js";
 const DmServerMemberList = ({
