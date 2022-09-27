@@ -15,7 +15,19 @@ class DmServer extends React.Component {
 
     }
     componentDidMount () {
-        this.props.fetchDmServer(this.props.dmServerId);
+        // this.props.reSyncCurrentUser(this.props.currentUserId).then((action) => {
+        //     let currUser = action.currentUser;
+        //     if (!currUser.dmServersJoined.includes(parseInt(this.props.dmServerId))) {
+        //         this.props.removeDmServer(this.props.dmServerId);
+        //         this.props.history.push('/$TR!F3-INTRUSION-PREVENTION/');
+        //     }
+        //     else {
+
+        //         this.props.fetchDmServer(this.props.dmServerId);
+        //     }
+
+        // })
+        // this.props.fetchDmServer(this.props.dmServerId);
     }
 
     setHideMembersList () {
