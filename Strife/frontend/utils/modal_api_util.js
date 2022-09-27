@@ -1,7 +1,6 @@
 import { closeModal } from "../actions/modal_actions";
 
 export const handleKeyUp = (e) => {
-    // console.log("in esc function");
 
     const keys = {
         27: () => {
