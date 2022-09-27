@@ -1,8 +1,5 @@
 import React from "react";
 import { createConsumer } from "@rails/actioncable"
-import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
-import ReactTooltip from "react-tooltip";
-import autosize from "autosize";
 import DMMessageEditContainer from "../dms_message_and_edit_component/dm_message_edit_container";
 
 class DmMessages extends React.Component {
@@ -27,11 +24,30 @@ class DmMessages extends React.Component {
         this.oneToOneChatFirstMessage = this.oneToOneChatFirstMessage.bind(this);
         this.renderGroupChatFirstMessage = this.renderGroupChatFirstMessage.bind(this);
         this.placeholderText = '';
+        this.resyncUserProps = this.resyncUserProps.bind(this);
     }
     //mount correct dmServer and start subscription listening 
     componentDidMount () {
-        this.props.fetchDmServer(this.props.dmServerId);
         this.subscribe();
+        this.props.reSyncCurrentUser(this.props.currentUserId).then((action) => {
+            let currUser = action.currentUser;
+            if (!currUser.dmServersJoined.includes(parseInt(this.props.dmServerId))) {
+                this.props.removeDmServer(this.props.dmServerId);
+                // this.props.history.push('/$TR!F3-INTRUSION-PREVENTION/');
+                return null;
+            }
+            else {
+
+                this.props.fetchDmServer(this.props.dmServerId);
+
+            }
+
+        })
+
+        //code above checks if user was kick while out of chat if condtion pass boot them and do not fetch server
+        // this.props.fetchDmServer(this.props.dmServerId);
+        // this.subscribe();
+
     }
 
 
@@ -55,6 +71,9 @@ class DmMessages extends React.Component {
         this.subscription.unsubscribe();
     }
 
+    resyncUserProps(head, path){
+
+    }
 
     subscribe () {
 
@@ -63,15 +82,23 @@ class DmMessages extends React.Component {
         this.subscription = cable.subscriptions.create(
             { channel: 'DmChannel', id: this.props.dmServerId },
             {
-
+                //return a head code to invoke a resync and allow live updates for other dm_server_components without having to 
+                //manually add actioncable on them on the front end side this now allows the chat container to control nearly everything
+                // attached to dm_server for a full resync
                 received: ({ dm_message, head, path }) => {
+                    
+                    //boot individual member
+                    if(head === 401){
+                        // console.log("head: ", head);
+                        // console.log("path : ", path);
+                    }
 
                     //this is to boot everyone when the dmserver is deleted
                     if (head === 302 && path === '/loading/') {
                         this.props.history.push(`/loading/`);
                     }
                     // else if(this.props.currentUserId !== this.props.dmServer.owner_id) {
-                    else{
+                    else {
                         // ensure individual membership is maintained if not boot the user that fails this
                         // condition
                         this.props.reSyncCurrentUser(this.props.currentUserId).then((action) => {
