@@ -7,10 +7,9 @@ import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
 const DeleteServerChannelMessageModal = (props) => {
 
     useEffect(() => {
-        window.addEventListener('keyup', props.xscape, false);
+        window.addEventListener('keyup', props.handleESC, false);
         return function cleanUp () {
-            window.removeEventListener('keyup', props.xscape, false);
-
+        window.removeEventListener('keyup', props.handleESC, false);
         }
     }, [])
 
