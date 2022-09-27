@@ -306,7 +306,24 @@ class DmNavBar extends React.Component {
 
                                 <Link to={`/channels/@me/${dmServer.id}`}
                                     className={selectedDmServer}
-                                    onClick={() => this.props.fetchDmServer(dmServer.id)}
+                                    onClick={() => {
+
+                                        this.props.reSyncCurrentUser(this.props.currentUserId).then((action) => {
+                                            let currUser = action.currentUser;
+                                            if (!currUser.dmServersJoined.includes(parseInt(dmServer.id))) {
+                                                this.props.removeDmServer(dmServer.id);
+                                                this.props.history.push('/$TR!F3-INTRUSION-PREVENTION/');
+                                            }
+                                            else if(currUser.dmServersJoined.includes(parseInt(dmServer.id))) {
+                                                this.props.fetchDmServer(dmServer.id);
+
+                                            }
+                
+                                        })
+                                        // this.props.reSyncCurrentUser(this.props.currentUserId).then(() => {
+                                        //     this.props.fetchDmServer(dmServer.id);
+                                        // })
+                                    }}
                                     key={dmServer.id}
                                 >
                                     <li className={`dm-server-li-item ${selectedDmServer}`} key={dmServerIndex}>
@@ -323,10 +340,6 @@ class DmNavBar extends React.Component {
                                             <h5 className='dm-server-name'>{dmServerName}</h5>
                                             <p className='dm-server-subtitle'>{dmServerSubtitle}</p>
                                         </div>
-
-
-
-
 
                                     </li>
                                 </Link>
