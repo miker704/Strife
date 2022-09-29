@@ -34,9 +34,12 @@ class Api::MessagesController < ApplicationController
         @message = Message.find_by(id: params[:id])
         @channel = Channel.find_by(id: @message[:channel_id])
 
-        if @message.destroy
-            ServerChannel.broadcast_to @channel,
-            from_template('api/messages/show', message: @message)
+        # if @message.destroy
+        if @message
+            ServerChannel.broadcast_to(@channel, message: @message, head: 101)
+            @message.destroy
+            # ServerChannel.broadcast_to (@channel, deletedMessage: @message, head: 410)
+            # from_template('api/messages/show', message: @message)
             render json: nil, status: :ok
         else
             render json: @message.errors.full_messages , status: 400
