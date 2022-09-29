@@ -3,9 +3,7 @@ class Api::ServersController < ApplicationController
     def index
         @servers = Server.all
         @current_user = userId ? current_user : false
-        # if @current_user
         @servers = @current_user.servers_joined.includes(:channels) if (@current_user)
-        # end
         render :index
     end
 
@@ -35,15 +33,20 @@ class Api::ServersController < ApplicationController
         if @server
             if server_params[:server_Icon_Remove]
                 @server.server_Icon.purge
+                @server.channels.each do |channel|
+                    ServerChannel.broadcast_to(channel, head: 203)
+                end
                 render :show
             elsif @server.update(server_params)
+                @server.channels.each do |channel|
+                    ServerChannel.broadcast_to(channel, head: 203)
+                end
+
                 render :show
             else
                  render json: @server.errors.full_messages, status: 400
             end
 
-        # if @server && @server.update(server_params)
-        #   render :show
         else
           render json: @server.errors.full_messages, status: 400
         end
@@ -58,7 +61,6 @@ class Api::ServersController < ApplicationController
             if (@server.members.find_by(id: current_user.id))
                 @server.errors.add(:error,'You are already a member of this server')
                 render json: @server.errors.full_messages, status: 422
-                # render json: ['You are already a member of this server'], status: 422
             else
                 
                 member = ServerMembership.create!(user_id: current_user.id, server_id: @server.id)
@@ -71,17 +73,12 @@ class Api::ServersController < ApplicationController
                             receiver_id: current_user.id
                         )
                     end
-                        # @servers = current_user.servers_joined
-                        # render json: @servers, include: %i[channels members]
-                        # render json: @servers
                         render :show
 
                 end
             end
         else
             @server = Server.last
-            # @server.errors.add(:error, 'The Invite code is invalid or has expired')
-            # render json: @server.errors.full_messages, status: 422
             render json: ['The invite is invalid or has expired.'], status: 422
 
         end
@@ -111,13 +108,12 @@ class Api::ServersController < ApplicationController
         @server = Server.find(params[:id])
         @current_user=current_user
         if @current_user.id == @server.server_owner_id
-
-            #ban everyone
-
-
-
-
-           @server.destroy!
+            # send the message to all channels
+            async_Server_Self_Destruct(@server)
+            # give time for all these actions to happen
+            sleep(3)
+            # destroy the server
+            @server.destroy!
             # render :show
         else
             render json: ['You cannot destroy a server that is not yours !'], status: 401
