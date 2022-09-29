@@ -24,9 +24,8 @@ class ServerChatRoom extends React.Component {
         this.handleEnter = this.handleEnter.bind(this);
         this.formatTime = this.formatTime.bind(this);
     }
-    //mount correct dmServer and start subscription listening 
     componentDidMount () {
-        this.props.fetchServer(this.props.serverId);
+        // this.props.fetchServer(this.props.serverId);
         this.props.fetchChannel(this.props.channelId);
         this.subscribe();
     }
@@ -56,21 +55,62 @@ class ServerChatRoom extends React.Component {
         //plug the cable
         const cable = createConsumer('ws://localhost:3000/cable'); // /cable mounts to local host that rails server is running on 
         this.subscription = cable.subscriptions.create(
-            { channel: 'ServerChannel', id: this.props.channelId },
+            { channel: 'ServerChannel', id: this.props.newMessage.channel_id },
             {
-                received: ({ message, head, path }) => {
+                received: ({ message, head, path, type, channel, banned, bannedUser }) => {
 
                     console.log("incoming message : ", message);
                     console.table(message);
-                    if(head === 100 || head === 101){
-                        this.props.fetchServer(parseInt(this.props.serverId));
+                    console.log("incoming head : ", head);
+                    console.log("path : ", path);
+                    console.log("type : ", type);
+                    console.log("channel : ", channel);
+                    console.log("banned : ", banned);
+                    console.log("banneduser : ", bannedUser);
+
+                    //refetch server id new channel is made or updated
+                    if (type === 'NewChannel' || type === 'UpdateChannel') {
+                        this.props.fetchServer(this.props.serverId);
+                    }
+                    // if channel is deleted redirect users to general channel if they are in that channel to be deleted
+                    if (type === 'DeleteChannel') {
+                        if (this.props.history.location.pathname === `/channels/${this.props.server.id}/${channel.id}`) {
+                            this.props.history.push(`${this.props.server.general_channel_id}`)
+                        }
+                        this.props.fetchServer(this.props.match.params.serverId)
                     }
 
+
+
+                    // if member is add
+                    if (head === 100 || head === 101) {
+                        this.props.fetchServer(parseInt(this.props.serverId));
+                    }
+                    //if member is deleted
+                    // if (head === 101) {
+                    //     console.log("in head 101 banneduser : ", bannedUser);
+
+                    //     this.props.reSyncCurrentUser(this.props.currentUserId).then((action) => {
+                    //         const curr_User = action.currentUser
+                    //         if (!curr_User.serversJoined.includes(parseInt(this.props.match.params.serverId))) {
+                    
+                    //                 this.props.removeServer(parseInt(this.props.match.params.serverId));
+                    //                 this.props.history.push('/$TR!F3-INTRUSION-PREVENTION/');
+                    //         }
+                    //         else {
+                    //             this.props.fetchServer(parseInt(this.props.match.params.serverId));
+                    //         }
+                    //     })
+                    // }
+
                     if (head === 302 && path === '/loading/') {
-                        this.props.history.push(path);
+                        console.log("server is self destructing")
+                        this.props.history.push('/loading/');
                     }
 
                     else {
+                        console.log("last else : ", bannedUser);
+
                         this.props.reSyncCurrentUser(this.props.currentUserId).then((action) => {
                             let currUser = action.currentUser;
                             if (!currUser.serversJoined.includes(parseInt(this.props.serverId))) {
@@ -78,14 +118,11 @@ class ServerChatRoom extends React.Component {
                                 this.props.history.push('/$TR!F3-INTRUSION-PREVENTION/');
                             }
                             else {
-                                // this.props.fetchServer(this.props.server.id);
-                                this.props.fetchChannel(this.props.channelId);
+                                this.props.fetchServer(this.props.server.id);
                             }
 
                         })
                     }
-
-
 
 
                     if (message !== undefined) {
@@ -104,9 +141,13 @@ class ServerChatRoom extends React.Component {
                             }
                             else {
                                 console.log("in else message doesnt exists ???????????");
-                                message.authorName = this.props.server.users[message.author_id].username;
+
+
+                                
+                                // message.authorName = this.props.server.users[message.author_id].username;
+                                message.authorName = message.authorName;
                                 message.author_id = message.author_id;
-                                //grab time stamps from the backend
+                                // //grab time stamps from the backend
                                 let timeStamp = new Date(message.created_at)
                                 let time = timeStamp.toLocaleTimeString();
                                 let date = timeStamp.toLocaleDateString();
@@ -138,15 +179,43 @@ class ServerChatRoom extends React.Component {
         if (prevState.channelMessages.length < this.state.channelMessages.length) {
             this.scrollToBottomOfChat("smooth");
         }
-        if (prevProps.messageIds.length !== this.props.messageIds.length) {
+
+        if (prevProps.messages.length !== this.props.messages.length) {
+            // this.props.fetchChannel(this.props.match.params.channelId);
             let channelMessages = this.props.messages;
             let channelMessageIds = this.props.messageIds;
             this.setState({ channelMessages });
             this.setState({ channelMessageIds });
         }
-        if (prevProps.messageIds.length > 0 && this.props.messageIds.length > 0) {
+
+
+
+        // if (prevProps.messageIds.length !== this.props.messageIds.length) {
+        //     // this.props.fetchChannel(this.props.match.params.channelId);
+        //     let channelMessages = this.props.messages;
+        //     let channelMessageIds = this.props.messageIds;
+        //     this.setState({ channelMessages });
+        //     this.setState({ channelMessageIds });
+        // }
+        // if (prevProps.messageIds.length > 0 && this.props.messageIds.length > 0) {
+        //     if (prevProps.messages[0].id !== this.props.messages[0].id) {
+        //         // this.props.fetchServer(this.props.serverId);
+        //         console.log("compdidupdate channel messages in not the same")
+        //         this.props.fetchChannel(this.props.match.params.channelId);
+        //         this.unsubscribe();
+        //         this.subscribe();
+        //         let channelMessages = this.props.messages;
+        //         let channelMessageIds = this.props.messageIds;
+        //         this.setState({ channelMessages });
+        //         this.setState({ channelMessageIds });
+        //     }
+        // }
+
+        if (prevProps.messages.length > 0 && this.props.messages.length > 0 &&
+            prevProps.match.params.channelId === this.props.match.params.channelId) {
             if (prevProps.messages[0].id !== this.props.messages[0].id) {
                 // this.props.fetchServer(this.props.serverId);
+                console.log("compdidupdate channel messages in not the same")
                 this.props.fetchChannel(this.props.match.params.channelId);
                 this.unsubscribe();
                 this.subscribe();
@@ -157,19 +226,14 @@ class ServerChatRoom extends React.Component {
             }
         }
 
-        if (Object.values(prevProps.server.channels).length !== Object.values(this.props.server.channels).length) {
-            console.log("iside compdidupdatye new channel/ old channel");
-            this.props.fetchServer(this.props.match.params.serverId);
-            this.props.fetchChannel(this.props.match.params.channelId);
-            let channelMessages = this.props.messages;
-            let channelMessageIds = this.props.messageIds;
-            this.setState({ channelMessages });
-            this.setState({ channelMessageIds });
 
-        }
 
         // if (prevProps.match.params.serverId !== this.props.match.params.serverId || prevProps.match.params.channelId !== this.props.match.params.channelId) {
+    //    if(this.props.channelId !== this.props.server.general_channel_id){
+    //     console.log("compdidupdate channel not general channel id ")
+
         if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
+            console.log("compdidupdate channel not the same ")
             let newMessage = this.state.newMessage
             newMessage.body = '';
             newMessage.channel_id = this.props.match.params.channelId;
@@ -183,6 +247,8 @@ class ServerChatRoom extends React.Component {
             this.setState({ channelMessages });
             this.setState({ channelMessageIds });
         }
+    // }
+
     }
 
 
@@ -242,7 +308,7 @@ class ServerChatRoom extends React.Component {
 
     render () {
 
-       
+        console.log("server chat room props : ", this.props);
         const serverMembers = this.props.serverMembers;
         //using a differnet approach than in dmservers as server state is not as sensitive and to try to increase 
         //performance and reduce lag and  excessive memory allocation for unneed resources 
