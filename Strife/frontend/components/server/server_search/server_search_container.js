@@ -17,7 +17,7 @@ const mSTP = (state, ownProps) => {
         channels: Object.values(state.entities.channels),
         errors: state.errors.server,
         servers: state.entities.servers,
-        unExploredServers: state.entities.unExploredServers
+        unExploredServers: state.unExploredServers
 
     }
 }
