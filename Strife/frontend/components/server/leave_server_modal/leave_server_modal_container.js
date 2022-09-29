@@ -1,8 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { fetchChannel, deleteChannel, removeChannelErrors } from "../../../actions/channel_actions.js";
+import { fetchChannel,  removeChannelErrors } from "../../../actions/channel_actions.js";
 import { fetchServer, fetchServers, removeServerErrors } from "../../../actions/server_actions.js";
-import { deleteChannelMembership } from "../../../actions/channel_membership_actions.js";
 import { deleteServerMembership } from "../../../actions/server_membership_actions.js";
 import { closeModal } from "../../../actions/modal_actions.js";
 import { handleKeyUp } from "../../../utils/modal_api_util";
@@ -53,7 +52,6 @@ const mDTP = (dispatch, ownProps) => {
         //channel api functions
 
         fetchChannel: (channelId) => { dispatch(fetchChannel(channelId)) },
-        deleteChannel: (channelId) => dispatch(deleteChannel(channelId)),
         removeChannelErrors: () => dispatch(removeChannelErrors()),
 
         //server membership api functions
@@ -61,10 +59,7 @@ const mDTP = (dispatch, ownProps) => {
         deleteServerMembership: (servermembershipId, servermembership) =>
             dispatch(deleteServerMembership(servermembershipId, servermembership)),
 
-        //channel membership api functions 
-        deleteChannelMembership: (channelmembershipId, channelmembership) =>
-            dispatch(deleteChannelMembership(channelmembershipId, channelmembership)),
-
+       
         // modal api functions
         closeModal: () => dispatch(closeModal()),
         handleESC: (e) => handleKeyUp(e),
