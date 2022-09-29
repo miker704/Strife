@@ -293,8 +293,7 @@ victorH = User.create!(username: "Victor", email: "VictorH@strife.com", password
 
 
 #friends
- Friendship.create!(friend_id: victorH.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: victorH.id, friend_request_status: 3);
+
  Friendship.create!(friend_id: demouser2.id, user_id: demouser1.id, friend_request_status: 3);
  Friendship.create!(friend_id: demouser1.id, user_id: demouser2.id, friend_request_status: 3);
  Friendship.create!(friend_id: stacy.id, user_id: demouser1.id, friend_request_status: 3);
@@ -305,44 +304,19 @@ victorH = User.create!(username: "Victor", email: "VictorH@strife.com", password
  Friendship.create!(friend_id: demouser1.id, user_id: KrystalR.id, friend_request_status: 3);
  Friendship.create!(friend_id: vivian.id, user_id: demouser1.id, friend_request_status: 3);
  Friendship.create!(friend_id: demouser1.id, user_id: vivian.id, friend_request_status: 3);
- Friendship.create!(friend_id: mikeC.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: mikeC.id, friend_request_status: 3);
- Friendship.create!(friend_id: MikeH.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: MikeH.id, friend_request_status: 3);
- Friendship.create!(friend_id: VeraH.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: VeraH.id, friend_request_status: 3);
- Friendship.create!(friend_id: EricB.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: EricB.id, friend_request_status: 3);
- Friendship.create!(friend_id: EvanF.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: EvanF.id, friend_request_status: 3);
  Friendship.create!(friend_id: AlanN.id, user_id: demouser1.id, friend_request_status: 3);
  Friendship.create!(friend_id: demouser1.id, user_id: AlanN.id, friend_request_status: 3);
- Friendship.create!(friend_id: LinS.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: LinS.id, friend_request_status: 3);
- Friendship.create!(friend_id: KevinN.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: KevinN.id, friend_request_status: 3);
- Friendship.create!(friend_id: madeleineP.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: madeleineP.id, friend_request_status: 3);
  Friendship.create!(friend_id: TomLL.id, user_id: demouser1.id, friend_request_status: 3);
  Friendship.create!(friend_id: demouser1.id, user_id: TomLL.id, friend_request_status: 3);
- Friendship.create!(friend_id: Leo.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: Leo.id, friend_request_status: 3);
  Friendship.create!(friend_id: Karen.id, user_id: demouser1.id, friend_request_status: 3);
  Friendship.create!(friend_id: demouser1.id, user_id: Karen.id, friend_request_status: 3);
  Friendship.create!(friend_id: Gabriel.id, user_id: demouser1.id, friend_request_status: 3);
  Friendship.create!(friend_id: demouser1.id, user_id: Gabriel.id, friend_request_status: 3);
  Friendship.create!(friend_id: David_allen.id, user_id: demouser1.id, friend_request_status: 3);
  Friendship.create!(friend_id: demouser1.id, user_id: David_allen.id, friend_request_status: 3);
- Friendship.create!(friend_id: DavidZ.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: DavidZ.id, friend_request_status: 3);
  Friendship.create!(friend_id: nikhilK.id, user_id: demouser1.id, friend_request_status: 3);
  Friendship.create!(friend_id: demouser1.id, user_id: nikhilK.id, friend_request_status: 3);
- Friendship.create!(friend_id: NaranI.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: NaranI.id, friend_request_status: 3);
- Friendship.create!(friend_id: DuncanM.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: DuncanM.id, friend_request_status: 3);
- Friendship.create!(friend_id: AlisherP.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: AlisherP.id, friend_request_status: 3);
+
 
 
  Friendship.create!(friend_id: demouser2.id, user_id: MichaelR.id, friend_request_status: 3);
