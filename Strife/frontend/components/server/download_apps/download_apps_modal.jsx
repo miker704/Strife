@@ -33,7 +33,7 @@ class DownloadApps extends React.Component {
                                 </button>
                                 <div className="platform-wraps">
                                     <h3 className="platform-wraps-h3">
-                                        Get STRIFE at Home
+                                        Get $TR!F3 at Home
                                     </h3>
                                     <ul className="platforms-ul">
                                         <li className="platforms-li-item">
