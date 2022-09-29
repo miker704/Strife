@@ -292,7 +292,7 @@ const ServerUserOptionsModal = ({
     }
 
     const handleBanUser = () => {
-        let subState = { user_id: member.id, server_id: ServerID };
+        let subState = { user_id: member.id, server_id: ServerID , banned: 1};
 
         deleteServerMembership(member.id, subState).then(() => {
             // fetchChannel(channelId);
