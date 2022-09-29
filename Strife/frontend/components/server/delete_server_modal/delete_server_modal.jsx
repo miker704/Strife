@@ -1,11 +1,8 @@
 import React from "react";
 import { useRef, useEffect, useState } from "react";
-import { closeOnEsc, closeHookModalOnOutsideClick } from "../../../utils/close_hook_modals_api_utils";
 
 const DeleteServerModal = (props) => {
     const popupRef = useRef();
-    // closeHookModalOnOutsideClick(popupRef, props.setServerDeletion);
-    // closeOnEsc(props.setServerDeletion);
     const [confirmServerName, setConfirmServerName] = useState("");
 
 
