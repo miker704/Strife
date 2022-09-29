@@ -37,7 +37,7 @@ class Server extends React.Component {
 
 
     render () {
-        console.log("server main: this.props.server: ", this.props.server)
+        // console.log("server main: this.props.server: ", this.props.server)
 
 
 
