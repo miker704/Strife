@@ -27,7 +27,7 @@ const ServerHeaderNavBar = ({
     const [channelName, setChannelName] = useState(''); 
 
     useEffect(() => {
-        if (currentChannel?.id) {
+        if (currentChannel?.id || currentChannel?.channel_name) {
             fetchChannel(currentChannelId)
             setChannelName(currentChannel.channel_name);
         }
@@ -39,14 +39,8 @@ const ServerHeaderNavBar = ({
                 removeChannelErrors()
             }
         }
-    }, [currentChannel?.id])
+    }, [currentChannel?.id, currentChannel?.channel_name])
 
-   
-
-    // console.log("servernav propps server : ", server)
-    // console.log("servernav propps :severId ", serverId)
-    // console.log("servernav propps :currentchannelId ", currentChannelId)
-    // console.log("servernav propps :currentchannel", currentChannel)
 
 
     return (
