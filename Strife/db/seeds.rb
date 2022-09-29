@@ -31,12 +31,23 @@ mr_Wumpus = User.create!(
 )
 mr_Wumpus.photo.attach(io: File.open('app/assets/images/discord_Strife_logo.png'), filename:'discord_Strife_logo.png')
 
+StrifeMainServer = Server.create!(
+    server_owner_id: mr_Wumpus.id,
+    server_name: "Welcome to Strife", 
+    public: true
+)
+
+StrifeMainServer.server_Icon.attach(io: File.open('app/assets/images/loading.gif'), filename: 'loading.gif')
+ServerMembership.create(server_id: StrifeMainServer.id , user_id: mr_Wumpus.id)
+
 # demo user 1
 demouser1=User.create!(
     username: 'DemoUser1',
     email: 'DemoUser1@strife.com',
     birthday: Date.new(1996,02,25),
     password: 'qwerty1234',
+    phone_number:"+17185557894"
+
 )
 demouser1.photo.attach(io: File.open('app/assets/images/loading.gif'), filename: 'loading.gif')
 # demo user 2
@@ -45,6 +56,7 @@ demouser2=User.create!(
     email: 'DemoUser2@strife.com',
     password: 'QWERTY1234',
     birthday: Date.new(1997,03,10),
+    phone_number:"+17185557890"
 )
 
 stacy=User.create!(
@@ -52,6 +64,8 @@ stacy=User.create!(
     email: 'Demo56@strife.com',
     password: 'QWERTY1234',
     birthday: Date.new(1990,03,10),
+    phone_number:"+17185557891"
+
 )
 
 defaultServer = Server.create!(
@@ -71,6 +85,8 @@ spencer = User.create(
     username: "Iascone",
     password: "great TA",
     birthday: Date.new(1990,03,10),
+    phone_number:"+17185557892"
+
 )
 
 ayce = User.create(
@@ -78,17 +94,27 @@ ayce = User.create(
   username: "Ayce machine",
   password: "12348hello",
   birthday: Date.new(1990,03,10),
+  phone_number:"+17185557893"
+
 )
 
 jwong = User.create(
     email: "jwong@hhl.com",
     username: "Jwong",
-    password: "Dance dance revolution",
+    password: "Dancedancerevolution",
     birthday: Date.new(1990,03,10),
+    phone_number:"+17185557896"
+
 )
 
-kinKa = User.create!(username: "burgerkinka", email: "kinka@kinka.com", password: "123456789", birthday: Date.new(1990,03,10),)
+kinKa = User.create!(
+    username: "burgerkinka", 
+    email: "kinka@kinka.com", 
+    password: "123456789", 
+    birthday: Date.new(1990,03,10),
+    phone_number:"+17185557897"
 
+)
 
 
 kinKaServer = Server.create!(
@@ -103,8 +129,6 @@ ayceServer = Server.create!(
     public: true
 
 )
-
-
 
 
 Server1 = Server.create!(
@@ -131,24 +155,9 @@ Server4 = Server.create!(
     public: true
 
 )
-Server5 = Server.create!(
-    server_owner_id: demouser1.id,
-    server_name: "Server5", 
-    public: true
 
-)
-Server6 = Server.create!(
-    server_owner_id: demouser1.id,
-    server_name: "Server6", 
-    public: true
 
-)
-Server7 = Server.create!(
-    server_owner_id: demouser1.id,
-    server_name: "Server7", 
-    public: true
 
-)
 
 
 
@@ -205,203 +214,324 @@ DmMessage.create!(dm_server_id: dm_server_3.id, sender_id: ayce.id, body:"Congra
 
 
 
+spamUser1 =User.create!(
+    username: "spamuser@gmail.com", 
+    email: "spamuser@gmail.com", 
+    password: "spamuser@gmail.com", 
+    birthday: Date.new(1990,03,10),
+    phone_number:"+17185657894"
 
-# temp test data
-
-# demo user 1
-test1=User.create!(
-    username: 'Test1@1.com',
-    email: 'Test1@1.com',
-    birthday: Date.new(1996,02,25),
-    password: 'Test1@1.com',
 )
 
-test2=User.create!(
-    username: "test1@g.com",
-    email: "test1@g.com",
-    birthday: Date.new(1996,02,25),
-    password: "test1@g.com",
-)
-
-
-test3=User.create!(
-    username: "testuser1234@gmail.com",
-    email: "testuser1234@gmail.com",
-    birthday: Date.new(1996,02,25),
-    password: "testuser1234@gmail.com",
-)
-
-
-test4=User.create!(
-    username: "testuser12345@gmail.com",
-    email: "testuser12345@gmail.com",
-    birthday: Date.new(1996,02,25),
-    password: "testuser12345@gmail.com",
-)
-
-spamUser1 =User.create!(username: "spamuser@gmail.com", email: "spamuser@gmail.com", password: "spamuser@gmail.com", birthday: Date.new(1990,03,10),)
-spamUser2 =User.create!(username: "spamuser1@gmail.com", email: "spamuser1@gmail.com", password: "spamuser1@gmail.com", birthday: Date.new(1990,03,10),)
-
-
-testserver1 = Server.create!(
-    server_owner_id: test1.id,
-    server_name: "test1@1.com server", 
-    public: true
+spamUser2 =User.create!(
+    username: "spamuser1@gmail.com", 
+    email: "spamuser1@gmail.com",
+    password: "spamuser1@gmail.com",
+    birthday: Date.new(1990,03,10),
+    phone_number:"+17285527894"
 
 )
 
 
-testserver2 = Server.create!(
-    server_owner_id: test2.id,
-    server_name: "test1@g.com server", 
-    public: true
 
-)
 
-testserver3 = Server.create!(
-    server_owner_id: test3.id,
-    server_name: "testuser1234@gmail.com server", 
-    public: true
 
-)
-
-testserver4 = Server.create!(
-    server_owner_id: test4.id,
-    server_name: "testuser12345@gmail.com server", 
-    public: true
-
-)
 
 
 
 
 dm_server_4 = DmServer.create!( owner_id: demouser1.id )
 dm_server_5 = DmServer.create!( owner_id: demouser1.id )
-
 dm_membership_7 = DmMember.create!( dm_server_id: dm_server_4.id, dm_member_id: demouser1.id )
 dm_membership_8 = DmMember.create!( dm_server_id: dm_server_4.id, dm_member_id: demouser2.id )
 dm_membership_9 = DmMember.create!( dm_server_id: dm_server_4.id, dm_member_id: stacy.id )
 dm_membership_10 = DmMember.create!( dm_server_id: dm_server_5.id, dm_member_id: demouser1.id )
-dm_membership_11 = DmMember.create!( dm_server_id: dm_server_5.id, dm_member_id: test1.id )
-
-
+dm_membership_11 = DmMember.create!( dm_server_id: dm_server_5.id, dm_member_id: spencer.id )
 DmMessage.create!(dm_server_id: dm_server_4.id, sender_id: mr_Wumpus.id, body:"Welcome to the beginning of your Group Chat" )
 DmMessage.create!(dm_server_id: dm_server_4.id, sender_id: stacy.id, body:"You should apply to App Academy. You would be a great software engineer." )
 DmMessage.create!(dm_server_id: dm_server_4.id, sender_id: demouser1.id, body:"Will do. Thanks for the advice and motivation." )
 DmMessage.create!(dm_server_id: dm_server_4.id, sender_id: demouser2.id, body:"Hi!." )
-
 DmMessage.create!(dm_server_id: dm_server_5.id, sender_id: mr_Wumpus.id, body:"This is the beginning of your direct message history with" )
-DmMessage.create!(dm_server_id: dm_server_5.id, sender_id: test1.id, body:"You should apply to App Academy. You would be a great software engineer." )
+DmMessage.create!(dm_server_id: dm_server_5.id, sender_id: spencer.id, body:"You should apply to App Academy. You would be a great software engineer." )
 DmMessage.create!(dm_server_id: dm_server_5.id, sender_id: demouser1.id, body:"Will do. Thanks for the advice and motivation." )
+
 #data  for seeding users (Reserved)
 
-MichaelR = User.create!(username: "MichaelR", email: "mikeR@strife.com", password: "Qwerty1234", birthday: Date.new(1996,10,10))
-KrystalR = User.create!(username: "KrystalR", email: "KrystalR@strife.com", password: "Qwerty1234", birthday: Date.new(1997,8,10))
+MichaelR = User.create!(
+    username: "MichaelR", 
+    email: "mikeR@strife.com", 
+    password: "Qwerty1234", 
+    birthday: Date.new(1996,10,10),
+    phone_number:"+17185520000"
 
-vivian = User.create!(username: "Vivian", email: "vivianC@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-mikeC = User.create!(username: "MichaelC", email: "mikeC@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-MikeH = User.create!(username: "MichaelH", email: "MikeH@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-VeraH = User.create!(username: "Vera", email: "VeraH@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-EricB = User.create!(username: "Eric", email: "EricB@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-EvanF = User.create!(username: "Evan", email: "EvanF@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-AlanN = User.create!(username: "Alan", email: "AlanNg@strife.com", password: "AlanNg4TA", birthday: Date.new(1990,03,10))
-LinS = User.create!(username: "LinShen", email: "LinS@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-KevinN = User.create!(username: "Kevin", email: "KevinN@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-madeleineP = User.create!(username: "Madeleine", email: "madeleineP@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-TomLL = User.create!(username: "Tom", email: "TomLL@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-Leo = User.create!(username: "Leo", email: "LeoC@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-Karen = User.create!(username: "Karen", email: "KarenP@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-Gabriel = User.create!(username: "Gabriel", email: "GabrielG@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-David_allen = User.create!(username: "David-allen", email: "David-allen@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-DavidZ = User.create!(username: "DavidZ", email: "DavidZ@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-nikhilK = User.create!(username: "Nikhil", email: "nikhilK@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-NaranI = User.create!(username: "Naran", email: "NaranI@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-DuncanM = User.create!(username: "Duncan", email: "DuncanM@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-AlisherP = User.create!(username: "Alisher", email: "AlisherP@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10))
-
-#test users
-
-bambi = User.create!(username: "bambi", email: "bambi@gmail.com", password: "bambi@gmail.com", birthday: Date.new(1990,03,10))
-
-trish = User.create!(username: "trish@gmail.com", email: "trish@gmail.com", password: "trish@gmail.com", birthday: Date.new(1990,03,10))
-rae=User.create!(username: "rae@gmail.com", email: "rae@gmail.com", password: "rae@gmail.com", birthday: Date.new(1990,03,10))
-baatu=User.create!(username: "baatu@gmail.com", email: "baatu@gmail.com", password: "baatu@gmail.com", birthday: Date.new(1990,03,10))
-cindy=User.create!(username: "cindy@gmail.com", email: "cindy@gmail.com", password: "cindy@gmail.com", birthday: Date.new(1990,03,10))
-nora=User.create!(username: "nora@gmail.com", email: "nora@gmail.com", password: "nora@gmail.com", birthday: Date.new(1990,03,10))
-ame=User.create!(username: "ame@gmail.com", email: "ame@gmail.com", password: "ame@gmail.com", birthday: Date.new(1990,03,10))
+)
+KrystalR = User.create!(username: "KrystalR", email: "KrystalR@strife.com", password: "Qwerty1234", birthday: Date.new(1997,8,10),phone_number:"+17185520001")
+vivian = User.create!(username: "Vivian", email: "vivianC@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520002")
+mikeC = User.create!(username: "MichaelC", email: "mikeC@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520003")
+MikeH = User.create!(username: "MichaelH", email: "MikeH@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520004")
+VeraH = User.create!(username: "Vera", email: "VeraH@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520005")
+EricB = User.create!(username: "Eric", email: "EricB@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520006")
+EvanF = User.create!(username: "Evan", email: "EvanF@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520007")
+AlanN = User.create!(username: "Alan", email: "AlanNg@strife.com", password: "AlanNg4TA", birthday: Date.new(1990,03,10),phone_number:"+17185520008")
+LinS = User.create!(username: "LinShen", email: "LinS@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520009")
+KevinN = User.create!(username: "Kevin", email: "KevinN@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520010")
+madeleineP = User.create!(username: "Madeleine", email: "madeleineP@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520011")
+TomLL = User.create!(username: "Tom", email: "TomLL@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520012")
+Leo = User.create!(username: "Leo", email: "LeoC@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520013")
+Karen = User.create!(username: "Karen", email: "KarenP@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520014")
+Gabriel = User.create!(username: "Gabriel", email: "GabrielG@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520015")
+David_allen = User.create!(username: "David-allen", email: "David-allen@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520016")
+DavidZ = User.create!(username: "DavidZ", email: "DavidZ@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520018")
+nikhilK = User.create!(username: "Nikhil", email: "nikhilK@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520019")
+NaranI = User.create!(username: "Naran", email: "NaranI@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520022")
+DuncanM = User.create!(username: "Duncan", email: "DuncanM@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520023")
+AlisherP = User.create!(username: "Alisher", email: "AlisherP@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520024")
+victorH = User.create!(username: "Victor", email: "VictorH@strife.com", password: "Qwerty1234", birthday: Date.new(1990,03,10),phone_number:"+17185520025")
 
 
-vinnie=User.create!(username: "vinnie@gmail.com", email: "vinnie@gmail.com", password: "vinnie@gmail.com", birthday: Date.new(1990,03,10))
-carly=User.create!(username: "carly@gmail.com", email: "carly@gmail.com", password: "carly@gmail.com", birthday: Date.new(1990,03,10))
-ruru=User.create!(username: "ruru@gmail.com", email: "ruru@gmail.com", password: "ruru@gmail.com", birthday: Date.new(1990,03,10))
-danny=User.create!(username: "danny@gmail.com", email: "danny@gmail.com", password: "danny@gmail.com", birthday: Date.new(1990,03,10))
 
-dee=User.create!(username: "dee@gmail.com", email: "dee@gmail.com", password: "dee@gmail.com", birthday: Date.new(1990,03,10))
-will=User.create!(username: "will@gmail.com", email: "will@gmail.com", password: "will@gmail.com", birthday: Date.new(1990,03,10))
-
-bald=User.create!(username: "baldstie@gmail.com", email: "baldstie@gmail.com", password: "baldstie@gmail.com", birthday: Date.new(1990,03,10))
-jenny=User.create!(username: "jenny@gmail.com", email: "jenny@gmail.com", password: "jenny@gmail.com", birthday: Date.new(1990,03,10))
-lumi=User.create!(username: "lumi@gmail.com", email: "lumi@gmail.com", password: "lumi@gmail.com", birthday: Date.new(1990,03,10))
 
 
 #friends
-f1 = Friendship.create!(friend_id: demouser2.id, user_id: demouser1.id, friend_request_status: 3);
-f2 = Friendship.create!(friend_id: demouser1.id, user_id: demouser2.id, friend_request_status: 3);
-f3 = Friendship.create!(friend_id: stacy.id, user_id: demouser1.id, friend_request_status: 3);
-f4 = Friendship.create!(friend_id: demouser1.id, user_id: stacy.id, friend_request_status: 3);
+ Friendship.create!(friend_id: victorH.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: victorH.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser2.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: demouser2.id, friend_request_status: 3);
+ Friendship.create!(friend_id: stacy.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: stacy.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: KrystalR.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: KrystalR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: vivian.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: vivian.id, friend_request_status: 3);
+ Friendship.create!(friend_id: mikeC.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: mikeC.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MikeH.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: MikeH.id, friend_request_status: 3);
+ Friendship.create!(friend_id: VeraH.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: VeraH.id, friend_request_status: 3);
+ Friendship.create!(friend_id: EricB.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: EricB.id, friend_request_status: 3);
+ Friendship.create!(friend_id: EvanF.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: EvanF.id, friend_request_status: 3);
+ Friendship.create!(friend_id: AlanN.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: AlanN.id, friend_request_status: 3);
+ Friendship.create!(friend_id: LinS.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: LinS.id, friend_request_status: 3);
+ Friendship.create!(friend_id: KevinN.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: KevinN.id, friend_request_status: 3);
+ Friendship.create!(friend_id: madeleineP.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: madeleineP.id, friend_request_status: 3);
+ Friendship.create!(friend_id: TomLL.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: TomLL.id, friend_request_status: 3);
+ Friendship.create!(friend_id: Leo.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: Leo.id, friend_request_status: 3);
+ Friendship.create!(friend_id: Karen.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: Karen.id, friend_request_status: 3);
+ Friendship.create!(friend_id: Gabriel.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: Gabriel.id, friend_request_status: 3);
+ Friendship.create!(friend_id: David_allen.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: David_allen.id, friend_request_status: 3);
+ Friendship.create!(friend_id: DavidZ.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: DavidZ.id, friend_request_status: 3);
+ Friendship.create!(friend_id: nikhilK.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: nikhilK.id, friend_request_status: 3);
+ Friendship.create!(friend_id: NaranI.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: NaranI.id, friend_request_status: 3);
+ Friendship.create!(friend_id: DuncanM.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: DuncanM.id, friend_request_status: 3);
+ Friendship.create!(friend_id: AlisherP.id, user_id: demouser1.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser1.id, user_id: AlisherP.id, friend_request_status: 3);
 
-# f5 = Friendship.create!(friend_id: mr_Wumpus.id, user_id: demouser1.id, friend_request_status: 3);
-# f6 = Friendship.create!(friend_id: demouser1.id, user_id: mr_Wumpus.id, friend_request_status: 3);
- Friendship.create!(friend_id: spencer.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: spencer.id, friend_request_status: 3);
- Friendship.create!(friend_id: kinKa.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: kinKa.id, friend_request_status: 3);
- Friendship.create!(friend_id: jwong.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: jwong.id, friend_request_status: 3);
- Friendship.create!(friend_id: trish.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: trish.id, friend_request_status: 3);
- Friendship.create!(friend_id: cindy.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: cindy.id, friend_request_status: 3);
- Friendship.create!(friend_id: nora.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: nora.id, friend_request_status: 3);
- Friendship.create!(friend_id: ame.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: ame.id, friend_request_status: 3);
- Friendship.create!(friend_id: carly.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: carly.id, friend_request_status: 3);
 
- Friendship.create!(friend_id: lumi.id, user_id: demouser1.id, friend_request_status: 3);
- Friendship.create!(friend_id: demouser1.id, user_id: lumi.id, friend_request_status: 3);
+ Friendship.create!(friend_id: demouser2.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: demouser2.id, friend_request_status: 3);
+ Friendship.create!(friend_id: stacy.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: stacy.id, friend_request_status: 3);
+ Friendship.create!(friend_id: vivian.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: vivian.id, friend_request_status: 3);
+ Friendship.create!(friend_id: mikeC.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: mikeC.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MikeH.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: MikeH.id, friend_request_status: 3);
+ Friendship.create!(friend_id: VeraH.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: VeraH.id, friend_request_status: 3);
+ Friendship.create!(friend_id: EricB.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: EricB.id, friend_request_status: 3);
+ Friendship.create!(friend_id: EvanF.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: EvanF.id, friend_request_status: 3);
+ Friendship.create!(friend_id: AlanN.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: AlanN.id, friend_request_status: 3);
+ Friendship.create!(friend_id: LinS.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: LinS.id, friend_request_status: 3);
+ Friendship.create!(friend_id: KevinN.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: KevinN.id, friend_request_status: 3);
+ Friendship.create!(friend_id: madeleineP.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: madeleineP.id, friend_request_status: 3);
+ Friendship.create!(friend_id: TomLL.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: TomLL.id, friend_request_status: 3);
+ Friendship.create!(friend_id: Leo.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: Leo.id, friend_request_status: 3);
+ Friendship.create!(friend_id: Karen.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: Karen.id, friend_request_status: 3);
+ Friendship.create!(friend_id: Gabriel.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: Gabriel.id, friend_request_status: 3);
+ Friendship.create!(friend_id: David_allen.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: David_allen.id, friend_request_status: 3);
+ Friendship.create!(friend_id: DavidZ.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: DavidZ.id, friend_request_status: 3);
+ Friendship.create!(friend_id: nikhilK.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: nikhilK.id, friend_request_status: 3);
+ Friendship.create!(friend_id: NaranI.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: NaranI.id, friend_request_status: 3);
+ Friendship.create!(friend_id: DuncanM.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: DuncanM.id, friend_request_status: 3);
+ Friendship.create!(friend_id: AlisherP.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: AlisherP.id, friend_request_status: 3);
+ Friendship.create!(friend_id: KrystalR.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: KrystalR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: spencer.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: spencer.id, friend_request_status: 3);
+ Friendship.create!(friend_id: victorH.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: victorH.id, friend_request_status: 3);
+ Friendship.create!(friend_id: jwong.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: jwong.id, friend_request_status: 3);
+ Friendship.create!(friend_id: ayce.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: ayce.id, friend_request_status: 3);
+ Friendship.create!(friend_id: kinKa.id, user_id: MichaelR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: MichaelR.id, user_id: kinKa.id, friend_request_status: 3);
 
 
 
  #pending requests
- Friendship.create!(friend_id: test4.id, user_id: demouser1.id, friend_request_status: 2);
- Friendship.create!(friend_id: demouser1.id, user_id: test4.id, friend_request_status: 1);
-
  Friendship.create!(friend_id: ayce.id, user_id: demouser1.id, friend_request_status: 2);
  Friendship.create!(friend_id: demouser1.id, user_id: ayce.id, friend_request_status: 1);
-
- Friendship.create!(friend_id: test1.id, user_id: demouser1.id, friend_request_status: 1);
- Friendship.create!(friend_id: demouser1.id, user_id: test1.id, friend_request_status: 2);
-
- Friendship.create!(friend_id: test2.id, user_id: demouser1.id, friend_request_status: 1);
- Friendship.create!(friend_id: demouser1.id, user_id: test2.id, friend_request_status: 2);
-
-
- Friendship.create!(friend_id: test3.id, user_id: demouser1.id, friend_request_status: 1);
- Friendship.create!(friend_id: demouser1.id, user_id: test3.id, friend_request_status: 2);
-
-f7 = Friendship.create!(friend_id: KrystalR.id, user_id: MichaelR.id, friend_request_status: 3);
-f8 = Friendship.create!(friend_id: MichaelR.id, user_id: KrystalR.id, friend_request_status: 3);
+ Friendship.create!(friend_id: kinKa.id, user_id: demouser1.id, friend_request_status: 1);
+ Friendship.create!(friend_id: demouser1.id, user_id: kinKa.id, friend_request_status: 2);
+ Friendship.create!(friend_id: spencer.id, user_id: demouser1.id, friend_request_status: 1);
+ Friendship.create!(friend_id: demouser1.id, user_id: spencer.id, friend_request_status: 2);
+ Friendship.create!(friend_id: jwong.id, user_id: demouser1.id, friend_request_status: 1);
+ Friendship.create!(friend_id: demouser1.id, user_id: jwong.id, friend_request_status: 2);
 
 
 #blockusers
-f5 = Friendship.create!(friend_id: spamUser1.id, user_id: demouser1.id, friend_request_status: -1);
+Friendship.create!(friend_id: spamUser1.id, user_id: demouser1.id, friend_request_status: -1);
 Friendship.create!(friend_id: spamUser2.id, user_id: demouser1.id, friend_request_status: -1);
-Friendship.create!(friend_id: rae.id, user_id: demouser1.id, friend_request_status: -1);
-Friendship.create!(friend_id: baatu.id, user_id: demouser1.id, friend_request_status: -1);
-Friendship.create!(friend_id: ruru.id, user_id: demouser1.id, friend_request_status: -1);
-Friendship.create!(friend_id: danny.id, user_id: demouser1.id, friend_request_status: -1);
-Friendship.create!(friend_id: dee.id, user_id: demouser1.id, friend_request_status: -1);
-Friendship.create!(friend_id: will.id, user_id: demouser1.id, friend_request_status: -1);
-Friendship.create!(friend_id: bald.id, user_id: demouser1.id, friend_request_status: -1);
+Friendship.create!(friend_id: spamUser1.id, user_id: MichaelR.id, friend_request_status: -1);
+Friendship.create!(friend_id: spamUser2.id, user_id: MichaelR.id, friend_request_status: -1);
+
+
+# server memberships for attendance circles and app/acc servers
+#ayce attendance
+ServerMembership.create(server_id: ayceServer.id , user_id: vivian.id)
+ServerMembership.create(server_id: ayceServer.id , user_id: EricB.id)
+ServerMembership.create(server_id: ayceServer.id , user_id: LinS.id)
+ServerMembership.create(server_id: ayceServer.id , user_id: KevinN.id)
+ServerMembership.create(server_id: ayceServer.id , user_id: madeleineP.id)
+ServerMembership.create(server_id: ayceServer.id , user_id: TomLL.id)
+ServerMembership.create(server_id: ayceServer.id , user_id: David_allen.id)
+ServerMembership.create(server_id: ayceServer.id , user_id: NaranI.id)
+ServerMembership.create(server_id: ayceServer.id , user_id: AlisherP.id)
+ServerMembership.create(server_id: ayceServer.id , user_id: nikhilK.id)
+ServerMembership.create(server_id: ayceServer.id , user_id: spencer.id)
+ServerMembership.create(server_id: ayceServer.id , user_id: jwong.id)
+ServerMembership.create(server_id: ayceServer.id , user_id: victorH.id)
+
+
+#kinka attendace
+ServerMembership.create(server_id: kinKaServer.id , user_id: victorH.id)
+ServerMembership.create(server_id: kinKaServer.id , user_id: ayce.id)
+ServerMembership.create(server_id: kinKaServer.id , user_id: spencer.id)
+ServerMembership.create(server_id: kinKaServer.id , user_id: jwong.id)
+ServerMembership.create(server_id: kinKaServer.id , user_id: MichaelR.id)
+ServerMembership.create(server_id: kinKaServer.id , user_id: mikeC.id)
+ServerMembership.create(server_id: kinKaServer.id , user_id: DuncanM.id)
+ServerMembership.create(server_id: kinKaServer.id , user_id: DavidZ.id)
+ServerMembership.create(server_id: kinKaServer.id , user_id: Gabriel.id)
+ServerMembership.create(server_id: kinKaServer.id , user_id: Leo.id)
+ServerMembership.create(server_id: kinKaServer.id , user_id: Karen.id)
+ServerMembership.create(server_id: kinKaServer.id , user_id: AlanN.id)
+ServerMembership.create(server_id: kinKaServer.id , user_id: EvanF.id)
+ServerMembership.create(server_id: kinKaServer.id , user_id: VeraH.id)
+ServerMembership.create(server_id: kinKaServer.id , user_id: MikeH.id)
+
+
+#app/acc offical
+appaco = Server.create!(
+    server_owner_id: kinKa.id,
+    server_name: "App Academy Campus", 
+    public: true
+)
+appaco.server_Icon.attach(io: File.open('app/assets/images/appacc.png'), filename: 'appacc.png')
+
+
+
+ServerMembership.create(server_id: appaco.id , user_id: kinKa.id)
+ServerMembership.create(server_id: appaco.id , user_id: ayce.id)
+ServerMembership.create(server_id: appaco.id , user_id: jwong.id)
+ServerMembership.create(server_id: appaco.id , user_id: spencer.id)
+ServerMembership.create(server_id: appaco.id , user_id: victorH.id)
+ServerMembership.create(server_id: appaco.id , user_id: MichaelR.id)
+ServerMembership.create(server_id: appaco.id , user_id: vivian.id)
+ServerMembership.create(server_id: appaco.id , user_id: mikeC.id)
+ServerMembership.create(server_id: appaco.id , user_id: MikeH.id)
+ServerMembership.create(server_id: appaco.id , user_id: VeraH.id)
+ServerMembership.create(server_id: appaco.id , user_id: EricB.id)
+ServerMembership.create(server_id: appaco.id , user_id: EvanF.id)
+ServerMembership.create(server_id: appaco.id , user_id: AlanN.id)
+ServerMembership.create(server_id: appaco.id , user_id: LinS.id)
+ServerMembership.create(server_id: appaco.id , user_id: KevinN.id)
+ServerMembership.create(server_id: appaco.id , user_id: madeleineP.id)
+ServerMembership.create(server_id: appaco.id , user_id: TomLL.id)
+ServerMembership.create(server_id: appaco.id , user_id: Leo.id)
+ServerMembership.create(server_id: appaco.id , user_id: Karen.id)
+ServerMembership.create(server_id: appaco.id , user_id: Gabriel.id)
+ServerMembership.create(server_id: appaco.id , user_id: David_allen.id)
+ServerMembership.create(server_id: appaco.id , user_id: DavidZ.id)
+ServerMembership.create(server_id: appaco.id , user_id: nikhilK.id)
+ServerMembership.create(server_id: appaco.id , user_id: NaranI.id)
+ServerMembership.create(server_id: appaco.id , user_id: DuncanM.id)
+ServerMembership.create(server_id: appaco.id , user_id: AlisherP.id)
+
+
+#app/ac unoffical
+
+appacStrife = Server.create!(
+    server_owner_id: MichaelR.id,
+    server_name: "App/ac Cohort 3/2022", 
+    public: true
+
+)
+appacStrife.server_Icon.attach(io: File.open('app/assets/images/Appacademylogo.png'), filename: 'Appacademylogo.png')
+
+ServerMembership.create(server_id: appacStrife.id , user_id: MichaelR.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: KrystalR.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: vivian.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: mikeC.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: MikeH.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: VeraH.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: EricB.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: EvanF.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: AlanN.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: LinS.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: KevinN.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: madeleineP.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: TomLL.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: Leo.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: Karen.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: Gabriel.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: David_allen.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: DavidZ.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: nikhilK.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: NaranI.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: DuncanM.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: AlisherP.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: victorH.id)
+ServerMembership.create(server_id: appacStrife.id , user_id: kinKa.id)
+
+
+
+
+
+
