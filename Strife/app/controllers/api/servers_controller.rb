@@ -34,12 +34,12 @@ class Api::ServersController < ApplicationController
             if server_params[:server_Icon_Remove]
                 @server.server_Icon.purge
                 @server.channels.each do |channel|
-                    ServerChannel.broadcast_to(channel, head: 203)
+                    StrifeServer.broadcast_to(channel, head: 203)
                 end
                 render :show
             elsif @server.update(server_params)
                 @server.channels.each do |channel|
-                    ServerChannel.broadcast_to(channel, head: 203)
+                    StrifeServer.broadcast_to(channel, head: 203)
                 end
 
                 render :show
@@ -99,7 +99,7 @@ class Api::ServersController < ApplicationController
         @response_Message = " #{server.server_name} self destructing redirecting everyone to home ...1...2...3..."
         server.channels.each do |channel|
             @message=Message.create!(body: @response_Message, author_id: 1, channel_id: channel.id)
-            ServerChannel.broadcast_to(channel, message: @message, head: 302, path: '/loading/')
+            StrifeServer.broadcast_to(channel, message: @message, head: 302, path: '/loading/')
         end
     end
 
