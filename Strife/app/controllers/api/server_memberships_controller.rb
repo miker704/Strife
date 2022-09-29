@@ -25,7 +25,7 @@ class Api::ServerMembershipsController < ApplicationController
         @new_Server_Member = User.find_by(id: new_server_member.user_id)
         @response_Message = "Welcome @#{@new_Server_Member.username} to #{server.server_name}!"
         @message=Message.create!(body: @response_Message, author_id: 1, channel_id: channel.id)
-        ServerChannel.broadcast_to(channel,head: 100)
+        StrifeServer.broadcast_to(channel,head: 100)
     end
 
     def async_ban_member_from_Server(server, banned_user, banned)
@@ -37,8 +37,8 @@ class Api::ServerMembershipsController < ApplicationController
         end
         server.channels.each do |channel|
             @message=Message.create!(body: @response_Message, author_id: 1, channel_id: channel.id)
-            # ServerChannel.broadcast_to(channel, message: @message, head: 101, path: '/$TR!F3-INTRUSION-PREVENTION/', banned: banned, bannedUser: banned_user)
-            ServerChannel.broadcast_to(channel, head: 101, path: '/$TR!F3-INTRUSION-PREVENTION/', banned: banned, bannedUser: banned_user.id)
+            # StrifeServer.broadcast_to(channel, message: @message, head: 101, path: '/$TR!F3-INTRUSION-PREVENTION/', banned: banned, bannedUser: banned_user)
+            StrifeServer.broadcast_to(channel, head: 101, path: '/$TR!F3-INTRUSION-PREVENTION/', banned: banned, bannedUser: banned_user.id)
 
         end
     end
