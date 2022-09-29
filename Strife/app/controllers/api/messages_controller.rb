@@ -3,7 +3,7 @@ class Api::MessagesController < ApplicationController
         @message = Message.new(message_params)
         @channel = Channel.find_by(id: @message[:channel_id])
         if @message.save
-            ServerChannel.broadcast_to @channel,
+            StrifeServer.broadcast_to @channel,
             from_template('api/messages/show', message: @message)
             render json: nil, status: :ok
 
@@ -20,7 +20,7 @@ class Api::MessagesController < ApplicationController
         @channel = Channel.find_by(id: @message[:channel_id])
 
         if @message.update(message_params)
-            ServerChannel.broadcast_to @channel,
+            StrifeServer.broadcast_to @channel,
             from_template('api/messages/show', message: @message)
             render json: nil, status: :ok
         else
@@ -36,9 +36,9 @@ class Api::MessagesController < ApplicationController
 
         # if @message.destroy
         if @message
-            ServerChannel.broadcast_to(@channel, message: @message, head: 101)
+            StrifeServer.broadcast_to(@channel, message: @message, head: 101)
             @message.destroy
-            # ServerChannel.broadcast_to (@channel, deletedMessage: @message, head: 410)
+            # StrifeServer.broadcast_to (@channel, deletedMessage: @message, head: 410)
             # from_template('api/messages/show', message: @message)
             render json: nil, status: :ok
         else
