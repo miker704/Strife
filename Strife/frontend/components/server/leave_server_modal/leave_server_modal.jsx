@@ -1,5 +1,5 @@
 import React from "react";
-import { useRef, useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const LeaveServerModal = (props) => {
 
@@ -18,7 +18,7 @@ const LeaveServerModal = (props) => {
     }, [])
 
     const handleLeaveServer = () => {
-        let subState = { user_id: props.currentUser.id, server_id: props.server.id };
+        let subState = { user_id: props.currentUser.id, server_id: props.server.id, banned: 0 };
         //this is done carefully doing these out of order invoke state and prop errors
         // close the modal first preventing errors waiving from missing server values of server name etc
         //which stops everything same as pushing to home page pushing first invokes server name errors
