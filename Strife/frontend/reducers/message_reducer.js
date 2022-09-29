@@ -1,4 +1,4 @@
-import { RECEIVE_MESSAGE, REMOVE_MESSAGE } from "../actions/message_actions";
+import { RECEIVE_MESSAGE, REMOVE_MESSAGE} from "../actions/message_actions";
 import { RECEIVE_CHANNEL, REMOVE_CHANNEL } from "../actions/channel_actions";
 import { RECEIVE_SERVER, REMOVE_SERVER } from "../actions/server_actions";
 import { RECEIVE_SERVER_MEMBERSHIP, REMOVE_SERVER_MEMBERSHIP } from "../actions/server_membership_actions";
@@ -10,6 +10,8 @@ const messageReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
     switch (action.type) {
+
+       
         case RECEIVE_MESSAGE:
             nextState[action.message.id] = action.message;
             return nextState
