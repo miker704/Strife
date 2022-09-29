@@ -34,7 +34,7 @@ class SplashNav extends React.Component {
 
 
                                 </span>
-                                <span id="website-name-banner"> STRIFE </span>
+                                <span id="website-name-banner"> $TR!F3 </span>
                             </div>
                         </div>
 
@@ -44,7 +44,7 @@ class SplashNav extends React.Component {
                             <a className="link" href={discord_Strife_logo} download="STRIFE.EXE"
                                 target="_blank"> Download </a>
                             <a className="link" href="https://github.com/miker704/Strife"
-                                target="_blank"> STRIFE </a>
+                                target="_blank"> $TR!F3 </a>
                             <a className="link" href="https://github.com/miker704"
                                 target="_blank"> Github </a>
                             <a className="link" href="https://www.linkedin.com/in/michael-ramoutar/"
