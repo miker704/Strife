@@ -1,7 +1,5 @@
 require 'open-uri'
 class Api::UsersController < ApplicationController
-
-
     
     def index
         @users = User.all
@@ -161,18 +159,7 @@ class Api::UsersController < ApplicationController
 
     # allow user to delete their strife account 
     def destroy
-        # @user = User.find_by(id: params[:id])
-       
-        # if !@user.is_password?(params[:userId][:password])
-        #     invalid_password_error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['Error Incorrect Password !']
-        #     render json: invalid_password_error, status: 401
-        # elsif @user.is_password?(params[:userId][:password])
-        #     @user.destroy
-        #     render :show
-        
-        # else
-        #     render json: ['This is not your account'], status: 401
-        # end
+     
         @user = User.find_by(id: params[:id])
         @user.destroy;
         render :show;
