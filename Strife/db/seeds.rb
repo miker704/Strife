@@ -37,7 +37,7 @@ StrifeMainServer = Server.create!(
     public: true
 )
 
-StrifeMainServer.server_Icon.attach(io: File.open('app/assets/images/loading.gif'), filename: 'loading.gif')
+StrifeMainServer.server_Icon.attach(io: File.open('app/assets/images/discord_Strife_logo.png'), filename:'discord_Strife_logo.png')
 ServerMembership.create(server_id: StrifeMainServer.id , user_id: mr_Wumpus.id)
 
 # demo user 1
