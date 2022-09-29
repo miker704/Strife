@@ -42,7 +42,7 @@ class Splash extends React.Component {
                                     Download for Windows
                                 </a>
 
-                                <Link id="open-Strife_banner" to="/register"><span >Open Strife in your browser</span></Link>
+                                <Link id="open-Strife_banner" to="/register"><span >Open $TR!F3 in your browser</span></Link>
 
                             </div>
 
@@ -61,7 +61,7 @@ class Splash extends React.Component {
                         <div className="odd-div-msg">
                             <h2 className="odd-div-header">Create an invite-only place where you belong</h2>
                             <p className="odd-div-ptag">
-                                Strife servers are organized into topic-based channels where you can
+                                $TR!F3 servers are organized into topic-based channels where you can
                                 collaborate, share, and just talk about your day without clogging
                                 up a group chat.
                             </p>
