@@ -137,6 +137,8 @@ class User < ApplicationRecord
     after_initialize :ensure_strife_id_tag
     after_initialize :ensure_color_tag
     after_create :create_Friendship_With_Bot
+    after_create :create_membership_to_Strife_Main
+
 
     # SPIRE
 
@@ -194,5 +196,10 @@ class User < ApplicationRecord
         end
     end
 
+    def create_membership_to_Strife_Main
+        if self.id != 1
+        ServerMembership.create!(user_id: self.id, server_id: 1)
+        end
+    end
 
 end
