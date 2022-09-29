@@ -12,6 +12,8 @@ export const receiveMessage = (message) => {
     }
 }
 
+
+
 export const removeMessage = (messageId) => {
     return {
         type: REMOVE_MESSAGE,
@@ -62,3 +64,6 @@ export const updateMessage = (message) => (dispatch) =>
 
 export const deleteMessage = (messageId) => (dispatch) =>
     MessageAPI.deleteMessage(messageId);
+
+
+
