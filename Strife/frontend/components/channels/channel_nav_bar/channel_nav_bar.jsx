@@ -12,9 +12,16 @@ const ChannelNavBar = (props) => {
     }
 
     useEffect(() => {
-        props.fetchServer();
+    //     //this fetch of server leads to a render where messages pop up again from a previous channel for a split second
+    //     // props.fetchServer();
         props.fetchChannel();
     }, [props.currentChannel?.id])
+
+    useEffect(() => {
+        if(props.server?.id){
+            props.fetchServer();
+        }
+    }, [props.server?.id])
 
 
     const [showPopUp, setShowPopUp] = useState(false);
@@ -86,7 +93,7 @@ const ChannelNavBar = (props) => {
                                     Create Invite
                                 </ReactTooltip>
                                 <div
-                                    className={`channel-settings-wrapper ${props.currentUser.id === props.server.server_owner_id ?
+                                    className={`channel-settings-wrapper ${props.currentUserId === props.server.server_owner_id ?
                                         `` : `is-hidden`
                                         }`}
                                     data-tip data-for="channel-settings-tool-tip"
@@ -204,7 +211,7 @@ const ChannelNavBar = (props) => {
                                         Create Invite
                                     </ReactTooltip>
                                 </div>
-                                <div className={`channel-settings-wrapper ${props.currentUser.id === props.server.server_owner_id ?
+                                <div className={`channel-settings-wrapper ${props.currentUserId === props.server.server_owner_id ?
                                     `` : `is-hidden`
                                     }`}
                                     data-tip data-for="channel-settings-tool-tip2"
@@ -300,7 +307,7 @@ const ChannelNavBar = (props) => {
                                             <div className="main-channel-h2">Text Channels</div>
                                         </h2>
                                     </div>
-                                    <div className={`channel-plus-div ${props.currentUser.id === props.server.server_owner_id ? `` : `is-hidden`}`}
+                                    <div className={`channel-plus-div ${props.currentUserId === props.server.server_owner_id ? `` : `is-hidden`}`}
                                         data-tip data-for="create-channel-tool-tip">
                                         <button type="button" className="add-channel-button"
                                             onClick={() => {
@@ -341,7 +348,7 @@ const ChannelNavBar = (props) => {
                                             <div className="main-channel-h2">Voice Channels</div>
                                         </h2>
                                     </div>
-                                    <div className={`channel-plus-div ${props.currentUser.id === props.server.server_owner_id ? `` : `is-hidden`}`}
+                                    <div className={`channel-plus-div ${props.currentUserId === props.server.server_owner_id ? `` : `is-hidden`}`}
                                         data-tip data-for="create-channel-tool-tip2">
                                         <button type="button" className="add-channel-button"
                                             onClick={() => {
