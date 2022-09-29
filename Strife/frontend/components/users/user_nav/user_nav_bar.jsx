@@ -38,7 +38,6 @@ class UserNavBar extends React.Component {
     let mic_component_className = this.state.micMute === false ? "user-settings-toggle" : "user-settings-toggle-muted";
     let headphone_component_className = this.state.deafen === false ? "" : "";
     let default_profile_pic = this.props.currentUser.photo === undefined ? "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png" : this.props.currentUser.photo;
-    // let default_profile_pic = this.props.currentUser.photo === undefined ? default_PFP : this.props.currentUser.photo;
     let rendered_User_PFP = this.props.currentUser.photo === undefined ? default_user_PFP : this.props.currentUser.photo;
 
     let mic_component = this.state.micMute === false ?
