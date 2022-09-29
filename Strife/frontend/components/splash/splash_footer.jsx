@@ -109,10 +109,10 @@ class SplashFooter extends React.Component {
             target="_blank"> Discord  </a></h6>
 
           <div id="footer-cnt">
-            <ul className="footer-list"> About STRIFE
+            <ul className="footer-list"> About $TR!F3
               <li>
                 <a className="link" href="https://github.com/miker704/Strife"
-                  target="_blank"> STRIFE on Github </a>
+                  target="_blank"> $TR!F3 on Github </a>
               </li>
               <li>
                 <a className="link" href={discord_Strife_logo} download="STRIFE.EXE"
@@ -140,14 +140,14 @@ class SplashFooter extends React.Component {
             </svg>
 
 
-            <span id="website-name"> STRIFE </span>
+            <span id="website-name"> $TR!F3 </span>
           </div>
 
 
 
           <div id="NW">
             <div>
-              <span>STRIFE is a Discord Clone built by </span>
+              <span>$TR!F3 is a Discord Clone built by </span>
               <a className="link" href="https://github.com/miker704" target="_blank">
                 Michael A. Ramoutar.</a>
             </div>
