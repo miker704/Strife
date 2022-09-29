@@ -431,6 +431,19 @@ ServerMembership.create(server_id: kinKaServer.id , user_id: VeraH.id)
 ServerMembership.create(server_id: kinKaServer.id , user_id: MikeH.id)
 
 
+Message.create(channel_id: kinKaCircle.id , author_id:demouser1.id, body: "hello?")
+Message.create(channel_id: kinKaCircle.id , author_id:kinKa.id, body: "hello? taking attendance everyone!")
+Message.create(channel_id: kinKaCircle.id , author_id:kinKa.id, body: "Michael R?")
+Message.create(channel_id: kinKaCircle.id , author_id: MichaelR.id, body: "Here!")
+Message.create(channel_id: kinKaCircle.id , author_id:kinKa.id, body: "Alan!?")
+Message.create(channel_id: kinKaCircle.id , author_id: AlanN.id, body: "Here!")
+
+
+
+
+
+
+
 #app/acc offical
 appaco = Server.create!(
     server_owner_id: kinKa.id,
@@ -469,6 +482,63 @@ ServerMembership.create(server_id: appaco.id , user_id: DuncanM.id)
 ServerMembership.create(server_id: appaco.id , user_id: AlisherP.id)
 
 
+welcomeAndRules = Channel.create!(channel_name: "Welcome and Server Rules", server_id: appaco.id, channel_type:1)
+campusAct = Channel.create!(channel_name: "Course Schedule", server_id: appaco.id, channel_type:1)
+resourceandhelp = Channel.create!(channel_name: "Resources and Help", server_id: appaco.id, channel_type:1)
+
+Message.create(channel_id: welcomeAndRules.id , author_id:kinKa.id, body: "Hello there! Welcome to the App Academy Server!")
+Message.create(channel_id: welcomeAndRules.id , author_id:kinKa.id, body: "Here are the Rules Of Conduct")
+
+Message.create(channel_id: welcomeAndRules.id , author_id:kinKa.id, body: "1. Make sure you take attendance at your group circle servers 9am, 1pm and 5:30pm everyday!")
+Message.create(channel_id: welcomeAndRules.id , author_id:kinKa.id, body: "2. Be Respectful")
+Message.create(channel_id: welcomeAndRules.id , author_id:kinKa.id, body: "3. No Talking! or Texting in the Server!")
+Message.create(channel_id: welcomeAndRules.id , author_id:kinKa.id, body: "4. Keep Conversations on Topic use your own server if you wish to speak on off topic subjects")
+Message.create(channel_id: welcomeAndRules.id , author_id:kinKa.id, body: "5. We Hope you have a great time learning with us!")
+
+
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "Hey There! This Channel is to provide you notice of the Course Schedule and what we will be learning in class")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "BootCamp Starts On - 3/28/22")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "Software Fundementals - Remote Online - 3/28/22 - 4/11/22")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "Beginner Ruby 3/22/22 - 4/14/22")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "Ruby FA1-Practice - 3/31/22 @ 9:15am")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "Ruby FA1 - 4/4/22 @ 9:15am")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "Ruby FA2 - 4/11/22 @ 9:15am")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "On Campus In-Person Starts  - 4/12/22")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "Intermediate Ruby - 4/12/22 - 4/25/22")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "Ruby 1 Prep - 4/14/22 @ 9:15am")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "Ruby 1 - 4/18/22 @ 9:15am")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "Ruby 2 - 4/25/22 @ 9:15am")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "Rails & SQL - 4/26/22 - 5/16/22")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "Rails 1 - 5/3/22 @ 9:15am")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "Rails Olympics - 5/9/22 @ 9:15am")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "Rails 2 - 5/16/22 @ 9:15am")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "JavaScript - 5/17/22 - 5/26/22")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "JavaScript 1 - 5/26/22 @ 9:15am")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "JavaScript Project - 5/27/22 - 6/2/22")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "JavaScript Project - Presentations - 6/2/22 @ 1:00pm")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "React 6/3/22 - 6/17/22")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "React 1 6/17/22 @ 9:15am")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "Full Stack Project  6/17/22 - 7/1/22")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "Full Stack Project - Presentations - 7/1/22 @ 9:15am")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "MERN Project - 7/1/22 - 7/8/22")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "MERN Project - Presentations - 7/8/22 @ 9:15am - 10:30am")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "Job Search Prep - 7/8/22 - 7/15/22")
+Message.create(channel_id: campusAct.id , author_id:kinKa.id, body: "Graduation - 7/15/22 @ 4:00pm")
+
+
+Message.create(channel_id: resourceandhelp.id , author_id: kinKa.id, body: "Hey There! This Channel is to provide resources and help if you were too lazy.. im mean couldnt do your homework")
+Message.create(channel_id: resourceandhelp.id , author_id: kinKa.id, body: "Come To Class on Time")
+Message.create(channel_id: resourceandhelp.id , author_id: kinKa.id, body: "App/ac Learn")
+Message.create(channel_id: resourceandhelp.id , author_id: kinKa.id, body: "HackerRank")
+Message.create(channel_id: resourceandhelp.id , author_id: kinKa.id, body: "LeetCode")
+Message.create(channel_id: resourceandhelp.id , author_id: kinKa.id, body: "Do your Homework")
+
+
+
+
+
+
+
 #app/ac unoffical
 
 appacStrife = Server.create!(
@@ -503,6 +573,27 @@ ServerMembership.create(server_id: appacStrife.id , user_id: DuncanM.id)
 ServerMembership.create(server_id: appacStrife.id , user_id: AlisherP.id)
 ServerMembership.create(server_id: appacStrife.id , user_id: victorH.id)
 ServerMembership.create(server_id: appacStrife.id , user_id: kinKa.id)
+
+
+jobsearch = Channel.create!(channel_name: "job search", server_id: appacStrife.id, channel_type:1)
+algo = Channel.create!(channel_name: "dsa", server_id: appacStrife.id, channel_type:1)
+random = Channel.create!(channel_name: "off-topic", server_id: appacStrife.id, channel_type:1)
+
+
+
+
+Message.create(channel_id: jobsearch.id , author_id: MichaelR.id, body: "Post Job Stuff Here")
+Message.create(channel_id: jobsearch.id , author_id: DuncanM.id, body: "Cool okay")
+Message.create(channel_id: jobsearch.id , author_id: vivian.id, body: "Thanks for making this channel")
+
+Message.create(channel_id: algo.id , author_id: MichaelR.id, body: "Post DSA Stuff Here")
+Message.create(channel_id: algo.id , author_id: AlanN.id, body: "LeetCode")
+Message.create(channel_id: algo.id , author_id: EricB.id, body: "HackerRank")
+
+Message.create(channel_id: random.id , author_id: MichaelR.id, body: "Post Memes Here")
+Message.create(channel_id: random.id , author_id: vivian.id, body: "kk")
+Message.create(channel_id: random.id , author_id: David_allen.id, body: "thats funny you know what memes are?")
+
 
 
 
