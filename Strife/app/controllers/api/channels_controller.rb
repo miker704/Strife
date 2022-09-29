@@ -10,7 +10,7 @@ class Api::ChannelsController < ApplicationController
         if @channel.save
             @server = Server.find_by(id: @channel.server_id)
             @server.channels.each do |channel|
-                ServerChannel.broadcast_to(channel, head: 201, type: 'NewChannel')
+                StrifeServer.broadcast_to(channel, head: 201, type: 'NewChannel')
             end
           render :show
         else
@@ -25,7 +25,7 @@ class Api::ChannelsController < ApplicationController
           @default_channel_message.update(body: "Welcome to ##{@channel.channel_name} channel !")
           @server = Server.find_by(id: @channel.server_id)
             @server.channels.each do |channel|
-                ServerChannel.broadcast_to(channel, head: 202, type: 'UpdateChannel')
+                StrifeServer.broadcast_to(channel, head: 202, type: 'UpdateChannel')
             end
           render :show
         else
@@ -38,7 +38,7 @@ class Api::ChannelsController < ApplicationController
         @server = Server.find_by(id: @channel.server_id)
         if @channel
             @server.channels.each do |channel|
-                ServerChannel.broadcast_to(channel, head: 302, type: 'DeleteChannel',  channel: @channel)
+                StrifeServer.broadcast_to(channel, head: 302, type: 'DeleteChannel',  channel: @channel)
             end
         #   sleep(2)
           @channel.destroy
