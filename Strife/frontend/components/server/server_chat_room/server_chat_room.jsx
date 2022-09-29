@@ -1,6 +1,5 @@
 import React from "react";
 import { createConsumer } from "@rails/actioncable"
-import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
 import ServerMessagesContainer from "../server_messages/server_messages_container";
 
 
@@ -59,15 +58,7 @@ class ServerChatRoom extends React.Component {
             {
                 received: ({ message, head, path, type, channel, banned, bannedUser }) => {
 
-                    console.log("incoming message : ", message);
-                    console.table(message);
-                    console.log("incoming head : ", head);
-                    console.log("path : ", path);
-                    console.log("type : ", type);
-                    console.log("channel : ", channel);
-                    console.log("banned : ", banned);
-                    console.log("banneduser : ", bannedUser);
-
+                   
                     //refetch server id new channel is made or updated
                     if (type === 'NewChannel' || type === 'UpdateChannel') {
                         this.props.fetchServer(this.props.serverId);
@@ -104,12 +95,10 @@ class ServerChatRoom extends React.Component {
                     // }
 
                     if (head === 302 && path === '/loading/') {
-                        console.log("server is self destructing")
                         this.props.history.push('/loading/');
                     }
 
                     else {
-                        console.log("last else : ", bannedUser);
 
                         this.props.reSyncCurrentUser(this.props.currentUserId).then((action) => {
                             let currUser = action.currentUser;
@@ -140,9 +129,6 @@ class ServerChatRoom extends React.Component {
                                 this.setState({ ["channelMessages"]: CHANNELMessagesCollection });
                             }
                             else {
-                                console.log("in else message doesnt exists ???????????");
-
-
                                 
                                 // message.authorName = this.props.server.users[message.author_id].username;
                                 message.authorName = message.authorName;
@@ -188,34 +174,11 @@ class ServerChatRoom extends React.Component {
             this.setState({ channelMessageIds });
         }
 
-
-
-        // if (prevProps.messageIds.length !== this.props.messageIds.length) {
-        //     // this.props.fetchChannel(this.props.match.params.channelId);
-        //     let channelMessages = this.props.messages;
-        //     let channelMessageIds = this.props.messageIds;
-        //     this.setState({ channelMessages });
-        //     this.setState({ channelMessageIds });
-        // }
-        // if (prevProps.messageIds.length > 0 && this.props.messageIds.length > 0) {
-        //     if (prevProps.messages[0].id !== this.props.messages[0].id) {
-        //         // this.props.fetchServer(this.props.serverId);
-        //         console.log("compdidupdate channel messages in not the same")
-        //         this.props.fetchChannel(this.props.match.params.channelId);
-        //         this.unsubscribe();
-        //         this.subscribe();
-        //         let channelMessages = this.props.messages;
-        //         let channelMessageIds = this.props.messageIds;
-        //         this.setState({ channelMessages });
-        //         this.setState({ channelMessageIds });
-        //     }
-        // }
+       
 
         if (prevProps.messages.length > 0 && this.props.messages.length > 0 &&
             prevProps.match.params.channelId === this.props.match.params.channelId) {
             if (prevProps.messages[0].id !== this.props.messages[0].id) {
-                // this.props.fetchServer(this.props.serverId);
-                console.log("compdidupdate channel messages in not the same")
                 this.props.fetchChannel(this.props.match.params.channelId);
                 this.unsubscribe();
                 this.subscribe();
@@ -226,19 +189,11 @@ class ServerChatRoom extends React.Component {
             }
         }
 
-
-
-        // if (prevProps.match.params.serverId !== this.props.match.params.serverId || prevProps.match.params.channelId !== this.props.match.params.channelId) {
-    //    if(this.props.channelId !== this.props.server.general_channel_id){
-    //     console.log("compdidupdate channel not general channel id ")
-
         if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
-            console.log("compdidupdate channel not the same ")
             let newMessage = this.state.newMessage
             newMessage.body = '';
             newMessage.channel_id = this.props.match.params.channelId;
             this.setState({ newMessage });
-            // this.props.fetchServer(this.props.serverId);
             this.props.fetchChannel(this.props.match.params.channelId);
             this.unsubscribe();
             this.subscribe();
@@ -247,7 +202,6 @@ class ServerChatRoom extends React.Component {
             this.setState({ channelMessages });
             this.setState({ channelMessageIds });
         }
-    // }
 
     }
 
@@ -308,7 +262,6 @@ class ServerChatRoom extends React.Component {
 
     render () {
 
-        console.log("server chat room props : ", this.props);
         const serverMembers = this.props.serverMembers;
         //using a differnet approach than in dmservers as server state is not as sensitive and to try to increase 
         //performance and reduce lag and  excessive memory allocation for unneed resources 
@@ -340,12 +293,6 @@ class ServerChatRoom extends React.Component {
                 />
             )
         })
-
-
-
-
-
-
 
         return (
             <div className="server-chat-container-wrapper">
