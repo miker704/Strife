@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { fetchChannel, deleteChannel, removeChannelErrors } from "../../../actions/channel_actions.js";
 import { fetchServer, fetchServers, deleteServer, removeServerErrors, removeServer } from "../../../actions/server_actions.js";
-import { receiveMessage, createMessage, removeMessageErrors } from "../../../actions/message_actions.js";
+import { receiveMessage, createMessage, removeMessageErrors} from "../../../actions/message_actions.js";
 import { reSyncCurrentUser } from "../../../actions/session_actions.js";
 import ServerChatRoom from "./server_chat_room.jsx";
 
@@ -58,7 +58,7 @@ const mDTP = (dispatch, ownProps) => {
         reSyncCurrentUser: (currentUser) => dispatch(reSyncCurrentUser(currentUser)),
         removeChannelErrors: () => dispatch(removeChannelErrors()),
         removeMessageErrors: () => dispatch(removeMessageErrors()),
-        removeServerErrors: () => dispatch(removeServerErrors())
+        removeServerErrors: () => dispatch(removeServerErrors()),
 
     }
 }
