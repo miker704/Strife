@@ -272,7 +272,7 @@ class SessionForm extends React.Component {
                 {signInAsDemoUser1}
                 <div className="demologin-text">
                     <h2>Login with a Demo account</h2>
-                    <p> and take a tour of Strife  </p>
+                    <p> and take a tour of $TR!F3 </p>
                 </div>
 
                 {/* {signInAsDemoUser1} */}
@@ -292,7 +292,7 @@ class SessionForm extends React.Component {
         ) : ("");
 
         const tos = this.props.formType === "Sign Up" ? (
-            <span className="tos">By registering, you agree to Strife's{" "}
+            <span className="tos">By registering, you agree to $TR!F3's{" "}
                 <Link to="/register">Terms of Service</Link>
                 {" "}and{" "}
                 <Link to="/register">Privacy Policy</Link>
