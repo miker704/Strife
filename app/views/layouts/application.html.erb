@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>STRIFE</title>
+    <title>$TR!F3</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= action_cable_meta_tag %> 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%# <%= javascript_include_tag 'cable', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application' %>
 
+   <%# not using font awesome its limits are a huge downfall  %>
     <%# <script src="https://kit.fontawesome.com/c7eb8a60f1.js" crossorigin="anonymous"></script> %>
     
-    <link rel="shortcut icon" type="image/x-icon" href="<%=image_url("discord_Strife_logo.png") %>"> 
-     <%# if current_user %>
-      <%# window.currentUser = { %>
-        <%# "id": %>
-         <%# = current_user.id, %>
-        <%# "username": "= current_user.username", %>
-        <%# "email": "= current_user.email", %>
-        <%# "birthday":"= current_user.birthday", %>
-        <%# "online":"= current_user.online" %>
-      <%# } %>
-    <%# end %>
+    <%= javascript_include_tag 'application' %>
+    <link rel="shortcut icon" type="image/x-icon" href="<%=image_url("discord_Strife_logo.png") %>">
+
+    <% if logged_in? %>
+        <script type="text/javascript">
+             window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
+        </script>
+    <% end %>
+     
   </head>
 
   <body>
