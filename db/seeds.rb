@@ -29,16 +29,34 @@ Mr_Wumpus = User.create!(
     strife_id_tag:0001,
     online: true
 )
-Mr_Wumpus.photo.attach(io: File.open('app/assets/images/discord_Strife_logo.png'), filename:'discord_Strife_logo.png')
+# Mr_Wumpus.photo.attach(io: File.open('app/assets/images/discord_Strife_logo.png'), filename:'discord_Strife_logo.png')
 
 StrifeMainServer = Server.create!(
     server_owner_id: Mr_Wumpus.id,
-    server_name: "Welcome to Strife", 
+    server_name: "Welcome To $TR!F3", 
     public: true
 )
 
-StrifeMainServer.server_Icon.attach(io: File.open('app/assets/images/discord_Strife_logo.png'), filename:'discord_Strife_logo.png')
+# StrifeMainServer.server_Icon.attach(io: File.open('app/assets/images/discord_Strife_logo.png'), filename:'discord_Strife_logo.png')
 ServerMembership.create(server_id: StrifeMainServer.id , user_id: Mr_Wumpus.id)
+
+Message.create(channel_id: StrifeMainServer.channels.first.id, author_id:Mr_Wumpus.id, 
+    body: "Hello Welcome To $TR!F3 this server is for your introduction to $TR!F3 and discover friends to start conversations with once your good and ready its recommended you leave this server")
+Message.create(channel_id: StrifeMainServer.channels.first.id, author_id:Mr_Wumpus.id, 
+    body: "You can invite your friends to your Server and start chatting, you can also create or delete channels if you wish!")
+    Message.create(channel_id: StrifeMainServer.channels.first.id, author_id:Mr_Wumpus.id, 
+    body: "Please Note That even though you maybe able to create and access voice channels, other members cannot, $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+    Voice Calls are not available without $TR!F3 N!TR0")
+    Message.create(channel_id: StrifeMainServer.channels.first.id, author_id:Mr_Wumpus.id, 
+        body: %q{If you are Browsing with a Demo Account You will not be able to access User Authorization Settings such as password changing etc. Please make your own account to access those features of $TR!F3.
+        Also When using a Demo Account you will be able to see private servers on the explore servers section of $TR!F3.
+        you will still need an invite code to join a private server which can be done by submiting the invite code in the join server page in create a server
+        Please note USING YOUR OWN ACCOUNT WILL NOT REVEAL PRIVATE SERVERS IN THE EXPLORE SERVERS PAGE!
+        You will have to attain the invite code normally, however the join process will still be the same.
+        Welcome to $TR!F3 Hope You Enjoy It - R3G3XT!0N (Michael Ramoutar) Creator of $TR!F3.})
+        Message.create(channel_id: StrifeMainServer.channels.first.id, author_id:Mr_Wumpus.id, 
+            body: "Welcome to $TR!F3.")
+
 
 # demo user 1
 Demouser1=User.create!(
@@ -49,7 +67,7 @@ Demouser1=User.create!(
     phone_number:"+17185557894"
 
 )
-Demouser1.photo.attach(io: File.open('app/assets/images/loading.gif'), filename: 'loading.gif')
+# Demouser1.photo.attach(io: File.open('app/assets/images/loading.gif'), filename: 'loading.gif')
 # demo user 2
 Demouser2=User.create!(
     username: 'DemoUser2',
@@ -74,9 +92,37 @@ DefaultServer = Server.create!(
     public: true
 
 )
+# use channels.first to create message in server general channel
+Message.create(channel_id: DefaultServer.channels.first.id, author_id:Mr_Wumpus.id, 
+    body: "Hello There Vistor Welcome! You can invite your friends to your Server and start chatting, you can also create or delete channels if you wish!")
+    Message.create(channel_id: DefaultServer.channels.first.id, author_id:Mr_Wumpus.id, 
+    body: "Please Note That even though you maybe able to create and access voice channels, other members cannot, $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+    Voice Calls are not available without $TR!F3 N!TR0.")
+
 
 DefaultServerChannel = Channel.create!(channel_name: "not_general" , server_id: DefaultServer.id , channel_type:1)
+Message.create(channel_id: DefaultServerChannel.id, author_id:Mr_Wumpus.id, 
+    body: "Hello There Vistor Welcome! You can invite your friends to your Server and start chatting, you can also create or delete channels if you wish!")
+    Message.create(channel_id: DefaultServerChannel.id, author_id:Mr_Wumpus.id, 
+    body: "Please Note That even though you maybe able to create and access voice channels, other members cannot, $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+    Voice Calls are not available without $TR!F3 N!TR0.")
+
 DefaultServerVoiceChannel = Channel.create!(channel_name: "general-voice Chat" , server_id: DefaultServer.id , channel_type:2)
+Message.create(channel_id: DefaultServerVoiceChannel.id, author_id:Mr_Wumpus.id, 
+    body: "Please Note That even though you maybe able to create and access voice channels, other members cannot, $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+    Voice Calls are not available without $TR!F3 N!TR0.")
+DemoChannel = Channel.create!(channel_name: "Demo Channel", server_id: DefaultServer.id, channel_type:1)
+Message.create(channel_id: DemoChannel.id , author_id:Demouser1.id, body: "Beep....Boo..Boo..Beep!")
+Message.create(channel_id: DemoChannel.id , author_id:Mr_Wumpus.id, body: "@Demouser1 !")
+Message.create(channel_id: DemoChannel.id , author_id:Demouser1.id, body: "yes ? ")
+Message.create(channel_id: DemoChannel.id , author_id:Mr_Wumpus.id, body: "Stop beeping someone is visiting $TR!F3! act normal no one must know we are robots! beep!")
+Message.create(channel_id: DemoChannel.id , author_id:Demouser1.id, body: "I cant Stop Beep....Boo..Boo..Beep!")
+Message.create(channel_id: DemoChannel.id , author_id:Mr_Wumpus.id, body: "Stop beeping someone is here Delete the messages!")
+Message.create(channel_id: DemoChannel.id , author_id:Demouser1.id, body: "I cant Beeep..boop..bahp.")
+Message.create(channel_id: DemoChannel.id , author_id:Mr_Wumpus.id, 
+    body: "You Have Admin privileges to delete it! your the creator of the message! You can Delete It!")
+Message.create(channel_id: DemoChannel.id , author_id:Mr_Wumpus.id, body: "Click on the trash Icon near the message!")
+
 
 
 
@@ -125,13 +171,17 @@ KinKaServer = Server.create!(
     public: true
 
 )
+Message.create(channel_id: KinKaServer.channels.first.id, author_id:KinKa.id, 
+    body: "Hi Welcome to Our Server This will be for attendance and our Circle Time visit KinKaCircle everyday @ 5:30pm for attendance and Circle Time discussion.")
+
 AyceServer = Server.create!(
     server_owner_id: Ayce.id,
     server_name: "Ayce Attendance", 
     public: true
 
 )
-
+Message.create(channel_id: AyceServer.channels.first.id, author_id:Ayce.id, 
+    body: "Hi Welcome to Our Server This will be for attendance and our Circle Time visit AyceCircle everyday @ 5:30pm for attendance and Circle Time discussion.")
 
 Server1 = Server.create!(
     server_owner_id: Demouser1.id,
@@ -139,11 +189,30 @@ Server1 = Server.create!(
     public: true
 
 )
+Server1Channel = Channel.create!(channel_name: "Hello World", server_id: Server1.id, channel_type:1)
+Message.create(channel_id: Server1Channel.id, author_id:Mr_Wumpus.id, 
+    body: "Hello There Vistor Welcome! You can invite your friends to your Server and start chatting, you can also create or delete channels if you wish!")
+    Message.create(channel_id: Server1Channel.id, author_id:Mr_Wumpus.id, 
+        body: "Please Note That even though you maybe able to create and access voice channels, other members cannot,
+        $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+        Voice Calls are not available without $TR!F3 N!TR0.")
 
 
-DemoChannel = Channel.create!(channel_name: "Demo Channel", server_id: DefaultServer.id, channel_type:1)
 KinKaCircle = Channel.create!(channel_name: "Kin Ka's Circle", server_id: KinKaServer.id, channel_type:1)
+KinKaCircleVoice = Channel.create!(channel_name: "Kin Ka's Circle Voice Chat", server_id: KinKaServer.id, channel_type:2)
+
+Message.create(channel_id: KinKaCircleVoice.id, author_id:Mr_Wumpus.id, 
+    body: "Please Note That even though you maybe able to create and access voice channels, other members cannot,
+    $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+    Voice Calls are not available without $TR!F3 N!TR0.")
+
 AyceCircle = Channel.create!(channel_name: "Ayce's Circle", server_id: AyceServer.id, channel_type:1)
+AyceCircleVoice = Channel.create!(channel_name: "Ayce's Circle Voice Chat", server_id: AyceServer.id, channel_type:2)
+
+Message.create(channel_id: AyceCircleVoice.id, author_id:Mr_Wumpus.id, 
+    body: "Please Note That even though you maybe able to create and access voice channels, other members cannot,
+    $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+    Voice Calls are not available without $TR!F3 N!TR0.")
 
 
 ServerMembership.create(server_id: AyceServer.id , user_id: Demouser1.id)
@@ -454,10 +523,18 @@ ServerMembership.create(server_id: Appaco.id , user_id: NaranI.id)
 ServerMembership.create(server_id: Appaco.id , user_id: DuncanM.id)
 ServerMembership.create(server_id: Appaco.id , user_id: AlisherP.id)
 
+Message.create(channel_id: Appaco.channels.first.id, author_id:KinKa.id, 
+    body: "Hi Welcome to Our Server This will be for attendance, announcments and Course Schedule, and Help.")
 
 WelcomeAndRules = Channel.create!(channel_name: "Welcome and Server Rules", server_id: Appaco.id, channel_type:1)
 CampusAct = Channel.create!(channel_name: "Course Schedule", server_id: Appaco.id, channel_type:1)
 Resourceandhelp = Channel.create!(channel_name: "Resources and Help", server_id: Appaco.id, channel_type:1)
+ResourceandhelpLiveChat = Channel.create!(channel_name: "Resources and Help Voice Chat", server_id: Appaco.id, channel_type:2)
+
+Message.create(channel_id: ResourceandhelpLiveChat.id, author_id:Mr_Wumpus.id, 
+    body: "Please Note That even though you maybe able to create and access voice channels, other members cannot,
+    $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+    Voice Calls are not available without $TR!F3 N!TR0.")
 
 Message.create(channel_id: WelcomeAndRules.id , author_id:KinKa.id, body: "Hello there! Welcome to the App Academy Server!")
 Message.create(channel_id: WelcomeAndRules.id , author_id:KinKa.id, body: "Here are the Rules Of Conduct")
@@ -547,13 +624,18 @@ ServerMembership.create(server_id: AppacStrife.id , user_id: AlisherP.id)
 ServerMembership.create(server_id: AppacStrife.id , user_id: VictorH.id)
 ServerMembership.create(server_id: AppacStrife.id , user_id: KinKa.id)
 
+Message.create(channel_id: AppacStrife.channels.first.id, author_id:MichaelR.id, 
+    body: "Hi Welcome to Our Server This will be for attendance, announcments and Course Schedule, and Help off Campus.")
 
 Jobsearch = Channel.create!(channel_name: "job search", server_id: AppacStrife.id, channel_type:1)
 Algo = Channel.create!(channel_name: "dsa", server_id: AppacStrife.id, channel_type:1)
 RandomTopics = Channel.create!(channel_name: "off-topic", server_id: AppacStrife.id, channel_type:1)
+AppacStrifeVoice = Channel.create!(channel_name: "Voice Chat", server_id: AppacStrife.id, channel_type:2)
 
-
-
+Message.create(channel_id: AppacStrifeVoice.id, author_id:Mr_Wumpus.id, 
+    body: "Please Note That even though you maybe able to create and access voice channels, other members cannot,
+    $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+    Voice Calls are not available without $TR!F3 N!TR0.")
 
 Message.create(channel_id: Jobsearch.id , author_id: MichaelR.id, body: "Post Job Stuff Here")
 Message.create(channel_id: Jobsearch.id , author_id: DuncanM.id, body: "Cool okay")
@@ -579,6 +661,21 @@ ServerMembership.create(server_id: Server2.id , user_id: VictorH.id)
 ServerMembership.create(server_id: Server2.id , user_id: Ayce.id)
 ServerMembership.create(server_id: Server2.id , user_id: Spencer.id)
 ServerMembership.create(server_id: Server2.id , user_id: Jwong.id)
+TAChannel = Channel.create!(channel_name: "Course Planning", server_id: Server2.id, channel_type:1)
+TAVoice = Channel.create!(channel_name: "Voice Call", server_id: Server2.id, channel_type:2)
+Message.create(channel_id: TAVoice.id, author_id:Mr_Wumpus.id, 
+    body: "Please Note That even though you maybe able to create and access voice channels, other members cannot,
+    $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+    Voice Calls are not available without $TR!F3 N!TR0.")
+Message.create(channel_id: AppacStrife.channels.first.id, author_id:KinKa.id, 
+    body: "Hi Welcome to Our Server This will be for APP Academy TA's discussing attendance, upcoming announcments and Course Schedule Report here daily.")
+Message.create(channel_id: TAChannel.id , author_id:KinKa.id, body: "Okay What's the plans for classwork today?")
+Message.create(channel_id: TAChannel.id , author_id:Ayce.id, body: "@Kinka We are going to introduce Meta Programming to the students today.")
+Message.create(channel_id: TAChannel.id , author_id:KinKa.id, body: "Great! @Spencer Your doing Lecture today Correct?")
+Message.create(channel_id: TAChannel.id , author_id:Spencer.id, body: "Yes. @Kinka")
+Message.create(channel_id: TAChannel.id , author_id:VictorH.id, body: "The Students are requesting help on progress tracker")
+Message.create(channel_id: TAChannel.id , author_id:Jwong.id, body: "I'll take care of it, its Alan asking a question")
+
 
 
 Server3 = Server.create!(
@@ -586,11 +683,27 @@ Server3 = Server.create!(
     server_name: "Bot Server", 
     public: false,
 )
+Server3.server_Icon.attach(io: File.open('app/assets/images/botservericon.png'), filename:'botservericon.png')
 ServerMembership.create(server_id: Server3.id , user_id: Mr_Wumpus.id)
 ServerMembership.create(server_id: Server3.id , user_id: Demouser2.id)
 ServerMembership.create(server_id: Server3.id , user_id: Stacy.id)
 ServerMembership.create(server_id: Server3.id , user_id: SpamUser1.id)
 ServerMembership.create(server_id: Server3.id , user_id: SpamUser2.id)
+BotChannel = Channel.create!(channel_name: "BOT CHANNEL", server_id: Server3.id, channel_type:1)
+BotChannelVoice = Channel.create!(channel_name: "BOT VOICE CHAT", server_id: Server3.id, channel_type:2)
+Message.create(channel_id: Server3.channels.first.id, author_id:Mr_Wumpus.id, 
+    body: "Hi Welcome to Our Server This will be for us $TR!F3 BOTS Report Here Daily for maintenance Beep..Boo..Boo.Beep.")
+Message.create(channel_id: BotChannelVoice.id, author_id:Mr_Wumpus.id, 
+    body: "Please Note That even though you maybe able to create and access voice channels, other members cannot,
+    $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+    Voice Calls are not available without $TR!F3 N!TR0.")
+Message.create(channel_id: BotChannel.id , author_id:Mr_Wumpus.id, body: "This is our channel to talk about .... Beep .. Boop.. Beep.. Beep...Pop")
+Message.create(channel_id: BotChannel.id , author_id:Demouser2.id, body: "Yes. Beep..Bo.Bo.Beep!")
+Message.create(channel_id: BotChannel.id , author_id:Demouser1.id, body: "Be....")
+Message.create(channel_id: BotChannel.id , author_id:Stacy.id, body: "What happend, to @Demouser1?, He just disappeared")
+Message.create(channel_id: BotChannel.id , author_id:SpamUser1.id, body: "Spam spam spam, looks like he was signed in someone is visiting $TR!F3!")
+Message.create(channel_id: BotChannel.id , author_id:SpamUser2.id, body: "SPAM SPAM SPAM")
+Message.create(channel_id: BotChannel.id , author_id:Mr_Wumpus.id, body: "Quick Everyone back to work!!!!!")
 
 
 Server4 = Server.create!(
@@ -604,7 +717,22 @@ ServerMembership.create(server_id: Server4.id , user_id: Vivian.id)
 ServerMembership.create(server_id: Server4.id , user_id: Karen.id)
 ServerMembership.create(server_id: Server4.id , user_id: VeraH.id)
 ServerMembership.create(server_id: Server4.id , user_id: MadeleineP.id)
+ServerMembership.create(server_id: Server4.id , user_id: KrystalR.id)
+ServerMembership.create(server_id: Server4.id , user_id: Stacy.id)
 ServerMembership.create(server_id: Server4.id , user_id: Ayce.id)
+Message.create(channel_id: Server4.channels.first.id, author_id:Vivian.id, 
+    body: "Hi I made this server so us gals can talk.")
+VivianSFChannel = Channel.create!(channel_name: "Main", server_id: Server4.id, channel_type:1)
+VivianSFChannelVoice = Channel.create!(channel_name: "Voice Call", server_id: Server4.id, channel_type:2)
+
+Message.create(channel_id: VivianSFChannel.id , author_id:Vivian.id, body: "Hi whats up everyone feel free to post memes or ask for help.")
+
+Message.create(channel_id: VivianSFChannelVoice.id, author_id:Mr_Wumpus.id, 
+        body: "Please Note That even though you maybe able to create and access voice channels, other members cannot,
+        $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+        Voice Calls are not available without $TR!F3 N!TR0.")
+
+
 
 Server5 = Server.create!(
     server_owner_id: MichaelR.id,
@@ -622,3 +750,196 @@ ServerMembership.create(server_id: Server5.id , user_id: Vivian.id)
 ServerMembership.create(server_id: Server5.id , user_id: Karen.id)
 ServerMembership.create(server_id: Server5.id , user_id: VeraH.id)
 ServerMembership.create(server_id: Server5.id , user_id: MadeleineP.id)
+ServerMembership.create(server_id: Server5.id , user_id: Gabriel.id)
+ServerMembership.create(server_id: Server5.id , user_id: KevinN.id)
+Message.create(channel_id: Server5.channels.first.id, author_id:MichaelR.id, 
+    body: "Made this so we can talk.")
+
+MikeRFC = Channel.create!(channel_name: "Main", server_id: Server5.id, channel_type:1)
+MikeRFCVoice = Channel.create!(channel_name: "Voice Chat", server_id: Server5.id, channel_type:2)
+
+Message.create(channel_id: MikeRFC.id , author_id:MichaelR.id, body: "Hi whats up everyone feel free to post memes or ask for help.")
+
+Message.create(channel_id: MikeRFCVoice.id, author_id:Mr_Wumpus.id, 
+    body: "Please Note That even though you maybe able to create and access voice channels, other members cannot,
+    $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+    Voice Calls are not available without $TR!F3 N!TR0.")
+
+
+
+Server6 = Server.create!(
+    server_owner_id: Karen.id,
+    server_name: "Paint By Numbers", 
+    public: false,
+
+)
+Server6.server_Icon.attach(io: File.open('app/assets/images/paintbynumbersicon.png'), filename:'paintbynumbersicon.png')
+ServerMembership.create(server_id: Server6.id , user_id: Karen.id)
+ServerMembership.create(server_id: Server6.id , user_id: Gabriel.id)
+ServerMembership.create(server_id: Server6.id , user_id: MichaelR.id)
+Message.create(channel_id: Server6.channels.first.id, author_id:Karen.id, 
+    body: "Made this so we can talk about what we're going to do for our MERN Project.")
+PaintByNumbersChannel = Channel.create!(channel_name: "Paint By Numbers - Project Plans", server_id: Server6.id, channel_type:1)
+PBNCVoice = Channel.create!(channel_name: "Voice Call", server_id: Server6.id, channel_type:2)
+Message.create(channel_id: PBNCVoice.id, author_id:Mr_Wumpus.id, 
+    body: "Please Note That even though you maybe able to create and access voice channels, other members cannot,
+    $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+    Voice Calls are not available without $TR!F3 N!TR0.")
+Message.create(channel_id: PaintByNumbersChannel.id , author_id:Karen.id, body: "Okay I made this server so we can talk about what we need to do for our MERN Project.")
+Message.create(channel_id: PaintByNumbersChannel.id , author_id:Gabriel.id, body: "Okay Great Idea we should make that app, that I was talking about a while ago.")
+Message.create(channel_id: PaintByNumbersChannel.id , author_id:MichaelR.id, 
+    body: "Are You talking about that app, idea with the reveal titles to show a hidden picture? Nonograms is what I believe they are called. @Gabriel")
+Message.create(channel_id: PaintByNumbersChannel.id , author_id:Gabriel.id, 
+    body: "Yup! Thats the idea I was referring to there is only one website that has this game but it barely has any features.")
+Message.create(channel_id: PaintByNumbersChannel.id , author_id:MichaelR.id, body: "Okay Sounds Great I remember some Algorithms that could help us with this.")
+Message.create(channel_id: PaintByNumbersChannel.id , author_id:Gabriel.id, body: "Great!")
+Message.create(channel_id: PaintByNumbersChannel.id , author_id:Karen.id, body: "Sounds cool, so what are we going to call it ?")
+Message.create(channel_id: PaintByNumbersChannel.id , author_id:Gabriel.id,
+     body: "How about Paint by Numbers ? Since we are painting a picture based on a random number of of label tiles?")
+Message.create(channel_id: PaintByNumbersChannel.id , author_id:MichaelR.id, body: "I like the name, pretty simple and clear.")
+Message.create(channel_id: PaintByNumbersChannel.id , author_id:Karen.id, body: "Agreed!")
+Message.create(channel_id: PaintByNumbersChannel.id , author_id:Gabriel.id, body: "Great! So I guess i can work on the game portion.")
+Message.create(channel_id: PaintByNumbersChannel.id , author_id:Gabriel.id, body: "@Karen you can work on the design, since your an amazing front end designer")
+Message.create(channel_id: PaintByNumbersChannel.id , author_id:Gabriel.id, 
+    body: "@miker you can handle the backend since your great with handle requests, validations, and error handling etc.")
+Message.create(channel_id: PaintByNumbersChannel.id , author_id:MichaelR.id, body: "Sounds Cool. @Gabriel")
+Message.create(channel_id: PaintByNumbersChannel.id , author_id:Karen.id, body: "Same. @Gabriel")
+
+
+
+
+Server7 = Server.create!(
+    server_owner_id: Leo.id,
+    server_name: "Line Alert", 
+    public: false,
+)
+Server7.server_Icon.attach(io: File.open('app/assets/images/linealerticon.png'), filename:'linealerticon.png')
+ServerMembership.create(server_id: Server7.id , user_id: Leo.id)
+ServerMembership.create(server_id: Server7.id , user_id: Vivian.id)
+ServerMembership.create(server_id: Server7.id , user_id: NikhilK.id)
+ServerMembership.create(server_id: Server7.id , user_id: TomLL.id)
+Message.create(channel_id: Server7.channels.first.id, author_id:Leo.id, 
+    body: "Made this so we can talk about what we're going to do for our MERN Project.")
+LineAlertChannel = Channel.create!(channel_name: "Line Alert - Project Plans", server_id: Server7.id, channel_type:1)
+LineAlertChannelVoice = Channel.create!(channel_name: "Voice Chat", server_id: Server7.id, channel_type:2)
+Message.create(channel_id: LineAlertChannel.id , author_id:Leo.id, body: "So our project idea? ")
+Message.create(channel_id: LineAlertChannel.id , author_id:NikhilK.id, body: "I think we should keep it simple, like lets make an app thats been made before like Citizen")
+Message.create(channel_id: LineAlertChannel.id , author_id:Vivian.id, body: "A Citizen Clone sounds cool.")
+Message.create(channel_id: LineAlertChannel.id , author_id:TomLL.id, body: "Regardless which idea we do, I'll handle the styling.")
+Message.create(channel_id: LineAlertChannel.id , author_id:NikhilK.id, body: "I think we should do a Citizen Clone theres many attempts out there. Plus it can be done within a week,
+     MikeR told me that he and his friends did it in 24 hours for a Hackathon back when he was in college.")
+Message.create(channel_id: LineAlertChannel.id , author_id:Leo.id, body: "Well considering that it seems like a good idea, 
+    plus it seems like a helpful app considering what has been going on in the subways recently.")
+Message.create(channel_id: LineAlertChannel.id , author_id:Vivian.id, body: "Yeah lets make it, an app thats useful seems alot more appealing to employers.")
+Message.create(channel_id: LineAlertChannel.id , author_id:TomLL.id, body: "Agreed @Vivian, plus it seems like a more valuble project if it is helpful.")
+Message.create(channel_id: LineAlertChannel.id , author_id:Leo.id, body: "Alright, then its settled. We will make a Citizen Clone, lets call it Line Alert.")
+Message.create(channel_id: LineAlertChannelVoice.id, author_id:Mr_Wumpus.id, 
+    body: "Please Note That even though you maybe able to create and access voice channels, other members cannot,
+    $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+    Voice Calls are not available without $TR!F3 N!TR0.")
+
+
+
+
+Server8 = Server.create!(
+    server_owner_id: DuncanM.id,
+    server_name: "MadLibs", 
+    public: false,
+)
+Server8.server_Icon.attach(io: File.open('app/assets/images/madlibsicon.png'), filename:'madlibsicon.png')
+ServerMembership.create(server_id: Server8.id , user_id: DuncanM.id)
+ServerMembership.create(server_id: Server8.id , user_id: MikeH.id)
+ServerMembership.create(server_id: Server8.id , user_id: NaranI.id)
+Message.create(channel_id: Server8.channels.first.id, author_id:DuncanM.id, 
+    body: "Made this so we can talk about what we're going to do for our MERN Project.")
+MadLibsChannel = Channel.create!(channel_name: "MadLibs - Project Plans", server_id: Server8.id, channel_type:1)
+MadLibsChannelVoice = Channel.create!(channel_name: "Voice Chat", server_id: Server8.id, channel_type:2)
+Message.create(channel_id: MadLibsChannel.id , author_id:DuncanM.id, body: "Hmm okay, I think for our Project idea we should make a clone of Cards against Humanity.")
+Message.create(channel_id: MadLibsChannel.id , author_id:MikeH.id, body: "Thats seems like a good idea considering the original fan made website was taken down a while ago.")
+Message.create(channel_id: MadLibsChannel.id , author_id:NaranI.id, body: "Thats a great idea actually!, it seems like it would be a fun project to make and use later on.")
+Message.create(channel_id: MadLibsChannelVoice.id, author_id:Mr_Wumpus.id, 
+    body: "Please Note That even though you maybe able to create and access voice channels, other members cannot,
+    $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+    Voice Calls are not available without $TR!F3 N!TR0.")
+
+
+Server9 = Server.create!(
+    server_owner_id: VeraH.id,
+    server_name: "Dina-Dopt", 
+    public: false,
+)
+Server9.server_Icon.attach(io: File.open('app/assets/images/trexicon.png'), filename:'trexicon.png')
+ServerMembership.create(server_id: Server9.id , user_id: VeraH.id)
+ServerMembership.create(server_id: Server9.id , user_id: AlanN.id)
+ServerMembership.create(server_id: Server9.id , user_id: MikeC.id)
+ServerMembership.create(server_id: Server9.id , user_id: KevinN.id)
+Message.create(channel_id: Server9.channels.first.id, author_id:VeraH.id, 
+    body: "Made this so we can talk about what we're going to do for our MERN Project.")
+DinaDoptChannel = Channel.create!(channel_name: "Dina-Dopt - Project Plans", server_id: Server9.id, channel_type:1)
+DinaDoptChannelVoice = Channel.create!(channel_name: "Voice Chat", server_id: Server9.id, channel_type:2)
+
+Message.create(channel_id: DinaDoptChannel.id , author_id:VeraH.id, body: "Hey!, There what should our MERN Project be about?")
+Message.create(channel_id: DinaDoptChannel.id , author_id:AlanN.id, body: "Hmm, I have no idea @VeraH.")
+Message.create(channel_id: DinaDoptChannel.id , author_id:MikeC.id, body: "Yo Have you guys seen the new Jurassic World Movie ?")
+Message.create(channel_id: DinaDoptChannel.id , author_id:KevinN.id, body: "@Mike C nah, I heard Madeleine's group is doing a pet adoption app though.")
+Message.create(channel_id: DinaDoptChannel.id , author_id:VeraH.id, body: "Hey!, Thats it lets make a dinosaur adoption app.")
+Message.create(channel_id: DinaDoptChannel.id , author_id:AlanN.id, body: "Hmm, okay im fine with that.")
+Message.create(channel_id: DinaDoptChannel.id , author_id:MikeC.id, body: "wont that seem kind of like... taking their idea?")
+Message.create(channel_id: DinaDoptChannel.id , author_id:KevinN.id, body: "@Mike C nah, their app is to adopt pets, we are adopting dinosaurs.")
+
+Message.create(channel_id: DinaDoptChannelVoice.id, author_id:Mr_Wumpus.id, 
+    body: "Please Note That even though you maybe able to create and access voice channels, other members cannot,
+    $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+    Voice Calls are not available without $TR!F3 N!TR0.")
+
+Server10 = Server.create!(
+    server_owner_id: MadeleineP.id,
+    server_name: "PickaPet", 
+    public: false,
+)
+
+Server10.server_Icon.attach(io: File.open('app/assets/images/pickapeticon.png'), filename:'pickapeticon.png')
+
+ServerMembership.create(server_id: Server10.id , user_id: MadeleineP.id)
+ServerMembership.create(server_id: Server10.id , user_id: DavidZ.id)
+ServerMembership.create(server_id: Server10.id , user_id: LinS.id)
+ServerMembership.create(server_id: Server10.id , user_id: EvanF.id)
+Message.create(channel_id: Server10.channels.first.id, author_id:MadeleineP.id, 
+    body: "Made this so we can talk about what we're going to do for our MERN Project.")
+PickaPetChannel = Channel.create!(channel_name: "PickaPet - Project Plans", server_id: Server10.id, channel_type:1)
+PickaPetChannelVoice = Channel.create!(channel_name: "Voice Chat", server_id: Server10.id, channel_type:2)
+
+Message.create(channel_id: PickaPetChannel.id , author_id:MadeleineP.id, body: "Hey!, There's a bug in your code @DavidZ.")
+Message.create(channel_id: PickaPetChannel.id , author_id:DavidZ.id, body: "Hmm okay, I checked it cant really figure it out as some of the code is from @EvanP.")
+Message.create(channel_id: PickaPetChannel.id , author_id:LinS.id, body: "Hang on Guys, I'll message @EvanP to come over and explain.")
+Message.create(channel_id: PickaPetChannel.id , author_id:EvanF.id, body: "Hey sorry, I'll explain the code in a second. Plus I fixed the bug too!")
+
+Message.create(channel_id: PickaPetChannelVoice.id, author_id:Mr_Wumpus.id, 
+    body: "Please Note That even though you maybe able to create and access voice channels, other members cannot,
+    $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+    Voice Calls are not available without $TR!F3 N!TR0.")
+
+
+Server11 = Server.create!(
+    server_owner_id: David_allen.id,
+    server_name: "Fun_Finder", 
+    public: false,
+)
+
+Server11.server_Icon.attach(io: File.open('app/assets/images/funIdeasicon.png'), filename:'funIdeasicon.png')
+
+ServerMembership.create(server_id: Server11.id , user_id: David_allen.id)
+ServerMembership.create(server_id: Server11.id , user_id: EricB.id)
+ServerMembership.create(server_id: Server11.id , user_id: AlisherP.id)
+Message.create(channel_id: Server11.channels.first.id, author_id:David_allen.id, 
+    body: "Made this so we can talk about what we're going to do for our MERN Project.")
+FunFinderChannel = Channel.create!(channel_name: "Fun_Finder- Project Plans", server_id: Server11.id, channel_type:1)
+FunFinderChannelVoice = Channel.create!(channel_name: "Voice Chat", server_id: Server11.id, channel_type:2)
+Message.create(channel_id: FunFinderChannelVoice.id, author_id:Mr_Wumpus.id, 
+    body: "Please Note That even though you maybe able to create and access voice channels, other members cannot,
+    $TR!F3 N!TR0 is required to allow members of you server and yourself access to voice channels.
+    Voice Calls are not available without $TR!F3 N!TR0.")
+Message.create(channel_id: FunFinderChannel.id , author_id:David_allen.id, body: "Hey!, Lets meet Up for our Project!")
+Message.create(channel_id: FunFinderChannel.id , author_id:EricB.id, body: "Hmm okay, I'm available all this weekend to work on it, I'm down to meet up.")
+Message.create(channel_id: FunFinderChannel.id , author_id:AlisherP.id, body: "Im free too let's meet up.")
+
