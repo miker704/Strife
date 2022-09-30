@@ -1,5 +1,4 @@
 import React from "react";
-import NavBarContainer from "../nav_bar/nav_bar_container";
 import { Link } from "react-router-dom";
 class Splash extends React.Component {
 
