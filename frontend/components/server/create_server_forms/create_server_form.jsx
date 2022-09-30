@@ -865,7 +865,7 @@ class CreateServerForm extends React.Component {
 
                         <input id="servernameInput" type="text" onKeyUp={this.submissionBlocker} onChange={this.handleInput()} value={this.state.server_name} placeholder={`${this.props.currentUser.username}'s server`} />
                         <h3>
-                            By creating a server, you agree to Strife's{" "}
+                            By creating a server, you agree to $TR!F3's{" "}
                             <strong><a href="https://discord.com/guidelines" target="_blank">Community Guidelines</a></strong>
                         </h3>
                     </div>
