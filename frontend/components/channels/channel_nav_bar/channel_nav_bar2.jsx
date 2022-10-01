@@ -461,18 +461,13 @@
 // //         this.props.fetchChannel(this.props.currentChannelId);
 // //     }
 // //     componentDidUpdate (prevProps, prevState) {
-// //         console.log("in comp did update")
 // //         // if(prevProps.currentChannel !== this.props.currentChannel){
-// //         //     console.log("in comp did update condtionsd")
 // //         //     this.props.fetchChannel(this.props.currentChannelId);
 
 // //         //     return
 // //         // }
-// //         console.log("prevprops channel : ", prevProps.currentChannel);
-// //         console.log("props channel : ", this.props.currentChannel);
 
 // //         if (prevProps.currentChannel !== this.props.currentChannel) {
-// //             console.log("in comp did update condtionsd")
 // //             // this.props.fetchChannel(this.props.currentChannelId);
 // //             fetch(`/api/channels/${this.props.currentChannelId}`).then((channel) => channel.json()).then((data) => {
 // //                 this.setState({ currentChannel: data });
@@ -484,7 +479,6 @@
 
 // //     openDropBox () {
 // //         if (this.state.openMod === true) {
-// //             console.log("hello")
 
 // //             return (
 // //                 <ChannelDropDownContainer />
@@ -497,14 +491,6 @@
 // //     render () {
 // //         let default_profile_pic = this.props.currentUser.photo === undefined ? "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png" : this.props.currentUser.photo;
 
-// //         console.log("channel nav bar current server: ", this.props.server);
-// //         console.log("channel nav bar current serverID: ", this.props.serverId);
-// //         console.log("channel nav bar current channelID: ", this.props.currentChannelId),
-// //             console.log("channel nav bar current channel: ", this.props.currentChannel)
-// //         console.log("channel nav bar current channel from state : ", this.state.currentChannel)
-// //         console.log("channel nav bar channels : ", this.props.channels)
-
-// //         console.log("channel nav bar props : ", this.props)
 
 
 
