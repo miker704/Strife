@@ -1,7 +1,6 @@
 import React from "react";
-import defaultPFP from '../../../app/assets/images/discord_PFP.svg';
-import { Link } from "react-router-dom";
-import ReactTooltip from "react-tooltip";
+// import defaultPFP from '../../../app/assets/images/discord_PFP.svg';
+
 class TestPage extends React.Component {
     constructor (props) {
         super(props);
@@ -104,25 +103,25 @@ class TestPage extends React.Component {
 
 
     render () {
-        let default_PFP = defaultPFP;
-        let default_png = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
-        // let default_profile_pic = this.props.currentUser.photo === undefined ?
-        //     <img src={default_png} alt="PFP" /> : <img className="pfp-svg" src={default_PFP} alt="PFP" />
+        // let default_PFP = defaultPFP;
+        // let default_png = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
+        // // let default_profile_pic = this.props.currentUser.photo === undefined ?
+        // //     <img src={default_png} alt="PFP" /> : <img className="pfp-svg" src={default_PFP} alt="PFP" />
 
-        let default_profile_pic = this.props.currentUser.photo === undefined ? <img className="user-avatar-img" /> : <img src={this.props.currentUser.photo} alt="pfp" />
-        let default_profile_pic1 = this.props.currentUser.photo === undefined ?
-            <div className={`user-avatar-img-svg-render color-${this.props.currentUser.color_tag}`}>
-                <img className="user-avatar-img-svg" />
+        // let default_profile_pic = this.props.currentUser.photo === undefined ? <img className="user-avatar-img" /> : <img src={this.props.currentUser.photo} alt="pfp" />
+        // let default_profile_pic1 = this.props.currentUser.photo === undefined ?
+        //     <div className={`user-avatar-img-svg-render color-${this.props.currentUser.color_tag}`}>
+        //         <img className="user-avatar-img-svg" />
 
-            </div> :
-            <img src={this.props.currentUser.photo} alt="pfp" />
+        //     </div> :
+        //     <img src={this.props.currentUser.photo} alt="pfp" />
 
-        let default_user_pfp = this.props.currentUser.photo === undefined ?
-            default_PFP : this.props.currentUser.photo;
-        let passwordErrorTag = this.props.errors.length > 0 ? "field-error" : "";
+        // let default_user_pfp = this.props.currentUser.photo === undefined ?
+        //     default_PFP : this.props.currentUser.photo;
+        // let passwordErrorTag = this.props.errors.length > 0 ? "field-error" : "";
 
 
-        console.log("test bench props: ", this.props);
+        // console.log("test bench props: ", this.props);
 
         // return (
 
