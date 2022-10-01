@@ -79,7 +79,6 @@ class ServerChatRoom extends React.Component {
                     }
                     //if member is deleted
                     // if (head === 101) {
-                    //     console.log("in head 101 banneduser : ", bannedUser);
 
                     //     this.props.reSyncCurrentUser(this.props.currentUserId).then((action) => {
                     //         const curr_User = action.currentUser
