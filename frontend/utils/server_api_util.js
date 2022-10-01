@@ -36,4 +36,5 @@ export const joinServer = (inviteCode) => $.ajax({ url: `/api/servers/join`, met
 export const verifyName = (server) => $.ajax({ url: `/api/servers/${server.id}/verifyDeletion/`, method: "PATCH", data: { server } });
 
 
-export const exploreServers = () => $.ajax({ url: "/api/servers/", method: "GET" });
+// export const exploreServers = () => $.ajax({ url: "/api/servers/", method: "GET" });
+export const exploreServers = (userId) => $.ajax({ url: "/api/exploreServers/", method: "GET", data: { userId: userId } });
