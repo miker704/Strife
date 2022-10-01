@@ -104,7 +104,6 @@ class CreateServerForm extends React.Component {
 
     stopProc (e) {
         e.preventDefault();
-        // console.log("calling to input an image file");
     }
 
 
@@ -428,7 +427,6 @@ class CreateServerForm extends React.Component {
                 //code is 8 chars long while the link is the code plus https://strife.gg/{code}
                 if (invite.length === 8) {
                     let fullInviteLink = "https://strife.gg/" + invite.toString();
-                    // console.log("invite code given now parsing it with full url : ", fullInviteLink);
                     this.setState({ invite_code: fullInviteLink });
                     invite = fullInviteLink;
                 }
