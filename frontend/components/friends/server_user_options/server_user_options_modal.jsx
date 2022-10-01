@@ -161,7 +161,6 @@ const ServerUserOptionsModal = ({
 
 
             // if(serverType === "SERVER"){
-            //     console.log("hello")
             //     fetchServer();
             //     fetchChannel();
             // }
