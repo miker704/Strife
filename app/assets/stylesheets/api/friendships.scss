@@ -266,6 +266,7 @@ $off-grey: #B9BBBE;
     forced-color-adjust: none;
     display: flex;
     overflow: hidden;
+    box-sizing: content-box;
 }
 
 .friend-account-info-wrapper {
