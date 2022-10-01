@@ -14,12 +14,10 @@ class Api::ServersController < ApplicationController
         @current_user = userId.to_i ? current_user : false
         if @auth_ids.include?(@current_user.id)
             @servers = Server.all
-            # render :index
             render :explore
 
         else
             @servers = Server.where("servers.public = true").includes(:channels)
-            # render :index
             render :explore
 
         end
