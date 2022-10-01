@@ -108,19 +108,16 @@ export const extractDmServerProps = (state, id) => {
 
 export const receiveUnexploredServers = (state) => {
     if (!state.entities.servers) {
-        console.log("Server false");
 
         return state;
     }
     if (!state.unExploredServers) {
-        console.log("uexServer false");
         return state;
     }
 
     const currentUserAuthIds = [1, 2, 3, 4];
     const currentUser = state.currentUser;
     const unExploredServers = state.unExploredServers;
-    console.log("State = : ", state);
     let showServers = new Object();
     if (currentUserAuthIds.includes(currentUser.id)) {
         return unExploredServers
