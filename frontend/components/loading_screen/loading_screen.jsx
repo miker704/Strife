@@ -26,6 +26,7 @@ class LoadingScreen extends React.Component {
                          </div>
                      </div>
                 </div>
+                <h1 className="loading-screen-img-h2">Welcome to $TR!F3</h1>
                 <h1 className="loading-screen-img-h2">{this.loadingMessage}</h1>
             </div>
         )
