@@ -7,6 +7,21 @@ class Api::ServersController < ApplicationController
         render :index
     end
 
+
+    def explore_Servers
+        @servers = Server.all
+        @auth_ids = [1,2,3,4]
+        @current_user = userId.to_i ? current_user : false
+        if @auth_ids.include?(@current_user.id)
+            @servers = Server.all
+            render :index
+        else
+            @servers = Server.where("servers.public = true").includes(:channels)
+            render :index
+        end
+
+    end
+
     def show
         @server = Server.find(params[:id])
         render :show
