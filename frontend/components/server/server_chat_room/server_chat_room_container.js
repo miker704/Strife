@@ -16,6 +16,10 @@ const mSTP = (state, ownProps) => {
         channelName = state.entities.channels[ownProps.match.params.channelId].channel_name;
     }
 
+    let channel_type = 1;
+    if(state.entities.channels[ownProps.match.params.channelId]){
+        channel_type = state.entities.channels[ownProps.match.params.channelId].channel_type;
+    }
 
     return {
         newMessage: {
@@ -32,6 +36,7 @@ const mSTP = (state, ownProps) => {
         server: state.entities.servers[ownProps.match.params.serverId],
         channel: state.entities.channels[ownProps.match.params.channelId],
         channelName: channelName,
+        channel_type: channel_type,
         channels: Object.values(state.entities.channels),
         serverMembers: Object.values(state.entities.servers[ownProps.match.params.serverId].users),
         errors: state.errors.message,
