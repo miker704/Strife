@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import default_PFP from "/app/assets/images/defaultProfilePic.png";
 import default_user_PFP from "../../../../app/assets/images/discord_PFP.svg";
 
 class UserNavBar extends React.Component {
