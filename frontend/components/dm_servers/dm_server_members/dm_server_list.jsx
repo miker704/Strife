@@ -25,7 +25,6 @@ const DmServerMemberList = ({
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
     let default_DMSM_PFP = user_Default_PFP;
     // useEffect(() => {
-    //     console.log("useffect called from dmservers list ");
     //     requestFriendships();
     //     // return function cleanup () {
     //     //     if (errors.length > 0) {
@@ -45,7 +44,6 @@ const DmServerMemberList = ({
     // useEffect(() => {
 
     //     if (dmServer?.id) {
-    //         console.log("useffect called in dmserver list")
     //         fetchDmServer(dmServerId);
     //     }
 
