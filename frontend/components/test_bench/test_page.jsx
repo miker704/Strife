@@ -66,33 +66,24 @@ class TestPage extends React.Component {
     }
     handleSubmit (e) {
         e.preventDefault();
-        console.log("choice: ", this.state.selected_Option);
     }
 
     handleOnChange (e) {
         // return this.setState({channelType:field})
-        console.log("before: ", this.state.selected_Option);
         this.setState({ selected_Option: e.currentTarget.value });
-        console.log("now: ", this.state.selected_Option);
 
     }
     handlePrivacy () {
-        // console.log("onChange: ", e.currentTarget.value);
         this.setState({ private_Selected: !this.state.private_Selected });
-        console.log("onChange: ", this.state.private_Selected);
 
     }
     selectChannelTypes (channels) {
         let channelHash = new Object();
 
         for (let i of channels) {
-            console.log("channel_cat_name: ", i.channel_cat_name);
             channelHash[i.channel_cat_name] = [];
         }
-        console.log("channel hash after cat insertion: ")
-        console.table(channelHash);
         for (let i of channels) {
-            console.log("channel_cat_name: ", i.channel_cat_name);
             channelHash[i.channel_cat_name].push(i)
         }
 
@@ -121,7 +112,6 @@ class TestPage extends React.Component {
         // let passwordErrorTag = this.props.errors.length > 0 ? "field-error" : "";
 
 
-        // console.log("test bench props: ", this.props);
 
         // return (
 
