@@ -1,5 +1,4 @@
 import React from "react"
-import { Link, Redirect } from 'react-router-dom'
 import EditUserNameContainer from "../user_edit_username_form/user_edit_username_container.js"
 import EditUserEmailContainer from "../user_edit_email_form/user_edit_email_container.js"
 import EditUserPFPContainer from "../user_edit_profile_pic_form/user_edit_pfp_container.js"
@@ -8,7 +7,6 @@ import EditUserPhoneNumberContainer from "../user_edit_phone_number_form/user_ed
 import RemoveUserPhoneNumberContainer from "../user_remove_phone_number_form/user_remove_phone_number_container.js"
 import DisableUserAccountContainer from "../user_disable_account_form/user_disable_account_container.js"
 import DeleteUserAccountContainer from "../user_delete_account_form/user_delete_account_container.js"
-import default_PFP from "/app/assets/images/defaultProfilePic.png";
 
 
 class UserProfile extends React.Component {
