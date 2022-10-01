@@ -1,5 +1,8 @@
 import { FETCH_STRIFE_BOT } from "../actions/session_actions";
-import bot_PFP from "../../app/assets/images/discord_Strife_logo.png";
+// import bot_PFP from "../../app/assets/images/discord_Strife_logo.png";
+import bot_PFP from "/app/assets/images/Strife_logo_compressed.png";
+
+
 //stop fetching the bot just hard code it as it will always be avaliable and no need to slow down every thing
 const _STRIFE_BOT = {
    1: {
