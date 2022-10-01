@@ -11,13 +11,9 @@
 //         let channelHash = new Object();
 
 //         for (let i of channels) {
-//             console.log("channel_cat_name: ", i.channel_cat_name);
 //             channelHash[i.channel_cat_name] = [];
 //         }
-//         console.log("channel hash after cat insertion: ")
-//         console.table(channelHash);
 //         for (let i of channels) {
-//             console.log("channel_cat_name: ", i.channel_cat_name);
 //             channelHash[i.channel_cat_name].push(i)
 //         }
 
@@ -289,28 +285,16 @@
 
 
 //         //         let channels_Array = Object.values(channels);
-//         //         console.log("channels type: ", typeof channels);
-//         //         console.log("channels content");
-//         //         console.table(channels);
-//         //         console.log("channels to array : ", channels_Array);
-//         //         console.log("channels to array : ", typeof channels_Array);
+
 
 //         //         let channel_nav_bar_content = this.selectChannelTypes(channels_Array);
 
-//         //         console.log("channel_nav_bar_content: ");
-//         //         console.log(channel_nav_bar_content);
-//         //         console.table(channel_nav_bar_content);
-//         //         console.log("channel_nav type: ", typeof channel_nav_bar_content)
+
 
 //         //         let channel_nav_bar_content_array = Object.entries(channel_nav_bar_content);
-//         //         console.log("channel_nav_bar_contnet array  = : ", channel_nav_bar_content_array);
-//         //         console.table(channel_nav_bar_content_array);
 
 //         //         channel_nav_bar_content_array.map((channelCat, idx) => {
-//         //             console.log("channel catergory: ", channelCat[0]);
 //         //             channelCat[1].map((channel, channelidx) => {
-//         //                 console.log("channel name: ", channel);
-//         //                 console.log("channel name: ", channel.channel_name);
 
 //         //             })
 //         //         })
@@ -386,7 +370,6 @@
 //         //                                             </div>
 //         //                                         </li>
 //         //                                         {channel_category[1].map((channel, channelidx) => {
-//         //                                             console.log("channel name: ", channel);
 //         //                                             let icon = channel.channel_type === '1' ? chat_icon : voice_icon;
 
 //         //                                             return (
@@ -1256,17 +1239,11 @@
 //             </div>
 
 //         )
-// console.log("this.props.currentUser: = ", this.props.currentUser);
 
 // let goHome = this.props.serverId === "@me" ? "selected-Server" : "unselected-Server";
-// // console.log("server currentUser props: ", this.props.currentUser);
-// console.log("server navbar props: ", this.props);
-// console.log("server navbar serverid: ", this.props.serverId);
 
-// console.log("server navbar gohome: ", goHome);
 
-// console.log(this.props.servers);
-// console.log(this.props.serverId);
+
 
 
 // let userServer = this.props.servers.map((server, serverIndex) => {
