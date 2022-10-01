@@ -105,8 +105,6 @@ class ServerSettingsModal extends React.Component {
 
     render () {
 
-        console.log("ServerSettings props: ", this.props);
-        console.log("ServerSettings props: ", this.props.server);
         let currentUser = {
             "id": 2,
             "username": "DemoUser1",
@@ -822,7 +820,6 @@ class ServerSettingsModal extends React.Component {
                                                 spellCheck={false}
                                                 // onSubmit={this.printMsg()}
                                                 onInput={() => {
-                                                    console.log("activated listener");
                                                     window.addEventListener('keyup', this.handleEnter, false);
                                                 }}
                                             />
