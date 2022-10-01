@@ -1,9 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import discord_Strife_logo from "/app/assets/images/discord_Strife_logo.png";
-
-
-
+import mini_strife_logo from "/app/assets/images/Strife_logo_compressed.png";
 
 class SplashFooter extends React.Component {
   constructor (props) {
@@ -115,7 +112,7 @@ class SplashFooter extends React.Component {
                   target="_blank"> $TR!F3 on Github </a>
               </li>
               <li>
-                <a className="link" href={discord_Strife_logo} download="STRIFE.EXE"
+                <a className="link" href={mini_strife_logo} download="STRIFE.EXE"
                   target="_blank"> Download </a>
               </li>
 
