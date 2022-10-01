@@ -2,7 +2,6 @@ import React from "react";
 import ReactTooltip from "react-tooltip";
 import default_User_PFP from "../../../../app/assets/images/discord_PFP.svg";
 
-
 class BlockedList extends React.Component {
     constructor (props) {
         super(props);
@@ -29,7 +28,6 @@ class BlockedList extends React.Component {
             else {
                 allFriendShips[i].classList.add("is-hidden");
                 count++;
-
             }
         }
 
@@ -37,7 +35,6 @@ class BlockedList extends React.Component {
             document.getElementById('ul-fiiw').classList.add('is-hidden')
             document.getElementById('no-match').classList.remove('is-hidden')
             numberOfFriends.innerHTML = `BLOCKED USERS - ${0}`;
-
         }
         else {
             document.getElementById('no-match').classList.add('is-hidden')
@@ -46,18 +43,13 @@ class BlockedList extends React.Component {
 
     }
 
-
-
-
     componentDidMount () {
         this.props.requestFriendships();
-        // this.props.requestAllFriendships();
     }
 
 
     componentWillUnmount () {
         if (this.props.errors.length > 0) {
-
             this.props.removeFriendshipErrors();
         }
     }
@@ -171,23 +163,14 @@ class BlockedList extends React.Component {
                                                     </ReactTooltip>
                                                 </div>
                                             </div>
-
-
-
                                         </li>
                                     )
                                 })
                             }
                         </ul>
-
-
                     </div>
-
                 </div >
-
-
             )
-
         }
         else {
 
@@ -203,10 +186,7 @@ class BlockedList extends React.Component {
                     </div>
                 </div>
             )
-
         }
-
-
     }
 }
 
