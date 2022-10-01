@@ -1,9 +1,5 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { fetchChannel, createChannel, updateChannel, deleteChannel, removeChannelErrors } from "../../../actions/channel_actions.js";
-import { fetchServer, fetchServers, removeServerErrors, deleteServer, updateServer } from "../../../actions/server_actions.js";
-import { createChannelMembership, deleteChannelMembership } from "../../../actions/channel_membership_actions.js";
-import { createServerMembership, deleteServerMembership } from "../../../actions/server_membership_actions.js";
 import { openModal, openModalWithProps } from "../../../actions/modal_actions.js";
 import ChannelDropDown from "./channel_drop_down.jsx";
 
@@ -20,36 +16,9 @@ const mSTP = (state, ownProps) => {
 
 }
 
-const mDTP = (dispatch,ownProps) => {
+const mDTP = (dispatch) => {
     return {
-        //server api functions
-        fetchServer: serverId => dispatch(fetchServer(serverId)),
-        fetchUserServers: (user) => dispatch(fetchServers(user)),
-        fetchServers: () => dispatch(fetchServers()),
-        updateServer: (server) => dispatch(updateServer(server)),
-        deleteServer: (serverId) => dispatch(deleteServer(serverId)),
-        removeServerErrors: () => dispatch(removeServerErrors()),
-        
-        
-        //channel api functions
-        
-        fetchChannel: (channelId) => { dispatch(fetchChannel(channelId)) },
-        createChannel: (channel) => dispatch(createChannel(channel)),
-        updateChannel: (channel) => dispatch(updateChannel(channel)),
-        deleteChannel: (channelId) => dispatch(deleteChannel(channelId)),
-        removeChannelErrors: () => dispatch(removeChannelErrors()),
-
-        //server membership api functions
-
-        createServerMembership: (servermembership) => dispatch(createServerMembership(servermembership)),
-        deleteServerMembership: (servermembershipId, servermembership) => 
-        dispatch(deleteServerMembership(servermembershipId,servermembership)),
-
-        //channel membership api functions 
-        createChannelMembership: (channelmembership) => dispatch(createChannelMembership(channelmembership)),
-        deleteChannelMembership: (channelmembershipId,channelmembership) => 
-        dispatch(deleteChannelMembership(channelmembershipId,channelmembership)),
-
+      
         // modal api functions
         openModal: modal => dispatch(openModal(modal)),
         openModalWithProps: (modal_with_props) => dispatch(openModalWithProps(modal_with_props))
