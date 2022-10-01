@@ -5,7 +5,6 @@ class FriendRequestErrorModal extends React.Component {
         super(props);
     }
 
-
     componentDidMount () {
         window.addEventListener('keyup', this.props.handleESC, false);
 
@@ -15,9 +14,6 @@ class FriendRequestErrorModal extends React.Component {
         window.removeEventListener('keyup', this.props.handleESC, false);
         this.props.removeSessionErrors();
     }
-
-
-
 
     render () {
         return (
