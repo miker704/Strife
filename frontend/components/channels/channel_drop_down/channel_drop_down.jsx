@@ -1,15 +1,11 @@
 import React from "react";
-import { useRef, useEffect, useState } from "react";
-import { openModal } from "../../../actions/modal_actions";
+import { useRef} from "react";
 import { closeHookModalOnOutsideClick, closeOnEsc } from "../../../utils/close_hook_modals_api_utils";
 const ChannelDropDown = (props) => {
-
-
 
     const popUpRef = useRef();
     closeHookModalOnOutsideClick(popUpRef, props.setShowPopUp);
     closeOnEsc(props.setShowPopUp);
-
 
     const serverOwnerId = props.server.server_owner_id;
         return (
@@ -195,10 +191,6 @@ const ChannelDropDown = (props) => {
                                             </svg>
                                         </div>
                                     </div>
-
-
-
-
                                 </div>
                             </div>
                         </div>
@@ -206,11 +198,6 @@ const ChannelDropDown = (props) => {
                 </div>
             </div>
         )
-  
-
-
-
 }
-
 
 export default ChannelDropDown;
