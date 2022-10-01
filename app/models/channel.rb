@@ -28,7 +28,13 @@ class Channel < ApplicationRecord
     after_create :create_Welcome_Message
 
     def create_Welcome_Message
-        Message.create(channel_id: self.id, author_id: 1, body: "Welcome to ##{self.channel_name}!")
+        if self.channel_type == 1
+            Message.create(channel_id: self.id, author_id: 1, body: "Welcome to ##{self.channel_name}!")
+        elsif self.channel_type == 2
+            Message.create(channel_id: self.id, author_id: 1, 
+            body: "$TR!F3 N!TR0 is required to allow members of your server and yourself access to Voice & Video call channels. Voice/Video Calls are not available without $TR!F3 N!TR0.")
+        end
+
     end
     def create_Channel_Membership
        # channel memberships wont be fully used right now
