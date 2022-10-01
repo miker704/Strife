@@ -28,8 +28,8 @@ const exploreServersReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
     switch (action.type) {
         case EXPLORE_SERVERS:
-            // return action.servers;
-            return receiveUnexploredServers(state, action.servers);
+            return action.servers;
+            // return receiveUnexploredServers(state, action.servers);
         // remove the state when leaving the page as it is not needed anymore only when in the page it is needed
         case REMOVE_UNEXPLORED_SERVERS:
             return action.servers
