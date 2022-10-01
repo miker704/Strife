@@ -130,7 +130,6 @@ class UserSearchModal extends React.Component {
 
 
     render () {
-        console.log("user search props: ", this.props);
 
 
         return (
