@@ -36,14 +36,8 @@ const DmMessages2 = (props) => {
 
 
     useEffect(() => {
-        // console.log("current dmMesaagesprops. lenghth UE", props.DmMessages.length);
-        // console.log("prevprops:UE ", prevPropsDMS);
 
 
-
-
-
-        console.log("use effect call to fethc dmserver");
         props.reSyncCurrentUser(props.currentUserId).then((action) => {
             let currUser = action.currentUser;
             if (!currUser.dmServersJoined.includes(parseInt(props.dmServerId))) {
@@ -70,18 +64,13 @@ const DmMessages2 = (props) => {
         const handlers = {
             received ({ dm_message, type }) {
                 // props.fetchDmServer()
-                console.log("data - dm_message : ", dm_message);
-                console.log("type: ", type);
                 setDmMessages([...dmMessages, dm_message])
                 props.receiveDmMessage(dm_message)
-                console.log("dmMessages: ", dmMessages);
             },
             connected () {
-                console.log("connected");
             },
 
             disconnected () {
-                console.log("disconnected");
 
             }
         }
@@ -106,15 +95,12 @@ const DmMessages2 = (props) => {
 
 
     useEffect(() => {
-        console.log(`messages props state: NOW: ${props.DmMessages.length}, BEFORE: ${prevPropsDMS}`)
 
         if(props.DmMessages[0]  !== prevPropsDMS){
             scrollToBottomOfChat("auto");
-            console.log("auto");
         }
         if (prevStateDMSLen < dmMessages.length) {
             scrollToBottomOfChat("smooth");
-            console.log("smooth");
 
         }
 
@@ -126,7 +112,6 @@ const DmMessages2 = (props) => {
 
 
 
-    // console.log('getparams:', getParams);
     const submitMessage = (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -256,10 +241,7 @@ const DmMessages2 = (props) => {
     });
 
 
-    console.log("dmmessages hooks props: ", props);
-    console.log("dmmessages hooks state: ", dmMessages);
-    console.log("current dmMesaagesprops. lenghth ", props.DmMessages.length);
-    console.log("prevprops: ", prevPropsDMS);
+   
 
     return (
         <div className="server-chat-container-wrapper">
