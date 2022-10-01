@@ -80,26 +80,59 @@ export const selectBlockedUsers = (state, status) => {
 
 
 
-  export const selectDmMembers = (state,id) => {
+export const selectDmMembers = (state, id) => {
     const memberIds = state.entities.dmServers[id]?.members;
-    if(!memberIds){
+    if (!memberIds) {
         return [];
     }
-    else{
+    else {
 
         return memberIds;
     }
- 
-  };
+
+};
 
 
-  export const extractDmServerProps = (state,id) => {
+export const extractDmServerProps = (state, id) => {
     const dmsprops = state.entities.dmServers[id]
-    if(!dmsprops){
+    if (!dmsprops) {
         return [];
     }
-    else{
+    else {
         return dmsprops;
     }
- 
-  };
+
+};
+
+
+
+export const receiveUnexploredServers = (state) => {
+    if (!state.entities.servers) {
+        console.log("Server false");
+
+        return state;
+    }
+    if (!state.unExploredServers) {
+        console.log("uexServer false");
+        return state;
+    }
+
+    const currentUserAuthIds = [1, 2, 3, 4];
+    const currentUser = state.currentUser;
+    const unExploredServers = state.unExploredServers;
+    console.log("State = : ", state);
+    let showServers = new Object();
+    if (currentUserAuthIds.includes(currentUser.id)) {
+        return unExploredServers
+    }
+    else {
+        for (let [id, server] of Object.entries(unExploredServers)) {
+
+            if (server.public === true) {
+                showServers[id] = server
+            }
+
+        }
+    }
+    return showServers;
+}
