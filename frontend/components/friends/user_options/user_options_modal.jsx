@@ -42,7 +42,6 @@ const UserOptionsModal = ({
     
         // (async () => {
         //     // const response = await fetch(`api/users/${member.id}`).then((res) => res.json());
-        //     // console.log("response : ", response);
         //     // setMemberStatus(response);
 
         // })();
