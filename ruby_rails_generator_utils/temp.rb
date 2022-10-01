@@ -29,7 +29,7 @@ mr_Wumpus = User.create!(
     strife_id_tag:0001,
     online: true
 )
-mr_Wumpus.photo.attach(io: File.open('app/assets/images/discord_Strife_logo.png'), filename:'discord_Strife_logo.png')
+# mr_Wumpus.photo.attach(io: File.open('app/assets/images/discord_Strife_logo.png'), filename:'discord_Strife_logo.png')
 
 # StrifeMainServer = Server.create!(
 #     server_owner_id: mr_Wumpus.id,
