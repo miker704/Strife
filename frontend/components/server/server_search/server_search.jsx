@@ -14,7 +14,7 @@ const ExploreServers = (props) => {
             if (props.errors.length > 0) {
                 props.removeServerErrors();
             }
-            // props.clearUnexploredServers();
+            props.clearUnexploredServers();
         }
     }, []);
 
