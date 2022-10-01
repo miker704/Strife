@@ -80,8 +80,8 @@ class Api::ServersController < ApplicationController
                 @server.errors.add(:error,'You are already a member of this server')
                 render json: @server.errors.full_messages, status: 422
             else
-                
                 member = ServerMembership.create!(user_id: current_user.id, server_id: @server.id)
+                @response_Message = "Welcome @#{current_user.username} to #{@server.server_name}!"
                 if member.save
                     all_channels = @server.channels
                     all_channels.each do |channel|
@@ -90,6 +90,10 @@ class Api::ServersController < ApplicationController
                             channel_id: channel.id, 
                             receiver_id: current_user.id
                         )
+                    @message=Message.create!(body: @response_Message, author_id: 1, channel_id: channel.id)
+                    StrifeServer.broadcast_to(channel,message: @message, head: 100)
+                    # StrifeServer.broadcast_to(channel, head: 100)
+
                     end
                         render :show
 
