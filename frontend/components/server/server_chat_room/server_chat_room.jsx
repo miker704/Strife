@@ -22,6 +22,8 @@ class ServerChatRoom extends React.Component {
         this.handleInput = this.handleInput.bind(this);
         this.handleEnter = this.handleEnter.bind(this);
         this.formatTime = this.formatTime.bind(this);
+        this.checkToDisable = this.checkToDisable.bind(this);
+        this.disabledText = this.disabledText.bind(this);
     }
     componentDidMount () {
         // this.props.fetchServer(this.props.serverId);
@@ -36,6 +38,19 @@ class ServerChatRoom extends React.Component {
     }
 
 
+    checkToDisable(){
+        return this.props.channel.channel_type === 2 || parseInt(this.props.serverId) === 1 ? true : false;
+    }
+
+    disabledText(){
+        if(parseInt(this.props.serverId) === 1){
+            return 'You do not have permission to send messages in this channel.'    
+        }
+        else if(this.props.channel_type === 2){
+            return '$TR!F3 N!TR0 REQUIRED!'
+        }
+         return 'You do not have permission to send messages in this channel.'    
+    }
 
     scrollToBottomOfChat = (speed) => {
         if (this.placeholder) {
@@ -260,7 +275,7 @@ class ServerChatRoom extends React.Component {
 
 
     render () {
-
+        console.log("server chat room props: ", this.props)
         const serverMembers = this.props.serverMembers;
         //using a differnet approach than in dmservers as server state is not as sensitive and to try to increase 
         //performance and reduce lag and  excessive memory allocation for unneed resources 
@@ -343,8 +358,10 @@ class ServerChatRoom extends React.Component {
                                                 minLength={1}
                                                 maxLength={2000}
                                                 autoFocus
-                                                placeholder={`Message #${this.props.channelName}`}
+                                                placeholder={`${this.props.channel_type === 2 || parseInt(this.props.serverId) === 1 ?
+                                                    this.disabledText() :`Message #${this.props.channelName}`}`}
                                                 spellCheck={false}
+                                                disabled={this.props.channel_type === 2 || parseInt(this.props.serverId) === 1 ? true : false}
                                                 onKeyDown={(e) => {
                                                     if (e.code === 'Enter' && !e.shiftKey) {
                                                         this.handleSubmit(e);
