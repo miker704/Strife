@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { selectFriendStatus, selectAllFriends } from '../../../utils/selectors_api_util';
+import { selectFriendStatus, } from '../../../utils/selectors_api_util';
 import { requestFriendships, updateFriendship, deleteFriendship, removeFriendshipErrors , requestAllFriendships} from '../../../actions/friendship_actions';
 import PendingFriendList from './pending_friends_list';
 
@@ -9,8 +9,6 @@ const mSTP = (state) => {
         currentUser: state.entities.users[state.session.id],
         outgoing: selectFriendStatus(state, 1),
         incoming: selectFriendStatus(state, 2),
-        // outgoing: selectAllFriends(state, 1),
-        // incoming: selectAllFriends(state, 2),
         errors: state.errors.friendship
     }
 };
