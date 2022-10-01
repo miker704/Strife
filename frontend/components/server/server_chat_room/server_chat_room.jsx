@@ -275,7 +275,6 @@ class ServerChatRoom extends React.Component {
 
 
     render () {
-        console.log("server chat room props: ", this.props)
         const serverMembers = this.props.serverMembers;
         //using a differnet approach than in dmservers as server state is not as sensitive and to try to increase 
         //performance and reduce lag and  excessive memory allocation for unneed resources 
