@@ -6,7 +6,6 @@ import { createServerMembership } from "../../../actions/server_membership_actio
 import { reSyncCurrentUser } from "../../../actions/session_actions.js";
 import ExploreServers from "./server_search";
 
-
 const mSTP = (state, ownProps) => {
 
 
@@ -14,10 +13,10 @@ const mSTP = (state, ownProps) => {
 
         currentUser: state.entities.users[state.session.id],
         currentUserId: state.session.id,
-        channels: Object.values(state.entities.channels),
+        // channels: Object.values(state.entities.channels),
         errors: state.errors.server,
         servers: state.entities.servers,
-        unExploredServers: state.unExploredServers
+        unExploredServers: state.unExploredServers,
 
     }
 }
@@ -33,7 +32,8 @@ const mDTP = (dispatch, ownProps) => {
         fetchServer: (serverId) => dispatch(fetchServer(serverId)),
         fetchUserServers: (user) => dispatch(fetchServers(user)),
         fetchServers: () => dispatch(fetchServers()),
-        exploreServers: () => dispatch(exploreServers()),
+        // exploreServers: () => dispatch(exploreServers()),
+        exploreServers: (currentUserId) => dispatch(exploreServers(currentUserId)),
         removeServerErrors: () => dispatch(removeServerErrors()),
         //server membership api functions
         createServerMembership: (servermembership) => dispatch(createServerMembership(servermembership)),
