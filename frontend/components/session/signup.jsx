@@ -27,10 +27,7 @@ class SignUp extends React.Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.state.birthday);
         this.props.signUpUser(this.state).then(() => this.props.history.push('/'));
-        // this.props.removeSessionErrors();
-        // this.props.signUpUser(this.state)
     }
 
     componentWillUnmount(){
