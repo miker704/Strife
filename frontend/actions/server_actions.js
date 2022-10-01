@@ -114,8 +114,10 @@ export const verifyName = (server) => (dispatch) =>
     }, (err) => { dispatch(receiveServerErrors(err.responseJSON)) });
 
 
-export const exploreServers = () => dispatch =>
-    ServerAPI.exploreServers().then((servers) => dispatch(serverSearch(servers)));
+// export const exploreServers = () => dispatch =>
+//     ServerAPI.exploreServers().then((servers) => dispatch(serverSearch(servers)));
+export const exploreServers = (user) => dispatch =>
+    ServerAPI.exploreServers(user).then((servers) => dispatch(serverSearch(servers)));
 
 
 export const joiningServer = (inviteCode) => (dispatch) =>
