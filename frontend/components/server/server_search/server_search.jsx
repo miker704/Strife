@@ -8,12 +8,13 @@ const ExploreServers = (props) => {
 
 
     useEffect(() => {
-        props.exploreServers();
+        // props.exploreServers();
+        props.exploreServers(props.currentUserId);
         return function cleanUp () {
             if (props.errors.length > 0) {
                 props.removeServerErrors();
             }
-            props.clearUnexploredServers();
+            // props.clearUnexploredServers();
         }
     }, []);
 
@@ -78,6 +79,9 @@ const ExploreServers = (props) => {
         let serverMembers = Object.values(server.users);
         return serverMembers.find((member) => member.id === props.currentUser.id) ? true : false;
     }
+    const checkIfPrivateServer = (server) => {
+        return server.public;
+    }
 
     const getColorId = (server) => {
         let serverMembers = Object.values(server.users);
@@ -108,6 +112,7 @@ const ExploreServers = (props) => {
         const onlineServerMembers = serverMembers.filter((member) => member.online === true);
         const checkIfJoined = checkIfJoinedServer(server);
         const color_tag = getColorId(server);
+        const publicServer = checkIfPrivateServer(server);
         const serverAcryo = server.server_Icon === undefined ?
             (
                 <svg width="100" height="100" viewBox="0 0 48 48" className="purple-icon-bk" fill="currentColor">
@@ -227,13 +232,16 @@ const ExploreServers = (props) => {
                         <div className="guild-card-text">
                             The official server for {server.server_name}, click to join now!
                         </div>
-                        <div className="flex-to-end">
-                            <button type="button" className="faint-boost-shiny-button join-server" disabled={checkIfJoined}
+                        <div className="flex-to-end" 
+                            data-tip data-for={`${checkIfJoined === true ? ``: publicServer === false ? "PrivateServer" : ``}`}>
+                            <button type="button" 
+                             className="faint-boost-shiny-button join-server" 
+                             disabled={checkIfJoined === true ? true : publicServer === false ? true : false }
                                 onClick={() => {
                                     joinThisServer(server);
                                 }}>
                                 <div className="shiny-button-contents">
-                                    {`${checkIfJoined === true ? `Server Joined` : `Join Server`}`}
+                                    {`${checkIfJoined === true ? `Server Joined` : publicServer === false ? `Private Server` : `Join Server`}`}
                                     <div className="shiny-button-container">
                                         <div className="shiny-button-flex">
                                             <div className="shiny-button-inner"></div>
@@ -256,6 +264,15 @@ const ExploreServers = (props) => {
                         </div>
                     </div>
                 </div>
+                <ReactTooltip
+                    className="thread-tool-tip"
+                    textColor="#B9BBBE"
+                    backgroundColor="#191919"
+                    id="PrivateServer"
+                    place="top"
+                    effect="solid">
+                    Private Server Join Via Invite
+                </ReactTooltip>
             </div>
         )
     })
