@@ -104,7 +104,6 @@ class AddFriends extends React.Component {
 
         this.props.fetchUserByStrifeId(userStrifeId).then((action) => {
             newFriend = action.user;
-            // console.log("newfriend: ", newFriend);
             this.props.createFriendship({ friend_id: newFriend.id, user_id: this.props.currentUser.id }).then(() => {
                 this.setState({ friendRequestSuccess: true });
             });
