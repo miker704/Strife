@@ -89,8 +89,6 @@ class DmMessages extends React.Component {
                     
                     //boot individual member
                     if(head === 401){
-                        // console.log("head: ", head);
-                        // console.log("path : ", path);
                     }
 
                     //this is to boot everyone when the dmserver is deleted
