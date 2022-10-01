@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import mini_strife_logo from "/app/assets/images/Strife_logo_compressed.png";
+
 class Splash extends React.Component {
 
     constructor (props) {
@@ -27,7 +29,7 @@ class Splash extends React.Component {
 
                             <div className="banner-button-container">
 
-                                <a id="fake-download-windows" href="app/assets/images/discord_Strife_logo.png" download="STRIFE.EXE">
+                                <a id="fake-download-windows" href={mini_strife_logo} download="STRIFE.EXE">
 
                                     <svg width="24" height="24" viewBox="0 0 24 24" className="change-down-icon">
                                         <g fill="currentColor">
@@ -118,12 +120,11 @@ class Splash extends React.Component {
                     <div id="bottom-windows-download">
                         <div className="sparkles">
                             <img className="sparkles1" />
-                            {/* <h4 className="bottom-windows-div-header">Ready to start your journey?</h4> */}
                         </div>
                         <h4 className="bottom-windows-div-header">Ready to start your journey?</h4>
 
                         <div className="banner-button-container">
-                            <a className="bwd" href="app/assets/images/discord_Strife_logo.png" download="STRIFE.EXE">
+                            <a className="bwd" href={mini_strife_logo} download="STRIFE.EXE">
                                 <svg width="24" height="24" viewBox="0 0 24 24" className="change-down-icon">
                                     <g fill="currentColor">
                                         <path d="M17.707 10.708L16.293 9.29398L13 12.587V2.00098H11V12.587L7.70697 9.29398L6.29297 10.708L12 16.415L17.707 10.708Z">
