@@ -360,7 +360,6 @@ class UserProfile extends React.Component {
     submodalToClose.classList.add("transition-out");
     // submodalToClose.className = "edit-userInfo-model transition-out"
 
-    console.log("animation triggered");
     // setTimeout(() => {
     // this.props.removeSessionErrors();
     this.closeModal(subModalName);
