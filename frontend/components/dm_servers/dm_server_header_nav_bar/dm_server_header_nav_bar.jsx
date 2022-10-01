@@ -491,7 +491,6 @@ export default DmServerHeaderNavBar;
 //         let membersOfthisServer = Object.values(this.props.dmServerMembers);
 
 
-//         console.log("these are the dmheader navbbar props: ", this.props);
 
 //         return (
 //             <div className="dm-server-header-bar">
@@ -551,7 +550,6 @@ export default DmServerHeaderNavBar;
 //                                     onChange={this.handleInput()}
 //                                     placeholder={this.handleDmServerName2()}
 //                                     value={this.state.DmServerName}
-//                                     onSubmit={() => console.log("hello the name is : ", this.state.DmServerName)}
 //                                 />
 //                                 <div id="ign" className="input-group-name">
 //                                     {this.handleDmServerName2()}</div>
