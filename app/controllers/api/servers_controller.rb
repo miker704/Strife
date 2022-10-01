@@ -23,7 +23,8 @@ class Api::ServersController < ApplicationController
     end
 
     def show
-        @server = Server.find(params[:id])
+        # @server = Server.find(params[:id])
+        @server = Server.where("id = #{params[:id]}").includes(:channels).first
         render :show
     end
     
@@ -43,7 +44,9 @@ class Api::ServersController < ApplicationController
     
 
     def update
-        @server = Server.find(params[:id])
+        # @server = Server.find(params[:id])
+        @server = Server.where("id = #{params[:id]}").includes(:channels).first
+
 
         if @server
             if server_params[:server_Icon_Remove]
