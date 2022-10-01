@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :servers, only: [:index, :show, :create, :update, :destroy]
               post '/servers/join/', to: 'servers#join_server', as: 'join_server'
               patch '/servers/:id/verifyDeletion/', to: 'servers#verify_Name', as: 'verify_Name'
+              get '/exploreServers/', to: 'servers#explore_Servers', as: 'explore_Servers'
     resources :server_memberships, only: [:create, :destroy]
     resources :channels, only: [:show, :update, :create, :destroy]
     resources :channel_memberships, only: [:create, :destroy]
