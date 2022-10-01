@@ -4,7 +4,6 @@ import EditFriendshipModal from './edit_friendship';
 import { selectFriendStatusOnline} from '../../../utils/selectors_api_util';
 import { requestFriendships, removeFriendshipErrors, deleteFriendship, updateFriendship , blockUser} from '../../../actions/friendship_actions';
 
-
 const mSTP = (state) => {
     return {
         currentUser: state.entities.users[state.session.id],
