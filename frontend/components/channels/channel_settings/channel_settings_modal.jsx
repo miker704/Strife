@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import DeleteChannelModalContainer from "../delete_channel_modal/delete_channel_modal_container";
 
 const ChannelSettingsModal = (props) => {
