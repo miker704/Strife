@@ -16,7 +16,6 @@ const ServerSettingsModal = (props) => {
     useEffect(() => {
 
         // if(!props.server?.id){
-        //     console.log("sevrr id null ")
         //     props.fetchServer();
         //     props.fetchChannel();
         // }
