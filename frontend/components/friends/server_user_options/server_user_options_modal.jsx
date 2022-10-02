@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useRef, useEffect } from "react";
 import { closeHookModalOnOutsideClick, closeOnEsc } from "../../../utils/close_hook_modals_api_utils";
 import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
+import ReactTooltip from "react-tooltip";
 
 const ServerUserOptionsModal = ({
     top,
@@ -55,6 +56,17 @@ const ServerUserOptionsModal = ({
             <img src={USER_PFP} alt="upfp" />
         </div>) :
         (<img src={member.photo} alt="upfp" />);
+
+    const Strife_Bot_IDs = [1, 2, 3, 4];
+
+    let if_Bot_tag = Strife_Bot_IDs.includes(member.id) ? (
+        <span className="bot-sticker">
+            <svg aria-label="Verified Bot" className="bot-check-mark" aria-hidden="false" role="img" width="16" height="16" viewBox="0 0 16 15.2">
+                <path d="M7.4,11.17,4,8.62,5,7.26l2,1.53L10.64,4l1.36,1Z" fill="currentColor"></path></svg>
+            <span className="bot-text">$TR!F3 BOT</span>
+        </span>
+    ) : ("");
+
 
     const popupRef = useRef();
     const dmMembersArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
@@ -118,6 +130,7 @@ const ServerUserOptionsModal = ({
                                     <div className="upc-header-text-wrapper">
                                         <span className="upc-username">{member.username}</span>
                                         <span className="upc-strife-tag">#{member.strife_id_tag}</span>
+                                        {if_Bot_tag}
                                     </div>
                                 </div>
                             </div>
@@ -187,7 +200,7 @@ const ServerUserOptionsModal = ({
 
                     createDmMessage(messageHash);
                     history.push(`/channels/@me/${dmServer.id}`);
-                
+
                 }
                 return;
             }
@@ -335,7 +348,7 @@ const ServerUserOptionsModal = ({
             deleteDmServer(DmServerId).then(() => {
                 // history.push(`/channels/@me`);
                 history.push(`/loading/`);
-                
+
             })
         }
         else {
@@ -351,7 +364,7 @@ const ServerUserOptionsModal = ({
     }
 
     const handleBanUser = () => {
-        let subState = { user_id: member.id, server_id: ServerID , banned: 1};
+        let subState = { user_id: member.id, server_id: ServerID, banned: 1 };
 
         deleteServerMembership(member.id, subState).then(() => {
             // fetchChannel(channelId);
@@ -372,6 +385,10 @@ const ServerUserOptionsModal = ({
     let banUserFromServerTag = currentUser.id === ServerOwner && serverType === 'SERVER' ? (<div className="fo-item-container red" onClick={() => handleBanUser()}>
         <div className="fo-item-name">Ban User</div>
     </div>) : ("")
+
+
+
+
 
 
     switch (memberStatus.friend_request_status) {
@@ -555,6 +572,7 @@ const ServerUserOptionsModal = ({
                                 <div className="upc-header-text-wrapper">
                                     <span className="upc-username">{member.username}</span>
                                     <span className="upc-strife-tag">#{member.strife_id_tag}</span>
+                                    {if_Bot_tag}
                                 </div>
                             </div>
                         </div>
@@ -566,22 +584,22 @@ const ServerUserOptionsModal = ({
                         </div>
                         <div className="upc-footer">
                             <div className="upc-input-wrapper">
-                                <input 
+                                <input
                                     maxLength={999}
-                                    minLength={1} 
-                                    className="upc-input" 
-                                    type="text" 
-                                    placeholder={`Message @${member.username} (disabled)`}
+                                    minLength={1}
+                                    className="upc-input"
+                                    type="text"
+                                    placeholder={`Message @${member.username}`}
                                     value={message}
                                     onChange={(e) => setMessage(e.currentTarget.value)}
                                     spellCheck={false}
                                     autoFocus
                                     onKeyDown={(e) => {
-                                    if (e.code === 'Enter') {
-                                    handleDmMessage(e);
-                                    }
-                                   }}
-                                   />
+                                        if (e.code === 'Enter') {
+                                            handleDmMessage(e);
+                                        }
+                                    }}
+                                />
 
                             </div>
                         </div>
