@@ -199,6 +199,7 @@ const FriendShipIndex = (props) => {
                                                     `user-pfp-svg-render color-${friend.color_tag}`:`friend-info`}`}>
                                                         <img src={`${friend.photo === undefined ? rendered_User_PFP : friend.photo}`} alt="pfp" />
                                                     </div>
+                                                        <div className={`${friend.online ? "circle-online-1" : "circle-offline-1"}`}></div>
                                                     <div className="friend-account-info-wrapper">
                                                         <div className="friend-account-info">
                                                             <div className="friend-tag">
@@ -209,7 +210,7 @@ const FriendShipIndex = (props) => {
                                                         <div className="subtext">
                                                             <div className="subtext-inner">
                                                                 {`${friend.online ? "online" : "offline"}`}
-                                                                <div className={`${friend.online ? "circle-online" : "circle-offline"}`}></div>
+                                                                 {/* <div className={`${friend.online ? "circle-online" : "circle-offline"}`}></div> */}
                                                             </div>
                                                         </div>
                                                     </div>
