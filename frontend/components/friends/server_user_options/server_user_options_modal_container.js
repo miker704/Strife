@@ -4,13 +4,14 @@ import { withRouter } from 'react-router';
 import { selectFriendStatusOnline } from '../../../utils/selectors_api_util';
 import { requestFriendships, removeFriendshipErrors, deleteFriendship, updateFriendship, blockUser, createFriendship } from '../../../actions/friendship_actions';
 import { createDmServer, removeDmServerErrors, fetchDmServer, deleteDmServer } from '../../../actions/dm_server_actions';
-import { createDmMember, deleteDmMember } from '../../../actions/dm_member_actions';
-import { createChannelMembership, deleteChannelMembership } from "../../../actions/channel_membership_actions";
-import { createServerMembership, deleteServerMembership } from "../../../actions/server_membership_actions";
-import { fetchUser } from '../../../actions/session_actions';
-import { removeServerErrors, fetchServer } from "../../../actions/server_actions";
-import { removeChannelErrors, fetchChannel } from "../../../actions/channel_actions";
-import { reSyncCurrentUser } from "../../../actions/session_actions";
+import { deleteDmMember } from '../../../actions/dm_member_actions';
+import { createChannelMembership, deleteChannelMembership } from "../../../actions/channel_membership_actions.js";
+import { createServerMembership, deleteServerMembership } from "../../../actions/server_membership_actions.js";
+import { fetchUser } from '../../../actions/session_actions.js';
+import { removeServerErrors, fetchServer } from "../../../actions/server_actions.js";
+import { removeChannelErrors, fetchChannel } from "../../../actions/channel_actions.js";
+import { reSyncCurrentUser } from "../../../actions/session_actions.js";
+import {createDmMessage} from '../../../actions/dm_messages_actions.js';
 
 const mSTP = (state, ownProps) => {
     return {
@@ -64,7 +65,8 @@ const mDTP = (dispatch, ownProps) => {
         removeServerErrors: () => dispatch(removeServerErrors()),
 
         //reSync current user props
-        reSyncCurrentUser : (currentUserId) => dispatch(reSyncCurrentUser(currentUserId))
+        reSyncCurrentUser : (currentUserId) => dispatch(reSyncCurrentUser(currentUserId)),
+        createDmMessage: (dmMsg) => dispatch(createDmMessage(dmMsg))
 
     }
 };
