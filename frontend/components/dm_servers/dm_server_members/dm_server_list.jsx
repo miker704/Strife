@@ -50,7 +50,7 @@ const DmServerMemberList = ({
 
     // }, [dmServer?.id ])
 
-   
+
 
     const inputRef = useRef();
     const [showPopup, setShowPopup] = useState(false);
@@ -65,17 +65,17 @@ const DmServerMemberList = ({
 
         let currTop = e.currentTarget.getBoundingClientRect().top
 
-        if(currTop > 640){
-            currTop/=3;
+        if (currTop > 640) {
+            currTop /= 3;
             setPopupTop(currTop);
         }
-        else if(currTop >101 && currTop < 639){
-            currTop/=2;
+        else if (currTop > 101 && currTop < 639) {
+            currTop /= 2;
             setPopupTop(currTop);
         }
 
-        else if(currTop <=100){
-            setPopupTop(currTop*0.095);
+        else if (currTop <= 100) {
+            setPopupTop(currTop * 0.095);
         }
         else {
             setPopupTop(currTop);
@@ -89,7 +89,7 @@ const DmServerMemberList = ({
     return (
         <div className="dm-members-index-container-wrapper">
             {
-            
+
 
                 showPopup && <ServerUserOptionsModalContainer
                     user={currentUser} member={selectedMember}
@@ -118,13 +118,13 @@ const DmServerMemberList = ({
                                     <div className="dm-member-layout">
                                         <div className="dm-member-avatar">
                                             <div className="dm-member-avatar-inner-wrapper">
-                                            
+
                                                 <div className={`${dmMember.photo === undefined ?
                                                     `user-pfp-svg-render color-${dmMember.color_tag}` :
                                                     `dm-member-avatar-img`}`}>
                                                     <img src={`${dmMember.photo === undefined ? default_DMSM_PFP : dmMember.photo}`} alt="dsmPFP" />
                                                 </div>
-
+                                                <div className={`${dmMember.online ? "circle-online-dm-list" : "circle-offline-dm-list"}`}></div>
 
                                             </div>
                                         </div>
