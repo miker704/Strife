@@ -394,128 +394,131 @@ label.field-error {
 
 
 
-
-
-
-
-
-
 .circle-offline {
-  // float: right;
   background: hsl(214, 9.9%, 50.4%);
   border-radius: 50%;
   width: 10px;
   height: 10px;
-  // transform: translate(43px, -14px);
   transform: translate(5px, 1px);
+  border: 1px solid #000;
+
 }
 
 
 .circle-offline-1 {
-  // float: right;
   background: hsl(214, 9.9%, 50.4%);
   border-radius: 50%;
   width: 8px;
   height: 8px;
   border: 1px solid;
-  // transform: translate(43px, -14px);
   transform: translate(-10px, 20px);
+}
+
+.circle-offline-dm-list {
+  background: #747f8d;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #000;
+  transform: translate(22px, -12px);
+}
+
+.circle-offline-dm-side-bar-list {
+  background: #747f8d;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #000;
+  transform: translate(-10px, 10px);
 }
 
 .circle-online {
-  // float: right;
   background: hsl(139, 47.3%, 43.9%);
   border-radius: 50%;
   width: 10px;
   height: 10px;
-  // transform: translate(43px, -14px);
-  // #72808c
   transform: translate(5px, 0px);
+  border: 1px solid #000;
+
 }
 
 .circle-online-1 {
-  // float: right;
   background: hsl(139, 47.3%, 43.9%);
   border-radius: 50%;
   width: 8px;
   height: 8px;
-  // transform: translate(43px, -14px);
   border: 1px solid;
   transform: translate(-10px, 20px);
 }
 
+
+.circle-online-dm-list {
+  background: hsl(139, 47.3%, 43.9%);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #000;
+  transform: translate(22px, -12px);
+}
+
+.circle-online-dm-side-bar-list {
+  background: hsl(139, 47.3%, 43.9%);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #000;
+  transform: translate(-10px, 10px);
+}
+
 .circle-blocked {
-  // float: right;
   background: red;
   border-radius: 50%;
   width: 10px;
   height: 10px;
-  // transform: translate(43px, -14px);
   transform: translate(5px, 0px);
+  border: 1px solid #000;
+
 }
 
 .circle-blocked-1 {
-  // float: right;
   background: red;
   border-radius: 50%;
   width: 8px;
   height: 8px;
-  // transform: translate(43px, -14px);
   border: 1px solid;
   transform: translate(-10px, 20px);
 }
 
 
-
-
 .circle-0 {
-  // float: right;
   background: hsl(214, 9.9%, 50.4%);
   border-radius: 50%;
-  // width: 10px;
-  // height: 10px;
-  // transform: translate(43px, -14px);
-  // transform: translate(5px, 1px);
-
-
-
   width: 20px;
   height: 20px;
   transform: translate(60px, -25px);
+  border: 1px solid #000;
+
 }
 
 .circle-2 {
-  // float: right;
   background: hsl(139, 47.3%, 43.9%);
   border-radius: 50%;
-  // width: 10px;
-  // height: 10px;
-  // transform: translate(43px, -14px);
-  // transform: translate(5px, 0px);
-
-
   width: 20px;
   height: 20px;
   transform: translate(60px, -25px);
+  border: 1px solid #000;
+
 }
 
 
 .circle-1 {
-  // float: right;
   background: red;
   border-radius: 50%;
-  // width: 10px;
-  // height: 10px;
-  // transform: translate(43px, -14px);
-  // transform: translate(5px, 0px);
   width: 20px;
   height: 20px;
   transform: translate(60px, -25px);
+  border: 1px solid #000;
 }
-
-
-
-
 
 
 .frf-ERROR {
@@ -525,8 +528,6 @@ label.field-error {
   cursor: default;
   forced-color-adjust: none;
   color: hsl(359, 82%, 73.9%);
-
-
 
 }
 
