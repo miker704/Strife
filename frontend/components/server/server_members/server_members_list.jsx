@@ -106,6 +106,7 @@ const ServerMembersList = ({
                                                     `server-member-avatar-img`}`}>
                                                     <img src={`${serverMember.photo === undefined ? render_User_PFP : serverMember.photo}`} alt="SMPFP" />
                                                 </div>
+                                                <div className={`${serverMember.online ? "circle-online-dm-list" : "circle-offline-dm-list"}`}></div>
 
 
                                             </div>
@@ -176,7 +177,7 @@ const ServerMembersList = ({
                                                     `server-member-avatar-img`}`}>
                                                     <img src={`${serverMember.photo === undefined ? render_User_PFP : serverMember.photo}`} alt="SMPFP" />
                                                 </div>
-
+                                                <div className={`${serverMember.online ? "circle-online-dm-list" : "circle-offline-dm-list"}`}></div>
 
                                             </div>
                                         </div>
