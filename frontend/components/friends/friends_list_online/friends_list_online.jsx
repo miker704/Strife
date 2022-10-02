@@ -26,7 +26,7 @@ const FriendShipIndexOnline = ({
     const [selectedFriends, setSelectedFriends] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
     const [popupTop, setPopupTop] = useState(0);
-    const [selectFriend,toggleSelected] = useState([]);
+    const [selectFriend, toggleSelected] = useState([]);
     let allFriends = friends;
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
     let rendered_User_PFP = default_User_PFP;
@@ -99,7 +99,7 @@ const FriendShipIndexOnline = ({
         });
         return;
     }
-  
+
     const liveSearch = () => {
         let allFriendShips = document.querySelectorAll('.friend-index-item');
         let search_query = document.getElementById('input-all-friends').value;
@@ -134,32 +134,28 @@ const FriendShipIndexOnline = ({
 
     }
 
-   
-  
-
-
 
     if (allFriends.length > 0) {
         return (
 
             <div className="friend-index-container">
-                
-             { showPopup && <EditFriendshipModalContainer user={currentUser} friend={selectFriend} top={popupTop} setShowPopup={setShowPopup}/>}
-                 
+
+                {showPopup && <EditFriendshipModalContainer user={currentUser} friend={selectFriend} top={popupTop} setShowPopup={setShowPopup} />}
+
 
                 <div className="all-search-bar">
                     <div className="all-search-bar-inner">
-                        <input 
-                               id="input-all-friends"
-                               className="input-all-friends"
-                               type="search"
-                               placeholder="Search"
-                               autoFocus ref={inputRef}
-                               onInput={() => liveSearch()}
-                               onChange={e => setSearchText(e.currentTarget.value)}
-                               value={searchText}
-                            
-                            />
+                        <input
+                            id="input-all-friends"
+                            className="input-all-friends"
+                            type="search"
+                            placeholder="Search"
+                            autoFocus ref={inputRef}
+                            onInput={() => liveSearch()}
+                            onChange={e => setSearchText(e.currentTarget.value)}
+                            value={searchText}
+
+                        />
 
 
                         <div className="magnify-icon-wrapper">
@@ -184,8 +180,6 @@ const FriendShipIndexOnline = ({
                 </div>
 
 
-
-
                 <div id="num-of-friends" className="all-friends">
                     {`ONLINE - ${allFriends.length}`}
                 </div>
@@ -198,29 +192,23 @@ const FriendShipIndexOnline = ({
                         </div>
                     </div>
                 </div>
-
-
                 <div className="friend-index" id='ul-fiiw'>
-
                     <div className="friend-index-item-wrapper" >
-
-                    <ul>
-                        {
-
-                            allFriends.map((friend, friendIdx) => {
-                                   
-                                
+                        <ul>
+                            {
+                                allFriends.map((friend, friendIdx) => {
                                     return (
-                                            
+
                                         <li id="fii" className="friend-index-item" key={friend.id} >
-                                           
+
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
-                                                    
-                                                    <div className={`${friend.photo === undefined ? 
-                                                    `user-pfp-svg-render color-${friend.color_tag}`:`friend-info`}`}>
+
+                                                    <div className={`${friend.photo === undefined ?
+                                                        `user-pfp-svg-render color-${friend.color_tag}` : `friend-info`}`}>
                                                         <img src={`${friend.photo === undefined ? rendered_User_PFP : friend.photo}`} alt="pfp" />
                                                     </div>
+                                                    <div className={`${friend.online ? "circle-online-1" : "circle-offline-1"}`}></div>
 
                                                     <div className="friend-account-info-wrapper">
                                                         <div className="friend-account-info">
@@ -232,7 +220,7 @@ const FriendShipIndexOnline = ({
                                                         <div className="subtext">
                                                             <div className="subtext-inner">
                                                                 {`${friend.online ? "online" : "offline"}`}
-                                                                <div className={`${friend.online ? "circle-online" : "circle-offline"}`}></div>
+                                                                 {/* <div className={`${friend.online ? "circle-online" : "circle-offline"}`}></div> */}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -241,7 +229,7 @@ const FriendShipIndexOnline = ({
                                             </div>
 
                                             <div className="friend-msg-actions">
-                                                <div data-tip data-for = "Message" className="friend-msg-button" onClick={() => handleDm(friend)}>
+                                                <div data-tip data-for="Message" className="friend-msg-button" onClick={() => handleDm(friend)}>
                                                     <svg className="icon-1WV" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                         <path fill="currentColor" d="M4.79805 3C3.80445 3 2.99805 3.8055 2.99805 
                                                             4.8V15.6C2.99805 16.5936 3.80445 17.4 4.79805 17.4H7.49805V21L11.098 
@@ -249,24 +237,24 @@ const FriendShipIndexOnline = ({
                                                             20.1925 3 19.198 3H4.79805Z">
                                                         </path>
                                                     </svg>
-                                                    <ReactTooltip 
-                                                        className = "message-tool-tip"
-                                                        textColor="#B9BBBE" 
+                                                    <ReactTooltip
+                                                        className="message-tool-tip"
+                                                        textColor="#B9BBBE"
                                                         backgroundColor="#191919"
-                                                        id ="Message"
+                                                        id="Message"
                                                         place="top"
                                                         effect="solid">
-                                                                        Message
+                                                        Message
                                                     </ReactTooltip>
-                                                    
+
                                                 </div>
-                                                <div data-tip data-for = "More" 
-                                                     className="friend-options-button" 
-                                                     onClick={(e) => {
-                                                                        handleSelected(friend);
-                                                                        handlePopupShow(e)
-                                                                    }}
-                                                                    >
+                                                <div data-tip data-for="More"
+                                                    className="friend-options-button"
+                                                    onClick={(e) => {
+                                                        handleSelected(friend);
+                                                        handlePopupShow(e)
+                                                    }}
+                                                >
 
                                                     <svg className="icon-1WVg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                                         <g fill="none" fillRule="evenodd">
@@ -278,14 +266,14 @@ const FriendShipIndexOnline = ({
                                                             </path>
                                                         </g>
                                                     </svg>
-                                                    <ReactTooltip 
-                                                        className = "more-message-tool-tip" 
-                                                        textColor="#B9BBBE" 
-                                                        backgroundColor="#191919" 
-                                                        id ="More" 
-                                                        place="top" 
+                                                    <ReactTooltip
+                                                        className="more-message-tool-tip"
+                                                        textColor="#B9BBBE"
+                                                        backgroundColor="#191919"
+                                                        id="More"
+                                                        place="top"
                                                         effect="solid">
-                                                                       More
+                                                        More
                                                     </ReactTooltip>
 
                                                 </div>
@@ -296,18 +284,18 @@ const FriendShipIndexOnline = ({
                                         </li>
                                     )
 
-                            })
-                        }
-                    </ul>
+                                })
+                            }
+                        </ul>
+                    </div>
                 </div>
+
             </div>
-               
-        </div>
 
 
         )
     }
-    
+
     else {
         return (
             <div className="friend-index-container">
