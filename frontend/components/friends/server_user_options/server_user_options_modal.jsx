@@ -24,6 +24,7 @@ const ServerUserOptionsModal = ({
     createDmServer,
     deleteDmServer,
     dmServerMembers,
+    createDmMessage,
     dmServerId,
     fetchDmServer,
     kickUserfromGroupChat,
@@ -59,6 +60,7 @@ const ServerUserOptionsModal = ({
     const dmMembersArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
     closeHookModalOnOutsideClick(popupRef, setShowPopup);
     closeOnEsc(setShowPopup);
+    const [message, setMessage] = useState('');
 
     if (member.id === currentUser.id) {
 
@@ -169,6 +171,64 @@ const ServerUserOptionsModal = ({
     }, []);
 
 
+    const handleDmMessage = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const memberIds = [currentUser.id, parseInt(member.id)].sort((a, b) => a - b);
+        let new_dm_members = [currentUser, member];
+        for (let dmServer of dmServers) {
+            if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
+                if (history.location.pathname !== `/channels/@me/${dmServer.id}`) {
+                    const messageHash = {
+                        body: message,
+                        sender_id: parseInt(currentUserId),
+                        dm_server_id: dmServerId
+                    }
+
+                    createDmMessage(messageHash);
+                    history.push(`/channels/@me/${dmServer.id}`);
+                
+                }
+                return;
+            }
+        }
+        // if dmserver does not already exists create one
+        const dmMemberInfo = JSON.parse(JSON.stringify(new_dm_members));
+        let newDmServerName = [];
+        let dmServerName = "";
+        for (let member of dmMemberInfo) {
+            if (member.id !== currentUser.id) {
+                newDmServerName.push(member.username);
+            }
+        }
+        if (newDmServerName.length === 1) {
+            dmServerName = newDmServerName.join();
+        }
+        else {
+            dmServerName = newDmServerName.join(", ");
+        }
+        let submissionState = {
+            owner_id: currentUser.id,
+            // dm_server_name: dmServerName,
+            dm_member_ids: memberIds
+        }
+        let newDmServer;
+        createDmServer(submissionState).then((action) => {
+            newDmServer = action.dmserver;
+            const messageHash = {
+                body: message,
+                sender_id: parseInt(currentUserId),
+                dm_server_id: newDmServer.id
+            }
+            createDmMessage(messageHash);
+            reSyncCurrentUser(currentUserId).then(() => {
+                history.push(`/channels/@me/${newDmServer.id}`);
+            })
+
+        });
+        return;
+
+    }
 
 
 
@@ -506,7 +566,23 @@ const ServerUserOptionsModal = ({
                         </div>
                         <div className="upc-footer">
                             <div className="upc-input-wrapper">
-                                <input maxLength={999} className="upc-input" type="text" placeholder={`Message @${member.username} (disabled)`} disabled />
+                                <input 
+                                    maxLength={999}
+                                    minLength={1} 
+                                    className="upc-input" 
+                                    type="text" 
+                                    placeholder={`Message @${member.username} (disabled)`}
+                                    value={message}
+                                    onChange={(e) => setMessage(e.currentTarget.value)}
+                                    spellCheck={false}
+                                    autoFocus
+                                    onKeyDown={(e) => {
+                                    if (e.code === 'Enter') {
+                                    handleDmMessage(e);
+                                    }
+                                   }}
+                                   />
+
                             </div>
                         </div>
 
