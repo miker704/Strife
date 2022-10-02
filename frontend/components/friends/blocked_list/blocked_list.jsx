@@ -127,10 +127,11 @@ class BlockedList extends React.Component {
                                             <div className="friend-index-item-wrapper-inner">
                                                 <div className="friend-account-info-wrapper-super">
 
-                                                    <div className={`${blockedUser.photo === undefined ? 
-                                                    `user-pfp-svg-render color-${blockedUser.color_tag}`:`friend-info`}`}>
+                                                    <div className={`${blockedUser.photo === undefined ?
+                                                        `user-pfp-svg-render color-${blockedUser.color_tag}` : `friend-info`}`}>
                                                         <img src={`${blockedUser.photo === undefined ? rendered_User_PFP : blockedUser.photo}`} alt="pfp" />
                                                     </div>
+                                                    <div className="circle-blocked-1"></div>
                                                     <div className="friend-account-info-wrapper">
                                                         <div className="friend-account-info">
                                                             <div className="friend-tag">
@@ -141,7 +142,7 @@ class BlockedList extends React.Component {
                                                         <div className="subtext">
                                                             <div className="subtext-inner">
                                                                 Blocked
-                                                                <div className="circle-blocked"></div>
+                                                                {/* <div className="circle-blocked"></div> */}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -155,8 +156,6 @@ class BlockedList extends React.Component {
                                                         18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z">
                                                         </path>
                                                     </svg>
-                                                    {/* <div className="pending-request-actions-tool-tip">Remove</div> */}
-                                                    {/* <div className="pending-request-actions-tool-tip-triangle"></div> */}
                                                     <ReactTooltip className="remove-message-tool-tip" textColor="#B9BBBE"
                                                         backgroundColor="#191919" id="Remove-Blocked-User" place="top" effect="solid">
                                                         Remove
