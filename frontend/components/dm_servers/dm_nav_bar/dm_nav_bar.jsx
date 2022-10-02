@@ -19,14 +19,12 @@ class DmNavBar extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderCreateDMModal = this.renderCreateDMModal.bind(this);
         this.setShowPopUp = this.setShowPopUp.bind(this);
+        this.findOnlineStatus= this.findOnlineStatus.bind(this);
     }
-
 
     setShowPopUp () {
         this.setState({ showPopUp: !this.state.showPopUp });
     }
-
-
 
     handleESC (e) {
         const keys = {
@@ -51,16 +49,12 @@ class DmNavBar extends React.Component {
         }, 1000);
 
     }
-
     componentDidMount () {
         this.mounted = true;
-
         this.props.fetchUserDmServers(this.props.currentUser.id);
-
     }
     componentWillUnmount () {
         this.mounted = false;
-
         this.props.removeDmServerErrors();
     }
 
@@ -102,20 +96,15 @@ class DmNavBar extends React.Component {
             }
             else if (dmServerPFP.photo === undefined) {
                 // return <img src={default_Photo} alt="pfp" />
-
                 return <div className={`user-pfp-svg-render color-${dmServerPFP.color_tag}`}>
                     <img src={default_DMS_PFP} alt="pfp" />
                 </div>
-
             }
-
         }
-
 
         return <div className='friend-info'>
             <img src={group_Chat_Photo} alt="pfp" className={`user-icon color-${dmServerPFP.color_tag === 7 ? 8 : dmServerPFP.color_tag}`} />
         </div>
-
 
     }
 
@@ -149,6 +138,24 @@ class DmNavBar extends React.Component {
         return dmServerName;
     }
 
+    findOnlineStatus(dmServer){
+        let dmMemberArray = Object.values(dmServer.members);
+        let findOtherMember = null;
+        if(dmMemberArray.length > 2){
+            return null;
+        }
+        else if(dmMemberArray.length <= 2 ){
+            for (let i of dmMemberArray) {
+                if (i.id !== this.props.currentUser.id) {
+                    return i;
+                }
+            }
+        }
+        return findOtherMember;
+    }
+
+
+
     renderCreateDMModal () {
         if (this.state.createDmModal === true) {
             window.addEventListener('keyup', this.handleESC, false);
@@ -168,10 +175,9 @@ class DmNavBar extends React.Component {
 
         return (
             <div className='dm-server-nav-bar'>
-                {/* {this.renderCreateDMModal()} */}
 
-                { this.state.showPopUp && <CreateDmModalContainer setShowPopUp={this.setShowPopUp} />}
-                
+                {this.state.showPopUp && <CreateDmModalContainer setShowPopUp={this.setShowPopUp} />}
+
                 <div className='dm-nav-bar-search-bar'>
                     <button type='button' className='dm-nav-bar-search-bar-button'>Find or start a conversation</button>
                 </div>
@@ -205,10 +211,7 @@ class DmNavBar extends React.Component {
                                             <div className='friend-avatar-text'>Friends</div>
                                         </div>
                                     </div>
-
                                 </div>
-
-
                             </Link>
                         </div>
                     </div>
@@ -277,16 +280,10 @@ class DmNavBar extends React.Component {
 
                     <div className="dm-list-header">
                         <h4>DIRECT MESSAGES</h4>
-                        {/* <div className="create-channel-div" onClick={() => this.toggleCreateDmModal()}> */}
                         <div className="create-channel-div" onClick={() => this.setShowPopUp()}>
-
-                        {/* <div className="create-channel-div" onClick={() => this.props.openModal('createDmModal')}> */}
-
-
                             <svg x="0" y="0" aria-hidden="true" className="dm-add-button" role="img" width="24" height="24" viewBox="0 0 18 18">
                                 <polygon fillRule="nonzero" fill="currentColor" points="15 10 10 10 10 15 8 15 8 10 3 10 3 8 8 8 8 3 10 3 10 8 15 8"></polygon>
                             </svg>
-
                             <div className="dm-tool-tip">
                                 Create DM
                             </div>
@@ -296,12 +293,14 @@ class DmNavBar extends React.Component {
                         {this.props.dmServers.map((dmServer, dmServerIndex) => {
                             let selectedDmServer = this.props.dmServerId === dmServer.id.toString()
                                 ? "selected-dm-server" : "";
-
                             let dmServerMembers = Object.values(dmServer.members);
                             let dmServerName = this.generateDmServerName(dmServer);
                             let dmServerSubtitle = dmServerMembers.length > 2 ? `${dmServerMembers.length} Members` : "";
                             let dmServerPFP = this.renderDmServerPFP(dmServerMembers);
-
+                            let dmMemberOnlineStatus = this.findOnlineStatus(dmServer);
+                            let onlineStatus = dmMemberOnlineStatus !== null ? (
+                                <div className={`${dmMemberOnlineStatus.online ? "circle-online-dm-side-bar-list" : "circle-offline-dm-side-bar-list"}`}></div>
+                            ):("");
                             return (
 
                                 <Link to={`/channels/@me/${dmServer.id}`}
@@ -314,44 +313,28 @@ class DmNavBar extends React.Component {
                                                 this.props.removeDmServer(dmServer.id);
                                                 this.props.history.push('/$TR!F3-INTRUSION-PREVENTION/');
                                             }
-                                            else if(currUser.dmServersJoined.includes(parseInt(dmServer.id))) {
+                                            else if (currUser.dmServersJoined.includes(parseInt(dmServer.id))) {
                                                 this.props.fetchDmServer(dmServer.id);
-
                                             }
-                
                                         })
-                                        // this.props.reSyncCurrentUser(this.props.currentUserId).then(() => {
-                                        //     this.props.fetchDmServer(dmServer.id);
-                                        // })
                                     }}
                                     key={dmServer.id}
                                 >
                                     <li className={`dm-server-li-item ${selectedDmServer}`} key={dmServerIndex}>
-                                        {/* <div className='dm-server-pfp'>
-                                            {dmServerPFP}
-                                            <div className='dm-server-name-wrapper'>
-                                                <h5 className='dm-server-name'>{dmServerName}</h5>
-                                                <p className='dm-server-subtitle'>{dmServerSubtitle}</p></div>
-                                        </div> */}
                                         <div className='dm-server-pfp'>
                                             {dmServerPFP}
+                                            {onlineStatus}
                                         </div>
                                         <div className='dm-server-name-wrapper'>
                                             <h5 className='dm-server-name'>{dmServerName}</h5>
                                             <p className='dm-server-subtitle'>{dmServerSubtitle}</p>
                                         </div>
-
                                     </li>
                                 </Link>
-
-
-
                             )
-
                         })
                         }
                     </ul>
-
                 </div>
             </div>
         )
