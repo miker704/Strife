@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	//atttempt to perform an async state save cmmt out as it is not used/ no current need for it yet
 	// store.subscribe(throttle(()=>{
-	// 	console.log("Save my state is syncing up");
 	// 	saveMyState({
 	// 		entities: store.getState().entities,
 	// 		session: store.getState().session,
