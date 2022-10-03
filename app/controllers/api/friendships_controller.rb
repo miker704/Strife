@@ -1,4 +1,6 @@
 class Api::FriendshipsController < ApplicationController
+    skip_before_action :verify_authenticity_token
+
      def index
         # @current_user = current_user
         # @friendships =  @current_user.friendships.all

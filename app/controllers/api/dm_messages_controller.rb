@@ -1,4 +1,5 @@
 class Api::DmMessagesController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def create
     @dm_message = DmMessage.new(dm_message_params)

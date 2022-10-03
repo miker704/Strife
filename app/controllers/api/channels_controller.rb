@@ -1,4 +1,5 @@
 class Api::ChannelsController < ApplicationController
+    skip_before_action :verify_authenticity_token
 
     def show
         @channel = Channel.find_by(id: params[:id])
