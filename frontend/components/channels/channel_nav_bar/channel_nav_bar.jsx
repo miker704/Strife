@@ -142,7 +142,7 @@ const ChannelNavBar = (props) => {
                     <div className="def-channel-wrap">
                         <div className="def-channel-content" >
                             {/* <Link to={`/channels/${props.server.id}/${channel.id}`} className="def-channel-a"> */}
-                            <div className="def-channel-a" id="v-channel">
+                            <div className="def-channel-a" id="v-channel" data-tip data-for="voice-channel-Strife-access">
                                 <div className="def-channel-icon-container" data-tip data-for="voice-channel-tool-tip">
                                     <svg className="icon-speaker" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                         <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M11.383 3.07904C11.009 2.92504 10.579 
@@ -162,6 +162,15 @@ const ChannelNavBar = (props) => {
                                         place="top"
                                         effect="solid">
                                         Voice
+                                    </ReactTooltip>
+                                    <ReactTooltip
+                                        className="thread-tool-tip"
+                                        textColor="#B9BBBE"
+                                        backgroundColor="#191919"
+                                        id="voice-channel-Strife-access"
+                                        place="top"
+                                        effect="solid">
+                                        $TR!F3 N!TR0 need to access
                                     </ReactTooltip>
                                 </div>
                                 <div className="default-channel-name-cont">
@@ -311,6 +320,7 @@ const ChannelNavBar = (props) => {
                                         data-tip data-for="create-channel-tool-tip">
                                         <button type="button" className="add-channel-button"
                                             onClick={() => {
+                                                props.openModalWithProps({channelType: 1})
                                                 props.openModal('CreateChannel');
                                             }}>
 
@@ -352,6 +362,7 @@ const ChannelNavBar = (props) => {
                                         data-tip data-for="create-channel-tool-tip2">
                                         <button type="button" className="add-channel-button"
                                             onClick={() => {
+                                                props.openModalWithProps({channelType: 2})
                                                 props.openModal('CreateChannel');
                                             }}>
                                             <div className="add-channel-button-inner">
