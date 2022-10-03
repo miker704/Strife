@@ -1,6 +1,7 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
 import InviteToDmModalContainer from "../invite_to_dm_server/invite_to_dm_server_container";
+import InviteToDMCallModalContainer from "../select_dm_members_call/select_dm_members_container";
 
 import { useEffect, useState, useRef } from "react";
 
@@ -35,7 +36,8 @@ const DmServerHeaderNavBar = ({
     const [DmServerName, setDMServerName] = useState("");
     const [showPopUp, setShowPopUp] = useState(false);
     const [popupTop, setPopupTop] = useState(0);
-
+    const [showPopUpCall, setShowPopUpCall] = useState(false);
+    const [popupTopCall, setPopupTopCall] = useState(0);
 
 
     useEffect(() => {
@@ -78,6 +80,11 @@ const DmServerHeaderNavBar = ({
         setPopupTop(currTop);
         setShowPopUp(!showPopUp);
     }
+    const handlePopupShowCall = (e) => {
+        let currTop = e.currentTarget.getBoundingClientRect().top
+        setPopupTopCall(currTop);
+        setShowPopUpCall(!showPopUpCall);
+    }
 
 
     const handleDmServerName2 = () => {
@@ -115,6 +122,14 @@ const DmServerHeaderNavBar = ({
                 dmServerId={dmServerId}
             />}
 
+            {showPopUpCall && <InviteToDMCallModalContainer
+                top={popupTopCall}
+                setShowPopUp={setShowPopUpCall}
+                topBar={true}
+                dmServerMembers={dmServerMembers}
+                dmServer={dmServer}
+                dmServerId={dmServerId}
+            />}
             <div className="dm-server-bar-children">
                 <div id="normDm" className={`dms-children-icon-wrapper ${membersOfthisServer.length > 2 ? "is-hidden" : ""}`}>
                     <svg x="0" y="0" className="icon-at-sym" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
@@ -191,7 +206,7 @@ const DmServerHeaderNavBar = ({
                 <div className="dmshb-tool-bar">
 
 
-                    <div className="dmshb-tool-icon-wrapper" data-tip data-for="start-voice-call" >
+                    <div className="dmshb-tool-icon-wrapper" data-tip data-for="start-voice-call" onClick={(e) => { handlePopupShowCall(e) }}>
                         <svg x="0" y="0" className="icon-phone" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M11 5V3C16.515 3 21 7.486 21 13H19C19 
                             8.589 15.411 5 11 5ZM17 13H15C15 10.795 13.206 9 11 9V7C14.309 7 17 9.691 17 13ZM11 11V13H13C13 
