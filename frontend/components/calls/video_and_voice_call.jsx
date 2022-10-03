@@ -19,7 +19,7 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
         navigator.mediaDevices.getUserMedia({ audio: true, video: true }).then(stream => {
             this.localStream = stream;
             document.getElementById('local-video').srcObject = stream;
-        }).catch(error => { console.log("ERROR CALL FAILED TO CONNECT: ", error); })
+        }).catch(error => { console.warn("ERROR CALL FAILED TO CONNECT: ", error); })
     }
 
     join (data) {
@@ -31,12 +31,10 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
             { channel: "CallChannel" },
             {
                 connected: () => {
-                    console.log("connected ? ");
                     broadcastData({ type: JOIN_CALL, from: this.userId });
 
                 },
                 received: (data) => {
-                    console.log("RECEIVED : ", data);
                     if (data.from === this.userId) { return; }
                     switch (data.type) {
                         case JOIN_CALL:
