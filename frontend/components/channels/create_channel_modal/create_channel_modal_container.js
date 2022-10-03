@@ -28,7 +28,9 @@ const mSTP = (state, ownProps) => {
         errors: state.errors.channel,
         serverErrors: state.errors.server,
         sessionErrors: state.errors.session,
-        servers: state.entities.servers
+        servers: state.entities.servers,
+        channelType : state.ui.modalProps.channelType
+
 
     }
 }
