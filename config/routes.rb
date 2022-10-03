@@ -27,6 +27,7 @@ Rails.application.routes.draw do
               get '/dm_members/dms_status', to: 'dm_members#show', as: 'dm_membership_status'
     resources :dm_messages, only: [:create, :update, :destroy]
     resources :dm_servers, only: [:index, :show, :create, :update, :destroy]
+    resources :calls, only: [:create]
 
   end
 
