@@ -16,6 +16,8 @@ import CreateChannelModalContainer from "../channels/create_channel_modal/create
 import ActionButtonPopUpContainer from "../server/server_search/action_button_pop_up_container.js";
 import DeleteDmMessageModalContainer from "../dm_servers/delete_dm_message_modal/delete_dm_message_modal_container.js";
 import DeleteServerChannelMessageModalContainer from "../server/delete_server_message_modal/delete_server_message_modal_container.js";
+import InviteToDMCallModalContainer from "../dm_servers/select_dm_members_call/select_dm_members_container.js";
+import WEBRTCDMCallModalContainer from "../dm_servers/dm_call/dm_call_container.js";
 
 class ModalManager extends React.Component {
     constructor (props) {
@@ -162,7 +164,15 @@ class ModalManager extends React.Component {
                 modalMod = 0;
 
                 break;
-
+                case 'InviteDMMembersToCall':
+                    renderedModal = <InviteToDMCallModalContainer />
+                    modalMod = 0;
+                    break;
+    
+                case 'WEBRTC_DM_CALL':
+                    renderedModal = <WEBRTCDMCallModalContainer/>
+                    modalMod = 0;
+                    break;
 
             default:
                 return null;
