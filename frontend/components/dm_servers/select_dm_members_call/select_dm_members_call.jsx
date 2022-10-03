@@ -72,7 +72,6 @@ const InviteToDMCallModal = ({
         openModal('WEBRTC_DM_CALL');
 
 
-        console.log("members to be added to the call: ", newDMMembers);
 
         setShowPopUp(false);
     }
@@ -80,10 +79,7 @@ const InviteToDMCallModal = ({
 
 
     const filterOutDmMembers = dmMembers.filter(member => member.id !== currentUserId);
-    console.log("fileteroutDmMembers: ", filterOutDmMembers);
 
-    console.log("dmserverMembers: ", dmServerMembers),
-    console.log("dmMembers: ", dmMembers);
    
     return (
         <div className={`clear-modal-wrapper ${topBar === true ? `homeBar` : ``}`}>
