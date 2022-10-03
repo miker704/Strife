@@ -397,8 +397,10 @@ label.field-error {
 .circle-offline {
   background: hsl(214, 9.9%, 50.4%);
   border-radius: 50%;
-  width: 10px;
-  height: 10px;
+  // width: 10px;
+  // height: 10px;
+  width: 8px;
+  height: 8px;
   transform: translate(5px, 1px);
   border: 1px solid #000;
 
@@ -435,9 +437,12 @@ label.field-error {
 .circle-online {
   background: hsl(139, 47.3%, 43.9%);
   border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  transform: translate(5px, 0px);
+  // width: 10px;
+  // height: 10px;
+  width: 8px;
+  height: 8px;
+  // transform: translate(5px, 0px);
+  transform: translate(5px, 1px);
   border: 1px solid #000;
 
 }
@@ -473,9 +478,12 @@ label.field-error {
 .circle-blocked {
   background: red;
   border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  transform: translate(5px, 0px);
+  // width: 10px;
+  // height: 10px;
+  width: 8px;
+  height: 8px;
+  // transform: translate(5px, 0px);
+  transform: translate(5px, 1px);
   border: 1px solid #000;
 
 }
