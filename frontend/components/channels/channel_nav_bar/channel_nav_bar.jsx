@@ -71,7 +71,10 @@ const ChannelNavBar = (props) => {
                             </Link>
                             <div className="child-buttons">
                                 <div className="create-channel-invite-icon-wrapper"
-                                    data-tip data-for="create-channel-invite-tool-tip1">
+                                    data-tip data-for="create-channel-invite-tool-tip1"
+                                    onClick={()=>{
+                                            props.openModal('InviteToServer');
+                                    }}>
                                     <svg className="create-channel-invite-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
                                         <path fill="currentColor" d="M14 2H16V3H14V5H13V3H11V2H13V0H14V2Z"></path>
                                         <path fill="currentColor" d="M6.5 8.00667C7.88 8.00667 9 6.88667 9 5.50667C9 4.12667 7.88 3.00667 6.5 
@@ -199,7 +202,11 @@ const ChannelNavBar = (props) => {
                                         Open Chat
                                     </ReactTooltip>
                                 </div>
-                                <div className="create-channel-invite-icon-wrapper" data-tip data-for="create-channel-invite-tool-tip3">
+                                <div className="create-channel-invite-icon-wrapper"
+                                 data-tip data-for="create-channel-invite-tool-tip3"
+                                 onClick={() => {
+                                        props.openModal("InviteToServer");
+                                 }}>
 
                                     <svg className="create-channel-invite-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
                                         <path fill="currentColor" d="M14 2H16V3H14V5H13V3H11V2H13V0H14V2Z"></path>
