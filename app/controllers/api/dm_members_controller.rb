@@ -1,4 +1,5 @@
 class Api::DmMembersController < ApplicationController
+    skip_before_action :verify_authenticity_token
 
     def create
         @dm_membership = DmMember.new(dm_member_params)
