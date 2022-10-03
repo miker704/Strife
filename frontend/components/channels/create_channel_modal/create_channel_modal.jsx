@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-
+import ReactTooltip from "react-tooltip";
 
 const CreateChannelModal = (props) => {
 
@@ -154,6 +154,8 @@ const CreateChannelModal = (props) => {
         //procedure create -> close -> push redirect
         props.createChannel(substate).then((action) => {
             const newChannel = action.channelPayload.channel;
+            //disabling routing to voice channels till voice calling is implemented
+            // but allow users to create them 
             props.closeModal();
             props.history.push(`/channels/${props.server.id}/${newChannel.id}`)
         })
@@ -186,6 +188,7 @@ const CreateChannelModal = (props) => {
     }
 
     const channelErrorsTag = props.errors.length > 0 ? "server-error-lite" : "";
+    const inText = props.channelType === 1 ? ("in Text Channels") : ("in Voice Channels")
 
     return (
         <div className="create-channel-modal-wrapper" >
@@ -204,7 +207,7 @@ const CreateChannelModal = (props) => {
                                                     Create Channel
                                                 </h2>
                                                 <div className="ccm-small-txt">
-                                                    in Text Channels
+                                                    {inText}
                                                 </div>
                                             </div>
                                             <button type="button" className="ccm-close-button" onClick={() => props.closeModal()}>
@@ -278,7 +281,7 @@ const CreateChannelModal = (props) => {
                                                             </div>
                                                         </label>
                                                     </div>
-                                                    <div className="ccm-radio-item" role={"radio"}>
+                                                    <div className="ccm-radio-item" role={"radio"} data-tip data-for="voice-channel-Strife-access">
                                                         <label htmlFor="2s-op" className="ccm-radio-bar">
                                                             <div className="ccm-radio-bar-icon">
                                                                 <input
@@ -323,11 +326,20 @@ const CreateChannelModal = (props) => {
                                                                                 Voice
                                                                             </div>
                                                                             <div className="ccm-small-txt-rad">Hang out together with voice, video, and screen share </div>
-                                                                            <div className="ccm-small-txt-3">(STRIFE Nitro Required to access)</div>
+                                                                            <div className={`ccm-small-txt-3 ${selectedOption === 2 ? `server-error` : ``}`}>($TR!F3 N!TR0 Required to access)</div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <ReactTooltip
+                                                                className={`thread-tool-tip-red`}
+                                                                textColor="#B9BBBE"
+                                                                backgroundColor="#191919"
+                                                                id="voice-channel-Strife-access"
+                                                                place="top"
+                                                                effect="solid">
+                                                                You can still make Voice Channels, but you still need $TR!F3 N!TR0 need to access them.
+                                                            </ReactTooltip>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -369,7 +381,6 @@ const CreateChannelModal = (props) => {
                                                                     className="ccm-slider-input" type="checkbox"
                                                                     checked={selectPrivacy}
                                                                     onChange={() => setSelectPrivacy(!selectPrivacy)}
-                                                                    disabled
                                                                 />
                                                             </div>
                                                         </div>
@@ -378,7 +389,7 @@ const CreateChannelModal = (props) => {
                                                         <div className="ccm-private-note-text">
                                                             Only selected members and roles will be able to view this channel.
                                                         </div>
-                                                        <div className="ccm-small-txt-3">(STRIFE Nitro Required)</div>
+                                                        <div className={`ccm-small-txt-3 ${selectPrivacy === true ? `server-error` : ``}`}>($TR!F3 N!TR0 Required to access)</div>
                                                     </div>
                                                 </div>
 
