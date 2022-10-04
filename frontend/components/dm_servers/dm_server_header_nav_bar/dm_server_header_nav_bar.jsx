@@ -2,7 +2,6 @@ import React from "react";
 import ReactTooltip from "react-tooltip";
 import InviteToDmModalContainer from "../invite_to_dm_server/invite_to_dm_server_container";
 import InviteToDMCallModalContainer from "../select_dm_members_call/select_dm_members_container";
-
 import { useEffect, useState, useRef } from "react";
 
 const DmServerHeaderNavBar = ({
@@ -206,7 +205,7 @@ const DmServerHeaderNavBar = ({
                 <div className="dmshb-tool-bar">
 
 
-                    <div className="dmshb-tool-icon-wrapper" data-tip data-for="start-voice-call" onClick={(e) => { handlePopupShowCall(e) }}>
+                    <div className="dmshb-tool-icon-wrapper" data-tip data-for="start-voice-call">
                         <svg x="0" y="0" className="icon-phone" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M11 5V3C16.515 3 21 7.486 21 13H19C19 
                             8.589 15.411 5 11 5ZM17 13H15C15 10.795 13.206 9 11 9V7C14.309 7 17 9.691 17 13ZM11 11V13H13C13 
@@ -225,7 +224,7 @@ const DmServerHeaderNavBar = ({
                             Start Voice Call
                         </ReactTooltip>
                     </div>
-                    <div className="dmshb-tool-icon-wrapper" data-tip data-for="start-video-call">
+                    <div className="dmshb-tool-icon-wrapper" data-tip data-for="start-video-call" onClick={(e) => { handlePopupShowCall(e) }}>
                         <svg x="0" y="0" className="icon-webcall" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M21.526 8.149C21.231 7.966 20.862 7.951
                              20.553 8.105L18 9.382V7C18 5.897 17.103 5 16 5H4C2.897 5 2 5.897 2 

@@ -18,6 +18,7 @@ import DeleteDmMessageModalContainer from "../dm_servers/delete_dm_message_modal
 import DeleteServerChannelMessageModalContainer from "../server/delete_server_message_modal/delete_server_message_modal_container.js";
 import InviteToDMCallModalContainer from "../dm_servers/select_dm_members_call/select_dm_members_container.js";
 import WEBRTCDMCallModalContainer from "../dm_servers/dm_call/dm_call_container.js";
+import STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS_CONTAINER from "../calls/video_and_voice_call_container.js";
 
 class ModalManager extends React.Component {
     constructor (props) {
@@ -173,7 +174,10 @@ class ModalManager extends React.Component {
                     renderedModal = <WEBRTCDMCallModalContainer/>
                     modalMod = 0;
                     break;
-
+                case "STRIFE_WEBRTC_CALL":
+                    renderedModal = <STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS_CONTAINER/>
+                    modalMod=1;
+                    break;
             default:
                 return null;
         }

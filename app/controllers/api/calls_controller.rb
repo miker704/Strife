@@ -3,13 +3,13 @@ class Api::CallsController < ApplicationController
 
     def create
       head :no_content
-      ActionCable.server.broadcast('call_channel', call_params)
+      ActionCable.server.broadcast("call_channel_"+ params[:id], call_params)
     end
   
     private
   
     def call_params
-      params.permit(:call, :type, :from, :to, :sdp)
+      params.permit(:type, :from, :to, :sdp, :candidate, :id, :call)
     end
   end
   

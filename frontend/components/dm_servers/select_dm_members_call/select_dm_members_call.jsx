@@ -68,11 +68,10 @@ const InviteToDMCallModal = ({
         // for (let newMemberId of newDMMembers) {
         //     createDmMember({dm_member_id: newMemberId ,dm_server_id: dm_SERVER_ID})
         // }
+        // openModalWithProps({dmMembersForCall:newDMMembers, dmServer:dmServer});
+        // openModal('WEBRTC_DM_CALL');
         openModalWithProps({dmMembersForCall:newDMMembers, dmServer:dmServer});
-        openModal('WEBRTC_DM_CALL');
-
-
-
+        openModal("STRIFE_WEBRTC_CALL");
         setShowPopUp(false);
     }
 
