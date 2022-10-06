@@ -16,7 +16,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="<%= image_url("discord_Strife_logo.png") %>">
      <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
     <% if logged_in? %>
         <script type="text/javascript">
              window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>

@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
 import ReactTooltip from "react-tooltip";
-import autosize from "autosize";
 import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
 import { closeOnEsc, closeHookModalOnOutsideClick } from "../../../utils/close_hook_modals_api_utils";
 

@@ -35,7 +35,7 @@ const InviteToDMCallModal = ({
     const isSelected = (member) => selectedMembers.map(member => member.id).includes(member.id);
     const findIfSelected = (toAdd) => selectedMembers.findIndex(member => member.id === toAdd.id);
     let rendered_User_PFP = user_Default_PFP;
-    let count = Object.values(dmServerMembers).length >= 10 ? 10 : selectedMembers.length + Object.values(dmServerMembers).length - 1;
+    let count = selectedMembers.length;
 
     useEffect(() => {
         return function cleanup () {
@@ -88,12 +88,12 @@ const InviteToDMCallModal = ({
                     <div className="create-dm-modal">
                         <form onSubmit={addNewDmMembers}>
                             <div className="create-dm-header-sec">
-                                <h2 className="create-dm-header-h2">Select Members</h2>
+                                <h2 className="create-dm-header-h2">Select Member</h2>
 
-                                {count <= 8 ?
-                                    <div className="num-of-dm-members-selected">You can add {9 - count} more {`${9 - count === 1 ? `member` : `members`}`}.</div>
-                                    : <div className={`${count > 9 ? "num-of-dm-members-selected cDMS-error" : "num-of-dm-members-selected"}`}>
-                                        This Call has a 10 member limit.
+                                {count <= 1 ?
+                                    <div className="num-of-dm-members-selected">Select 1 Member.</div>
+                                    : <div className={`${count > 1 ? "num-of-dm-members-selected cDMS-error" : "num-of-dm-members-selected"}`}>
+                                        This Call has a 1 member limit.
                                     </div>
                                 }
                                 <div className="create-dm-search-bar-wrapper">
@@ -185,8 +185,8 @@ const InviteToDMCallModal = ({
                             </div>
                             <div className="create-dm-footer"></div>
                             <div className="create-dm-button-sec">
-                                <button className="create-dm-button" type="submit" disabled={count > 9 || count - (Object.values(dmServerMembers).length-1) === 0}>
-                                    <div className="create-dm-button-text">{`${Object.values(dmServerMembers).length === 2 ? `Create Group DM` : `Invite To Group DM`}`}</div>
+                                <button className="create-dm-button" type="submit" disabled={count > 1 }>
+                                    <div className="create-dm-button-text">Start Call</div>
                                 </button>
                                 <div className="ccm-small-txt-2">(Sending Invite Links (WIP))</div>
 

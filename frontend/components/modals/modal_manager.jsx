@@ -176,7 +176,7 @@ class ModalManager extends React.Component {
                     break;
                 case "STRIFE_WEBRTC_CALL":
                     renderedModal = <STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS_CONTAINER/>
-                    modalMod=1;
+                    modalMod=0;
                     break;
             default:
                 return null;
