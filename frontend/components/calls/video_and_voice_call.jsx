@@ -38,7 +38,7 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
         ).then(stream => {
             this.localStream = stream;
             this.localVideo.srcObject = stream;
-        }).catch((error) => { console.log(error) });
+        }).catch((error) => { console.error(error) });
         this.setState({
             leaveCall: false,
             startCall: false,
@@ -251,10 +251,10 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
                                     }, 1000);
                                 });
 
-                        }).catch(errors => console.log(errors));
+                        }).catch(errors => console.error(errors));
 
                     }
-                }).catch((errors) => console.log(errors));
+                }).catch((errors) => console.error(errors));
 
             }
         }
