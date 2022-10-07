@@ -10,6 +10,7 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
             joinCall: false,
             startCall: true,
             leaveCall: true,
+            callArmed: false,
         }
         this._V_CALL_CONSTRUCTOR_ = this._V_CALL_CONSTRUCTOR_.bind(this);
         this._V_CALL_DECONSTRUCTOR_ = this._V_CALL_DECONSTRUCTOR_.bind(this);
@@ -42,6 +43,7 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
             leaveCall: false,
             startCall: false,
             joinCall: true,
+            callArmed: true
         })
     }
 
@@ -100,9 +102,9 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
                     }
                 },
             });
-            this.setState({
-                startCall: true,
-            })
+        this.setState({
+            startCall: true,
+        })
     }
 
     leaveCall (e) {
@@ -129,7 +131,8 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
         this.setState({
             leaveCall: true,
             startCall: true,
-            joinCall: false
+            joinCall: false,
+            callArmed: false
         })
         this.props.closeModal();
     }
@@ -192,7 +195,7 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
                 // document.getElementById('remoteVideo').style.background = "none";
                 // document.getElementById('remoteVideo').style.height = `100%`;
                 // this.remoteVideo.appendChild(remoteVid);
-                this.remoteVideo.id=`remoteVideo+${userId}`;
+                this.remoteVideo.id = `remoteVideo+${userId}`;
                 this.remoteVideo.srcObject = e.streams[0];
                 vidcount++
 
@@ -260,6 +263,15 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
     render () {
         return (
             <div className="strife-web-call-container2" onClick={(e) => e.stopPropagation()}>
+                <div id= "close-vid-call" className={`x-to-close-video-call ${this.state.callArmed === true ? `is-hidden`:``}`}>
+                    <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        onClick={() => this.props.closeModal()}
+                    ><path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>
+                    </svg>
+                </div>
                 <div id="buttons">
                     <div className="video-controls">
                         <button disabled={this.state.joinCall} type="button" id="Join-call" className="faint-boost-shiny-button start-call-button" onClick={this._V_CALL_CONSTRUCTOR_.bind(this)}>
@@ -323,7 +335,7 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
                 <div id="videos">
                     <video id="localVideo" muted autoPlay playsInline></video>
                     {/* <div id="remoteVideo"></div> */}
-                    <video id="remoteVideo"autoPlay playsInline></video>
+                    <video id="remoteVideo" autoPlay playsInline></video>
 
                 </div>
             </div>
