@@ -6,7 +6,6 @@ import PendingFriendListContainer from "../pending_list/pending_friends_list_con
 import AddFriendsContainer from "../add_friends/add_friends_container.js";
 import CreateDmModalContainer from "../../dm_servers/create_new_dm/create_dm_container.js";
 import default_User_PFP from "../../../../app/assets/images/discord_PFP.svg";
-import { matches } from "lodash";
 
 class FriendsHomePageContainer extends React.Component {
     constructor (props) {
