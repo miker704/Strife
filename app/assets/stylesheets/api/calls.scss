@@ -260,10 +260,10 @@ div#remote-video-container>video {
 
 
 
-.faint-boost-shiny-button.start-call-button,
-.faint-boost-shiny-button.drop-call-button {
-    min-width: 150px;
-    max-width: 150px;
+.faint-boost-shiny-button.start-video-call-button,
+.faint-boost-shiny-button.drop-video-call-button {
+    min-width: 180px;
+    max-width: 180px;
     max-height: 36px;
     min-height: 36px;
     font-family: "ABC Ginto Normal";
@@ -273,7 +273,7 @@ div#remote-video-container>video {
     // color: #6200ee;
 }
 
-.faint-boost-shiny-button.start-call-button:disabled {
+.faint-boost-shiny-button.start-video-call-button:disabled {
     box-shadow: 0px 0px 0px 0px #0003, 0px 0px 0px 0px #00000024, 0px 0px 0px 0px #0000001f;
     color: transparent;
     background-color: transparent;
@@ -300,7 +300,7 @@ div#remote-video-container>video {
     }
 }
 
-.faint-boost-shiny-button.drop-call-button {
+.faint-boost-shiny-button.drop-video-call-button {
     background-color: #f04747;
 }
 
@@ -315,13 +315,13 @@ div#remote-video-container>video {
 
 }
 
-.faint-boost-shiny-button.start-call-button:hover {
+.faint-boost-shiny-button.start-video-call-button:hover {
     .icon-phone-2 {
         color: hsl(210, 2.9%, 86.7%);
     }
 }
 
-.faint-boost-shiny-button.drop-call-button:active {
+.faint-boost-shiny-button.drop-video-call-button:active {
     background-color: hsl(359, 66.7%, 54.1%);
     color: hsl(0, 0%, 100%) !important;
 
@@ -331,7 +331,7 @@ div#remote-video-container>video {
     }
 }
 
-.faint-boost-shiny-button.drop-call-button:hover {
+.faint-boost-shiny-button.drop-video-call-button:hover {
     background-color: hsl(359, 66.7%, 54.1%);
     color: hsl(0, 0%, 100%) !important;
 
@@ -343,7 +343,7 @@ div#remote-video-container>video {
 
 
 
-.faint-boost-shiny-button.drop-call-button:disabled {
+.faint-boost-shiny-button.drop-video-call-button:disabled {
     box-shadow: 0px 0px 0px 0px #0003, 0px 0px 0px 0px #00000024, 0px 0px 0px 0px #0000001f;
     color: transparent;
     background-color: transparent;
