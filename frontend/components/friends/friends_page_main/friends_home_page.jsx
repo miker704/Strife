@@ -6,6 +6,7 @@ import PendingFriendListContainer from "../pending_list/pending_friends_list_con
 import AddFriendsContainer from "../add_friends/add_friends_container.js";
 import CreateDmModalContainer from "../../dm_servers/create_new_dm/create_dm_container.js";
 import default_User_PFP from "../../../../app/assets/images/discord_PFP.svg";
+import { matches } from "lodash";
 
 class FriendsHomePageContainer extends React.Component {
     constructor (props) {
@@ -38,7 +39,7 @@ class FriendsHomePageContainer extends React.Component {
         this.handleESC = this.handleESC.bind(this);
         this.setShowPopUp = this.setShowPopUp.bind(this);
         this.randomActivityMessage = this.randomActivityMessage.bind(this);
-
+        this.randomFriendShuffle = this.randomFriendShuffle.bind(this);
 
 
     }
@@ -230,18 +231,20 @@ class FriendsHomePageContainer extends React.Component {
 
     }
 
-
-
+    randomFriendShuffle (onlineFriends) {
+        const cut = Math.floor(Math.random() * (onlineFriends.length - 1) + 1)
+        const shuffle = [...onlineFriends].sort(() => Math.floor(0.5 - Math.random()));
+        return shuffle.slice(0, cut);
+    }
 
 
 
     render () {
-        console.log("friends homepage props : ", this.props);
-
-        console.log("online friends : ", this.props.onlineFriends)
         const rendered_User_PFP = default_User_PFP;
         const onlineFriends = this.props.onlineFriends;
-        const onlineActivityMap = onlineFriends.map((friend, idx) => {
+        const randomFriendShuffleArray = onlineFriends.length ? this.randomFriendShuffle(onlineFriends) : null;
+        //lets shuffle this a bit maybe not all of out online friends are doing stuff
+        const onlineActivityMap = onlineFriends.length ? randomFriendShuffleArray.map((friend, idx) => {
             return (
                 <li id="fii" className="friend-index-item activl" key={friend.id} >
 
@@ -272,7 +275,7 @@ class FriendsHomePageContainer extends React.Component {
                     </div>
                 </li>
             )
-        })
+        }) : ("");
 
 
 
