@@ -367,8 +367,8 @@ class FriendsHomePageContainer extends React.Component {
                                         <div className={`empty-card-text ${onlineFriends.length === 0 ? `` : `is-hidden`}`}>
                                             When a friend starts an activity—like playing a game or hanging out on voice—we'll show it here!
                                         </div>
-                                        <div className="friend-index activl" id='ul-fiiw'>
-                                            <div className="friend-index-item-wrapper" >
+                                        <div className={`friend-index activl ${onlineFriends.length === 0 ? `is-hidden`:``}`}>
+                                            <div className={`friend-index-item-wrapper ${onlineFriends.length === 0 ? `is-hidden`:``}`} >
                                                 <ul>{onlineActivityMap}</ul>
                                             </div>
                                         </div>
