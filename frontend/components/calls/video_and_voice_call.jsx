@@ -12,8 +12,8 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
             leaveCall: true,
             callArmed: false,
         }
-        this._V_CALL_CONSTRUCTOR_ = this._V_CALL_CONSTRUCTOR_.bind(this);
-        this._V_CALL_DECONSTRUCTOR_ = this._V_CALL_DECONSTRUCTOR_.bind(this);
+        this._STRIFE_VIDEO_CALL_CONSTRUCTOR_ = this._STRIFE_VIDEO_CALL_CONSTRUCTOR_.bind(this);
+        this._STRIFE_VIDEO_CALL_DECONSTRUCTOR_ = this._STRIFE_VIDEO_CALL_DECONSTRUCTOR_.bind(this);
         this.exchange = this.exchange.bind(this);
         this.join = this.join.bind(this);
         this.removeUser = this.removeUser.bind(this);
@@ -24,10 +24,10 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
     }
 
     componentWillUnmount () {
-        this._V_CALL_DECONSTRUCTOR_();
+        this._STRIFE_VIDEO_CALL_DECONSTRUCTOR_();
     }
 
-    _V_CALL_CONSTRUCTOR_ () {
+    _STRIFE_VIDEO_CALL_CONSTRUCTOR_ () {
         this.localVideo = document.getElementById("localVideo");
         this.remoteVideo = document.getElementById("remoteVideo");
         navigator.mediaDevices.getUserMedia(
@@ -48,7 +48,7 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
     }
 
     //impose a deconstructor to clear any lingering data
-    _V_CALL_DECONSTRUCTOR_ () {
+    _STRIFE_VIDEO_CALL_DECONSTRUCTOR_ () {
         //close peer connections
         const pcKeys = Object.keys(this.peerConnectionPeers);
         for (let i = 0; i < pcKeys.length; i++) {
@@ -263,7 +263,7 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
     render () {
         return (
             <div className="strife-web-call-container2" onClick={(e) => e.stopPropagation()}>
-                <div id= "close-vid-call" className={`x-to-close-video-call ${this.state.callArmed === true ? `is-hidden`:``}`}>
+                <div id= "close-video-call" className={`x-to-close-video-call ${this.state.callArmed === true ? `is-hidden`:``}`}>
                     <svg
                         width="24"
                         height="24"
@@ -274,7 +274,7 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
                 </div>
                 <div id="buttons">
                     <div className="video-controls">
-                        <button disabled={this.state.joinCall} type="button" id="Join-call" className="faint-boost-shiny-button start-call-button" onClick={this._V_CALL_CONSTRUCTOR_.bind(this)}>
+                        <button disabled={this.state.joinCall} type="button" id="Join-call" className="faint-boost-shiny-button start-video-call-button" onClick={this._STRIFE_VIDEO_CALL_CONSTRUCTOR_.bind(this)}>
                             <svg x="0" y="0" className="icon-phone-2" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M11 5V3C16.515 3 21 7.486 21 13H19C19 
                                 8.589 15.411 5 11 5ZM17 13H15C15 10.795 13.206 9 11 9V7C14.309 7 17 9.691 17 13ZM11 11V13H13C13 
@@ -284,7 +284,7 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
                                 </path>
                             </svg>
                             <div className="shiny-button-contents">
-                                Join Call
+                                Join Video Call
                                 <div className="shiny-button-container">
                                     <div className="shiny-button-flex">
                                         <div className="shiny-button-inner"></div>
@@ -292,7 +292,7 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
                                 </div>
                             </div>
                         </button>
-                        <button disabled={this.state.startCall} type="button" id="start-call" className="faint-boost-shiny-button start-call-button" onClick={this.joinCall.bind(this)}>
+                        <button disabled={this.state.startCall} type="button" id="start-call" className="faint-boost-shiny-button start-video-call-button" onClick={this.joinCall.bind(this)}>
                             <svg x="0" y="0" className="icon-phone-2" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M11 5V3C16.515 3 21 7.486 21 13H19C19 
                                 8.589 15.411 5 11 5ZM17 13H15C15 10.795 13.206 9 11 9V7C14.309 7 17 9.691 17 13ZM11 11V13H13C13 
@@ -302,7 +302,7 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
                                 </path>
                             </svg>
                             <div className="shiny-button-contents">
-                                Start Call
+                                Start Video Call
                                 <div className="shiny-button-container">
                                     <div className="shiny-button-flex">
                                         <div className="shiny-button-inner"></div>
@@ -310,7 +310,7 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
                                 </div>
                             </div>
                         </button>
-                        <button disabled={this.state.leaveCall} type="button" id="leave-call" className="faint-boost-shiny-button drop-call-button" onClick={this.leaveCall.bind(this)}>
+                        <button disabled={this.state.leaveCall} type="button" id="leave-call" className="faint-boost-shiny-button drop-video-call-button" onClick={this.leaveCall.bind(this)}>
                             <svg className="disconnect-call-icon" aria-hidden="true" role="img" width="24" height="24"
                                 viewBox="0 0 24 24">
                                 <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M21.1169 1.11603L22.8839 
@@ -321,7 +321,7 @@ class STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS extends React.Component {
                                 </path>
                             </svg>
                             <div className="shiny-button-contents">
-                                Leave Call
+                                Leave Video Call
                                 <div className="shiny-button-container">
                                     <div className="shiny-button-flex">
                                         <div className="shiny-button-inner"></div>
