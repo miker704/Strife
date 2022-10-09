@@ -7,7 +7,7 @@ import { RECEIVE_SERVER_MEMBERSHIP, REMOVE_SERVER_MEMBERSHIP } from "../actions/
 //leave a channel without leaving its server
 //add in channelmembership actions
 import { RECEIVE_CHANNEL_MEMBERSHIP, REMOVE_CHANNEL_MEMBERSHIP } from "../actions/channel_membership_actions";
-
+import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 const channelReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
@@ -55,7 +55,8 @@ const channelReducer = (state = {}, action) => {
 
             delete nextState[action.channelmembershiphash.channel.id];
             return nextState;
-
+        case LOGOUT_CURRENT_USER:
+            return {};
         default:
             return state;
     }
