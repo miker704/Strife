@@ -1,7 +1,7 @@
 import { RECEIVE_DM_SERVER, REMOVE_DM_SERVER } from "../actions/dm_server_actions";
 import { REMOVE_DM_MEMBER } from "../actions/dm_member_actions";
 import { RECEIVE_DM_MESSAGE, REMOVE_DM_MESSAGE } from "../actions/dm_messages_actions";
-
+import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 
 
 const dmMessageReducer = (state = {}, action) => {
@@ -26,7 +26,8 @@ const dmMessageReducer = (state = {}, action) => {
 
         case REMOVE_DM_MEMBER:
             return {};
-
+        case LOGOUT_CURRENT_USER:
+            return {};
         default:
             return state;
     }
