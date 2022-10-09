@@ -1,9 +1,9 @@
-import { RECEIVE_MESSAGE, REMOVE_MESSAGE} from "../actions/message_actions";
+import { RECEIVE_MESSAGE, REMOVE_MESSAGE } from "../actions/message_actions";
 import { RECEIVE_CHANNEL, REMOVE_CHANNEL } from "../actions/channel_actions";
 import { RECEIVE_SERVER, REMOVE_SERVER } from "../actions/server_actions";
 import { RECEIVE_SERVER_MEMBERSHIP, REMOVE_SERVER_MEMBERSHIP } from "../actions/server_membership_actions";
 import { RECEIVE_CHANNEL_MEMBERSHIP, REMOVE_CHANNEL_MEMBERSHIP } from "../actions/channel_membership_actions";
-
+import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 
 const messageReducer = (state = {}, action) => {
 
@@ -11,7 +11,7 @@ const messageReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
     switch (action.type) {
 
-       
+
         case RECEIVE_MESSAGE:
             nextState[action.message.id] = action.message;
             return nextState
@@ -56,7 +56,8 @@ const messageReducer = (state = {}, action) => {
 
         case REMOVE_SERVER_MEMBERSHIP:
             return {};
-
+        case LOGOUT_CURRENT_USER:
+            return {};
 
         default:
             return state;
