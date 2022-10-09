@@ -82,7 +82,7 @@ const mSTP = (state) => {
 
 
     return {
-        currentUser: state.entities.users[state.session.id],
+        currentUserId: state.session.id,
         selectedLoadingMsg: selectedLoadingMsg,
 
     }
