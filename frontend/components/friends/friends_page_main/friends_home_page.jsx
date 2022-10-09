@@ -199,7 +199,7 @@ class FriendsHomePageContainer extends React.Component {
             'Playing Games.', 'Studying.', 'Listening to Spotify.', 'Playing Centipede.js.', 'Playing BlueStacks 5.0.', 'Playing Fortnite.',
             'In a Group Call.', 'Eating Food.', 'Playing Paint-By-Numbers.', 'Playing Doom.', 'Playing Quake.', 'Playing BattleField.',
             'Studying For an Upcoming App Academy Assessment.', 'Working on MERN Project With Partners.', 'Playing Call of Duty.',
-            'Playing Wolfenstein.', 'Playing Grand Theft Auto V.', 'Playing Roblox.', 'Study for an Interview.',
+            'Playing Wolfenstein.', 'Playing Grand Theft Auto V.', 'Playing Roblox.', 'Studying for an Interview.',
             'Studying Data Structures and Algorithms.', 'Playing Minecraft.', 'Playing League of Legends.', 'Playing Dota 2.',
             'Playing Overwatch.', 'Playing Rocket League.', 'Playing Cyberpunk 2077.', 'Playing Monster Hunter - Iceborne.',
             "Playing PlayerUnknown's Battlegrounds.", 'Playing ARK: Survival Evolved.', 'Playing Red Dead Redemption 2.',
