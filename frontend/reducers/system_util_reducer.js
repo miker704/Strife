@@ -23,7 +23,7 @@ const _STRIFE_BOT = {
 
 const systemUtilReducer = (state = { _STRIFE_BOT }, action) => {
     Object.freeze(state);
-    // return state;
+    return state;
     // switch (action.type) {
     //     case FETCH_STRIFE_BOT:
     //         let bot = Object.assign({}, state, { ['StrifeBot']: { [action.bot.id]: action.bot } });
@@ -32,12 +32,12 @@ const systemUtilReducer = (state = { _STRIFE_BOT }, action) => {
     //         return state;
     // }
 
-    switch (action.type) {
-        case LOGOUT_CURRENT_USER:
-            return {};
-        default:
-            return state;
-    }
+    // switch (action.type) {
+    //     case LOGOUT_CURRENT_USER:
+    //         return {};
+    //     default:
+    //         return state;
+    // }
 
 }
 
