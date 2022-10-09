@@ -99,7 +99,8 @@ const friendshipReducer = (state = {}, action) => {
         //     user = nextState[action.friendship.friend_id];
         //     user.friend_request_status = 0;
         //     return nextState;
-
+        case LOGOUT_CURRENT_USER:
+            return {};
 
         default:
             return state;
