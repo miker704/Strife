@@ -1,6 +1,6 @@
 import { RECEIVE_DM_SERVER, RECEIVE_DM_SERVERS, REMOVE_DM_SERVER } from "../actions/dm_server_actions";
 import { RECEIVE_DM_MEMBER, REMOVE_DM_MEMBER } from "../actions/dm_member_actions";
-
+import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 
 
 
@@ -29,7 +29,8 @@ const dmServerReducer = (state = {}, action) => {
             nextState[action.dm_member_hash.id] = action.dm_member_hash
 
             return nextState;
-
+        case LOGOUT_CURRENT_USER:
+            return {};
         default:
             return state;
     }
