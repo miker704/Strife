@@ -305,6 +305,7 @@ const ExploreServers = (props) => {
                                                                 id="all-servers"
                                                                 placeholder="Search for Public Servers"
                                                                 autoFocus={inputRef}
+                                                                spellCheck={false}
                                                                 onInput={() => liveSearch()}
                                                                 onChange={(e) => setSearchText(e.currentTarget.value)}
                                                                 value={searchText}
