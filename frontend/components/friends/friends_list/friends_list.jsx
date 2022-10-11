@@ -43,8 +43,11 @@ const FriendShipIndex = (props) => {
 
 
     const handlePopupShow = (e) => {
-
-        setPopupTop(e.currentTarget.getBoundingClientRect().top);
+        let currTop = e.currentTarget.getBoundingClientRect().top
+        if (currTop > 542) {
+            currTop /= 1.28;
+        }
+        setPopupTop(currTop);
         setShowPopup(!showPopup);
     }
 
