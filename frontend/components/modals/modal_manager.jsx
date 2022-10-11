@@ -17,6 +17,7 @@ import ActionButtonPopUpContainer from "../server/server_search/action_button_po
 import DeleteDmMessageModalContainer from "../dm_servers/delete_dm_message_modal/delete_dm_message_modal_container.js";
 import DeleteServerChannelMessageModalContainer from "../server/delete_server_message_modal/delete_server_message_modal_container.js";
 import InviteToDMCallModalContainer from "../dm_servers/select_dm_members_call/select_dm_members_container.js";
+import StartConversationSearchBarModalContainer from "../friends/user_asset_search_modal/user_asset_search_modal_container.js";
 import WEBRTCDMCallModalContainer from "../dm_servers/dm_call/dm_call_container.js";
 import STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS_CONTAINER from "../calls/video_and_voice_call_container.js";
 
@@ -70,6 +71,10 @@ class ModalManager extends React.Component {
 
                 break;
 
+            case 'StartConversationSearch':
+                renderedModal = <StartConversationSearchBarModalContainer />
+                modalMod = 0;
+                break;
 
             case 'friendOptions':
 
@@ -165,19 +170,19 @@ class ModalManager extends React.Component {
                 modalMod = 0;
 
                 break;
-                case 'InviteDMMembersToCall':
-                    renderedModal = <InviteToDMCallModalContainer />
-                    modalMod = 0;
-                    break;
-    
-                case 'WEBRTC_DM_CALL':
-                    renderedModal = <WEBRTCDMCallModalContainer/>
-                    modalMod = 0;
-                    break;
-                case "STRIFE_WEBRTC_CALL":
-                    renderedModal = <STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS_CONTAINER/>
-                    modalMod=0;
-                    break;
+            case 'InviteDMMembersToCall':
+                renderedModal = <InviteToDMCallModalContainer />
+                modalMod = 0;
+                break;
+
+            case 'WEBRTC_DM_CALL':
+                renderedModal = <WEBRTCDMCallModalContainer />
+                modalMod = 0;
+                break;
+            case "STRIFE_WEBRTC_CALL":
+                renderedModal = <STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS_CONTAINER />
+                modalMod = 0;
+                break;
             default:
                 return null;
         }
