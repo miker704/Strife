@@ -52,8 +52,11 @@ const FriendShipIndexOnline = ({
     }
 
     const handlePopupShow = (e) => {
-
-        setPopupTop(e.currentTarget.getBoundingClientRect().top);
+        let currTop = e.currentTarget.getBoundingClientRect().top
+        if (currTop > 542) {
+            currTop /= 1.28;
+        }
+        setPopupTop(currTop);
         setShowPopup(!showPopup);
     }
 
@@ -220,7 +223,7 @@ const FriendShipIndexOnline = ({
                                                         <div className="subtext">
                                                             <div className="subtext-inner">
                                                                 {`${friend.online ? "online" : "offline"}`}
-                                                                 {/* <div className={`${friend.online ? "circle-online" : "circle-offline"}`}></div> */}
+                                                                {/* <div className={`${friend.online ? "circle-online" : "circle-offline"}`}></div> */}
                                                             </div>
                                                         </div>
                                                     </div>
