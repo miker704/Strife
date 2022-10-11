@@ -232,11 +232,11 @@ const ExploreServers = (props) => {
                         <div className="guild-card-text">
                             The official server for {server.server_name}, click to join now!
                         </div>
-                        <div className="flex-to-end" 
-                            data-tip data-for={`${checkIfJoined === true ? ``: publicServer === false ? "PrivateServer" : ``}`}>
-                            <button type="button" 
-                             className="faint-boost-shiny-button join-server" 
-                             disabled={checkIfJoined === true ? true : publicServer === false ? true : false }
+                        <div className="flex-to-end"
+                            data-tip data-for={`${checkIfJoined === true ? `` : publicServer === false ? "PrivateServer" : ``}`}>
+                            <button type="button"
+                                className="faint-boost-shiny-button join-server"
+                                disabled={checkIfJoined === true ? true : publicServer === false ? true : false}
                                 onClick={() => {
                                     joinThisServer(server);
                                 }}>
@@ -311,7 +311,7 @@ const ExploreServers = (props) => {
                                                             />
 
                                                         </div>
-                                                        <svg className="exs-search-icon"
+                                                        <svg className={`exs-search-icon ${searchText.length === 0 ? ``:`is-hidden`}`}
                                                             aria-label="Search" aria-hidden="false" role="img" width="24" height="24" viewBox="0 0 24 24">
                                                             <path fill="currentColor" d="M21.707 20.293L16.314 14.9C17.403 13.504 18 11.799 18 10C18 
                                                         7.863 17.167 5.854 15.656 4.344C14.146 2.832 12.137 2 10 2C7.863 2 5.854 2.832 4.344 4.344C2.833 
@@ -322,6 +322,17 @@ const ExploreServers = (props) => {
                                                         14.243C13.109 15.376 11.603 16 10 16Z">
                                                             </path>
                                                         </svg>
+                                                        <div className={`clear-exs-search-icon ${searchText.length === 0 ?`is-hidden`:``}`}>
+                                                            <svg className="clear-exs-icon close-exs-icon"
+                                                                aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 14 14">
+                                                                <path fill="currentColor" d="M7.02799 0.333252C3.346 0.333252 0.361328 3.31792 0.361328 6.99992C0.361328 
+                                                                10.6819 3.346 13.6666 7.02799 13.6666C10.71 13.6666 13.6947 10.6819 13.6947 6.99992C13.6947 3.31792 10.7093
+                                                                 0.333252 7.02799 0.333252ZM10.166 9.19525L9.22333 10.1379L7.02799 7.94325L4.83266 10.1379L3.89 9.19525L6.08466 
+                                                                 6.99992L3.88933 4.80459L4.832 3.86259L7.02733 6.05792L9.22266 3.86259L10.1653 4.80459L7.97066 6.99992L10.166
+                                                                  9.19525Z">
+                                                                </path>
+                                                            </svg>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
