@@ -400,6 +400,29 @@
     transition: color .2s ease;
 }
 
+.clear-exs-search-icon {
+    line-height: 0;
+    forced-color-adjust: none;
+    outline: 0
+}
+
+.clear-exs-icon {
+    cursor: pointer;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    color: hsl(216, 3.7%, 73.5%);
+    width: 1.4em;
+    height: 1.4em;
+}
+
+.close-exs-icon {
+    color: hsl(215, 9.7%, 34.3%);
+}
+
+
+
 .guildListSection {
     width: 100%;
     margin-bottom: 32px;
@@ -992,7 +1015,7 @@
     outline: 0;
 }
 
-.epssc-flex{
+.epssc-flex {
     display: flex;
     flex-direction: column;
     align-content: center;
