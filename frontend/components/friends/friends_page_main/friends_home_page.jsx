@@ -245,7 +245,7 @@ class FriendsHomePageContainer extends React.Component {
         //lets shuffle this a bit maybe not all of out online friends are doing stuff
         const onlineActivityMap = onlineFriends.length ? randomFriendShuffleArray.map((friend, idx) => {
             return (
-                <li id="fii" className="friend-index-item activl" key={friend.id} >
+                <li id="fii" className="activity-online-friend-idx" key={friend.id} >
 
                     <div className="friend-index-item-wrapper-inner">
                         <div className="friend-account-info-wrapper-super">
