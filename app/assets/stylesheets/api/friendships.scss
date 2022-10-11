@@ -772,6 +772,11 @@ $off-grey: #B9BBBE;
 
 }
 
+.add-friend-input-search-wrapper:focus-within{
+    border-color: hsl(197,100%,47.8%);
+}
+
+
 .add-friend-input-search-inner-wrapper {
     forced-color-adjust: none;
     background-color: transparent;
