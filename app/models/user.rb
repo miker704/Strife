@@ -58,7 +58,7 @@ class User < ApplicationRecord
     has_many :dm_memberships, class_name: "DmMember", foreign_key: "dm_member_id", dependent: :destroy
     #user dm_servers
     has_many :owned_dm_servers, class_name: "Dmserver", foreign_key: "owner_id"
-    has_many :dm_servers, through: :dm_memberships, source: :dm_server
+    has_many :dm_servers, through: :dm_memberships, source: :dm_server  # < ---- Dm Server Membership (to owned dmServers and dmServers owned by others)
 
     # messages
     has_many :messages, class_name: "Message", foreign_key: "author_id", dependent: :destroy
@@ -70,7 +70,7 @@ class User < ApplicationRecord
     
     #has-many relationships
     #servers -> has many servers joined through server memberships
-    has_many :servers_joined, through: :server_memberships, source: :server
+    has_many :servers_joined, through: :server_memberships, source: :server #< ---- Server Membership includes servers Owned and server not owned
     
     #channels
     
@@ -138,8 +138,6 @@ class User < ApplicationRecord
     after_initialize :ensure_color_tag
     after_create :create_Friendship_With_Bot
     after_create :create_membership_to_Strife_Main
-
-
     # SPIRE
 
     def self.find_by_credentials(email,password)
