@@ -344,8 +344,6 @@ const StartConversationSearchBarModal = (props) => {
         let search_query = document.getElementById('uas-search').value;
         let count = 0;
         let foundCount = 0;
-        console.log('allitems length: ', allItems.length);
-        console.log("current search query : ", search_query[0]);
 
 
         for(let i = 0; i< allItems.length; i++){
