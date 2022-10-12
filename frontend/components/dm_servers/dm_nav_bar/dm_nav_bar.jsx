@@ -19,7 +19,7 @@ class DmNavBar extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderCreateDMModal = this.renderCreateDMModal.bind(this);
         this.setShowPopUp = this.setShowPopUp.bind(this);
-        this.findOnlineStatus= this.findOnlineStatus.bind(this);
+        this.findOnlineStatus = this.findOnlineStatus.bind(this);
     }
 
     setShowPopUp () {
@@ -57,6 +57,15 @@ class DmNavBar extends React.Component {
         this.mounted = false;
         this.props.removeDmServerErrors();
     }
+
+    // componentDidUpdate(prevProps,props){
+    //     console.log("comp did update")
+    //     if(prevProps.dmServers.length !== this.props.dmServers.length){
+    //         this.props.fetchUserDmServers(this.props.currentUser.id)
+    //     }
+    // }
+
+
 
     toggleCreateDmModal () {
         this.setState({ createDmModal: true })
@@ -138,13 +147,13 @@ class DmNavBar extends React.Component {
         return dmServerName;
     }
 
-    findOnlineStatus(dmServer){
+    findOnlineStatus (dmServer) {
         let dmMemberArray = Object.values(dmServer.members);
         let findOtherMember = null;
-        if(dmMemberArray.length > 2){
+        if (dmMemberArray.length > 2) {
             return null;
         }
-        else if(dmMemberArray.length <= 2 ){
+        else if (dmMemberArray.length <= 2) {
             for (let i of dmMemberArray) {
                 if (i.id !== this.props.currentUser.id) {
                     return i;
@@ -179,7 +188,11 @@ class DmNavBar extends React.Component {
                 {this.state.showPopUp && <CreateDmModalContainer setShowPopUp={this.setShowPopUp} />}
 
                 <div className='dm-nav-bar-search-bar'>
-                    <button type='button' className='dm-nav-bar-search-bar-button'>Find or start a conversation</button>
+                    <button type='button'
+                        className='dm-nav-bar-search-bar-button'
+                        onClick={() => this.props.openModal('StartConversationSearch')}>
+                        Find or start a conversation
+                    </button>
                 </div>
 
                 <div className='dm-nav-bar-scroller'>
@@ -300,7 +313,7 @@ class DmNavBar extends React.Component {
                             let dmMemberOnlineStatus = this.findOnlineStatus(dmServer);
                             let onlineStatus = dmMemberOnlineStatus !== null ? (
                                 <div className={`${dmMemberOnlineStatus.online ? "circle-online-dm-side-bar-list" : "circle-offline-dm-side-bar-list"}`}></div>
-                            ):("");
+                            ) : ("");
                             return (
 
                                 <Link to={`/channels/@me/${dmServer.id}`}
