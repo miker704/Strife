@@ -538,6 +538,21 @@
     outline: 0;
 }
 
+.misc-x-content{
+    font-weight: 500;
+    opacity: 0.6;
+    font-size: 14px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    forced-color-adjust: none;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: "Whitney";
+}
+
+
+
 .result-item-server-name {
     flex: 1 1 auto;
     white-space: nowrap;
