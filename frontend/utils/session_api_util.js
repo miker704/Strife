@@ -35,6 +35,18 @@ export const changeUserPFP = (userId, formData) =>
         processData: false
     });
 
+
+export const changeUserBanner = (userId, formData) =>
+    $.ajax({
+        url: `/api/users/${userId}/changeUserBanner/`,
+        method: "PATCH",
+        data: formData,
+        contentType: false,
+        processData: false
+    });
+
+
+
 export const disableAccount = (user) => $.ajax({ url: `/api/users/${user.id}/disableAccount/`, method: "PATCH", data: { user } });
 
 export const reSyncCurrentUser = (userId) => $.ajax({ url: `/api/users/${userId}/`, method: "GET" });
