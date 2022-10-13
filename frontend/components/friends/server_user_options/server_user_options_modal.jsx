@@ -84,7 +84,7 @@ const ServerUserOptionsModal = ({
                             <div className="upc-header-wrapper">
                                 <div className="upc-header-normal">
                                     <div className={`upc-banner color-${member.color_tag}`}>
-                                        <div className="upc-strife-nitro-wrapper" title="Upload your own personalized banner and more with Strife Nitro!">
+                                        <div className="upc-strife-nitro-wrapper" title="Upload your own personalized banner and more with $TR!F3 N!TR0!">
                                             <div className="upc-strife-nitro-badge">
                                                 <svg className="upc-strife-nitro-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
                                                     <path fill="currentColor" d="M2.98966977,9.35789159 C2.98966977,9.77582472 2.63442946,10.1240466 2.20807287,10.1240466
