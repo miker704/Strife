@@ -236,7 +236,7 @@ const ChannelSettingsModal = (props) => {
                                                         setCount(e.currentTarget.value.length);
                                                         setValue(e.currentTarget.value);
                                                     }}
-                                                    placeholder="Let everyone know how to use this channel! (STRIFE NITRO Required!)">
+                                                    placeholder="Let everyone know how to use this channel! ($TR!F3 N!TR0 Required!)">
                                                 </textarea>
                                                 <span className="tmaxlen">Maximum 1024 characters.</span>
                                                 <div className="maxlen-textarea-cs">{`${count}`}</div>
@@ -343,7 +343,7 @@ const ChannelSettingsModal = (props) => {
                                     </div>
                                     <div className="inactive-sub-info">
                                         Members will be restricted to sending one message and creating one thread per this interval,
-                                        unless they have Manage Channel or Manage Messages permissions. (STRIFE NITRO Required!)
+                                        unless they have Manage Channel or Manage Messages permissions. ($TR!F3 N!TR0 Required!)
                                     </div>
                                 </div>
 
@@ -380,7 +380,7 @@ const ChannelSettingsModal = (props) => {
                                                         </div>
                                                         <div className="inactive-sub-info">
                                                             Users will need to confirm they are of over legal age to view in the content in this channel.
-                                                            Age-restricted channels are exempt from the explicit content filter. (STRIFE NITRO Required!)
+                                                            Age-restricted channels are exempt from the explicit content filter. ($TR!F3 N!TR0 Required!)
                                                         </div>
                                                     </div>
 
@@ -415,7 +415,7 @@ const ChannelSettingsModal = (props) => {
                                     </div>
                                     <div className="inactive-sub-info">
                                         New threads will not show in the channel list after being
-                                        inactive for the specified duration. (STRIFE NITRO Required!)
+                                        inactive for the specified duration. ($TR!F3 N!TR0 Required!)
                                     </div>
                                 </div>
 
