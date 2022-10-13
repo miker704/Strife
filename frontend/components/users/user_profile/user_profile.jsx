@@ -891,7 +891,7 @@ class UserProfile extends React.Component {
                           </div>
                           <div className="auth-info-div">
                             <p className="auth-info">
-                              Protect your Strife account with an extra layer of security. Once configured, you'll be required
+                              Protect your $TR!F3 account with an extra layer of security. Once configured, you'll be required
                               to enter both your password and an authentication code from your mobile phone in order to sign in.
                             </p>
                           </div>
