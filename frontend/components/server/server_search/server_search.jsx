@@ -291,7 +291,7 @@ const ExploreServers = (props) => {
                                     <img className="exs-searchImg" alt="exsimg" />
                                     <div className="exs-header-content-wrapper">
                                         <div className="exs-header-content">
-                                            <h3 className="exs-search-title">Find Your Community on STRIFE</h3>
+                                            <h3 className="exs-search-title">Find Your Community on $TR!F3</h3>
                                             <div className="exs-search-subtitle">
                                                 From gaming, to music, to learning, there's a place for you.
                                             </div>
