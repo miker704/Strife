@@ -138,9 +138,9 @@ const StartConversationSearchBarModal = (props) => {
     }
 
     const getChannels = props.servers.map((server, idx) => {
+        for (let channel of Object.values(server.channels)) { channel.server_name = server.server_name; }
         return Object.values(server.channels);
     }).flat(Infinity);
-
     //voice channels are locked
     const voiceChannelsArray = getChannels.filter((channel, idx) => {
         return channel.channel_type === 2;
@@ -175,7 +175,9 @@ const StartConversationSearchBarModal = (props) => {
                     <div className="result-item-server-name">
                         <span className="result-item-match">{channel.channel_name}</span>
                     </div>
-                    <div className="misc-x"></div>
+                    <div className="misc-x">
+                        <div className="misc-x-content">{channel.server_name}</div>
+                    </div>
                 </div>
                 <ReactTooltip
                     className="thread-tool-tip"
@@ -216,7 +218,10 @@ const StartConversationSearchBarModal = (props) => {
                         <div className="result-item-server-name">
                             <span className="result-item-match">{channel.channel_name}</span>
                         </div>
-                        <div className="misc-x"></div>
+                        <div className="misc-x">
+                            <div className="misc-x-content">{channel.server_name}</div>
+
+                        </div>
                     </div>
                 </Link>
             </div>
@@ -346,22 +351,22 @@ const StartConversationSearchBarModal = (props) => {
         let foundCount = 0;
 
 
-        for(let i = 0; i< allItems.length; i++){
-            if(allItems[i].innerText.toLowerCase().includes(search_query.toLowerCase())){
+        for (let i = 0; i < allItems.length; i++) {
+            if (allItems[i].innerText.toLowerCase().includes(search_query.toLowerCase())) {
                 allItems[i].classList.remove("is-hidden");
                 foundCount++;
             }
-            else{
+            else {
                 allItems[i].classList.add("is-hidden");
                 count++;
             }
         }
 
-        if(count === allItems.length){
+        if (count === allItems.length) {
             document.getElementById("uid_100").classList.add('is-hidden');
             document.getElementById("no-match").classList.remove('is-hidden');
         }
-        else{
+        else {
             document.getElementById("no-match").classList.add('is-hidden');
             document.getElementById("uid_100").classList.remove('is-hidden');
         }
@@ -386,12 +391,7 @@ const StartConversationSearchBarModal = (props) => {
 
         // }
 
-
-
-
-
     }
-
 
 
     return (
@@ -455,7 +455,7 @@ const StartConversationSearchBarModal = (props) => {
                             </div>
 
                             <div id="no-match" className="emptyState-uas is-hidden">
-                                    <img className="emptyState-uas-img" alt="uas-img" />
+                                <img className="emptyState-uas-img" alt="uas-img" />
                                 <div className="emptyState-uas-note">Can't seem to find what you're looking for?</div>
                                 <div className="emptyState-uas-note-anchor-container">
                                     <a className="emptyState-uas-anchor" href="https://support.discord.com/hc/en-us/articles/115000070311" target="_blank" rel="noreferrer noopener">
