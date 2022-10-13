@@ -498,7 +498,7 @@ const ServerSettingsModal = (props) => {
                                             receive a notification for every message sent in this server or not.
                                         </div>
                                         <div className="inactive-sub-info-2">
-                                            We highly recommend setting this to only @mentions for a public STRIFE.
+                                            We highly recommend setting this to only @mentions for a public $TR!F3.
                                         </div>
                                         <div role={"radiogroup"}>
                                             <div className="sop-radio-item1" role={"radio"} aria-checked="true">
