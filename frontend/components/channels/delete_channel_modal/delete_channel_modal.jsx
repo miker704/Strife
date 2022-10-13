@@ -88,7 +88,7 @@ const DeleteChannelModal = (props) => {
                                 This is {` `} <strong>{`${props.server.server_name}`}'s{` `}</strong>
                                 general channel {` `}
                                 <strong>#{`${props.currentChannel.channel_name}`}{` `}</strong>
-                                which cannot be deleted. Subscribe to STRIFE NITRO to delete any channel from your servers.
+                                which cannot be deleted. Subscribe to $TR!F3 N!TR0 to delete any channel from your servers.
                             </div>
                             <div className="username-edit-sep"></div>
                         </div>
