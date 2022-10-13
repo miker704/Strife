@@ -55,7 +55,7 @@ class AddFriends extends React.Component {
             return "Hm, didn't work. Double check that the capitalization, spelling, any spaces, and numbers are correct.";
         }
         else if (this.props.sessionErrors.includes('Please enter proper format username + # + STRIFE ID Tag.')) {
-            return "Please enter proper format username + # + STRIFE ID Tag."
+            return "Please enter proper format username + # + $TR!F3 ID Tag."
         }
         else {
             return "";
@@ -146,7 +146,7 @@ class AddFriends extends React.Component {
                         Add Friend
                     </h2>
                     <form autoComplete="off" onSubmit={this.handleSubmit}>
-                        <div className="add-friend-subtitle">You can add a friend with their STRIFE Tag. It's cAsE sEnSitIvE!</div>
+                        <div className="add-friend-subtitle">You can add a friend with their $TR!F3 Tag. It's cAsE sEnSitIvE!</div>
                         <div className={`add-friend-input-search-wrapper ${this.props.sessionErrors.length > 0 ? "frf-ERROR" : ""}`}>
                             <div className="add-friend-input-search-inner-wrapper">
                                 <input id="add-friend-input-bar" className="add-friend-input-bar" type="text"
