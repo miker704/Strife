@@ -16,7 +16,10 @@ const ActionButtonPopUp = (props) => {
                     <div className="action-button-scroller">
                         <div role={"group"}>
                             <div className="action-button-pop-up-item" data-tip data-for="copy-strife-server-link">
-                                <div className="action-button-strife-server-link" onClick={()=>{navigator.clipboard.writeText(props.serverLink)}}>
+                                <div className="action-button-strife-server-link"
+                                    onClick={() => {
+                                        navigator.clipboard.writeText(props.serverLink).then(()=>{props.setShowPopUp(false)})
+                                    }}>
                                     {props.serverLink}
                                 </div>
                                 <div className="action-button-pop-up-icon-wrapper">
