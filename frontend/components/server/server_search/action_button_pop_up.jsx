@@ -1,22 +1,24 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
 import { closeHookModalOnOutsideClick, closeOnEsc } from "../../../utils/close_hook_modals_api_utils";
-
+import ReactTooltip from "react-tooltip";
 
 const ActionButtonPopUp = (props) => {
 
     const popupRef = useRef();
     closeHookModalOnOutsideClick(popupRef, props.setShowPopUp);
     closeOnEsc(props.setShowPopUp);
-   
+
     return (
         <div className="action-button-pop-up-layer" >
-            <div className="action-button-pop-up"onClick={(e) => e.stopPropagation()} ref={popupRef} >
+            <div className="action-button-pop-up" onClick={(e) => e.stopPropagation()} ref={popupRef} >
                 <div className="action-button-pop-up-menu">
                     <div className="action-button-scroller">
                         <div role={"group"}>
-                            <div className="action-button-pop-up-item">
-                                <div className="action-button-strife-server-link">{props.serverLink}</div>
+                            <div className="action-button-pop-up-item" data-tip data-for="copy-strife-server-link">
+                                <div className="action-button-strife-server-link" onClick={()=>{navigator.clipboard.writeText(props.serverLink)}}>
+                                    {props.serverLink}
+                                </div>
                                 <div className="action-button-pop-up-icon-wrapper">
                                     <svg className="action-button-pop-up-icon" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                         <path fill="currentColor" fillRule="evenodd" clipRule="evenodd"
@@ -30,6 +32,15 @@ const ActionButtonPopUp = (props) => {
                                 </div>
                             </div>
                         </div>
+                        <ReactTooltip
+                            className="thread-tool-tip"
+                            textColor="#B9BBBE"
+                            backgroundColor="#191919"
+                            id="copy-strife-server-link"
+                            place="top"
+                            effect="solid">
+                            Click to Copy Server Invite Link
+                        </ReactTooltip>
                     </div>
                 </div>
             </div>
