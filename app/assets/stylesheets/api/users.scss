@@ -350,6 +350,21 @@
     color: #005a17 !important;
 }
 
+.user-Banner-wrapper{
+    position: relative;
+    height: 100px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-Banner{
+    height: 100px;
+    width: 400px;
+}
 
 
 
@@ -907,6 +922,69 @@
 
 }
 
+.my-account-container:hover .upc-strife-nitro-wrapper,
+.account-card-banner:hover .upc-strife-nitro-wrapper {
+    opacity: 1;
+    transform: translateZ(0);
+}
+
+
+.account-card-banner:hover{
+    opacity: 0.5;
+    .demo-edit-lock-warning{
+        opacity: 1;
+    }
+    
+}
+
+
+.upc-strife-nitro-wrapper {
+    cursor: pointer;
+    forced-color-adjust: none;
+    transition: opacity .15s ease-out, transform .15s ease-out, -webkit-transform .15s ease-out;
+    transform: translate3d(0, -5px, 0);
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    z-index: 2;
+    opacity: 0;
+    outline: 0;
+
+}
+
+.upc-strife-nitro-badge {
+    outline: 0;
+    box-sizing: border-box;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    padding: 0 6px;
+    font-family: "ABC Ginto Normal";
+    font-weight: 500;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    forced-color-adjust: none;
+    background-color: #202225cc;
+}
+
+.upc-strife-nitro-icon {
+    color: hsl(0, 0%, 100%);
+    display: block;
+    margin-left: -2px;
+    margin-right: -2px;
+    forced-color-adjust: none;
+}
+
+
 
 .account-card-user-info {
     forced-color-adjust: none;
@@ -1043,6 +1121,41 @@
     margin-right: -2px;
     margin-bottom: -2px;
 }
+
+.edit-user-banner-button{
+    color: hsl(0, 0%, 100%);
+    background-color: #202225cc;
+    cursor: pointer;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    width: auto;
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+    transition: background-color .17s ease, color .17s ease;
+    position: relative;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    user-select: none;
+    font-family: "Whitney";
+    text-rendering: optimizeLegibility;
+}
+
+.edit-user-banner-button:hover {
+    background-color: #4752C4;
+    filter: brightness(125%);
+}
+
+
 
 
 .edit-user-profile-button {
