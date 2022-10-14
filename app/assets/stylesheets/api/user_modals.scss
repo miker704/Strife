@@ -303,6 +303,19 @@
     flex-direction: column;
 }
 
+.username-input-wrapper-banner {
+    forced-color-adjust: none;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+
 .username-input-wrapper2 {
     forced-color-adjust: none;
     display: flex;
@@ -780,6 +793,7 @@
     font-size: 14px;
     transform: translate(-22px, 250px);
     z-index: 9999;
+    opacity: 1;
 }
 
 
