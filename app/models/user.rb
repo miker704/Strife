@@ -45,6 +45,7 @@ class User < ApplicationRecord
     # has_one_attached :profile_pic_url 
     #-- > this requires acxtive storage 
     has_one_attached :photo
+    has_one_attached :user_Banner
     # too_long: "Must be between 2 and 32 in length", too_short: "Must be between 2 and 32 in length"
    # Age Error user must be 13 years to sign up
     # too_long: "Username Must be between 2 and 32 in length", too_short: "Username Must be between 2 and 32 in length"}
