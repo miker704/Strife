@@ -73,16 +73,37 @@ class Api::UsersController < ApplicationController
                     process_File_Error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['cannot process file']
                     render json: process_File_Error, status: 400
                 end
-
-                # if @user.update(user_params)
-                #     @user.save!
-                #     render :show
             else
 
                 process_File_Error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['cannot process file']
                 render json: process_File_Error, status: 400
             end
     end
+
+
+    def change_User_Banner
+        # debugger
+        @user = User.find_by(id: params[:id])
+       
+        if @user
+            if user_params[:remove_UB]
+                @user.user_Banner.purge
+                @user.save!
+                render :show
+            elsif @user.update(user_params)
+                 @user.save!    
+                render :show
+            else
+                process_File_Error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['cannot process file']
+                render json: process_File_Error, status: 400
+            end
+        else
+
+            process_File_Error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['cannot process file']
+            render json: process_File_Error, status: 400
+        end
+    end
+
 
     def change_Password
         @user = User.find(params[:id])
@@ -123,6 +144,12 @@ class Api::UsersController < ApplicationController
         @users = User.where('lower(username) ~ ? and id != ?', username.downcase, current_user.id)
 
         render :searchResult
+    end
+
+    # grab full log of users data
+    def user_data_extraction
+        @user = User.find(params[:id])
+        render :userExtraction
     end
 
 
@@ -169,7 +196,7 @@ class Api::UsersController < ApplicationController
 
     private
     def user_params
-        return params.require(:user).permit(:email,:username,:birthday,:password,:online,:phone_number,:photo,:remove_PFP)
+        return params.require(:user).permit(:email,:username,:birthday,:password,:online,:phone_number,:photo,:remove_PFP,:user_Banner,:remove_UB)
     end
 
     
