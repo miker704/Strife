@@ -12,6 +12,12 @@ class StrifeServer < ApplicationCable::Channel
 
   end
 
+
+  def self.active_users(channel)
+    ActionCable.server.connections.select{ |conn| conn.strifeServerChannelsStreaming.include?(channel)}
+    .map{ |conn| conn.current_user}
+  end
+
   def find
     return strifeServerChannelsStreaming[0]
   end
