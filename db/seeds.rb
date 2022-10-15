@@ -244,17 +244,17 @@ DmMessage.create!(dm_server_id: Dm_server_3.id, sender_id: Demouser1.id,
 DmMessage.create!(dm_server_id: Dm_server_3.id, sender_id: Ayce.id, body: 'Congrats!')
 
 SpamUser1 = User.create!(
-  username: 'spamuser@gmail.com',
-  email: 'spamuser@gmail.com',
-  password: 'spamuser@gmail.com',
+  username: 'spamuser',
+  email: 'spamuser@strife.com',
+  password: 'spamuser@strife.com',
   birthday: Date.new(1990, 0o3, 10),
   phone_number: '+17185657894'
 )
 
 SpamUser2 = User.create!(
-  username: 'spamuser1@gmail.com',
-  email: 'spamuser1@gmail.com',
-  password: 'spamuser1@gmail.com',
+  username: 'spamuser1',
+  email: 'spamuser1@strife.com',
+  password: 'spamuser1@strife.com',
   birthday: Date.new(1990, 0o3, 10),
   phone_number: '+17285527894'
 )
