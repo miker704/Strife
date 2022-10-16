@@ -30,13 +30,12 @@ class ModalManager extends React.Component {
         this.setModalSpecialFeatures = this.setModalSpecialFeatures.bind(this);
 
     }
-
     //this function is to set special modal background/ positioning for different modals that need it 
     setModalSpecialFeatures (modifier) {
         this.setState({ setSpecialFeatures: modifier });
     }
 
-
+ 
 
     render () {
 
