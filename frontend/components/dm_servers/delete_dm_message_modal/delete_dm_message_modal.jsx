@@ -9,7 +9,7 @@ const DeleteDmMessageModal = (props) => {
     useEffect(() => {
         window.addEventListener('keyup', props.handleESC, false);
         return function cleanUp () {
-        window.removeEventListener('keyup', props.handleESC, false);
+            window.removeEventListener('keyup', props.handleESC, false);
         }
     }, [])
 
@@ -41,13 +41,14 @@ const DeleteDmMessageModal = (props) => {
                                 <div className="delete-msg-box">
                                     <div className="chat-message-item" >
 
+
                                         <div className="message-wrapper-contents">
                                             <div className="message-wrapper1">
-                                                <div className={`${props.dmMessage.author[props.dmMessage.sender_id].photo === undefined ?
-                                                    `chat-user-pfp-svg-render color-${props.dmMessage.author[props.dmMessage.sender_id].color_tag}` :
+                                                <div className={`${props.dmMessageAuthor.photo === undefined ?
+                                                    `chat-user-pfp-svg-render color-${props.dmMessageAuthor.color_tag}` :
                                                     `chat-member-avatar-img`}`}>
-                                                    <img src={`${props.dmMessage.author[props.dmMessage.sender_id].photo === undefined
-                                                        ? render_User_PFP : props.dmMessage.author[props.dmMessage.sender_id].photo}`} alt="SMPFP" />
+                                                    <img src={`${props.dmMessageAuthor.photo === undefined
+                                                        ? render_User_PFP : props.dmMessageAuthor.photo}`} alt="SMPFP" />
                                                 </div>
                                                 <h2 className="chat-member-username-header">
                                                     <span className="chat-member-username-wrap">
