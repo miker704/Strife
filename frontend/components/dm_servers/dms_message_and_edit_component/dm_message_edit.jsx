@@ -8,6 +8,7 @@ import { closeOnEsc, closeHookModalOnOutsideClick } from "../../../utils/close_h
 const DMMessageEdit = ({
 
     currentUserId,
+    currentUser,
     dmMessage,
     dmMembers,
     renderGroupChatFirstMessage,
@@ -17,7 +18,11 @@ const DMMessageEdit = ({
     updateDmMessage,
     deleteDmMessage,
     openModal,
-    openModalWithProps
+    openModalWithProps,
+    strifeBot,
+    dmMessageAuthor,
+
+
 
 }) => {
 
@@ -114,22 +119,23 @@ const DMMessageEdit = ({
         oneToOneChatFirstMessage() : dmMessage.sender_id === 1 &&
             dmMessage.body === 'Welcome to the beginning of your Group Chat' ?
             renderGroupChatFirstMessage() : ('');
-
+    let dmMessageAuthorName = dmMessage.sender_id !== dmMessageAuthor.id ? dmMessage.authorName : dmMessageAuthor.username;
 
     return (
+  
         <li className="chat-message-item" key={dmMessage.id} ref={popUpRef}>
 
             <div className="message-wrapper-contents">
                 <div className="message-wrapper1">
-                    <div className={`${dmMessage.author[dmMessage.sender_id].photo === undefined ?
-                        `chat-user-pfp-svg-render color-${dmMessage.author[dmMessage.sender_id].color_tag}` :
+                    <div className={`${dmMessageAuthor.photo === undefined ?
+                        `chat-user-pfp-svg-render color-${dmMessageAuthor.color_tag}` :
                         `chat-member-avatar-img`}`}>
-                        <img src={`${dmMessage.author[dmMessage.sender_id].photo === undefined
-                            ? render_User_PFP : dmMessage.author[dmMessage.sender_id].photo}`} alt="SMPFP" />
+                        <img src={`${dmMessageAuthor.photo === undefined
+                            ? render_User_PFP : dmMessageAuthor.photo}`} alt="SMPFP" />
                     </div>
                     <h2 className="chat-member-username-header">
                         <span className="chat-member-username-wrap">
-                            <span className="chat-member-username">{dmMessage.authorName}</span>
+                            <span className="chat-member-username">{dmMessageAuthorName}</span>
                         </span>
                         <span className="chat-message-timestamp-wrap">
                             <p className="chat-message-timestamp">
@@ -139,7 +145,6 @@ const DMMessageEdit = ({
                     </h2>
                     <div className="chat-message">
                         {messageBody()}
-
                         {botMessage}
                         {/* <span className="mention-wrapper">{dmMessage.body}</span> */}
                     </div>
@@ -148,10 +153,10 @@ const DMMessageEdit = ({
                     <div className="message-accessories-button" data-tip data-for="edit-message" onClick={() => openEdit()}>
                         <svg className="pen-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
                             <path fillRule="evenodd" clipRule="evenodd" d="M19.2929 9.8299L19.9409 9.18278C21.353 7.77064 
-                                     21.353 5.47197 19.9409 4.05892C18.5287 2.64678 16.2292 2.64678 14.817 4.05892L14.1699 4.70694L19.2929 
-                                     9.8299ZM12.8962 5.97688L5.18469 13.6906L10.3085 18.813L18.0201 11.0992L12.8962 5.97688ZM4.11851 
-                                     20.9704L8.75906 19.8112L4.18692 15.239L3.02678 19.8796C2.95028 20.1856 3.04028 20.5105 3.26349 
-                                     20.7337C3.48669 20.9569 3.8116 21.046 4.11851 20.9704Z" fill="currentColor">
+                                 21.353 5.47197 19.9409 4.05892C18.5287 2.64678 16.2292 2.64678 14.817 4.05892L14.1699 4.70694L19.2929 
+                                 9.8299ZM12.8962 5.97688L5.18469 13.6906L10.3085 18.813L18.0201 11.0992L12.8962 5.97688ZM4.11851 
+                                 20.9704L8.75906 19.8112L4.18692 15.239L3.02678 19.8796C2.95028 20.1856 3.04028 20.5105 3.26349 
+                                 20.7337C3.48669 20.9569 3.8116 21.046 4.11851 20.9704Z" fill="currentColor">
                             </path>
                         </svg>
 
@@ -159,12 +164,14 @@ const DMMessageEdit = ({
                     <div className="message-accessories-button" data-tip data-for="delete-message"
                         onClick={() => {
                             openModalWithProps({
-                                currentUserId:currentUserId,
-                                dmMessage:dmMessage,
-                                renderGroupChatFirstMessage:renderGroupChatFirstMessage,
-                                oneToOneChatFirstMessage:oneToOneChatFirstMessage,
-                                formatTime:formatTime,
-                                dmServerId:dmServerId,
+                                currentUserId: currentUserId,
+                                currentUser: currentUser,
+                                dmMessage: dmMessage,
+                                renderGroupChatFirstMessage: renderGroupChatFirstMessage,
+                                oneToOneChatFirstMessage: oneToOneChatFirstMessage,
+                                formatTime: formatTime,
+                                dmServerId: dmServerId,
+                                dmMessageAuthor:dmMessageAuthor
 
                             });
                             openModal('DeleteDmMessage');
@@ -174,7 +181,7 @@ const DMMessageEdit = ({
                             <path fill="currentColor" d="M15 3.999V2H9V3.999H3V5.999H21V3.999H15Z">
                             </path>
                             <path fill="currentColor" d="M5 6.99902V18.999C5 20.101 5.897 20.999 7 20.999H17C18.103 20.999
-                                    19 20.101 19 18.999V6.99902H5ZM11 17H9V11H11V17ZM15 17H13V11H15V17Z">
+                                19 20.101 19 18.999V6.99902H5ZM11 17H9V11H11V17ZM15 17H13V11H15V17Z">
                             </path>
                         </svg>
 
