@@ -55,7 +55,7 @@ class Api::DmServersController < ApplicationController
     def show
         @dm_server = DmServer.find_by(id: params[:id])
         @current_user = current_user
-
+        # @active_users = DmChannel.active_users(@dm_server) << @current_user
         # @dm_server = @current_user.dm_servers.includes(:members,:dm_messages).find_by(id: params[:id])
         render :show
     end
@@ -91,7 +91,7 @@ class Api::DmServersController < ApplicationController
         if @dm_server
             ## initiate redirects to loading container to resync state boots anyone remaining in chat
             ## also ensures that everyone is removed LIVE via action cable
-            async_redirect(@dm_server, '/loading/')
+            async_redirect(@dm_server, '/telefrag/')
             ## destroy the dmServer render nothing 
             @dm_server.destroy
         end
