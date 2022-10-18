@@ -9,12 +9,14 @@ import DeleteDmMessageModal from "./delete_dm_message_modal";
 const mSTP = (state, ownProps) => {
     
     return {
+            
             currentUserId: state.session.id,
             dmMessage: state.ui.modalProps.dmMessage,
             dmServerId :state.ui.modalProps.dmServerId,      
             renderGroupChatFirstMessage: state.ui.modalProps.renderGroupChatFirstMessage,
             oneToOneChatFirstMessage:state.ui.modalProps.oneToOneChatFirstMessage,
             formatTime:state.ui.modalProps.formatTime,
+            dmMessageAuthor:state.ui.modalProps.dmMessageAuthor
     }
 }
 
