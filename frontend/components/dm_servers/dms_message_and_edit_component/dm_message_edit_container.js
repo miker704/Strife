@@ -5,6 +5,14 @@ import DMMessageEdit from "./dm_message_edit";
 import { closeModal, openModal, openModalWithProps } from "../../../actions/modal_actions";
 
 
+const mSTP = (state) => {
+    return {
+        currentUser: state.currentUser,
+        currentUserId: state.session.id
+    }
+}
+
+
 const mDTP = (dispatch) => {
     return {
         updateDmMessage: (dm_message) => dispatch(updateDmMessage(dm_message)),
@@ -15,5 +23,5 @@ const mDTP = (dispatch) => {
 }
 
 
-const DMMessageEditContainer = withRouter(connect(null, mDTP)(DMMessageEdit));
+const DMMessageEditContainer = withRouter(connect(mSTP, mDTP)(DMMessageEdit));
 export default DMMessageEditContainer;
