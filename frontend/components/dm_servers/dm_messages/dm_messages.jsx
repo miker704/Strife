@@ -71,7 +71,7 @@ class DmMessages extends React.Component {
         this.subscription.unsubscribe();
     }
 
-    resyncUserProps(head, path){
+    resyncUserProps (head, path) {
 
     }
 
@@ -87,14 +87,24 @@ class DmMessages extends React.Component {
                 //manually add actioncable on them on the front end side this now allows the chat container to control nearly everything
                 // attached to dm_server for a full resync
                 received: ({ dm_message, head, path }) => {
-                    
                     //boot individual member
-                    if(head === 401){
+                    if (head === 401) {
+                    }
+                    if (head === 102) {
+                        this.props.fetchDmServer(this.props.dmServerId);
                     }
 
+                    //active member in chat has update a visuaL comp
+                    if (head === 111) {
+                        // console.log("user has been updated")
+                        this.props.fetchDmServer(this.props.dmServerId);
+                        //trick compdid update
+               
+
+                    }
                     //this is to boot everyone when the dmserver is deleted
-                    if (head === 302 && path === '/loading/') {
-                        this.props.history.push(`/loading/`);
+                    if (head === 302 && path === '/telefrag/') {
+                        this.props.history.push(`/telefrag/`);
                     }
                     // else if(this.props.currentUserId !== this.props.dmServer.owner_id) {
                     else {
@@ -172,6 +182,7 @@ class DmMessages extends React.Component {
         if (prevState.DmMessages.length < this.state.DmMessages.length) {
             this.scrollToBottomOfChat("smooth");
         }
+
         if (prevProps.dmMessagesIds.length !== this.props.dmMessagesIds.length) {
             let DmMessages = this.props.DmMessages;
             let dmMessagesIds = this.props.dmMessagesIds;
@@ -291,101 +302,33 @@ class DmMessages extends React.Component {
 
 
     render () {
-
+        const dmServerMembers = this.props.dmMembers;
 
         let dmMessageOLLIMapping = this.state.DmMessages.map((dmMessage) => {
-            // const botMessage = dmMessage.sender_id === 1 &&
-            //     dmMessage.body === 'This is the beginning of your direct message history with' ?
-            //     this.oneToOneChatFirstMessage() : dmMessage.sender_id === 1 &&
-            //         dmMessage.body === 'Welcome to the beginning of your Group Chat' ?
-            //         this.renderGroupChatFirstMessage() : ('');
 
+            let member = dmServerMembers.find(member => member.id === dmMessage.sender_id)
+            if (member === undefined) {
+                member = Object.values(this.props.strifeBot)[0];
+            }
             {
                 return (
 
 
                     <DMMessageEditContainer
+                        dmMessageAuthor = {member}
                         dmMembers={this.props.dmMembers}
                         currentUserId={this.props.currentUserId}
+                        currentUser = {this.props.currentUser}
                         dmMessage={dmMessage}
                         renderGroupChatFirstMessage={this.renderGroupChatFirstMessage}
                         oneToOneChatFirstMessage={this.oneToOneChatFirstMessage}
                         formatTime={this.formatTime}
                         dmServerId={this.props.dmServerId}
                         key={dmMessage.id}
+                        strifeBot={this.props.strifeBot}
                     />
 
-
-                    // <li className="chat-message-item" key={dmMessage.id}>
-
-                    //     <div className="message-wrapper-contents">
-                    //         <div className="message-wrapper1">
-                    //             <div className={`${dmMessage.author[dmMessage.sender_id].photo === undefined ?
-                    //                 `chat-user-pfp-svg-render color-${dmMessage.author[dmMessage.sender_id].color_tag}` :
-                    //                 `chat-member-avatar-img`}`}>
-                    //                 <img src={`${dmMessage.author[dmMessage.sender_id].photo === undefined
-                    //                     ? render_User_PFP : dmMessage.author[dmMessage.sender_id].photo}`} alt="SMPFP" />
-                    //             </div>
-                    //             <h2 className="chat-member-username-header">
-                    //                 <span className="chat-member-username-wrap">
-                    //                     <span className="chat-member-username">{dmMessage.authorName}</span>
-                    //                 </span>
-                    //                 <span className="chat-message-timestamp-wrap">
-                    //                     <p className="chat-message-timestamp">
-                    //                         {this.formatTime(dmMessage.created_at)}
-                    //                     </p>
-                    //                 </span>
-                    //             </h2>
-                    //             <div className="chat-message">
-                    //                 {dmMessage.body}
-                    //                 {botMessage}
-                    //                 {/* <span className="mention-wrapper">{dmMessage.body}</span> */}
-                    //             </div>
-                    //         </div>
-                    //         <div className={`message-accessories-button-wrapper ${this.props.currentUserId === dmMessage.sender_id ? ``:`is-hidden`}`}>
-                    //             <div className="message-accessories-button" data-tip data-for="edit-message">
-                    //                 <svg className="pen-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
-                    //                     <path fillRule="evenodd" clipRule="evenodd" d="M19.2929 9.8299L19.9409 9.18278C21.353 7.77064 
-                    //                                  21.353 5.47197 19.9409 4.05892C18.5287 2.64678 16.2292 2.64678 14.817 4.05892L14.1699 4.70694L19.2929 
-                    //                                  9.8299ZM12.8962 5.97688L5.18469 13.6906L10.3085 18.813L18.0201 11.0992L12.8962 5.97688ZM4.11851 
-                    //                                  20.9704L8.75906 19.8112L4.18692 15.239L3.02678 19.8796C2.95028 20.1856 3.04028 20.5105 3.26349 
-                    //                                  20.7337C3.48669 20.9569 3.8116 21.046 4.11851 20.9704Z" fill="currentColor">
-                    //                     </path>
-                    //                 </svg>
-
-                    //             </div>
-                    //             <div className="message-accessories-button" data-tip data-for="delete-message">
-                    //                 <svg className="trash-message-icon" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
-                    //                     <path fill="currentColor" d="M15 3.999V2H9V3.999H3V5.999H21V3.999H15Z">
-                    //                     </path>
-                    //                     <path fill="currentColor" d="M5 6.99902V18.999C5 20.101 5.897 20.999 7 20.999H17C18.103 20.999
-                    //                                 19 20.101 19 18.999V6.99902H5ZM11 17H9V11H11V17ZM15 17H13V11H15V17Z">
-                    //                     </path>
-                    //                 </svg>
-
-                    //             </div>
-                    //         </div>
-                    //     </div>
-                    //     <ReactTooltip
-                    //         className="thread-tool-tip"
-                    //         textColor="#B9BBBE"
-                    //         backgroundColor="#191919"
-                    //         id="edit-message"
-                    //         place="top"
-                    //         effect="solid">
-                    //         Edit
-                    //     </ReactTooltip>
-
-                    //     <ReactTooltip
-                    //         className="thread-tool-tip"
-                    //         textColor="#B9BBBE"
-                    //         backgroundColor="#191919"
-                    //         id="delete-message"
-                    //         place="top"
-                    //         effect="solid">
-                    //         Delete
-                    //     </ReactTooltip>
-                    // </li>
+               
                 )
             }
 
