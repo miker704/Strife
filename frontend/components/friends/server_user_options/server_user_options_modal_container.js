@@ -15,7 +15,7 @@ import {createDmMessage} from '../../../actions/dm_messages_actions.js';
 
 const mSTP = (state, ownProps) => {
     return {
-        currentUser: state.entities.users[state.session.id],
+        currentUser: state.currentUser,
         currentUserId: state.session.id,
         friends: selectFriendStatusOnline(state, 3),
         errors: state.errors.friendship,
