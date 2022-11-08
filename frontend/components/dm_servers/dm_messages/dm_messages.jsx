@@ -305,6 +305,12 @@ class DmMessages extends React.Component {
         const dmServerMembers = this.props.dmMembers;
 
         let dmMessageOLLIMapping = this.state.DmMessages.map((dmMessage) => {
+            // const botMessage = dmMessage.sender_id === 1 &&
+            //     dmMessage.body === 'This is the beginning of your direct message history with' ?
+            //     this.oneToOneChatFirstMessage() : dmMessage.sender_id === 1 &&
+            //         dmMessage.body === 'Welcome to the beginning of your Group Chat' ?
+            //         this.renderGroupChatFirstMessage() : ('');
+
 
             let member = dmServerMembers.find(member => member.id === dmMessage.sender_id)
             if (member === undefined) {
