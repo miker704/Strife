@@ -63,6 +63,7 @@ Demouser1 = User.create!(
   phone_number: '+17185557894'
 )
 Demouser1.photo.attach(io: File.open('app/assets/images/loading.gif'), filename: 'loading.gif')
+Demouser1.user_Banner.attach(io: File.open('app/assets/images/banners/user_banners/quiet.jpg'), filename:'quiet.jpg')
 # demo user 2
 Demouser2 = User.create!(
   username: 'DemoUser2',
