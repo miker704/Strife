@@ -14,6 +14,15 @@ export const REMOVE_SESSION_ERRORS = "REMOVE_SESSION_ERRORS";
 export const RECEIVE_USER_SEARCH = "RECEIVE_USER_SEARCH";
 export const RESYNC_CURRENT_USER = "RESYNC_CURRENT_USER";
 export const FETCH_STRIFE_BOT = "FETCH_$TR!F3_BOT";
+export const RECEIVE_CORE = "RECEIVE_CORE";
+
+export const receiveCore = core => {
+    return {
+        type: RECEIVE_CORE,
+        core
+    }
+}
+
 
 export const receiveUser = user => {
     return {
@@ -75,7 +84,7 @@ export const receiveUserSearch = (users) => {
 
 export const reSyncUser = (currentUser) => {
     return {
-        type : RESYNC_CURRENT_USER,
+        type: RESYNC_CURRENT_USER,
         currentUser
     }
 }
@@ -125,6 +134,8 @@ export const changePassword = user => (dispatch) =>
 export const changeUserPFP = (userId, formData) => (dispatch) =>
     SessionAPIUtil.changeUserPFP(userId, formData).then((user) => (dispatch(receiveCurrentUser(user))), (err) => (dispatch(receiveSessionErrors(err.responseJSON))));
 
+export const changeUserBanner = (userId, formData) => (dispatch) =>
+    SessionAPIUtil.changeUserBanner(userId, formData).then((user) => (dispatch(receiveCurrentUser(user))), (err) => (dispatch(receiveSessionErrors(err.responseJSON))));
 
 
 
@@ -145,21 +156,21 @@ export const fetchUserByStrifeId = user_strife_id_tag => (dispatch) =>
 
 
 
-export const fetchUser = (userId) => (dispatch) => 
-SessionAPIUtil.fetchUser(userId).then((user) =>{
-    return dispatch(receiveUser(user));
-}, (err) => {dispatch(receiveSessionErrors(err.responseJSON))});
+export const fetchUser = (userId) => (dispatch) =>
+    SessionAPIUtil.fetchUser(userId).then((user) => {
+        return dispatch(receiveUser(user));
+    }, (err) => { dispatch(receiveSessionErrors(err.responseJSON)) });
 
 
 
-export const fetchBot = (userId) => (dispatch) => 
-SessionAPIUtil.fetchUser(userId).then((user) =>{
-    return dispatch(receiveStrifeBot(user));
-}, (err) => {dispatch(receiveSessionErrors(err.responseJSON))});
+export const fetchBot = (userId) => (dispatch) =>
+    SessionAPIUtil.fetchUser(userId).then((user) => {
+        return dispatch(receiveStrifeBot(user));
+    }, (err) => { dispatch(receiveSessionErrors(err.responseJSON)) });
 
 
-export const reSyncCurrentUser = (userId) => (dispatch) => 
-SessionAPIUtil.fetchUser(userId).then((user) =>{
-    return dispatch(reSyncUser(user));
-}, (err) => {dispatch(receiveSessionErrors(err.responseJSON))});
+export const reSyncCurrentUser = (userId) => (dispatch) =>
+    SessionAPIUtil.fetchUser(userId).then((user) => {
+        return dispatch(reSyncUser(user));
+    }, (err) => { dispatch(receiveSessionErrors(err.responseJSON)) });
 
