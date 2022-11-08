@@ -44,7 +44,9 @@ const InviteToServerModal = (props) => {
         const sERVER_ID = parseInt(props.serverId)
         for (let newMemberId of newServerMembers) {
 
-            props.createServerMembership({user_id: newMemberId, server_id: sERVER_ID});
+            props.createServerMembership({user_id: newMemberId, server_id: sERVER_ID}).then(()=>{
+                App.StrifeCore.perform('parse_Invites_To_Existing_Server', {user_id: newMemberId, server_id: sERVER_ID});
+            });
 
         }
         props.closeModal();
