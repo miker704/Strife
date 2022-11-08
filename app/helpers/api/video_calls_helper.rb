@@ -1,0 +1,2 @@
+module Api::VideoCallsHelper
+end
