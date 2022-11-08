@@ -109,13 +109,14 @@ const ServerMessages = ({
 
 
     const render_User_PFP = user_Default_PFP;
- 
+    let messageAuthorName = message.author_id !== messageAuthor.id ? message.authorName : messageAuthor.username;
+
     return (
         <li className="chat-message-item" key={message.id} ref={popUpRef}>
 
             <div className="message-wrapper-contents">
                 <div className="message-wrapper1">
-               
+
                     <div className={`${messageAuthor.photo === undefined ?
                         `chat-user-pfp-svg-render color-${messageAuthor.color_tag}` :
                         `chat-member-avatar-img`}`}>
@@ -125,7 +126,9 @@ const ServerMessages = ({
 
                     <h2 className="chat-member-username-header">
                         <span className="chat-member-username-wrap">
-                            <span className="chat-member-username">{message.authorName}</span>
+                            {/* <span className="chat-member-username">{message.authorName}</span> */}
+                            <span className="chat-member-username">{messageAuthorName}</span>
+
                         </span>
                         <span className="chat-message-timestamp-wrap">
                             <p className="chat-message-timestamp">
@@ -152,12 +155,12 @@ const ServerMessages = ({
                     <div className="message-accessories-button" data-tip data-for="delete-message"
                         onClick={() => {
                             openModalWithProps({
-                                currentUserId:currentUserId,
+                                currentUserId: currentUserId,
                                 message: message,
-                                formatTime:formatTime,
-                                serverId:serverId,
+                                formatTime: formatTime,
+                                serverId: serverId,
                                 channelId: channelId,
-                                messageAuthor:messageAuthor
+                                messageAuthor: messageAuthor
 
                             });
                             openModal('DeleteServerChannelMessage');
