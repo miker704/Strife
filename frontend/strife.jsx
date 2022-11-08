@@ -3,11 +3,10 @@ import ReactDOM from "react-dom";
 import Root from "./components/root.jsx"
 import configureStore from "./store/store.js"
 import throttle from "lodash.throttle";
-import {saveMyState} from './utils/state_storage_async_util.js';
+import { saveMyState } from './utils/state_storage_async_util.js';
 
 document.addEventListener("DOMContentLoaded", () => {
 	let store;
-	// let preloadedState = undefined;
 	if (window.currentUser) {
 		const preloadedState = {
 			entities: {
@@ -26,16 +25,16 @@ document.addEventListener("DOMContentLoaded", () => {
 		store = configureStore();
 	}
 
-	//atttempt to perform an async state save cmmt out as it is not used/ no current need for it yet
-	// store.subscribe(throttle(()=>{
+
 	// 	saveMyState({
 	// 		entities: store.getState().entities,
 	// 		session: store.getState().session,
-	// 		currentUser: store.getState().currentUser
+	// 		currentUser: store.getState().currentUser,
 	// 	});
+	// 	console.log('perform resync to core');
+	// 	App.StrifeCore.perform('track_HeartBeat')
+
 	// }, 1000));
-
-
 
 
 
