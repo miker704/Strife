@@ -69,7 +69,9 @@ const InviteToDmModal = ({
         const newDMMembers = [...selectedFriends.map((friend) => parseInt(friend.id))].sort((a, b) => a - b);
         const dm_SERVER_ID = parseInt(dmServerId)
         for (let newMemberId of newDMMembers) {
-            createDmMember({dm_member_id: newMemberId ,dm_server_id: dm_SERVER_ID})
+            createDmMember({ dm_member_id: newMemberId, dm_server_id: dm_SERVER_ID }).then(() => {
+                App.StrifeCore.perform('parse_Invites_To_Existing_DmServer', { dm_member_id: newMemberId, dm_server_id: dm_SERVER_ID });
+            })
         }
         setShowPopUp(false);
     }
@@ -82,7 +84,7 @@ const InviteToDmModal = ({
         }
     })
 
-   
+
     return (
         <div className={`clear-modal-wrapper ${topBar === true ? `homeBar` : ``}`}>
 
@@ -170,7 +172,7 @@ const InviteToDmModal = ({
                                                             <div className={`create-dm-check-box ${isSelected(friend) ? "checked" : ""}`}>
                                                                 <svg aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 24 24">
                                                                     <path fill="transparent" fillRule="evenodd" clipRule="evenodd" d="M8.99991 16.17L4.82991 
-                                                            12L3.40991 13.41L8.99991 19L20.9999 7.00003L19.5899 5.59003L8.99991 16.17Z">
+                                                                      12L3.40991 13.41L8.99991 19L20.9999 7.00003L19.5899 5.59003L8.99991 16.17Z">
                                                                     </path>
                                                                 </svg>
                                                             </div>
@@ -188,7 +190,7 @@ const InviteToDmModal = ({
                             </div>
                             <div className="create-dm-footer"></div>
                             <div className="create-dm-button-sec">
-                                <button className="create-dm-button" type="submit" disabled={count > 9 || count - (Object.values(dmServerMembers).length-1) === 0}>
+                                <button className="create-dm-button" type="submit" disabled={count > 9 || count - (Object.values(dmServerMembers).length - 1) === 0}>
                                     <div className="create-dm-button-text">{`${Object.values(dmServerMembers).length === 2 ? `Create Group DM` : `Invite To Group DM`}`}</div>
                                 </button>
                                 <div className="ccm-small-txt-2">(Sending Invite Links (WIP))</div>
