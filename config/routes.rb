@@ -7,9 +7,11 @@ Rails.application.routes.draw do
               patch '/users/:id/removephone/', to: 'users#delete_PhoneNumber', as: 'delete_PhoneNumber'
               patch '/users/:id/changePassword/', to: 'users#change_Password', as: 'change_Password'
               patch '/users/:id/changeUserPFP/', to: 'users#change_User_PFP', as: 'change_User_PFP'
+              patch '/users/:id/changeUserBanner/', to: 'users#change_User_Banner', as: 'change_User_Banner'
               patch '/users/:id/disableAccount/', to: 'users#disable_Account', as: 'disable_Account'
               get   '/search/:username', to: 'users#search', as: 'user_search'
               get    '/fetchbystrifeId/:strife_id_tag', to: 'users#fetch_via_strife_id', as: 'fetch_via_strife_id'
+              get    '/users/:id/extractData/', to: 'users#user_data_extraction', as: 'user_data_extraction'
     resource  :session, only: [:create, :destroy]
     resources :servers, only: [:index, :show, :create, :update, :destroy]
               post '/servers/join/', to: 'servers#join_server', as: 'join_server'
@@ -28,12 +30,15 @@ Rails.application.routes.draw do
     resources :dm_messages, only: [:create, :update, :destroy]
     resources :dm_servers, only: [:index, :show, :create, :update, :destroy]
     resources :calls, only: [:create]
+    resources :video_calls, only: [:create]
+    resources :voice_calls, only: [:create]
+
 
   end
 
 
   mount ActionCable.server => "/cable"
-
+  
   root to: 'static_pages#root'
 
 end
