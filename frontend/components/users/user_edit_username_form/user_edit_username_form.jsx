@@ -1,12 +1,11 @@
 import React from "react"
-import { Link, Redirect } from 'react-router-dom'
 
 
 class EditUsernameForm extends React.Component {
     constructor (props) {
         super(props)
-        
-        this.state = { username: this.props.currentUser.username, password: ""}
+
+        this.state = { username: this.props.currentUser.username, password: "" }
 
 
         this.cancel = false;
@@ -21,7 +20,7 @@ class EditUsernameForm extends React.Component {
         if (this.props.errors.includes('Login or password is invalid')) {
             return " - Password does not match.";
         }
-        else if (this.props.errors.includes("Error Incorrect Password !")){
+        else if (this.props.errors.includes("Error Incorrect Password !")) {
             return " - Password does not match.";
         }
         return "";
@@ -41,18 +40,21 @@ class EditUsernameForm extends React.Component {
     handleSubmit (e) {
         // e.preventDefault();
 
-        if(this.cancel){
+        if (this.cancel) {
             this.props.removeSessionErrors();
             return;
         }
-            let subState = {
-                id: this.props.currentUser.id,
-                username: this.state.username,
-                password: this.state.password
-            }
+        let subState = {
+            id: this.props.currentUser.id,
+            username: this.state.username,
+            password: this.state.password
+        }
 
+        this.props.updateUserInfo(subState).then(() => {
+            App.StrifeCore.perform('transmit_to_other_channel', { currrentUserLocation: this.props.location.pathname })
 
-            this.props.updateUserInfo(subState);
+        })
+
     }
 
     userNameErrors () {
@@ -94,7 +96,7 @@ class EditUsernameForm extends React.Component {
                         Enter a new username and your existing password
                     </div>
                 </div>
-                <form  onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit}>
                     <div className="form-container1">
 
                         <div className="form-username-sec">
@@ -140,8 +142,8 @@ class EditUsernameForm extends React.Component {
                         <div className="username-edit-sep"></div>
                     </div>
                     <div className="username-edit-button-sec">
-                        <button type="submit" className="username-edit-submit-button">Done</button>
-                        <button type="submit" onClick={() => this.cancel=true} className="username-edit-cancel-button">Cancel</button>
+                        <button type="submit" className="username-edit-submit-button" >Done</button>
+                        <button type="submit" onClick={() => this.cancel = true} className="username-edit-cancel-button">Cancel</button>
                     </div>
 
 
