@@ -1,7 +1,5 @@
 import React from "react"
-import { Link, Redirect } from 'react-router-dom'
 import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
-
 class EditUserPFP extends React.Component {
     constructor (props) {
         super(props)
@@ -12,7 +10,6 @@ class EditUserPFP extends React.Component {
             remove_PFP: false
 
         }
-
 
         this.file_input = null;
         this.cancel = false;
@@ -41,7 +38,10 @@ class EditUserPFP extends React.Component {
         }
         let formData = new FormData();
         formData.append('user[remove_PFP]', this.state.remove_PFP);
-        this.props.changeUserPFP(this.props.currentUser.id, formData);
+        //check user location after updating if they are in a server broadcast a signal to rerender the server
+        this.props.changeUserPFP(this.props.currentUser.id, formData).then(() => {
+            App.StrifeCore.perform('transmit_to_other_channel', { currrentUserLocation: this.props.location.pathname })
+        });
 
     }
 
@@ -108,7 +108,9 @@ class EditUserPFP extends React.Component {
             }
         }
 
-        this.props.changeUserPFP(this.props.currentUser.id, formData);
+        this.props.changeUserPFP(this.props.currentUser.id, formData).then(()=>{
+            App.StrifeCore.perform('transmit_to_other_channel', { currrentUserLocation: this.props.location.pathname })
+        });
 
         this.setState({
             submit: true,
@@ -159,7 +161,7 @@ class EditUserPFP extends React.Component {
                                         {/* <img className="user-pfp" id="display-user-pfp" src={this.state.photo_url} alt={this.state.photo_url} /> */}
                                     </div>
 
-                                    <input type='file' accept=".jpg, .jpeg, .svg, .png, .gif" onChange={this.handleFileInput} />
+                                    <input type='file' accept=".jpg, .jpeg, .png, .gif" onChange={this.handleFileInput} />
                                 </div>
                             </div>
                         </div>
