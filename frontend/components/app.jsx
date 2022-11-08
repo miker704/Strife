@@ -15,6 +15,7 @@ import DeletedServerLoadingScreenContainer from './loading_screen/delete_server_
 import ExploreServersContainer from './server/server_search/server_search_container.js';
 import PROTECTED_DM_SERVER_CONTAINER from './dm_servers/dm_server_security/protect_dm_server_container.js';
 import PROTECTED_SERVER_CONTAINER from './server/server_security/protect_server_container.js';
+// import STRIFE_VOICE_CALL_API_CONTAINER from './voice_calls/voice_call_container.js';
 import _STRIFE_CORE_CONTAINER_ from './Core/CORE_CONTAINER.js';
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
             <ProtectedRoute  component={_STRIFE_CORE_CONTAINER_} ></ProtectedRoute>
             <ProtectedRoute path="/channels/:serverId/" component={ServerNavBarContainer} />
             <ProtectedRoute path="/channels/" component={UserNavContainer} />
+            {/* <ProtectedRoute exact path="/voice/" component={STRIFE_VOICE_CALL_API_CONTAINER} /> */}
 
             <Switch>
                 <ProtectedRoute path="/channels/@me" component={DMNavBarContainer} />
