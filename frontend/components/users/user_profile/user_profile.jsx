@@ -136,7 +136,7 @@ class UserProfile extends React.Component {
       // document.getElementById("enable-two-auth-button"); // no disable as this feature is diabled already for all users
       document.getElementById("disable-account-button").disabled = true;
       document.getElementById("delete-account-button").disabled = true;
-
+      document.getElementById("edit-user-banner-button").disabled = true;
     }
     else {
       this.setState({ demoUser: false });
@@ -148,6 +148,8 @@ class UserProfile extends React.Component {
       // document.getElementById("remove-phone-button").disabled = false;
       document.getElementById("disable-account-button").disabled = false;
       document.getElementById("delete-account-button").disabled = false;
+      document.getElementById("edit-user-banner-button").disabled = false;
+
       return;
     }
 
@@ -801,7 +803,10 @@ class UserProfile extends React.Component {
                     <div className={`account-card-banner ${this.props.currentUser.banner === undefined ?
                       `color-${this.props.currentUser.color_tag}` : ``}`}
                       style={{ backgroundImage: `${this.props.currentUser.banner === undefined ? `none` : `url(${this.props.currentUser.banner})`}` }}>
-                      <div className="upc-strife-nitro-wrapper" title="Upload your own personalized banner and more with $TR!F3 N!TR0!">
+                      <div className="upc-strife-nitro-wrapper" 
+                      title="Upload your own personalized banner and more with $TR!F3 N!TR0!"
+                      // title={`${this.props.currentUser.banner === undefined ? "Upload your own personalized banner and more with $TR!F3 N!TR0!" : "Change Banner"}`}
+                      >
                         <button type="button" onClick={() => this.openModal("changeBanner")} id="edit-user-banner-button" className="edit-user-banner-button">
                           <div className="upc-strife-nitro-badge">
                             <svg className="upc-strife-nitro-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
