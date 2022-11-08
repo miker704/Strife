@@ -6,7 +6,7 @@ import { selectAllFriends } from '../../../utils/selectors_api_util';
 import { requestFriendships, removeFriendshipErrors , requestAllFriendships} from '../../../actions/friendship_actions'; 
 import { closeModal } from '../../../actions/modal_actions';
 import WEBRTCDMCallModal from './dm_call';
-
+import STRIFE_WEB_RTC_DM_CALL from './dm_call2';
 
 
 const mSTP = (state,ownProps) => {
@@ -38,5 +38,6 @@ const mDTP = (dispatch) => {
 }
 
 
-const WEBRTCDMCallModalContainer = withRouter(connect(mSTP, mDTP)(WEBRTCDMCallModal));
+const WEBRTCDMCallModalContainer = withRouter(connect(mSTP, mDTP)(STRIFE_WEB_RTC_DM_CALL));
+// const WEBRTCDMCallModalContainer = withRouter(connect(mSTP, mDTP)(WEBRTCDMCallModal));
 export default WEBRTCDMCallModalContainer;
