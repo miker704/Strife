@@ -8,7 +8,8 @@ import DmNavBar from "./dm_nav_bar";
 const mSTP = (state, ownProps) => {
 
     return {
-        currentUser: state.entities.users[state.session.id],
+        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.currentUser,
         currentUserId: state.session.id,
         dmServers: Object.values(state.entities.dmServers),
         dmServerId: ownProps.match.params.dmServerId,
