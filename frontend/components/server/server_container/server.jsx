@@ -24,6 +24,22 @@ class Server extends React.Component {
         this.props.removeChannelErrors();
     }
 
+    // componentDidUpdate (prevProps) {
+
+        // if(Object.values(prevProps.server.users).length !== Object.values(this.props.server.users).length){
+        //     fet
+        // }
+
+        // for(let userProp in prevProps.users){
+        //     if()
+        // }
+
+        // for(let user in this.props.server.users){
+
+        // }
+
+
+    // }
 
     setHideMembersList () {
         this.setState({ hideMembersList: !this.state.hideMembersList });
@@ -33,17 +49,16 @@ class Server extends React.Component {
 
     render () {
 
-
-
+        // console.log("server props : ", this.props);
         //if server is rendered and fetch render it else return null FAIL SAFE for refresh or odd application state 
         if (this.props.server) {
-    
 
             return (
 
                 <div className="server-main-base">
                     <ChannelNavBarContainer server={this.props.server} currentChannelId={this.props.currentChannelId}
-                        serverId={this.props.serverId} channels={this.props.channels}
+                        serverId={this.props.serverId} channels={this.props.channels} isViz={this.setHideMembersList}
+                        hideMembersList={this.state.hideMembersList}
                     />
                     <div className="server-base">
 
@@ -55,8 +70,10 @@ class Server extends React.Component {
                             currentChannel={this.props.currentChannel}
                         />
                         <div className="server-content">
-                            <ServerChatRoomContainer/>
-                            {!this.state.hideMembersList && <ServerMembersListContainer />}
+                            <ServerChatRoomContainer currentChannel={this.props.currentChannel} />
+                            {!this.state.hideMembersList && <ServerMembersListContainer
+                                serverMembers={Object.values(this.props.server.users)}
+                                users={this.props.users} />}
                         </div>
                     </div>
                 </div>
