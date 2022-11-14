@@ -1,8 +1,10 @@
 class Api::ChannelsController < ApplicationController
-    skip_before_action :verify_authenticity_token
+    # skip_before_action :verify_authenticity_token
 
     def show
+        @current_user = current_user
         @channel = Channel.find_by(id: params[:id])
+        StrifeServer.active_users(@channel)<< @current_user
         render :show
     end
 
