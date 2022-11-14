@@ -92,7 +92,7 @@ const DmServerMemberList = ({
 
 
                 showPopup && <ServerUserOptionsModalContainer
-                    user={currentUser} member={selectedMember}
+                    user={currentUser} member={selectedMember} memberId={selectedMember.id}
                     top={popupTop} setShowPopup={setShowPopup}
                     DmServerOwner={DmServerOwner} DmServerId={dmServer.id}
                     serverType={'DM_SERVER'} dmServerMembers={dmServerMembers} />
