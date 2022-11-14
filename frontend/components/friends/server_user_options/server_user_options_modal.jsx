@@ -8,7 +8,8 @@ const ServerUserOptionsModal = ({
     top,
     setShowPopup,
     currentUser,
-    member,
+    // member,
+    memberId,
     DmServerOwner,
     ServerOwner,
     ServerID,
@@ -50,6 +51,57 @@ const ServerUserOptionsModal = ({
     reSyncCurrentUser,
     serverType
 }) => {
+
+    const [memberStatus, setMemberStatus] = useState([]);
+    // const [currMember, setMemberData] = useState({});
+    const [member, setMemberData] = useState({});
+    // console.log("member b4: ", member);
+    // console.log('memberId: ', memberId);
+
+
+    useEffect(() => {
+
+        fetchUser(memberId).then((action) => {
+            const newfriend = action.user
+            // member = Object.assign({}, action.user)
+            setMemberData(newfriend);
+            setMemberStatus(newfriend);
+
+
+        })
+
+
+        return function cleanup () {
+            if (errors.length > 0) {
+                removeFriendshipErrors();
+            }
+            if (dmServerErrors.length > 0) {
+                removeDmServerErrors();
+            }
+            if (serverErrors.length > 0) {
+                removeServerErrors();
+            }
+            if (channelErrors.length > 0) {
+                removeChannelErrors();
+            }
+            // requestFriendships();
+            // fetchDmServer(dmServerId)
+            // requestFriendships();
+
+
+            // if(serverType === "SERVER"){
+            //     fetchServer();
+            //     fetchChannel();
+            // }
+        }
+
+    }, []);
+
+
+    // console.log("member after outside: ", member);
+
+
+
     let USER_PFP = user_Default_PFP;
     let rendered_PFP = member.photo === undefined ?
         (<div className={`user-avatar-img-svg-render color-${member.color_tag}`}>
@@ -83,7 +135,8 @@ const ServerUserOptionsModal = ({
                         <div className="user-mini-upc">
                             <div className="upc-header-wrapper">
                                 <div className="upc-header-normal">
-                                    <div className={`upc-banner color-${member.color_tag}`}>
+                                    <div className={`upc-banner ${currentUser.banner === undefined ? `color-${currentUser.color_tag}` : ``}`}
+                                        style={{ backgroundImage: `${currentUser.banner === undefined ? `none` : `url(${currentUser.banner})`}` }}>
                                         <div className="upc-strife-nitro-wrapper" title="Upload your own personalized banner and more with $TR!F3 N!TR0!">
                                             <div className="upc-strife-nitro-badge">
                                                 <svg className="upc-strife-nitro-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
@@ -115,11 +168,11 @@ const ServerUserOptionsModal = ({
                                     <div className="upc-pfp-icon-wrapper">
                                         <div className="upc-pfp-icon-hover">
                                             <div
-                                                className={`${member.photo === undefined ?
-                                                    `upc-pfp-icon-hover-wrapper color-${member.color_tag}` :
+                                                className={`${currentUser.photo === undefined ?
+                                                    `upc-pfp-icon-hover-wrapper color-${currentUser.color_tag}` :
                                                     `upc-pfp-icon-hover-wrapper`}`}>
                                                 {rendered_PFP}
-                                                <div className={`${member.online ? `circle-2` : `circle-0`}`} />
+                                                <div className={`${currentUser.online ? `circle-2` : `circle-0`}`} />
                                             </div>
                                         </div>
                                     </div>
@@ -128,8 +181,8 @@ const ServerUserOptionsModal = ({
                             <div className="upc-header-top">
                                 <div className="upc-header-text">
                                     <div className="upc-header-text-wrapper">
-                                        <span className="upc-username">{member.username}</span>
-                                        <span className="upc-strife-tag">#{member.strife_id_tag}</span>
+                                        <span className="upc-username">{currentUser.username}</span>
+                                        <span className="upc-strife-tag">#{currentUser.strife_id_tag}</span>
                                         {if_Bot_tag}
                                     </div>
                                 </div>
@@ -147,41 +200,7 @@ const ServerUserOptionsModal = ({
         )
     }
 
-    const [memberStatus, setMemberStatus] = useState([])
 
-    useEffect(() => {
-
-        fetchUser(member.id).then((action) => {
-            const newfriend = action.user
-            setMemberStatus(newfriend);
-
-        })
-
-        return function cleanup () {
-            if (errors.length > 0) {
-                removeFriendshipErrors();
-            }
-            if (dmServerErrors.length > 0) {
-                removeDmServerErrors();
-            }
-            if (serverErrors.length > 0) {
-                removeServerErrors();
-            }
-            if (channelErrors.length > 0) {
-                removeChannelErrors();
-            }
-            // requestFriendships();
-            // fetchDmServer(dmServerId)
-            // requestFriendships();
-
-
-            // if(serverType === "SERVER"){
-            //     fetchServer();
-            //     fetchChannel();
-            // }
-        }
-
-    }, []);
 
 
     const handleDmMessage = (e) => {
@@ -354,6 +373,7 @@ const ServerUserOptionsModal = ({
         else {
 
             kickUserfromGroupChat(member.id, subState).then(() => {
+                App.StrifeCore.perform('kick_User_From_DmServer', { dm_member_id: member.id, dm_server_id: DmServerId });
                 fetchDmServer(DmServerId);
                 setShowPopup(false);
             });
@@ -369,6 +389,7 @@ const ServerUserOptionsModal = ({
         deleteServerMembership(member.id, subState).then(() => {
             // fetchChannel(channelId);
             // fetchServer(serverId);
+            App.StrifeCore.perform('_ASYNC_Ban_User_From_Server_', subState);
             setShowPopup(false);
         })
         return;
@@ -515,6 +536,7 @@ const ServerUserOptionsModal = ({
 
     }
 
+
     return (
 
         <div className="user-profile-card-layer-container">
@@ -524,7 +546,8 @@ const ServerUserOptionsModal = ({
                         <div className="upc-header-wrapper">
                             <div className="upc-header-normal">
 
-                                <div className={`upc-banner color-${member.color_tag}`}>
+                                <div className={`upc-banner ${member.banner === undefined ? `color-${member.color_tag}` : ``}`}
+                                    style={{ backgroundImage: `${member.banner === undefined ? `none` : `url(${member.banner})`}` }} >
                                     <div className="upc-strife-nitro-wrapper" title="Upload your own personalized banner and more with Strife Nitro!">
                                         <div className="upc-strife-nitro-badge">
                                             <svg className="upc-strife-nitro-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
