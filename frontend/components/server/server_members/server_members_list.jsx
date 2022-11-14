@@ -3,18 +3,30 @@ import ReactTooltip from "react-tooltip";
 import { useEffect, useState, useRef } from "react";
 import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
 import ServerUserOptionsModalContainer from "../../friends/server_user_options/server_user_options_modal_container";
-
+import _ from 'lodash'
 
 const ServerMembersList = ({
     currentUser,
     serverId,
     errors,
     server,
+    serverMembers,
     fetchServer,
     removeServerErrors,
     deleteServerMembership,
+    users
 
 }) => {
+
+
+    // useEffect(()=>{
+    //     if(_.isEqual(users,server.users) === false){
+    //         console.log("not equeal")
+    //         fetchServer(serverId)
+    //     }
+    // },[server.users,users])
+
+
 
     const [showPopup, setShowPopup] = useState(false);
     const [popupTop, setPopupTop] = useState(0);
@@ -31,23 +43,23 @@ const ServerMembersList = ({
 
         let currTop = e.currentTarget.getBoundingClientRect().top
 
-        if(currTop > 640){
-            currTop/=3;
+        if (currTop > 640) {
+            currTop /= 3;
             setPopupTop(currTop);
         }
-        else if(currTop >101 && currTop < 639){
-            currTop/=2;
+        else if (currTop > 101 && currTop < 639) {
+            currTop /= 2;
             setPopupTop(currTop);
         }
 
-        else if(currTop <=100){
-            setPopupTop(currTop*0.095);
+        else if (currTop <= 100) {
+            setPopupTop(currTop * 0.095);
         }
         else {
             setPopupTop(currTop);
         }
 
-        
+
         setShowPopup(!showPopup);
     }
 
@@ -67,6 +79,7 @@ const ServerMembersList = ({
     }
 
     const serverMembersArray = Object.values(server.users);
+    // const serverMembersArray = Object.values(currentServerMembers);
     const ServerOwner = server.server_owner_id;
     const offlineServerMembers = sortOfflineMembers(serverMembersArray);
     const onlineServerMembers = sortOnlineMembers(serverMembersArray);
@@ -75,9 +88,9 @@ const ServerMembersList = ({
         <div className="server-members-index-container-wrapper">
             {
                 showPopup && <ServerUserOptionsModalContainer
-                    serverType={'SERVER'} member={selectedMember}
+                    serverType={'SERVER'} member={selectedMember} memberId={selectedMember.id}
                     ServerOwner={ServerOwner}
-                    top={popupTop} setShowPopup={setShowPopup} ServerID= {server.id} />
+                    top={popupTop} setShowPopup={setShowPopup} ServerID={server.id} />
 
             }
             <div className="server-members-index-container">
