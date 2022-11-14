@@ -36,12 +36,23 @@ const ChannelNavBar = (props) => {
         setShowPopUp(!showPopUp);
     }
 
-
+    // const checkIsViz = (channelType) =>{
+    //     console.log("izviz :", props.hideMembersList)
+    //     if(channelType === 1 ){
+    //         if(props.hideMembersList === true){
+    //             props.isViz();
+    //         }
+    //     }
+    //     else if (channelType === 2 && props.hideMembersList === false){
+    //         props.isViz();
+    //     }
+    // }
 
     const mapTextChannel = props.channels.map((channel) => {
         if (channel.channel_type === 1) {
             return (
                 <li className="default-channel-item" key={channel.id}>
+                {/* <li className="default-channel-item" key={channel.id} onClick={() => checkIsViz(channel.channel_type)}> */}
                     <div className="def-channel-wrap">
                         <div className="def-channel-content">
                             <Link to={`/channels/${props.server.id}/${channel.id}`} className="def-channel-a">
@@ -142,6 +153,7 @@ const ChannelNavBar = (props) => {
         if (channel.channel_type === 2) {
             return (
                 <li className="default-channel-item" key={channel.id}>
+                {/* <li className="default-channel-item" key={channel.id} onClick={() => checkIsViz(channel.channel_type)}> */}
                     <div className="def-channel-wrap">
                         <div className="def-channel-content" >
                             {/* <Link to={`/channels/${props.server.id}/${channel.id}`} className="def-channel-a"> */}
