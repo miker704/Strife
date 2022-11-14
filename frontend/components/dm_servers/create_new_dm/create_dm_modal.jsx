@@ -112,7 +112,7 @@ const CreateDmModal = ({
                 history.push(`/channels/@me/${newDmServer.id}`);
             })
         }).then(() => {
-
+            App.StrifeCore.perform('transmit_New_DmServer', {newDmServer})
             setShowPopUp(false)
         })
 
