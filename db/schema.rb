@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_16_155954) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_11_16_170337) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,7 +19,7 @@ ActiveRecord::Schema.define(version: 2022_11_16_155954) do
     t.string "record_type", null: false
     t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
-    t.datetime "created_at", null: false
+    t.datetime "created_at", precision: nil, null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
@@ -31,8 +30,8 @@ ActiveRecord::Schema.define(version: 2022_11_16_155954) do
     t.string "content_type"
     t.text "metadata"
     t.bigint "byte_size", null: false
-    t.string "checksum", null: false
-    t.datetime "created_at", null: false
+    t.string "checksum"
+    t.datetime "created_at", precision: nil, null: false
     t.string "service_name", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
@@ -46,8 +45,8 @@ ActiveRecord::Schema.define(version: 2022_11_16_155954) do
   create_table "channel_memberships", force: :cascade do |t|
     t.integer "channel_id", null: false
     t.integer "receiver_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["channel_id", "receiver_id"], name: "index_channel_memberships_on_channel_id_and_receiver_id", unique: true
   end
 
@@ -55,8 +54,8 @@ ActiveRecord::Schema.define(version: 2022_11_16_155954) do
     t.integer "server_id", null: false
     t.string "channel_name", null: false
     t.integer "channel_type", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["channel_name", "server_id"], name: "index_channels_on_channel_name_and_server_id", unique: true
     t.index ["server_id"], name: "index_channels_on_server_id"
   end
@@ -64,8 +63,8 @@ ActiveRecord::Schema.define(version: 2022_11_16_155954) do
   create_table "dm_members", force: :cascade do |t|
     t.integer "dm_server_id", null: false
     t.integer "dm_member_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["dm_member_id"], name: "index_dm_members_on_dm_member_id"
     t.index ["dm_server_id", "dm_member_id"], name: "index_dm_members_on_dm_server_id_and_dm_member_id", unique: true
     t.index ["dm_server_id"], name: "index_dm_members_on_dm_server_id"
@@ -76,8 +75,8 @@ ActiveRecord::Schema.define(version: 2022_11_16_155954) do
     t.integer "sender_id", null: false
     t.integer "parent_message_id"
     t.string "body", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["dm_server_id"], name: "index_dm_messages_on_dm_server_id"
     t.index ["parent_message_id"], name: "index_dm_messages_on_parent_message_id"
     t.index ["sender_id"], name: "index_dm_messages_on_sender_id"
@@ -86,8 +85,8 @@ ActiveRecord::Schema.define(version: 2022_11_16_155954) do
   create_table "dm_servers", force: :cascade do |t|
     t.integer "owner_id", null: false
     t.string "dm_server_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["owner_id"], name: "index_dm_servers_on_owner_id"
   end
 
@@ -95,8 +94,8 @@ ActiveRecord::Schema.define(version: 2022_11_16_155954) do
     t.integer "user_id", null: false
     t.integer "friend_id", null: false
     t.integer "friend_request_status", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["user_id", "friend_id"], name: "index_friendships_on_user_id_and_friend_id", unique: true
     t.index ["user_id", "friend_request_status"], name: "index_friendships_on_user_id_and_friend_request_status"
   end
@@ -107,8 +106,8 @@ ActiveRecord::Schema.define(version: 2022_11_16_155954) do
     t.integer "parent_message_id"
     t.integer "replier_id"
     t.text "body", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["author_id"], name: "index_messages_on_author_id"
     t.index ["channel_id"], name: "index_messages_on_channel_id"
     t.index ["parent_message_id"], name: "index_messages_on_parent_message_id"
@@ -117,8 +116,8 @@ ActiveRecord::Schema.define(version: 2022_11_16_155954) do
   create_table "server_memberships", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "server_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["server_id", "user_id"], name: "index_server_memberships_on_server_id_and_user_id", unique: true
     t.index ["server_id"], name: "index_server_memberships_on_server_id"
     t.index ["user_id"], name: "index_server_memberships_on_user_id"
@@ -130,8 +129,8 @@ ActiveRecord::Schema.define(version: 2022_11_16_155954) do
     t.boolean "public", null: false
     t.string "server_icon"
     t.string "invite_code"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["invite_code"], name: "index_servers_on_invite_code", unique: true
     t.index ["server_name"], name: "index_servers_on_server_name"
     t.index ["server_owner_id", "server_name"], name: "index_servers_on_server_owner_id_and_server_name", unique: true
@@ -149,8 +148,8 @@ ActiveRecord::Schema.define(version: 2022_11_16_155954) do
     t.integer "color_tag", null: false
     t.date "birthday", null: false
     t.string "phone_number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
     t.index ["username", "strife_id_tag"], name: "index_users_on_username_and_strife_id_tag", unique: true
