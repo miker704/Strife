@@ -2,10 +2,10 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
-gem 'net-smtp', require: false
+# gem 'net-smtp', require: false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.7'
+gem 'rails', '~> 7.0.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -29,7 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem "aws-sdk-s3"
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem "sprockets-rails"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # Reduces boot times through caching; required in config/boot.rb
