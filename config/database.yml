@@ -80,7 +80,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   # database: Strife_production
   # username: Strife
   # password: <%= ENV['STRIFE_DATABASE_PASSWORD'] %>
-  url: <%= ENV['DATABASE_URL'] %>
