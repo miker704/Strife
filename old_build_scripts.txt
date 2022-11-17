@@ -1,0 +1,7 @@
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack",
+    "start": "webpack --mode=development --watch",
+    "build": "webpack --mode=production",
+    "buildrender": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
