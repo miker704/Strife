@@ -12,7 +12,7 @@ module Strife
     config.load_defaults 7.0
     config.time_zone = 'Eastern Time (US & Canada)'
     config.active_record.default_timezone = :local
-    config.railties_order = [:all, :main_app]
+    # config.railties_order = [:all, :main_app]
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
