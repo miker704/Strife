@@ -38,7 +38,7 @@ class EditUserBanner extends React.Component {
         let formData = new FormData();
         formData.append('user[remove_UB]', this.state.remove_UB);
         this.props.changeUserBanner(this.props.currentUser.id, formData);
-
+       
     }
 
     fileProcessingErrors () {
@@ -52,11 +52,19 @@ class EditUserBanner extends React.Component {
     handleFileInput (e) {
         const fileReader = new FileReader();
         const file = e.currentTarget.files[0];
+     
         fileReader.onloadend = () => {
             this.setState({
                 banner_url: fileReader.result,
                 banner: file
             });
+
+            if (this.props.currentUser.banner !== undefined) {
+                if (this.state.banner_url !== this.props.currentUser.banner) {
+                    document.getElementById('rm-banner-button').classList.add('is-hidden');
+                    document.getElementById('save-banner-button').classList.remove('is-hidden');
+                }
+            }
         }
 
         if (file) {
@@ -141,7 +149,10 @@ class EditUserBanner extends React.Component {
                                             alt={'defaultUserPFP'} />
                                     </div>
 
+                                    {/* <input type='file' accept=".jpg, .jpeg, .png, .gif" onChange={this.handleFileInput} disabled={this.props.currentUser.banner === undefined ? false : true} />
+                                     */}
                                     <input type='file' accept=".jpg, .jpeg, .png, .gif" onChange={this.handleFileInput} />
+
                                 </div>
                             </div>
                         </div>
@@ -149,11 +160,11 @@ class EditUserBanner extends React.Component {
                         <div className="username-edit-sep"></div>
                     </div>
                     <div className="username-edit-button-sec">
-                        <button type="submit"
+                        <button type="submit" id='save-banner-button'
                             className={`username-edit-submit-button ${this.props.currentUser.banner === undefined ? `` : `is-hidden`}`}>
                             Save
                         </button>
-                        <button type="button" onClick={(e) => this.handleRemoveBannerSubmission(e)}
+                        <button id='rm-banner-button' type="button" onClick={(e) => this.handleRemoveBannerSubmission(e)}
                             className={`username-edit-submit-button ${this.props.currentUser.banner !== undefined ? `` : `is-hidden`}`}>
                             Remove
                         </button>
