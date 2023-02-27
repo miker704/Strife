@@ -56,11 +56,23 @@ class EditUserPFP extends React.Component {
     handleFileInput (e) {
         const fileReader = new FileReader();
         const file = e.currentTarget.files[0];
+
         fileReader.onloadend = () => {
             this.setState({
                 photo_url: fileReader.result,
                 photo: file
             });
+
+
+            if (this.props.currentUser.photo !== undefined) {
+
+                if (this.state.photo_url !== this.props.currentUser.photo) {
+                    document.getElementById('rm-pfp').classList.add('is-hidden');
+                    document.getElementById('save-pfp').classList.remove('is-hidden');
+                }
+
+            }
+
         }
 
         if (file) {
@@ -108,7 +120,7 @@ class EditUserPFP extends React.Component {
             }
         }
 
-        this.props.changeUserPFP(this.props.currentUser.id, formData).then(()=>{
+        this.props.changeUserPFP(this.props.currentUser.id, formData).then(() => {
             App.StrifeCore.perform('transmit_to_other_channel', { currrentUserLocation: this.props.location.pathname })
         });
 
@@ -169,11 +181,11 @@ class EditUserPFP extends React.Component {
                         <div className="username-edit-sep"></div>
                     </div>
                     <div className="username-edit-button-sec">
-                        <button type="submit"
+                        <button type="submit" id='save-pfp'
                             className={`username-edit-submit-button ${this.props.currentUser.photo === undefined ? `` : `is-hidden`}`}>
                             Save
                         </button>
-                        <button type="button" onClick={(e) => this.handleRemovePFPSubmission(e)}
+                        <button type="button" id='rm-pfp' onClick={(e) => this.handleRemovePFPSubmission(e)}
                             className={`username-edit-submit-button ${this.props.currentUser.photo !== undefined ? `` : `is-hidden`}`}>
                             Remove
                         </button>
