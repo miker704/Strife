@@ -9,20 +9,22 @@ import { removeSessionErrors, updateUserInfo, changeUserPFP } from "../../../act
 
 const mSTP = (state) => {
     return {
-        currentUser: state.entities.users[state.session.id],
+        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.currentUser,
+
         errors: state.errors.session
     }
 };
 
 const mDTP = (dispatch) => {
     return {
-        changeUserPFP: (userId,formData) => dispatch(changeUserPFP(userId,formData)),
+        changeUserPFP: (userId, formData) => dispatch(changeUserPFP(userId, formData)),
         // changeUserPFP: (user) => dispatch(changeUserPFP(user)),
-        updateUserInfo : (user) => {dispatch(updateUserInfo(user))},
+        updateUserInfo: (user) => { dispatch(updateUserInfo(user)) },
         openModal: (modal) => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal()),
         removeSessionErrors: () => dispatch(removeSessionErrors()),
-        handleESC : (e) => handleKeyUp(e)
+        handleESC: (e) => handleKeyUp(e)
     }
 };
 
