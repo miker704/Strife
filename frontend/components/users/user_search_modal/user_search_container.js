@@ -6,7 +6,8 @@ import UserSearchModal from "./user_search_modal";
 
 const mSTP = (state,ownProps) => {
   return{
-    currentUser: state.entities.users[state.session.id],
+    // currentUser: state.entities.users[state.session.id],
+    currentUser: state.currentUser,
     searchedUsers: state.entities.userSearch,
     errors: state.errors.session,
     //current server
