@@ -1,3 +1,103 @@
+# PATCH NOTES
+
+## PATCH NOTES v3.00 - 2/24/2023 - 3/3/2023
+
+## Major Changes and Fixes
+
+    - Major overall to the apps routing system introduces a '/$' url in front of most protected routes leaving
+      auth routes to login, register, and splash (home) pages to remain the default '/', modal pages still
+      use the default '/' this is done due to the fact the the new CORE Async System to work properly and 
+      not interfere with the default auth routes. The CORE should start running upon signing in and remain doing 
+      so no matter what regarless of route changes and page refreshes until a user logs out.
+    - Fixed Problem where CORE Cable interferes with the auth pages and stops the app when a user is signed out
+      from visiting the splash (home), and register page. the core cable uses the same route url but though a protected route
+      instead of an auth route checks if the user is signed in before running but the protected route redirects to the login page
+      if the user is not signed in and since this occurs at the lowest route level it prevents the home/splash page from 
+      ever being accessed and redirects back to the login page even when physically adding thwe home url in the search bar and clicking
+      enter still redirects to the login page due to the protected route over riding the auth routes due to the core cable being
+      at the same level as the modal and auth routes. Visiting the register page and refreshing the page redirects back to the login 
+      page. This addressed by introducing another low level route.
+      The lowest level route is `/` which is reserved for auth routes and the model route
+      the second lowest route is '/$' which is the dedicated route for the CORE to run and start running all routes
+      for all routes starting with '/$' 
+      this fix allows for all auth routes to be visited login, register, and splash. and refreshing on either splash or register
+      does not redirect to login and remains on the same page as normal.
+      this seperation of routes allows more elegant and conflictless flow of the CORE and the rest of the apps functionality
+      '/' for modal and all auth routes
+      '/$' this route is available and accessed upon logging in and starts the CORE system to start running and prevents previous problems
+      caused by placing the start of this system else where which caused backend routing problems and failed system starts until a refresh of the 
+      page is done after being signed in.
+      '/$/all_other_protected_routes' all other protected routes start with the '/$' url and the core cable of the app runs being able to touch
+      all components if needed.
+    
+
+
+### Glitches and bugs Addressed
+
+    - Fixed redux warning when a user deletes their $TR!F3 account:
+        - Addressed by Rails backend controller returning a render of show user when user no
+          longer exists. Fixed by removing the render show
+    
+    - Fixed an Issue where if a user logs out and without refreshing the page sign back in 
+      and clicking on a server immediately causes a crash due to 
+      a scenerio that causes the SystemUtils redux state remain empty of the $TR!F3 bots assets
+      normally signing in this state becomes filled but when signing out clears this state and it remains
+      cleared when logging in again without a page refresh despite serveral diifferent redux calls to initiate a rewrite to state 
+      for systemUtils it returns the default state of empty even though the $TR!F3 bots assests are hardcoded and passed as 
+      params to the reducer.
+        - Fixed by introducing a dedicated redux call to rewrite the state that is dispatched when signing in and visting the loading 
+          screen. This works in combination with the other redux calls to write to the systemutil state this dedicate redux action
+          ensures that that state in overwritten
+        - hard coded systemUtils into preloaded state, testing if just a redux call on signin gives the same effect before removing it
+          from preloaded state.
+    
+    - Fixed an issue with uploading and previewing Profile banners:
+      - Issue is when a user uploads a banner and saves it changing the banner again to preview the new banner the option remove remains
+        which when click removes the newly loaded image that is being preview and detaches the currently saved banner on the users
+        account. attempting to select the image again without closing the modal to preview it upon loading does not render the image 
+        to be preview and clears the banner file and url from the state and prevents it from being rendered to be preview regardless 
+        of mutliple attempts to reselect the file, click on other files also gives a preview of gray screen. the option to save the image does 
+        appear however and the image can be saved. The normal changing of a users banner that has previously upload a banner of their
+        own is done by removing the old banner and selecting a new one and saving it. or selecting the banner clicking remove and selecting 
+        it again inorder to obtain the save option to then upload it and save it to the account.
+      - Fixed by introducing a proper comparison of checking if the user does not have a custom banner to begin with if they do have one
+        check the banner save on their account and compare it to the new banner they are previewing if the files dont match 
+        it removes the option to remove the banner and switch to the save option which then when click removes the old banner and saves the newly
+        loaded one. The remove banner option renders by default if the user has uploaded their own banner already click it removes the image
+        as normal and the users default banner will be used (based on users color tags).
+    
+    - Fixed an issue with uploading and previewing Profile Avatars (problems and fixes are the same as the profile banners):
+      - Issue is when a user uploads a avatar and saves it changing the avatar again to preview the new avatar the option remove remains
+        which when click removes the newly loaded image that is being preview and detaches the currently saved avatar on the users
+        account. attempting to select the image again without closing the modal to preview it upon loading does not render the image 
+        to be preview and clears the avatar file and url from the state and prevents it from being rendered to be preview regardless 
+        of mutliple attempts to reselect the file, click on other files also gives a preview of gray screen. the option to save the image does 
+        appear however and the image can be saved. The normal changing of a users avatar that has previously upload a avatar of their
+        own is done by removing the old avatar and selecting a new one and saving it. or selecting the avatar clicking remove and selecting 
+        it again inorder to obtain the save option to then upload it and save it to the account.
+      - Fixed by introducing a proper comparison of checking if the user does not have a custom avatar to begin with if they do have one
+        check the avatar save on their account and compare it to the new avatar they are previewing if the files dont match 
+        it removes the option to remove the avatar and switch to the save option which then when click removes the old avatar and saves the newly
+        loaded one. The remove avatar option renders by default if the user has uploaded their own avatar already click it removes the image
+        as normal upon removal of the old avatar the users default avatar will be used (based on the users color tags).
+
+    - Fixed an issue where if a user is attempting to disable or delete their account but owns servers, if a user deletes their servers
+      visitng the profile page and attempting to intiate the disable or delete account process the notification that they own servers still
+      appears even though they clearly no longer own servers. this issue happens if there is no page refresh and the user immediately goes to
+      the profile page to start disabling or deleting their account after deleting their last server.
+      - Issue caused by redux not resyncing the current users ownServers to be up to date causing the last server that was deleted to remain
+        in the redux state till a page refresh or some redux action allows the resync of the current users data to become up to date and
+        allow the user to delete their account.
+      - Fixed by allowing a dispatch call to rsync the currentuser when clicking the profile page/ clicking on disable or delete account. 
+        (in testing)
+
+### UI and Cosmetic Fixes
+
+    - UI Fixes (Cosmetic):
+      - Changed the profile pages colors to a darker shade of gray to match that of discords properly.
+
+---
+
 New Patch - 10/3/2022 - 10/7/2022
     - ADDED WEBCALLS NOW WORK USING WEBRTC AND ACTION CABLE ICE CANIDATE POOL IS RESTRICTED TO
     1 ON 1 CALLS ONLY FOR NOW
