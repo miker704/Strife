@@ -2,6 +2,10 @@
 
 ## PATCH NOTES v3.00 - 2/24/2023 - 3/3/2023
 
+## Intera Changes between 10/7/2022 - 11/17/2023
+
+    - $TR!F3 has moved homes, Transitioned to Render.com from Heroku. 
+
 ## Major Changes and Fixes
 
     - Major overall to the apps routing system introduces a '/$' url in front of most protected routes leaving
@@ -29,6 +33,8 @@
       page is done after being signed in.
       '/$/all_other_protected_routes' all other protected routes start with the '/$' url and the core cable of the app runs being able to touch
       all components if needed.
+      The CORE API has found its proper home to be mounted in the app. More details disscussing on what this system does and  how it works will 
+      be explained in the future as development of its full intergration has been reached the half way point.
 
 ### Glitches and bugs Addressed
 
@@ -127,7 +133,7 @@ New Patch - 10/3/2022 - 10/7/2022
      , by referring to the members of said server and match the author id of the message to a server member allows to use the member state of the server(already provided data) to help render the message without sending a small state with that message and induce uncessary querying with that message this approach is now used with dmmessages if a user is removed the generic bot pic will replace there pfp and the attached message user name will be provided.
     - fixed deleting and editing of dmMessages to go along with this new change
 
-    - the result of this chnage has speed up load times signifcantly on refresh on homepage, signing in, moving between dmservers, and 
+    - the result of this change has speed up load times signifcantly on refresh on homepage, signing in, moving between dmservers, and 
     participating in dmservers, messageing in dmservers, removal and adding of members editing and deleting message the rerendering of the dmserver 
     due to these actions and others that invoke it while in converstation the speed of the rerender is speed up massivley due to the 
     massively reduce data beign returned with each dmmessage and using already available resources to build the dmmessage to render instead of bringing 
@@ -148,7 +154,7 @@ New Patch - 10/3/2022 - 10/7/2022
     - Future change - > app will be updated to use more recent version of ruby and rails and will be moving to render.com
 
 
-    //CORE API
+    //CORE API (Arrival TBA currently in alpha state)
     -when inviting someone to a dmServer if said member that was invited is online and using the app they will receive a dispatch to obtain the 
     new dmserver  live without refreshing or force updating by switching between certain sections of the app
     - removing a member from a dmServer when they are not in said dmServer does not a remove it for that user now it removes it live for that user
@@ -158,14 +164,14 @@ New Patch - 10/3/2022 - 10/7/2022
     - removing a member from a Server when they are not in said dmServer does not a remove it for that user now it removes it live for that user
     if they are online. this is also added insurance to ensure a boot if they are in the server to begin with. 
 
-Incoming Patches ~ 10/10/2022
+Incoming Patches ~ 10/10/2022 - TBA (currently in progress)
     -dm server messages will be more optimized to align with the handling of messages in normal servers
     - server and dmserver messages - author names appear live on name change
     - unless they are removed from server
     -Friends activty page pushed to heroku
     - Testing full async features
     - multi cable restesting and intergration
-    - MASS INTEGRATION : core cable api
+    - MASS INTEGRATION : core cable api - (arrival date TBA currently in alpha state)
             -enables live server and dmserver fetching with out switch to home and another server to
              receive new servers
             - logs socket life time and algos to keep socket alive
