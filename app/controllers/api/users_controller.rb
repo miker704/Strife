@@ -114,7 +114,12 @@ class Api::UsersController < ApplicationController
             new_password = params[:user][:newPassword]
             confirm_new_password = params[:user][:confirmNewPassword]
             #now check to see if new password matches old password if so wave error
-            if new_password == old_password
+
+            if new_password.length < 8 || new_password.length > 72
+                @user.errors.add(:error,'new password must be 8 to 72 in length')
+                render json: @user.errors.full_messages, status: 401
+
+            elsif new_password == old_password
                 @user.errors.add(:error,'new password cannot match your previous password !')
             render json: @user.errors.full_messages, status: 401
 
@@ -189,8 +194,8 @@ class Api::UsersController < ApplicationController
     def destroy
      
         @user = User.find_by(id: params[:id])
-        @user.destroy;
-        render :show;
+        @user.destroy
+        # render :show
         
     end
 
