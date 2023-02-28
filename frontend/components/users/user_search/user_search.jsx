@@ -26,7 +26,7 @@ class UserSearch extends React.Component{
         let dmServerId = response.dmServer.id
         that.props.createDmMembership({dm_server_id: dmServerId, member_id: userId})
         that.props.createDmMembership({dm_server_id: dmServerId, member_id: that.props.currentUser.id})
-        that.props.history.push(`/channels/@me/${userId}/${dmServerId}`)
+        that.props.history.push(`/$/channels/@me/${userId}/${dmServerId}`)
       }
     )
   }
