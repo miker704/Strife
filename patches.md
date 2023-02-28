@@ -29,8 +29,6 @@
       page is done after being signed in.
       '/$/all_other_protected_routes' all other protected routes start with the '/$' url and the core cable of the app runs being able to touch
       all components if needed.
-    
-
 
 ### Glitches and bugs Addressed
 
@@ -102,8 +100,7 @@ New Patch - 10/3/2022 - 10/7/2022
     - ADDED WEBCALLS NOW WORK USING WEBRTC AND ACTION CABLE ICE CANIDATE POOL IS RESTRICTED TO
     1 ON 1 CALLS ONLY FOR NOW
     - FRIENDS ACTIVITY PAGE IS NOW INTEGRATED
-    - FRIENDS ACTIVITY PAGE WILL BE PUSHED TO HEROKU LIVE SOON, WEBRTC WEBCALLS ARE LIVE NOW ON HEROKU 
-
+    - FRIENDS ACTIVITY PAGE WILL BE PUSHED TO HEROKU LIVE SOON, WEBRTC WEBCALLS ARE LIVE NOW ON HEROKU
 
     - Friends Activity - styling is no longer using the same syntax belonging to the friends item list due to a 
      an unexpected result where the search bar would target not only the friends list but also the activty list it self breaking the
@@ -161,21 +158,20 @@ New Patch - 10/3/2022 - 10/7/2022
     - removing a member from a Server when they are not in said dmServer does not a remove it for that user now it removes it live for that user
     if they are online. this is also added insurance to ensure a boot if they are in the server to begin with. 
 
-
 Incoming Patches ~ 10/10/2022
     -dm server messages will be more optimized to align with the handling of messages in normal servers
     - server and dmserver messages - author names appear live on name change
-    - unless they are removed from server 
+    - unless they are removed from server
     -Friends activty page pushed to heroku
-    - Testing full async features 
+    - Testing full async features
     - multi cable restesting and intergration
-    - MASS INTEGRATION : core cable api 
-            -enables live server and dmserver fetching with out switch to home and another server to 
+    - MASS INTEGRATION : core cable api
+            -enables live server and dmserver fetching with out switch to home and another server to
              receive new servers
             - logs socket life time and algos to keep socket alive
             - allows for live updates to visually changes of the user  - name change , pfp changes,
             tracking the user and determine if there location is a server and update said server accordingly
-    - MASS INTEGRATION -> SAVEMYSTATE API -> 
+    - MASS INTEGRATION -> SAVEMYSTATE API ->
         -using lodash throttle subscribe to store to local storage, merge with preloaded state, middlewares
     - fixing bugs and missing features that dont appear on live resync in dmservers or servers
     - channel memberships will have a true use and automatically be created for each member in a server
@@ -185,14 +181,14 @@ Incoming Patches ~ 10/10/2022
     - creating a dmserver via create dm modal will live feed members to a refresh and receive the new server
     -MASS INTEGRATION -> reconverting server, and its channels to listen in on 2 cables again
      using core api to ensure active connections, transfer server responsiblities to the server cable
-     and allow channel cable to listen in on messages only -> this intergration was redacted and changed back serveral times do to complexity, bugs,connection sockets closing to early, and time restraints . 
-    -Voice calls 
+     and allow channel cable to listen in on messages only -> this intergration was redacted and changed back serveral times do to complexity, bugs,connection sockets closing to early, and time restraints .
+    -Voice calls
     - MASS INTEGRATION unlock voice channels for servers and
-    - intergrate a system for calls and video calls 
+    - intergrate a system for calls and video calls.
     -entering a voice channel disables members list going to a text channel enables it
     - MASS INTEGRATION Channel categories
     - mass intergration user banner - > multi file attachments, server -> banner -> multifil attachments
     - server and channel descriptions,
     -reply chaining for dmMessages and server messages
     - Server Redesign -> server genre -> descriptions server theme creation -> will be moved to the backend  
-    -message filter for both dmserver and servers
+    -message filter for both dmserver and servers.
