@@ -23,31 +23,31 @@ const App = () => {
     return (
         <div>
             <Route path='/' component={ModalManagerContainer}></Route>
-            <ProtectedRoute  component={_STRIFE_CORE_CONTAINER_} ></ProtectedRoute>
-            <ProtectedRoute path="/channels/:serverId/" component={ServerNavBarContainer} />
-            <ProtectedRoute path="/channels/" component={UserNavContainer} />
+            <ProtectedRoute  path = '/$/' component={_STRIFE_CORE_CONTAINER_} ></ProtectedRoute>
+            <ProtectedRoute path="/$/channels/:serverId/" component={ServerNavBarContainer} />
+            <ProtectedRoute path="/$/channels/" component={UserNavContainer} />
             {/* <ProtectedRoute exact path="/voice/" component={STRIFE_VOICE_CALL_API_CONTAINER} /> */}
 
             <Switch>
-                <ProtectedRoute path="/channels/@me" component={DMNavBarContainer} />
+                <ProtectedRoute path="/$/channels/@me" component={DMNavBarContainer} />
             </Switch>
 
 
             {/* render proper component for messages type or friends list */}
             <Switch>
 
-                <ProtectedRoute path="/channels/@me/:dmServerId" component={PROTECTED_DM_SERVER_CONTAINER} />
-                <ProtectedRoute path="/channels/:serverId/:channelId" component={PROTECTED_SERVER_CONTAINER} />
-                <ProtectedRoute path="/channels/@me" component={HomePageContainer} />
+                <ProtectedRoute path="/$/channels/@me/:dmServerId" component={PROTECTED_DM_SERVER_CONTAINER} />
+                <ProtectedRoute path="/$/channels/:serverId/:channelId" component={PROTECTED_SERVER_CONTAINER} />
+                <ProtectedRoute path="/$/channels/@me" component={HomePageContainer} />
 
             </Switch>
 
             {/* alt routes to other areas not involving main app */}
             <Switch>
-                <ProtectedRoute path="/loading/" component={LoadingScreenContainer} />
-                <ProtectedRoute path="/telefrag/" component={DeletedServerLoadingScreenContainer} />
-                <ProtectedRoute path='/$TR!F3-INTRUSION-PREVENTION/' component={IntrusionPreventionLoadingScreenContainer} />
-                <ProtectedRoute path="/channels/guild-discovery/" component={ExploreServersContainer} />
+                <ProtectedRoute path="/$/loading/" component={LoadingScreenContainer} />
+                <ProtectedRoute path="/$/telefrag/" component={DeletedServerLoadingScreenContainer} />
+                <ProtectedRoute path='/$/$TR!F3-INTRUSION-PREVENTION/' component={IntrusionPreventionLoadingScreenContainer} />
+                <ProtectedRoute path="/$/channels/guild-discovery/" component={ExploreServersContainer} />
             </Switch>
 
 
