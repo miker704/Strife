@@ -47,7 +47,7 @@ class SessionForm extends React.Component {
 
         this.props.processForm(submissionState).then(() => {
             // setTimeout(() => {
-            this.props.history.push("/loading/");
+            this.props.history.push("/$/loading/");
             // }, 10)
         });
     }
@@ -84,7 +84,7 @@ class SessionForm extends React.Component {
         this.setState({ password: demoUser.password })
         this.props.processForm(demoUser).then(() => {
             // setTimeout(() => {
-            this.props.history.push("/loading/");
+            this.props.history.push("/$/loading/");
             // }, 10)
         });
         // this.props.processForm(this.state)
