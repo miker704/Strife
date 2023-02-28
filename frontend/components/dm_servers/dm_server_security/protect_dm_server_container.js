@@ -20,7 +20,7 @@ const PROTECTED_DM_SERVER = ({isMember, path, exact }) => {
             path={path}
             exact={exact}
             render={props => (
-                isMember ? <DmServerContainer {...props} /> : <Redirect to={'/$TR!F3-INTRUSION-PREVENTION/'} />
+                isMember ? <DmServerContainer {...props} /> : <Redirect to={'/$/$TR!F3-INTRUSION-PREVENTION/'} />
             )} />
     )
 }
