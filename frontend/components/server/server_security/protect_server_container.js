@@ -17,7 +17,7 @@ const PROTECTED_SERVER = ({ isMember, path, exact }) => {
             path={path}
             exact={exact}
             render={props => (
-                isMember ? <ServerContainer {...props} /> : <Redirect to={'/$TR!F3-INTRUSION-PREVENTION/'} />
+                isMember ? <ServerContainer {...props} /> : <Redirect to={'/$/$TR!F3-INTRUSION-PREVENTION/'} />
             )} />
     )
 }
