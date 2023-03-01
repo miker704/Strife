@@ -11,7 +11,7 @@ import { logoutUser, removeSessionErrors } from "../../../actions/session_action
 
 const extractServerProps = (state, ownProps) => {
     let locationString = ownProps.location.pathname;
-    let newLoc = locationString.split('/channels/').join('').split('/');
+    let newLoc = locationString.split('/$/channels/').join('').split('/');
     return newLoc;
 }
 
