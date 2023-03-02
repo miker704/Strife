@@ -27,11 +27,13 @@ class EditUserPasswordForm extends React.Component {
             'Error Incorrect Password !',
             'Error new password cannot match your previous password !',
             'Error new password does not match confirm password !', 
+            'Error new password must be 8 to 72 in length'
         ];
         let passwordErrorMessages = {
             0: " - incorrect Password",
             1: " - cannot be an old password",
             2: ' - must match confirm field',
+            3: ' - must be 8-72 characters in length'
         }
 
         for (let i = 0; i < passwordErrorList.length; i++) {
