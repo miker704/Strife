@@ -3,10 +3,10 @@ import {
     REMOVE_CURRENT_USER, RECEIVE_USER,
     RECEIVE_USERS,
     RESYNC_CURRENT_USER
-    } from "../actions/session_actions.js";
+} from "../actions/session_actions.js";
 
 import { RECEIVE_DM_SERVER } from "../actions/dm_server_actions.js";
-import { RECEIVE_SERVER } from '../actions/server_actions.js';
+import { RECEIVE_SERVER, REMOVE_SERVER } from '../actions/server_actions.js';
 
 
 const extractCurrentUser = (state, users) => {
@@ -22,7 +22,7 @@ const extractCurrentUser = (state, users) => {
 }
 
 const extractCurrentUserDmMemberShip = (state, members) => {
-    if (!members) { return state }
+    if (!members) { return state; }
     let nextState = Object.assign({}, state);
     for (let [id, member] of Object.entries(members)) {
         if (state.id === member.id) {
@@ -32,6 +32,26 @@ const extractCurrentUserDmMemberShip = (state, members) => {
     }
     return nextState;
 }
+
+
+const removeDeletedServer = (state, serverId) => {
+    if (!serverId) {
+        return state;
+    }
+    let nextState = Object.assign({}, state);
+    // we are not from  removing the joined servers we are letting 
+    // the next resync handle it as it will slow down the process
+    // let newJoinedServersArray = state.serversJoined.filter((srvId) => srvId !== serverId);
+    // nextState.serversJoined = newJoinedServersArray;
+    // let newOwnedServersArray = state.ownedServers.filter((srvId) => srvId !== serverId);
+    // nextState.ownedServers = newOwnedServersArray;
+
+    nextState.ownedServers = state.ownedServers.filter((srvId) => srvId !== serverId);
+    nextState.serversJoined = state.serversJoined.filter((srvId) => srvId !== serverId);
+
+    return nextState;
+}
+
 
 
 const currentUserReducer = (state = {}, action) => {
@@ -64,8 +84,9 @@ const currentUserReducer = (state = {}, action) => {
         case RECEIVE_SERVER:
             return extractCurrentUser(state, action.server.users);
 
-       
-     
+
+        case REMOVE_SERVER:
+            return removeDeletedServer(state, action.serverId);
 
         case REMOVE_CURRENT_USER:
             return {};
