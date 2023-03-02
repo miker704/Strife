@@ -61,7 +61,6 @@ class UserProfile extends React.Component {
     this.renderDisableUser = this.renderDisableUser.bind(this);
 
 
-
   }
 
 
@@ -484,8 +483,7 @@ class UserProfile extends React.Component {
     this.scramblePhoneNumber();
     this.checkIfDemoUser();
     this.mounted = true;
-
-
+    // this.props.reSyncCurrentUser(this.props.currentUser.id);
     window.addEventListener('keyup', this.props.handleESC, false);
 
 
@@ -803,8 +801,8 @@ class UserProfile extends React.Component {
                     <div className={`account-card-banner ${this.props.currentUser.banner === undefined ?
                       `color-${this.props.currentUser.color_tag}` : ``}`}
                       style={{ backgroundImage: `${this.props.currentUser.banner === undefined ? `none` : `url(${this.props.currentUser.banner})`}` }}>
-                      <div className="upc-strife-nitro-wrapper" 
-                      title="Upload your own personalized banner and more with $TR!F3 N!TR0!"
+                      <div className="upc-strife-nitro-wrapper"
+                        title="Upload your own personalized banner and more with $TR!F3 N!TR0!"
                       // title={`${this.props.currentUser.banner === undefined ? "Upload your own personalized banner and more with $TR!F3 N!TR0!" : "Change Banner"}`}
                       >
                         <button type="button" onClick={() => this.openModal("changeBanner")} id="edit-user-banner-button" className="edit-user-banner-button">
@@ -1002,8 +1000,28 @@ class UserProfile extends React.Component {
                     </p>
                   </div>
                   <div className="account-del-button-cont">
-                    <button onClick={() => this.openModal("disableUser")} type="button" id="disable-account-button" className="disable-account-button">Disable Account</button>
-                    <button onClick={() => this.openModal("deleteUser")} type="button" id="delete-account-button" className="account-delete-button">Delete Account</button>
+                    <button onClick={() => {
+
+                      setTimeout(() => {
+                        this.props.reSyncCurrentUser(this.props.currentUser.id).then(() => {
+                          this.openModal("disableUser");
+                        });
+                      }, 1700);
+                      //  this.openModal("disableUser")
+
+                    }}
+                      type="button" id="disable-account-button"
+                      className="disable-account-button">Disable Account</button>
+                    <button onClick={() => {
+                      setTimeout(() => {
+                        this.props.reSyncCurrentUser(this.props.currentUser.id).then(() => {
+                          this.openModal("deleteUser");
+                        });
+                      }, 1700);
+                      // this.openModal("deleteUser");
+                    }}
+                      type="button" id="delete-account-button"
+                      className="account-delete-button">Delete Account</button>
 
 
                   </div>
