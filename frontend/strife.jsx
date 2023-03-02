@@ -8,6 +8,7 @@ import { saveMyState } from './utils/state_storage_async_util.js';
 document.addEventListener("DOMContentLoaded", () => {
 	let store;
 	if (window.currentUser) {
+		// debuggers
 		const preloadedState = {
 			entities: {
 				users: { [window.currentUser.id]: window.currentUser },
@@ -16,7 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
 				// currentUser: window.currentUser,
 				id: window.currentUser.id,
 			},
-			currentUser: window.currentUser
+			currentUser: window.currentUser,
+		
 		};
 		store = configureStore(preloadedState);
 		delete window.currentUser;
