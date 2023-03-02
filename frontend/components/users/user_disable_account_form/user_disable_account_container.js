@@ -6,7 +6,9 @@ import { closeModal } from "../../../actions/modal_actions.js";
 
 const mSTP = (state) => {
     return {
-        currentUser: state.entities.users[state.session.id],
+        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.currentUser,
+
         errors: state.errors.session,
 
     }
