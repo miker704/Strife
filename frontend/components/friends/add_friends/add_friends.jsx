@@ -5,7 +5,7 @@ class AddFriends extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            user_strife_id_tag: "Username#0000",
+            user_strife_id_tag: "",
             FRF_Modal: false,
             friendRequestSuccess: false,
         }
@@ -18,7 +18,6 @@ class AddFriends extends React.Component {
         this.closeFRFErrorModal = this.closeFRFErrorModal.bind(this);
         this.renderFriendRequestSuccess = this.renderFriendRequestSuccess.bind(this);
         this.renderFriendRequestFailedErrors = this.renderFriendRequestFailedErrors.bind(this);
-
     }
 
     componentDidMount () {
@@ -133,6 +132,9 @@ class AddFriends extends React.Component {
     }
 
 
+   
+
+
     render () {
 
         let friendRequestErrors = this.props.sessionErrors.length > 0 ? "frf-ERROR" : "";
@@ -153,7 +155,7 @@ class AddFriends extends React.Component {
                                     onKeyUp={this.submissionBlocker}
                                     onChange={this.handleInput("user_strife_id_tag")}
                                     value={this.state.user_strife_id_tag}
-                                    placeholder={this.state.user_strife_id_tag}
+                                    placeholder={"Enter a Username#0000"}
                                 />
                             </div>
                             <button type="submit" id="add-friend-button" className="add-friend-button">
@@ -169,13 +171,14 @@ class AddFriends extends React.Component {
                 </div>
                 <div className="add-friend-header-wrapper-2">
                     <h2 className="add-friend-header-2">
-                        Other places to find friends
+                        Other places to Make friends
                     </h2>
                 </div>
                 
-                <Link className="unStyle" to={`/channels/guild-discovery/`}>
+
                 <div className="add-friend-grid" >
-                    <button type="button" className="add-friend-grid-button-wrapper" >
+                <Link className="unStyle" to={`/$/channels/guild-discovery/`}>
+                    <button type="button" className="add-friend-grid-button-wrapper"  >
                         <img className="add-friend-grid-button-icon" alt="expserv" />
                         <div className="add-friend-grid-button-text">Explore Public Servers</div>
                         <svg className="arrow-3B" fill="none" height="20" viewBox="0 0 20 20" width="20">
@@ -184,8 +187,9 @@ class AddFriends extends React.Component {
                             </path>
                         </svg>
                     </button>
-                </div>
                 </Link>
+                </div>
+
                 <div className="empty-state-container-2">
                     <div className="empty-friends-container">
                         <div className="empty-friends-container-flex">
