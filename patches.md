@@ -53,7 +53,7 @@
           screen. This works in combination with the other redux calls to write to the systemutil state this dedicate redux action
           ensures that that state in overwritten
         - hard coded systemUtils into preloaded state, testing if just a redux call on signin gives the same effect before removing it
-          from preloaded state.
+          from preloaded state. removed from preloaded state and obtained via redux call.
     
     - Fixed an issue with uploading and previewing Profile banners:
       - Issue is when a user uploads a banner and saves it changing the banner again to preview the new banner the option remove remains
@@ -93,7 +93,7 @@
         in the redux state till a page refresh or some redux action allows the resync of the current users data to become up to date and
         allow the user to delete their account.
       - Fixed by allowing a dispatch call to rsync the currentuser when clicking the profile page/ clicking on disable or delete account. 
-        (in testing)
+        (in testing) - done
 
 ### UI and Cosmetic Fixes
 
