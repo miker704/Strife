@@ -105,6 +105,11 @@
       - In the add friends page changed the header title of Other Places to Find Friends to Other Places to Make Friends.
       - In the add friends page the search bar to enter a users $TR!F3 tag the place holder is changed from "Username#0000"
         to "Enter a Username#0000" and the bar is no longer prefilled with "Username#0000" in the state.  
+
+### Other Changes
+
+- Changed which state for current user information to be extracted from for certain components.
+
 ---
 
 New Patch - 10/3/2022 - 10/7/2022
