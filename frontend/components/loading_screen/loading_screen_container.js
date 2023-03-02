@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import LoadingScreen from "./loading_screen";
-
+import { receiveStrifeB0t } from "../../actions/session_actions";
 
 const mSTP = (state) => {
 
@@ -91,6 +91,7 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
+        receiveStrifeB0t: () => dispatch(receiveStrifeB0t())
     }
 }
 
