@@ -99,7 +99,12 @@
 
     - UI Fixes (Cosmetic):
       - Changed the profile pages colors to a darker shade of gray to match that of discords properly.
-
+      - Fixed Bug in the add friends page where the link to redirect to the explore public servers page over extends it button
+        where clicking the same row the button is located at will register as a valid button press and redirect the user to 
+        the explore servers page.
+      - In the add friends page changed the header title of Other Places to Find Friends to Other Places to Make Friends.
+      - In the add friends page the search bar to enter a users $TR!F3 tag the place holder is changed from "Username#0000"
+        to "Enter a Username#0000" and the bar is no longer prefilled with "Username#0000" in the state.  
 ---
 
 New Patch - 10/3/2022 - 10/7/2022
