@@ -95,6 +95,13 @@
       - Fixed by allowing a dispatch call to rsync the currentuser when clicking the profile page/ clicking on disable or delete account. 
         (in testing) - done
 
+#### User Security
+
+- Fixed an issue when user changes their password and the password is not of appropiate length
+  - Issue is due to password length validation failing to check when updating it
+  - Fixed by returning the warning that a users password must by of appropiate length when 
+    changing their password, it must fall into the length required when first creating their account.
+
 ### UI and Cosmetic Fixes
 
     - UI Fixes (Cosmetic):
