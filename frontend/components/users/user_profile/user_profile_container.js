@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import UserProfile from "./user_profile";
-import { removeUserAccount, logoutUser, updateUserInfo, removeSessionErrors, disableUserAccount } from '../../../actions/session_actions'
+import { removeUserAccount, logoutUser, updateUserInfo, removeSessionErrors, disableUserAccount, reSyncCurrentUser } from '../../../actions/session_actions'
 import { openModal, closeModal } from "../../../actions/modal_actions";
 import { withRouter } from "react-router";
 import { handleKeyUp } from "../../../utils/modal_api_util";
@@ -21,8 +21,8 @@ const mDTP = (dispatch) => {
     closeModal: () => dispatch(closeModal()),
     removeSessionErrors: () => dispatch(removeSessionErrors()),
     handleESC: (e) => handleKeyUp(e),
-    disableUserAccount: (user) => dispatch(disableUserAccount(user))
-
+    disableUserAccount: (user) => dispatch(disableUserAccount(user)),
+    reSyncCurrentUser: (userId) => dispatch(reSyncCurrentUser(userId))
   }
 }
 
