@@ -10,9 +10,9 @@ class IntrusionPreventionLoadingScreen extends React.Component {
 
     componentDidMount () {
         this.props.fetchUser(this.props.currentUserId);
-        if (this.props.history.location.pathname !== "/channels/@me") {
+        if (this.props.history.location.pathname !== "/$/channels/@me") {
             setTimeout(() => {
-                this.props.history.push("/channels/@me");
+                this.props.history.push("/$/channels/@me");
             }, 10000)
         }
     }
