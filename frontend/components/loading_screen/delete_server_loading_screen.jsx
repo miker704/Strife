@@ -7,9 +7,9 @@ class DeletedServerLoadingScreen extends React.Component {
     }
 
     componentDidMount () {
-        if (this.props.history.location.pathname !== "/channels/@me") {
+        if (this.props.history.location.pathname !== "/$/channels/@me") {
             setTimeout(() => {
-                this.props.history.push("/channels/@me");
+                this.props.history.push("/$/channels/@me");
             }, 5000)
         }
     }
@@ -23,7 +23,7 @@ class DeletedServerLoadingScreen extends React.Component {
                          </div>
                      </div>
                 </div>
-                <h1 className="loading-screen-img-h2">SERVER HAS BEEN DELETED TAKE YOU HOME</h1>
+                <h1 className="loading-screen-img-h2">SERVER HAS BEEN DELETED TAKING YOU HOME</h1>
             </div>
         )
     }
