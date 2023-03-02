@@ -15,6 +15,7 @@ export const RECEIVE_USER_SEARCH = "RECEIVE_USER_SEARCH";
 export const RESYNC_CURRENT_USER = "RESYNC_CURRENT_USER";
 export const FETCH_STRIFE_BOT = "FETCH_$TR!F3_BOT";
 export const RECEIVE_CORE = "RECEIVE_CORE";
+export const RECEIVE_STRIFE_BOT = "FETCH_$TR!F3_BOT";
 
 export const receiveCore = core => {
     return {
@@ -23,6 +24,11 @@ export const receiveCore = core => {
     }
 }
 
+export const receiveStrifeB0t = () => {
+    return {
+        type: RECEIVE_STRIFE_BOT
+    }
+}
 
 export const receiveUser = user => {
     return {
