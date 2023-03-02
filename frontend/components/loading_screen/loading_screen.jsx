@@ -9,9 +9,10 @@ class LoadingScreen extends React.Component {
 
 
     componentDidMount () {
-        if (this.props.history.location.pathname !== "/channels/@me") {
+        this.props.receiveStrifeB0t();
+        if (this.props.history.location.pathname !== "/$/channels/@me") {
             setTimeout(() => {
-                this.props.history.push("/channels/@me");
+                this.props.history.push("/$/channels/@me");
             }, 5000)
         }
     }
