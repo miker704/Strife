@@ -8,7 +8,9 @@ import { updateUserInfo, removeSessionErrors } from "../../../actions/session_ac
 
 const mSTP = (state) => {
     return {
-        currentUser: state.entities.users[state.session.id],
+        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.currentUser,
+
         errors: state.errors.session
     }
 };
