@@ -6,7 +6,8 @@ import BlockedList from './blocked_list';
 
 const mSTP = (state) => {
     return {
-        currentUser: state.entities.users[state.session.id],
+        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.currentUser,
         blockedUsers: selectFriendStatus(state, -1),
         errors: state.errors.friendship
     }
