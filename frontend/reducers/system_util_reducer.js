@@ -1,10 +1,10 @@
-import { FETCH_STRIFE_BOT } from "../actions/session_actions";
+import { FETCH_STRIFE_BOT, RESYNC_CURRENT_USER } from "../actions/session_actions";
 // import bot_PFP from "../../app/assets/images/discord_Strife_logo.png";
 import bot_PFP from "/app/assets/images/Strife_logo_compressed.png";
-import { LOGOUT_CURRENT_USER, RECEIVE_CURRENT_USER } from "../actions/session_actions";
+import { LOGOUT_CURRENT_USER, RECEIVE_CURRENT_USER, RECEIVE_STRIFE_BOT } from "../actions/session_actions";
 
 //stop fetching the bot just hard code it as it will always be avaliable and no need to slow down every thing
-const _STRIFE_BOT = {
+export const _STRIFE_BOT = {
     1: {
         "id": 1,
         "username": "Mr.Wumpus",
@@ -23,6 +23,7 @@ const _STRIFE_BOT = {
 
 const systemUtilReducer = (state = { _STRIFE_BOT }, action) => {
     Object.freeze(state);
+    let newState;
     // return state;
     // switch (action.type) {
     //     case FETCH_STRIFE_BOT:
@@ -34,10 +35,19 @@ const systemUtilReducer = (state = { _STRIFE_BOT }, action) => {
 
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            return state;
+            newState = Object.assign({}, state, { _STRIFE_BOT: _STRIFE_BOT });
+            return newState;
+
+        case RECEIVE_STRIFE_BOT:
+            // //if user signs out without refreshing page force this action to modify the state
+            // //if they sign back in
+            newState = Object.assign({}, state, { _STRIFE_BOT: _STRIFE_BOT });
+            return newState
         case LOGOUT_CURRENT_USER:
             return {};
         default:
+            // console.log("default");
+            // console.table(state);
             return state;
     }
 
