@@ -1006,7 +1006,7 @@ class UserProfile extends React.Component {
                         this.props.reSyncCurrentUser(this.props.currentUser.id).then(() => {
                           this.openModal("disableUser");
                         });
-                      }, 1700);
+                      }, 1800);
                       //  this.openModal("disableUser")
 
                     }}
@@ -1017,7 +1017,7 @@ class UserProfile extends React.Component {
                         this.props.reSyncCurrentUser(this.props.currentUser.id).then(() => {
                           this.openModal("deleteUser");
                         });
-                      }, 1700);
+                      }, 1800);
                       // this.openModal("deleteUser");
                     }}
                       type="button" id="delete-account-button"
