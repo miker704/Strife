@@ -95,6 +95,11 @@
       - Fixed by allowing a dispatch call to rsync the currentuser when clicking the profile page/ clicking on disable or delete account. 
         (in testing) - done
 
+    - Fixed an issue on Invite a friend to an already existing dmserver where search up a friend is case sensitive.
+      - Fixed by making both the username and search text be compared to each other both in lowercase form.
+
+
+
 #### User Security
 
 - Fixed an issue when user changes their password and the password is not of appropiate length
