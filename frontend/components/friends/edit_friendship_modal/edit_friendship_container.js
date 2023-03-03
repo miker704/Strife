@@ -6,7 +6,8 @@ import { requestFriendships, removeFriendshipErrors, deleteFriendship, updateFri
 
 const mSTP = (state) => {
     return {
-        currentUser: state.entities.users[state.session.id],
+        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.currentUser,
         friends: selectFriendStatusOnline(state, 3),
         errors: state.errors.friendship,
     }
