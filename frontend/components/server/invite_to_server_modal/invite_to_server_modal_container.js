@@ -13,7 +13,7 @@ import InviteToServerModal from "./invite_to_server_modal.jsx";
 
 const extractServerProps = (state, ownProps) => {
     let locationString = ownProps.location.pathname;
-    let newLoc = locationString.split('/channels/').join('').split('/');
+    let newLoc = locationString.split('/$/channels/').join('').split('/');
     return newLoc;
 }
 
