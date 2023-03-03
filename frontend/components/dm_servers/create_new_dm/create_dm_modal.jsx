@@ -73,8 +73,8 @@ const CreateDmModal = ({
         const memberIds = [currentUser.id, ...selectedFriends.map((friend) => parseInt(friend.id))].sort((a, b) => a - b);
         for (let dmServer of dmServers) {
             if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
-                if (history.location.pathname !== `/channels/@me/${dmServer.id}`) {
-                    history.push(`/channels/@me/${dmServer.id}`);
+                if (history.location.pathname !== `/$/channels/@me/${dmServer.id}`) {
+                    history.push(`/$/channels/@me/${dmServer.id}`);
                 }
                 return;
             }
@@ -109,7 +109,7 @@ const CreateDmModal = ({
         createDmServer(submissionState).then((action) => {
             newDmServer = action.dmserver;
             reSyncCurrentUser(currentUserId).then(() => {
-                history.push(`/channels/@me/${newDmServer.id}`);
+                history.push(`/$/channels/@me/${newDmServer.id}`);
             })
         }).then(() => {
             App.StrifeCore.perform('transmit_New_DmServer', {newDmServer})
