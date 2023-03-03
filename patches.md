@@ -95,7 +95,10 @@
       - Fixed by allowing a dispatch call to rsync the currentuser when clicking the profile page/ clicking on disable or delete account. 
         (in testing) - done
 
-    - Fixed an issue on Invite a friend to an already existing dmserver where search up a friend is case sensitive.
+    - Fixed an issue on Invite a friend to an already existing dmserver where searching up a friend is case sensitive.
+      - Fixed by making both the username and search text be compared to each other both in lowercase form.
+    
+    - Fixed an issue on creating a dmserver where searching up a friend is case sensitive.
       - Fixed by making both the username and search text be compared to each other both in lowercase form.
 
 
