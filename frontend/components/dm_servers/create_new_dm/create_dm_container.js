@@ -10,7 +10,8 @@ import { reSyncCurrentUser } from '../../../actions/session_actions';
 
 const mSTP = (state) => {
     return {
-        currentUser: state.entities.users[state.session.id],
+        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.currentUser,
         currentUserId: state.session.id,
         dmServers: Object.values(state.entities.dmServers),
         // friends: selectFriendStatus(state, 3),
