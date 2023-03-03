@@ -10,7 +10,8 @@ import { selectFriendStatusOnline } from '../../../utils/selectors_api_util';
 
 const mSTP = (state) => {
     return {
-        currentUser: state.entities.users[state.session.id],
+        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.currentUser,
         currentUserId: state.session.id,
         errors: state.errors.friendship,
         onlineFriends: selectFriendStatusOnline(state, 3),
