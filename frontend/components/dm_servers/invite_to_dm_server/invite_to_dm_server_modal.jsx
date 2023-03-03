@@ -141,7 +141,7 @@ const InviteToDmModal = ({
                                 <ul className="create-dm-ul-list">
                                     <div className="create-dm-ul-list-div"></div>
                                     {filterOutFriends.map(friend => {
-                                        if (friend.username.includes(searchText)) {
+                                        if (friend.username.toLowerCase().includes(searchText.toLowerCase())) {
                                             return (
 
                                                 <li className="create-dm-friend-wrapper" key={friend.id}
