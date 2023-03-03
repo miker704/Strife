@@ -67,8 +67,8 @@ const FriendShipIndexOnline = ({
         let new_dm_members = [currentUser, friend];
         for (let dmServer of dmServers) {
             if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
-                if (history.location.pathname !== `/channels/@me/${dmServer.id}`) {
-                    history.push(`/channels/@me/${dmServer.id}`);
+                if (history.location.pathname !== `/$/channels/@me/${dmServer.id}`) {
+                    history.push(`/$/channels/@me/${dmServer.id}`);
                 }
                 return;
             }
@@ -97,7 +97,7 @@ const FriendShipIndexOnline = ({
         createDmServer(submissionState).then((action) => {
             newDmServer = action.dmserver;
             reSyncCurrentUser(currentUserId).then(() => {
-                history.push(`/channels/@me/${newDmServer.id}`);
+                history.push(`/$/channels/@me/${newDmServer.id}`);
             })
         });
         return;
