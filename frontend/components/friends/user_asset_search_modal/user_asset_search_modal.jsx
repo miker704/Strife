@@ -28,8 +28,8 @@ const StartConversationSearchBarModal = (props) => {
         let new_dm_members = [props.currentUser, friend];
         for (let dmServer of props.dmServers) {
             if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
-                if (props.history.location.pathname !== `/channels/@me/${dmServer.id}`) {
-                    props.history.push(`/channels/@me/${dmServer.id}`);
+                if (props.history.location.pathname !== `/$/channels/@me/${dmServer.id}`) {
+                    props.history.push(`/$/channels/@me/${dmServer.id}`);
                     props.closeModal();
 
                 }
@@ -59,7 +59,7 @@ const StartConversationSearchBarModal = (props) => {
         props.createDmServer(submissionState).then((action) => {
             newDmServer = action.dmserver;
             props.reSyncCurrentUser(props.currentUserId).then(() => {
-                props.history.push(`/channels/@me/${newDmServer.id}`);
+                props.history.push(`/$/channels/@me/${newDmServer.id}`);
                 props.closeModal();
             })
         });
@@ -153,7 +153,7 @@ const StartConversationSearchBarModal = (props) => {
         return (
             <div className="result-item"
                 id={`uid_100 item-${channel.server_id}`} role={'option'} key={channel.id}>
-                {/* <Link to={`/channels/${channel.server_id}/${channel.id}`} style={{ textDecoration: `none` }} */}
+                {/* <Link to={`/$/channels/${channel.server_id}/${channel.id}`} style={{ textDecoration: `none` }} */}
                 {/* onClick={() => props.closeModal()}> */}
                 <div className="result-item-inner" id="v-channel" data-tip data-for="voice-channel-Strife-access">
                     <div className="result-item-server-guild-card-container">
@@ -197,7 +197,7 @@ const StartConversationSearchBarModal = (props) => {
         return (
             <div className="result-item"
                 id={`uid_100 item-${channel.server_id}`} role={'option'} key={channel.id}>
-                <Link to={`/channels/${channel.server_id}/${channel.id}`} style={{ textDecoration: `none` }}
+                <Link to={`/$/channels/${channel.server_id}/${channel.id}`} style={{ textDecoration: `none` }}
                     onClick={() => props.closeModal()}>
                     <div className="result-item-inner">
                         <div className="result-item-server-guild-card-container">
@@ -253,7 +253,7 @@ const StartConversationSearchBarModal = (props) => {
         return (
             <div className="result-item"
                 id={`uid_100 item-${server.id}`} role={'option'} key={server.id}>
-                <Link to={`/channels/${server.id}/${server.general_channel_id}`} style={{ textDecoration: `none` }}
+                <Link to={`/$/channels/${server.id}/${server.general_channel_id}`} style={{ textDecoration: `none` }}
                     onClick={() => props.closeModal()}>
                     <div className="result-item-inner">
                         <div className="result-item-server-guild-card-container">
@@ -324,7 +324,7 @@ const StartConversationSearchBarModal = (props) => {
         return (
             <div className="result-item"
                 id={`uid_100 item-${dmServer.id}`} role={'option'} key={dmServer.id}>
-                <Link to={`/channels/@me/${dmServer.id}`} style={{ textDecoration: `none` }}
+                <Link to={`/$/channels/@me/${dmServer.id}`} style={{ textDecoration: `none` }}
                     onClick={() => props.closeModal()}>
                     <div className="result-item-inner">
                         <div className="result-item-server-guild-card-container">
