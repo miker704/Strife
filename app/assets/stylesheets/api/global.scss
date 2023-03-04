@@ -426,6 +426,15 @@ label.field-error {
   transform: translate(22px, -12px);
 }
 
+.circle-offline-dm-header-nav-bar {
+  background: #747f8d;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #000;
+  transform: translate(1px, 0px);
+}
+
 .circle-offline-dm-side-bar-list {
   background: #747f8d;
   border-radius: 50%;
@@ -465,6 +474,16 @@ label.field-error {
   height: 8px;
   border: 1px solid #000;
   transform: translate(22px, -12px);
+}
+
+
+.circle-online-dm-header-nav-bar  {
+  background: hsl(139, 47.3%, 43.9%);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #000;
+  transform: translate(1px, 0px);
 }
 
 .circle-online-dm-side-bar-list {
