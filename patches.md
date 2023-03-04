@@ -104,7 +104,6 @@
     - Fixed an issue on selecting dmserver members for a call where searching up a member is case sensitive.
       - Fixed by making both the username and search text be compared to each other both in lowercase form.
 
-
 #### User Security
 
 - Fixed an issue when user changes their password and the password is not of appropiate length
