@@ -11,8 +11,8 @@ const mSTP = (state, ownProps) => {
         dmServerMembers: selectDmMembers(state, ownProps.match.params.dmServerId),
         errors: state.errors.dmServer,
         dmServer: state.entities.dmServers[ownProps.match.params.dmServerId],
-        currentUser: state.entities.users[state.session.id],
-        // friends : 
+        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.currentUser,
         dmServerUsers: Object.values(state.entities.users)
 
     }
