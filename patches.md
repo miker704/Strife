@@ -111,7 +111,6 @@
     and modal asking if a user wants to outright delete their message instead. Instead of allowing them to edit a message into a blank
     message and then have it be replaced by the old message instead.
 
-
 #### User Security
 
 - Fixed an issue when user changes their password and the password is not of appropiate length
