@@ -2,7 +2,7 @@
 
 ## PATCH NOTES v3.00 - 2/24/2023 - 3/3/2023
 
-## Intera Changes between 10/7/2022 - 11/17/2023
+## Intra - Changes between 10/7/2022 - 11/17/2023
 
     - $TR!F3 has moved homes, Transitioned to Render.com from Heroku. 
 
