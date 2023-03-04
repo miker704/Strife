@@ -59,7 +59,11 @@ const DmServerHeaderNavBar = ({
 
     const handleEditName = (e) => {
         e.preventDefault();
-        if (DmServerName !== displayName) {
+        //prevent the user from saving the name of the dmServer to a blank name.
+        if(DmServerName.length === 0 || DmServerName.replace(/\s/g, '').length === 0){
+            return;
+        }
+        else if (DmServerName !== displayName) {
             //run update
             updateDmServer(dmServer.id, { dm_server_name: DmServerName });
         }
