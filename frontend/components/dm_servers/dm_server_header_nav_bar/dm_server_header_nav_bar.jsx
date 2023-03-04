@@ -16,8 +16,8 @@ const DmServerHeaderNavBar = ({
     removeDmServerErrors,
     removeDmMessageErrors,
     updateDmServer,
-    isViz,
-    dmServerUsers
+    dmServerUsers,
+    isViz
 
 }) => {
     if (!dmServer) {
