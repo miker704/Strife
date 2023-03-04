@@ -107,9 +107,12 @@
     - Fixed an issue on selecting server members to invite to an existing server where searching up a member is case sensitive.
       - Fixed by making both the username and search text be compared to each other both in lowercase form.
 
-    - Added the feature where in DmServers where if a user edits their message to become blank instead of negating the change
-    and modal asking if a user wants to outright delete their message instead. Instead of allowing them to edit a message into a blank
-    message and then have it be replaced by the old message instead.
+    - Added the feature where in DmServers where if a user edits their message to become blank or if it contains only whitespaces
+     instead of negating the change and having it sent to thge backend and return a bad requests have the delete message modal appear
+     asking if a user wants to outright delete their message instead.
+     - Also added the feature if a user user aborts the deletion of their message through editing it and sending a blank or space only 
+       message have the old message be refilled back into the state so when editing it again the message will be prefilled with it 
+       previous remove contents.
 
 #### User Security
 
