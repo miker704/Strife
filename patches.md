@@ -115,6 +115,10 @@
        previous remove contents.
      - Added the ability for the cursor to auto focus at the end of the text when editing instead of the beginning.
 
+    - Fixed a problem where a user edit the name of a dmServer with containing 3 or more members and submitting a blank or name filled 
+      with  only spaces. 
+      - Fixed by not checking if new name entered contains only spaces or is empty and aborts the changes and returns the orginal name.
+
 #### User Security
 
 - Fixed an issue when user changes their password and the password is not of appropiate length
