@@ -123,6 +123,10 @@
       and the dmServer does not have a permanment name.
        - Addressed by being able to use the users in the dmServer state to re-render when a change in that state has occured and update 
         the pre-filled name of the dmServer head nav bar.
+    
+    - Fixed an issue in DmServers where a user types a message and does not send it, then proceeds to  switch to another dmServer that
+      previously typed message that was not sent remains in the textArea.
+      - Addressed by clearing the state of the text area the dmServer id changes.
 
 #### User Security
 
