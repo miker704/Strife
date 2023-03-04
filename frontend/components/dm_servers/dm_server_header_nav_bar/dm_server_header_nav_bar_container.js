@@ -9,12 +9,14 @@ const mSTP = (state, ownProps) => {
     return {
         errors: state.errors.dmServer,
         dmMessageErrors: state.errors.dmMessage,
-        currentUser: state.entities.users[state.session.id],
+        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.currentUser,
         // dmServer: state.entities.dmServers[ownProps.match.params.dmServerId],
         dmServer: extractDmServerProps(state,ownProps.match.params.dmServerId),
 
         dmServerId: ownProps.match.params.dmServerId,
         dmServerMembers: selectDmMembers(state,ownProps.match.params.dmServerId),
+        dmServerUsers : state.entities.dmServers[ownProps.match.params.dmServerId].users
     }
 
 }
