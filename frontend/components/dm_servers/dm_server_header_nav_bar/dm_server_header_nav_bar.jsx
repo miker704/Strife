@@ -16,7 +16,8 @@ const DmServerHeaderNavBar = ({
     removeDmServerErrors,
     removeDmMessageErrors,
     updateDmServer,
-    isViz
+    isViz,
+    dmServerUsers
 
 }) => {
     if (!dmServer) {
@@ -41,10 +42,10 @@ const DmServerHeaderNavBar = ({
 
     useEffect(() => {
         if (dmServer?.id) {
-
             // fetchDmServer(dmServerId);
             setDMServerName(displayName);
         }
+
         return function cleanup () {
             if (errors.length > 0) {
                 removeDmServerErrors();
@@ -53,7 +54,7 @@ const DmServerHeaderNavBar = ({
                 removeDmMessageErrors()
             }
         }
-    }, [dmServer?.id])
+    }, [dmServer?.id,dmServerUsers])
 
 
 
