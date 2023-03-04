@@ -9,7 +9,8 @@ import InviteToDmModal from './invite_to_dm_server_modal';
 
 const mSTP = (state) => {
     return {
-        currentUser: state.entities.users[state.session.id],
+        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.currentUser,
         dmServers: Object.values(state.entities.dmServers),
         friends: selectAllFriends(state, 3),
         errors: state.errors.friendship,
