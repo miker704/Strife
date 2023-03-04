@@ -210,7 +210,7 @@ const ServerUserOptionsModal = ({
         let new_dm_members = [currentUser, member];
         for (let dmServer of dmServers) {
             if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
-                if (history.location.pathname !== `/channels/@me/${dmServer.id}`) {
+                if (history.location.pathname !== `/$/channels/@me/${dmServer.id}`) {
                     const messageHash = {
                         body: message,
                         sender_id: parseInt(currentUserId),
@@ -218,7 +218,7 @@ const ServerUserOptionsModal = ({
                     }
 
                     createDmMessage(messageHash);
-                    history.push(`/channels/@me/${dmServer.id}`);
+                    history.push(`/$/channels/@me/${dmServer.id}`);
 
                 }
                 return;
@@ -254,7 +254,7 @@ const ServerUserOptionsModal = ({
             }
             createDmMessage(messageHash);
             reSyncCurrentUser(currentUserId).then(() => {
-                history.push(`/channels/@me/${newDmServer.id}`);
+                history.push(`/$/channels/@me/${newDmServer.id}`);
             })
 
         });
@@ -271,8 +271,8 @@ const ServerUserOptionsModal = ({
         let new_dm_members = [currentUser, member];
         for (let dmServer of dmServers) {
             if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
-                if (history.location.pathname !== `/channels/@me/${dmServer.id}`) {
-                    history.push(`/channels/@me/${dmServer.id}`);
+                if (history.location.pathname !== `/$/channels/@me/${dmServer.id}`) {
+                    history.push(`/$/channels/@me/${dmServer.id}`);
                 }
                 return;
             }
@@ -301,7 +301,7 @@ const ServerUserOptionsModal = ({
         createDmServer(submissionState).then((action) => {
             newDmServer = action.dmserver;
             reSyncCurrentUser(currentUserId).then(() => {
-                history.push(`/channels/@me/${newDmServer.id}`);
+                history.push(`/$/channels/@me/${newDmServer.id}`);
             })
 
         });
@@ -365,8 +365,8 @@ const ServerUserOptionsModal = ({
         if (Object.values(dmServerMembers).length - 1 === 2) {
 
             deleteDmServer(DmServerId).then(() => {
-                // history.push(`/channels/@me`);
-                history.push(`/loading/`);
+                // history.push(`/$/channels/@me`);
+                history.push(`/$/loading/`);
 
             })
         }
