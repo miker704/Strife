@@ -113,6 +113,7 @@
      - Also added the feature if a user user aborts the deletion of their message through editing it and sending a blank or space only 
        message have the old message be refilled back into the state so when editing it again the message will be prefilled with it 
        previous remove contents.
+     - Added the ability for the cursor to auto focus at the end of the text when editing instead of the beginning.
 
 #### User Security
 
