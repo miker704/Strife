@@ -100,7 +100,9 @@
     
     - Fixed an issue on creating a dmserver where searching up a friend is case sensitive.
       - Fixed by making both the username and search text be compared to each other both in lowercase form.
-
+    
+    - Fixed an issue on selecting dmserver members for a call where searching up a member is case sensitive.
+      - Fixed by making both the username and search text be compared to each other both in lowercase form.
 
 
 #### User Security
