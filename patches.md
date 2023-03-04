@@ -118,6 +118,11 @@
     - Fixed a problem where a user edit the name of a dmServer with containing 3 or more members and submitting a blank or name filled 
       with  only spaces. 
       - Fixed by not checking if new name entered contains only spaces or is empty and aborts the changes and returns the orginal name.
+    
+    - Fixed a rare issue with the DmServer Head NavBar would not change re-render the name change if a new memeber is invited to the server
+      and the dmServer does not have a permanment name.
+       - Addressed by being able to use the users in the dmServer state to re-render when a change in that state has occured and update 
+        the pre-filled name of the dmServer head nav bar.
 
 #### User Security
 
