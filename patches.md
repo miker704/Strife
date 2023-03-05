@@ -149,7 +149,8 @@
       and dmServer members.
     - Fixed background colors of server nav bar and user nav bar.
     - Fixed background colors of Find or Start conversation bar and Search bar in DmServerHeader NavBar.
-    - Added users online status of the Dm Server Headder nav bar for one to one dmserver chat rooms.
+    - Added users online status of the Dm Server Header nav bar for one to one dmserver chat rooms.
+    - Readjusted the colors and background colors of hovering and selecting friend options on the homepage head nav bar.
 
 ### Other Changes
 
