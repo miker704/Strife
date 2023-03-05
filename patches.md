@@ -135,7 +135,7 @@
   - Fixed by returning the warning that a users password must by of appropiate length when.
     changing their password, it must fall into the length required when first creating their account.
 
-### UI and Cosmetic Fixes
+### UI and Cosmetic Fixes and Changes
 
     - UI Fixes (Cosmetic):
       - Changed the profile pages colors to a darker shade of gray to match that of discords properly.
@@ -145,6 +145,11 @@
       - In the add friends page changed the header title of Other Places to Find Friends to Other Places to Make Friends.
       - In the add friends page the search bar to enter a users $TR!F3 tag the place holder is changed from "Username#0000"
         to "Enter a Username#0000" and the bar is no longer prefilled with "Username#0000" in the state.  
+    - Fixed background colors of dm server navbar , dm server header navbar, textarea, dmMembers list, highlighting of dmservers 
+      and dmServer members.
+    - Fixed background colors of server nav bar and user nav bar.
+
+    - Added users online status of the Dm Server Headder nav bar for one to one dmserver chat rooms.
 
 ### Other Changes
 
