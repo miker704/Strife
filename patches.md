@@ -138,6 +138,9 @@
       - Added back the double routing of DmServerNavBar with initial rendering at '/$/channels/@me' and 
         '/$/channels/@me/:dmServerId' this route here is taken to a secure route and checked to see if a user is a member of that dmServer
         rendering the dmServer navbar component again on this route allows a selected dmServer to be showm as selected.
+    
+    - Added a new icon 'Show user profile' on the dmServer header navbar for dmServers that are explicitly one on one chats clicking it will
+      show the other users profile card (will be added at a later date) 
 
 #### User Security
 
