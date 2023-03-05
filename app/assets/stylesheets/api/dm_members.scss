@@ -24,7 +24,8 @@
     overflow: hidden scroll;
     padding-right: 0px;
     forced-color-adjust: none;
-    background-color: hsl(223, 6.9%, 19.8%);
+    // background-color: hsl(223, 6.9%, 19.8%);
+    background-color: #2b2d31;
     width: 240px;
     padding: 0 0 20px;
     -webkit-box-flex: 0;
@@ -103,7 +104,8 @@
     max-width: 224px;
     margin-left: 8px;
     forced-color-adjust: none;
-    background-color: hsl(223, 6.9%, 19.8%);
+    // background-color: hsl(223, 6.9%, 19.8%);
+    background-color: #2b2d31;
     box-sizing: border-box;
     display: block;
     padding: 1px 0;
@@ -115,8 +117,11 @@
 
 
 .dm-member-item:hover {
-    background-color: #3b3f45;
-    color: hsl(210, 2.9%, 86.7%);
+    // background-color: #3b3f45;
+    // color: hsl(210, 2.9%, 86.7%);
+    color: hsl(228, 8.8%, 88.8%);
+    // background-color:hsla(217, 7.6%, 33.5%, 0.4);
+    background-color: #35373c;
 }
 
 
