@@ -9,8 +9,8 @@
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
-    background-color: hsl(220, 7.7%, 22.9%);
-
+    // background-color: hsl(220, 7.7%, 22.9%);
+    background-color: #313338;
 
 
 }
@@ -18,7 +18,8 @@
 
 .home-nav-bar {
     forced-color-adjust: none;
-    background-color: hsl(220, 7.7%, 22.9%);
+    // background-color: hsl(220, 7.7%, 22.9%);
+    background-color: #313338;
     box-sizing: border-box;
     flex: 0 0 auto;
     height: 48px;
@@ -135,7 +136,8 @@
     padding: 2px 8px;
     cursor: default;
     // color: #FFFFFF;
-    color: hsl(216, 3.7%, 73.5%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: hsl(231.4, 5.2%, 73.5%);
     forced-color-adjust: none;
     box-sizing: border-box;
     position: relative;
@@ -162,7 +164,8 @@
     border-radius: 4px;
     margin: 0 8px;
     padding: 2px 8px;
-    color: hsl(216, 3.7%, 73.5%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: hsl(231.4, 5.2%, 73.5%);
     forced-color-adjust: none;
     box-sizing: border-box;
     position: relative;
@@ -189,7 +192,8 @@
     border-radius: 4px;
     margin: 0 8px;
     padding: 2px 8px;
-    color: hsl(216, 3.7%, 73.5%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: hsl(231.4, 5.2%, 73.5%);
     forced-color-adjust: none;
     box-sizing: border-box;
     position: relative;
@@ -215,7 +219,8 @@
     border-radius: 4px;
     margin: 0 8px;
     padding: 2px 8px;
-    color: hsl(216, 3.7%, 73.5%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: hsl(231.4, 5.2%, 73.5%);
     forced-color-adjust: none;
     box-sizing: border-box;
     position: relative;
@@ -261,8 +266,11 @@
 .all-tab.selected,
 .pending-tab.selected,
 .blocked-tab.selected {
-    background-color: hsla(217, 7.6%, 33.5%, 0.6);
-    color: #FFFFFF;
+    // background-color: hsla(217, 7.6%, 33.5%, 0.6);
+    // background-color: #42444b;
+    background-color: rgba(78,80,88,0.6);
+    // color: #FFFFFF;
+    color: rgb(243,244,245);
 }
 
 .add-friend-tab.selected {
@@ -275,8 +283,11 @@
 .all-tab:hover,
 .pending-tab:hover,
 .blocked-tab:hover {
-    color: hsl(210, 2.9%, 86.7%);
-    background-color: hsla(217, 7.6%, 33.5%, 0.4);
+    // color: hsl(210, 2.9%, 86.7%);
+    color: hsl(228, 8.8%, 88.8%);
+    // background-color: hsla(217, 7.6%, 33.5%, 0.4);
+    background-color: rgba(78,80,88,0.3);
+    // background-color: hsl(228,6%,32.5%/0.3);
 }
 
 .add-friend-tab:hover {
@@ -303,7 +314,9 @@
 }
 
 
-.invite-tool-bar-group-dm:hover svg, .inbox-tool-bar:hover svg ,.help-tool-bar:hover svg{
+.invite-tool-bar-group-dm:hover svg,
+.inbox-tool-bar:hover svg,
+.help-tool-bar:hover svg {
 
     color: hsl(210, 2.9%, 86.7%);
 }
