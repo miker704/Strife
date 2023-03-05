@@ -184,14 +184,18 @@
 }
 
 .selected-dm-server {
-    background-color: #3A3C43;
-    color: #FFFFFF;
+    // background-color: #3A3C43;
+    // color: #FFFFFF;
+    background-color: #3f4249;
+    color: hsl(210,9.1%,95.7%);
 
 }
 
 .dm-server-li-item.selected-dm-server {
-    background-color: #3A3C43;
-    color: #FFFFFF;
+    background-color: #3f4249;
+    color: hsl(210,9.1%,95.7%);
+    // color: #FFFFFF;
+
 }
 
 .dm-server-li-item {
