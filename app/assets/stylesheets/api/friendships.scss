@@ -48,6 +48,11 @@ $off-grey: #B9BBBE;
     background-color: hsla(217, 7.6%, 33.5%, 0.48);
 }
 
+.friends-nav-bar.selected-x{
+    background-color: #3f4249;
+    color: hsl(210,9.1%,95.7%);
+}
+
 
 .friends-nav-bar-link {
     align-items: center;
@@ -378,7 +383,8 @@ $off-grey: #B9BBBE;
     // transform: translate(309px, 34px);
     // transform: translate(309px, 48px);
 
-    background-color: #36393F;
+    // background-color: #36393F;
+    background-color: #313338;
     z-index: -1;
 
 
@@ -405,7 +411,8 @@ $off-grey: #B9BBBE;
     min-width: 360px;
     max-width: 360px;
     -webkit-box-flex: 0;
-    background: hsl(223, 6.95%, 19.8%);
+    // background: hsl(223, 6.95%, 19.8%);
+    background-color: #313338;
     forced-color-adjust: none;
     display: flex;
     flex-direction: column;
@@ -416,7 +423,8 @@ $off-grey: #B9BBBE;
 .active-now-section {
     forced-color-adjust: none;
     height: 93vh;
-    background-color: hsl(220, 7.7%, 22.9%);
+    // background-color: hsl(220, 7.7%, 22.9%);
+    background-color: #313338;
     user-select: none;
 }
 
@@ -599,7 +607,7 @@ $off-grey: #B9BBBE;
 //     opacity: 0;
 // }
 
-.mag-icon1{
+.mag-icon1 {
     forced-color-adjust: none;
     color: hsl(216, 3.7%, 73.5%);
     box-sizing: border-box;
@@ -610,15 +618,16 @@ $off-grey: #B9BBBE;
     width: 100%;
     height: 100%;
     z-index: 2;
-    -webkit-transition: opacity .1s ease-out,-webkit-transform .1s ease-out;
-    transition: opacity .1s ease-out,-webkit-transform .1s ease-out;
-    transition: transform .1s ease-out,opacity .1s ease-out;
-    transition: transform .1s ease-out,opacity .1s ease-out,-webkit-transform .1s ease-out;
+    -webkit-transition: opacity .1s ease-out, -webkit-transform .1s ease-out;
+    transition: opacity .1s ease-out, -webkit-transform .1s ease-out;
+    transition: transform .1s ease-out, opacity .1s ease-out;
+    transition: transform .1s ease-out, opacity .1s ease-out, -webkit-transform .1s ease-out;
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
     opacity: 0;
 }
-.mag-icon1.visible-x{
+
+.mag-icon1.visible-x {
     transform: rotate(0deg);
     opacity: 1;
 }
@@ -1459,7 +1468,7 @@ $off-grey: #B9BBBE;
     margin: 0 10px 0 20px;
 }
 
-.activity-online-friend-idx :hover{
+.activity-online-friend-idx :hover {
     .subtext-inner {
         text-overflow: unset;
         // transform: translateX(100%);
