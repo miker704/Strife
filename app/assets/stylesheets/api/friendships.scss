@@ -450,7 +450,8 @@ $off-grey: #B9BBBE;
 
 .empty-card {
     forced-color-adjust: none;
-    background: hsl(220, 7.7%, 22.9%);
+    // background: hsl(220, 7.7%, 22.9%);
+    background-color: #313338;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
