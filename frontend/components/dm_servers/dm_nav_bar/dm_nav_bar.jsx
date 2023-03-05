@@ -65,8 +65,6 @@ class DmNavBar extends React.Component {
     //     }
     // }
 
-
-
     toggleCreateDmModal () {
         this.setState({ createDmModal: true })
     }
@@ -199,9 +197,8 @@ class DmNavBar extends React.Component {
 
 
                     <div className='friends-nav-bar-wrapper'>
-                        <div className='friends-nav-bar'>
-                            <Link className='friends-nav-bar-link' to={`/$/channels/@me`}>
-
+                        <div className={`friends-nav-bar ${this.props.location.pathname === `/$/channels/@me/` ? `selected-x`:``}`}>
+                            <Link className='friends-nav-bar-link' to={`/$/channels/@me/`}>
                                 <div className='friend-avatar-wrapper'>
                                     <div className='friend-avatar'>
                                         <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
@@ -319,7 +316,6 @@ class DmNavBar extends React.Component {
                                 <Link to={`/$/channels/@me/${dmServer.id}`}
                                     className={selectedDmServer}
                                     onClick={() => {
-
                                         this.props.reSyncCurrentUser(this.props.currentUserId).then((action) => {
                                             let currUser = action.currentUser;
                                             if (!currUser.dmServersJoined.includes(parseInt(dmServer.id))) {
