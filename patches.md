@@ -127,6 +127,17 @@
     - Fixed an issue in DmServers where a user types a message and does not send it, then proceeds to  switch to another dmServer that
       previously typed message that was not sent remains in the textArea.
       - Addressed by clearing the state of the text area the dmServer id changes.
+    
+    - Fixed an issue where selected dmServers would not appear as selected 
+      - Problem was due too the elimination of double routing of this component.
+        - Which only left it to render at '/channels/@me' which is needed in order for a user to see and click to enter a dmServer
+        - The route  '/$/channels/@me/:dmServerId' was reserved to be in a special protected route to prevent from unauthorized users from
+          entering. this route was also used to render the dmserver navbar component which allowed access to the  params ':dmServerId' which
+          with the elimination of this component rendering of at this route the component no longer has access to that params which 
+          is required inorder to activate the selected dmserver colorization 
+      - Added back the double routing of DmServerNavBar with initial rendering at '/$/channels/@me' and 
+        '/$/channels/@me/:dmServerId' this route here is taken to a secure route and checked to see if a user is a member of that dmServer
+        rendering the dmServer navbar component again on this route allows a selected dmServer to be showm as selected.
 
 #### User Security
 
@@ -151,6 +162,8 @@
     - Fixed background colors of Find or Start conversation bar and Search bar in DmServerHeader NavBar.
     - Added users online status of the Dm Server Header nav bar for one to one dmserver chat rooms.
     - Readjusted the colors and background colors of hovering and selecting friend options on the homepage head nav bar.
+    - Added color brightness when selecting dmserver member list to be enabled
+    - Added the colors when selecting friends option in the dmServer navbar
 
 ### Other Changes
 
