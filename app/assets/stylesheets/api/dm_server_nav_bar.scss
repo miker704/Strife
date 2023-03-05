@@ -353,8 +353,11 @@
     overflow: hidden;
     border-radius: 4px;
     box-shadow: none;
-    color: hsl(214, 4%, 65.3%);
-    background-color: hsl(216, 7.2%, 13.5%);
+    // color: hsl(214, 4%, 65.3%);
+    color: hsl(228, 5.1%, 61.6%);
+
+    // background-color: hsl(216, 7.2%, 13.5%);
+    background-color: #1e1f22;
     text-align: left;
     text-overflow: ellipsis;
     font-size: 14px;
@@ -365,6 +368,7 @@
     forced-color-adjust: none;
     cursor: pointer;
     font-family: "Whitney";
+    // font-family: "Helvetica";
     border-color: transparent;
 }
 
