@@ -37,8 +37,10 @@ $off-grey: #B9BBBE;
 .friends-nav-bar:hover,
 .friends-nav-bar:focus-within {
     // filter: brightness(125%);
-    color: hsl(210, 2.9%, 86.7%);
-    background-color: hsla(217, 7.6%, 33.5%, 0.4);
+    // color: hsl(210, 2.9%, 86.7%);
+    // background-color: hsla(217, 7.6%, 33.5%, 0.4);
+    background-color: #35373c;
+    color: hsl(228, 8.8%, 88.8%);
 }
 
 .friends-nav-bar:active {
