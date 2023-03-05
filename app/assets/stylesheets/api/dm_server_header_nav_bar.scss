@@ -509,13 +509,33 @@
 
 }
 
+.icon-hide-user-profile {
+    display: block;
+    width: 24px;
+    height: 24px;
+    -webkit-app-region: no-drag;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+    color: hsl(216, 3.7%, 73.5%);
+
+}
+
+.icon-hide-user-profile.selected,
+.icon-hide-group-chat.selected{
+    color: hsl(210, 9.1%, 95.7%);
+
+}
+
+.icon-hide-user-profile:hover,
 .icon-hide-group-chat:hover,
 .icon-dms-inbox:hover,
 .icon-add-members:hover,
 .icon-webcall:hover,
 .icon-pin-messages:hover,
 .icon-phone:hover {
-    color: hsl(210, 2.9%, 86.7%);
+    // color: hsl(210, 2.9%, 86.7%);
+    color: hsl(228, 8.8%, 88.8%);
+
 
 }
 
