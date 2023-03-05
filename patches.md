@@ -148,8 +148,9 @@
     - Fixed background colors of dm server navbar , dm server header navbar, textarea, dmMembers list, highlighting of dmservers 
       and dmServer members.
     - Fixed background colors of server nav bar and user nav bar.
-
+    - Fixed background colors of Find or Start conversation bar and Search bar in DmServerHeader NavBar.
     - Added users online status of the Dm Server Headder nav bar for one to one dmserver chat rooms.
+
 
 ### Other Changes
 
