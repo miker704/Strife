@@ -23,7 +23,7 @@ const App = () => {
     return (
         <div>
             <Route path='/' component={ModalManagerContainer}></Route>
-            <ProtectedRoute  path = '/$/' component={_STRIFE_CORE_CONTAINER_} ></ProtectedRoute>
+            <ProtectedRoute path='/$/' component={_STRIFE_CORE_CONTAINER_} ></ProtectedRoute>
             <ProtectedRoute path="/$/channels/:serverId/" component={ServerNavBarContainer} />
             <ProtectedRoute path="/$/channels/" component={UserNavContainer} />
             {/* <ProtectedRoute exact path="/voice/" component={STRIFE_VOICE_CALL_API_CONTAINER} /> */}
@@ -32,7 +32,6 @@ const App = () => {
                 <ProtectedRoute path="/$/channels/@me" component={DMNavBarContainer} />
             </Switch>
 
-
             {/* render proper component for messages type or friends list */}
             <Switch>
 
@@ -40,6 +39,12 @@ const App = () => {
                 <ProtectedRoute path="/$/channels/:serverId/:channelId" component={PROTECTED_SERVER_CONTAINER} />
                 <ProtectedRoute path="/$/channels/@me" component={HomePageContainer} />
 
+            </Switch>
+            {/* this componenet is routed again to this path in order to activate which dmServer is selected  
+                the first route path to this component is to display the component and be able to enter it
+            */}
+            <Switch>
+                <ProtectedRoute path="/$/channels/@me/:dmServerId" component={DMNavBarContainer} />
             </Switch>
 
             {/* alt routes to other areas not involving main app */}
