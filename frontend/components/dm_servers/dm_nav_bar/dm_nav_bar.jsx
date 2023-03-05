@@ -200,7 +200,7 @@ class DmNavBar extends React.Component {
 
                     <div className='friends-nav-bar-wrapper'>
                         <div className='friends-nav-bar'>
-                            <Link className='friends-nav-bar-link' to={`/channels/@me`}>
+                            <Link className='friends-nav-bar-link' to={`/$/channels/@me`}>
 
                                 <div className='friend-avatar-wrapper'>
                                     <div className='friend-avatar'>
@@ -316,7 +316,7 @@ class DmNavBar extends React.Component {
                             ) : ("");
                             return (
 
-                                <Link to={`/channels/@me/${dmServer.id}`}
+                                <Link to={`/$/channels/@me/${dmServer.id}`}
                                     className={selectedDmServer}
                                     onClick={() => {
 
@@ -324,7 +324,7 @@ class DmNavBar extends React.Component {
                                             let currUser = action.currentUser;
                                             if (!currUser.dmServersJoined.includes(parseInt(dmServer.id))) {
                                                 this.props.removeDmServer(dmServer.id);
-                                                this.props.history.push('/$TR!F3-INTRUSION-PREVENTION/');
+                                                this.props.history.push('/$/$TR!F3-INTRUSION-PREVENTION/');
                                             }
                                             else if (currUser.dmServersJoined.includes(parseInt(dmServer.id))) {
                                                 this.props.fetchDmServer(dmServer.id);
