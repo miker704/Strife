@@ -218,9 +218,13 @@
     display: flex;
     -webkit-box-align: stretch;
     box-sizing: border-box;
-    color: hsl(210, 2.9%, 86.7%);
-    background-color: hsl(216, 7.2%, 13.5%);
-
+    // color: hsl(210, 2.9%, 86.7%);
+    color: hsl(228, 8.8%, 88.8%);
+    // background-color: hsl(216, 7.2%, 13.5%);
+    background-color: #1e1f22;
+    font-family: "Whitney";
+    // font-family: "Helvetica";
+    font-size: 14px;
 }
 
 .draft-edit {
