@@ -151,7 +151,6 @@
     - Fixed background colors of Find or Start conversation bar and Search bar in DmServerHeader NavBar.
     - Added users online status of the Dm Server Headder nav bar for one to one dmserver chat rooms.
 
-
 ### Other Changes
 
 - Changed which state for current user information to be extracted from for certain components.
