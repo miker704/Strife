@@ -167,7 +167,7 @@
     - Readjusted the colors and background colors of hovering and selecting friend options on the homepage head nav bar.
     - Added color brightness when selecting dmserver member list to be enabled
     - Added the colors when selecting friends option in the dmServer navbar
-    - Recolored the Active now Section.
+    - Recolored and changed the font-sizes in the Active now Section .
 
 ### Other Changes
 
