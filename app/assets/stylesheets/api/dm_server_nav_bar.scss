@@ -204,7 +204,9 @@
 
 
 .dm-server-li-item:hover {
-    background-color: #3A3C43;
+    // background-color: #3A3C43;
+    background-color: #35373c;
+    color: hsl(228, 8.8%, 88.8%);
 
 }
 
@@ -319,7 +321,8 @@
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
-    background-color: #2f3136;
+    // background-color: #2f3136;
+    background-color: #2b2d31;
     transform: translate(75px, 0px);
     width: 234px;
     // padding-left: 5px;
@@ -369,7 +372,8 @@
     overflow: hidden scroll;
     padding-right: 0px;
     forced-color-adjust: none;
-    background-color: hsl(223, 6.9%, 19.8%);
+    // background-color: hsl(223, 6.9%, 19.8%);
+    background-color: #2b2d31;
     flex: 1 1 auto;
     box-sizing: border-box;
     min-height: 0;
