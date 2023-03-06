@@ -100,7 +100,7 @@ const DmServerMemberList = ({
 
             }
             <div className="dm-members-index-container">
-                <h2 className="dm-members-header-title">{`MEMBERS - ${dmServerMemberList.length}`}</h2>
+                <h2 className="dm-members-header-title">{`MEMBERS — ${dmServerMemberList.length}`}</h2>
                 <ul className="ul-padding">
                     {
                         dmServerMemberList.map((dmMember, dmMemberIdx) => {
@@ -108,7 +108,7 @@ const DmServerMemberList = ({
                             return (
 
 
-                                <li className="dm-member-item" key={dmMember.id}
+                                <li className={`dm-member-item ${dmMember.online === false ? `dm-member-item-offline` : ``}`} key={dmMember.id}
                                     onClick={(e) => {
                                         handleSelected(dmMember);
                                         handlePopupShow(e);
