@@ -48,7 +48,7 @@ class DmServer extends React.Component {
         if (this.props.dmServer) {
             return (
                 <div className="dm-server-container">
-                    <DmServerHeaderNavBarContainer isViz={this.setHideMembersList} dmServerMembers={this.props.dmServerMembers} />
+                    <DmServerHeaderNavBarContainer isViz={this.setHideMembersList} _viz={this.state.hideMembersList} dmServerMembers={this.props.dmServerMembers} />
                     <div className="dm-server-content-container">
                         <div className="dm-messages-container-wrapper">
                             <DmMessagesContainer />
