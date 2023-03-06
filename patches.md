@@ -172,6 +172,8 @@
     - Adjust opacity for offline members in dmServer member list.
     - Added Selected Color for dmServer Members list for group dmServer chats by passing state of
       hideDmServer member list.
+    - Fixed a displacement issue where the edit friendship modal on the the all friends section clicking on the more options button
+      places the modal in the middle of the screen when using a 4k resolution screen.
 
 ### Other Changes
 
