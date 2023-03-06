@@ -96,7 +96,8 @@
     font-weight: 500;
     -webkit-box-flex: 1;
     flex: 1 1 auto;
-    color: hsl(223, 3.4%, 60.2%);
+    // color: hsl(223, 3.4%, 60.2%);
+    color: #989AA2;
 }
 
 .dm-member-item {
@@ -111,10 +112,15 @@
     padding: 1px 0;
     border-radius: 4px;
     transition: none;
-    color: hsl(223, 3.4%, 60.2%);
+    // color: hsl(223, 3.4%, 60.2%);
+    color: #989AA2;
     outline: 0;
 }
 
+.dm-member-item-offline {
+    // color: hsl(228, 5.1%, 61.6%);
+    opacity: 0.3;
+}
 
 .dm-member-item:hover {
     // background-color: #3b3f45;
@@ -122,6 +128,7 @@
     color: hsl(228, 8.8%, 88.8%);
     // background-color:hsla(217, 7.6%, 33.5%, 0.4);
     background-color: #35373c;
+    opacity: 1;
 }
 
 
