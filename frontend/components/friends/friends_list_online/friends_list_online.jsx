@@ -26,6 +26,7 @@ const FriendShipIndexOnline = ({
     const [selectedFriends, setSelectedFriends] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
     const [popupTop, setPopupTop] = useState(0);
+    const [popupLeft, setPopupLeft] = useState(0);
     const [selectFriend, toggleSelected] = useState([]);
     let allFriends = friends;
     let default_Photo = "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png";
@@ -52,11 +53,27 @@ const FriendShipIndexOnline = ({
     }
 
     const handlePopupShow = (e) => {
-        let currTop = e.currentTarget.getBoundingClientRect().top
-        if (currTop > 542) {
-            currTop /= 1.28;
+        let currTop = e.currentTarget.getBoundingClientRect().top;
+        let currLeft = e.currentTarget.getBoundingClientRect().left;
+        const realWidth = window.screen.width * window.devicePixelRatio;
+        const realHeight = window.screen.height * window.devicePixelRatio;
+        //check if screen is 1920*1080 or 4k (3840*2160) give a range not an  exact as screens alter slightly 
+
+        if(currTop > ((window.innerHeight*0.7889))){
+            if(realWidth >= 3800 && realHeight >= 2100 ){
+                currTop/= 1.1475;
+            }
+            else{
+                // screen resolution is assumed 1920 * 1080
+                currTop /= 1.28;
+            }
         }
+        // if (currTop > 542) {
+        //     currTop /= 1.28;
+        // }
+
         setPopupTop(currTop);
+        setPopupLeft(currLeft);
         setShowPopup(!showPopup);
     }
 
@@ -143,7 +160,7 @@ const FriendShipIndexOnline = ({
 
             <div className="friend-index-container">
 
-                {showPopup && <EditFriendshipModalContainer user={currentUser} friend={selectFriend} top={popupTop} setShowPopup={setShowPopup} />}
+                {showPopup && <EditFriendshipModalContainer user={currentUser} friend={selectFriend} left={popupLeft} top={popupTop} setShowPopup={setShowPopup} />}
 
 
                 <div className="all-search-bar">
