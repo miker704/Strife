@@ -170,6 +170,8 @@
     - Recolored and changed the font-sizes in the Active now Section .
     - Switched from '-' to em dash '—' symbol for member lists on dmServers
     - Adjust opacity for offline members in dmServer member list.
+    - Added Selected Color for dmServer Members list for group dmServer chats by passing state of
+      hideDmServer member list.
 
 ### Other Changes
 
