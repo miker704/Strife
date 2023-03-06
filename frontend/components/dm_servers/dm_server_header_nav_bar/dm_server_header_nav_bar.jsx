@@ -17,6 +17,7 @@ const DmServerHeaderNavBar = ({
     removeDmMessageErrors,
     updateDmServer,
     dmServerUsers,
+    _viz,
     isViz
 
 }) => {
@@ -24,26 +25,28 @@ const DmServerHeaderNavBar = ({
         return null;
     }
 
-    let displayName = "";
 
+    let displayName = "";
     if (dmServer.dm_server_name === null) {
-        displayName = Object.values(dmServerMembers).filter(member => member.id !== currentUser.id).map(member => member.username).join(", ")
+        displayName = Object.values(dmServerMembers).filter(member => member.id !== currentUser.id).map(member => member.username).join(", ");
     }
     else if (dmServer.dm_server_name !== null || dmServer.dm_server_name !== undefined || dmServer.dm_server_name !== "") {
-        displayName = dmServer.dm_server_name
+        displayName = dmServer.dm_server_name;
     }
+
     const [showEdit, setShowEdit] = useState(false);
     const [DmServerName, setDMServerName] = useState("");
     const [showPopUp, setShowPopUp] = useState(false);
     const [popupTop, setPopupTop] = useState(0);
     const [showPopUpCall, setShowPopUpCall] = useState(false);
     const [popupTopCall, setPopupTopCall] = useState(0);
-
+    const [viz,setViz] = useState(false);
 
     useEffect(() => {
         if (dmServer?.id) {
             // fetchDmServer(dmServerId);
             setDMServerName(displayName);
+            setViz(false);
         }
 
         return function cleanup () {
@@ -54,14 +57,14 @@ const DmServerHeaderNavBar = ({
                 removeDmMessageErrors()
             }
         }
-    }, [dmServer?.id,dmServerUsers])
+    }, [dmServer?.id, dmServerUsers])
 
 
 
     const handleEditName = (e) => {
         e.preventDefault();
         //prevent the user from saving the name of the dmServer to a blank name.
-        if(DmServerName.length === 0 || DmServerName.replace(/\s/g, '').length === 0){
+        if (DmServerName.length === 0 || DmServerName.replace(/\s/g, '').length === 0) {
             return;
         }
         else if (DmServerName !== displayName) {
@@ -110,10 +113,22 @@ const DmServerHeaderNavBar = ({
     }
 
 
+    console.log(`viz = ${viz}`);
+    console.log(`_VIZ_ is = ${_viz} `);
 
     let membersOfthisServer = Object.values(dmServerMembers);
+    let otherUser;
+    let prefilled = false;
+    if (membersOfthisServer.length === 2) {
+        otherUser = Object.values(dmServerMembers).filter(member => member.id !== currentUser.id);
+        prefilled = true;
+    }
 
-
+    let onlineStatus = prefilled === true ? (
+        <div className="online-status-dmshnb">
+            <div className={`${otherUser[0].online === true ? "circle-online-dm-header-nav-bar" : "circle-offline-dm-header-nav-bar"}`}></div>
+        </div>) :
+        ('');
 
     return (
         <div className="dm-server-header-bar">
@@ -175,6 +190,8 @@ const DmServerHeaderNavBar = ({
                 <div id="normal-chat" className={`dms-hbar-name ${membersOfthisServer.length > 2 ? "is-hidden" : ""}`}>
                     <h3 className="dms-hbar-name-header">{displayName}</h3>
                 </div>
+
+                {onlineStatus}
 
                 <div id="groupchatname"
                     className={`group-chat-container ${membersOfthisServer.length < 3 ? "is-hidden" : ""}`}
@@ -292,9 +309,9 @@ const DmServerHeaderNavBar = ({
                     <div id="hide-group-chat"
                         className={`dmshb-tool-icon-wrapper ${membersOfthisServer.length < 3 ? "is-hidden" : ""}`}
                         data-tip data-for="hide-members-tip"
-                        onClick={() => isViz()}
+                        onClick={() => {isViz();}}
                     >
-                        <svg x="0" y="0" className="icon-hide-group-chat" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                        <svg x="0" y="0" className={`icon-hide-group-chat ${_viz === false ? ``: `selected`}`} aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M14 8.00598C14 10.211 12.206 12.006 10
                                                  12.006C7.795 12.006 6 10.211 6 8.00598C6 5.80098 7.794 4.00598 10 4.00598C12.206 4.00598 14 5.80098 14 
                                                  8.00598ZM2 19.006C2 15.473 5.29 13.006 10 13.006C14.711 13.006 18 15.473 18 19.006V20.006H2V19.006Z">
@@ -314,7 +331,7 @@ const DmServerHeaderNavBar = ({
                             </path>
                         </svg>
                         <ReactTooltip
-                            className="dmshb-hide-members-tool-tip "
+                            className="dmshb-hide-members-tool-tip"
                             textColor="#B9BBBE"
                             backgroundColor="#191919"
                             id="hide-members-tip"
@@ -323,6 +340,41 @@ const DmServerHeaderNavBar = ({
                             Hide Member List
                         </ReactTooltip>
                     </div>
+
+                    <div id="hide-user-profile"
+                        className={`dmshb-tool-icon-wrapper ${membersOfthisServer.length > 2 ? "is-hidden" : ""}`}
+                        data-tip data-for="hide-user-profile-tip"
+                        onClick={() => {isViz(); setViz(!viz)}}
+                    >
+
+                        <svg x="0" y="0" className={`icon-hide-user-profile ${viz === false ? ``: `selected`}`} aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                            <g fill="none">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M12 22C12.4883 22 12.9684 21.965 13.438 21.8974C12.5414 
+                            20.8489 12 19.4877 12 18C12 17.6593 12.0284 17.3252 12.083 17H6V16.0244C6 14.0732 10 13 12 13C12.6215 13 13.436 13.1036 
+                            14.2637 13.305C15.2888 12.4882 16.5874 12 18 12C19.4877 12 20.8489 12.5414 21.8974 13.438C21.965 12.9684 22 12.4883 22 
+                            12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM12 12C13.66 12 15 10.66 15 9C15 7.34 
+                            13.66 6 12 6C10.34 6 9 7.34 9 9C9 10.66 10.34 12 12 12Z" fill="currentColor">
+                                </path>
+                                <path d="M18 22C20.2091 22 22 20.2091 22 18C22 15.7909 20.2091
+                         14 18 14C15.7909 14 14 15.7909 14 18C14 20.2091 15.7909 22 18 22Z" fill="currentColor">
+                                </path>
+                            </g>
+                        </svg>
+
+                        <ReactTooltip
+                            className="dmshb-hide-user-profile-tool-tip "
+                            textColor="#B9BBBE"
+                            backgroundColor="#191919"
+                            id="hide-user-profile-tip"
+                            place="bottom"
+                            effect="solid">
+                            Show User Profile
+                        </ReactTooltip>
+                    </div>
+
+
+
+
                     <div className="dmshbar-search-bar-wrapper" >
                         <div className="dmshbar-search-bar-inner-wrapper">
                             <div className="dmshbar-search-bar">
