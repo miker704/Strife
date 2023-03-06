@@ -15,6 +15,7 @@ const EditFriendshipModal = ({
     history,
     user,
     top,
+    left
 }) => {
 
 
@@ -75,7 +76,7 @@ const EditFriendshipModal = ({
 
     return (
         <div className="fo-layer" >
-            <div className="fo-theme" style={{ top: `${top}px` }} ref={popupRef}>
+            <div className="fo-theme" style={{ top: `${top}px`, left: `${left}px` }} ref={popupRef}>
 
                 <div className="fo-flex-wrapper" >
                     <div className="fo-scroller" onClick={(e) => e.stopPropagation()} >
