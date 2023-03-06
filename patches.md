@@ -168,6 +168,7 @@
     - Added color brightness when selecting dmserver member list to be enabled
     - Added the colors when selecting friends option in the dmServer navbar
     - Recolored and changed the font-sizes in the Active now Section .
+    - Switched from '-' to em dash '—' symbol for member lists on dmServers
 
 ### Other Changes
 
