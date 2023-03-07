@@ -176,6 +176,8 @@
       button places the modal in the middle of the screen when using a 4k resolution screen.
     - Fixed a displacement issue for user profile card on dmserver members list section in dmServers 
       for 4k resolution screens.
+    - Fixed a displacement issue for user profile card on server members list section in Servers 
+      for 4k resolution screens.
 
 ### Other Changes
 
