@@ -174,6 +174,8 @@
       hideDmServer member list.
     - Fixed a displacement issue in the edit friendship modal on the all and online friends list sections where clicking on the more options 
       button places the modal in the middle of the screen when using a 4k resolution screen.
+    - Fixed a displacement issue for user profile card on dmserver members list section in dmServers 
+      for 4k resolution screens.
 
 ### Other Changes
 
