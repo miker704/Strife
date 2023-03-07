@@ -154,3 +154,74 @@ class TestPage extends React.Component {
 }
 
 export default TestPage;
+
+
+
+// const handlePopupShow = (e) => {
+//     let currTop = e.currentTarget.getBoundingClientRect().top;
+//     let currLeft = e.currentTarget.getBoundingClientRect().left;
+    
+//     let windH = window.innerHeight;
+//     let windW = window.innerWidth;
+//     console.log(`window height = ${windH}`);
+//     console.log(`window width = ${windW}`);
+//     const realWidth = window.screen.width * window.devicePixelRatio;
+//     const realHeight = window.screen.height * window.devicePixelRatio;
+//     console.log(`
+//       Your screen resolution is: ${realWidth} x ${realHeight}
+//       Your screen devicePixelRatio is: ${window.devicePixelRatio}
+//       Your screen width is: ${window.screen.width}
+//       Your screen height is: ${window.screen.height}`);
+//     console.log(`clientBound is  = ${e.currentTarget.getBoundingClientRect()}`);
+//     console.table(e.currentTarget.getBoundingClientRect());
+//     console.log(`current resolution of bound clients is window.screen.height  = ${window.screen.height * 0.7889}`);
+//     console.log(`current resolution of bound clients is window.innerHeight  = ${window.innerHeight * 0.7889}`);
+//     console.log(`window.screen.height* 0.7889/1.28 = ${(window.screen.height * 0.7889)/1.28}`);
+//     console.log(`window.innerHeight * 0.7889/1.28  = ${(window.innerHeight * 0.7889)/1.28}`);
+
+
+//     //check if screen is 1920*1080 or 4k (3840*2160) give a range not an  exact as screens alter slightly 
+//     // if(realWidth > 3800 && realHeight > 2100){
+
+//     // }
+
+//     if(currTop > ((window.innerHeight*0.7889))){
+//         if(realWidth >= 3800 && realHeight >= 2100 ){
+//             currTop/= 1.1475;
+//         }
+//         else{
+//             // screen resolution is assumed 1920 * 1080
+//             currTop /= 1.28;
+//         }
+//     }
+
+
+//     // if (currTop > 542) {
+//     //     currTop /= 1.28;
+//     // }
+//     setPopupTop(currTop);
+//     setPopupLeft(currLeft);
+//     setShowPopup(!showPopup);
+// }
+
+
+
+        // if (currTop > 640) {
+        //     console.log(`currtop > 640 ${currTop / 3}`);
+        //     currTop /= 3;
+        //     setPopupTop(currTop);
+        // }
+        // else if (currTop > 101 && currTop < 639) {
+        //     console.log(`currtop >101 and < 639 ${currTop / 2}`);
+        //     currTop /= 2;
+        //     setPopupTop(currTop);
+        // }
+
+        // else if (currTop <= 100) {
+        //     console.log(`currtop <= 100px% ${currTop * 0.095}`);
+        //     setPopupTop(currTop * 0.095);
+        // }
+        // else {
+        //     console.log(`currtop is normal @ ${currTop}`);
+        //     setPopupTop(currTop);
+        // }
