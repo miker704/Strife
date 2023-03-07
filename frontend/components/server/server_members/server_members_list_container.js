@@ -8,7 +8,8 @@ import ServerMembersList from "./server_members_list.jsx";
 
 const mSTP = (state, ownProps) => {
     return {
-        currentUser: state.entities.users[state.session.id],
+        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.currentUser,
         serverId: ownProps.match.params.serverId,
         errors: state.errors.server,
         server: state.entities.servers[ownProps.match.params.serverId],
