@@ -187,8 +187,6 @@
     - Fixed u.i colors and problems on friend container on dm nav bar
     - Fixed u.i colors and problems on nitro container on dm nav bar
 
-
-
 ### Other Changes
 
 - Changed which state for current user information to be extracted from for certain components.
