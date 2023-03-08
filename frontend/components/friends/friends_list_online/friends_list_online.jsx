@@ -204,7 +204,7 @@ const FriendShipIndexOnline = ({
 
 
                 <div id="num-of-friends" className="all-friends">
-                    {`ONLINE - ${allFriends.length}`}
+                    {`ONLINE — ${allFriends.length}`}
                 </div>
 
                 <div id="no-match" className="empty-state-container is-hidden">
