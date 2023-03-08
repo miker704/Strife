@@ -183,7 +183,6 @@
     - Switched from '-' to em dash '—' symbol in the friends section for users in the online,all friends list, pending friend request list, and 
       blocked list.
 
-
 ### Other Changes
 
 - Changed which state for current user information to be extracted from for certain components.
