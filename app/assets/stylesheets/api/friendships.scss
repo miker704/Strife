@@ -22,7 +22,8 @@ $off-grey: #B9BBBE;
     forced-color-adjust: none;
     padding-right: 8px;
     // color: #FFFFFF;
-    color: hsl(223, 3.4%, 60.2%);
+    // color: hsl(223, 3.4%, 60.2%);
+    // color: #989AA2;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -41,6 +42,12 @@ $off-grey: #B9BBBE;
     // background-color: hsla(217, 7.6%, 33.5%, 0.4);
     background-color: #35373c;
     color: hsl(228, 8.8%, 88.8%);
+
+    .friend-avatar-text,
+    .friend-avatar {
+        color: hsl(228, 8.8%, 88.8%);
+
+    }
 }
 
 .friends-nav-bar:active {
@@ -48,9 +55,13 @@ $off-grey: #B9BBBE;
     background-color: hsla(217, 7.6%, 33.5%, 0.48);
 }
 
-.friends-nav-bar.selected-x{
+.friends-nav-bar.selected-x {
     background-color: #3f4249;
-    color: hsl(210,9.1%,95.7%);
+    color: hsl(210, 9.1%, 95.7%);
+    .friend-avatar-text,
+    .friend-avatar {
+        color: hsl(210, 9.1%, 95.7%);
+    }
 }
 
 
@@ -95,6 +106,7 @@ $off-grey: #B9BBBE;
     justify-content: center;
     -webkit-box-flex: 0;
     -webkit-box-pack: center;
+    color: hsl(228, 5.1%, 61.6%);
 }
 
 .friend-avatar-text-wrapper {
@@ -127,6 +139,8 @@ $off-grey: #B9BBBE;
     text-overflow: ellipsis;
     overflow: hidden;
     font-family: "Whitney";
+    color: #989AA2;
+
 }
 
 
