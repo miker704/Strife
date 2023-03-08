@@ -111,7 +111,7 @@ class BlockedList extends React.Component {
 
 
                     <div id="num-of-friends" className="all-friends">
-                        {`BLOCKED USERS - ${allBlockedUsers.length}`}
+                        {`BLOCKED USERS — ${allBlockedUsers.length}`}
                     </div>
 
                     <div id="no-match" className="empty-state-container is-hidden">
