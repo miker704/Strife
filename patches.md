@@ -179,7 +179,10 @@
     - Fixed a displacement issue for user profile card on server members list section in Servers 
       for 4k resolution screens.
     - Adjust opacity for offline members in Server member list of a server.
-    - 
+    - Switched from '-' to em dash '—' symbol for member lists on Servers for offline and online users.
+    - Switched from '-' to em dash '—' symbol in the friends section for users in the online,all friends list, pending friend request list, and 
+      blocked list.
+
 
 ### Other Changes
 
