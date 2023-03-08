@@ -182,6 +182,12 @@
     - Switched from '-' to em dash '—' symbol for member lists on Servers for offline and online users.
     - Switched from '-' to em dash '—' symbol in the friends section for users in the online,all friends list, pending friend request list, and 
       blocked list.
+    - Fixed u.i colors and problems on Dmserver nav bar
+    - Fixed u.i colors and problems on homepage nav bar
+    - Fixed u.i colors and problems on friend container on dm nav bar
+    - Fixed u.i colors and problems on nitro container on dm nav bar
+
+
 
 ### Other Changes
 
