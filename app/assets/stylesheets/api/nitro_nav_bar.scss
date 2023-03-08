@@ -16,7 +16,8 @@
     forced-color-adjust: none;
     padding-right: 8px;
     // color: #FFFFFF;
-    color: hsl(223, 3.4%, 60.2%);
+    // color: hsl(223, 3.4%, 60.2%);
+    color: hsl(228, 5.1%, 61.6%);
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -31,14 +32,31 @@
 .nitro-nav-bar:hover,
 .nitro-nav-bar:focus-within {
     // filter: brightness(125%);
-    color: hsl(210, 2.9%, 86.7%);
+    // color: hsl(210, 2.9%, 86.7%);
+    color: hsl(228, 8.8%, 88.8%);
     background-color: hsla(217, 7.6%, 33.5%, 0.4);
+
+    .nitro-avatar,
+    .nitro-avatar-text {
+        color: hsl(228, 8.8%, 88.8%);
+
+    }
 }
 
 .nitro-nav-bar:active {
     color: #FFFFFF;
     background-color: hsla(217, 7.6%, 33.5%, 0.48);
 }
+
+.nitro-nav-bar.selected {
+    background-color: #3f4249;
+    color: hsl(210, 9.1%, 95.7%);
+    .nitro-avatar,
+    .nitro-avatar-text {
+        color: hsl(210, 9.1%, 95.7%);
+    }
+}
+
 
 
 .nitro-nav-bar-link {
@@ -82,6 +100,8 @@
     justify-content: center;
     -webkit-box-flex: 0;
     -webkit-box-pack: center;
+    color: hsl(228, 5.1%, 61.6%);
+
 }
 
 .nitro-avatar-text-wrapper {
@@ -114,6 +134,8 @@
     text-overflow: ellipsis;
     overflow: hidden;
     font-family: "Whitney";
+    color: #989AA2;
+
 }
 
 .strife-nitro-lbl1 {
