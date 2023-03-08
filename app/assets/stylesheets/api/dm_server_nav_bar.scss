@@ -66,11 +66,34 @@
     font-size: 12px;
     font-weight: 500;
     font-family: "ABC Ginto Normal";
+
+
+    // display: flex;
+    // padding: 18px 8px 4px 18px;
+    // height: 40px;
+    // box-sizing: border-box;
+    // text-overflow: ellipsis;
+    // white-space: nowrap;
+    // overflow: hidden;
+    // text-transform: uppercase;
+    // font-size: 12px;
+    // line-height: 16px;
+    // letter-spacing: .02em;
+    // font-family: var(--font-display);
+    // font-weight: 600;
+    // -webkit-box-flex: 1;
+    // color: hsl(228, 5.1%, 61.6%);
+
+}
+
+.dm-list-header span:hover {
+    color: hsl(228, 8.8%, 88.8%);
 }
 
 .dm-list-header h4:hover {
     // filter: brightness(125%);
-    color: #dcddde;
+    // color: #dcddde;
+    color: hsl(228, 8.8%, 88.8%);
 }
 
 
@@ -101,6 +124,23 @@
     cursor: pointer;
     transform: translate(-8px, 0px);
     z-index: 20;
+
+    // -webkit-box-flex: 0;
+    // -ms-flex: 0;
+    // flex: 0;
+    // width: 16px;
+    // height: 16px;
+    // margin-left: 0;
+    // margin-right: 2px;
+
+    // position: relative;
+    // // height: 24px;
+    // // width: auto;
+    // // -webkit-box-flex: 0;
+    // // -ms-flex: 0 0 auto;
+    // // flex: 0 0 auto;
+    // margin: 0 8px;
+
 }
 
 .create-channel-div:hover {
@@ -156,7 +196,8 @@
 .dm-nav-bar-list a {
     border-radius: 5px;
     text-decoration: none;
-    color: rgb(151, 152, 157);
+    // color: rgb(151, 152, 157);
+    color: #989AA2;
 }
 
 
@@ -187,14 +228,20 @@
     // background-color: #3A3C43;
     // color: #FFFFFF;
     background-color: #3f4249;
-    color: hsl(210,9.1%,95.7%);
+    color: hsl(210, 9.1%, 95.7%);
 
 }
 
 .dm-server-li-item.selected-dm-server {
     background-color: #3f4249;
-    color: hsl(210,9.1%,95.7%);
+    color: hsl(210, 9.1%, 95.7%);
+
     // color: #FFFFFF;
+    .dm-server-name,
+    .dm-server-subtitle {
+        color: hsl(210, 9.1%, 95.7%);
+
+    }
 
 }
 
@@ -212,6 +259,12 @@
     background-color: #35373c;
     color: hsl(228, 8.8%, 88.8%);
 
+    .dm-server-name,
+    .dm-server-subtitle {
+        color: hsl(228, 8.8%, 88.8%);
+
+    }
+
 }
 
 .dm-server-name {
@@ -224,6 +277,8 @@
     overflow: hidden;
     position: relative;
     text-overflow: ellipsis;
+    color: #989AA2;
+
 }
 
 .dm-server-subtitle {
@@ -238,6 +293,7 @@
     font-family: "Whitney";
     overflow-x: hidden;
     max-width: 180px;
+    color: #989AA2;
 
 }
 
@@ -252,13 +308,13 @@
     border-radius: 50%;
 }
 
-.dm-server-pfp-icon{
+.dm-server-pfp-icon {
     display: flex;
     align-items: center;
 }
 
 
-.dm-server-pfp-icon>img{
+.dm-server-pfp-icon>img {
     height: 32px;
     width: 32px;
     border-radius: 50%;
@@ -428,7 +484,9 @@
     margin-left: 0;
     margin-right: 2px;
     -webkit-box-flex: 0;
+    // color: hsl(231, 5.2%, 73.5%);
     color: hsl(216, 3.7%, 73.5%);
+
     forced-color-adjust: none;
     display: block;
     -webkit-app-region: no-drag;
