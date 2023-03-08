@@ -178,6 +178,8 @@
       for 4k resolution screens.
     - Fixed a displacement issue for user profile card on server members list section in Servers 
       for 4k resolution screens.
+    - Adjust opacity for offline members in Server member list of a server.
+    - 
 
 ### Other Changes
 
