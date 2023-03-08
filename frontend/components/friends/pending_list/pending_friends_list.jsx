@@ -122,7 +122,7 @@ class PendingFriendList extends React.Component {
                     </div>
 
                     <div id="num-of-friends" className="all-friends">
-                        {`PENDING FRIEND REQUESTS - ${outgoing_requests.length + incoming_requests.length}`}
+                        {`PENDING FRIEND REQUESTS — ${outgoing_requests.length + incoming_requests.length}`}
                     </div>
                     <div id="no-match" className="empty-state-container is-hidden">
                         <div className="blocked-users-empty">
