@@ -193,7 +193,7 @@ const FriendShipIndex = (props) => {
                 </div>
 
                 <div id="num-of-friends" className="all-friends">
-                    {`ALL FRIENDS - ${allFriends.length}`}
+                    {`ALL FRIENDS — ${allFriends.length}`}
                 </div>
 
 
