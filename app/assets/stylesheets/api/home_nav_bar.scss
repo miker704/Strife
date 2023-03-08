@@ -73,7 +73,9 @@
     width: auto;
     -webkit-box-flex: 0;
     forced-color-adjust: none;
-    color: hsl(223, 3.4%, 60.2%);
+    // color: hsl(223, 3.4%, 60.2%);
+    color: hsl(226, 5.5%, 53.5%);
+
 
 }
 
@@ -94,7 +96,7 @@
     box-sizing: border-box;
     font-weight: 500;
     font-family: "ABC Ginto Normal";
-    color: #FFFFFF;
+    color: #F3F4F5;
     font-size: 16px;
     line-height: 20px;
 }
@@ -318,7 +320,9 @@
 .inbox-tool-bar:hover svg,
 .help-tool-bar:hover svg {
 
-    color: hsl(210, 2.9%, 86.7%);
+    // color: hsl(210, 2.9%, 86.7%);
+    color: hsl(228, 8.8%, 88.8%);
+
 }
 
 .invite-tool-bar-group-dm {
@@ -331,7 +335,9 @@
     margin: 0 8px;
     cursor: pointer;
     box-sizing: border-box;
-    color: #B9BBBE;
+    // color: #B9BBBE;
+    color: hsl(231,5.2%,73.5%);
+
 }
 
 
@@ -345,7 +351,9 @@
     margin: 0 8px;
     cursor: pointer;
     box-sizing: border-box;
-    color: #B9BBBE;
+    // color: #B9BBBE;
+    color: hsl(231,5.2%,73.5%);
+
 
 }
 
@@ -353,7 +361,8 @@
     forced-color-adjust: none;
     text-decoration: none;
     // color: hsl(197, 100%, 47.8%);
-    color: #B9BBBE;
+    // color: #B9BBBE;
+    color: hsl(231,5.2%,73.5%);
     box-sizing: border-box;
     cursor: pointer;
 }
