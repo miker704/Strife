@@ -189,6 +189,8 @@
     - Added the X symbol button on hover over a dmserver on the dmServer Navbar which when clicked will allow deletion of a dmServer bar 
       (to added later).
     - Added color adjustment for selecting a channel in a server.
+    - Added icon change based on channel type in Server Header navbar.
+
 
 ### Other Changes
 
