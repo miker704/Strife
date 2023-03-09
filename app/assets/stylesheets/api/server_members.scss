@@ -5,7 +5,8 @@
 .server-members-index-container-wrap {
     width: 240px;
     flex-shrink: 0;
-    background-color: #36393F;
+    // background-color: #36393F;
+    background-color: #2b2d31;
 }
 
 
@@ -24,7 +25,8 @@
     overflow: hidden scroll;
     padding-right: 0px;
     forced-color-adjust: none;
-    background-color: hsl(223, 6.9%, 19.8%);
+    // background-color: hsl(223, 6.9%, 19.8%);
+    background-color: #2b2d31;
     width: 240px;
     padding: 0 0 20px;
     -webkit-box-flex: 0;
@@ -95,7 +97,8 @@
     font-weight: 500;
     -webkit-box-flex: 1;
     flex: 1 1 auto;
-    color: hsl(223, 3.4%, 60.2%);
+    // color: hsl(223, 3.4%, 60.2%);
+    color: #989AA2;
     margin-bottom: 5px;
 }
 
@@ -104,20 +107,29 @@
     max-width: 224px;
     margin-left: 8px;
     forced-color-adjust: none;
-    background-color: hsl(223, 6.9%, 19.8%);
+    // background-color: hsl(223, 6.9%, 19.8%);
+    background-color: #2b2d31;
     box-sizing: border-box;
     display: block;
     padding: 1px 0;
     border-radius: 4px;
     transition: none;
-    color: hsl(223, 3.4%, 60.2%);
+    // color: hsl(223, 3.4%, 60.2%);
+    color: #989AA2;
     outline: 0;
 }
 
+.server-member-item-offline{
+    opacity: 0.3;
+}
 
 .server-member-item:hover {
-    background-color: #3b3f45;
-    color: hsl(210, 2.9%, 86.7%);
+    // background-color: #3b3f45;
+    // color: hsl(210, 2.9%, 86.7%);
+    color: hsl(228, 8.8%, 88.8%);
+    background-color: #35373c;
+    opacity: 1;
+
 }
 
 
@@ -231,7 +243,7 @@
     padding-top: 3px;
     font-family: "Whitney";
     font-size: 16px;
-    color:#96989d;
+    // color:#96989d;
 }
 
 .server-group-owner-icon {
