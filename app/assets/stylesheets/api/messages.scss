@@ -460,7 +460,8 @@
     outline: 0;
     overflow-x: hidden;
     overflow-y: scroll;
-    background-color: hsl(218, 7.9%, 27.3%);
+    // background-color: hsl(218, 7.9%, 27.3%);
+    background-color: #383a40;
     max-height: 50vh;
     border-radius: 8px;
     forced-color-adjust: none;
@@ -667,7 +668,9 @@
     position: relative;
     outline: none;
 
-    background-color: #40444b;
+    // background-color: #40444b;
+    background-color: #383a40;
+
 }
 
 .inner-scroller-buttons {
