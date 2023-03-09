@@ -32,7 +32,8 @@
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
-    background-color: #2f3136;
+    // background-color: #2f3136;
+    background-color: #2b2d31;
     transform: translate(75px, 0px);
     width: 234px;
     // padding-left: 5px;
@@ -41,7 +42,7 @@
     // padding-right: 5px;
     height: calc(100vh - 49px);
 
-    
+
 
 
 
@@ -62,7 +63,8 @@
     flex: 1 1 auto;
     min-height: 0;
     position: relative;
-    background-color: hsl(223, 6.9%, 19.8%);
+    // background-color: hsl(223, 6.9%, 19.8%);
+    background-color: #2b2d31;
     forced-color-adjust: none;
 
 }
@@ -153,14 +155,15 @@
 
 }
 
-.icon-chevron-X{
-    transform: translate3d(0,-3px,0) rotate(-90deg);
+.icon-chevron-X {
+    transform: translate3d(0, -3px, 0) rotate(-90deg);
     forced-color-adjust: none;
     position: relative;
     top: 3px;
     opacity: .8;
     transition: transform .2s ease-out, stroke-dasharray .2s ease-out, -webkit-transform .2s ease-out;
     margin-left: 4px;
+
     path {
         stroke-width: 2px;
         stroke-dasharray: 14;
@@ -446,6 +449,7 @@
     forced-color-adjust: none;
     position: relative;
     transition: opacity .2s ease-in-out;
+    border-radius: 4px;
 }
 
 .def-channel-wrap {
@@ -479,8 +483,11 @@
 }
 
 .default-channel-item:hover {
-    background-color: #3A3C43;
-    color: #FFFFFF;
+    // background-color: #3A3C43;
+    // color: #FFFFFF;
+    background-color: rgba(78, 80, 88, 0.298);
+    color: hsl(228, 8.8%, 88.8%);
+
 
     .child-buttons {
         visibility: visible;
@@ -489,8 +496,10 @@
 }
 
 .default-channel-item.selected-channel {
-    background-color: #42474d;
-    color: #FFFFFF;
+    // background-color: #42474d;
+    // color: #FFFFFF;
+    background-color: #3f4249;
+    color: #f3f4f5;
 
     .child-buttons {
         visibility: visible;
