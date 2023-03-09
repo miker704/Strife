@@ -58,7 +58,7 @@
 .dm-list-header {
     display: flex;
     text-align: left;
-    color: rgb(150, 152, 157);
+    // color: rgb(150, 152, 157);
     padding-left: 16px;
     padding-bottom: 10px;
     padding-right: 10px;
@@ -79,10 +79,10 @@
     // font-size: 12px;
     // line-height: 16px;
     // letter-spacing: .02em;
-    // font-family: var(--font-display);
+    // // font-family: var(--font-display);
     // font-weight: 600;
     // -webkit-box-flex: 1;
-    // color: hsl(228, 5.1%, 61.6%);
+    color: hsl(228, 5.1%, 61.6%);
 
 }
 
@@ -484,8 +484,8 @@
     margin-left: 0;
     margin-right: 2px;
     -webkit-box-flex: 0;
-    // color: hsl(231, 5.2%, 73.5%);
-    color: hsl(216, 3.7%, 73.5%);
+    color: hsl(231, 5.2%, 73.5%);
+    // color: hsl(216, 3.7%, 73.5%);
 
     forced-color-adjust: none;
     display: block;
