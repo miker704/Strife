@@ -188,6 +188,7 @@
     - Fixed u.i colors and problems on nitro container on dm nav bar
     - Added the X symbol button on hover over a dmserver on the dmServer Navbar which when clicked will allow deletion of a dmServer bar 
       (to added later).
+    - Added color adjustment for selecting a channel in a server.
 
 ### Other Changes
 
