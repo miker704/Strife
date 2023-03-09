@@ -113,8 +113,6 @@ const DmServerHeaderNavBar = ({
     }
 
 
-    console.log(`viz = ${viz}`);
-    console.log(`_VIZ_ is = ${_viz} `);
 
     let membersOfthisServer = Object.values(dmServerMembers);
     let otherUser;
