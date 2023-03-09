@@ -10,7 +10,8 @@ import { openModal, openModalWithProps} from "../../../actions/modal_actions";
 const mSTP = (state, ownProps) => {
 
     return {
-        currentUser: state.entities.users[state.session.id],
+        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.currentUser,
         currentUserId: state.session.id,
         server: state.entities.servers[ownProps.match.params.serverId],
         channels: Object.values(state.entities.channels),
