@@ -2,7 +2,8 @@
 
 .server-header-bar {
     flex: 0 0 auto;
-    background: hsl(220, 7.7%, 22.9%);
+    // background: hsl(220, 7.7%, 22.9%);
+    background-color: #313338;
     forced-color-adjust: none;
     -webkit-box-flex: 0;
     box-sizing: border-box;
@@ -505,6 +506,9 @@
     box-sizing: border-box;
     color: hsl(216, 3.7%, 73.5%);
 
+}
+.icon-hide-members-list.selected{
+    color: hsl(210, 9.1%, 95.7%);
 }
 
 .icon-hide-members-list:hover,
