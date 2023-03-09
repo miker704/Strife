@@ -145,7 +145,8 @@
 }
 
 .icon-server-hashtag {
-    color: hsl(216, 3.7%, 73.5%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: hsl(226, 5.5%, 53.5%);
     display: block;
     width: 24px;
     height: 24px;
@@ -155,8 +156,20 @@
 
 }
 
+
+.icon-server-mega-phone{
+    color: hsl(226, 5.5%, 53.5%);
+    display: block;
+    width: 24px;
+    height: 24px;
+    -webkit-app-region: no-drag;
+    forced-color-adjust: none;
+    box-sizing: border-box;
+}
+
 .icon-thread {
-    color: hsl(216, 3.7%, 73.5%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: hsl(231, 5.2%, 73.5%);
     display: block;
     width: 24px;
     height: 24px;
@@ -166,7 +179,8 @@
 }
 
 .icon-pin-messages {
-    color: hsl(216, 3.7%, 73.5%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: hsl(231, 5.2%, 73.5%);
     display: block;
     width: 24px;
     height: 24px;
@@ -176,7 +190,8 @@
 }
 
 .icon-ns {
-    color: hsl(216, 3.7%, 73.5%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: hsl(231, 5.2%, 73.5%);
     display: block;
     width: 24px;
     height: 24px;
@@ -386,7 +401,8 @@
 }
 
 .icon-dms-inbox {
-    color: hsl(216, 3.7%, 73.5%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: hsl(231, 5.2%, 73.5%);
     display: block;
     width: 24px;
     height: 24px;
@@ -497,18 +513,21 @@
     width: fit-content !important;
 }
 
-.icon-hide-members-list{
+.icon-hide-members-list {
     display: block;
     width: 24px;
     height: 24px;
     -webkit-app-region: no-drag;
     forced-color-adjust: none;
     box-sizing: border-box;
-    color: hsl(216, 3.7%, 73.5%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: hsl(231, 5.2%, 73.5%);
 
 }
-.icon-hide-members-list.selected{
+
+.icon-hide-members-list.selected {
     color: hsl(210, 9.1%, 95.7%);
+
 }
 
 .icon-hide-members-list:hover,
@@ -517,8 +536,7 @@
 .icon-ns:hover,
 .icon-pin-messages:hover,
 .icon-thread:hover {
-    color: hsl(210, 2.9%, 86.7%);
+    // color: hsl(210, 2.9%, 86.7%);
+    color: hsl(228, 8.8%, 88.8%);
 
 }
-
-
