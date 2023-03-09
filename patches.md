@@ -190,6 +190,7 @@
       (to added later).
     - Added color adjustment for selecting a channel in a server.
     - Added icon change based on channel type in Server Header navbar.
+    - Added icon color adjustments in Server Header navbar.
 
 ### Other Changes
 
