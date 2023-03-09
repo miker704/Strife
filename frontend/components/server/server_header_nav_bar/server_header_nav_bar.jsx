@@ -11,6 +11,7 @@ const ServerHeaderNavBar = ({
     serverId,
     currentChannel,
     isViz,
+    _viz,
     fetchServer,
     errors,
     channelErrors,
@@ -24,12 +25,14 @@ const ServerHeaderNavBar = ({
     // if(!currentChannel){
     //     return null;
     // }
-    const [channelName, setChannelName] = useState(''); 
+    const [channelName, setChannelName] = useState('');
+    const [channelType, setChannelType] = useState(1);
 
     useEffect(() => {
-        if (currentChannel?.id || currentChannel?.channel_name) {
+        if (currentChannel?.id || currentChannel?.channel_name || currentChannel?.channel_type) {
             fetchChannel(currentChannelId)
             setChannelName(currentChannel.channel_name);
+            setChannelType(currentChannel.channel_type);
         }
         return function cleanup () {
             if (errors.length > 0) {
@@ -39,7 +42,7 @@ const ServerHeaderNavBar = ({
                 removeChannelErrors()
             }
         }
-    }, [currentChannel?.id, currentChannel?.channel_name])
+    }, [currentChannel?.id, currentChannel?.channel_name, currentChannel?.channel_type])
 
 
 
@@ -48,7 +51,9 @@ const ServerHeaderNavBar = ({
             <div className="server-bar-children">
                 <div id="normDm" className={`server-children-icon-wrapper`}>
 
-                    <svg width="24" height="24" viewBox="0 0 24 24" className="icon-server-hashtag" x="0" y="0" aria-hidden="true" role="img">
+                    <svg width="24" height="24" viewBox="0 0 24 24"
+                        className={`icon-server-hashtag ${channelType === 1 ? `` : `is-hidden`}`}
+                        x="0" y="0" aria-hidden="true" role="img">
                         <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M5.88657 21C5.57547 21 5.3399 20.7189 
                     5.39427 20.4126L6.00001 17H2.59511C2.28449 17 2.04905 16.7198 2.10259 16.4138L2.27759 15.4138C2.31946 
                     15.1746 2.52722 15 2.77011 15H6.35001L7.41001 9H4.00511C3.69449 9 3.45905 8.71977 3.51259 8.41381L3.68759 
@@ -61,8 +66,18 @@ const ServerHeaderNavBar = ({
                     7.11337 21 6.87094 21H5.88657ZM9.41045 9L8.35045 15H14.3504L15.4104 9H9.41045Z">
                         </path>
                     </svg>
-                </div>
 
+                    <svg x="0" y="0" className={`icon-server-mega-phone ${channelType === 2 ? `` : `is-hidden`}`}
+                        aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M11.383 3.07904C11.009 2.92504 10.579 3.01004 
+                        10.293 3.29604L6 8.00204H3C2.45 8.00204 2 8.45304 2 9.00204V15.002C2 15.552 2.45 16.002 3 16.002H6L10.293 20.71C10.579 
+                        20.996 11.009 21.082 11.383 20.927C11.757 20.772 12 20.407 12 20.002V4.00204C12 3.59904 11.757 3.23204 11.383 3.07904ZM14 
+                        5.00195V7.00195C16.757 7.00195 19 9.24595 19 12.002C19 14.759 16.757 17.002 14 17.002V19.002C17.86 19.002 21 15.863 21 
+                        12.002C21 8.14295 17.86 5.00195 14 5.00195ZM14 9.00195C15.654 9.00195 17 10.349 17 12.002C17 13.657 15.654 15.002 14 
+                        15.002V13.002C14.551 13.002 15 12.553 15 12.002C15 11.451 14.551 11.002 14 11.002V9.00195Z" aria-hidden="true">
+                        </path>
+                    </svg>
+                </div>
 
                 <div id="normal-chat" className={`server-hbar-name`}>
 
@@ -146,7 +161,7 @@ const ServerHeaderNavBar = ({
                         data-tip data-for="hide-members-tip"
                         onClick={() => isViz()}
                     >
-                        <svg x="0" y="0" className="icon-hide-members-list" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                        <svg x="0" y="0" className={`icon-hide-members-list ${_viz === false ? `` : `selected`}`} aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M14 8.00598C14 10.211 12.206 12.006 10
                                                  12.006C7.795 12.006 6 10.211 6 8.00598C6 5.80098 7.794 4.00598 10 4.00598C12.206 4.00598 14 5.80098 14 
                                                  8.00598ZM2 19.006C2 15.473 5.29 13.006 10 13.006C14.711 13.006 18 15.473 18 19.006V20.006H2V19.006Z">
