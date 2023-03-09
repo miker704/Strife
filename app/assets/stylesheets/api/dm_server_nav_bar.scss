@@ -56,35 +56,47 @@
 }
 
 .dm-list-header {
-    display: flex;
-    text-align: left;
-    // color: rgb(150, 152, 157);
-    padding-left: 16px;
-    padding-bottom: 10px;
-    padding-right: 10px;
-    justify-content: space-between;
-    font-size: 12px;
-    font-weight: 500;
-    font-family: "ABC Ginto Normal";
-
-
     // display: flex;
-    // padding: 18px 8px 4px 18px;
-    // height: 40px;
-    // box-sizing: border-box;
-    // text-overflow: ellipsis;
-    // white-space: nowrap;
-    // overflow: hidden;
-    // text-transform: uppercase;
+    // text-align: left;
+    // // color: rgb(150, 152, 157);
+    // padding-left: 16px;
+    // padding-bottom: 10px;
+    // padding-right: 10px;
+    // justify-content: space-between;
     // font-size: 12px;
-    // line-height: 16px;
-    // letter-spacing: .02em;
-    // // font-family: var(--font-display);
-    // font-weight: 600;
-    // -webkit-box-flex: 1;
-    color: hsl(228, 5.1%, 61.6%);
+    // font-weight: 500;
+    // font-family: "ABC Ginto Normal";
 
+
+    display: flex;
+    padding: 18px 8px 4px 18px;
+    height: 40px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: .02em;
+    // font-family: "ABC Ginto Normal";
+    font-family: "Whitney";
+    font-weight: 600;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    color: hsl(228, 5.1%, 61.6%);
 }
+
+.dm-list-header:hover {
+    .dm-server-nav-bar-dm-title-text {
+        color: hsl(228, 8.8%, 88.8%);
+    }
+}
+
+
+
 
 .dm-list-header span:hover {
     color: hsl(228, 8.8%, 88.8%);
@@ -247,10 +259,15 @@
 
 .dm-server-li-item {
     display: flex;
-    padding-top: 7.5px;
-    padding-left: 15px;
-    padding-bottom: 7.5px;
+    // padding-top: 7.5px;
+    // padding-left: 15px;
+    // padding-bottom: 7.5px;
+    // border-radius: 5px;
+    padding-top: 1px;
+    padding-left: 8px;
+    padding-bottom: 1px;
     border-radius: 5px;
+    align-items: center;
 }
 
 
@@ -300,6 +317,8 @@
 .dm-server-pfp {
     display: flex;
     align-items: center;
+    height: 42px;
+    width: 42px;
 }
 
 .dm-server-pfp>img {
@@ -495,4 +514,232 @@
 
 .dm-add-button:hover {
     color: hsl(210, 2.9%, 86.7%);
+}
+
+
+
+/**** temp test**/
+//
+
+
+.dm-server-nav-bar-dm-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 18px 8px 4px 18px;
+    height: 40px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: .02em;
+    // font-family: "ABC Ginto Normal";
+    font-family: "Whitney";
+
+    font-weight: 600;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    color: hsl(228, 5.1%, 61.6%);
+
+}
+
+.dm-server-nav-bar-dm-title-text {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    outline: 0;
+}
+
+.dm-server-nav-bar-dm-title:hover {
+    .dm-server-nav-bar-dm-title-text {
+        color: hsl(228, 8.8%, 88.8%);
+
+    }
+}
+
+
+
+.dm-server-nav-bar-add-dm-button {
+    -webkit-box-flex: 0;
+    -ms-flex: 0;
+    flex: 0;
+    width: 16px;
+    height: 16px;
+    margin-left: 0;
+    margin-right: 2px;
+    cursor: pointer;
+    outline: 0;
+    position: relative;
+    margin: 0 8px;
+}
+
+
+.create-dm-server-nav-bar-tool-tip {
+    // background: #191919 !important;
+    background: #000000 !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    padding: 6px 10px !important;
+    border-radius: 4px !important;
+    // color: #B9BBBE !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    text-transform: none;
+    // width: 38px !important;
+}
+
+
+
+
+
+
+.dmsnb-container {
+    box-sizing: border-box;
+    display: block;
+    padding: 1px 0;
+    border-radius: 4px;
+    transition: none;
+
+    position: relative;
+    max-width: 224px;
+    margin-left: 8px;
+}
+
+.inner-dms {
+
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    color: hsl(228, 5.1%, 61.6%);
+    cursor: pointer;
+    border-radius: inherit;
+    outline: 0;
+}
+
+.inner-dms-link {
+    display: flex;
+    min-width: 0;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-align: center;
+    align-items: center;
+    color: inherit;
+    outline: 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.inner-dms-member-info {
+    outline: 0;
+    min-width: 0;
+    border-radius: 4px;
+    height: 42px;
+    padding: 0 8px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.dmsnb-dmsm-name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1 1 auto;
+    min-width: 0;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    forced-color-adjust: none;
+    line-height: 20px;
+    outline: 0;
+}
+
+.dmsnb-dmsm-name-inner {
+
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: 0;
+
+}
+
+.dmsnb-dmsm-name-cont {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    outline: 0;
+
+}
+
+.dmsnb-dmsm-name-text {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: relative;
+    outline: 0;
+}
+
+
+.dmsnb-subtext-cont {
+    margin-top: -2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    outline: 0;
+}
+
+.dmsnb-subtext-text {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    outline: 0;
+}
+
+
+.delete-dms-button {
+    display: none;
+    width: 16px;
+    height: 16px;
+    opacity: .7;
+    margin: 2px;
+    padding-right: 8px;
+    outline: 0;
+
+}
+
+.delete-dms-button-icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+.dm-server-li-item:hover {
+    .delete-dms-button {
+        display: block;
+    }
 }
