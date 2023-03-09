@@ -12,13 +12,13 @@ const ChannelNavBar = (props) => {
     }
 
     useEffect(() => {
-    //     //this fetch of server leads to a render where messages pop up again from a previous channel for a split second
-    //     // props.fetchServer();
+        //     //this fetch of server leads to a render where messages pop up again from a previous channel for a split second
+        //     // props.fetchServer();
         props.fetchChannel();
     }, [props.currentChannel?.id])
 
     useEffect(() => {
-        if(props.server?.id){
+        if (props.server?.id) {
             props.fetchServer();
         }
     }, [props.server?.id])
@@ -49,13 +49,14 @@ const ChannelNavBar = (props) => {
     // }
 
     const mapTextChannel = props.channels.map((channel) => {
+        let selectedChannel = channel.id.toString() === props.currentChannelId ? `selected-channel` : ``;
         if (channel.channel_type === 1) {
             return (
-                <li className="default-channel-item" key={channel.id}>
-                {/* <li className="default-channel-item" key={channel.id} onClick={() => checkIsViz(channel.channel_type)}> */}
+                <li className={`default-channel-item ${selectedChannel}`} key={channel.id}>
+                    {/* <li className="default-channel-item" key={channel.id} onClick={() => checkIsViz(channel.channel_type)}> */}
                     <div className="def-channel-wrap">
                         <div className="def-channel-content">
-                            <Link to={`/channels/${props.server.id}/${channel.id}`} className="def-channel-a">
+                            <Link to={`/$/channels/${props.server.id}/${channel.id}`} className="def-channel-a">
                                 <div className="def-channel-icon-container">
                                     <svg width="24" height="24" viewBox="0 0 24 24" className="icon-2W8DHg" aria-hidden="true" role="img">
                                         <path fill="currentColor" fillRule="evenodd"
@@ -83,8 +84,8 @@ const ChannelNavBar = (props) => {
                             <div className="child-buttons">
                                 <div className="create-channel-invite-icon-wrapper"
                                     data-tip data-for="create-channel-invite-tool-tip1"
-                                    onClick={()=>{
-                                            props.openModal('InviteToServer');
+                                    onClick={() => {
+                                        props.openModal('InviteToServer');
                                     }}>
                                     <svg className="create-channel-invite-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
                                         <path fill="currentColor" d="M14 2H16V3H14V5H13V3H11V2H13V0H14V2Z"></path>
@@ -150,13 +151,14 @@ const ChannelNavBar = (props) => {
 
 
     const mapVoiceChannel = props.channels.map((channel) => {
+        let selectedChannel = channel.id.toString() === props.currentChannelId ? "selected-channel" : "";
         if (channel.channel_type === 2) {
             return (
-                <li className="default-channel-item" key={channel.id}>
-                {/* <li className="default-channel-item" key={channel.id} onClick={() => checkIsViz(channel.channel_type)}> */}
+                <li className={`default-channel-item ${selectedChannel}`} key={channel.id}>
+                    {/* <li className="default-channel-item" key={channel.id} onClick={() => checkIsViz(channel.channel_type)}> */}
                     <div className="def-channel-wrap">
                         <div className="def-channel-content" >
-                            {/* <Link to={`/channels/${props.server.id}/${channel.id}`} className="def-channel-a"> */}
+                            {/* <Link to={`/$/channels/${props.server.id}/${channel.id}`} className="def-channel-a"> */}
                             <div className="def-channel-a" id="v-channel" data-tip data-for="voice-channel-Strife-access">
                                 <div className="def-channel-icon-container" data-tip data-for="voice-channel-tool-tip">
                                     <svg className="icon-speaker" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
@@ -215,10 +217,10 @@ const ChannelNavBar = (props) => {
                                     </ReactTooltip>
                                 </div>
                                 <div className="create-channel-invite-icon-wrapper"
-                                 data-tip data-for="create-channel-invite-tool-tip3"
-                                 onClick={() => {
+                                    data-tip data-for="create-channel-invite-tool-tip3"
+                                    onClick={() => {
                                         props.openModal("InviteToServer");
-                                 }}>
+                                    }}>
 
                                     <svg className="create-channel-invite-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
                                         <path fill="currentColor" d="M14 2H16V3H14V5H13V3H11V2H13V0H14V2Z"></path>
@@ -339,7 +341,7 @@ const ChannelNavBar = (props) => {
                                         data-tip data-for="create-channel-tool-tip">
                                         <button type="button" className="add-channel-button"
                                             onClick={() => {
-                                                props.openModalWithProps({channelType: 1})
+                                                props.openModalWithProps({ channelType: 1 })
                                                 props.openModal('CreateChannel');
                                             }}>
 
@@ -381,7 +383,7 @@ const ChannelNavBar = (props) => {
                                         data-tip data-for="create-channel-tool-tip2">
                                         <button type="button" className="add-channel-button"
                                             onClick={() => {
-                                                props.openModalWithProps({channelType: 2})
+                                                props.openModalWithProps({ channelType: 2 })
                                                 props.openModal('CreateChannel');
                                             }}>
                                             <div className="add-channel-button-inner">
