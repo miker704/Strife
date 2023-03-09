@@ -63,6 +63,7 @@ class Server extends React.Component {
                     <div className="server-base">
 
                         <ServerHeaderNavBarContainer isViz={this.setHideMembersList}
+                            _viz={this.state.hideMembersList}
                             channels={this.props.channels}
                             currentChannelId={this.props.currentChannelId}
                             server={this.props.server}
