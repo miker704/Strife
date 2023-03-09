@@ -67,23 +67,6 @@ const DmServerMemberList = ({
         const realWidth = window.screen.width * window.devicePixelRatio;
         const realHeight = window.screen.height * window.devicePixelRatio;
 
-
-        // if (currTop > 640) {
-        //     currTop /= 3;
-        //     setPopupTop(currTop);
-        // }
-        // else if (currTop > 101 && currTop < 639) {
-        //     currTop /= 2;
-        //     setPopupTop(currTop);
-        // }
-
-        // else if (currTop <= 100) {
-        //     setPopupTop(currTop * 0.095);
-        // }
-        // else {
-        //     setPopupTop(currTop);
-        // }
-
         if (currTop > window.innerHeight * 0.93158) {
             if (realWidth >= 3800 && realHeight >= 2100) {
                 if (currTop >= window.innerHeight * 0.949628) {
