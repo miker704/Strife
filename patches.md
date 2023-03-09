@@ -191,7 +191,6 @@
     - Added color adjustment for selecting a channel in a server.
     - Added icon change based on channel type in Server Header navbar.
 
-
 ### Other Changes
 
 - Changed which state for current user information to be extracted from for certain components.
