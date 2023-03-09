@@ -186,6 +186,8 @@
     - Fixed u.i colors and problems on homepage nav bar
     - Fixed u.i colors and problems on friend container on dm nav bar
     - Fixed u.i colors and problems on nitro container on dm nav bar
+    - Added the X symbol button on hover over a dmserver on the dmServer Navbar which when clicked will allow deletion of a dmServer bar 
+      (to added later).
 
 ### Other Changes
 
