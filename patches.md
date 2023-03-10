@@ -142,6 +142,13 @@
     - Added a new icon 'Show user profile' on the dmServer header navbar for dmServers that are explicitly one on one chats clicking it will
       show the other users profile card (will be added at a later date) 
 
+    - Fixed an issue where after removing prefilled data from the Add Friend search bar the send
+    friend request button is no longer disabled by default only when a user types and removes the input
+    the button disables itself.
+      - Cause of problem is due to the state value no longer having a value by default due to a previous patch the function to disable the add friends button is called via a onKeyUp event which requires
+      user input first.
+      - Fixed by disabling the button by default.
+
 #### User Security
 
 - Fixed an issue when user changes their password and the password is not of appropiate length
