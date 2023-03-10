@@ -10,8 +10,8 @@ const mSTP = (state, ownProps) => {
 
 
     return {
-
-        currentUser: state.entities.users[state.session.id],
+        currentUser: state.currentUser,
+        // currentUser: state.entities.users[state.session.id],
         currentUserId: state.session.id,
         // channels: Object.values(state.entities.channels),
         errors: state.errors.server,
