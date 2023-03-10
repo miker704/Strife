@@ -100,7 +100,7 @@ const ExploreServers = (props) => {
         props.joiningServer(server.invite_code).then((action) => {
             const joinedServer = action.server;
             props.reSyncCurrentUser(props.currentUserId).then(() => {
-                props.history.push(`/channels/${joinedServer.id}/${joinedServer.general_channel_id}`)
+                props.history.push(`/$/channels/${joinedServer.id}/${joinedServer.general_channel_id}`)
 
             })
         })
@@ -253,13 +253,15 @@ const ExploreServers = (props) => {
                         <div className="guild-card-member-info">
                             <div className="guild-card-member-count">
                                 <div className="guild-card-member-online-status"></div>
-                                <div className="guild-card-member-count-text"></div>
-                                {onlineServerMembers.length}{` `}Online
+                                <div className="guild-card-member-count-txt">
+                                    {onlineServerMembers.length}{` `}Online
+                                </div>
                             </div>
                             <div className="guild-card-member-count">
                                 <div className="guild-card-member-offline-status"></div>
-                                <div className="guild-card-member-count-txt"></div>
-                                {serverMembers.length}{` `}Members
+                                <div className="guild-card-member-count-txt">
+                                    {serverMembers.length}{` `}Members
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -303,7 +305,7 @@ const ExploreServers = (props) => {
                                                                 className="exs-search-input"
                                                                 type="search"
                                                                 id="all-servers"
-                                                                placeholder="Search for Public Servers"
+                                                                placeholder="Explore communities"
                                                                 autoFocus={inputRef}
                                                                 spellCheck={false}
                                                                 onInput={() => liveSearch()}
@@ -312,7 +314,7 @@ const ExploreServers = (props) => {
                                                             />
 
                                                         </div>
-                                                        <svg className={`exs-search-icon ${searchText.length === 0 ? ``:`is-hidden`}`}
+                                                        <svg className={`exs-search-icon ${searchText.length === 0 ? `` : `is-hidden`}`}
                                                             aria-label="Search" aria-hidden="false" role="img" width="24" height="24" viewBox="0 0 24 24">
                                                             <path fill="currentColor" d="M21.707 20.293L16.314 14.9C17.403 13.504 18 11.799 18 10C18 
                                                         7.863 17.167 5.854 15.656 4.344C14.146 2.832 12.137 2 10 2C7.863 2 5.854 2.832 4.344 4.344C2.833 
@@ -323,7 +325,7 @@ const ExploreServers = (props) => {
                                                         14.243C13.109 15.376 11.603 16 10 16Z">
                                                             </path>
                                                         </svg>
-                                                        <div className={`clear-exs-search-icon ${searchText.length === 0 ?`is-hidden`:``}`}>
+                                                        <div className={`clear-exs-search-icon ${searchText.length === 0 ? `is-hidden` : ``}`}>
                                                             <svg className="clear-exs-icon close-exs-icon"
                                                                 aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 14 14">
                                                                 <path fill="currentColor" d="M7.02799 0.333252C3.346 0.333252 0.361328 3.31792 0.361328 6.99992C0.361328 
