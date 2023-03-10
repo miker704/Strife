@@ -158,7 +158,7 @@ class AddFriends extends React.Component {
                                     placeholder={"Enter a Username#0000"}
                                 />
                             </div>
-                            <button type="submit" id="add-friend-button" className="add-friend-button">
+                            <button type="submit" id="add-friend-button" className="add-friend-button" disabled>
                                 <div className="add-friend-button-text">Send Friend Request</div>
                             </button>
                         </div>
