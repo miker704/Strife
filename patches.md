@@ -202,6 +202,7 @@
     - Adjusted Searchbar background colors and magnify icon colors in servers, dmServers, friends pages, and add Friend Pages.
     - Adjusted the background color of the Explore Public Servers Button in Add Friend page.
     - Changed the placeholder text in the search bar of the explore servers page. 
+    - Changed the colors of the offline and online circles, texts and background colors text in the explore servers page. 
 
 ### Other Changes
 
