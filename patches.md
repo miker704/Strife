@@ -200,6 +200,7 @@
     - Added icon color adjustments in Server Header navbar.
     - Adjusted the text color and background color of tool tips around the entire app.
     - Adjusted Searchbar background colors and magnify icon colors in servers, dmServers, friends pages, and add Friend Pages.
+    - Adjusted the background color of the Explore Public Servers Button in Add Friend page.
 
 ### Other Changes
 
