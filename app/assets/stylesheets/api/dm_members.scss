@@ -265,12 +265,14 @@
 }
 
 .dmshb-group-owner-tool-tip {
-    background: #191919 !important;
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    // background: #191919 !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     padding: 6px 12px !important;
     border-radius: 4px !important;
-    color: #B9BBBE !important;
+    // color: #B9BBBE !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
     font-family: "Whitney" !important;
     width: fit-content !important;
