@@ -965,7 +965,8 @@ $off-grey: #B9BBBE;
     display: flex;
     -webkit-box-align: center;
     border: 1px solid hsla(217, 7.6%, 33.5%, 0.48);
-    background-color: hsl(223, 6.9%, 19.8%);
+    // background-color: hsl(223, 6.9%, 19.8%);
+    background-color: #2b2d31;
     outline: 0;
     font-family: "Whitney";
     text-rendering: optimizeLegibility;
@@ -1003,14 +1004,16 @@ $off-grey: #B9BBBE;
     font-size: 16px;
     line-height: 20px;
     font-family: "Whitney";
-    color: hsl(210, 2.9%, 86.7%);
+    // color: hsl(210, 2.9%, 86.7%);
     outline: 0;
+    color: #E0E1E5;
 
 }
 
 .arrow-3B {
     forced-color-adjust: none;
-    color: hsl(216, 3.7%, 73.5%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: hsl(231, 5.2%, 73.5%);
     margin-left: auto;
     margin-right: 16px;
 }
