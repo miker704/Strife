@@ -1193,13 +1193,13 @@ $off-grey: #B9BBBE;
     visibility: hidden;
     position: absolute;
     // top: -40px;
-    background: #191919;
+    // background: #191919;
     font-size: 14px;
     font-weight: 600;
     padding: 6px 12px;
     border-radius: 4px;
     width: fit-content;
-    color: #B9BBBE;
+    // color: #B9BBBE;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     transform: translate(0px, -42px);
     display: flex;
@@ -1208,7 +1208,8 @@ $off-grey: #B9BBBE;
     align-items: center;
     z-index: 6;
     font-family: "Whitney";
-
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
 
 }
 
@@ -1349,15 +1350,17 @@ $off-grey: #B9BBBE;
 
 
 
-// this is a react tool tip everything most be overrided with !important
+// this is a react tool tip everything must be overrided with !important
 .message-tool-tip {
 
-    background: #191919 !important;
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    // background: #191919 !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     padding: 6px 12px !important;
     border-radius: 4px !important;
-    color: #B9BBBE !important;
+    // color: #B9BBBE !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
     font-family: "Whitney" !important;
 
@@ -1365,12 +1368,15 @@ $off-grey: #B9BBBE;
 
 
 .more-message-tool-tip {
-    background: #191919 !important;
+
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    // background: #191919 !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     padding: 6px 12px !important;
     border-radius: 4px !important;
-    color: #B9BBBE !important;
+    // color: #B9BBBE !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
     font-family: "Whitney" !important;
     width: fit-content !important;
@@ -1378,12 +1384,15 @@ $off-grey: #B9BBBE;
 
 
 .remove-message-tool-tip {
-    background: #191919 !important;
+
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    // background: #191919 !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     padding: 6px 12px !important;
     border-radius: 4px !important;
-    color: #B9BBBE !important;
+    // color: #B9BBBE !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
     font-family: "Whitney" !important;
     width: fit-content !important;
@@ -1391,36 +1400,46 @@ $off-grey: #B9BBBE;
 }
 
 .cancel-message-tool-tip {
-    background: #191919 !important;
+
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    // background: #191919 !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     padding: 6px 12px !important;
     border-radius: 4px !important;
-    color: #B9BBBE !important;
+    // color: #B9BBBE !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
     font-family: "Whitney" !important;
     width: fit-content !important;
 }
 
 .accept-message-tool-tip {
-    background: #191919 !important;
+
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    // background: #191919 !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     padding: 6px 12px !important;
     border-radius: 4px !important;
-    color: #B9BBBE !important;
+    // color: #B9BBBE !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
     font-family: "Whitney" !important;
     width: fit-content !important;
 }
 
 .ignore-message-tool-tip {
-    background: #191919 !important;
+
+
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    // background: #191919 !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     padding: 6px 12px !important;
     border-radius: 4px !important;
-    color: #B9BBBE !important;
+    // color: #B9BBBE !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
     font-family: "Whitney" !important;
     width: fit-content !important;
