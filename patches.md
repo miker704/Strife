@@ -191,6 +191,7 @@
     - Added color adjustment for selecting a channel in a server.
     - Added icon change based on channel type in Server Header navbar.
     - Added icon color adjustments in Server Header navbar.
+    - Adjusted the text color and background color of tool tips around the entire app.
 
 ### Other Changes
 
