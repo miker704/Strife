@@ -157,7 +157,7 @@ const CreateChannelModal = (props) => {
             //disabling routing to voice channels till voice calling is implemented
             // but allow users to create them 
             props.closeModal();
-            props.history.push(`/channels/${props.server.id}/${newChannel.id}`)
+            props.history.push(`/$/channels/${props.server.id}/${newChannel.id}`)
         })
 
     }
@@ -338,7 +338,7 @@ const CreateChannelModal = (props) => {
                                                                 id="voice-channel-Strife-access"
                                                                 place="top"
                                                                 effect="solid">
-                                                                You can still make Voice Channels, but you still need $TR!F3 N!TR0 need to access them.
+                                                                You can still make Voice Channels, but you still need $TR!F3 N!TR0 to access them.
                                                             </ReactTooltip>
                                                         </label>
                                                     </div>
