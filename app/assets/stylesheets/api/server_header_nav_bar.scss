@@ -384,7 +384,8 @@
     height: 100%;
     z-index: 2;
     transition: transform .1s ease-out, opacity .1s ease-out, -webkit-transform .1s ease-out;
-    color: hsl(214, 4%, 65.3%);
+    // color: hsl(214, 4%, 65.3%);
+    color: hsl(228, 5.1%, 61.6%);
 
 
 }
@@ -401,7 +402,9 @@
     z-index: 2;
     transition: transform .1s ease-out, opacity .1s ease-out, -webkit-transform .1s ease-out;
     transform: rotate(90deg);
-    color: hsl(214, 4%, 65.3%);
+    // color: hsl(214, 4%, 65.3%);
+    color: hsl(228, 5.1%, 61.6%);
+
 }
 
 .icon-dms-inbox {
