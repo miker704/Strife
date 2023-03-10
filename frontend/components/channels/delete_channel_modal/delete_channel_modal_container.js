@@ -10,7 +10,7 @@ import DeleteChannelModal from "./delete_channel_modal.jsx";
 
 const extractServerProps = (state, ownProps) => {
     let locationString = ownProps.location.pathname;
-    let newLoc = locationString.split('/channels/').join('').split('/');
+    let newLoc = locationString.split('/$/channels/').join('').split('/');
     return newLoc;
 }
 
@@ -22,7 +22,8 @@ const mSTP = (state, ownProps) => {
 
     return {
 
-        currentUser: state.entities.users[state.session.id],
+        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.currentUser,
         server: state.entities.servers[parseInt(getIds[0])],
         channel: state.entities.channels[parseInt(getIds[1])],
         channels: Object.values(state.entities.channels),
