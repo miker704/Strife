@@ -58,6 +58,7 @@ $off-grey: #B9BBBE;
 .friends-nav-bar.selected-x {
     background-color: #3f4249;
     color: hsl(210, 9.1%, 95.7%);
+
     .friend-avatar-text,
     .friend-avatar {
         color: hsl(210, 9.1%, 95.7%);
@@ -524,7 +525,8 @@ $off-grey: #B9BBBE;
     display: flex;
     border-radius: 4px;
     overflow: hidden;
-    background-color: hsl(216, 7.2%, 13.5%);
+    // background-color: hsl(216, 7.2%, 13.5%);
+    background-color: #1e1f22;
     // transform: translate(0px, 10px);
 
 
@@ -550,6 +552,7 @@ $off-grey: #B9BBBE;
 
 .input-all-friends {
     color: hsl(210, 2.9%, 86.7%);
+    // color: hsl(228, 5.1%, 61.6%);
     appearance: none;
     flex: 1;
     min-width: 48px;
@@ -565,9 +568,19 @@ $off-grey: #B9BBBE;
     height: 30px;
     padding: 0 8px;
     outline: none;
-
+    font-family: "Whitney";
 
 }
+
+
+.input-all-friends::placeholder {
+    font-family: "Whitney";
+    opacity: 1;
+    color: hsl(228, 5.1%, 61.6%);
+    text-rendering: optimizeLegibility;
+    font-weight: 400;
+}
+
 
 .magnify-icon-wrapper {
     width: 32px;
@@ -625,7 +638,8 @@ $off-grey: #B9BBBE;
 
 .mag-icon1 {
     forced-color-adjust: none;
-    color: hsl(216, 3.7%, 73.5%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: hsl(231, 5.2%, 73.5%);
     box-sizing: border-box;
     position: absolute;
     top: 0;
