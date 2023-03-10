@@ -358,7 +358,8 @@
     font-weight: 500;
     -webkit-box-flex: 1;
     flex: 1 1 auto;
-    color: hsl(223, 3.4%, 60.2%);
+    // color: hsl(223, 3.4%, 60.2%);
+    color: #989AA2;
 }
 
 .main-channel-h2 {
@@ -412,11 +413,13 @@
 
 }
 
-.main-channel-content-h2:hover,
-.default-channel-name-cont:hover {
-    color: hsl(210, 2.9%, 86.7%);
-
+.main-channel-content-h2:hover {
+    // color: hsl(210, 2.9%, 86.7%);
+    color: #E0E1E5;
 }
+
+
+
 
 .addButtonIcon:hover {
     color: hsl(210, 2.9%, 86.7%);
@@ -488,6 +491,9 @@
     background-color: rgba(78, 80, 88, 0.298);
     color: hsl(228, 8.8%, 88.8%);
 
+    .default-channel-name {
+        color: hsl(228, 8.8%, 88.8%);
+    }
 
     .child-buttons {
         visibility: visible;
@@ -499,7 +505,14 @@
     // background-color: #42474d;
     // color: #FFFFFF;
     background-color: #3f4249;
-    color: #f3f4f5;
+
+    // color: #f3f4f5;
+    // color: hsl(210, 9.1%, 95.7%);
+    .default-channel-name {
+        color: hsl(228, 8.8%, 88.8%);
+        filter: brightness(125%);
+
+    }
 
     .child-buttons {
         visibility: visible;
@@ -561,7 +574,8 @@
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     white-space: normal;
-    color: hsl(223, 3.4%, 60.2%);
+    // color: hsl(223, 3.4%, 60.2%);
+    color: #989AA2;
     forced-color-adjust: none;
 }
 
