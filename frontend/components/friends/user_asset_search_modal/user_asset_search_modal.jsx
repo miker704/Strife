@@ -186,7 +186,7 @@ const StartConversationSearchBarModal = (props) => {
                     id="voice-channel-Strife-access"
                     place="top"
                     effect="solid">
-                    $TR!F3 N!TR0 need to access
+                    $TR!F3 N!TR0 needed to access
                 </ReactTooltip>
                 {/* </Link> */}
             </div>
