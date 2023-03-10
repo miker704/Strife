@@ -830,7 +830,8 @@ $off-grey: #B9BBBE;
     padding: 0 12px;
     position: relative;
     border-radius: 8px;
-    background-color: hsl(216, 7.2%, 13.5%);
+    // background-color: hsl(216, 7.2%, 13.5%);
+    background-color: #1e1f22;
     border: 1px solid hsla(0, 0%, 0%, 0.3);
 
 }
@@ -879,10 +880,19 @@ $off-grey: #B9BBBE;
     border-radius: 3px;
     outline: none;
     transition: border-color .2s ease-in-out;
-    color: hsl(210, 2.9%, 86.7%);
+    // color: hsl(210, 2.9%, 86.7%);
+    color: hsl(228, 8.8%, 88.8%);
     font-family: "Whitney";
     text-rendering: optimizeLegibility;
 
+}
+
+
+.add-friend-input-bar::placeholder {
+    text-rendering: optimizeLegibility;
+    font-family: "Whitney";
+    color: hsl(216, 2.1%, 53.9%);
+    user-select: none;
 }
 
 .add-friend-input-search-wrapper.frf-ERROR {
