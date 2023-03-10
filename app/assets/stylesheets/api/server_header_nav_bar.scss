@@ -157,7 +157,7 @@
 }
 
 
-.icon-server-mega-phone{
+.icon-server-mega-phone {
     color: hsl(226, 5.5%, 53.5%);
     display: block;
     width: 24px;
@@ -233,8 +233,12 @@
     display: flex;
     -webkit-box-align: stretch;
     box-sizing: border-box;
-    color: hsl(210, 2.9%, 86.7%);
-    background-color: hsl(216, 7.2%, 13.5%);
+    // color: hsl(210, 2.9%, 86.7%);
+    // background-color: hsl(216, 7.2%, 13.5%);
+    color: hsl(228, 8.8%, 88.8%);
+    background-color: #1e1f22;
+    font-family: "Whitney";
+    font-size: 14px;
 
 }
 
@@ -413,19 +417,23 @@
 
 
 .thread-tool-tip {
-    background: #191919 !important;
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    // filter: brightness(125%);
+    // background: #191919 !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     padding: 6px 12px !important;
     border-radius: 4px !important;
-    color: #B9BBBE !important;
+    // color: #B9BBBE !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
     font-family: "Whitney" !important;
     width: fit-content !important;
 }
 
 .thread-tool-tip-red {
-    background: #191919 !important;
+    // background: #191919 !important;
+    background: #000000 !important;
     font-size: 14px !important;
     font-weight: 900 !important;
     padding: 6px 10px !important;
@@ -440,48 +448,56 @@
 
 
 .Notification-Settings-tool-tip {
-    background: #191919 !important;
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    // background: #191919 !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     padding: 6px 12px !important;
     border-radius: 4px !important;
-    color: #B9BBBE !important;
+    // color: #B9BBBE !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
     font-family: "Whitney" !important;
     width: fit-content !important;
 }
 
 .pinned-messages-tool-tip {
-    background: #191919 !important;
+    // background: #191919 !important;
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     padding: 6px 12px !important;
     border-radius: 4px !important;
-    color: #B9BBBE !important;
+    // color: #B9BBBE !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
     font-family: "Whitney" !important;
     width: fit-content !important;
 }
 
 .shb-inbox-message-tool-tip {
-    background: #191919 !important;
+    // background: #191919 !important;
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     padding: 6px 12px !important;
     border-radius: 4px !important;
-    color: #B9BBBE !important;
+    // color: #B9BBBE !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
     font-family: "Whitney" !important;
     width: fit-content !important;
 }
 
 .shb-help-tool-tip {
-    background: #191919 !important;
+    // background: #191919 !important;
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     padding: 4px 8px !important;
     border-radius: 4px !important;
-    color: #B9BBBE !important;
+    // color: #B9BBBE !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
     font-family: "Whitney" !important;
     width: 27px !important;
@@ -490,24 +506,28 @@
 }
 
 .dmshb-invite-members-tool-tip {
-    background: #191919 !important;
+    // background: #191919 !important;
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     padding: 6px 12px !important;
     border-radius: 4px !important;
-    color: #B9BBBE !important;
+    // color: #B9BBBE !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
     font-family: "Whitney" !important;
     width: fit-content !important;
 }
 
 .shb-hide-members-tool-tip {
-    background: #191919 !important;
+    // background: #191919 !important;
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     padding: 6px 12px !important;
     border-radius: 4px !important;
-    color: #B9BBBE !important;
+    // color: #B9BBBE !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
     font-family: "Whitney" !important;
     width: fit-content !important;
