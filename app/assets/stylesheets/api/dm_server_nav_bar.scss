@@ -585,12 +585,14 @@
 .create-dm-server-nav-bar-tool-tip {
     // background: #191919 !important;
     background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    filter: brightness(125%);
+
     font-size: 12px !important;
     font-weight: 600 !important;
-    padding: 6px 10px !important;
+    padding: 6px 12px !important;
     border-radius: 4px !important;
     // color: #B9BBBE !important;
-    color: hsl(228, 8.8%, 88.8%) !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
     font-family: "Whitney" !important;
     text-transform: none;
