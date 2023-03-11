@@ -252,9 +252,13 @@ $off-grey: #B9BBBE;
     border-radius: 8px;
     border-color: #0000;
     padding: 16px 10px;
-    background: hsla(217, 7.6%, 33.5%, 0.4);
+    // background: hsla(217, 7.6%, 33.5%, 0.4);
+    background-color: #393c41;
     forced-color-adjust: none;
     margin: 0 10px 0 20px;
+    .pending-check-icon,.friend-msg-button,.friend-options-button,.pending-deny-icon{
+        background-color: #1E1F22;
+    }
 }
 
 
@@ -321,7 +325,8 @@ $off-grey: #B9BBBE;
     margin-left: 12px;
     font-weight: 600;
     font-size: 16px;
-    color: #FFFFFF;
+    // color: #FFFFFF;
+    color: #F3F4F5;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -332,7 +337,8 @@ $off-grey: #B9BBBE;
     span {
         visibility: hidden;
         font-size: 14px;
-        color: $off-grey;
+        // color: $off-grey;
+        color:#B8B9BF;
     }
 }
 
@@ -354,7 +360,8 @@ $off-grey: #B9BBBE;
     forced-color-adjust: none;
     font-size: 14px;
     font-family: "Whitney";
-    color: #B9BBBE;
+    // color: #B9BBBE;
+    color: #B8B9BF;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1106,8 +1113,10 @@ $off-grey: #B9BBBE;
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    color: hsl(216, 3.7%, 73.5%);
-    background-color: hsl(223, 6.9%, 19.8%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: #b8b9bf;
+    // background-color: hsl(223, 6.9%, 19.8%);
+    background-color: #2b2d31;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -1136,8 +1145,10 @@ $off-grey: #B9BBBE;
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    color: hsl(216, 3.7%, 73.5%);
-    background-color: hsl(223, 6.9%, 19.8%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: #b8b9bf;
+    // background-color: hsl(223, 6.9%, 19.8%);
+    background-color: #2b2d31;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -1184,8 +1195,10 @@ $off-grey: #B9BBBE;
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    color: hsl(216, 3.7%, 73.5%);
-    background-color: hsl(223, 6.9%, 19.8%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: #b8b9bf;
+    // background-color: hsl(223, 6.9%, 19.8%);
+    background-color: #2b2d31;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -1203,8 +1216,10 @@ $off-grey: #B9BBBE;
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    color: hsl(216, 3.7%, 73.5%);
-    background-color: hsl(223, 6.9%, 19.8%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: #b8b9bf;
+    // background-color: hsl(223, 6.9%, 19.8%);
+    background-color: #2b2d31;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
