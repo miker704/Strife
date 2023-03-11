@@ -57,7 +57,7 @@ const ChannelNavBar = (props) => {
                     <div className="def-channel-wrap">
                         <div className="def-channel-content">
                             <Link to={`/$/channels/${props.server.id}/${channel.id}`} className="def-channel-a">
-                                <div className="def-channel-icon-container">
+                                <div className="def-channel-icon-container" data-tip data-for="text-channel-tool-tip">
                                     <svg width="24" height="24" viewBox="0 0 24 24" className="icon-2W8DHg" aria-hidden="true" role="img">
                                         <path fill="currentColor" fillRule="evenodd"
                                             clipRule="evenodd" d="M5.88657 21C5.57547 21 5.3399 20.7189 5.39427 20.4126L6.00001
@@ -74,6 +74,15 @@ const ChannelNavBar = (props) => {
                                     9H9.41045Z">
                                         </path>
                                     </svg>
+                                    <ReactTooltip
+                                        className="text-channel-nav-bar-tool-tip"
+                                        textColor="#B9BBBE"
+                                        backgroundColor="#191919"
+                                        id="text-channel-tool-tip"
+                                        place="top"
+                                        effect="solid">
+                                        Text
+                                    </ReactTooltip>
                                 </div>
                                 <div className="default-channel-name-cont">
                                     <div className="default-channel-name">
@@ -99,7 +108,7 @@ const ChannelNavBar = (props) => {
 
                                 </div>
                                 <ReactTooltip
-                                    className="channel-nav-bar-tool-tip"
+                                    className="create-channel-invite-nav-bar-tool-tip"
                                     textColor="#B9BBBE"
                                     backgroundColor="#191919"
                                     id="create-channel-invite-tool-tip1"
@@ -128,7 +137,7 @@ const ChannelNavBar = (props) => {
                                         </path>
                                     </svg>
                                     <ReactTooltip
-                                        className="channel-nav-bar-tool-tip"
+                                        className="channel-settings-nav-bar-tool-tip"
                                         textColor="#B9BBBE"
                                         backgroundColor="#191919"
                                         id="channel-settings-tool-tip"
@@ -172,7 +181,7 @@ const ChannelNavBar = (props) => {
                                         </path>
                                     </svg>
                                     <ReactTooltip
-                                        className="channel-nav-bar-tool-tip"
+                                        className="voice-channel-nav-bar-tool-tip"
                                         textColor="#B9BBBE"
                                         backgroundColor="#191919"
                                         id="voice-channel-tool-tip"
@@ -207,7 +216,7 @@ const ChannelNavBar = (props) => {
                                         </path>
                                     </svg>
                                     <ReactTooltip
-                                        className="channel-nav-bar-tool-tip"
+                                        className="channel-chat-nav-bar-tool-tip"
                                         textColor="#B9BBBE"
                                         backgroundColor="#191919"
                                         id="open-chat-channel-tool-tip"
@@ -232,7 +241,7 @@ const ChannelNavBar = (props) => {
                                         </path>
                                     </svg>
                                     <ReactTooltip
-                                        className="channel-nav-bar-tool-tip"
+                                        className="create-voice-channel-invite-nav-bar-tool-tip"
                                         textColor="#B9BBBE"
                                         backgroundColor="#191919"
                                         id="create-channel-invite-tool-tip3"
@@ -260,7 +269,7 @@ const ChannelNavBar = (props) => {
                                         </path>
                                     </svg>
                                     <ReactTooltip
-                                        className="channel-nav-bar-tool-tip"
+                                        className="voice-channel-settings-nav-bar-tool-tip"
                                         textColor="#B9BBBE"
                                         backgroundColor="#191919"
                                         id="channel-settings-tool-tip2"
@@ -355,7 +364,7 @@ const ChannelNavBar = (props) => {
                                             </div>
                                         </button>
                                         <ReactTooltip
-                                            className="channel-nav-bar-tool-tip"
+                                            className="create-channel-nav-bar-tool-tip"
                                             textColor="#B9BBBE"
                                             backgroundColor="#191919"
                                             id="create-channel-tool-tip"
@@ -393,7 +402,7 @@ const ChannelNavBar = (props) => {
                                                     </polygon>
                                                 </svg>
                                                 <ReactTooltip
-                                                    className="channel-nav-bar-tool-tip"
+                                                    className="create-voice-channel-nav-bar-tool-tip"
                                                     textColor="#B9BBBE"
                                                     backgroundColor="#191919"
                                                     id="create-channel-tool-tip2"
