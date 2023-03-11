@@ -205,6 +205,7 @@
     - Changed the colors of the offline and online circles, texts and background colors text in the explore servers page. 
     - changed colors of user option buttons in all of the  friend list sections.
     - changed colors of usernames in all of the  friend list sections.
+    - Added and fixed tooltips on channel nav bar.
 
 ### Other Changes
 
