@@ -203,6 +203,8 @@
     - Adjusted the background color of the Explore Public Servers Button in Add Friend page.
     - Changed the placeholder text in the search bar of the explore servers page. 
     - Changed the colors of the offline and online circles, texts and background colors text in the explore servers page. 
+    - changed colors of user option buttons in all of the  friend list sections.
+    - changed colors of usernames in all of the  friend list sections.
 
 ### Other Changes
 
