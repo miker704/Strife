@@ -630,7 +630,9 @@
     height: 16px;
     display: block;
     forced-color-adjust: none;
-    color: hsl(216, 3.7%, 73.5%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: #b8b9bf;
+
 }
 
 .create-channel-invite-icon {
@@ -640,14 +642,16 @@
     height: 16px;
     display: block;
     forced-color-adjust: none;
-    color: hsl(216, 3.7%, 73.5%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: #b8b9bf;
 }
 
 .open-chat-icon {
     width: 16px;
     height: 16px;
     display: block;
-    color: hsl(216, 3.7%, 73.5%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: #b8b9bf;
     cursor: pointer;
     line-height: 0;
     forced-color-adjust: none;
@@ -692,3 +696,134 @@
 
 
 //channels info type section 
+
+.text-channel-nav-bar-tool-tip {
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    width: fit-content !important;
+}
+
+
+.voice-channel-nav-bar-tool-tip {
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    width: fit-content !important;
+
+}
+
+.channel-nav-bar-tool-tip-1 {
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    // background: #191919 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    // color: #B9BBBE !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    width: fit-content !important;
+}
+
+.create-channel-nav-bar-tool-tip {
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    padding: 4px 12px !important;
+    border-radius: 4px !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    width: 80px !important;
+}
+
+.create-voice-channel-nav-bar-tool-tip {
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    width: 80px !important;
+}
+
+
+
+.create-channel-invite-nav-bar-tool-tip {
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 6px 16px !important;
+    border-radius: 4px !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    width: 70px !important;
+}
+
+.create-voice-channel-invite-nav-bar-tool-tip {
+    background: #000000 !important;
+    color: #e0e1e5 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    width: 70px !important;
+
+}
+
+
+
+.channel-settings-nav-bar-tool-tip {
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 6px 16px !important;
+    border-radius: 4px !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    width: 70px !important;
+}
+
+
+.voice-channel-settings-nav-bar-tool-tip {
+    background: #000000 !important;
+    color: hsl(228, 8.8%, 88.8%) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 5px 16px !important;
+    border-radius: 4px !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    width: 70px !important;
+}
+
+
+.channel-chat-nav-bar-tool-tip {
+    background: #000000 !important;
+    color: #e0e1e5 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 12px 16px !important;
+    border-radius: 4px !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    font-family: "Whitney" !important;
+    width: 60px !important;
+}
