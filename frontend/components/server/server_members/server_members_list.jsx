@@ -109,7 +109,7 @@ const ServerMembersList = ({
 
             }
             <div className="server-members-index-container">
-                <h2 className="server-members-header-title">{`ONLINE - ${onlineServerMembers.length}`}</h2>
+                <h2 className="server-members-header-title">{`ONLINE — ${onlineServerMembers.length}`}</h2>
 
                 <ul className="server-members-ul-padding">
                     {
@@ -182,14 +182,14 @@ const ServerMembersList = ({
 
                     }
 
-                    <h2 className="server-members-header-title">{`OFFLINE - ${offlineServerMembers.length}`}</h2>
+                    <h2 className="server-members-header-title">{`OFFLINE — ${offlineServerMembers.length}`}</h2>
                     {
                         offlineServerMembers.map((serverMember, serverMemberIdx) => {
 
                             return (
 
 
-                                <li className="server-member-item" key={serverMember.id}
+                                <li className={`server-member-item ${serverMember.online === false ? `server-member-item-offline` : ``}`} key={serverMember.id}
                                     onClick={(e) => {
                                         handleSelected(serverMember);
                                         handlePopupShow(e);
