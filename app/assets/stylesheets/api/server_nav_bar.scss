@@ -3,7 +3,8 @@
   // height: auto;
   // height:fit-content;
   // width: 77px;
-  width: 225px;
+  // width: 225px;
+  width:75px;
 
   position: absolute;
   // position:;
@@ -404,4 +405,82 @@ button#create-server:focus,
 button#search-servers:focus,
 button#download-apps:focus {
   visibility: hidden;
+}
+
+
+
+.server-nav-bar-tool-tip{
+  background: #000000 !important;
+  color: hsl(228, 8.8%, 88.8%) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  padding: 5px 16px !important;
+  border-radius: 5px !important;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+  font-family: "Ginto", Arial, Helvetica, sans-serif !important;
+  // width: fit-content !important;
+  text-overflow: ellipsis !important;
+  max-width: 150px;
+  text-align: left;
+  overflow: hidden !important;
+  max-height: 45px;
+  // background-color: rgb(25, 25, 25);
+}
+
+
+
+.server-nav-bar-download-apps-tool-tip{
+  background: #000000 !important;
+  color: hsl(228, 8.8%, 88.8%) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  // padding: 5px 16px !important;
+  padding: 0px 6px !important;
+  border-radius: 5px !important;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+  font-family: "Ginto", Arial, Helvetica, sans-serif !important;
+  // width: fit-content !important;
+  width: 120px !important;
+  text-overflow: ellipsis !important;
+  // max-width: 115px;
+  text-align: left;
+  overflow: hidden !important;
+  // background-color: rgb(25, 25, 25);
+  max-height: 40px;
+}
+
+
+.server-nav-bar-explore-public-servers-tool-tip{
+  background: #000000 !important;
+  color: hsl(228, 8.8%, 88.8%) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  padding: 4px 12px !important;
+  border-radius: 5px !important;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+  font-family: "Ginto", Arial, Helvetica, sans-serif !important;
+  width: 160px !important;
+  text-overflow: ellipsis !important;
+  // max-width: 115px;
+  text-align: left;
+  overflow: hidden !important;
+  // background-color: rgb(25, 25, 25);
+}
+
+
+.add-a-server-nav-bar-tool-tip{
+  background: #000000 !important;
+  color: hsl(228, 8.8%, 88.8%) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  padding: 5px 16px !important;
+  border-radius: 5px !important;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+  font-family: "Ginto", Arial, Helvetica, sans-serif !important;
+  width: fit-content !important;
+  text-overflow: ellipsis !important;
+  max-width: 115px;
+  text-align: left;
+  overflow: hidden !important;
+  // background-color: rgb(25, 25, 25);
 }
