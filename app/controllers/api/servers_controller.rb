@@ -124,7 +124,7 @@ class Api::ServersController < ApplicationController
         @response_Message = " #{server.server_name} self destructing redirecting everyone to home ...1...2...3..."
         server.channels.each do |channel|
             @message=Message.create!(body: @response_Message, author_id: 1, channel_id: channel.id)
-            StrifeServer.broadcast_to(channel, message: @message, head: 302, path: '/telefrag/')
+            StrifeServer.broadcast_to(channel, message: @message, head: 302, path: '/$/telefrag/')
         end
     end
 
