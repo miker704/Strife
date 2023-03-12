@@ -479,17 +479,21 @@
     outline: 0;
 }
 
-.selected-channel {
-    background-color: #42474d;
-    color: #FFFFFF;
+// .selected-channel {
+//     background-color: #42474d;
+//     color: #FFFFFF;
 
-}
+// }
 
 .default-channel-item:hover {
     // background-color: #3A3C43;
     // color: #FFFFFF;
-    background-color: rgba(78, 80, 88, 0.298);
     color: hsl(228, 8.8%, 88.8%);
+
+    .def-channel-content {
+
+        background-color: rgba(78, 80, 88, 0.298);
+    }
 
     .default-channel-name {
         color: hsl(228, 8.8%, 88.8%);
@@ -504,10 +508,14 @@
 .default-channel-item.selected-channel {
     // background-color: #42474d;
     // color: #FFFFFF;
-    background-color: #3f4249;
+    // background-color: #3f4249;
 
     // color: #f3f4f5;
     // color: hsl(210, 9.1%, 95.7%);
+    .def-channel-content {
+        background-color: #3f4249;
+    }
+
     .default-channel-name {
         color: hsl(228, 8.8%, 88.8%);
         filter: brightness(125%);
