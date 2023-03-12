@@ -26,6 +26,7 @@
     cursor: pointer;
     border-radius: inherit;
     // background-color: hsla(217,7.6%,33.5%,0.6);
+    text-rendering: optimizeLegibility;
 
 }
 
@@ -49,8 +50,9 @@
 }
 
 .nitro-nav-bar.selected {
-    background-color: #3f4249;
-    color: hsl(210, 9.1%, 95.7%);
+    // background-color: #3f4249;
+    background:rgba(78,80,88,0.6);
+    // color: hsl(210, 9.1%, 95.7%);
     .nitro-avatar,
     .nitro-avatar-text {
         color: hsl(210, 9.1%, 95.7%);
