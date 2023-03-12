@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import ReactTooltip from "react-tooltip";
 
 class ServerNavBar extends React.Component {
     constructor (props) {
@@ -58,9 +59,9 @@ class ServerNavBar extends React.Component {
 
 
             return (
-                <li className="server-bubbles" key={server.id}>
+                <li className="server-bubbles" key={server.id} data-tip data-for={`server-bubble-tool-tip-${server.id}`}>
                     <div className="server-nav-bar-list-item">
-                        <Link to={`/channels/${server.id}/${server.general_channel_id}`}
+                        <Link to={`/$/channels/${server.id}/${server.general_channel_id}`}
                             onClick={() => this.props.fetchServer(server.id)}
                             className={serverNavBarClassTag}
                             id={`${server.server_Icon === undefined ? `purple-hover` : `no-purple`}`}>
@@ -70,7 +71,16 @@ class ServerNavBar extends React.Component {
                         </Link>
 
                     </div>
-                    <div className="server-nav-bar-tool-kit">{server.server_name}</div>
+                    {/* <div className="server-nav-bar-tool-kit">{server.server_name}</div> */}
+                    <ReactTooltip
+                            className="server-nav-bar-tool-tip"
+                            textColor="#B9BBBE"
+                            backgroundColor="#191919"
+                            id={`server-bubble-tool-tip-${server.id}`}
+                            place="right"
+                            effect="solid">
+                            {server.server_name}
+                        </ReactTooltip>
                 </li>
             )
         }
@@ -80,9 +90,9 @@ class ServerNavBar extends React.Component {
         return (
             <div className="server-nav-bar">
                 <ul className="server-nav-bar-list">
-                    <li key="home-Bubbles" className="server-bubbles">
+                    <li key="home-Bubbles" className="server-bubbles" data-tip data-for="home-page-server-tool-tip">
                         <div className="server-nav-bar-list-item">
-                            <Link id="purple-hover" className={goHome} to={`/channels/@me`}>
+                            <Link id="purple-hover" className={goHome} to={`/$/channels/@me`}>
                                 <div className="pill-box"><span className="pill-box-item"></span></div>
                                 <svg className="home-Bubbles" aria-hidden="true" role="img" width="28" height="20" viewBox="0 0 28 20">
                                     <path fill="currentColor" d="M23.0212 1.67671C21.3107 0.879656 19.5079 0.318797 17.6584 0C17.4062 
@@ -102,7 +112,17 @@ class ServerNavBar extends React.Component {
                                 </svg>
                             </Link>
                         </div>
-                        <div className="server-nav-bar-tool-kit">HOME</div>
+                        {/* <div className="server-nav-bar-tool-kit">HOME</div> */}
+                        <ReactTooltip
+                            className="server-nav-bar-tool-tip"
+                            textColor="#B9BBBE"
+                            backgroundColor="#191919"
+                            id="home-page-server-tool-tip"
+                            place="right"
+                            effect="solid"
+                            >
+                            HOME
+                        </ReactTooltip>
                     </li>
 
                     <div className="server-bubble-seperator-container">
@@ -110,7 +130,7 @@ class ServerNavBar extends React.Component {
                     </div>
                     {userServer}
 
-                    <li className="server-bubbles" key="createServer">
+                    <li className="server-bubbles" key="createServer" data-tip data-for="add-a-server-tool-tip">
                         <div className="server-nav-bar-list-item">
                             <button id="create-server" onClick={() => this.renderModal('createServerForm')}>
                                 <div id="fill-pill" className="pill-box"><span className="pill-box-item"></span></div>
@@ -120,11 +140,20 @@ class ServerNavBar extends React.Component {
                                 </svg>
                             </button>
                         </div>
-                        <div className="server-nav-bar-tool-kit">Add a Server</div>
+                        {/* <div className="server-nav-bar-tool-kit">Add a Server</div> */}
+                        <ReactTooltip
+                            className="add-a-server-nav-bar-tool-tip"
+                            textColor="#B9BBBE"
+                            backgroundColor="#191919"
+                            id="add-a-server-tool-tip"
+                            place="right"
+                            effect="solid">
+                            Add a Server
+                        </ReactTooltip>
                     </li>
-                    <li className="server-bubbles" key="serverSearch">
+                    <li className="server-bubbles" key="serverSearch" data-tip data-for="explore-public-servers-tool-tip">
                         <div className="server-nav-bar-list-item">
-                            <Link to={`/channels/guild-discovery/`}>
+                            <Link to={`/$/channels/guild-discovery/`}>
                                 <button id="search-servers">
                                     <div id="fill-pill" className="pill-box"><span className="pill-box-item"></span></div>
                                     <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
@@ -137,7 +166,16 @@ class ServerNavBar extends React.Component {
                                 </button>
                             </Link>
                         </div>
-                        <div className="server-nav-bar-tool-kit">Explore Public Servers</div>
+                        {/* <div className="server-nav-bar-tool-kit">Explore Public Servers</div> */}
+                        <ReactTooltip
+                            className="server-nav-bar-explore-public-servers-tool-tip"
+                            textColor="#B9BBBE"
+                            backgroundColor="#191919"
+                            id="explore-public-servers-tool-tip"
+                            place="right"
+                            effect="solid">
+                            Explore Public Servers
+                        </ReactTooltip>
                     </li>
 
                     <div className="bottom-server-bubble-seperator-container">
@@ -145,7 +183,7 @@ class ServerNavBar extends React.Component {
                     </div>
 
 
-                    <li className="server-bubbles" key="downloadApps">
+                    <li className="server-bubbles" key="downloadApps" data-tip data-for="download-apps">
                         <div className="server-nav-bar-list-item">
                             <button id="download-apps" onClick={() => this.props.openModal('downloadApps')} >
                                 <div id="fill-pill" className="pill-box"><span className="pill-box-item"></span></div>
@@ -157,7 +195,16 @@ class ServerNavBar extends React.Component {
                                 </svg>
                             </button>
                         </div>
-                        <div className="server-nav-bar-tool-kit">Download Apps</div>
+                        {/* <div className="server-nav-bar-tool-kit">Download Apps</div> */}
+                        <ReactTooltip
+                            className="server-nav-bar-download-apps-tool-tip"
+                            textColor="#B9BBBE"
+                            backgroundColor="#191919"
+                            id="download-apps"
+                            place="right"
+                            effect="solid">
+                            Download Apps
+                        </ReactTooltip>
                     </li>
 
                 </ul>
