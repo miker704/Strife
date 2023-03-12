@@ -2,7 +2,8 @@ json.partial! 'api/servers/server', server: @server
 
 
 json.server do 
-    json.general_channel_id @server.channels.first.id
+    json.general_channel_id @server.channels.order(:id).first.id
+    # json.general_channel_id @server.channels.first.id
     json.extract! @server, :id, :server_name, :server_owner_id, :public, :server_icon, :invite_code
   end
 
@@ -58,9 +59,12 @@ json.server do
 
   #render the messages of the first channel in the in the server
 # this logic will basically be the same for channels dm channels and servers
+# messages = @server.channels.first.messages.includes(:user)
   
+
+
   json.messages do 
-    messages = @server.channels.first.messages.includes(:user)
+    messages = @server.channels.order(:id).first.messages.includes(:user)
     messages.each do |message|
       json.set! message.id do
         #get eastern time zone
