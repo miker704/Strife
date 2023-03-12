@@ -32,7 +32,7 @@ $off-grey: #B9BBBE;
     cursor: pointer;
     border-radius: inherit;
     // background-color: hsla(217,7.6%,33.5%,0.6);
-
+    text-rendering: optimizeLegibility;
 }
 
 .friends-nav-bar:hover,
@@ -56,8 +56,9 @@ $off-grey: #B9BBBE;
 }
 
 .friends-nav-bar.selected-x {
-    background-color: #3f4249;
-    color: hsl(210, 9.1%, 95.7%);
+    // background-color: #3f4249;
+    background:rgba(78,80,88,0.6);
+    // color: hsl(210, 9.1%, 95.7%);
 
     .friend-avatar-text,
     .friend-avatar {
