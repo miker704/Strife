@@ -149,6 +149,12 @@
       user input first.
       - Fixed by disabling the button by default.
 
+    - Fixed a bug where changing the name of the general channel in a server, would cause the id of the servers general channel to switch to other  
+      channel in that server if they exist editing names of that new general channel would also change it again. This allows the deletion of the general
+      channel when it is not allowed.
+      - Cause of the problem lies with the jbuilder code server.channels.first.id  which can suffer from a  problem where rails is read data entries from disk only and updating an entry such as the general channel causes it to be pushed to the last entry of the table as last updated. to remedy
+      this is to use the code server.channels.order(:id).first.id to directly get the first channel of the server no matter what.
+
 #### User Security
 
 - Fixed an issue when user changes their password and the password is not of appropiate length
