@@ -5,7 +5,8 @@ import ChannelDropDown from "./channel_drop_down.jsx";
 
 const mSTP = (state, ownProps) => {
     return {
-        currentUser: state.entities.users[state.session.id],
+        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.currentUser,
         server: state.entities.servers[ownProps.match.params.serverId],
         channels: Object.values(state.entities.channels),
         currentChannelId: ownProps.match.params.channelId,
