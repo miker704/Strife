@@ -11,7 +11,8 @@ const mSTP = (state, ownProps) => {
 
 
     return {
-        currentUser: state.entities.users[state.session.id],
+        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.currentUser,
         server: state.entities.servers[ownProps.match.params.serverId],
         channels: Object.values(state.entities.channels),
         currentChannelId: ownProps.match.params.channelId,
@@ -36,10 +37,10 @@ const mDTP = (dispatch, ownProps) => {
         updateServer: (server) => dispatch(updateServer(server)),
         deleteServer: (serverId) => dispatch(deleteServer(serverId)),
         removeServerErrors: () => dispatch(removeServerErrors()),
-        
-        
+
+
         //channel api functions
-        
+
         fetchChannel: (channelId) => { dispatch(fetchChannel(channelId)) },
         createChannel: (channel) => dispatch(createChannel(channel)),
         updateChannel: (channel) => dispatch(updateChannel(channel)),
@@ -49,13 +50,13 @@ const mDTP = (dispatch, ownProps) => {
         //server membership api functions
 
         createServerMembership: (servermembership) => dispatch(createServerMembership(servermembership)),
-        deleteServerMembership: (servermembershipId, servermembership) => 
-        dispatch(deleteServerMembership(servermembershipId,servermembership)),
+        deleteServerMembership: (servermembershipId, servermembership) =>
+            dispatch(deleteServerMembership(servermembershipId, servermembership)),
 
         //channel membership api functions 
         createChannelMembership: (channelmembership) => dispatch(createChannelMembership(channelmembership)),
-        deleteChannelMembership: (channelmembershipId,channelmembership) => 
-        dispatch(deleteChannelMembership(channelmembershipId,channelmembership)),
+        deleteChannelMembership: (channelmembershipId, channelmembership) =>
+            dispatch(deleteChannelMembership(channelmembershipId, channelmembership)),
 
         // modal api functions
         openModal: modal => dispatch(openModal(modal)),
