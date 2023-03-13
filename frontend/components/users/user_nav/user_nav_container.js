@@ -20,6 +20,5 @@ const mDTP = (dispatch) => {
 
 }
 
-// const  UserNavContainer =  connect(mSTP, null)(UserNavBar)
 const  UserNavContainer =  connect(mSTP, mDTP)(withRouter(UserNavBar));
 export default UserNavContainer;
