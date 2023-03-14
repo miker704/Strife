@@ -403,13 +403,15 @@
     flex-direction: column;
     // background-color: #2f3136;
     background-color: #2b2d31;
-    transform: translate(75px, 0px);
-    width: 234px;
+    // transform: translate(75px, 0px);
+    // width: 234px;
     // padding-left: 5px;
     top: 0;
     z-index: 2;
     // padding-right: 5px;
     height: calc(100vh - 49px);
+    transform: translate(72px, 0px);
+    width: 240px;
 
 }
 
@@ -578,7 +580,7 @@
     cursor: pointer;
     outline: 0;
     position: relative;
-    margin: 0 8px;
+    // margin: 0 8px;
 }
 
 
