@@ -3,8 +3,9 @@
   // height: auto;
   // height:fit-content;
   // width: 77px;
-  // width: 225px;
-  width:75px;
+  width: 225px;
+  // width:75px;
+  // width: 72px;
 
   position: absolute;
   // position:;
@@ -147,7 +148,8 @@
   margin: 0 0 8px;
   display: flex;
   justify-content: center;
-  width: 75px;
+  // width: 75px;
+  width: 72px;
   outline: 0;
 }
 
@@ -197,7 +199,9 @@
   // height: Calc(100vh - 55px);
   height: calc(100vh - 8px);
   // height: calc(auto-55px);
-
+  display: flex;
+  flex-direction: column;
+  width: 73px;
 }
 
 .server-nav-bar-list li {
@@ -265,43 +269,55 @@
 }
 
 .bottom-server-bubble-seperator-container {
-  width: 75px;
+  // width: 75px;
+  // height: 2px;
+  // display: flex;
+  // justify-content: center;
+  // padding-bottom:15px;
+  // background-color:rgb(32, 34, 37);
+  width: 72px;
   height: 2px;
   display: flex;
   justify-content: center;
-  // padding-bottom:15px;
-
-  // background-color:rgb(32, 34, 37);
+  margin: 0 0 8px;
 }
 
 .bottom-server-bubble-seperator {
-  width: 37.5px;
+  // width: 37.5px;
   height: 2px;
-  background-color: #383A3F;
   border-radius: 5px;
+  width: 32px;
+  background-color: rgba(78, 80, 88, 0.48);
+
+  // background-color: #383A3F;
+  // border-radius: 1px;
 }
 
 
 .server-bubble-seperator-container {
-  width: 75px;
+  // width: 75px;
   height: 2px;
   display: flex;
   justify-content: center;
-
+  width: 72px;
+  margin: 0 0 8px;
   // background-color:rgb(32, 34, 37);
 }
 
 .server-bubble-seperator {
-  width: 37.5px;
+  // width: 37.5px;
   height: 2px;
-  background-color: #383A3F;
+  // background-color: #383A3F;
   border-radius: 5px;
+  width: 32px;
+  background-color: #35363c;
 }
 
 .unselected-Server,
 .selected-Server {
   text-decoration: none;
-  color: rgb(221, 221, 221);
+  // color: rgb(221, 221, 221);
+  color: #E0E1E5;
   cursor: pointer;
   font-size: 20px;
   font-family: bold;
@@ -316,7 +332,8 @@
 
 .unselected-Server {
   // background-color: rgb(56, 57, 62);
-  background-color: #36393f;
+  // background-color: #36393f;
+  background-color: #313338;
   border-radius: 50%;
 }
 
@@ -409,7 +426,7 @@ button#download-apps:focus {
 
 
 
-.server-nav-bar-tool-tip{
+.server-nav-bar-tool-tip {
   background: #000000 !important;
   color: hsl(228, 8.8%, 88.8%) !important;
   font-size: 15px !important;
@@ -429,7 +446,7 @@ button#download-apps:focus {
 
 
 
-.server-nav-bar-download-apps-tool-tip{
+.server-nav-bar-download-apps-tool-tip {
   background: #000000 !important;
   color: hsl(228, 8.8%, 88.8%) !important;
   font-size: 15px !important;
@@ -450,7 +467,7 @@ button#download-apps:focus {
 }
 
 
-.server-nav-bar-explore-public-servers-tool-tip{
+.server-nav-bar-explore-public-servers-tool-tip {
   background: #000000 !important;
   color: hsl(228, 8.8%, 88.8%) !important;
   font-size: 15px !important;
@@ -468,7 +485,7 @@ button#download-apps:focus {
 }
 
 
-.add-a-server-nav-bar-tool-tip{
+.add-a-server-nav-bar-tool-tip {
   background: #000000 !important;
   color: hsl(228, 8.8%, 88.8%) !important;
   font-size: 15px !important;
