@@ -34,19 +34,21 @@
 }
 
 .server-base {
-    width: calc(100vw - 309px);
     display: flex;
     forced-color-adjust: none;
     overflow: hidden;
     flex-direction: column;
     height: 100vh;
-    transform: translate(309px, 0px);
     // background-color: #36393f;
     background-color: #313338;
     flex: 1;
     position: absolute;
     justify-content: flex-start;
     // transform: translate(308px, -640px);
+    // transform: translate(309px, 0px);
+    // width: calc(100vw - 309px);
+    transform: translate(312px, 0px);
+    width: calc(100vw - 312px);
 }
 
 
