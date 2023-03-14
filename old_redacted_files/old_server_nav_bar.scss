@@ -1,0 +1,368 @@
+// .server-nav-bar {
+//     height: 100vh;
+//     // height: auto;
+//     // height:fit-content;
+//     // width: 77px;
+//     width: 225px;
+  
+//     position: absolute;
+//     // position:;
+//     background-color: rgb(32, 34, 37);
+//     color: white;
+//     // display: flex;
+//     // flex-direction: column;
+//     user-select: none;
+//   }
+  
+//   @media only screen and (min-width:1400px) {
+//     #splash-banner {
+  
+//     }
+//   }
+  
+  
+  
+  
+//   .server-nav-bar a:hover {
+//     background-color: #5865F2;
+//     border-radius: 30%;
+//   }
+//   .pill-box {
+//     position: relative;
+//     overflow: hidden;
+//     width: 8px;
+//     height: 48px;
+//     display: -webkit-box;
+//     display: -ms-flexbox;
+//     display: flex;
+//     align-items: center;
+//     justify-content: flex-start;
+//     contain: layout size;
+//     position: absolute;
+//     left: 0;
+//     forced-color-adjust: none;
+//     // top: 0;
+//     outline: 0;
+//   }
+  
+//   .blob-contain {
+//     position: relative;
+//     transform: translateY(1px) translateZ(0);
+//     backface-visibility: hidden;
+//   }
+  
+//   .unselected-Server:hover {
+//     .pill-box {
+//       color: #fff;
+//       background-color: #fff;
+//       border-radius: 5px;
+//       height: 24px;
+//     }
+//   }
+  
+//   .server-nav-bar .server-nav-bar-list-item:hover {
+//     .pill-box {
+//       color: #fff;
+//       background-color: #fff;
+//       border-radius: 5px;
+//       height: 24px;
+//     }
+//   }
+  
+//   .selected-Server {
+//     .pill-box {
+//       color: #fff !important;
+//       background-color: #fff !important;
+//       border-radius: 5px !important;
+//       height: 48px !important;
+//     }
+//   }
+  
+//   .pill-box-item {
+//     outline: 0;
+//     forced-color-adjust: none;
+//     background-color: #FFFFFF;
+//     position: absolute;
+//     display: block;
+//     width: 8px;
+//     border-radius: 0 4px 4px 0;
+//     margin-left: -4px;
+  
+//   }
+  
+//   .bubble-wrap {
+//     display: flex;
+//     width: 48px;
+//     height: 48px;
+//     align-items: center;
+//     justify-content: center;
+//     forced-color-adjust: none;
+//     outline: 0;
+//     transition: background-color .1s ease-out, color .1s ease-out;
+//   }
+  
+  
+  
+//   .bubble-img {
+//     display: block;
+//     width: 48px;
+//     height: 48px;
+//     border-radius: 50%;
+  
+//     object-fit: cover;
+//     // pointer-events: none;
+//     forced-color-adjust: none;
+  
+//   }
+  
+  
+//   .server-nav-bar a:hover {
+//     // background-color: #5865F2;
+//     border-radius: 30%;
+  
+//   }
+  
+//   #no-purple:hover img {
+//     border-radius: 30%;
+//     background-color: #202225;
+//     transition: background .4s ease-out, border-radius .4s ease-out;
+//   }
+  
+//   .server-nav-bar a#purple-hover:hover {
+//     background-color: #5865F2;
+  
+//   }
+  
+//   .server-nav-bar a#no-purple:hover {
+//     background-color: #202225;
+//     transition-property: border-radius;
+  
+//   }
+  
+//   .server-nav-bar-list-item {
+//     forced-color-adjust: none;
+//     position: relative;
+//     margin: 0 0 8px;
+//     display: flex;
+//     justify-content: center;
+//     width: 75px;
+//     outline: 0;
+//   }
+  
+  
+//   .server-nav-bar-list-item:active {
+//     position: relative;
+//     transform: translateY(1px) translateZ(0);
+//     backface-visibility: hidden;
+//   }
+  
+//   .server-Acryo {
+//     font-size: 16px;
+//     forced-color-adjust: none;
+//     outline: 0;
+//     font-weight: 500;
+//     line-height: 1.2em;
+//     white-space: nowrap;
+//     transition: background-color .15s ease-out, color .15s ease-out;
+//     display: flex;
+//     width: 48px;
+//     height: 48px;
+//     align-items: center;
+//     justify-content: center;
+//     font-family: "Whitney";
+  
+//   }
+  
+//   .purple-bubbles {
+//     box-sizing: border-box;
+//     // position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 48px;
+//     height: 48px;
+//     forced-color-adjust: none;
+//   }
+  
+  
+  
+//   .server-nav-bar-list {
+//     margin-top: 5px;
+//     overflow-x: hidden;
+//     overflow-y: auto;
+//     // height: calc(100vh-55px);
+//     // height: auto;
+//     // height:--webkit-fill-avaliable
+//     // height: Calc(100vh - 55px);
+//     height: calc(100vh - 8px);
+//     // height: calc(auto-55px);
+  
+//   }
+  
+//   .server-nav-bar-list li {
+//     padding: 5px;
+//     height: 50px;
+//     padding-left: 0px;
+//     list-style: none;
+//     // background-color: rgb(32, 34, 37);
+//   }
+  
+//   get rid of the stupid windows scroll bar / minimize it so its nearly unseeable its noticieable when a ton of text
+//   is rendered clipping can be seen
+//   .server-nav-bar-list::-webkit-scrollbar {
+//     width: 1px;
+//   }
+  
+//   .server-nav-bar-list::-webkit-scrollbar-thumb {
+//     background: rgb(30, 35, 40);
+//     border-radius: 5px;
+//   }
+  
+//   .server-nav-bar-list::-webkit-scrollbar-track {
+//     border-radius: 10px;
+//     background: rgb(40, 45, 50);
+//   }
+  
+  
+  
+  
+  
+//   .home-Bubbles {
+//     font-size: 25px;
+//   }
+  
+//   .server-bubbles .server-nav-bar-tool-kit {
+//     visibility: hidden;
+//     position: relative;
+//     background-color: rgb(25, 25, 25);
+//     color: #FFFFFF;
+//     border-radius: 5px;
+//     width: fit-content;
+//     max-width: 115px;
+//     text-align: left;
+//     padding: 5px;
+//     z-index: 5;
+//     top: -50px;
+//     left: 85px;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     font-size: 15px;
+//     font-weight: 500;
+//     font-family: "Ginto", Arial, Helvetica, sans-serif;
+  
+//   }
+  
+//   .server-bubbles:hover .server-nav-bar-tool-kit {
+//     visibility: visible;
+//     z-index: 5;
+//   }
+  
+//   .server-nav-bar-a {
+//     width: 75px;
+//     display: flex;
+//     justify-content: center;
+//   }
+  
+//   .bottom-server-bubble-seperator-container {
+//     width: 75px;
+//     height: 2px;
+//     display: flex;
+//     justify-content: center;
+//     // padding-bottom:15px;
+  
+//     // background-color:rgb(32, 34, 37);
+//   }
+  
+//   .bottom-server-bubble-seperator {
+//     width: 37.5px;
+//     height: 2px;
+//     background-color: #383A3F;
+//     border-radius: 5px;
+//   }
+  
+  
+//   .server-bubble-seperator-container {
+//     width: 75px;
+//     height: 2px;
+//     display: flex;
+//     justify-content: center;
+//     // background-color:rgb(32, 34, 37);
+//   }
+  
+//   .server-bubble-seperator {
+//     width: 37.5px;
+//     height: 2px;
+//     background-color: #383A3F;
+//     border-radius: 5px;
+//   }
+  
+//   .unselected-Server,
+//   .selected-Server {
+//     text-decoration: none;
+//     color: rgb(221, 221, 221);
+//     cursor: pointer;
+//     font-size: 20px;
+//     font-family: bold;
+//     height: 48px;
+//     width: 48px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     text-align: center;
+//     transition: 0.4s;
+//   }
+  
+//   .unselected-Server {
+//     // background-color: rgb(56, 57, 62);
+//     background-color: #36393f;
+//     border-radius: 50%;
+//   }
+  
+//   .selected-Server {
+//     background-color: #5865F2;
+//     border-radius: 30%;
+//   }
+  
+//   .selected-Server#no-purple {
+//     border-radius: 30%;
+//     background: none;
+//   }
+  
+//   server nav bar modals
+//   createServer modal file name Create_server_form.jsx called in server nav bar.jsx these aare buttons to call these forms
+//   #create-server,
+//   #search-servers,
+//   #download-apps {
+//     text-decoration: none;
+//     border-style: none;
+//     border-color: rgb(56, 57, 62);
+//     color: rgb(221, 221, 221);
+//     background-color: rgb(56, 57, 62);
+//     cursor: pointer;
+//     font-size: 20px;
+//     font-weight: bold;
+//     display: flex;
+//     justify-content: center;
+//     text-align: center;
+//     align-items: center;
+//     height: 48px;
+//     width: 48px;
+//     border-radius: 50%;
+//     transition: 0.4s;
+//     color: rgb(60, 163, 92);
+//     padding: 0;
+//   }
+  
+//   #create-server:hover,
+//   #search-servers:hover,
+//   #download-apps:hover {
+//     background-color: rgb(60, 163, 92);
+//     color: #FFFFFF;
+//     border-radius: 30%;
+//   }
+  
+
+//   button#create-server:focus,
+//   button#search-servers:focus,
+//   button#download-apps:focus {
+//     visibility: hidden;
+//   }
