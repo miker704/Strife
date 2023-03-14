@@ -4,18 +4,20 @@
 
 
 .dm-server-container {
-    width: calc(100vw - 310px);
     display: flex;
     forced-color-adjust: none;
     overflow: hidden;
     flex-direction: column;
     height: 100vh;
-    transform: translate(309px, 0px);
     // background-color: #36393f;
     background: #313338;
     flex: 1;
     position: absolute;
     justify-content: flex-start;
+    // width: calc(100vw - 310px);
+    // transform: translate(309px, 0px);
+    width: calc(100vw - 312px);
+    transform: translate(312px, 0px);
 }
 
 
