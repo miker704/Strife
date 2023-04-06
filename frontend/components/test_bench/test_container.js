@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import TestPage from "./test_page";
+
 import { openModal, closeModal } from "../../actions/modal_actions";
 import { fetchServer, fetchServers } from "../../actions/server_actions";
 import { fetchChannel } from "../../actions/channel_actions";
