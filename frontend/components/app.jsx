@@ -18,6 +18,7 @@ import PROTECTED_SERVER_CONTAINER from './server/server_security/protect_server_
 // import STRIFE_VOICE_CALL_API_CONTAINER from './voice_calls/voice_call_container.js';
 import _STRIFE_CORE_CONTAINER_ from './Core/CORE_CONTAINER.js';
 
+
 const App = () => {
 
     return (
@@ -26,6 +27,7 @@ const App = () => {
             <ProtectedRoute path='/$/' component={_STRIFE_CORE_CONTAINER_} ></ProtectedRoute>
             <ProtectedRoute path="/$/channels/:serverId/" component={ServerNavBarContainer} />
             <ProtectedRoute path="/$/channels/" component={UserNavContainer} />
+
             {/* <ProtectedRoute exact path="/voice/" component={STRIFE_VOICE_CALL_API_CONTAINER} /> */}
 
             <Switch>
