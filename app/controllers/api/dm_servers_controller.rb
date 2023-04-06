@@ -91,7 +91,7 @@ class Api::DmServersController < ApplicationController
         if @dm_server
             ## initiate redirects to loading container to resync state boots anyone remaining in chat
             ## also ensures that everyone is removed LIVE via action cable
-            async_redirect(@dm_server, '/telefrag/')
+            async_redirect(@dm_server, '/$/telefrag/')
             ## destroy the dmServer render nothing 
             @dm_server.destroy
         end
