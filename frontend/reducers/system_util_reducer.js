@@ -34,9 +34,9 @@ const systemUtilReducer = (state = { _STRIFE_BOT }, action) => {
     // }
 
     switch (action.type) {
-        case RECEIVE_CURRENT_USER:
-            newState = Object.assign({}, state, { _STRIFE_BOT: _STRIFE_BOT });
-            return newState;
+        // case RECEIVE_CURRENT_USER:
+        //     newState = Object.assign({}, state, { _STRIFE_BOT: _STRIFE_BOT });
+        //     return newState;
 
         case RECEIVE_STRIFE_BOT:
             // //if user signs out without refreshing page force this action to modify the state
