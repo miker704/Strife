@@ -16,6 +16,8 @@ const _STRIFE_CORE_CABLE_ = (store, currentUserId, dispatch) => (
         },
         received: (data) => {
             // debugger
+            // console.error(`Curr Data = ${data}`);
+            // console.table(data);
             let currentDate = new Date();
             let time = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds() + ":" + currentDate.getMilliseconds();
             switch (data.type) {
