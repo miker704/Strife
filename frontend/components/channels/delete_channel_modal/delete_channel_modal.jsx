@@ -54,7 +54,7 @@ const DeleteChannelModal = (props) => {
         //then delete channel
         props.setChannelDeletion(false);
         props.closeModal();
-        props.history.push(`/channels/${props.server.id}/${props.server.general_channel_id}`);
+        props.history.push(`/$/channels/${props.server.id}/${props.server.general_channel_id}`);
         props.deleteChannel(props.currentChannel.id).then(()=> {
             props.fetchServer(parseInt(props.serverId));
         })
