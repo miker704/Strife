@@ -31,9 +31,11 @@
     padding: 0 8px;
     margin-bottom: 1px;
     user-select: none;
-    transform: translate(71px, Calc(100vh - 52px));
     z-index: 3;
-    width: 225px;
+    // transform: translate(71px, Calc(100vh - 52px));
+    // width: 225px;
+    transform: translate(72px, Calc(100vh - 52px));
+    width: 224px;
     position: absolute;
 
 }
