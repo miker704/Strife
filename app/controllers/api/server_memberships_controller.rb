@@ -39,7 +39,7 @@ class Api::ServerMembershipsController < ApplicationController
         server.channels.each do |channel|
             @message=Message.create!(body: @response_Message, author_id: 1, channel_id: channel.id)
             # StrifeServer.broadcast_to(channel, message: @message, head: 101, path: '/$TR!F3-INTRUSION-PREVENTION/', banned: banned, bannedUser: banned_user)
-            StrifeServer.broadcast_to(channel, head: 101, path: '/$TR!F3-INTRUSION-PREVENTION/', banned: banned, bannedUser: banned_user.id)
+            StrifeServer.broadcast_to(channel, head: 101, path: '/$/$TR!F3-INTRUSION-PREVENTION/', banned: banned, bannedUser: banned_user.id)
 
         end
     end
