@@ -38,7 +38,7 @@ class Api::DmMembersController < ApplicationController
         @dms_owner = User.find_by(id: dmServer.owner_id)
         @response_Message = "@#{@dms_owner.username} has kicked @#{@user_kicked.username}"
         @dm_message_via_bot = DmMessage.create!(body: @response_Message, sender_id: 1, dm_server_id: @dm_server.id)
-        DmChannel.broadcast_to(dmServer, head:401, path: '/$TR!F3-INTRUSION-PREVENTION/' )
+        DmChannel.broadcast_to(dmServer, head:401, path: '/$/$TR!F3-INTRUSION-PREVENTION/' )
     end
 
     def destroy
