@@ -154,6 +154,18 @@
       channel when it is not allowed.
       - Cause of the problem lies with the jbuilder code server.channels.first.id  which can suffer from a  problem where rails is read data entries from disk only and updating an entry such as the general channel causes it to be pushed to the last entry of the table as last updated. to remedy
       this is to use the code server.channels.order(:id).first.id to directly get the first channel of the server no matter what.
+    
+    - Fixed an issue in Server Chat Rooms where if a user enters some text in the message text area but does not send it and proceeds to switch between
+      the servers channels or switches to a different server and the contents of the text area remain.
+      - Addressed by clearing the state of the text area when the channel id changes.
+
+    - Added the feature where in Server channels where if a user edits their message to become blank or if it contains only whitespaces
+     instead of negating the change and having it sent to thge backend and return a bad requests have the delete message modal appear
+     asking if a user wants to outright delete their message instead.
+      - Also added the feature if a user user aborts the deletion of their message through editing it and sending a blank or space only 
+       message have the old message be refilled back into the state so when editing it again the message will be prefilled with it 
+       previous remove contents.
+      - Added the ability for the cursor to auto focus at the end of the text when editing instead of the beginning.
 
 #### User Security
 
