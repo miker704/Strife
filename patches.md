@@ -212,6 +212,28 @@
     - changed colors of user option buttons in all of the  friend list sections.
     - changed colors of usernames in all of the  friend list sections.
     - Added and fixed tooltips on channel nav bar.
+    - Fixed header nav bar sizings in explore servers page, dmServers and Servers.
+    - remodeled user nav bar to scale with proper sizing.
+    - resized channel nav bar dmServer navbar and explore servers navbar.
+    - resized server nav bar.
+    - changed tool tips for server nav bar.
+    - Added new colors for backend console.
+    - Added new info in dev console.
+    - Changed text on the deleted server loading screen.
+
+## Backend Changes
+
+- Changed the routes to the new Routing system on the frontend to redirect banned users from both dmservers
+  and servers to the banned user loading screen and send them page to the home dashboard.
+
+- Changed jbuilder return for servers general channel from general_channel_id servers.channels.first.id
+  to servers.channels.order(:id).first.id to prevent reading the wrong channel when the general channel updates and switches to the end of the table when read from disk level.
+
+- Changed jbuilder return for the first message of the general channel for servers changing from messages
+  servers.channels.first.messages.includes(:user)
+  to servers.channels.order(:id).first.messages.includes(:user)
+
+- Changed return action cable text colors to easily identify which redux call is being taken place.
 
 ### Other Changes
 
