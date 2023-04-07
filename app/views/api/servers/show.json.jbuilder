@@ -65,6 +65,7 @@ json.server do
 
   json.messages do 
     messages = @server.channels.order(:id).first.messages.includes(:user)
+    # messages = @server.channels.first.messages.includes(:user)
     messages.each do |message|
       json.set! message.id do
         #get eastern time zone
