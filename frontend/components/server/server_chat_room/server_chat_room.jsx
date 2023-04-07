@@ -67,9 +67,9 @@ class ServerChatRoom extends React.Component {
     subscribe () {
 
         //plug the cable
-        // const cable = createConsumer('ws://localhost:3000/cable'); // /cable mounts to local host that rails server is running on 
+        const cable = createConsumer('ws://localhost:3000/cable'); // /cable mounts to local host that rails server is running on 
         // const cable = createConsumer('wss://strife-v1.herokuapp.com/cable'); // /cable mounts to local host that rails server is running on
-        const cable = createConsumer('wss://strife.onrender.com/cable');
+        // const cable = createConsumer('wss://strife.onrender.com/cable');
         this.subscription = cable.subscriptions.create(
             { channel: 'StrifeServer', id: this.props.newMessage.channel_id },
             {
@@ -82,7 +82,7 @@ class ServerChatRoom extends React.Component {
                     }
                     // if channel is deleted redirect users to general channel if they are in that channel to be deleted
                     if (type === 'DeleteChannel') {
-                        if (this.props.history.location.pathname === `/channels/${this.props.server.id}/${channel.id}`) {
+                        if (this.props.history.location.pathname === `/$/channels/${this.props.server.id}/${channel.id}`) {
                             this.props.history.push(`${this.props.server.general_channel_id}`)
                         }
                         this.props.fetchServer(this.props.match.params.serverId)
@@ -110,8 +110,8 @@ class ServerChatRoom extends React.Component {
                     //     })
                     // }
 
-                    if (head === 302 && path === '/telefrag/') {
-                        this.props.history.push('/telefrag/');
+                    if (head === 302 && path === '/$/telefrag/') {
+                        this.props.history.push('/$/telefrag/');
                     }
 
                     else {
@@ -120,7 +120,7 @@ class ServerChatRoom extends React.Component {
                             let currUser = action.currentUser;
                             if (!currUser.serversJoined.includes(parseInt(this.props.serverId))) {
                                 this.props.removeServer(this.props.server.id);
-                                this.props.history.push('/$TR!F3-INTRUSION-PREVENTION/');
+                                this.props.history.push('/$/$TR!F3-INTRUSION-PREVENTION/');
                             }
                             else {
                                 this.props.fetchServer(this.props.server.id);
@@ -210,6 +210,7 @@ class ServerChatRoom extends React.Component {
             newMessage.body = '';
             newMessage.channel_id = this.props.match.params.channelId;
             this.setState({ newMessage });
+            this.setState({value: ''});
             this.props.fetchChannel(this.props.match.params.channelId);
             this.unsubscribe();
             this.subscribe();
@@ -287,9 +288,17 @@ class ServerChatRoom extends React.Component {
 
             //if in order to stop corruption since the find funct returns undefined if something is not found  check to see if that id === 1
             //  which indicates a bot message set that message id to the bot 
-            let member = serverMembers.find(member => member.id === message.author_id)
+            let member = serverMembers.find(member => member.id === message.author_id);
+            // debugger
+            // console.log(`member pre if = ${member}`);
             if (member === undefined) {
+
+                // console.log(`member pre  = ${member}`);
+                // console.log(`strigeBot  = ${this.props.strifeBot}`);
+
                 member = Object.values(this.props.strifeBot)[0];
+                // console.log(`member post = ${member}`);
+                // console.table(member);
             }
             return (
 
@@ -499,9 +508,9 @@ class ServerChatRoom extends React.Component {
                                                                         <div className="call-room-member-title-child">
                                                                             <div className="call-room-member-rt"></div>
                                                                             <div className="crm-content">
-                                                                            <div className="crm-bk">
-                                                                                avatar
-                                                                            </div>
+                                                                                <div className="crm-bk">
+                                                                                    avatar
+                                                                                </div>
 
                                                                             </div>
                                                                             <div className="crm-indicators"></div>
