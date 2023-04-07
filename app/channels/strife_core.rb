@@ -122,6 +122,7 @@ class StrifeCore < ApplicationCable::Channel
   end
 
   def kick_User_From_DmServer(_kicked_member)
+    puts "\e[\033[1;91m KICKED MEMBER \e[1;91m\n"
     @kicked_DmMember = User.find_by(id: _kicked_member['dm_member_id'].to_i)
     if @kicked_DmMember.online == true
       core = '$TR!F3_' + @kicked_DmMember.id.to_s
@@ -142,6 +143,8 @@ class StrifeCore < ApplicationCable::Channel
 
   def _ASYNC_Ban_User_From_Server_(_banned_member)
     puts "BANNNED MEMBER"
+    # puts "\e[\033[1;91m\]"
+    puts "\e[\033[1;91m BANNNED MEMBER \e[1;91m\n"
     puts _banned_member.inspect
     @banned_Server_Member = User.find_by(id: _banned_member['user_id'].to_i)
     if @banned_Server_Member.online == true
