@@ -43,10 +43,11 @@ const DeleteServerModal = (props) => {
 
         props.verifyName(subState).then(() => {
             props.closeModal();
-            props.history.push('/channels/@me');
+            props.history.push('/$/channels/@me');
             props.deleteServer(props.server.id).then(() => {
                 props.fetchUserServers(props.currentUser.id);
             });
+
         })
         props.removeServerErrors()
 
