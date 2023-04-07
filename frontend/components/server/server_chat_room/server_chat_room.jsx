@@ -67,9 +67,9 @@ class ServerChatRoom extends React.Component {
     subscribe () {
 
         //plug the cable
-        const cable = createConsumer('ws://localhost:3000/cable'); // /cable mounts to local host that rails server is running on 
+        // const cable = createConsumer('ws://localhost:3000/cable'); // /cable mounts to local host that rails server is running on 
         // const cable = createConsumer('wss://strife-v1.herokuapp.com/cable'); // /cable mounts to local host that rails server is running on
-        // const cable = createConsumer('wss://strife.onrender.com/cable');
+        const cable = createConsumer('wss://strife.onrender.com/cable');
         this.subscription = cable.subscriptions.create(
             { channel: 'StrifeServer', id: this.props.newMessage.channel_id },
             {
