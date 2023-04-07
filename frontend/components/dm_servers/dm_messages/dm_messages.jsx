@@ -53,9 +53,7 @@ class DmMessages extends React.Component {
 
     //remove listening of subscription 
     componentWillUnmount () {
-
         this.subscription?.unsubscribe();
-
     }
 
 
@@ -78,9 +76,9 @@ class DmMessages extends React.Component {
     subscribe () {
 
         //plug the cable
-        // const cable = createConsumer('ws://localhost:3000/cable'); // /cable mounts to local host that rails server is running on 
+        const cable = createConsumer('ws://localhost:3000/cable'); // /cable mounts to local host that rails server is running on 
         // const cable = createConsumer('wss://strife-v1.herokuapp.com/cable'); // /cable mounts to local host that rails server is running on 
-        const cable = createConsumer('wss://strife.onrender.com/cable');
+        // const cable = createConsumer('wss://strife.onrender.com/cable');
         this.subscription = cable.subscriptions.create(
             { channel: 'DmChannel', id: this.props.dmServerId },
             {
@@ -104,8 +102,8 @@ class DmMessages extends React.Component {
 
                     }
                     //this is to boot everyone when the dmserver is deleted
-                    if (head === 302 && path === '/telefrag/') {
-                        this.props.history.push(`/telefrag/`);
+                    if (head === 302 && path === '/$/telefrag/') {
+                        this.props.history.push(`/$/telefrag/`);
                     }
                     // else if(this.props.currentUserId !== this.props.dmServer.owner_id) {
                     else {
@@ -115,7 +113,7 @@ class DmMessages extends React.Component {
                             let currUser = action.currentUser;
                             if (!currUser.dmServersJoined.includes(parseInt(this.props.dmServerId))) {
                                 this.props.removeDmServer(this.props.dmServer.id);
-                                this.props.history.push('/$TR!F3-INTRUSION-PREVENTION/');
+                                this.props.history.push('/$/$TR!F3-INTRUSION-PREVENTION/');
                             }
                             else {
 
@@ -206,6 +204,7 @@ class DmMessages extends React.Component {
             newDmMessage.body = '';
             newDmMessage.dm_server_id = this.props.match.params.dmServerId;
             this.setState({ newDmMessage });
+            this.setState({value : ""});
             this.props.fetchDmServer(this.props.dmServerId);
             this.unsubscribe();
             this.subscribe();
