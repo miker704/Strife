@@ -28,7 +28,7 @@ const LeaveServerModal = (props) => {
         // rerun the render if delete membership fails user can still enter and try again with no errors
        
         props.closeModal();
-        props.history.push('/channels/@me')
+        props.history.push('/$/channels/@me')
         props.deleteServerMembership(props.currentUser.id, subState).then(() => {
         props.fetchUserServers(props.currentUser.id)
         })
