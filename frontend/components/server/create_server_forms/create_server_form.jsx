@@ -305,7 +305,7 @@ class CreateServerForm extends React.Component {
             }, 100);
         }).then(() => {
             this.props.reSyncCurrentUser(this.props.currentUserId).then(() => {
-                this.props.history.push(`/channels/${newServer.id}/${newServer.general_channel_id}`);
+                this.props.history.push(`/$/channels/${newServer.id}/${newServer.general_channel_id}`);
             })
         })
 
@@ -439,7 +439,7 @@ class CreateServerForm extends React.Component {
                     this.props.joinServer(invite).then((action) => {
                         let joinedServer = action.server;
                         this.props.reSyncCurrentUser(this.props.currentUserId).then(() => {
-                            this.props.history.push(`/channels/${joinedServer.id}/${joinedServer.general_channel_id}`);
+                            this.props.history.push(`/$/channels/${joinedServer.id}/${joinedServer.general_channel_id}`);
                             this.closeModalTransitionOut();
                         })
 
@@ -734,7 +734,7 @@ class CreateServerForm extends React.Component {
                         <h3>https://strife.gg/default-server</h3>
                     </div>
 
-                    <Link className="unStyle" to={`/channels/guild-discovery/`} onClick={() => this.closeModalTransitionOut()}>
+                    <Link className="unStyle" to={`/$/channels/guild-discovery/`} onClick={() => this.closeModalTransitionOut()}>
                         <div className="slide2-to-slide3-button-2">
 
                             <div className="img-container">
