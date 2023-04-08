@@ -35,6 +35,7 @@
       all components if needed.
       The CORE API has found its proper home to be mounted in the app. More details disscussing on what this system does and  how it works will 
       be explained in the future as development of its full intergration has been reached the half way point.
+    - Fixed a problem when creating a new DmServer is would not send the dmserver to invited members live.
 
 ### Glitches and bugs Addressed
 
