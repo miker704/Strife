@@ -247,6 +247,8 @@
 
 - Changed return action cable text colors to easily identify which redux call is being taken place.
 
+- Integrated Colorize gem for CoRE cable action cable calls to easily identify them in the backend rails server console.
+
 ### Other Changes
 
 - Changed which state for current user information to be extracted from for certain components.
