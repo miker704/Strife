@@ -43,7 +43,26 @@ const ServerMessages = ({
     const handleEdit = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        if (value !== message.body) {
+
+
+        if (value.length === 0 || value.replace(/\s/g, '').length === 0) {
+            //reset back the value to dmMessage body just incase user aborts deletion
+            // if a user sends a blank message or a message containing only spaces ask if the user
+            //wants to delete their message instead.
+            setValue(message.body);
+            openModalWithProps({
+                currentUserId: currentUserId,
+                message: message,
+                formatTime: formatTime,
+                serverId: serverId,
+                channelId: channelId,
+                messageAuthor: messageAuthor
+
+            });
+            openModal('DeleteServerChannelMessage');
+        }
+
+        else if (value !== message.body) {
 
             let editedMessage = {
                 id: message.id,
@@ -67,6 +86,7 @@ const ServerMessages = ({
     const editInput = (
         <form onSubmit={handleEdit} className="message-form-edit" >
             <textarea
+                onFocus={(e)=>e.currentTarget.setSelectionRange(e.currentTarget.value.length,e.currentTarget.value.length)}
                 value={value}
                 onChange={(e) => setValue(e.currentTarget.value)}
                 className="server-message-chat-box-area"
