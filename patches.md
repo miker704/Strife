@@ -167,6 +167,13 @@
        message have the old message be refilled back into the state so when editing it again the message will be prefilled with it 
        previous remove contents.
       - Added the ability for the cursor to auto focus at the end of the text when editing instead of the beginning.
+    
+    - Fixed an issue with creating dmServers via create dm modal where if an if there is an existing dmserver with said members it should 
+      redirect to that dmServer. however this was overlooked do to a flaw in the algorithm to check for this it would always fail and run the createDMServer function and the backend would return the existing server redirecting to that server anyways the goal was to prevent 
+      the backend from running this check anyways as the createdm dispatch would call on the core cable to parse the new dmserver and 
+      send a redux action to dispatch and receive the new dmserver to its members.
+      - Addressed said issue by comparing member ids properly, prior to this the algorthim was comparing member data as a whole against 
+        their id which was not intended.
 
 #### User Security
 
