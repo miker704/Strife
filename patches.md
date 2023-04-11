@@ -37,6 +37,20 @@
       be explained in the future as development of its full intergration has been reached the half way point.
     - Fixed a problem when creating a new DmServer is would not send the dmserver to invited members live.
 
+## C0R3 @P! glitches and bugs addressed and added changes
+
+- CORE is a small api combining both backend rails action cable, frontend javascript rails action cable libaries with redux to perform async like actions across the app when a user is not in
+ a chat room where they normally would be connected to a websocket. Each user once signed in is given a core representing a global cable unique to them actions across the app involving user will result having them send a signal to the backend to send any involving users of said action to receive a redux action to reflect the changes live. such as creating a new server and inviting a few membes that action will be sent to the global cable and send each invited member of this new server and redux action to perform a dispatch on and recieve/render the new server LIVE WITHOUT HAVING TO REFRESH THE PAGE!! other actions such as banning or kicking a user also are reflected live as well resulting in removal of the server/dm that user was removed from even if they are not browsing the current server/dmserver they got removed from a request will be sent to that user if they are online and regardless of where they are in the app the server will be removed live.
+
+- Mounted Root Cable to Start A Conversation Modal when clicking on friend that the user has no dmServer for upon clicking it will sent a live request to that friend if they are online to render the new dmserver live.
+
+- Clicking start a dm message with a friend on both friend list or online friends list and their is no
+current dmServer involving the user of their friend it will send a request to the friend if they are online to render the new dmServer live.
+
+- Clicking send message when clicking on a user from the member list in a server or dmServer if there is no exisiting dmserver between them and that user is online it will send a request for them to render the new DmServer live.
+
+- Typing a message in the user profile card on a user by clicking on that user from the member list in a server or dmserver if there is no existing dmServer with that user before it will send a live request for that user to receive this new dmServer live if that user is online.
+
 ### Glitches and bugs Addressed
 
     - Fixed redux warning when a user deletes their $TR!F3 account:
