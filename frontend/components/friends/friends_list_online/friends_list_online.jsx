@@ -83,7 +83,7 @@ const FriendShipIndexOnline = ({
         const memberIds = [currentUser.id, parseInt(friend.id)].sort((a, b) => a - b);
         let new_dm_members = [currentUser, friend];
         for (let dmServer of dmServers) {
-            if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
+            if (dmMembersArray(Object.values(dmServer.members).map((member)=>member.id).sort((a, b) => a - b), memberIds)) {
                 if (history.location.pathname !== `/$/channels/@me/${dmServer.id}`) {
                     history.push(`/$/channels/@me/${dmServer.id}`);
                 }
@@ -116,6 +116,7 @@ const FriendShipIndexOnline = ({
             reSyncCurrentUser(currentUserId).then(() => {
                 history.push(`/$/channels/@me/${newDmServer.id}`);
             })
+            App.StrifeCore.perform('parse_Invites_To_Existing_DmServer_INVOKE_DMS_REFRESH', { dm_member_id: friend.id, dm_server_id: newDmServer.id });
         });
         return;
     }
