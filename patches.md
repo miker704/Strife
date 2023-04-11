@@ -1,6 +1,13 @@
 # PATCH NOTES
 
-## PATCH NOTES v3.00 - 2/24/2023 - 3/3/2023
+## Future additions and pending changes
+  
+- Core Cable will mount to friend status updates
+  - Dmserver can manually be deleted via clicking the x icon next to it
+  - Server Banners, Channel and Server descriptions which can be views on the explore servers page
+  - many more
+
+## PATCH NOTES v3.00 - 2/24/2023 - 4/11/2023
 
 ## Intra - Changes between 10/7/2022 - 11/17/2023
 
