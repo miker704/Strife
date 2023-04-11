@@ -5,7 +5,7 @@ import {
     RESYNC_CURRENT_USER
 } from "../actions/session_actions.js";
 
-import { RECEIVE_DM_SERVER } from "../actions/dm_server_actions.js";
+import { RECEIVE_DM_SERVER, REMOVE_DM_SERVER } from "../actions/dm_server_actions.js";
 import { RECEIVE_SERVER, REMOVE_SERVER } from '../actions/server_actions.js';
 
 
@@ -52,6 +52,19 @@ const removeDeletedServer = (state, serverId) => {
     return nextState;
 }
 
+const removeDeletedDmServer = (state, dmServerId) => {
+    console.log('in remove dleted dmserver');
+    console.log('state');
+    console.table(state);
+    console.log(`dms ID : ${dmServerId}`);
+    if (!dmServerId) {
+        return state;
+    }
+    let nextState = Object.assign({}, state);
+    nextState.dmServersJoined = state.dmServersJoined.filter((dmsId) => dmsId !== dmServerId);
+    return nextState;
+}
+
 
 
 const currentUserReducer = (state = {}, action) => {
@@ -79,7 +92,8 @@ const currentUserReducer = (state = {}, action) => {
         case RECEIVE_DM_SERVER:
             return extractCurrentUserDmMemberShip(state, action.dmserver.members);
 
-
+        // case REMOVE_DM_SERVER:
+        //     return removeDeletedDmServer(state, action.dmserverId);
 
         case RECEIVE_SERVER:
             return extractCurrentUser(state, action.server.users);
