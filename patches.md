@@ -54,6 +54,11 @@ current dmServer involving the user of their friend it will send a request to th
 - Deleting server purges all remaining members from the server and removes the server from their
   server list if they are actively browsing the server at the time of deletion however now if a user is online and not browsing the server at the time of deletion they will receive an action to remove the server preventing access to a non existant server live.
 
+- Deleting dmserver purges all remaining members from the dmserver and removes the dmserver from their
+  dmserver list if they are actively browsing the server at the time of deletion however now if a user is online and not browsing the dmserver at the time of deletion they will receive an action to remove the dmserver preventing access to a non existant dmserver live.
+
+- Updating server updates all members outside the server.
+
 ### Glitches and bugs Addressed
 
     - Fixed redux warning when a user deletes their $TR!F3 account:
