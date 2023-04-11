@@ -1,6 +1,7 @@
 import { receiveAllFriends } from "../../actions/friendship_actions";
 import { fetchServer, fetchServers, receiveServer, receiveServers, removeServer } from "../../actions/server_actions";
 import { fetchDmServer, fetchDmServers, receiveDmServer, receiveDmServers, removeDmServer } from "../../actions/dm_server_actions";
+import { reSyncCurrentUser } from "../../actions/session_actions";
 import { createContext } from "react";
 import React from "react";
 
@@ -8,6 +9,7 @@ const _STRIFE_CORE_CABLE_ = (store, currentUserId, dispatch) => (
     App.StrifeCore = App.cable.subscriptions.create({ channel: 'StrifeCore', id: store.getState().session.id }, {
         // "color:#800080;"
         //"#00FD61"
+    
         connected: () => {
             let currentDate = new Date();
             let time = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds() + ":" + currentDate.getMilliseconds();
@@ -53,11 +55,23 @@ const _STRIFE_CORE_CABLE_ = (store, currentUserId, dispatch) => (
                     store.dispatch(fetchDmServers(store.getState().session.id));
                     console.info(`%c[$TR!FE M0N!T0R]: %c[DM_SERVER_REFRESH%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
                     break;
+                case 'RECEIVE_DM_SERVERS_RESYNC_USER':
+                    
+                    store.dispatch(fetchDmServers(store.getState().session.id)).then(()=>{
+                        store.dispatch(reSyncCurrentUser(store.getState().session.id));
+                    });
+                    console.info(`%c[$TR!FE M0N!T0R]: %c[DM_SERVER_REFRESH_USER_RESYNC%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
+                    break;
                 //insurance incase a user is rm when they arent in said dm at the moment
                 case 'REMOVE_DM_SERVER':
                     store.dispatch(removeDmServer(data.removedDmServerId));
                     console.info(`%c[$TR!FE M0N!T0R]: %c[DM_SERVER_REMOVAL%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;");
                     break;
+                case 'RESYNC_CURRENT_USER':
+                    store.dispatch(reSyncCurrentUser(store.getState().session.id));
+                    console.info(`%c[$TR!FE M0N!T0R]: %c[RESYNC_CURRENT_USER%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
+                    break;
+
                 case 'RECEIVE_ALL_FRIENDS':
                     break;
 
@@ -81,7 +95,7 @@ const _STRIFE_CORE_CABLE_ = (store, currentUserId, dispatch) => (
 
 
     setInterval(() => {
-        if(store.getState().session.id !== null){
+        if (store.getState().session.id !== null) {
             App.StrifeCore.perform('track_HeartBeat')
         }
     }, 15000)
