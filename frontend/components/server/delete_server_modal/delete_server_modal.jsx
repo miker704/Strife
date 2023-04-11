@@ -40,12 +40,15 @@ const DeleteServerModal = (props) => {
             server_owner_id: props.server_owner_id,
             server_name: confirmServerName
         }
-
+        let remove_SERVER_ID = props.server.id;
+        let purged_Members = Object.values(props.server.users).map((user)=>user.id);
+        purged_Members = purged_Members.filter((userID) => userID !== props.currentUser.id);
         props.verifyName(subState).then(() => {
             props.closeModal();
             props.history.push('/$/channels/@me');
             props.deleteServer(props.server.id).then(() => {
                 props.fetchUserServers(props.currentUser.id);
+                App.StrifeCore.perform('_Purge_Server_Members_', {purged_Members,remove_SERVER_ID});
             });
 
         })
