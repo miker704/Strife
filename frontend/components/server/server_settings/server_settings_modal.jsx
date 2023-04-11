@@ -42,7 +42,12 @@ const ServerSettingsModal = (props) => {
 
         const formData = new FormData();
         formData.append('server[server_Icon_Remove]', removeServerIcon);
-        props.updateServer(props.server.id, formData)
+        props.updateServer(props.server.id, formData).then((action)=>{
+            let updatedServer = action.server;
+            App.StrifeCore.perform('_Serve_Server_Update_To_Members_Force_Refresh_',{updatedServerID: updatedServer.id})
+            // App.StrifeCore.perform('_Serve_Server_Update_To_Members_',{updatedServerID: updatedServer.id})
+
+        })
 
     }
 
@@ -66,7 +71,12 @@ const ServerSettingsModal = (props) => {
         let formData = new FormData();
         formData.append('server[server_name]', newServerName);
 
-        props.updateServer(props.server.id, formData);
+        props.updateServer(props.server.id, formData).then((action)=>{
+            let updatedServer = action.server;
+            // App.StrifeCore.perform('_Serve_Server_Update_To_Members_',{updatedServerID: updatedServer.id})
+            App.StrifeCore.perform('_Serve_Server_Update_To_Members_Force_Refresh_',{updatedServerID: updatedServer.id})
+
+        });
     }
 
 
@@ -120,7 +130,12 @@ const ServerSettingsModal = (props) => {
             formData.append('server[server_Icon]', serverIconPhoto);
         }
 
-        props.updateServer(props.server.id, formData);
+        props.updateServer(props.server.id, formData).then((action)=>{
+            let updatedServer = action.server;
+            App.StrifeCore.perform('_Serve_Server_Update_To_Members_Force_Refresh_',{updatedServerID: updatedServer.id})
+            // App.StrifeCore.perform('_Serve_Server_Update_To_Members_',{updatedServerID: updatedServer.id})
+
+        });
 
     }
 
