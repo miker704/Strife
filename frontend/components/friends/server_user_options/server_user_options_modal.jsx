@@ -209,7 +209,7 @@ const ServerUserOptionsModal = ({
         const memberIds = [currentUser.id, parseInt(member.id)].sort((a, b) => a - b);
         let new_dm_members = [currentUser, member];
         for (let dmServer of dmServers) {
-            if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
+            if (dmMembersArray(Object.values(dmServer.members).map((member)=>member.id).sort((a, b) => a - b), memberIds)) {
                 if (history.location.pathname !== `/$/channels/@me/${dmServer.id}`) {
                     const messageHash = {
                         body: message,
@@ -256,6 +256,7 @@ const ServerUserOptionsModal = ({
             reSyncCurrentUser(currentUserId).then(() => {
                 history.push(`/$/channels/@me/${newDmServer.id}`);
             })
+            App.StrifeCore.perform('parse_Invites_To_Existing_DmServer_INVOKE_DMS_REFRESH', { dm_member_id: member.id, dm_server_id: newDmServer.id });
 
         });
         return;
@@ -270,7 +271,7 @@ const ServerUserOptionsModal = ({
         const memberIds = [currentUser.id, parseInt(member.id)].sort((a, b) => a - b);
         let new_dm_members = [currentUser, member];
         for (let dmServer of dmServers) {
-            if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
+            if (dmMembersArray(Object.values(dmServer.members).map((member)=>member.id).sort((a, b) => a - b), memberIds)) {
                 if (history.location.pathname !== `/$/channels/@me/${dmServer.id}`) {
                     history.push(`/$/channels/@me/${dmServer.id}`);
                 }
@@ -303,6 +304,10 @@ const ServerUserOptionsModal = ({
             reSyncCurrentUser(currentUserId).then(() => {
                 history.push(`/$/channels/@me/${newDmServer.id}`);
             })
+            //add cable to send member id 
+            //we do send a request to receive all dmservers instead because sending a single dmserver causes the 
+            //message in the new server to render to that members screen if they are in some other dmserver 
+            App.StrifeCore.perform('parse_Invites_To_Existing_DmServer_INVOKE_DMS_REFRESH', { dm_member_id: member.id, dm_server_id: newDmServer.id });
 
         });
         return;
@@ -361,7 +366,6 @@ const ServerUserOptionsModal = ({
             dm_server_id: DmServerId
         }
 
-
         if (Object.values(dmServerMembers).length - 1 === 2) {
 
             deleteDmServer(DmServerId).then(() => {
@@ -369,6 +373,18 @@ const ServerUserOptionsModal = ({
                 history.push(`/$/loading/`);
 
             })
+            
+            .then(() => {
+                //this entire function removes the dmserver from redux state for all 3 members but if one of them is 
+                //offline or not in the dmserver when it is destroyed the dmServer is still shown if they are currently
+                //in the home dashboard clicking on it will redirect them back to the loading screen
+                // but to prevent this from happening regardless we invoke a purge by taking the member ids
+                //then sending them a request to perform a redux action to remove the id of the non existing dmServer
+                let purged_Members = Object.values(dmServerMembers).map((user) => user.id)
+                let purged_ids = purged_Members.filter((userID) => userID !== currentUser.id);
+                App.StrifeCore.perform('purge_DmServer_Members', { dm_members: purged_ids, dm_server_id: DmServerId });
+            })
+
         }
         else {
 
