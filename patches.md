@@ -51,6 +51,9 @@ current dmServer involving the user of their friend it will send a request to th
 
 - Typing a message in the user profile card on a user by clicking on that user from the member list in a server or dmserver if there is no existing dmServer with that user before it will send a live request for that user to receive this new dmServer live if that user is online.
 
+- Deleting server purges all remaining members from the server and removes the server from their
+  server list if they are actively browsing the server at the time of deletion however now if a user is online and not browsing the server at the time of deletion they will receive an action to remove the server preventing access to a non existant server live.
+
 ### Glitches and bugs Addressed
 
     - Fixed redux warning when a user deletes their $TR!F3 account:
