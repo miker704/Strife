@@ -66,6 +66,15 @@ class DmNavBar extends React.Component {
     //     }
     // }
 
+    // componentDidUpdate(prevProps){
+    //     console.log('inside compentdid update in dm_nav bar');
+    //     if(prevProps.currentUser.dmServersJoined.length !== this.props.currentUser.dmServersJoined.length){
+    //         console.log('triggered a refresh for dmServers');
+    //         this.props.fetchUserDmServers(this.props.currentUser.id);
+    //     }
+    // }
+
+
     toggleCreateDmModal () {
         this.setState({ createDmModal: true })
     }
