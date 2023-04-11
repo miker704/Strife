@@ -72,10 +72,12 @@ const CreateDmModal = ({
     const handleDmServerCreation = () => {
         const memberIds = [currentUser.id, ...selectedFriends.map((friend) => parseInt(friend.id))].sort((a, b) => a - b);
         for (let dmServer of dmServers) {
-            if (dmMembersArray(Object.values(dmServer.members).sort((a, b) => a - b), memberIds)) {
+            if (dmMembersArray(Object.values(dmServer.members).map((member) => member.id).sort((a, b) => a - b), memberIds)) {
+
                 if (history.location.pathname !== `/$/channels/@me/${dmServer.id}`) {
                     history.push(`/$/channels/@me/${dmServer.id}`);
                 }
+                setShowPopUp(false)
                 return;
             }
         }
@@ -103,7 +105,6 @@ const CreateDmModal = ({
             // dm_server_name: dmServerName,
             dm_member_ids: memberIds
         }
-
         let newDmServer;
 
         createDmServer(submissionState).then((action) => {
@@ -112,7 +113,13 @@ const CreateDmModal = ({
                 history.push(`/$/channels/@me/${newDmServer.id}`);
             })
         }).then(() => {
-            App.StrifeCore.perform('transmit_New_DmServer', {newDmServer})
+            App.StrifeCore.perform('transmit_New_DmServer', { newDmServer })
+            let membersToInvite = Object.values(newDmServer.members);
+            for (let member of membersToInvite) {
+                if (member.id !== currentUser.id) {
+                    App.StrifeCore.perform('parse_Invites_To_Existing_DmServer', { dm_member_id: member.id, dm_server_id: newDmServer.id });
+                }
+            }
             setShowPopUp(false)
         })
 
