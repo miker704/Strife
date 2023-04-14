@@ -2,9 +2,12 @@
 
 ## Future additions and pending changes
   
-- Core Cable will mount to friend status updates
+- Core Cable will mount to friend status updates -> nearly complete
   - Dmserver can manually be deleted via clicking the x icon next to it
   - Server Banners, Channel and Server descriptions which can be views on the explore servers page
+  - Action and process flow of banning and kicking users from a server or a dmServer will be reworked and
+    be optimized by the Core Cable anaylzing the location of said user deciding the best course of action on whether
+    a user should re-receive all their dm/servers or just a single one. The hope is also to reduce and eliminate problem areas on re-renders such as channel messages re-rendering a previous or newly received server/channels messages for half a second before reverting back to the proper messages.
   - many more
 
 ## PATCH NOTES v3.00 - 2/24/2023 - 4/11/2023
