@@ -3,12 +3,23 @@
 ## Future additions and pending changes
   
 - Core Cable will mount to friend status updates -> nearly complete
-  - Dmserver can manually be deleted via clicking the x icon next to it
   - Server Banners, Channel and Server descriptions which can be views on the explore servers page
   - Action and process flow of banning and kicking users from a server or a dmServer will be reworked and
     be optimized by the Core Cable anaylzing the location of said user deciding the best course of action on whether
     a user should re-receive all their dm/servers or just a single one. The hope is also to reduce and eliminate problem areas on re-renders such as channel messages re-rendering a previous or newly received server/channels messages for half a second before reverting back to the proper messages.
   - many more
+
+### DmServer Plans
+
+- Dmserver can manually be deleted via clicking the x icon next to it
+  - (Anticipated) DmServers that become group chats (3-10 users) removing a user when they are 3 remaining deletes the dmServer in order to prevent a   duplicate chat of the same individuals regardless if it exists already or not. Change will be to check if there is a dm between those remaining two users if it exists the dmServer will be deleted if it doesnt deletion is aborted and the 3rd member that was being removed will be removed normally.
+
+## Known issues currently present and being worked on
+  
+- A fellow Contributor noted that email format veritification missed a problem with periods (and provided a fix this will be merged soon as it was provided near patch v3.0).
+
+- Block user interactions have been discovered to be a bit buggy, working on a fix (blocked users was only intented for "show" just adding them to a block list) however a blocked user can do certain interactions with the user that blocked them including friending them which can revert the previous block. So the just for "show" aspect is no longer considered acceptable. The minimum that will be done is deny a blocked user from outright friending,
+  or direct messaging (if they dont have a one to one chat together already) with the user that blocked them. they can however block them.
 
 ## PATCH NOTES v3.00 - 2/24/2023 - 4/11/2023
 
