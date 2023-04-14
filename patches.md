@@ -26,6 +26,7 @@
 
 - Ability to give channels a description.
 - Allow channels to be private, thus requiring an invite to that channel
+- Channel Categories.
 
 ### Messaging as Whole
 
@@ -34,6 +35,7 @@
 - Inviting a user as Non Demo or admin account should work normally as in it creates a dm and with an invite to join.
 - emojis
 - Message/ notification inbox intergration
+- Default message for channels and dm servers to be changed to match more of discords.
 
 ### General/Util
 
