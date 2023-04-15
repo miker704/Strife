@@ -352,6 +352,8 @@ between two users. including being able to deciever if there is a block relation
 
 - Added new rail routes for unblock user functionality
 
+- Added new return data in Jbuilder file for index.json.jbuilder for friendships "blocked_by" which are users that have blocked the current_user.
+
 ### Other Changes
 
 - Changed which state for current user information to be extracted from for certain components.
