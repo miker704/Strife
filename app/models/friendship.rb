@@ -18,7 +18,7 @@ class Friendship < ApplicationRecord
     validates :user_id, :friend_id, :friend_request_status, presence: true
     # validates :accepted, inclusion: {in: [true,false]}
     #changed friend req to an int as it is easier to work with 
-    validates :friend_request_status, inclusion: {in: [-1,0,1,2,3]}
+    validates :friend_request_status, inclusion: {in: [-2,-1,0,1,2,3]}
     # validates :friend_a_Id, uniqueness: {scope: :friend_b_Id}
     validates :friend_id, uniqueness: {scope: :user_id}
 
