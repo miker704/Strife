@@ -118,6 +118,8 @@ current dmServer involving the user of their friend it will send a request to th
 - Added Core Cable Actions to member lists in DmServers and Servers where friend request actions,
   removing, adding, and accepting friend requests are sent live to the user that is being sent that request if that user is at the home dash board and is in the pending friends list the request will be received live and if the sender cancels the requests the pending request on that users screen is also removed live.
 
+- Added interactions for friend requests for blocking, unblocking, deleting friends, updating friend requests (rejecting friend requests, approving friend requests) and creating friend requests.
+
 ### Glitches and bugs Addressed
 
     - Fixed redux warning when a user deletes their $TR!F3 account:
