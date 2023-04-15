@@ -362,6 +362,8 @@ between two users. including being able to deciever if there is a block relation
      #<Friendship:0x0000.......21 id: 10001, user_id: 10, friend_id: 11, friend_request_status: -2>
   Here these records indicate that user of id: 11 has blocked user of id: 10 hence the status of -1. For user of id: 10 the -2 indicates that user id:11 was the user that blocked them. however this is hidden from user id:10. If User id:10 decides to block user id: 11 it will swap to -1.
 
+- With new block relationships adjusted seeds for blocked users.
+
 ### Other Changes
 
 - Changed which state for current user information to be extracted from for certain components.
