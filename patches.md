@@ -263,6 +263,8 @@ current dmServer involving the user of their friend it will send a request to th
      on that users end that they where blocked because they arent supposed to know that they are being blocked.
       - Fixed by readding block requests to create a pair of records on indicating a -1 status for the user that created the block indicating "user A" has blocked "user b" and another record with a status of -2 stating to "user b" that the following user "user A" was the user that initaited the block between "user A" and "user B". This is a similar relationship when creating a friend request. (status 1 is the request of the user that made the friend request while status 2 indicates an incoming friend request for the user to accept the friend request ). 
 
+    - Fixed a bug where when receiving a Blocked User the friendship status reverts to 0 when it should be -1, this is fixed by changing the reassign value to -1.
+
 #### User Security
 
 - Fixed an issue when user changes their password and the password is not of appropiate length
