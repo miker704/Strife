@@ -29,3 +29,10 @@ export const blockUser = (account_ids) =>
         method: "POST",
         data: { friendship: account_ids }
     });
+
+export const unBlockUser = (account_ids) =>
+    $.ajax({
+        url: `/api/friendships/unblockuser/`,
+        method: "PATCH",
+        data: { friendship: account_ids }
+    });
