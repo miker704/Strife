@@ -53,9 +53,6 @@ the need to create a private room is need to prevent unwanted members from enter
   
 - A fellow Contributor noted that email format veritification missed a problem with periods (and provided a fix this will be merged soon as it was provided near patch v3.0).
 
-- Block user interactions have been discovered to be a bit buggy, working on a fix (blocked users was only intented for "show" just adding them to a block list) however a blocked user can do certain interactions with the user that blocked them including friending them which can revert the previous block. So the just for "show" aspect is no longer considered acceptable. The minimum that will be done is deny a blocked user from outright friending,
-  or direct messaging (if they dont have a one to one chat together already) with the user that blocked them. they can however block them.
-
 ## PATCH NOTES v3.00 - 2/24/2023 - 4/15/2023
 
 ## Intra - Changes between 10/7/2022 - 11/17/2023
@@ -258,7 +255,7 @@ current dmServer involving the user of their friend it will send a request to th
       - Addressed said issue by comparing member ids properly, prior to this the algorthim was comparing member data as a whole against 
         their id which was not intended.
     
-    - Addressed an Issue With Blocking Users: a user that was blocked by some other user where able to send friend requests to them.
+    - Addressed an Issue With Blocking Users: a user that was blocked by some other user where able to send friend requests to them hence undoing the    block between the users.
      - This was do to an issue of how blocked users where implemented typically any relationship between users are created with and referenced
      via a pair of records, blocked users only generated one record for the user that created a block, the reason for this was that the blocked user
      was able to remove the block by visiting the blocked users page. creating the record for the user that created the block only allows them to view 
@@ -348,9 +345,19 @@ current dmServer involving the user of their friend it will send a request to th
 
 - Integrated Colorize gem for CoRE cable action cable calls to easily identify them in the backend rails server console.
 
+- Reworked block user function from creating only a single record to now once again creating a pair of records to indicate a blocked relationship
+between two users. including being able to deciever if there is a block relationship between two users being -1 for a user that has been blocked by current user and -2 to indicate that current user was the one that issued a block. if the user wants to block current_user it will switch to -1.
+
+- Created a new function to unblock a user if two users blocked each other the status of the person that intitiated the unblock request will swap from -1 to -2 since the other user has blocked them if that user did not block them then both records are deleted and the friendship on the frontend changes their status to zero indicated no relationship between the two users.
+
+- Added new rail routes for unblock user functionality
+
 ### Other Changes
 
 - Changed which state for current user information to be extracted from for certain components.
+- Due to problems with blocked users added a new frontend friendship api util function to handle unblocking of users.
+- Added new friend redux action REMOVE_BLOCKED_USER = (UNBLOCK_USER) and new removeBlockedUser dispatch function for unblocking users.
+- Added to user reducer to handle the REMOVE_BLOCKED_USER = (UNBLOCK_USER) friendship redux action call.
 
 ---
 
