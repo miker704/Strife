@@ -10,6 +10,8 @@ export const RECEIVE_ALL_FRIEND_REQUESTS = "RECEIVE_ALL_FRIEND_REQUESTS";
 export const RECEIVE_ALL_BLOCKED_USERS = "RECEIVE_ALL_BLOCKED_USERS";
 export const RECEIVE_ALL_ONLINE_FRIENDS = "RECEIVE_ALL_ONLINE_FRIENDS";
 export const RECEIVE_BLOCKED_USER = "BLOCKED_USER";
+export const REMOVE_BLOCKED_USER = "UNBLOCKED_USER";
+
 
 export const receiveAllOnlineFriends = (friendships) => {
     return {
@@ -74,6 +76,12 @@ export const receiveBlockedUser = (friendship) => {
     }
 }
 
+export const removeBlockedUser = (friendship) => {
+    return {
+        type: REMOVE_BLOCKED_USER,
+        friendship
+    }
+}
 
 export const requestFriendships = () => (dispatch) =>
     FRIENDSHIP_API_UTIL.requestFriendships().then((users) => dispatch(receiveUsers(users)), err => dispatch(receiveFriendshipErrors(err.responseJSON)));
@@ -119,4 +127,11 @@ export const blockUser = (account_ids) => (dispatch) =>
     FRIENDSHIP_API_UTIL.blockUser(account_ids).then((friendship) => {
         dispatch(removeFriendshipErrors());
         return dispatch(receiveBlockedUser(friendship));
+    }, (err) => (dispatch(receiveFriendshipErrors(err.responseJSON))));
+
+
+export const unBlockUser = (account_ids) => (dispatch) =>
+    FRIENDSHIP_API_UTIL.unBlockUser(account_ids).then((friendship) => {
+        dispatch(removeFriendshipErrors());
+        return dispatch(removeBlockedUser(friendship));
     }, (err) => (dispatch(receiveFriendshipErrors(err.responseJSON))));
