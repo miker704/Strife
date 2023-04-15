@@ -56,7 +56,7 @@ the need to create a private room is need to prevent unwanted members from enter
 - Block user interactions have been discovered to be a bit buggy, working on a fix (blocked users was only intented for "show" just adding them to a block list) however a blocked user can do certain interactions with the user that blocked them including friending them which can revert the previous block. So the just for "show" aspect is no longer considered acceptable. The minimum that will be done is deny a blocked user from outright friending,
   or direct messaging (if they dont have a one to one chat together already) with the user that blocked them. they can however block them.
 
-## PATCH NOTES v3.00 - 2/24/2023 - 4/11/2023
+## PATCH NOTES v3.00 - 2/24/2023 - 4/15/2023
 
 ## Intra - Changes between 10/7/2022 - 11/17/2023
 
@@ -255,6 +255,14 @@ current dmServer involving the user of their friend it will send a request to th
       send a redux action to dispatch and receive the new dmserver to its members.
       - Addressed said issue by comparing member ids properly, prior to this the algorthim was comparing member data as a whole against 
         their id which was not intended.
+    
+    - Addressed an Issue With Blocking Users: a user that was blocked by some other user where able to send friend requests to them.
+     - This was do to an issue of how blocked users where implemented typically any relationship between users are created with and referenced
+     via a pair of records, blocked users only generated one record for the user that created a block, the reason for this was that the blocked user
+     was able to remove the block by visiting the blocked users page. creating the record for the user that created the block only allows them to view 
+     the block and remove it if they choose to. however this allowed the blocked user to still send friend requests to that user as their is not record
+     on that users end that they where blocked because they arent supposed to know that they are being blocked.
+      - Fixed by readding block requests to create a pair of records on indicating a -1 status for the user that created the block indicating "user A" has blocked "user b" and another record with a status of -2 stating to "user b" that the following user "user A" was the user that initaited the block between "user A" and "user B". This is a similar relationship when creating a friend request. (status 1 is the request of the user that made the friend request while status 2 indicates an incoming friend request for the user to accept the friend request ). 
 
 #### User Security
 
