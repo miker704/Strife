@@ -25,6 +25,7 @@ Rails.application.routes.draw do
               patch 'friendships', to: 'friendships#update'
               delete 'friendships', to: 'friendships#destroy'
               post '/friendships/blockuser/', to: 'friendships#block_User', as: 'block_User'
+              patch '/friendships/unblockuser/', to: 'friendships#unblock_User', as: 'unblock_User'
     resources :dm_members, only: [:create,:destroy]
               get '/dm_members/dms_status', to: 'dm_members#show', as: 'dm_membership_status'
     resources :dm_messages, only: [:create, :update, :destroy]
