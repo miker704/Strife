@@ -23,3 +23,9 @@ end
         json.partial! 'api/users/user', user: blocked_user
     end
 end
+
+@user.blocked_by.each do |blocked_by|
+    json.set! blocked_by.id do
+        json.partial! 'api/users/user', user: blocked_by
+    end
+end
