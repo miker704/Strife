@@ -103,8 +103,11 @@ class AddFriends extends React.Component {
 
         this.props.fetchUserByStrifeId(userStrifeId).then((action) => {
             newFriend = action.user;
-            this.props.createFriendship({ friend_id: newFriend.id, user_id: this.props.currentUser.id }).then(() => {
+            this.props.createFriendship({ friend_id: newFriend.id, user_id: this.props.currentUser.id }).then((action) => {
                 this.setState({ friendRequestSuccess: true });
+                let new_friend_request = action.friendship;
+                App.StrifeCore.perform('parse_add_friend_request', { new_friend_request });
+
             });
         })
     }
@@ -132,7 +135,7 @@ class AddFriends extends React.Component {
     }
 
 
-   
+
 
 
     render () {
@@ -174,20 +177,20 @@ class AddFriends extends React.Component {
                         Other places to Make friends
                     </h2>
                 </div>
-                
+
 
                 <div className="add-friend-grid" >
-                <Link className="unStyle" to={`/$/channels/guild-discovery/`}>
-                    <button type="button" className="add-friend-grid-button-wrapper"  >
-                        <img className="add-friend-grid-button-icon" alt="expserv" />
-                        <div className="add-friend-grid-button-text">Explore Public Servers</div>
-                        <svg className="arrow-3B" fill="none" height="20" viewBox="0 0 20 20" width="20">
-                            <path clipRule="evenodd" d="m5.41667 4.2625 5.66573 5.7375-5.66573 5.7375 
+                    <Link className="unStyle" to={`/$/channels/guild-discovery/`}>
+                        <button type="button" className="add-friend-grid-button-wrapper"  >
+                            <img className="add-friend-grid-button-icon" alt="expserv" />
+                            <div className="add-friend-grid-button-text">Explore Public Servers</div>
+                            <svg className="arrow-3B" fill="none" height="20" viewBox="0 0 20 20" width="20">
+                                <path clipRule="evenodd" d="m5.41667 4.2625 5.66573 5.7375-5.66573 5.7375 
                                     1.74426 1.7625 7.42237-7.5-7.42237-7.5z" fill="currentColor" fillRule="evenodd">
-                            </path>
-                        </svg>
-                    </button>
-                </Link>
+                                </path>
+                            </svg>
+                        </button>
+                    </Link>
                 </div>
 
                 <div className="empty-state-container-2">
