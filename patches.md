@@ -372,6 +372,7 @@ between two users. including being able to deciever if there is a block relation
 - Added new removeBlockedUser dispatch function for unblocking users.
 - Added the new friendship api util function for unblocking of users and implemented it.
 - Added to user reducer to handle the REMOVE_BLOCKED_USER = (UNBLOCK_USER) friendship redux action call changing the friendship status of blocked users  to -2 if both users have blocked each other or 0 if only the curr_user has blocked the user.
+- Completed deprecation of user options modal which was already deprecated except its container was not, now both user options modal and user options modal container are deprecated these both where replaced a while ago by the far superior ServerUserOptionsModal.
 
 ---
 
