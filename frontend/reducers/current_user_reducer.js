@@ -53,10 +53,6 @@ const removeDeletedServer = (state, serverId) => {
 }
 
 const removeDeletedDmServer = (state, dmServerId) => {
-    console.log('in remove dleted dmserver');
-    console.log('state');
-    console.table(state);
-    console.log(`dms ID : ${dmServerId}`);
     if (!dmServerId) {
         return state;
     }
