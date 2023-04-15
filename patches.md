@@ -354,6 +354,14 @@ between two users. including being able to deciever if there is a block relation
 
 - Added new return data in Jbuilder file for index.json.jbuilder for friendships "blocked_by" which are users that have blocked the current_user.
 
+- Added new has_many relationship called blocked_by in user models to indicate friendship relations where the current user has been blocked by some other user denoted by a newly added status number of -2.
+
+- Added a status of -2 to indicate that the friendship status between users is the current_user has been blocked by some user. Observe the friendship record example below:
+  
+     #<Friendship:0x0000.......20 id: 10000, user_id: 11, friend_id: 10, friend_request_status: -1>,
+     #<Friendship:0x0000.......21 id: 10001, user_id: 10, friend_id: 11, friend_request_status: -2>
+  Here these records indicate that user of id: 11 has blocked user of id: 10 hence the status of -1. For user of id: 10 the -2 indicates that user id:11 was the user that blocked them. however this is hidden from user id:10. If User id:10 decides to block user id: 11 it will swap to -1.
+
 ### Other Changes
 
 - Changed which state for current user information to be extracted from for certain components.
