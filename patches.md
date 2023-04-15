@@ -89,6 +89,7 @@ the need to create a private room is need to prevent unwanted members from enter
       The CORE API has found its proper home to be mounted in the app. More details disscussing on what this system does and  how it works will 
       be explained in the future as development of its full intergration has been reached the half way point.
     - Fixed a problem when creating a new DmServer is would not send the dmserver to invited members live.
+    - Added Core Cable call to Add Friend Page when submitting a friend requests by sending successfully submitting their $TR!F3 id if the user to be added is online they will receive LIVE said friend request from that user.
 
 ## C0R3 @P! glitches and bugs addressed and added changes
 
