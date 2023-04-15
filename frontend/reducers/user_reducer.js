@@ -3,7 +3,7 @@ import { RECEIVE_DM_MEMBER } from "../actions/dm_member_actions.js";
 import { RECEIVE_DM_SERVER } from '../actions/dm_server_actions.js';
 import { RECEIVE_SERVER } from '../actions/server_actions.js';
 import { RECEIVE_SERVER_MEMBERSHIP, REMOVE_SERVER_MEMBERSHIP } from '../actions/server_membership_actions.js';
-import { RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP, RECEIVE_BLOCKED_USER } from '../actions/friendship_actions.js';
+import { RECEIVE_FRIENDSHIP, REMOVE_FRIENDSHIP, RECEIVE_BLOCKED_USER, REMOVE_BLOCKED_USER } from '../actions/friendship_actions.js';
 
 const receiveUsers = (state, users) => {
     if (!users) { return state; }
@@ -47,7 +47,8 @@ const userReducer = (state = {}, action) => {
         case RECEIVE_BLOCKED_USER:
             newState = Object.assign({}, state);
             user = newState[action.friendship.friend_id];
-            user.friend_request_status = 0;
+            user.friend_request_status = -1;
+            // user.friend_request_status = 0;
             return newState;
 
 
@@ -67,10 +68,12 @@ const userReducer = (state = {}, action) => {
             user.friend_request_status = 0;
             return newState;
 
-
+        case REMOVE_BLOCKED_USER:
+            newState = Object.assign({}, state);
+            user = newState[action.friendship.friend_id];
+            user.friend_request_status = action.friendship.friend_request_status == -2 ? -2 : 0;
+            return newState;
         // case REMOVE_SERVER_MEMBERSHIP:
-
-        
         //     newState = Object.assign({}, state);
         //     newState[action.membershiphash.id] = action.membershiphash.id;
         //     return newState;
