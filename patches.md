@@ -129,6 +129,8 @@ current dmServer involving the user of their friend it will send a request to th
 - Mounted Cable actions on inviting members to an already exisiting dmServer.
 - Mounted Cable actions on delete friendship on elipses drop down context menu button on online friends page.
 - Mounted Cable actions on delete friendship on elipses drop down context menu button on all friends page.
+- Mounted Cable actions on deny friend request (update friend request action ) in pending friends page.
+- Mounted Cable actions on accept friend request (update friend request action ) in pending friends page.
 
 ### Glitches and bugs Addressed
 
