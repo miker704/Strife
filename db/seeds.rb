@@ -428,11 +428,19 @@ Friendship.create!(friend_id: Demouser1.id, user_id: Spencer.id, friend_request_
 Friendship.create!(friend_id: Jwong.id, user_id: Demouser1.id, friend_request_status: 1)
 Friendship.create!(friend_id: Demouser1.id, user_id: Jwong.id, friend_request_status: 2)
 
-# blockusers
+# blockusers user blocked by demo user 1
 Friendship.create!(friend_id: SpamUser1.id, user_id: Demouser1.id, friend_request_status: -1)
+Friendship.create!(friend_id: Demouser1.id, user_id: SpamUser1.id, friend_request_status: -2)
+
 Friendship.create!(friend_id: SpamUser2.id, user_id: Demouser1.id, friend_request_status: -1)
+Friendship.create!(friend_id: Demouser1.id, user_id: SpamUser2.id, friend_request_status: -2)
+
 Friendship.create!(friend_id: SpamUser1.id, user_id: MichaelR.id, friend_request_status: -1)
+Friendship.create!(friend_id: MichaelR.id, user_id: SpamUser1.id, friend_request_status: -2)
+
 Friendship.create!(friend_id: SpamUser2.id, user_id: MichaelR.id, friend_request_status: -1)
+Friendship.create!(friend_id: MichaelR.id, user_id: SpamUser2.id, friend_request_status: -2)
+
 
 # server memberships for attendance circles and app/acc servers
 # Ayce attendance
