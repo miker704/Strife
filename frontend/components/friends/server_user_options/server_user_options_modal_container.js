@@ -2,7 +2,7 @@ import ServerUserOptionsModal from "./server_user_options_modal";
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { selectFriendStatusOnline } from '../../../utils/selectors_api_util';
-import { requestFriendships, removeFriendshipErrors, deleteFriendship, updateFriendship, blockUser, createFriendship } from '../../../actions/friendship_actions';
+import { requestFriendships, removeFriendshipErrors, deleteFriendship, updateFriendship, blockUser, createFriendship, unBlockUser } from '../../../actions/friendship_actions';
 import { createDmServer, removeDmServerErrors, fetchDmServer, deleteDmServer } from '../../../actions/dm_server_actions';
 import { deleteDmMember } from '../../../actions/dm_member_actions';
 import { createChannelMembership, deleteChannelMembership } from "../../../actions/channel_membership_actions.js";
@@ -41,6 +41,7 @@ const mDTP = (dispatch, ownProps) => {
         removeDmServerErrors: () => dispatch(removeDmServerErrors()),
         deleteFriendship: (ids) => dispatch(deleteFriendship(ids)),
         blockUser: (ids) => dispatch(blockUser(ids)),
+        unBlockUser:(ids) => dispatch(unBlockUser(ids)),
         updateFriendship: (ids) => dispatch(updateFriendship(ids)),
         createFriendship: (ids) => dispatch(createFriendship(ids)),
         kickUserfromGroupChat: (dm_memberId, dm_member) => dispatch(deleteDmMember(dm_memberId, dm_member)),
