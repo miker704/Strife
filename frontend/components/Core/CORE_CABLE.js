@@ -1,25 +1,29 @@
 import { receiveAllFriends } from "../../actions/friendship_actions";
 import { fetchServer, fetchServers, receiveServer, receiveServers, removeServer } from "../../actions/server_actions";
 import { fetchDmServer, fetchDmServers, receiveDmServer, receiveDmServers, removeDmServer } from "../../actions/dm_server_actions";
-import { reSyncCurrentUser } from "../../actions/session_actions";
-import { createContext } from "react";
+import { reSyncCurrentUser, fetchUser } from "../../actions/session_actions";
 import React from "react";
 
-const _STRIFE_CORE_CABLE_ = (store, currentUserId, dispatch) => (
+const _STRIFE_CORE_CABLE_ = (store, _history, props, history, currentUserId, dispatch) => (
     App.StrifeCore = App.cable.subscriptions.create({ channel: 'StrifeCore', id: store.getState().session.id }, {
         // "color:#800080;"
         //"#00FD61"
-    
+
         connected: () => {
             let currentDate = new Date();
             let time = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds() + ":" + currentDate.getMilliseconds();
-            let initialHeartBeat = Math.floor((Math.random() * (150 - 59) + 59))
+            let initialHeartBeat = Math.floor((Math.random() * (150 - 59) + 59));
             console.info(`%c[C0NN3CT3D T0 $TR!F3]: %c[With A HeartBeat @ ${initialHeartBeat}] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
         },
         received: (data) => {
             // debugger
             // console.error(`Curr Data = ${data}`);
             // console.table(data);
+            // console.log('Storage : ');
+            // console.log(store.getState());
+            // console.log('history : ');
+            // console.log(_history.location.pathname);
+            
             let currentDate = new Date();
             let time = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds() + ":" + currentDate.getMilliseconds();
             switch (data.type) {
@@ -56,8 +60,8 @@ const _STRIFE_CORE_CABLE_ = (store, currentUserId, dispatch) => (
                     console.info(`%c[$TR!FE M0N!T0R]: %c[DM_SERVER_REFRESH%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
                     break;
                 case 'RECEIVE_DM_SERVERS_RESYNC_USER':
-                    
-                    store.dispatch(fetchDmServers(store.getState().session.id)).then(()=>{
+
+                    store.dispatch(fetchDmServers(store.getState().session.id)).then(() => {
                         store.dispatch(reSyncCurrentUser(store.getState().session.id));
                     });
                     console.info(`%c[$TR!FE M0N!T0R]: %c[DM_SERVER_REFRESH_USER_RESYNC%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
@@ -71,13 +75,35 @@ const _STRIFE_CORE_CABLE_ = (store, currentUserId, dispatch) => (
                     store.dispatch(reSyncCurrentUser(store.getState().session.id));
                     console.info(`%c[$TR!FE M0N!T0R]: %c[RESYNC_CURRENT_USER%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
                     break;
-
+                //some of these do the same thing but however they are to indicate a different 
+                //reason why the action has occured on the receiving users end
                 case 'RECEIVE_ALL_FRIENDS':
                     break;
 
-                case 'RECEIVE_FRIEND':
+                case 'RECEIVE_FRIEND_REQUEST':
+                    store.dispatch(fetchUser(data.friendId));
+                    console.info(`%c[$TR!FE M0N!T0R]: %c[RECEIVED_A_FRIEND_REQUEST%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
                     break;
-
+                case 'UPDATE_FRIEND_REQUEST':
+                    store.dispatch(fetchUser(data.friendId));
+                    console.info(`%c[$TR!FE M0N!T0R]: %c[RECEIVED_A_FRIEND_REQUEST_UPDATE%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
+                    break;
+                case 'REMOVE_FRIEND':
+                    store.dispatch(fetchUser(data.friendId));
+                    console.info(`%c[$TR!FE M0N!T0R]: %c[REMOVE_FRIEND%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
+                    break;
+                case 'BLOCKED_USER':
+                    store.dispatch(fetchUser(data.friendId));
+                    console.info(`%c[$TR!FE M0N!T0R]: %c[RECEIVED_A_BLOCK_REQUEST%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
+                    break;
+                case 'REMOVE_BLOCKED_USER':
+                    store.dispatch(fetchUser(data.friendId));
+                    console.info(`%c[$TR!FE M0N!T0R]: %c[RECEIVED_A_UNBLOCK_REQUEST%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
+                    break;
+                case 'RECEIVE_USER':
+                    store.dispatch(fetchUser(data.friendId));
+                    console.info(`%c[$TR!FE M0N!T0R]: %c[RECEIVED_A_FRIEND_REQUEST%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
+                    break;
                 default:
                     console.warn(`%c[$TR!FE M0N!T0R]: %c[UNKNOWN REQUEST%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;");
                     break;
