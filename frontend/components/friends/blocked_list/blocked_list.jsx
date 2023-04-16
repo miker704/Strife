@@ -59,7 +59,9 @@ class BlockedList extends React.Component {
             user_id: this.props.currentUser.id,
             friend_id: blockedUser.id,
         }
-        this.props.removeBlockedUser(substate);
+        this.props.removeBlockedUser(substate).then(()=>{
+            App.StrifeCore.perform('parse_unblock_request', { user_id: this.props.currentUser.id, friend_id: blockedUser.id });
+        });
     }
 
 
