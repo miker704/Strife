@@ -262,6 +262,77 @@ class StrifeCore < ApplicationCable::Channel
 end
 
 
+  def parse_add_friend_request(_friend)
+    puts "FRIEND REQUEST".colorize(:green)
+    puts _friend.inspect.colorize(:yellow)
+    puts 'REQUEST SEND FROM USER ID'.colorize(:cyan)
+    puts _friend['new_friend_request'].inspect.colorize(:cyan)
+    @send_to_user = User.find_by(id: _friend['new_friend_request']['friend_id'].to_i)
+    if @send_to_user.online == true
+      core = '$TR!F3_' + @send_to_user.id.to_s
+      received({ type: 'RECEIVE_FRIEND_REQUEST', core: core, friendId: _friend['new_friend_request']['user_id'].to_i})
+      # received({ type: 'RECEIVE_USER', core: core, friendId: _friend['new_friend_request']['user_id'].to_i})
+    end
+
+  end
+
+  def parse_update_friend_request(_friend)
+    puts "UPDATE FRIEND REQUEST".colorize(:green)
+    puts _friend.inspect.colorize(:yellow)
+    puts 'REQUEST SEND FROM USER ID'.colorize(:cyan)
+    puts _friend['user_id'].inspect.colorize(:cyan)
+    puts 'REQUEST FOR FRIEND WITH USER ID'.colorize(:cyan)
+    puts _friend['friend_id'].inspect.colorize(:cyan)
+    @send_to_user = User.find_by(id:_friend['friend_id'].to_i)
+    if @send_to_user && @send_to_user.online == true
+      core = '$TR!F3_' + @send_to_user.id.to_s
+      received({ type: 'UPDATE_FRIEND_REQUEST', core: core, friendId: _friend['user_id'].to_i})
+    end
+  end
+
+  def parse_delete_friend_request(_friend)
+    puts "DELETE FRIEND REQUEST".colorize(:green)
+    puts _friend.inspect.colorize(:yellow)
+    puts 'REQUEST SEND FROM USER ID'.colorize(:cyan)
+    puts _friend['user_id'].inspect.colorize(:cyan)
+    puts 'REQUEST FOR FRIEND WITH USER ID'.colorize(:cyan)
+    puts _friend['friend_id'].inspect.colorize(:cyan)
+
+    @send_to_user = User.find_by(id: _friend['friend_id'].to_i)
+    if @send_to_user && @send_to_user.online == true
+      core = '$TR!F3_' + @send_to_user.id.to_s
+      received({ type: 'REMOVE_FRIEND', core: core, friendId: _friend['user_id'].to_i})
+    end
+  end
+
+  def parse_block_request(_block_request)
+    puts "BLOCK REQUEST".colorize(:green)
+    puts _block_request.inspect.colorize(:yellow)
+    puts 'REQUEST SEND FROM USER ID'.colorize(:cyan)
+    puts _block_request['user_id'].inspect.colorize(:cyan)
+    puts 'REQUEST FOR USER TO BLOCK WITH USER ID'.colorize(:cyan)
+    puts _block_request['friend_id'].inspect.colorize(:cyan)
+    @send_to_user = User.find_by(id: _block_request['friend_id'].to_i)
+    if @send_to_user && @send_to_user.online == true
+      core = '$TR!F3_' + @send_to_user.id.to_s
+      received({ type: 'BLOCKED_USER', core: core, friendId: _block_request['user_id'].to_i})
+    end
+  end
+
+  def parse_unblock_request(_unblock_request)
+    puts "UNBLOCK REQUEST".colorize(:green)
+    puts _unblock_request.inspect.colorize(:yellow)
+    puts 'REQUEST SEND FROM USER ID'.colorize(:cyan)
+    puts _unblock_request['user_id'].inspect.colorize(:cyan)
+    puts 'REQUEST FOR USER TO UNBLOCK WITH USER ID'.colorize(:cyan)
+    puts _unblock_request['friend_id'].inspect.colorize(:cyan)
+    @send_to_user = User.find_by(id: _unblock_request['friend_id'].to_i)
+    if @send_to_user && @send_to_user.online == true
+      core = '$TR!F3_' + @send_to_user.id.to_s
+      received({ type: 'REMOVE_BLOCKED_USER', core: core, friendId: _unblock_request['user_id'].to_i})
+    end
+  end
+
   def parse_Mass_Broadcast_User_Updated_Server(_user_Array); end
 
   def mass_Invite_To_Server(_server_membership); end
@@ -308,6 +379,18 @@ end
         core = data[:core]
         self.class.broadcast_to(core, data)
       when 'RECEIVE_FRIEND'
+        core = data[:core]
+        self.class.broadcast_to(core, data)
+      when 'RECEIVE_FRIEND_REQUEST'
+        core = data[:core]
+        self.class.broadcast_to(core, data)
+      when  'UPDATE_FRIEND_REQUEST'
+        core = data[:core]
+        self.class.broadcast_to(core, data)
+      when 'BLOCKED_USER'
+        core = data[:core]
+        self.class.broadcast_to(core, data)
+      when  'REMOVE_BLOCKED_USER'
         core = data[:core]
         self.class.broadcast_to(core, data)
       when 'REMOVE_FRIEND'
