@@ -89,7 +89,6 @@ the need to create a private room is need to prevent unwanted members from enter
       The CORE API has found its proper home to be mounted in the app. More details disscussing on what this system does and  how it works will 
       be explained in the future as development of its full intergration has been reached the half way point.
     - Fixed a problem when creating a new DmServer is would not send the dmserver to invited members live.
-    - Added Core Cable call to Add Friend Page when submitting a friend requests by sending successfully submitting their $TR!F3 id if the user to be added is online they will receive LIVE said friend request from that user.
 
 ## C0R3 @P! glitches and bugs addressed and added changes
 
@@ -117,6 +116,17 @@ current dmServer involving the user of their friend it will send a request to th
   removing, adding, and accepting friend requests are sent live to the user that is being sent that request if that user is at the home dash board and is in the pending friends list the request will be received live and if the sender cancels the requests the pending request on that users screen is also removed live.
 
 - Added interactions for friend requests for blocking, unblocking, deleting friends, updating friend requests (rejecting friend requests, approving friend requests) and creating friend requests.
+
+- Added Core Cable call to Add Friend Page when submitting a friend requests by sending successfully submitting their $TR!F3 id if the user to be added is online they will receive LIVE said friend request from that user.
+
+- Added Core Cable actions to blocked users page for unblocking users and for unblocking and blocking actions across servers and dmServers else where in the app.
+
+- Added mounting of performing Core Cable Actions onto functionality in the ServerUserOptionsModal, functions including creating a dmServer by clicking on the message option on a user's UPC (User Profile Card), sending a message directly into the UPC and pressing enter to send, Sending/creating a friend request, Updating a friend request (Accepting or ignoring/denying a friend request), deleting a friend/request, blocking, unblocking, kicking (also mounting a remove dmServer action if kicking a dm member of a dmServer containing only 3 members will cause a duplication of a dmserver already containing these two members already), or banning a user.
+
+- Mounted Cable actions when a user uploads, updates, or removes their profile avatar, or changes their username their location is analyzed and depending on whether they are in a dm/server or in the dashboard will send a request to said online dm/server members to re-render the changes.
+
+- Mounted Cable actions on inviting members to an already exisiting server.
+- Mounted Cable actions on inviting members to an already exisiting dmServer.
 
 ### Glitches and bugs Addressed
 
@@ -366,7 +376,7 @@ between two users. including being able to deciever if there is a block relation
 
 - With new block relationships adjusted seeds for blocked users.
 
-### Other Changes
+### Front-End Changes
 
 - Changed which state for current user information to be extracted from for certain components.
 - Due to problems with blocked users added a new frontend friendship api util function to handle unblocking of users.
@@ -374,6 +384,10 @@ between two users. including being able to deciever if there is a block relation
 - Added new removeBlockedUser dispatch function for unblocking users.
 - Added the new friendship api util function for unblocking of users and implemented it.
 - Added to user reducer to handle the REMOVE_BLOCKED_USER = (UNBLOCK_USER) friendship redux action call changing the friendship status of blocked users  to -2 if both users have blocked each other or 0 if only the curr_user has blocked the user.
+- Removed previous dispatch function for removing block on a blocked user which used deleteFriendship dispatch this is changed to a dispatch calling the unblock dispatch function.
+
+### Other Changes
+
 - Completed deprecation of user options modal which was already deprecated except its container was not, now both user options modal and user options modal container are deprecated these both where replaced a while ago by the far superior ServerUserOptionsModal.
 
 ---
