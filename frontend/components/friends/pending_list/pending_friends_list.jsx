@@ -67,7 +67,9 @@ class PendingFriendList extends React.Component {
             user_id: this.props.currentUser.id,
             friend_id: friend.id,
         }
-        this.props.updateFriendship(substate);
+        this.props.updateFriendship(substate).then(()=>{
+            App.StrifeCore.perform('parse_update_friend_request',{ user_id: this.props.currentUser.id, friend_id: friend.id });
+        });
     }
 
     deleteFriendShip (friend) {
@@ -75,7 +77,9 @@ class PendingFriendList extends React.Component {
             user_id: this.props.currentUser.id,
             friend_id: friend.id,
         }
-        this.props.deleteFriendship(substate);
+        this.props.deleteFriendship(substate).then(()=>{
+            App.StrifeCore.perform('parse_delete_friend_request',{ user_id: this.props.currentUser.id, friend_id: friend.id });
+        });
 
     }
 
