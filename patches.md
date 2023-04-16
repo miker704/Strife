@@ -50,7 +50,7 @@ the need to create a private room is need to prevent unwanted members from enter
 
 ## Known issues currently present and being worked on
   
-- A fellow Contributor noted that email format veritification missed a problem with periods (and provided a fix this will be merged soon as it was provided near patch v3.0).
+- A fellow Contributor noted that email format verification missed a problem with escaping periods. Resulting in email addresses being incorrectly validated. (provided a fix this will be merged soon as it was provided near patch v3.0). Credit goes to cpoppe1 who graciously pointed this out and provided the proper regex format to address the vulnerbility.
 
 ## PATCH NOTES v3.00 - 2/24/2023 - 4/17/2023
 
@@ -285,6 +285,9 @@ current dmServer involving the user of their friend it will send a request to th
   - Issue is due to password length validation failing to check when updating it
   - Fixed by returning the warning that a users password must by of appropiate length when.
     changing their password, it must fall into the length required when first creating their account.
+
+- A fellow Contributor noted that email format verification missed a problem with periods (and provided a fix this will be merged soon as it was provided near patch v3.0). credit goes to user cpoope1.
+- Email format verification used regex to check for proper email formatting the former version has a vulnerbility Resulting in email addresses being incorrectly validated and has been addressed by cpoope1.
 
 ### UI and Cosmetic Fixes and Changes
 
