@@ -2,8 +2,7 @@
 
 ## Future additions and pending changes
   
-- Core Cable will mount to friend status updates -> nearly complete
-  - Action and process flow of banning and kicking users from a server or a dmServer will be reworked and
+- Action and process flow of banning and kicking users from a server or a dmServer will be reworked and
     be optimized by the Core Cable anaylzing the location of said user deciding the best course of action on whether
     a user should re-receive all their dm/servers or just a single one. The hope is also to reduce and eliminate problem areas on re-renders such as channel messages re-rendering a previous or newly received server/channels messages for half a second before reverting back to the proper messages.
   - many more
@@ -31,7 +30,7 @@
 ### Messaging as Whole
 
 - Be able to message chain (reply to a comment)
-- @ a user/ mention a user
+- @ a user/ mention a user - (with upgrading to rails 7 this will be more hassle free to implement correctly)
 - Inviting a user as Non Demo or admin account should work normally as in it creates a dm and with an invite to join.
 - emojis
 - Message/ notification inbox intergration
@@ -53,7 +52,7 @@ the need to create a private room is need to prevent unwanted members from enter
   
 - A fellow Contributor noted that email format veritification missed a problem with periods (and provided a fix this will be merged soon as it was provided near patch v3.0).
 
-## PATCH NOTES v3.00 - 2/24/2023 - 4/15/2023
+## PATCH NOTES v3.00 - 2/24/2023 - 4/17/2023
 
 ## Intra - Changes between 10/7/2022 - 11/17/2023
 
@@ -89,6 +88,7 @@ the need to create a private room is need to prevent unwanted members from enter
       The CORE API has found its proper home to be mounted in the app. More details disscussing on what this system does and  how it works will 
       be explained in the future as development of its full intergration has been reached the half way point.
     - Fixed a problem when creating a new DmServer is would not send the dmserver to invited members live.
+    - Reworked ServerUserOptionsModal added Core Cable actions to all actions that can be chosen when selecting a user's UPC (User Profile Card), reworked block user function, implemented a new function for unblocking a user, have a user upc render completely from the switch check instead of user selectable options this fixes the default options from appearing and being selected when the generic layout of the upc is first rendered before fully loading the user upc completely which previously allowed if a user was fast enough to select options for a user that may or may not be available once the user upc has been fully loaded which can result in crashes and errors. Also prevented the message area from appearing on the generic layout by default when a user selects a blocked, block by or the current user themselves. Also the default generic layout has been reduced it chances from ever appearing now its now more of fail safe as it should be. previously it would rendered the generic purple background banner color along with the default profile avatar, generic/ no options/ message/no message area a # with no name or $TR!F3 id tag and an offline status for a split second before rendering the users actual data. now upon clicking a user their UPC and data loads instantly the method may impact performance but this is yet to be observed and if such issues arise another method using fragmentation will be used instead, this rendering method gives the exact rendering of a users UPC instantly like discords (discord does not have a intitial generic layout rendered first just the actual user's upc with their data instantly).
 
 ## C0R3 @P! glitches and bugs addressed and added changes
 
