@@ -48,20 +48,81 @@ class Api::FriendshipsController < ApplicationController
     end
 
     def block_User
-        @blocked_User = Friendship.new( 
-            user_id: friendship_params[:user_id], 
-            friend_id: params[:friendship][:friend_id],
-            friend_request_status: -1
-        )
-        if @blocked_User.save
-            render :blocked
+
+
+        #first search if there is any relationship between users specifcally if either of the two users blocked each other
+        # u1 -> -1 u2 -> -2  u2 tries to block u1 check the relationship 
+
+
+        @check_if_blocked = Friendship.find_by(user_id: friendship_params[:user_id], friend_id: friendship_params[:friend_id])
+        @check_blocked_user = Friendship.find_by(user_id: friendship_params[:friend_id], friend_id: friendship_params[:user_id])
+        if @check_if_blocked && @check_blocked_user
+           
+            if @check_if_blocked.friend_request_status == -2
+                if @check_if_blocked.update(friend_request_status:-1)
+                    @blocked_User = @check_if_blocked
+                    render :blocked
+                end
+            end
+
+        #check status of friendship on the other users end
         else
-            render json: @blocked_User.errors.full_messages, status: 422
+
+            @blocked_User = Friendship.new( 
+                user_id: friendship_params[:user_id], 
+                friend_id: params[:friendship][:friend_id],
+                friend_request_status: -1
+            )
+ 
+        # prevents the person who is blocked from removing the block or
+        # sending them a request until the person that blocked them removes the block
+            @blocked_by = Friendship.new(
+                user_id: params[:friendship][:friend_id], 
+                friend_id: friendship_params[:user_id],
+                friend_request_status: -2
+            )
+            if @blocked_User.save && @blocked_by.save
+                render :blocked
+            else
+                render json: @blocked_User.errors.full_messages, status: 422
+            end
+
         end
 
     end
 
    
+    def unblock_User
+        
+        #check if blocked 
+        @friendship = Friendship.find_by(user_id: friendship_params[:user_id], friend_id: friendship_params[:friend_id])
+        #check the other user 
+        @friend = Friendship.find_by(user_id: friendship_params[:friend_id], friend_id: friendship_params[:user_id])
+
+
+        if @friendship && @friend
+            if @friend.friend_request_status == -1
+                @blocked_User = @friendship
+                if @blocked_User.update(friend_request_status: -2)
+                    render :blocked
+                else
+                    render json: @blocked_User.errors.full_messages, status: 422
+                end
+            elsif @friend.friend_request_status == -2
+                if @friendship.destroy && @friend.destroy
+                    render :show
+                else 
+                    render json: @friendship.errors.full_messages, status: 422
+                end
+            end
+        
+        else
+            render json: @friendship.errors.full_messages, status: 422
+        end
+
+    end
+
+
     def update
         @friendship = Friendship.find_by(user_id: friendship_params[:user_id], friend_id: friendship_params[:friend_id])
         #check status of friendship on the other users end
