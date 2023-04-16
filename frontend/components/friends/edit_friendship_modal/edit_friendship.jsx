@@ -30,8 +30,8 @@ const EditFriendshipModal = ({
     const handleDeleteFriendShip = () => {
 
         deleteFriendship({ user_id: currentUser.id, friend_id: friend.id }).then(() => {
+            App.StrifeCore.perform('parse_delete_friend_request',{ user_id: currentUser.id, friend_id: friend.id });
             setShowPopup(false);
-
         });
         return;
     }
