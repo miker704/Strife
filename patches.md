@@ -347,6 +347,14 @@ current dmServer involving the user of their friend it will send a request to th
     - Added new colors for backend console.
     - Added new info in dev console.
     - Changed text on the deleted server loading screen.
+    - Major Change: Re-Worked the Session form page for both login and sign up pages to be able to scale on various screen sizes and 
+    be able to match the new slight alterations discord has made.
+    - Fixed animation glitch on the session form in the register page.
+    - Fixed Background for the login and registar page, background used to repeat itself now it is one image same as discords.
+    - Imported login and register background to be an svg file instead for higher resolutions. 
+    - Added the ability of the sign in page once the window minimizes small enough it will change to a layout similar to the sign up
+    form.
+    - Add required red stars on sign in page for email/phone number and password input fields.
 
 ## Backend Changes
 
