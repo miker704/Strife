@@ -361,7 +361,9 @@ current dmServer involving the user of their friend it will send a request to th
     - Brought back the Demo 2 login button.
     - So now visiters dont have to immediately make an account although i encourage you do as there are certain features blocked when using demo accounts
       but one can can open seperate browsers or normal and incognito/private mode and login in demo 1 and demo 2 and browse the app and explore the async functionality.
-      
+    - returned both sliding animations for the sessions form slideDown animation for logging in and sliding up for signing up.
+    - Fixed a visual bug with the sliding up animation (which is why it was removed before).
+
 ## Backend Changes
 
 - Changed the routes to the new Routing system on the frontend to redirect banned users from both dmservers
@@ -410,6 +412,8 @@ between two users. including being able to deciever if there is a block relation
 ### Other Changes
 
 - Completed deprecation of user options modal which was already deprecated except its container was not, now both user options modal and user options modal container are deprecated these both where replaced a while ago by the far superior ServerUserOptionsModal.
+
+- Completed deprecation of the sessions form for login and sig up to a newer version that mimics discords recent version including the animation that plays when regenerating a qr code. Also enables scalability and now offers back the ability to login as demo user 2 and well as demo user 1. The old sessions form and styling although simple and can morph in to either log in of sign up upon url change the new version aims its best to keep that same simplicity. The old sessions forms and styles have moved to the deprecated folder.
 
 ---
 
