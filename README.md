@@ -3,6 +3,12 @@
     Discord - "disagreement between people."
     Synonym Strife - "angry or bitter disagreement over fundamental issues; conflict"
 
+## [LIVE LINK](https://strife.onrender.com/)
+
+[STRIFE](https://strife.onrender.com/) stylized as [$TR!F3](https://strife.onrender.com/) is fully comprehensive, pixel perfect, functional clone of the popular VoIP and instant messaging platform [Discord](https://discord.com/)
+
+***
+
 ## Project Goal
 
     Project goal is to replicate a clone of the communcication app discord utilizing the following technologies learned during the App/acc curriculum among a few others (see below)
@@ -25,24 +31,60 @@
     4). Live Chat
     5). Direct Messaging via private servers 
 
-## Technologies used
+***
 
-    For Strife:
-    
-    -Html5 - frontend
-    -CSS3 - frontend
-    -JavaScript (EM6), jBuilder, Ajax - frontend and backend
-    - React.js - frontend 
-    - Node.js - backend
-    - Redux.js - frontend (State handling) 
-    -Websocket.io - Api for socket connections for Javascript
-    - Ruby Rails - Backend Tech for Database handling and user Authentication with Ruby BCrypt Library
-    - Postgresql - Database service
-    -webpack - project bundler
-    Editors
-    -Vscode
-    -Vim (NeoVim along with its plugins)
-    
-    - proposed Bot (bonus feature) - final confirmed tech TBD 
-        -Discord Api
-        - C++
+## Technologies Utilized
+
+STRIFE "$TR!F3" as of Patch V3.0:
+
+* Front-End
+  * ```React``` and ```Redux``` for frontend state management, design and rendering of components.
+  * ```HTML5``` and ```JSX``` for website structure and design of ```React``` Components.
+  * ```CSS3``` and ```SCSS``` for styling elements of website structure and ```React``` Components.
+  * ```JavaScript(EM6)``` for dynamic updates to the frontend and other front-end logic overall code base of STRIFE's functionality is written in ```JavaScript``` .
+  * ```WebPack``` and ```Babel``` as the module bundler and for live Transpilation of ```JavaScript``` .
+  * ```AJAX``` to communicate with ```PostgreSQL``` Server in addition to sending and retrieving data in ```JSON``` format.
+  * ```Node.js``` for libraries including ```@rails/actioncable``` for handling ```Rails ActionCable WebSockets```.
+  * ```WebRTC``` API for enabling the ability to allow both video and audio calling between users.
+* Back-End
+  * ```jBuilder``` for returning database data in ```JSON``` formatting to the front-end.
+  * ```Ruby v3.1.2``` latest version of ```Ruby``` for coding the backend server, logic and database handling.
+  * ```Ruby on Rails v7.0.4``` latest version of ```Ruby on Rails``` as the web application framework allowing Database handling, user authentication with Ruby BCrypt library, Application Record, Action View and Action Cable.
+  * ```PostgreSQL``` as the Database for data storage and managment.
+  * ```AWS``` (Amazon Web Service) for storing App assets and storing user uploaded assets including user and server profile avatars and banners.
+* Full-Stack
+  * ```WebRTC``` Api in combination with Rails ActionCable  to allow both video and voice calling between users.
+  * ```Rails Action Cable```, ```Redis```, and ```JavaScripts @rails/actioncable``` as the Applications WebSocket Provider handling both front-end and back-end request allowing for async functionality across the entire application. Allowing for live updates in receiving user updates, friend requests, invited dmServers and Servers, Live text messaging, voice and video calling.
+  * ```Render``` $TR!F3 currently uses [Render](https://render.com/) as is deployment and live hosting service.
+* Former Tech Stack
+  * ```Rails version 5.2.8``` this was used as part of the default tech stack required by App Academy as the project grew and this version of rails has ceased support by the rails development team and was nearing its support on Heroku. The version of rails and ruby was moved to the newer versions in transistion to the current versions of ruby and ruby on rails.
+  * ```Ruby version 2.5.1``` this was used as part of the default tech stack required by App Academy as the project grew and this version of rails has ceased support by the rails development team and was nearing its support on Heroku. The version of rails and ruby was moved to the newer versions in transistion to the current versions of ruby and ruby on rails.
+  * ```Heroku``` this was previously used as STRIFE's live deployment and hosting service but do due Heroku's elimination of its free tier, STRIFE
+* Future Stack
+  * ```RUST``` as the backend programming language and ```Rocket.rs``` as the web application framework.
+  * Eventually I will want to port over this and any future Versions of STRIFE using ```Ruby on Rails``` backend to use ```RUST``` via ```Rocket.rs``` for a faster, safer web framework and web server. And allow much faster and greater performance overall.
+  * ```React``` with ```TypeScript``` for more robust frontend and have more type restricting on the frontend.
+  * ```Railway``` for future deployment and live hosting for this and any future version of Strife.
+* Editors
+  * ```Visual Studio Code``` as Main code editor
+  * ```Vim (NeoVim along with its plugins)``` for whenever Vscode would bug out or would run slowly do to other running projects.
+* Other Tech
+  * ```C++``` most of the files coded in C++ are long gone, but they where used with a old program to parse data to auto re-seed the postgreSQL database with data without having to manually re-seed or drop the database via rails console similar to knex.js or EF Core, It was also used to generate seed data easier into a csv format without having to painstakingly do it manually. This as a Whole has been replaced with rails console and vs code plugins despite it being a bit tedious.
+
+***
+
+## Project Setup and Installation
+
+* Setup a directory and git clone this repository or fork it.
+* run bundle install && npm install
+* bundle exec rails db:setup
+* In a seperate console run npm run start
+* In the previous console run rails s or rails s -p {"DESIRED_PORT_NUMBER"}
+
+## Disclaimer and Project Usage
+
+* Feel free to offer suggestions, fixes, or optimizations to the project, if there are any bugs please submit a pull request or raise an issue stating the bug, and also any potential fixes if any. If offering a potential fix please do your best to explain your findings, your method of addressing the issue, also please test and provide such test examples as well. It will make it easier for me to check and merge the change. (If your fix is passable I will merge the pull request/contribution, You'll also receive credit on the line of code and in any upcoming patch notes )
+* This projects visual assests are of the property and owned by Discord and other Artist.
+* You cannot use this project in anyway to monetize, sell or receive profit from it or any versions of it even those created by other users.
+* This Project also follows the rules of the GNU General Public License.
+* This project is currently still active in development for the forseeable future till any planned features are too taxing on the ruby rails backend. Once that has been reached $TRIF3 will move to a new version to utilize RUST as its backend via Rocket.rs web framework where speed and performance will increase massively and extra hardware intensive features will be added.
