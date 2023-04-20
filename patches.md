@@ -355,7 +355,13 @@ current dmServer involving the user of their friend it will send a request to th
     - Added the ability of the sign in page once the window minimizes small enough it will change to a layout similar to the sign up
     form.
     - Add required red stars on sign in page for email/phone number and password input fields.
-
+    - Added the spinning cube animation that replaces the qr code image every few minutes it will play for a few seconds before returning the qr image.
+      at the login screen.
+    - Changed Demo Login button to Demo login 1.
+    - Brought back the Demo 2 login button.
+    - So now visiters dont have to immediately make an account although i encourage you do as there are certain features blocked when using demo accounts
+      but one can can open seperate browsers or normal and incognito/private mode and login in demo 1 and demo 2 and browse the app and explore the async functionality.
+      
 ## Backend Changes
 
 - Changed the routes to the new Routing system on the frontend to redirect banned users from both dmservers
