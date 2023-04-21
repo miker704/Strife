@@ -150,12 +150,19 @@ $off-grey: #B9BBBE;
 
 
 .friend-index-container {
-    height: calc(100% - 0px);
+    
+    // height: calc(100% - 0px);
+    // width: 105vh;
+    
     padding-right: 3px;
     display: flex;
     flex-direction: column;
-    width: 105vh;
     user-select: none;
+    flex: 1 1 auto;
+    overflow: hidden;
+    
+
+
 
     button[type="submit"]:disabled {
         cursor: not-allowed;
@@ -402,7 +409,8 @@ $off-grey: #B9BBBE;
     position: absolute;
     width: calc(100vw - 310px);
     // height: 95vh;
-    height: 93vh;
+
+    // height: 93vh;
 
     // transform: translate(309px, 34px);
     // transform: translate(309px, 48px);
@@ -433,7 +441,8 @@ $off-grey: #B9BBBE;
 .active-now-section-wrapper {
     flex: 0 1 30%;
     min-width: 360px;
-    max-width: 360px;
+    max-width: 420px;
+    // max-width: 360px;
     -webkit-box-flex: 0;
     // background: hsl(223, 6.95%, 19.8%);
     background-color: #313338;
@@ -1490,7 +1499,7 @@ $off-grey: #B9BBBE;
 
 .friend-index.activl {
     overflow: hidden scroll;
-    height: 80vh;
+    // height: 80vh;
 }
 
 
