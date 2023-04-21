@@ -1,369 +1,310 @@
-// Place all the styles related to the api::sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// // Place all the styles related to the api::sessions controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: http://sass-lang.com/
 
-//background for session
+// //background for session
 
-.session-form {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-image: image_url("Discord_login_background_2022.png");
-    // background-size: cover;
-    // background-color: #36393f;
-    top: 0;
-    left: 0;
+// .session-form {
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+//     background-image: image_url("Discord_login_background_2022.png");
+//     top: 0;
+//     left: 0;
+//     display: flex;
+//     overflow-y: auto;
+//     overflow-x: hidden;
 
-    display: flex;
+// }
 
-    // align-items: center;
-    // justify-content: center;
 
-    // vertical-align: baseline;
-    // z-index: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
 
-}
+// .session-form .box {
 
+//     animation-name: slideDown;
+//     animation-duration: 0.3s;
+//     animation-iteration-count: 1;
+// }
 
+// @keyframes slideDown {
+//     0% {
+//         opacity: 0;
+//         transform: translateY(-40%) scale(1.2, 1.2);
+//     }
 
-.session-form .box {
+//     70% {
+//         opacity: 1;
+//         transform: scale(1, 1);
+//     }
 
-    animation-name: slideDown;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
-  }
+//     99% {
+//         transform: translateY(1%);
+//     }
 
-@keyframes slideDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-40%) scale(1.2, 1.2);
-  }
-  70% {
-    opacity: 1;
-    transform: scale(1, 1);
-  }
-  99% {
-    transform: translateY(1%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
+//     100% {
+//         transform: translateY(0%);
+//     }
+// }
 
 
 
-.session-form .box {
+// .session-form .box {
 
-    z-index: 1;
-    background-color: #36393f;
-    width: auto;
-    height: auto;
-    color: white;
-    font-family:  Arial, sans-serif;
-    padding: 30px;
-    border-radius: 10px;
-    display: flex;
-    text-align: center;
-    //when on smaller screens 350px  work but on 4k res screens its not enough 
-    //places the login boxto much to the right 
-    // margin: auto auto auto 350px;
-    margin: auto auto auto auto;
+//     z-index: 1;
+//     background-color: #36393f;
+//     width: auto;
+//     height: auto;
+//     color: white;
+//     font-family: Arial, sans-serif;
+//     padding: 30px;
+//     border-radius: 10px;
+//     display: flex;
+//     text-align: center;
+//     //when on smaller screens 350px  work but on 4k res screens its not enough 
+//     //places the login boxto much to the right 
+//     margin: auto auto auto auto;
+//     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+// }
 
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
 
-    // align-items: center;
-    // justify-content: center;
-
-
-
-    // flex-direction: column;
-}
-
-
-
-
-
-
-.session-form .box.signup-box {
-    // background-color: #36393f;
-    margin: auto auto auto auto;
-    padding-top: 25px;
-    padding-bottom: 20px;
-}
 
 
-.session-form {
-
-    h3 {
-        font-size: 18.72px;
-        font-weight: 700;
-        font-family:  Arial, sans-serif;
-        color: #B9BBBE;
-        // text-align: center;
-        margin: 0 20px 10px 20px;
-
-    }
-
-    h2.welcome-message {
-        font-weight: 700;
-        font-size: 24px;
-        margin: 10px;
-    }
-
-    h2.signup-header {
-        font-weight: 700;
-        font-size: 24px;
-        margin: 20px 20px -10px 20px;
-
-    }
-
-    a {
-        color: #00Aff4;
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    form {
-        display: flex;
-        flex-direction: column;
-
-
-        .field {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-
-            label {
-                // color:#8e9297;
-                color: #B9BBBE;
-                font-weight: 600;
-                font-size: 12px;
-                position: relative;
-                margin: 10px 0;
-
-            }
-
-
-            input {
-                background-color: #202225;
-                border: solid rgb(25, 25, 25) 1px;
-                border-radius: 3px;
-                width: 98%;
-                // padding: 10px;
-                height: 40px;
-                // margin-top: -17px;
-                margin-bottom: 10px;
-                color: #DCDDDE;
-                font-size: 16px;
-                padding-left: 10px;
-                font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
-            }
-
-            input[type="password"] {
-                font-size: 22px;
-                font-weight: 500;
-                letter-spacing: 2px;
-            }
-
-            select {
-                background-color: #313339;
-                font-size: 16px;
-                font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
-                color: #DCDDDE;
-                border: solid rgb(25, 25, 25) 1px;
-                padding: 5px;
-                // margin-left: 2px;
-                // margin-right: 2px;
-                // margin: 2px 9px 2px 9px;
-                margin: 0 10px 5px 10px;
-                // align-items: center;
-                border-radius: 3px;
 
 
+// .session-form .box.signup-box {
+//     margin: auto auto auto auto;
+//     padding-top: 25px;
+//     padding-bottom: 20px;
+// }
 
-            }
 
-            // select .fade-select {
-            //     color: rgb(114, 118, 125);
-            // }
+// .session-form {
 
-            select#month {
-                width: 150px;
-                margin-left: 0;
-            }
+//     h3 {
+//         font-size: 18.72px;
+//         font-weight: 700;
+//         font-family: Arial, sans-serif;
+//         color: #B9BBBE;
+//         margin: 0 20px 10px 20px;
 
-            select#day {
-                width: 100px;
-            }
+//     }
+
+//     h2.welcome-message {
+//         font-weight: 700;
+//         font-size: 24px;
+//         margin: 10px;
+//     }
 
-            select#year {
-                width: 125px;
-                margin-right: 5px;
-            }
-
-            select:hover {
-                border: solid black 1px;
-                outline: none;
-                transition: 0.25s;
-            }
-
-            select#year option:hover {
-                box-shadow: 0 0 10px 100px #FFFFFF inset;
-            }
-
-            select option:focus {
-                color: #191919
-            }
-
-        }
-
-
-
-
-
-
-        input[type="submit"] {
-            background-color: #5865F2;
-            color: #FFFFFF;
-            // font-size: 16px;
-            font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
-            width: 415px;
-            height: 45px;
-            margin: 20px 0 10px 0;
-            font-weight: 500;
-
-        }
-
-        input[type="submit"]:hover {
-            cursor: pointer;
-            transition: 0.25s;
-            background-color: #4752C4;
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        input[type="password"]:focus {
-            outline: none;
-            border-color: #040405;
-        }
-
-        .navlinks {
-            font-size: 14px;
-            margin-bottom: 10px;
-            color: #72767D;
-        }
-
-
-
-
-
-        //discords background 36393f
-        //input background #202225
-        // date of birth drop box
-        //text in drop box rgb(114, 118, 125);
-        //"ABC Ginto Normal","Helvetica Neue",Helvetica,Arial,sans-serif
-        //select box font  Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif
-        //select faded rgb(114,118,125)
-
-
-
-
-
-        .tos {
-            font-size: 12px;
-            color: #888b8f;
-            margin-top: 30px;
-            // line-height: 16px;
-            // align-items: left;
-        }
-
-
-        label.login-error {
-            color: #f38688;
-        }
-
-        .forgotPassword {
-            text-align: left;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-    }
-
-
-  
- 
-    .wumpuslogin {
-        width: 176px;
-        height: 176px;
-        margin-bottom: 20px;
-        color: white;
-        content: image_url("discord-qr-image.png");
+//     h2.signup-header {
+//         font-weight: 700;
+//         font-size: 24px;
+//         margin: 20px 20px -10px 20px;
+
+//     }
+
+//     a {
+//         color: #00Aff4;
+//         text-decoration: none;
+//     }
+
+//     a:hover {
+//         text-decoration: underline;
+//     }
+
+//     form {
+//         display: flex;
+//         flex-direction: column;
+
+
+//         .field {
+//             display: flex;
+//             flex-direction: column;
+//             align-items: flex-start;
+
+//             label {
+//                 color: #B9BBBE;
+//                 font-weight: 600;
+//                 font-size: 12px;
+//                 position: relative;
+//                 margin: 10px 0;
+
+//             }
+
+
+//             input {
+//                 background-color: #202225;
+//                 border: solid rgb(25, 25, 25) 1px;
+//                 border-radius: 3px;
+//                 width: 98%;
+//                 height: 40px;
+//                 margin-bottom: 10px;
+//                 color: #DCDDDE;
+//                 font-size: 16px;
+//                 padding-left: 10px;
+//                 font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+//             }
+
+//             input[type="password"] {
+//                 font-size: 22px;
+//                 font-weight: 500;
+//                 letter-spacing: 2px;
+//             }
+
+//             select {
+//                 background-color: #313339;
+//                 font-size: 16px;
+//                 font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+//                 color: #DCDDDE;
+//                 border: solid rgb(25, 25, 25) 1px;
+//                 padding: 5px;
+//                 margin: 0 10px 5px 10px;
+//                 border-radius: 3px;
+
+
+
+//             }
+
+       
+//             select#month {
+//                 width: 150px;
+//                 margin-left: 0;
+//             }
+
+//             select#day {
+//                 width: 100px;
+//             }
+
+//             select#year {
+//                 width: 125px;
+//                 margin-right: 5px;
+//             }
+
+//             select:hover {
+//                 border: solid black 1px;
+//                 outline: none;
+//                 transition: 0.25s;
+//             }
+
+//             select#year option:hover {
+//                 box-shadow: 0 0 10px 100px #FFFFFF inset;
+//             }
+
+//             select option:focus {
+//                 color: #191919
+//             }
+
+//         }
+
+
+
+
+
+
+//         input[type="submit"] {
+//             background-color: #5865F2;
+//             color: #FFFFFF;
+//             font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+//             width: 415px;
+//             height: 45px;
+//             margin: 20px 0 10px 0;
+//             font-weight: 500;
+
+//         }
+
+//         input[type="submit"]:hover {
+//             cursor: pointer;
+//             transition: 0.25s;
+//             background-color: #4752C4;
+//         }
+
+//         input[type="text"]:focus,
+//         input[type="email"]:focus,
+//         input[type="password"]:focus {
+//             outline: none;
+//             border-color: #040405;
+//         }
+
+//         .navlinks {
+//             font-size: 14px;
+//             margin-bottom: 10px;
+//             color: #72767D;
+//         }
+
+//         .tos {
+//             font-size: 12px;
+//             color: #888b8f;
+//             margin-top: 30px;
+//         }
+
+
+//         label.login-error {
+//             color: #f38688;
+//         }
+
+//         .forgotPassword {
+//             text-align: left;
+//             margin-bottom: 10px;
+//             font-size: 14px;
+//         }
+//     }
+
+
+
+
+//     .wumpuslogin {
+//         width: 176px;
+//         height: 176px;
+//         margin-bottom: 20px;
+//         color: white;
+//         content: image_url("discord-qr-image.png");
+
+//     }
+
+//     .demologins {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         text-align: center;
+//         justify-content: center;
+//         width: auto;
+
     
-    }
+//         .demologin-text {
+//             width: 80%;
+//             text-align: center;
+//             color: #888b8f;
+//             padding-top: 20px;
 
-    .demologins {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        width: auto;
+//         }
 
-        // .barcodeWumpus{
-        //     // content: image_url("barcode.png");
-        //     // content: image_url("incognitowumpus.png");
-        //     // align-items: center;
-        //     // z-index:10;
-        //     background-image: image_url("barcode.png");
-        // }
+//         h2 {
+//             font-family: Arial, sans-serif;
+//             font-size: 24px;
+//             font-weight: 700;
+//             line-height: 1.2;
 
-        .demologin-text {
-            width: 80%;
-            // margin: 0 auto;
-            text-align: center;
-            color: #888b8f;
-            padding-top: 20px;
-
-        }
-
-        h2 {
-            font-family:  Arial, sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            // margin: 10px 15px 10px 15px;
-            // padding-top: 10px;
-            line-height: 1.2;
-
-        }
+//         }
 
 
-        p {
-            font-size: 14px;
-            color: #b9bbbe;
-            // margin: 0 auto 0 50px;
-            // margin: 0 auto 0 auto;
-            padding-top: 15px;
+//         p {
+//             font-size: 14px;
+//             color: #b9bbbe;
+//             padding-top: 15px;
 
-        }
+//         }
 
-    }
+//     }
 
-    .demo-login-button {
-        height: 40px;
-        width: 70%;
+//     .demo-login-button {
+//         height: 40px;
+//         width: 70%;
 
-        color: white;
-        background-color: #5865F2;
-        border-radius: 3px;
-        border: none;
-        cursor: pointer;
-        // margin: 0 -40px 0 20px;
-        margin-bottom: 5px;
-    }
+//         color: white;
+//         background-color: #5865F2;
+//         border-radius: 3px;
+//         border: none;
+//         cursor: pointer;
+//         margin-bottom: 5px;
+//     }
 
-}
+// }
