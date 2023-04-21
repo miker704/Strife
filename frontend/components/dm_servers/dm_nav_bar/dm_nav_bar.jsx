@@ -52,7 +52,7 @@ class DmNavBar extends React.Component {
     }
     componentDidMount () {
         this.mounted = true;
-        this.props.fetchUserDmServers(this.props.currentUser.id);
+        this.props.fetchUserDmServers(this.props.currentUserId);
     }
     componentWillUnmount () {
         this.mounted = false;
