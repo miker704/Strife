@@ -4,6 +4,7 @@ import Root from "./components/root.jsx"
 import configureStore from "./store/store.js"
 import throttle from "lodash.throttle";
 import { saveMyState } from './utils/state_storage_async_util.js';
+// import { createRoot } from 'react-dom/client';
 
 document.addEventListener("DOMContentLoaded", () => {
 	let store;
@@ -42,5 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	window.getState = store.getState;
 	window.dispatch = store.dispatch;
+	
+	//Do not use libaries need to updated first react 18 interferes with react-tool-tip and skips loadscreens
+	// const rootContainer = document.getElementById('root');
+	// const ROOT = createRoot(rootContainer);
+	// ROOT.render(<Root store={store} />);
+	
+	
 	ReactDOM.render(<Root store={store} />, document.getElementById('root'))
 })
