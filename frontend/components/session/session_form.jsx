@@ -92,12 +92,15 @@ class SessionForm extends React.Component {
     }
 
     loginAsDemoUser2 () {
-        let demoUser = {
+        let demoUser2 = {
             email: 'DemoUser2@strife.com',
             password: 'QWERTY1234'
         }
-        this.setState({ email: demoUser.email })
-        this.setState({ password: demoUser.password })
+        this.setState({ email: demoUser2.email })
+        this.setState({ password: demoUser2.password })
+        this.props.processForm(demoUser2).then(()=>{
+            this.props.history.push("/$/loading/");
+        });
     }
 
 
@@ -251,37 +254,24 @@ class SessionForm extends React.Component {
         const subHeaderMessage = this.props.formType === "Sign In" ? ("We're so excited to see you again!") : ("");
 
         const signInAsDemoUser1 = (
-            // <button type="submit" className="demo-login-button" onClick={() => this.loginAsDemoUser1()}>Demo Login</button>
-
-            <button type="submit" className="demo-login-button" onClick={() => this.loginAsDemoUser1()}>Demo Login</button>
-
-
+            <button type="submit" className="demo-login-button" onClick={() => this.loginAsDemoUser1()}>Demo 1 Login</button>
         );
-        // const signInAsDemoUser2 = (
-        // <button type="submit" className="demo-login-button" onClick={() => this.loginAsDemoUser2()}>Demo 2 Login</button>);
+        const signInAsDemoUser2 = (
+            <button type="submit" className="demo-login-button" onClick={() => this.loginAsDemoUser2()}>Demo 2 Login</button>
+        );
 
 
 
         const demoLogins = this.props.formType === "Sign Up" ? ("") : (
-
             <div className="demologins">
-
-
                 <img className="wumpuslogin" />
-
                 {signInAsDemoUser1}
+                {signInAsDemoUser2}
                 <div className="demologin-text">
                     <h2>Login with a Demo account</h2>
                     <p> and take a tour of $TR!F3 </p>
                 </div>
-
-                {/* {signInAsDemoUser1} */}
-
-
-
             </div>
-
-
         )
 
 
@@ -318,7 +308,6 @@ class SessionForm extends React.Component {
         const birthday = this.props.formType === "Sign In" ? ("") : (
 
             <div className="field">
-
                 <label id="birthday-label" className={birthdayErrorTag}>DATE OF BIRTH{this.birthdayErrors()}</label>
                 <div className="dropbox-selector">
 
@@ -365,56 +354,25 @@ class SessionForm extends React.Component {
         return (
             <div className="session-form">
                 <div id="box" className={formtype}>
-                    {/* <div className='login-box'> */}
                     <div className="form-box">
                         {headerMessage}
-
                         <h3>{subHeaderMessage}</h3>
-
                         <form onSubmit={this.handleSubmit}>
                             {email}
-
-                            {/* <div className="field">
-                                <label id="email-label" className={emailErrorTag}>
-                                    EMAIL{this.emailErrors()}
-                                </label>
-                                <input id="email" type="email" className={emailErrorTag} onChange={this.handleInput('email')} />
-
-                            </div> */}
-
-
                             {userName}
                             {password}
-
-                            {/* <div className="field">
-                                <label id="password-label" className={passwordErrorTag}>
-                                    PASSWORD{this.passwordErrors()}
-                                </label>
-                                <input id="password" type="password" className={passwordErrorTag} onChange={this.handleInput('password')} /> */}
-
                             {forgotPassword}
-                            {/* </div> */}
-
-
-
                             {birthday}
                             <div className="field">
-
-
-                                {/* <button type="submit">{submitButtonMessage}</button> */}
                                 <input type="submit" value={submitButtonMessage} />
-
-
                                 {this.props.navLink}
                                 {tos}
                             </div>
                         </form>
                     </div>
-
                     {demoLogins}
                 </div>
             </div>
-            // </div>
         )
     }
 
