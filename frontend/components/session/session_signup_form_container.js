@@ -23,5 +23,5 @@ const mDTP = dispatch => {
     }
 }
 
-const SessionSignUpFormContainer = connect(mSTP, mDTP)(SessionForm4);
+const SessionSignUpFormContainer = connect(mSTP, mDTP)(SessionForm);
 export default SessionSignUpFormContainer
