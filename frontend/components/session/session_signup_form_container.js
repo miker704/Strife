@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { signUpUser, removeSessionErrors } from "../../actions/session_actions";
 import SessionForm from "./session_form";
+import SessionForm2 from "./ss2_form";
+import SessionForm4 from "./session_form4";
 import { Link } from "react-router-dom";
 
 
@@ -21,5 +23,5 @@ const mDTP = dispatch => {
     }
 }
 
-const SessionSignUpFormContainer = connect(mSTP, mDTP)(SessionForm);
+const SessionSignUpFormContainer = connect(mSTP, mDTP)(SessionForm4);
 export default SessionSignUpFormContainer
