@@ -363,6 +363,9 @@ current dmServer involving the user of their friend it will send a request to th
       but one can can open seperate browsers or normal and incognito/private mode and login in demo 1 and demo 2 and browse the app and explore the async functionality.
     - returned both sliding animations for the sessions form slideDown animation for logging in and sliding up for signing up.
     - Fixed a visual bug with the sliding up animation (which is why it was removed before).
+    - Added Autofocus on text message area input in dmServers.
+    - Added Autofocus on text message area input in Servers.
+    - Added Autofocus on text message area input in add friends input.
 
 ## Backend Changes
 
