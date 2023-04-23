@@ -371,7 +371,6 @@ current dmServer involving the user of their friend it will send a request to th
     - Adjusted colors of the invite to dmServer modal.
     - Adjusted colors of the old invite to Server modal.
 
-
 ## Backend Changes
 
 - Changed the routes to the new Routing system on the frontend to redirect banned users from both dmservers
