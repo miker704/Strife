@@ -366,6 +366,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added Autofocus on text message area input in dmServers.
     - Added Autofocus on text message area input in Servers.
     - Added Autofocus on text message area input in add friends input.
+    - Re-modeled invite members to server modal to reflect that of discords and is no longer a re-hashed version of the create dmServer modal. 
 
 ## Backend Changes
 
