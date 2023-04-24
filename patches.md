@@ -384,6 +384,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added Online/Offline Status in create dm Server modal via dmServer nav bar.
     - Added Online/Offline Status in create dm Server modal via home nav bar.
     - Added a variety of various style options for online and offline status for various modals.
+    - Added adjustment for 4k screens for active now section (will be moving to present day styles onwards).
 
 ## Backend Changes
 
