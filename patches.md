@@ -379,6 +379,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Added online/offline status on invite to existing dmServer modal
     - Removed Spell Check on Email and Username inputs on Sign up Forms
     - Removed Spell Check on Email Input for login forms
+    - Recreated create dm server modal that pops up for the homebar into a seperate component as a small amount of data passed can affect its placement.
+    
 
 ## Backend Changes
 
