@@ -374,16 +374,25 @@
     box-sizing: border-box;
     width: 100%;
     border-radius: 3px;
-    color: hsl(210, 2.9%, 86.7%);
-    background-color: hsl(216, 7.2%, 13.5%);
+    color: rgb(219, 222, 225);
+    background-color: #1e1f22;
     border: none;
     transition: border-color .2s ease-in-out;
     font-family: "Whitney";
     text-rendering: optimizeLegibility;
     font-weight: 400;
 
+}
+
+.server-op-name-input::placeholder {
+    color: rgb(219, 222, 225);
+    font-family: "Whitney";
+    text-rendering: optimizeLegibility;
+    font-weight: 400;
 
 }
+
+
 
 .server-op-divider {
     margin-top: 40px;
@@ -452,10 +461,10 @@
     -webkit-box-align: center;
     align-items: center;
     border-radius: 4px;
-    color: hsl(210, 2.9%, 86.7%);
+    color: rgb(219, 222, 225);
     font-weight: 500;
-    border-color: hsl(216, 7.2%, 13.5%);
-    background-color: hsl(216, 7.2%, 13.5%);
+    border-color: #1e1f22;
+    background-color: #1e1f22;
 }
 
 .s-b-value {
@@ -545,13 +554,13 @@
     -webkit-box-align: center;
     align-items: center;
     border-radius: 4px;
-    color: hsl(210, 2.9%, 86.7%);
     font-weight: 500;
     cursor: not-allowed;
     opacity: .6;
     forced-color-adjust: none;
-    border-color: hsl(216, 7.2%, 13.5%);
-    background-color: hsl(216, 7.2%, 13.5%);
+    color: rgb(219, 222, 225);
+    border-color: #1e1f22;
+    background-color: #1e1f22;
 }
 
 .inactive-sub-info {
