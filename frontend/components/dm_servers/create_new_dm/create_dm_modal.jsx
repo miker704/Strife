@@ -7,6 +7,7 @@ const CreateDmModal = ({
     top,
     dmServers,
     setShowPopUp,
+    popUpTop,
     currentUser,
     friends,
     createDmServer,
@@ -127,11 +128,16 @@ const CreateDmModal = ({
     }
 
 
+    let createDmButtonMessage = count <= 1 ? (
+        <div className="create-dm-button-text">Create DM</div>
+    ) : (
+        <div className="create-dm-button-text">Create Group DM</div>
+    )
 
     return (
         <div className={`clear-modal-wrapper ${topBar === true ? `homeBar` : ``}`}>
 
-            <div className="create-dm-modal-popup" onClick={e => e.stopPropagation()} ref={popupRef}>
+            <div className="create-dm-modal-popup" onClick={e => e.stopPropagation()} ref={popupRef} style={{ top: `${popUpTop}px` }}>
                 <div className="create-dm-modal-focus-lock">
                     <div className="create-dm-modal">
                         <form onSubmit={handleDmServerCreation}>
@@ -239,7 +245,7 @@ const CreateDmModal = ({
                             <div className="create-dm-footer"></div>
                             <div className="create-dm-button-sec">
                                 <button className="create-dm-button" type="submit" disabled={count > 9 || count === 0}>
-                                    <div className="create-dm-button-text">Create Group DM</div>
+                                    {createDmButtonMessage}
                                 </button>
                             </div>
                         </form>
