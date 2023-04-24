@@ -511,6 +511,41 @@
 }
 
 
+// .user-profile-header3-wrapper {
+//     padding: 6px 10px;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     flex-shrink: 0;
+//     outline: 0;
+//     color: rgb(148, 155, 164);
+
+// }
+
+// .user-profile-header3 {
+//     outline: 0;
+//     font-weight: 700;
+//     text-transform: uppercase;
+//     letter-spacing: .02em;
+//     font-size: 12px;
+//     line-height: 16px;
+//     font-family: "ABC Ginto Normal";
+//     // font-family: "gg sans";
+//     box-sizing: border-box;
+//     overflow-x: hidden;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     // overflow: hidden;
+
+
+//     // padding: 6px 10px;
+//     color: #96989D;
+//     // color: hsl(223,0.034%,60.2%);
+
+// }
+
 .user-profile-header3 {
     padding: 0px 10px 6px;
     // padding: 6px 10px;
@@ -562,9 +597,10 @@
 }
 
 .user-profile-item.force{
-    color: hsl(210, 2.9%, 86.7%);
-    background-color: hsla(217, 7.6%, 33.5%, 0.4);
-
+    // color: hsl(210, 2.9%, 86.7%);
+    // background-color: hsla(217, 7.6%, 33.5%, 0.4);
+    color: #FFFFFF;
+    background-color: rgba(78, 80, 88, 0.6);
     svg {
         color: #dcddde;
 
