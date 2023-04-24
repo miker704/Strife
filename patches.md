@@ -381,6 +381,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Removed Spell Check on Email Input for login forms
     - Recreated create dm server modal that pops up for the homebar into a seperate component as a small amount of data passed can affect its placement.
     - Fixed the button messages on both create dm modal on home bar and nav bar to display create dm or create group dm based on the number of users selected. 
+    - Added Online/Offline Status in create dm Server modal via dmServer nav bar.
 
 ## Backend Changes
 
