@@ -621,7 +621,9 @@ class UserProfile extends React.Component {
 
                   <ul className="user-profile-item-list">
 
-                    <li><h3 className="user-profile-header3">User Settings</h3></li>
+                    <li>
+                      <h3 className="user-profile-header3">User Settings</h3>
+                    </li>
 
 
                     {/* <Link to={`/users/${this.props.currentUser.id}`}> */}
@@ -630,12 +632,12 @@ class UserProfile extends React.Component {
 
                     {/* </Link> */}
 
-                    <li className="user-profile-item">Friend Requests</li>
                     <li className="user-profile-item">Profiles</li>
                     <li className="user-profile-item">Privacy & Safety</li>
                     <li className="user-profile-item">Authorized Apps</li>
                     <li className="user-profile-item">Devices</li>
                     <li className="user-profile-item">Connections</li>
+                    <li className="user-profile-item">Friend Requests</li>
                     <div className="user-settings-separator"></div>
                     <li><h3 className="user-profile-header3">Billing Settings</h3></li>
                     <li className="user-profile-item" ><div className="strife-nitro-lbl">
@@ -771,7 +773,7 @@ class UserProfile extends React.Component {
 
                     </div>
                     <div className="version-number">
-                      <span>Stable 140575 (12c29a3)</span>
+                      <span>Stable 191743 (b61e73b)</span>
                       <br />
                       <span>Windows 11 64-bit</span>
 
