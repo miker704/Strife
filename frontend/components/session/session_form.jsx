@@ -98,7 +98,7 @@ class SessionForm extends React.Component {
         }
         this.setState({ email: demoUser2.email })
         this.setState({ password: demoUser2.password })
-        this.props.processForm(demoUser2).then(()=>{
+        this.props.processForm(demoUser2).then(() => {
             this.props.history.push("/$/loading/");
         });
     }
@@ -223,12 +223,12 @@ class SessionForm extends React.Component {
         const email = this.props.formType === "Sign Up" ? (
             <div className="field">
                 <label id="email-label" className={emailErrorTag}>EMAIL{this.emailErrors()}</label>
-                <input id="email" className={emailErrorTag} type="email" value={this.state.email} onChange={this.handleInput('email')} />
+                <input id="email" className={emailErrorTag} type="email" value={this.state.email} onChange={this.handleInput('email')} spellCheck={false} />
             </div>
         ) : (
             <div className="field">
                 <label id="email-label" className={emailErrorTag}>EMAIL OR PHONE NUMBER{this.emailErrors()}</label>
-                <input id="email" className={emailErrorTag} type="email" value={this.state.email} onChange={this.handleInput('email')} />
+                <input id="email" className={emailErrorTag} type="email" value={this.state.email} onChange={this.handleInput('email')} spellCheck={false} />
             </div>
         )
             ;
@@ -243,7 +243,7 @@ class SessionForm extends React.Component {
         const userName = this.props.formType === "Sign In" ? ("") : (
             <div className="field">
                 <label id="username-label" className={usernameErrorTag}>USERNAME{this.userNameErrors()}</label>
-                <input id="username" type="text" value={this.state.username} onChange={this.handleInput('username')} />
+                <input id="username" type="text" value={this.state.username} onChange={this.handleInput('username')} spellCheck={false}/>
             </div>
         );
 
