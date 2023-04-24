@@ -9,7 +9,8 @@ class DmNavBar extends React.Component {
         super(props)
         this.state = {
             createDmModal: false,
-            showPopUp: false
+            showPopUp: false,
+            popUpTop : 0
         }
 
         this.toggleCreateDmModal = this.toggleCreateDmModal.bind(this);
@@ -20,11 +21,18 @@ class DmNavBar extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderCreateDMModal = this.renderCreateDMModal.bind(this);
         this.setShowPopUp = this.setShowPopUp.bind(this);
+        this.setPopUpTop = this.setPopUpTop.bind(this);
         this.findOnlineStatus = this.findOnlineStatus.bind(this);
     }
 
     setShowPopUp () {
         this.setState({ showPopUp: !this.state.showPopUp });
+    }
+
+    setPopUpTop(e){
+        let currTop = e.currentTarget.getBoundingClientRect().top;
+        this.setState({popUpTop: currTop+20});
+        this.setShowPopUp();
     }
 
     handleESC (e) {
@@ -193,7 +201,7 @@ class DmNavBar extends React.Component {
         return (
             <div className='dm-server-nav-bar'>
 
-                {this.state.showPopUp && <CreateDmModalContainer setShowPopUp={this.setShowPopUp} />}
+                {this.state.showPopUp && <CreateDmModalContainer setShowPopUp={this.setShowPopUp} popUpTop={this.state.popUpTop} />}
 
                 <div className='dm-nav-bar-search-bar'>
                     <button type='button'
@@ -289,8 +297,8 @@ class DmNavBar extends React.Component {
                                                         9.99999 4.66675Z">
                                                 </path></g>
                                         </svg>
-
-                                        1 month free</div>
+                                        1 month free
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -298,7 +306,7 @@ class DmNavBar extends React.Component {
 
                     <div className="dm-list-header">
                         <h4 className='dm-server-nav-bar-dm-title-text'>DIRECT MESSAGES</h4>
-                        <div data-tip data-for="create-dm-tool-tip" className="dm-server-nav-bar-add-dm-button" onClick={() => this.setShowPopUp()}>
+                        <div data-tip data-for="create-dm-tool-tip" className="dm-server-nav-bar-add-dm-button" onClick={(e) => this.setPopUpTop(e) }>
                             <svg x="0" y="0" aria-hidden="true" className="dm-add-button" role="img" width="24" height="24" viewBox="0 0 18 18">
                                 <polygon fillRule="nonzero" fill="currentColor" points="15 10 10 10 10 15 8 15 8 10 3 10 3 8 8 8 8 3 10 3 10 8 15 8"></polygon>
                             </svg>
