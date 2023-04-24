@@ -373,6 +373,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Adjusted case sensitive search on the old invite to Server modal.
     - Added Clear/Reset search function to Invite to Server Modal.
     - Added Clear/Reset search function to online friends page.
+    - Added Clear/Reset search function to all friends page.
 
 
 ## Backend Changes
