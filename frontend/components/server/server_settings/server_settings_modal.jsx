@@ -42,9 +42,9 @@ const ServerSettingsModal = (props) => {
 
         const formData = new FormData();
         formData.append('server[server_Icon_Remove]', removeServerIcon);
-        props.updateServer(props.server.id, formData).then((action)=>{
+        props.updateServer(props.server.id, formData).then((action) => {
             let updatedServer = action.server;
-            App.StrifeCore.perform('_Serve_Server_Update_To_Members_Force_Refresh_',{updatedServerID: updatedServer.id})
+            App.StrifeCore.perform('_Serve_Server_Update_To_Members_Force_Refresh_', { updatedServerID: updatedServer.id })
             // App.StrifeCore.perform('_Serve_Server_Update_To_Members_',{updatedServerID: updatedServer.id})
 
         })
@@ -71,10 +71,10 @@ const ServerSettingsModal = (props) => {
         let formData = new FormData();
         formData.append('server[server_name]', newServerName);
 
-        props.updateServer(props.server.id, formData).then((action)=>{
+        props.updateServer(props.server.id, formData).then((action) => {
             let updatedServer = action.server;
             // App.StrifeCore.perform('_Serve_Server_Update_To_Members_',{updatedServerID: updatedServer.id})
-            App.StrifeCore.perform('_Serve_Server_Update_To_Members_Force_Refresh_',{updatedServerID: updatedServer.id})
+            App.StrifeCore.perform('_Serve_Server_Update_To_Members_Force_Refresh_', { updatedServerID: updatedServer.id })
 
         });
     }
@@ -130,9 +130,9 @@ const ServerSettingsModal = (props) => {
             formData.append('server[server_Icon]', serverIconPhoto);
         }
 
-        props.updateServer(props.server.id, formData).then((action)=>{
+        props.updateServer(props.server.id, formData).then((action) => {
             let updatedServer = action.server;
-            App.StrifeCore.perform('_Serve_Server_Update_To_Members_Force_Refresh_',{updatedServerID: updatedServer.id})
+            App.StrifeCore.perform('_Serve_Server_Update_To_Members_Force_Refresh_', { updatedServerID: updatedServer.id })
             // App.StrifeCore.perform('_Serve_Server_Update_To_Members_',{updatedServerID: updatedServer.id})
 
         });
@@ -204,18 +204,26 @@ const ServerSettingsModal = (props) => {
                                     <li className="user-profile-item">Roles</li>
                                     <li className="user-profile-item">Emoji</li>
                                     <li className="user-profile-item">Stickers</li>
-                                    <li className="user-profile-item">Integration</li>
+                                    <li className="user-profile-item">Soundboard</li>
                                     <li className="user-profile-item">Widget</li>
                                     <li className="user-profile-item">Server Template</li>
                                     <li className="user-profile-item">Custom Invite Link</li>
                                     <div className="user-settings-separator"></div>
+                                    <li><h3 className="user-profile-header3">APPS</h3></li>
+                                    <li className="user-profile-item">Integrations</li>
+                                    <li className="user-profile-item">App Directory</li>
+                                    <div className="user-settings-separator"></div>
                                     <li><h3 className="user-profile-header3">Moderation</h3></li>
                                     <li className="user-profile-item">Safety Setup</li>
+                                    <li className="user-profile-item">AutoMod</li>
                                     <li className="user-profile-item">Audit Log</li>
                                     <li className="user-profile-item">Bans</li>
                                     <div className="user-settings-separator"></div>
                                     <li><h3 className="user-profile-header3">Community</h3></li>
                                     <li className="user-profile-item">Enable Community</li>
+                                    <div className="user-settings-separator"></div>
+                                    <li><h3 className="user-profile-header3">Monetization</h3></li>
+                                    <li className="user-profile-item">Server Subscriptions</li>
                                     <div className="user-settings-separator"></div>
                                     <li className="user-profile-item">
                                         <div className="user-profile-item-logout-sec">
@@ -365,7 +373,7 @@ const ServerSettingsModal = (props) => {
                                             <div className="select-box-look-filled">
                                                 <span className="s-b-value">
                                                     <div className="s-b-value-flex">
-                                                        <div className="sb-value-inner">No Active Channel</div>
+                                                        <div className="sb-value-inner">No Inactive Channel</div>
                                                     </div>
                                                 </span>
                                                 <div className="server-op-divider-icons-wrap">
@@ -696,7 +704,7 @@ const ServerSettingsModal = (props) => {
                                                             This image will display in server invite embeds, invite in browser, and invite confirmation modal.
                                                         </div>
                                                         <div className="faint-server-invite-text2">
-                                                            "The recommended minimum size is 1920x1080 and recommended aspect ratio is 16:9."{" "}
+                                                            The recommended minimum size is 1920x1080 and recommended aspect ratio is 16:9.{" "}
                                                             <a className="faint-anchor" target="_blank" href="https://support.discord.com/hc/en-us/articles/4415841146391">Learn More</a>.
                                                         </div>
                                                         <button type="button" className="faint-boost-shiny-button">
