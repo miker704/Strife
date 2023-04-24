@@ -4,8 +4,8 @@ import FriendShipIndexOnlineContainer from "../friends_list_online/friends_list_
 import BlockedListContainer from "../blocked_list/blocked_list_container.js";
 import PendingFriendListContainer from "../pending_list/pending_friends_list_container.js";
 import AddFriendsContainer from "../add_friends/add_friends_container.js";
-import CreateDmModalContainer from "../../dm_servers/create_new_dm/create_dm_container.js";
 import default_User_PFP from "../../../../app/assets/images/discord_PFP.svg";
+import CreateDmModalHomeBarContainer from "../../dm_servers/create_new_dm_homebar_version/create_dm_homebar_container.js";
 
 class FriendsHomePageContainer extends React.Component {
     constructor (props) {
@@ -31,10 +31,6 @@ class FriendsHomePageContainer extends React.Component {
         this.renderAddFriend = this.renderAddFriend.bind(this);
         this.resetForm = this.resetForm.bind(this);
         this.openForm = this.openForm.bind(this);
-        this.renderCreateDMModal = this.renderCreateDMModal.bind(this);
-        this.toggleCreateDmModal = this.toggleCreateDmModal.bind(this);
-        this.closeCreateDmModal = this.closeCreateDmModal.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
         this.handleESC = this.handleESC.bind(this);
         this.setShowPopUp = this.setShowPopUp.bind(this);
         this.randomActivityMessage = this.randomActivityMessage.bind(this);
@@ -53,7 +49,6 @@ class FriendsHomePageContainer extends React.Component {
         const keys = {
             27: () => {
                 e.preventDefault();
-                this.closeCreateDmModal();
                 window.removeEventListener('keyup', this.handleESC, false);
 
             },
@@ -62,32 +57,6 @@ class FriendsHomePageContainer extends React.Component {
             keys[e.keyCode]();
         }
     }
-
-
-
-
-
-    handleSubmit () {
-        setTimeout(() => {
-            if (this.props.errors.length === 0) {
-                this.closeCreateDmModal();
-            }
-
-        }, 1000);
-
-    }
-
-    toggleCreateDmModal () {
-        this.setState({ createDmModal: true })
-    }
-
-    closeCreateDmModal () {
-        if (this.mounted) {
-            this.setState({ createDmModal: false })
-            window.removeEventListener('keyup', this.handleESC, false);
-        }
-    }
-
 
 
     componentDidMount () {
@@ -172,20 +141,6 @@ class FriendsHomePageContainer extends React.Component {
         if (this.state.Add_Friend === true) {
             return (
                 <AddFriendsContainer />
-            )
-        }
-    }
-
-    renderCreateDMModal () {
-        if (this.state.createDmModal === true) {
-            window.addEventListener('keyup', this.handleESC, false);
-            return (
-
-                <div className="clear-modal-wrapper homeBar" onClick={() => this.closeCreateDmModal()}>
-                    <div onSubmit={() => this.handleSubmit()}>
-                        <CreateDmModalContainer />
-                    </div>
-                </div>
             )
         }
     }
@@ -308,7 +263,7 @@ class FriendsHomePageContainer extends React.Component {
 
                         </div>
                     </div>
-                    {this.state.showPopUp && <CreateDmModalContainer setShowPopUp={this.setShowPopUp} topBar={true} />}
+                    {this.state.showPopUp && <CreateDmModalHomeBarContainer setShowPopUp={this.setShowPopUp} topBar={true} />}
                     <div className="home-nav-tool-bar">
                         <div className="invite-tool-bar">
                             <div className="invite-tool-bar-group-dm" id="itbgdm">
