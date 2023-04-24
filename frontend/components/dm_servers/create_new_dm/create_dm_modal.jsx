@@ -206,6 +206,7 @@ const CreateDmModal = ({
                                                             `create-dm-avatar-info`}`}>
                                                             <img src={`${friend.photo === undefined ? rendered_User_PFP : friend.photo}`} alt="dsmPFP" />
                                                         </div>
+                                                        <div className={`${friend.online ? "circle-online-create-dms" : "circle-offline-create-dms"}`}></div>
 
                                                         <div className="create-dm-user-info">
                                                             <strong className="create-dm-user-username-wrapper">
