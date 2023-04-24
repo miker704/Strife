@@ -426,6 +426,15 @@ label.field-error {
   transform: translate(22px, -12px);
 }
 
+.circle-offline-dm-list-i2dsm {
+  background: #747f8d;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #000;
+  transform: translate(-10px, 8px);
+}
+
 .circle-offline-dm-header-nav-bar {
   background: #747f8d;
   border-radius: 50%;
@@ -474,6 +483,16 @@ label.field-error {
   height: 8px;
   border: 1px solid #000;
   transform: translate(22px, -12px);
+}
+
+
+.circle-online-dm-list-i2dsm {
+  background: hsl(139, 47.3%, 43.9%);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #000;
+  transform: translate(-10px, 8px);
 }
 
 
@@ -556,6 +575,8 @@ label.field-error {
   cursor: default;
   forced-color-adjust: none;
   color: hsl(359, 82%, 73.9%);
+  outline:0;
+  margin-top: 8px;
 
 }
 
@@ -565,7 +586,12 @@ label.field-error {
   font-weight: 400;
   cursor: default;
   forced-color-adjust: none;
-  color: #47c46f;
+  color: rgb(45, 199, 112);
+  outline:0;
+  margin-top: 8px;
+  strong{
+    font-weight: 600;
+  }
 }
 
 
