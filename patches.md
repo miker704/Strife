@@ -387,7 +387,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added adjustment for 4k screens for active now section (will be moving to present day styles onwards).
     - Adjusted error color text on create dm member modals and invite to dmServer modals.
     - Reworked search alogrithm for create dm modal via dm nav bar.
-    - Changed color for check mark on create dm modal via dm nav bar, home bar and invite to dm server modals.
+    - Changed color check box check mark and check box with check mark on create dm modal via dm nav bar, home bar and invite to dm server modals.
 
 ## Backend Changes
 
