@@ -393,6 +393,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added a no result image when failing to find a search result in create dm modal via dm server nav bar.
     - Adjusted colors in some components in server settings modal.
     - Edited Inactive channel default text in server settings modal from "No Active Channel" to "No Inactive Channel".
+    - Added New options on the left hand side in the Server Settings Modal.
 
 ## Backend Changes
 
