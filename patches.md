@@ -383,6 +383,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Fixed the button messages on both create dm modal on home bar and nav bar to display create dm or create group dm based on the number of users selected. 
     - Added Online/Offline Status in create dm Server modal via dmServer nav bar.
     - Added Online/Offline Status in create dm Server modal via home nav bar.
+    - Added a variety of various style options for online and offline status for various modals.
 
 ## Backend Changes
 
