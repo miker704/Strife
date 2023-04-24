@@ -47,21 +47,21 @@ class SessionForm4 extends React.Component {
                 }, 10000);
             }
         }, 20000);
-        console.log(`intervalID === ${this.intervalId}`)
+        // console.log(`intervalID === ${this.intervalId}`)
     };
 
 
     componentDidMount(){
         if(this.props.formType === "Sign In"){
-            console.log("Starting qr cube spinner");
+            // console.log("Starting qr cube spinner");
             this.qrCubeSpinner();
         }
-        console.log(`intervalID === ${this.intervalId}`)
+        // console.log(`intervalID === ${this.intervalId}`)
 
     }
 
     componentWillUnmount () {
-        console.log(` terminating set interval intervalID === ${this.intervalId}`)
+        // console.log(` terminating set interval intervalID === ${this.intervalId}`)
         clearInterval(this.IntervalId);
         this.props.removeSessionErrors();
     }
