@@ -88,17 +88,17 @@ class SessionForm2 extends React.Component {
     qrCubeSpinner () {
 
         this.intervalID = setInterval(() => {
-            console.log("in 60k set interval")
+            // console.log("in 60k set interval")
             if (this.state.cubes === false) {
-                console.log("cube is false setting to true")
+                // console.log("cube is false setting to true")
                 this.setState({ cubes: !this.state.cubes });
                 setTimeout(() => {
-                    console.log("cube is true setting to false 10 secs")
+                    // console.log("cube is true setting to false 10 secs")
                     this.setState({ cubes: !this.state.cubes });
                 }, 10000)
             }
         }, 20000)
-        console.log(`intervalID === ${this.intervalID}`)
+        // console.log(`intervalID === ${this.intervalID}`)
     };
 
 
@@ -106,10 +106,10 @@ class SessionForm2 extends React.Component {
         let qrImage = document.getElementById('qrWumpus');
         let cubePlayer = document.getElementById('cubes');
         cubePlayer.onanimationstart = () => {
-            console.log('Animation has started');
+            // console.log('Animation has started');
         }
         cubePlayer.onanimationend = () => {
-            console.log('Animation has ended');
+            // console.log('Animation has ended');
 
         }
     }
@@ -118,10 +118,10 @@ class SessionForm2 extends React.Component {
     componentDidMount () {
         // this.playAnimation();
         if (this.props.formType !== "Sign Up") {
-            console.log('spining')
+            // console.log('spining')
             this.qrCubeSpinner();
         }
-        console.log(`intervalID === ${this.intervalID}`)
+        // console.log(`intervalID === ${this.intervalID}`)
 
     }
 
@@ -248,7 +248,7 @@ class SessionForm2 extends React.Component {
 
     render () {
     
-        console.log(`cube state is  = ${this.state.cubes}`);
+        // console.log(`cube state is  = ${this.state.cubes}`);
         //assign variables to change classname tags depending if an error has occcured or not
 
         let emailErrorTag = "";
