@@ -370,7 +370,9 @@ current dmServer involving the user of their friend it will send a request to th
     - Adjusted colors of the create dmServer modal.
     - Adjusted colors of the invite to dmServer modal.
     - Adjusted colors of the old invite to Server modal.
+    - Adjusted case sensitive search on the old invite to Server modal.
     - Added Clear/Reset search function to Invite to Server Modal.
+   
 
 ## Backend Changes
 
