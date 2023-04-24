@@ -643,7 +643,8 @@
     forced-color-adjust: none;
     box-sizing: border-box;
     opacity: 1;
-    background-color: hsl(139, 47.3%, 43.9%);
+    // background-color: hsl(139, 47.3%, 43.9%); 
+    background-color: rgb(35, 165, 90);
 }
 
 .slider-32CRPX {
@@ -688,14 +689,17 @@
     display: block;
     box-sizing: border-box;
     forced-color-adjust: none;
-    color: hsl(216, 3.7%, 73.5%);
-    background-color: hsl(223, 6.9%, 19.8%);
+    // color: hsl(216, 3.7%, 73.5%);
+    color: rgb(181, 186, 193);
+    background-color: rgb(43, 45, 49);
+    // background-color: hsl(223, 6.9%, 19.8%);
 }
 
 .sop-radio-item[aria-check=true],
 .sop-radio-item1 {
-    background-color: hsla(217, 7.6%, 33.5%, 0.6);
+    // background-color: hsla(217, 7.6%, 33.5%, 0.6);
     color: #FFFFFF;
+    background-color: #42444b;
 
 }
 
@@ -940,7 +944,7 @@
     forced-color-adjust: none;
     margin-left: 4px;
     height: 18px;
-    background-color: hsl(220, 6.8%, 17.3%);
+    background-color: rgb(35,36,40);
     display: flex;
     margin-top: -1px;
     box-sizing: border-box;
