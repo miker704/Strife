@@ -282,7 +282,7 @@ class SessionForm2 extends React.Component {
             <div className="session-info-block-mb">
                 <div className="field">
                     <label id="email-label" className={emailErrorTag}>EMAIL<span className="session-error-msg">{this.emailErrors()}</span></label>
-                    <input id="email" className={emailErrorTag} type="email" value={this.state.email} onChange={this.handleInput('email')} />
+                    <input id="email" className={emailErrorTag} type="email" value={this.state.email} onChange={this.handleInput('email')} spellCheck={false}/>
                 </div>
             </div>
 
@@ -292,7 +292,7 @@ class SessionForm2 extends React.Component {
                     <label id="email-label" className={emailErrorTag}>EMAIL OR PHONE NUMBER<span className="session-error-msg">{this.emailErrors()}</span>
                         <span className="required-star">*</span>
                     </label>
-                    <input id="email" className={emailErrorTag} type="email" value={this.state.email} onChange={this.handleInput('email')} />
+                    <input id="email" className={emailErrorTag} type="email" value={this.state.email} onChange={this.handleInput('email')} spellCheck={false}/>
                 </div>
             </div>
         );
@@ -316,7 +316,7 @@ class SessionForm2 extends React.Component {
             <div className="session-info-block-mb">
                 <div className="field">
                     <label id="username-label" className={usernameErrorTag}>USERNAME<span className="session-error-msg">{this.userNameErrors()}</span></label>
-                    <input id="username" type="text" value={this.state.username} onChange={this.handleInput('username')} />
+                    <input id="username" type="text" value={this.state.username} onChange={this.handleInput('username')} spellCheck={false}/>
                 </div>
             </div>
 
