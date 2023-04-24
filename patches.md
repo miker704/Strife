@@ -376,6 +376,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added Clear/Reset search function to all friends page.
     - Added Clear/Reset search function to pending friends page.
     - Added Clear/Reset search function to blocked users page.
+    - Added online/offline status on invite to existing dmServer modal
 
 ## Backend Changes
 
