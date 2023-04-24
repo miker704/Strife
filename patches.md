@@ -388,6 +388,9 @@ current dmServer involving the user of their friend it will send a request to th
     - Adjusted error color text on create dm member modals and invite to dmServer modals.
     - Reworked search alogrithm for create dm modal via dm nav bar.
     - Changed color check box check mark and check box with check mark on create dm modal via dm nav bar, home bar and invite to dm server modals.
+    - Reworked the search algorithm on create dm modal via home nav bar.
+    - Added a no result image when failing to find a search result in create dm modal via home nav bar.
+    - Added a no result image when failing to find a search result in create dm modal via dm server nav bar.
 
 ## Backend Changes
 
