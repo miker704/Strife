@@ -426,7 +426,27 @@ label.field-error {
   transform: translate(22px, -12px);
 }
 
+.circle-offline-create-dms {
+  background: #747f8d;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #000;
+  transform: translate(-9px, 9px);
+}
+
+
+
 .circle-offline-dm-list-i2dsm {
+  background: #747f8d;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #000;
+  transform: translate(-10px, 8px);
+}
+
+.circle-offline-dms-home-bar {
   background: #747f8d;
   border-radius: 50%;
   width: 8px;
@@ -485,6 +505,14 @@ label.field-error {
   transform: translate(22px, -12px);
 }
 
+.circle-online-create-dms {
+  background: hsl(139, 47.3%, 43.9%);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #000;
+  transform: translate(-9px, 9px);
+}
 
 .circle-online-dm-list-i2dsm {
   background: hsl(139, 47.3%, 43.9%);
@@ -494,6 +522,19 @@ label.field-error {
   border: 1px solid #000;
   transform: translate(-10px, 8px);
 }
+
+.circle-online-dms-home-bar {
+  background: hsl(139, 47.3%, 43.9%);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #000;
+  transform: translate(-10px, 8px);
+}
+
+
+
+
 
 
 .circle-online-dm-header-nav-bar  {
