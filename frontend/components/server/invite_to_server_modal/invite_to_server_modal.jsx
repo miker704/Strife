@@ -44,8 +44,8 @@ const InviteToServerModal = (props) => {
         const sERVER_ID = parseInt(props.serverId)
         for (let newMemberId of newServerMembers) {
 
-            props.createServerMembership({user_id: newMemberId, server_id: sERVER_ID}).then(()=>{
-                App.StrifeCore.perform('parse_Invites_To_Existing_Server', {user_id: newMemberId, server_id: sERVER_ID});
+            props.createServerMembership({ user_id: newMemberId, server_id: sERVER_ID }).then(() => {
+                App.StrifeCore.perform('parse_Invites_To_Existing_Server', { user_id: newMemberId, server_id: sERVER_ID });
             });
 
         }
@@ -60,6 +60,12 @@ const InviteToServerModal = (props) => {
         }
     })
 
+
+    const serverName = (
+        <h2 className="create-dm-header-h2">Invite friends to {`${props.server.server_name}`}</h2>
+    );
+
+
     return (
         <div className={`clear-modal-wrapper-server`}>
 
@@ -68,7 +74,8 @@ const InviteToServerModal = (props) => {
                     <div className="create-dm-modal">
                         <form onSubmit={addNewServerMembers}>
                             <div className="create-dm-header-sec">
-                                <h2 className="create-dm-header-h2">Select Friends</h2>
+                                {/* <h2 className="create-dm-header-h2">Select Friends</h2> */}
+                                {serverName}
                                 <div className="create-dm-search-bar-wrapper">
                                     <div className="create-dm-search-bar-outer-wrapper">
                                         <div className="create-dm-search-bar-inner-wrapper">
@@ -109,7 +116,7 @@ const InviteToServerModal = (props) => {
                                 <ul className="create-dm-ul-list">
                                     <div className="create-dm-ul-list-div"></div>
                                     {filterOutFriends.map(friend => {
-                                        if (friend.username.includes(searchText)) {
+                                        if (friend.username.toLowerCase().includes(searchText.toLowerCase())) {
                                             return (
 
                                                 <li className="create-dm-friend-wrapper" key={friend.id}
