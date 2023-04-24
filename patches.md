@@ -378,6 +378,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added Clear/Reset search function to blocked users page.
     - Added online/offline status on invite to existing dmServer modal
     - Removed Spell Check on Email and Username inputs on Sign up Forms
+    - Removed Spell Check on Email Input for login forms
 
 ## Backend Changes
 
