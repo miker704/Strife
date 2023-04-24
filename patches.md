@@ -392,7 +392,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Added a no result image when failing to find a search result in create dm modal via home nav bar.
     - Added a no result image when failing to find a search result in create dm modal via dm server nav bar.
     - Adjusted colors in some components in server settings modal.
-    
+    - Edited Inactive channel default text in server settings modal from "No Active Channel" to "No Inactive Channel".
+
 ## Backend Changes
 
 - Changed the routes to the new Routing system on the frontend to redirect banned users from both dmservers
