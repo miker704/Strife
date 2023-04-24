@@ -111,6 +111,35 @@ const CreateDmModalHomeBar = ({
         return;
     }
 
+    const liveSearch = () => {
+        let allFriendShips = document.querySelectorAll('.create-dm-friend-wrapper');
+        let search_query = document.getElementById('input-all-friends').value;
+        let count = 0;
+        for (let i = 0; i < allFriendShips.length; i++) {
+            if (allFriendShips[i].innerText.toLowerCase().includes(search_query.toLowerCase())) {
+                allFriendShips[i].classList.remove("is-hidden");
+            }
+            else {
+                allFriendShips[i].classList.add("is-hidden");
+                count++;
+            }
+        }
+
+        if (count === allFriendShips.length) {
+            document.getElementById('ul-fiiw').classList.add('is-hidden')
+            document.getElementById('no-match').classList.remove('is-hidden')
+
+        }
+        else {
+            document.getElementById('no-match').classList.add('is-hidden')
+            document.getElementById('ul-fiiw').classList.remove('is-hidden')
+        }
+
+    }
+
+
+
+
     let createDmButtonMessage = count <= 1 ? (
         <div className="create-dm-button-text">Create DM</div>
     ) : (
@@ -156,11 +185,13 @@ const CreateDmModalHomeBar = ({
                                             }
 
                                             <input
+                                                id="input-all-friends"
                                                 className="create-dm-search-bar"
                                                 autoFocus ref={inputRef}
                                                 spellCheck={false}
                                                 type="text"
                                                 value={searchText}
+                                                onInput={() => liveSearch()}
                                                 onChange={(e) => setSearchText(e.currentTarget.value)}
                                                 placeholder="Type the username of a friend"
                                             />
@@ -169,63 +200,54 @@ const CreateDmModalHomeBar = ({
                                     </div>
                                 </div>
                             </div>
-                            <div className="create-dm-scroller">
+                            <div className="create-dm-scroller" id='ul-fiiw'>
                                 <ul className="create-dm-ul-list">
                                     <div className="create-dm-ul-list-div"></div>
                                     {friends.map(friend => {
-                                        if (friend.username.toLowerCase().includes(searchText.toLowerCase())) {
-                                            return (
-
-                                                <li className="create-dm-friend-wrapper" key={friend.id}
-                                                    onClick={() => {
-                                                        toggleSelection(friend);
-                                                        inputRef.current.focus();
-                                                    }}>
-                                                    <div className="create-dm-friend-inner-wrapper">
-                                                        {/* <div className="create-dm-avatar-info">
-                                                        <img src={`${friend.photo === undefined ? default_Photo : friend.photo}`} alt="pfp" />
-                                                    </div> */}
-                                                        <div className={`${friend.photo === undefined ?
-                                                            `user-pfp-svg-render color-${friend.color_tag}` :
-                                                            `create-dm-avatar-info`}`}>
-                                                            <img src={`${friend.photo === undefined ? rendered_User_PFP : friend.photo}`} alt="dsmPFP" />
-                                                        </div>
-                                                        <div className={`${friend.online ? "circle-online-dms-home-bar" : "circle-offline-dms-home-bar"}`}></div>
-
-                                                        <div className="create-dm-user-info">
-                                                            <strong className="create-dm-user-username-wrapper">
-                                                                {friend.username}
-                                                            </strong>
-                                                            <div className="create-dm-user-strife-tag">
-                                                                <span className="create-dm-user-user-name">
-                                                                    {friend.username}
-                                                                </span>
-                                                                <span>#{friend.strife_id_tag}</span>
-                                                            </div>
-                                                        </div>
-                                                        <span className="create-dm-check-box-wrapper">
-                                                            <div className={`create-dm-check-box ${isSelected(friend) ? "checked" : ""}`}>
-                                                                <svg aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 24 24">
-                                                                    <path fill="transparent" fillRule="evenodd" clipRule="evenodd" d="M8.99991 16.17L4.82991 
-                                                            12L3.40991 13.41L8.99991 19L20.9999 7.00003L19.5899 5.59003L8.99991 16.17Z">
-                                                                    </path>
-                                                                </svg>
-                                                            </div>
-                                                        </span>
+                                        return (
+                                            <li className="create-dm-friend-wrapper" key={friend.id}
+                                                onClick={() => {
+                                                    toggleSelection(friend);
+                                                    inputRef.current.focus();
+                                                }}>
+                                                <div className="create-dm-friend-inner-wrapper">
+                                                    <div className={`${friend.photo === undefined ?
+                                                        `user-pfp-svg-render color-${friend.color_tag}` :
+                                                        `create-dm-avatar-info`}`}>
+                                                        <img src={`${friend.photo === undefined ? rendered_User_PFP : friend.photo}`} alt="dsmPFP" />
                                                     </div>
+                                                    <div className={`${friend.online ? "circle-online-dms-home-bar" : "circle-offline-dms-home-bar"}`}></div>
 
-                                                </li>
-
-
-                                            )
-                                        }
-                                        else {
-                                            return null;
-                                        }
+                                                    <div className="create-dm-user-info">
+                                                        <strong className="create-dm-user-username-wrapper">
+                                                            {friend.username}
+                                                        </strong>
+                                                        <div className="create-dm-user-strife-tag">
+                                                            <span className="create-dm-user-user-name">
+                                                                {friend.username}
+                                                            </span>
+                                                            <span>#{friend.strife_id_tag}</span>
+                                                        </div>
+                                                    </div>
+                                                    <span className="create-dm-check-box-wrapper">
+                                                        <div className={`create-dm-check-box ${isSelected(friend) ? "checked" : ""}`}>
+                                                            <svg aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 24 24">
+                                                                <path fill="transparent" fillRule="evenodd" clipRule="evenodd" d="M8.99991 16.17L4.82991 
+                                                            12L3.40991 13.41L8.99991 19L20.9999 7.00003L19.5899 5.59003L8.99991 16.17Z">
+                                                                </path>
+                                                            </svg>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        )
                                     })
-
                                     }
                                 </ul>
+                            </div>
+                            <div id="no-match" className="create-dm-no-results is-hidden">
+                                <div className="create-dm-no-results-error-state"></div>
+                                <div>No friends found that are not already in this DM.</div>
                             </div>
                             <div className="create-dm-footer"></div>
                             <div className="create-dm-button-sec">
