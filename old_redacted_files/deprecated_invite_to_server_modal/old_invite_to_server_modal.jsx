@@ -1,7 +1,5 @@
 /// This modal is deprecated an replaced by the newer invite to server modal
 
-
-
 // import React from "react";
 // import { useState, useRef, useEffect } from "react";
 // import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
@@ -70,8 +68,6 @@
 //     );
 
 
-//     console.log(`current server is ${props.server}`);
-//     console.table(props.server);
 //     return (
 //         <div className={`clear-modal-wrapper-server`}>
 
