@@ -398,7 +398,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Changed background color of channel drop down container modal.
     - Added App directory option to Channel Drop Down Container.
     - Added styles for App Directory option in channel drop down modal.
-
+    - Added back Server Settings to non-server owners in channel drop down modal, but it is disable till
+    new modals are added. 
 
 ## Backend Changes
 
