@@ -57,7 +57,7 @@ $off-grey: #B9BBBE;
 
 .friends-nav-bar.selected-x {
     // background-color: #3f4249;
-    background:rgba(78,80,88,0.6);
+    background: rgba(78, 80, 88, 0.6);
     // color: hsl(210, 9.1%, 95.7%);
 
     .friend-avatar-text,
@@ -150,17 +150,17 @@ $off-grey: #B9BBBE;
 
 
 .friend-index-container {
-    
+
     // height: calc(100% - 0px);
     // width: 105vh;
-    
+
     padding-right: 3px;
     display: flex;
     flex-direction: column;
     user-select: none;
     flex: 1 1 auto;
     overflow: hidden;
-    
+
 
 
 
@@ -264,7 +264,11 @@ $off-grey: #B9BBBE;
     background-color: #393c41;
     forced-color-adjust: none;
     margin: 0 10px 0 20px;
-    .pending-check-icon,.friend-msg-button,.friend-options-button,.pending-deny-icon{
+
+    .pending-check-icon,
+    .friend-msg-button,
+    .friend-options-button,
+    .pending-deny-icon {
         background-color: #1E1F22;
     }
 }
@@ -346,7 +350,7 @@ $off-grey: #B9BBBE;
         visibility: hidden;
         font-size: 14px;
         // color: $off-grey;
-        color:#B8B9BF;
+        color: #B8B9BF;
     }
 }
 
@@ -857,6 +861,9 @@ $off-grey: #B9BBBE;
     border-color: hsl(197, 100%, 47.8%);
 }
 
+.add-friend-input-search-wrapper.frsuccess {
+    border-color: rgb(35, 165, 89);
+}
 
 .add-friend-input-search-inner-wrapper {
     forced-color-adjust: none;
@@ -913,7 +920,8 @@ $off-grey: #B9BBBE;
 }
 
 .add-friend-input-search-wrapper.frf-ERROR {
-    border-color: hsl(359, 82.6%, 59.4%);
+    // border-color: hsl(359, 82.6%, 59.4%);
+    border-color: rgb(250, 119, 124);
 
 }
 
