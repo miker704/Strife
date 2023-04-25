@@ -279,7 +279,7 @@ current dmServer involving the user of their friend it will send a request to th
       - Fixed by readding block requests to create a pair of records on indicating a -1 status for the user that created the block indicating "user A" has blocked "user b" and another record with a status of -2 stating to "user b" that the following user "user A" was the user that initaited the block between "user A" and "user B". This is a similar relationship when creating a friend request. (status 1 is the request of the user that made the friend request while status 2 indicates an incoming friend request for the user to accept the friend request ). 
     - Fixed a bug where when receiving a Blocked User the friendship status reverts to 0 when it should be -1, this is fixed by changing the reassign value to -1.
 
-#### User Security
+#### User Security && Application Security
 
 - Fixed an issue when user changes their password and the password is not of appropiate length
   - Issue is due to password length validation failing to check when updating it
@@ -288,6 +288,8 @@ current dmServer involving the user of their friend it will send a request to th
 
 - A fellow Contributor noted that email format verification missed a problem with periods (and provided a fix this will be merged soon as it was provided near patch v3.0). credit goes to user cpoope1.
 - Email format verification used regex to check for proper email formatting the former version has a vulnerbility Resulting in email addresses being incorrectly validated and has been addressed by cpoope1.
+
+- A potential risky html/jsx code has been addressed in Channel Drop Down modal. Prior the modal would return avaliable options that can be selected based on the level of authorization the user has either they are a server member or the server owner it will render options that they have access to. However the modal returns Un-Authorized options as invisible, to the U.I. but it is present in the html which can be exploited and can possibly crash the app if enable. The reason for this is the modal returns the options while deciding whether or not to hide them or not. This has been addressed by having the decisons for those options decided before the returning jsx is returned.
 
 ### UI and Cosmetic Fixes and Changes
 
