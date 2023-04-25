@@ -401,6 +401,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added back Server Settings to non-server owners in channel drop down modal, but it is disable till
     new modals are added. 
     - Added recoloring and style updates to Channel drop down modal.
+    - Refactored channel drop down modal return html/jsx to prevent options that users do not have access too from appearing in the html file structure but are disabled these are not rendered visually in the u.i. but are present in the html file structure and can be enabled through editing the struture through dev tools. To prevent only authorized options to be rendered in both the html file structure and the u.i. the options are decided before the returning jsx. prior the returning jsx decided to hide which ever options it needed leaving said option to be hidden by styling it to be invisible instead of not rendering it at all.
 
 ## Backend Changes
 
