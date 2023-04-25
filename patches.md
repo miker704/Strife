@@ -394,6 +394,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Adjusted colors in some components in server settings modal.
     - Edited Inactive channel default text in server settings modal from "No Active Channel" to "No Inactive Channel".
     - Added New options on the left hand side in the Server Settings Modal.
+    - Reorganized setting options in user profile/ user settings modal.
+    -
 
 ## Backend Changes
 
