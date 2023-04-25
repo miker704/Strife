@@ -29,9 +29,9 @@
 .channel-drop-down-pop-up-animate {
     forced-color-adjust: none;
     outline: 0;
-    -webkit-transition: opacity .12s ease-out,-webkit-transform .12s ease-out;
-    transition: opacity .12s ease-out,-webkit-transform .12s ease-out;
-    transition: transform .12s ease-out,opacity .12s ease-out;
+    -webkit-transition: opacity .12s ease-out, -webkit-transform .12s ease-out;
+    transition: opacity .12s ease-out, -webkit-transform .12s ease-out;
+    transition: transform .12s ease-out, opacity .12s ease-out;
     transition: transform .12s ease-out, opacity .12s ease-out, -webkit-transform .12s ease-out;
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -219,7 +219,7 @@
 .icon-cd-hmc,
 .icon-cd-rr,
 .icon-cd-ls,
-.icon-cd-ad{
+.icon-cd-ad {
     width: 18px;
     height: 18px;
     forced-color-adjust: none;
@@ -236,6 +236,7 @@
 .channel-drop-item.redclr:hover {
     background-color: hsl(360, 60.2%, 39.4%);
     color: hsl(0, 0%, 100%) !important;
+
     .server-boost-label {
         color: hsl(0, 0%, 100%) !important;
 
@@ -246,7 +247,27 @@
 .channel-drop-item:hover {
     background-color: hsl(235, 46.7%, 44.1%);
     color: hsl(0, 0%, 100%) !important;
+
     .server-boost-label {
         color: hsl(0, 0%, 100%) !important;
     }
+    .icon-cd-hmc .checkBox {
+        color: hsl(0, 0%, 100%) !important;
+
+    }
+    
+    .icon-cd-hmc .checkMark {
+        color: hsl(235, 46.7%, 44.1%);
+    }
+
+}
+
+
+.icon-cd-hmc .checkBox {
+    color: rgb(88, 101, 242);
+}
+
+.icon-cd-hmc .checkMark {
+    color: hsl(0, 0%, 100%);
+    // background-color: hsl(235, 46.7%, 44.1%);
 }
