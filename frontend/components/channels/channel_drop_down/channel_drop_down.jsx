@@ -1,13 +1,57 @@
 import React from "react";
 import { useRef } from "react";
 import { closeHookModalOnOutsideClick, closeOnEsc } from "../../../utils/close_hook_modals_api_utils";
+import { useState } from "react";
 const ChannelDropDown = (props) => {
 
     const popUpRef = useRef();
     closeHookModalOnOutsideClick(popUpRef, props.setShowPopUp);
     closeOnEsc(props.setShowPopUp);
+    const [checkMark, setCheckMark] = useState(false);
+    const [checkMark2, setCheckMark2] = useState(false);
 
     const serverOwnerId = props.server.server_owner_id;
+
+
+    let checkBoxRender = checkMark === false ? (
+        <svg aria-hidden="true" role="img" className="icon-cd-hmc" width="24" height="24" viewBox="0 0 24 24">
+            <path fillRule="evenodd" clipRule="evenodd" d="M18.625 3H5.375C4.06519 3 3 4.06519 3 5.375V18.625C3 
+    19.936 4.06519 21 5.375 21H18.625C19.936 21 21 19.936 21 18.625V5.375C21.0057 4.08803 19.9197 3 18.625
+     3ZM19 19V5H4.99999V19H19Z" fill="currentColor">
+            </path>
+        </svg>
+    ) : (
+        <svg aria-hidden="true" role="img" className="icon-cd-hmc" width="24" height="24" viewBox="0 0 24 24">
+            <path fillRule="evenodd" clipRule="evenodd" d="M5.37499 3H18.625C19.9197 3 21.0056 4.08803 21 5.375V18.625C21 
+                                            19.936 19.9359 21 18.625 21H5.37499C4.06518 21 3 19.936 3 18.625V5.375C3 4.06519 4.06518 3 5.37499 3Z"
+                className="checkBox" fill="currentColor">
+            </path>
+            <path d="M9.58473 14.8636L6.04944 11.4051L4.50003 12.9978L9.58473 18L19.5 8.26174L17.9656 6.64795L9.58473 14.8636Z"
+                className="checkMark" fill="currentColor">
+            </path>
+        </svg>
+    );
+
+    let checkBoxRender2 = checkMark2 === false ? (
+        <svg aria-hidden="true" role="img" className="icon-cd-hmc" width="24" height="24" viewBox="0 0 24 24">
+            <path fillRule="evenodd" clipRule="evenodd" d="M18.625 3H5.375C4.06519 3 3 4.06519 3 5.375V18.625C3 
+    19.936 4.06519 21 5.375 21H18.625C19.936 21 21 19.936 21 18.625V5.375C21.0057 4.08803 19.9197 3 18.625
+     3ZM19 19V5H4.99999V19H19Z" fill="currentColor">
+            </path>
+        </svg>
+    ) : (
+        <svg aria-hidden="true" role="img" className="icon-cd-hmc" width="24" height="24" viewBox="0 0 24 24">
+            <path fillRule="evenodd" clipRule="evenodd" d="M5.37499 3H18.625C19.9197 3 21.0056 4.08803 21 5.375V18.625C21 
+                                            19.936 19.9359 21 18.625 21H5.37499C4.06518 21 3 19.936 3 18.625V5.375C3 4.06519 4.06518 3 5.37499 3Z"
+                className="checkBox" fill="currentColor">
+            </path>
+            <path d="M9.58473 14.8636L6.04944 11.4051L4.50003 12.9978L9.58473 18L19.5 8.26174L17.9656 6.64795L9.58473 14.8636Z"
+                className="checkMark" fill="currentColor">
+            </path>
+        </svg>
+    )
+
+
     return (
 
         <div className="channel-drop-down-layer">
@@ -139,13 +183,22 @@ const ChannelDropDown = (props) => {
                             </div>
                             <div className="channel-drop-sep"></div>
                             <div role={"group"}>
+
+
+                                <div className="channel-drop-item" onClick={() => setCheckMark(!checkMark)}>
+                                    <div className="server-boost-label">Show All Channels (Beta)</div>
+                                    <div className="server-boost-icon-container">
+                                        {checkBoxRender}
+                                    </div>
+                                </div>
+
                                 <div className="channel-drop-item">
                                     <div className="server-boost-label">Notification Settings</div>
                                     <div className="server-boost-icon-container">
                                         <svg className="icon-cd-ns" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                             <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M18 9V14C18 15.657 19.344 17 
-                                    21 17V18H3V17C4.656 17 6 15.657 6 14V9C6 5.686 8.686 3 12 3C15.314 3 18 5.686 18 9ZM11.9999 21C10.5239 
-                                    21 9.24793 20.19 8.55493 19H15.4449C14.7519 20.19 13.4759 21 11.9999 21Z">
+                                                21 17V18H3V17C4.656 17 6 15.657 6 14V9C6 5.686 8.686 3 12 3C15.314 3 18 5.686 18 9ZM11.9999 21C10.5239 
+                                                21 9.24793 20.19 8.55493 19H15.4449C14.7519 20.19 13.4759 21 11.9999 21Z">
                                             </path>
                                         </svg>
                                     </div>
@@ -181,15 +234,10 @@ const ChannelDropDown = (props) => {
                                         </svg>
                                     </div>
                                 </div>
-                                <div className="channel-drop-item">
+                                <div className="channel-drop-item" onClick={() => setCheckMark2(!checkMark2)}>
                                     <div className="server-boost-label">Hide Muted Channels</div>
                                     <div className="server-boost-icon-container">
-                                        <svg aria-hidden="true" role="img" className="icon-cd-hmc" width="24" height="24" viewBox="0 0 24 24">
-                                            <path fillRule="evenodd" clipRule="evenodd" d="M18.625 3H5.375C4.06519 3 3 4.06519 3 5.375V18.625C3 
-                                        19.936 4.06519 21 5.375 21H18.625C19.936 21 21 19.936 21 18.625V5.375C21.0057 4.08803 19.9197 3 18.625
-                                         3ZM19 19V5H4.99999V19H19Z" fill="currentColor">
-                                            </path>
-                                        </svg>
+                                        {checkBoxRender2}
                                     </div>
                                 </div>
                             </div>
