@@ -396,6 +396,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added New options on the left hand side in the Server Settings Modal.
     - Reorganized setting options in user profile/ user settings modal.
     - Changed background color of channel drop down container modal.
+    - Added App directory option to Channel Drop Down Container.
 
 ## Backend Changes
 
