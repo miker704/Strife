@@ -400,6 +400,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added styles for App Directory option in channel drop down modal.
     - Added back Server Settings to non-server owners in channel drop down modal, but it is disable till
     new modals are added. 
+    - Added recoloring and style updates to Channel drop down modal.
 
 ## Backend Changes
 
