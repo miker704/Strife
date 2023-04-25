@@ -20,7 +20,8 @@
     forced-color-adjust: none;
     position: absolute;
     top: 56px;
-    left: 7px;
+    // left: 7px;
+    left: 10px;
     z-index: 1005;
 
 }
@@ -28,7 +29,11 @@
 .channel-drop-down-pop-up-animate {
     forced-color-adjust: none;
     outline: 0;
+    -webkit-transition: opacity .12s ease-out,-webkit-transform .12s ease-out;
+    transition: opacity .12s ease-out,-webkit-transform .12s ease-out;
+    transition: transform .12s ease-out,opacity .12s ease-out;
     transition: transform .12s ease-out, opacity .12s ease-out, -webkit-transform .12s ease-out;
+    -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 1;
     transform-origin: top center;
@@ -46,7 +51,7 @@
     height: auto;
     cursor: default;
     max-height: calc(100vh - 32px);
-    box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.24);
+    box-shadow: 0px 8px 16px 0px hsla(0, 0%, 0%, 0.24);
     background: #111214;
     border-radius: 4px;
     z-index: 1006;
@@ -94,7 +99,7 @@
 .channel-drop-item {
     forced-color-adjust: none;
     outline: 0;
-    color: hsl(216, 3.7%, 73.5%);
+    color: hsl(215, 8.8%, 73.3%);
     position: relative;
     margin: 2px 0;
     border-radius: 2px;
@@ -111,7 +116,7 @@
     align-items: center;
     min-height: 32px;
     padding: 6px 8px;
-    border-color: hsl(216, 3.7%, 73.5%);
+    border-color: hsl(215, 8.8%, 73.3%);
     font-family: "Whitney";
 
 }
@@ -141,13 +146,16 @@
     width: 18px;
     margin-left: 8px;
     -webkit-box-flex: 0;
+
+    position: relative;
 }
 
 .server-boost-icon {
     width: 18px;
     height: 18px;
     forced-color-adjust: none;
-    color: hsl(302, 100%, 72.5%);
+    // color is disable as discord does not have the boost icon color enabled
+    // color: hsl(302, 100%, 72.5%);
 }
 
 .channel-drop-sep {
@@ -155,7 +163,9 @@
     outline: 0;
     box-sizing: border-box;
     margin: 4px;
-    border-bottom: 1px solid hsla(217, 7.6%, 33.5%, 0.48);
+    // border-bottom: 1px solid hsla(217, 7.6%, 33.5%, 0.48);
+    border-bottom: 1px solid hsla(228, 6%, 32.5%, 0.48);
+
 }
 
 
@@ -216,16 +226,15 @@
 }
 
 .channel-drop-item.redclr {
-    color: hsl(359, 82.6%, 59.45%) !important;
+    color: hsl(359, 87.3%, 59.8%) !important;
 
     .server-boost-label {
-        color: hsl(359, 82.6%, 59.45%) !important;
-
+        color: hsl(359, 87.3%, 59.8%) !important;
     }
 }
 
 .channel-drop-item.redclr:hover {
-    background-color: hsl(359, 66.7%, 54.1%);
+    background-color: hsl(360, 60.2%, 39.4%);
     color: hsl(0, 0%, 100%) !important;
     .server-boost-label {
         color: hsl(0, 0%, 100%) !important;
@@ -239,7 +248,5 @@
     color: hsl(0, 0%, 100%) !important;
     .server-boost-label {
         color: hsl(0, 0%, 100%) !important;
-
-
     }
 }
