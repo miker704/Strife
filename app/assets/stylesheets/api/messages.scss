@@ -259,11 +259,11 @@
     overflow: hidden;
     margin-right: 10px;
     margin-top: calc(4px - 0.125rem);
-
+    user-select: none;
+    -webkit-user-drag: none;
     position: absolute;
     left: 16px;
     cursor: pointer;
-    user-select: none;
     flex: 0 0 auto;
     pointer-events: none;
     z-index: 1;
@@ -275,6 +275,8 @@
     width: 40px;
     border-radius: 50%;
     margin-top: calc(4px - 0.125rem);
+    user-select: none;
+    -webkit-user-drag: none;
 
 }
 
@@ -292,6 +294,7 @@
     left: 16px;
     cursor: pointer;
     user-select: none;
+    -webkit-user-drag: none;
     flex: 0 0 auto;
     pointer-events: none;
     z-index: 1;
@@ -304,6 +307,8 @@
     border-radius: 50%;
     transform: scale(0.65);
     margin-top: calc(4px - 0.125rem);
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .chat-member-username-header {
@@ -993,6 +998,6 @@
     }
 }
 
-.message-form-edit span:hover{
+.message-form-edit span:hover {
     text-decoration: underline;
 }
