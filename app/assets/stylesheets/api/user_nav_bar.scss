@@ -31,6 +31,10 @@
     padding: 0 8px;
     margin-bottom: 1px;
     user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
     z-index: 3;
     // transform: translate(71px, Calc(100vh - 52px));
     // width: 225px;
@@ -111,6 +115,8 @@
     font-family: "Whitney";
     font-size: 14px;
     outline: 0;
+    user-select: none;
+
 }
 
 .user-nav-bar-strife-tag {
@@ -123,6 +129,7 @@
     overflow: hidden;
     color: hsl(231, 5.2%, 73.5%);
     line-height: 13px;
+    user-select: none;
 }
 
 .user-nav-bar-button-container {
