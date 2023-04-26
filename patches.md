@@ -407,6 +407,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added discords beta "Show all Channels" option in channel drop down modal.
     - Add styles for Show all Channels option in channel drop down modal.
     - Added 2 state variables to toggle check marks in two different check mark options in channel drop down modal. 
+    - Temporarly removed server settings for users that are not the server owner in channel drop down menu.
 
 ## Backend Changes
 
