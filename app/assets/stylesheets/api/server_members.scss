@@ -185,6 +185,8 @@
     height: 32px;
     width: 32px;
     border-radius: 50%;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 
