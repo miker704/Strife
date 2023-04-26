@@ -353,7 +353,7 @@
     color: #005a17 !important;
 }
 
-.user-Banner-wrapper{
+.user-Banner-wrapper {
     position: relative;
     height: 100px;
     width: 400px;
@@ -364,7 +364,7 @@
     justify-content: center;
 }
 
-.user-Banner{
+.user-Banner {
     height: 100px;
     width: 400px;
 }
@@ -596,11 +596,12 @@
 
 }
 
-.user-profile-item.force{
+.user-profile-item.force {
     // color: hsl(210, 2.9%, 86.7%);
     // background-color: hsla(217, 7.6%, 33.5%, 0.4);
     color: #FFFFFF;
     background-color: rgba(78, 80, 88, 0.6);
+
     svg {
         color: #dcddde;
 
@@ -971,12 +972,13 @@
 }
 
 
-.account-card-banner:hover{
+.account-card-banner:hover {
     opacity: 0.5;
-    .demo-edit-lock-warning{
+
+    .demo-edit-lock-warning {
         opacity: 1;
     }
-    
+
 }
 
 
@@ -1051,12 +1053,16 @@
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
     border-radius: 50%;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .account-avatar-wrapper>img {
     height: 100%;
     width: 100%;
     border-radius: 50%;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 
@@ -1079,21 +1085,25 @@
     content: image_url("discord_PFP.svg");
     height: 42px;
     width: 80px;
-   
+    user-select: none;
+    -webkit-user-drag: none;
 
 }
 
-.user-avatar-img-svg-render{
+.user-avatar-img-svg-render {
     display: flex;
     align-items: center;
     height: 80px;
     width: 80px;
     overflow: hidden;
     border-radius: 50%;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
-.user-avatar-img-svg-render>img{
- 
+.user-avatar-img-svg-render>img {
+    user-select: none;
+    -webkit-user-drag: none;
     height: 42px;
     width: 80px;
 
@@ -1164,7 +1174,7 @@
     margin-bottom: -2px;
 }
 
-.edit-user-banner-button{
+.edit-user-banner-button {
     color: hsl(0, 0%, 100%);
     background-color: #202225cc;
     cursor: pointer;
