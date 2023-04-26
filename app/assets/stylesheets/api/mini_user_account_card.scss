@@ -160,12 +160,16 @@
     height: 80px;
     border: 6px solid hsl(225, 7.7%, 10.2%);
     background-color: hsl(225, 7.7%, 10.2%);
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .upc-pfp-icon-hover-wrapper>img {
     height: 100%;
     width: 100%;
     border-radius: 50%;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 
@@ -217,7 +221,8 @@
     -webkit-box-flex: 0;
     flex: 0 1 auto;
     outline: 0;
-
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .upc-strife-tag {
@@ -226,6 +231,8 @@
     font-weight: 600;
     forced-color-adjust: none;
     color: hsl(216, 3.7%, 73.5%);
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 
@@ -358,6 +365,8 @@
     align-items: center;
     flex-shrink: 0;
     text-indent: 0;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .bot-check-mark{
