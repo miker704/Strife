@@ -537,7 +537,7 @@ label.field-error {
 
 
 
-.circle-online-dm-header-nav-bar  {
+.circle-online-dm-header-nav-bar {
   background: hsl(139, 47.3%, 43.9%);
   border-radius: 50%;
   width: 9px;
@@ -616,7 +616,7 @@ label.field-error {
   cursor: default;
   forced-color-adjust: none;
   color: hsl(359, 82%, 73.9%);
-  outline:0;
+  outline: 0;
   margin-top: 8px;
 
 }
@@ -628,9 +628,10 @@ label.field-error {
   cursor: default;
   forced-color-adjust: none;
   color: rgb(45, 199, 112);
-  outline:0;
+  outline: 0;
   margin-top: 8px;
-  strong{
+
+  strong {
     font-weight: 600;
   }
 }
@@ -670,6 +671,8 @@ label.field-error {
   border-radius: 50%;
   width: 32px;
   overflow: hidden;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .user-pfp-svg-render>img {
@@ -677,6 +680,8 @@ label.field-error {
   width: 32px;
   border-radius: 50%;
   transform: scale(0.65);
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 
@@ -698,4 +703,6 @@ label.field-error {
   height: 32px;
   width: 32px;
   border-radius: 50%;
+  user-select: none;
+  -webkit-user-drag: none;
 }
