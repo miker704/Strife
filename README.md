@@ -7,6 +7,8 @@
 
 [STRIFE](https://strife.onrender.com/) stylized as [$TR!F3](https://strife.onrender.com/) is fully comprehensive, pixel perfect, functional clone of the popular VoIP and instant messaging platform [Discord](https://discord.com/)
 
+### [Current Patch Notes](./patches.md)
+
 ***
 
 ## Project Goal
