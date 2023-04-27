@@ -409,6 +409,9 @@ current dmServer involving the user of their friend it will send a request to th
     - Added 2 state variables to toggle check marks in two different check mark options in channel drop down modal. 
     - Temporarly removed server settings for users that are not the server owner in channel drop down menu.
     - removed user drag and select on various texts and avatars on various components. 
+    - Re-added private lock svg for creating private channels.
+    - Fixed a bug where channel type defaults to text channels when opening create channel modal from the channel drop down modal.
+    - Added new Styles to create channel modal.
 
 ## Backend Changes
 
