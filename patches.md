@@ -413,6 +413,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Fixed a bug where channel type defaults to text channels when opening create channel modal from the channel drop down modal.
     - Added new Styles to create channel modal.
     - Removed a few text descriptions from create channels modal.
+    - Added feature to disable the create channel button until a name is entered into the the channel name input.
 
 ## Backend Changes
 
