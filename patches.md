@@ -452,6 +452,7 @@ between two users. including being able to deciever if there is a block relation
   Here these records indicate that user of id: 11 has blocked user of id: 10 hence the status of -1. For user of id: 10 the -2 indicates that user id:11 was the user that blocked them. however this is hidden from user id:10. If User id:10 decides to block user id: 11 it will swap to -1.
 
 - With new block relationships adjusted seeds for blocked users.
+- Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
 
 ### Front-End Changes
 
