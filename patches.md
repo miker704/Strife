@@ -414,6 +414,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added new Styles to create channel modal.
     - Removed a few text descriptions from create channels modal.
     - Added feature to disable the create channel button until a name is entered into the the channel name input.
+    - Disabled creation of private channels regardless if the channel name input has text or not once the slider for private channels is turned on any proceed attempt to create a private channel is disabled the create channel button is disabled.
 
 ## Backend Changes
 
