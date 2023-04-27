@@ -468,6 +468,8 @@ between two users. including being able to deciever if there is a block relation
 
 - Completed deprecation of the sessions form for login and sig up to a newer version that mimics discords recent version including the animation that plays when regenerating a qr code. Also enables scalability and now offers back the ability to login as demo user 2 and well as demo user 1. The old sessions form and styling although simple and can morph in to either log in of sign up upon url change the new version aims its best to keep that same simplicity. The old sessions forms and styles have moved to the deprecated folder.
 
+- Added Link to Patch notes (this file) in the README.MD file
+
 ---
 
 New Patch - 10/3/2022 - 10/7/2022
