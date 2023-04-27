@@ -412,6 +412,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Re-added private lock svg for creating private channels.
     - Fixed a bug where channel type defaults to text channels when opening create channel modal from the channel drop down modal.
     - Added new Styles to create channel modal.
+    - Removed a few text descriptions from create channels modal.
 
 ## Backend Changes
 
