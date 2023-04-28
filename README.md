@@ -82,6 +82,7 @@ STRIFE "$TR!F3" as of Patch V3.0:
 * bundle exec rails db:setup
 * In a seperate console run npm run start
 * In the previous console run rails s or rails s -p {"DESIRED_PORT_NUMBER"}
+* Project is currently supported to be used in browsers Microsoft Edge and Google Chrome. Mozilla Firefox can be used but currently the styles need to be added to fully support it. Many styles are no longer supported in Mozilla browser and glitch out as a result.
 
 ## Disclaimer and Project Usage
 
