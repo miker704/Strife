@@ -423,6 +423,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Disabled creation of private channels regardless if the channel name input has text or not once the slider for private channels is turned on any proceed attempt to create a private channel is disabled the create channel button is disabled.
     - Changed the create channel button text from "Create Channel" to "Next" when private channel selection is enabled.
     - Prevent a length greater than 100 characters in create channel name input from being submited if input is able to be submit it it will deny creation of such a channel.
+    - Shift placement of item tool bar to the correct div on the server header nav bar.
+    - Fixed a issue where channel names that reach 100 characters push out the item tool bar in the server header nav bar.
 
 ## Backend Changes
 
