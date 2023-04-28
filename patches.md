@@ -44,6 +44,7 @@ link if possible.
 
 - Attempts to address draggable containers
 - Context menus across the application
+- Add Moz kit values to every style as FireFox is currently now unsupported as many styles glitch out in the browser. Microsoft edge, and Google Chrome are the only support browsers.
 
 ### Video / Voice Calling
 
