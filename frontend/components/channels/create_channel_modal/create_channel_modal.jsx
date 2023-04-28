@@ -195,13 +195,14 @@ const CreateChannelModal = (props) => {
 
     const handleHeight = () => {
         if (props.channelType === 1 || props.channelType === 2) {
-            // return 482;
-            return 494;
-
+            // return 482; // keep for removal of nitro private access warning
+            // return 494; // for private warning and voice warning
+            return 506;
         }
         else {
-            // return 466;
-            return 478;
+            // return 466; // keep for removal of nitro private access warning
+            // return 478; //for private warning and voice warning
+            return 490;
         }
     }
 
@@ -375,7 +376,7 @@ const CreateChannelModal = (props) => {
                                                                                 Voice
                                                                             </div>
                                                                             <div className="ccm-small-txt-rad">Hang out together with voice, video, and screen share </div>
-                                                                            {/* <div className={`ccm-small-txt-3 ${selectedOption === 2 ? `server-error` : ``}`}>($TR!F3 N!TR0 Required to access)</div> */}
+                                                                            <div className={`ccm-small-txt-3 ${selectedOption === 2 ? `server-error` : ``}`}>($TR!F3 N!TR0 Required to access)</div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
