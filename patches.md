@@ -35,6 +35,10 @@
 - emojis
 - Message/ notification inbox intergration
 - Default message for channels and dm servers to be changed to match more of discords.
+- Allow messages to send images
+- Allow a url parser, anaylze if a text matches a url and provide a small modal/ component to wrap out send
+link if possible.
+- Allow url parser to embed youtube videos.
 
 ### General/Util
 
