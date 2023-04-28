@@ -425,6 +425,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Prevent a length greater than 100 characters in create channel name input from being submited if input is able to be submit it it will deny creation of such a channel.
     - Shift placement of item tool bar to the correct div on the server header nav bar.
     - Fixed a issue where channel names that reach 100 characters push out the item tool bar in the server header nav bar.
+    - Added Height function to create channel modal to handle more added elements while using it.
+    - Added clear channel errors when clicking the create channel button when using the create channel modal after failing to create a channel prior.
 
 ## Backend Changes
 
