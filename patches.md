@@ -433,6 +433,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Imported discords new font gg sans in each type used by discord.
     - used gg sans font for channel settings modal.
     - preparing to switch to gg sans on every component in $TR!F3.
+    - added loud speaker svg image for voice channels in channel settings.
 
 ## Backend Changes
 
