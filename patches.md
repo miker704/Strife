@@ -427,6 +427,12 @@ current dmServer involving the user of their friend it will send a request to th
     - Fixed a issue where channel names that reach 100 characters push out the item tool bar in the server header nav bar.
     - Added Height function to create channel modal to handle more added elements while using it.
     - Added clear channel errors when clicking the create channel button when using the create channel modal after failing to create a channel prior.
+    - Remodeled Channel settings modal. 
+    - Moved old channel settings modal to deprecated files folder.
+    - Revamped styles for channel settings modal.
+    - Imported discords new font gg sans in each type used by discord.
+    - used gg sans font for channel settings modal.
+    - preparing to switch to gg sans on every component in $TR!F3.
 
 ## Backend Changes
 
