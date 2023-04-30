@@ -186,7 +186,6 @@ const CreateChannelModal = (props) => {
         return "";
     }
 
-    const channelErrorsTag = props.errors.length > 0 ? "server-error-lite" : "";
     const channelErrorsMsg = props.errors.length > 0 ? (
         <div className={"channel-error"}>{`${renderChannelErrorMessages()}`}</div>
     ) : ("");
