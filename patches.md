@@ -440,6 +440,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added more error detection in channel settings modal.
     - Restyled Delete Channel modal
     - Prevent form hijacking on delete channel modal.
+    - Moved old delete channel modal to deprecated folder.
 
 ## Backend Changes
 
