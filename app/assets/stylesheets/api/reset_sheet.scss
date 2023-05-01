@@ -186,3 +186,89 @@ input {
 	src: url("GintoMedium.otf");
 }
 
+
+
+//importing and testing the new gg sans fonts that are used by
+//discord. 
+
+@font-face {
+	font-family: "gg sans";
+	font-style: normal;
+	font-weight: 400;
+	src: url("ggsansnormal400.woff2")format("woff2");
+}
+
+@font-face {
+	font-family: "gg sans";
+	font-style: normal;
+	font-weight: 500;
+	src: url("ggsans500normal.woff2")format("woff2");
+}
+
+@font-face {
+	font-family: "gg sans";
+	font-style: normal;
+	font-weight: 600;
+	src: url("ggsans600normal.woff2")format("woff2");
+}
+
+@font-face {
+	font-family: "gg sans";
+	font-style: normal;
+	font-weight: 700;
+	src: url("ggsansnormal700.woff2")format("woff2");
+}
+
+@font-face {
+	font-family: "gg sans";
+	font-style: normal;
+	font-weight: 800;
+	src: url("ggsansnormal800.woff2")format("woff2");
+}
+
+//italic
+
+
+@font-face {
+	font-family: "gg sans";
+	font-style: italic;
+	font-weight: 400;
+	src: url("ggsansitalic400.woff2")format("woff2");
+}
+
+@font-face {
+	font-family: "gg sans";
+	font-style: italic;
+	font-weight: 500;
+	src: url("ggsansitalic500.woff2")format("woff2");
+}
+
+
+
+@font-face {
+	font-family: "gg sans";
+	font-style: italic;
+	font-weight: 600;
+	src: url("ggsansitalic600.woff2")format("woff2");
+}
+
+
+
+
+
+@font-face {
+	font-family: "gg sans";
+	font-style: italic;
+	font-weight: 700;
+	src: url("ggsansitalic700.woff2")format("woff2");
+}
+
+
+
+
+@font-face {
+	font-family: "gg sans";
+	font-style: italic;
+	font-weight: 800;
+	src: url("ggsansitalic800.woff2")format("woff2");
+}
