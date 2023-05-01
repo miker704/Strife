@@ -1,0 +1,291 @@
+@import 'global_vars';
+
+.delete-channel-wrapper {
+    // forced-color-adjust: none;
+    outline: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: none !important;
+    pointer-events: none;
+    z-index: 120;
+}
+
+.delete-channel-backdrop {
+    // forced-color-adjust: none;
+    outline: 0;
+    pointer-events: all;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(0);
+    opacity: 0.85;
+    background: $black-500;
+}
+
+
+
+.delete-channel-layer {
+    // forced-color-adjust: none;
+    outline: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+
+.delete-channel-focus-lock {
+    // forced-color-adjust: none;
+    outline: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    max-width: 100%;
+    user-select: none;
+    z-index: 1500;
+
+
+}
+
+.delete-channel-root {
+    // forced-color-adjust: none;
+    outline: 0;
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: $dark-elevation-border, $dark-elevation-high;
+    width: 440px;
+    max-height: 720px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: $modal-pop-up-bg-color;
+    border-radius: 4px;
+    margin: 0 auto;
+    pointer-events: all;
+    position: relative;
+    max-height: 100%;
+    user-select: none;
+
+    button[type="submit"]:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        color: $white-500;
+        // forced-color-adjust: none;
+    }
+
+    z-index: 1505;
+}
+
+.delete-channel-flex {
+    // forced-color-adjust: none;
+    outline: 0;
+    -webkit-transition: -webkit-box-shadow .1s ease-out;
+    transition: -webkit-box-shadow .1s ease-out;
+    transition: box-shadow .1s ease-out;
+    transition: box-shadow .1s ease-out, -webkit-box-shadow .1s ease-out;
+    word-wrap: break-word;
+    border-radius: 4px 4px 0 0;
+    flex: 0 0 auto;
+    position: relative;
+    flex: 0 0 auto;
+    padding: 16px;
+    z-index: 1;
+    overflow-x: hidden;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+}
+
+
+.delete-channel-content-scroll-base {
+    // forced-color-adjust: none;
+    outline: 0;
+    padding-right: 8px;
+    padding-bottom: 20px;
+    position: relative;
+    z-index: 0;
+    border-radius: 5px 5px 0 0;
+    padding-left: 16px;
+    box-sizing: border-box;
+    min-height: 0;
+    flex: 1 1 auto;
+    // overflow: hidden scroll;
+    // scrollbar-width: thin;
+    // scrollbar-color: $scrollbar-thin-thumb, $scrollbar-thin-track;
+
+}
+
+
+
+.delete-channel-button-flex-wrapper {
+    // forced-color-adjust: none;
+    outline: 0;
+    box-shadow: inset 0 1px 0 $primary-630-hsl;
+    flex: 0 0 auto;
+    border-radius: 0 0 5px 5px;
+    background-color: $modal-footer-bg-color-button-wrapper;
+    position: relative;
+    flex: 0 0 auto;
+    padding: 16px;
+    z-index: 1;
+    overflow-x: hidden;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    display: flex;
+
+}
+
+
+.delete-channel-text {
+    font-family: $global-font;
+    font-size: 16px;
+    line-height: 20px;
+    // forced-color-adjust: none;
+    font-weight: 400;
+    color: $header-primary;
+    outline: 0;
+    overflow: hidden;
+    text-overflow: clip;
+
+    strong {
+        font-weight: 600;
+        // forced-color-adjust: none;
+        outline: 0;
+
+    }
+}
+
+
+.delete-channel-text.red {
+    color: hsl(359, 82.6%, 59.45%);
+}
+
+.delete-channel-sep {
+    position: absolute;
+    pointer-events: none;
+    min-height: 0px;
+    min-width: 1px;
+    flex: 0 0 auto;
+    height: 20px;
+}
+
+
+.delete-channel-header {
+    forced-color-adjust: none;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: $global-font;
+    color: $header-primary;
+}
+
+
+
+
+.delete-channel-submit-button {
+    color: $white-500;
+    width: auto;
+    height: 38px;
+    min-width: 96px;
+    min-height: 38px;
+    background-color: $red-danger-button-background;
+    transition: background-color .17s ease, color .17s ease;
+    position: relative;
+    text-rendering: optimizeLegibility;
+    font-family: $global-font;
+    user-select: none;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+}
+
+.delete-channel-submit-button:hover:not(:disabled) {
+    background-color: $red-danger-button-background-hover;
+}
+
+
+.delete-channel-cancel-button {
+    cursor: pointer;
+    font-family: $global-font;
+    text-rendering: optimizeLegibility;
+    user-select: none;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    height: 38px;
+    min-width: 96px;
+    min-height: 38px;
+    width: auto;
+    margin-right: 8px;
+    color: $white-500;
+}
+
+
+.delete-channel-cancel-button:hover {
+    text-decoration: underline;
+}
+
+
+
+.fake-delete-channel-submit-button {
+    color: $white-500;
+    width: auto;
+    height: 38px;
+    min-width: 96px;
+    min-height: 38px;
+    background-color: $red-danger-button-background;
+    transition: background-color .17s ease, color .17s ease;
+    position: relative;
+    text-rendering: optimizeLegibility;
+    font-family: $global-font;
+    user-select: none;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: not-allowed;
+    opacity: 0.5;
+    
+}
