@@ -297,6 +297,8 @@ current dmServer involving the user of their friend it will send a request to th
 
 - A potential risky html/jsx code has been addressed in Channel Drop Down modal. Prior the modal would return avaliable options that can be selected based on the level of authorization the user has either they are a server member or the server owner it will render options that they have access to. However the modal returns Un-Authorized options as invisible, to the U.I. but it is present in the html which can be exploited and can possibly crash the app if enable. The reason for this is the modal returns the options while deciding whether or not to hide them or not. This has been addressed by having the decisons for those options decided before the returning jsx is returned.
 
+- Fixed certain forms and buttons in delete channel modal from being XSS attacked or fall victim to form hijacking.
+
 ### UI and Cosmetic Fixes and Changes
 
     - UI Fixes (Cosmetic):
@@ -436,6 +438,8 @@ current dmServer involving the user of their friend it will send a request to th
     - added loud speaker svg image for voice channels in channel settings.
     - Add slide in animation for channel errors when attempting to change channel name in channel settings modal.
     - Added more error detection in channel settings modal.
+    - Restyled Delete Channel modal
+    - Prevent form hijacking on delete channel modal.
 
 ## Backend Changes
 
@@ -490,6 +494,8 @@ between two users. including being able to deciever if there is a block relation
 - Completed deprecation of the sessions form for login and sig up to a newer version that mimics discords recent version including the animation that plays when regenerating a qr code. Also enables scalability and now offers back the ability to login as demo user 2 and well as demo user 1. The old sessions form and styling although simple and can morph in to either log in of sign up upon url change the new version aims its best to keep that same simplicity. The old sessions forms and styles have moved to the deprecated folder.
 
 - Added Link to Patch notes (this file) in the README.MD file
+
+- Started to swap to scss features to replace commonly used styles.
 
 ---
 
