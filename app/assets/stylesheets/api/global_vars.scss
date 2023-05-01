@@ -1,0 +1,38 @@
+/*this file is to used as of now 04/30/2023
+as a reference for commonly used styles.
+*/
+
+
+//global
+$global-font: "gg sans";
+
+
+//box shadows
+$dark-elevation-border: 0px 0px 0px 1px rgba(30, 31, 34, 0.6);
+$dark-elevation-high: 0px 2px 10px 0px rgba(0, 0, 0, 0.2);
+//background colors
+$modal-pop-up-bg-color: rgb(49, 51, 56);
+
+
+//text colors
+$header-primary: rgb(242, 243, 245);
+$white-500 : rgb(255, 255, 255);
+
+
+
+//button colors
+$modal-footer-bg-color-button-wrapper: rgb(43, 45, 49);
+$red-danger-button-background: rgb(218, 55, 60);
+$red-danger-button-background-hover: rgb(161, 40, 40);
+
+$button-underline-color: transparent;
+
+//general colors
+$primary-630-hsl: rgba(43, 45, 49, 0.6);
+$black-500: hsl(0, 0%, 0%);
+
+
+
+//scroll bar
+$scrollbar-thin-thumb: hsl(225, 7.1%, 11%);
+$scrollbar-thin-track: hsl(0, 0%, 0%);
