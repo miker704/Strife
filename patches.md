@@ -442,6 +442,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Prevent form hijacking on delete channel modal.
     - Moved old delete channel modal to deprecated folder.
     - Prevent general channel from being deleted when using the delete channel modal, prevent deletion through form hijacking and XSS attacks.
+    - Global vars with SCSS Vars for quicker and more consistant styling of commonly used styles.
 
 ## Backend Changes
 
