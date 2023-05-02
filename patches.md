@@ -443,6 +443,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Moved old delete channel modal to deprecated folder.
     - Prevent general channel from being deleted when using the delete channel modal, prevent deletion through form hijacking and XSS attacks.
     - Global vars with SCSS Vars for quicker and more consistant styling of commonly used styles.
+    - Imported Material UI libraries (MUI) for custom ui components such as sliders that are more easier to build, style and work with.
+    - Created workable slider in channel settings modal using MUI Slider components.
 
 ## Backend Changes
 
