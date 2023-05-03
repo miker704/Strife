@@ -465,3 +465,76 @@
 // }
 
 // export default ChannelSettingsModal;
+
+
+/**
+ * deprecated old slider bar using divs role slider
+ *   <div className="cs-slowmode-slider" role={"slider"}>
+      <div className="cs-track">
+          <div className="cs-mark" style={{ left: '0%' }}>
+              <div className="cs-mark-value">Off</div>
+              <div className="cs-mark-dash"></div>
+          </div>
+          <div className="cs-mark" style={{ left: '7.69231%' }}>
+              <div className="cs-mark-value">5s</div>
+              <div className="cs-mark-dash"></div>
+          </div>
+          <div className="cs-mark" style={{ left: '15.3846%' }}>
+              <div className="cs-mark-value">10s</div>
+              <div className="cs-mark-dash"></div>
+          </div>
+          <div className="cs-mark" style={{ left: '23.0769%' }}>
+              <div className="cs-mark-value">15s</div>
+              <div className="cs-mark-dash"></div>
+          </div>
+          <div className="cs-mark" style={{ left: '30.7692%' }}>
+              <div className="cs-mark-value">30s</div>
+              <div className="cs-mark-dash"></div>
+          </div>
+          <div className="cs-mark" style={{ left: '38.4615%' }}>
+              <div className="cs-mark-value">1m</div>
+              <div className="cs-mark-dash"></div>
+          </div>
+          <div className="cs-mark" style={{ left: '46.1538%' }}>
+              <div className="cs-mark-value">2m</div>
+              <div className="cs-mark-dash"></div>
+          </div>
+          <div className="cs-mark" style={{ left: '53.8462%' }}>
+              <div className="cs-mark-value">5m</div>
+              <div className="cs-mark-dash"></div>
+          </div>
+          <div className="cs-mark" style={{ left: '61.5385%' }}>
+              <div className="cs-mark-value">10m</div>
+              <div className="cs-mark-dash"></div>
+          </div>
+          <div className="cs-mark" style={{ left: '69.2308%' }}>
+              <div className="cs-mark-value">15m</div>
+              <div className="cs-mark-dash"></div>
+          </div>
+          <div className="cs-mark" style={{ left: '76.9231%' }}>
+              <div className="cs-mark-value">30m</div>
+              <div className="cs-mark-dash"></div>
+          </div>
+          <div className="cs-mark" style={{ left: '84.6154%' }}>
+              <div className="cs-mark-value">1h</div>
+              <div className="cs-mark-dash"></div>
+          </div>
+          <div className="cs-mark" style={{ left: '92.3077%' }}>
+              <div className="cs-mark-value">2h</div>
+              <div className="cs-mark-dash"></div>
+          </div>
+          <div className="cs-mark" style={{ left: '100%' }}>
+              <div className="cs-mark-value">6h</div>
+              <div className="cs-mark-dash"></div>
+          </div>
+      </div>
+      <div className="cs-slider-bar">
+          <div className="cs-slider-bar-fill" style={{ width: '0%' }}></div>
+      </div>
+      <div className="cs-track-bar">
+          <div className="cs-grabber" style={{ left: '0%' }}></div>
+      </div>
+  </div>
+ * 
+ * 
+ */
