@@ -845,7 +845,7 @@
 .user-profile-header1 {
     forced-color-adjust: none;
     box-sizing: border-box;
-    color: #FFFFFF;
+    color: rgb(242, 243, 245);
     margin-bottom: 20px;
     font-weight: 500;
     font-size: 20px;
@@ -1984,7 +1984,8 @@
     cursor: pointer;
     forced-color-adjust: none;
     box-sizing: border-box;
-    color: hsl(216, 0.037%, 73.5%);
+    // color: hsl(216, 0.037%, 73.5%);
+    color: rgb(181, 186, 193);
 }
 
 .esc-bind {
@@ -1994,8 +1995,8 @@
     text-align: center;
     forced-color-adjust: none;
     box-sizing: border-box;
-    color: hsl(216, 0.037%, 73.5%);
-    font-family: "Whitney";
+    color: rgb(181, 186, 193);
+    font-family: "gg sans";
 
 }
 
