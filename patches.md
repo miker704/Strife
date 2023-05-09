@@ -449,6 +449,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Imported Material UI libraries (MUI) for custom ui components such as sliders that are more easier to build, style and work with.
     - Created workable slider in channel settings modal using MUI Slider components.
     - Placed specs for old slider using divs in old channel settings modal in the deprecated files folder.
+    - Added missing/misplaced animation for delete channel modal.
 
 ## Backend Changes
 
