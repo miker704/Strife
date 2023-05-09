@@ -57,7 +57,7 @@ the need to create a private room is need to prevent unwanted members from enter
   
 - A fellow Contributor noted that email format verification missed a problem with escaping periods. Resulting in email addresses being incorrectly validated. (provided a fix this will be merged soon as it was provided near patch v3.0). Credit goes to cpoppe1 who graciously pointed this out and provided the proper regex format to address the vulnerbility.
 
-## PATCH NOTES v3.00 - 2/24/2023 - OnGoing (currently pending proposed to arrive on 5/01/23 do to some testing)
+## PATCH NOTES v3.00 - 2/24/2023 - OnGoing (currently pending proposed to arrive on 5/15/23 do to some testing)
 
 ## Intra - Changes between 10/7/2022 - 11/17/2023
 
