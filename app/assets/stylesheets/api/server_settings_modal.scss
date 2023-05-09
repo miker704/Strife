@@ -324,7 +324,7 @@
     box-sizing: border-box;
     forced-color-adjust: none;
     outline: 0;
-    color: hsl(216, 3.7%, 73.5%);
+    color: rgb(181, 186, 193);
     margin-bottom: 8px;
     font-size: 12px;
     font-weight: 500;
@@ -378,7 +378,7 @@
     background-color: #1e1f22;
     border: none;
     transition: border-color .2s ease-in-out;
-    font-family: "Whitney";
+    font-family: "gg sans";
     text-rendering: optimizeLegibility;
     font-weight: 400;
 
@@ -386,10 +386,9 @@
 
 .server-op-name-input::placeholder {
     color: rgb(219, 222, 225);
-    font-family: "Whitney";
+    font-family: "gg sans";
     text-rendering: optimizeLegibility;
     font-weight: 400;
-
 }
 
 
@@ -672,7 +671,10 @@
     text-rendering: optimizeLegibility;
     border-radius: 14px;
     cursor: pointer;
-
+    //post
+    top: 0;
+    left: 0;
+    margin: 0;
 
 }
 
@@ -885,7 +887,7 @@
     border-radius: 14px;
     cursor: pointer;
     opacity: 1;
-    background-color: hsl(218, 4.6%, 46.9%);
+    background-color: rgb(128,132,142);
 }
 
 .flex-child-boost-ex {
@@ -944,7 +946,7 @@
     forced-color-adjust: none;
     margin-left: 4px;
     height: 18px;
-    background-color: rgb(35,36,40);
+    background-color: rgb(35, 36, 40);
     display: flex;
     margin-top: -1px;
     box-sizing: border-box;
@@ -1025,7 +1027,7 @@
     min-height: 38px;
     transition: background-color .17s ease, color .17s ease;
     outline: 0;
-    font-family: "Whitney";
+    font-family: "gg sans";
     text-rendering: optimizeLegibility;
 
     position: relative;
@@ -1064,10 +1066,6 @@
     -webkit-animation-delay: 0s;
     animation-delay: 0s
 }
-
-
-
-
 
 .shiny-button-contents {
     margin: 0 auto;
