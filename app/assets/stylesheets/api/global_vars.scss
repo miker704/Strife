@@ -1,7 +1,7 @@
 /*this file is to used as of now 04/30/2023
 as a reference for commonly used styles.
 */
-
+@use "sass:map";
 
 //global
 $global-font: "gg sans";
@@ -10,29 +10,120 @@ $global-font: "gg sans";
 //box shadows
 $dark-elevation-border: 0px 0px 0px 1px rgba(30, 31, 34, 0.6);
 $dark-elevation-high: 0px 2px 10px 0px rgba(0, 0, 0, 0.2);
+$cs-divider-color: rgba(114, 118, 125, 0.3);
 //background colors
 $modal-pop-up-bg-color: rgb(49, 51, 56);
-
+// $background-primary: $primary-600;
+// $background-secondary: $primary-630;
 
 //text colors
 $header-primary: rgb(242, 243, 245);
+//general colors
+
 $white-500 : rgb(255, 255, 255);
+$black-500: hsl(0, 0%, 0%);
+$black-500-hsl-005: hsla(0, 0%, 0%, 0.05);
+$black-500-hsl-01: hsla(0, 0%, 0%, 0.1);
 
-
+$brand-500: hsl(235, 85.6%, 64.7%);
+$primary-200: hsl(216, 9.8%, 90%);
+$primary-230: rgb(219, 222, 225);
+$primary-330: rgb(181, 186, 193);
+$primary-360: hsl(214, 8.1%, 61.2%);
+$primary-400: rgba(78, 80, 88, 0.6);
+$primary-500: rgba(78, 80, 88, 0.298);
+$primary-500-bg-color: rgb(78, 80, 88);
+$primary-500-48: rgba(78, 80, 88, 0.48);
+$primary-560: rgb(135, 137, 140);
+$primary-600: rgb(49, 51, 56);
+$primary-630: hsl(220, 7%, 18%);
+$primary-630-hsl: rgba(43, 45, 49, 0.6);
+$primary-700: rgb(30, 31, 34);
+$primary-730: hsl(225, 7.1%, 11%);
+$primary-800-60: hsla(225, 7.7%, 10.2%, 0.6);
+$red-400: hsl(359, 87.3%, 59.8%);
+$red-430: hsl(358, 68.8%, 53.5%);
+$red-345: rgb(250, 119, 124);
+$gray-switch: rgb(128, 132, 142);
+$green-switch: hsl(145, 65%, 39%);
 
 //button colors
 $modal-footer-bg-color-button-wrapper: rgb(43, 45, 49);
 $red-danger-button-background: rgb(218, 55, 60);
 $red-danger-button-background-hover: rgb(161, 40, 40);
-
 $button-underline-color: transparent;
-
-//general colors
-$primary-630-hsl: rgba(43, 45, 49, 0.6);
-$black-500: hsl(0, 0%, 0%);
-
-
 
 //scroll bar
 $scrollbar-thin-thumb: hsl(225, 7.1%, 11%);
-$scrollbar-thin-track: hsl(0, 0%, 0%);
+$scrollbar-thin-track: hsla(0, 0%, 0%, 0);
+$scrollbar-auto-thumb: hsl(225, 7%, 11%);
+$scrollbar-auto-track: hsl(220, 7%, 18%);
+
+//var to var
+$brand-experiment: $brand-500;
+$background-primary: $primary-600;
+$background-secondary: $primary-630;
+$background-modifier-accent: $primary-500-48;
+$background-modifier-hover: $primary-500;
+$background-modifier-selected: $primary-400;
+$channels-default: $primary-360;
+$header-secondary : $primary-330;
+$interactive-normal: $primary-330;
+$interactive-hover: $primary-230;
+$interactive-active: $white-500;
+$text-muted: $primary-360;
+$text-normal : $primary-230;
+$text-danger: $red-345;
+$input-background: $primary-700;
+$input-placeholder-text: $primary-560;
+
+$strife-root: (
+    colors:(black-500: hsl(0, 0%, 0%),
+        brand-500: hsl(235, 85.6%, 64.7%),
+        primary-330:hsl(215, 8.8%, 73.3%),
+        primary-360: hsl(214, 8.1%, 61.2%),
+        primary-600: rgb(49, 51, 56),
+        primary-630: hsl(220, 7%, 18%),
+        primary-630-hsl: rgba(43, 45, 49, 0.6),
+        primary-730: hsl(225, 7.1%, 11%),
+        red-430: hsl(358, 68.8%, 53.5%),
+    ),
+);
+
+@function getColor($color) {
+    @return map-get(map-get($strife-root, colors), $color);
+}
+
+
+
+$colors: (
+    black-500: hsl(0, 0%, 0%),
+    brand-500: hsl(235, 85.6%, 64.7%),
+    primary-330:hsl(215, 8.8%, 73.3%),
+    primary-360: hsl(214, 8.1%, 61.2%),
+    primary-600: rgb(49, 51, 56),
+    primary-630: hsl(220, 7%, 18%),
+    primary-630-hsl: rgba(43, 45, 49, 0.6),
+    primary-730: hsl(225, 7.1%, 11%),
+    red-430: hsl(358, 68.8%, 53.5%),
+);
+
+@function getRawColor($color) {
+    @return map-get($colors, $color);
+}
+
+
+// :root {
+//     --black-500: hsl(0, 0%, 0%);
+//     --brand-500: hsl(235, 85.6%, 64.7%);
+//     --primary-330: #{getColor(primary-330)};
+//     --primary-360: #{getColor(primary-360)};
+//     --primary-600: rgb(49, 51, 56);
+//     --primary-630: hsl(220, 7%, 18%);
+//     --primary-630-hsl: rgba(43, 45, 49, 0.6);
+//     --primary-730: #{getColor(primary-730)};
+//     --red-430: hsl(358, 68.8%, 53.5%);
+//     --scrollbar-thin-thumb: var(--primary-730);
+//     --interactive-normal: var(--primary-330);
+
+// }
