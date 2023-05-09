@@ -40,64 +40,71 @@ const DeleteChannelModal = (props) => {
     }
 
 
-
-    const checkIfGeneralChannel = () => {
-        if (props.currentChannel.id === props.server.general_channel_id) {
-            return true
-        }
-        else if (props.currentChannel.id !== props.server.general_channel_id) {
-            return false;
-        }
-    }
-    const handleDeleteChannel = () => {
+    const handleDeleteChannel = (e) => {
         // this is a bit more complex and involved we will close this modal, main mod then transefer a redirect to general channel id
         //then delete channel
-        props.setChannelDeletion(false);
-        props.closeModal();
-        props.history.push(`/$/channels/${props.server.id}/${props.server.general_channel_id}`);
-        props.deleteChannel(props.currentChannel.id).then(()=> {
-            props.fetchServer(parseInt(props.serverId));
-        })
+        e.preventDefault(); // prevent tiny warning for form disconnection
 
+        if (props.currentChannel.id !== props.server.general_channel_id) {
+            props.setChannelDeletion(false);
+            props.closeModal();
+            props.history.push(`/$/channels/${props.server.id}/${props.server.general_channel_id}`);
+            props.deleteChannel(props.currentChannel.id).then(() => {
+                props.fetchServer(parseInt(props.serverId));
+            })
+        }
+        else {
+            //prevent deletion of general channel through XSS attacks (form hijackings)
+            props.setChannelDeletion(false);
+        }
     }
 
+    let hashTag = props.currentChannel.channel_type === 1 ?('#'):("");
+
+    let deleteChannelMessage = props.currentChannel.id === props.server.general_channel_id ? (
+        <div className={`delete-channel-text red`}>
+            This is {` `} <strong>{`${props.server.server_name}`}'s{` `}</strong>
+            general channel {` `}
+            <strong>{hashTag}{`${props.currentChannel.channel_name}`}{` `}</strong>
+            which cannot be deleted. Subscribe to $TR!F3 N!TR0 to delete any channel from your servers.
+        </div>
+    ) : (
+        <div className={`delete-channel-text`}>
+            Are you sure you want to delete {` `}
+            <strong>{hashTag}{`${props.currentChannel.channel_name}`}</strong>
+            ? This cannot be undone.
+        </div>
+    );
+
+
+    let deleteChannelButton = props.currentChannel.id === props.server.general_channel_id ? (
+        <div className="fake-delete-channel-submit-button">
+            Delete Channel
+        </div>
+    ) : (
+        <button type="submit" className="delete-channel-submit-button">
+            Delete Channel
+        </button >
+    );
+
     return (
-        <div className="leave-server-wrapper"  >
-            <div className="leave-server-backdrop channel" onClick={() => props.setChannelDeletion(false)}></div>
-            <div className="leave-server-layer">
-                <div id="leave-server-focus-lock" className="leave-server-focus-lock" onClick={e => e.stopPropagation()} ref={popupRef}>
-                    <div className="leave-server-root">
-                        <div className="leave-server-flex" >
-                            <h2 className="remove-phone-header">
+        <div className="delete-channel-wrapper"  >
+            <div className="delete-channel-backdrop" onClick={() => props.setChannelDeletion(false)}></div>
+            <div className="delete-channel-layer">
+                <div className="delete-channel-focus-lock" onClick={e => e.stopPropagation()} ref={popupRef}>
+                    <div className="delete-channel-root">
+                        <div className="delete-channel-flex" >
+                            <h2 className="delete-channel-header">
                                 Delete Channel
                             </h2>
                         </div>
-                        <div className="leave-server-content-scroll-base" >
-                            <div className={`leave-server-text ${props.currentChannel.id ===
-                                props.server.general_channel_id ?
-                                `is-hidden` : ``
-                                }`}>
-                                Are you sure you want to delete {` `}
-                                <strong>#{`${props.currentChannel.channel_name}`}</strong>
-                                ? This cannot be undone.
-                            </div>
-                            <div className={`leave-server-text ${props.currentChannel.id ===
-                                props.server.general_channel_id ?
-                                `red` : `is-hidden`
-                                }`}>
-                                This is {` `} <strong>{`${props.server.server_name}`}'s{` `}</strong>
-                                general channel {` `}
-                                <strong>#{`${props.currentChannel.channel_name}`}{` `}</strong>
-                                which cannot be deleted. Subscribe to $TR!F3 N!TR0 to delete any channel from your servers.
-                            </div>
-                            <div className="username-edit-sep"></div>
+                        <div className="delete-channel-content-scroll-base" >
+                            {deleteChannelMessage}
+                            <div className="delete-channel-sep"></div>
                         </div>
-                        <form onSubmit={handleDeleteChannel} className="leave-server-button-flex-wrapper">
-                            <button type="submit" className="delete-server-submit-button"
-                                disabled={checkIfGeneralChannel()}>
-                                Delete Channel
-                            </button>
-                            <button type="button" onClick={() => props.setChannelDeletion(false)} className="username-edit-cancel-button">Cancel</button>
+                        <form onSubmit={handleDeleteChannel} className="delete-channel-button-flex-wrapper">
+                            {deleteChannelButton}
+                            <button type="button" onClick={() => props.setChannelDeletion(false)} className="delete-channel-cancel-button">Cancel</button>
                         </form>
                     </div>
                 </div>
