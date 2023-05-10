@@ -1,5 +1,106 @@
 @import 'global_vars';
 
+
+
+
+
+
+@keyframes deleteChannelModalAppear {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+
+    }
+
+}
+
+
+
+@-webkit-keyframes deleteChannelModalAppear {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+
+    }
+
+}
+
+@keyframes deleteChannelModalDisappear {
+
+    0% {
+        opacity: 1;
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+        opacity: 0.1;
+
+    }
+
+}
+
+
+
+
+@-webkit-keyframes deleteChannelModalDisappear {
+
+    0% {
+        opacity: 1;
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+        opacity: 0.1;
+
+    }
+
+}
+
+
+
+
+
+
 .delete-channel-wrapper {
     // forced-color-adjust: none;
     outline: 0;
@@ -87,7 +188,26 @@
     }
 
     z-index: 1505;
+    animation-name: deleteChannelModalAppear;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: deleteChannelModalAppear;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
 }
+
+
+
+.delete-channel-root.transition-out {
+    animation-name: deleteChannelModalDisappear;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: deleteChannelModalDisappear;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
+}
+
+
 
 .delete-channel-flex {
     // forced-color-adjust: none;
@@ -287,5 +407,5 @@
     display: flex;
     cursor: not-allowed;
     opacity: 0.5;
-    
+
 }
