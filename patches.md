@@ -450,6 +450,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Created workable slider in channel settings modal using MUI Slider components.
     - Placed specs for old slider using divs in old channel settings modal in the deprecated files folder.
     - Added missing/misplaced animation for delete channel modal.
+    - Prevent Warping to the general channel when deleting a channel when the user is already at the general channel.
 
 ## Backend Changes
 
