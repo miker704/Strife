@@ -12,7 +12,6 @@ const DeleteChannelModal = (props) => {
     //pass in props for server general  channel and lock deletion for deltion of it 
 
     useEffect(() => {
-
         window.addEventListener('keyup', handleESC, false);
         return function cleanUp () {
             props.removeServerErrors();
@@ -24,13 +23,14 @@ const DeleteChannelModal = (props) => {
 
 
     const handleESC = (e) => {
-
         const keys = {
             27: () => {
                 e.preventDefault();
-
-                props.setChannelDeletion(false);
-                window.removeEventListener('keyup', handleESC, false);
+                document.getElementById('delete-channel-modal').classList.add("transition-out");
+                setTimeout(() => {
+                    props.setChannelDeletion(false);
+                    window.removeEventListener('keyup', handleESC, false);
+                }, 310);
 
             },
         };
@@ -38,6 +38,16 @@ const DeleteChannelModal = (props) => {
             keys[e.keyCode]();
         }
     }
+
+    const handleCloseOnOuterClick = (e) => {
+        e.preventDefault();
+        document.getElementById('delete-channel-modal').classList.add("transition-out");
+        setTimeout(() => {
+            props.setChannelDeletion(false);
+            window.removeEventListener('keyup', handleESC, false);
+        }, 310);
+    }
+
 
 
     const handleDeleteChannel = (e) => {
@@ -48,7 +58,9 @@ const DeleteChannelModal = (props) => {
         if (props.currentChannel.id !== props.server.general_channel_id) {
             props.setChannelDeletion(false);
             props.closeModal();
-            props.history.push(`/$/channels/${props.server.id}/${props.server.general_channel_id}`);
+            if (props.history.location.pathname !== `/$/channels/${props.server.id}/${props.server.general_channel_id}`) {
+                props.history.push(`/$/channels/${props.server.id}/${props.server.general_channel_id}`);
+            }
             props.deleteChannel(props.currentChannel.id).then(() => {
                 props.fetchServer(parseInt(props.serverId));
             })
@@ -59,7 +71,7 @@ const DeleteChannelModal = (props) => {
         }
     }
 
-    let hashTag = props.currentChannel.channel_type === 1 ?('#'):("");
+    let hashTag = props.currentChannel.channel_type === 1 ? ('#') : ("");
 
     let deleteChannelMessage = props.currentChannel.id === props.server.general_channel_id ? (
         <div className={`delete-channel-text red`}>
@@ -89,10 +101,10 @@ const DeleteChannelModal = (props) => {
 
     return (
         <div className="delete-channel-wrapper"  >
-            <div className="delete-channel-backdrop" onClick={() => props.setChannelDeletion(false)}></div>
+            <div className="delete-channel-backdrop" onClick={(e) => handleCloseOnOuterClick(e)}></div>
             <div className="delete-channel-layer">
                 <div className="delete-channel-focus-lock" onClick={e => e.stopPropagation()} ref={popupRef}>
-                    <div className="delete-channel-root">
+                    <div className="delete-channel-root" id="delete-channel-modal">
                         <div className="delete-channel-flex" >
                             <h2 className="delete-channel-header">
                                 Delete Channel
