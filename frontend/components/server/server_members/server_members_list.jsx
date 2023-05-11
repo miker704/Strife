@@ -3,7 +3,7 @@ import ReactTooltip from "react-tooltip";
 import { useEffect, useState, useRef } from "react";
 import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
 import ServerUserOptionsModalContainer from "../../friends/server_user_options/server_user_options_modal_container";
-import _ from 'lodash'
+// import _ from 'lodash'
 
 const ServerMembersList = ({
     currentUser,
