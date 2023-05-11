@@ -8,6 +8,8 @@ import { handleKeyUp } from "../../../utils/modal_api_util";
 import { reSyncCurrentUser } from "../../../actions/session_actions.js";
 import DeleteServerModal from "./delete_server_modal.jsx";
 
+
+
 const extractServerProps = (state, ownProps) => {
     let locationString = ownProps.location.pathname;
     let newLoc = locationString.split('/$/channels/').join('').split('/');
