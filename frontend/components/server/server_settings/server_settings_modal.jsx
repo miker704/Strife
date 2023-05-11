@@ -252,7 +252,7 @@ const ServerSettingsModal = (props) => {
                                     </li>
                                     <div className="user-settings-separator"></div>
                                     <div className="version-number">
-                                        <span>Stable 191743 (b61e73b)</span>
+                                        <span>Stable 140575 (12c29a3)</span>
                                         <br />
                                         <span>Windows 11 64-bit</span>
 
