@@ -333,6 +333,9 @@
     text-rendering: optimizeLegibility;
     font-family: $global-font;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     box-sizing: border-box;
     border: none;
     border-radius: 3px;
@@ -356,6 +359,9 @@
     font-family: $global-font;
     text-rendering: optimizeLegibility;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     box-sizing: border-box;
     background: none;
     border: none;
