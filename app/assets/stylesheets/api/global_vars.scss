@@ -46,6 +46,7 @@ $red-430: hsl(358, 68.8%, 53.5%);
 $red-345: rgb(250, 119, 124);
 $gray-switch: rgb(128, 132, 142);
 $green-switch: hsl(145, 65%, 39%);
+$yellow-300: rgb(240,177,50);
 
 //button colors
 $modal-footer-bg-color-button-wrapper: rgb(43, 45, 49);
@@ -76,6 +77,7 @@ $text-normal : $primary-230;
 $text-danger: $red-345;
 $input-background: $primary-700;
 $input-placeholder-text: $primary-560;
+$status-warning-background:$yellow-300;
 
 $strife-root: (
     colors:(black-500: hsl(0, 0%, 0%),
