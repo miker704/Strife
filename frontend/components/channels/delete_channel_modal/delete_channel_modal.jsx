@@ -1,6 +1,6 @@
 import React from "react";
-import { useEffect, useState, useRef } from "react";
-import { closeOnEsc, closeHookModalOnOutsideClick } from "../../../utils/close_hook_modals_api_utils";
+import { useEffect, useRef } from "react";
+// import { closeOnEsc, closeHookModalOnOutsideClick } from "../../../utils/close_hook_modals_api_utils";
 
 const DeleteChannelModal = (props) => {
     const popupRef = useRef();
@@ -116,7 +116,7 @@ const DeleteChannelModal = (props) => {
                         </div>
                         <form onSubmit={handleDeleteChannel} className="delete-channel-button-flex-wrapper">
                             {deleteChannelButton}
-                            <button type="button" onClick={() => props.setChannelDeletion(false)} className="delete-channel-cancel-button">Cancel</button>
+                            <button type="button" onClick={(e) => handleCloseOnOuterClick(e)} className="delete-channel-cancel-button">Cancel</button>
                         </form>
                     </div>
                 </div>
