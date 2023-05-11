@@ -20,7 +20,15 @@ const ServerSettingsModal = (props) => {
         //     props.fetchChannel();
         // }
 
-        window.addEventListener('keyup', props.handleESC, false);
+        if (serverDeletion === true) {
+            window.removeEventListener('keyup', props.handleESC, false);
+
+        }
+        else {
+            window.addEventListener('keyup', props.handleESC, false);
+        }
+
+        // window.addEventListener('keyup', props.handleESC, false);
         file_Input = document.querySelector('input[type=file]');
 
         return function cleanUp () {
@@ -30,7 +38,7 @@ const ServerSettingsModal = (props) => {
             window.removeEventListener('keyup', props.handleESC, false);
         }
 
-    }, [])
+    }, [serverDeletion])
 
 
     const handleServerIconRemoval = () => {
@@ -158,27 +166,6 @@ const ServerSettingsModal = (props) => {
     }
 
 
-    const renderServerDeletionModal = () => {
-        if (serverDeletion) {
-            window.removeEventListener('keyup', props.handleESC, false);
-
-            return (
-                <div>
-                    {serverDeletion && <DeleteServerModalContainer setServerDeletion={setServerDeletion} />}
-                </div>
-            )
-        }
-        else if (!serverDeletion) {
-            setTimeout(() => {
-
-                window.addEventListener('keyup', props.handleESC, false);
-            }, 1500)
-
-        }
-    }
-
-
-
     let serverNameErrorsTag = props.errors.length > 0 ? "server-error-lite" : "";
     let existingServerImageIcon = serverIconPhotoUrl === undefined || serverIconPhotoUrl === '' ?
         ('') :
@@ -190,7 +177,7 @@ const ServerSettingsModal = (props) => {
 
     return (
         <div className="user-profile-wrapper" onClick={e => e.stopPropagation()}>
-            {renderServerDeletionModal()}
+            {serverDeletion && <DeleteServerModalContainer setServerDeletion={setServerDeletion} />}
             <div className="user-profile" id="user-profile">
                 <div className="sidebar">
                     <div className="sidebar-scrollbar">
