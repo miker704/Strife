@@ -451,6 +451,12 @@ current dmServer involving the user of their friend it will send a request to th
     - Placed specs for old slider using divs in old channel settings modal in the deprecated files folder.
     - Added missing/misplaced animation for delete channel modal.
     - Prevent Warping to the general channel when deleting a channel when the user is already at the general channel.
+    - Added a new animation that aligns closer to discords animation when opening the channel settings modal.
+    - Added App pulling animation for opening channel settings modal, when opening the channel settings modal the app is pulled in to about 
+      96% of the orginal size closing the modal also plays an animation behind the animation of closing the channel settings where the main app
+      re-shrinks to 96% size and grows back to 100% after the modal if fully closed.
+    - Fixed escape listener bug on delete server modal where clicking outside the modal to close it causes a bug that refuses to bind to any sub modal
+     hence clicking escape will close both the sub and main modal. issue is due to an old method of removing listeners when opening a sub modal and adding listeners to that sub modal a set time out is used to readd the listener to the main modal upon closing the sub modal however the timing is what causes the bug so removing the settime out fixes this. settimouts are added to the sub modal to allow the closing animation to fully play.
 
 ## Backend Changes
 
