@@ -1,104 +1,7 @@
 // this modal inherits majority of the stylings for the user disable and user delete modals
 // the only difference here is some different colors and text styles
 
-
-
-.delete-server-modal-wrapper {
-    z-index: 110;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    height: 100%;
-    width: 100%;
-    animation-name: deleteServerWrapperRender;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
-}
-
-
-.delete-server-flex-box-wrapper{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 0;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    forced-color-adjust: none;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    outline: 0;
-}
-
-
-
-
-
-.delete-server-flex-box {
-    flex-direction: column;
-    min-height: 0;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    forced-color-adjust: none;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    max-width: 100%;
-}
-
-
-.delete-server-modal-inner-wrapper {
-    forced-color-adjust: none;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    outline: 0;
-    min-height: 0;
-    max-width: 100%;
-}
-
-
-
-
-.delete-server-modal {
-    animation-name: deleteServerModalAppear;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
-    z-index: 20;
-    forced-color-adjust: none;
-    width: 440px;
-    max-height: 720px;
-    min-height: 200px;
-    opacity: 1;
-    transform: scale(1);
-    display: flex;
-    flex-direction: column;
-    border-radius: 4px;
-    margin: 0 auto;
-    pointer-events: all;
-    position: relative;
-    background-color: hsl(220, 7.7%, 22.9%);
-    user-select: none;
-    box-shadow: 0 0 0 1px hsla(216, 7.2%, 13.5%, 0.6), 0 2px 10px 0 hsla(0, 0%, 0%, 0.2);
-    button[type="submit"]:disabled {
-        cursor: not-allowed;
-        opacity: .5;
-        color: hsl(0, 0%, 100%);
-        forced-color-adjust: none;
-    }
-}
-
-
+@import 'global_vars';
 
 
 @keyframes deleteServerWrapperRender {
@@ -152,6 +55,104 @@
 }
 
 
+.delete-server-modal-layer-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: none !important;
+    pointer-events: none;
+    z-index: 1002;
+    outline: 0;
+}
+
+
+.delete-server-modal-backdrop {
+    opacity: 0.85;
+    background: $black-500;
+    pointer-events: all;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(0px);
+    outline: 0;
+
+}
+
+.delete-server-layer {
+    -webkit-box-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    min-height: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    outline: 0;
+
+}
+
+
+.delete-server-focus-lock {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    outline: 0;
+    min-height: 0;
+    max-width: 100%;
+}
+
+.delete-server-modal {
+    opacity: 1;
+    transform: scale(1);
+    width: 440px;
+    max-height: 720px;
+    min-height: 200px;
+    box-shadow: $dark-elevation-border, $dark-elevation-high;
+    background-color: $modal-pop-up-bg-color;
+    border-radius: 4px;
+    margin: 0 auto;
+    pointer-events: all;
+    position: relative;
+    outline: 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    animation-name: deleteServerModalAppear;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    z-index: 20;
+
+    button[type="submit"]:disabled {
+        cursor: not-allowed;
+        opacity: .5;
+        color: $white-500;
+        forced-color-adjust: none;
+    }
+
+}
+
 .delete-server-modal.transition-out {
     animation-name: deleteServerModalDisappear;
     animation-duration: 0.3s;
@@ -161,69 +162,115 @@
 
 .delete-server-form-header-wrapper {
     flex: 0 0 auto;
-    forced-color-adjust: none;
     border-radius: 4px 4px 0 0;
     transition: box-shadow .1s ease-out, -webkit-box-shadow .1s ease-out;
     word-wrap: break-word;
     position: relative;
+    -webkit-box-flex: 0;
     padding: 16px;
     z-index: 1;
     overflow-x: hidden;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
     display: flex;
+    outline: 0;
 }
 
 .delete-server-form-header {
-    forced-color-adjust: none;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 20px;
     line-height: 24px;
-    font-family: "ABC Ginto Normal";
-    color: #FFFFFF;
+    font-family: $global-font;
+    color: $header-primary;
 
+
+    overflow: hidden;
+    max-height: 50px;
+    text-overflow: clip;
+}
+
+
+.delete-server-scroll-base {
+
+    overflow: hidden scroll;
+    padding-right: 8px;
+    position: relative;
+    z-index: 0;
+    border-radius: 5px 5px 0 0;
+    padding-left: 16px;
+    // padding-right: 16px;
+    // overflow-x: hidden;
+    box-sizing: border-box;
+    min-height: 0;
+    outline: 0;
+    flex: 1 1 auto;
+    scrollbar-width: thin;
+    scrollbar-color: $scrollbar-thin-thumb $scrollbar-thin-track;
 }
 
 
 
+
+.delete-server-scroll-base::-webkit-scrollbar {
+    width: 8px;
+    height: 8px
+}
+
+.delete-server-scroll-base::-webkit-scrollbar-track {
+    border-color: $scrollbar-thin-track;
+    background-color: $scrollbar-thin-track;
+    border: 2px solid $scrollbar-thin-track;
+}
+
+.delete-server-scroll-base::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    background-color: transparent;
+    min-height: 40px
+}
+
+.delete-server-scroll-base::-webkit-scrollbar-corner {
+    background-color: transparent
+}
+
+
 .delete-server-warning-card {
-    forced-color-adjust: none;
     padding: 10px;
     line-height: 20px;
-    border-color: hsl(38, 95.7%, 54.1%);
-    background-color: hsl(38, 95.7%, 54.1%);
+    margin-bottom: 20px;
     position: relative;
+    border-color: $status-warning-background;
+    background-color: $status-warning-background;
     border-width: 1px;
     border-style: solid;
     border-radius: 5px;
-    margin-bottom: 20px;
     outline: 0;
+    overflow: hidden;
+
 
 }
 
 .delete-server-warning-text {
-    forced-color-adjust: none;
     outline: 0;
     font-size: 16px;
     line-height: 20px;
-    font-family: "Whitney";
+    font-family: $global-font;
     font-weight: 400;
-    color: #FFFFFF;
+    color: $white-500;
+    overflow: hidden;
+    // text-overflow: clip;
+    text-overflow: ellipsis;
 
     strong {
         font-weight: 600;
         outline: 0;
-        forced-color-adjust: none;
-
     }
 }
-
-
-
-
-
 
 
 .delete-server-sep {
@@ -232,24 +279,92 @@
     min-height: 0px;
     min-width: 1px;
     flex: 0 0 auto;
-    height: 16px;
-    forced-color-adjust: none;
+    height: 0px;
+    outline: 0;
+
+}
+
+.delete-server-spacing {
+    margin-bottom: 20px;
+    outline: 0;
+}
+
+.delete-server-input-header {
+    color: $header-secondary;
+    margin-bottom: 8px;
+    font-family: $global-font;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+}
+
+.delete-server-input-name-wrapper {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    outline: 0;
 }
 
 
+
+.input-server-name {
+    padding: 10px;
+    height: 40px;
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 3px;
+    color: $text-normal;
+    background-color: $input-background;
+    border: none;
+    transition: border-color .2s ease-in-out;
+    font-family: $global-font;
+    text-rendering: optimizeLegibility;
+    font-weight: 400;
+    outline: none;
+}
+
+
+.delete-server-button-sec {
+    outline: 0;
+    box-shadow: inset 0 1px 0 $primary-630-hsl;
+    flex: 0 0 auto;
+    border-radius: 0 0 5px 5px;
+    background-color: $modal-footer-bg-color-button-wrapper;
+    position: relative;
+    flex: 0 0 auto;
+    padding: 16px;
+    z-index: 1;
+    overflow-x: hidden;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    display: flex;
+}
+
+
+
+
 .delete-server-submit-button {
-    forced-color-adjust: none;
-    color: #FFFFFF;
+    color: $white-500;
     width: auto;
     height: 38px;
     min-width: 96px;
     min-height: 38px;
-    background-color: hsl(359, 66.7%, 54.1%);
+    background-color: $red-danger-button-background;
     transition: background-color .17s ease, color .17s ease;
     position: relative;
     text-rendering: optimizeLegibility;
-    font-family: "Whitney";
+    font-family: $global-font;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     box-sizing: border-box;
     // background: none;
     border: none;
@@ -265,15 +380,18 @@
 }
 
 .delete-server-submit-button:hover {
-    background-color: hsl(359, 56.3%, 40.4%);
+    background-color: $red-danger-button-background-hover;
 }
 
 
 .delete-server-cancel-button {
     cursor: pointer;
-    font-family: "Whitney";
+    font-family: $global-font;
     text-rendering: optimizeLegibility;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     box-sizing: border-box;
     background: none;
     border: none;
@@ -291,8 +409,7 @@
     min-height: 38px;
     width: auto;
     margin-right: 8px;
-    forced-color-adjust: none;
-    color: #FFFFFF;
+    color: $white-500;
 }
 
 
@@ -301,125 +418,12 @@
 }
 
 
-.delete-server-button-sec {
-    flex: 0 0 auto;
-    forced-color-adjust: none;
-    border-radius: 0 0 5px 5px;
-    background-color: hsl(223, 6.9%, 19.8%);
-    box-shadow: inset 0 1px 0 hsla(223, 6.9%, 19.8%, .6);
-    padding: 16px;
-    z-index: 1;
-    overflow-x: hidden;
-    position: relative;
-    flex-wrap: nowrap;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-    align-items: stretch;
-    display: flex;
-}
-
-
-
-.server-name-section {
-    forced-color-adjust: none;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.server-name-header1 {
-    flex: 1;
-    cursor: default;
-    font-family: "ABC Ginto Normal";
-    font-weight: 500;
-    text-transform: uppercase;
+.delete-server-error {
     font-size: 12px;
     line-height: 16px;
-    margin-bottom: 8px;
-    forced-color-adjust: none;
-    color: hsl(216, 3.7%, 73.5%);
-
-}
-
-.input-server-name-wrapper {
-    forced-color-adjust: none;
-    display: flex;
-    flex-direction: column;
-}
-
-.input-server-name {
-    forced-color-adjust: none;
-    padding: 10px;
-    height: 40px;
-    font-size: 16px;
-    box-sizing: border-box;
-    width: 100%;
-    border-radius: 3px;
-    color: hsl(210, 2.9%, 86.7%);
-    background-color: hsl(216, 7.2%, 13.5%);
-    border: none;
-    transition: border-color .2s ease-in-out;
-    font-family: "Whitney";
-    text-rendering: optimizeLegibility;
     font-weight: 400;
-    outline: none;
-}
-
-
-.delete-server-form-container {
-    padding-right: 8px;
-    forced-color-adjust: none;
-    padding-bottom: 16px;
-    position: relative;
-    z-index: 0;
-    border-radius: 5px 5px 0 0;
-    padding-left: 16px;
-    box-sizing: border-box;
-    min-height: 0;
-    flex: 1 1 auto;
-}
-
-
-
-.delete-server-scroll-base {
-
-    // overflow: hidden scroll;
-    padding-right: 8px;
-    forced-color-adjust: none;
-    position: relative;
-    z-index: 0;
-    border-radius: 5px 5px 0 0;
-    padding-left: 16px;
-    padding-right: 16px;
-    // overflow-x: hidden;
-    box-sizing: border-box;
-    min-height: 0;
-    flex: 1 1 auto;
-    scrollbar-width: thin;
-    scrollbar-color: hsl(216, 7.2%, 13.5%) hsla(0, 0%, 0%, 0);
-}
-
-
-
-
-.delete-server-scroll-base::-webkit-scrollbar {
-    width: 8px;
-    height: 8px
-}
-
-.delete-server-scroll-base::-webkit-scrollbar-track {
-    border-color: hsla(0, 0%, 0%, 0);
-    background-color: hsla(0, 0%, 0%, 0);
-    border: 2px solid hsla(0, 0%, 0%, 0);
-}
-
-.delete-server-scroll-base::-webkit-scrollbar-thumb {
-    background-clip: padding-box;
-    border: 2px solid transparent;
-    border-radius: 4px;
-    background-color: transparent;
-    min-height: 40px
-}
-
-.delete-server-scroll-base::-webkit-scrollbar-corner {
-    background-color: transparent
+    outline: 0;
+    margin-top: 8px;
+    color: $text-danger;
+    font-family: $global-font;
 }
