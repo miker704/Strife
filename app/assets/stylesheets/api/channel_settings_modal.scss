@@ -251,6 +251,29 @@
     }
 }
 
+@keyframes bounceIn3{
+    from {
+        opacity: 0;
+        transform: scale(1.1) translateY(0px);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1) translateZ(0px);
+    }
+}
+@keyframes bounceOut4{
+    from{
+        opacity: 1;
+        transform: scale(1) translateZ(0px);
+    }
+    to{
+        opacity: 0;
+        transform: scale(1.10) translateZ(0px);
+    }
+}
+
+
+
 .cs-channel-settings-modal {
     position: absolute;
     opacity: 1;
