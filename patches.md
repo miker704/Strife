@@ -458,6 +458,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Fixed escape listener bug on delete server modal where clicking outside the modal to close it causes a bug that refuses to bind to any sub modal
      hence clicking escape will close both the sub and main modal. issue is due to an old method of removing listeners when opening a sub modal and adding listeners to that sub modal a set time out is used to readd the listener to the main modal upon closing the sub modal however the timing is what causes the bug so removing the settime out fixes this. settimouts are added to the sub modal to allow the closing animation to fully play.
     - Remodeled and re styled delete server modal.
+    - Addressed warp issue when failing to delete server when using the delete server form.
+    - changed the close modal event when click cancel on the delete channel fom.
 
 ## Backend Changes
 
