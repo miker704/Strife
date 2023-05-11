@@ -1,5 +1,7 @@
+@import 'global_vars';
+
 .da-layer {
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
     outline: 0;
     position: absolute;
     top: 0;
@@ -12,9 +14,9 @@
 }
 
 .da-backdrop {
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
     outline: 0;
-    background: hsl(0, 0%, 0%);
+    background: $black-500;
     opacity: 0.85;
     pointer-events: all;
     transform: translateZ(0);
@@ -26,7 +28,7 @@
 }
 
 .da-flex-layer {
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -48,7 +50,7 @@
 }
 
 .da-focus-lock {
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -61,7 +63,7 @@
 .da-dl-apps {
     opacity: 1;
     transform: scale(1);
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
     outline: 0;
     display: flex;
     -webkit-box-orient: vertical;
@@ -78,13 +80,13 @@
     margin: 0 auto;
     pointer-events: all;
     position: relative;
-    background-color: hsl(0, 0%, 100%) !important;
-    box-shadow: 0 0 0 1px hsla(216, 3.7%, 73.5%, 0.3), 0 2px 10px 0 hsla(0, 0%, 0%, 0.1) !important;
+    background-color: $white-500 !important;
+    box-shadow: $light-elevation-border, $light-elevation-high !important;
 
 }
 
 .da-dl-apps-inner {
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
     outline: 0;
     display: flex;
     margin: 10px;
@@ -95,22 +97,23 @@
 
 
 .close-da {
-    forced-color-adjust: none;
-    color: #4f5660;
+    // forced-color-adjust: none;
+    color: $download-modal-close-button;
     position: absolute;
     top: 12px;
     right: 12px;
     height: 26px;
     padding: 4px;
     transition: opacity .2s ease-in-out;
-    opacity: .5;
+    opacity: 0.5;
     cursor: pointer;
     border-radius: 3px;
     box-sizing: content-box;
     width: auto;
     border: 0;
     margin: 0;
-    background: #0000;
+    // background: #0000;
+    background: transparent;
     display: flex;
     -webkit-box-pack: center;
     -webkit-box-align: center;
@@ -121,14 +124,19 @@
     line-height: 16px;
     user-select: none;
     outline: 0;
-    font-family: "Whitney";
+    font-family: $global-font;
     text-rendering: optimizeLegibility;
+}
+
+.close-da:hover {
+    color: $download-modal-close-button;
+    opacity: 1;
 }
 
 .close-da-contents {
     outline: 0;
-    forced-color-adjust: none;
-
+    // forced-color-adjust: none;
+    background-image: linear-gradient(0deg, transparent, transparent 1px, transparent 0, transparent 2px, transparent 0);
 
 }
 
@@ -141,36 +149,36 @@
     -webkit-box-direction: normal;
     display: flex;
     outline: 0;
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
     flex-direction: column;
 }
 
 
 .platform-wraps-h3 {
     outline: 0;
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
     text-align: center;
     align-items: center;
     margin-bottom: 7px;
-    color: #060607;
+    color: $platform-wraps-header;
     -webkit-box-align: center;
-    font-weight: 500;
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 20px;
     line-height: 24px;
-    font-family: "ABC Ginto Normal";
+    font-family: $global-font;
 
 }
 
 .platforms-ul {
     display: flex;
     list-style: none;
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
 }
 
 .platforms-li-item {
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
     backface-visibility: hidden;
-    border: 2px solid #747f8d;
+    border: 2px solid $platform-item-color;
     padding: 32px 12px 12px;
     position: relative;
     -webkit-box-orient: vertical;
@@ -188,7 +196,7 @@
 
 .platforms-li-item:hover {
     transform: scale(1.025);
-    border-color: hsl(235, 85.6%, 64.7%);
+    border-color: $brand-experiment;
 
     .platform-apple-icon {
         // visibility: hidden;
@@ -225,6 +233,7 @@
     .platform-android-icon-active {
         opacity: unset;
     }
+
     .platform-apple-ios-icon {
         // visibility: hidden;
         opacity: 0;
@@ -233,17 +242,18 @@
     .platform-apple-ios-icon-active {
         opacity: unset;
     }
+
     .download-app-buttons-anchor,
     .download-app-buttons-anchor-2,
     .download-app-buttons-anchor-3 {
-        background-color: hsl(235, 85.6%, 64.7%);
+        background-color: $brand-experiment;
     }
 
 }
 
 
 .platforms-li-item-inner-wrapper {
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
     justify-content: space-between;
     -webkit-box-flex: 1;
     -webkit-box-pack: justify;
@@ -256,7 +266,7 @@
 }
 
 .platforms-icon-wrap {
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
     align-self: center;
     position: relative;
     width: 100px;
@@ -281,7 +291,7 @@
 .platform-apple-icon-active {
     content: image_url('macos-blue.svg');
     opacity: 0;
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
     transition: opacity .3s ease-in-out;
     background-repeat: no-repeat;
     background-size: contain;
@@ -310,7 +320,7 @@
 .platform-windows-icon-active {
     content: image_url('windows-blue.svg');
     opacity: 0;
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
     transition: opacity .3s ease-in-out;
     background-repeat: no-repeat;
     background-size: contain;
@@ -340,7 +350,7 @@
 .platform-linux-icon-active {
     content: image_url('linux-blue.svg');
     opacity: 0;
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
     transition: opacity .3s ease-in-out;
     background-repeat: no-repeat;
     background-size: contain;
@@ -366,7 +376,7 @@
 .platform-apple-ios-icon-active {
     content: image_url('apple-blue.svg');
     opacity: 0;
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
     transition: opacity .3s ease-in-out;
     background-repeat: no-repeat;
     background-size: contain;
@@ -393,7 +403,7 @@
 .platform-android-icon-active {
     content: image_url('android-blue.svg');
     opacity: 0;
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
     transition: opacity .3s ease-in-out;
     background-repeat: no-repeat;
     background-size: contain;
@@ -409,11 +419,11 @@
 
 
 .da-icon-header {
-    forced-color-adjust: none;
-    color: #060607;
+    // forced-color-adjust: none;
+    color: $platform-icon-header;
     text-align: center;
-    font-weight: 500;
-    font-family: "ABC Ginto Normal";
+    font-weight: 600;
+    font-family: $global-font;
     font-size: 20px;
     line-height: 24px;
 }
@@ -421,7 +431,7 @@
 .download-app-buttons {
     outline: 0;
     display: flex;
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
 
 }
 
@@ -430,8 +440,8 @@
     flex-grow: 1;
     text-decoration: none;
     outline: 0;
-    forced-color-adjust: none;
-    background-color: #747f8d;
+    // forced-color-adjust: none;
+    background-color: $platform-item-color;
     text-align: center;
     border-radius: 3px;
     font-weight: 500;
@@ -439,7 +449,7 @@
     padding: 12px 0;
     margin-top: 16px;
     transition: background-color .3s ease-in-out;
-    color: hsl(0, 0%, 100%);
+    color: $white-500;
 }
 
 
@@ -448,8 +458,8 @@
     flex-grow: 1;
     text-decoration: none;
     outline: 0;
-    forced-color-adjust: none;
-    background-color: #747f8d;
+    // forced-color-adjust: none;
+    background-color: $platform-item-color;
     text-align: center;
     border-radius: 3px;
     font-weight: 500;
@@ -457,7 +467,7 @@
     padding: 12px 0;
     margin-top: 16px;
     transition: background-color .3s ease-in-out;
-    color: hsl(0, 0%, 100%);
+    color: $white-500;
     width: 65px;
 }
 
@@ -466,8 +476,8 @@
     flex-grow: 1;
     text-decoration: none;
     outline: 0;
-    forced-color-adjust: none;
-    background-color: #747f8d;
+    // forced-color-adjust: none;
+    background-color: $platform-item-color;
     text-align: center;
     border-radius: 3px;
     font-weight: 500;
@@ -475,7 +485,7 @@
     padding: 12px 0;
     margin-top: 16px;
     transition: background-color .3s ease-in-out;
-    color: hsl(0, 0%, 100%);
+    color: $white-500;
     width: 65px;
     margin-left: 12px;
 
@@ -485,33 +495,29 @@
 
 
 
-.mobile-platforms{
+.mobile-platforms {
     outline: 0;
-   -webkit-box-orient: vertical;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
     margin-top: 32px;
 }
 
-.mobile-header{
-    font-size: 18px;
+.mobile-header {
+    font-size: 20px;
     line-height: 4px;
-    font-family: "ABC Ginto Normal";
-    font-weight: 500;
+    font-family: $global-font;
+    font-weight: 600;
     align-items: center;
     margin-bottom: 10px;
-    color: #060607;
+    color: $platform-icon-header;
     -webkit-box-align: center;
     text-align: center;
-    forced-color-adjust: none;
+    // forced-color-adjust: none;
 
 
 }
-
-
-
-
