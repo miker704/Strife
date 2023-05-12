@@ -12,7 +12,7 @@ const mSTP = (state, ownProps) => {
         servers: Object.values(state.entities.servers),
         serverId: ownProps.match.params.serverId,
         errors: state.errors.servers,
-       
+        currentOpenModal: state.ui.modal,
 
     }
 }
