@@ -476,17 +476,17 @@ button#download-apps:focus {
   color: $text-normal !important;
   font-size: 16px !important;
   font-weight: 600 !important;
-  padding: 5px 16px !important;
+  padding: 8px 12px !important;
   border-radius: 5px !important;
   box-shadow: $tool-tip-elevation-high !important;
   font-family: $global-font !important;
   text-overflow: ellipsis !important;
-  max-width: 150px;
+  max-width: 170px;
   line-height: 20px;
   text-align: left;
   overflow: hidden !important;
-  max-height: 45px;
-  max-width: 196px;
+  max-height: 50px;
+  // max-width: 196px;
   box-sizing: border-box;
   // word-wrap: break-word;
 }
