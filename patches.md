@@ -461,6 +461,16 @@ current dmServer involving the user of their friend it will send a request to th
     - Addressed warp issue when failing to delete server when using the delete server form.
     - changed the close modal event when click cancel on the delete channel form.
     - Changed CSS vars to SCSS and updated colors and fonts to downloads modal.
+    - Switched from Css to SCSS vars for server nav bar.
+    - Fixed hover problems on server bubbles.
+    - Fixed a problem on the server nav bar where if a server bubble for a server is using a custom avatar
+      selecting that server does not keep the bubble expanded. Addressed the issue by adding a missing style the decrease the border radius by 30% on an img type.
+    - Addressed an issue where a missing feature of selecting the following bubbles on the server nav bar
+      explore public servers, create a server, download apps, bubbles if these bubbles are clicked the bubble itself does not retain 30% border radius or the color changes for a selected bubble. Addressed by using a similar approach to the home bubble for explore servers bubble attaching the guild link to a condition to ensure the selected bubble shows as selected while at the explore servers page.
+      Also by using the ui state rto check which modals are currently open either download apps, or create a server if so set a custom class to show the bubble that is is selected and active and "pop" the bubble when the modal is closed this works when in the explore servers page of in any other server clicking on the modal bubbles allows those bubbles to expand as well while still having the current server bubble expanded at the same time.
+    - Changed tooltip for the home bubble to say Direct Messages instead of Home.
+    - Restyled the Tool Tips for server, explore servers, download apps, and create a server modal bubbles.
+    - Changed font type for the text in the Server Acronyms bubbles.
 
 ## Backend Changes
 
