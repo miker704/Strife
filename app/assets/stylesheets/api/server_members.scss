@@ -1,20 +1,14 @@
+@import 'global_vars';
+
 // Place all the styles related to the api::DmMembers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.server-members-index-container-wrap {
-    width: 240px;
-    flex-shrink: 0;
-    // background-color: #36393F;
-    background-color: #2b2d31;
-}
 
 
 .server-members-index-container-wrapper {
     min-width: 240px;
     position: relative;
     max-height: 100%;
-    forced-color-adjust: none;
     outline: 0;
     display: flex;
     user-select: none;
@@ -24,9 +18,7 @@
 .server-members-index-container {
     overflow: hidden scroll;
     padding-right: 0px;
-    forced-color-adjust: none;
-    // background-color: hsl(223, 6.9%, 19.8%);
-    background-color: #2b2d31;
+    background-color: $background-secondary;
     width: 240px;
     padding: 0 0 20px;
     -webkit-box-flex: 0;
@@ -45,14 +37,14 @@
 }
 
 .server-members-index-container::-webkit-scrollbar-corner {
-    background-color: #0000;
+    background-color: transparent;
 }
 
 .server-members-index-container::-webkit-scrollbar-thumb {
     background-clip: padding-box;
-    border: 2px solid #0000;
+    border: 2px solid transparent;
     border-radius: 4px;
-    background-color: hsl(216, 7.2%, 13.5%);
+    background-color: $scrollbar-thin-thumb;
     min-height: 40px;
 }
 
@@ -66,25 +58,23 @@
 }
 
 .server-members-index-container::-webkit-scrollbar-track {
-    border-color: #FFFFFF;
-    ;
-    background-color: #FFFFFF;
-    border: 2px solid #FFFFFF;
+    border-color: $scrollbar-thin-track;
+    background-color: $scrollbar-thin-track;
+    border: 2px solid $scrollbar-thin-track;
 }
 
 // .server-members-ul-padding {
-    // padding-top: 10px;
-    /* padding-top: 7.5px; */
-    /* padding-left: 7.5px; */
-    /* padding-bottom: 7.5px; */
-    /* border-radius: 5px;*/
+// padding-top: 10px;
+/* padding-top: 7.5px; */
+/* padding-left: 7.5px; */
+/* padding-bottom: 7.5px; */
+/* border-radius: 5px;*/
 
 // }
 
 .server-members-header-title {
     padding: 24px 8px 0 16px;
     height: 40px;
-    forced-color-adjust: none;
     box-sizing: border-box;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -93,12 +83,11 @@
     font-size: 12px;
     line-height: 16px;
     letter-spacing: .02em;
-    font-family: "ABC Ginto Normal";
-    font-weight: 500;
+    font-family: $global-font;
+    font-weight: 600;
     -webkit-box-flex: 1;
     flex: 1 1 auto;
-    // color: hsl(223, 3.4%, 60.2%);
-    color: #989AA2;
+    color: $channels-default;
     margin-bottom: 5px;
 }
 
@@ -106,30 +95,24 @@
     position: relative;
     max-width: 224px;
     margin-left: 8px;
-    forced-color-adjust: none;
-    // background-color: hsl(223, 6.9%, 19.8%);
-    background-color: #2b2d31;
+    background-color: $background-secondary;
     box-sizing: border-box;
     display: block;
     padding: 1px 0;
     border-radius: 4px;
     transition: none;
-    // color: hsl(223, 3.4%, 60.2%);
-    color: #989AA2;
+    color: $channels-default;
     outline: 0;
 }
 
-.server-member-item-offline{
+.server-member-item-offline {
     opacity: 0.3;
 }
 
 .server-member-item:hover {
-    // background-color: #3b3f45;
-    // color: hsl(210, 2.9%, 86.7%);
-    color: hsl(228, 8.8%, 88.8%);
-    background-color: #35373c;
+    color: $interactive-hover;
+    background-color: $background-modifier-hover;
     opacity: 1;
-
 }
 
 
@@ -142,7 +125,6 @@
     padding: 0 8px;
     display: flex;
     -webkit-box-align: center;
-    forced-color-adjust: none;
 
 }
 
@@ -151,13 +133,11 @@
     width: 32px;
     height: 32px;
     margin-right: 12px;
-    forced-color-adjust: none;
     outline: 0;
     justify-content: center;
     -webkit-box-flex: 0;
     align-items: center;
     -webkit-box-pack: center;
-
     display: flex;
     -webkit-box-align: center;
     overflow: hidden;
@@ -166,7 +146,6 @@
 .server-member-avatar-inner-wrapper {
     width: 32px;
     height: 32px;
-    forced-color-adjust: none;
     position: relative;
     outline: 0;
     border-radius: 50%;
@@ -197,7 +176,6 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    forced-color-adjust: none;
     flex: 1 1 auto;
     min-width: 0;
     -webkit-box-flex: 1;
@@ -211,7 +189,6 @@
     justify-content: flex-start;
     -webkit-box-align: center;
     align-items: center;
-    forced-color-adjust: none;
 }
 
 .server-member-username-div {
@@ -224,8 +201,6 @@
     text-overflow: ellipsis;
     overflow: hidden;
     outline: 0;
-
-    forced-color-adjust: none;
 }
 
 .server-member-username-span {
@@ -235,17 +210,14 @@
     overflow: hidden;
     outline: 0;
 
-    forced-color-adjust: none;
 }
 
 .server-member-username {
-    forced-color-adjust: none;
     outline: 0;
     padding-left: 10px;
     padding-top: 3px;
-    font-family: "Whitney";
+    font-family: $global-font;
     font-size: 16px;
-    // color:#96989d;
 }
 
 .server-group-owner-icon {
@@ -257,20 +229,21 @@
     height: 14px;
     flex-shrink: 0;
     margin-left: 4px;
-    forced-color-adjust: none;
-    color: hsl(38, 95.7%, 54.1%);
+    color: $text-warning;
 }
 
 .server-group-owner-tool-tip {
-    background: #000000 !important;
-    color: hsl(228, 8.8%, 88.8%) !important;
-    // background: #191919 !important;
-    font-size: 14px !important;
+
+    opacity: 1.0 !important;
+    background: $background-floating !important;
+    color: $text-normal !important;
+    font-size: 16px !important;
     font-weight: 600 !important;
+    line-height: 20px;
+    // box-shadow: $tool-tip-elevation-high !important;
+    border-radius: 5px !important;
+    font-family: $global-font !important;
     padding: 6px 12px !important;
-    border-radius: 4px !important;
-    // color: #B9BBBE !important;
-    // box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
-    font-family: "Whitney" !important;
     width: fit-content !important;
+
 }
