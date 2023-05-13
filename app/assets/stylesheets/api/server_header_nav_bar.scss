@@ -1,10 +1,10 @@
+@import 'global_vars';
+
 //header navbar that diosplays on top of the screen of each dm server
 
 .server-header-bar {
     flex: 0 0 auto;
-    // background: hsl(220, 7.7%, 22.9%);
-    background-color: #313338;
-    forced-color-adjust: none;
+    background-color: $background-primary;
     -webkit-box-flex: 0;
     box-sizing: border-box;
     display: flex;
@@ -12,7 +12,7 @@
     align-items: center;
     min-width: 0;
     user-select: none;
-    color: hsl(210, 2.9%, 86.7%);
+    color: $text-normal;
     height: 48px;
     padding: 0 8px;
     font-size: 16px;
@@ -35,7 +35,6 @@
     min-width: 0;
     overflow: hidden;
     box-sizing: border-box;
-    forced-color-adjust: none;
     display: flex;
     -webkit-box-align: center;
     flex: 1 1 auto;
@@ -44,7 +43,6 @@
 }
 
 .server-children-icon-wrapper {
-    forced-color-adjust: none;
     position: relative;
     height: 24px;
     width: auto;
@@ -57,7 +55,6 @@
 }
 
 // .icon-server-hashtag {
-//     forced-color-adjust: none;
 //     box-sizing: border-box;
 //     display: block;
 //     width: 24px;
@@ -67,7 +64,6 @@
 // }
 
 .server-hbar-name {
-    forced-color-adjust: none;
     flex: 0 0 auto;
     min-width: auto;
     margin: 0 8px 0 0;
@@ -84,21 +80,19 @@
     white-space: nowrap;
     -webkit-box-pack: start;
     cursor: pointer;
-    forced-color-adjust: none;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
     box-sizing: border-box;
-    color: #FFFFFF;
+    color: $header-primary;
     font-size: 16px;
-    line-height: 22px;
-    font-weight: 500;
-    font-family: "ABC Ginto Normal";
+    line-height: 20px;
+    font-weight: 600;
+    font-family: $global-font;
 
 }
 
 .server-member-online-status {
-    forced-color-adjust: none;
     -webkit-box-flex: 0;
     flex: 0 0 auto;
     align-items: center;
@@ -110,7 +104,6 @@
 }
 
 .shb-spacer {
-    forced-color-adjust: none;
     flex: 1 1 auto;
     -webkit-box-flex: 1;
     box-sizing: border-box;
@@ -118,7 +111,6 @@
 }
 
 .shb-tool-bar {
-    forced-color-adjust: none;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -133,7 +125,6 @@
 }
 
 .shb-tool-icon-wrapper {
-    forced-color-adjust: none;
     outline: 0;
     position: relative;
     height: 24px;
@@ -146,70 +137,58 @@
 }
 
 .icon-server-hashtag {
-    // color: hsl(216, 3.7%, 73.5%);
-    color: hsl(226, 5.5%, 53.5%);
+    color: $channel-icon;
     display: block;
     width: 24px;
     height: 24px;
     -webkit-app-region: no-drag;
-    forced-color-adjust: none;
     box-sizing: border-box;
-
 }
 
 
 .icon-server-mega-phone {
-    color: hsl(226, 5.5%, 53.5%);
+    color: $channel-icon;
     display: block;
     width: 24px;
     height: 24px;
     -webkit-app-region: no-drag;
-    forced-color-adjust: none;
     box-sizing: border-box;
 }
 
 .icon-thread {
-    // color: hsl(216, 3.7%, 73.5%);
-    color: hsl(231, 5.2%, 73.5%);
+    color: $interactive-normal;
     display: block;
     width: 24px;
     height: 24px;
     -webkit-app-region: no-drag;
-    forced-color-adjust: none;
     box-sizing: border-box;
 }
 
 .icon-pin-messages {
-    // color: hsl(216, 3.7%, 73.5%);
-    color: hsl(231, 5.2%, 73.5%);
+    color: $interactive-normal;
     display: block;
     width: 24px;
     height: 24px;
     -webkit-app-region: no-drag;
-    forced-color-adjust: none;
     box-sizing: border-box;
 }
 
 .icon-ns {
-    // color: hsl(216, 3.7%, 73.5%);
-    color: hsl(231, 5.2%, 73.5%);
+    color: $interactive-normal;
     display: block;
     width: 24px;
     height: 24px;
     -webkit-app-region: no-drag;
-    forced-color-adjust: none;
     box-sizing: border-box;
 }
 
 .shbar-search-bar-wrapper {
-    forced-color-adjust: none;
     margin: 0 8px;
     box-sizing: border-box;
     outline: 0;
 }
 
 .shbar-search-bar-inner-wrapper {
-    forced-color-adjust: none;
     position: relative;
     overflow: visible;
     z-index: 100;
@@ -221,7 +200,6 @@
 
 .shbar-search-bar {
     transition: width .25s ease;
-    forced-color-adjust: none;
     outline: 0;
     box-shadow: none;
     cursor: text;
@@ -236,9 +214,9 @@
     box-sizing: border-box;
     // color: hsl(210, 2.9%, 86.7%);
     // background-color: hsl(216, 7.2%, 13.5%);
-    color: hsl(228, 8.8%, 88.8%);
-    background-color: #1e1f22;
-    font-family: "Whitney";
+    color: $text-normal;
+    background-color: $background-tertiary;
+    font-family: $global-font;
     font-size: 14px;
 
 }
@@ -251,7 +229,6 @@
     overflow: hidden;
     -webkit-box-flex: 1;
     padding: 2px 0;
-    forced-color-adjust: none;
     position: relative;
     height: inherit;
     text-align: initial;
@@ -264,20 +241,18 @@
 .public-draft-edit {
     padding-left: 4px;
     outline: 0;
-    forced-color-adjust: none;
     position: absolute;
     z-index: 1;
     box-sizing: content-box;
     padding-bottom: 20px;
     padding-right: 2px;
-    color: hsl(214, 4%, 65.3%);
+    color: $text-muted;
 }
 
 
 .public-draft-edit-placeholder {
     white-space: pre-wrap;
     outline: 0;
-    forced-color-adjust: none;
     box-sizing: border-box;
 }
 
@@ -286,8 +261,7 @@
     overflow: hidden;
     border-radius: 2px;
     height: 20px;
-    forced-color-adjust: none;
-    background-color: #fff0;
+    background-color: $draft-editor;
     position: relative;
     z-index: 1;
     outline: 0;
@@ -309,7 +283,6 @@
     padding-left: 2px;
     padding-right: 2px;
     -webkit-user-modify: read-write-plaintext-only;
-    forced-color-adjust: none;
     height: inherit;
     text-align: initial;
     outline: 0;
@@ -317,7 +290,6 @@
 }
 
 .data-contents {
-    forced-color-adjust: none;
     outline: 0;
     box-sizing: border-box;
 
@@ -325,7 +297,6 @@
 
 .data-block {
     box-sizing: border-box;
-    forced-color-adjust: none;
     outline: 0;
 }
 
@@ -336,13 +307,11 @@
     direction: ltr;
     text-align: left;
     position: relative;
-    forced-color-adjust: none;
     box-sizing: border-box;
 
 }
 
 .data-key-offset2 {
-    forced-color-adjust: none;
     outline: 0;
     box-sizing: border-box;
     min-width: 1px;
@@ -352,7 +321,6 @@
 .shbar-mag-icon-container {
     width: 24px;
     height: 24px;
-    forced-color-adjust: none;
     box-sizing: border-box;
     display: flex;
     -webkit-box-pack: center;
@@ -364,7 +332,6 @@
 }
 
 .mag-container {
-    forced-color-adjust: none;
     box-sizing: border-box;
     position: relative;
     width: 16px;
@@ -377,7 +344,6 @@
     transform: rotate(0deg);
     opacity: 1;
     box-sizing: border-box;
-    forced-color-adjust: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -385,14 +351,11 @@
     height: 100%;
     z-index: 2;
     transition: transform .1s ease-out, opacity .1s ease-out, -webkit-transform .1s ease-out;
-    // color: hsl(214, 4%, 65.3%);
-    color: hsl(228, 5.1%, 61.6%);
-
+    color: $text-muted;
 
 }
 
 .mag-icon-2 {
-    forced-color-adjust: none;
     box-sizing: border-box;
     position: absolute;
     top: 0;
@@ -403,138 +366,152 @@
     z-index: 2;
     transition: transform .1s ease-out, opacity .1s ease-out, -webkit-transform .1s ease-out;
     transform: rotate(90deg);
-    // color: hsl(214, 4%, 65.3%);
-    color: hsl(228, 5.1%, 61.6%);
+    color: $interactive-normal;
 
 }
 
+.mag-container:hover {
+    .mag-icon-2 {
+        color: $interactive-hover;
+    }
+}
+
 .icon-dms-inbox {
-    // color: hsl(216, 3.7%, 73.5%);
-    color: hsl(231, 5.2%, 73.5%);
+    color: $interactive-normal;
     display: block;
     width: 24px;
     height: 24px;
     -webkit-app-region: no-drag;
-    forced-color-adjust: none;
     box-sizing: border-box;
 }
 
-
 .thread-tool-tip {
+    background: $background-floating !important;
+    color: $text-normal !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    padding: 8px 12px !important;
+    border-radius: 5px !important;
+    line-height: 16px;
+    box-shadow: $tool-tip-elevation-high !important;
+    font-family: $global-font !important;
+    width: fit-content !important;
+    opacity: 1 !important;
+}
+
+.thread-tool-tip-1 {
     background: #000000 !important;
     color: hsl(228, 8.8%, 88.8%) !important;
-    // filter: brightness(125%);
-    // background: #191919 !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     padding: 6px 12px !important;
     border-radius: 4px !important;
-    // color: #B9BBBE !important;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
     font-family: "Whitney" !important;
     width: fit-content !important;
 }
 
+
+
+
 .thread-tool-tip-red {
-    // background: #191919 !important;
-    background: #000000 !important;
+    background: $black-500 !important;
     font-size: 14px !important;
     font-weight: 900 !important;
     padding: 6px 10px !important;
     border-radius: 4px !important;
-    color: #A12D2F !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+    color: $red-500 !important;
+    box-shadow: $tool-tip-elevation-high !important;
     width: 410px !important;
-    font-family: "Ginto Normal" !important;
+    font-family: $global-font !important;
     font-style: italic !important;
 }
 
 
 
 .Notification-Settings-tool-tip {
-    background: #000000 !important;
-    color: hsl(228, 8.8%, 88.8%) !important;
-    // background: #191919 !important;
+    background: $background-floating !important;
+    color: $text-normal !important;
     font-size: 14px !important;
-    font-weight: 600 !important;
-    padding: 6px 12px !important;
-    border-radius: 4px !important;
-    // color: #B9BBBE !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
-    font-family: "Whitney" !important;
+    font-weight: 500 !important;
+    padding: 8px 12px !important;
+    border-radius: 5px !important;
+    line-height: 16px;
+    box-shadow: $tool-tip-elevation-high !important;
+    font-family: $global-font !important;
     width: fit-content !important;
+    opacity: 1 !important;
 }
 
 .pinned-messages-tool-tip {
-    // background: #191919 !important;
-    background: #000000 !important;
-    color: hsl(228, 8.8%, 88.8%) !important;
+    background: $background-floating !important;
+    color: $text-normal !important;
     font-size: 14px !important;
-    font-weight: 600 !important;
-    padding: 6px 12px !important;
-    border-radius: 4px !important;
-    // color: #B9BBBE !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
-    font-family: "Whitney" !important;
+    font-weight: 500 !important;
+    padding: 8px 12px !important;
+    border-radius: 5px !important;
+    line-height: 16px;
+    box-shadow: $tool-tip-elevation-high !important;
+    font-family: $global-font !important;
     width: fit-content !important;
+    opacity: 1 !important;
 }
 
 .shb-inbox-message-tool-tip {
-    // background: #191919 !important;
-    background: #000000 !important;
-    color: hsl(228, 8.8%, 88.8%) !important;
     font-size: 14px !important;
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     padding: 6px 12px !important;
-    border-radius: 4px !important;
-    // color: #B9BBBE !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
-    font-family: "Whitney" !important;
+    border-radius: 5px !important;
     width: fit-content !important;
+    background: $background-floating !important;
+    color: $text-normal !important;
+    line-height: 16px;
+    box-shadow: $tool-tip-elevation-high !important;
+    font-family: $global-font !important;
+    opacity: 1 !important;
 }
 
 .shb-help-tool-tip {
-    // background: #191919 !important;
-    background: #000000 !important;
-    color: hsl(228, 8.8%, 88.8%) !important;
     font-size: 14px !important;
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     padding: 4px 8px !important;
-    border-radius: 4px !important;
-    // color: #B9BBBE !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
-    font-family: "Whitney" !important;
+    border-radius: 5px !important;
     width: 27px !important;
     text-align: center !important;
-    // overflow: hidden !important;
+    background: $background-floating !important;
+    color: $text-normal !important;
+    line-height: 16px;
+    box-shadow: $tool-tip-elevation-high !important;
+    font-family: $global-font !important;
+    opacity: 1 !important;
 }
 
 .dmshb-invite-members-tool-tip {
-    // background: #191919 !important;
-    background: #000000 !important;
-    color: hsl(228, 8.8%, 88.8%) !important;
+    background: $background-floating !important;
+    color: $text-normal !important;
     font-size: 14px !important;
-    font-weight: 600 !important;
-    padding: 6px 12px !important;
-    border-radius: 4px !important;
-    // color: #B9BBBE !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
-    font-family: "Whitney" !important;
+    font-weight: 500 !important;
+    padding: 8px 12px !important;
+    border-radius: 5px !important;
+    line-height: 16px;
+    box-shadow: $tool-tip-elevation-high !important;
+    font-family: $global-font !important;
     width: fit-content !important;
+    opacity: 1 !important;
 }
 
 .shb-hide-members-tool-tip {
-    // background: #191919 !important;
-    background: #000000 !important;
-    color: hsl(228, 8.8%, 88.8%) !important;
+    background: $background-floating !important;
+    color: $text-normal !important;
     font-size: 14px !important;
-    font-weight: 600 !important;
-    padding: 6px 12px !important;
-    border-radius: 4px !important;
-    // color: #B9BBBE !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
-    font-family: "Whitney" !important;
+    font-weight: 500 !important;
+    padding: 8px 12px !important;
+    border-radius: 5px !important;
+    line-height: 16px;
+    box-shadow: $tool-tip-elevation-high !important;
+    font-family: $global-font !important;
     width: fit-content !important;
+    opacity: 1 !important;
 }
 
 .icon-hide-members-list {
@@ -542,16 +519,13 @@
     width: 24px;
     height: 24px;
     -webkit-app-region: no-drag;
-    forced-color-adjust: none;
     box-sizing: border-box;
-    // color: hsl(216, 3.7%, 73.5%);
-    color: hsl(231, 5.2%, 73.5%);
+    color: $interactive-normal;
 
 }
 
 .icon-hide-members-list.selected {
-    color: hsl(210, 9.1%, 95.7%);
-
+    color: $interactive-active;
 }
 
 .icon-hide-members-list:hover,
@@ -560,7 +534,5 @@
 .icon-ns:hover,
 .icon-pin-messages:hover,
 .icon-thread:hover {
-    // color: hsl(210, 2.9%, 86.7%);
-    color: hsl(228, 8.8%, 88.8%);
-
+    color: $interactive-hover;
 }
