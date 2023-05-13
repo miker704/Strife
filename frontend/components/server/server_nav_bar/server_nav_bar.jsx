@@ -40,7 +40,7 @@ class ServerNavBar extends React.Component {
         let goGuild = this.props.serverId === "guild-discovery" ? "selected-Server" : "unselected-Server";
         let activatedCreateServerModal = this.props.currentOpenModal === "createServerForm" ? "selected-Modal" : "unselected-Modal";
         let activatedDownloadAppsModal = this.props.currentOpenModal === "downloadApps" ? "selected-Modal" : "unselected-Modal";
-
+        
         let userServer = this.props.servers.map((server, serverIndex) => {
             let serverNavBarClassTag = this.props.serverId === server.id.toString() ? "selected-Server" : "unselected-Server";
             let serverAcryo = server.server_Icon === undefined ?
