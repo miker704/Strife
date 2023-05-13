@@ -1,6 +1,6 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState} from "react";
 
 const ServerHeaderNavBar = ({
     // props,
@@ -44,7 +44,7 @@ const ServerHeaderNavBar = ({
         }
     }, [currentChannel?.id, currentChannel?.channel_name, currentChannel?.channel_type])
 
-
+    let hideMembersToolTipMessage = _viz === false ? ("Hide Member List"):("Show Member List");
 
     return (
         <div className="server-header-bar">
@@ -159,7 +159,7 @@ const ServerHeaderNavBar = ({
                     data-tip data-for="hide-members-tip"
                     onClick={() => isViz()}
                 >
-                    <svg x="0" y="0" className={`icon-hide-members-list ${_viz === false ? `` : `selected`}`} aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                    <svg x="0" y="0" className={`icon-hide-members-list ${_viz === false ? `selected` : ``}`} aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                         <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M14 8.00598C14 10.211 12.206 12.006 10
                                                  12.006C7.795 12.006 6 10.211 6 8.00598C6 5.80098 7.794 4.00598 10 4.00598C12.206 4.00598 14 5.80098 14 
                                                  8.00598ZM2 19.006C2 15.473 5.29 13.006 10 13.006C14.711 13.006 18 15.473 18 19.006V20.006H2V19.006Z">
@@ -185,7 +185,7 @@ const ServerHeaderNavBar = ({
                         id="hide-members-tip"
                         place="bottom"
                         effect="solid">
-                        Hide Member List
+                        {hideMembersToolTipMessage}
                     </ReactTooltip>
                 </div>
                 <div className="shbar-search-bar-wrapper" >
