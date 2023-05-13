@@ -471,6 +471,9 @@ current dmServer involving the user of their friend it will send a request to th
     - Changed tooltip for the home bubble to say Direct Messages instead of Home.
     - Restyled the Tool Tips for server, explore servers, download apps, and create a server modal bubbles.
     - Changed font type for the text in the Server Acronyms bubbles.
+    - Restyled Server Header Nav Bar switching to SCSS vars, font styles, colors, changed tool tip sizes.
+    - Changed the tool tip message for hiding server members list when clicked to say either "Hide Members List" or "Show Members List" depending on the current state of the members list if it is hidden or not.
+    - Addressed hover and color issues for the icon of hiding member list depending on if it is false or not. 
 
 ## Backend Changes
 
