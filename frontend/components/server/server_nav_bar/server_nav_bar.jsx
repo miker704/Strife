@@ -19,6 +19,7 @@ class ServerNavBar extends React.Component {
     renderModal (modalName) {
 
         this.props.openModal(modalName);
+
     }
 
 
@@ -36,6 +37,9 @@ class ServerNavBar extends React.Component {
     render () {
 
         let goHome = this.props.serverId === "@me" ? "selected-Server" : "unselected-Server";
+        let goGuild = this.props.serverId === "guild-discovery" ? "selected-Server" : "unselected-Server";
+        let activatedCreateServerModal = this.props.currentOpenModal === "createServerForm" ? "selected-Modal" : "unselected-Modal";
+        let activatedDownloadAppsModal = this.props.currentOpenModal === "downloadApps" ? "selected-Modal" : "unselected-Modal";
 
         let userServer = this.props.servers.map((server, serverIndex) => {
             let serverNavBarClassTag = this.props.serverId === server.id.toString() ? "selected-Server" : "unselected-Server";
@@ -71,16 +75,15 @@ class ServerNavBar extends React.Component {
                         </Link>
 
                     </div>
-                    {/* <div className="server-nav-bar-tool-kit">{server.server_name}</div> */}
                     <ReactTooltip
-                            className="server-nav-bar-tool-tip"
-                            textColor="#B9BBBE"
-                            backgroundColor="#191919"
-                            id={`server-bubble-tool-tip-${server.id}`}
-                            place="right"
-                            effect="solid">
-                            {server.server_name}
-                        </ReactTooltip>
+                        className="server-nav-bar-tool-tip"
+                        textColor="#B9BBBE"
+                        backgroundColor="#191919"
+                        id={`server-bubble-tool-tip-${server.id}`}
+                        place="right"
+                        effect="solid">
+                        {server.server_name}
+                    </ReactTooltip>
                 </li>
             )
         }
@@ -112,7 +115,6 @@ class ServerNavBar extends React.Component {
                                 </svg>
                             </Link>
                         </div>
-                        {/* <div className="server-nav-bar-tool-kit">HOME</div> */}
                         <ReactTooltip
                             className="server-nav-bar-tool-tip"
                             textColor="#B9BBBE"
@@ -120,8 +122,8 @@ class ServerNavBar extends React.Component {
                             id="home-page-server-tool-tip"
                             place="right"
                             effect="solid"
-                            >
-                            HOME
+                        >
+                            Direct Messages
                         </ReactTooltip>
                     </li>
 
@@ -132,7 +134,7 @@ class ServerNavBar extends React.Component {
 
                     <li className="server-bubbles" key="createServer" data-tip data-for="add-a-server-tool-tip">
                         <div className="server-nav-bar-list-item">
-                            <button id="create-server" onClick={() => this.renderModal('createServerForm')}>
+                            <button className={activatedCreateServerModal} id="create-server" onClick={() => this.renderModal('createServerForm')}>
                                 <div id="fill-pill" className="pill-box"><span className="pill-box-item"></span></div>
                                 <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M20 11.1111H12.8889V4H11.1111V11.1111H4V12.8889H11.1111V20H12.8889V12.8889H20V11.1111Z">
@@ -140,7 +142,6 @@ class ServerNavBar extends React.Component {
                                 </svg>
                             </button>
                         </div>
-                        {/* <div className="server-nav-bar-tool-kit">Add a Server</div> */}
                         <ReactTooltip
                             className="add-a-server-nav-bar-tool-tip"
                             textColor="#B9BBBE"
@@ -153,7 +154,7 @@ class ServerNavBar extends React.Component {
                     </li>
                     <li className="server-bubbles" key="serverSearch" data-tip data-for="explore-public-servers-tool-tip">
                         <div className="server-nav-bar-list-item">
-                            <Link to={`/$/channels/guild-discovery/`}>
+                            <Link className={goGuild} to={`/$/channels/guild-discovery/`}>
                                 <button id="search-servers">
                                     <div id="fill-pill" className="pill-box"><span className="pill-box-item"></span></div>
                                     <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
@@ -166,7 +167,6 @@ class ServerNavBar extends React.Component {
                                 </button>
                             </Link>
                         </div>
-                        {/* <div className="server-nav-bar-tool-kit">Explore Public Servers</div> */}
                         <ReactTooltip
                             className="server-nav-bar-explore-public-servers-tool-tip"
                             textColor="#B9BBBE"
@@ -185,7 +185,7 @@ class ServerNavBar extends React.Component {
 
                     <li className="server-bubbles" key="downloadApps" data-tip data-for="download-apps">
                         <div className="server-nav-bar-list-item">
-                            <button id="download-apps" onClick={() => this.props.openModal('downloadApps')} >
+                            <button className={activatedDownloadAppsModal} id="download-apps" onClick={() => this.props.openModal('downloadApps')} >
                                 <div id="fill-pill" className="pill-box"><span className="pill-box-item"></span></div>
                                 <svg fill="currentColor" aria-hidden="false" width="24" height="24" viewBox="0 0 24 24">
                                     <path d="M16.293 9.293L17.707 10.707L12 16.414L6.29297 10.707L7.70697 9.293L11 
@@ -195,7 +195,6 @@ class ServerNavBar extends React.Component {
                                 </svg>
                             </button>
                         </div>
-                        {/* <div className="server-nav-bar-tool-kit">Download Apps</div> */}
                         <ReactTooltip
                             className="server-nav-bar-download-apps-tool-tip"
                             textColor="#B9BBBE"
