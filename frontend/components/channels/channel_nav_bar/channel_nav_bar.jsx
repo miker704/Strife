@@ -94,6 +94,7 @@ const ChannelNavBar = (props) => {
                                 <div className="create-channel-invite-icon-wrapper"
                                     data-tip data-for="create-channel-invite-tool-tip1"
                                     onClick={() => {
+                                        props.openModalWithProps({ ChannelId: channel.id })
                                         props.openModal('InviteToServer');
                                     }}>
                                     <svg className="create-channel-invite-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 16 16">
@@ -228,6 +229,7 @@ const ChannelNavBar = (props) => {
                                 <div className="create-channel-invite-icon-wrapper"
                                     data-tip data-for="create-channel-invite-tool-tip3"
                                     onClick={() => {
+                                        props.openModalWithProps({ ChannelId: channel.id })
                                         props.openModal("InviteToServer");
                                     }}>
 
