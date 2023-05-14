@@ -485,7 +485,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Switched to functional component for download apps modal.
     - Added Open and Exit Animations for Download apps modal.
     - Switched to SCSS vars for Invite to Server Modal.
-    
+    - Added Animations for Enter and exiting Invite To Server Modal.
 
 ## Backend Changes
 
