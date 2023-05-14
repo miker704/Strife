@@ -100,7 +100,7 @@ const InviteToServerModal = (props) => {
     return (
 
 
-        <div className="invite-to-server-modal-layerContainer-1 ">
+        <div className="invite-to-server-modal-layerContainer ">
             <div className="i2sm-main-layer" onClick={e => e.stopPropagation()} ref={popupRef}>
                 <div className="i2sm-main-wrapper" >
                     <div className="i2sm-focus-lock">
@@ -239,7 +239,7 @@ const InviteToServerModal = (props) => {
                                     </div>
                                     <div className="i2sm-sll-edit-link-wrapper">
                                         Your invite link expires in 7 days.{` `}
-                                        <a className="i2sm-sll-link-2-edit-i-link" target="_blank" role="button">Edit invite link.</a>
+                                        <a className="i2sm-sll-link-2-edit-i-link" target="_blank" role="button">Edit invite link.</a>{` `}
                                         ($TR!F3 N!TR0 Required)
                                     </div>
                                     <div className="i2sm-sll-add-image-container">
