@@ -30,7 +30,7 @@ const DeleteChannelModal = (props) => {
                 setTimeout(() => {
                     props.setChannelDeletion(false);
                     window.removeEventListener('keyup', handleESC, false);
-                }, 310);
+                }, 300);
 
             },
         };
@@ -45,7 +45,7 @@ const DeleteChannelModal = (props) => {
         setTimeout(() => {
             props.setChannelDeletion(false);
             window.removeEventListener('keyup', handleESC, false);
-        }, 310);
+        }, 300);
     }
 
 
