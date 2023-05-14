@@ -26,7 +26,7 @@ const DeleteServerModal = (props) => {
                 setTimeout(() => {
                     props.setServerDeletion(false);
                     window.removeEventListener('keyup', handleESC, false);
-                }, 310);
+                }, 300);
             },
         };
         if (keys[e.keyCode]) {
@@ -41,7 +41,7 @@ const DeleteServerModal = (props) => {
         setTimeout(() => {
             props.setServerDeletion(false);
             window.removeEventListener('keyup', handleESC, false);
-        }, 310);
+        }, 300);
     }
 
 
