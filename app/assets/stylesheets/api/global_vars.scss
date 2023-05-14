@@ -37,7 +37,7 @@ $primary-230: rgb(219, 222, 225);
 $primary-330: rgb(181, 186, 193);
 $primary-360: hsl(214, 8.1%, 61.2%);
 $primary-400: rgba(78, 80, 88, 0.6);
-$primary-500: rgba(78, 80, 88, 0.298);
+$primary-500: rgba(79, 81, 89, 0.298);
 $primary-500-bg-color: rgb(78, 80, 88);
 $primary-500-48: rgba(78, 80, 88, 0.48);
 $primary-560: rgb(135, 137, 140);
@@ -50,12 +50,15 @@ $primary-800-60: hsla(225, 7.7%, 10.2%, 0.6);
 $red-400: hsl(359, 87.3%, 59.8%);
 $red-430: hsl(358, 68.8%, 53.5%);
 $red-345: rgb(250, 119, 124);
+$red-500: rgb(161, 45, 47);
 $gray-switch: rgb(128, 132, 142);
 $green-switch: hsl(145, 65%, 39%);
+$green-330: rgb(45, 199, 112);
 $green-360: rgb(35, 165, 89);
 $yellow-300: rgb(240, 177, 50);
 $platform-item-color: #747f8d;
-
+$channel-icon: rgb(128, 132, 142);
+$draft-editor: hsla(0, 0%, 100%, 0.0);
 //button colors
 $modal-footer-bg-color-button-wrapper: rgb(43, 45, 49);
 $red-danger-button-background: rgb(218, 55, 60);
@@ -87,9 +90,12 @@ $interactive-active: $white-500;
 $text-muted: $primary-360;
 $text-normal : $primary-230;
 $text-danger: $red-345;
+$text-warning: $yellow-300;
+$text-positive: $green-330;
 $input-background: $primary-700;
 $input-placeholder-text: $primary-560;
 $status-warning-background: $yellow-300;
+
 
 $strife-root: (
     colors:(black-500: hsl(0, 0%, 0%),
