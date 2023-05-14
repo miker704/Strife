@@ -27,17 +27,23 @@ $platform-icon-header: #060607;
 //general colors
 
 $white-500 : rgb(255, 255, 255);
+$white-500-hsl-01: rgba(255, 255, 255, 0.1);
 $black-500: hsl(0, 0%, 0%);
 $black-500-hsl-005: hsla(0, 0%, 0%, 0.05);
 $black-500-hsl-01: hsla(0, 0%, 0%, 0.1);
 
 $brand-500: hsl(235, 85.6%, 64.7%);
+$brand-560: rgb(71, 82, 196);
+$blue-345: rgb(0, 168, 252);
+$primary-100: rgb(249, 249, 249);
 $primary-200: hsl(216, 9.8%, 90%);
 $primary-230: rgb(219, 222, 225);
+$primary-300: rgb(196, 201, 206);
 $primary-330: rgb(181, 186, 193);
 $primary-360: hsl(214, 8.1%, 61.2%);
 $primary-400: rgba(78, 80, 88, 0.6);
 $primary-500: rgba(79, 81, 89, 0.298);
+$primary-500-hsl-30: rgba(78, 80, 88, 0.3);
 $primary-500-bg-color: rgb(78, 80, 88);
 $primary-500-48: rgba(78, 80, 88, 0.48);
 $primary-560: rgb(135, 137, 140);
@@ -46,7 +52,9 @@ $primary-630: hsl(220, 7%, 18%);
 $primary-630-hsl: rgba(43, 45, 49, 0.6);
 $primary-700: rgb(30, 31, 34);
 $primary-730: hsl(225, 7.1%, 11%);
+$primary-800-30: rgba(17, 18, 20, 0.3);
 $primary-800-60: hsla(225, 7.7%, 10.2%, 0.6);
+
 $red-400: hsl(359, 87.3%, 59.8%);
 $red-430: hsl(358, 68.8%, 53.5%);
 $red-345: rgb(250, 119, 124);
@@ -55,7 +63,11 @@ $gray-switch: rgb(128, 132, 142);
 $green-switch: hsl(145, 65%, 39%);
 $green-330: rgb(45, 199, 112);
 $green-360: rgb(35, 165, 89);
+$green-430: rgb(36, 128, 70);
+$green-500: rgb(27, 103, 54);
+$green-530: rgb(21, 86, 43);
 $yellow-300: rgb(240, 177, 50);
+$purple-100: rgb(255, 115, 250);
 $platform-item-color: #747f8d;
 $channel-icon: rgb(128, 132, 142);
 $draft-editor: hsla(0, 0%, 100%, 0.0);
@@ -66,7 +78,13 @@ $red-danger-button-background-hover: rgb(161, 40, 40);
 $button-underline-color: transparent;
 $download-modal-close-button: #4f5660;
 $download-modal-close-button-hover: #2e3338;
-
+$button-outline-positive-background-hover: $green-430;
+$button-outline-positive-border: $green-360;
+$button-outline-positive-border-hover: $green-430;
+$button-positive-background: $green-430;
+$button-positive-background-hover: $green-500;
+$button-outline-positive-background-active: $green-530;
+$button-outline-positive-border-active: $green-530;
 
 //scroll bar
 $scrollbar-thin-thumb: hsl(225, 7.1%, 11%);
@@ -76,6 +94,7 @@ $scrollbar-auto-track: hsl(220, 7%, 18%);
 
 //var to var
 $brand-experiment: $brand-500;
+$brand-experiment-560: $brand-560;
 $background-primary: $primary-600;
 $background-secondary: $primary-630;
 $background-modifier-accent: $primary-500-48;
@@ -87,6 +106,7 @@ $header-secondary : $primary-330;
 $interactive-normal: $primary-330;
 $interactive-hover: $primary-230;
 $interactive-active: $white-500;
+$text-link: $blue-345;
 $text-muted: $primary-360;
 $text-normal : $primary-230;
 $text-danger: $red-345;
@@ -95,7 +115,7 @@ $text-positive: $green-330;
 $input-background: $primary-700;
 $input-placeholder-text: $primary-560;
 $status-warning-background: $yellow-300;
-
+$gemstone: $purple-100;
 
 $strife-root: (
     colors:(black-500: hsl(0, 0%, 0%),
