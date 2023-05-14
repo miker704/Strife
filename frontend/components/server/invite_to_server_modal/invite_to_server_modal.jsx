@@ -6,16 +6,23 @@ const InviteToServerModal = (props) => {
     const inputRef = useRef();
     const popupRef = useRef();
     const [searchText, setSearchText] = useState("");
-    const [generalChannelName, setGeneralChannelName] = useState("");
-    
+    // const [generalChannelName, setGeneralChannelName] = useState("");
+    const [channelName, setChannelName] = useState("");
+
+
     useEffect(() => {
-        setGeneralChannelName(props.generalChannelName);
-        window.addEventListener('keyup', props.handleESC, false);
+        // setGeneralChannelName(props.generalChannelName);
+        setChannelName(props.currentChannel.channel_name);
+        // window.addEventListener('keyup', props.handleESC, false);
+        window.addEventListener('keyup', handleESC, false);
+
         props.requestAllFriendships();
         return function cleanup () {
             props.removeFriendshipErrors();
             props.removeServerErrors();
-            window.removeEventListener('keyup', props.handleESC, false);
+            // window.removeEventListener('keyup', props.handleESC, false);
+            window.removeEventListener('keyup', handleESC, false);
+
         }
     }, []);
 
@@ -97,16 +104,43 @@ const InviteToServerModal = (props) => {
     }
 
 
+    const handleESC = (e) => {
+        const keys = {
+            27: () => {
+                e.preventDefault();
+                document.getElementById("i2sm-modal").classList.add("transition-out");
+                setTimeout(() => {
+                    props.closeModal();
+                    window.removeEventListener('keyup', handleESC, false);
+                }, 200);
+
+            },
+        };
+        if (keys[e.keyCode]) {
+            keys[e.keyCode]();
+        }
+    }
+
+    const handleCloseOnOuterClick = (e) => {
+        e.preventDefault();
+        document.getElementById("i2sm-modal").classList.add("transition-out");
+        setTimeout(() => {
+            props.closeModal();
+            window.removeEventListener('keyup', handleESC, false);
+        }, 200);
+    }
+
     return (
 
 
-        <div className="invite-to-server-modal-layerContainer ">
+        <div className="invite-to-server-modal-layerContainer" onClick={(e) => handleCloseOnOuterClick(e)}>
+            <div className="i2sm-back-drop"></div>
             <div className="i2sm-main-layer" onClick={e => e.stopPropagation()} ref={popupRef}>
                 <div className="i2sm-main-wrapper" >
                     <div className="i2sm-focus-lock">
-                        <div className="i2sm-modal">
+                        <div className="i2sm-modal" id="i2sm-modal">
                             <div className="i2sm-inner-flex">
-                                <button type="button" className="i2sm-close-button-wrapper" onClick={() => props.closeModal()} >
+                                <button type="button" className="i2sm-close-button-wrapper" onClick={(e) => handleCloseOnOuterClick(e)} >
                                     <div className="i2sm-close-button-container">
                                         <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                             <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z">
@@ -118,8 +152,10 @@ const InviteToServerModal = (props) => {
                                     <div className="i2sm-header">
                                         <h1 className="i2sm-header-1">Invite friends to <strong>{props.server.server_name}</strong></h1>
                                         <div className="i2sm-header-channel-name-container">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" className="i2sm-channelHashIcon" aria-hidden="true" role="img">
-                                                <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M5.88657 21C5.57547 21 5.3399 20.7189 
+                                            {
+                                                props.currentChannel.channel_type === 1 ?
+                                                    (<svg width="24" height="24" viewBox="0 0 24 24" className="i2sm-channelHashIcon" aria-hidden="true" role="img">
+                                                        <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M5.88657 21C5.57547 21 5.3399 20.7189 
                                                      5.39427 20.4126L6.00001 17H2.59511C2.28449 17 2.04905 16.7198 2.10259 16.4138L2.27759 15.4138C2.31946 15.1746 
                                                      2.52722 15 2.77011 15H6.35001L7.41001 9H4.00511C3.69449 9 3.45905 8.71977 3.51259 8.41381L3.68759 7.41381C3.72946 
                                                      7.17456 3.93722 7 4.18011 7H7.76001L8.39677 3.41262C8.43914 3.17391 8.64664 3 8.88907 3H9.87344C10.1845 3 10.4201 
@@ -128,9 +164,20 @@ const InviteToServerModal = (props) => {
                                                      9H17.41L16.35 15H19.7549C20.0655 15 20.301 15.2802 20.2474 15.5862L20.0724 16.5862C20.0306 16.8254 19.8228 17 19.5799 17H16L15.3632
                                                      20.5874C15.3209 20.8261 15.1134 21 14.8709 21H13.8866C13.5755 21 13.3399 20.7189 13.3943 20.4126L14 17H8.00001L7.36325 
                                                      20.5874C7.32088 20.8261 7.11337 21 6.87094 21H5.88657ZM9.41045 9L8.35045 15H14.3504L15.4104 9H9.41045Z">
-                                                </path>
-                                            </svg>
-                                            <div className="i2sm-channel-text-name">{generalChannelName}</div>
+                                                        </path>
+                                                    </svg>) :
+                                                    (<svg className="i2sm-channelLSIcon" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                                        <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M11.383 3.07904C11.009 2.92504 10.579 3.01004 10.293 
+                                                3.29604L6 8.00204H3C2.45 8.00204 2 8.45304 2 9.00204V15.002C2 15.552 2.45 16.002 3 16.002H6L10.293 20.71C10.579 20.996 11.009 
+                                                21.082 11.383 20.927C11.757 20.772 12 20.407 12 20.002V4.00204C12 3.59904 11.757 3.23204 11.383 3.07904ZM14 5.00195V7.00195C16.757 
+                                                7.00195 19 9.24595 19 12.002C19 14.759 16.757 17.002 14 17.002V19.002C17.86 19.002 21 15.863 21 12.002C21 8.14295 17.86 5.00195 14
+                                                 5.00195ZM14 9.00195C15.654 9.00195 17 10.349 17 12.002C17 13.657 15.654 15.002 14 15.002V13.002C14.551 13.002 15 12.553 15 12.002C15 
+                                                 11.451 14.551 11.002 14 11.002V9.00195Z" aria-hidden="true">
+                                                        </path>
+                                                    </svg>)
+                                            }
+
+                                            <div className="i2sm-channel-text-name">{channelName}</div>
                                         </div>
                                         <div className="i2sm-search-bar-container">
                                             <div className="i2sm-search-bar-inner">
