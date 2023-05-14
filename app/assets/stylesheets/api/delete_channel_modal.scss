@@ -99,6 +99,67 @@
 
 
 
+@keyframes deleteChannelWrapperRender {
+
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {}
+
+}
+
+@-webkit-keyframes deleteChannelWrapperRender {
+
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {}
+
+}
+
+@keyframes deleteChannelWrapperUnRender {
+
+    0% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.85;
+    }
+
+    100% {
+        opacity: 0.6;
+
+    }
+
+}
+
+@-webkit-keyframes deleteChannelWrapperUnRender {
+
+
+    0% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.85;
+    }
+
+    100% {
+        opacity: 0.6;
+
+    }
+}
 
 
 .delete-channel-wrapper {
@@ -112,6 +173,12 @@
     background: none !important;
     pointer-events: none;
     z-index: 120;
+    animation-name: deleteChannelWrapperRender;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: deleteChannelWrapperRender;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
 }
 
 .delete-channel-backdrop {
