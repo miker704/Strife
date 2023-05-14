@@ -6,14 +6,14 @@ import { handleKeyUp } from "../../../utils/modal_api_util";
 import DeleteServerChannelMessageModal from "./delete_server_message_modal";
 
 const mSTP = (state, ownProps) => {
-    
+
     return {
-            currentUserId: state.session.id,
-            message: state.ui.modalProps.message,
-            serverId :state.ui.modalProps.serverId,    
-            channelId :state.ui.modalProps.channelId,      
-            formatTime:state.ui.modalProps.formatTime,
-            messageAuthor: state.ui.modalProps.messageAuthor
+        currentUserId: state.session.id,
+        message: state.ui.modalProps.message,
+        serverId: state.ui.modalProps.serverId,
+        channelId: state.ui.modalProps.channelId,
+        formatTime: state.ui.modalProps.formatTime,
+        messageAuthor: state.ui.modalProps.messageAuthor
     }
 }
 
@@ -24,7 +24,6 @@ const mDTP = (dispatch) => {
         deleteMessage: (messageId) => dispatch(deleteMessage(messageId)),
         closeModal: () => dispatch(closeModal()),
         handleESC: (e) => handleKeyUp(e),
-
     }
 }
 
