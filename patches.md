@@ -479,6 +479,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Switched to SCSS Vars for styles in Delete Server Message Modal.
     - Added Pro tip indicator for Delete Server Message Modal.
     - Added enter and exit animations for Delete Server message modal.
+    - Adjusted Server Container base Color.
 
 ## Backend Changes
 
