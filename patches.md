@@ -474,6 +474,10 @@ current dmServer involving the user of their friend it will send a request to th
     - Restyled Server Header Nav Bar switching to SCSS vars, font styles, colors, changed tool tip sizes.
     - Changed the tool tip message for hiding server members list when clicked to say either "Hide Members List" or "Show Members List" depending on the current state of the members list if it is hidden or not.
     - Addressed hover and color issues for the icon of hiding member list depending on if it is false or not. 
+    - Remodeled Delete Server Message Modal.
+    - Restyled Delete Server Message Modal.
+    - Switched to SCSS Vars for styles in Delete Server Message Modal.
+    - Added Pro tip indicator for Delete Server Message Modal.
 
 ## Backend Changes
 
