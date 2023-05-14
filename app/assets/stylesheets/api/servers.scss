@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'global_vars';
 
 .server-main-base{
     // top: 0;
@@ -35,12 +36,11 @@
 
 .server-base {
     display: flex;
-    forced-color-adjust: none;
     overflow: hidden;
     flex-direction: column;
     height: 100vh;
-    // background-color: #36393f;
-    background-color: #313338;
+    // background-color: rgb(50, 52, 57);
+    background-color: $background-primary;
     flex: 1;
     position: absolute;
     justify-content: flex-start;
@@ -55,7 +55,6 @@
 .server-content{
     outline: 0;
     position: relative;
-    forced-color-adjust: none;
     display: flex;
     -webkit-box-align: stretch;
     align-items: stretch;
@@ -68,19 +67,3 @@
 
 }
 
-
-.server-chat {
-    min-width: 0;
-    min-height: 0;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-    background: hsl(220,7.7%,22.9%);
-    -webkit-box-flex: 1;
-    flex: 1 1 auto;
-    outline: 0;
-    forced-color-adjust: none;
-}
