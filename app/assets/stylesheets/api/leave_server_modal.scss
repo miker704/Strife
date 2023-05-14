@@ -1,5 +1,165 @@
+@import 'global_vars';
+
+
+@keyframes leaveServerModalAppear {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+
+    }
+
+}
+
+
+
+@-webkit-keyframes leaveServerModalAppear {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+
+    }
+
+}
+
+@keyframes leaveServerModalDisappear {
+
+    0% {
+        opacity: 1;
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+        opacity: 0.1;
+
+    }
+
+}
+
+
+
+
+@-webkit-keyframes leaveServerModalDisappear {
+
+    0% {
+        opacity: 1;
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+        opacity: 0.1;
+
+    }
+
+}
+
+
+
+
+@keyframes leaveServerWrapperRender {
+
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {}
+
+}
+
+@-webkit-keyframes leaveServerWrapperRender {
+
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {}
+
+}
+
+@keyframes leaveServerWrapperUnRender {
+
+    0% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.85;
+    }
+
+    100% {
+        opacity: 0.6;
+
+    }
+
+}
+
+@-webkit-keyframes leaveServerWrapperUnRender {
+
+
+    0% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.85;
+    }
+
+    100% {
+        opacity: 0.6;
+
+    }
+}
+
+
+
 .leave-server-wrapper {
-    forced-color-adjust: none;
     outline: 0;
     position: absolute;
     top: 0;
@@ -9,10 +169,15 @@
     background: none !important;
     pointer-events: none;
     z-index: 120;
+    animation-name: leaveServerWrapperRender;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: leaveServerWrapperRender;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
 }
 
 .leave-server-backdrop {
-    forced-color-adjust: none;
     outline: 0;
     pointer-events: all;
     position: fixed;
@@ -26,24 +191,7 @@
 }
 
 
-.leave-server-backdrop.channel {
-    forced-color-adjust: none;
-    outline: 0;
-    pointer-events: all;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transform: translateZ(0);
-    opacity: 0.85;
-    background: hsl(0,  0%, 0%);
-}
-
-
-
 .leave-server-layer {
-    forced-color-adjust: none;
     outline: 0;
     align-items: center;
     display: flex;
@@ -61,7 +209,6 @@
 }
 
 .leave-server-focus-lock {
-    forced-color-adjust: none;
     outline: 0;
     display: flex;
     flex-direction: column;
@@ -74,37 +221,54 @@
 }
 
 .leave-server-root {
-    forced-color-adjust: none;
     outline: 0;
     opacity: 1;
     transform: scale(1);
-    box-shadow: 0 0 0 1px hsla(216, 7.2%, 13.5%, 0.6), 0 2px 10px 0 hsla(0, 0%, 0%, 0.2);
+    box-shadow: $dark-elevation-border, $dark-elevation-high;
     width: 440px;
     max-height: 720px;
     min-height: 200px;
     display: flex;
     flex-direction: column;
-    background-color: hsl(220, 7.7%, 22.9%);
+    background-color: $background-primary;
     border-radius: 4px;
     margin: 0 auto;
     pointer-events: all;
     position: relative;
     max-height: 100%;
     user-select: none;
+
     button[type="submit"]:disabled {
         cursor: not-allowed;
-        opacity: .5;
-        color: hsl(0, 0%, 100%);
-        forced-color-adjust: none;
+        opacity: 0.5;
+        color: $white-500;
     }
+
     z-index: 1505;
+    animation-name: leaveServerModalAppear;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: leaveServerModalAppear;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
+
 }
 
+
+.leave-server-root.transition-out {
+    animation-name: leaveServerModalDisappear;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: leaveServerModalDisappear;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
+}
+
+
 .leave-server-flex {
-    forced-color-adjust: none;
     outline: 0;
     transition: box-shadow .1s ease-out, -webkit-box-shadow .1s ease-out;
-    word-wrap: break-word;
+    // word-wrap: break-word;
     border-radius: 4px 4px 0 0;
     flex: 0 0 auto;
     position: relative;
@@ -119,9 +283,18 @@
     display: flex;
 }
 
+.leave-server-header {
+    color: $header-primary;
+    font-family: $global-font;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 50px;
+}
 
 .leave-server-content-scroll-base {
-    forced-color-adjust: none;
     outline: 0;
     padding-right: 8px;
     padding-bottom: 20px;
@@ -137,12 +310,11 @@
 }
 
 .leave-server-button-flex-wrapper {
-    forced-color-adjust: none;
     outline: 0;
-    box-shadow: inset 0 1px 0 hsla(223, 6.9%, 19.8%, 0.6);
+    box-shadow: inset 0 1px 0 $primary-630-hsl;
     flex: 0 0 auto;
     border-radius: 0 0 5px 5px;
-    background-color: hsl(223, 6.9%, 19.8%);
+    background-color: $modal-footer-bg-color-button-wrapper;
     position: relative;
     flex: 0 0 auto;
     padding: 16px;
@@ -157,24 +329,102 @@
 }
 
 
+
+.leave-server-submit-button {
+    color: $white-500;
+    width: auto;
+    height: 38px;
+    min-width: 96px;
+    min-height: 38px;
+    background-color: $red-danger-button-background;
+    transition: background-color .17s ease, color .17s ease;
+    position: relative;
+    text-rendering: optimizeLegibility;
+    font-family: $global-font;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+}
+
+.leave-server-submit-button:hover {
+    background-color: $red-danger-button-background-hover;
+}
+
+
+.leave-server-cancel-button {
+    cursor: pointer;
+    font-family: $global-font;
+    text-rendering: optimizeLegibility;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    height: 38px;
+    min-width: 96px;
+    min-height: 38px;
+    width: auto;
+    margin-right: 8px;
+    color: $white-500;
+}
+
+
+.leave-server-cancel-button:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
 .leave-server-text {
-    font-family: "Whitney";
+    font-family: $global-font;
     font-size: 16px;
     line-height: 20px;
-    forced-color-adjust: none;
     font-weight: 400;
-    color: hsl(210,2.9%,86.7%);
+    color: $text-normal;
     outline: 0;
-
+    overflow: hidden;
+    text-overflow: ellipsis;
     strong {
         font-weight: 600;
-        forced-color-adjust: none;
         outline: 0;
 
     }
 }
 
 
-.leave-server-text.red{
-    color: hsl(359, 82.6%, 59.45%);
+.leave-server-sep {
+    position: absolute;
+    pointer-events: none;
+    min-height: 0px;
+    min-width: 1px;
+    flex: 0 0 auto;
+    height: 20px;
+    outline: 0;
 }
