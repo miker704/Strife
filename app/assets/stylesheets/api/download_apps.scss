@@ -191,7 +191,6 @@
 }
 
 .da-flex-layer {
-    // forced-color-adjust: none;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -213,7 +212,6 @@
 }
 
 .da-focus-lock {
-    // forced-color-adjust: none;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -226,7 +224,6 @@
 .da-dl-apps {
     opacity: 1;
     transform: scale(1);
-    // forced-color-adjust: none;
     outline: 0;
     display: flex;
     -webkit-box-orient: vertical;
@@ -268,7 +265,6 @@
 
 
 .da-dl-apps-inner {
-    // forced-color-adjust: none;
     outline: 0;
     display: flex;
     margin: 10px;
@@ -279,7 +275,6 @@
 
 
 .close-da {
-    // forced-color-adjust: none;
     color: $download-modal-close-button;
     position: absolute;
     top: 12px;
@@ -317,7 +312,6 @@
 
 .close-da-contents {
     outline: 0;
-    // forced-color-adjust: none;
     background-image: linear-gradient(0deg, transparent, transparent 1px, transparent 0, transparent 2px, transparent 0);
 
 }
@@ -331,14 +325,12 @@
     -webkit-box-direction: normal;
     display: flex;
     outline: 0;
-    // forced-color-adjust: none;
     flex-direction: column;
 }
 
 
 .platform-wraps-h3 {
     outline: 0;
-    // forced-color-adjust: none;
     text-align: center;
     align-items: center;
     margin-bottom: 7px;
@@ -354,11 +346,9 @@
 .platforms-ul {
     display: flex;
     list-style: none;
-    // forced-color-adjust: none;
 }
 
 .platforms-li-item {
-    // forced-color-adjust: none;
     backface-visibility: hidden;
     border: 2px solid $platform-item-color;
     padding: 32px 12px 12px;
@@ -435,7 +425,6 @@
 
 
 .platforms-li-item-inner-wrapper {
-    // forced-color-adjust: none;
     justify-content: space-between;
     -webkit-box-flex: 1;
     -webkit-box-pack: justify;
@@ -448,13 +437,11 @@
 }
 
 .platforms-icon-wrap {
-    // forced-color-adjust: none;
     align-self: center;
     position: relative;
     width: 100px;
     height: 100px;
     outline: 0;
-
 
 }
 
@@ -473,7 +460,6 @@
 .platform-apple-icon-active {
     content: image_url('macos-blue.svg');
     opacity: 0;
-    // forced-color-adjust: none;
     transition: opacity .3s ease-in-out;
     background-repeat: no-repeat;
     background-size: contain;
@@ -502,7 +488,6 @@
 .platform-windows-icon-active {
     content: image_url('windows-blue.svg');
     opacity: 0;
-    // forced-color-adjust: none;
     transition: opacity .3s ease-in-out;
     background-repeat: no-repeat;
     background-size: contain;
@@ -532,7 +517,6 @@
 .platform-linux-icon-active {
     content: image_url('linux-blue.svg');
     opacity: 0;
-    // forced-color-adjust: none;
     transition: opacity .3s ease-in-out;
     background-repeat: no-repeat;
     background-size: contain;
@@ -558,7 +542,6 @@
 .platform-apple-ios-icon-active {
     content: image_url('apple-blue.svg');
     opacity: 0;
-    // forced-color-adjust: none;
     transition: opacity .3s ease-in-out;
     background-repeat: no-repeat;
     background-size: contain;
@@ -585,7 +568,6 @@
 .platform-android-icon-active {
     content: image_url('android-blue.svg');
     opacity: 0;
-    // forced-color-adjust: none;
     transition: opacity .3s ease-in-out;
     background-repeat: no-repeat;
     background-size: contain;
@@ -601,7 +583,6 @@
 
 
 .da-icon-header {
-    // forced-color-adjust: none;
     color: $platform-icon-header;
     text-align: center;
     font-weight: 600;
@@ -613,7 +594,6 @@
 .download-app-buttons {
     outline: 0;
     display: flex;
-    // forced-color-adjust: none;
 
 }
 
@@ -622,7 +602,6 @@
     flex-grow: 1;
     text-decoration: none;
     outline: 0;
-    // forced-color-adjust: none;
     background-color: $platform-item-color;
     text-align: center;
     border-radius: 3px;
@@ -641,7 +620,6 @@
     flex-grow: 1;
     text-decoration: none;
     outline: 0;
-    // forced-color-adjust: none;
     background-color: $platform-item-color;
     text-align: center;
     border-radius: 3px;
@@ -661,7 +639,6 @@
     flex-grow: 1;
     text-decoration: none;
     outline: 0;
-    // forced-color-adjust: none;
     background-color: $platform-item-color;
     text-align: center;
     border-radius: 3px;
@@ -690,7 +667,6 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    // forced-color-adjust: none;
     margin-top: 32px;
 }
 
@@ -704,7 +680,5 @@
     color: $platform-icon-header;
     -webkit-box-align: center;
     text-align: center;
-    // forced-color-adjust: none;
-
 
 }
