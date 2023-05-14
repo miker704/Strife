@@ -480,6 +480,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Added Pro tip indicator for Delete Server Message Modal.
     - Added enter and exit animations for Delete Server message modal.
     - Adjusted Server Container base Color.
+    - Added animation enter and exit to leave server modal
+    - Restyled Leave Server Modal.
 
 ## Backend Changes
 
