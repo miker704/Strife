@@ -2,6 +2,167 @@
 
 
 
+
+@keyframes inviteToServerModalAppear {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+
+    }
+
+}
+
+
+
+@-webkit-keyframes inviteToServerModalAppear {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+
+    }
+
+}
+
+@keyframes inviteToServerModalDisappear {
+
+    0% {
+        opacity: 1;
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+        opacity: 0.1;
+
+    }
+
+}
+
+
+
+
+@-webkit-keyframes inviteToServerModalDisappear {
+
+    0% {
+        opacity: 1;
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+        opacity: 0.1;
+
+    }
+
+}
+
+
+
+
+@keyframes inviteToServerWrapperRender {
+
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {}
+
+}
+
+@-webkit-keyframes inviteToServerWrapperRender {
+
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {}
+
+}
+
+@keyframes inviteToServerWrapperUnRender {
+
+    0% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.85;
+    }
+
+    100% {
+        opacity: 0.6;
+
+    }
+
+}
+
+@-webkit-keyframes inviteToServerWrapperUnRender {
+
+
+    0% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.85;
+    }
+
+    100% {
+        opacity: 0.6;
+
+    }
+}
+
+
+
+
+
 .invite-to-server-modal-layerContainer {
     position: absolute;
     top: 0;
@@ -12,6 +173,12 @@
     pointer-events: none;
     z-index: 1002;
     outline: 0;
+    animation-name: inviteToServerWrapperRender;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: inviteToServerWrapperRender;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
 }
 
 .i2sm-back-drop {
@@ -97,8 +264,24 @@
         color: $white-500;
         background-color: $brand-experiment;
     }
+
+    animation-name: inviteToServerModalAppear;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: inviteToServerModalAppear;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
+
 }
 
+.i2sm-modal.transition-out {
+    animation-name: inviteToServerModalDisappear;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: inviteToServerModalDisappear;
+    -webkit-animation-duration: 0.2s;
+    -webkit-animation-iteration-count: 1;
+}
 
 .i2sm-inner-flex {
     flex: 0 0 auto;
@@ -233,6 +416,14 @@
 }
 
 .i2sm-channelHashIcon {
+    margin-right: 8px;
+    margin-top: 4px;
+    height: 20px;
+    width: 20px;
+    color: $interactive-normal;
+}
+
+.i2sm-channelLSIcon {
     margin-right: 8px;
     margin-top: 4px;
     height: 20px;
