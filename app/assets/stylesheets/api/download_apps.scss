@@ -1,7 +1,165 @@
 @import 'global_vars';
 
+
+@keyframes dAModalAppear {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+
+    }
+
+}
+
+
+
+@-webkit-keyframes dAModalAppear {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+
+    }
+
+}
+
+@keyframes dAModalDisappear {
+
+    0% {
+        opacity: 1;
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+        opacity: 0.0;
+
+    }
+
+}
+
+
+
+
+@-webkit-keyframes dAModalDisappear {
+
+    0% {
+        opacity: 1;
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+        opacity: 0.0;
+
+    }
+
+}
+
+
+
+
+@keyframes dAWrapperRender {
+
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {}
+
+}
+
+@-webkit-keyframes dAWrapperRender {
+
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {}
+
+}
+
+@keyframes dAWrapperUnRender {
+
+    0% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.85;
+    }
+
+    100% {
+        opacity: 0.6;
+
+    }
+
+}
+
+@-webkit-keyframes dAWrapperUnRender {
+
+
+    0% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.85;
+    }
+
+    100% {
+        opacity: 0.6;
+
+    }
+}
+
+
+
 .da-layer {
-    // forced-color-adjust: none;
     outline: 0;
     position: absolute;
     top: 0;
@@ -11,12 +169,17 @@
     background: none !important;
     pointer-events: none;
     z-index: 1002;
+    animation-name: dAWrapperRender;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: dAWrapperRender;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
 }
 
 .da-backdrop {
-    // forced-color-adjust: none;
     outline: 0;
-    background: $black-500;
+    background: transparent;
     opacity: 0.85;
     pointer-events: all;
     transform: translateZ(0);
@@ -82,8 +245,27 @@
     position: relative;
     background-color: $white-500 !important;
     box-shadow: $light-elevation-border, $light-elevation-high !important;
+    animation-name: dAModalAppear;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: dAModalAppear;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
+
 
 }
+
+.da-dl-apps.transition-out {
+    animation-name: dAModalDisappear;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: dAModalDisappear;
+    -webkit-animation-duration: 0.2s;
+    -webkit-animation-iteration-count: 1;
+}
+
+
+
 
 .da-dl-apps-inner {
     // forced-color-adjust: none;
@@ -450,6 +632,7 @@
     margin-top: 16px;
     transition: background-color .3s ease-in-out;
     color: $white-500;
+    font-family: $global-font;
 }
 
 
@@ -469,6 +652,8 @@
     transition: background-color .3s ease-in-out;
     color: $white-500;
     width: 65px;
+    font-family: $global-font;
+
 }
 
 .download-app-buttons-anchor-3 {
@@ -488,6 +673,8 @@
     color: $white-500;
     width: 65px;
     margin-left: 12px;
+    font-family: $global-font;
+
 
 }
 
