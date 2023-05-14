@@ -1,4 +1,8 @@
-.invite-to-server-modal-layerContainer-1 {
+@import 'global_vars';
+
+
+
+.invite-to-server-modal-layerContainer {
     position: absolute;
     top: 0;
     left: 0;
@@ -20,7 +24,7 @@
     transform: translateZ(0);
     pointer-events: all;
     opacity: 0.85;
-    background: rgb(0, 0, 0);
+    background: transparent;
     outline: 0;
 }
 
@@ -59,14 +63,12 @@
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
-    forced-color-adjust: none;
 }
 
 
 .i2sm-modal {
     opacity: 1;
     transform: scale(1);
-    forced-color-adjust: none;
     outline: 0;
     max-height: 645px;
     min-height: 144px;
@@ -80,8 +82,9 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    background-color: #313338;
-    box-shadow: 0 0 0 1px hsla(216, 7.2%, 13.5%, 0.6), 0 2px 10px 0 hsla(0, 0%, 0%, 0.2);
+    // background-color: #313338;
+    background-color: $background-primary;
+    box-shadow: $dark-elevation-border, $dark-elevation-high;
 
     user-select: none;
     -webkit-user-drag: none;
@@ -90,17 +93,16 @@
 
     button[type="submit"]:disabled {
         cursor: not-allowed;
-        opacity: .5;
-        color: hsl(0, 0%, 100%);
-        background-color: hsl(235, 85.6%, 64.7%);
-        forced-color-adjust: none;
+        opacity: 0.5;
+        color: $white-500;
+        background-color: $brand-experiment;
     }
 }
 
 
 .i2sm-inner-flex {
     flex: 0 0 auto;
-    box-shadow: 0 1px 0 0 rgba(17, 18, 20, 0.298), 0 1px 2px 0 rgba(17, 18, 20, 0.298);
+    box-shadow: 0 1px 0 0 $primary-800-30, 0 1px 2px 0 $primary-800-30;
     border-radius: 4px 4px 0 0;
     -webkit-transition: -webkit-box-shadow .1s ease-out;
     transition: -webkit-box-shadow .1s ease-out;
@@ -142,24 +144,20 @@
     opacity: .5;
     cursor: pointer;
     border-radius: 3px;
-    color: rgb(181, 186, 193);
+    color: $interactive-normal;
     box-sizing: content-box;
 
     background: transparent;
     border: 0;
     margin: 0;
     outline: 0;
-    font-family: "Whitney"; //add gg sans later
+    font-family: $global-font;
     text-rendering: optimizeLegibility;
-
-
-
 
 
     display: -webkit-box;
     display: flex;
     -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     -webkit-box-align: center;
     align-items: center;
@@ -180,7 +178,7 @@
 
 .i2sm-close-button-wrapper:hover {
     opacity: 1;
-    color: rgb(219, 222, 225);
+    color: $interactive-hover;
 }
 
 
@@ -202,7 +200,6 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
 }
 
@@ -213,8 +210,8 @@
     margin-bottom: 4px;
     font-size: 16px;
     line-height: 20px;
-    color: rgb(242, 243, 245);
-    font-family: "Whitney"; // add gg sans
+    color: $header-primary;
+    font-family: $global-font;
     -webkit-box-flex: 1;
     flex: 1;
     cursor: default;
@@ -240,7 +237,7 @@
     margin-top: 4px;
     height: 20px;
     width: 20px;
-    color: rgb(181, 186, 193);
+    color: $interactive-normal;
 }
 
 .i2sm-channel-text-name {
@@ -248,8 +245,8 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
-    color: rgb(181, 186, 193);
-    font-family: "Whitney"; //import gg sans
+    color: $interactive-normal;
+    font-family: $global-font
 }
 
 
@@ -264,7 +261,7 @@
     flex: 1 1 auto;
     border-radius: 4px;
     overflow: hidden;
-    background-color: rgb(30, 31, 34);
+    background-color: $background-tertiary;
 }
 
 .i2sm-search-bar-inner {
@@ -305,16 +302,15 @@
     -moz-appearance: none;
     appearance: none;
     outline: 0;
-    font-family: "Whitney"; // change to gg "sans";
+    font-family: $global-font;
     text-rendering: optimizeLegibility;
-    color: rgb(219, 222, 225);
+    color: $text-normal;
 }
 
 .i2sm-search-bar::placeholder {
     text-rendering: optimizeLegibility;
-    font-family: "Whitney"; // change to gg "sans";
-    // font-family: "gg sans";
-    color: rgb(148, 155, 164);
+    font-family: $global-font;
+    color: $text-muted;
     opacity: 1;
     font-weight: 400;
 }
@@ -355,7 +351,7 @@
     transition: transform .1s ease-out, opacity .1s ease-out, -webkit-transform .1s ease-out;
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
-    color: rgb(181, 186, 193);
+    color: $interactive-normal;
 }
 
 .i2sm-clear-icon {
@@ -372,7 +368,7 @@
     transition: transform .1s ease-out, opacity .1s ease-out, -webkit-transform .1s ease-out;
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
-    color: rgb(181, 186, 193);
+    color: $interactive-normal;
 }
 
 
@@ -406,7 +402,7 @@
     min-height: 0;
     -webkit-box-flex: 1;
     outline: 0;
-    scrollbar-color: hsl(216, 7.2%, 13.5%) hsla(0, 0%, 0%, 0);
+    scrollbar-color: $scrollbar-thin-thumb, $scrollbar-thin-track;
     scrollbar-width: thin;
 }
 
@@ -421,9 +417,8 @@
     font-weight: 600;
     text-transform: uppercase;
     text-align: center;
-    color: rgb(148, 155, 164);
-    font-family: "Whitney";
-    // font-family: "gg sans";
+    color: $text-muted;
+    font-family: $global-font;
 
 }
 
@@ -451,7 +446,7 @@
     -webkit-box-flex: 1;
     flex: 1 1 auto;
 
-    scrollbar-color: hsl(216, 7.2%, 13.5%) hsla(0, 0%, 0%, 0);
+    scrollbar-color: $scrollbar-thin-thumb, $scrollbar-thin-track;
     scrollbar-width: thin;
 }
 
@@ -473,16 +468,16 @@
     background-clip: padding-box;
     border: 2px solid transparent;
     border-radius: 4px;
-    background-color: hsl(216, 7.2%, 13.5%);
+    background-color: $scrollbar-thin-thumb;
     min-height: 40px;
 }
 
 
 .i2sm-no-results::-webkit-scrollbar-track,
 .i2sm-scroller::-webkit-scrollbar-track {
-    border-color: hsla(0, 0%, 0%, 0);
-    background-color: hsla(0, 0%, 0%, 0);
-    border: 2px solid hsla(0, 0%, 0%, 0);
+    border-color: $scrollbar-thin-track;
+    background-color: $scrollbar-thin-track;
+    border: 2px solid $scrollbar-thin-track;
 }
 
 
@@ -508,15 +503,18 @@
 }
 
 .i2sm-invite-row:hover {
-    background-color: rgba(78, 80, 88, 0.298);
+    // background-color: rgba(78, 80, 88, 0.298);
+    background-color: $primary-500-hsl-30;
 
     .i2sm-invite-member-button {
-        color: hsl(0, 0%, 100%);
-        background-color: hsl(142, 56.1%, 32.2%);
+        color: $white-500;
+        background-color: $button-positive-background;
+        // background-color: rgb(36, 128, 70);
     }
-    .i2sm-invite-member-button:disabled{
+
+    .i2sm-invite-member-button:disabled {
         background-color: transparent;
-        
+
     }
 }
 
@@ -548,39 +546,21 @@
 }
 
 
-
-// .i2sm-main-layer{
-//     .user-pfp-svg-render {
-//         overflow: unset;
-
-//     }
-// }
-
-
-
-
-
-
-
-
 .i2sm-invite-row-member-username {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     outline: 0;
-    color: rgb(249, 249, 249);
+    color: $primary-100;
     font-size: 16px;
-    font-family: "Whitney";
-    // font-family: "gg sans";
+    font-family: $global-font;
     font-weight: 400;
 
 }
 
 
 .i2sm-invite-member-button {
-    // font-family: "gg sans";
-    font-family: "Whitney";
-
+    font-family: $global-font;
     text-rendering: optimizeLegibility;
     outline: 0;
 
@@ -620,9 +600,8 @@
     -webkit-box-flex: 0;
     flex: none;
     width: 72px;
-    color: rgb(255, 255, 255);
-    border-color: hsl(145, 65%, 39.2%);
-
+    color: $white-500;
+    border-color: $button-outline-positive-border;
 
 }
 
@@ -637,23 +616,24 @@
 
 
 .i2sm-invite-member-button:hover {
-    // background-color: rgb(36, 128, 70);
-    background-color: hsl(141, 58.4%, 24.5%) !important;
-    border-color: hsl(142, 56.1%, 32.2%);
-    color: rgb(255, 255, 255);
+    // background-color: rgb(26, 99, 52) !important; 
+    background-color: $button-positive-background-hover !important;
+    // border-color: rgb(36, 128, 70);
+    border-color: $button-outline-positive-border-hover;
+    color: $white-500;
 }
 
 
 .i2sm-invite-member-button:active {
-    background-color: hsl(140, 60.7%, 21%);
-    border-color: hsl(140, 60.7%, 21%);
-    color: rgb(255, 255, 255);
+    background-color: $button-outline-positive-background-active;
+    border-color: $button-outline-positive-border-active;
+    color: $white-500;
 }
 
 .i2sm-invite-member-button:disabled {
     cursor: not-allowed;
     opacity: 0.5;
-    color: rgb(255, 255, 255);
+    color: $white-500;
     border-color: transparent;
     background-color: transparent;
     pointer-events: none;
@@ -683,8 +663,8 @@
     z-index: 1;
     overflow-x: hidden;
     border-radius: 0 0 5px 5px;
-    background-color: rgb(49, 51, 56);
-    box-shadow: inset 0 1px 0 rgba(43, 45, 49, 0.6);
+    background-color: $primary-600;
+    box-shadow: inset 0 1px 0 $primary-630-hsl;
 
 }
 
@@ -733,7 +713,7 @@
     margin-left: -6px;
     -webkit-transform: translateY(-20px);
     transform: translateY(-20px);
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: $white-500-hsl-01;
 }
 
 
@@ -743,11 +723,10 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: .02em;
-    font-family: "Whitney";
-    // font-family: "gg sans"
+    font-family: $global-font;
     font-size: 12px;
     line-height: 16px;
-    color: rgb(181, 186, 193);
+    color: $header-secondary;
 }
 
 .i2sm-ssl-input-flex-container {
@@ -766,8 +745,9 @@
     box-sizing: border-box;
     width: 100%;
     border-radius: 3px;
-    color: rgb(219, 222, 225);
-    background-color: rgb(30, 31, 34);
+    color: $text-normal;
+    background-color: $input-background;
+    font-weight: 400;
     border: none;
     -webkit-transition: border-color .2s ease-in-out;
     transition: border-color .2s ease-in-out;
@@ -787,9 +767,7 @@
 }
 
 .i2sm-sll-input {
-    font-family: "Whitney";
-    // font-family: "gg sans";
-
+    font-family: $global-font;
     text-rendering: optimizeLegibility;
     padding: 10px;
     height: 40px;
@@ -799,19 +777,20 @@
     box-sizing: border-box;
     width: 100%;
     border-radius: 3px;
-    color: rgb(219, 222, 225);
-    background-color: rgb(30, 31, 34);
+    color: $text-normal;
+    background-color: $input-background;
+    font-weight: 400;
     border: none;
     -webkit-transition: border-color .2s ease-in-out;
     transition: border-color .2s ease-in-out;
 }
 
 .i2sm-sll-input::placeholder {
-    color: rgb(219, 222, 225);
+    color: $text-normal;
     text-rendering: optimizeLegibility;
-    font-family: "Whitney"; // change to gg "sans";
-    // font-family: "gg sans";
+    font-family: $global-font;
     opacity: 1;
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -824,14 +803,10 @@
     width: 75px;
     transition: background-color .17s ease, color .17s ease;
     outline: 0;
-    // font-family: "gg sans";
-    font-family: "Whitney";
-
+    font-family: $global-font;
     text-rendering: optimizeLegibility;
-    background-color: rgb(88, 101, 242);
-    color: rgb(255, 255, 255);
-
-
+    background-color: $brand-experiment;
+    color: $white-500;
     position: relative;
     display: -webkit-box;
     display: flex;
@@ -854,16 +829,18 @@
 
 
 .i2sm-sll-copy-button:hover {
-    background-color: rgb(71, 82, 196);
+    background-color: $brand-experiment-560;
 }
 
 
 .i2sm-sll-copy-button:active {
-    background-color: hsl(141, 58.4%, 24.5%);
+    // background-color: rgb(26, 99, 52);
+    background-color: $button-positive-background-hover;
 }
 
 .i2sm-sll-copy-button.copy-successful {
-    background-color: hsl(141, 58.4%, 24.5%);
+    // background-color: rgb(26, 99, 52);
+    background-color: $button-positive-background-hover;
 }
 
 .i2sm-sll-copy-button-contents {
@@ -883,14 +860,13 @@
     line-height: 16px;
     font-weight: 400;
     margin-top: 8px;
-    color: rgb(196, 201, 206);
-    font-family: "Whitney";
-    // font-family: "gg-sans";
+    color: $primary-300;
+    font-family: $global-font;
 }
 
 .i2sm-sll-link-2-edit-i-link {
 
-    color: rgb(0, 168, 252);
+    color: $text-link;
     text-decoration: none;
     outline: 0;
     cursor: pointer;
@@ -915,7 +891,7 @@
     margin-top: 16px;
     padding: 14px 0;
     flex: 1 1 auto;
-    background-color: rgb(43, 45, 49);
+    background-color: $modal-footer-bg-color-button-wrapper;
 }
 
 .i2sm-sll-add-image-icon {
@@ -926,37 +902,32 @@
     top: 1px;
     width: 16px;
     height: 24px;
-    color: rgb(255, 115, 250);
+    color: $gemstone;
 }
 
 .i2sm-sll-add-image-text {
 
-    font-family: "Whitney";
-    // font-family: "gg-sans";
+    font-family: $global-font;
     font-size: 14px;
     line-height: 18px;
     font-weight: 400;
-    color: rgb(219, 222, 225);
+    color: $text-normal;
     outline: 0;
 }
 
 .i2sm-sll-add-image-learn-more-link {
     font-size: 12px;
     margin-left: 16px;
-    color: rgb(0, 168, 252);
+    color: $text-link;
     text-decoration: none;
     outline: 0;
     cursor: pointer;
-    font-family: "Whitney";
-    // font-family: "gg sans"
+    font-family: $global-font;
 }
 
 .i2sm-sll-add-image-learn-more-link:hover {
     text-decoration: underline;
 }
-
-
-
 
 
 @-webkit-keyframes spinning-pulsing-ellipsis {
@@ -1056,7 +1027,7 @@
     width: 6px;
     height: 6px;
     margin-right: 2px;
-    background-color: hsl(0, 0, 97.6%);
+    background-color: $primary-100;
     border-radius: 3px;
     display: inline-block;
     opacity: .3;
@@ -1074,5 +1045,5 @@
 
 .spin-dot-item {
 
-    background-color: hsl(0, 0, 100%);
+    background-color: $white-500;
 }
