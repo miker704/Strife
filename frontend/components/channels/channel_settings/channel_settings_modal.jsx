@@ -183,15 +183,22 @@ const RegionRadio = styled(Radio)(({ theme }) => ({
 
 const ChannelSettingsModal = (props) => {
 
-
+    const [channelDeletion, setChannelDeletion] = useState(false);
+    const [newChannelName, setNewChannelName] = useState("");
     useEffect(() => {
-        if (channelDeletion) {
-            window.removeEventListener('keyup', props.handleESC, false);
+        setNewChannelName(props.channel.channel_name);
+
+        if (channelDeletion === true) {
+            // window.removeEventListener('keyup', props.handleESC, false);
+            window.removeEventListener('keyup', overrideCloseModal, false);
+
 
         }
         else {
             // setTimeout(() => {
-            window.addEventListener('keyup', props.handleESC, false);
+            // window.addEventListener('keyup', props.handleESC, false);
+            window.addEventListener('keyup', overrideCloseModal, false);
+
             // }, 1000)
         }
 
@@ -199,16 +206,46 @@ const ChannelSettingsModal = (props) => {
             props.removeServerErrors();
             props.removeChannelErrors();
             props.removeSessionErrors();
-            window.removeEventListener('keyup', props.handleESC, false);
+            // window.removeEventListener('keyup', props.handleESC, false);
+            window.removeEventListener('keyup', overrideCloseModal, false);
+
         }
 
     }, [channelDeletion]);
 
+    const overrideCloseModal = (e) => {
+        const keys = {
+            27: () => {
+                e.preventDefault();
+                let modalToClose = document.getElementById("channel-settings-modal");
+                modalToClose.classList.add("transition-out");
+                document.getElementById("grab-wrapper").style.opacity = 0.6;
+                document.getElementById('app-puller').animate(
+                    {
+                        transform: ['scale(0.93) translateZ(0px)', 'scale(0.94) translateZ(0px)', 'scale(0.95) translateZ(0px)', 'scale(0.97) translateZ(0px)', 'scale(0.99) translateZ(0px)'],
+                        offset: [0.0, 0.25, 0.5, 0.75, 1.0],
+                    },
+                    {
+                        duration: 200,
+                        iterations: 1,
+                    }
+                );
+                setTimeout(() => {
+                    props.removeServerErrors();
+                    props.closeModal();
+                    window.removeEventListener('keyup', overrideCloseModal, false);
+                }, 100);
+            },
+        };
+        if (keys[e.keyCode]) {
+            keys[e.keyCode]();
+        }
+    }
+
+
     const [value, setValue] = useState('');
     const [count, setCount] = useState(1024);
-    const [newChannelName, setNewChannelName] = useState('');
     const [newChannelTopic, setNewChannelTopic] = useState('');
-    const [channelDeletion, setChannelDeletion] = useState(false);
     const [activitySwitch, setActivitySwitch] = useState(false);
 
     const [activitySliderValue, setActivitySliderValue] = useState(0);
@@ -518,9 +555,20 @@ const ChannelSettingsModal = (props) => {
 
 
     const handleCloseModal = () => {
-        document.getElementById('app-puller').classList.remove('shrink-app');
+        // document.getElementById('app-puller').classList.remove('shrink-app');
         let modalToClose = document.getElementById("channel-settings-modal");
         modalToClose.classList.add("transition-out");
+        document.getElementById("grab-wrapper").style.opacity = 0.6;
+        document.getElementById('app-puller').animate(
+            {
+                transform: ['scale(0.93) translateZ(0px)', 'scale(0.94) translateZ(0px)', 'scale(0.95) translateZ(0px)', 'scale(0.97) translateZ(0px)', 'scale(0.99) translateZ(0px)'],
+                offset: [0.0, 0.25, 0.5, 0.75, 1.0],
+            },
+            {
+                duration: 200,
+                iterations: 1,
+            }
+        );
         setTimeout(() => {
             props.removeServerErrors();
             props.closeModal();
@@ -572,21 +620,9 @@ const ChannelSettingsModal = (props) => {
     ) : ("");
 
 
-    console.log(`newchannelname  = ${newChannelName}`);
-    console.log(`actvity switch?  = ${activitySwitch}`);
-    console.log(`activity slider  = ${activitySliderValue}`);
-    console.log(`final activity slider value  = ${finalActivitySliderValue}`);
-    console.log(`bitrate  = ${bitRate}`);
-    console.log(`uer limte  = ${userLimit}`);
-    console.log(`video quality = ${videoQuality}`);
-    console.log(`region  = ${region}`);
-    console.log(`hideinactivity  = ${hideInActivity}`);
-
-
-
 
     return (
-        <div className="cs-settings-modal-wrapper" onClick={e => e.stopPropagation()}>
+        <div id="grab-wrapper" className="cs-settings-modal-wrapper" onClick={e => e.stopPropagation()}>
             {channelDeletion && <DeleteChannelModalContainer currentChannel={props.channel}
                 setChannelDeletion={setChannelDeletion} />}
             <div className="cs-channel-settings-modal" id="channel-settings-modal">
@@ -943,22 +979,22 @@ const ChannelSettingsModal = (props) => {
                                                 <div className="csm-split-flex-container">
                                                     <h3 className="cs-op-div-fjs-h5">USER LIMIT</h3>
                                                     <div className="csm-invisible-div"></div>
-                                                        <div className="cs-box-2">
+                                                    <div className="cs-box-2">
 
-                                                            <SlowModeSlider
-                                                                aria-label="userlimitslider"
-                                                                valueLabelDisplay="auto"
-                                                                defaultValue={0}
-                                                                getAriaValueText={userLimitValueLabel}
-                                                                valueLabelFormat={userLimitValueLabel}
-                                                                min={0}
-                                                                max={99}
-                                                                step={1}
-                                                                marks={userLimitMarks}
-                                                                value={userLimit}
-                                                                onChange={(e, value) => (setUserLimit(value))}
-                                                            />
-                                                        </div>
+                                                        <SlowModeSlider
+                                                            aria-label="userlimitslider"
+                                                            valueLabelDisplay="auto"
+                                                            defaultValue={0}
+                                                            getAriaValueText={userLimitValueLabel}
+                                                            valueLabelFormat={userLimitValueLabel}
+                                                            min={0}
+                                                            max={99}
+                                                            step={1}
+                                                            marks={userLimitMarks}
+                                                            value={userLimit}
+                                                            onChange={(e, value) => (setUserLimit(value))}
+                                                        />
+                                                    </div>
                                                     <div className="cs-inactive-sub-info">
                                                         Limits the number of users that can connect to this voice channel. Users with the{`${" "}`}
                                                         <strong>Move Members</strong>{`${" "}`}
