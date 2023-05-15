@@ -488,6 +488,9 @@ current dmServer involving the user of their friend it will send a request to th
     - Added Animations for Enter and exiting Invite To Server Modal.
     - Added Loud Speaker Icon for Invite to Server Modal.
     - Added direct pass through for channel id to get the proper channel to appear in Invite to Server Modal.
+    - Restyled Explore Servers Page.
+    - Switched to SCSS Vars in Explore Servers Page.
+    - Added "Try search for them" footer at the bottom of the explore servers page.
 
 ## Backend Changes
 
