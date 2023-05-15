@@ -36,7 +36,7 @@ const ActionButtonPopUp = (props) => {
                             </div>
                         </div>
                         <ReactTooltip
-                            className="thread-tool-tip"
+                            className="copy-server-link-tool-tip"
                             textColor="#B9BBBE"
                             backgroundColor="#191919"
                             id="copy-strife-server-link"
