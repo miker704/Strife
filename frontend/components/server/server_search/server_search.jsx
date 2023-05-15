@@ -231,7 +231,7 @@ const ExploreServers = (props) => {
                                     </svg>
                                 </div>
                                 <ReactTooltip
-                                    className="thread-tool-tip"
+                                    className="verified-tool-tip"
                                     textColor="#B9BBBE"
                                     backgroundColor="#191919"
                                     id="verified"
@@ -280,7 +280,7 @@ const ExploreServers = (props) => {
                     </div>
                 </div>
                 <ReactTooltip
-                    className="thread-tool-tip"
+                    className="ps-thread-tool-tip"
                     textColor="#B9BBBE"
                     backgroundColor="#191919"
                     id="PrivateServer"
