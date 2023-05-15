@@ -202,7 +202,8 @@
 .exs-main-content-scroller-base {
     height: 100%;
     outline: 0;
-    padding: 32px;
+    // padding: 32px;
+    padding: 16px;
     overflow: hidden scroll;
     padding-right: 16px;
     text-rendering: optimizeLegibility;
@@ -298,6 +299,16 @@
 }
 
 .exs-search-subtitle {
+    margin-top: 8px;
+    outline: 0;
+    color: $white-500;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: $global-font;
+
+}
+.exs-search-subtitle-2 {
     margin-top: 8px;
     outline: 0;
     color: $white-500;
@@ -732,8 +743,10 @@
     position: absolute;
     // top: 285.966px;
     // right: 740px;
-    top: 150px;
-    left: 95px;
+    // top: 150px;
+    // left: 95px;
+    top: 164px;
+    left: 125px;
     pointer-events: auto;
 }
 
@@ -1057,4 +1070,70 @@
     min-width: 1px;
     flex: 0 0 auto;
     height: 32px;
+}
+
+//4k screen adjustments
+@media only screen and (min-width:1400px) {
+
+    .faint-boost-shiny-button.join-server {
+        // background-color: chartreuse;
+        margin-bottom: 10px;
+        margin-right: -4px;
+    }
+
+    .action-button-pop-up {
+        top: 164px;
+        left: 50px;
+    }
+}
+
+
+@media only screen and (max-width:640px) {
+    .action-button-pop-up {
+        left: 79px;
+    }
+}
+
+@media only screen and (min-width:640px) and (max-width: 957px) {
+    .action-button-pop-up {
+        left: 79px; 
+    }
+}
+@media only screen and (min-width:957px) and (max-width: 1024px) {
+    .action-button-pop-up {
+        left: 112px;
+    }
+}
+
+@media only screen and (min-width:1024px) and (max-width: 1152px) {
+    .action-button-pop-up {
+        left: 176px ;
+    }
+}
+@media only screen and (width:1152px) {
+    .action-button-pop-up {
+        // left: 45px !important;
+        left: 45px ;
+
+    }
+}
+
+
+@media (max-width: 1265px){
+    .exs-search-title{
+        font-size: 20px;
+    }
+    .exs-search-subtitle{
+        font-size: 14px;
+    }
+    .exs-search-subtitle-2{
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1129px){
+    .exs-main-content-scroller-base{
+        padding: 32px;
+    }
+ 
 }
