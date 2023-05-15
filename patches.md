@@ -486,6 +486,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Added Open and Exit Animations for Download apps modal.
     - Switched to SCSS vars for Invite to Server Modal.
     - Added Animations for Enter and exiting Invite To Server Modal.
+    - Added Loud Speaker Icon for Invite to Server Modal.
+    - Added direct pass through for channel id to get the proper channel to appear in Invite to Server Modal.
 
 ## Backend Changes
 
