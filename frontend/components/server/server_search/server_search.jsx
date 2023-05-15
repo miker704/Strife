@@ -21,6 +21,7 @@ const ExploreServers = (props) => {
     const inputRef = useRef();
     const [searchText, setSearchText] = useState("");
     const [showPopUp, setShowPopUp] = useState(false);
+    const [popUpLeft, setPopupLeft] = useState(0);
     const [selectedServer, toggleSelectedServer] = useState([]);
     const [selectedServerLink, setSelectedServerLink] = useState('');
 
@@ -35,6 +36,18 @@ const ExploreServers = (props) => {
     }
 
     const handlePopupShow = (e) => {
+        // check for screen resolution type in order to display the action pop up in the right position
+        // let currLeft = e.currentTarget.getBoundingClientRect().left;
+        // const realWidth = window.screen.width * window.devicePixelRatio;
+        // const realHeight = window.screen.height * window.devicePixelRatio;
+
+        // if (realWidth >= 3800 && realHeight >= 2100) {
+        //     currLeft = 50;
+        // }
+        // else {
+        //     currLeft = 125;
+        // }
+        // setPopupLeft(currLeft);
         setShowPopUp(!showPopUp);
     }
 
@@ -167,7 +180,7 @@ const ExploreServers = (props) => {
                                         onClick={(e) => {
                                             handleSelectedServerLink(server);
                                             handleSelected(server)
-                                            handlePopupShow(e);
+                                            handlePopupShow(e,server.id);
                                         }}>
                                         <svg className="action-button-icon" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                             <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M7 12.001C7 10.8964 6.10457 10.001 
@@ -197,7 +210,7 @@ const ExploreServers = (props) => {
                         </div>
                     </div>
 
-                    {showPopUp && selectedServer.id === server.id && <ActionButtonPopUpContainer serverLink={selectedServerLink} setShowPopUp={setShowPopUp} />}
+                    {showPopUp && selectedServer.id === server.id && <ActionButtonPopUpContainer serverLink={selectedServerLink} setShowPopUp={setShowPopUp} left={popUpLeft} />}
                     <div className="guild-card-info">
                         <div className="guild-card-title">
                             <div className={`guild-card-star fill-color-${color_tag}`} data-tip data-for="verified">
@@ -339,7 +352,7 @@ const ExploreServers = (props) => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="exs-search-subtitle">
+                                            <div className="exs-search-subtitle-2">
                                                 Click to Join a Public Server, to Join a Private Server
                                                 You must attain an Invite Link by the Server Owner or its Members.
                                             </div>
