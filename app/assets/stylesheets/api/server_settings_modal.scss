@@ -1,5 +1,6 @@
 //server settings modal similar layout to the user profile modal (using most of its styling
 //  already these here are styles exclusive to the server options modal)
+@import 'global_vars';
 
 
 .server-op-item-flex {
@@ -24,7 +25,6 @@
     flex: 1 1 50%;
     margin-left: 0;
     margin-right: 10px;
-    forced-color-adjust: none;
     box-sizing: border-box;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -42,7 +42,6 @@
     flex: 1 1 auto;
     outline: 0;
     margin-right: 10px;
-    forced-color-adjust: none;
     box-sizing: border-box;
     margin-left: 0;
 
@@ -51,14 +50,12 @@
 .server-image-uploader {
     text-align: center;
     font-size: 12px;
-    forced-color-adjust: none;
     box-sizing: border-box;
     outline: 0;
 }
 
 .server-image-uploader-inner {
     outline: 0;
-    forced-color-adjust: none;
     flex-shrink: 0;
     box-sizing: border-box;
     background-position: 50%;
@@ -111,7 +108,6 @@
     display: block;
     text-decoration: none;
     cursor: pointer;
-    forced-color-adjust: none;
     box-sizing: border-box;
     text-align: center;
     color: hsl(216, 3.7%, 73.5%);
@@ -138,12 +134,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    forced-color-adjust: none;
     font-family: "Whitney";
 }
 
 .image-uploader-acro {
-    forced-color-adjust: none;
     outline: 0;
     box-sizing: border-box;
     font-size: 40px;
@@ -158,7 +152,6 @@
     text-transform: uppercase;
     line-height: 12px;
     white-space: pre;
-    forced-color-adjust: none;
     box-sizing: border-box;
     outline: 0;
 
@@ -175,7 +168,6 @@
     text-rendering: optimizeLegibility;
     outline: 0;
     box-sizing: border-box;
-    forced-color-adjust: none;
     pointer-events: auto;
     position: absolute;
     top: 0px;
@@ -203,7 +195,6 @@
 
 .server-op-image-uploader-icon {
     background-color: hsl(210, 2.9%, 86.7%);
-    forced-color-adjust: none;
     position: absolute;
     top: 0;
     right: 0;
@@ -233,7 +224,6 @@
     max-width: 180px;
     margin-right: 0;
     margin-left: 10px;
-    forced-color-adjust: none;
     box-sizing: border-box;
     outline: 0;
     display: flex;
@@ -249,7 +239,6 @@
 
 .server-op-icon-rec-s {
     margin-bottom: 8px;
-    forced-color-adjust: none;
     outline: 0;
     box-sizing: border-box;
     color: hsl(216, 3.7%, 73.5%);
@@ -262,7 +251,6 @@
 }
 
 .server-op-pfp-upload-button {
-    forced-color-adjust: none;
     outline: 0;
     box-sizing: border-box;
     cursor: default;
@@ -307,12 +295,10 @@
     overflow: hidden;
     box-sizing: border-box;
     outline: 0;
-    forced-color-adjust: none;
 }
 
 .server-op-item-margin-bottom {
     outline: 0;
-    forced-color-adjust: none;
     margin-right: 0;
     margin-left: 10px;
     box-sizing: border-box;
@@ -322,7 +308,6 @@
 
 .server-op-item-margin-bottom-h5 {
     box-sizing: border-box;
-    forced-color-adjust: none;
     outline: 0;
     color: rgb(181, 186, 193);
     margin-bottom: 8px;
@@ -338,7 +323,6 @@
 
 .server-op-item-margin-bottom-h5-2 {
     box-sizing: border-box;
-    forced-color-adjust: none;
     outline: 0;
     color: hsl(216, 3.7%, 73.5%);
     font-size: 12px;
@@ -360,11 +344,9 @@
     -webkit-box-direction: normal;
     flex-direction: column;
     box-sizing: border-box;
-    forced-color-adjust: none;
 }
 
 .server-op-name-input {
-    forced-color-adjust: none;
     outline: 0;
     box-sizing: border-box;
     padding: 10px;
@@ -399,13 +381,11 @@
     border-top: 1px solid #0000;
     box-sizing: border-box;
     outline: 0;
-    forced-color-adjust: none;
     border-color: hsla(218, 4.6%, 46.9%, 0.3);
 }
 
 .server-op-divider-flex-js {
     flex: 1 1 auto;
-    forced-color-adjust: none;
     box-sizing: border-box;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -422,7 +402,6 @@
 .server-op-flexchild1 {
     flex: 1 1 50%;
     margin-left: 0;
-    forced-color-adjust: none;
     box-sizing: border-box;
     margin-right: 10px;
     outline: 0;
@@ -431,7 +410,6 @@
 
 .server-op-div-fjs-h5 {
     outline: 0;
-    forced-color-adjust: none;
     box-sizing: border-box;
     font-size: 12px;
     line-height: 16px;
@@ -448,7 +426,6 @@
 
 .select-box-look-filled {
     outline: 0;
-    forced-color-adjust: none;
     box-sizing: border-box;
     border: 1px solid #0000;
     padding: 8px 8px 8px 12px;
@@ -468,7 +445,6 @@
 
 .s-b-value {
     outline: 0;
-    forced-color-adjust: none;
     box-sizing: border-box;
     gap: 8px;
     text-overflow: ellipsis;
@@ -482,7 +458,6 @@
 .s-b-value-flex {
     flex: 1 1 auto;
     outline: 0;
-    forced-color-adjust: none;
     box-sizing: border-box;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -498,7 +473,6 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    forced-color-adjust: none;
     margin: 0 4px;
     box-sizing: border-box;
     font-size: 16px;
@@ -524,7 +498,6 @@
     margin-left: 8px;
     min-width: 48px;
     text-transform: uppercase;
-    forced-color-adjust: none;
     font-weight: 600;
 }
 
@@ -533,7 +506,6 @@
 .server-op-divider-icons-wrap {
     box-sizing: border-box;
     outline: 0;
-    forced-color-adjust: none;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -555,15 +527,13 @@
     border-radius: 4px;
     font-weight: 500;
     cursor: not-allowed;
-    opacity: .6;
-    forced-color-adjust: none;
+    opacity: 0.6;
     color: rgb(219, 222, 225);
     border-color: #1e1f22;
     background-color: #1e1f22;
 }
 
 .inactive-sub-info {
-    forced-color-adjust: none;
     outline: 0;
     margin-top: 8px;
     box-sizing: border-box;
@@ -579,7 +549,6 @@
 
 
 .server-op-margin-top-container {
-    forced-color-adjust: none;
     margin-top: 20px;
     display: flex;
     -webkit-box-direction: normal;
@@ -594,8 +563,7 @@
     box-sizing: border-box;
     align-self: center;
     min-width: 16px;
-    opacity: .3;
-    forced-color-adjust: none;
+    opacity: 0.3;
 }
 
 .sop-label-row {
@@ -608,12 +576,10 @@
     width: 100%;
     -webkit-box-align: start;
     align-items: flex-start;
-    forced-color-adjust: none;
 
 }
 
 .sop-label {
-    forced-color-adjust: none;
     outline: 0;
     box-sizing: border-box;
     flex: 1;
@@ -628,7 +594,6 @@
     word-wrap: break-word;
     -webkit-box-flex: 1;
     cursor: pointer;
-    forced-color-adjust: none;
     font-family: "Whitney";
 }
 
@@ -639,7 +604,6 @@
     outline: 0;
     border-radius: 14px;
     cursor: pointer;
-    forced-color-adjust: none;
     box-sizing: border-box;
     opacity: 1;
     // background-color: hsl(139, 47.3%, 43.9%); 
@@ -655,7 +619,6 @@
     margin: 3px;
     box-sizing: border-box;
     cursor: pointer;
-    forced-color-adjust: none;
     left: 12px;
 }
 
@@ -666,7 +629,6 @@
     outline: 0;
     height: 100%;
     box-sizing: border-box;
-    forced-color-adjust: none;
     font-family: "Whitney";
     text-rendering: optimizeLegibility;
     border-radius: 14px;
@@ -690,7 +652,6 @@
     border-radius: 3px;
     display: block;
     box-sizing: border-box;
-    forced-color-adjust: none;
     // color: hsl(216, 3.7%, 73.5%);
     color: rgb(181, 186, 193);
     background-color: rgb(43, 45, 49);
@@ -712,7 +673,6 @@
 
 .sop-radio-item-inner {
     padding: 10px;
-    forced-color-adjust: none;
     box-sizing: border-box;
     border-left: 3px solid transparent;
     border-radius: 4px;
@@ -727,7 +687,6 @@
 }
 
 .sop-radio-info {
-    forced-color-adjust: none;
     outline: 0;
     box-sizing: border-box;
     margin-right: 8px;
@@ -744,7 +703,6 @@
     line-height: 20px;
     font-weight: 500;
     box-sizing: border-box;
-    forced-color-adjust: none;
     outline: 0;
 
     strong {
@@ -755,14 +713,12 @@
 .sop-section-title {
     outline: 0;
     box-sizing: border-box;
-    forced-color-adjust: none;
     display: flex;
 }
 
 .sop-section-header {
     outline: 0;
     box-sizing: border-box;
-    forced-color-adjust: none;
     color: #FFFFFF;
     margin-bottom: 20px;
     font-weight: 500;
@@ -776,7 +732,6 @@
 }
 
 .sop-display-children {
-    forced-color-adjust: none;
     box-sizing: border-box;
     display: flex;
     -webkit-box-orient: vertical;
@@ -787,7 +742,6 @@
 
 .server-op-divider-flex-js2 {
     flex: 1 1 auto;
-    forced-color-adjust: none;
     box-sizing: border-box;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -805,7 +759,6 @@
     flex: 1 1 50%;
     margin-right: 10px;
     margin-left: 10px;
-    forced-color-adjust: none;
     box-sizing: border-box;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -832,7 +785,6 @@
     -webkit-box-orient: vertical;
     margin-top: 8px;
     margin-bottom: 8px;
-    forced-color-adjust: none;
 }
 
 
@@ -846,7 +798,6 @@
     width: 100%;
     -webkit-box-orient: horizontal;
     -webkit-box-align: start;
-    forced-color-adjust: none;
 }
 
 .server-op-horz-label {
@@ -862,7 +813,6 @@
     word-wrap: break-word;
     cursor: pointer;
     -webkit-box-flex: 1;
-    forced-color-adjust: none;
     box-sizing: border-box;
     outline: 0;
     font-family: "Whitney";
@@ -870,7 +820,6 @@
 }
 
 .control-123 {
-    forced-color-adjust: none;
     box-sizing: border-box;
     outline: 0;
     flex: 0 0 auto;
@@ -881,7 +830,6 @@
     position: relative;
     width: 40px;
     height: 24px;
-    forced-color-adjust: none;
     box-sizing: border-box;
     outline: 0;
     border-radius: 14px;
@@ -894,7 +842,6 @@
     flex: 1 1 50%;
     margin-right: 0;
     margin-left: 10px;
-    forced-color-adjust: none;
     box-sizing: border-box;
     outline: 0;
 }
@@ -908,7 +855,6 @@
 }
 
 .sbb-op-flex {
-    forced-color-adjust: none;
     flex: 1 1 50%;
     box-sizing: border-box;
     -webkit-box-orient: horizontal;
@@ -925,7 +871,6 @@
 .sbb-flex-child {
     flex: 1 1 50%;
     margin-right: 10px;
-    forced-color-adjust: none;
     margin-left: 0;
     box-sizing: border-box;
     outline: 0;
@@ -937,13 +882,11 @@
     outline: 0;
     box-sizing: border-box;
     cursor: pointer;
-    forced-color-adjust: none;
 }
 
 .faint-server-boost-icon-wrapper {
     padding: 1px 2px;
     border-radius: 16px;
-    forced-color-adjust: none;
     margin-left: 4px;
     height: 18px;
     background-color: rgb(35, 36, 40);
@@ -961,7 +904,6 @@
     height: 14px;
     margin-right: 3px;
     box-sizing: border-box;
-    forced-color-adjust: none;
 }
 
 .faint-boost-h3 {
@@ -972,12 +914,10 @@
     text-transform: uppercase;
     box-sizing: border-box;
     color: inherit;
-    forced-color-adjust: none;
     margin-right: 4px;
 }
 
 .faint-boost-sub {
-    forced-color-adjust: none;
     margin-bottom: 8px;
     box-sizing: border-box;
     color: hsl(216, 3.7%, 73.5%);
@@ -990,7 +930,6 @@
 }
 
 .faint-boost-sub2 {
-    forced-color-adjust: none;
     box-sizing: border-box;
     color: hsl(216, 3.7%, 73.5%);
     cursor: default;
@@ -1003,7 +942,6 @@
 }
 
 .faint-anchor {
-    forced-color-adjust: none;
     box-sizing: border-box;
     text-decoration: none;
     outline: 0;
@@ -1018,7 +956,6 @@
     box-sizing: border-box;
     overflow: hidden;
     width: auto;
-    forced-color-adjust: none;
     cursor: pointer;
     color: #FFFFFF;
     background-color: hsl(139, 47.1%, 33.3%);
@@ -1072,7 +1009,6 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    forced-color-adjust: none;
     align-items: center;
     display: flex;
     -webkit-box-align: center;
@@ -1084,12 +1020,10 @@
 
 .shiny-button-icon {
     margin-right: 4px;
-    forced-color-adjust: none;
     box-sizing: border-box;
 }
 
 .shiny-button-container {
-    forced-color-adjust: none;
     box-sizing: border-box;
     left: -50%;
     position: absolute;
@@ -1164,7 +1098,6 @@
 
 .shiny-button-flex {
     flex: 1 1 auto;
-    forced-color-adjust: none;
     box-sizing: border-box;
     background-color: currentColor;
     height: 300%;
@@ -1191,27 +1124,23 @@
     height: 100%;
     width: 16px;
     box-sizing: border-box;
-    forced-color-adjust: none;
 }
 
 .faint-boost-flex-child {
     flex: 1 1 50%;
     margin-right: 0;
     margin-left: 10px;
-    forced-color-adjust: none;
     box-sizing: border-box;
     outline: 0;
 }
 
 .faint-upsell {
     cursor: pointer;
-    forced-color-adjust: none;
     box-sizing: border-box;
     outline: 0;
 }
 
 .faint-img-uploader {
-    forced-color-adjust: none;
     cursor: not-allowed;
     text-align: center;
     font-size: 12px;
@@ -1220,7 +1149,6 @@
 }
 
 .faint-img-upload {
-    forced-color-adjust: none;
     background-color: hsl(217, 7.6%, 33.5%);
     background-image: none;
     border-radius: 4px;
@@ -1238,7 +1166,6 @@
     font-size: 40px;
     overflow: hidden;
     white-space: nowrap;
-    forced-color-adjust: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -1260,7 +1187,6 @@
     background-image: none;
     background-color: hsl(0, 0%, 100%);
     position: absolute;
-    forced-color-adjust: none;
     opacity: 1%;
     top: 0;
     right: 0;
@@ -1283,7 +1209,6 @@
 }
 
 .radioIconForeground {
-    forced-color-adjust: none;
     box-sizing: border-box;
     color: #FFFFFF;
 }
@@ -1291,7 +1216,6 @@
 .faint-h5 {
     display: flex;
     margin-bottom: 8px;
-    forced-color-adjust: none;
     color: hsl(216, 3.7%, 73.5%);
     font-size: 12px;
     line-height: 16px;
@@ -1305,7 +1229,6 @@
 
 .faint-server-invite-text1 {
     margin-bottom: 8px;
-    forced-color-adjust: none;
     box-sizing: border-box;
     color: hsl(216, 3.7%, 73.5%);
     font-size: 14px;
@@ -1316,7 +1239,6 @@
 }
 
 .faint-server-invite-text2 {
-    forced-color-adjust: none;
     box-sizing: border-box;
     color: hsl(216, 3.7%, 73.5%);
     font-size: 14px;
@@ -1328,7 +1250,6 @@
 
 .inactive-sub-info-2 {
     margin-bottom: 20px;
-    forced-color-adjust: none;
     box-sizing: border-box;
     color: hsl(216, 3.7%, 73.5%);
     cursor: default;
@@ -1346,7 +1267,6 @@
 .s-b-value-flex1 {
     flex: 1 1 auto;
     outline: 0;
-    forced-color-adjust: none;
     box-sizing: border-box;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
