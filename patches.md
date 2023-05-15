@@ -492,6 +492,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Switched to SCSS Vars in Explore Servers Page.
     - Added "Try search for them" footer at the bottom of the explore servers page.
     - Changed Action Button Pop Up for grabbing the server invite link changed the text from the base server invite link to Copy Server ID.
+    - Changed button size for the join buttons in explore servers page for 4k screens.
+    - Changed placement of Action Button Popup on 4k screens.
 
 ## Backend Changes
 
