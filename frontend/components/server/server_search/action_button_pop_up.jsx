@@ -20,7 +20,7 @@ const ActionButtonPopUp = (props) => {
                                     onClick={() => {
                                         navigator.clipboard.writeText(props.serverLink).then(()=>{props.setShowPopUp(false)})
                                     }}>
-                                    {props.serverLink}
+                                    Copy Server ID
                                 </div>
                                 <div className="action-button-pop-up-icon-wrapper">
                                     <svg className="action-button-pop-up-icon" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
