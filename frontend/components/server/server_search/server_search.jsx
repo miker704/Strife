@@ -364,7 +364,15 @@ const ExploreServers = (props) => {
                                         </div>
                                     </section>
                                 </div>
+                                <div className="explore-servers-footer-bar-container">
+                                    <div className="explore-server-footer-bar-img"></div>
+                                    <h2 className="exp-srv-footer-bar-header-2">There are more communities out there!</h2>
+                                    <button type="button" className="exp-srv-footer-bar-button">
+                                        <div className="exp-srv-footer-bar-button-contents">Try Searching for them.</div>
+                                    </button>
+                                </div>
                             </div>
+                            <div className="exp-srv-footer-bar-sep"></div>
                         </div>
                     </div>
                 </div>
