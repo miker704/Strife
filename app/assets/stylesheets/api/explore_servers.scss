@@ -308,6 +308,7 @@
     font-family: $global-font;
 
 }
+
 .exs-search-subtitle-2 {
     margin-top: 8px;
     outline: 0;
@@ -1098,9 +1099,10 @@
 
 @media only screen and (min-width:640px) and (max-width: 957px) {
     .action-button-pop-up {
-        left: 79px; 
+        left: 79px;
     }
 }
+
 @media only screen and (min-width:957px) and (max-width: 1024px) {
     .action-button-pop-up {
         left: 112px;
@@ -1109,33 +1111,83 @@
 
 @media only screen and (min-width:1024px) and (max-width: 1152px) {
     .action-button-pop-up {
-        left: 176px ;
+        left: 176px;
     }
 }
+
 @media only screen and (width:1152px) {
     .action-button-pop-up {
         // left: 45px !important;
-        left: 45px ;
+        left: 45px;
 
     }
 }
 
 
-@media (max-width: 1265px){
-    .exs-search-title{
+@media (max-width: 1265px) {
+    .exs-search-title {
         font-size: 20px;
     }
-    .exs-search-subtitle{
+
+    .exs-search-subtitle {
         font-size: 14px;
     }
-    .exs-search-subtitle-2{
+
+    .exs-search-subtitle-2 {
         font-size: 12px;
     }
 }
 
-@media (min-width: 1129px){
-    .exs-main-content-scroller-base{
+@media (min-width: 1129px) {
+    .exs-main-content-scroller-base {
         padding: 32px;
     }
- 
+
+}
+
+
+
+
+.verified-tool-tip {
+    background: $background-floating !important;
+    color: $text-normal !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    padding: 8px 12px !important;
+    border-radius: 5px !important;
+    line-height: 16px;
+    font-family: $global-font !important;
+    width: fit-content !important;
+    opacity: 1 !important;
+}
+
+
+.copy-server-link-tool-tip {
+    background: $background-floating !important;
+    color: $text-normal !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    padding: 8px 12px !important;
+    border-radius: 5px !important;
+    line-height: 16px;
+    box-shadow: $tool-tip-elevation-high !important;
+    font-family: $global-font !important;
+    width: fit-content !important;
+    opacity: 1 !important;
+}
+
+.pp-thread-tool-tip {
+    background: $background-floating !important;
+    // color: $text-normal !important;
+    color: $text-danger !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    padding: 8px 12px !important;
+    border-radius: 5px !important;
+    line-height: 16px;
+    font-family: $global-font !important;
+    width: fit-content !important;
+    opacity: 1 !important;
+    box-shadow: $tool-tip-elevation-high !important;
+
 }
