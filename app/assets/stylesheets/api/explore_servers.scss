@@ -1,3 +1,5 @@
+@import 'global_vars';
+
 .explore-server-base {
     forced-color-adjust: none;
     overflow: hidden;
@@ -23,21 +25,18 @@
     flex: 1 1 auto;
     position: relative;
     outline: 0;
-    forced-color-adjust: none;
     user-select: none;
 }
 
 .explore-server-sidebar {
     outline: 0;
-    forced-color-adjust: none;
     // display: flex;
     // overflow: hidden;
     // flex-direction: column;
     // min-height: 0;
     // width: 240px;
     // flex: 0 0 auto;
-    background-color: #2B2D31;
-    // background: hsl(223, 6.9%, 19.8%);
+    background-color: $background-secondary;
     user-select: none;
     left: 0;
     user-select: none;
@@ -63,26 +62,25 @@
     overflow: hidden scroll;
     padding-right: 0px;
     outline: 0;
-    forced-color-adjust: none;
 }
 
 
 .explore-server-sidebar-scroll-base::-webkit-scrollbar-track {
-    border-color: hsla(0, 0%, 0%, 0);
-    background-color: hsla(0, 0%, 0%, 0);
-    border: 2px solid hsla(0, 0%, 0%, 0);
+    border-color: $scrollbar-thin-track;
+    background-color: $scrollbar-thin-track;
+    border: 2px solid $scrollbar-thin-track;
 }
 
 .explore-server-sidebar-scroll-base::-webkit-scrollbar-thumb {
     background-clip: padding-box;
-    border: 2px solid #0000;
+    border: 2px solid transparent;
     border-radius: 4px;
-    background-color: hsl(216, 7.2%, 13.5%);
+    background-color: $scrollbar-thin-thumb;
     min-height: 40px;
 }
 
 .explore-server-sidebar-scroll-base::-webkit-scrollbar-corner {
-    background-color: #0000;
+    background-color: transparent;
 }
 
 .explore-server-sidebar-scroll-base::-webkit-scrollbar {
@@ -91,22 +89,20 @@
 }
 
 .exsbar-def-header-h2 {
-    margin: 16px 0 16px 16px;
+    margin: 16px 0px 16px 16px;
     font-weight: 700;
-    forced-color-adjust: none;
     outline: 0;
-    font-size: 25px;
+    font-size: 24px;
     line-height: 30px;
     // color: #FFFFFF;
-    color: #F3F4F5;
-    font-family: "ABC Ginto Normal";
+    color: $header-primary;
+    font-family: $global-font;
 }
 
 .explore-bar-item-cat {
-    // color: hsl(216, 3.7%, 73.5%);
-    color: #B8B9BF;
+    color: $header-secondary;
+    // color: #B8B9BF;
     margin-left: 8px;
-    forced-color-adjust: none;
     outline: 0;
     display: block;
     padding: 1px 0;
@@ -116,28 +112,26 @@
 }
 
 .explore-bar-item-cat:hover {
-    // color: hsl(210, 2.9%, 86.7%);
-    color: hsl(228, 8.8%, 88.8%);
+    // color: hsl(228, 8.8%, 88.8%);
+    color: $interactive-hover;
 
     .explore-bar-item-cat-inner {
-        // background-color: hsla(217, 7.6%, 33.5%, 0.4);
-        background-color: hsla(228, 6%, 32.5%, 0.3);
+        background-color: $background-modifier-hover;
         cursor: pointer;
     }
 }
 
 .explore-bar-item-cat.selected-choice {
-    color: hsl(0, 0%, 100%);
+    color: $white-500;
 
     .explore-bar-item-cat-inner {
-        background-color: hsl(235, 85.6%, 64.7%);
+        background-color: $brand-experiment;
     }
 }
 
 .explore-bar-item-cat-inner {
     height: auto;
     padding: 5px 8px;
-    forced-color-adjust: none;
     outline: 0;
     display: flex;
     align-items: center;
@@ -147,7 +141,6 @@
 }
 
 .explore-bar-item-cat-avatar {
-    forced-color-adjust: none;
     outline: 0;
     flex: 0 0 auto;
     width: 32px;
@@ -162,14 +155,12 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    forced-color-adjust: none;
     outline: 0;
     min-width: 0;
     flex: 1 1 auto;
 }
 
 .explore-bar-item-cat-nameAndDecos {
-    forced-color-adjust: none;
     outline: 0;
     display: flex;
     justify-content: flex-start;
@@ -177,7 +168,6 @@
 }
 
 .explore-bar-item-cat-nameAndDecos-wrap {
-    forced-color-adjust: none;
     outline: 0;
     white-space: normal;
     font-size: 16px;
@@ -186,18 +176,18 @@
     flex: 0 1 auto;
     text-overflow: ellipsis;
     overflow: hidden;
-    font-family: "Whitney";
+    font-family: $global-font;
 }
 
 .explore-server-page-wrapper {
     outline: 0;
     width: 100%;
     position: relative;
-    forced-color-adjust: none;
-    // color: #FFFFFF;
-    color: #f3f4f5;
-    // background-color: hsl(220, 7.7%, 22.9%);
-    background-color: #313338;
+    color: $white-500;
+    // color: #f3f4f5;
+    background-color: $primary-600;
+    // background-color: #313338;
+
 }
 
 .exs-drag-region {
@@ -207,13 +197,11 @@
     width: 100%;
     height: 100px;
     outline: 0;
-    forced-color-adjust: none;
 }
 
 .exs-main-content-scroller-base {
     height: 100%;
     outline: 0;
-    forced-color-adjust: none;
     padding: 32px;
     overflow: hidden scroll;
     padding-right: 16px;
@@ -226,7 +214,7 @@
 }
 
 .exs-main-content-scroller-base::-webkit-scrollbar-corner {
-    background-color: #0000;
+    background-color: transparent;
 }
 
 .exs-main-content-scroller-base::-webkit-scrollbar {
@@ -235,39 +223,27 @@
 }
 
 .exs-main-content-scroller-base::-webkit-scrollbar-thumb {
-    background-color: hsl(216, 7.2%, 13.5%);
+    background-color: $scrollbar-auto-thumb;
     min-height: 40px;
 }
 
 .exs-main-content-scroller-base::-webkit-scrollbar-thumb,
 .exs-main-content-scroller-base::-webkit-scrollbar-track {
-    border: 4px solid #0000;
+    border: 4px solid transparent;
     background-clip: padding-box;
     border-radius: 8px;
 }
 
 .exs-main-content-scroller-base::-webkit-scrollbar-track {
-    background-color: hsl(216, 7.2%, 13.5%);
+    background-color: $scrollbar-auto-track;
 }
 
-.exs-main-content-scroller-base::-webkit-scrollbar-thumb,
-.exs-main-content-scroller-base::-webkit-scrollbar-track {
-    border: 4px solid #0000;
-    background-clip: padding-box;
-    border-radius: 8px;
-}
-
-
-.exs-main-content-scroller-base::-webkit-scrollbar-track {
-    background-color: hsl(210, 9.8%, 20%);
-}
 
 .exs-view-wrapper {
     width: 100%;
     height: 100%;
     max-width: 1608px;
     margin: 0 auto;
-    forced-color-adjust: none;
     outline: 0;
 }
 
@@ -276,7 +252,6 @@
     text-align: center;
     margin-bottom: 32px;
     min-height: 200px;
-    forced-color-adjust: none;
     outline: 0;
 }
 
@@ -285,7 +260,6 @@
     border-radius: 8px;
     width: 100%;
     height: auto;
-    forced-color-adjust: none;
     filter: 1;
     content: image_url('exserverssearch.svg');
     object-fit: contain;
@@ -293,7 +267,6 @@
 }
 
 .exs-header-content-wrapper {
-    forced-color-adjust: none;
     outline: 0;
     position: absolute;
     top: 0;
@@ -310,36 +283,32 @@
     min-width: 360px;
     max-width: 720px;
     margin: 0 240px;
-    forced-color-adjust: none;
     outline: 0;
 
 }
 
 .exs-search-title {
-    forced-color-adjust: none;
     outline: 0;
-    color: #FFFFFF;
-    font-weight: 500;
-    font-family: "ABC Ginto Normal";
-    font-size: 25px;
+    color: $white-500;
+    font-weight: 600;
+    font-family: $global-font;
+    font-size: 24px;
     line-height: 30px;
 
 }
 
 .exs-search-subtitle {
     margin-top: 8px;
-    forced-color-adjust: none;
     outline: 0;
-    color: #FFFFFF;
+    color: $white-500;
     font-size: 16px;
     line-height: 20px;
     font-weight: 400;
-    font-family: "Whitney";
+    font-family: $global-font;
 
 }
 
 .exs-search-content {
-    forced-color-adjust: none;
     outline: 0;
     display: flex;
     justify-content: flex-start;
@@ -348,7 +317,6 @@
 }
 
 .exs-search {
-    forced-color-adjust: none;
     outline: 0;
     width: 100%;
     max-width: 560px;
@@ -357,10 +325,9 @@
 }
 
 .exs-search-box {
-    forced-color-adjust: none;
     outline: 0;
     z-index: 2;
-    background-color: hsl(0, 0%, 100%);
+    background-color: $white-500;
     padding-right: 8px;
     position: relative;
     overflow: hidden;
@@ -369,11 +336,11 @@
     font-size: 18px;
     padding-right: 16px;
     border-radius: 3px;
-    border: 1px solid #0000;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 5px 0px $primary-500-hsl-20;
 }
 
 .exs-search-input-wrapper {
-    forced-color-adjust: none;
     outline: 0;
     flex: 1;
     display: flex;
@@ -381,16 +348,16 @@
 }
 
 .exs-search-input {
-    forced-color-adjust: none;
     outline: 0;
     font-size: 16px;
     padding: 8px;
-    color: hsl(210, 9.8%, 20%);
+    color: $primary-600;
     border: none;
     font-weight: 500;
-    background: #0000;
+    // background: #0000;
+    background: transparent;
     height: auto;
-    font-family: "Whitney";
+    font-family: $global-font;
     text-rendering: optimizeLegibility;
     font-size: 16px;
     box-sizing: border-box;
@@ -402,16 +369,14 @@
 }
 
 .exs-search-input::placeholder {
-    color: hsl(226, 5.5%, 53.5%);
+    color: $primary-401;
     text-rendering: optimizeLegibility;
-    font-family: "Whitney";
+    font-family: $global-font;
     font-weight: 500;
 }
 
 .exs-search-icon {
-    // color: hsla(217, 7.6%, 33.5%, 0.6);
-    color: hsla(228, 6%, 33%, 0.6);
-    forced-color-adjust: none;
+    color: $primary-500-hsl-60;
     width: 1.4em;
     height: 1.4em;
     flex-shrink: 0;
@@ -420,7 +385,6 @@
 
 .clear-exs-search-icon {
     line-height: 0;
-    forced-color-adjust: none;
     outline: 0
 }
 
@@ -430,13 +394,13 @@
     transform-origin: center;
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
-    color: hsl(216, 3.7%, 73.5%);
+    color: $interactive-normal;
     width: 1.4em;
     height: 1.4em;
 }
 
 .close-exs-icon {
-    color: hsl(215, 9.7%, 34.3%);
+    color: $primary-501;
 }
 
 
@@ -445,23 +409,19 @@
     width: 100%;
     margin-bottom: 32px;
     min-width: 580px;
-    forced-color-adjust: none;
     outline: 0;
 }
 
 .gls-h3 {
-    forced-color-adjust: none;
     outline: 0;
-    font-family: "ABC Ginto Normal";
-    // color: #FFFFFF;
-    color: #F3F4F5;
+    font-family: $global-font;
+    color: $header-primary;
     font-size: 20px;
     line-height: 24px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .guild-list {
-    forced-color-adjust: none;
     outline: 0;
     margin-top: 16px;
     display: grid;
@@ -471,12 +431,10 @@
 
 .loaded-guilds {
     position: relative;
-    forced-color-adjust: none;
     outline: 0;
 }
 
 .guild-card {
-    forced-color-adjust: none;
     outline: 0;
     display: flex;
     flex-direction: column;
@@ -489,12 +447,10 @@
     transition: box-shadow .2s ease-out, transform .2s ease-out, background .2s ease-out, opacity .2s ease-in;
     transition: box-shadow .2s ease-out, transform .2s ease-out, background .2s ease-out, opacity .2s ease-in, -webkit-box-shadow .2s ease-out, -webkit-transform .2s ease-out;
     cursor: pointer;
-    // background-color: hsl(220, 6.8%, 17.3%);
-    background-color: #232428;
+    background-color: $background-secondary-alt;
 }
 
 .guild-card-splash {
-    forced-color-adjust: none;
     outline: 0;
     display: block;
     position: absolute;
@@ -514,7 +470,6 @@
     width: 100%;
     object-fit: cover;
     height: 100%;
-    forced-color-adjust: none;
     outline: 0;
 
 }
@@ -526,7 +481,6 @@
     justify-content: center;
     right: 16px;
     top: 128px;
-    forced-color-adjust: none;
     outline: 0;
 }
 
@@ -538,7 +492,6 @@
 }
 
 .action-buttons-container {
-    forced-color-adjust: none;
     outline: 0;
     align-items: center;
     justify-content: center;
@@ -546,11 +499,9 @@
 }
 
 .action-buttons-wrapper {
-    forced-color-adjust: none;
     outline: 0;
-    // background-color: hsl(220, 7.7%, 22.9%);
-    background-color: #313338;
-    box-shadow: 0 0 0 1px hsla(240, 11.1%, 1.8%, 0.15);
+    background-color: $background-primary;
+    box-shadow: $elevation-stroke;
     display: grid;
     grid-auto-flow: column;
     box-sizing: border-box;
@@ -568,7 +519,6 @@
 
 
 .action-button {
-    forced-color-adjust: none;
     outline: 0;
     display: flex;
     align-items: center;
@@ -577,15 +527,14 @@
     padding: 4px;
     min-width: 24px;
     flex: 0 0 auto;
-    // color: hsl(216, 3.7%, 73.5%);
-    color: hsl(231, 5.2%, 73.5%);
+    color: $interactive-normal;
     cursor: pointer;
     position: relative;
 }
 
 .action-button:hover {
-    color: hsl(228, 8.8%, 88.8%);
-    background-color: hsla(228, 6%, 32.5%, 0.3);
+    color: $interactive-hover;
+    background-color: $background-modifier-hover;
 }
 
 
@@ -594,13 +543,11 @@
     height: 20px;
     display: block;
     object-fit: contain;
-    forced-color-adjust: none;
     outline: 0;
 }
 
 
 .guildIcon {
-    forced-color-adjust: none;
     outline: 0;
     position: absolute;
     bottom: -21px;
@@ -610,7 +557,6 @@
 .guildIcon-img {
     width: 48px;
     height: 48px;
-    forced-color-adjust: none;
     border-radius: 50%;
     // border: 1px solid #292b2f;
 
@@ -618,7 +564,6 @@
 
 
 .guild-card-header {
-    forced-color-adjust: none;
     outline: 0;
     height: 143px;
     position: relative;
@@ -628,7 +573,6 @@
 }
 
 .guild-card-info {
-    forced-color-adjust: none;
     outline: 0;
     display: flex;
     flex: 1 1 auto;
@@ -645,12 +589,10 @@
     align-items: center;
     width: 100%;
     font-weight: 600;
-    forced-color-adjust: none;
     outline: 0;
 }
 
 .guild-card-star {
-    forced-color-adjust: none;
     outline: 0;
     flex: 0 0 16px;
     width: 16px;
@@ -659,7 +601,7 @@
     margin-left: -2px;
     width: 16px;
     height: 16px;
-    color: hsl(139, 47.3%, 43.9%);
+    color: $green-360;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -669,19 +611,16 @@
 
 .guild-card-star-icon {
     width: 100%;
-    forced-color-adjust: none;
     height: 100%;
 }
 
 .guild-card-star-icon-2 {
     width: 100%;
-    forced-color-adjust: none;
     height: 100%;
-    color: #FFFFFF;
+    color: $white-500;
 }
 
 .guild-card-child-container {
-    forced-color-adjust: none;
     outline: 0;
     position: absolute;
     top: -0.05px;
@@ -694,78 +633,72 @@
 }
 
 .guild-card-h4-title {
-    forced-color-adjust: none;
     outline: 0;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    font-weight: 500;
-    font-family: "ABC Ginto Normal";
-    font-size: 17px;
-    line-height: 22px;
-    // color: #FFFFFF;
-    color: #F3F4F5;
+    font-weight: 600;
+    font-family: $global-font;
+    font-size: 16px;
+    line-height: 20px;
+    color: $header-primary;
 }
 
 
 
 .guild-card-text {
-    forced-color-adjust: none;
     outline: 0;
-    // color: hsl(216, 3.7%, 73.5%);
-    color: #B8B9BF;
+    color: $header-secondary;
     flex: 1 1 auto;
     overflow: hidden;
     margin: 4px 0 16px;
-    font-family: "Whitney";
+    font-family: $global-font;
     font-size: 14px;
     line-height: 18px;
+    font-weight: 400;
     display: flex;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
 
 .guild-card-member-info {
-    forced-color-adjust: none;
     outline: 0;
     flex: 0 0 auto;
     display: flex;
     align-items: center;
-    font-family: "Whitney";
+    font-family: $global-font;
 
 }
 
 
 .guild-card-member-online-status {
-    forced-color-adjust: none;
     outline: 0;
     border-radius: 50%;
     width: 8px;
     height: 8px;
     margin-right: 4px;
     flex-shrink: 0;
-    // background-color: hsl(139, 47.3%, 43.9%);
-    background-color: #00a45e;
+    // background-color: hsl(154, 100%, 32%);
+    background-color: $green-360;
 }
 
 .guild-card-member-offline-status {
-    forced-color-adjust: none;
     outline: 0;
     border-radius: 50%;
     width: 8px;
     height: 8px;
     margin-right: 4px;
     flex-shrink: 0;
-    // background-color: hsl(216, 3.7%, 73.5%);
-    background-color: #c7c8ce;
+    // background-color: #c7c8ce;
+    background-color: $primary-300;
 }
 
 .guild-card-member-count-txt {
-    forced-color-adjust: none;
     outline: 0;
     font-weight: 400;
-    // color: hsl(216, 3.7%, 73.5%);
-    color: #B8B9BF;
-    font-family: "Whitney";
+    color: $header-secondary;
+    font-family: $global-font;
     font-size: 12px;
     line-height: 16px;
 
@@ -773,7 +706,6 @@
 
 
 .guild-card-member-count {
-    forced-color-adjust: none;
     outline: 0;
     font-size: 0.75rem;
     line-height: 1rem;
@@ -792,12 +724,10 @@
     background: none !important;
     pointer-events: none;
     z-index: 1002;
-    forced-color-adjust: none;
     outline: 0;
 }
 
 .action-button-pop-up {
-    forced-color-adjust: none;
     outline: 0;
     position: absolute;
     // top: 285.966px;
@@ -808,7 +738,6 @@
 }
 
 .action-button-pop-up-menu {
-    forced-color-adjust: none;
     outline: 0;
     min-width: 188px;
     max-width: 320px;
@@ -819,13 +748,12 @@
     height: auto;
     cursor: default;
     max-height: calc(100vh - 32px);
-    box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.24);
-    background: hsl(225, 7.7%, 10.2%);
+    box-shadow: $elevation-high;
+    background: $background-floating;
     border-radius: 4px;
 }
 
 .action-button-scroller {
-    forced-color-adjust: none;
     outline: 0;
     // overflow: hidden scroll;
     padding-right: 0px;
@@ -838,7 +766,6 @@
 }
 
 .action-button-pop-up-item {
-    forced-color-adjust: none;
     outline: 0;
     box-sizing: border-box;
     display: flex;
@@ -853,21 +780,20 @@
     font-weight: 500;
     line-height: 18px;
     cursor: pointer;
-    border-color: hsl(216, 3.7%, 73.5%);
-    color: hsl(216, 3.7%, 73.5%);
-    font-family: "Whitney";
+    border-color: $interactive-normal;
+    color: $interactive-normal;
+    font-family: $global-font;
 
 }
 
 .action-button-pop-up-item:hover {
-    background-color: hsl(235, 46.7%, 44.1%);
-    color: hsl(0, 0%, 100%);
+    background-color: $brand-experiment-600;
+    color: $white-500;
 }
 
 .action-button-strife-server-link {
-    forced-color-adjust: none;
     outline: 0;
-    font-family: "Whitney";
+    font-family: $global-font;
     flex: 1 1 auto;
     white-space: nowrap;
     overflow: hidden;
@@ -875,7 +801,6 @@
 }
 
 .action-button-pop-up-icon-wrapper {
-    forced-color-adjust: none;
     outline: 0;
     flex: 0 0 auto;
     height: 18px;
@@ -884,7 +809,6 @@
 }
 
 .action-button-pop-up-icon {
-    forced-color-adjust: none;
     width: 18px;
     height: 18px;
 }
@@ -900,9 +824,9 @@
     margin-top: 0px;
     min-height: 30px;
     height: 30px;
-    width: 112px;
-    min-width: 112px;
-    max-width: 112px;
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
     max-height: 30px;
 }
 
@@ -911,9 +835,8 @@
     button[type="submit"]:disabled,
     button[type="button"]:disabled {
         cursor: not-allowed;
-        opacity: .5;
-        color: hsl(0, 0%, 100%);
-        forced-color-adjust: none;
+        opacity: 0.5;
+        color: $white-500;
     }
 }
 
@@ -924,8 +847,7 @@
     left: 0;
     // width: 100%;
     // height: 100%;
-    forced-color-adjust: none;
-    fill: rgb(88, 101, 242);
+    fill: $brand-experiment;
 }
 
 .bubble-wrap-bk {
@@ -936,14 +858,12 @@
     height: 100%;
     align-items: center;
     justify-content: center;
-    forced-color-adjust: none;
     outline: 0;
     transition: background-color .1s ease-out, color .1s ease-out;
 }
 
 .server-Acryo-bk {
     font-size: 16px;
-    forced-color-adjust: none;
     outline: 0;
     font-weight: 500;
     line-height: 1.2em;
@@ -956,14 +876,14 @@
     height: 100%;
     align-items: center;
     justify-content: center;
-    font-family: "Whitney";
+    font-family: $global-font;
 }
 
 
 .guildIcon>svg {
-    background-color: rgb(88, 101, 242);
+    background-color: $brand-experiment;
     border-radius: 50%;
-    border: 1px solid #292b2f;
+    border: 1px solid $guild-icon-border;
 
     path {
         fill: currentColor;
@@ -974,7 +894,7 @@
 
 
 .guild-card-splash>svg {
-    background-color: rgb(88, 101, 242);
+    background-color: $brand-experiment;
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -994,7 +914,6 @@
         width: 100%;
         object-fit: cover;
         height: 100%;
-        forced-color-adjust: none;
         outline: 0;
 
     }
@@ -1002,13 +921,12 @@
 
 
 .empty-server-state-container {
-    forced-color-adjust: none;
     outline: 0;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-color: hsl(223, 6.9%, 19.8%);
+    background-color: $background-secondary;
     padding: 80px 0;
     border-radius: 8px;
     max-width: 900px;
@@ -1018,23 +936,21 @@
 .epssc-h3 {
     margin-top: 32px;
     margin-bottom: 8px;
-    forced-color-adjust: none;
     outline: 0;
-    font-weight: 500;
-    font-size: 25px;
+    font-weight: 600;
+    font-size: 24px;
     line-height: 30px;
-    font-family: "ABC Ginto Normal";
-    color: #FFFFFF;
+    font-family: $global-font;
+    color: $header-primary;
 }
 
 .epssc-st {
     font-size: 16px;
     line-height: 20px;
-    forced-color-adjust: none;
     outline: 0;
     font-weight: 400;
-    font-family: "Whitney";
-    color: hsl(216, 3.7%, 73.5%);
+    font-family: $global-font;
+    color: $header-secondary;
 
 }
 
@@ -1044,7 +960,6 @@
     background-size: contain;
     width: 314px;
     height: 145px;
-    forced-color-adjust: none;
     outline: 0;
 }
 
@@ -1054,4 +969,92 @@
     align-content: center;
     justify-content: center;
     align-items: center;
+}
+
+
+
+.explore-servers-footer-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    padding-bottom: 32px;
+    text-align: center;
+    outline: 0;
+}
+
+.explore-servers-footer-bar-container>img[alt] {
+    text-indent: -9999px;
+}
+
+.explore-server-footer-bar-img {
+    background-image: image_url('exploreserversfooterimg.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 80px;
+    height: 64px;
+    outline: 0;
+    margin-bottom: 8px;
+}
+
+.exp-srv-footer-bar-header-2 {
+    color: $header-primary;
+    font-family: $global-font;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.exp-srv-footer-bar-button {
+    cursor: pointer;
+    color: $text-link;
+    width: auto;
+    display: inline;
+    height: auto;
+    padding: 2px 4px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: $global-font;
+    text-rendering: optimizeLegibility;
+    outline: 0;
+}
+
+.exp-srv-footer-bar-button-contents {
+    margin: 0 auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    outline: 0;
+    background-image: linear-gradient(0deg, transparent, transparent 1px, transparent 0, transparent 2px, transparent 0);
+}
+
+.exp-srv-footer-bar-sep {
+    outline: 0;
+    position: absolute;
+    pointer-events: none;
+    min-height: 0px;
+    min-width: 1px;
+    flex: 0 0 auto;
+    height: 32px;
 }
