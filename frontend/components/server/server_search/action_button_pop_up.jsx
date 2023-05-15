@@ -11,14 +11,14 @@ const ActionButtonPopUp = (props) => {
 
     return (
         <div className="action-button-pop-up-layer" >
-            <div className="action-button-pop-up" onClick={(e) => e.stopPropagation()} ref={popupRef} >
+            <div className="action-button-pop-up" onClick={(e) => e.stopPropagation()} ref={popupRef}>
                 <div className="action-button-pop-up-menu">
                     <div className="action-button-scroller">
                         <div role={"group"}>
                             <div className="action-button-pop-up-item" data-tip data-for="copy-strife-server-link">
                                 <div className="action-button-strife-server-link"
                                     onClick={() => {
-                                        navigator.clipboard.writeText(props.serverLink).then(()=>{props.setShowPopUp(false)})
+                                        navigator.clipboard.writeText(props.serverLink).then(() => { props.setShowPopUp(false) })
                                     }}>
                                     Copy Server ID
                                 </div>
