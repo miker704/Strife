@@ -301,6 +301,7 @@ current dmServer involving the user of their friend it will send a request to th
 - A potential risky html/jsx code has been addressed in Channel Drop Down modal. Prior the modal would return avaliable options that can be selected based on the level of authorization the user has either they are a server member or the server owner it will render options that they have access to. However the modal returns Un-Authorized options as invisible, to the U.I. but it is present in the html which can be exploited and can possibly crash the app if enable. The reason for this is the modal returns the options while deciding whether or not to hide them or not. This has been addressed by having the decisons for those options decided before the returning jsx is returned.
 
 - Fixed certain forms and buttons in delete channel modal from being XSS attacked or fall victim to form hijacking.
+- Added Protection features to prevent XSS attacks and form hi-jacking on delete server messages of other users.
 
 ### UI and Cosmetic Fixes and Changes
 
@@ -502,6 +503,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added Custom Tool tips for Edit Message options container.
     - Added more Options for Edit Message Options Container.
     - Reduced exit animation for delete server message modal.
+    - Added Protection features to prevent XSS attacks and form hi-jacking on delete server messages of other users.
 
 ## Backend Changes
 
