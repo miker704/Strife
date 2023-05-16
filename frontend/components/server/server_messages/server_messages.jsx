@@ -132,7 +132,7 @@ const ServerMessages = ({
     let messageAuthorName = message.author_id !== messageAuthor.id ? message.authorName : messageAuthor.username;
 
     return (
-        <li className="chat-message-item" key={message.id} ref={popUpRef}>
+        <li className={`chat-message-item ${showMsgEdit === true ? `selected`:``}`} key={message.id} ref={popUpRef}>
 
             <div className="message-wrapper-contents">
                 <div className="message-wrapper1">
