@@ -14,7 +14,9 @@ $light-elevation-border: 0px 0px 0px 1px hsla(210, 9.3%, 78.8%, 0.3);
 $light-elevation-high: 0px 2px 10px 0px hsla(0, 0%, 0%, 0.1);
 $tool-tip-elevation-high: 0px 8px 16px 0px rgba(0, 0, 0, 0.24);
 $elevation-high: 0px 8px 16px rgba(0, 0, 0, 0.24);
+$elevation-medium: 0px 4px 4px 0px rgba(0, 0, 0, 0.16);
 $elevation-stroke: 0px 0px 0px 1px rgba(2, 2, 2, 0.15);
+$elevation-low: 0px 1px 0px 0px rgba(2, 2, 2, 0.2), 0px 1.5px 0px 0px rgba(6, 6, 7, 0.05), 0px 2px 0px 0px rgba(2, 2, 2, 0.05);
 $cs-divider-color: rgba(114, 118, 125, 0.3);
 //background colors
 $modal-pop-up-bg-color: rgb(49, 51, 56);
@@ -34,7 +36,9 @@ $black-500: hsl(0, 0%, 0%);
 $black-500-hsl-005: hsla(0, 0%, 0%, 0.05);
 $black-500-hsl-01: hsla(0, 0%, 0%, 0.1);
 
+$brand-260: rgb(201, 205, 251);
 $brand-500: hsl(235, 85.6%, 64.7%);
+$brand-500-hsl: rgba(88, 101, 242, 0.298);
 $brand-560: rgb(71, 82, 196);
 $brand-600: hsl(235, 46.7%, 44.1%);
 $blue-345: rgb(0, 168, 252);
@@ -47,6 +51,7 @@ $primary-330: rgb(181, 186, 193);
 $primary-360: hsl(214, 8.1%, 61.2%);
 $primary-400: rgba(78, 80, 88, 0.6);
 $primary-401: rgb(128, 132, 142);
+$primary-430: rgb(109, 111, 120);
 $primary-500: rgba(79, 81, 89, 0.298);
 $primary-500-hsl-20: rgba(0, 0, 0, 0.2);
 $primary-500-hsl-30: rgba(78, 80, 88, 0.3);
@@ -54,6 +59,7 @@ $primary-500-hsl-60: rgba(78, 80, 88, 0.6);
 $primary-500-bg-color: rgb(78, 80, 88);
 $primary-500-48: rgba(78, 80, 88, 0.48);
 $primary-501: rgb(78, 80, 88);
+$primary-505: rgba(2, 2, 2, 0.06);
 $primary-560: rgb(135, 137, 140);
 $primary-600: rgb(49, 51, 56);
 $primary-630: hsl(220, 7%, 18%);
@@ -61,6 +67,8 @@ $primary-630-hsl: rgba(43, 45, 49, 0.6);
 $primary-660: #232428;
 $primary-700: rgb(30, 31, 34);
 $primary-730: hsl(225, 7.1%, 11%);
+$primary-800: rgb(17, 18, 20);
+$primary-800-lvl-2: rgb(56, 58, 64);
 $primary-800-30: rgba(17, 18, 20, 0.3);
 $primary-800-60: hsla(225, 7.7%, 10.2%, 0.6);
 
@@ -76,6 +84,7 @@ $green-430: rgb(36, 128, 70);
 $green-500: rgb(27, 103, 54);
 $green-530: rgb(21, 86, 43);
 $yellow-300: rgb(240, 177, 50);
+$yellow-emoji: #ffc959;
 $purple-100: rgb(255, 115, 250);
 $platform-item-color: #747f8d;
 $channel-icon: rgb(128, 132, 142);
@@ -128,6 +137,12 @@ $input-placeholder-text: $primary-560;
 $status-warning-background: $yellow-300;
 $gemstone: $purple-100;
 $guild-icon-border: $primary-150;
+$mention-foreground: $brand-260;
+$mention-background: $brand-500-hsl;
+$channeltextarea-background: $primary-800-lvl-2;
+$channeltextarea-placeholder: $primary-430;
+$background-message-hover: $primary-505;
+
 
 $strife-root: (
     colors:(black-500: hsl(0, 0%, 0%),
