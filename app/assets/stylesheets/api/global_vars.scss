@@ -71,8 +71,8 @@ $primary-800: rgb(17, 18, 20);
 $primary-800-lvl-2: rgb(56, 58, 64);
 $primary-800-30: rgba(17, 18, 20, 0.3);
 $primary-800-60: hsla(225, 7.7%, 10.2%, 0.6);
-
 $red-400: hsl(359, 87.3%, 59.8%);
+$red-400-2: hsl(359, 87%, 60%);
 $red-430: hsl(358, 68.8%, 53.5%);
 $red-345: rgb(250, 119, 124);
 $red-500: rgb(161, 45, 47);
@@ -135,6 +135,7 @@ $text-positive: $green-330;
 $input-background: $primary-700;
 $input-placeholder-text: $primary-560;
 $status-warning-background: $yellow-300;
+$status-danger: $red-400-2;
 $gemstone: $purple-100;
 $guild-icon-border: $primary-150;
 $mention-foreground: $brand-260;
