@@ -500,7 +500,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Restyled Edit message modal.
     - Restyled Server Messages.
     - Added Custom Tool tips for Edit Message options container.
-    - Added more Options for Edit Message Options Container. 
+    - Added more Options for Edit Message Options Container.
+    - Reduced exit animation for delete server message modal.
 
 ## Backend Changes
 
