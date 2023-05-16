@@ -494,6 +494,10 @@ current dmServer involving the user of their friend it will send a request to th
     - Changed Action Button Pop Up for grabbing the server invite link changed the text from the base server invite link to Copy Server ID.
     - Changed button size for the join buttons in explore servers page for 4k screens.
     - Changed placement of Action Button Popup on 4k screens.
+    - Restyled Server Chat room message area.
+    - Swapped to SCSS Vars for styles in Server Chat room messages.
+    - Added a condition to change the styles of the current message being edited.
+    - Restyled Edit message modal.
 
 ## Backend Changes
 
