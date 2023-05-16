@@ -28,7 +28,7 @@ const DeleteServerChannelMessageModal = (props) => {
                 setTimeout(() => {
                     props.closeModal();
                     window.removeEventListener('keyup', handleESC, false);
-                }, 300);
+                }, 200);
             },
         };
         if (keys[e.keyCode]) {
@@ -42,19 +42,27 @@ const DeleteServerChannelMessageModal = (props) => {
         setTimeout(() => {
             props.closeModal();
             window.removeEventListener('keyup', handleESC, false);
-        }, 300);
+        }, 200);
     }
 
     const handleDelete = () => {
-        props.deleteMessage(props.message.id).then(() => {
-            document.getElementById("delete-message-modal").classList.add("transition-out");
-            setTimeout(() => {
-                props.closeModal();
-            }, 300);
-        })
+
+        if (props.currentUserId === props.message.author_id) {
+            props.deleteMessage(props.message.id);
+        }
+        document.getElementById("delete-message-modal").classList.add("transition-out");
+        setTimeout(() => {
+            props.closeModal();
+        }, 200);
     }
     const render_User_PFP = user_Default_PFP;
 
+    let deleteMessageButton = props.currentUserId === props.message.author_id ? (
+        <button type="submit" onClick={() => handleDelete()} className="delete-server-msg-submit-button">Delete</button>
+
+    ) : (
+        <div className="fake-delete-message-submit-button">Delete</div>
+    );
 
     return (
         <div className="delete-message-modal-layer" onClick={(e) => handleModalClose(e)}>
@@ -108,7 +116,7 @@ const DeleteServerChannelMessageModal = (props) => {
                             <div className="delete-server-msg-sep"></div>
                         </div>
                         <div className="delete-server-msg-button-sec">
-                            <button type="submit" onClick={() => handleDelete()} className="delete-server-msg-submit-button">Delete</button>
+                            {deleteMessageButton}
                             <button type="button" onClick={(e) => handleModalClose(e)} className="delete-server-msg-cancel-button">Cancel</button>
                         </div>
                     </div>
