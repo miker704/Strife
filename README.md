@@ -48,6 +48,9 @@ STRIFE "$TR!F3" as of Patch V3.0:
   * ```AJAX``` to communicate with ```PostgreSQL``` Server in addition to sending and retrieving data in ```JSON``` format.
   * ```Node.js``` for libraries including ```@rails/actioncable``` for handling ```Rails ActionCable WebSockets```.
   * ```WebRTC``` API for enabling the ability to allow both video and audio calling between users.
+  * ```Material UI``` library (modern) for implementing  and designing complex input containers such as custom sliders to work on all browsers, majority of input components in $TR!F3 are created from scratch only tedious and complex components are made with material UI.
+  * ```@mui/styled-engine-sc``` mui uses the ```emotion engine``` as its default styling engine for styling its components however it is slow due to its generation of ~100's of style tags in the header tag upon rendering components containing mui components. Using this engine if phenomenally faster barely a cost in performance and rendering time.
+
 * Back-End
   * ```jBuilder``` for returning database data in ```JSON``` formatting to the front-end.
   * ```Ruby v3.1.2``` latest version of ```Ruby``` for coding the backend server, logic and database handling.
@@ -59,14 +62,23 @@ STRIFE "$TR!F3" as of Patch V3.0:
   * ```Rails Action Cable```, ```Redis```, and ```JavaScripts @rails/actioncable``` as the Applications WebSocket Provider handling both front-end and back-end request allowing for async functionality across the entire application. Allowing for live updates in receiving user updates, friend requests, invited dmServers and Servers, Live text messaging, voice and video calling.
   * ```Render``` $TR!F3 currently uses [Render](https://render.com/) as is deployment and live hosting service.
 * Former Tech Stack
+  * ```Emotion``` the emotion library/engine is a "performant" and flexible CSS in JS Library which is used by default the styling engine ```Material UI``` uses to style its components. Despite being "performant" this engine has been replaced with a better alternative as using material ui with it causes massive slowdown on rendering components that use mui components. As it generates style tags for all styles for each mui component in the header tag, which can be hundreds of style tags being generated at a time which slows the app down signifcantly after investigation it was quickly replaced with one of MUI's alternative styling engines ```@mui/styled-engine-sc``` otherwise known as MUI Styled Engine for Styled Components.
   * ```Rails version 5.2.8``` this was used as part of the default tech stack required by App Academy as the project grew and this version of rails has ceased support by the rails development team and was nearing its support on Heroku. The version of rails and ruby was moved to the newer versions in transistion to the current versions of ruby and ruby on rails.
   * ```Ruby version 2.5.1``` this was used as part of the default tech stack required by App Academy as the project grew and this version of rails has ceased support by the rails development team and was nearing its support on Heroku. The version of rails and ruby was moved to the newer versions in transistion to the current versions of ruby and ruby on rails.
-  * ```Heroku``` this was previously used as STRIFE's live deployment and hosting service but do due Heroku's elimination of its free tier, STRIFE
+  * ```Heroku``` this was previously used as STRIFE's live deployment and hosting service but do due Heroku's elimination of its free tier, STRIFE has moved to ```Render``` and will move to ```RailWay``` in the future.
+
 * Future Stack
   * ```RUST``` as the backend programming language and ```Rocket.rs``` as the web application framework.
   * Eventually I will want to port over this and any future Versions of STRIFE using ```Ruby on Rails``` backend to use ```RUST``` via ```Rocket.rs``` for a faster, safer web framework and web server. And allow much faster and greater performance overall.
   * ```React``` with ```TypeScript``` for more robust frontend and have more type restricting on the frontend.
   * ```Railway``` for future deployment and live hosting for this and any future version of Strife.
+* Other Tools
+  * ```Webpack Bundle Analyzer``` used to generate a distribution map of the projects bundled assets to analyze which components are taking up the most space.
+  * ```React Developer Tools``` used to analyze React Components with abilites to view components state, props, and use other useful tools.
+    * ```React Developer Tools - Components``` view Components state, props, providers, routing etc.
+    * ```React Developer Tools - Profiler - FlameGraph``` an extremely useful tool to record the rendering of Components generate a chart/map of all components and elements being rendered during recording in the order of which they are rendered with the times it takes to render and process for each components with useful colors and timestamps to show what components are causes for performance issues, slow rendering and execution times this was used to identify problems with the mui library caused by the Emotion engine and was used to optimize styling and using mui components that gave the fastest performance possible, enough to the point where components would render nearly to the same time prior to using mui components in the first place.
+  * ```Redux Dev Tools``` used to analyze Redux state of the application and view a more complete distribution of the application state i n various graphs and charts and be able to analyze redux state calls more closely.
+  * ```Vim (NeoVim along with its plugins)``` for whenever Vscode would bug out or would run slowly do to other running projects.
 * Editors
   * ```Visual Studio Code``` as Main code editor
   * ```Vim (NeoVim along with its plugins)``` for whenever Vscode would bug out or would run slowly do to other running projects.
