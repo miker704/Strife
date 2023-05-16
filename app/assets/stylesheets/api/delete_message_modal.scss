@@ -235,14 +235,20 @@
     -webkit-animation-name: deleteMessageModalAppear;
     -webkit-animation-duration: 0.3s;
     -webkit-animation-iteration-count: 1;
+    button[type="submit"]:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        color: $white-500;
+        // forced-color-adjust: none;
+    }
 }
 
 .delete-message-modal-root.transition-out {
     animation-name: deleteMessageModalDisappear;
-    animation-duration: 0.3s;
+    animation-duration: 0.2s;
     animation-iteration-count: 1;
     -webkit-animation-name: deleteMessageModalDisappear;
-    -webkit-animation-duration: 0.3s;
+    -webkit-animation-duration: 0.2s;
     -webkit-animation-iteration-count: 1;
 }
 
@@ -593,4 +599,36 @@
 
 .delete-message-member-avatar-img>img[alt] {
     text-indent: -9999px;
+}
+
+
+.fake-delete-message-submit-button {
+    color: $white-500;
+    width: auto;
+    height: 38px;
+    min-width: 96px;
+    min-height: 38px;
+    background-color: $red-danger-button-background;
+    transition: background-color .17s ease, color .17s ease;
+    position: relative;
+    text-rendering: optimizeLegibility;
+    font-family: $global-font;
+    user-select: none;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: not-allowed;
+    opacity: 0.5;
+
+}
+
+.delete-channel-submit-button:hover:not(:disabled) {
+    background-color: $red-danger-button-background-hover;
 }
