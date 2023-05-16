@@ -1,6 +1,7 @@
 // Place all the styles related to the api::Messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'global_vars';
 
 
 .server-chat-container-wrapper {
@@ -22,7 +23,6 @@
 }
 
 .server-chat-container {
-    forced-color-adjust: none;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -48,7 +48,6 @@
 }
 
 .message-wrapper {
-    forced-color-adjust: none;
     display: flex;
     position: relative;
     -webkit-box-flex: 1;
@@ -72,7 +71,6 @@
     min-height: 0;
     -webkit-box-flex: 1;
     flex: 1 1 auto;
-    outline: 0;
     overflow-x: hidden;
 }
 
@@ -83,17 +81,17 @@
 }
 
 .chat-scroller::-webkit-scrollbar-corner {
-    background-color: #0000;
+    background-color: transparent;
 }
 
 .chat-scroller::-webkit-scrollbar-thumb {
-    background-color: hsl(216, 7.2%, 13.5%);
+    background-color: $scrollbar-auto-thumb;
     min-height: 40px;
 }
 
 .chat-scroller::-webkit-scrollbar-thumb,
 .chat-scroller::-webkit-scrollbar-track {
-    border: 4px solid #0000;
+    border: 4px solid transparent;
     background-clip: padding-box;
     border-radius: 8px;
 }
@@ -104,17 +102,17 @@
 }
 
 .chat-scroller::-webkit-scrollbar-corner {
-    background-color: #0000;
+    background-color: transparent;
 }
 
 .chat-scroller::-webkit-scrollbar-thumb {
-    background-color: hsl(216, 7.2%, 13.5%);
+    background-color: $scrollbar-auto-thumb;
     min-height: 40px;
 }
 
 .chat-scroller::-webkit-scrollbar-thumb,
 .chat-scroller::-webkit-scrollbar-track {
-    border: 4px solid #0000;
+    border: 4px solid transparent;
     background-clip: padding-box;
     border-radius: 8px;
 }
@@ -126,13 +124,13 @@
 
 .chat-scroller::-webkit-scrollbar-thumb,
 .chat-scroller::-webkit-scrollbar-track {
-    border: 4px solid #0000;
+    border: 4px solid transparent;
     background-clip: padding-box;
     border-radius: 8px;
 }
 
 .chat-scroller::-webkit-scrollbar-track {
-    background-color: hsl(210, 9.8%, 20%);
+    background-color: $scrollbar-auto-track;
 }
 
 
@@ -149,21 +147,19 @@
     -webkit-box-align: stretch;
     align-items: stretch;
     min-height: 100%;
-    forced-color-adjust: none;
     position: relative;
 }
 
 .chat-scroller-inner {
     list-style: none;
     min-height: 0;
-    forced-color-adjust: none;
+    // overflow: hidden;
 }
 
 
 .chat-divider {
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
-    forced-color-adjust: none;
     position: relative;
     left: auto;
     right: auto;
@@ -172,7 +168,8 @@
     outline: 0;
     z-index: 1;
     height: 0;
-    border-top: thin solid hsla(217, 7.6%, 33.5%, 0.48);
+    border-top: thin solid $background-modifier-accent;
+
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -192,19 +189,19 @@
     -webkit-box-flex: 0;
     flex: 0 0 auto;
     padding: 2px 4px;
-    color: hsl(214, 4%, 65.3%);
-    background: hsl(220, 7.7%, 22.9%);
+    color: $text-muted;
+    background: $background-primary;
     line-height: 13px;
     font-size: 12px;
     margin-top: -1px;
     font-weight: 600;
-    forced-color-adjust: none;
+    font-family: $global-font;
     border-radius: 8px;
 }
 
 .otherUser {
     font-weight: 600;
-    font-family: "Whitney";
+    font-family: $global-font;
     margin-left: 2px;
 }
 
@@ -212,6 +209,8 @@
 .dm-message-item {
     outline: none;
     forced-color-adjust: none;
+    // position: relative;
+
     // display: flex;
     // justify-content: flex-start;
     // align-content: center;
@@ -220,12 +219,18 @@
 }
 
 .chat-message-item:hover {
-    background-color: hsla(240, 11.1%, 1.8%, 0.07);
-
+    background-color: $background-message-hover;
     .message-accessories-button-wrapper {
         display: flex;
     }
 }
+.chat-message-item.selected {
+    background-color: $background-message-hover;
+    .message-accessories-button-wrapper {
+        display: flex;
+    }
+}
+
 
 .message-wrapper1 {
     margin-top: 1.0625rem;
@@ -233,7 +238,6 @@
     padding-left: 72px;
     padding-top: 0.125rem;
     padding-bottom: 0.125rem;
-    forced-color-adjust: none;
     padding-right: 48px !important;
     outline: 0;
     position: relative;
@@ -246,7 +250,6 @@
 
 .message-wrapper-contents {
     outline: 0;
-    forced-color-adjust: none;
     margin-left: 0;
     padding-left: 0;
     text-indent: 0;
@@ -316,32 +319,29 @@
     position: relative;
     line-height: 1.375rem;
     min-height: 1.375rem;
-    color: hsl(214, 4%, 65.3%);
+    color: $text-muted;
     white-space: break-spaces;
     overflow: hidden;
-    forced-color-adjust: none;
 }
 
 .chat-member-username-wrap {
     margin-right: 0.25rem;
     outline: 0;
-    forced-color-adjust: none;
 }
 
 .chat-member-username {
     outline: 0;
-    forced-color-adjust: none;
     font-size: 1rem;
     font-weight: 500;
     line-height: 1.375rem;
-    color: #FFFFFF;
+    color: $header-primary;
     display: inline;
     vertical-align: baseline;
     position: relative;
     overflow: hidden;
     flex-shrink: 0;
     font-size: 16px;
-    font-family: "Whitney";
+    font-family: $global-font;
 }
 
 
@@ -353,12 +353,11 @@
     pointer-events: none;
     font-weight: 500;
     margin-left: 0.25rem;
-    forced-color-adjust: none;
     font-size: 0.75rem;
     line-height: 1.375rem;
-    color: hsl(214, 4%, 65.3%);
+    color: $text-muted;
     vertical-align: baseline;
-    font-family: "Whitney";
+    font-family: $global-font;
 
 }
 
@@ -368,9 +367,8 @@
     font-weight: 500;
     font-size: 0.75rem;
     line-height: 1.375rem;
-    color: hsl(214, 4%, 65.3%);
-    forced-color-adjust: none;
-    font-family: "Whitney";
+    color: $text-muted;
+    font-family: $global-font;
 
 }
 
@@ -382,12 +380,11 @@
     font-style: normal;
     font-size: 0.75rem;
     line-height: 1.375rem;
-    color: hsl(214, 4%, 65.3%);
+    color: $text-muted;
     cursor: default;
     pointer-events: none;
     font-weight: 500;
-    forced-color-adjust: none;
-    font-family: "Whitney";
+    font-family: $global-font;
 
 }
 
@@ -397,7 +394,6 @@
     padding-left: 72px;
     overflow: hidden;
     position: relative;
-    forced-color-adjust: none;
     text-indent: 0;
     outline: 0;
     font-size: 1rem;
@@ -405,8 +401,8 @@
     white-space: break-spaces;
     word-wrap: break-word;
     user-select: text;
-    color: hsl(210, 2.9%, 86.7%);
-    font-family: "Whitney";
+    color: $text-normal;
+    font-family: $global-font;
 }
 
 .mention-wrapper {
@@ -418,17 +414,15 @@
     border-radius: 3px;
     padding: 0 2px;
     font-weight: 500;
-    forced-color-adjust: none;
-    background: hsla(235, 85.6%, 64.7%, 0.3);
-    color: hsl(236, 83.3%, 92.9%);
-    font-family: "Whitney";
+    background: $mention-background;
+    color: $mention-foreground;
+    font-family: $global-font;
 
 }
 
 
 
 .ol-scroller-spacer {
-    forced-color-adjust: none;
     outline: 0;
     display: block;
     height: 30px;
@@ -446,30 +440,26 @@
     padding-left: 16px;
     padding-right: 16px;
     margin-top: -8px;
-    forced-color-adjust: none;
 }
 
 
 .chat-input-text-area {
-    forced-color-adjust: none;
     margin-bottom: 24px;
     position: relative;
     width: 100%;
     text-indent: 0;
     border-radius: 8px;
     outline: 0;
-    background-color: hsl(220, 7.7%, 22.9%);
+    background-color: $background-primary;
 }
 
 .chat-input-text-area-scroller {
     outline: 0;
     overflow-x: hidden;
     overflow-y: scroll;
-    // background-color: hsl(218, 7.9%, 27.3%);
-    background-color: #383a40;
+    background-color: $channeltextarea-background;
     max-height: 50vh;
     border-radius: 8px;
-    forced-color-adjust: none;
 }
 
 .chat-input-text-area-scroller::-webkit-scrollbar {
@@ -482,17 +472,15 @@
 }
 
 .chat-input-text-area-scroller::-webkit-scrollbar-thumb {
-    background-color: hsla(225, 7.7%, 10.2%, 0.6);
+    background-color: $primary-800-60;
     border-radius: 8px;
 }
 
 .chat-input-text-area-scroller::-webkit-scrollbar-thumb,
 .chat-input-text-area-scroller::-webkit-scrollbar-track {
     background-clip: padding-box;
-    border: 4px solid #0000;
+    border: 4px solid transparent;
 }
-
-
 
 
 
@@ -515,7 +503,6 @@
     left: auto;
     right: 4px;
     outline: 0;
-    forced-color-adjust: none;
     transform: translateY(12px);
     opacity: 0;
     pointer-events: none;
@@ -524,7 +511,6 @@
 }
 
 .inner-attach-button {
-    forced-color-adjust: none;
     padding-left: 16px;
     display: flex;
     position: relative;
@@ -537,7 +523,6 @@
     width: 0;
     height: 0;
     pointer-events: none;
-    forced-color-adjust: none;
 
 }
 
@@ -550,15 +535,13 @@
     opacity: 0;
     cursor: pointer;
     font-size: 0px;
-    forced-color-adjust: none;
     outline: 0;
     text-rendering: optimizeLegibility;
-    font-family: "Whitney";
+    font-family: $global-font;
 }
 
 
 .attach-wrapper {
-    forced-color-adjust: none;
     outline: 0;
     position: sticky;
     -webkit-box-flex: 0;
@@ -568,19 +551,18 @@
 
 .attach-wrapper-button {
     cursor: pointer;
-    forced-color-adjust: none;
     height: 44px;
     padding: 10px 16px;
     position: sticky;
     top: 0;
     margin-left: -16px;
     width: auto;
-    background: #0000;
+    background: transparent;
     color: currentColor;
     border: 0;
     margin: 0;
     outline: 0;
-    font-family: "Whitney";
+    font-family: $global-font;
     text-rendering: optimizeLegibility;
 
     display: flex;
@@ -599,10 +581,10 @@
 }
 
 .attach-wrapper-button-content {
-    forced-color-adjust: none;
     height: 24px;
     outline: 0;
     cursor: pointer;
+    background-image: linear-gradient(0deg, transparent, transparent 1px, transparent 0, transparent 2px, transparent 0);
 }
 
 
@@ -610,15 +592,14 @@
     transform-origin: 50% 50%;
     width: 24px;
     height: 24px;
-    fill: hsl(216, 3.7%, 73.5%);
+    fill: $interactive-normal;
 }
 
 
 .inner-scroller-text-area {
-    forced-color-adjust: none;
     outline: 0;
-    color: hsl(210, 2.9%, 86.7%);
-    background-color: #0000;
+    color: $text-normal;
+    background-color: transparent;
     resize: none;
     border: none;
     appearance: none;
@@ -631,10 +612,10 @@
     min-height: 44px;
     padding: 0;
     position: relative;
+    font-family: $global-font;
 }
 
 .server-chat-box-placeholder {
-    forced-color-adjust: none;
     outline: 0;
     padding-bottom: 11px;
     padding-top: 11px;
@@ -642,45 +623,57 @@
     position: absolute;
     left: 0;
     right: 10px;
-
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    color: hsl(218, 4.6%, 46.9%);
+    color: $channeltextarea-placeholder;
     user-select: none;
     pointer-events: none;
-
-
 
 }
 
 .server-message-chat-box-area {
     user-select: text;
-    color: hsl(210, 2.9%, 86.7%);
+    color: $text-normal;
     font-size: 1rem;
     line-height: 1.375rem;
     text-align: left;
     word-break: break-word;
     white-space: break-spaces !important;
-    caret-color: hsl(210, 2.9%, 86.7%);
+    caret-color: $text-normal;
     left: 0;
     right: 10px;
     padding-right: 10px;
     padding-bottom: 11px;
     padding-top: 11px;
-    forced-color-adjust: none;
     overflow-wrap: break-word;
     position: relative;
     outline: none;
-
-    // background-color: #40444b;
-    background-color: #383a40;
+    font-family: $global-font;
+    background-color: $primary-800-lvl-2;
 
 }
 
+.server-message-chat-box-area::placeholder {
+    outline: 0;
+    padding-bottom: 11px;
+    padding-right: 10px;
+    position: absolute;
+    left: 0;
+    right: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: $channeltextarea-placeholder;
+    user-select: none;
+    pointer-events: none;
+    font-family: $global-font;
+
+}
+
+
 .inner-scroller-buttons {
     margin-right: -6px;
-    forced-color-adjust: none;
     flex-direction: row;
     height: 44px;
     position: sticky;
@@ -697,18 +690,16 @@
     margin-left: 4px;
     justify-content: center;
     margin-right: 4px;
-    color: hsl(216, 3.7%, 73.5%);
+    color: $interactive-normal;
     align-items: center;
     -webkit-box-pack: center;
     display: flex;
     -webkit-box-align: center;
-    forced-color-adjust: none;
 }
 
 .chat-button-wrapper {
     opacity: 1;
     transform: none;
-    forced-color-adjust: none;
     outline: 0;
     cursor: pointer;
 }
@@ -728,20 +719,20 @@
     line-height: 16px;
     padding: 2px 16px;
     user-select: none;
-    background: #0000;
+    background: transparent;
     color: currentColor;
     border: 0;
     padding: 0;
     margin: 0;
     width: auto;
-    forced-color-adjust: none;
     cursor: pointer;
-    font-family: "Whitney";
+    font-family: $global-font;
     text-rendering: optimizeLegibility;
+    color: $interactive-normal;
+
 }
 
 .button-chat-input-wrap {
-    forced-color-adjust: none;
     display: flex;
     outline: 0;
 
@@ -750,42 +741,38 @@
 
 
 .sticker-icon {
-    color: hsl(216, 3.7%, 73.5%);
+    color: $interactive-normal;
     display: block;
     width: 24px;
     height: 24px;
     -webkit-app-region: no-drag;
-    forced-color-adjust: none;
     box-sizing: border-box;
 }
 
 .icongif {
-    color: hsl(216, 3.7%, 73.5%);
+    color: $interactive-normal;
     display: block;
     width: 24px;
     height: 24px;
     -webkit-app-region: no-drag;
-    forced-color-adjust: none;
     box-sizing: border-box;
 }
 
 .present-icon {
-    color: hsl(216, 3.7%, 73.5%);
+    color: $interactive-normal;
     display: block;
     width: 24px;
     height: 24px;
     -webkit-app-region: no-drag;
-    forced-color-adjust: none;
     box-sizing: border-box;
 }
 
 .fa-face-smile-wink {
-    color: hsl(216, 3.7%, 73.5%);
+    color: $interactive-normal;
     display: block !important;
     width: 24px;
     height: 24px;
     -webkit-app-region: no-drag;
-    forced-color-adjust: none;
     box-sizing: border-box;
     transform: translate(-2px, 10px) !important;
 }
@@ -800,28 +787,27 @@
 .present-icon:hover,
 .icongif:hover,
 .sticker-icon:hover {
-    color: hsl(210, 2.9%, 86.7%);
+    color: $interactive-active;
 
 }
 
 .fa-face-smile-wink:hover {
 
-    color: #ffc959;
+    color: $yellow-emoji;
 }
 
 .smiley-face-icon {
-    color: hsl(216, 3.7%, 73.5%);
+    color: $interactive-normal;
     display: block !important;
     width: 24px;
     height: 24px;
     -webkit-app-region: no-drag;
-    forced-color-adjust: none;
     box-sizing: border-box;
     // transform: translate(-2px, 10px) !important;
 }
 
 .smiley-face-icon:hover {
-    color: #ffc959;
+    color: $yellow-emoji;
 }
 
 
@@ -830,10 +816,10 @@
     display: none;
 }
 
+
 .txt-inpt {
     color: transparent;
 }
-
 
 
 
@@ -845,7 +831,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    box-shadow: 0 1px 0 hsla(240, 11.1%, 1.8%, 0.2), 0 1.5px 0 hsla(240, 7.7%, 2.5%, 0.05), 0 2px 0 hsla(240, 11.1%, 1.8%, 0.05);
+    box-shadow: $elevation-low;
     z-index: 1;
     pointer-events: none;
 }
@@ -857,7 +843,7 @@
     left: 0;
     height: 0.5rem;
     width: 1.25rem;
-    // background: linear-gradient(180deg, #36393f00 0, hsl(220, 7.7%, 22.9%));
+    background: linear-gradient(180deg, rgba(54, 57, 63, 0) 0, $background-primary);
 }
 
 //edit and delete buttons 
@@ -872,13 +858,11 @@
     padding-bottom: 0.125rem;
     position: relative;
     outline: 0;
-    forced-color-adjust: none;
     display: none;
 }
 
 .message-accessories-button-container {
     outline: 0;
-    forced-color-adjust: none;
     top: 0;
     right: 0;
     position: absolute;
@@ -886,7 +870,6 @@
 
 .message-accessories-button-layer {
     outline: 0;
-    forced-color-adjust: none;
     top: -16px;
     position: absolute;
     right: 0;
@@ -900,9 +883,8 @@
 
 .message-accessories-button-wrapper {
     outline: 0;
-    forced-color-adjust: none;
-    background-color: hsl(220, 7.7%, 22.9%);
-    box-shadow: 0 0 0 1px hsla(240, 11.1%, 1.8%, 0.15);
+    background-color: $background-primary;
+    box-shadow: $elevation-stroke;
     // display: grid;
     // grid-auto-flow: column;
     box-sizing: border-box;
@@ -929,14 +911,13 @@
     transform: translateY(-200%);
 
     // background-color: #36393F;
-    // box-shadow: 0 2px 2px rgb(0 0 0 / 10%);
     // transition: box-shadow 0.1s ease-in-out;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid #2f3136;
+    border: 1px solid $background-primary;
     // border-radius: 5px;
     overflow: hidden;
-    color: #B9BBBE;
+    color: $interactive-normal;
     cursor: pointer;
 
 
@@ -944,7 +925,7 @@
 }
 
 .message-accessories-button-wrapper:hover {
-    box-shadow: 0 0 0 1px hsla(240, 11.1%, 1.8%, 0.15), 0 4px 4px hsla(0, 0%, 0%, 0.16);
+    box-shadow: $elevation-stroke, $elevation-medium;
 }
 
 .message-accessories-button {
@@ -955,22 +936,20 @@
     padding: 4px;
     min-width: 24px;
     flex: 0 0 auto;
-    color: hsl(216, 3.7%, 73.5%);
+    color: $interactive-normal;
     cursor: pointer;
     position: relative;
     outline: 0;
-    forced-color-adjust: none;
 }
 
 .message-accessories-button:hover {
     padding-top: 5px;
     padding-bottom: 3px;
-    color: hsl(216, 3.7%, 73.5%);
-    background-color: hsla(217, 7.6%, 33.5%, 0.48);
+    color: $interactive-hover;
+    background-color: $background-modifier-hover;
 }
 
 .pen-icon {
-    forced-color-adjust: none;
     width: 20px;
     height: 20px;
     display: block;
@@ -986,13 +965,12 @@
     font-size: 12px;
     font-weight: 400;
     text-indent: 0;
-    color: hsl(210, 2.9%, 86.7%);
-    forced-color-adjust: none;
+    color: $text-normal;
     outline: 0;
-    font-family: "Whitney";
+    font-family: $global-font;
 
     span {
-        color: hsl(197, 100%, 47.8%);
+        color: $text-link;
         text-decoration: none;
     }
 }
