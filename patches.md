@@ -498,6 +498,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Swapped to SCSS Vars for styles in Server Chat room messages.
     - Added a condition to change the styles of the current message being edited.
     - Restyled Edit message modal.
+    - Restyled Server Messages.
 
 ## Backend Changes
 
