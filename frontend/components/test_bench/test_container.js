@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import TestPage from "./test_page";
+import TestPage1 from "./test_page1";
 
 import { openModal, closeModal } from "../../actions/modal_actions";
 import { fetchServer, fetchServers } from "../../actions/server_actions";
@@ -43,5 +44,6 @@ const mDTP = (dispatch) => {
 }
 
 
-const TestPageContainer = withRouter(connect(mSTP, mDTP)(TestPage));
+// const TestPageContainer = withRouter(connect(mSTP, mDTP)(TestPage));
+const TestPageContainer = withRouter(connect(mSTP, mDTP)(TestPage1));
 export default TestPageContainer;
