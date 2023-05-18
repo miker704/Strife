@@ -504,6 +504,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added more Options for Edit Message Options Container.
     - Reduced exit animation for delete server message modal.
     - Added Protection features to prevent XSS attacks and form hi-jacking on delete server messages of other users.
+    - Add control functionality to edit message options container holding the shift key while hovering over a message will expand the edit message options button group revealing more options for users to select. releasing the shift key shrinks the button group back while moving the mouse away from the message also disables the listener too.
 
 ## Backend Changes
 
