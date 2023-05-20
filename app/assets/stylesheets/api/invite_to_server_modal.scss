@@ -324,7 +324,7 @@
     padding: 4px;
     -webkit-transition: opacity .2s ease-in-out;
     transition: opacity .2s ease-in-out;
-    opacity: .5;
+    opacity: 0.5;
     cursor: pointer;
     border-radius: 3px;
     color: $interactive-normal;
@@ -408,8 +408,10 @@
 
 .i2sm-header-channel-name-container {
     display: -webkit-box;
-    display: flex;
+    display: -ms-flexbox;
+    // display: flex;
     -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     margin-bottom: 4px;
     outline: 0;
