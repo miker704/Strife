@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
 
 const InviteToServerModal = (props) => {
+
     const inputRef = useRef();
     const popupRef = useRef();
     const [searchText, setSearchText] = useState("");
@@ -11,8 +12,9 @@ const InviteToServerModal = (props) => {
 
 
     useEffect(() => {
-        // setGeneralChannelName(props.generalChannelName);
+        // setChannelName(props.channelName);
         setChannelName(props.currentChannel.channel_name);
+
         // window.addEventListener('keyup', props.handleESC, false);
         window.addEventListener('keyup', handleESC, false);
 
@@ -24,7 +26,7 @@ const InviteToServerModal = (props) => {
             window.removeEventListener('keyup', handleESC, false);
 
         }
-    }, []);
+    }, [props.currentChannel]);
 
 
     const findIfMemberAlready = (member) => Object.values(props.server.users).findIndex(friend => friend.id === member.id);
