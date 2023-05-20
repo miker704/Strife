@@ -30,7 +30,8 @@ const getChannelName = (state, ownProps) => {
 
 const getCurrentChannel = (state, ownProps) => {
     let serverChannels = Object.values(state.entities.channels);
-    const findThis = ownProps.mod_Channel_ID['ChannelId'];
+    // const findThis = ownProps.mod_Channel_ID['ChannelId'];
+    const findThis = ownProps.mod_Channel_ID;
     let currentChannelTarget = serverChannels.find((channel) => channel.id === findThis);
     return currentChannelTarget;
 
@@ -40,14 +41,16 @@ const mSTP = (state, ownProps) => {
 
     const getIds = extractServerProps(state, ownProps);
     // let getGeneralChannelName = getChannelName(state, ownProps);
-    const currentChannelTarget = getCurrentChannel(state,ownProps);
+    // const currentChannelTarget = getCurrentChannel(state, ownProps);
     return {
 
         currentUser: state.currentUser,
         server: state.entities.servers[parseInt(getIds[0])],
         channel: state.entities.channels[parseInt(getIds[1])],
 
-        currentChannel: currentChannelTarget,
+        // currentChannel: currentChannelTarget,
+        currentChannel: state.entities.channels[parseInt(ownProps.mod_Channel_ID)],
+
         // generalChannelName: getGeneralChannelName,
         channels: Object.values(state.entities.channels),
         currentChannelId: getIds[1],
