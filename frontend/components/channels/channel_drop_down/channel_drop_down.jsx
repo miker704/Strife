@@ -75,6 +75,11 @@ const ChannelDropDown = (props) => {
                             <div role={"group"}>
                                 <div className="channel-drop-item group2"
                                     onClick={() => {
+                                        props.openModalWithProps(
+                                            {
+                                                ChannelId: props.currentChannel.id,
+                                            }
+                                        );
                                         props.openModal('InviteToServer');
                                         props.setShowPopUp(false);
                                     }}>
