@@ -508,6 +508,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Fixed a bug that would crash the app when user clicked to open the invite to server modal from the channel drop down modal due too the needed props not being passed to invite to server modal from channel drop down.
     - Passed the channel id that is mapped to the invite to server modal button on the channel nav bar and used it via ownprops to extract the channels state to get that props of the channel instead of using a function.
     - Adjusted the flex container to webkit and mss flex boxes to allow proper alignment of the channel type icons and the channel name in the the invite to server modal. 
+    - Switched to SCSS Vars in Servers Settings Modal.
 
 ## Backend Changes
 
