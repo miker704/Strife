@@ -554,6 +554,7 @@ between two users. including being able to deciever if there is a block relation
 - Added the new friendship api util function for unblocking of users and implemented it.
 - Added to user reducer to handle the REMOVE_BLOCKED_USER = (UNBLOCK_USER) friendship redux action call changing the friendship status of blocked users  to -2 if both users have blocked each other or 0 if only the curr_user has blocked the user.
 - Removed previous dispatch function for removing block on a blocked user which used deleteFriendship dispatch this is changed to a dispatch calling the unblock dispatch function.
+- Added Custom Built in Hook components for detecting when a component is mounted or not, this is used to delay to triggering of css animation effects of some elements upon initial rendering.
 
 ### Other Changes
 
