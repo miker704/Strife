@@ -1608,28 +1608,34 @@
     background-color: $background-secondary;
 }
 
-// .sop-radio-item[aria-check=true],
-// .sop-radio-item1[aria-check=true]{
-//     color: $interactive-active;
-//     background-color: $background-modifier-selected;
 
-// }
-.sop-radio-item1[aria-check=true],
-.sop-radio-item1 {
+.sop-radio-item1[aria-checked=true] {
     color: $interactive-active;
     background-color: $background-modifier-selected;
 
 }
 
-.sop-radio-item:hover {
+
+.sop-radio-item[aria-checked=true] {
+    color: $interactive-active;
+    background-color: $background-modifier-selected;
+
+}
+
+.sop-radio-item:hover:not([aria-checked=true]) {
     background-color: $background-modifier-hover;
     color: $interactive-hover;
 }
 
+// .sop-radio-item:hover {
+//     background-color: $background-modifier-hover;
+//     color: $interactive-hover;
+// }
+
 .sop-radio-item-inner {
     padding: 10px;
     box-sizing: border-box;
-    border-left: 3px solid transparent;
+    // border-left: 3px solid transparent;
     border-radius: 4px;
     display: grid;
     grid-template-columns: auto 1fr;
@@ -1659,7 +1665,6 @@
     outline: 0;
 
     strong {
-        padding-left: 2px;
         font-weight: 600;
     }
 }
@@ -2119,8 +2124,22 @@
 
 .radioIconForeground {
     box-sizing: border-box;
-    color: $white-500;
+    color: transparent;
 }
+
+.radioIconForeground.fill {
+    box-sizing: border-box;
+    color: $interactive-active;
+}
+
+.radioIconForeground-container {
+    box-sizing: border-box;
+    outline: 0;
+    height: 26.91px;
+    min-height: 26.91px;
+    max-height: 26.91px;
+}
+
 
 
 .faint-boost-shiny-button {
