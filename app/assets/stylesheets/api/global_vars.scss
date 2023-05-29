@@ -35,6 +35,7 @@ $white-500-hsl-01: rgba(255, 255, 255, 0.1);
 $black-500: hsl(0, 0%, 0%);
 $black-500-hsl-005: hsla(0, 0%, 0%, 0.05);
 $black-500-hsl-01: hsla(0, 0%, 0%, 0.1);
+$black-500-hsl-02: hsla(0, 0%, 0%, 0.2);
 
 $brand-260: rgb(201, 205, 251);
 $brand-500: hsl(235, 85.6%, 64.7%);
@@ -42,6 +43,7 @@ $brand-500-hsl: rgba(88, 101, 242, 0.298);
 $brand-560: rgb(71, 82, 196);
 $brand-600: hsl(235, 46.7%, 44.1%);
 $blue-345: rgb(0, 168, 252);
+$blue-350: rgb(62, 112, 221);
 $primary-100: rgb(249, 249, 249);
 $primary-150: rgb(41, 43, 47);
 $primary-200: hsl(216, 9.8%, 90%);
@@ -50,12 +52,15 @@ $primary-300: rgb(196, 201, 206);
 $primary-330: rgb(181, 186, 193);
 $primary-360: hsl(214, 8.1%, 61.2%);
 $primary-400: rgba(78, 80, 88, 0.6);
+$primary-400-hsl-03: hsla(223, 5.8%, 52.9%, 0.3);
 $primary-401: rgb(128, 132, 142);
 $primary-430: rgb(109, 111, 120);
 $primary-500: rgba(79, 81, 89, 0.298);
+$primary-500-non-alpha: rgb(78, 80, 88);
 $primary-500-hsl-20: rgba(0, 0, 0, 0.2);
 $primary-500-hsl-30: rgba(78, 80, 88, 0.3);
 $primary-500-hsl-60: rgba(78, 80, 88, 0.6);
+$primary-500-hsl-75: rgba(78, 80, 88, 0.75);
 $primary-500-bg-color: rgb(78, 80, 88);
 $primary-500-48: rgba(78, 80, 88, 0.48);
 $primary-501: rgb(78, 80, 88);
@@ -82,10 +87,12 @@ $green-330: rgb(45, 199, 112);
 $green-360: rgb(35, 165, 89);
 $green-430: rgb(36, 128, 70);
 $green-500: rgb(27, 103, 54);
+$green-501: rgb(26, 99, 52);
 $green-530: rgb(21, 86, 43);
 $yellow-300: rgb(240, 177, 50);
 $yellow-emoji: #ffc959;
 $purple-100: rgb(255, 115, 250);
+$purple-110: rgb(179, 119, 243);
 $platform-item-color: #747f8d;
 $channel-icon: rgb(128, 132, 142);
 $draft-editor: hsla(0, 0%, 100%, 0.0);
@@ -101,6 +108,8 @@ $button-outline-positive-border: $green-360;
 $button-outline-positive-border-hover: $green-430;
 $button-positive-background: $green-430;
 $button-positive-background-hover: $green-500;
+$button-positive-background-hover-2: $green-501;
+$button-positive-background-active: $green-530;
 $button-outline-positive-background-active: $green-530;
 $button-outline-positive-border-active: $green-530;
 
@@ -109,7 +118,8 @@ $scrollbar-thin-thumb: hsl(225, 7.1%, 11%);
 $scrollbar-thin-track: hsla(0, 0%, 0%, 0);
 $scrollbar-auto-thumb: hsl(225, 7%, 11%);
 $scrollbar-auto-track: hsl(220, 7%, 18%);
-
+$scrollbar-auto-scrollbar-color-thumb: $primary-730;
+$scrollbar-auto-scrollbar-color-track: $primary-630;
 //var to var
 $brand-experiment: $brand-500;
 $brand-experiment-560: $brand-560;
@@ -143,7 +153,8 @@ $mention-background: $brand-500-hsl;
 $channeltextarea-background: $primary-800-lvl-2;
 $channeltextarea-placeholder: $primary-430;
 $background-message-hover: $primary-505;
-
+$guild-boosting-blue: $blue-350;
+$guild-boosting-purple: $purple-110;
 
 $strife-root: (
     colors:(black-500: hsl(0, 0%, 0%),
