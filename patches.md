@@ -510,6 +510,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Adjusted the flex container to webkit and mss flex boxes to allow proper alignment of the channel type icons and the channel name in the the invite to server modal. 
     - Switched to SCSS Vars in Servers Settings Modal.
     - Remodeled Server Settings Modal.
+    - Added a better resolution image of Boost Progress bar.
 
 ## Backend Changes
 
