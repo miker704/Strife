@@ -513,11 +513,13 @@ current dmServer involving the user of their friend it will send a request to th
     - Adjusted the flex container to webkit and mss flex boxes to allow proper alignment of the channel type icons and the channel name in the the invite to server modal. 
     - Switched to SCSS Vars in Servers Settings Modal.
     - Remodeled Server Settings Modal.
+    - Restyled Server Settings Modal from ground up.
     - Added a better resolution image of Boost Progress bar.
     - Moved Old Server Settings Modal to deprecated folder.
     - Created custom toggle switch that uses a similar svg animation to that of discords.
     - Styled custom toggle switch.
     - Removed old server error style from global styles.
+    - Added MUI components to Server Settings Modal converted static Select Boxes to Select MUI components.
 
 ## Backend Changes
 
