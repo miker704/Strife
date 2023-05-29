@@ -2,10 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import DeleteChannelModalContainer from "../delete_channel_modal/delete_channel_modal_container";
 import Slider from '@mui/material/Slider';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { styled } from "@mui/material/styles";
 import SvgIcon from "@mui/material/SvgIcon";
@@ -126,61 +122,6 @@ const SelectRegion = styled(Select)(({ theme }) => ({
 }));
 
 
-const RegionLabel = styled(FormControlLabel)(({ theme }) => ({
-    boxSizing: "border-box",
-    outline: "0",
-    cursor: "pointer",
-    borderRadius: "3px",
-    display: "block",
-    marginBottom: "8px",
-    marginLeft: '0px',
-    marginRight: '-5px',
-    display: "-webkit-box",
-    display: "flex",
-    flexDirection: "row",
-    padding: '3px 0px',
-    '.MuiFormControlLabel-label': {
-        boxSizing: 'border-box',
-        outline: "0",
-        lineHeight: '20px',
-        fontFamily: "gg sans",
-        fontSize: '16px',
-        fontWeight: '500',
-    }
-}));
-
-const RegionRadioGroup = styled(RadioGroup)(({ theme }) => ({
-    color: "#b5bac1",
-    boxSizing: "border-box",
-    outline: "0",
-    cursor: "pointer",
-    borderRadius: "3px",
-    display: "block",
-    marginBottom: "8px",
-    display: "-webkit-box",
-    display: "flex",
-    flexDirection: "column"
-}));
-
-
-const RegionFormControl = styled(FormControl)(({ theme }) => ({
-    boxSizing: "border-box",
-    outline: "0",
-    display: "flex",
-    flexDirection: "column"
-}));
-
-const RegionRadio = styled(Radio)(({ theme }) => ({
-    color: "white",
-    'padding': '10px',
-
-    "&.Mui-checked": {
-        color: "rgb(255,255,255)"
-    }
-
-}))
-
-
 const ChannelSettingsModal = (props) => {
 
     const [channelDeletion, setChannelDeletion] = useState(false);
@@ -247,7 +188,6 @@ const ChannelSettingsModal = (props) => {
     const [count, setCount] = useState(1024);
     const [newChannelTopic, setNewChannelTopic] = useState('');
     const [activitySwitch, setActivitySwitch] = useState(false);
-
     const [activitySliderValue, setActivitySliderValue] = useState(0);
     const [finalActivitySliderValue, setFinalActivitySliderValue] = useState(0);
 
@@ -255,7 +195,7 @@ const ChannelSettingsModal = (props) => {
     const [userLimit, setUserLimit] = useState(0);
     const [videoQuality, setvideoQuality] = useState("Auto");
     const [region, setRegion] = useState("Automatic");
-    const [hideInActivity, setHideInActivity] = useState("3 Days");
+    const [hideInActivity, setHideInActivity] = useState(72);
 
 
     const hideInActivityChoices = [
@@ -265,6 +205,12 @@ const ChannelSettingsModal = (props) => {
         "1 Week"
     ];
 
+    const hideInActivityChoicesEvaluation = {
+        "1 Hour": 1,
+        "24 Hours": 24,
+        "3 Days": 72,
+        "1 Week": 168,
+    }
     const activityMarks = [
         {
             value: 0,
@@ -510,10 +456,6 @@ const ChannelSettingsModal = (props) => {
 
     const bitRateLabel = (value) => {
         return `${value}kbps`;
-    }
-
-    const handleVideoSelection = (e) => {
-        setvideoQuality(e.target.value);
     }
 
 
@@ -885,9 +827,9 @@ const ChannelSettingsModal = (props) => {
                                                         >
                                                             {hideInActivityChoices.map((choice) => {
                                                                 return (
-                                                                    <MenuItem value={choice} key={choice}>
+                                                                    <MenuItem value={hideInActivityChoicesEvaluation[choice]} key={choice}>
                                                                         {choice}
-                                                                        {hideInActivity === choice ? (checkMark) : ("")}
+                                                                        {hideInActivity === hideInActivityChoicesEvaluation[choice] ? (checkMark) : ("")}
                                                                     </MenuItem>
                                                                 )
                                                             })}
@@ -935,38 +877,42 @@ const ChannelSettingsModal = (props) => {
                                                 <div className="csm-split-flex-container">
                                                     <div>
                                                         <h3 className="cs-op-div-fjs-h5">VIDEO QUALITY</h3>
-                                                        <RegionFormControl>
-                                                            <RegionRadioGroup
-                                                                aria-labelledby="select-video-quality"
-                                                                name="select-video-quality-radio-buttons-group"
-                                                                value={videoQuality}
-                                                                onChange={handleVideoSelection}
-                                                            >
-                                                                <RegionLabel
-                                                                    sx={{
-                                                                        backgroundColor: `${videoQuality === "Auto" ? `rgba(78, 80, 88, 0.6)` : "#2b2d31"}`,
-                                                                        color: `${videoQuality === "Auto" ? `white` : "#b5bac1"}`,
-                                                                    }}
-                                                                    value="Auto"
-                                                                    control={
-                                                                        <RegionRadio />
-                                                                    }
-                                                                    label="Auto"
-                                                                />
-
-                                                                <RegionLabel
-                                                                    sx={{
-                                                                        backgroundColor: `${videoQuality === "720P" ? `rgba(78, 80, 88, 0.6)` : "#2b2d31"}`,
-                                                                        color: `${videoQuality === "720P" ? `white` : "#b5bac1"}`,
-                                                                    }}
-                                                                    value="720P"
-                                                                    control={
-                                                                        <RegionRadio />
-                                                                    }
-                                                                    label="720P"
-                                                                />
-                                                            </RegionRadioGroup>
-                                                        </RegionFormControl>
+                                                        <div role={'radiogroup'} className="csm-vQ-rad-group">
+                                                            <div className={`csm-vq-rad-item`} aria-checked={`${videoQuality === 'Auto' ? `true` : `false`}`} onClick={() => setvideoQuality('Auto')}>
+                                                                <div className="csm-vq-rad-item-bar">
+                                                                    <div className="csm-rad-item-icon-container">
+                                                                        <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                                                            <path fillRule="evenodd" clipRule="evenodd" d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172
+                                                                                 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715
+                                                                                  2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="currentColor">
+                                                                            </path>
+                                                                            <circle cx="12" cy="12" r="5" className={`csm-rad-item ${videoQuality === 'Auto' ? `fill` : ``}`} fill="currentColor">
+                                                                            </circle>
+                                                                        </svg>
+                                                                    </div>
+                                                                    <div className="csm-vq-rad-item-info">
+                                                                        <div className="csm-rad-item-text">Auto</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className={`csm-vq-rad-item`} aria-checked={`${videoQuality === '720p' ? `true` : `false`}`} onClick={() => setvideoQuality('720p')}>
+                                                                <div className="csm-vq-rad-item-bar">
+                                                                    <div className="csm-rad-item-icon-container">
+                                                                        <svg aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                                                            <path fillRule="evenodd" clipRule="evenodd" d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172
+                                                                            4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715
+                                                                             2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="currentColor">
+                                                                            </path>
+                                                                            <circle cx="12" cy="12" r="5" className={`csm-rad-item ${videoQuality === '720p' ? `fill` : ``}`} fill="currentColor">
+                                                                            </circle>
+                                                                        </svg>
+                                                                    </div>
+                                                                    <div className="csm-vq-rad-item-info">
+                                                                        <div className="csm-rad-item-text">720p</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div className="cs-inactive-sub-info">
                                                         Sets camera video quality for all channel participants. Choose{`${" "}`}
@@ -974,7 +920,6 @@ const ChannelSettingsModal = (props) => {
                                                         for optimal performance.
                                                     </div>
                                                 </div>
-
 
                                                 <div className="csm-split-flex-container">
                                                     <h3 className="cs-op-div-fjs-h5">USER LIMIT</h3>
@@ -1001,8 +946,6 @@ const ChannelSettingsModal = (props) => {
                                                         permission ignore this limit and can move other users into the channel.
                                                     </div>
                                                 </div>
-
-
 
                                                 <div className="csm-split-flex-container">
                                                     <h3 className="cs-op-div-fjs-h5">REGION OVERRIDE</h3>
