@@ -520,6 +520,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Styled custom toggle switch.
     - Removed old server error style from global styles.
     - Added MUI components to Server Settings Modal converted static Select Boxes to Select MUI components.
+    - fixed Styling issue with border radius and div element wrapping svg element that caused the radio   item to mis-align in the radio group in Server Settings.
 
 ## Backend Changes
 
