@@ -526,7 +526,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Replaced Mui Radio Group, Radio Button, FormControl and FormcontrolLabel with the orginal custom made radio group in Server Settings Modal.
     - Moved Mui Styles and components for Radio group for Channel Settings  Modal to deprecated inputs file.
     - Removed Redacted Code from StrifeToggleSwitch module.
-    
+    - Renamed StrifeToggleSwitch module file.
+
 ## Backend Changes
 
 - Changed the routes to the new Routing system on the frontend to redirect banned users from both dmservers
