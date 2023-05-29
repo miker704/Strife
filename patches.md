@@ -2,6 +2,9 @@
 
 ## Future additions and pending changes
   
+- Preparing to update to react 18
+  - Changes will require fixing setInvervals, setTimeouts, modals that popup on within components other than the ModalMangerContainer.
+
 - Action and process flow of banning and kicking users from a server or a dmServer will be reworked and
     be optimized by the Core Cable anaylzing the location of said user deciding the best course of action on whether
     a user should re-receive all their dm/servers or just a single one. The hope is also to reduce and eliminate problem areas on re-renders such as channel messages re-rendering a previous or newly received server/channels messages for half a second before reverting back to the proper messages.
