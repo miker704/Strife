@@ -1,0 +1,429 @@
+@import 'global_vars';
+
+// .sliderInner.on {
+//     :first-child {
+//         animation: pathAnime1 200ms ease-in-out 1;
+
+//     }
+
+//     :last-child {
+//         animation: pathAnime2 200ms ease-in-out 1;
+
+//     }
+// }
+
+// .sliderInner.off {
+//     :first-child {
+//         animation: pathAnime1 100ms ease-in-out 1 reverse;
+//     }
+
+//     :last-child {
+//         animation: pathAnime2 100ms ease-in-out 1 reverse;
+
+//     }
+// }
+
+@keyframes switchimg {
+    0% {
+        background-image: image_url("grayswitchuncheck.svg");
+        // background-image: image_url("compressedswitchgray.svg");
+        transform: scaleY(0.65);
+    }
+
+    25% {
+        background-image: image_url("compressedswitchgray.svg");
+
+    }
+
+    75% {
+        background-image: image_url("compressswitchgreen.svg");
+    }
+
+    to {
+        background-image: image_url("greenswitchcheck.svg");
+    }
+
+}
+
+@keyframes switchrevimg {
+    0% {
+        background-image: image_url("greenswitchcheck.svg");
+
+        // background-image: image_url("compressedswitchgray.svg");
+        transform: scaleY(0.65);
+    }
+
+    25% {
+        background-image: image_url("compressswitchgreen.svg");
+
+    }
+
+    75% {
+        background-image: image_url("compressedswitchgray.svg");
+    }
+
+    to {
+        background-image: image_url("grayswitchuncheck.svg");
+
+    }
+
+}
+
+
+
+
+
+@-webkit-keyframes completedSliding {
+    0% {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+        background-color: hsl(228, 6%, 32.5%);
+    }
+
+    20% {
+        -webkit-box-shadow: 0 0 0 0 hsla(145, 65%, 39%, 0.5);
+        box-shadow: 0 0 0 0 hsla(145, 65%, 39%, 0.5);
+    }
+
+    60% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+        background-color: hsl(146, 86.6%, 64.9%);
+    }
+
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-box-shadow: 0 0 0 2px hsl(145, 65%, 39%);
+        box-shadow: 0 0 0 2px hsl(145, 65%, 39%);
+    }
+}
+
+@keyframes completedSliding {
+    0% {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+        background-color: hsl(228, 6%, 32.5%);
+    }
+
+    20% {
+        -webkit-box-shadow: 0 0 0 0 hsla(145, 65%, 39%, 0.5);
+        box-shadow: 0 0 0 0 hsla(145, 65%, 39%, 0.5);
+    }
+
+    60% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+        background-color: hsl(146, 86.6%, 64.9%);
+    }
+
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-box-shadow: 0 0 0 2px hsl(145, 65%, 39%);
+        box-shadow: 0 0 0 2px hsl(145, 65%, 39%);
+    }
+}
+
+@-webkit-keyframes completedRevSliding {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-box-shadow: 0 0 0 2px hsl(145, 65%, 39%);
+        box-shadow: 0 0 0 2px hsl(145, 65%, 39%);
+
+    }
+
+    20% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+        background-color: hsl(228, 6%, 32.5%);
+
+    }
+
+    60% {
+        -webkit-box-shadow: 0 0 0 0 hsl(228, 6%, 32.5%);
+        box-shadow: 0 0 0 0 hsl(228, 6%, 32.5%);
+    }
+
+    to {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+        background-color: hsl(228, 6%, 32.5%);
+    }
+}
+
+@keyframes completedRevSliding {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-box-shadow: 0 0 0 2px hsl(145, 65%, 39%);
+        box-shadow: 0 0 0 2px hsl(145, 65%, 39%);
+
+    }
+
+    20% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+        background-color: hsl(228, 6%, 32.5%);
+
+    }
+
+    60% {
+        -webkit-box-shadow: 0 0 0 0 hsl(228, 6%, 32.5%);
+        box-shadow: 0 0 0 0 hsl(228, 6%, 32.5%);
+    }
+
+    to {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+        background-color: hsl(228, 6%, 32.5%);
+    }
+}
+
+
+
+@keyframes switchimg2 {
+    0% {
+        background-image: image_url("grayswitchuncheck.svg");
+        -webkit-transform: scaleY(0.7) translateX(0%);
+        transform: scaleY(0.7) translateX(0%);
+        // background-color: hsl(228, 6%, 32.5%);
+        background-color: white;
+        color: rgba(128, 132, 142, 1);
+    }
+
+    25% {
+        background-image: image_url("compressedswitchgray.svg");
+        -webkit-transform: scaleY(0.6) translateX(35%);
+        transform: scaleY(0.6) translateX(35%);
+        -webkit-box-shadow: 0 0 0 0 hsla(145, 65%, 39%, 0.5);
+        box-shadow: 0 0 0 0 hsla(145, 65%, 39%, 0.5);
+        background-color: white;
+        color: rgba(128, 132, 142, 1);
+
+    }
+
+    75% {
+        background-image: image_url("compressswitchgreen.svg");
+        -webkit-transform: scaleY(0.8) translateX(70%);
+        transform: scaleY(0.8) translateX(70%);
+        background-color: white;
+        color: rgb(35, 165, 90);
+    }
+
+    to {
+        background-image: image_url("greenswitchcheck.svg");
+        -webkit-transform: scaleY(1) translateX(84%);
+        transform: scaleY(1) translateX(84%);
+        -webkit-box-shadow: 0 0 0 2px hsl(145, 65%, 39%);
+        box-shadow: 0 0 0 2px hsl(145, 65%, 39%);
+        background-color: white;
+        color: rgb(35, 165, 90);
+    }
+
+}
+
+@keyframes switchrevimg2 {
+    0% {
+        background-image: image_url("greenswitchcheck.svg");
+        -webkit-transform: scaleY(0.8) translateX(84%);
+        transform: scaleY(0.8) translateX(84%);
+        -webkit-box-shadow: 0 0 0 2px hsl(145, 65%, 39%);
+        box-shadow: 0 0 0 2px hsl(145, 65%, 39%);
+        background-color: white;
+        color: rgb(35, 165, 90);
+    }
+
+    25% {
+        background-image: image_url("compressswitchgreen.svg");
+        -webkit-transform: scaleY(0.7) translateX(70%);
+        transform: scaleY(0.7) translateX(70%);
+        background-color: white;
+        color: rgb(35, 165, 90);
+    }
+
+    75% {
+        background-image: image_url("compressedswitchgray.svg");
+        -webkit-transform: scaleY(0.6) translateX(35%);
+        transform: scaleY(0.6) translateX(35%);
+        -webkit-box-shadow: 0 0 0 0 hsla(145, 65%, 39%, 0.5);
+        box-shadow: 0 0 0 0 hsla(145, 65%, 39%, 0.5);
+        background-color: white;
+        color: rgba(128, 132, 142, 1);
+    }
+
+    to {
+        background-image: image_url("grayswitchuncheck.svg");
+        -webkit-transform: scaleY(1) translateX(0%);
+        transform: scaleY(1) translateX(0%);
+        // background-color: hsl(228, 6%, 32.5%);
+        background-color: white;
+        color: rgba(128, 132, 142, 1);
+
+    }
+
+}
+
+
+
+
+
+
+@keyframes pathAnime1 {
+
+    0% {
+        d: path("M5.13231 6.72963L6.7233 5.13864L14.855 13.2704L13.264 14.8614L5.13231 6.72963Z");
+        fill: rgba(128, 132, 142, 1);
+    }
+
+    15% {
+        fill: rgba(118, 135, 137, 1);
+    }
+
+    35% {
+        d: path("M6.56666 11.0013L6.56666 8.96683L13.5667 8.96683L13.5667 11.0013L6.56666 11.0013Z");
+        fill: rgba(98, 143, 125, 1);
+    }
+
+    40% {
+        fill: rgba(63, 155, 105, 1);
+    }
+
+
+    to {
+        d: path("M7.89561 14.8538L6.30462 13.2629L14.3099 5.25755L15.9009 6.84854L7.89561 14.8538Z");
+        fill: rgb(35, 165, 90);
+
+    }
+
+}
+
+@keyframes pathAnime2 {
+
+    0% {
+        d: path("M13.2704 5.13864L14.8614 6.72963L6.72963 14.8614L5.13864 13.2704L13.2704 5.13864Z");
+        fill: rgba(128, 132, 142, 1);
+
+    }
+
+    15% {
+        fill: rgba(118, 135, 137, 1);
+    }
+
+    35% {
+        d: path("M13.5582 8.96683L13.5582 11.0013L6.56192 11.0013L6.56192 8.96683L13.5582 8.96683Z");
+        fill: rgba(98, 143, 125, 1);
+
+    }
+
+
+    40% {
+        fill: rgba(63, 155, 105, 1);
+    }
+
+    to {
+        d: path("M4.08643 11.0903L5.67742 9.49929L9.4485 13.2704L7.85751 14.8614L4.08643 11.0903Z");
+        fill: rgb(35, 165, 90);
+
+    }
+
+}
+
+
+
+@-webkit-keyframes sliderColor {
+    0% {
+        background-color: rgba(128, 132, 142, 1);
+    }
+
+    20% {
+        background-color: rgba(118, 135, 137, 1);
+    }
+
+    35% {
+        background-color: rgba(98, 143, 125, 1);
+    }
+
+    50% {
+        background-color: rgba(100, 142, 126, 1);
+    }
+
+    60% {
+        background-color: rgba(90, 145, 115, 1);
+    }
+
+    75% {
+        background-color: rgba(85, 150, 110, 1);
+    }
+
+    80% {
+        background-color: rgba(63, 155, 105, 1);
+
+    }
+
+    90% {
+
+        background-color: rgba(40, 160, 95, 1);
+
+    }
+
+    to {
+        background-color: rgb(35, 165, 90);
+
+    }
+}
+
+
+
+
+
+
+
+@keyframes sliderColor {
+    0% {
+        background-color: rgba(128, 132, 142, 1);
+    }
+
+    20% {
+        background-color: rgba(118, 135, 137, 1);
+    }
+
+    35% {
+        background-color: rgba(98, 143, 125, 1);
+    }
+
+    50% {
+        background-color: rgba(100, 142, 126, 1);
+    }
+
+    60% {
+        background-color: rgba(90, 145, 115, 1);
+    }
+
+    75% {
+        background-color: rgba(85, 150, 110, 1);
+    }
+
+    80% {
+        background-color: rgba(63, 155, 105, 1);
+
+    }
+
+    90% {
+
+        background-color: rgba(40, 160, 95, 1);
+
+    }
+
+    to {
+        background-color: rgb(35, 165, 90);
+
+    }
+}
+
+@keyframes draw {
+    to {
+        transform: scaleY(0.6);
+    }
+}
