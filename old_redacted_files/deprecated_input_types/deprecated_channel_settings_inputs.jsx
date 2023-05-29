@@ -1897,3 +1897,104 @@
     for optimal performance.
 </div>
 </div> */}
+
+// const handleVideoSelection = (e) => {
+//     setvideoQuality(e.target.value);
+// }
+// const RegionLabel = styled(FormControlLabel)(({ theme }) => ({
+//     boxSizing: "border-box",
+//     outline: "0",
+//     cursor: "pointer",
+//     borderRadius: "3px",
+//     display: "block",
+//     marginBottom: "8px",
+//     marginLeft: '0px',
+//     marginRight: '-5px',
+//     display: "-webkit-box",
+//     display: "flex",
+//     flexDirection: "row",
+//     padding: '3px 0px',
+//     '.MuiFormControlLabel-label': {
+//         boxSizing: 'border-box',
+//         outline: "0",
+//         lineHeight: '20px',
+//         fontFamily: "gg sans",
+//         fontSize: '16px',
+//         fontWeight: '500',
+//     }
+// }));
+
+// const RegionRadioGroup = styled(RadioGroup)(({ theme }) => ({
+//     color: "#b5bac1",
+//     boxSizing: "border-box",
+//     outline: "0",
+//     cursor: "pointer",
+//     borderRadius: "3px",
+//     display: "block",
+//     marginBottom: "8px",
+//     display: "-webkit-box",
+//     display: "flex",
+//     flexDirection: "column"
+// }));
+
+
+// const RegionFormControl = styled(FormControl)(({ theme }) => ({
+//     boxSizing: "border-box",
+//     outline: "0",
+//     display: "flex",
+//     flexDirection: "column"
+// }));
+
+// const RegionRadio = styled(Radio)(({ theme }) => ({
+//     color: "white",
+//     'padding': '10px',
+
+//     "&.Mui-checked": {
+//         color: "rgb(255,255,255)"
+//     }
+
+// }))
+
+
+                                                {/* <div className="csm-split-flex-container">
+                                                    <div>
+                                                        <h3 className="cs-op-div-fjs-h5">VIDEO QUALITY</h3>
+                                                        <RegionFormControl>
+                                                            <RegionRadioGroup
+                                                                aria-labelledby="select-video-quality"
+                                                                name="select-video-quality-radio-buttons-group"
+                                                                value={videoQuality}
+                                                                onChange={handleVideoSelection}
+                                                            >
+                                                                <RegionLabel
+                                                                    sx={{
+                                                                        backgroundColor: `${videoQuality === "Auto" ? `rgba(78, 80, 88, 0.6)` : "#2b2d31"}`,
+                                                                        color: `${videoQuality === "Auto" ? `white` : "#b5bac1"}`,
+                                                                    }}
+                                                                    value="Auto"
+                                                                    control={
+                                                                        <RegionRadio />
+                                                                    }
+                                                                    label="Auto"
+                                                                />
+
+                                                                <RegionLabel
+                                                                    sx={{
+                                                                        backgroundColor: `${videoQuality === "720P" ? `rgba(78, 80, 88, 0.6)` : "#2b2d31"}`,
+                                                                        color: `${videoQuality === "720P" ? `white` : "#b5bac1"}`,
+                                                                    }}
+                                                                    value="720P"
+                                                                    control={
+                                                                        <RegionRadio />
+                                                                    }
+                                                                    label="720P"
+                                                                />
+                                                            </RegionRadioGroup>
+                                                        </RegionFormControl>
+                                                    </div>
+                                                    <div className="cs-inactive-sub-info">
+                                                        Sets camera video quality for all channel participants. Choose{`${" "}`}
+                                                        <strong>Auto</strong>{`${" "}`}
+                                                        for optimal performance.
+                                                    </div>
+                                                </div> */}
