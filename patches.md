@@ -511,6 +511,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Switched to SCSS Vars in Servers Settings Modal.
     - Remodeled Server Settings Modal.
     - Added a better resolution image of Boost Progress bar.
+    - Moved Old Server Settings Modal to deprecated folder.
 
 ## Backend Changes
 
