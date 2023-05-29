@@ -110,76 +110,6 @@ const StrifeToggleSwitch = (props = {
     }
 
 
-
-    // const handleThisAnimationsMap = (customIndex, checkedState) => {
-
-    //     let sliderBackGround = document.getElementById(`stsslidecontrol-${customIndex}`);
-    //     let firstRect = document.getElementById(`switchrect-${customIndex}`);
-    //     let w = document.getElementById(`slider32CRPX4-${customIndex}`);
-    //     let x = w.lastElementChild;
-
-    //     if (checkedState === false) {
-    //         firstRect.setAttribute('height', '18');
-    //         firstRect.setAttribute('width', '28');
-    //         firstRect.setAttribute('x', '0');
-    //         firstRect.setAttribute('y', '1');
-
-    //         w.style.left = '12px';
-    //         sliderBackGround.style.animation = "sliderColor 200ms ease-in-out";
-    //         x.firstElementChild.setAttribute('d', "M6.56666 11.0013L6.56666 8.96683L13.5667 8.96683L13.5667 11.0013L6.56666 11.0013Z");
-    //         x.lastElementChild.setAttribute('d', "M13.5582 8.96683L13.5582 11.0013L6.56192 11.0013L6.56192 8.96683L13.5582 8.96683Z");
-    //         // sliderBackGround.style.backgroundColor = "rgba(100, 142, 126,1)";
-
-
-
-
-
-    //         setTimeout(() => {
-    //             firstRect.setAttribute('height', '20');
-    //             firstRect.setAttribute('width', '20');
-    //             firstRect.setAttribute('x', '4');
-    //             firstRect.setAttribute('y', '0');
-    //             x.firstElementChild.setAttribute('d', "M7.89561 14.8538L6.30462 13.2629L14.3099 5.25755L15.9009 6.84854L7.89561 14.8538Z");
-    //             x.firstElementChild.setAttribute('fill', "rgba(35, 165, 90, 1)");
-
-    //             x.lastElementChild.setAttribute('d', "M4.08643 11.0903L5.67742 9.49929L9.4485 13.2704L7.85751 14.8614L4.08643 11.0903Z");
-    //             x.lastElementChild.setAttribute('fill', "rgba(35, 165, 90, 1)");
-
-    //             sliderBackGround.style.backgroundColor = "rgb(35, 165, 90)";
-
-    //         }, 250)
-
-
-    //     }
-    //     else if (checkedState === true) {
-    //         w.style.left = '-3px';
-
-    //         x.firstElementChild.setAttribute('d', "M6.56666 11.0013L6.56666 8.96683L13.5667 8.96683L13.5667 11.0013L6.56666 11.0013Z");
-    //         x.lastElementChild.setAttribute('d', "M13.5582 8.96683L13.5582 11.0013L6.56192 11.0013L6.56192 8.96683L13.5582 8.96683Z");
-    //         setTimeout(() => {
-    //             firstRect.setAttribute('height', '20');
-    //             firstRect.setAttribute('width', '20');
-    //             firstRect.setAttribute('x', '4');
-    //             firstRect.setAttribute('y', '0');
-    //             x.firstElementChild.setAttribute('d', "M5.13231 6.72963L6.7233 5.13864L14.855 13.2704L13.264 14.8614L5.13231 6.72963Z");
-    //             x.firstElementChild.setAttribute('fill', "rgba(128, 132, 142, 1)");
-    //             x.lastElementChild.setAttribute('d', "M13.2704 5.13864L14.8614 6.72963L6.72963 14.8614L5.13864 13.2704L13.2704 5.13864Z");
-    //             x.lastElementChild.setAttribute('fill', "rgba(128, 132, 142, 1)");
-
-    //             sliderBackGround.style.backgroundColor = "rgba(128, 132, 142, 1)";
-
-    //         }, 250)
-    //     }
-
-    // }
-
-
-
-
-
-
-
-
     let pathRef = useRef(props.checkedState);
     // console.log(`choice is ${props.name} ref states `);
     // console.log(pathRef)
@@ -199,29 +129,6 @@ const StrifeToggleSwitch = (props = {
     // console.log(`starting color : ${startingColor} `);
     // console.log(`starting Paths = ${startingPaths} `);
     // console.log(startingPaths);
-
-
-
-
-    let checkMark = (<svg id={`sliderInner-${props.customIndex}`} viewBox="0 0 20 20" fill="none">
-        <path fill="rgb(35, 165, 90)" d="M7.89561 14.8538L6.30462 13.2629L14.3099 5.25755L15.9009 6.84854L7.89561 14.8538Z">
-        </path>
-        <path fill="rgb(35, 165, 90)" d="M4.08643 11.0903L5.67742 9.49929L9.4485 13.2704L7.85751 14.8614L4.08643 11.0903Z">
-        </path>
-    </svg>);
-
-    let xMark = (
-        <svg id={`sliderInner-${props.customIndex}`} viewBox="0 0 20 20" fill="none">
-            <path fill="rgba(128, 132, 142, 1)"
-                d="M5.13231 6.72963L6.7233 5.13864L14.855 13.2704L13.264 14.8614L5.13231 6.72963Z">
-            </path>
-            <path fill="rgba(128, 132, 142, 1)"
-                d="M13.2704 5.13864L14.8614 6.72963L6.72963 14.8614L5.13864 13.2704L13.2704 5.13864Z">
-            </path>
-        </svg>);
-
-
-
 
     return (
         <div className="sts-label-row">
