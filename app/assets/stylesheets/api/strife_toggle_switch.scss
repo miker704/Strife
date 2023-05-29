@@ -1,0 +1,113 @@
+@import 'global_vars';
+
+
+//strife toggle button 
+.sts-label-row {
+    outline: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    flex-direction: row;
+    width: 100%;
+    -webkit-box-align: center;
+    align-items: center;
+
+}
+
+
+.sts-label {
+    outline: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    flex: 1;
+    -webkit-box-flex: 1;
+    display: block;
+    overflow: hidden;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: $header-primary;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 500;
+    word-wrap: break-word;
+    cursor: pointer;
+    font-family: $global-font;
+}
+
+
+
+.sts-slide-control-wrapper {
+    outline: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+}
+
+.sts-slide-control {
+    position: relative;
+    width: 40px;
+    height: 24px;
+    outline: 0;
+    border-radius: 14px;
+    cursor: pointer;
+    box-sizing: border-box;
+    opacity: 1;
+    // transition: 0.3s ease-out;
+    transition: 0.3s ease-out, background-color 200ms linear, transform 200ms ease-in-out;
+}
+
+.slider-32CRPX4 {
+    position: absolute;
+    display: block;
+    left: -3px;
+    width: 28px;
+    height: 18px;
+    margin: 3px;
+    box-sizing: border-box;
+    cursor: pointer;
+    // transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
+    // transition: left 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: background-color 200ms ease-in-out 1s,
+        transform 200ms ease-in-out 0s,
+        left 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+        transform 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+
+
+}
+
+
+
+.sts-slider {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    outline: 0;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: $global-font;
+    text-rendering: optimizeLegibility;
+    border-radius: 14px;
+    cursor: pointer;
+    //post
+    top: 0;
+    left: 0;
+    margin: 0;
+    appearance: none;
+}
+
+.switchrect {
+    transition: all 50ms ease-in-out;
+}
+
+.sliderInner {
+    transition: all 50ms ease-in-out;
+
+    path {
+        transition: all 50ms ease-in-out;
+
+    }
+}
