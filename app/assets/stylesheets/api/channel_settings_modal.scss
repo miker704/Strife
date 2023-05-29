@@ -228,6 +228,11 @@
 @keyframes bounceOut {
 
     from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    99% {
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
     }
@@ -241,6 +246,11 @@
 @-webkit-keyframes bounceOut {
 
     from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    99% {
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
     }
@@ -251,27 +261,62 @@
     }
 }
 
-@keyframes bounceIn3{
+@-webkit-keyframes bounceIn3 {
     from {
         opacity: 0;
+        -webkit-transform: scale(1.1) translateY(0px);
         transform: scale(1.1) translateY(0px);
     }
-    to{
+
+    to {
         opacity: 1;
+        -webkit-transform: scale(1) translateZ(0px);
         transform: scale(1) translateZ(0px);
     }
 }
-@keyframes bounceOut4{
-    from{
+
+
+@keyframes bounceIn3 {
+    from {
+        opacity: 0;
+        -webkit-transform: scale(1.1) translateY(0px);
+        transform: scale(1.1) translateY(0px);
+    }
+
+    to {
         opacity: 1;
+        -webkit-transform: scale(1) translateZ(0px);
         transform: scale(1) translateZ(0px);
     }
-    to{
+}
+
+@keyframes bounceOut4 {
+    from {
+        opacity: 1;
+        -webkit-transform: scale(1) translateZ(0px);
+        transform: scale(1) translateZ(0px);
+    }
+
+    to {
         opacity: 0;
+        -webkit-transform: scale(1.10) translateZ(0px);
         transform: scale(1.10) translateZ(0px);
     }
 }
 
+@-webkit-keyframes bounceOut4 {
+    from {
+        opacity: 1;
+        -webkit-transform: scale(1) translateZ(0px);
+        transform: scale(1) translateZ(0px);
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: scale(1.10) translateZ(0px);
+        transform: scale(1.10) translateZ(0px);
+    }
+}
 
 
 .cs-channel-settings-modal {
@@ -292,8 +337,10 @@
     // -webkit-animation-duration: 0.3s;
     // -webkit-animation-iteration-count: 1;
     // animation-name: channelSettingsModalAppear;
+    -webkit-animation-name: bounceIn;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
     animation-name: bounceIn;
-
     animation-duration: 0.3s;
     animation-iteration-count: 1;
     user-select: none;
@@ -310,10 +357,12 @@
     // -webkit-animation-duration: 0.3s;
     // -webkit-animation-iteration-count: 1;
     // animation-name: channelSettingsModalDisappear;
+
+    -webkit-animation-name: bounceOut;
+    -webkit-animation-duration: 0.1s;
+    -webkit-animation-iteration-count: 1;
     animation-name: bounceOut;
-
-
-    animation-duration: 0.3s;
+    animation-duration: 0.1s;
     animation-iteration-count: 1;
 }
 
@@ -398,8 +447,8 @@
 
 .cs-left-side-bar-list {
     outline: 0;
-    display: flex;
     display: -webkit-box;
+    display: flex;
     -webkit-box-flex: 1;
     flex: 1;
     -webkit-box-orient: vertical;
@@ -486,6 +535,8 @@
 .cs-left-side-list-item.selected:hover {
     // background-color: rgba(78, 80, 88, 0.298);
     color: $interactive-active;
+    background-color: $background-modifier-hover;
+
 }
 
 .cs-left-side-list-item:hover {
@@ -713,12 +764,12 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     outline: 0;
-    display: flex;
     -webkit-box-orient: vertical;
-    flex-direction: column;
-    margin-bottom: 20px;
     display: -webkit-box;
+    margin-bottom: 20px;
     -webkit-box-direction: normal;
+    flex-direction: column;
+    display: flex;
 }
 
 .cs-label-row {
@@ -773,8 +824,8 @@
     -webkit-box-direction: normal;
     flex-direction: column;
     outline: 0;
-    display: flex;
     display: -webkit-box;
+    display: flex;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 
@@ -1486,10 +1537,24 @@
 
 }
 
-.csm-vq-rad-item.checked {
-    background-color: $background-modifier-selected;
+// .csm-vq-rad-item.checked {
+//     background-color: $background-modifier-selected;
+//     color: $interactive-active;
+// }
+.csm-vq-rad-item[aria-checked=true] {
     color: $interactive-active;
+    background-color: $background-modifier-selected;
 }
+
+.csm-vq-rad-item:hover:not([aria-checked=true]) {
+    background-color: $background-modifier-hover;
+    color: $interactive-hover;
+}
+
+// .csm-vq-rad-item:hover:not(.checked) {
+//     background-color: $background-modifier-hover;
+//     color: $interactive-hover;
+// }
 
 .csm-vq-rad-item-bar {
     padding: 10px;
@@ -1501,7 +1566,7 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    border-left: 3px solid transparent;
+    // border-left: 3px solid transparent;
     outline: 0;
 }
 
@@ -1528,11 +1593,21 @@
 
 }
 
+.csm-rad-item-icon-container {
+    box-sizing: border-box;
+    outline: 0;
+    height: 26.91px;
+    min-height: 26.91px;
+    max-height: 26.91px;
+}
+
 .csm-rad-item.fill {
-    color: white;
+    box-sizing: border-box;
+    color: $interactive-active;
 }
 
 .csm-rad-item {
+    box-sizing: border-box;
     color: transparent;
 }
 
