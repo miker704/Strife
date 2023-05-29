@@ -512,6 +512,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Remodeled Server Settings Modal.
     - Added a better resolution image of Boost Progress bar.
     - Moved Old Server Settings Modal to deprecated folder.
+    - Created custom toggle switch that uses a similar svg animation to that of discords.
+
 
 ## Backend Changes
 
