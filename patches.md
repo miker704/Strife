@@ -523,6 +523,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Fixed Styling issue with border radius and div element wrapping svg element that caused the radio   item to mis-align in the radio group in Server Settings.
     - Fixed Styling Issue with radio group and radio items in Channel Settings Modal.
     - Replaced Mui Radio Group, Radio Button, FormControl and FormcontrolLabel with the orginal custom made radio group in Channel Settings Modal.
+    - Replaced Mui Radio Group, Radio Button, FormControl and FormcontrolLabel with the orginal custom made radio group in Server Settings Modal.
 
 ## Backend Changes
 
