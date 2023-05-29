@@ -2,7 +2,7 @@
 
 ## Future additions and pending changes
   
-- Preparing to update to react 18
+- Preparing to update to React v18
   - Changes will require fixing setInvervals, setTimeouts, modals that popup on within components other than the ModalMangerContainer.
 
 - Action and process flow of banning and kicking users from a server or a dmServer will be reworked and
