@@ -524,6 +524,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Fixed Styling Issue with radio group and radio items in Channel Settings Modal.
     - Replaced Mui Radio Group, Radio Button, FormControl and FormcontrolLabel with the orginal custom made radio group in Channel Settings Modal.
     - Replaced Mui Radio Group, Radio Button, FormControl and FormcontrolLabel with the orginal custom made radio group in Server Settings Modal.
+    - Moved Mui Styles and components for Radio group for Channel Settings  Modal to deprecated inputs file.
 
 ## Backend Changes
 
