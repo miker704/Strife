@@ -1,13 +1,11 @@
 
 
-
-  
 //   #edit-server-form {
 //     position: absolute;
 //     transform: translate(5px, 25px);
 //     z-index: 10;
 //   }
-  
+
 //   #delete-server, #leave-server, #update-server-name, #server-update-error{
 //     background-color: rgb(25, 25, 28);
 //     width: 195px;
@@ -17,16 +15,16 @@
 //     border-style: none;
 //     cursor: pointer;
 //   }
-  
+
 //   #delete-server {
 //     border-top: .15px solid lightgray
 //   }
-  
+
 //   #server-update-error {
 //     color: red;
 //   }
-  
-  
+
+
 //   #edit-server-name{
 //     background-color: rgb(25, 25, 28);
 //     color: white;
@@ -39,30 +37,30 @@
 //     border-style:none;
 //     height: 30px;
 //   }
-  
+
 //   #edit-server-name:focus{
 //     outline: none;
 //   }
-  
+
 //   #update-server-name{
 //     color: rgb(186,187,190)
 //   }
-  
+
 //   #update-server-name:hover{
 //     color: white;
 //     background-color: #5865F2;
 //   }
-  
-  
+
+
 //   #delete-server, #leave-server{
 //     color: rgb(238, 65, 65);
 //   }
-  
+
 //   #delete-server:hover, #leave-server:hover {
 //     color: white;
 //     background-color: rgb(238, 65, 65);
 //   }
-  
+
 //   .list-header {
 //     display: flex;
 //     text-align: left;
@@ -74,9 +72,9 @@
 //     font-size: 12px;
 //     font-weight: 500;
 //     font-family: "Ginto";
-  
+
 //   }
-  
+
 //   .channel-nav-item {
 //     display: flex;
 //     text-align: left;
@@ -86,7 +84,7 @@
 //     padding-top: 5px;
 //     font-weight: 500;
 //   }
-  
+
 //   #edit-modal-container{
 //     z-index: 3;
 //     position: absolute;
@@ -97,27 +95,27 @@
 //     background-color: transparent;
 //     transform: translate(-75px, 0px)
 //   }
-  
+
 //   .channel-nav-item{
 //     border: 1px solid rgb(48,49,54);
 //     border-radius: 5px;
 //   }
-  
+
 //   .channel-nav-item:hover{
 //     background-color: rgb(58, 60, 67);
 //   }
-  
+
 //   .channel-nav-link{
 //     border-radius: 5px;
 //     text-decoration: none;
 //     color: rgb(151, 152, 157);
 //   }
-  
+
 //   .selected-channel{
 //     background-color: rgb(58, 60, 67);
 //     color: white;
 //   }
-  
+
 //   // Padding for Font Awesome Icons
 //   .fa-plus, .fa-chevron-down { 
 //     cursor: pointer;
@@ -125,34 +123,34 @@
 //   .channel-nav-item .fa-gear{
 //     padding-right: 3.5px;
 //   }
-  
+
 //   #channel-nav-list .fa-hashtag{
 //     padding-left: 10px; 
 //     padding-right: 10px;
 //     color: rgb(151, 152, 157);
 //   }
-  
+
 //   #channel-nav-list{
 //     overflow-y: auto;
 //     height: calc(100vh - 175px)
 //   }
-  
+
 //   #channel-nav-list::-webkit-scrollbar {
 //     width: 7.5px;
 //   }
-  
+
 //   #channel-nav-list::-webkit-scrollbar-thumb {
 //     background: rgb(30, 35, 40);
 //     border-radius: 5px;
 //   }
-  
+
 //   #channel-nav-list::-webkit-scrollbar-track {
 //     border-radius: 10px;
 //     background: rgb(40, 45, 50);
 //   }
-  
+
 //   // Modals for Channel Edit and server name edit
-  
+
 //   .channel-edit-modal, #server-edit-modal, .user-edit-modal{
 //     z-index: 3;
 //     position: absolute;
@@ -162,11 +160,11 @@
 //     width: 100vw;
 //     background-color: rgba(10, 10, 10, .9);
 //   }
-  
+
 //   #server-edit-modal {
 //     transform: translate(-85px, -72px);
 //   }
-  
+
 //   #double-channel-modal-container {
 //     z-index: 4;
 //     position: absolute;
@@ -177,7 +175,7 @@
 //     background-color: transparent;
 //     transform: translate(-75px, 0px)
 //   }
-  
+
 //   // Channel Edit Form and Server Name Form
 //   #channel-form, #server-name-form{
 //     position: absolute;
@@ -191,21 +189,21 @@
 //     z-index: 10;
 //     height: 270px;
 //   }
-  
+
 //   #channel-form form, #server-name-form form{
 //     height: 270px
 //   }
-  
+
 //   #channel-form{
 //     transform: translate(calc(50vw - 200px), calc(40vh - 100px));
 //   }
-  
+
 //   // Add the extra starting position of the server edit form to the translate.
 //   // Starting position calcuated from the translate of the server edit modal.
 //   #server-name-form{
 //     transform: translate(calc(50vw - 285px), calc(40vh - 172px));
 //   }
-  
+
 //   // Channel Edit Form Components
 //   #channel-form-header h5, #user-edit-form-header{
 //     text-align: center;
@@ -215,14 +213,14 @@
 //     padding-bottom: 5px;
 //     color: white;
 //   }
-  
+
 //   #channel-form-header p{
 //     text-align: center;
 //     font-size: 14px;
 //     padding-bottom: 20px;
 //     color: rgb(180,180,180)
 //   }
-  
+
 //   #channel-form-name, #channel-error-name{
 //     font-size: 14px;
 //     text-align: left;
@@ -231,15 +229,15 @@
 //     font-weight: bold;
 //     text-align: left;
 //   }
-  
+
 //   #channel-form-name{
 //     color: rgb(200, 200, 200);
 //   }
-  
+
 //   #channel-error-name{
 //     color: red;
 //   }
-  
+
 //   #channel-form-name-input{
 //       color: rgb(225, 225, 225);
 //       background-color: transparent;
@@ -249,11 +247,11 @@
 //       color: rgb(225, 225, 225);
 //       width: 90%;
 //   }
-  
+
 //   #channel-form-name-input:focus{
 //     outline: none;
 //   }
-  
+
 //   #channel-form-name-input-container{
 //     border: 0.75px solid rgb(32, 34, 37);
 //     background-color: rgb(32, 34, 37);
@@ -264,7 +262,7 @@
 //     width: 358.5px;
 //     margin-left: 15px;
 //   }
-  
+
 //   #cancel-form{
 //     background-color: transparent;
 //     width: 98px;
@@ -275,11 +273,11 @@
 //     border: none;
 //     cursor: pointer;
 //   }
-  
+
 //   #cancel-form:hover{
 //     text-decoration: underline;
 //   }
-  
+
 //   #channel-delete-button, #server-delete-button{
 //     margin: 15px;
 //     width: 122px;
@@ -291,33 +289,33 @@
 //     font-size: 14px;
 //     font-weight: 500;
 //   }
-  
+
 //   #channel-delete-button{
 //     border: 1px solid black;
 //     border-radius: 3px;
 //   }
-  
+
 //   #channel-delete-button:hover{
 //     color: white;
 //     background-color: rgb(238, 65, 65);
 //   }
-  
-  
+
+
 //   #channel-edit-submit:hover {
 //     filter: brightness(80%);
 //   }
-  
+
 //   #server-delete-button {
 //     color: white;
 //     background-color: rgb(238, 65, 65);
 //     border: 1px solid  rgb(238, 65, 65);
 //     border-radius: 3px;
 //   }
-  
+
 //   #server-delete-button:hover{
 //     filter: brightness(80%)
 //   }
-  
+
 //   #channel-edit-submit, #user-edit-submit{
 //     text-align: center;
 //     margin: 15px;
@@ -331,7 +329,7 @@
 //     font-size: 14px;
 //     font-weight: 500;
 //   }
-  
+
 //   #channel-exit-x, #server-name-exit-x{
 //     position: absolute;
 //     top: 0px;
@@ -343,7 +341,7 @@
 //     cursor: pointer;
 //     color: rgb(151, 152, 157);
 //   }
-  
+
 //   #channel-exit-x {
 //     transform: translate(calc(50vw + 180px), calc(40vh - 100px));
 //   }
@@ -351,7 +349,7 @@
 //   #server-name-exit-x {
 //     transform: translate(380px, 0px)
 //   }
-  
+
 //   .create-tool-tip, .user-tool-tip{
 //     visibility: hidden;
 //     font-size: 12px;
@@ -366,21 +364,21 @@
 //     transform: translate(-45px, -55px);
 //     color: rgb(225, 225, 225);
 //   }
-  
+
 //   .edit-translate{
 //     transform: translate(-39px, -55px);
 //     font-family: "Ginto";
 //     font-weight: 500;
 //   }
-  
+
 //   .create-channel-div{
 //     cursor: pointer;
 //   }
-  
+
 //   .create-channel-div:hover .create-tool-tip{
 //     visibility: visible;
 //   }
-  
+
 //   .create-tool-tip::after, .user-tool-tip::after, .tool-tip-within-tool-tip::after {
 //     content: " ";
 //     position: absolute;
@@ -391,7 +389,7 @@
 //     border-style: solid;
 //     border-color: rgb(25,25,28) transparent transparent transparent;
 //   }
-  
+
 //   #channel-form-bottom {
 //     height: 70px;
 //     width: 100%;
@@ -401,16 +399,16 @@
 //     flex-direction: row-reverse;
 //     background-color: rgb(47, 49, 54);
 //   }
-  
+
 //   #channel-form-top{
 //     height: 200px;
 //   }
-  
+
 //   #server-name-form-buffer{
 //     width: 100%;
 //     height: 41px;
 //   }
-  
+
 //   #delete-server-header{
 //     font-family: "Ginto";
 //     font-size: 20px;
@@ -418,7 +416,7 @@
 //     font-weight: 500;
 //     padding-left: 10px;
 //   }
-  
+
 //   #delete-warning{
 //     margin-right: 5%;
 //     margin-left: 5%;
@@ -432,7 +430,7 @@
 //     align-items: center;
 //     border-radius: 5px;
 //   }
-  
+
 //   #delete-account {
 //     font-weight: 900;
 //   }
