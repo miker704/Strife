@@ -515,7 +515,6 @@ current dmServer involving the user of their friend it will send a request to th
     - Created custom toggle switch that uses a similar svg animation to that of discords.
     - Styled custom toggle switch.
 
-
 ## Backend Changes
 
 - Changed the routes to the new Routing system on the frontend to redirect banned users from both dmservers
