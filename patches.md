@@ -527,7 +527,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Moved Mui Styles and components for Radio group for Channel Settings  Modal to deprecated inputs file.
     - Removed Redacted Code from StrifeToggleSwitch module.
     - Renamed StrifeToggleSwitch module file.
-    - Fixed An issue where swapping between servers too fast and visiting the channel settings upon entering the server would cause a crash due to props.channel.channel_type not being synced fast enough. fixed by returning null if !props.channel which as a result returned the modal enter/exit animation effects to simulate a delay effect when missing props are not synced to the modal and introduce a useEffect to attempt to rescue the channelSettings Modal.If the useEffect syncs the modal appears. 
+    - Fixed An issue where swapping between servers too fast and visiting the channel settings upon entering the server would cause a crash due to props.channel.channel_type not being synced fast enough. fixed by returning null if !props.channel which as a result returned the modal enter/exit animation effects to simulate a delay effect when missing props are not synced to the modal and introduce a useEffect to attempt to rescue the channelSettings Modal.If the useEffect syncs the modal appears.
+    - Restyled Channel Drop Down Modal switched to SCSS Global Vars. 
 
 ## Backend Changes
 
