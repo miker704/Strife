@@ -536,7 +536,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Changed Friend Request Failed Error Modal from a class based component to a functional component.
     - Moved old Class based Friend Request Failed Error Modal to deprecated folder.
     - Created third Modal mod (named "modal-struct-2") which removes the double backdrop color effect on small modals.
-
+    - Applied third modal mod on Friend Request Failed Error Modal.
 
 ## Backend Changes
 
