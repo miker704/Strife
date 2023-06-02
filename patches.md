@@ -531,6 +531,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Restyled Channel Drop Down Modal switched to SCSS Global Vars. 
     - Switch to SCSS Vars for Friend Request Failed Error Modal.
     - Restyled Friend Request Failed Error Modal.
+    - Removed the old error information text in Friend Request Failed Error Modal: "Hm, didn't work. Double check that the capitalization, spelling, any spaces, and numbers are correct." and changed it to the new version "Hm, didn't work. Double check that the username is correct". As discord moves to use usernames as the method for submitting friend requests instead of nitro tags. $TR!F3 will move in a similar fashion.
     - Added enter and exit animations for Friend Request Failed Error Modal.
     - Added outside and esc listeners for exiting Friend Request Failed Error Modal.
     - Changed Friend Request Failed Error Modal from a class based component to a functional component.
