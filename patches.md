@@ -536,7 +536,6 @@ current dmServer involving the user of their friend it will send a request to th
     - Changed Friend Request Failed Error Modal from a class based component to a functional component.
     - Moved old Class based Friend Request Failed Error Modal to deprecated folder.
 
-
 ## Backend Changes
 
 - Changed the routes to the new Routing system on the frontend to redirect banned users from both dmservers
