@@ -1,7 +1,173 @@
+@import 'global_vars';
+
+
+
+@keyframes ffrmWrapperUnRender {
+
+    0% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.85;
+    }
+
+    100% {
+        opacity: 0.6;
+
+    }
+
+}
+
+@-webkit-keyframes ffrmWrapperUnRender {
+
+
+    0% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.85;
+    }
+
+    100% {
+        opacity: 0.6;
+
+    }
+}
+
+
+
+@keyframes ffrmWrapperRender {
+
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {}
+
+}
+
+@-webkit-keyframes ffrmWrapperRender {
+
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {}
+
+}
+
+
+@keyframes ffrmModalAppear {
+
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(0.5, 0.5);
+        transform: scale(0.5, 0.5);
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+
+
+}
+
+@-webkit-keyframes ffrmModalAppear {
+
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(0.5, 0.5);
+        transform: scale(0.5, 0.5);
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+
+    }
+
+}
+
+@keyframes ffrmModalDisappear {
+
+    0% {
+        opacity: 1;
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+        opacity: 0.1;
+
+    }
+
+}
+
+@-webkit-keyframes ffrmModalDisappear {
+
+    0% {
+        opacity: 1;
+        transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+        opacity: 0.1;
+
+    }
+
+}
+
+
+
+
+
+.ffrm-layer-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: none !important;
+    pointer-events: none;
+    z-index: 1002;
+}
+
+
 .frfm-backdrop {
     transform: translateZ(0);
     outline: 0;
-    forced-color-adjust: none;
     position: fixed;
     top: 0;
     right: 0;
@@ -9,7 +175,8 @@
     left: 0;
     pointer-events: all;
     opacity: 0.85;
-    background: hsl(0, 0%, 0%);
+    background: $black-500;
+
 }
 
 .frfm-wrapper {
@@ -22,122 +189,180 @@
     min-height: 0;
     padding-top: 40px;
     padding-bottom: 40px;
-    justify-content: center;
+    display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    display: flex;
     -webkit-box-pack: center;
-    align-items: center;
     -webkit-box-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     outline: 0;
-    forced-color-adjust: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-animation-name: ffrmWrapperRender ;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
+    animation-name: ffrmWrapperRender ;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
 }
 
 .frfm {
-    forced-color-adjust: none;
     outline: 0;
     min-height: 0;
     max-width: 100%;
-    flex-direction: column;
-    display: flex;
+    display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    display: flex;
+    flex-direction: column;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
     user-select: none;
+    -webkit-animation-name: ffrmModalAppear;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
+    animation-name: ffrmModalAppear;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+
 }
 
+.frfm.transition-out{
+    -webkit-animation-name: ffrmModalDisappear;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
+    animation-name: ffrmModalDisappear;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+}
+
+
+
 .frfm-inner {
-    forced-color-adjust: none;
     outline: 0;
-    display: flex;
+    display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    display: flex;
     flex-direction: column;
     border-radius: 4px;
     margin: 0 auto;
     pointer-events: all;
     position: relative;
-    background-color: hsl(220, 7.7%, 22.9%);
+    background-color: $modal-pop-up-bg-color;
     width: 440px;
     max-height: 720px;
     min-height: 200px;
     word-wrap: break-word;
     opacity: 1;
     transform: scale(1);
-    box-shadow: 0 0 0 1px hsla(216, 7.2%, 13.5%, 0.6), 0 2px 10px 0 hsla(0, 0%, 0%, 0.2);
+    box-shadow: $dark-elevation-border, $dark-elevation-high;
 
 }
 
 .form-class-200 {
-    forced-color-adjust: none;
     height: 100%;
     display: -webkit-box;
-    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    display: flex;
     flex-direction: column;
+    //
     word-wrap: break-word;
 }
 
 .form-content-1 {
+    overflow: hidden scroll;
+    padding-right: 8px;
+
     position: relative;
     z-index: 0;
-    border-radius: 5px 5px 0 0;
-    padding-left: 8px;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     min-height: 0;
     -webkit-box-flex: 1;
+    flex: 1 1 auto;
     outline: 0;
-    forced-color-adjust: none;
     padding-top: 20px;
     padding-bottom: 20px;
-
-    // overflow: hidden scroll;
-    padding-right: 8px;
-
+    padding-left: 16px;
+    scrollbar-width: thin;
+    scrollbar-color: $scrollbar-thin-thumb $scrollbar-thin-track;
 
 }
 
+.form-content-1::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.form-content-1::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+.form-content-1::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    background-color: $scrollbar-thin-thumb;
+    min-height: 40px;
+}
+
+.form-content-1::-webkit-scrollbar-track {
+    border-color: $scrollbar-thin-track;
+    background-color: $scrollbar-thin-track;
+    border: 2px solid $scrollbar-thin-track;
+}
+
+
+
 .form-content-1-inner {
-    forced-color-adjust: none;
     height: 100%;
     flex: 1 1 auto;
+    display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-box-pack: center;
+    -webkit-box-align: stretch;
+    display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
-    -webkit-box-pack: center;
     align-items: stretch;
     outline: 0;
-    -webkit-box-align: stretch;
-    display: flex;
 }
 
 .form-content-1-header {
-    font-family: "ABC Ginto Normal";
+    -webkit-box-flex: 1;
     flex: 1;
     cursor: default;
-    -webkit-box-flex: 1;
-    font-weight: 500;
+    font-weight: 600;
+    font-family: $global-font;
     font-size: 16px;
     line-height: 20px;
     text-transform: uppercase;
     margin-top: 8px;
     margin-bottom: 20px;
     text-align: center;
-    forced-color-adjust: none;
-    color: hsl(0, 0%, 100%);
+    color: $header-primary;
 }
 
 .form-content-1-subtext {
-    forced-color-adjust: none;
     outline: 0;
-    color: hsl(210, 2.9%, 86.7%);
+    color: $text-normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
     text-align: center;
-    font-family: "Whitney";
+    font-family: $global-font;
 }
 
 .frfm-div-sep {
@@ -147,64 +372,77 @@
     min-width: 1px;
     flex: 0 0 auto;
     height: 20px;
-    forced-color-adjust: none;
     outline: 0;
 }
 
 .frfm-button-sec {
     flex: 0 0 auto;
-    forced-color-adjust: none;
     outline: 0;
     border-radius: 0 0 5px 5px;
-    background-color: hsl(223, 6.9%, 19.8%);
-    box-shadow: inset 0 1px 0 hsla(223, 6.9%, 19.8%, 0.6);
+
+
+    background-color: $modal-footer-bg-color-button-wrapper;
+    box-shadow: inset 0 1px 0 $primary-630-hsl;
+
+
     position: relative;
     -webkit-box-flex: 0;
     padding: 16px;
     z-index: 1;
     overflow-x: hidden;
+    display: -webkit-box;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
+    -webkit-box-align: stretch;
+    -webkit-box-pack: justify;
+    display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
     justify-content: space-between;
-    -webkit-box-align: stretch;
     align-items: stretch;
-    display: flex;
 
 }
 
 .frfm-button {
-    forced-color-adjust: none;
+    -webkit-box-flex: 1;
+    flex: 1 1 45%;
     outline: 0;
+
     height: 50px;
     min-width: 148px;
     min-height: 50px;
     font-size: 16px;
     line-height: normal;
     padding: 2px 20px;
-    transition: background-color .17s ease, color .17s ease;
-    flex: 1 1 45%;
+    transition: background-color 0.17s ease, color 0.17s ease;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
     position: relative;
     display: -webkit-box;
-    display: flex;
     -webkit-box-pack: center;
-    justify-content: center;
     -webkit-box-align: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    box-sizing: border-box;
     background: none;
     border: none;
     border-radius: 3px;
-    font-weight: 500;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
-    -webkit-box-flex: 1;
+
+    font-weight: 500;
     width: auto;
-    font-family: "Whitney";
-
+    font-family: $global-font;
     text-rendering: optimizeLegibility;
-    color: hsl(0, 0%, 100%);
-    background-color: hsl(235, 85.6%, 64.7%);
+    color: $white-500;
+    background-color: $brand-experiment;
+}
 
 
+.frfm-button:hover {
+    color: $white-500;
+    background-color: $brand-experiment-560;
 }
