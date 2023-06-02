@@ -540,6 +540,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Applied third modal mod on Friend Request Failed Error Modal.
     - Removed user drag on server bubbles that have avatars.
     - Added Updated Is Ready Icon to Homepage Header NavBar. 
+    - Added Updated Is Ready Icon to Server Header NavBar. 
+
 
 ## Backend Changes
 
