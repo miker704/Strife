@@ -541,9 +541,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Removed user drag on server bubbles that have avatars.
     - Added Update Is Ready Icon to Homepage Header NavBar. 
     - Added Update Is Ready Icon to Server Header NavBar.
-    - Added Update Is Ready Icon to DmServer Header NavBar. 
-
-
+    - Added Update Is Ready Icon to DmServer Header NavBar.
+    - Function with a low probability to reveal the  Update Is Ready Icon in Homepage Header NavBar clicking it removes the icon and as of right now redirects to the loading screen (will update to redirect to a dedicated update screen).
 
 ## Backend Changes
 
