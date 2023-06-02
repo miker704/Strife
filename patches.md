@@ -534,6 +534,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Added enter and exit animations for Friend Request Failed Error Modal.
     - Added outside and esc listeners for exiting Friend Request Failed Error Modal.
     - Changed Friend Request Failed Error Modal from a class based component to a functional component.
+    - Moved old Class based Friend Request Failed Error Modal to deprecated folder.
+
 
 ## Backend Changes
 
