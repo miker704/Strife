@@ -17,7 +17,14 @@
   color: $white-500;
   // display: flex;
   // flex-direction: column;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
+
+
+
 }
 
 .pill-box {
@@ -157,6 +164,11 @@
   object-fit: cover;
   // pointer-events: none;
   // forced-color-adjust: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
 }
 
