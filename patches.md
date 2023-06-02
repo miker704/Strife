@@ -531,6 +531,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Restyled Channel Drop Down Modal switched to SCSS Global Vars. 
     - Switch to SCSS Vars for Friend Request Failed Error Modal.
     - Restyled Friend Request Failed Error Modal.
+    - Added enter and exit animations for Friend Request Failed Error Modal.
     
 
 
