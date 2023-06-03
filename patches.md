@@ -545,6 +545,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Function with a low probability to reveal the  Update Is Ready Icon in Homepage Header NavBar clicking it removes the icon and as of right now redirects to the loading screen (will update to redirect to a dedicated update screen).
     - Fixed an issue where search in the online friends tab changes from online - # count to All Friends - #count. 
     - Added New Update Loading Screen.
+    - Added New Update Loading Screen Container.
+
 
 
 ## Backend Changes
