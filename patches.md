@@ -547,6 +547,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added New Update Loading Screen.
     - Added New Update Loading Screen Container.
     - Update Is ready Icon when clicked now goes to the upload loading screen instead of the normal loading screen.
+    - Switched to SCSS Vars for styles for Loading, intrusion, serverDeleted (Warp), and update screens.
 
 ## Backend Changes
 
