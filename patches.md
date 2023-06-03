@@ -546,8 +546,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Fixed an issue where search in the online friends tab changes from online - # count to All Friends - #count. 
     - Added New Update Loading Screen.
     - Added New Update Loading Screen Container.
-
-
+    - Update Is ready Icon when clicked now goes to the upload loading screen instead of the normal loading screen.
 
 ## Backend Changes
 
