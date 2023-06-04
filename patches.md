@@ -558,6 +558,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added Show Update Icon Probability and click to remove and redirect to update screen in DmServer Header NavBar.
     - Fixed selection color issue with hide/show member list in DmServer Header NavBar.
     - Added conditional rendering to display hide or show members list for the tool tip when clicking the group chat member icon in DmServer Header NavBar.
+    - Swapped from Div element to section element in HomePage Header NavBar.
     - Swapped from Div element to section element in Server Header NavBar.
     - Swapped from Div element to section element in DmServer Header NavBar.
     - Swapped from Div element to Aside element in Server Member List. 
@@ -569,6 +570,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Restyled styles for Server Container.
     - Switched to SCSS Vars for styles for Channels Container.
     - Restyled styles for Channels Container.
+
 
 ## Backend Changes
 
