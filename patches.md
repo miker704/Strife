@@ -550,6 +550,9 @@ current dmServer involving the user of their friend it will send a request to th
     - Switched to SCSS Vars for styles for Loading, intrusion, serverDeleted (Warp), and update screens.
     - Restyled styles for Loading, intrusion, serverDeleted (Warp), and update screens.
     - Added circular progress style and animations to the update screens and certain warp containers.
+    - Added Different Sized animations for each loading screen type.
+    - Each Warp Screen (Loading) has its own unique color.
+    - Switched from linear to radial gradients for styling loading screens.
 
 ## Backend Changes
 
