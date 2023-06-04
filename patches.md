@@ -553,6 +553,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added Different Sized animations for each loading screen type.
     - Each Warp Screen (Loading) has its own unique color.
     - Switched from linear to radial gradients for styling loading screens.
+    - Add fade away transition effect on warp/loading screens to fade into the path `/$/channels/@me/`
 
 ## Backend Changes
 
