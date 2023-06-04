@@ -563,7 +563,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Swapped from Div element to Aside element in Server Member List. 
     - Switched to SCSS Vars for styles for Server Header Nav Bar.
     - Restyled styles for Server Header Nav Bar.
-
+    - Switched to SCSS Vars for styles for DmServer Header Nav Bar.
+    -
 
 ## Backend Changes
 
