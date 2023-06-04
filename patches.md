@@ -576,6 +576,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Restyled styles for Server Members List.
     - Switched to SCSS Vars for styles for DmServer Members List.
     - Restyled styles for DmServer Members List.
+    - Removed unused old DmServer Header Nav Bar file from the frontend folder and moved it to deprecated folder.
 
 ## Backend Changes
 
