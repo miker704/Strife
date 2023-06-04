@@ -555,6 +555,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Switched from linear to radial gradients for styling loading screens.
     - Add fade away transition effect on warp/loading screens to fade into the path `/$/channels/@me/`
     - Added Show Update Icon Probability and click to remove and redirect to update screen in Server Header NavBar.
+    - Added Show Update Icon Probability and click to remove and redirect to update screen in DmServer Header NavBar.
 
 ## Backend Changes
 
