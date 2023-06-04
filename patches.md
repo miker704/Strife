@@ -572,8 +572,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Restyled styles for Channels Container.
     - Switched to SCSS Vars for styles for HomePage Header NavBar.
     - Restyled styles for HomePage Header NavBar.
-
-
+    - Switched to SCSS Vars for styles for Server Members List.
 
 ## Backend Changes
 
