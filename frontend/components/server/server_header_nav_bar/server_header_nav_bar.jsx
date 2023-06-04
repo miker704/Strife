@@ -1,6 +1,6 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 const ServerHeaderNavBar = ({
     // props,
@@ -10,6 +10,7 @@ const ServerHeaderNavBar = ({
     currentChannelId,
     serverId,
     currentChannel,
+    history,
     isViz,
     _viz,
     fetchServer,
@@ -27,8 +28,10 @@ const ServerHeaderNavBar = ({
     // }
     const [channelName, setChannelName] = useState('');
     const [channelType, setChannelType] = useState(1);
+    const [showUpdate, setShowUpdate] = useState(false);
 
     useEffect(() => {
+        showUpdateProbability();
         if (currentChannel?.id || currentChannel?.channel_name || currentChannel?.channel_type) {
             fetchChannel(currentChannelId)
             setChannelName(currentChannel.channel_name);
@@ -42,9 +45,20 @@ const ServerHeaderNavBar = ({
                 removeChannelErrors()
             }
         }
-    }, [currentChannel?.id, currentChannel?.channel_name, currentChannel?.channel_type])
+    }, [currentChannel?.id, currentChannel?.channel_name, currentChannel?.channel_type]);
 
-    let hideMembersToolTipMessage = _viz === false ? ("Hide Member List"):("Show Member List");
+    const showUpdateProbability = () => {
+        let probability = Math.random() > 0.99;
+        probability === true ? setShowUpdate(true) : setShowUpdate(false);
+    }
+
+    const handleRemoveUpdateIcon = (e) => {
+        e.preventDefault();
+        setShowUpdate(false);
+        history.push(`/$/updating/`);
+    }
+
+    let hideMembersToolTipMessage = _viz === false ? ("Hide Member List") : ("Show Member List");
 
     return (
         <div className="server-header-bar">
@@ -90,7 +104,7 @@ const ServerHeaderNavBar = ({
             <div className="shb-tool-bar">
 
                 <div className="shb-tool-icon-wrapper" data-tip data-for="thread-tip" >
-                    <svg x="0" y="0" className="icon-thread" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <svg x="0" y="0" className="icon-shnb-thread" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path fill="currentColor" d="M5.43309 21C5.35842 21 5.30189 20.9325 5.31494 20.859L5.99991 17H2.14274C2.06819 
                         17 2.01168 16.9327 2.02453 16.8593L2.33253 15.0993C2.34258 15.0419 2.39244 15 2.45074 15H6.34991L7.40991
                          9H3.55274C3.47819 9 3.42168 8.93274 3.43453 8.85931L3.74253 7.09931C3.75258 7.04189 3.80244 7 3.86074 
@@ -117,7 +131,7 @@ const ServerHeaderNavBar = ({
                     </ReactTooltip>
                 </div>
                 <div className="shb-tool-icon-wrapper" data-tip data-for="Notification-Settings">
-                    <svg x="0" y="0" className="icon-ns" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <svg x="0" y="0" className="icon-shnb-ns" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path fill="currentColor" fillRule="evenodd" clipRule="evenodd"
                             d="M18 9V14C18 15.657 19.344 17 21 17V18H3V17C4.656 17 6 15.657 6 14V9C6 5.686 8.686 
                         3 12 3C15.314 3 18 5.686 18 9ZM11.9999 21C10.5239 21 9.24793 20.19 8.55493 19H15.4449C14.7519 20.19 13.4759 21 11.9999 21Z">
@@ -134,7 +148,7 @@ const ServerHeaderNavBar = ({
                     </ReactTooltip>
                 </div>
                 <div className="shb-tool-icon-wrapper" data-tip data-for="pin-messages">
-                    <svg x="0" y="0" className="icon-pin-messages" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                    <svg x="0" y="0" className="icon-shnb-pin-messages" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M22 12L12.101 2.10101L10.686 3.51401L12.101 4.92901L7.15096 9.87801V9.88001L5.73596
                              8.46501L4.32196 9.88001L8.56496 14.122L2.90796 19.778L4.32196 21.192L9.97896 15.536L14.222 19.778L15.636 
                              18.364L14.222 16.95L19.171 12H19.172L20.586 13.414L22 12Z">
@@ -191,16 +205,16 @@ const ServerHeaderNavBar = ({
                 <div className="shbar-search-bar-wrapper" >
                     <div className="shbar-search-bar-inner-wrapper">
                         <div className="shbar-search-bar">
-                            <div className="draft-edit">
-                                <div className="public-draft-edit">
-                                    <div className="public-draft-edit-placeholder">Search</div>
+                            <div className="shbar-draft-edit">
+                                <div className="shbar-public-draft-edit">
+                                    <div className="shbar-public-draft-edit-placeholder">Search</div>
                                 </div>
-                                <div className="public-draft-editor-container">
-                                    <div className="public-draft-editor-container-placeholder">
-                                        <div className="data-contents">
-                                            <div className="data-block">
-                                                <div className="data-key-offset">
-                                                    <span className="data-key-offset2"></span>
+                                <div className="shbar-public-draft-editor-container">
+                                    <div className="shbar-public-draft-editor-container-placeholder">
+                                        <div className="shbar-data-contents">
+                                            <div className="shbar-data-block">
+                                                <div className="shbar-data-key-offset">
+                                                    <span className="shbar-data-key-offset2"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -208,8 +222,8 @@ const ServerHeaderNavBar = ({
                                 </div>
                             </div>
                             <div className="shbar-mag-icon-container">
-                                <div className="mag-container">
-                                    <svg className="mag-icon-2-visible" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                <div className="shnb-mag-container">
+                                    <svg className="shnb-mag-icon-2-visible" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                         <path fill="currentColor" d="M21.707 20.293L16.314 14.9C17.403 13.504 18 11.799 18 10C18
                                                      7.863 17.167 5.854 15.656 4.344C14.146 2.832 12.137 2 10 2C7.863 2 5.854 2.832 4.344 
                                                      4.344C2.833 5.854 2 7.863 2 10C2 12.137 2.833 14.146 4.344 15.656C5.854 17.168 7.863 
@@ -219,7 +233,7 @@ const ServerHeaderNavBar = ({
                                                        16 8.398 16 10C16 11.603 15.376 13.11 14.242 14.243C13.109 15.376 11.603 16 10 16Z">
                                         </path>
                                     </svg>
-                                    <svg className="mag-icon-2" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                                    <svg className="shnb-mag-icon-2" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                                         <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 
                                                         13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z">
                                         </path>
@@ -229,8 +243,30 @@ const ServerHeaderNavBar = ({
                         </div>
                     </div>
                 </div>
+
+                {
+                    showUpdate && (<div className="shb-tool-icon-wrapper" data-tip data-for="update-ready-tip" onClick={(e) => handleRemoveUpdateIcon(e)}>
+                        <svg x="0" y="0" className="icon-shnb-update-ready" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                            <path className="shnb-update-icon-fill" fill="currentColor" fillRule="evenodd" clipRule="evenodd"
+                                d="M16.293 9.293L17.707 10.707L12 16.414L6.29297 10.707L7.70697 9.293L11 12.586V2H13V12.586L16.293 9.293ZM18
+                         20V18H20V20C20 21.102 19.104 22 18 22H6C4.896 22 4 21.102 4 20V18H6V20H18Z">
+                            </path>
+                        </svg>
+                        <ReactTooltip
+                            className="shb-inbox-message-tool-tip"
+                            textColor="#B9BBBE"
+                            backgroundColor="#191919"
+                            id="update-ready-tip"
+                            place="bottom"
+                            effect="solid">
+                            Update Ready!
+                        </ReactTooltip>
+                    </div>)
+
+                }
+
                 <div className="shb-tool-icon-wrapper" data-tip data-for="inbox-messages-tip">
-                    <svg x="0" y="0" className="icon-dms-inbox" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <svg x="0" y="0" className="icon-shnb-inbox" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M19 3H4.99C3.88 3 3.01 3.89 3.01 5L3 19C3 20.1 3.88 21 4.99 21H19C20.1 21 21 20.1 21
                                      19V5C21 3.89 20.1 3 19 3ZM19 15H15C15 16.66 13.65 18 12 18C10.35 18 9 16.66 9 15H4.99V5H19V15Z" fill="currentColor">
                         </path>
@@ -246,9 +282,9 @@ const ServerHeaderNavBar = ({
                     </ReactTooltip>
                 </div>
 
-                <a className="help-tool-bar" href="https://support.discord.com" target="_blank">
-                    <div className="help-tool-bar-icon-wrapper" data-tip data-for="help-messages-tip">
-                        <svg x="0" y="0" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
+                <a className="shnb-help-tool-bar" href="https://support.discord.com" target="_blank" rel="noreferrer noopener">
+                    <div className="shnb-help-tool-bar-icon-wrapper" data-tip data-for="help-messages-tip">
+                        <svg className="icon-shnb-help" x="0" y="0" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M12 2C6.486 2 2 6.487 2 12C2 17.515 6.486 22 12 22C17.514 22 22 17.515
                                          22 12C22 6.487 17.514 2 12 2ZM12 18.25C11.31 18.25 10.75 17.691 10.75 17C10.75 16.31 11.31
                                           15.75 12 15.75C12.69 15.75 13.25 16.31 13.25 17C13.25 17.691 12.69 18.25 12 18.25ZM13
