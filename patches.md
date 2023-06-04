@@ -575,6 +575,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Switched to SCSS Vars for styles for Server Members List.
     - Restyled styles for Server Members List.
     - Switched to SCSS Vars for styles for DmServer Members List.
+    - Restyled styles for DmServer Members List.
 
 ## Backend Changes
 
