@@ -581,6 +581,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Replaced Old DmServer Header NavBar.
     - Restructured Dm Server Header NavBar.
     - Replaced @ symbol and group chat svg icon on the Dm Server Header Nav Bar with the other user profile picture for one to one dm chats and a group chat icon for dm chats greater than 2 members.
+    -Moved the trigger function to allow editing of the dm Server name on to the inner  most div prior to the input component to prevent click in the middle of the header bar and being able to edit the dmServer name unintentionally. 
 
 ## Backend Changes
 
