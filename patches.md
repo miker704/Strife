@@ -587,6 +587,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Provided condtional rendering of tool tips that change based on whether the hide members and hide user are selected or not.
     - Used more highly optmized condtional rendering removed unsafe instances of is hidden style.
     - Created a Replica of Discords Default Group Chat icon in svg format using boxy-svg editor with a circle background to allow use of a single file while being able to be recolored based on a random group members color tag.
+    - Reduced the name input size for Fm Servers in the DmServer Header Nav bar for a min of 1 to a max of 100 in length, implemented in the backend as well also with being allow to be nil.
     - Created a Replica of the discord default profile picture with a circle background that can be filled with boxy-svg editor to allow use of a single fill to server as the default profile avatar for all users as a users color tag can color the fills background allowing for custom images.
 
 ## Backend Changes
