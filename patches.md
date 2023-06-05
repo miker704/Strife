@@ -585,6 +585,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Add click away to submit dmServer name change now pressing enter or clicking away after typing when the input looses focus the name will be submitted.
     - Fixed the lighting up of icons for hide members and hide user when clicked.
     - Provided condtional rendering of tool tips that change based on whether the hide members and hide user are selected or not.
+    - Used more highly optmized condtional rendering removed unsafe instances of is hidden style.
 
 ## Backend Changes
 
