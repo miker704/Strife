@@ -590,6 +590,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Fixed an issue where the Dmserver Nav Bar Component Duplicates itself due to a weird routing issue
     - Reduced the name input size for Dm Servers in the DmServer Header Nav bar for a min of 1 to a max of 100 in length, implemented in the backend as well also with being allow to be nil.
     - Created a Replica of the discord default profile picture with a circle background that can be filled with boxy-svg editor to allow use of a single fill to server as the default profile avatar for all users as a users color tag can color the fills background allowing for custom images.
+    -Mounted masking Svg component at app.jsx that allows for universaly masking of profile avatars and certain images arounf the app.
 
 ## Backend Changes
 
