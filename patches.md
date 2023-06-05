@@ -580,7 +580,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Moved old DmServer Header Nav Bar to deprecated folder as it was replaced by a superior version.
     - Replaced Old DmServer Header NavBar.
     - Restructured Dm Server Header NavBar.
-    
+    - Replaced @ symbol and group chat svg icon on the Dm Server Header Nav Bar with the other user profile picture for one to one dm chats and a group chat icon for dm chats greater than 2 members.
 
 ## Backend Changes
 
