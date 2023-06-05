@@ -578,6 +578,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Restyled styles for DmServer Members List.
     - Removed unused old DmServer Header Nav Bar version 2 file from the frontend folder and moved it to deprecated folder.
     - Moved old DmServer Header Nav Bar to deprecated folder as it was replaced by a superior version.
+    - Replaced Old DmServer Header NavBar.
 
 ## Backend Changes
 
