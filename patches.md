@@ -586,6 +586,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Fixed the lighting up of icons for hide members and hide user when clicked.
     - Provided condtional rendering of tool tips that change based on whether the hide members and hide user are selected or not.
     - Used more highly optmized condtional rendering removed unsafe instances of is hidden style.
+    - Created a Replica of Discords Default Group Chat icon in svg format using boxy-svg editor to allow use of a single file while being able to be recolored based on a random group members color tag.
+    -
 
 ## Backend Changes
 
