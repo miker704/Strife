@@ -596,6 +596,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Switched to SCSS Vars for Create Channel ModaL.
     - Restyled Create a Channel Modal.
     - Replaced old radio button filling method in Create channel modal.
+    - Removed old toggle switch button and replaced it with custom made toggle switch in create channel modal.
 
 ## Backend Changes
 
