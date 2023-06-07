@@ -595,6 +595,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Achieved masking with Svgs with linear and circular gradients for online statuses for user profile avatars preparation to replace each component containing profile avatars with them replacing the old plain circles made from divs. 
     - Switched to SCSS Vars for Create Channel ModaL.
     - Restyled Create a Channel Modal.
+    - Replaced old radio button filling method in Create channel modal.
 
 ## Backend Changes
 
