@@ -598,7 +598,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Replaced old radio button filling method in Create channel modal.
     - Removed old toggle switch button and replaced it with custom made toggle switch in create channel modal.
     - Added Event Listeners for exiting modal on outside click, cancel, form complete, and escape in create channel modal.
-    - Using new Svg masking for online statuses replaced how user profile avatars are rendered in DmServer Memebers List.
+    - Using new Svg masking for online statuses replaced how user profile avatars are rendered in DmServer Members List.
 
 ## Backend Changes
 
