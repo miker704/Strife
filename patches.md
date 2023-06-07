@@ -603,7 +603,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Applied better conditional rendering for the group owner icon in DmServer Members List.
     - Using new Svg masking for online statuses replaced how user profile avatars are rendered in Server Members List.
     - Remove UL list and li items for rendering members in Server Members List with a mapped divs.
-    - Applied better conditional rendering for the group owner icon in Server Members List.
+    - Applied better conditional rendering for the Server owner icon in Server Members List.
+    - Applied conditional rendering for which user is selected in Server Members List.
     - Resolved a problem where the change name input field did not grow when type only after state due to displaying a static var of the server name changed it to display current state like an input element does.
     - Removed focusing on group/server owner icons and rect statuses
 
