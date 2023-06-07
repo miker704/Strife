@@ -600,6 +600,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added Event Listeners for exiting modal on outside click, cancel, form complete, and escape in create channel modal.
     - Using new Svg masking for online statuses replaced how user profile avatars are rendered in DmServer Members List.
     - Remove UL list and li items for rendering members in DmServer Members List with a mapped divs.
+    - Applied better conditional rendering for the group owner icon in DmServer Members List.
     - Using new Svg masking for online statuses replaced how user profile avatars are rendered in Server Members List.
     - Remove UL list and li items for rendering members in Server Members List with a mapped divs.
 
