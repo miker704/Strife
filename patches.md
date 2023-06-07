@@ -613,6 +613,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added Tool Tips in DmServer Members List for the online status badges for user avatars. 
     - Removed the display of the offline status badge for offline users in Server Members List as they are faded out to begin with and are rendered under the offline members list section plus the removal of the badge allows the online users to pop up more since the offline members are wrapped into a slightly smaller svg. This is the same as discord and was going to be ignored before the visual affect was noticed.
     - Removed the display of the offline status badge for offline users in DmServer Members List as they are faded out to begin with, the removal of the badge allows the online users to pop up more since the offline members are wrapped into a slightly smaller svg. This is the same as discord and was going to be ignored before the visual affect was noticed.
+    - Replaced the Black color linked to users with a color tag of seven with a light purple color iunstead this is due to a visual distoration of svgs whose background is filled with a black color causes it to appear smaller visually but in fact to is the same size. Since default profile pictures are not using png versions for the default profile picture and a single svg just colored in removing black as a color filling option has been removed.
 
 ## Backend Changes
 
