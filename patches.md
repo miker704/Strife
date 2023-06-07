@@ -594,6 +594,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Removed Purple color for users and replaced it with the Secret Pink Color that is the Secret Pink Avatar uses in discord (in discord the discriminator is mod by 5 and the remainder is some number between 0-4 which is what will determine your color of your profile picture which is 5 different pictures but there is a 6th secret picture that is not attainable and it is a secret pink colored avatar since $TR!F3 offers up to ten different default colors for user profile pictures we skipped the discriminator modulus part and used svgs to gives color to the profile pictures).
     - Achieved masking with Svgs with linear and circular gradients for online statuses for user profile avatars preparation to replace each component containing profile avatars with them replacing the old plain circles made from divs. 
     - Switched to SCSS Vars for Create Channel ModaL.
+    - Restyled Create a Channel Modal.
 
 ## Backend Changes
 
