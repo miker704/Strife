@@ -609,7 +609,9 @@ current dmServer involving the user of their friend it will send a request to th
     - Removed focusing on group/server owner icons and rect statuses
     - For the Dm Server Members list users are not able to notice which member is currently selected unlike in the server members list on discord this
     feature is allowed on $TR!F3 as it allows more cleaner ui.
-    - Added Tool Tips in Server Members List for the online status badges for user avatars.  
+    - Added Tool Tips in Server Members List for the online status badges for user avatars.
+    - Added Tool Tips in DmServer Members List for the online status badges for user avatars.  
+
 
 ## Backend Changes
 
