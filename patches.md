@@ -611,7 +611,8 @@ current dmServer involving the user of their friend it will send a request to th
     feature is allowed on $TR!F3 as it allows more cleaner ui.
     - Added Tool Tips in Server Members List for the online status badges for user avatars.
     - Added Tool Tips in DmServer Members List for the online status badges for user avatars. 
-    - Removed the display of the offline status badge for offline users in Server Members List as they are faded out to begin with and are rendered under the offline members list section plus the removal of thew badge allows the online users to pop up more since the offline members are wrapped into a slightly smaller svg. This is the same as discord and was going to be ignored before the visual affect was noticed.
+    - Removed the display of the offline status badge for offline users in Server Members List as they are faded out to begin with and are rendered under the offline members list section plus the removal of the badge allows the online users to pop up more since the offline members are wrapped into a slightly smaller svg. This is the same as discord and was going to be ignored before the visual affect was noticed.
+    - Removed the display of the offline status badge for offline users in DmServer Members List as they are faded out to begin with, the removal of the badge allows the online users to pop up more since the offline members are wrapped into a slightly smaller svg. This is the same as discord and was going to be ignored before the visual affect was noticed.
 
 ## Backend Changes
 
