@@ -607,6 +607,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Applied conditional rendering for which user is selected in Server Members List.
     - Resolved a problem where the change name input field did not grow when type only after state due to displaying a static var of the server name changed it to display current state like an input element does.
     - Removed focusing on group/server owner icons and rect statuses
+    - For the Dm Server Members list users are not able to notice which member is currently selected unlike in the server members list on discord this
+    feature is allowed on $TR!F3 as it allows more cleaner ui.
 
 ## Backend Changes
 
