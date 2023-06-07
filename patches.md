@@ -601,6 +601,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Using new Svg masking for online statuses replaced how user profile avatars are rendered in DmServer Members List.
     - Remove UL list and li items for rendering members in DmServer Members List with a mapped divs.
     - Using new Svg masking for online statuses replaced how user profile avatars are rendered in Server Members List.
+    - Remove UL list and li items for rendering members in Server Members List with a mapped divs.
 
 ## Backend Changes
 
