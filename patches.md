@@ -616,6 +616,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Replaced the Black color linked to users with a color tag of seven with a light purple color iunstead this is due to a visual distoration of svgs whose background is filled with a black or any dark shades of color causes it to appear smaller visually but in fact to is the same size. Since default profile pictures are not using png versions for the default profile picture and a single svg just colored in removing black as a color filling option has been removed.
     - Moved Old Dm Server Members List to deprecated Folder.
     - Moved Old Server Members List to deprecated Folder.
+    - Changed text for All friends Page if a user has no friends.
 
 ## Backend Changes
 
