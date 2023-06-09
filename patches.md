@@ -618,6 +618,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Moved Old Server Members List to deprecated Folder.
     - Changed text for All friends Page if a user has no friends.
     - Breaking Down Friends Homepage Container (Main DashBoard) into seperate Components.
+    - Added New Pic for the active now section if the user is "Streaming a game/something".
 
 ## Backend Changes
 
