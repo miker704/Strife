@@ -617,6 +617,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Moved Old Dm Server Members List to deprecated Folder.
     - Moved Old Server Members List to deprecated Folder.
     - Changed text for All friends Page if a user has no friends.
+    - Breaking Down Friends Homepage Container (Main DashBoard) into seperate Components.
 
 ## Backend Changes
 
