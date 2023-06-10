@@ -676,7 +676,8 @@ between two users. including being able to deciever if there is a block relation
 - Added Link to Patch notes (this file) in the README.MD file
 
 - Started to swap to scss features to replace commonly used styles.
-
+- Add new Selector Function to extract directly from the friendship state and get a users friends based on a friendships status indicated via a number between -2 - +3, previously a selector of similar functionality was used but extracted from the users state instead.
+  
 ---
 
 New Patch - 10/3/2022 - 10/7/2022
