@@ -72,7 +72,19 @@ export const selectFriendsViaStatusType = (state, status) => {
 
 
 
-
+/**
+ * Function to return friends of the current user that are online
+ * @param {Redux_State} state - Friendship State from Redux Store
+ * @param {Number} status - status of friend (3)
+ * @returns {(Array.<{id:Number,username:String,email:String,online:boolean,strife_id_tag:String,
+* photo: URL.<String> | undefined,color_tag: Number,friend_request_status:Number,}>|[])}
+* An Array of Objects containing State data of friends of the current user that are online.
+* Data is returned sorted by usernames in alphabetical order
+* returns an empty array ([]) if no data can be obtained.
+* NOTE: REQUIRES the FRIENDSHIP STATE TO CONTAIN DATA! Dispatch to fetch a users friends of the state is empty 
+* It is not necessary to call a dispatch everytime before using this function only when the
+* state is empty. 
+*/
 export const selectOnlineFriends = (state, status) => {
     const onlineFriends = [];
     for (let friend of Object.values(state.entities.friendships)) {
