@@ -620,6 +620,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Breaking Down Friends Homepage Container (Main DashBoard) into seperate Components.
     - Added New Pic for the active now section if the user is "Streaming a game/something".
     - Moved old JSX Structure for Active now Container to Deprecated Folder.
+    - Moved old styles for Active now Container to Deprecated Folder.
 
 ## Backend Changes
 
