@@ -102,3 +102,42 @@
                         //     const shuffle = [...onlineFriends].sort(() => Math.floor(0.5 - Math.random()));
                         //     return shuffle.slice(0, cut);
                         // }
+
+
+
+/**
+ * 
+ *     const randomPartyMembersArrayGenerator = (randomNum) => {
+        let randomParty = new Array(randomNum);
+        return randomParty.fill(0).map(() => Math.floor(Math.random() * (10 - 1 + 1)) + 1);
+    };
+ * 
+ * 
+ *     // let renderPartyMembers1 = StreamingActivityChance === true ? randomPartyMembersArrayGenerator(randomNumber).map((colorCode, idx) => {
+        //     return (
+
+        //         <div className="partyMember-known partyMembers-M1" key={`r:${props.currentUser.id}${colorCode}${idx}${props.currentUser.id * colorCode * idx}:r`}>
+        //             <div className="partyMember-svg-wrapper partyMembers-M1" tabIndex="0" aria-hidden="false" role="button">
+        //                 <svg width="24" height="24" viewBox="0 0 24 24" className="partyMember-svg-mask partyMember-svg-layer" aria-hidden="true">
+        //                     <foreignObject x="0" y="0" width="24" height="24" mask="url(#svg-mask-avatar-default)">
+        //                         <div className="partyMember-avatar-stack">
+        //                             <img className={`partyMember-avatar-pfp color-${colorCode}`} src={rendered_Default_PFP} alt="UPFP" aria-hidden="true" />
+        //                         </div>
+        //                     </foreignObject>
+        //                 </svg>
+        //             </div>
+        //         </div>
+
+
+        //     )
+        // }) : ('');
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
