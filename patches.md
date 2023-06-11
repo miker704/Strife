@@ -640,6 +640,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Split Active Now Section Container into its own component as its growth has far exceeded its simple version and is to big to house all its functionality in the dash board component.
     - Intergrated Active Now Container into Home Page container.
     - Add a Redirect Button if the User has no friends and is in the all friends page list a button will appear called add friend which will redirect to the add friends page when clicked.
+    - Moved class based component of Add Friends Page to deprecated.
 
 ## Backend Changes
 
