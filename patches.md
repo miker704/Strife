@@ -645,8 +645,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Moved class based component of Pending Friends List to deprecated.
     - Replaced Class based Pending Friends List with a functional version.
     - Moved class based component of Blocked User List to deprecated.
-
-
+    - Replaced Class based Blocked User List with a functional version.
 
 ## Backend Changes
 
