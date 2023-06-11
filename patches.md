@@ -633,6 +633,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Restyled Homepage, Online, All, Pending, Blocked, Active Now, and Add Friends Components.
     - Replaced Online Friends List Component.
     - Replaced All Friends List Component.
+    - Replaced Pending Friends List Component.
+
 
 
 ## Backend Changes
