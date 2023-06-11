@@ -635,6 +635,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Replaced All Friends List Component.
     - Replaced Pending Friends List Component.
     - Replaced Blocked Users List Component.
+    - Replaced Add Friends Page Component.
+
 
 
 
