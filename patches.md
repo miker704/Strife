@@ -626,6 +626,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Moved Old version of Friends Homepage (Home Dashboard) to deprecated folder.
     - Moved Old version of Online Friends List to deprecated folder.
     - Moved Old version of Pending Friends List to deprecated folder.
+    - Moved Old version of Add Friends Page to deprecated folder.
+
 
 
 
