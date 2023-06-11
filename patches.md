@@ -632,11 +632,6 @@ current dmServer involving the user of their friend it will send a request to th
     - Switched to SCSS Vars for all friendship pages i.e Homepage, Online, All, Pending, Blocked, Active Now, and Add Friends Components.
     - Restyled Homepage, Online, All, Pending, Blocked, Active Now, and Add Friends Components.
 
-
-
-
-
-
 ## Backend Changes
 
 - Changed the routes to the new Routing system on the frontend to redirect banned users from both dmservers
