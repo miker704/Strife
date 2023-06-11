@@ -644,6 +644,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Replaced class based component of Add Friends Page to a functional component as the complexity of the component is not enough to be a class based component.
     - Moved class based component of Pending Friends List to deprecated.
     - Replaced Class based Pending Friends List with a functional version.
+    - Moved class based component of Blocked User List to deprecated.
+
 
 
 ## Backend Changes
