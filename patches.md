@@ -624,6 +624,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Added unused functions from new version of Active Now Section in the deprecated Active Now section File.
     - Added old Friendships stylesheet which contains styles for the old friendship pages, friend nav button on dm Server nav bar, and friend text and icon on home header nav bar to deprecated folder.
     - Moved Old version of Friends Homepage (Home Dashboard) to deprecated folder.
+    - Moved Old version of Online Friends List to deprecated folder.
+
 
 ## Backend Changes
 
