@@ -629,11 +629,13 @@ current dmServer involving the user of their friend it will send a request to th
     - Moved Old version of Add Friends Page to deprecated folder.
     - Moved Old version of All Friends List to deprecated folder.
     - Moved Old version of Blocked Users List to deprecated folder.
-    - Switched to SCSS Vars for all friendship pages i.e Homepage, Online, All, Pending, Blocked, Active Now, and Add Friends Components.
+    - Switched to SCSS Vars for all friendship pages i.e Homepage, Online, All, Pending, Blocked, Active Now, Friends Home Page Header Nav Bar Icon & Text, Friends Dm Nav Bar Button, and Add Friends Components.
     - Restyled Homepage, Online, All, Pending, Blocked, Active Now, and Add Friends Components.
     - Replaced Online Friends List Component.
     - Replaced All Friends List Component.
     - Replaced Pending Friends List Component.
+    - Replaced Blocked Users List Component.
+
 
 
 
