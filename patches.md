@@ -641,6 +641,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Intergrated Active Now Container into Home Page container.
     - Add a Redirect Button if the User has no friends and is in the all friends page list a button will appear called add friend which will redirect to the add friends page when clicked.
     - Moved class based component of Add Friends Page to deprecated.
+    - Replaced class based component of Add Friends Page to a functional component as the complexity of the component is not enough to be a class based component.
+
 
 ## Backend Changes
 
