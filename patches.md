@@ -637,6 +637,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Replaced Blocked Users List Component.
     - Replaced Add Friends Page Component.
     - Replaced Friends Home Page (Main DashBoard) Component.
+    - Split Active Now Section Container into its own component as its growth has far exceeded its simple version and is to big to house all its functionality in the dash board component.
 
 ## Backend Changes
 
