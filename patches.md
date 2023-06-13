@@ -655,7 +655,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Added Red border color around the input field in the add friends page if a friend request attempt was unsuccessful.
     - Added Green border color around the input field in the add friends page if a friend request attempt was successful.
     - Added the feature when a friend request is successful to show a success message containing the username#$TR!F3_tag_id of the user the current user has successfully sent a friend request to.
-    - Added the functionality to reset state holding redux state errors and clear redux error state, and reset any error or success style modifiers and messages when the user inputs any text into the input field in add friends page. 
+    - Added the functionality to reset state holding redux state errors and clear redux error state, and reset any error or success style modifiers and messages when the user inputs any text into the input field in add friends page this function is called in submission blocker which checks if the input has text or not and enables or disables the submit button depending on if the input field has data or not and the input handler also calls the function if needed.
+    - Removed the render friend ship error modal function and instead call it in a reject promise if the friend request fails.
 
 ## Backend Changes
 
