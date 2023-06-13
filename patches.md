@@ -653,6 +653,7 @@ current dmServer involving the user of their friend it will send a request to th
     input max length resizes back to 37. if a hash tag is entered as the 36 or 37th character the input max length will not change to prevent an submission of something that wouldnt be successful anyways. 
     - In Add Friends page added the ability when inputing a hashtag to then reveal a shadow placeholder element that shows the user a hint of what they should be typing adding the # then reveals a placeholder of 4 "0"s hinting the user to input the tag number of the user as the user procceds to input numbers the placeholder will shrink the number of zeros depending on the how many numbers the user has currently inputed. when the user removes the hash tag the shadow placeholder is removed.
     - Added Red border color around the input field in the add friends page if a friend request attempt was unsuccessful.
+    - Added Green border color around the input field in the add friends page if a friend request attempt was successful.
 
 ## Backend Changes
 
