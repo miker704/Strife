@@ -647,6 +647,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Moved class based component of Blocked User List to deprecated.
     - Replaced Class based Blocked User List with a functional version.
     - Add state vars to hold error messages when friend requests fail in add friends page to maintain the error messages returned from redux state to remain on the DOM when the Friendship error modal appears/disappears as the modal clears the error state in redux wrapping it into state allows it to remain and by shown after the Friendship error modal disappears. 
+    - Add a heavy modified search functionality for the input handler for the add friends input field in the add friends page component. It detects when typing a hashtag and prevents the user from entering any non number value, only allowing the user to enter a 4 digit number representing the users $TR!F3 tag.
 
 ## Backend Changes
 
