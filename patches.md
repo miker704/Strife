@@ -646,6 +646,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Replaced Class based Pending Friends List with a functional version.
     - Moved class based component of Blocked User List to deprecated.
     - Replaced Class based Blocked User List with a functional version.
+    -
 
 ## Backend Changes
 
@@ -682,6 +683,8 @@ between two users. including being able to deciever if there is a block relation
 
 - With new block relationships adjusted seeds for blocked users.
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
+- Added a return of friend info through friend show  jbuilder.json file to potentially allow the friendship state to fully sync with the user state when
+when friend actions are executed. (Friend actions orginate in the user state as the natural way to meet new users is through this state and actions such as creating a friendship is using data from the user state to create the friendship while the friendship state is used to refer to all friends/ relationships with statuses of -1, 1,2,3) of the current user in certain modals as it is not volatile like the user state. The user state changes constantly as switching between servers, and dmServers the user state becomes filled with users that are members of those entities which would force users who are not friends with the current user to appear in lists/modals that use the users friends. the friend state renders all relations and filters out what is needed and shows the type of friendships without being modified by the users state. However many actions involving friendships do not get modded into the friendship reducer as the data returned by friend actions only partially contains data to complete further actions involving friendships the extra needed data comes from the user state so returning an extra portion of data from the friendships view file can allow friendship state to be used more in the app than just a hard filtered state. The potiental of this is yet to be tested and fully intergrated.
 
 ### Front-End Changes
 
