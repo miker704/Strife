@@ -646,7 +646,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Replaced Class based Pending Friends List with a functional version.
     - Moved class based component of Blocked User List to deprecated.
     - Replaced Class based Blocked User List with a functional version.
-    -
+    - Add state vars to hold error messages when friend requests fail in add friends page to maintain the error messages returned from redux state to remain on the DOM when the Friendship error modal appears/disappears as the modal clears the error state in redux wrapping it into state allows it to remain and by shown after the Friendship error modal disappears. 
 
 ## Backend Changes
 
