@@ -671,6 +671,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Switch to Global ScrollBar Variant in Delete Server Messages Modal.
     - Switch to Global ScrollBar Variant in Delete Server Modal.
     - Switch to Global ScrollBar Variant in Leave Server Modal.
+    - Switch to Global ScrollBar Variants in Active Now Section.
 
 
 
