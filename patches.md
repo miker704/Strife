@@ -678,6 +678,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Switch to Global ScrollBar Variant in Dm Server Members List.
     - Switch to Global ScrollBar Variant in Server Members List.
     - Switch to Global ScrollBar Variant in All Friends List.
+    - Switch to Global ScrollBar Variant in Online Friends List.
+
 
 
 
