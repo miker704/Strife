@@ -680,6 +680,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Switch to Global ScrollBar Variant in All Friends List.
     - Switch to Global ScrollBar Variant in Online Friends List.
     - Switch to Global ScrollBar Variant in Pending Friend Request List.
+    - Switch to Global ScrollBar Variant in Blocked Users List.
+
 
 
 
