@@ -662,6 +662,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Changed Most Scrollbars throughout the application to use similar class names based on their style needs as most components have very similar requirements for scrollbars so adding a generic global variants for all components to use instead of component exclusive versions. Another reason for this is to dry up some code along with being allow for all 
     scrollbars to be modified if a theme is switched without have to manually restyle each scrollbar.
     - Add autofocus and input refs to delete server modal.
+    - Add autofocus and input refs to create channel modal.
 
 ## Backend Changes
 
