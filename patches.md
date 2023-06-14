@@ -667,8 +667,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Removed Button Margin misalignment in Delete Server Modal.
     - Removed Button Margin misalignment in Leave Server Modal.
     - Removed Button Margin misalignment in Delete Server Messages Modal.
-
-
+    - Switch to Global ScrollBar Variants in Create Channel Modal.
 
 ## Backend Changes
 
