@@ -683,6 +683,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Switch to Global ScrollBar Variant in Blocked Users List.
     - Switch to Global ScrollBar Variant in Channel Drop Down Modal.
     - Switch to Global ScrollBar Variants in Channel Settings Modal.
+    - Switch to Global ScrollBar Variants in Server Settings Modal.
+
 
 
 ## Backend Changes
