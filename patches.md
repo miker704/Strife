@@ -683,17 +683,6 @@ current dmServer involving the user of their friend it will send a request to th
     - Switch to Global ScrollBar Variant in Blocked Users List.
     - Switch to Global ScrollBar Variant in Channel Drop Down Modal.
 
-
-
-
-
-
-
-
-
-
-
-
 ## Backend Changes
 
 - Changed the routes to the new Routing system on the frontend to redirect banned users from both dmservers
