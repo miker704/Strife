@@ -658,7 +658,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added the functionality to reset state holding redux state errors and clear redux error state, and reset any error or success style modifiers and messages when the user inputs any text into the input field in add friends page this function is called in submission blocker which checks if the input has text or not and enables or disables the submit button depending on if the input field has data or not and the input handler also calls the function if needed.
     - Removed the render friend ship error modal function and instead call it in a reject promise if the friend request fails.
     - Added onReject functions after the then() function of the promise dispatch functions in add friends page.
-    - Upon SuccessFul friend request the input field will clear in add friends page.
+    - Upon Successful friend request the input field will clear in add friends page.
     - Changed Most Scrollbars throughout the application to use similar class names based on their style needs as most components have very similar requirements for scrollbars so adding a generic global variants for all components to use instead of component exclusive versions. Another reason for this is to dry up some code along with being allow for all 
     scrollbars to be modified if a theme is switched without have to manually restyle each scrollbar.
     - Add autofocus and input refs to delete server modal.
