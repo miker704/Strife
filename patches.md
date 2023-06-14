@@ -663,9 +663,11 @@ current dmServer involving the user of their friend it will send a request to th
     scrollbars to be modified if a theme is switched without have to manually restyle each scrollbar.
     - Add autofocus and input refs to delete server modal.
     - Add autofocus and input refs to create channel modal.
-    - Removed Margin misalignment in Create Channel Modal.
-    - Removed Margin misalignment in Delete Server Modal.
-    - Removed Margin misalignment in Leave Server Modal.
+    - Removed Button Margin misalignment in Create Channel Modal.
+    - Removed Button Margin misalignment in Delete Server Modal.
+    - Removed Button Margin misalignment in Leave Server Modal.
+    - Removed Button Margin misalignment in Delete Server Messages Modal.
+
 
 
 ## Backend Changes
