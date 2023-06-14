@@ -673,9 +673,11 @@ current dmServer involving the user of their friend it will send a request to th
     - Switch to Global ScrollBar Variant in Leave Server Modal.
     - Switch to Global ScrollBar Variants in Active Now Section.
     - Switch to Global ScrollBar Variant in Explore Servers Side NavBar.
+    - Switch to Global ScrollBar Variant in Friend Request Error Modal.
     - Switch to Global ScrollBar Variants in Main Explore Servers Page.
-    - Switch to Global ScrollBar Variants in Dm Server Members List.
-    - Switch to Global ScrollBar Variants in Server Members List.
+    - Switch to Global ScrollBar Variant in Dm Server Members List.
+    - Switch to Global ScrollBar Variant in Server Members List.
+
 
 
 
