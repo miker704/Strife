@@ -665,6 +665,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Add autofocus and input refs to create channel modal.
     - Removed Margin misalignment in Create Channel Modal.
     - Removed Margin misalignment in Delete Server Modal.
+    - Removed Margin misalignment in Leave Server Modal.
 
 
 ## Backend Changes
