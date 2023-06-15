@@ -695,6 +695,8 @@ current dmServer involving the user of their friend it will send a request to th
     - In DmServer Chat rooms fixed place Holder bug where swapping to other dmServers cause the name of the previous room. This is caused from the place holder variable being a this variable and its value is created and assigned from a function that is passed to another component and called there. This was fixed by moving said placeholder text as a state variable and created a function to be called when the component is mounted to then run the needed algorithm to generate the placeholder in the input field. In addition when every a room is switched the function is called again to obtain a new placeholder preventing the old one from appearing.
     - Added the ability for placeholders to use the DmServer name if it exists instead of autogenerating a temporary name as a place holder based on the chats members.
     - When Switching dmServers added the ref on the chat message input box to refocus.
+    - In Server Chat rooms added refs to chat input field.
+
 
 ## Backend Changes
 
