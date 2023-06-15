@@ -697,7 +697,7 @@ current dmServer involving the user of their friend it will send a request to th
     - When Switching dmServers added the ref on the chat message input box to refocus.
     - In Server Chat rooms added refs to chat input field.
     - When Switching Servers added the ref on the chat message input box to refocus.
-    
+    - When Switching channel with a Servers added the ref on the chat message input box to refocus.
 
 ## Backend Changes
 
