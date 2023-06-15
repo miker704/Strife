@@ -691,6 +691,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Switch to Global ScrollBar Variants in DmServer Chat Room Text Area Input.
     - Restyled Root Render Error State Page.
     - Added Seperate Animation state for Root Error Render Page.
+    - In DmServer Chat rooms added refs to chat input field. 
 
 ## Backend Changes
 
