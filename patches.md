@@ -685,7 +685,9 @@ current dmServer involving the user of their friend it will send a request to th
     - Switch to Global ScrollBar Variants in Channel Settings Modal.
     - Switch to Global ScrollBar Variants in Server Settings Modal.
     - Switch to Global ScrollBar Variants in Invite to Server Modal.
-    - Switch to Global ScrollBar Variants in Server Chat Room.
+    - Switch to Global ScrollBar Variants in Server Chat Room Message Area.
+    - Switch to Global ScrollBar Variants in Server Chat Room Text Area Input.
+
     - Restyled Root Render Error State Page.
     - Added Seperate Animation state for Root Error Render Page.
 
