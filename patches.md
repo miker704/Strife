@@ -691,7 +691,10 @@ current dmServer involving the user of their friend it will send a request to th
     - Switch to Global ScrollBar Variants in DmServer Chat Room Text Area Input.
     - Restyled Root Render Error State Page.
     - Added Seperate Animation state for Root Error Render Page.
-    - In DmServer Chat rooms added refs to chat input field. 
+    - In DmServer Chat rooms added refs to chat input field.
+    - In DmServer Chat rooms fixed place Holder bug where swapping to other dmServers cause the name of the previous room. This is caused from the place holder variable being a this variable and its value is created and assigned from a function that is passed to another component and called there. This was fixed by moving said placeholder text as a state variable and created a function to be called when the component is mounted to then run the needed algorithm to generate the placeholder in the input field. In addition when every a room is switched the function is called again to obtain a new placeholder preventing the old one from appearing.
+     
+
 
 ## Backend Changes
 
