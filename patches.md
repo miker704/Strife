@@ -696,7 +696,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Added the ability for placeholders to use the DmServer name if it exists instead of autogenerating a temporary name as a place holder based on the chats members.
     - When Switching dmServers added the ref on the chat message input box to refocus.
     - In Server Chat rooms added refs to chat input field.
-
+    - When Switching Servers added the ref on the chat message input box to refocus.
+    
 
 ## Backend Changes
 
