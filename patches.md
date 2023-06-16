@@ -703,6 +703,7 @@ current dmServer involving the user of their friend it will send a request to th
     - If user has no friends or has no friends to invite to a server (all friends of the user are joined in the server) to render a smaller version of the invite to server modal that shows a copy server link id and share it.
     - Added random chance for the server owner to see the add image to server invite link invite to server modal.
     - Refined the search algorithm for search the available friends instead of using is hidden a filter is used instead.
+    - Refining live search allows to conditionally render no results found when search return no results without the need for is-hidden props.
 
 ## Backend Changes
 
