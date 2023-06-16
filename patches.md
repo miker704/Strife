@@ -699,7 +699,7 @@ current dmServer involving the user of their friend it will send a request to th
     - When Switching Servers added the ref on the chat message input box to refocus.
     - When Switching channel with a Servers added the ref on the chat message input box to refocus.
     - Added extra Components to invite Server Modal including temporarly replacing redux dispatching to friends state and use a raw fetch to simulate similar loading to that of discords.
-    
+    -Added a Rescue to invite to server modal which renders the spining cubes animation while the modal resyncs its props.
 
 ## Backend Changes
 
