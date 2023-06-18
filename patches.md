@@ -708,6 +708,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Changed the rendering of messages when adding a member to a server only the first channel of the server will give a message about the invited person.
     -Prevent the inviting of blocked by and blocked users when selecting a dmServer as the invite option in invite to server modal.
     - Added new Redux action to handle inviting multiple members (from a dmServer) at once in invite to server modal.
+    - Added new ajax api call to handle inviting multiple members (from a dmServer) at once in invite to server modal.
 
 ## Backend Changes
 
