@@ -750,6 +750,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Changed the rendering of messages when adding a member to a server only the first channel of the server will give a message about the invited person.
 - Added a new function that passes in an array of member ids to grant server and channel memberships when inviting members of a group/dm server.
 - Add another backend strife core cable action to parse members that where invited via a dm server in invite to server modal.
+- Added new route to  call the new function to handle inviting multiple members (from a dmServer) at once from the invite to server modal in the server_memberships controller.
 
 ### Front-End Changes
 
