@@ -709,6 +709,7 @@ current dmServer involving the user of their friend it will send a request to th
     -Prevent the inviting of blocked by and blocked users when selecting a dmServer as the invite option in invite to server modal.
     - Added new Redux action to handle inviting multiple members (from a dmServer) at once in invite to server modal.
     - Added new ajax api call to handle inviting multiple members (from a dmServer) at once in invite to server modal.
+    - Implemented new rescue tatics for invite to server modal, including spinning cube animations, null screen overlay and if a rescue fails a user can just click on the animation or over lay to leave the modal. also if a null screen is activated then the modal will close itself after some time ahas passed.
 
 ## Backend Changes
 
