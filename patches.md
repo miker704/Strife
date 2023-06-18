@@ -713,7 +713,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added proper triggers and conditions to render the correct modal the first time instead of loading one and switching to the other when a condtion is made upon initial render for invite to server modal.
     - To Prevent redux store from changing every thing in the background behind invite to server modal most dispatch calls are replaced with the raw ajax call without a dispatch or fetch requests.
     - Combined both dmServers and friends together inorder for them to be searchable and auto refilter themselves when users are added in dmServers.
-    
+
 ## Backend Changes
 
 - Changed the routes to the new Routing system on the frontend to redirect banned users from both dmservers
