@@ -706,6 +706,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Refining live search allows to conditionally render no results found when search return no results without the need for is-hidden props.
     - Added DmServers To invite to Server Modal where a users dms will be parsed as a selectable option to invite which invites all the members of that chat room into said server, if a user is already in the server but is in said dm they will be filtered out from being invited. Inviting any users via a dmServer if those users are available as individual options to invite by themselves or if they are invitable from another dmserver choice inviting them from a dmServer will remove their options for a stand alone invite, and filter them out from being sent an invite for any dmServer choices they may be in.
     - Changed the rendering of messages when adding a member to a server only the first channel of the server will give a message about the invited person.
+    -Prevent the inviting of blocked by and blocked users when selecting a dmServer as the invite option in invite to server modal.
 
 ## Backend Changes
 
