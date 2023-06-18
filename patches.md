@@ -711,6 +711,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Added new ajax api call to handle inviting multiple members (from a dmServer) at once in invite to server modal.
     - Implemented new rescue tatics for invite to server modal, including spinning cube animations, null screen overlay and if a rescue fails a user can just click on the animation or over lay to leave the modal. also if a null screen is activated then the modal will close itself after some time ahas passed.
     - Added proper triggers and conditions to render the correct modal the first time instead of loading one and switching to the other when a condtion is made upon initial render for invite to server modal.
+    - To Prevent redux store from changing every thing in the background behind invite to server modal most dispatch calls are replaced with the raw ajax call without a dispatch or fetch requests.
 
 ## Backend Changes
 
