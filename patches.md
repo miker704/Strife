@@ -714,6 +714,8 @@ current dmServer involving the user of their friend it will send a request to th
     - To Prevent redux store from changing every thing in the background behind invite to server modal most dispatch calls are replaced with the raw ajax call without a dispatch or fetch requests.
     - Combined both dmServers and friends together inorder for them to be searchable and auto refilter themselves when users are added in dmServers.
     - Switched To SCSS Vars for user nav bar container.
+    - Restyled user nav bar container.
+
 
 ## Backend Changes
 
