@@ -737,6 +737,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Replaced previous method of rendering dmServer icon avatars with svg masking in DmServer nav bar.
     - Replaced previous svg image use for dmServer avatars with a newer on in dmServer nav bar.
     - Add global scroll bars style sheet.
+    - Add scroll bar backups for reference to old version of previopusly used styled bars for components across the app.
 
 ## Backend Changes
 
