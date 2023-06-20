@@ -737,8 +737,6 @@ current dmServer involving the user of their friend it will send a request to th
     - Replaced previous method of rendering dmServer icon avatars with svg masking in DmServer nav bar.
     - Replaced previous svg image use for dmServer avatars with a newer on in dmServer nav bar.
 
-
-
 ## Backend Changes
 
 - Changed the routes to the new Routing system on the frontend to redirect banned users from both dmservers
