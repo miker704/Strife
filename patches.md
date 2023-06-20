@@ -719,6 +719,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Add on Mouse enter and Mouse leave event function listeners to activate a forced hover state for the div scroller in UserNav Bar.
     - Replaced previous method of rendering user avatars with svg masking in user nav bar.
     - Switched To SCSS Vars for DmServer nav bar container.
+    - Restyled DmServer nav bar container.
 
 
 
