@@ -726,6 +726,10 @@ current dmServer involving the user of their friend it will send a request to th
     - Replaced Class Based component version of DmServer Nav Bar with a Functional Component.
     - Move Old Class based component version for DmServer nav bar to deprecated folder.
     - Restyled Friend button in DmServer Nav Bar.
+    - Moved old Friend page Styles to deprecated folder.
+    - Switched to SCSS Vars for Friend pages.
+
+
 
 
 ## Backend Changes
