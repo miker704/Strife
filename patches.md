@@ -731,9 +731,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Restyled Nitro nav bar button in DmServer Nav Bar.
     - Switched to SCSS Vars for Nitro nav bar.
     - Moved old styles for Nitro nav bar to deprecated folder.
-
-
-
+    - Add random chance for the nitro nav button to switch to a different color.
 
 
 ## Backend Changes
