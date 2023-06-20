@@ -720,6 +720,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Move Old Styles for user nav bar to deprecated folder.
     - Move Old function component version for user nav bar to deprecated folder.
     - Replaced previous method of rendering user avatars with svg masking in user nav bar.
+    - Added online status badges to user avatars in user nav bar using svg masking.
     - Switched To SCSS Vars for DmServer nav bar container.
     - Restyled DmServer nav bar container.
     - Move Old Styles for DmServer nav bar to deprecated folder.
