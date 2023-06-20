@@ -728,6 +728,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Restyled Friend button in DmServer Nav Bar.
     - Moved old Friend page Styles to deprecated folder.
     - Switched to SCSS Vars for Friend pages.
+    - Restyled Nitro button in DmServer Nav Bar.
 
 
 
