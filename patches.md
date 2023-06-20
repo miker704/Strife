@@ -715,6 +715,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Combined both dmServers and friends together inorder for them to be searchable and auto refilter themselves when users are added in dmServers.
     - Switched To SCSS Vars for user nav bar container.
     - Restyled user nav bar container.
+    - Add div scroller on User nav bar where status is displayed first and on hover the username and strife tag.
 
 
 ## Backend Changes
