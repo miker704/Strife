@@ -723,6 +723,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Switched To SCSS Vars for DmServer nav bar container.
     - Restyled DmServer nav bar container.
     - Move Old Styles for DmServer nav bar to deprecated folder.
+    - Replaced Class Based component version of DmServer Nav Bar with a Functional Component.
     - Move Old Class based component version for DmServer nav bar to deprecated folder.
 
 
