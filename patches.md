@@ -734,6 +734,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Add random chance for the nitro nav button to switch to a different color.
     - Replaced previous method of rendering user avatars with svg masking in DmServer nav bar.
     - Removed online status bubbles and function to render it on user avatars in DmServer nav bar due to svg rendering does it automatically.
+    - Replaced previous method of rendering dmServer icon avatars with svg masking in DmServer nav bar.
+
 
 
 ## Backend Changes
