@@ -716,6 +716,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Switched To SCSS Vars for user nav bar container.
     - Restyled user nav bar container.
     - Add div scroller on User nav bar where status is displayed first and on hover the username and strife tag.
+    - Add on Mouse enter and Mouse leave event function listeners to activate a forced hover state for the div scroller in UserNav Bar.
 
 
 ## Backend Changes
