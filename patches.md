@@ -752,8 +752,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Moved old second Channel settings to Deprecated folder.
     - Moved old create channel modal to deprecated folder.
     - Moved old nitro style file to deprecated folder.
-
-
+    - Deleted Old alternative that was unsed move a copy of it to deprecated Channel nav bar file.
 
 ## Backend Changes
 
