@@ -747,7 +747,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Add states for switching to different modals for create dm modal variants if one has no friends, no friends to add and is not friends with the current on to one dm member.
     - Moved from in component modal call to modal manager for all create dm modal variants.
     - Switched to props params for all create dm modal variants instead of using deconstructed params.
-
+    - Moved old Channel nav bar to Deprecated
+.
 ## Backend Changes
 
 - Changed the routes to the new Routing system on the frontend to redirect banned users from both dmservers
