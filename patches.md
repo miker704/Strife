@@ -750,6 +750,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Moved old Channel nav bar to Deprecated folder.
     - Removed unused server chat room file.
     - Moved old second Channel settings to Deprecated folder.
+    - Moved old create channel modal to deprecated folder.
 
 
 ## Backend Changes
