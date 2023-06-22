@@ -1,0 +1,774 @@
+// @import 'global_vars';
+
+
+
+
+
+
+
+// .dm-server-nav-bar2 {
+//     top: 0px;
+//     left: 0px;
+//     position: absolute;
+//     height: calc(100vh - 49px);
+//     background-color: #2f3136;
+//     width: 225px;
+//     padding-left: 5px;
+//     padding-right: 5px;
+//     transform: translate(75px, 0px);
+//     z-index: 2;
+//     overflow: hidden scroll;
+// }
+
+// .dm-server-nav-bar::-webkit-scrollbar {
+//     width: 5px;
+// }
+
+// .dm-server-nav-bar::-webkit-scrollbar-thumb {
+//     background: rgb(30, 35, 40);
+//     border-radius: 5px;
+//     visibility: hidden;
+// }
+
+// .dm-server-nav-bar:hover::-webkit-scrollbar-thumb {
+//     visibility: visible;
+// }
+
+// .dm-server-nav-bar::-webkit-scrollbar-track {
+//     border-radius: 10px;
+//     background: rgb(40, 45, 50);
+//     visibility: hidden;
+
+// }
+
+// .dm-server-nav-bar:hover::-webkit-scrollbar-track {
+//     visibility: visible;
+// }
+
+
+
+// .fake-nav-bar {
+//     height: 50px;
+//     width: 225px;
+// }
+
+
+// .split-line {
+//     position: absolute;
+//     left: 0px;
+//     top: 0px;
+//     height: 1.5px;
+//     width: 235px;
+//     background-color: #232428;
+//     transform: translate(0px, 50px);
+// }
+
+// .dm-list-header {
+//     // display: flex;
+//     // text-align: left;
+//     // // color: rgb(150, 152, 157);
+//     // padding-left: 16px;
+//     // padding-bottom: 10px;
+//     // padding-right: 10px;
+//     // justify-content: space-between;
+//     // font-size: 12px;
+//     // font-weight: 500;
+//     // font-family: "ABC Ginto Normal";
+
+
+//     display: flex;
+//     padding: 18px 8px 4px 18px;
+//     height: 40px;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-transform: uppercase;
+//     font-size: 12px;
+//     line-height: 16px;
+//     letter-spacing: .02em;
+//     // font-family: "ABC Ginto Normal";
+//     font-family: "Whitney";
+//     font-weight: 600;
+//     -webkit-box-flex: 1;
+//     -ms-flex: 1 1 auto;
+//     flex: 1 1 auto;
+//     color: hsl(228, 5.1%, 61.6%);
+// }
+
+// .dm-list-header:hover {
+//     .dm-server-nav-bar-dm-title-text {
+//         color: hsl(228, 8.8%, 88.8%);
+//     }
+// }
+
+
+
+
+// .dm-list-header span:hover {
+//     color: hsl(228, 8.8%, 88.8%);
+// }
+
+// .dm-list-header h4:hover {
+//     // filter: brightness(125%);
+//     // color: #dcddde;
+//     color: hsl(228, 8.8%, 88.8%);
+// }
+
+
+// .dm-tool-tip {
+//     visibility: hidden;
+//     font-size: 10px;
+//     // width: 50px;
+//     width: 55px;
+//     height: 28px;
+
+//     // height: 30px;
+//     position: absolute;
+//     background-color: rgb(25, 25, 28);
+//     border-radius: 5px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     // transform: translate(-20px, -55px);
+//     transform: translate(-20px, -51px);
+
+//     color: rgb(225, 225, 225);
+//     z-index: 6;
+//     font-family: "Whitney";
+// }
+
+
+// .create-channel-div {
+//     cursor: pointer;
+//     transform: translate(-8px, 0px);
+//     z-index: 20;
+
+//     // -webkit-box-flex: 0;
+//     // -ms-flex: 0;
+//     // flex: 0;
+//     // width: 16px;
+//     // height: 16px;
+//     // margin-left: 0;
+//     // margin-right: 2px;
+
+//     // position: relative;
+//     // // height: 24px;
+//     // // width: auto;
+//     // // -webkit-box-flex: 0;
+//     // // -ms-flex: 0 0 auto;
+//     // // flex: 0 0 auto;
+//     // margin: 0 8px;
+
+// }
+
+// .create-channel-div:hover {
+//     svg {
+//         color: hsl(210, 2.9%, 86.7%);
+//     }
+// }
+
+// .create-channel-div:hover .dm-tool-tip {
+//     visibility: visible;
+// }
+
+
+// .dm-tool-tip::after {
+//     content: " ";
+//     position: absolute;
+//     top: 100%;
+//     left: 50%;
+//     margin-left: -5px;
+//     border-width: 5px;
+//     border-style: solid;
+//     border-color: rgb(25, 25, 28) transparent transparent transparent;
+// }
+
+
+
+// .dm-nav-bar-list {
+//     height: 84%;
+//     width: 100%;
+//     // overflow-y: auto;
+//     // overflow-x: hidden;
+//     // overflow: hidden scroll;
+//     overflow-x: clip;
+// }
+
+// // .dm-nav-bar-list::-webkit-scrollbar {
+// //     width: 5px;
+// // }
+
+// // .dm-nav-bar-list::-webkit-scrollbar-thumb {
+// //     background: rgb(30, 35, 40);
+// //     border-radius: 5px;
+// // }
+
+// // .dm-nav-bar-list::-webkit-scrollbar-track {
+// //     border-radius: 10px;
+// //     background: rgb(40, 45, 50)
+// // }
+
+
+
+
+// .dm-nav-bar-list a {
+//     border-radius: 5px;
+//     text-decoration: none;
+//     // color: rgb(151, 152, 157);
+//     color: #989AA2;
+// }
+
+
+
+
+// .dm-member-li-item {
+//     display: flex;
+//     padding-top: 7.5px;
+//     padding-left: 15px;
+//     padding-bottom: 7.5px;
+//     border-radius: 5px;
+// }
+
+
+// .dm-member-li-item:hover {
+//     background-color: #3A3C43;
+
+// }
+
+// .dm-member-username {
+//     padding-left: 10px;
+//     padding-top: 3px;
+//     font-family: "Whitney";
+//     font-size: 16px;
+// }
+
+// .selected-dm-server {
+//     // background-color: #3A3C43;
+//     // color: #FFFFFF;
+//     background-color: #3f4249;
+//     color: hsl(210, 9.1%, 95.7%);
+
+// }
+
+// .dm-server-li-item.selected-dm-server {
+//     background-color: #3f4249;
+//     color: hsl(210, 9.1%, 95.7%);
+
+//     // color: #FFFFFF;
+//     .dm-server-name,
+//     .dm-server-subtitle {
+//         color: hsl(210, 9.1%, 95.7%);
+//         filter: brightness(125%);
+
+//     }
+
+// }
+
+// .dm-server-li-item {
+//     display: flex;
+//     // padding-top: 7.5px;
+//     // padding-left: 15px;
+//     // padding-bottom: 7.5px;
+//     // border-radius: 5px;
+//     padding-top: 1px;
+//     padding-left: 8px;
+//     padding-bottom: 1px;
+//     border-radius: 5px;
+//     align-items: center;
+// }
+
+
+// .dm-server-li-item:hover {
+//     // background-color: #3A3C43;
+//     background-color: #35373c;
+//     color: hsl(228, 8.8%, 88.8%);
+
+//     .dm-server-name,
+//     .dm-server-subtitle {
+//         color: hsl(228, 8.8%, 88.8%);
+
+//     }
+
+// }
+
+// .dm-server-name {
+//     padding-left: 10px;
+//     padding-top: 3px;
+//     font-family: "Whitney";
+//     font-size: 16px;
+//     overflow-x: hidden;
+//     max-width: 170px;
+//     overflow: hidden;
+//     position: relative;
+//     text-overflow: ellipsis;
+//     color: #989AA2;
+
+// }
+
+// .dm-server-subtitle {
+//     padding-left: 10px;
+//     font-size: 12px;
+//     line-height: 16px;
+//     font-weight: 500;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     forced-color-adjust: none;
+//     font-family: "Whitney";
+//     overflow-x: hidden;
+//     max-width: 180px;
+//     color: #989AA2;
+
+// }
+
+// .dm-server-pfp {
+//     display: flex;
+//     align-items: center;
+//     height: 42px;
+//     width: 42px;
+// }
+
+// .dm-server-pfp>img {
+//     height: 32px;
+//     width: 32px;
+//     border-radius: 50%;
+// }
+
+// .dm-server-pfp-icon {
+//     display: flex;
+//     align-items: center;
+// }
+
+
+// .dm-server-pfp-icon>img {
+//     height: 32px;
+//     width: 32px;
+//     border-radius: 50%;
+// }
+
+
+
+
+// .dm-server-name-wrapper {
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     flex: 1 1 auto;
+//     min-width: 0;
+//     -webkit-box-flex: 1;
+//     forced-color-adjust: none;
+//     line-height: 20px;
+// }
+
+
+
+
+
+// .dm-server-nav-bar-wrapper {
+//     forced-color-adjust: none;
+//     flex: 0 0 auto;
+//     flex-direction: column;
+//     min-height: 0;
+//     width: 240px;
+//     -webkit-box-flex: 0;
+//     background-color: hsl(223, 6.9%, 19.8%);
+//     overflow: hidden;
+//     display: flex;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+// }
+
+// .dm-server-nav-bar {
+//     // forced-color-adjust: none;
+//     // position: relative;
+//     // display: flex;
+//     // box-sizing: border-box;
+//     // overflow: hidden;
+//     // user-select: none;
+//     // -webkit-box-flex: 1;
+//     // flex: 1;
+//     // -webkit-box-orient: vertical;
+//     // -webkit-box-direction: normal;
+//     // flex-direction: column;
+//     // background-color: hsl(223, 6.9%, 19.8%);
+
+
+
+
+//     left: 0;
+//     forced-color-adjust: none;
+//     position: absolute;
+//     display: flex;
+//     box-sizing: border-box;
+//     /* overflow: hidden; */
+//     user-select: none;
+//     -webkit-box-flex: 1;
+//     flex: 1;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+//     flex-direction: column;
+//     // background-color: #2f3136;
+//     background-color: #2b2d31;
+//     // transform: translate(75px, 0px);
+//     // width: 234px;
+//     // padding-left: 5px;
+//     top: 0;
+//     z-index: 2;
+//     // padding-right: 5px;
+//     height: calc(100vh - 49px);
+//     transform: translate(72px, 0px);
+//     width: 240px;
+
+// }
+
+// .dm-nav-bar-search-bar {
+//     forced-color-adjust: none;
+//     flex: 0 0 auto;
+//     padding: 0 10px;
+//     height: 48px;
+//     -webkit-box-align: center;
+//     z-index: 2;
+//     -webkit-box-flex: 0;
+//     align-items: center;
+//     box-shadow: 0 1px 0 hsla(240, 11.1%, 1.8%, 0.2), 0 1.5px 0 hsla(240, 7.7%, 2.5%, 0.05), 0 2px 0 hsla(240, 11.1%, 1.8%, 0.05);
+//     display: flex;
+//     position: relative;
+// }
+
+// .dm-nav-bar-search-bar-button {
+//     width: 100%;
+//     height: 28px;
+//     overflow: hidden;
+//     border-radius: 4px;
+//     box-shadow: none;
+//     // color: hsl(214, 4%, 65.3%);
+//     color: hsl(228, 5.1%, 61.6%);
+
+//     // background-color: hsl(216, 7.2%, 13.5%);
+//     background-color: #1e1f22;
+//     text-align: left;
+//     text-overflow: ellipsis;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 24px;
+//     white-space: nowrap;
+//     text-rendering: optimizeLegibility;
+//     forced-color-adjust: none;
+//     cursor: pointer;
+//     font-family: "Whitney";
+//     // font-family: "Helvetica";
+//     border-color: transparent;
+// }
+
+// .dm-nav-bar-scroller {
+//     overflow: hidden scroll;
+//     padding-right: 0px;
+//     forced-color-adjust: none;
+//     // background-color: hsl(223, 6.9%, 19.8%);
+//     background-color: #2b2d31;
+//     flex: 1 1 auto;
+//     box-sizing: border-box;
+//     min-height: 0;
+//     -webkit-box-flex: 1;
+//     position: relative;
+//     padding-left: 5px;
+//     padding-right: 5px;
+
+
+// }
+
+
+
+
+// .dm-nav-bar-scroller::-webkit-scrollbar {
+//     width: 5px;
+// }
+
+// .dm-nav-bar-scroller::-webkit-scrollbar-thumb {
+//     background: rgb(30, 35, 40);
+//     border-radius: 5px;
+//     visibility: hidden;
+// }
+
+// .dm-nav-bar-scroller:hover::-webkit-scrollbar-thumb {
+//     visibility: visible;
+// }
+
+// .dm-nav-bar-scroller::-webkit-scrollbar-track {
+//     border-radius: 10px;
+//     background: rgb(40, 45, 50);
+//     visibility: hidden;
+
+// }
+
+// .dm-nav-bar-scroller:hover::-webkit-scrollbar-track {
+//     visibility: visible;
+// }
+
+// .dm-add-button {
+//     flex: 0;
+//     width: 16px;
+//     height: 16px;
+//     margin-left: 0;
+//     margin-right: 2px;
+//     -webkit-box-flex: 0;
+//     color: hsl(231, 5.2%, 73.5%);
+//     // color: hsl(216, 3.7%, 73.5%);
+
+//     forced-color-adjust: none;
+//     display: block;
+//     -webkit-app-region: no-drag;
+//     cursor: pointer;
+// }
+
+// .dm-add-button:hover {
+//     color: hsl(210, 2.9%, 86.7%);
+// }
+
+
+
+// /**** temp test**/
+// //
+
+
+// .dm-server-nav-bar-dm-title {
+//     display: -webkit-box;
+//     display: -ms-flexbox;
+//     display: flex;
+//     padding: 18px 8px 4px 18px;
+//     height: 40px;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-transform: uppercase;
+//     font-size: 12px;
+//     line-height: 16px;
+//     letter-spacing: .02em;
+//     // font-family: "ABC Ginto Normal";
+//     font-family: "Whitney";
+
+//     font-weight: 600;
+//     -webkit-box-flex: 1;
+//     -ms-flex: 1 1 auto;
+//     flex: 1 1 auto;
+//     color: hsl(228, 5.1%, 61.6%);
+
+// }
+
+// .dm-server-nav-bar-dm-title-text {
+//     -webkit-box-flex: 1;
+//     -ms-flex: 1;
+//     flex: 1;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     outline: 0;
+// }
+
+// .dm-server-nav-bar-dm-title:hover {
+//     .dm-server-nav-bar-dm-title-text {
+//         color: hsl(228, 8.8%, 88.8%);
+
+//     }
+// }
+
+
+
+// .dm-server-nav-bar-add-dm-button {
+//     -webkit-box-flex: 0;
+//     -ms-flex: 0;
+//     flex: 0;
+//     width: 16px;
+//     height: 16px;
+//     margin-left: 0;
+//     margin-right: 2px;
+//     cursor: pointer;
+//     outline: 0;
+//     position: relative;
+//     // margin: 0 8px;
+// }
+
+
+// .create-dm-server-nav-bar-tool-tip {
+//     // background: #191919 !important;
+//     background: #000000 !important;
+//     color: hsl(228, 8.8%, 88.8%) !important;
+//     filter: brightness(125%);
+
+//     font-size: 12px !important;
+//     font-weight: 600 !important;
+//     padding: 6px 12px !important;
+//     border-radius: 4px !important;
+//     // color: #B9BBBE !important;
+//     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+//     font-family: "Whitney" !important;
+//     text-transform: none;
+//     // width: 38px !important;
+// }
+
+
+
+
+
+
+// .dmsnb-container {
+//     box-sizing: border-box;
+//     display: block;
+//     padding: 1px 0;
+//     border-radius: 4px;
+//     transition: none;
+
+//     position: relative;
+//     max-width: 224px;
+//     margin-left: 8px;
+// }
+
+// .inner-dms {
+
+//     display: flex;
+//     -webkit-box-align: center;
+//     align-items: center;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     width: 100%;
+//     color: hsl(228, 5.1%, 61.6%);
+//     cursor: pointer;
+//     border-radius: inherit;
+//     outline: 0;
+// }
+
+// .inner-dms-link {
+//     display: flex;
+//     min-width: 0;
+//     -webkit-box-flex: 1;
+//     flex: 1 1 auto;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     -webkit-box-align: center;
+//     align-items: center;
+//     color: inherit;
+//     outline: 0;
+//     text-decoration: none;
+//     cursor: pointer;
+// }
+
+
+// .inner-dms-member-info {
+//     outline: 0;
+//     min-width: 0;
+//     border-radius: 4px;
+//     height: 42px;
+//     padding: 0 8px;
+//     display: flex;
+//     -webkit-box-align: center;
+//     align-items: center;
+// }
+
+// .dmsnb-dmsm-name {
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     flex: 1 1 auto;
+//     min-width: 0;
+//     -webkit-box-flex: 1;
+//     -ms-flex: 1 1 auto;
+//     forced-color-adjust: none;
+//     line-height: 20px;
+//     outline: 0;
+// }
+
+// .dmsnb-dmsm-name-inner {
+
+//     display: flex;
+//     -webkit-box-pack: start;
+//     justify-content: flex-start;
+//     -webkit-box-align: center;
+//     align-items: center;
+//     outline: 0;
+
+// }
+
+// .dmsnb-dmsm-name-cont {
+//     font-size: 16px;
+//     line-height: 20px;
+//     font-weight: 500;
+//     -webkit-box-flex: 0;
+//     -ms-flex: 0 1 auto;
+//     flex: 0 1 auto;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     outline: 0;
+
+// }
+
+// .dmsnb-dmsm-name-text {
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     position: relative;
+//     outline: 0;
+// }
+
+
+// .dmsnb-subtext-cont {
+//     margin-top: -2px;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     outline: 0;
+// }
+
+// .dmsnb-subtext-text {
+//     font-size: 12px;
+//     line-height: 16px;
+//     font-weight: 500;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     outline: 0;
+// }
+
+
+// .delete-dms-button {
+//     display: none;
+//     width: 16px;
+//     height: 16px;
+//     opacity: .7;
+//     margin: 2px;
+//     padding-right: 8px;
+//     outline: 0;
+
+// }
+
+// .delete-dms-button-icon {
+//     display: block;
+//     width: 16px;
+//     height: 16px;
+// }
+
+// .dm-server-li-item:hover {
+//     .delete-dms-button {
+//         display: block;
+//     }
+// }
+
+
+
+
+// .friend-info-dmsnb {
+//     display: flex;
+//     align-items: center;
+//     overflow: hidden;
+// }
+
+
+// .friend-info-dmsnb>img {
+//     height: 32px;
+//     width: 32px;
+//     border-radius: 50%;
+// }
