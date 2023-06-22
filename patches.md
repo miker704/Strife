@@ -745,6 +745,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Restyled Create Dm Modal, Create Dm Modal Homebar, and Invite to Dm Modal.
     - Remodeled Create Dm Modal, Create Dm Modal Homebar, and Invite to Dm Modal.
     - Add states for switching to different modals for create dm modal variants if one has no friends, no friends to add and is not friends with the current on to one dm member.
+    - Moved from in component modal call to modal manager for all create dm modal variants.
 
 
 ## Backend Changes
