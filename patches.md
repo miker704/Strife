@@ -751,6 +751,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Removed unused server chat room file.
     - Moved old second Channel settings to Deprecated folder.
     - Moved old create channel modal to deprecated folder.
+    - Moved old nitro style file to deprecated folder.
+
 
 
 ## Backend Changes
