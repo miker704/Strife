@@ -1,0 +1,186 @@
+// .nitro-nav-bar-wrapper {
+//     position: relative;
+//     max-width: 225px;
+//     width: 215px;
+//     margin-left: 4px;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     display: block;
+//     padding: 1px 0;
+//     border-radius: 4px;
+//     transition: none;
+//     margin-top: 8px;
+// }
+
+// .nitro-nav-bar {
+//     forced-color-adjust: none;
+//     padding-right: 8px;
+//     // color: #FFFFFF;
+//     // color: hsl(223, 3.4%, 60.2%);
+//     color: hsl(228, 5.1%, 61.6%);
+//     display: flex;
+//     -webkit-box-align: center;
+//     align-items: center;
+//     box-sizing: border-box;
+//     width: 100%;
+//     cursor: pointer;
+//     border-radius: inherit;
+//     // background-color: hsla(217,7.6%,33.5%,0.6);
+//     text-rendering: optimizeLegibility;
+
+// }
+
+// .nitro-nav-bar:hover,
+// .nitro-nav-bar:focus-within {
+//     // filter: brightness(125%);
+//     // color: hsl(210, 2.9%, 86.7%);
+//     color: hsl(228, 8.8%, 88.8%);
+//     background-color: hsla(217, 7.6%, 33.5%, 0.4);
+
+//     .nitro-avatar,
+//     .nitro-avatar-text {
+//         color: hsl(228, 8.8%, 88.8%);
+
+//     }
+// }
+
+// .nitro-nav-bar:active {
+//     color: #FFFFFF;
+//     background-color: hsla(217, 7.6%, 33.5%, 0.48);
+// }
+
+// .nitro-nav-bar.selected {
+//     // background-color: #3f4249;
+//     background:rgba(78,80,88,0.6);
+//     // color: hsl(210, 9.1%, 95.7%);
+//     .nitro-avatar,
+//     .nitro-avatar-text {
+//         color: hsl(210, 9.1%, 95.7%);
+//         // filter: brightness(125%);
+//     }
+// }
+
+
+
+// .nitro-nav-bar-link {
+//     align-items: center;
+//     color: inherit;
+//     forced-color-adjust: none;
+//     flex: 1 1 auto;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     -webkit-box-align: center;
+//     display: flex;
+//     min-width: 0;
+//     -webkit-box-flex: 1;
+//     text-decoration: none;
+// }
+
+
+// .nitro-avatar-wrapper {
+//     forced-color-adjust: none;
+//     -webkit-box-flex: 1;
+//     flex-grow: 1;
+//     align-items: center;
+//     display: flex;
+//     -webkit-box-align: center;
+//     min-width: 0;
+//     border-radius: 4px;
+//     height: 42px;
+//     padding: 0 8px;
+// }
+
+// .nitro-avatar {
+//     forced-color-adjust: none;
+//     flex: 0 0 auto;
+//     width: 32px;
+//     height: 32px;
+//     margin-right: 12px;
+//     display: flex;
+//     -webkit-box-align: center;
+//     align-items: center;
+//     justify-content: center;
+//     -webkit-box-flex: 0;
+//     -webkit-box-pack: center;
+//     color: hsl(228, 5.1%, 61.6%);
+
+// }
+
+// .nitro-avatar-text-wrapper {
+//     forced-color-adjust: none;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     flex: 1 1 auto;
+//     min-width: 0;
+//     -webkit-box-flex: 1;
+// }
+
+// .nitro-avatar-text-inner {
+//     align-items: center;
+//     justify-content: flex-start;
+//     -webkit-box-align: center;
+//     display: flex;
+//     -webkit-box-pack: start;
+//     forced-color-adjust: none;
+// }
+
+// .nitro-avatar-text {
+//     forced-color-adjust: none;
+//     font-size: 16px;
+//     line-height: 20px;
+//     font-weight: 600;
+//     -webkit-box-flex: 0;
+//     flex: 0 1 auto;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     font-family: "Whitney";
+//     color: #989AA2;
+
+// }
+
+// .strife-nitro-lbl1 {
+//     display: flex;
+//     -webkit-box-pack: justify;
+//     justify-content: space-between;
+//     -webkit-box-align: center;
+//     align-items: center;
+//     position: relative;
+//     pointer-events: none;
+//     z-index: 2;
+//     box-sizing: border-box;
+
+// }
+
+// .strife-nitro-img1 {
+//     background-image: linear-gradient(90deg, #854DC2, #AC5C8F);
+//     // background-image: linear-gradient(90deg, #32CD32, #AC5C);
+
+//     // #854dc2, #ac5c8f
+//     // #854DC2, #AC5C
+//     //#00FF00
+//     color: hsl(0, 0%, 100%);
+
+//     -webkit-box-align: center;
+//     align-items: center;
+//     display: flex;
+//     border-radius: 12px;
+//     font-weight: 600;
+//     font-size: 12px;
+//     line-height: 12px;
+//     margin-left: auto;
+//     padding: 4px 8px;
+//     pointer-events: all;
+//     text-transform: uppercase;
+//     box-sizing: border-box;
+//     font-family: "Whitney";
+//     padding-right: 5px;
+// }
+
+// .strife-nitro-clock1 {
+//     padding-right: 2px;
+// }
+
+
