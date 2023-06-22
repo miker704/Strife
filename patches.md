@@ -755,6 +755,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Deleted Old alternative that was unsed move a copy of it to deprecated Channel nav bar file.
     - Moved old a copy create channel modal to deprecated folder.
     - Created and moved old user nav style file to deprecated folder.
+    - Createed and moved old friends error request modal to deprecated.
 
 
 ## Backend Changes
