@@ -742,6 +742,8 @@ current dmServer involving the user of their friend it will send a request to th
     - Add Nav into DmServer Nav Bar.
     - Add Section into User Nav Bar.
     - Switched to SCSS vars for Create Dm Modal, Create Dm Modal Homebar, and Invite to Dm Modal.
+    - Restyled Create Dm Modal, Create Dm Modal Homebar, and Invite to Dm Modal.
+
 
 ## Backend Changes
 
