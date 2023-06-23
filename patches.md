@@ -772,6 +772,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Created and moved second deprecated version of create dm modal home bar version to deprecated.
     - Created and moved deprecated version of delete dm message modal to deprecated.
     - Restructured error loading screen aka root.html.erb file.
+    - Updated Bundle License.
 
 ## Backend Changes
 
