@@ -775,6 +775,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Updated Bundle License.
     - Replaced All Current Alt tags for images with a null prop to work well with negative text indentation.
     - Add a scroll ref to scroll to the selected dm server when clicked on.
+    - Modified Selector Functions that sort friend state out based on statuses to sort objects more precisely by lowercasing user names to sort more accurately as js .sort() method places uppercase letters before lowercase.
 
 ## Backend Changes
 
