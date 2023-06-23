@@ -766,6 +766,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Created and moved old deprecated version of DmServer members list to deprecated.
     - Created and moved old deprecated version of DmServer header nav bar to deprecated.
     - Created and moved old second deprecated version of DmServer header nav bar to deprecated.
+    - Moved old created dm modal style file to deprecated folder.
 
 
 ## Backend Changes
