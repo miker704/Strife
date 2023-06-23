@@ -774,6 +774,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Restructured error loading screen aka root.html.erb file.
     - Updated Bundle License.
     - Replaced All Current Alt tags for images with a null prop to work well with negative text indentation.
+    - Add a scroll ref to scroll to the selected dm server when clicked on.
 
 ## Backend Changes
 
