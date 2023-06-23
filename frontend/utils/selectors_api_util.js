@@ -7,7 +7,7 @@ export const selectFriendStatus = (state, status) => {
             friends.push(user);
         }
     }
-    return friends.sort((a, b) => a.username > b.username ? 1 : -1);
+    return friends.sort((a, b) => a.username.toLowerCase() > b.username.toLowerCase() ? 1 : -1);
 }
 
 export const extractFriendState = (state) => {
@@ -17,7 +17,7 @@ export const extractFriendState = (state) => {
             friends.push(user);
         }
     }
-    return friends.sort((a, b) => a.username > b.username ? 1 : -1);
+    return friends.sort((a, b) => a.username.toLowerCase() > b.username.toLowerCase() ? 1 : -1);
 }
 
 
@@ -32,7 +32,7 @@ export const selectFriendStatusOnline = (state, status) => {
         }
     }
 
-    return friends.sort((a, b) => a.username > b.username ? 1 : -1);
+    return friends.sort((a, b) => a.username.toLowerCase() > b.username.toLowerCase() ? 1 : -1);
 }
 
 
@@ -43,7 +43,7 @@ export const selectAllFriends = (state, status) => {
             allFriends.push(friend);
         }
     }
-    return allFriends.sort((a, b) => a.username > b.username ? 1 : -1);
+    return allFriends.sort((a, b) => a.username.toLowerCase() > b.username.toLowerCase() ? 1 : -1);
 }
 
 
@@ -67,7 +67,7 @@ export const selectFriendsViaStatusType = (state, status) => {
             allFriends.push(friend);
         }
     }
-    return allFriends.sort((a, b) => a.username > b.username ? 1 : -1);
+    return allFriends.sort((a, b) => a.username.toLowerCase() > b.username.toLowerCase() ? 1 : -1);
 }
 
 
@@ -93,7 +93,7 @@ export const selectOnlineFriends = (state, status) => {
         }
     }
 
-    return onlineFriends.sort((a, b) => a.username > b.username ? 1 : -1);
+    return onlineFriends.sort((a, b) => a.username.toLowerCase() > b.username.toLowerCase() ? 1 : -1);
 }
 
 export const selectFriendRequests = (state, status) => {
@@ -103,7 +103,7 @@ export const selectFriendRequests = (state, status) => {
             friendRequests.push(friend);
         }
     }
-    return friendRequests.sort((a, b) => a.username > b.username ? 1 : -1);
+    return friendRequests.sort((a, b) => a.username.toLowerCase() > b.username.toLowerCase() ? 1 : -1);
 }
 
 export const selectBlockedUsers = (state, status) => {
@@ -114,7 +114,7 @@ export const selectBlockedUsers = (state, status) => {
         }
     }
 
-    return blockedUsers.sort((a, b) => a.username > b.username ? 1 : -1);
+    return blockedUsers.sort((a, b) => a.username.toLowerCase() > b.username.toLowerCase() ? 1 : -1);
 }
 
 
