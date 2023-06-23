@@ -773,6 +773,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Created and moved deprecated version of delete dm message modal to deprecated.
     - Restructured error loading screen aka root.html.erb file.
     - Updated Bundle License.
+    - Replaced All Current Alt tags for images with a null prop to work well with negative tex indentation.
 
 ## Backend Changes
 
