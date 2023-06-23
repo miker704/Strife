@@ -763,7 +763,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Created and moved old second deprecated version of friends homepage to deprecated.
     - Created and moved old second deprecated version of DmServer Nav Bar to deprecated.
     - Switched from class based to functional based component for DmServer Nav Bar.
- 
+    - Created and moved old second deprecated version of DmServer members list to deprecated.
 
 ## Backend Changes
 
