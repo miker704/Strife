@@ -779,6 +779,9 @@ current dmServer involving the user of their friend it will send a request to th
     - For Create DmModals added the ability to use the backspace button to deselect the last selected user that was click to be potientially invited to the dm server if the search text is blank hitting back space removes the last seleceted friend if any was selected.
     - Moved Old Version of select dm members for video calling modal to deprecated.
     - Remodeled select dm members for video calling modal.
+    - Remodeled select dm members call modal top be used for both either video, or just voice calling.
+    
+
 
 
 ## Backend Changes
