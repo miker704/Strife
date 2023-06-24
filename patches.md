@@ -782,6 +782,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Remodeled select dm members call modal top be used for both either video, or just voice calling.
     - Reconfigured the following modals Create DmServer, Create DmServer HomeBar Version, InviteToDmServer Modal and Select Dm Members for video ad voice calling to be deployed via the modal manager instead of being called in the contained component where it it can be launched from, the reason for this is to prepare for react version 18 which stops modals from being deployed with in the same component that may overflow be rendered invisible.
     - These Modals will be deployed in a sub modal container instead later on.
+    - Added a no friends to add modal when in dm servers clicking the dm server side bar create dm modal button or the invite/create dm modal button in  dm header bar, or homepage header bar in a that pop up if a user has no friends or does not have any friends at all to invite (including not being friends with anyone in the dmserver) which will warp to the homepage and enable the add friends tab if they are in a dm server already. 
 
 ## Backend Changes
 
