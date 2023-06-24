@@ -281,3 +281,35 @@
 // }
 
 // export default CreateDmModal;
+
+
+
+//alt fetch for new version
+    //run fetch not a redux action to avoid unintentional rerenders of other onscreen components
+    // useEffect(() => {
+    //     requestAllLevelThreeFriends(props.currentUserId)
+    //         .then((result) => {
+    //             //it doesnt matter sorting the records via username on the backend once it hits the frontend  it
+    //             // gets sorted back by the entry id so its a  wasted effort to do so on the backend  
+    //             result = Object.values(result).sort((a, b) => a.username.toLowerCase() > b.username.toLowerCase() ? 1 : -1);
+    //             setFriends(result);
+    //             setIsLoading(false);
+    //         }, (error) => {
+    //             props.closeModal();
+    //         })
+
+    // }, []);
+    // useEffect(() => {
+
+    //     const fetchData = async () => {
+    //         await props.requestAllFriendships();
+    //         setFriends(props.friends);
+    //         setIsLoading(false);
+    //         setIsFullyLoaded(false);
+
+    //     }
+
+    //     fetchData().catch(() => props.closeModal());
+
+
+    // }, []);
