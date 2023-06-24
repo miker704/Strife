@@ -780,9 +780,7 @@ current dmServer involving the user of their friend it will send a request to th
     - Moved Old Version of select dm members for video calling modal to deprecated.
     - Remodeled select dm members for video calling modal.
     - Remodeled select dm members call modal top be used for both either video, or just voice calling.
-    
-
-
+    - Reconfigured the following modals Create DmServer, Create DmServer HomeBar Version, InviteToDmServer Modal and Select Dm Members for video ad voice calling to be deployed via the modal manager instead of being called in the contained component where it it can be launched from, the reason for this is to prepare for react version 18 which stops modals from being deployed with in the same component that may overflow be rendered invisible.
 
 ## Backend Changes
 
