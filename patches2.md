@@ -494,6 +494,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Move old Select Dm Members to Call modal container to deprecated.
     - Swapped to props param instead of deconstructured prop params for Select Dm Members to Call modal;
     - Passed useparams to Select Dm Members to Call modal to get the current dm server;
+    - Swapped Friends homepage from a class based component to a function component in order to use a call back to usse location from certain modals.
 
 ## Backend Changes
 
