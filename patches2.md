@@ -486,6 +486,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added another modal that is displayed in a one to one dmServer when clicking on the dmserver header bar and clicking add dm members button if the user is not friends with the other user in the dm chat they are not allowed to invite anyone till they become friends there is a button to submit a friend request to that user once the user is added it will check if the user has any friends to invite or if they do display the no friends to add modal or a variant of the invite to dmServer modal.
     -Remodeled select dm members for video calling modal.
     -Remodeled select dm members for voice calling modal.
+    - Add a switch props for select dm members for calling modal depending on which button pressed will switch styles and specific call modals based on whether video or voice call is pressed.
 
 ## Backend Changes
 
