@@ -499,6 +499,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Styles sheet for delete friend confirmation modal.
     - Created Delete friend confirmation modal which will pop up when proceeding to delete a friend.
     - Created Delete friend confirmation modal container.
+    - Removed Unused user search modal that has never been used to deprecated folder as a reference file.
 
 ## Backend Changes
 
