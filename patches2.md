@@ -492,7 +492,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Select Dm Members to invite to call be deployed from within the dm serve app bar to just be called to be opened from their and be spawned from the modal manager.
     - Move old Select Dm Members to Call modal to deprecated.
     - Move old Select Dm Members to Call modal container to deprecated.
-
+    - Swapped to props param instead of deconstructured prop params for Select Dm Members to Call modal;
 
 ## Backend Changes
 
