@@ -488,7 +488,7 @@ the need to create a private room is need to prevent unwanted members from enter
     -Remodeled select dm members for voice calling modal.
     - Add a switch props for select dm members for calling modal depending on which button pressed will switch styles and specific call modals based on whether video or voice call is pressed.
     - Added voice call option when clicking the phone icon in dmServers to select members to invite to a call, this is disabled for now.
-     
+    - Add in Select Dm Members to call to have the form handle which cally type it is and deploy the appropiate call modal, this is switched back to the previous on submit function for now while voice call modal is worked on.
 
 ## Backend Changes
 
