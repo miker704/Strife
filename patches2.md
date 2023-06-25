@@ -485,7 +485,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added a no friends to add modal when in dm servers clicking the dm server side bar create dm modal button or the invite/create dm modal button in  dm header bar, or homepage header bar in a that pop up if a user has no friends or does not have any friends at all to invite (including not being friends with anyone in the dmserver) which will warp to the homepage and enable the add friends tab if they are in a dm server already.
     - Added another modal that is displayed in a one to one dmServer when clicking on the dmserver header bar and clicking add dm members button if the user is not friends with the other user in the dm chat they are not allowed to invite anyone till they become friends there is a button to submit a friend request to that user once the user is added it will check if the user has any friends to invite or if they do display the no friends to add modal or a variant of the invite to dmServer modal.
     -Remodeled select dm members for video calling modal.
-    
+    -Remodeled select dm members for voice calling modal.
 
 ## Backend Changes
 
