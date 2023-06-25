@@ -491,6 +491,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Add in Select Dm Members to call to have the form handle which cally type it is and deploy the appropiate call modal, this is switched back to the previous on submit function for now while voice call modal is worked on.
     - Added Select Dm Members to invite to call be deployed from within the dm serve app bar to just be called to be opened from their and be spawned from the modal manager.
     - Move old Select Dm Members to Call modal to deprecated.
+    - Move old Select Dm Members to Call modal container to deprecated.
+
 
 ## Backend Changes
 
