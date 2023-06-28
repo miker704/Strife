@@ -503,7 +503,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Switched to SCSS vars temporaly for Create Server Modal.
     - Create Server Modal uses discords light theme so preparations have been made to switch to starting the theme switching feature earlier. started the conversion fo scss vars  and mapping them to the light theme equivalent.
     - Restyled create server modal.
-    - Remodeled and reworked create server modal. 
+    - Remodeled and reworked create server modal.
+    - Moved old styles of create server modal to deprecated.
 
 ## Backend Changes
 
