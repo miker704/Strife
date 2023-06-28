@@ -502,6 +502,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed Unused user search modal that has never been used to deprecated folder as a reference file.
     - Switched to SCSS vars temporaly for Create Server Modal.
     - Create Server Modal uses discords light theme so preparations have been made to switch to starting the theme switching feature earlier. started the conversion fo scss vars  and mapping them to the light theme equivalent.
+    - Restyled create server modal.
 
 ## Backend Changes
 
