@@ -506,6 +506,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Remodeled and reworked create server modal.
     - Moved old styles of create server modal to deprecated.
     - Moved old class based component of create server modal to deprecated.
+    - Switched to functional based component for create server modal.
 
 ## Backend Changes
 
