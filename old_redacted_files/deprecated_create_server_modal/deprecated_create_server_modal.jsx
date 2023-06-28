@@ -923,3 +923,302 @@
 // }
 
 // export default CreateServerForm;
+
+//new unused comps
+
+// let slide1 = currentForm === 1 ? (
+//     <div className="create-server-slide-1">
+//         <div className="create-server-slide-inner">
+
+//             <div className='create-server-header-wrap'>
+//                 <h1 className='create-server-header'>Create a Server</h1>
+//                 <div className='create-server-header-subtext'>
+//                     Your server is where you and your friends hang out.
+//                     Make yours and start talking.
+//                 </div>
+//                 <button className="x-to-close-button-svg" type="button" onClick={(e) => handleCloseOnOutSideClick(e)}>
+//                     <div className="global-button-contents">
+//                         <svg aria-hidden="true" role="img" className="svg-x-closeIcon" width="24" height="24" viewBox="0 0 24 24">
+//                             <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path></svg>
+//                     </div>
+//                 </button>
+
+//             </div>
+//             <div className='create-server-template-button-list global-scroll-thin-raw-attributes-light global-scroller-base' style={{ overflow: `hidden scroll` }}>
+//                 <button className='create-server-template-button' type="button"
+//                     onClick={(e) => {
+//                         handleSlideForward(e);
+//                     }}
+//                 >
+//                     <img className="create-a-Server-Img" alt=" " />
+//                     <div className='create-server-template-button-text'>Create My Own</div>
+//                     <img className="create-server-modal-arrow" alt=" " />
+//                 </button>
+
+//                 <div className='create-server-template-text-header'>Start from a template</div>
+
+//                 <button className='create-server-template-button' type="button"
+//                     onClick={(e) => {
+//                         handleSlideForward(e);
+//                         setServerGenre("Gaming");
+//                     }}
+//                 >
+//                     <img className="gaming-Server-Img" alt=" " />
+//                     <div className='create-server-template-button-text'>Gaming</div>
+//                     <img className="create-server-modal-arrow" alt=" " />
+//                 </button>
+//                 <button className='create-server-template-button' type="button"
+//                     onClick={(e) => {
+//                         handleSlideForward(e);
+//                         setServerGenre("School Club");
+
+//                     }}
+//                 >
+//                     <img className="school-Club-Server-Img" alt=" " />
+//                     <div className='create-server-template-button-text'>School Club</div>
+//                     <img className="create-server-modal-arrow" alt=" " />
+//                 </button>
+//                 <button className='create-server-template-button' type="button"
+//                     onClick={(e) => {
+//                         handleSlideForward(e);
+//                         setServerGenre("Study Group");
+
+//                     }}
+//                 >
+//                     <img className="study-Server-Img" alt=" " />
+//                     <div className='create-server-template-button-text'>Study Group</div>
+//                     <img className="create-server-modal-arrow" alt=" " />
+//                 </button>
+//                 <button className='create-server-template-button' type="button"
+//                     onClick={(e) => {
+//                         handleSlideForward(e);
+//                         setServerGenre("Friends");
+
+//                     }}
+//                 >
+//                     <img className="friends-Server-Img" alt=" " />
+//                     <div className='create-server-template-button-text'>Friends</div>
+//                     <img className="create-server-modal-arrow" alt=" " />
+//                 </button>
+//                 <button className='create-server-template-button' type="button"
+//                     onClick={(e) => {
+//                         handleSlideForward(e);
+//                         setServerGenre("Artists & Creators");
+//                     }}
+//                 >
+//                     <img className="artists-and-Creators-Server-Img" alt=" " />
+//                     <div className='create-server-template-button-text'>Artists & Creators</div>
+//                     <img className="create-server-modal-arrow" alt=" " />
+//                 </button>
+//                 <button className='create-server-template-button' type="button"
+//                     onClick={(e) => {
+//                         handleSlideForward(e);
+//                         setServerGenre("Local Community");
+//                     }}
+//                 >
+//                     <img className="local-Community-Server-Img" alt=" " />
+//                     <div className='create-server-template-button-text'>Local Community</div>
+//                     <img className="create-server-modal-arrow" alt=" " />
+//                 </button>
+//                 <div className='create-server-template-list-sep'></div>
+//             </div>
+//             <div className='create-server-footer-button-container'>
+//                 <h2 className='create-server-footer-header'>
+//                     Have an invite already?
+//                 </h2>
+//                 <button className='create-server-footer-join-a-server-button' type="button" onClick={(e) => { handleJoinServerClick(e) }}>
+//                     <div className='create-server-footer-join-a-server-button-contents'>Join a Server </div>
+//                 </button>
+//             </div>
+//         </div>
+//     </div>
+// ) : ("");
+
+
+// let joinSlide = joiningServer === true && currentForm === 2 ? (
+//     <div className='create-server-slide-joining-server'>
+
+//         <div className="create-server-slide-inner">
+
+//             <div>
+//                 <div className='create-server-header-wrap-3'>
+//                     <h1 className='csm-join-server-header'>Join a Server</h1>
+//                     <div className='csm-join-server-header-subtext'>
+//                         Enter an invite below to join an existing server
+//                     </div>
+//                     <button className="x-to-close-button-svg" type="button" onClick={(e) => handleCloseOnOutSideClick(e)}>
+//                         <div className="global-button-contents">
+//                             <svg aria-hidden="true" role="img" className="svg-x-closeIcon" width="24" height="24" viewBox="0 0 24 24">
+//                                 <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path></svg>
+//                         </div>
+//                     </button>
+//                 </div>
+//                 <div className='create-server-template-button-list-3 global-scroll-thin-raw-attributes-light global-scroller-base' style={{ overflow: `hidden scroll`, paddingRight: `8px` }}>
+//                     <form className='join-server-input-form'>
+//                         <div>
+//                             <h2 className='join-server-input-form-header'>
+//                                 Invite link
+//                                 <span className={inviteCodeErrors}>{invalidInviteCode}</span>
+//                             </h2>
+//                             <div className='join-server-input-wrapper'>
+//                                 <input
+//                                     className='join-server-input'
+//                                     spellCheck={false} placeholder="https://strife.gg/8404br4s"
+//                                     value={inviteCode} onChange={(e) => setInviteCode(e.currentTarget.value)}
+//                                     type="text" maxLength={999} required />
+//                             </div>
+//                         </div>
+//                     </form>
+//                     <div className='join-server-invite-links-example'>
+//                         <h2 className='join-server-invite-link-example-header'>Invites should look like</h2>
+//                         <div className='join-server-invite-link-sample'>8404br4s</div>
+//                         <div className='join-server-invite-link-sample'>https://strife.gg/8406eb38</div>
+//                         <div className='join-server-invite-link-sample'>https://strife.gg/default-server</div>
+
+//                     </div>
+//                     <div className='join-server-invite-row-container' role={'button'} onClick={(e) => { props.history.push(`/$/channels/guild-discovery/`); handleCloseOnOutSideClick(e) }}>
+//                         <img className="dont-Have-A-Server-Img" alt=" " />
+//                         <div>
+//                             <h2 className='dont-have-a-server-header'>
+//                                 Don't have an invite?
+//                             </h2>
+//                             <div className='dont-have-a-server-text'>Check out Discoverable communities in Server Discovery.</div>
+//                         </div>
+//                         <img className="create-server-modal-arrow" alt=" " />
+//                     </div>
+//                     <div className='create-server-sep'></div>
+//                 </div>
+//                 <div className='create-server-footer-button-container-3'>
+//                     <button className='join-server-join-button' type='button' onClick={(e) => handleJoinServer(e)}>
+//                         <div className='global-button-contents look-filled-button-contents'>Join Server</div>
+//                     </button>
+//                     <button className='join-server-back-button' type='button' onClick={(e) => handleSlideBackward(e)}>
+//                         <div className='global-button-contents look-filled-button-contents'>Back</div>
+//                     </button>
+//                 </div>
+//             </div>
+//         </div>
+
+//     </div>
+// ) : ("");
+
+
+// let slide2 = currentForm === 2 && joiningServer === false ? (
+//     <div className="create-server-slide-2">
+//         <div className="create-server-slide-inner">
+
+//             <div className='create-server-header-wrap'>
+//                 <h1 className='create-server-header'>Tell us more about your server</h1>
+//                 <div className='create-server-header-subtext'>
+//                     In order to help you with your setup, is your new server for just a few friends or a larger community?
+//                 </div>
+//                 <button className="x-to-close-button-svg" type="button" onClick={(e) => handleCloseOnOutSideClick(e)}>
+//                     <div className="global-button-contents">
+//                         <svg aria-hidden="true" role="img" className="svg-x-closeIcon" width="24" height="24" viewBox="0 0 24 24">
+//                             <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path></svg>
+//                     </div>
+//                 </button>
+//             </div >
+//             <div className='create-server-template-button-list-2 global-scroll-thin-raw-attributes-light global-scroller-base' style={{ overflow: `hidden scroll`, paddingRight: `8px` }}>
+
+//                 <button className='create-server-template-button' type="button"
+//                     onClick={(e) => {
+//                         handleSlideForward(e);
+//                         setServerPrivacy('private');
+//                         setPublicServer(false)
+//                     }}>
+//                     <img className="private-Server-Img" alt=" " />
+//                     <div className='create-server-template-button-text'>For me and my friends</div>
+//                     <img className="create-server-modal-arrow" alt=" " />
+//                 </button>
+
+//                 <button className='create-server-template-button' type="button"
+//                     onClick={(e) => {
+//                         handleSlideForward(e);
+//                         setServerPrivacy('public');
+//                         setPublicServer(true)
+//                     }}>
+//                     <img className="public-Server-Img" alt=" " />
+//                     <div className='create-server-template-button-text'>For a club or community</div>
+//                     <img className="create-server-modal-arrow" alt=" " />
+//                 </button>
+
+//                 <div className='skip-section'>
+//                     Not sure? You can {` `}
+//                     <a className='skip-anchor'
+//                         onClick={(e) => {
+//                             handleSlideForward(e);
+//                             setPublicServer(true);
+//                             setServerPrivacy('public');
+//                         }}>skip this question</a>
+//                     {` `}for now.
+//                 </div>
+//                 <div className='create-server-template-list-sep-2'></div>
+//             </div>
+//             <div className='create-server-footer-button-container-2'>
+//                 <button className='create-server-footer-back-button' type="button" onClick={(e) => handleSlideBackward(e)}>
+//                     <div className='global-button-contents'>Back</div>
+//                 </button>
+//             </div>
+//         </div>
+//     </div >
+// ) : ("")
+
+
+// let slide3 = currentForm === 3 ? (
+//     <div className='create-server-slide-3' style={{ height: `${props.errors.length > 0 ? `428px` : `404px`}` }}>
+//         <div className="create-server-slide-inner">
+//             <div className='create-server-header-wrapper'>
+//                 <h1 className='create-server-header'>Customize your server</h1>
+//                 <div className='create-server-header-subtext'>
+//                     Give your new server a personality with a name and an icon. You can always change it later.
+//                 </div>
+//                 <button className="x-to-close-button-svg" type="button" onClick={(e) => handleCloseOnOutSideClick(e)}>
+//                     <div className="global-button-contents">
+//                         <svg aria-hidden="true" role="img" className="svg-x-closeIcon" width="24" height="24" viewBox="0 0 24 24">
+//                             <path fill="currentColor" d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path></svg>
+//                     </div>
+//                 </button>
+//             </div>
+//             <div className='create-server-template-button-list-3 create-server-guild global-scroll-thin-raw-attributes-light global-scroller-base' style={{ overflow: `hidden scroll`, paddingRight: `8px` }}>
+
+//                 <div className='create-server-upload-server-icon-wrapper'>
+//                     <div className='create-server-upload-server-icon-container'>
+//                         {server_Icon_Upload_Filler}
+//                         <input className="create-server-icon-image-input" type="file" accept=".jpg, .jpeg, .png, .gif" onChange={(e) => handleFileProcessing(e)} />
+//                     </div>
+//                 </div>
+//                 <form onSubmit={handleSubmit}>
+
+//                     <div className='create-server-name-input-section'>
+//                         {ifServerError}
+//                         <label className='create-server-name-input-label' htmlFor="servernameInput">Server Name</label>
+//                         <div className='create-server-name-input-wrapper'>
+//                             <input id="servernameInput" className="create-server-name-input" type="text" spellCheck={false}
+//                                 maxLength={100} value={serverName} onKeyUp={(e) => submissionBlocker(e)}
+//                                 placeholder={`${props.currentUser.username}'s server`}
+//                                 onChange={(e) => setServerName(e.currentTarget.value)}
+//                             />
+//                         </div>
+//                     </div>
+//                     <div className='create-server-name-input-subtext'>
+//                         By creating a server, you agree to $TR!F3's{" "}
+//                         <strong><a href="https://discord.com/guidelines" target="_blank" rel="noreferrer noopener">Community Guidelines</a></strong>
+//                         .
+//                     </div>
+//                 </form>
+//                 <div className='create-server-sep'></div>
+//             </div>
+
+//             <div className='create-server-footer-button-container-3'>
+//                 <button className='create-server-button' type='submit'>
+//                     <div className='global-button-contents look-filled-button-contents'>Create</div>
+//                 </button>
+//                 <button className='create-server-slide-3-back-button' type='button' onClick={(e) => handleSlideBackward(e)}>
+//                     <div className='global-button-contents'>Back</div>
+//                 </button>
+//             </div>
+//         </div>
+
+//     </div>
+// ) : ("");
