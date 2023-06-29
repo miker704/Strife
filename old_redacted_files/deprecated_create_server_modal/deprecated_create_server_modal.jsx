@@ -1222,3 +1222,224 @@
 
 //     </div>
 // ) : ("");
+
+
+
+
+//normal old style to make
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     let serverSubmission = {};
+    //     const createServerFormData = new FormData();
+
+    //     //if server genre is of local type 
+    //     let serverChannelSetup = {};
+    //     switch (serverTemplate) {
+
+    //         case 'Local Community':
+    //             serverChannelSetup = {
+    //                 channelInfoNames: ['welcome-and-rules', "announcements", 'resources'],
+    //                 channelTextNames: ["meeting-plans", 'off-topic'],
+    //                 channelVoiceNames: ['Lounge', "Meeting Room"],
+
+    //             };
+    //             break;
+    //         case 'Artists & Creators':
+    //             serverChannelSetup = {
+    //                 channelInfoNames: ['welcome-and-rules', "announcements"],
+    //                 channelTextNames: ["events", 'ideas-and-feedback'],
+    //                 channelVoiceNames: ['Lounge', 'Community Hangout', "Stream Room"],
+
+    //             };
+    //             break;
+
+    //         case 'Friends':
+    //             serverChannelSetup = {
+    //                 channelInfoNames: [],
+    //                 channelTextNames: ["games", 'music'],
+    //                 channelVoiceNames: ['Lounge', "Stream Room"],
+
+    //             };
+    //             break;
+
+    //         case 'Study Group':
+    //             serverChannelSetup = {
+    //                 channelInfoNames: ['welcome-and-rules', 'notes-resources'],
+    //                 channelTextNames: ["homework-help", 'session-planning', 'off-topic'],
+    //                 channelVoiceNames: ['Lounge', "Study Room 1", "Study Room 2"],
+
+    //             };
+    //             break;
+
+    //         case 'School Club':
+    //             serverChannelSetup = {
+    //                 channelInfoNames: ['welcome-and-rules', "announcements", 'resources'],
+    //                 channelTextNames: ["meeting-plans", 'off-topic'],
+    //                 channelVoiceNames: ['Lounge', "Meeting Room 1", "Meeting Room 2"],
+
+    //             };
+    //             break;
+
+    //         case 'Gaming':
+    //             serverChannelSetup = {
+    //                 channelInfoNames: [],
+    //                 channelTextNames: ["clips-and-highlights"],
+    //                 channelVoiceNames: ['Lobby', "Gaming"],
+
+    //             };
+    //             break;
+
+    //         default:
+    //             serverChannelSetup = {
+    //                 channelInfoNames: [],
+    //                 channelTextNames: [],
+    //                 channelVoiceNames: ['General'],
+
+    //             };
+    //             break;
+
+    //     }
+
+    //     if (serverPrivacy === "public") {
+    //         setPublicServer(true);
+
+    //         serverSubmission = {
+    //             server_owner_id: props.currentUser.id,
+    //             server_name: serverName,
+    //             public: publicServer, //true by default
+
+    //         }
+
+    //         createServerFormData.append(`server[server_owner_id]`, props.currentUser.id);
+    //         createServerFormData.append(`server[server_name]`, serverName);
+    //         createServerFormData.append(`server[public]`, publicServer);
+    //         // createServerFormData.append(`server[serverTemplate]`, serverTemplate);
+
+    //         if (server_Icon) {
+    //             createServerFormData.append(`server[server_Icon]`, server_Icon);
+    //         }
+    //     }
+    //     else if (serverPrivacy === "private") {
+
+    //         setPublicServer(false);
+    //         serverSubmission = {
+    //             server_owner_id: props.currentUser.id,
+    //             server_name: serverName,
+    //             public: publicServer, //true by default
+
+    //         }
+    //         createServerFormData.append(`server[server_owner_id]`, props.currentUser.id);
+    //         createServerFormData.append(`server[server_name]`, serverName);
+    //         createServerFormData.append(`server[public]`, publicServer);
+    //         // createServerFormData.append(`server[serverTemplate]`, serverTemplate);
+
+    //         if (server_Icon) {
+    //             createServerFormData.append(`server[server_Icon]`, server_Icon);
+    //         }
+
+    //     }
+
+
+    //     let newServer;
+    //     let channel_type;
+    //     //create the new server then if the server is using one of the performed templates 
+    //     //create the channels to set up the server 
+    //     // this.props.action(serverSubmission).then((action) => {
+    //     props.createServer(createServerFormData).then((action) => {
+    //         newServer = action.server;
+    //         // newServer = action.server.server;
+    //         //
+    //         for (let i in serverChannelSetup) {
+    //             //if template for server has no channels in the in any of the 3 catergories skip it  
+    //             if (serverChannelSetup[i].length === 0) {
+    //                 continue;
+    //             }
+    //             else {
+
+    //                 if (i === 'channelInfoNames' || i === 'channelTextNames') {
+    //                     channel_type = 1;
+    //                 }
+    //                 else if (i === 'channelVoiceNames') {
+    //                     channel_type = 2;
+
+    //                 }
+
+    //                 for (let e of serverChannelSetup[i]) {
+    //                     let channelHash = new Object();
+    //                     channelHash = {
+    //                         server_id: newServer.id,
+    //                         channel_name: e,
+    //                         channel_type: channel_type
+    //                     }
+
+    //                     props.createChannelSetup(channelHash);
+
+    //                 }
+
+    //             }
+    //         }
+
+
+
+    //     })
+    //     // .then(() => {
+    //     //     setTimeout(() => {
+    //     //         handleCloseOnOutSideClick(e);
+    //     //     }, 300);
+    //     // }).then(() => {
+    //     //     props.reSyncCurrentUser(props.currentUserId).then(() => {
+    //     //         props.history.push(`/$/channels/${newServer.id}/${newServer.general_channel_id}`);
+    //     //     })
+    //     // })
+
+    // }
+
+
+
+
+//through channel injextion    method
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     const createServerFormData = new FormData();
+
+    //     //if server genre is of local type 
+    
+    //     if (serverPrivacy === "public") {
+    //         setPublicServer(true);
+
+    //         createServerFormData.append(`server[server_owner_id]`, props.currentUser.id);
+    //         createServerFormData.append(`server[server_name]`, serverName);
+    //         createServerFormData.append(`server[public]`, publicServer);
+    //         // createServerFormData.append(`server[serverTemplate]`, serverTemplate);
+    //         if (server_Icon) {
+    //             createServerFormData.append(`server[server_Icon]`, server_Icon);
+    //         }
+    //     }
+    //     else if (serverPrivacy === "private") {
+
+    //         setPublicServer(false);
+        
+    //         createServerFormData.append(`server[server_owner_id]`, props.currentUser.id);
+    //         createServerFormData.append(`server[server_name]`, serverName);
+    //         createServerFormData.append(`server[public]`, publicServer);
+    //         // createServerFormData.append(`server[serverTemplate]`, serverTemplate);
+
+    //         if (server_Icon) {
+    //             createServerFormData.append(`server[server_Icon]`, server_Icon);
+    //         }
+
+    //     }
+
+
+    //     let newServer;
+
+    //     props.createServer(createServerFormData).then((action) => {
+    //         newServer = action.server;
+    //         let channelInjextion = {
+    //             server_id: newServer.id,
+    //             serverTemplate: serverTemplate
+    //         };
+    //         props.createChannelsViaServerTemplate(channelInjextion);
+    //     })
+
+    // }
