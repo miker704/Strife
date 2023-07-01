@@ -501,7 +501,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Delete friend confirmation modal container.
     - Removed Unused user search modal that has never been used to deprecated folder as a reference file.
     - Switched to SCSS vars temporaly for Create Server Modal.
-    - Create Server Modal uses discords light theme so preparations have been made to switch to starting the theme switching feature earlier. started the conversion fo scss vars  and mapping them to the light theme equivalent.
+    - Create Server Modal uses discords light theme so preparations have been made to switch to starting the theme switching feature earlier. started the conversion fo scss vars and mapping them to the light theme equivalent.
     - Restyled create server modal.
     - Remodeled and reworked create server modal.
     - Moved old styles of create server modal to deprecated.
@@ -513,7 +513,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Remodeled Channel Nav Bar.
     - Moved Old Channel Nav Bar Styles to deprecated folder.
     - Moved Old Channel Nav Bar to deprecated folder.
-    - Modifed SCSS/CSS reset sheet to match more closely to discords reset of html styling values.
+    - Modified SCSS/CSS reset sheet to match more closely to discords reset of html styling values.
+    - Replaced the backend controller function for create servers with a combination of the frontend server creation from the create server modal that uses a template to create channels for server setup. The backend controller takes the template type and creates the pre made channels on the backend instead of the frontend allowing for much more faster creation and reducing unecessary redux calls from numberous channel creations and fetches when creating a server with a template with multiple channels.
 
 ## Backend Changes
 
