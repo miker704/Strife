@@ -537,7 +537,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed Blocked Users - # count to Blocked - # count in Blocked users page.
     - Removed Pending Friend Requests - # count to Pending - # count in Pending Friend Requests page.
     - Adjust the subtext sizing of each list element in blocked users page.
-
+    - Adjust the subtext sizing of each list element in Pending Friend Requests page.
 
 ## Backend Changes
 
