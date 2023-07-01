@@ -521,6 +521,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Made a channel injection redux dispatch variable which is received by server reducer to inject the channels into server redux state.
     - Made a backend function to create channels based on server template in channel controller.
     - Moved a backup alternative create dm modal that uses fetch instead of redux dispatch to deprecated folder.
+    - Replaced the filter search that uses the is-hidden attribute to hide non matching results and show the no results found in Online Friends List Page
 
 ## Backend Changes
 
