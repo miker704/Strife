@@ -528,6 +528,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Replaced the filter search that uses the is-hidden attribute to hide non matching results and show the no results found in All Friends List Page.
     - Moved All Friends List Page that uses the old search method to deprecated folder.
     - Added input refocus when clicking the gray X to reset the search when in live search in All friends page.
+    - Added input refocus when clicking the gray X to reset the search when in live search in Block Users page.
+
 
 ## Backend Changes
 
