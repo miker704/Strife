@@ -511,6 +511,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Switched to SCSS Vars for styles for Channel Nav Bar.
     - Restyled Channel Nav Bar.
     - Remodeled Channel Nav Bar.
+    - Moved Old Channel Nav Bar Styles to deprecated folder.
 
 ## Backend Changes
 
