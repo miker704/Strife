@@ -535,6 +535,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Replaced the filter search that uses the is-hidden attribute to hide non matching results and show the no results found in Pending requests Page.
     - Moved Pending Requests Page that uses the old search method to deprecated folder.
     - Removed Blocked Users - # count to Blocked - # count in Blocked users page.
+    - Removed Pending Friend Requests - # count to Pending - # count in Pending Friend Requests page.
+
 
 ## Backend Changes
 
