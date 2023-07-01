@@ -510,6 +510,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Swapped Create Server function using a template option in create server modal from the front end to the backend.
     - Switched to SCSS Vars for styles for Channel Nav Bar.
     - Restyled Channel Nav Bar.
+    - Remodeled Channel Nav Bar.
 
 ## Backend Changes
 
