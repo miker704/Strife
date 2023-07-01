@@ -508,6 +508,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old class based component of create server modal to deprecated.
     - Switched to functional based component for create server modal.
     - Swapped Create Server function using a template option in create server modal from the front end to the backend.
+    - Switched to SCSS Vars for styles for Channel Nav Bar.
 
 ## Backend Changes
 
