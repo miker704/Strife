@@ -523,6 +523,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved a backup alternative create dm modal that uses fetch instead of redux dispatch to deprecated folder.
     - Replaced the filter search that uses the is-hidden attribute to hide non matching results and show the no results found in Online Friends List Page.
     - Moved Online Friends List Page that uses the old search method to deprecated folder.
+    - Removed the Blue X to clear search from search inputs across the entire app via reset sheet.
 
 ## Backend Changes
 
