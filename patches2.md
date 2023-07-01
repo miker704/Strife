@@ -515,6 +515,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved Old Channel Nav Bar to deprecated folder.
     - Modified SCSS/CSS reset sheet to match more closely to discords reset of html styling values.
     - Replaced the backend controller function for create servers with a combination of the frontend server creation from the create server modal that uses a template to create channels for server setup. The backend controller takes the template type and creates the pre made channels on the backend instead of the frontend allowing for much more faster creation and reducing unecessary redux calls from numberous channel creations and fetches when creating a server with a template with multiple channels.
+    - Made a create channel dispatch function that can be used to in combination of create server modal for creating multiple channels then injecting those channels in that server state. this is made but replaced with a direct method but kept as a backup as an alternative.
 
 ## Backend Changes
 
