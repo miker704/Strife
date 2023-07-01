@@ -513,6 +513,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Remodeled Channel Nav Bar.
     - Moved Old Channel Nav Bar Styles to deprecated folder.
     - Moved Old Channel Nav Bar to deprecated folder.
+    - Modifed SCSS/CSS reset sheet to match more closely to discords reset of html styling values.
 
 ## Backend Changes
 
