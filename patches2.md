@@ -518,6 +518,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Made a create channel dispatch function that can be used to in combination of create server modal for creating multiple channels then injecting those channels in that server state. this is made but replaced with a direct method but kept as a backup as an alternative.
     - Made a channel injection api function.
     - Made a channel injection redux dispatch function.
+    - Made a channel injection redux dispatch variable which is received by server reducer to inject the channels into server redux state.
+
 
 ## Backend Changes
 
