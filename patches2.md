@@ -524,6 +524,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Replaced the filter search that uses the is-hidden attribute to hide non matching results and show the no results found in Online Friends List Page.
     - Moved Online Friends List Page that uses the old search method to deprecated folder.
     - Removed the Blue X to clear search from search inputs across the entire app via reset sheet.
+    - Added input refocus when clicking the gray X to reset the search when in live search in online friends page 
 
 ## Backend Changes
 
