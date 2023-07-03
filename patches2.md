@@ -538,6 +538,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed Pending Friend Requests - # count to Pending - # count in Pending Friend Requests page.
     - Adjust the subtext sizing of each list element in blocked users page.
     - Adjust the subtext sizing of each list element in Pending Friend Requests page.
+    - Added Pulsing ellipis animation to create server button in create server modal.
 
 ## Backend Changes
 
