@@ -67,7 +67,7 @@ class UserSearchModal extends React.Component {
                             src={user.photo === undefined ? 
                                 "https://strife-seeds.s3.amazonaws.com/defaultProfilePic.png" :
                                 user.photo
-                                } alt="pfp" />
+                                } alt=" " />
                         </div>
                         <div className="searched-user-username" key={user.username}>{user.username}</div>
                     </div>
