@@ -542,6 +542,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Pulsing ellipis animation to join server button in create server modal.
     - Created Util Function to return the mask url of online user badge.
     - Created Util Function to return the badge color of online user badge.
+    - Switched to SCSS Vars for User Settings Modal.
 
 
 ## Backend Changes
