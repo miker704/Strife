@@ -1,0 +1,2019 @@
+// // Place all the styles related to the api::users controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// //user nav bar located in User_nav_container.js calling form user_nav_bar.jsx
+// @import 'global_vars';
+
+// // .user-nav-bar {
+// //     height: 40px;
+// //     display: flex;
+// //     justify-content: space-between;
+// //     width: 225px;
+// //     padding: 5px;
+// //     // background-color: #292B2F;
+// //     background-color: #232428;
+// //     position: absolute;
+// //     transform: translate(75px, Calc(100vh - 50px));
+// //     user-select: none;
+// //     z-index: 3;
+// //     // width: 230px;
+// //     // transform: translate(75px, Calc(100vh - 50px));
+
+// // }
+
+
+// // .user-nav-bar:hover {
+// //     z-index: 9;
+// // }
+
+// // .fa-microphone,
+// // .fa-headphones,
+// // .svg-microphone,
+// // .svg-muted-microphone,
+// // .svg-headphone,
+// // .svg-muted-headphone {
+// //     color: #B9BBBE;
+// //     padding: 5px;
+// //     padding-top: 10px;
+// // }
+
+
+
+// // .fa-gear {
+// //     color: #B9BBBE;
+// //     padding: 5px;
+// //     padding-top: 10px;
+// // }
+
+// #username {
+//     display: flex;
+//     align-content: center;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+
+// #username h3 {
+//     color: #FFFFFF;
+//     font-size: 14px;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     line-height: 18px;
+//     font-weight: 600;
+//     font-family: "Whitney";
+//     white-space: nowrap;
+
+// }
+
+
+// #username p {
+//     font-size: 12px;
+//     font-family: "Whitney";
+//     line-height: 13px;
+//     overflow: hidden;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     color: hsl(216, 0.037%, 73.5%);
+//     font-weight: 400;
+// }
+
+
+// #user-account-info {
+//     padding-left: 10px;
+//     width: 90px;
+//     overflow-y: auto;
+//     overflow-x: auto;
+// }
+
+// #user-account-info::-webkit-scrollbar {
+//     width: 2px;
+//     height: 2px;
+//     background-color: #282A2E;
+// }
+
+// #user-settings-icons a {
+//     text-decoration: none;
+//     width: 32px;
+// }
+
+// // #user-settings-icons a:hover .fa-gear {
+// //     filter: brightness(150%);
+// // }
+
+// #user-settings-icons .fa-gear:hover {
+//     filter: brightness(150%);
+// }
+
+
+
+
+// #user-settings-icons .fa-headphones:hover {
+//     filter: brightness(150%);
+// }
+
+// #user-settings-icons .fa-microphone:hover {
+//     filter: brightness(150%);
+// }
+
+// #user-settings-icons .svg-microphone:hover {
+//     filter: brightness(150%);
+
+// }
+
+// #user-settings-icons .svg-muted-microphone:hover {
+//     filter: brightness(150%);
+
+// }
+
+
+// #user-settings-icons .svg-headphone:hover {
+//     filter: brightness(150%);
+
+// }
+
+// #user-settings-icons .svg-muted-headphone:hover {
+//     filter: brightness(150%);
+
+// }
+
+// .user-settings-toggle {
+//     // width: fit-content;
+//     width: 60px;
+//     // height: 30px;
+//     height: fit-content;
+//     font-family: "Ginto";
+//     font-weight: 500;
+//     // transform: translate(24px, -65px);
+//     transform: translate(-2px, -80px);
+//     visibility: hidden;
+//     background-color: rgb(25, 25, 25);
+//     color: #FFFFFF;
+//     z-index: 6;
+//     border-radius: 5px;
+//     font-size: 12px;
+//     display: flex;
+//     position: absolute;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+// .user-settings-toggle1 {
+//     width: 85px;
+//     // height: 30px;
+//     height: fit-content;
+//     font-family: "Ginto";
+//     font-weight: 500;
+
+//     // transform: translate(24px, -65px);
+//     transform: translate(-25px, -80px);
+//     visibility: hidden;
+//     background-color: rgb(25, 25, 25);
+//     color: #FFFFFF;
+//     z-index: 6;
+//     border-radius: 5px;
+//     font-size: 12px;
+//     display: flex;
+//     position: absolute;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+// .user-settings-toggle2 {
+//     // width: fit-content;
+//     width: 70px;
+//     // height: 30px;
+//     height: fit-content;
+//     font-family: "Ginto";
+//     font-weight: 500;
+//     // transform: translate(24px, -65px);
+//     transform: translate(-12px, -80px);
+//     visibility: hidden;
+//     background-color: rgb(25, 25, 25);
+//     color: #FFFFFF;
+//     z-index: 6;
+//     border-radius: 5px;
+//     font-size: 12px;
+//     display: flex;
+//     position: absolute;
+//     align-items: center;
+//     justify-content: center;
+
+// }
+
+
+// .user-settings-toggle-unmute {
+//     width: 62px;
+//     // height: 30px;
+//     height: fit-content;
+//     font-family: "Ginto";
+//     font-weight: 500;
+//     // transform: translate(24px, -65px);
+//     transform: translate(-12px, -80px);
+//     visibility: hidden;
+//     background-color: rgb(25, 25, 25);
+//     color: #FFFFFF;
+//     z-index: 6;
+//     border-radius: 5px;
+//     font-size: 12px;
+//     display: flex;
+//     position: absolute;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+
+// #user-settings-icons a:hover .user-settings-toggle {
+//     visibility: visible;
+// }
+
+
+// #user-settings-icons span:hover .user-settings-toggle {
+//     visibility: visible;
+
+// }
+
+// #user-settings-icons div:hover .user-settings-toggle {
+//     visibility: visible;
+
+// }
+
+// #user-settings-icons .user-settings-toggle:hover {
+//     visibility: visible;
+
+// }
+
+// #user-settings-icons a:hover .user-settings-toggle1 {
+//     visibility: visible;
+// }
+
+// #user-settings-icons div:hover .user-settings-toggle2 {
+//     visibility: visible;
+// }
+
+// #user-settings-icons div:hover .user-settings-toggle1 {
+//     visibility: visible;
+// }
+
+
+// #user-settings-icons {
+//     display: flex;
+
+// }
+
+// .contain-icon {
+//     width: 32px;
+// }
+
+
+// .color-1 {
+//     background-color: $user-avatar-color-1 !important;
+// }
+
+// .color-2 {
+//     background-color: $user-avatar-color-2 !important;
+// }
+
+// .color-3 {
+//     background-color: $user-avatar-color-3 !important;
+// }
+
+// .color-4 {
+//     background-color: $user-avatar-color-4 !important;
+// }
+
+// .color-5 {
+//     background-color: $user-avatar-color-5 !important;
+// }
+
+// .color-6 {
+//     background-color: $user-avatar-color-6 !important;
+// }
+
+// .color-7 {
+//     background-color: $user-avatar-color-7 !important;
+// }
+
+// .color-8 {
+//     background-color: $user-avatar-color-8 !important;
+// }
+
+
+// .color-9 {
+//     background-color: $user-avatar-color-9 !important;
+// }
+
+// .color-10 {
+//     background-color: $user-avatar-color-10 !important;
+// }
+
+
+// .fill-color-1 {
+//     color: rgb(237, 66, 69) !important;
+// }
+
+// .fill-color-2 {
+//     color: rgb(89, 101, 242) !important;
+// }
+
+// .fill-color-3 {
+//     color: rgb(117, 126, 138) !important;
+// }
+
+// .fill-color-4 {
+//     color: rgb(250, 166, 25) !important;
+// }
+
+// .fill-color-5 {
+//     color: rgb(60, 165, 92) !important;
+// }
+
+// .fill-color-6 {
+
+//     color: blue !important;
+// }
+
+// .fill-color-7 {
+
+//     color: #000000 !important;
+// }
+
+// .fill-color-8 {
+//     color: purple !important;
+// }
+
+
+// .fill-color-9 {
+//     color: cyan !important;
+// }
+
+// .fill-color-10 {
+
+//     color: #005a17 !important;
+// }
+
+// .user-Banner-wrapper {
+//     position: relative;
+//     height: 100px;
+//     width: 400px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+// .user-Banner {
+//     height: 100px;
+//     width: 400px;
+// }
+
+
+
+// .user-icon {
+//     font-size: 18px;
+//     height: 30px;
+//     width: 30px;
+//     border-radius: 50%;
+// }
+
+
+
+// // .fa-discord {
+// //     transform: translate(1px, 2px);
+// // }
+
+// .user-icon i {
+//     padding-top: 6px;
+//     padding-left: 3.5px;
+//     color: #fff;
+// }
+
+// // user settings modal located as user profile container.js and uiser profile.jsx
+
+// .user-profile-wrapper {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     background-color: transparent;
+//     height: 100%;
+//     width: 100%;
+//     animation-name: userProfileWrapperRender;
+//     animation-duration: 0.3s;
+//     animation-iteration-count: 1;
+//     z-index: 20;
+
+
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     display: flex;
+//     overflow: hidden;
+//     flex-direction: column;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+//     flex: 1 1 auto;
+
+
+
+
+//     .user-profile {
+//         animation-name: userProfileModalAppear;
+//         animation-duration: 0.3s;
+//         animation-iteration-count: 1;
+//         z-index: 20;
+//         background-color: #2F3136;
+//         // width: 100vw;
+//         // height: 100vh;
+
+//         display: flex;
+//         top: 0;
+//         bottom: 0;
+//         left: 0;
+//         right: 0;
+//         position: absolute;
+//         z-index: 101;
+//         /* display: -webkit-box; */
+//         box-sizing: border-box;
+//         color: #3a3a3a;
+//         user-select: none;
+
+//         button[type="button"]:disabled {
+//             cursor: not-allowed;
+//             opacity: 0.5;
+
+//         }
+
+//     }
+
+// }
+
+// .sidebar {
+//     display: flex;
+//     -webkit-box-flex: 1;
+//     -webkit-box-pack: end;
+//     justify-content: flex-end;
+//     flex: 1 0 218px;
+//     z-index: 1;
+//     box-sizing: border-box;
+// }
+
+// .sidebar-scrollbar {
+//     flex: 1 0 auto;
+//     align-items: flex-start;
+//     flex-direction: row;
+//     -webkit-box-align: start;
+//     -webkit-box-orient: horizontal;
+//     -webkit-box-direction: normal;
+//     // background-color: #2F3136;
+//     background-color: #2B2D31;
+//     display: flex;
+//     -webkit-box-flex: 1;
+//     -webkit-box-pack: end;
+//     justify-content: flex-end;
+//     box-sizing: border-box;
+//     position: relative;
+//     min-height: 0;
+//     padding-right: 0px;
+//     overflow: hidden scroll;
+
+// }
+
+// .sidebar-inner {
+//     width: 218px;
+//     padding: 60px 6px 60px 20px;
+//     // padding: 60px 20px 60px 20px; comment out padding to adjust to top
+
+//     // box-sizing: border-box;
+
+// }
+
+// .user-profile-left-side {
+
+
+
+//     // background-color: #2F3136;
+//     color: #96989D;
+
+
+
+//     display: flex;
+//     text-rendering: optimizeLegibility;
+//     flex-direction: column;
+//     flex: 1;
+//     -webkit-box-flex: 1;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+//     box-sizing: border-box;
+//     forced-color-adjust: none;
+
+// }
+
+
+// // .user-profile-header3-wrapper {
+// //     padding: 6px 10px;
+// //     -webkit-box-sizing: border-box;
+// //     box-sizing: border-box;
+// //     white-space: nowrap;
+// //     text-overflow: ellipsis;
+// //     overflow: hidden;
+// //     flex-shrink: 0;
+// //     outline: 0;
+// //     color: rgb(148, 155, 164);
+
+// // }
+
+// // .user-profile-header3 {
+// //     outline: 0;
+// //     font-weight: 700;
+// //     text-transform: uppercase;
+// //     letter-spacing: .02em;
+// //     font-size: 12px;
+// //     line-height: 16px;
+// //     font-family: "ABC Ginto Normal";
+// //     // font-family: "gg sans";
+// //     box-sizing: border-box;
+// //     overflow-x: hidden;
+// //     white-space: nowrap;
+// //     text-overflow: ellipsis;
+// //     // overflow: hidden;
+
+
+// //     // padding: 6px 10px;
+// //     color: #96989D;
+// //     // color: hsl(223,0.034%,60.2%);
+
+// // }
+
+// .user-profile-header3 {
+//     padding: 0px 10px 6px;
+//     // padding: 6px 10px;
+//     box-sizing: border-box;
+//     font-size: 12px;
+//     font-weight: 700;
+//     line-height: 16px;
+//     text-transform: uppercase;
+//     color: #96989D;
+//     // color: hsl(223,0.034%,60.2%);
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     font-family: "ABC Ginto Normal";
+
+// }
+
+
+
+
+// .user-profile-item {
+//     // margin: 10px;
+//     margin: 0px 0px 2px;
+//     // padding:5px;
+//     // padding: 6px 10px;#41464d
+//     padding: 6px 10px;
+//     cursor: pointer;
+//     border-radius: 5px;
+//     font-family: "Whitney";
+//     padding-top: 6px;
+//     padding-bottom: 10px;
+//     margin-bottom: 2px;
+//     box-sizing: border-box;
+
+//     white-space: nowrap;
+//     position: relative;
+//     font-size: 16px;
+//     line-height: 20px;
+
+//     flex-shrink: 0;
+//     font-weight: 500;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     color: #B9BBBE;
+//     user-select: none;
+//     -webkit-user-drag: none;
+
+
+// }
+
+// .user-profile-item.force {
+//     // color: hsl(210, 2.9%, 86.7%);
+//     // background-color: hsla(217, 7.6%, 33.5%, 0.4);
+//     color: #FFFFFF;
+//     background-color: rgba(78, 80, 88, 0.6);
+
+//     svg {
+//         color: #dcddde;
+
+//     }
+// }
+
+// .user-profile-item:hover {
+//     color: hsl(210, 2.9%, 86.7%);
+//     background-color: hsla(217, 7.6%, 33.5%, 0.4);
+
+//     svg {
+//         color: #dcddde;
+
+//     }
+// }
+
+// .user-profile-item-list {
+//     display: flex;
+//     flex: 1;
+//     flex-direction: column;
+//     // width: 218px;
+//     // padding: 60px 6px 60px 20px;
+//     box-sizing: border-box;
+//     -webkit-box-flex: 1;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+
+// }
+
+
+// .user-profile-item-list a {
+//     text-decoration: none;
+//     color: #96989D;
+//     user-select: none;
+//     -webkit-user-drag: none;
+
+
+// }
+
+// .user-settings-separator {
+//     margin: 8px 10px;
+//     height: 2px;
+//     box-sizing: border-box;
+//     background-color: hsla(217, 0.076%, 33.5%, 0.48);
+// }
+
+// @keyframes userProfileWrapperRender {
+
+//     0% {
+//         opacity: 0;
+//     }
+
+//     70% {
+//         opacity: 1;
+//     }
+
+//     100% {}
+
+// }
+
+
+
+// @keyframes userProfileModalAppear {
+
+//     0% {
+//         opacity: 0;
+//         transform: scale(0.5, 0.5);
+//     }
+
+//     70% {
+//         opacity: 1;
+//     }
+
+//     100% {
+//         transform: scale(1, 1);
+//     }
+
+// }
+
+// @keyframes userProfileModalDisappear {
+
+//     0% {
+//         opacity: 1;
+//         transform: scale(1, 1);
+//     }
+
+//     70% {
+//         opacity: 0.5;
+//     }
+
+//     100% {
+//         transform: scale(0.5, 0.5);
+//     }
+
+// }
+
+
+
+// .user-profile.transition-out {
+//     animation-name: userProfileModalDisappear;
+//     animation-duration: 0.3s;
+//     animation-iteration-count: 1;
+// }
+
+// .user-profile-socials {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: flex-start;
+//     padding-left: 10px;
+//     padding-top: 5px;
+
+//     padding: 8px 10px;
+//     font-size: 12px;
+//     line-height: 16px;
+// }
+
+// .user-profile-item-logout-sec {
+//     forced-color-adjust: none;
+//     outline: 0;
+//     box-sizing: border-box;
+//     align-items: center;
+//     -webkit-box-align: center;
+//     justify-content: space-between;
+//     -webkit-box-pack: justify;
+//     display: flex;
+// }
+
+
+// .upm-twitter,
+// .upm-facebook,
+// .upm-instagram {
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     text-decoration: none;
+//     padding: 0 2px;
+//     margin-right: 8px;
+//     color: hsl(216, 3.7%, 73.5%);
+//     cursor: pointer;
+//     outline: 0;
+// }
+
+// .upm-twitter-icon,
+// .upm-facebook-icon,
+// .upm-instagram-icon,
+// .upm-logout-icon {
+//     forced-color-adjust: none;
+//     cursor: pointer;
+//     color: #B9BBBE;
+
+//     .path {
+//         forced-color-adjust: none;
+//         transition: color .15s ease;
+//         box-sizing: border-box;
+//     }
+// }
+
+// .upm-twitter-icon:hover,
+// .upm-facebook-icon:hover,
+// .upm-instagram-icon:hover,
+// .upm-logout-icon:hover {
+//     forced-color-adjust: none;
+//     cursor: pointer;
+//     color: #dcddde;
+
+//     .path {
+//         forced-color-adjust: none;
+//         transition: color .15s ease;
+//         box-sizing: border-box;
+//     }
+// }
+
+
+
+// .version-number {
+//     color: #A3A6AA;
+//     font-size: 12px;
+//     font-family: "Whitney";
+//     padding-left: 10px;
+//     padding-top: 20px;
+// }
+
+// .strife-nitro-lbl {
+//     display: flex;
+//     -webkit-box-pack: justify;
+//     justify-content: space-between;
+//     -webkit-box-align: center;
+//     align-items: center;
+//     position: relative;
+//     pointer-events: none;
+//     z-index: 23;
+//     box-sizing: border-box;
+
+// }
+
+// .strife-nitro-img {
+//     background-image: linear-gradient(90deg, #854DC2, #AC5C8F);
+//     // background-image: linear-gradient(90deg, #32CD32, #AC5C);
+
+//     // #854dc2, #ac5c8f
+//     // #854DC2, #AC5C
+//     //#00FF00
+//     color: hsl(0, 0%, 100%);
+
+//     -webkit-box-align: center;
+//     align-items: center;
+//     display: flex;
+//     border-radius: 12px;
+//     font-weight: 600;
+//     font-size: 12px;
+//     line-height: 12px;
+//     margin-left: auto;
+//     padding: 4px 8px;
+//     pointer-events: all;
+//     text-transform: uppercase;
+//     box-sizing: border-box;
+//     font-family: "Whitney";
+// }
+
+// .user-security-img {
+//     content: image_url("usersecurity.svg");
+// }
+
+// .fa-instagram,
+// .fa-facebook-square {
+//     margin-left: 5px;
+// }
+
+// .fa-arrow-right {
+//     background-color: rgb(186, 186, 186);
+//     color: rgb(56, 57, 62);
+//     position: relative;
+//     transform: translate(75px, 0px);
+// }
+
+// .user-profile-header1-div {
+//     display: flex;
+//     box-sizing: border-box;
+
+// }
+
+// .user-profile-header1 {
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     color: rgb(242, 243, 245);
+//     margin-bottom: 20px;
+//     font-weight: 500;
+//     font-size: 20px;
+//     line-height: 24px;
+//     -webkit-box-flex: 1;
+//     flex: 1;
+//     cursor: default;
+//     // font-family: "Ginto Normal";
+//     font-family: "ABC Ginto Normal";
+
+
+// }
+
+
+// .user-profile-right-side-wrapper {
+//     display: flex;
+//     position: relative;
+//     -webkit-box-flex: 1;
+//     flex: 1 1 800px;
+//     -webkit-box-align: start;
+//     align-items: flex-start;
+//     // background-color: #36393F;
+//     background-color: #313338;
+
+// }
+
+
+
+// .user-profile-rsiw {
+//     forced-color-adjust: none;
+//     -webkit-box-flex: 1;
+//     flex: 1;
+//     height: 100%;
+//     box-sizing: border-box;
+// }
+
+// .user-profile-rs-inner-wrapper {
+//     forced-color-adjust: none;
+//     -webkit-box-flex: 1;
+//     flex: 1;
+//     height: 100%;
+//     box-sizing: border-box;
+//     overflow: hidden scroll;
+//     padding-right: 0px;
+//     -webkit-box-pack: start;
+//     justify-content: flex-start;
+//     position: static;
+//     display: flex;
+//     -webkit-box-orient: horizontal;
+//     -webkit-box-direction: normal;
+//     flex-direction: row;
+//     -webkit-box-align: start;
+//     align-items: flex-start;
+// }
+
+
+// .user-profile-right-side {
+//     // background-color: #36393F;
+//     background-color: #313338;
+//     // overflow: hidden scroll;
+//     // padding-right: 0px;
+//     // -webkit-box-pack: start;
+//     // justify-content: flex-start;
+//     // height: 100%;
+//     // position: static;
+//     // display: flex;
+//     // -webkit-box-orient: horizontal;
+//     // -webkit-box-direction:normal;
+//     // flex-direction: row;
+//     // -webkit-box-align: start;
+//     // align-items: flex-start;
+//     position: relative;
+//     padding: 60px 40px 80px;
+//     -webkit-box-flex: 1;
+//     flex: 1 1 auto;
+//     max-width: 740px;
+//     min-width: 460px;
+//     min-height: 100%;
+//     box-sizing: border-box;
+//     forced-color-adjust: none;
+
+// }
+
+
+// .my-account-container-wrapper {
+//     display: flex;
+//     flex-direction: column;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+// }
+
+// .my-account-container {
+//     forced-color-adjust: none;
+//     border-radius: 8px;
+//     position: relative;
+//     overflow: hidden;
+//     box-sizing: border-box;
+//     -webkit-box-direction: normal;
+//     background-color: hsl(216, 0.072%, 13.5%);
+// }
+
+// .account-card-banner {
+//     background-color: #5c64f4;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     width: 100%;
+//     height: 100px;
+//     background-repeat: no-repeat;
+//     background-position: 50%;
+//     background-size: cover;
+//     transition: background-color .1s;
+//     position: relative;
+
+
+// }
+
+// .my-account-container:hover .upc-strife-nitro-wrapper,
+// .account-card-banner:hover .upc-strife-nitro-wrapper {
+//     opacity: 1;
+//     transform: translateZ(0);
+// }
+
+
+// .account-card-banner:hover {
+//     opacity: 0.5;
+
+//     .demo-edit-lock-warning {
+//         opacity: 1;
+//     }
+
+// }
+
+
+// .upc-strife-nitro-wrapper {
+//     cursor: pointer;
+//     forced-color-adjust: none;
+//     transition: opacity .15s ease-out, transform .15s ease-out, -webkit-transform .15s ease-out;
+//     transform: translate3d(0, -5px, 0);
+//     position: absolute;
+//     top: 6px;
+//     right: 8px;
+//     z-index: 2;
+//     opacity: 0;
+//     outline: 0;
+
+// }
+
+// .upc-strife-nitro-badge {
+//     outline: 0;
+//     box-sizing: border-box;
+//     height: 16px;
+//     min-width: 16px;
+//     min-height: 16px;
+//     font-size: 12px;
+//     line-height: 16px;
+//     color: hsl(0, 0%, 100%);
+//     text-align: center;
+//     -webkit-box-flex: 0;
+//     flex: 0 0 auto;
+//     border-radius: 8px;
+//     padding: 0 6px;
+//     font-family: "ABC Ginto Normal";
+//     font-weight: 500;
+//     text-transform: uppercase;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     forced-color-adjust: none;
+//     background-color: #202225cc;
+// }
+
+// .upc-strife-nitro-icon {
+//     color: hsl(0, 0%, 100%);
+//     display: block;
+//     margin-left: -2px;
+//     margin-right: -2px;
+//     forced-color-adjust: none;
+// }
+
+
+
+// .account-card-user-info {
+//     forced-color-adjust: none;
+//     height: 72px;
+//     width: 100%;
+//     display: flex;
+//     -webkit-box-pack: justify;
+//     justify-content: space-between;
+//     padding: 16px 16px 0 120px;
+//     box-sizing: border-box;
+// }
+
+// .account-avatar-wrapper {
+//     width: 80px;
+//     height: 80px;
+//     forced-color-adjust: none;
+//     border: 7px solid hsl(216, 0.072%, 13.5%);
+//     background-color: hsl(216, 0.072%, 13.5%);
+//     position: absolute;
+//     top: 76px;
+//     left: 16px;
+//     -webkit-box-sizing: content-box;
+//     box-sizing: content-box;
+//     border-radius: 50%;
+//     user-select: none;
+//     -webkit-user-drag: none;
+// }
+
+// .account-avatar-wrapper>img {
+//     height: 100%;
+//     width: 100%;
+//     border-radius: 50%;
+//     user-select: none;
+//     -webkit-user-drag: none;
+// }
+
+
+// .user-avatar-img {
+//     content: image_url("defaultProfilePic.png");
+
+//     // object-fit: cover;
+//     // overflow: hidden;
+//     // display: flex;
+//     // justify-content: center;
+//     // align-items: center;
+//     // width: 35px;
+//     // height: 35px;
+//     // border-radius: 50%;
+//     // margin-left: 10px;
+
+// }
+
+// .user-avatar-img-svg {
+//     content: image_url("discord_PFP.svg");
+//     height: 42px;
+//     width: 80px;
+//     user-select: none;
+//     -webkit-user-drag: none;
+
+// }
+
+// .user-avatar-img-svg-render {
+//     display: flex;
+//     align-items: center;
+//     height: 80px;
+//     width: 80px;
+//     overflow: hidden;
+//     border-radius: 50%;
+//     user-select: none;
+//     -webkit-user-drag: none;
+// }
+
+// .user-avatar-img-svg-render>img {
+//     user-select: none;
+//     -webkit-user-drag: none;
+//     height: 42px;
+//     width: 80px;
+
+// }
+
+// .account-card-username-div {
+//     forced-color-adjust: none;
+//     display: flex;
+//     box-sizing: border-box;
+// }
+
+// .account-card-username-strife-id-tag {
+//     align-items: center;
+//     overflow: hidden;
+//     justify-content: flex-start;
+//     -webkit-box-align: center;
+//     display: flex;
+//     -webkit-box-pack: start;
+//     box-sizing: border-box;
+//     forced-color-adjust: none;
+//     font-size: 20px;
+//     line-height: 24px;
+//     font-weight: 500;
+//     margin-bottom: 6px;
+//     font-family: "Ginto Normal";
+//     color: #FFFFFF;
+// }
+
+// .account-settings-username {
+//     forced-color-adjust: none;
+//     flex: 0 1 auto;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     display: block;
+//     -webkit-box-flex: 0;
+//     font-family: "ABC Ginto Normal";
+//     font-size: 20px;
+//     color: #FFFFFF;
+
+// }
+
+// .account-settings-strife-id-tag {
+//     forced-color-adjust: none;
+//     font-family: "ABC Ginto Normal";
+//     font-size: 20px;
+//     color: #B9BBBE;
+
+// }
+
+
+// .overflow-menu {
+//     margin-left: 8px;
+//     cursor: pointer;
+// }
+
+// .overflowMenuIcon {
+//     color: hsl(216, 0.037%, 73.5%);
+//     cursor: pointer;
+// }
+
+// .user-badge-container {
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     display: flex;
+//     flex-wrap: wrap;
+//     margin-right: -2px;
+//     margin-bottom: -2px;
+// }
+
+// .edit-user-banner-button {
+//     color: hsl(0, 0%, 100%);
+//     background-color: #202225cc;
+//     cursor: pointer;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     width: auto;
+//     height: 32px;
+//     min-width: 60px;
+//     min-height: 32px;
+//     transition: background-color .17s ease, color .17s ease;
+//     position: relative;
+//     display: flex;
+//     -webkit-box-pack: center;
+//     justify-content: center;
+//     -webkit-box-align: center;
+//     align-items: center;
+//     border: none;
+//     border-radius: 3px;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 16px;
+//     padding: 2px 16px;
+//     user-select: none;
+//     font-family: "Whitney";
+//     text-rendering: optimizeLegibility;
+// }
+
+// .edit-user-banner-button:hover {
+//     background-color: #4752C4;
+//     filter: brightness(125%);
+// }
+
+
+
+
+// .edit-user-profile-button {
+//     color: hsl(0, 0%, 100%);
+//     background-color: #5865F2;
+//     cursor: pointer;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     width: auto;
+//     height: 32px;
+//     min-width: 60px;
+//     min-height: 32px;
+//     transition: background-color .17s ease, color .17s ease;
+//     position: relative;
+//     display: flex;
+//     -webkit-box-pack: center;
+//     justify-content: center;
+//     -webkit-box-align: center;
+//     align-items: center;
+//     border: none;
+//     border-radius: 3px;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 16px;
+//     padding: 2px 16px;
+//     user-select: none;
+//     font-family: "Whitney";
+//     text-rendering: optimizeLegibility;
+// }
+
+// .edit-user-profile-button:hover {
+//     background-color: #4752C4;
+
+// }
+
+
+
+
+// .account-card-background {
+//     forced-color-adjust: none;
+//     border-radius: 8px;
+//     background-color: hsl(223, 0.069%, 19.8%);
+//     padding: 16px;
+//     margin: 8px 16px 16px;
+//     box-sizing: border-box;
+
+// }
+
+// .account-card-background-inner-wrapper {
+//     forced-color-adjust: none;
+//     border-radius: 8px;
+//     background-color: hsl(223, 0.069%, 19.8%);
+//     box-sizing: border-box;
+
+
+// }
+
+// .account-card-background-inner-field-1 {
+//     forced-color-adjust: none;
+//     display: flex;
+//     -webkit-box-orient: horizontal;
+//     -webkit-box-direction: normal;
+//     flex-direction: row;
+//     -webkit-box-pack: justify;
+//     justify-content: space-between;
+//     box-sizing: border-box;
+
+
+// }
+
+// .constrainedRow {
+//     forced-color-adjust: none;
+//     margin-right: 16px;
+//     overflow: hidden;
+//     flex: 1 1 auto;
+//     -webkit-box-flex: 1;
+//     display: flex;
+//     box-sizing: border-box;
+// }
+
+
+// .constrain-username {
+//     forced-color-adjust: none;
+//     overflow: hidden;
+//     box-sizing: border-box;
+// }
+
+// .constrain-username-header {
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     margin-bottom: 4px;
+//     font-size: 12px;
+//     line-height: 16px;
+//     font-weight: 500;
+//     text-transform: uppercase;
+//     color: hsl(216, 0.037%, 73.5%);
+//     -webkit-box-flex: 1;
+//     flex: 1;
+//     cursor: default;
+//     font-family: "ABC Ginto Normal";
+
+// }
+
+// .constrain-username-inner {
+//     overflow: hidden;
+//     color: #FFFFFF;
+//     text-overflow: ellipsis;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+// }
+
+// .const-user-name {
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     font-family: "Whitney";
+//     font-weight: 400;
+//     font-size: 16px;
+//     line-height: 20px;
+//     color: #FFFFFF;
+// }
+
+// .const-id-tag {
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     font-family: "Whitney";
+//     font-weight: 400;
+//     font-size: 16px;
+//     line-height: 20px;
+//     color: hsl(216, 0.037%, 73.5%)
+// }
+
+
+// .edit-profile-props-button {
+//     color: hsl(0, 0%, 100%);
+//     background-color: hsl(217, 0.076%, 33.5%);
+
+//     cursor: pointer;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     margin-top: auto;
+//     margin-bottom: auto;
+//     width: auto;
+//     height: 32px;
+//     min-width: 60px;
+//     min-height: 32px;
+//     transition: background-color .17s ease, color .17s ease;
+//     position: relative;
+//     display: flex;
+//     -webkit-box-pack: center;
+//     justify-content: center;
+//     -webkit-box-align: center;
+//     align-items: center;
+//     border: none;
+//     border-radius: 3px;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 16px;
+//     padding: 2px 16px;
+//     user-select: none;
+//     font-family: "Whitney";
+//     text-rendering: optimizeLegibility;
+// }
+
+// .edit-profile-props-button:hover {
+//     background-color: #686D73;
+
+// }
+
+// .field2 {
+
+//     forced-color-adjust: none;
+//     display: flex;
+//     -webkit-box-orient: horizontal;
+//     -webkit-box-direction: normal;
+//     flex-direction: row;
+//     -webkit-box-pack: justify;
+//     justify-content: space-between;
+//     box-sizing: border-box;
+//     margin-top: 24px;
+
+
+
+// }
+
+// .field3 {
+
+//     forced-color-adjust: none;
+//     display: flex;
+//     -webkit-box-orient: horizontal;
+//     -webkit-box-direction: normal;
+//     flex-direction: row;
+//     -webkit-box-pack: justify;
+//     justify-content: space-between;
+//     box-sizing: border-box;
+//     margin-top: 24px;
+// }
+
+// .const-hidden-props {
+//     color: #FFFFFF;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     font-size: 16px;
+//     line-height: 20px;
+//     font-weight: 400;
+//     font-family: "Whitney";
+// }
+
+// .reveal-button {
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     width: auto;
+//     cursor: pointer;
+//     color: hsl(197, 100%, 47.8%);
+//     display: inline;
+//     height: auto;
+//     padding: 2px 4px;
+//     text-rendering: optimizeLegibility;
+//     font-family: "Whitney";
+//     user-select: none;
+//     line-height: 16px;
+//     font-weight: 500;
+//     font-size: 14px;
+//     border-radius: 3px;
+//     border: none;
+//     background: none;
+//     -webkit-box-align: center;
+//     -webkit-box-pack: center;
+
+// }
+
+
+// .reveal-button1 {
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     width: auto;
+//     cursor: pointer;
+//     color: hsl(197, 100%, 47.8%);
+//     display: inline;
+//     height: auto;
+//     padding: 2px 4px;
+//     text-rendering: optimizeLegibility;
+//     font-family: "Whitney";
+//     user-select: none;
+//     line-height: 16px;
+//     font-weight: 500;
+//     font-size: 14px;
+//     border-radius: 3px;
+//     border: none;
+//     background: none;
+//     -webkit-box-align: center;
+//     -webkit-box-pack: center;
+
+// }
+
+// .reveal-button:hover,
+// .reveal-button1:hover {
+//     text-decoration: underline;
+// }
+
+// .phone-num-button-container {
+//     display: flex;
+
+// }
+
+
+// .remove-phone-num {
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     width: auto;
+//     cursor: pointer;
+//     margin-top: auto;
+//     margin-bottom: auto;
+//     margin-right: 8px;
+//     height: 32px;
+//     min-width: 60px;
+//     min-height: 32px;
+//     user-select: none;
+//     background: none;
+//     border: none;
+//     border-radius: 3px;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 16px;
+//     padding: 2px 16px;
+//     align-items: center;
+//     justify-content: center;
+//     -webkit-box-align: center;
+//     display: flex;
+//     -webkit-box-pack: center;
+//     position: relative;
+//     color: #FFFFFF;
+//     text-rendering: optimizeLegibility;
+//     font-family: "Whitney";
+// }
+
+// .remove-phone-num:hover {
+//     text-decoration: underline;
+// }
+
+
+// .sidebar-scrollbar::-webkit-scrollbar-track {
+//     border-radius: 10px;
+
+// }
+
+// .sidebar-scrollbar::-webkit-scrollbar {
+//     width: 5px;
+// }
+
+// .sidebar-scrollbar::-webkit-scrollbar-thumb {
+
+//     visibility: hidden;
+//     background: #202225;
+//     border-radius: 5px;
+// }
+
+// .sidebar-scrollbar:hover::-webkit-scrollbar-thumb {
+//     visibility: visible;
+// }
+
+
+
+
+// .user-profile-rs-inner-wrapper::-webkit-scrollbar-track {
+//     border-radius: 10px;
+//     width: 12px;
+//     background-color: #2d3338;
+// }
+
+
+// .user-profile-rs-inner-wrapper::-webkit-scrollbar {
+//     width: 12px;
+//     // height:100%;
+
+// }
+
+
+// .user-profile-rs-inner-wrapper::-webkit-scrollbar-thumb {
+//     // visibility: hidden;
+//     background: #202225;
+//     border-radius: 5px;
+//     // height:100%;
+//     width: 12px;
+
+
+// }
+
+
+
+// // .user-profile-rs-inner-wrapper:hover::-webkit-scrollbar-thumb{
+// //     visibility: visible;
+// // }
+
+
+
+
+
+
+
+// .settings-avatar {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 35px;
+//     height: 35px;
+//     border-radius: 50%;
+//     overflow: hidden;
+//     margin-left: 10px;
+// }
+
+
+
+// .divider-margin {
+//     width: 100%;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     height: 2px;
+//     margin-top: 40px;
+//     border-top: thin solid hsla(217, 0.076%, 33.5%, 0.48);
+// }
+
+
+// .userSecuritySettings {
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     margin-top: 40px;
+// }
+
+
+// .passwrd-section {
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     display: flex;
+// }
+
+// .passwrdAuth {
+//     font-size: 20px;
+//     line-height: 24px;
+//     -webkit-box-flex: 1;
+//     flex: 1;
+//     cursor: default;
+//     font-family: "ABC Ginto Normal";
+//     font-weight: 500;
+//     margin-bottom: 20px;
+//     color: #FFFFFF;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+
+// }
+
+
+// .password-edit-section {
+//     display: flex;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+//     flex-direction: column;
+// }
+
+// .changePasswordButton {
+//     transition: background-color .17s ease, color .17s ease;
+//     user-select: none;
+//     background: none;
+//     border: none;
+//     border-radius: 3px;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 16px;
+//     padding: 2px 16px;
+//     align-items: center;
+//     justify-content: center;
+//     -webkit-box-align: center;
+//     display: flex;
+//     -webkit-box-pack: center;
+//     position: relative;
+//     height: 32px;
+//     min-width: 60px;
+//     min-height: 32px;
+//     width: auto;
+//     margin-bottom: 28px;
+//     box-sizing: border-box;
+//     forced-color-adjust: none;
+//     cursor: pointer;
+//     color: #FFFFFF;
+//     background-color: #5865F2;
+//     font-family: "Whitney";
+//     font-size: 14px;
+// }
+
+
+// .changePasswordButton:hover {
+//     background-color: #4752C4;
+// }
+
+
+// .two-factor-auth-wrapper {
+//     flex: 1 1 auto;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     -webkit-box-orient: horizontal;
+//     -webkit-box-direction: normal;
+//     flex-direction: row;
+//     flex-wrap: nowrap;
+//     -webkit-box-pack: start;
+//     justify-content: flex-start;
+//     -webkit-box-align: stretch;
+//     align-items: stretch;
+//     display: flex;
+
+// }
+
+
+// .two-factor-auth-inner {
+//     flex: 1 1 auto;
+//     margin-left: 0;
+//     margin-right: 10px;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+// }
+
+
+
+// .auth-header-div {
+//     box-sizing: border-box;
+//     forced-color-adjust: none;
+//     display: flex;
+// }
+
+// .auth-header {
+//     box-sizing: border-box;
+//     forced-color-adjust: none;
+//     color: hsl(216, 3.7%, 73.5%);
+//     margin-bottom: 8px;
+//     font-size: 12px;
+//     line-height: 16px;
+//     font-weight: 500;
+//     text-transform: uppercase;
+//     flex: 1;
+//     cursor: default;
+//     -webkit-box-flex: 1;
+//     font-family: "ABC Ginto Normal";
+
+// }
+
+
+
+// .auth-info-div {
+//     flex-direction: column;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+//     box-sizing: border-box;
+//     forced-color-adjust: none;
+//     display: flex;
+// }
+
+// .auth-info {
+//     box-sizing: border-box;
+//     forced-color-adjust: none;
+//     color: hsl(216, 3.7%, 73.5%);
+//     font-size: 14px;
+//     line-height: 20px;
+//     font-weight: 400;
+//     cursor: default;
+//     margin-bottom: 20px;
+//     font-family: "Whitney";
+
+
+// }
+
+
+// .auth-button {
+//     cursor: not-allowed;
+//     box-sizing: border-box;
+//     forced-color-adjust: none;
+//     height: 32px;
+//     min-width: 60px;
+//     min-height: 32px;
+//     width: auto;
+//     background-color: #5865F2;
+//     color: #FFFFFF;
+//     transition: background-color .17s ease, color .17s ease;
+//     user-select: none;
+//     border: none;
+//     border-radius: 3px;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 16px;
+//     padding: 2px 16px;
+//     user-select: none;
+//     align-items: center;
+//     justify-content: center;
+//     -webkit-box-align: center;
+//     display: flex;
+//     -webkit-box-pack: center;
+//     position: relative;
+//     font-family: "Whitney";
+//     text-rendering: optimizeLegibility;
+// }
+
+// .auth-button:hover {
+//     background-color: #4752C4;
+// }
+
+// .auth-pic-div {
+//     box-sizing: border-box;
+//     forced-color-adjust: none;
+//     flex-direction: row;
+//     -webkit-box-orient: horizontal;
+//     -webkit-box-direction: normal;
+//     flex-wrap: nowrap;
+//     -webkit-box-pack: start;
+//     justify-content: flex-start;
+//     margin-left: 10px;
+//     margin-right: 0;
+//     flex: 0 1 323px;
+//     -webkit-box-align: center;
+//     align-items: center;
+//     display: flex;
+//     user-select: none;
+
+
+// }
+
+// .auth-security-img {
+//     box-sizing: border-box;
+//     forced-color-adjust: none;
+//     transition: opacity .3s ease;
+//     width: 100%;
+//     opacity: 1;
+//     content: image_url("usersecurity.svg");
+
+// }
+
+
+
+
+// .acc-removal-section {
+//     box-sizing: border-box;
+//     forced-color-adjust: none;
+//     margin-top: 40px;
+// }
+
+
+// .account-rem-header-div {
+//     box-sizing: border-box;
+//     forced-color-adjust: none;
+//     display: flex;
+// }
+
+// .account-rem-header {
+//     box-sizing: border-box;
+//     forced-color-adjust: none;
+//     color: hsl(216, 3.7%, 73.5%);
+//     margin-bottom: 8px;
+//     font-size: 12px;
+//     line-height: 16px;
+//     font-weight: 500;
+//     text-transform: uppercase;
+//     flex: 1;
+//     cursor: default;
+//     -webkit-box-flex: 1;
+//     font-family: "ABC Ginto Normal";
+// }
+
+// .account-rem-info-div {
+//     box-sizing: border-box;
+//     forced-color-adjust: none;
+//     display: flex;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+//     flex-direction: column;
+// }
+
+// .account-rem-info {
+//     font-size: 14px;
+//     line-height: 20px;
+//     font-weight: 400;
+//     cursor: default;
+//     color: hsl(216, 0.037%, 73.5%);
+//     box-sizing: border-box;
+//     forced-color-adjust: none;
+//     margin-bottom: 16px;
+//     font-family: "Whitney";
+
+// }
+
+
+// .account-del-button-cont {
+//     forced-color-adjust: none;
+//     display: flex;
+//     -webkit-box-orient: horizontal;
+//     -webkit-box-direction: normal;
+//     -ms-flex-direction: row;
+//     flex-direction: row;
+//     box-sizing: border-box;
+// }
+
+// .account-delete-button {
+//     user-select: none;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     display: flex;
+//     color: #FFFFFF;
+//     font-family: "Whitney";
+//     font-size: 14px;
+//     text-rendering: optimizeLegibility;
+//     background: none;
+//     border-radius: 3px;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 16px;
+//     padding: 2px 16px;
+//     align-items: center;
+//     justify-content: center;
+//     -webkit-box-align: center;
+//     -webkit-box-pack: center;
+//     position: relative;
+//     transition: color .17s ease, background-color .17s ease, border-color .17s ease;
+//     border-width: 1px;
+//     border-style: solid;
+//     height: 32px;
+//     min-width: 60px;
+//     min-height: 32px;
+//     width: auto;
+//     border-color: hsl(359, 66.7%, 54.1%);
+// }
+
+// .disable-account-button {
+//     user-select: none;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     display: flex;
+//     border: none;
+//     border-radius: 3px;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 16px;
+//     padding: 2px 16px;
+//     align-items: center;
+//     display: flex;
+//     -webkit-box-pack: center;
+//     justify-content: center;
+//     -webkit-box-align: center;
+//     position: relative;
+//     transition: background-color .17s ease, color .17s ease;
+//     height: 32px;
+//     min-width: 60px;
+//     min-height: 32px;
+//     width: auto;
+//     margin-right: 16px;
+//     cursor: pointer;
+//     background-color: hsl(359, 66.7%, 54.1%);
+//     color: #FFFFFF;
+//     font-family: "Whitney";
+//     font-size: 14px;
+//     text-rendering: optimizeLegibility;
+
+// }
+
+// .disable-account-button:hover {
+//     background-color: #A12D27;
+// }
+
+// .account-delete-button:hover {
+//     background: #D83C3E;
+// }
+
+
+
+// .tools-container {
+//     margin-right: 21px;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     position: relative;
+//     -webkit-box-flex: 0;
+//     flex: 0 0 36px;
+//     width: 60px;
+//     padding-top: 60px;
+
+
+// }
+
+// .tool-x-to-esc-button-wrapper {
+//     position: fixed;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+// }
+
+// .inner-tool-container {
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     display: flex;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+//     flex-direction: column;
+//     -webkit-box-align: center;
+//     align-items: center;
+// }
+
+// .x-to-esc-button {
+//     display: flex;
+//     -webkit-box-pack: center;
+//     justify-content: center;
+//     -webkit-box-align: center;
+//     align-items: center;
+//     -webkit-box-flex: 0;
+//     flex: 0 0 36px;
+//     border-width: 2px;
+//     border-style: solid;
+//     border-radius: 50%;
+//     width: 36px;
+//     height: 36px;
+//     cursor: pointer;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     // color: hsl(216, 0.037%, 73.5%);
+//     color: rgb(181, 186, 193);
+// }
+
+// .esc-bind {
+//     margin-top: 8px;
+//     font-weight: 600;
+//     font-size: 13px;
+//     text-align: center;
+//     forced-color-adjust: none;
+//     box-sizing: border-box;
+//     color: rgb(181, 186, 193);
+//     font-family: "gg sans";
+
+// }
+
+// .x-to-esc-button:hover {
+//     background-color: hsla(217, 7.6%, 33.5%, 0.4);
+//     color: hsl(210, 2.9%, 86.7%);
+//     // color: hsl(197,100%,47.8%);
+// }
+
+// .x-to-esc-button a {
+//     color: hsl(216, 0.037%, 73.5%);
+//     text-decoration: none;
+// }
+
+// #username>img {
+//     height: 32px;
+//     width: 32px;
+//     border-radius: 50%;
+//     // margin-right: 8px;
+// }
