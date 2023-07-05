@@ -545,6 +545,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Switched to SCSS Vars for User Settings Modal.
     - Restyled User Settings Modal.
     - Remodeled User Settings Modal.
+    - Backed up old styles for user settings modal.
 
 ## Backend Changes
 
