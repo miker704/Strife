@@ -552,6 +552,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved Deprecated Class based component version of all submodals belonging to user settings to deprecated folder.
     - Moved Deprecated Class based component version of Edit User Avatar modal to deprecated.
     - Moved Deprecated Class based component version of Edit User Banner modal to deprecated.
+    - Moved Deprecated Class based component version of Edit User Password modal to deprecated.
 
 
 ## Backend Changes
