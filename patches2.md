@@ -549,6 +549,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up old version of user settings modal to deprecated folder.
     - Replaced Class based component of user settings modal with a function component version.
     - Designed fake buttons/divs for user settings modal to prevent XSS attacks.
+    - Moved Deprecated Class based component version of all submodals belonging to user settings to deprecated folder.
+    
 
 ## Backend Changes
 
