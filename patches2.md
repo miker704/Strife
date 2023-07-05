@@ -553,6 +553,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved Deprecated Class based component version of Edit User Avatar modal to deprecated.
     - Moved Deprecated Class based component version of Edit User Banner modal to deprecated.
     - Moved Deprecated Class based component version of Edit User Password modal to deprecated.
+    - Moved Deprecated Class based component version of Edit User Username modal to deprecated.
+
 
 
 ## Backend Changes
