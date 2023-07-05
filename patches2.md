@@ -547,7 +547,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Remodeled User Settings Modal.
     - Backed up old styles for user settings modal to deprecated folder.
     - Backed up old version of user settings modal to deprecated folder.
-
+    - Replaced Class based component of user settings modal with a function component version.
 
 ## Backend Changes
 
