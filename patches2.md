@@ -557,6 +557,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved Deprecated Class based component version of Edit User Email modal to deprecated.
     - Moved Deprecated Class based component version of Edit User Phone Number modal to deprecated.
     - Moved Deprecated Class based component version of Disable User Account modal to deprecated.
+    - Moved Deprecated Class based component version of Delete User Account modal to deprecated.
+
 
 
 
