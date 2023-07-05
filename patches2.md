@@ -544,8 +544,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Util Function to return the badge color of online user badge.
     - Switched to SCSS Vars for User Settings Modal.
     - Restyled User Settings Modal.
-
-
+    - Remodeled User Settings Modal.
 
 ## Backend Changes
 
