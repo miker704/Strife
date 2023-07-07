@@ -561,6 +561,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved Deprecated Class based component version of  Delete User Phone number modal to deprecated.
     - Moved Deprecated Class based component version of Search User modal to deprecated.
     - Moved Deprecated Class based component version of User owns servers modal to deprecated.
+    - Fixed a backend issue related to returing errors when using the remove phone number modal.
 
 ## Backend Changes
 
