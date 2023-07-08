@@ -563,6 +563,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved Deprecated Class based component version of User owns servers modal to deprecated.
     - Fixed a backend issue related to returing errors when using the remove phone number modal.
     - Added Connect Container for User Owns Servers Warning Modal.
+    - Added container for edit user display name modal.
 
 ## Backend Changes
 
