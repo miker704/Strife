@@ -617,6 +617,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Renamed User Profile container to User Settings Container.
     - Renamed User Profile modal to User settings instead.
     - Update System version number on all major modals in user, server, and channel settings.
+    - Add App Puller animation to user settings in modal manager.
 
 ## Backend Changes
 
