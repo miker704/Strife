@@ -622,6 +622,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Add tik tok icon in the socials section in user settings.
     - Fixed rendering of errors on all user sub modals to allow only the errored input field to turn read and give the error message instead of all the fields.
     - Created Edit Display name modal.
+    - Created Edit Display name container.
 
 ## Backend Changes
 
