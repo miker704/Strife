@@ -605,6 +605,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - ReStyled Edit User Username modal.
     - Switched From Class Based Component for Edit User Username modal to a Function Component.
     - Re-Modeled Disable User Account modal.
+    - ReStyled Disable User Account modal.
 
 ## Backend Changes
 
