@@ -619,6 +619,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Update System version number on all major modals in user, server, and channel settings.
     - Add App Puller animation to user settings in modal manager.
     - Added App Puller animation to user settings when exiting with click x button or hitting escape.
+    - Add tik tok icon in the socials section in user settings.
 
 ## Backend Changes
 
