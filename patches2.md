@@ -626,6 +626,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Temporalily disable the reveal and usage of edit display name container till backend preparations are complete.
     - Added strife id image badge to user settings similar to discords badge that was added to members that joined prior to the full deprecation of the discriminator tag system in favor for a unique username system, $TR!F3 will continue to use the tag system along with the new user name system as well.
     - Added tool tip message when hovering over strife id tag legacy badge.
+    - Added strife id tag legacy badge image.
     - Added new nitro icon symbol for the left hand side of user settings which has the chance to spawn in 2 different colors as well as the ablilty to spawn the classic 1 month tag but in 2 different colors as well.
     - Added a new custom hook to fill the right color of the masked online status badge for a users avatar
     without the need for heavy string interpolation and is pre ready for new online statuses for users when added.
