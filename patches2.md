@@ -569,6 +569,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created connect container for logout modal.
     - Moved Old Class Based Component Version of the Loading Screen Container to Deprecated Folder.
     - Moved Old Class Based Component Version of the Updating Loading Screen Container to Deprecated Folder.
+    - Moved Old Class Based Component Version of the Intrusion Loading Screen Container to Deprecated Folder.
 
 
 ## Backend Changes
