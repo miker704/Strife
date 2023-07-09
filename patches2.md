@@ -629,6 +629,7 @@ the need to create a private room is need to prevent unwanted members from enter
      - Added a new custom hook to fill the right color of the masked online status badge for a users avatar
     without the need for heavy string interpolation and is pre ready for new online statuses for users when added.
     - Added a new custom hook to mask user avatars with their current online status without having to clutter jsx styling with conditional statements in the future users can have more online status types and this hook will make it easier to deploy the right online status badge.
+    - Added new hook to return a default png image of default profile avatars for users based on color id without the need to import said files repeatedly where they are needed.
 
 
 
