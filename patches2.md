@@ -571,6 +571,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved Old Class Based Component Version of the Updating Loading Screen Container to Deprecated Folder.
     - Moved Old Class Based Component Version of the Intrusion Loading Screen Container to Deprecated Folder.
     - Moved Old Class Based Component Version of the Warp Loading Screen Container to Deprecated Folder.
+    - Replaced Class Based Component Version of the Loading Screen Container with a Functional Component.
 
 
 ## Backend Changes
