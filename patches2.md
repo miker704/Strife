@@ -575,6 +575,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Replaced Class Based Component Version of the Warp Loading Screen Container with a Functional Component.
     - Replaced Class Based Component Version of the Intrusion Loading Screen Container with a Functional Component.
     - Replaced Class Based Component Version of the Updating Loading Screen Container with a Functional Component.
+    - Create Copy Strife_id tag pop up modal.
 
 ## Backend Changes
 
