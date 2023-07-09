@@ -583,6 +583,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Re-Modeled Edit User Avatar modal.
     - ReStyled Edit User Banner modal.
     - Re-Modeled Edit User Banner modal.
+    - ReStyled Edit User Password modal.
+
 
 
 
