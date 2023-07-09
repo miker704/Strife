@@ -594,6 +594,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - ReStyled Edit User Email modal.
     - Re-Modeled Edit User Email modal.
     - Added Email Image to Edit User Email Modal.
+    - Add Edit user Email Image.
 
 ## Backend Changes
 
