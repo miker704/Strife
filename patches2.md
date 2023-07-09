@@ -610,6 +610,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - ReStyled Delete User Account modal.
     - Re-Modeled Delete User Account modal.
     - Switched From Class Based Component for Delete User Account modal to a Function Component.
+    - ReStyled User Owns Servers Warning modal.
 
     - Renamed UserProfileContainer to UserSettingsContainer in  modal and sub modal manager.
     - Renamed openModal choice "userProfile" to "userSettings" in channel drop down menu, user nav bar,
