@@ -599,6 +599,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - ReStyled Edit User Phone Number modal.
     - Re-Modeled Edit User Phone Number modal.
     - Added Phone Image to edit user Phone number modal.
+    - Added Add Phone Number Svg file.
 
 ## Backend Changes
 
