@@ -588,6 +588,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Re-Modeled Edit User Banner modal.
     - Edit User Banner modal is now more inline to the actual discords version.
     - Switched From Class Based Component for Edit User Banner modal to a Function Component.
+    - ReStyled Edit User Password modal.
 
 ## Backend Changes
 
