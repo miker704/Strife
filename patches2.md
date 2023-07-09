@@ -597,6 +597,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Add Edit user Email Image.
     - Switched From Class Based Component for Edit User Email modal to a Function Component.
     - ReStyled Edit User Phone Number modal.
+    - Re-Modeled Edit User Phone Number modal.
 
 ## Backend Changes
 
