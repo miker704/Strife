@@ -644,6 +644,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Wrapped All user Sub Modals with new portal hook to deploy on the dom without the need of replacing the current main on screen modal.
     - Fixed a bug where re-renders on sub modals re-render the user settings modal underneath causing 
     for the escape on esc listener for user settings to reactivate fixed by adding a state condtion to block the listener from trigger when a sub modal is deployed.
+    - Moved Old Styled for User Modals to Deprecated.
 
 ## Backend Changes
 
