@@ -582,7 +582,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Switched From Class Based Component for User Settings to a Function Component.
     - ReStyled Edit User Avatar modal.
     - Re-Modeled Edit User Avatar modal.
-
+    - Edit User Avatar modal is now more inline to the actual discords version.
 
 ## Backend Changes
 
