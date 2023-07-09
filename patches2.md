@@ -580,10 +580,10 @@ the need to create a private room is need to prevent unwanted members from enter
     - ReStyled User Settings Modal.
     - Re-modeled User Settings Modal.
     - Switched From Class Based Component for User Settings to a Function Component.
+    - ReStyled Edit User Avatar modal.
 
 
 
-    
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
