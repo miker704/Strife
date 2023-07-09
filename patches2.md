@@ -623,13 +623,14 @@ the need to create a private room is need to prevent unwanted members from enter
     - Fixed rendering of errors on all user sub modals to allow only the errored input field to turn read and give the error message instead of all the fields.
     - Created Edit Display name modal.
     - Created Edit Display name container.
-     - Added strife id image badge to user settings similar to discords badge that was added to members that joined prior to the full deprecation of the discriminator tag system in favor for a unique username system, $TR!F3 will continue to use the tag system along with the new user name system as well.
-     - Added tool tip message when hovering over strife id tag legacy badge.
-     - Added new nitro icon symbol for the left hand side of user settings which has the chance to spawn in 2 different colors as well as the ablilty to spawn the classic 1 month tag but in 2 different colors as well.
-     - Added a new custom hook to fill the right color of the masked online status badge for a users avatar
+    - Added strife id image badge to user settings similar to discords badge that was added to members that joined prior to the full deprecation of the discriminator tag system in favor for a unique username system, $TR!F3 will continue to use the tag system along with the new user name system as well.
+    - Added tool tip message when hovering over strife id tag legacy badge.
+    - Added new nitro icon symbol for the left hand side of user settings which has the chance to spawn in 2 different colors as well as the ablilty to spawn the classic 1 month tag but in 2 different colors as well.
+    - Added a new custom hook to fill the right color of the masked online status badge for a users avatar
     without the need for heavy string interpolation and is pre ready for new online statuses for users when added.
     - Added a new custom hook to mask user avatars with their current online status without having to clutter jsx styling with conditional statements in the future users can have more online status types and this hook will make it easier to deploy the right online status badge.
     - Added new hook to return a default png image of default profile avatars for users based on color id without the need to import said files repeatedly where they are needed.
+    - Created a New System to deploy modals using a custom built hook called React Portals which teleports the modal to an empty div element on the dom using react create portal feature this will help lessen the complexity and bugs associated with passing props to modal manager to deploy a modal that needs proper params this reduces crashes and allows less needs for reverse prop drilling from child to parent.
 
 
 
