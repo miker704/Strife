@@ -632,6 +632,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new hook to return a default png image of default profile avatars for users based on color id without the need to import said files repeatedly where they are needed.
     - Created a New System to deploy modals using a custom built hook called React Portals which teleports the modal to an empty div element on the dom using react create portal feature this will help lessen the complexity and bugs associated with passing props to modal manager to deploy a modal that needs proper params this reduces crashes and allows less needs for reverse prop drilling from child to parent.
     - Wrapped All user Sub Modals with new portal hook to deploy on the dom without the need of replacing the current main on screen modal.
+    - Fixed a bug where re-renders on sub modals re-render the user settings modal underneath causing 
+    for the escape on esc listener for user settings to reactivate fixed by adding a state condtion to block the listener from trigger when a sub modal is deployed.
 
 
 ## Backend Changes
