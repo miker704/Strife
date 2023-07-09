@@ -577,7 +577,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Replaced Class Based Component Version of the Updating Loading Screen Container with a Functional Component.
     - Created Copy Strife_id tag pop up modal.
     - Create Connect Container for Copy Strife_id tag pop up modal.
-    
+    - ReStyled User Settings Modal.
+
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
