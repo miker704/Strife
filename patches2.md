@@ -624,6 +624,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Edit Display name modal.
     - Created Edit Display name container.
      - Added strife id image badge to user settings similar to discords badge that was added to members that joined prior to the full deprecation of the discriminator tag system in favor for a unique username system, $TR!F3 will continue to use the tag system along with the new user name system as well.
+     - Added tool tip message when hovering over strife id tag legacy badge.
 
 ## Backend Changes
 
