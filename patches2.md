@@ -578,6 +578,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Copy Strife_id tag pop up modal.
     - Create Connect Container for Copy Strife_id tag pop up modal.
     - ReStyled User Settings Modal.
+    - Re-modeled User Settings Modal.
     - ReStyled Edit User Avatar modal.
     - Re-Modeled Edit User Avatar modal.
     - ReStyled Edit User Banner modal.
