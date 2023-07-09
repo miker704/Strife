@@ -602,6 +602,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Add Phone Number Svg file.
     - Switched From Class Based Component for Edit User Phone Number modal to a Function Component.
     - Re-Modeled Edit User Username modal.
+    - ReStyled Edit User Username modal.
 
 ## Backend Changes
 
