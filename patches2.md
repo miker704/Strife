@@ -636,7 +636,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Fixed a bug where re-renders on sub modals re-render the user settings modal underneath causing 
     for the escape on esc listener for user settings to reactivate fixed by adding a state condtion to block the listener from trigger when a sub modal is deployed.
 
-
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
@@ -646,6 +645,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Added a new function that passes in an array of member ids to grant server and channel memberships when inviting members of a group/dm server.
 - Add another backend strife core cable action to parse members that where invited via a dm server in invite to server modal.
 - Added new route to  call the new function to handle inviting multiple members (from a dmServer) at once from the invite to server modal in the server_memberships controller.
+- Edited backend error messages for changing user passwords for when the new passowrd filed is blank.
 
 ### Front-End Changes
 
