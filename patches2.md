@@ -616,7 +616,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Export Raw Code of User Owns Servers Warning modal to Disable user Account modal.
     - Disable user Account modal added a ajax fetch of the current user instead of a redux dispatch to ensure faster deployment of the proper modal if current user has servers display user owns servers modal else display the disable account modal.
     - Export Raw Code of User Owns Servers Warning modal to Delete user Account modal.
-
+    - Delete user Account modal added a ajax fetch of the current user instead of a redux dispatch to ensure faster deployment of the proper modal if current user has servers display user owns servers modal else display the delete account modal.
     - Renamed UserProfileContainer to UserSettingsContainer in  modal and sub modal manager.
     - Renamed openModal choice "userProfile" to "userSettings" in channel drop down menu, user nav bar,
     and in modal, sub modal manager.
