@@ -613,6 +613,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Renamed UserProfileContainer to UserSettingsContainer in  modal and sub modal manager.
     - Renamed openModal choice "userProfile" to "userSettings" in channel drop down menu, user nav bar,
     and in modal, sub modal manager.
+    - Renamed User Profile folder to User Settings.
 
 ## Backend Changes
 
