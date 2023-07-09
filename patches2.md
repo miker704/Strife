@@ -623,6 +623,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Fixed rendering of errors on all user sub modals to allow only the errored input field to turn read and give the error message instead of all the fields.
     - Created Edit Display name modal.
     - Created Edit Display name container.
+     - Added strife id image badge to user settings similar to discords badge that was added to members that joined prior to the full deprecation of the discriminator tag system in favor for a unique username system, $TR!F3 will continue to use the tag system along with the new user name system as well.
 
 ## Backend Changes
 
