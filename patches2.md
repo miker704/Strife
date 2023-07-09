@@ -631,7 +631,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added a new custom hook to mask user avatars with their current online status without having to clutter jsx styling with conditional statements in the future users can have more online status types and this hook will make it easier to deploy the right online status badge.
     - Added new hook to return a default png image of default profile avatars for users based on color id without the need to import said files repeatedly where they are needed.
     - Created a New System to deploy modals using a custom built hook called React Portals which teleports the modal to an empty div element on the dom using react create portal feature this will help lessen the complexity and bugs associated with passing props to modal manager to deploy a modal that needs proper params this reduces crashes and allows less needs for reverse prop drilling from child to parent.
-
+    - Wrapped All user Sub Modals with new portal hook to deploy on the dom without the need of replacing the current main on screen modal.
 
 
 ## Backend Changes
