@@ -577,6 +577,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Replaced Class Based Component Version of the Updating Loading Screen Container with a Functional Component.
     - Created Copy Strife_id tag pop up modal.
     - Create Connect Container for Copy Strife_id tag pop up modal.
+    - ReStyled User Settings Modal.
     - ReStyled Edit User Avatar modal.
     - Re-Modeled Edit User Avatar modal.
     - ReStyled Edit User Banner modal.
