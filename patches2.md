@@ -565,7 +565,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Connect Container for User Owns Servers Warning Modal.
     - Added container for edit user display name modal.
     - Created edit user display name modal for editing the user display name when that feature is fully added.
-    - Created a Logout Modal to confirm if a user wants to logout this is to prevent accidently clicking logout and  signing out unintentionally.
+    - Created a Logout Modal to confirm if a user wants to logout this is to prevent accidently clicking logout and signing out unintentionally.
     - Created connect container for logout modal.
     - Moved Old Class Based Component Version of the Loading Screen Container to Deprecated Folder.
     - Moved Old Class Based Component Version of the Updating Loading Screen Container to Deprecated Folder.
