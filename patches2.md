@@ -615,6 +615,7 @@ the need to create a private room is need to prevent unwanted members from enter
     and in modal, sub modal manager.
     - Renamed User Profile folder to User Settings.
     - Renamed User Profile container to User Settings Container.
+    - Renamed User Profile modal to User settings instead.
 
 ## Backend Changes
 
