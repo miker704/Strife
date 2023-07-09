@@ -581,7 +581,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Re-modeled User Settings Modal.
     - Switched From Class Based Component for User Settings to a Function Component.
     - ReStyled Edit User Avatar modal.
-
+    - Re-Modeled Edit User Avatar modal.
 
 
 ## Backend Changes
