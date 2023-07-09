@@ -628,6 +628,9 @@ the need to create a private room is need to prevent unwanted members from enter
      - Added new nitro icon symbol for the left hand side of user settings which has the chance to spawn in 2 different colors as well as the ablilty to spawn the classic 1 month tag but in 2 different colors as well.
      - Added a new custom hook to fill the right color of the masked online status badge for a users avatar
     without the need for heavy string interpolation and is pre ready for new online statuses for users when added.
+    - Added a new custom hook to mask user avatars with their current online status without having to clutter jsx styling with conditional statements in the future users can have more online status types and this hook will make it easier to deploy the right online status badge.
+
+
 
 ## Backend Changes
 
