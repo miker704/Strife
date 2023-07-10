@@ -651,7 +651,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Remodeled friendship options modal.
     - Added React portal wrapper to friendship options modal.
     - Added SubModal1 div to teleport sub modals to. 
-    - Added SubModal2 div to teleport sub modals to. 
+    - Added SubModal2 div to teleport sub modals to.
+    - Switched to SCSS Vars for friendship options modal.
 
 
 ## Backend Changes
