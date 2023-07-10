@@ -647,7 +647,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved Old Styled for User Modals to Deprecated.
     - Moved old styles for mini friendship options modal to deprecated.
     - Moved old version of friendship options modal to deprecated.
-    
+    - Switched to a non params  deconstructed version of friendship options modal.
+
 
 ## Backend Changes
 
