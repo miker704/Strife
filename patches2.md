@@ -670,6 +670,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Default gray png user avatar pic.
     - Added Default blue png user avatar pic.
     - Added Default blurple png user avatar pic.
+    - Added Default green png user avatar pic.
 
 
 
