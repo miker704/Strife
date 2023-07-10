@@ -664,6 +664,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new render function that activates via a call back in online friends list to close friendship options modal and deploy confirm friendship delete modal if remove friend is clicked in friendship options modal.
     - Added Default Yellow png user avatar pic.
     - Added Default Secret Pink png user avatar pic.
+    - Added Default purple png user avatar pic.
+
 
 
 ## Backend Changes
