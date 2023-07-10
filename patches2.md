@@ -672,6 +672,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Default blurple png user avatar pic.
     - Added Default green png user avatar pic.
     - Added Default $TR!F3 green png user avatar pic.
+    - Added Returnfillmaskcolor and returnmaskbadgeimg in all friends list.
 
 ## Backend Changes
 
