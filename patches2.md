@@ -645,6 +645,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Fixed a bug where re-renders on sub modals re-render the user settings modal underneath causing 
     for the escape on esc listener for user settings to reactivate fixed by adding a state condtion to block the listener from trigger when a sub modal is deployed.
     - Moved Old Styled for User Modals to Deprecated.
+    - Moved old styles for mini friendship options modal to deprecated.
+    -
 
 ## Backend Changes
 
