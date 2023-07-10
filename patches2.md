@@ -655,6 +655,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Switched to SCSS Vars for friendship options modal.
     - Restyled friendship options modal.
     - Created Confirm Friendship Delete modal to confirm deleting a friend when clicking remove friend in friendship options modal.
+    -Created Confirm Friendship Delete modal styles.
 
 
 
