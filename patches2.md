@@ -653,6 +653,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added SubModal1 div to teleport sub modals to. 
     - Added SubModal2 div to teleport sub modals to.
     - Switched to SCSS Vars for friendship options modal.
+    - Restyled friendship options modal.
+
 
 
 ## Backend Changes
