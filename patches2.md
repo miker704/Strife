@@ -659,6 +659,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Confirm Friendship Delete modal connect container.
     - Removed the old delete friendship modal for deleting a friend when clicking delete friend in friendship options modal in favor of using a callback state function to close the modal and activate the confirm friendship delete modal to appear.
     - Added new render function in online friends list to deploy friendship options modal.
+    - Added new render function in All friends list to deploy friendship options modal.
+
 
 ## Backend Changes
 
