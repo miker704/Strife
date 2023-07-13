@@ -679,9 +679,10 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old styles for start conversation modal to deprecated.
     - Moved old version start conversation modal to deprecated.
     - Moved a version of start conversation modal to deprecated that features an implementation of _live_search that induces a filter to filter out object which removes the the old version of live search that hides elements using is-hidden however do to scertain condtions involved in rendering (elements are rendered under a header of their type which causes 5 instances to of live search to run at once and cannot be concat to be one list as rendering under the type header is not possible and with the 5 instance method is to slow around 2 seconds to filter from blank to 1 character) .
+    - Moved a version of start conversation modal to deprecated that features a working version that has the arrow movement for scroll and auto casting to first divs however they are bugs so it is moved to backup.
     - Changed the rendering functions for generating dmServer names and profile pic for start conversation model by importing the new version of those functions from dmServer nav bar.
     - Changed friend pfp rendering method in start conversation model.
-    -
+    - C
 
 ## Backend Changes
 
