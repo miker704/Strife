@@ -682,7 +682,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved a version of start conversation modal to deprecated that features a working version that has the arrow movement for scroll and auto casting to first divs however they are bugs so it is moved to backup.
     - Changed the rendering functions for generating dmServer names and profile pic for start conversation model by importing the new version of those functions from dmServer nav bar.
     - Changed friend pfp rendering method in start conversation model.
-    - C
+    - Changed the styling of the server default guild icon to be gray instead of blurple.
+    
 
 ## Backend Changes
 
