@@ -677,6 +677,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - ReStyled start conversation modal.
     - ReModeled start conversation modal.
     - Moved old styles for start conversation modal to deprecated.
+    - Moved old version start conversation modal to deprecated.
     - Changed the rendering functions for generating dmServer names and profile pic for start conversation model by importing the new version of those functions from dmServer nav bar.
     - Changed friend pfp rendering method in start conversation model.
     -
