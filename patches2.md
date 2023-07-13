@@ -682,9 +682,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved a version of start conversation modal to deprecated that features a working version that has the arrow movement for scroll and auto casting to first divs however they are bugs so it is moved to backup.
     - Changed the rendering functions for generating dmServer names and profile pic for start conversation model by importing the new version of those functions from dmServer nav bar.
     - Changed friend pfp rendering method in start conversation model.
-    - Changed the styling of the server default guild icon to be gray instead of blurple.
-    
-
+    - Changed the styling of the server default guild icon to be gray instead of blurple in start conversation container.
+    - Changed the styling of the message button for friends in start conversation container.
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
