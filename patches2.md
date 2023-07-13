@@ -674,6 +674,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Default $TR!F3 green png user avatar pic.
     - Added Returnfillmaskcolor and returnmaskbadgeimg in all friends list.
     - Switched to SCSS Vars for start conversation modal.
+    - Changed the rendering functions for generating dmServer names and profile pic for start conversation model by importing the new version of those functions from dmServer nav bar.
+
 
 ## Backend Changes
 
