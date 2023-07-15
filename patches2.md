@@ -691,7 +691,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Restyled Server User Options Modal.
     - Remodeled Server User Options Modal.
     - Moved old version of Server User Options Modal to deprecated.
-
+    - Moved old styles of Server User Options Modal to deprecated.
 
 ## Backend Changes
 
