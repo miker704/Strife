@@ -694,6 +694,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old styles of Server User Options Modal to deprecated.
     - Created custom colorings for Server User Options Modal for each user based on their color tags.
     - Created a second custom color pattern for Server User Options Modal for each user based on their color tags.
+    - Discovered a bug where messaging a user using the server user options modal via the message input once sending the message and the dm already exists upon teleporting the message actually is sent to the wrong dm hence that message never appears the the correct dm it appears in the previous dm that the user was in prior to messaging the other user, if the user is in a server and does this it fails to create the message but in turn teleport the the existing dm fixed by passing the correct dm id to the new message so it can be created in the proper dm the id variable is is similar to the prop  drill dmserverid variable and was missing the dot access operator i.e. : dmServer : dmServerId  <--- this variable is prop drilled the proper id was dmServer: dmServer.id.
 
 ## Backend Changes
 
