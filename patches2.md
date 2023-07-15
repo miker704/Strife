@@ -693,6 +693,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old version of Server User Options Modal to deprecated.
     - Moved old styles of Server User Options Modal to deprecated.
     - Created custom colorings for Server User Options Modal for each user based on their color tags.
+    - Created a second custom color pattern for Server User Options Modal for each user based on their color tags.
 
 ## Backend Changes
 
