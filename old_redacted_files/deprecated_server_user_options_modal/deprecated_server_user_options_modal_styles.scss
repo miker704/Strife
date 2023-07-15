@@ -1,0 +1,400 @@
+// //this is a modal that will mimick a similar interface of the user profile
+// // and an early implementations on the friend and user options modal
+// //put together
+
+
+// .user-profile-card-layer-container {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     background: none !important;
+//     pointer-events: none;
+//     z-index: 1002;
+//     forced-color-adjust: none;
+//     outline: 0;
+// }
+
+// .upc-popout {
+//     position: absolute;
+//     right: 247.909px;
+//     top: 229px;
+//     forced-color-adjust: none;
+//     pointer-events: auto;
+// }
+
+// .upc-inner-wrapper {
+//     transform: translateZ(0);
+//     forced-color-adjust: none;
+//     outline: 0;
+//     transition: transform .2s ease-out, -webkit-transform .2s ease-out;
+//     -webkit-animation-name: upcPopOut;
+//     -webkit-animation-timing-function: ease-in-out;
+//     -webkit-animation-iteration-count: 1;
+//     -webkit-animation-duration: 0.3s;
+//     animation-name: upcPopOut;
+//     animation-timing-function: ease-in-out;
+//     animation-duration: 0.3s;
+//     animation-iteration-count: 1;
+
+// }
+
+
+
+
+// .user-mini-upc {
+//     outline: 0;
+//     forced-color-adjust: none;
+//     width: 300px;
+//     box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.24);
+//     background-color: hsl(225, 7.7%, 10.2%);
+//     border-radius: 8px;
+//     overflow: hidden;
+//     max-height: calc(100vh - 20px);
+//     display: flex;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+//     flex-direction: column;
+// }
+
+
+// .upc-header-wrapper {
+//     outline: 0;
+//     forced-color-adjust: none;
+//     position: relative;
+// }
+
+// .upc-header-normal {
+//     forced-color-adjust: none;
+//     outline: 0;
+//     -webkit-box-flex: 0;
+//     flex: 0 0 auto;
+
+// }
+
+// .upc-banner {
+//     background-color: #5c64f4;
+//     forced-color-adjust: none;
+//     outline: 0;
+//     max-width: 300px;
+//     height: 120px;
+//     background-repeat: no-repeat;
+//     background-position: 50%;
+//     background-size: cover;
+//     position: relative;
+//     transition: background-color .1s;
+// }
+
+// .upc-banner:hover .upc-strife-nitro-wrapper {
+//     opacity: 1;
+//     transform: translateZ(0);
+// }
+
+
+// .upc-strife-nitro-wrapper {
+//     cursor: pointer;
+//     forced-color-adjust: none;
+//     transition: opacity .15s ease-out, transform .15s ease-out, -webkit-transform .15s ease-out;
+//     transform: translate3d(0, -5px, 0);
+//     position: absolute;
+//     top: 6px;
+//     right: 8px;
+//     z-index: 2;
+//     opacity: 0;
+//     outline: 0;
+
+// }
+
+// .upc-strife-nitro-badge {
+//     outline: 0;
+//     box-sizing: border-box;
+//     height: 16px;
+//     min-width: 16px;
+//     min-height: 16px;
+//     font-size: 12px;
+//     line-height: 16px;
+//     color: hsl(0, 0%, 100%);
+//     text-align: center;
+//     -webkit-box-flex: 0;
+//     flex: 0 0 auto;
+//     border-radius: 8px;
+//     padding: 0 6px;
+//     font-family: "ABC Ginto Normal";
+//     font-weight: 500;
+//     text-transform: uppercase;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     forced-color-adjust: none;
+//     background-color: #202225cc;
+// }
+
+// .upc-strife-nitro-icon {
+//     color: hsl(0, 0%, 100%);
+//     display: block;
+//     margin-left: -2px;
+//     margin-right: -2px;
+//     forced-color-adjust: none;
+// }
+
+
+// .upc-pfp-icon-wrapper {
+//     outline: 0;
+//     forced-color-adjust: none;
+//     top: 76px;
+//     cursor: pointer;
+//     border-radius: 50%;
+//     position: absolute;
+//     z-index: 1;
+//     left: 16px;
+
+// }
+
+// .upc-pfp-icon-hover {
+//     outline: 0;
+//     forced-color-adjust: none;
+//     border-radius: 50%;
+
+
+// }
+
+// .upc-pfp-icon-hover-wrapper {
+//     outline: 0;
+//     position: relative;
+//     border-radius: 50%;
+//     forced-color-adjust: none;
+//     box-sizing: content-box;
+//     width: 80px;
+//     height: 80px;
+//     border: 6px solid hsl(225, 7.7%, 10.2%);
+//     background-color: hsl(225, 7.7%, 10.2%);
+//     user-select: none;
+//     -webkit-user-drag: none;
+// }
+
+// .upc-pfp-icon-hover-wrapper>img {
+//     height: 100%;
+//     width: 100%;
+//     border-radius: 50%;
+//     user-select: none;
+//     -webkit-user-drag: none;
+// }
+
+
+
+
+// .upc-header-top {
+//     display: block;
+//     flex-shrink: 0;
+//     padding: 64px 16px 16px;
+//     overflow: hidden;
+//     position: relative;
+//     outline: 0;
+//     forced-color-adjust: none;
+// }
+
+// .upc-header-text {
+//     user-select: text;
+//     forced-color-adjust: none;
+//     outline: 0;
+// }
+
+// .upc-header-text-wrapper {
+//     outline: 0;
+//     overflow: hidden;
+//     justify-content: flex-start;
+//     -webkit-box-pack: start;
+//     font-weight: 400;
+//     display: block;
+//     font-family: "ABC Ginto Normal";
+//     font-size: 20px;
+//     line-height: 24px;
+//     word-break: break-word;
+//     white-space: normal;
+//     -webkit-box-align: end;
+//     align-items: flex-end;
+//     forced-color-adjust: none;
+// }
+
+// .upc-username {
+//     forced-color-adjust: none;
+//     color: #FFFFFF;
+//     font-weight: 600;
+//     overflow: auto;
+//     word-break: break-all;
+//     text-overflow: unset;
+//     white-space: normal;
+//     vertical-align: top;
+//     display: inline;
+//     -webkit-box-flex: 0;
+//     flex: 0 1 auto;
+//     outline: 0;
+//     user-select: none;
+//     -webkit-user-drag: none;
+// }
+
+// .upc-strife-tag {
+//     outline: 0;
+//     vertical-align: top;
+//     font-weight: 600;
+//     forced-color-adjust: none;
+//     color: hsl(216, 3.7%, 73.5%);
+//     user-select: none;
+//     -webkit-user-drag: none;
+// }
+
+
+// .upc-body-wrapper {
+//     -webkit-box-flex: 0;
+//     flex: 0 1 auto;
+//     min-height: 0;
+//     padding: 0 16px 14px;
+//     forced-color-adjust: none;
+//     overflow: hidden scroll;
+//     padding-right: 8px;
+//     box-sizing: border-box;
+//     position: relative;
+//     -webkit-box-sizing: border;
+//     outline: 0;
+//     scrollbar-width: thin;
+// }
+
+// .upc-body-wrapper:hover {
+//     scrollbar-color: hsl(216, 7.2%, 13.5%) hsla(0, 0%, 0%, 0);
+
+// }
+
+// .upc-body-wrapper::-webkit-scrollbar-track {
+//     margin-bottom: 4px;
+// }
+
+// .upc-body-wrapper::-webkit-scrollbar-thumb {
+//     background-clip: padding-box;
+//     border: 2px solid #0000;
+//     border-radius: 4px;
+//     background-color: hsl(216, 7.2%, 13.5%);
+//     ;
+//     min-height: 40px;
+// }
+
+// .upc-body-wrapper::-webkit-scrollbar-corner {
+//     background-color: #0000;
+// }
+
+// .upc-body-wrapper::-webkit-scrollbar-track {
+//     border-color: hsla(0, 0%, 0%, 0);
+//     background-color: hsla(0, 0%, 0%, 0);
+//     border: 2px solid hsla(0, 0%, 0%, 0);
+// }
+
+// .upc-body-wrapper::-webkit-scrollbar {
+//     width: 8px;
+//     height: 8px;
+// }
+
+// .upc-body {
+//     forced-color-adjust: none;
+//     outline: 0;
+//     background-color: hsl(225, 7.7%, 10.2%);
+//     color: hsl(0, 0%, 100%);
+// }
+
+// .upc-seper {
+//     forced-color-adjust: none;
+//     outline: 0;
+//     position: absolute;
+//     pointer-events: none;
+//     min-height: 0px;
+//     min-width: 1px;
+//     flex: 0 0 auto;
+//     height: 14px;
+// }
+
+// .upc-footer {
+//     outline: 0;
+//     forced-color-adjust: none;
+//     padding: 0 16px 16px;
+//     position: relative;
+//     -webkit-box-flex: 0;
+//     flex: 0 0 auto;
+//     background-color: hsl(225, 7.7%, 10.2%);
+//     color: #FFFFFF;
+//     margin-top: -2px;
+// }
+
+// .upc-input-wrapper {
+//     display: -webkit-box;
+//     display: flex;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+//     flex-direction: column;
+//     outline: 0;
+//     forced-color-adjust: none;
+// }
+
+// .upc-input {
+//     font-family: "Whitney";
+//     text-rendering: optimizeLegibility;
+//     outline: 0;
+//     transition: border-color .2s ease-in-out;
+//     box-sizing: border-box;
+//     width: 100%;
+//     border-radius: 3px;
+//     color: hsl(210, 2.9%, 86.7%);
+//     border: none;
+//     padding: 10px;
+//     height: 40px;
+//     font-size: 14px;
+//     background-color: hsl(220, 6.8%, 17.3%);
+//     forced-color-adjust: none;
+//     text-overflow: ellipsis;
+// }
+
+
+// .bot-sticker {
+//     height: 15px;
+//     padding: 0 4px;
+//     margin-top: 1px;
+//     border-radius: 3px;
+//     display: inline-flex;
+//     line-height: 15px;
+//     forced-color-adjust: none;
+//     outline: 0;
+//     vertical-align: top;
+//     margin-top: 5px !important;
+//     flex: 0 0 auto;
+//     margin-left: 1ch;
+//     background: hsl(235, 85.6%, 64.7%);
+//     color: hsl(0, 0%, 100%);
+//     font-size: .625rem;
+//     text-transform: uppercase;
+//     vertical-align: top;
+//     display: inline-flex;
+//     align-items: center;
+//     flex-shrink: 0;
+//     text-indent: 0;
+//     user-select: none;
+//     -webkit-user-drag: none;
+// }
+
+// .bot-check-mark{
+//     display: inline-block;
+//     outline: 0;
+//     width: 15px;
+//     height: 15px;
+//     margin-left: -4px;
+
+// }
+
+// .bot-text{
+//     font-size: 10px;
+//     line-height: 15px;
+//     forced-color-adjust: none;
+//     outline: 0;
+//     position: relative;
+//     font-weight: 500;
+//     vertical-align: top;
+//     font-family: "ABC Ginto Normal";
+//     text-transform: uppercase;
+// }
