@@ -690,6 +690,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Switched to SCSS Vars for Server User Options Modal.
     - Restyled Server User Options Modal.
     - Remodeled Server User Options Modal.
+    - Moved old version of Server User Options Modal to deprecated.
 
 
 ## Backend Changes
