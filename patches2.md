@@ -689,6 +689,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added a back up to the normal version of start conversation search modal that has the normal live search and no arrow tracking in deprecated folder.
     - Switched to SCSS Vars for Server User Options Modal.
     - Restyled Server User Options Modal.
+    - Remodeled Server User Options Modal.
+
 
 ## Backend Changes
 
