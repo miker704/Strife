@@ -688,6 +688,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added a working method of arrow tracking with the mouse and hopping to the first element in the search results in start converstation modal. The real version of this in discord uses complex listeners and various conditions cause arrow misalignment so a version that allows basic arrow movement was implemented and certain cases where notable scenerios where arrows would be outside the model have been taken care of by just rejecting the attempt to move the arrows.
     - Added a back up to the normal version of start conversation search modal that has the normal live search and no arrow tracking in deprecated folder.
     - Switched to SCSS Vars for Server User Options Modal.
+    - Restyled Server User Options Modal.
 
 ## Backend Changes
 
