@@ -702,6 +702,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved Deconstructed version of Dm Server member list to deprecated.
     - Remodeled Server Member list to be non prop deconstructed.
     - Remodeled Dm Server Member list to be non prop deconstructed.
+    - Added several modifications to server user options modal including protection against invalid options being ran if the the user being interacted with has modified the relationship status with the current user. A fetch request is ran to check if the current user being interacted with has a valid relationship status before executing any request whether it be to send a friend request or message the user when that user has already just sent a friend request or blocked the current user the fetch validates the relationship to see if the action is valid to execute if so it proceeds if not it closes the modal.  
 
 ## Backend Changes
 
