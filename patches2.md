@@ -709,8 +709,9 @@ the need to create a private room is need to prevent unwanted members from enter
     - Split the delete friendship function into 3 different functions due to new complex modal handling for deleting friends in Server User Options Modal. relationship status of 1 , 2, 3  are split into different functions previously the delete function handles all of these statuses but are now split into dedicated functions a status of 1 that is to be deleted indicates a cancel friend request option is now handled by cancel friend request function, a status of 2 meaning ignore friend request is handled by the ignore friend request status function while a status of 3 means delete friend which is handled by the orignal function with the exception that the deletion function is not ran on this status immediately now due to new ui implementations.
     - The orginal delete friendship function that now handles friend status of 3 in server user options modal now closes the modal and opens the confirm delete friend modal to confirm the deletion of the friend.
     - The orginal block user function in server user options modal now closes the modal and opens the confirm block request modal to confirm blocking the user.
-    - Add Server user options modal to be rendered by a function in server members list component.
-    - Add Server user options modal to be rendered by a function in dm server members list component.
+    - Added Server user options modal to be rendered by a function in server members list component.
+    - Added Server user options modal to be rendered by a function in dm server members list component.
+    - Add Delete friendship confirmation modal to be rendered by a function in dm server members list component.
 
 
 ## Backend Changes
