@@ -700,6 +700,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Block User Confirmation Modal Container.
     - Moved Deconstructed version of server member list to deprecated.
     - Moved Deconstructed version of dm server member list to deprecated.
+    - Remodeled Server Member list to be non prop deconstructed.
 
 ## Backend Changes
 
