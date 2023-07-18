@@ -724,6 +724,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added custom spawn variable for class tag to be used to style the theme of the server user options modal.
     - Added useEffect hook to server User Options Modal to grab the latest data of the currently viewed user to resync member options from core cable and member data in case the user being view does a member action on the current user.
     - Added useRef to file input in edit user profile avatar modal instead of using a variable for consistent file input handling. 
+    - Added useRef to file input in edit user profile banner modal instead of using a variable for consistent file input handling. 
 
 ## Backend Changes
 
