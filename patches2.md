@@ -722,6 +722,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added roles section in server user options modal if called in a server that gives a chance to show no roles or roles as the title along with a generic server member role if user is not the server owner. while the server owner has the role of server owner and if the current user is the server owner an add role button is displayed as well.
     - Added click to add note section in server user options modal.
     - Added custom spawn variable for class tag to be used to style the theme of the server user options modal.
+    - Added useEffect hook to server User Options Modal to grab the latest data of the currently viewed user to resync member options from core cable and member data in case the user being view does a member action on the current user.
 
 ## Backend Changes
 
