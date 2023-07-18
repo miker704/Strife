@@ -720,6 +720,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added time account created, and current time server membership created which is displayed depending on if the server user options modal is called in a dmserver or server it also show different headers in dms it will  joined $TR!F3 as the section title and the time they joined while in a server it will show member since as the title and both the time they joined $TR!F3 along the time they joined that server next to those options the discord logo is displayed and the server icon is also displayed if the server has no avatar a generic place holder is given.
     - Added about section in server user options modal if called in a server that shows a generic loading ... message along with a loading gif image.
     - Added roles section in server user options modal if called in a server that gives a chance to show no roles or roles as the title along with a generic server member role if user is not the server owner. while the server owner has the role of server owner and if the current user is the server owner an add role button is displayed as well.
+    - Added click to add note section in server user options modal.
 
 ## Backend Changes
 
