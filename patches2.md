@@ -704,7 +704,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Remodeled Dm Server Member list to be non prop deconstructed.
     - Added several modifications to server user options modal including protection against invalid options being ran if the the user being interacted with has modified the relationship status with the current user. A fetch request is ran to check if the current user being interacted with has a valid relationship status before executing any request whether it be to send a friend request or message the user when that user has already just sent a friend request or blocked the current user the fetch validates the relationship to see if the action is valid to execute if so it proceeds if not it closes the modal.
     - Added input validation to the message input to check if the message length is 0 or is of the length of 0 after removing white spaces in server user options modal before sending the message. Before any validation was implemented an invalid message length would end up warping to the dm if it exists or creating the dm but the message entered failed to be created as it is of invalid length.
-    - Added numpad enter key to send a message along with the prior implemented normal enter key in server user options modal. 
+    - Added numpad enter key to send a message along with the prior implemented normal enter key in server user options modal.
+    - Wrapped Server User Options modal in React Portal container.
 
 ## Backend Changes
 
