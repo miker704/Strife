@@ -710,6 +710,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - The orginal delete friendship function that now handles friend status of 3 in server user options modal now closes the modal and opens the confirm delete friend modal to confirm the deletion of the friend.
     - The orginal block user function in server user options modal now closes the modal and opens the confirm block request modal to confirm blocking the user.
     - Add Server user options modal to be rendered by a function in server members list component.
+    - Add Server user options modal to be rendered by a function in dm server members list component.
+
 
 ## Backend Changes
 
