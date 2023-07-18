@@ -717,6 +717,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Block user confirmation modal to be rendered by a function in server members list component which is triggered by a call back in server user options modal if the block user option is clicked.
     - Added a pencil icon for the current user to edit their profile when hovering over their banner if clicked it opens the user settings modal in server user options modal.
     - Added many new display features for server user options modal including themed versions of the modal based on the color tags of the user it can render 4 variants 2 default options and 2 options that are colored based on the users color tag and a special rare spawn of an alternative version of that users color pallette.
+    - Added time account created, and current time server membership created which is displayed depending on if the server user options modal is called in a dmserver or server.
 
 ## Backend Changes
 
