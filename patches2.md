@@ -711,7 +711,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - The orginal block user function in server user options modal now closes the modal and opens the confirm block request modal to confirm blocking the user.
     - Added Server user options modal to be rendered by a function in server members list component.
     - Added Server user options modal to be rendered by a function in dm server members list component.
-    - Add Delete friendship confirmation modal to be rendered by a function in dm server members list component.
+    - Add Delete friendship confirmation modal to be rendered by a function in dm server members list component which is triggered by a call back in server user options modal if the delete friendship is clicked.
+    - Add Delete friendship confirmation modal to be rendered by a function in server members list component which is triggered by a call back in server user options modal if the delete friendship is clicked.
 
 
 ## Backend Changes
