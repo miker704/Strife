@@ -706,6 +706,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added input validation to the message input to check if the message length is 0 or is of the length of 0 after removing white spaces in server user options modal before sending the message. Before any validation was implemented an invalid message length would end up warping to the dm if it exists or creating the dm but the message entered failed to be created as it is of invalid length.
     - Added numpad enter key to send a message along with the prior implemented normal enter key in server user options modal.
     - Wrapped Server User Options modal in React Portal container.
+    - Split the delete friendship function into 3 different functions due to new complex modal handling for deleting friends in Server User Options Modal. relationship status of 1 , 2, 3  are split into different functions previously the delete function handles all of these statuses but are now split into dedicated functions a status of 1 that is to be deleted indicates a cancel friend request option is now handled by cancel friend request function, a status of 2 meaning ignore friend request is handled by the ignore friend request status function while a status of 3 means delete friend which is handled by the orignal function with the exception that the deletion function is not ran on this status immediately now due to new ui implementations.
 
 ## Backend Changes
 
