@@ -746,6 +746,8 @@ the need to create a private room is need to prevent unwanted members from enter
     shows itself after a restyling of components.
     - Placed DmServerNavBar in Friends homepage container (Dashboard).
     - Placed DmServerNavBar in Dmserver Container instead of routing it seperately.
+    - Placed DmServerNavBar in Dmserver Container instead of routing it seperately.
+    - Moved route to guild discovery to all /$/channels routes instead of loading screens.
 
 
 ## Backend Changes
