@@ -748,7 +748,9 @@ the need to create a private room is need to prevent unwanted members from enter
     - Placed DmServerNavBar in Dmserver Container instead of routing it seperately.
     - Placed DmServerNavBar in Dmserver Container instead of routing it seperately.
     - Moved route to guild discovery to all /$/channels routes instead of loading screens.
-    - Changed All server main base containers used to seperate all content on each section in HomePage for each component to be contained in one big div the the exception of the server nav bar., 
+    - Changed All main base containers used to seperate all content on each section in HomePage for each component to be contained in one big div the the exception of the server nav bar. All Homepage container now contains all together user nav bar, dmServernav homepage header bar, active now section and friend list components all in one component where none are routed in differntly, with the exception of server nav bar.
+    - Changed All main base containers in Dmservers to allow all dmserver components to be routed together
+    dmserver header bar, dmServer Navbar, dmServer Chat room ,dmServer memberslist, user nav bar are all contained in one component with the exception of server nav bar. 
 
 
 ## Backend Changes
