@@ -740,7 +740,9 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Added new route to  call the new function to handle inviting multiple members (from a dmServer) at once from the invite to server modal in the server_memberships controller.
 - Edited backend error messages for changing user passwords for when the new passowrd filed is blank.
 - Fixed an error where removing phone number in remove phone number modal does not give an error on wrong password input due to not returning custom invaild password error.
-- Edited Routing for fetching dm member status, changed the route and edited it to get_dm_member instead.
+- Edited Routing for fetching dm member status, changed the route and edited it to get_dm_member instead also changed the function attached to it to return the dm member data instead.
+- Added a new route to check if a dm_member is still a member of a dmserver attached the route to dmServers instead of dmMembers to bybass naming it a generic /api/"generic name"/ route in order to bypass the get route needed the id of the object itself and needing to execute different functions or return different data this passes a bool value to indicate if membership is true or not without passing all the dmServer membership data instead which in the future will be larger.
+
 
 ### Front-End Changes
 
