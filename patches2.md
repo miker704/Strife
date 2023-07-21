@@ -740,6 +740,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed Dm Server Nav Bar from frontend routes.
     - Placed User Navbar into the nav section container of where it used to float above on.
     - Placed User Nav bar into explore servers nav bar.
+    - Placed User Nav bar into dm servers nav bar.
 
 
 ## Backend Changes
