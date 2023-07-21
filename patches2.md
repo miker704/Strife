@@ -743,7 +743,8 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Edited Routing for fetching dm member status, changed the route and edited it to get_dm_member instead also changed the function attached to it to return the dm member data instead.
 - Added a new route to check if a dm_member is still a member of a dmserver attached the route to dmServers instead of dmMembers to bybass naming it a generic /api/"generic name"/ route in order to bypass the get route needed the id of the object itself and needing to execute different functions or return different data this passes a bool value to indicate if membership is true or not without passing all the dmServer membership data instead which in the future will be larger.
 - Added a new route attached to dmServer to receive dm membership data the functionailiy is the same as the show for dm membership but more dedicated to the current dm server that dm membership belongs to.
-- Added Routing to obtain server membership data of a server member.
+- Added a new Route to obtain server membership data of a server member.
+- Added a new route attached to servers to obtain server membership data of a server member similar to the show server membership route/ function but more dedicated/ attached to the server the membership belongs to0.
 
 
 
