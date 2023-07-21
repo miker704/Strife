@@ -745,7 +745,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Added a new route attached to dmServer to receive dm membership data the functionailiy is the same as the show for dm membership but more dedicated to the current dm server that dm membership belongs to.
 - Added a new Route to obtain server membership data of a server member.
 - Added a new route attached to servers to obtain server membership data of a server member similar to the show server membership route/ function but more dedicated/ attached to the server the membership belongs too.
-
+- Added new route to obtain a bool value indicating if a server member is still a member of a server.
 
 
 ### Front-End Changes
