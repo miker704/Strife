@@ -752,6 +752,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 ### Front-End Changes
 
 - Added Custom Built in Hook components for detecting when a component is mounted or not, this is used to delay to triggering of css animation effects of some elements upon initial rendering.
+- Added new routes to get server membership data in server membership api util
 
 ### Other Changes
 
