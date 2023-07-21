@@ -742,6 +742,9 @@ the need to create a private room is need to prevent unwanted members from enter
     - Placed User Nav bar into explore servers nav bar.
     - Placed User Nav bar into dm servers nav bar.
     - Placed User Nav Bar into Channel nav bar.
+    - Fixed a glitch where channel drop down modal does not close when opening user settings modal and 
+    shows itself after a restyling of components.
+    -
 
 
 ## Backend Changes
