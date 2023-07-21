@@ -725,7 +725,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added useEffect hook to server User Options Modal to grab the latest data of the currently viewed user to resync member options from core cable and member data in case the user being view does a member action on the current user.
     - Added useRef to file input in edit user profile avatar modal instead of using a variable for consistent file input handling. 
     - Added useRef to file input in edit user profile banner modal instead of using a variable for consistent file input handling.
-    - Added transmit core cable function on both removebanner and changebanner functions to resync across the app in edit banner modal. 
+    - Added transmit core cable function on both removebanner and changebanner functions to resync across the app in edit banner modal.
+    - Added conditional protection to kick user from group chat (dmServer) which is to check to see if the dmMember being viewed is still a member before attempting to kick them from the dm server. fetches the if the dmMember is still or is a member of the dmServer if true proceed with kicking, else it is likely they have left the dmServer and if that is the case close the modal instead.
 
 ## Backend Changes
 
