@@ -753,10 +753,11 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 
 - Added Custom Built in Hook components for detecting when a component is mounted or not, this is used to delay to triggering of css animation effects of some elements upon initial rendering.
 - Added new routes to get server membership data in server membership api util.
-- Added get route server membership when not in its dedicated server in server membership api util.
-- Added get route server membership that is dedicated to the server it belongs to in server membership api util.
-- Add a get route to check for server membership that returns a bool.
+- Added get route for server membership when not in its dedicated server in server membership api util.
+- Added get route for server membership that is dedicated to the server it belongs to in server membership api util.
+- Add a get route to check for server membership that returns a bool in server membership api util.
 - Added new routes to get dmserver membership data in dmserver membership api util.
+- Added get route for dm membership when not in its dedicated dm server in dmserver membership api util.
 
 ### Other Changes
 
