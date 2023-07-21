@@ -744,7 +744,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Placed User Nav Bar into Channel nav bar.
     - Fixed a glitch where channel drop down modal does not close when opening user settings modal and 
     shows itself after a restyling of components.
-    -
+    - Placed DmServerNavBar in Friends homepage container (Dashboard).
 
 
 ## Backend Changes
