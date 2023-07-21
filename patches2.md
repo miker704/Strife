@@ -728,6 +728,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added transmit core cable function on both removebanner and changebanner functions to resync across the app in edit banner modal.
     - Added conditional protection to kick user from group chat (dmServer) in server user options modal which is to check to see if the dmMember being viewed is still a member before attempting to kick them from the dm server. fetches dmMember and checks if the dmMember is still or is a member of the dmServer if true proceed with kicking, else it is likely they have left the dmServer and if that is the case close the modal instead.
     - Added conditional protection to ban user from a server in server user options modal which is to check to see if the server Member being viewed is still a member before attempting to ban them from the server. fetches the server member is still or is a member of the Server if true proceed with the ban, else it is likely they have left the Server and if that is the case close the modal instead.
+    - Added 4 roles names with dedicated role colors 3 which are randomly generated for server members while 1 is dedicated to only the server owner themselves.
 
 ## Backend Changes
 
