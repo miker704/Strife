@@ -741,6 +741,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Placed User Navbar into the nav section container of where it used to float above on.
     - Placed User Nav bar into explore servers nav bar.
     - Placed User Nav bar into dm servers nav bar.
+    - Placed User Nav Bar into Channel nav bar.
 
 
 ## Backend Changes
