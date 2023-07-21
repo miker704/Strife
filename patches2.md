@@ -738,6 +738,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added $TR!F3 B0T tag to server members list component
     - Removed User Nav Bar from frontend routes.
     - Removed Dm Server Nav Bar from frontend routes.
+    - Placed User Navbar into the nav section container of where it used to float above on.
 
 
 ## Backend Changes
