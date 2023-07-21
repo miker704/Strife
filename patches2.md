@@ -759,6 +759,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Added new routes to get dmserver membership data in dmserver membership api util.
 - Added get route for dm server membership when not in its dedicated dm server in dmserver membership api util.
 - Added get route for dm server membership that is dedicated to the dmServer it belongs to in dmserver membership api util.
+- Add a get route to check for dmserver membership that returns a bool in dmServer membership api util.
 
 ### Other Changes
 
