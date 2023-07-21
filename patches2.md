@@ -732,6 +732,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Edited the handle popup to function in dmserver members list for passing to server user options modal which decides the placement of the modal passed on the where the member that was clicked on is in the list and place the modal close that the users name. this checks for screen sizes of 4k or 1080p and decides the placement. Since Server User options modal has been redesigned the modal has no one size but multiple sizes previously they are only 2 dedicated sizes reaching 238px to 396px. This range was for both servers and dmserver versions of the modal. However the redesign makes a max and minimum sizes 
     different for servers and dmservers themselves the server version reaches from 450px - 670px which at the max consumes most of the screen. so calculations are now different for both versions the dmserver version of handling placement takes into account of the minimum and max sizes possible of the dmserver version of the modal.
     - Edited the handle popup top function for placement of the server users options modal in server members list for changes related to the same problems for the dmserver version of this function for servers the placement of the modal on 1080p screens will 90% of the time be at the highest position due to the potential max size of the modal can reach over 96% of the screen size for 1080p screens however for 4k screens the modal handles placement more elegantly by placing the modal near the server members name in the members list.
+    - Passed a rawpopup top variable that grabs the non modified top value to server user options modal in both dmserver and server member list components.
+     
 
 ## Backend Changes
 
