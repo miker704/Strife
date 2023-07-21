@@ -737,6 +737,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up test and old modal placement function from server and dm memberlist container for server user options modal placement in deprecated folder.
     - Added $TR!F3 B0T tag to server members list component
     - Removed User Nav Bar from frontend routes.
+    - Removed Dm Server Nav Bar from frontend routes.
+
 
 ## Backend Changes
 
