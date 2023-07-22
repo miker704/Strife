@@ -758,7 +758,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Wrapped channel drop down in REACT_PORTAL hook.
     - Added open animation for channel drop down modal.
     - Restyled Dm Server Main Container.
-    
+    - Moved old Dm Server Main Container to deprecated.
+
 
 ## Backend Changes
 
