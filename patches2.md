@@ -766,6 +766,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added SCSS Vars to styles for Server Main Container.
     - Restyled Server Main Container.
     - Remodeled Server Main Container.
+    - Switch from Class based component to functional based component for Server Main Container.
 
 ## Backend Changes
 
