@@ -755,6 +755,7 @@ the need to create a private room is need to prevent unwanted members from enter
     server header bar, Server Chat room ,Server memberslist, user nav bar are all contained in one component with the exception of server nav bar.
     - Changed All main base containers in guild discovery to allow all guild discovery components to be routed together guild discovery nav bar user nav bar, and guild container list are all contained in one component with the exception of server nav bar.
     - Added Theme dark class to the html tag will be reverting SCSS vars to CSS vars and applying those style vars to all components in the future also allowing the swapping of theme in user settings in the near future.
+    - Wrapped channel drop down in REACT_PORTAL hook.
 
 ## Backend Changes
 
