@@ -1,0 +1,46 @@
+// // Place all the styles related to the api::DmServers controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// @import 'global_vars';
+
+
+// .dm-server-container {
+//     display: flex;
+//     overflow: hidden;
+//     flex-direction: column;
+//     height: 100vh;
+//     background-color: $background-primary;
+//     flex: 1;
+//     position: absolute;
+//     justify-content: flex-start;
+//     // width: calc(100vw - 310px);
+//     // transform: translate(309px, 0px);
+//     width: calc(100vw - 312px);
+//     transform: translate(312px, 0px);
+// }
+
+
+
+
+// .dm-server-container-wrapper {
+//     top: 0px;
+//     left: 0px;
+//     position: absolute;
+//     width: calc(100vw - 310px);
+//     height: 100vh;
+//     transform: translate(309px, 0px);
+//     // background-color: #36393F;
+//     background-color: $background-primary;
+//     z-index: -1;
+// }
+
+
+
+// .dm-server-content-container {
+//     height: calc(100% - 48px);
+//     display: flex;
+//     justify-content: space-between;
+//     width: calc(100vw - 312px);
+//     // transform: translate(309px, 48px);
+// }
