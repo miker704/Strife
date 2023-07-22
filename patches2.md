@@ -757,6 +757,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Theme dark class to the html tag will be reverting SCSS vars to CSS vars and applying those style vars to all components in the future also allowing the swapping of theme in user settings in the near future.
     - Wrapped channel drop down in REACT_PORTAL hook.
     - Added open animation for channel drop down modal.
+    - Add SCSS Vars Dm Server Main Container.
     - Restyled Dm Server Main Container.
     - Moved old Dm Server Main Container styles to deprecated.
     - Moved old Dm Server Main Container to deprecated.
