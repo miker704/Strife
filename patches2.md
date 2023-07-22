@@ -759,6 +759,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added open animation for channel drop down modal.
     - Added SCSS Vars to styles for Dm Server Main Container.
     - Restyled Dm Server Main Container.
+    - Remodeled Dm Server Main Container.
     - Moved old Dm Server Main Container styles to deprecated.
     - Moved old Dm Server Main Container to deprecated.
     - Changed Dm Server Main Container from class based component to functional component.
