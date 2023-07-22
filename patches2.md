@@ -768,8 +768,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Remodeled Server Main Container.
     - Switch from Class based component to functional based component for Server Main Container.
     - Moved old styles for Server Main Container to deprecated.
-    
-
+    - Moved old Server Main Container to deprecated.
 
 ## Backend Changes
 
