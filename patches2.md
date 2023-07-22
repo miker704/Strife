@@ -763,7 +763,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old Dm Server Main Container to deprecated.
     - Changed Dm Server Main Container from class based component to functional component.
     - Added SCSS Vars to styles for Server Main Container.
-    - Restyled 
+    - Restyled Server Main Container.
+    - Remodeled Server Main Container.
 
 ## Backend Changes
 
