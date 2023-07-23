@@ -783,9 +783,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Replaced Class Based component with a functional based component for Splash Footer Container.
     - Replaced Class Based component with a functional based component for Splash Body Container.
     - Moved old styles for splash page to deprecated.
-
-
-
+    - Moved old Splash Header Nav Bar to deprecated.
 
 
 ## Backend Changes
