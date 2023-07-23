@@ -772,6 +772,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Restyled Splash Page.
     - Remodeled Splash Header Nav Bar
     - Remodeled Splash Main Container.
+    - Remodeled Splash Footer Container.
 
 ## Backend Changes
 
