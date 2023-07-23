@@ -779,6 +779,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Restyled Splash Main Container.
     - Restyled Splash Header Nav Bar.
     - Replaced Class Based component with a functional based component for Splash Header Nav Bar.
+    - Replaced Class Based component with a functional based component for Splash Main Container.
+
 
 
 
