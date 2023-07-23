@@ -774,7 +774,9 @@ the need to create a private room is need to prevent unwanted members from enter
     - Remodeled Splash Main Container.
     - Remodeled Splash Footer Container.
     - Remodeled Splash Body Container.
-    - ReStyled Splash Body Container.
+    - Restyled Splash Body Container.
+    - Restyled Splash Footer Container.
+
 
 
 
