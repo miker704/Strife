@@ -785,6 +785,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old styles for splash page to deprecated.
     - Moved old Splash Header Nav Bar to deprecated.
     - Moved old Splash Body Container to deprecated.
+    - Moved old Splash Footer Container to deprecated.
 
 
 
