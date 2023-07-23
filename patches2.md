@@ -787,6 +787,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old Splash Body Container to deprecated.
     - Moved old Splash Footer Container to deprecated.
     - Moved old Splash Main Container to deprecated.
+    - Imported new ABC Ginto Nord font Normal.
 
 
 
