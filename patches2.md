@@ -770,7 +770,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old styles for Server Main Container to deprecated.
     - Moved old Server Main Container to deprecated.
     - Restyled Splash Page.
-    - 
+    - Remodeled Splash Header Nav Bar
 
 ## Backend Changes
 
