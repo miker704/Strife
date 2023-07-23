@@ -770,13 +770,15 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old styles for Server Main Container to deprecated.
     - Moved old Server Main Container to deprecated.
     - Restyled Splash Page.
-    - Remodeled Splash Header Nav Bar
+    - Remodeled Splash Header Nav Bar.
     - Remodeled Splash Main Container.
     - Remodeled Splash Footer Container.
     - Remodeled Splash Body Container.
     - Restyled Splash Body Container.
     - Restyled Splash Footer Container.
     - Restyled Splash Main Container.
+    - Restyled Splash Header Nav Bar.
+    - Replaced Class Based component with a functional based component for Splash Header Nav Bar.
 
 
 
