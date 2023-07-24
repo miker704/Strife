@@ -797,7 +797,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Remodeled Sessions form to feature an svg based background color and font adjustments along with error handling etc.
     - Moved old session component to deprecated.
     - Moved old sessions2 component to deprecated.
-
+    - Moved old sessions4 component to deprecated.
 
 ## Backend Changes
 
