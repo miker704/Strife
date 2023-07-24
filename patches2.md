@@ -795,6 +795,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Imported Svg component to replace discord login background converted this component into a proper react svg component and imported it as a jsx component itself to save space.
     - Restyled Session Form.
     - Remodeled Sessions form to feature an svg based background color and font adjustments along with error handling etc.
+    - Moved old session component to deprecated.
 
 ## Backend Changes
 
