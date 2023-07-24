@@ -798,6 +798,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old session component to deprecated.
     - Moved old sessions2 component to deprecated.
     - Moved old sessions4 component to deprecated.
+    - Added Clouds svg image for splash screen background.
 
 ## Backend Changes
 
