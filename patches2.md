@@ -790,6 +790,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Imported new ABC Ginto Nord font Normal.
     - Imported new ABC Ginto Nord font Italic.
     - Backed up old sessions styles pre april 2023.
+    - Backed up old sessions styles post april 2023 to pre august 2023.
+
 
 ## Backend Changes
 
