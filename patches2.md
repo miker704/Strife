@@ -789,8 +789,9 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old Splash Main Container to deprecated.
     - Imported new ABC Ginto Nord font Normal.
     - Imported new ABC Ginto Nord font Italic.
-    - Backed up old sessions styles pre april 2023.
-    - Backed up old sessions styles post april 2023 to pre august 2023.
+    - Backed up old sessions styles pre april 2023 in deprecated folder.
+    - Backed up old sessions styles post april 2023 to pre august 2023 in deprecated folder.
+    - Backed up new splash foot with all links in favor for keep custom links instead in deprecated folder.
 
 
 ## Backend Changes
