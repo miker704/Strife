@@ -800,7 +800,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old sessions4 component to deprecated.
     - Added Clouds svg image for splash screen background.
     - Backed up new session form with normal select input to deprecated in favor for mui select input component.
-    - Changed sessions component from class based to functional based component. 
+    - Changed sessions component from class based to functional based component.
+    - Reworked the qr spinner animation for sessions sign in form page replaced the clearinterval variable with a useref variable instead which clears the the setinterval timer upon switch forms or leaving the component.
 
 ## Backend Changes
 
