@@ -807,6 +807,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed Session sign in container.
     - Moved old session sign up container to deprecated.
     - Changed Session sign up container.
+    - Added prevention for user to create an account when not filling all of the birthday date fields.
 
 ## Backend Changes
 
