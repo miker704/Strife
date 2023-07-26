@@ -808,6 +808,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old session sign up container to deprecated.
     - Changed Session sign up container.
     - Added prevention for user to create an account when not filling all of the birthday date fields.
+    - Added trim() whitespace for username to prevent usernames that are only spaces and while allow spaces in between names.
 
 ## Backend Changes
 
