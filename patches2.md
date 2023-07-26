@@ -805,6 +805,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Replaced Normal Select Input with a mui select input component instead to have more style control for sessions form.
     - Moved old session sign in container to deprecated.
     - Changed Session sign in container.
+    - Moved old session sign up container to deprecated.
+    -
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
