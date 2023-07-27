@@ -846,6 +846,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed FriendShip error modal from modal manager.
     - Wrapped FriendShip error modal in REACT_PORTAL and deployed it via state in add friends page.
     - Removed Leave Server modal from modal manager.
+    - Wrapped Leave Server modal  in REACT_PORTAL and deployed it via state from server main container passing a call back through channel nav bar to channel drop down modal when leave server is clicked it closes channel drop down and functions as it normally does when confirming to leave server.
 
 ## Backend Changes
 
