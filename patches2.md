@@ -843,6 +843,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Deleted /nav_bar/main nav bar.
     - Deleted /nav_bar/main nav bar container.
     - Deleted removed unused/uncalled modals from the modal manager container as they are called without them.
+    - Removed FriendShip error modal from modal manager.
 
 ## Backend Changes
 
