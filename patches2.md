@@ -827,7 +827,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Wrapped Delete Channel Modal in react portal.
     - Added new render submodal method in channel setttings modal.
     - Added new condtional escape listener to channel settings modal.
-    - Added confirm logout modal to channel settings modal to replace dirtect click to logout function.
+    - Added confirm logout modal to channel settings modal to replace direct click to logout function.
 
 ## Backend Changes
 
