@@ -817,6 +817,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed the rendering of submodals in server settings used a function to render delete server when its active state is true. 
     - Changed click to logout in server settings modal to instead to open the confirm logout modal instead to prevent accidental logouts.
     - Wrapped Delete server modal with REACT_PORTAL HOOK.
+    - Changed the way uploading a server icon works clicking the bubble allows chnaging of the icon and then clicking upload image uploads it. and the remove button removes the image. Now if the bubble is used clicking upload image button will change the image as normal but if the bubble is not used clicking the upload button will open thew edit server avatar modal.
 
 
 ## Backend Changes
