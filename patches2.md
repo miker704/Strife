@@ -816,7 +816,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added submodal states and current active submodal states in  server settings modal.
     - Changed the rendering of submodals in server settings used a function to render delete server when its active state is true. 
     - Changed click to logout in server settings modal to instead to open the confirm logout modal instead to prevent accidental logouts.
-    
+    - Wrapped Delete server modal with REACT_PORTAL HOOK.
+
 
 ## Backend Changes
 
