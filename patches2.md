@@ -840,6 +840,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Deleted /nav_bar/home bar container.
     - Deleted /nav_bar/nav bar container.
     - Deleted /nav_bar/nav bar.
+    - Deleted /nav_bar/main nav bar.
 
 
 
