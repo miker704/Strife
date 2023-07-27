@@ -829,6 +829,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new condtional escape listener to channel settings modal.
     - Added confirm logout modal to channel settings modal to replace direct click to logout function.
     - Moved nav bar folder and its contents to deprecated as they where never used.
+    - Moved /nav_bar/home bar to deprecated.
 
 ## Backend Changes
 
