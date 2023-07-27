@@ -835,6 +835,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved /nav_bar/nav bar to deprecated.
     - Moved /nav_bar/ main nav bar to deprecated.
     - Moved /nav_bar/ main nav bar container to deprecated.
+    - Deleted nav bar folder and its contents to deprecated as they where never used.
 
 
 ## Backend Changes
