@@ -770,6 +770,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old styles for Server Main Container to deprecated.
     - Moved old Server Main Container to deprecated.
     - Restyled Splash Page.
+    - Created new icon banner to replace the generic disord banner logo on the splash page where the discord wumpus icon and $TR!F3 in text is added to an actual complete svg icon like the orginal.
     - Remodeled Splash Header Nav Bar.
     - Remodeled Splash Main Container.
     - Remodeled Splash Footer Container.
