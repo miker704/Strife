@@ -812,6 +812,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Adjusted year input options for select input on sign up form by reducing years selected by 4 years removing current year and 2 years past the current year and removing the earliest birth year by one. 
     - Speed up the opening animation for channel drop down modal.
     - Replaced Server Settings modal with the best version made so far.
+    - Added condtional handler to prevent closing of server settings modal when a submodal is active to the escape button listener.
 
 ## Backend Changes
 
