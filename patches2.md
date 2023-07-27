@@ -838,6 +838,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Deleted nav bar folder and its contents as they where never used.
     - Deleted /nav_bar/home bar.
     - Deleted /nav_bar/home bar container.
+    - Deleted /nav_bar/nav bar container.
 
 
 
