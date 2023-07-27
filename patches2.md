@@ -814,6 +814,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Replaced Server Settings modal with the best version made so far.
     - Added condtional handler to prevent closing of server settings modal when a submodal is active to the escape button listener.
     - Added submodal states and current active submodal states in  server settings modal.
+    - Changed the rendering of submodals in server settings used a function to render delete server when its active state is true. 
 
 ## Backend Changes
 
