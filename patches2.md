@@ -832,6 +832,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved /nav_bar/home bar to deprecated.
     - Moved /nav_bar/home bar container to deprecated.
     - Moved /nav_bar/nav bar container to deprecated.
+    - Moved /nav_bar/nav bar to deprecated.
 
 
 ## Backend Changes
