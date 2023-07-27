@@ -824,6 +824,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - When upload image button is clicked then the Server Avatar Modal is opened.
     - Backed up the Current Server Settings Modal that uploads images without opening the Server avatar modal to deprecated.
     - Added extra deprecated styles to deprecated edit friendship options modal.
+    - Wrapped Delete Channel Modal in react portal.
 
 ## Backend Changes
 
