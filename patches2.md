@@ -859,7 +859,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Rendered CreateDm Modal via functional condtional rendering and passing a call back to close it from dm server nav bar.
     - Removed createDm modal Home bar version from modal manager.
     - Re-added createDm modal Home bar version to be rendered once again inside homepage container.
-
+    - Removed props.closemodal() function from createDm modal Home bar version and used a state callback to close it instead.
 
 ## Backend Changes
 
