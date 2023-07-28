@@ -861,6 +861,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Re-added createDm modal Home bar version to be rendered once again inside homepage container.
     - Removed props.closemodal() function from createDm modal Home bar version and used a state callback to close it instead.
     - Moved the Deconstructed prop version of dmServer Header nav bar to deprecated.
+    - Removed NoFriends Dm Modal from modal manager.
 
 ## Backend Changes
 
