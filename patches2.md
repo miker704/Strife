@@ -873,7 +873,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed props.closemodal() from InviteToDMCallModal and used state call back to close it.
     - Removed InviteToDMCallModal from modal manager once again and rendered it in DmServerHeaderNavbar like the original version except using a portal which will work in react 18.
 
-
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
