@@ -857,7 +857,9 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed props.closemodal() function from CreateDm Modal and used a state callback to close it instead.
     - Removed CreateDm Modal from modal manager once again and rendered it in DmServerNav bar like the original version except using a portal which will work in react 18.
     - Rendered CreateDm Modal via functional condtional rendering and passing a call back to close it from dm server nav bar.
-    - Removed createDm modal Home bar version from modal manager.  
+    - Removed createDm modal Home bar version from modal manager.
+    - Re-added createDm modal Home bar version to be rendered once again inside homepage container.
+
 
 ## Backend Changes
 
