@@ -851,6 +851,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed inline condtional rendering for channel drop down to function condtional rendering.
     - Removed NoFriendsCreateDm Modal from modal manager. 
     - Used State and functional rendering in DmServer Nav Bar to render NoFriendsCreateDm Modal without modal manager. 
+    - Removed props.closemodal() function from NoFriendsCreateDm Modal and used a state callback to close it instead.
 
 ## Backend Changes
 
