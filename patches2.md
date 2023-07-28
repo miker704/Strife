@@ -854,6 +854,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed NoFriendsCreateDm Modal from modal manager. 
     - Used State and functional rendering in DmServer Nav Bar to render NoFriendsCreateDm Modal without modal manager. 
     - Removed props.closemodal() function from NoFriendsCreateDm Modal and used a state callback to close it instead.
+    - Removed props.closemodal() function from CreateDm Modal and used a state callback to close it instead.
 
 ## Backend Changes
 
