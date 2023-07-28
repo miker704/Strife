@@ -867,6 +867,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed NoTFriendsDmModal from modal manager.
     - Removed props.closemodal() from NoTFriendsDmModal and used state call back to close it.
     - Removed InviteToDmServer from modal manager.
+    - Removed props.closemodal() from InviteToDmServer and used state call back to close it.
+
 
 
 
