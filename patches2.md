@@ -850,6 +850,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed unused mstp and mdtp from leave server modal container.
     - Changed inline condtional rendering for channel drop down to function condtional rendering.
     - Removed NoFriendsCreateDm Modal from modal manager. 
+    - Used State and functional rendering in DmServer Nav Bar to render NoFriendsCreateDm Modal without modal manager. 
+
 
 ## Backend Changes
 
