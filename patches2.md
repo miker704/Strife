@@ -887,6 +887,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Attempted to convert the dm message area to a functional component however many problems with intial rendering where messages do not render on a page refresh. so all attempts are moved to deprecated.
     - Renamed DmMessages to DmChatRoom.
     - Renamed DmMessagesContainer to DmChatRoomContainer.
+    - Removed action.dmServer.users and replaced it with return action.dmservers.members instead since,
+    all other functions use it instead.
 
 ## Backend Changes
 
