@@ -904,6 +904,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved the rendering of DownloadApps Modal to root level.
     - Added Trim for white spaces when submiting a message in dmServers.
     - Added regex replace to check for white spaces and valid length > 0 when submiting a message in dmServers.
+    - Added Trim for white spaces when submiting a message in Servers.
+
     
 
 ## Backend Changes
