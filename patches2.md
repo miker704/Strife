@@ -909,6 +909,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added regex replace to check for white spaces and valid length > 0 when submiting a message in Servers.
     - Remove CreateServer Modal from modal manager.
     - Deployed Rendering of CreateServer Modal from mounting it at the root.
+    - Wrapped CreateServer Modal in REACT PORTAL.
 
 ## Backend Changes
 
