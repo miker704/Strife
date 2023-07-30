@@ -874,6 +874,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed InviteToDMCallModal from modal manager once again and rendered it in DmServerHeaderNavbar like the original version except using a portal which will work in react 18.
     - Moved the Deconstructed prop version of Server Header nav bar to deprecated.
     - Replaced the Deconstructed prop version of Server Header nav bar to non-deconstructed one.
+    - Moved the Deconstructed prop version of DmMessageEdit to deprecated.
+    -
 
 ## Backend Changes
 
