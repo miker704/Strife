@@ -900,7 +900,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed DeleteServerChannelMessage in Modal Manager.
     - Deployed DeleteServerChannelMessage from the Server main container but pass props and state to it as normal through open modal props, but opening it through a state call back function. (Will be reverted to the old props.openModal() but not throught a rendering through modal manager).
 
-
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
