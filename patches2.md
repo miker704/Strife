@@ -902,6 +902,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed DownloadApps Modal from Modal Manager.
     - Wrapped DownloadApps Modal in REACT PORTAL.
     - Moved the rendering of DownloadApps Modal to root level.
+    - Added Trim for white spaces when submiting a message in dmServers.
 
 ## Backend Changes
 
