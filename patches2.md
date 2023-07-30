@@ -876,6 +876,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Replaced the Deconstructed prop version of Server Header nav bar to non-deconstructed one.
     - Moved the Deconstructed prop version of DmMessageEdit to deprecated.
     - Replaced the Deconstructed prop version of DmMessageEdit to non-deconstructed one.
+    - Backed up the styles previously used for avatr images for messages in chat rooms.
 
 ## Backend Changes
 
