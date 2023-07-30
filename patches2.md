@@ -907,6 +907,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added another componentdidupdate condition if the number of members in the dmserver change via inviting or kicking a member the re-render of the dmServer Placeholder in the message area will re-render.
     - Added Trim for white spaces when submiting a message in Servers.
     - Added regex replace to check for white spaces and valid length > 0 when submiting a message in Servers.
+    - Remove CreateServer Modal from modal manager.
 
 ## Backend Changes
 
