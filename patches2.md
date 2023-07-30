@@ -882,7 +882,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed Create channel modal from modal manager.
     - Placed Create channel modal into server main container and use a state call back function to open it.
     - Passed State callback to open create channel modal and state pass params to pass data to create channel modal into channel drop down modal.
-    - Passed state params and state open call back for create channel modal to channel nav bar to open it for both voice and text channels. 
+    - Passed state params and state open call back for create channel modal to channel nav bar to open it for both voice and text channels.
+    - Fixed a bug in componentdidUpdate where the chatinputref would crash when creating a voice channel as the ref does not point to anything as voice channels do not have chat input boxes at the moment. 
 
 
 
