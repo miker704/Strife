@@ -892,6 +892,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up deconstructed server messages container to deprecated.
     - Replaced Server Messsages container with a non prop deconstructed version.
     - Wrapped DeleteDmMessage in React Portal.
+    - Removed DeleteDmMessage from Modal Manager.
 
 ## Backend Changes
 
