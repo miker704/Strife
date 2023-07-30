@@ -893,10 +893,11 @@ the need to create a private room is need to prevent unwanted members from enter
     - Replaced Server Messsages container with a non prop deconstructed version.
     - Wrapped DeleteDmMessage in React Portal.
     - Removed DeleteDmMessage from Modal Manager.
-    - Deployed DeleteDmMessage from the DmServer main container but pass props and state to it as normal through open modal props, but opening it through a state  call back function. (Will be reverted to the old props.openModal() but not throught a rendering through modal manager).
+    - Deployed DeleteDmMessage from the DmServer main container but pass props and state to it as normal through open modal props, but opening it through a state call back function. (Will be reverted to the old props.openModal() but not throught a rendering through modal manager).
     - Removed StartConversationSearch modal from modal manager.
     - Deployed the render of StartConversationSearch modal from Root level component and is then called on normally by props.openModal() and closed via props.closeModal() without the use of the modal manager component.
-
+    - Wrapped DeleteServerChannelMessage in React Portal.
+    -
 
 ## Backend Changes
 
