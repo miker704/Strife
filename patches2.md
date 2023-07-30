@@ -884,7 +884,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Passed State callback to open create channel modal and state pass params to pass data to create channel modal into channel drop down modal.
     - Passed state params and state open call back for create channel modal to channel nav bar to open it for both voice and text channels.
     - Fixed a bug in componentdidUpdate where the chatinputref would crash when creating a voice channel as the ref does not point to anything as voice channels do not have chat input boxes at the moment. 
-    - Attempted to convert the dm message area to a functional component however many problems with intial rendering where messages do not render on a page refresh. so all attempts are moved to deprecated.+
+    - Attempted to convert the dm message area to a functional component however many problems with intial rendering where messages do not render on a page refresh. so all attempts are moved to deprecated.
     - Renamed DmMessages to DmChatRoom.
     - Renamed DmMessagesContainer to DmChatRoomContainer.
 
