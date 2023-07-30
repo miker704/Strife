@@ -880,6 +880,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up channel nav bar with open modal with props.
     - Wrapped Create channel modal with react portal.
     - Removed Create channel modal from modal manager.
+    - Placed Create channel modal into server main container and use a state call back function to open it.
+
 
 
 
