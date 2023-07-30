@@ -901,8 +901,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Deployed DeleteServerChannelMessage from the Server main container but pass props and state to it as normal through open modal props, but opening it through a state call back function. (Will be reverted to the old props.openModal() but not throught a rendering through modal manager).
     - Removed DownloadApps Modal from Modal Manager.
     - Wrapped DownloadApps Modal in REACT PORTAL.
-
-    
+    - Moved the rendering of DownloadApps Modal to root level.
 
 ## Backend Changes
 
