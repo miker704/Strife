@@ -879,6 +879,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up the styles previously used for avatar images for messages in chat rooms.
     - Backed up channel nav bar with open modal with props.
     - Wrapped Create channel modal with react portal.
+    - Removed Create channel modal from modal manager.
+
 
 
 ## Backend Changes
