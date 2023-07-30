@@ -889,7 +889,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Renamed DmMessagesContainer to DmChatRoomContainer.
     - Removed action.dmServer.users and replaced it with return action.dmservers.members instead since,
     all other functions use it instead.
-    - Backed up deconstructed server messages container to deprecated. 
+    - Backed up deconstructed server messages container to deprecated.
+    - Replaced Server Messsages container with a non prop deconstructed version.
 
 ## Backend Changes
 
