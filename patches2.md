@@ -897,7 +897,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed StartConversationSearch modal from modal manager.
     - Deployed the render of StartConversationSearch modal from Root level component and is then called on normally by props.openModal() and closed via props.closeModal() without the use of the modal manager component.
     - Wrapped DeleteServerChannelMessage in React Portal.
-    -
+    - Removed DeleteServerChannelMessage in Modal Manager.
+
 
 ## Backend Changes
 
