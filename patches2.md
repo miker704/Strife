@@ -918,6 +918,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added RefreshPageLoading screen to later be used.
     - Added RefreshPageLoading screen container to later be used.
     - Add Trim to edit dmServers message.
+    - Add Trim to edit Servers message.
 
 ## Backend Changes
 
