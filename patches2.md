@@ -914,6 +914,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added upc Loading Status gif for Server User Options modal.
     - Added Session login background raw SVG file.
     - Added left side splash banner.
+    - Added right side splash banner.
 
 ## Backend Changes
 
