@@ -925,6 +925,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved Intrustion Prevention Loading Screen to a more organized folder.
     - Moved Intrustion Prevention Loading Screen container to a more organized folder.
     - Moved Deleted Server Loading Screen container to a more organized folder.
+    - Moved Deleted Server Loading Screen to a more organized folder.
 
 ## Backend Changes
 
