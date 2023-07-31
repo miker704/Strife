@@ -930,6 +930,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved Update Loading Screen Container to a more organized folder.
     - Moved Refresh Loading Screen Container to a more organized folder.
     - Moved Refresh Loading Screen to a more organized folder.
+    - Added refresh loading screen that spawns a random loading screen style and animation upon hitting refresh anywhere within the app by hitting F5 or 
+    hitting the browser refresh button.
 
 ## Backend Changes
 
