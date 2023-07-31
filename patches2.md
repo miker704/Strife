@@ -927,6 +927,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved Deleted Server Loading Screen container to a more organized folder.
     - Moved Deleted Server Loading Screen to a more organized folder.
     - Moved Update Loading Screen to a more organized folder.
+    - Moved Update Loading Screen Container to a more organized folder.
     - 
 
 ## Backend Changes
