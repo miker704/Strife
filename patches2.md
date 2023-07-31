@@ -910,6 +910,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Remove CreateServer Modal from modal manager.
     - Deployed Rendering of CreateServer Modal from mounting it at the root.
     - Wrapped CreateServer Modal in REACT PORTAL.
+    - Added Splash Chevron for splash page.
 
 ## Backend Changes
 
