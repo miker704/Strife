@@ -932,7 +932,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved Refresh Loading Screen to a more organized folder.
     - Added refresh loading screen that spawns a random loading screen style and animation upon hitting refresh anywhere within the app by hitting F5 or 
     hitting the browser refresh button.
-    - In Order to reduce unnecessary re-rendering due to injection of multiple server members via passing dmserver members as an invite instead of re-rendering for each message create for each member (Welcome @username to server_name) have one message containing all the members and push it to re-render the server to a minimim rate of around 1-3 server dispatches.
+    - Fixed a mass stall glitch when inviting a user to server the following happens user invited gains membership to server along with memberships to all channels of said server then a message is created welcoming that user to the server. when creating an invite using a dmserver passing all of the members create a welcome message. when ever a message is created it re-renders the server to render the new member added to the server. this causes alot of re-renders which stall the app and bottleneck the database. In Order to reduce unnecessary re-rendering due to injection of multiple server members via passing dmserver members as an invite instead of re-rendering for each message create for each member (Welcome @username to server_name) have one message containing all the members and push it to re-render the server to a minimim rate of around 1-3 server dispatches.
 
 ## Backend Changes
 
