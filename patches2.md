@@ -912,6 +912,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Wrapped CreateServer Modal in REACT PORTAL.
     - Added Splash Chevron for splash page.
     - Added upc Loading Status gif for Server User Options modal.
+    - Added Session login background raw SVG file.
 
 ## Backend Changes
 
