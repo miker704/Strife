@@ -929,7 +929,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved Update Loading Screen to a more organized folder.
     - Moved Update Loading Screen Container to a more organized folder.
     - Moved Refresh Loading Screen Container to a more organized folder.
-    - 
+    - Moved Refresh Loading Screen to a more organized folder.
 
 ## Backend Changes
 
