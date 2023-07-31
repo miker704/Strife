@@ -921,6 +921,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Add Trim to edit Servers message.
     - Added a mutation observer theme observer that anaylzes for changes to the current app theme if it is removed by abnormal means it is added back to keep the styles in check.
     - Moved Loading Screen to a more organized folder.
+    - Moved Loading Screen Container to a more organized folder.
+
 
 ## Backend Changes
 
