@@ -946,6 +946,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved previous version of invite to server modal container to deprecated.
     - Moved previous version of invite to server modal v1 to deprecated.
     - Moved previous version of invite to server modal v2 to deprecated.
+    - Moved previous version of invite to server modal v3 to deprecated.
+
 
 
 
