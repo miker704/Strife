@@ -1,4 +1,4 @@
-//in current use back up
+//in current use back up uses protection for serverId is provided but not channelId
 // import React from "react";
 // import { useState, useRef, useEffect } from "react";
 // import DefaultPFPSVG from "../../../../app/assets/images/defaultPFPSVG.svg";
