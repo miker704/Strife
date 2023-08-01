@@ -954,6 +954,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Create function to check if a user is still a member of a server.
 - Create function to check if a user is still a member of a dm server.
 - Added a change where injecting multiple members into a server by inviting a dmservers members to the server would cause a stall if the list of added members reach over 30 although this scenerio is impossible as dm servers have a max of 10 members reducing the amount of renders is needed. the re-renders is caused by the amount of new welcome messsages for each new member of the server with a re-render of the server to show the new added member. So a new welcome message function is created for injecting so many members at a time it welcomes all the new added members to the server in one messsage with all the new members names.
+- Removed Invite to Server Modal from modal manager.
 
 ### Front-End Changes
 
