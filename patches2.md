@@ -957,6 +957,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Removed Invite to Server Modal from modal manager.
 - Deployed invite to server modal from server main container.
 - Removed Props.closeModal() from invite to server modal and used a state callback function to open and close it while using the props.openmodalwithprops() function to pass props needed to use it as normal.
+- Wrapped invite to server modal with REACT PORTAL wrapped portal around all conditional renders of it.
 
 ### Front-End Changes
 
