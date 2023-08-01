@@ -944,12 +944,11 @@ the need to create a private room is need to prevent unwanted members from enter
     - Provided a new condtional rendering for invite to server modal where since the component is now mounted to the same level as the server container it has direct access to the params property by itself without the need to pass it as props to it however if the user is somehow routed in only serverId and not channelId prevent the requests for receiving the channel, friendships, and dms of the user and display the modal in a version where there is no data. This occurs when the route is /$/channels/:serverId instead of /$/channels/:serverId/:channelId and the modal is opened from channel drop down modal. since there is no current channel an id of -1 is used instead if that pass id is -1 set a new prop type that represents a special version of the modal to handle this situation and basically skip all fetches and render a plain version of the modal.
     - Moved previous new version of invite to server modal to deprecated.
     - Moved previous version of invite to server modal container to deprecated.
-    - Moved previous version of invite to server modal v1 to deprecated.
-    - Moved previous version of invite to server modal v2 to deprecated.
-    - Moved previous version of invite to server modal v3 to deprecated.
-
-
-
+    - Moved version 1 of new invite to server modal to deprecated.
+    - Moved version 2 of new invite to server modal to deprecated.
+    - Moved version 3 of new invite to server modal to deprecated.
+    - Moved version 4 of new invite to server modal to deprecated.
+    
 
 ## Backend Changes
 
