@@ -960,6 +960,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created a util file called app puller which contains 4 different app puller animations which are used on server, channel, and user settings, 2 close animations and 2 open animations including a holding 93% scale of the main app while the modal is open.
     - Removed user settings modal from modal manager.
     - Deployed user settings at the root level.
+    - reworked REACT PORTAL API Wrapper which now has some protections including being able to generate a portal if no portal element exists and renders the modal within the portal and delete it after the modal is closed using a useLayoutEffect. Also React Portal now takes in a classNameId which is then used when creating a portal gate to be added along with the wrapperid to form both the id and classname attribute of the portal gate. Also depending on the classnameId it will generate a specific type of portal and render it at aa specific position, These changes allow for more secure and error free rendering and allow but submodals and setting modals to be rendered.
+    - Move
 
 ## Backend Changes
 
