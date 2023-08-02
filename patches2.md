@@ -965,6 +965,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved deprecated conditional rendering react portal api assets to deprecated.
     - Moved deprecated conditional rendering of mass react portal api assets to deprecated.
     - Moved old version of channel settings modal container.
+    - Changed channel name in left side nav bar from using channel.channel_name, to the newChannelName input value so as the input changes in change channel name so does the name in the left nav at the same time.
 
 ## Backend Changes
 
