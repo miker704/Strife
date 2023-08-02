@@ -958,6 +958,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created a new version of usePrevProps hook called usePrevious.
     - Moved Basic app puller both pull and release animations to deprecated as a backup.
     - Created a util file called app puller which contains 4 different app puller animations which are used on server, channel, and user settings, 2 close animations and 2 open animations including a holding 93% scale of the main app while the modal is open.
+    - Removed user settings modal from modal manager.
 
 ## Backend Changes
 
