@@ -956,6 +956,7 @@ the need to create a private room is need to prevent unwanted members from enter
     match redirect back to the home dashboard tyo be used later.
     - Added a new selector to select the first channel of a server which will be used in the coming future.
     - Created a new version of usePrevProps hook called usePrevious.
+    - Moved Basic app puller both pull and release animations to deprecated as a backup.
 
 ## Backend Changes
 
