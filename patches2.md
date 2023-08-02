@@ -962,7 +962,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Deployed user settings at the root level.
     - reworked REACT PORTAL API Wrapper which now has some protections including being able to generate a portal if no portal element exists and renders the modal within the portal and delete it after the modal is closed using a useLayoutEffect. Also React Portal now takes in a classNameId which is then used when creating a portal gate to be added along with the wrapperid to form both the id and classname attribute of the portal gate. Also depending on the classnameId it will generate a specific type of portal and render it at aa specific position, These changes allow for more secure and error free rendering and allow but submodals and setting modals to be rendered.
     - Moved deprecated original react portal api assets to deprecated.
-    - Moved deprecated conditional rendering react portal api assets  to deprecated.
+    - Moved deprecated conditional rendering react portal api assets to deprecated.
+    - Moved deprecated conditional rendering of mass react portal api assets  to deprecated.
 
 ## Backend Changes
 
