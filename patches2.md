@@ -968,6 +968,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed channel name in left side nav bar from using channel.channel_name, to the newChannelName input value so as the input changes in change channel name so does the name in the left nav at the same time.
     - Removed channel settings modal from modal manager.
     - Add Channel settings modal to render from main server container. 
+    - Wrapped Channel settings modal in a REACT_PORTAL.
 
 ## Backend Changes
 
