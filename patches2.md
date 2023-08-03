@@ -1000,7 +1000,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added close modal to loading screen.
     - Added close modal to error boundary loading screen.
     - Added close modal to refresh loading screen.
-    -
+    - Added close modal to delete server loading screen.
 
 ## Backend Changes
 
