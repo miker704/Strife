@@ -997,6 +997,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added closeModal for update loading screen in case a user has some modal that uses modal redux state to close it and prevent opening it
     again unintentionally.
     - Added close modal to intrustion loading screen.
+    - Added close modal to loading screen.
+    -
 
 ## Backend Changes
 
