@@ -973,6 +973,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved deprecated channel settings container to deprecated.
     - Moved variable based channel settings modal to deprecated.
     - Moved text channel based channel settings modal to deprecated.
+    - Moved voice channel based channel settings modal to deprecated.
 
 
 ## Backend Changes
