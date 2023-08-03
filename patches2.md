@@ -982,6 +982,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed raw app pulling open animation for opening user settings and used the appPullfunction instead to dry up code.
     - Removed raw app pulling open animation for opening channel settings and used the appPullfunction instead to dry up code.
     - Removed raw app pulling open animation for opening server settings and used the appPullfunction instead to dry up code.
+    - Created Error Boundary component to handle errors for channel settings modal.
 
 ## Backend Changes
 
