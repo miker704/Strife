@@ -984,6 +984,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed raw app pulling open animation for opening server settings and used the appPullfunction instead to dry up code.
     - Created Error Boundary component to handle errors for channel settings modal.
     - Created Error Boundary loading screen which is the fall back component incase channel settings error out.
+    - Wrapped channel settings modal in a error boundary fall back to error boundary loading screen and wrapped channel settings modal with a suspense with a fallback with the spinning cube animation loading screen used in channel settings modal. 
 
 ## Backend Changes
 
