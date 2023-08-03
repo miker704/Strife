@@ -989,6 +989,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Fixed performance issue in server settings modal that was similar to the performance issue in channel settings related to delcaring and using the svg icon that is converted into a MUI SVGIcon component within the component itself. 
     - For channel nav bar passed the physical channel to ensure better protections of server hopping issues.
     - Moved old version of server settings modal container to deprecated.
+    - Moved a current prop based version of channel settings modal to deprecated.
 
 ## Backend Changes
 
