@@ -1001,7 +1001,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added close modal to error boundary loading screen.
     - Added close modal to refresh loading screen.
     - Added close modal to delete server loading screen.
-    - Added A new version of use previos hook in utils.
+    - Added a new version of use previous hook in utils.
+    - Added a new version of useIsComponentMounted hook called useIsMountedFirstRender in utils.
 
 ## Backend Changes
 
