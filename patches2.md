@@ -978,6 +978,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed spinning cube animation in channel settings modal as the likely hood for the component to not be mounted do to slow down of parsing location into props is not an issue as the component no longer has to be reversed prop drilled from redux state channel settings component rendered by modal manager, channel settings modal is now rendered within the server container and has no need for complex prop passing.
     - Removed raw app pulling animations for user settings modal when closing the modal via click or esc press and used the appPullerRelease animation function which uses the same raw code but offers some protections against certain elements or styles being missing.
     - Removed raw app pulling animations for closing via click or esc press for channel settings modal and used the appPuller release function instead.
+    - Removed raw app pulling animations for closing via click or esc press for server settings modal and used the appPuller release function instead.
 
 ## Backend Changes
 
