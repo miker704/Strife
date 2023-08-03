@@ -992,7 +992,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved a current prop based version of channel settings modal to deprecated.
     - Moved current non optmized version of channel settings to deprecated.
     - Moved voice channel settings to deprecated.
-
+    - Moved unused current channel settings container to deprecated.
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
