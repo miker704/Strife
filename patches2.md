@@ -969,6 +969,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed channel settings modal from modal manager.
     - Add Channel settings modal to render from main server container. 
     - Wrapped Channel settings modal in a REACT_PORTAL.
+    - Moved Deprecated Rescue version of channel settings to deprecated.
 
 ## Backend Changes
 
