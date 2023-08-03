@@ -975,7 +975,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved text channel based channel settings modal to deprecated.
     - Moved voice channel based channel settings modal to deprecated.
     - Fixed a performance issue in channel settings modal when svg icon "Chevron Icon" which is used as the icon for the mui select components to indicate drop down menu open, is converted to a mui svgIcon component. The problems is that this they of component most be declared outside the component it will be used in as since is takes in props (in this case mui controller props, controlled by the mui library) react renderd this icon as a component itself and declaring it within a component and using it causes lag due to this component takes in props and the component its delcared in takes props too, tasks such as text input slow it down. delcaring and converting the icon into a mui svg component allows it to render faster and stop lag. 
-
+    - Removed spinning cube animation in channel settings modal as the likely hood for the component to not be mounted do to slow down of parsing location into props is not an issue as the component no longer has to be reversed prop drilled from redux state channel settings component rendered by modal manager, channel settings modal is now rendered within the server container and has no need for complex prop passing.
 
 ## Backend Changes
 
