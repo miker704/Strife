@@ -979,7 +979,9 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed raw app pulling animations for user settings modal when closing the modal via click or esc press and used the appPullerRelease animation function which uses the same raw code but offers some protections against certain elements or styles being missing.
     - Removed raw app pulling animations for closing via click or esc press for channel settings modal and used the appPuller release function instead.
     - Removed raw app pulling animations for closing via click or esc press for server settings modal and used the appPuller release function instead.
-    - Removed raw app pulling open animation for opening use settings and used the appPullfunction instead to dry up code.
+    - Removed raw app pulling open animation for opening user settings and used the appPullfunction instead to dry up code.
+    - Removed raw app pulling open animation for opening channel settings and used the appPullfunction instead to dry up code.
+
 
 ## Backend Changes
 
