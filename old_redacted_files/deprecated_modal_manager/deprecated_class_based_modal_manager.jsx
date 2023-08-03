@@ -1,8 +1,8 @@
-// this modal manager version is the class based version before removing every modal that uses react portal hook
+// // this modal manager version is the class based version before removing every modal that uses react portal hook
 // import React from "react";
 // import CreateServerFormContainer from "../server/create_server_forms/create_server_form_container.js";
 // import UserSettingsContainer from "../users/user_settings/user_settings_container.js";
-// import UserSearchContainer from "../users/user_search_modal/user_search_container.js";
+// // import UserSearchContainer from "../users/user_search_modal/user_search_container.js";
 // import CreateDmModalContainer from "../dm_servers/create_new_dm/create_dm_container.js";
 // import CreateDmModalHomeBarContainer from "../dm_servers/create_new_dm_homebar_version/create_dm_homebar_container.js";
 // import InviteToDmModalContainer from "../dm_servers/invite_to_dm_server/invite_to_dm_server_container.js";
@@ -11,19 +11,19 @@
 // import NoFriendsDMModalContainer from "../dm_servers/no_friends_dm_modal/no_friends_dm_modal_container.js";
 // import FriendRequestErrorModalContainer from "../friends/friend_request_error_modal/friend_request_error_modal_container.js";
 // import DownloadAppsContainer from "../server/download_apps/download_apps_container.js";
-// import EditFriendshipModalContainer from "../friends/edit_friendship_modal/edit_friendship_container.js";
-// import ChannelDropDownContainer from "../channels/channel_drop_down/channel_drop_down_container.js";
+// // import EditFriendshipModalContainer from "../friends/edit_friendship_modal/edit_friendship_container.js";
+// // import ChannelDropDownContainer from "../channels/channel_drop_down/channel_drop_down_container.js";
 // import ServerSettingsModalContainer from "../server/server_settings/server_settings_modal_container.js";
 // import LeaveServerModalContainer from "../server/leave_server_modal/leave_server_modal_container.js";
-// import DeleteServerModalContainer from "../server/delete_server_modal/delete_server_modal_container.js";
+// // import DeleteServerModalContainer from "../server/delete_server_modal/delete_server_modal_container.js";
 // import InviteToServerModalContainer from "../server/invite_to_server_modal/invite_to_server_modal_container.js";
 // import ChannelSettingsModalContainer from "../channels/channel_settings/channel_settings_modal_container.js";
-// import CreateChannelModalContainer from "../channels/create_channel_modal/create_channel_modal_container.js";
-// import ActionButtonPopUpContainer from "../server/server_search/action_button_pop_up_container.js";
+// // import CreateChannelModalContainer from "../channels/create_channel_modal/create_channel_modal_container.js";
+// // import ActionButtonPopUpContainer from "../server/server_search/action_button_pop_up_container.js";
 // import DeleteDmMessageModalContainer from "../dm_servers/delete_dm_message_modal/delete_dm_message_modal_container.js";
 // import DeleteServerChannelMessageModalContainer from "../server/delete_server_message_modal/delete_server_message_modal_container.js";
 // import InviteToDMCallModalContainer from "../dm_servers/select_dm_members_call/select_dm_members_container.js";
-// import StartConversationSearchBarModalContainer from "../friends/user_asset_search_modal/user_asset_search_modal_container.js";
+// // import StartConversationSearchBarModalContainer from "../friends/user_asset_search_modal/user_asset_search_modal_container.js";
 // import WEBRTCDMCallModalContainer from "../dm_servers/dm_call/dm_call_container.js";
 // import STRIFE_VIDEO_AND_VOICE_CALL_VIA_WEB_RTC_ON_RAILS_CONTAINER from "../calls/video_and_voice_call_container.js";
 
@@ -95,26 +95,26 @@
 //                 )
 //                 break;
 
-//             case 'userSearch':
+//             // case 'userSearch':
 
-//                 renderedModal = <UserSearchContainer />
+//             //     renderedModal = <UserSearchContainer />
 
-//                 break;
+//             //     break;
 
-//             case 'StartConversationSearch':
-//                 renderedModal = <StartConversationSearchBarModalContainer />
-//                 modalMod = 1;
-//                 break;
+//             // case 'StartConversationSearch':
+//             //     renderedModal = <StartConversationSearchBarModalContainer />
+//             //     modalMod = 1;
+//             //     break;
 
-//             case 'friendOptions':
+//             // case 'friendOptions':
 
-//                 renderedModal = (
-//                     <div onClick={(e) => e.stopPropagation()}>
-//                         <EditFriendshipModalContainer />
-//                     </div>
-//                 );
-//                 modalMod = 2;
-//                 break;
+//             //     renderedModal = (
+//             //         <div onClick={(e) => e.stopPropagation()}>
+//             //             <EditFriendshipModalContainer />
+//             //         </div>
+//             //     );
+//             //     modalMod = 2;
+//             //     break;
 
 
 
@@ -215,31 +215,31 @@
 
 //                 break;
 
-//             case 'ChannelDropDown':
+//             // case 'ChannelDropDown':
 
-//                 renderedModal = <ChannelDropDownContainer />
-//                 modalMod = 1;
+//             //     renderedModal = <ChannelDropDownContainer />
+//             //     modalMod = 1;
 
-//                 break;
+//             //     break;
 
-//             case 'CreateChannel':
+//             // case 'CreateChannel':
 
-//                 renderedModal = (
-//                     <div onClick={(e) => e.stopPropagation()}>
-//                         <CreateChannelModalContainer />
-//                     </div>
+//             //     renderedModal = (
+//             //         <div onClick={(e) => e.stopPropagation()}>
+//             //             <CreateChannelModalContainer />
+//             //         </div>
 
-//                 )
-//                 modalMod = 2;
-//                 break;
+//             //     )
+//             //     modalMod = 2;
+//             //     break;
 
 
-//             case 'DeleteServer':
+//             // case 'DeleteServer':
 
-//                 renderedModal = <DeleteServerModalContainer />
-//                 modalMod = 0;
+//             //     renderedModal = <DeleteServerModalContainer />
+//             //     modalMod = 0;
 
-//                 break;
+//             //     break;
 //             case 'LeaveServer':
 
 //                 renderedModal = (
@@ -268,12 +268,12 @@
 //                 modalMod = 0;
 //                 break;
 
-//             case 'ActionButton':
+//             // case 'ActionButton':
 
-//                 renderedModal = <ActionButtonPopUpContainer serverLink={this.props.modalProps.serverInvite} />
-//                 modalMod = 1;
+//             //     renderedModal = <ActionButtonPopUpContainer serverLink={this.props.modalProps.serverInvite} />
+//             //     modalMod = 1;
 
-//                 break;
+//             //     break;
 
 //             case 'DeleteDmMessage':
 //                 renderedModal = (
