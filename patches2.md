@@ -998,6 +998,7 @@ the need to create a private room is need to prevent unwanted members from enter
     again unintentionally.
     - Added close modal to intrustion loading screen.
     - Added close modal to loading screen.
+    - Added close modal to error boundary loading screen.
     -
 
 ## Backend Changes
