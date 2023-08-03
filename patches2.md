@@ -994,6 +994,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved voice channel settings to deprecated.
     - Moved unused current channel settings container to deprecated.
     - Moved class based modal manager to deprecated.
+    - Added closeModal for update loading screen in case a user has some modal that uses modal redux state to close it and prevent opening it
+    again unintentionally.
 
 ## Backend Changes
 
