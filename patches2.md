@@ -1013,6 +1013,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Active Server, DmServer, and Channel dispatch functions to set the currently active chat room state.
     - Created a Active Chatroom reducer to handle the Active server, dmServer and channel dispatches.
     - Added Active Chat room reducer to the combined reducer of ui state to be used later in the future. 
+    - Changed the conditional rendering of search icons in explore servers page.
+    -  
 
 ## Backend Changes
 
