@@ -1008,6 +1008,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed Server Settings modal from modal manager.
     - Rendered Server Settings modal from server main container.
     - Wrapped Server Settings modal in REACT PORTAL.
+    - Backed up the old create a server function for create a server in create server modal in deprecated.
 
 ## Backend Changes
 
