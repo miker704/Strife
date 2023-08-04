@@ -1006,6 +1006,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added tool tip for server invite background level 1 icon.
     - Added tool tip for server banner background level 2 icon.
     - Removed Server Settings modal from modal manager.
+    - Rendered Server Settings modal from server main container.
+
 
 ## Backend Changes
 
