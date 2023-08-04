@@ -1003,6 +1003,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added close modal to delete server loading screen.
     - Added a new version of use previous hook in utils.
     - Added a new version of useIsComponentMounted hook called useIsMountedFirstRender in utils.
+    - Added tool tip for server invite background level 1 icon.
 
 ## Backend Changes
 
