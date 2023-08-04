@@ -1015,6 +1015,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Active Chat room reducer to the combined reducer of ui state to be used later in the future. 
     - Changed the conditional rendering of search icons in explore servers page.
     - Added Reset search function when clicking the x icon in explore servers to clear search input.
+    - Added hover style for the x button in search input for explore servers page.
 
 ## Backend Changes
 
