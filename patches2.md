@@ -1011,7 +1011,9 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up the old create a server function for create a server in create server modal in deprecated.
     - Adjusted the create server submit function in create server modal.
     - Created Active Server, DmServer, and Channel dispatch functions to set the currently active chat room state.
-    - Created a Active Chatroom reducer to handle the Active server, dmServer and channel dispatches. 
+    - Created a Active Chatroom reducer to handle the Active server, dmServer and channel dispatches.
+    - Added Active Chat room reducer to the combined reducer of ui state to be used later in the future. 
+
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
