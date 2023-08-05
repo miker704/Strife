@@ -1016,6 +1016,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed the conditional rendering of search icons in explore servers page.
     - Added Reset search function when clicking the x icon in explore servers to clear search input.
     - Added hover style for the x button in search input for explore servers page.
+    - Removed SetTimeOuts for 99% of all animation closings for modals and replaced with a a promise instead.
 
 ## Backend Changes
 
