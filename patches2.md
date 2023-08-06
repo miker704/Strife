@@ -1039,6 +1039,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Add Promise animation close to edit user password modal.
     - Add Promise animation close to edit user phone number modal.
     - Add Promise animation close to remove user phone number modal.
+    - Add Promise animation close to download apps modal.
 
 
 
