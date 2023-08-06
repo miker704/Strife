@@ -1050,6 +1050,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed the shiny button to submit name change in channel settings modal in favor of updating the name via the snack bar popup.
     - Backed up channel settings modal that contains the name change button in deprecated.
     - Backed up create channel container in deprecated.
+    - Backed up server settings modal before implementing snack bar.
 
 ## Backend Changes
 
