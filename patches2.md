@@ -1022,7 +1022,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Add Promise animation close to create server modal.
     - Add Promise animation close to block user modal.
     - Add Promise animation close to delete friendship modal.
-
+    - Add Promise animation close to  user owns servers modal.
 
 ## Backend Changes
 
