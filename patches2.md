@@ -1034,6 +1034,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Add Promise animation close to edit user avatar modal.
     - Add Promise animation close to edit user banner modal.
     - Add Promise animation close to edit user email modal.
+    - Add Promise animation close to edit user username modal.
 
 
 ## Backend Changes
