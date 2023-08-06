@@ -1019,6 +1019,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added the ability for the other user to approved the friend request sent through the not friends dm modal.
     - Removed SetTimeOuts for 99% of all animation closings for modals and replaced with a a promise instead.
     - Add Promise animation close to create channel modal.
+    - Add Promise animation close to create server modal.
+
 
 ## Backend Changes
 
