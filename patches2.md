@@ -1044,10 +1044,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Add Promise animation close to friendship error modal.
     - Add Promise animation close to user settings modal.
     - Add Promise animation close to channel settings modal.
-
-
-
-
+    - Add Promise animation close to server settings modal.
 
 ## Backend Changes
 
