@@ -1022,8 +1022,9 @@ the need to create a private room is need to prevent unwanted members from enter
     - Add Promise animation close to create server modal.
     - Add Promise animation close to block user modal.
     - Add Promise animation close to delete friendship modal.
-    - Add Promise animation close to  user owns servers modal.
-
+    - Add Promise animation close to user owns servers modal.
+    - Add Promise animation close to disable user account modal.
+    
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
