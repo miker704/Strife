@@ -1029,6 +1029,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Add Promise animation close to delete channel modal.
     - Add Promise animation close to delete server modal.
     - Add Promise animation close to delete server channel message modal.
+    - Add Promise animation close to delete dmServer message modal.
 
 
 ## Backend Changes
