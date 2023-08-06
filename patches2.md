@@ -1047,7 +1047,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Add Promise animation close to server settings modal.
     - Created styles for snack bar popup for settings modal.
     - Implemented snack bar popup for channel settings modal where if currently when changing the state of the channel name it will pop up and clicking out of the modal will cause the modal to play an error shaking animation along with a color changing animation preventing manual leaving of the channel settings modal via click until the user resets the changes being made or saves them.
-
+    - Removed the shiny button to submit name change in channel settings modal in favor of updating the name via the snack bar popup.
 
 ## Backend Changes
 
