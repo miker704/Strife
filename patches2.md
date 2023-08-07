@@ -1059,6 +1059,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up unused channel settings modal with channel update name button.
     - Backed up unused server settings modal with server update name button and without the snack bar.
     - Replaced channel.channel name as the place holder with newchannelname state variable for place holder in channel settings.
+    - Replaced placeholder for server name in server settings modal.
 
 ## Backend Changes
 
