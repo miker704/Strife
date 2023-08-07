@@ -1053,6 +1053,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up server settings modal before implementing snack bar.
     - Add snack bar popup for server settings modal.
     - Replaced Update server name button with the snack bar save changes button in server settings.
+    - Replaced Update channel name button with the snack bar save changes button in channel settings.
 
 ## Backend Changes
 
