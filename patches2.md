@@ -1055,6 +1055,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Replaced Update server name button with the snack bar save changes button in server settings.
     - Replaced Update channel name button with the snack bar save changes button in channel settings.
     - Replaced direct removal of server avatar and must be done through snack bar.
+    - Backed up unused channel modal with channel update name button.
 
 ## Backend Changes
 
