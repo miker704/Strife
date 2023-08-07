@@ -1,3 +1,7 @@
+// inorder to use this normally remove the line to upload server name in forms for remove pfp
+// and on the back end for update server removed if server parmas is remove icon remove
+// the line server.updateParams(params) after img purge. also remove the server name for form data
+// in server avatar modal.
 // import React from "react";
 // import { useState, useEffect, useRef } from "react";
 // import DeleteServerModalContainer from "../delete_server_modal/delete_server_modal_container";
