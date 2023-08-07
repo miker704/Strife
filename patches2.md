@@ -1051,6 +1051,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up channel settings modal that contains the name change button in deprecated.
     - Backed up create channel container in deprecated.
     - Backed up server settings modal before implementing snack bar.
+    - Add snack bar popup for server settings modal.
 
 ## Backend Changes
 
