@@ -1105,5 +1105,6 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Started to swap to scss features to replace commonly used styles.
 - Add new Selector Function to extract directly from the friendship state and get a users friends based on a friendships status indicated via a number between -2 - +3, previously a selector of similar functionality was used but extracted from the users state instead.
 - Added JsDoc To Friendship Selectors.
+- Added JsDoc to Strife Switch Component.
 
 ---
