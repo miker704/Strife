@@ -1070,6 +1070,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed ReactTool tip imports and components (1) from create channel modal and replaced it with the new ToolTip Component instead.
     - Removed ReactTool tip imports and components (2) from user settings modal and replaced it with one new ToolTip Component instead.
     - Removed ReactTool tip imports and components (1) from edit username modal and replaced it with one new ToolTip Component instead.
+    - Removed ReactTool tip imports and components (1) from server settings modal and replaced it with one new ToolTip Component instead.
 
 ## Backend Changes
 
