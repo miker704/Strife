@@ -1090,7 +1090,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed ReactTool tip imports and components (7) from server header nav bar and replaced it with a call to the new root ToolTip Component instead.    
     - Removed ReactTool tip imports and components (3) from user nav bar and replaced it with 3 new ToolTip Component instead.
     - Removed ReactTool tip imports and components (1) from dm nav bar and replaced it with a new ToolTip Component instead.
-    
+    - Added 2 new tool tip components to dm nav bar 1 to replace the reactTooltip component for the tooltip to display create dm on the plus icon. And a new tool tip component that conditional selects dmservers that have names whose lengths hit 19 or more characters long to display a tool tip of the full name of the dmServer. this tooltip is using the render prop to render its content. Which was used in a seperate version of this project to test the new tooltip library update on the server nav bar to great success the same technique is used here.
+
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
