@@ -1105,7 +1105,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed exit style animations for create a server modal.
     - Changed exit style animations for create channel modal.
     - Changed exit style animations for delete server channel message modal.
-
+    - Changed exit style animations for delete dmServer message modal.
 
 ## Backend Changes
 
