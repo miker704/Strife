@@ -1099,6 +1099,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added a new variation of the notifcation bell icon in server header nav bar where clicking shows a strike through indicating mute.
     - Added a chance for a red strike through of the muted variation of the notifcation bell in server header nav bar.
     - Added currently typing svg for potiential use in the future to display when the user types in the chat bar.
+    - Added image for future use when a server has no channels.
 
 ## Backend Changes
 
