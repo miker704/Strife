@@ -1098,6 +1098,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed ReactTooltip import and components (5) from Server nav bar component and replaced them with (5) Tooltips instead, including one that uses conditional rendering to generate a tool tip bubble displaying the server name for each server bubble but only using  one tool tip component instead of having one react tool tip component be generated for each server bubble. it uses rendering and a anchor select (basically a query selector) to grab the right bubble and show that server name itself.
     - Added a new variation of the notifcation bell icon in server header nav bar where clicking shows a strike through indicating mute.
     - Added a chance for a red strike through of the muted variation of the notifcation bell in server header nav bar.
+    - Added currently typing svg for potiential use in the future to display when the user types in the chat bar.
 
 ## Backend Changes
 
