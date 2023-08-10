@@ -1081,6 +1081,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed ReactTool tip imports and components (2) from all friends list page and replaced it with a call to the new root ToolTip Component instead.
     - Removed ReactTool tip imports and components (2) from online friends list page and replaced it with a call to the new root ToolTip Component instead.
     - Removed ReactTool tip imports and components (1) from action button modal and replaced it with a new ToolTip Component instead.
+    - Removed ReactTool tip imports and components (2) from dm members list and replaced it with a call to the new root ToolTip Component instead.
     
 ## Backend Changes
 
