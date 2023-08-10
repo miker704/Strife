@@ -1107,6 +1107,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed exit style animations for delete server channel message modal.
     - Changed exit style animations for delete dmServer message modal.
     - Moved Test Bench 2 file to deprecated.
+    - Moved test Bench 3 file to deprecated.
 
 ## Backend Changes
 
