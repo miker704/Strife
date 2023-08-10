@@ -1078,7 +1078,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed ReactTool tip imports and components (1) from invite to server modal and replaced it with one new ToolTip Component instead.
     - Removed ReactTool tip imports and components (1) from blocked users page and replaced it with a call to the new root ToolTip Component instead.
     - Removed ReactTool tip imports and components (3) from pending friends page and replaced it with a call to the new root ToolTip Component instead.
-    
+    - Removed ReactTool tip imports and components (2) from all friends list page and replaced it with a call to the new root ToolTip Component instead.
+
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
