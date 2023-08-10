@@ -1108,7 +1108,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed exit style animations for delete dmServer message modal.
     - Moved Test Bench 2 file to deprecated.
     - Moved test Bench 3 file to deprecated.
-    - Moved deprecated strife switch component to deprecated. 
+    - Moved deprecated strife switch component to deprecated.
+    - Moved onclick to copy server link to parent div element of the current div that the function is called on to allow clicking on the copy id icon to be registered as a click to copy as well and exit the modal. In Action Button modal. 
 
 ## Backend Changes
 
