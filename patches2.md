@@ -1089,6 +1089,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed ReactTool tip imports and components (9) from dmserver header nav bar and replaced it with a call to the new root ToolTip Component instead.
     - Removed ReactTool tip imports and components (7) from server header nav bar and replaced it with a call to the new root ToolTip Component instead.    
     - Removed ReactTool tip imports and components (3) from user nav bar and replaced it with 3 new ToolTip Component instead.
+    - Removed ReactTool tip imports and components (1) from dm nav bar and replaced it with a new ToolTip Component instead.
     
 ## Backend Changes
 
