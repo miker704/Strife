@@ -1094,7 +1094,9 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added a call to root tooltip to show a tooltip of the online status of a (user) for one to one dmServer chats in dmServer nav bar.
     - Removed ReactTooltip import and components (2) from message action control in Dmserver message component and temporaily added a call to root tool tip to render a tool tip. Until the full message control component is finished.
     - Removed ReactTooltip import and components (2) from message action control in Server message component and temporaily added a call to root tool tip to render a tool tip. Until the full message control component is finished.    
-    - Removed an additional (8) ReactTooltip components from a test version of message action control in Server message component and temporaily added a call to root tool tip to render a tool tip. Until the full message control component is finished.   
+    - Removed an additional (8) ReactTooltip components from a test version of message action control in Server message component and temporaily added a call to root tool tip to render a tool tip. Until the full message control component is finished.
+    - Removed ReactTooltip import and components (5) from Server nav bar component and replaced them with (5) Tooltips instead, including one that uses conditional rendering to generate a tool tip bubble displaying the server name for each server bubble but only using  one tool tip component instead of having one react tool tip component be generated for each server bubble. it uses rendering and a anchor select (basically a query selector) to grab the right bubble and show that server name itself.
+
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
