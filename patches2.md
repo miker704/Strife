@@ -1084,6 +1084,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed ReactTool tip imports and components (2) from dm members list and replaced it with a call to the new root ToolTip Component instead.
     - Added a call to root tool tip component in dm members list to show online statuses of a member.
     - Removed ReactTool tip imports and components (2) from server members list and replaced it with a call to the new root ToolTip Component instead.
+    - Added a call to root tool tip component in server members list to show online statuses of a member.
     
 ## Backend Changes
 
