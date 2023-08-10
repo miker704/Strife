@@ -1063,6 +1063,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added error shaking animation for channel settings that will shaking the modal when attempting to exit the modal if the channel name state is changed without saving it.
     - Added error shaking animation for server settings that will shaking the modal when attempting to exit the modal if the server name state is changed, avatar is attempted to be removed or added without saving it.
     - Removed alternate server settings modal to deprecated.
+    - Moved file test bench 8 which which was the test bench file for the development of the new server user options modal to deprecated.
 
 ## Backend Changes
 
