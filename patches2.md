@@ -1104,6 +1104,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Replaced a majority of styles for all the previously used tool tips for each react tool tip component with a few new ones and retired most as most tooltips now use one main main component and serves the styles needed for most of the tooltips to begin with.
     - Changed exit style animations for create a server modal.
     - Changed exit style animations for create channel modal.
+    - Changed exit style animations for delete server channel message modal.
 
 
 ## Backend Changes
