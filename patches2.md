@@ -1088,7 +1088,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed ReactTool tip imports and components (2) from server members list and replaced it with a call to the new root ToolTip Component instead.
     - Removed ReactTool tip imports and components (9) from dmserver header nav bar and replaced it with a call to the new root ToolTip Component instead.
     - Removed ReactTool tip imports and components (7) from server header nav bar and replaced it with a call to the new root ToolTip Component instead.    
-
+    - Removed ReactTool tip imports and components (3) from user nav bar and replaced it with 3 new ToolTip Component instead.
+    
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
