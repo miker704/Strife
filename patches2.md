@@ -1118,6 +1118,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed all raw svg embedded code in create channel modal and replaced them withg svg components.
     - Add theme-dark class to the html of application.html.erb
     - Removed all raw svg embedded code in channel nav bar and replaced them withg svg components.
+    - Removed all raw svg embedded code in download apps modal and replaced them withg svg components.
+
 
 ## Backend Changes
 
