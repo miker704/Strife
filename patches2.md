@@ -1121,6 +1121,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed all raw svg embedded code in download apps modal and replaced them withg svg components.
     - Removed all raw svg embedded code in channel settings modal and replaced them withg svg components.
     - Removed all raw svg embedded code in server avatar modal and replaced them withg svg components.
+    - Removed all raw svg embedded code in user avatar modal and replaced them withg svg components.
 
 
 ## Backend Changes
