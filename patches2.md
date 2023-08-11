@@ -1131,6 +1131,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed all raw svg embedded code in create a server modal and replaced them with svg components.
     - Fixed tiny warning issue in create a modal server where when warping to guild discovery when already there.
     - Removed all raw svg embedded code in user settings modal and replaced them with svg components.
+    - Switch title tool tip to react tool tip for nitro icon on the user banner in user settings modal.
 
 ## Backend Changes
 
