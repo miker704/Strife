@@ -1143,7 +1143,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Converted Online friends list page to a non deconstructed prop based component.
     - Removed all raw svg embedded code in invite to dm modal and replaced them with svg components.
     - Removed all raw svg embedded code in invite to dm modal v2 and replaced them with svg components.
-
+    - Removed all raw svg embedded code in select dm members for video call modal and replaced them with svg components.
 
 ## Backend Changes
 
