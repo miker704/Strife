@@ -1116,6 +1116,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Converted all svgs code in splash footer to svg components.
     - Removed all raw svg embedded code in channel drop down container and replaced it with svg component versions of them.
     - Removed all raw svg embedded code in create channel modal and replaced them withg svg components.
+    - Add theme-dark class to the html of application.html.erb
 
 ## Backend Changes
 
