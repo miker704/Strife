@@ -1147,6 +1147,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded new svg group chat icon for group chat avatars.
     - Removed all raw svg embedded code in dm members list and replaced them with svg components.
     - Removed all raw svg embedded code in server members list and replaced them with svg components.
+    - Added Reset live search function to invite to server modal.
 
 ## Backend Changes
 
