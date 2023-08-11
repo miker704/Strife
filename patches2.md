@@ -1134,6 +1134,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Switch title tool tip to react tool tip for nitro icon on the user banner in user settings modal.
     - Removed all raw svg embedded code in server settings modal and replaced them with svg components.
     - Removed all raw svg embedded code in create DM modal and replaced them with svg components.
+    - Removed all raw svg embedded code in create DM modal home bar version and replaced them with svg components.
 
 
 ## Backend Changes
