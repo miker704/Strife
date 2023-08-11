@@ -1151,6 +1151,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed all raw svg embedded code in invite to server modal and replaced them with svg components.
     - Removed all raw svg embedded code in start conversation modal and replaced them with svg components.
     - Removed all raw svg embedded code in active now section and replaced them with svg components (only loud speaker icon all other icons are foreign objects from user assets).
+    - Removed all raw svg embedded code in dm nav bar and replaced them with svg components.
+
 
 ## Backend Changes
 
