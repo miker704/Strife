@@ -1144,6 +1144,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed all raw svg embedded code in invite to dm modal and replaced them with svg components.
     - Removed all raw svg embedded code in invite to dm modal v2 and replaced them with svg components.
     - Removed all raw svg embedded code in select dm members for video call modal and replaced them with svg components.
+    - Uploaded new svg group chat icon for group chat avatars. 
 
 ## Backend Changes
 
