@@ -1135,6 +1135,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed all raw svg embedded code in server settings modal and replaced them with svg components.
     - Removed all raw svg embedded code in create DM modal and replaced them with svg components.
     - Removed all raw svg embedded code in create DM modal home bar version and replaced them with svg components.
+    - Removed all raw svg embedded code in blocked users page and replaced them with svg components.
 
 
 ## Backend Changes
