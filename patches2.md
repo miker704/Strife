@@ -1139,6 +1139,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed all raw svg embedded code in all friends page and replaced them with svg components.
     - Removed all raw svg embedded code in online friends page and replaced them with svg components.
     - Removed all raw svg embedded code in add friends page and replaced them with svg components.
+    - Removed all raw svg embedded code in pending friends page and replaced them with svg components.
 
 ## Backend Changes
 
