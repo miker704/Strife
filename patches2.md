@@ -1128,6 +1128,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed all raw svg embedded code in user edit email modal and replaced them withg svg components.
     - Removed all raw svg embedded code in user edit username modal and replaced them withg svg components.
     - Removed all raw svg embedded code in user edit user phone number modal and replaced them withg svg components.
+    - Removed all raw svg embedded code in user edit create a server modal and replaced them withg svg components.
 
 
 ## Backend Changes
