@@ -1146,7 +1146,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed all raw svg embedded code in select dm members for video call modal and replaced them with svg components.
     - Uploaded new svg group chat icon for group chat avatars.
     - Removed all raw svg embedded code in dm members list and replaced them with svg components.
-    
+    - Removed all raw svg embedded code in server members list and replaced them with svg components.
+
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
