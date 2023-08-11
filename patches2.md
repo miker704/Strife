@@ -1114,6 +1114,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed all raw embedded svg code from splash nav and converted each svg into its own component and replaced the embedded code with svg components.
     - Took all raw Embedded svg code from splash body and converted it to an svg component and replaced the embedded code with it.
     - Converted all svgs code in splash footer to svg components.
+    - Removed all raw svg embedded code in channel drop down container and replaced it with svg component versions of them.
 
 ## Backend Changes
 
