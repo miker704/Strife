@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="theme-dark">
   <head>
     <title>$TR!F3</title>
     <%= csrf_meta_tags %>
@@ -17,7 +17,7 @@
              window.currentUser = <%= render(partial:"api/users/user", formats: :json, object: current_user).html_safe %>
         </script>
     <% end %>
-     
+  
   </head>
 
   <body>
