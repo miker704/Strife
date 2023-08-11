@@ -1115,20 +1115,22 @@ the need to create a private room is need to prevent unwanted members from enter
     - Took all raw Embedded svg code from splash body and converted it to an svg component and replaced the embedded code with it.
     - Converted all svgs code in splash footer to svg components.
     - Removed all raw svg embedded code in channel drop down container and replaced it with svg component versions of them.
-    - Removed all raw svg embedded code in create channel modal and replaced them withg svg components.
+    - Removed all raw svg embedded code in create channel modal and replaced them with svg components.
     - Add theme-dark class to the html of application.html.erb
-    - Removed all raw svg embedded code in channel nav bar and replaced them withg svg components.
-    - Removed all raw svg embedded code in download apps modal and replaced them withg svg components.
-    - Removed all raw svg embedded code in channel settings modal and replaced them withg svg components.
-    - Removed all raw svg embedded code in server avatar modal and replaced them withg svg components.
-    - Removed all raw svg embedded code in user avatar modal and replaced them withg svg components.
-    - Removed all raw svg embedded code in user banner modal and replaced them withg svg components.
-    - Removed all raw svg embedded code in user edit display name modal and replaced them withg svg components.
-    - Removed all raw svg embedded code in user edit password modal and replaced them withg svg components.
-    - Removed all raw svg embedded code in user edit email modal and replaced them withg svg components.
-    - Removed all raw svg embedded code in user edit username modal and replaced them withg svg components.
-    - Removed all raw svg embedded code in user edit user phone number modal and replaced them withg svg components.
-    - Removed all raw svg embedded code in user edit create a server modal and replaced them withg svg components.
+    - Removed all raw svg embedded code in channel nav bar and replaced them with svg components.
+    - Removed all raw svg embedded code in download apps modal and replaced them with svg components.
+    - Removed all raw svg embedded code in channel settings modal and replaced them with svg components.
+    - Removed all raw svg embedded code in server avatar modal and replaced them with svg components.
+    - Removed all raw svg embedded code in user avatar modal and replaced them with svg components.
+    - Removed all raw svg embedded code in user banner modal and replaced them with svg components.
+    - Removed all raw svg embedded code in user edit display name modal and replaced them with svg components.
+    - Removed all raw svg embedded code in user edit password modal and replaced them with svg components.
+    - Removed all raw svg embedded code in user edit email modal and replaced them with svg components.
+    - Removed all raw svg embedded code in user edit username modal and replaced them with svg components.
+    - Removed all raw svg embedded code in user edit user phone number modal and replaced them with svg components.
+    - Removed all raw svg embedded code in user edit create a server modal and replaced them with svg components.
+    - Fixed tiny warning issue in create a modal server where when warping to guild discovery when already there.
+
 
 
 ## Backend Changes
