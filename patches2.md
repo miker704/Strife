@@ -1112,7 +1112,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved onclick to copy server link to parent div element of the current div that the function is called on to allow clicking on the copy id icon to be registered as a click to copy as well and exit the modal. In Action Button modal. 
     - Inorder to make code more cleaner and easier to maintain and provide an overall less annoyance in handling svgs, a library of all svgs will be created in order to make this process easier almost all raw embedded svg code will be taken an be converted into react components and be imported as components in place of the raw svg code to make code maintaince easier. Using the SVGR tools and SVGO in order to optimize the svg code and reduce the overall space taken by svg code reducing some module sizes down by anywhere from 10% - 70 % in size .
     - Removed all raw embedded svg code from splash nav and converted each svg into its own component and replaced the embedded code with svg components.
-    - Took allraw Embedded svg code from splash body and converted it to an svg component and replaced the embedded code with it.
+    - Took all raw Embedded svg code from splash body and converted it to an svg component and replaced the embedded code with it.
+    - Converted all svgs code in splash footer to svg components.
 
 ## Backend Changes
 
