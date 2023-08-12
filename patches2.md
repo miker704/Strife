@@ -1156,6 +1156,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed all raw svg embedded code in dm server header nav bar and replaced them with svg components.
     - Removed all raw svg embedded code in server header nav bar and replaced them with svg components.
     - Removed all raw svg embedded code in dm call container and replaced them with svg components.
+    - Removed all raw svg embedded code in dm call v2 container and replaced them with svg components.
     
 
 ## Backend Changes
