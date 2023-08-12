@@ -50,6 +50,7 @@ STRIFE "$TR!F3" as of Patch V3.0:
   * ```WebRTC``` API for enabling the ability to allow both video and audio calling between users.
   * ```Material UI``` library (modern) for implementing  and designing complex input containers such as custom sliders to work on all browsers, majority of input components in $TR!F3 are created from scratch only tedious and complex components are made with material UI.
   * ```@mui/styled-engine-sc``` mui uses the ```emotion engine``` as its default styling engine for styling its components however it is slow due to its generation of ~100's of style tags in the header tag upon rendering components containing mui components. Using this engine if phenomenally faster barely a cost in performance and rendering time.
+  * ```SVGR``` and ```SVGO``` as tools to quickly and easily convert SVG code into SVG React Components to make svg usage easy and maintain clean code and allow more reuse of similar svgs around the app and reduce the overall space each file takes up.  
 
 * Back-End
   * ```jBuilder``` for returning database data in ```JSON``` formatting to the front-end.
