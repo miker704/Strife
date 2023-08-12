@@ -1208,5 +1208,6 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Added JsDoc to Strife Switch Component.
 - Added JsDoc to REACT PORTAL Component.
 - Upgraded NPM Package for react tool tip.
+- Added SVGR and SVGO as tools in README.md
 
 ---
