@@ -1166,6 +1166,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed all raw svg embedded code in explore servers page container and replaced them with svg components.
     - Removed all raw svg embedded code in copy strife tag modal and replaced them with svg components.
     - Removed all raw svg embedded code in action button container modal and replaced them with svg components.
+    - Removed all raw svg embedded code in user nav bar and replaced them with svg components.
+
 
 ## Backend Changes
 
