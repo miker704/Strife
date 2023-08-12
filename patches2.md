@@ -1161,7 +1161,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Fixed Spacing issue with attach button in chat input area.    
     - Removed all raw svg embedded code in dm chat room container and replaced them with svg components.
     - Removed all raw svg embedded code in server chat room container and replaced them with svg components.
-
+    - Fixed icon spacing issues for both chat inputs in dm and server chat rooms.
 
 ## Backend Changes
 
