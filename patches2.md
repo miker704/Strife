@@ -1164,6 +1164,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Fixed icon spacing issues for both chat inputs in dm and server chat rooms.
     - Removed all raw svg embedded code in explore servers nav container and replaced them with svg components.
     - Removed all raw svg embedded code in explore servers page container and replaced them with svg components.
+    - Removed all raw svg embedded code in copy strife tag modal and replaced them with svg components.
 
 ## Backend Changes
 
