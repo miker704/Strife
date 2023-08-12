@@ -1162,6 +1162,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed all raw svg embedded code in dm chat room container and replaced them with svg components.
     - Removed all raw svg embedded code in server chat room container and replaced them with svg components.
     - Fixed icon spacing issues for both chat inputs in dm and server chat rooms.
+    - Removed all raw svg embedded code in explore servers nav container and replaced them with svg components.
 
 ## Backend Changes
 
@@ -1201,7 +1202,6 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 ### Other Changes
 
 - Added Link to Patch notes (this file) in the README.MD file
-
 - Started to swap to scss features to replace commonly used styles.
 - Add new Selector Function to extract directly from the friendship state and get a users friends based on a friendships status indicated via a number between -2 - +3, previously a selector of similar functionality was used but extracted from the users state instead.
 - Added JsDoc To Friendship Selectors.
