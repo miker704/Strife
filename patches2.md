@@ -1170,6 +1170,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Nitro Header Nav bar.
     - Created Nitro Header Nav bar container.
     - Created Nitro Header Nav bar styles.
+    - Created many Nitro Store Page images.
+
 
 ## Backend Changes
 
