@@ -1183,6 +1183,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded wumpus_wheel.svg
     - Uploaded smallPerk1.svg
     - Uploaded smallPerk2.svg
+    - Uploaded smallPerk3.svg
 
 
 
