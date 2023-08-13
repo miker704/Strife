@@ -1203,6 +1203,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Modified textchat2.svg.
     - Modified textchat3.svg.
     - Removed old version of boostexample.png
+    - Uploaded defaultPFPSVG.svg - default user avatar img
+
 
 ## Backend Changes
 
