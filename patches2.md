@@ -1195,6 +1195,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded nitroTableRight.svg
     - Uploaded createdmnofriends.svg
     - Uploaded voicePartyMemberMasker.svg
+    - Uploaded voiceSectionMask.svg
+
 
 
 ## Backend Changes
