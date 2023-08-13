@@ -1201,9 +1201,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up old version of dm server messages to deprecated folder.
     - Backed up old version of server messages to deprecated folder.
     - Modified textchat2.svg.
-
-
-
+    - Modified textchat3.svg.
 
 ## Backend Changes
 
