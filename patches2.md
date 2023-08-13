@@ -1191,6 +1191,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded smallPerk8.svg
     - Uploaded nitroPlanTableBasic.png
     - Uploaded nitroPlanTableNormal.png
+    - Uploaded nitroTableLeft.svg
 
 
 
