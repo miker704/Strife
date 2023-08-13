@@ -1,6 +1,6 @@
 
 
-const returnUserBadgeFillColor = (userStatus) => {
+export const returnUserBadgeFillColor = (userStatus) => {
 
     let fillColors = {
         "online": `rgb(35, 165, 90)`,
@@ -22,5 +22,3 @@ const returnUserBadgeFillColor = (userStatus) => {
     // }
 
 }
-
-export default returnUserBadgeFillColor;
