@@ -42,3 +42,4 @@ export const closeHookModalOnOutsideClick = (ref, setBoolean) => {
         return () => document.removeEventListener("click", checkOutsideClick);
     }, []);
 }
+
