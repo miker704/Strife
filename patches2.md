@@ -1175,6 +1175,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Nitro Store Page.
     - Created Nitro Store Page container.
     - Uploaded bigperk1.svg
+    - Uploaded bigperk2.svg
+
 
 ## Backend Changes
 
