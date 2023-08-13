@@ -1205,6 +1205,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed old version of boostexample.png
     - Uploaded defaultPFPSVG.svg - default user avatar img
     - Uploaded defaultPFPSVG3.svg 
+    - Modified closeHookModals util file.
 
 
 ## Backend Changes
