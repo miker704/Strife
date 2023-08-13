@@ -1206,6 +1206,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded defaultPFPSVG.svg - default user avatar img
     - Uploaded defaultPFPSVG3.svg 
     - Modified closeHookModals util file.
+    - Finalized userPFP_api_util.js (return default userPFP hook)
 
 ## Backend Changes
 
