@@ -1193,6 +1193,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded nitroPlanTableNormal.png
     - Uploaded nitroTableLeft.svg
     - Uploaded nitroTableRight.svg
+    - Uploaded createdmnofriends.svg
 
 
 
