@@ -1212,6 +1212,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved unused animation style sheet to to deprecated to reduce load on the browser as the style sheet is included when loading the page even through none on the styles are used.
     - Finalized styles for splash page.
     - Pushed user_online_activity badge mask hook.
+    - Pushed user status badge color hook.
 
 ## Backend Changes
 
