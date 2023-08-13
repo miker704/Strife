@@ -1173,6 +1173,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created many Nitro Store Page images.
     - Created many Nitro Store Page icons.
     - Created Nitro Store Page.
+    - Created Nitro Store Page container.
+
 
 ## Backend Changes
 
