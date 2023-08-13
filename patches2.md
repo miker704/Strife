@@ -1184,6 +1184,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded smallPerk1.svg
     - Uploaded smallPerk2.svg
     - Uploaded smallPerk3.svg
+    - Uploaded smallPerk4.png
 
 
 
