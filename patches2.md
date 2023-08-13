@@ -1213,6 +1213,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized styles for splash page.
     - Pushed user_online_activity badge mask hook.
     - Pushed user status badge color hook.
+    - Pushed Session Background SVG component.
 
 ## Backend Changes
 
