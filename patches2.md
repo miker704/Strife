@@ -1197,6 +1197,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded voicePartyMemberMasker.svg
     - Uploaded voiceSectionMask.svg
     - Backed up old svg embedded code before converting 90% of svgs to react components in deprecated folder.
+    - Backed up old version of dmmessages to deprecated folder.
 
 
 
