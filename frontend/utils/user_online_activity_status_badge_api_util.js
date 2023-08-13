@@ -1,5 +1,5 @@
 
-const returnUserOnlineActivityStatusBadgeMaskIMG = (userStatus) => {
+export const returnUserOnlineActivityStatusBadgeMaskIMG = (userStatus) => {
 
     let onlineActivityStatusBadge = {
         "online": "url(#svg-mask-status-online)",
@@ -21,5 +21,3 @@ const returnUserOnlineActivityStatusBadgeMaskIMG = (userStatus) => {
     // }
 
 }
-
-export default returnUserOnlineActivityStatusBadgeMaskIMG;
