@@ -1214,6 +1214,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Pushed user_online_activity badge mask hook.
     - Pushed user status badge color hook.
     - Pushed Session Background SVG component.
+    - Deprecated app.jsx to deprecated folder.
 
 ## Backend Changes
 
