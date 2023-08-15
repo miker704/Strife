@@ -1219,7 +1219,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Updated tech stack in readme.md
     - Created Mini Current User modal.jsx
     - Created Mini Current User modal container.js
-
+    - Mini Current user profile card can now be called by clicking the user`s name on the user nav bar near the user settings icon, this allows a quick briefing of quick settings for the user and allow another way to logout features a hover menu that expands out and allows the user to logout through it. The modal call to render comes from the user nav bar itself.
 
 ## Backend Changes
 
