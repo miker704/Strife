@@ -1214,7 +1214,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Pushed user_online_activity badge mask hook.
     - Pushed user status badge color hook.
     - Pushed Session Background SVG component.
-    - Deprecated app.jsx to deprecated folder.
+    - Deprecated app.jsx to deprecated folder
+    - Created Styles for Mini Current user profile card, which shares a majority of styles similaar to the server user options modal.
 
 ## Backend Changes
 
