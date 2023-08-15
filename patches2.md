@@ -1217,6 +1217,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Deprecated app.jsx to deprecated folder
     - Created Styles for Mini Current user profile card, which shares a majority of styles similaar to the server user options modal.
     - Updated tech stack in readme.md
+    - Created Mini Current User modal.jsx
 
 ## Backend Changes
 
