@@ -1227,6 +1227,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded noMutualServers.svg which is the image displayed in mega upc when both the current user and the user being viewed does not have any mutual servers.
     - Created Styles for Mega Upc Modal which have many shared styles between server user options modal and mini current user profile card.
     - Updated MIT License.
+    - Updated Apache License.
 
 ## Backend Changes
 
