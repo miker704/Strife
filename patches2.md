@@ -1222,6 +1222,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Mini Current user profile card can now be called by clicking the user`s name on the user nav bar near the user settings icon, this allows a quick briefing of quick settings for the user and allow another way to logout features a hover menu that expands out and allows the user to logout through it. The modal call to render comes from the user nav bar itself.
     - Uploaded happyFaceSmile.svg used for current user card.
     - Added Project build time in readme.md
+    - Started on Mega User Profile card which gives a larger over view of a user shows some user info and two other tab sections to view the mutual servers and friends in common between the users.
 
 ## Backend Changes
 
