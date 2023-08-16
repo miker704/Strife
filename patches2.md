@@ -1225,6 +1225,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Started on Mega User Profile card which gives a larger over view of a user shows some user info and two other tab sections to view the mutual servers and friends in common between the users.
     - Uploaded noFriendsInCommon.svg which is the image displayed in mega upc when both the current user and the user being viewed does not have any mutual friends.
     - Uploaded noMutualServers.svg which is the image displayed in mega upc when both the current user and the user being viewed does not have any mutual servers.
+    - Created Styles for Mega Upc Modal which have many shared styles between server user options modal and mini current user profile card.
 
 ## Backend Changes
 
