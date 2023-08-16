@@ -106,3 +106,7 @@ STRIFE "$TR!F3" as of Patch V3.0:
 * You cannot use this project in anyway to monetize, sell or receive profit from it or any versions of it even those created by other users.
 * This Project also follows the rules of the GNU General Public License.
 * This project is currently still active in development for the forseeable future till any planned features are too taxing on the ruby rails backend. Once that has been reached $TRIF3 will move to a new version to utilize RUST as its backend via Rocket.rs web framework where speed and performance will increase massively and extra hardware intensive features will be added.
+
+## Project Stats
+
+* Current Project development time ~||> 3952 hours
