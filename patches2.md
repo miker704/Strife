@@ -1223,6 +1223,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded happyFaceSmile.svg used for current user card.
     - Added Project build time in readme.md
     - Started on Mega User Profile card which gives a larger over view of a user shows some user info and two other tab sections to view the mutual servers and friends in common between the users.
+    - Uploaded noFriendsInCommon.svg which is the image displayed in mega upc when both the current user and the user being view does not have any mutual friends.
 
 ## Backend Changes
 
