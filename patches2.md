@@ -1234,6 +1234,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created MegaUpcTab1 container.
     - Created MegaUpcTab2.jsx which is for mutual servers between the current user and the currently viewed user which when one of the servers is clicked warps the current user to that server. 
     - Created MegaUpcTab2 container.
+    - Created MegaUpcTab3.jsx which is for mutual friends between the current user and the user beign viewed clicking on the user should change the modal to view that user instead.
 
 
 
