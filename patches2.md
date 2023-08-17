@@ -1236,7 +1236,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created MegaUpcTab2 container.
     - Created MegaUpcTab3.jsx which is for mutual friends between the current user and the user beign viewed clicking on the user should change the modal to view that user instead.
     - Created MegaUpcTab3 container.
-    - Added the spinning loading gif animation as a place holder for the about me section for mega upc modal in tab1 about me section.
+    - Added the spinning loading gif animation as a place holder for the about me section for mega upc modal in tab 1 about me section.
+    - Added mega upc modal to view the current users profile to be rendered from user nav bar which can be opened from going to the mini upc current user card and clicking on the users avatar circle that shows the hover hint  view profile. The modal itself for the current user prevents any of the tabs from being selected (they are not rendered) and any relation ship buttons are not rendered for the current user just the about me tab. Soon the modal will be added an rendered in a few other areas of the app including, clicking on the user name in dmServer header nav bar for one to one dm chats opening server user options modal in both dmServer and server member lists and clicking on  a user from the pending friends list. 
 
 ## Backend Changes
 
