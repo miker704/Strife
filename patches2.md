@@ -1240,6 +1240,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added mega upc modal to view the current users profile to be rendered from user nav bar which can be opened from going to the mini upc current user card and clicking on the users avatar circle that shows the hover hint  view profile. The modal itself for the current user prevents any of the tabs from being selected (they are not rendered) and any relation ship buttons are not rendered for the current user just the about me tab. Soon the modal will be added an rendered in a few other areas of the app including, clicking on the user name in dmServer header nav bar for one to one dm chats opening server user options modal in both dmServer and server member lists and clicking on  a user from the pending friends list. 
     - Fixed a bug with channel settings modal when opening sub modals would completely overwrite state due to note returning the previous state.
     - Fixed a bug with user settings modal when opening sub modals would completely overwrite state due to note returning the previous state.
+    - Fixed a bug with server settings modal when opening sub modals would completely overwrite state due to note returning the previous state.
 
 ## Backend Changes
 
