@@ -1230,7 +1230,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Container file for Mega UPC modal.
     - Created Jsx file for Mega UPC modal.
     - In order to reduce the potential large file size mega upc modal may have code spliting has been implemented.
-    - Created MegaUpcTab1 jsx file which is the about me section table that is selected by default upon loading the megaUpc modal. 
+    - Created MegaUpcTab1 jsx file which is the about me section table that is selected by default upon loading the megaUpc modal.
+    - Created MegaUpcTab1 container. 
 
 
 ## Backend Changes
