@@ -1267,6 +1267,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Added get route for dm server membership that is dedicated to the dmServer it belongs to in dmserver membership api util.
 - Add a get route to check for dmserver membership that returns a bool in dmServer membership api util.
 - Added a get route that submits the current user and another users ids to return mutual friends between them in session api util.
+- Added a get route that submits the current user and another users ids to return mutual servers between them in session api util.
 
 ### Other Changes
 
