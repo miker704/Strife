@@ -1251,6 +1251,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Backed up server update function to deprecated prior to implementing snack bar.
 - Replaced server update function with considerations for snackbar implementation able to parse removal of icon after updating and filtering out the removal icon bool from update params.
 - Created a new backend route to obtain the mutual friends between two users.
+- Created a new backend route to obtain the mutual servers between two users.
 
 ### Front-End Changes
 
