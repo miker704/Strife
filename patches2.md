@@ -1241,6 +1241,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Fixed a bug with channel settings modal when opening sub modals would completely overwrite state due to note returning the previous state.
     - Fixed a bug with user settings modal when opening sub modals would completely overwrite state due to note returning the previous state.
     - Fixed a bug with server settings modal when opening sub modals would completely overwrite state due to note returning the previous state.
+    - Changed to pass formName from a string to props.formName for props.closeSubModal in delete user account modal.
+
 
 ## Backend Changes
 
