@@ -1236,6 +1236,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created MegaUpcTab2 container.
     - Created MegaUpcTab3.jsx which is for mutual friends between the current user and the user beign viewed clicking on the user should change the modal to view that user instead.
     - Created MegaUpcTab3 container.
+    - Added the spinning loading gif animation as a place holder for the about me section for mega upc modal in tab1 about me section.
 
 ## Backend Changes
 
