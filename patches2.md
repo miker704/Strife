@@ -1226,8 +1226,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded noFriendsInCommon.svg which is the image displayed in mega upc when both the current user and the user being viewed does not have any mutual friends.
     - Uploaded noMutualServers.svg which is the image displayed in mega upc when both the current user and the user being viewed does not have any mutual servers.
     - Created Styles for Mega Upc Modal which have many shared styles between server user options modal and mini current user profile card.
-    - Updated MIT License.
-    - Updated Apache License.
     - Deleted core.jsx file replaced with an actual used file _CORE_.jsx which is the main apps routing of components which goes as follows root (contains provider, hash router, store, and app) -> app (routes to auth pages for sign up login and splash page redirects to /$/ (_CORE.jsx) once signed in) _CORE_.jsx is much different than the previous used core.jsx as that file was never used, and is differerent from the previous app.jsx as before app.jsx runs all the routes through it but do to major styling differences including certain assets that must be present in the app when signed in cause scaling and styling issues for the splash page to make this simply the routing for all logined in required componentss be routed in another container also when signed in Core_cable runs on path /$/ but this path was reserve only for this but made sense to run all logged in components routes to it as well as a bunch of util functions so _CORE_.jsx runs core cable and routing to all logged in required components. this also replaced the makeshift CORE.js file which runs through a container but returns no jsx and runs only the core cable functions now this functionality in placed in _CORE_.jsx and returns the routes of all logged in required components in the app.
 
 ## Backend Changes
@@ -1276,5 +1274,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Added JsDoc to REACT PORTAL Component.
 - Upgraded NPM Package for react tool tip.
 - Added SVGR and SVGO as tools in README.md
+- Updated MIT License.
+- Updated Apache License.
 
 ---
