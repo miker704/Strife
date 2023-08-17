@@ -1233,7 +1233,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created MegaUpcTab1 jsx file which is the about me section table that is selected by default upon loading the megaUpc modal.
     - Created MegaUpcTab1 container.
     - Created MegaUpcTab2.jsx which is for mutual servers between the current user and the currently viewed user which when one of the servers is clicked warps the current user to that server. 
-    
+    - Created MegaUpcTab2 container.
+
 
 
 ## Backend Changes
