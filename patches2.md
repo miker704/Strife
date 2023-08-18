@@ -1263,6 +1263,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added a useEffect to check to see if edit friendship modal is open in all friends list page if true using jquery add a hoverState class to maintain the hover styles when the modal is open on that selected friend as prior opening the modal would remove the hover styles. once the edit friendship modal closes another jquery function is ran when the condtion for the edit friendship modal is open returns false removes the hoverState class.
     - Made a switch in Not friends modal to allow async request using user state and core cable sending friendship updates to allow buttons to change depending on friendship types including if the modal is open and the other user accepts the friend request the modal will close through using state and useeffect instead of using props.
     - Moved old version of Not friends modal that uses primarly props to deprecated.
+    - Fixed a bug in the home page when switching between tabs would completely overwrite the tab state due to not returning the previous state.
     - Fixed a bug with mega upc modal when switching between tabs would completely overwrite the tab state due to not returning the previous state.
 
 
