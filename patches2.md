@@ -1265,7 +1265,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old version of Not friends modal that uses primarly props to deprecated.
     - Fixed a bug in the home page when switching between tabs would completely overwrite the tab state due to not returning the previous state.
     - Fixed a bug with mega upc modal when switching between tabs would completely overwrite the tab state due to not returning the previous state.
-
+    - Created a new hook called useCloseModalonESC in close modal hooks api util which takes in a bool usestate modal class name and exit transition class and listens for the esc press and applies the transistion class to the modal and using a promise close the modal at the end of the animation at near perfect timming.
 
 ## Backend Changes
 
