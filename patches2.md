@@ -1244,7 +1244,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed to pass formName from a string to props.formName for props.closeSubModal in delete user account modal.
     - Changed to pass formName from a string to props.formName for props.closeSubModal in disable user account modal.
     - Changed to pass formName from a string to props.formName for props.closeSubModal in edit username account modal.
-
+    - Changed to pass formName from a string to props.formName for props.closeSubModal in edit user email account modal.
     - Fixed a bug on in sessions forms where when attempting to login is unsuccessful and clicking  forgot password which redirects to register page shows the same errors on email and password inputs as it did on the login page solution was to remove the session errors when clicking on the link.
 
 ## Backend Changes
