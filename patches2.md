@@ -1242,8 +1242,9 @@ the need to create a private room is need to prevent unwanted members from enter
     - Fixed a bug with user settings modal when opening sub modals would completely overwrite state due to note returning the previous state.
     - Fixed a bug with server settings modal when opening sub modals would completely overwrite state due to note returning the previous state.
     - Changed to pass formName from a string to props.formName for props.closeSubModal in delete user account modal.
-    - Fixed a bug on in sessions forms where when attempting to login is unsuccessful and clicking  forgot password which redirects to register page shows the same errors on email and password inputs as it did on the login page solution was to remove the session errors when clicking on the link.
+    - Changed to pass formName from a string to props.formName for props.closeSubModal in disable user account modal.
 
+    - Fixed a bug on in sessions forms where when attempting to login is unsuccessful and clicking  forgot password which redirects to register page shows the same errors on email and password inputs as it did on the login page solution was to remove the session errors when clicking on the link.
 
 ## Backend Changes
 
