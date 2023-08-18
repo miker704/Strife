@@ -1237,11 +1237,12 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created MegaUpcTab3.jsx which is for mutual friends between the current user and the user beign viewed clicking on the user should change the modal to view that user instead.
     - Created MegaUpcTab3 container.
     - Added the spinning loading gif animation as a place holder for the about me section for mega upc modal in tab 1 about me section.
-    - Added mega upc modal to view the current users profile to be rendered from user nav bar which can be opened from going to the mini upc current user card and clicking on the users avatar circle that shows the hover hint  view profile. The modal itself for the current user prevents any of the tabs from being selected (they are not rendered) and any relation ship buttons are not rendered for the current user just the about me tab. Soon the modal will be added an rendered in a few other areas of the app including, clicking on the user name in dmServer header nav bar for one to one dm chats opening server user options modal in both dmServer and server member lists and clicking on  a user from the pending friends list. 
+    - Added mega upc modal to view the current users profile to be rendered from user nav bar which can be opened from going to the mini upc current user card and clicking on the users avatar circle that shows the hover hint view profile. The modal itself for the current user prevents any of the tabs from being selected (they are not rendered) and any relation ship buttons are not rendered for the current user just the about me tab. Soon the modal will be added an rendered in a few other areas of the app including, clicking on the user name in dmServer header nav bar for one to one dm chats opening server user options modal in both dmServer and server member lists and clicking on  a user from the pending friends list. 
     - Fixed a bug with channel settings modal when opening sub modals would completely overwrite state due to note returning the previous state.
     - Fixed a bug with user settings modal when opening sub modals would completely overwrite state due to note returning the previous state.
     - Fixed a bug with server settings modal when opening sub modals would completely overwrite state due to note returning the previous state.
     - Changed to pass formName from a string to props.formName for props.closeSubModal in delete user account modal.
+    - Fixed a bug on in sessions forms where when attempting to login is unsuccessful and clicking  forgot password which redirects to register page shows the same errors on email and password inputs as it did on the login page solution was to remove the session errors when clicking on the link.
 
 
 ## Backend Changes
