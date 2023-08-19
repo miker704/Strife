@@ -1270,11 +1270,12 @@ the need to create a private room is need to prevent unwanted members from enter
     - Adjusted speed increase of animation enter and exit for user sub modals and server avatar modals.
     - Adjusted speed increase of animation enter and exit for create channel modal.
     - Adjusted speed increase of animation enter and exit for create server modal.
-    - Adjusted speed increase of animation enter and exit for delete message modal for both dm messages and server channel messages.
+    - Adjusted speed increase of animation enter and exit for delete message modals for both dm messages and server channel messages.
     - Adjusted speed increase of animation enter and exit for create server modal.
     - Adjusted speed increase of animation enter and exit for delete server modal.
     - Adjusted speed increase of animation enter and exit for leave server modal.
     - Adjusted speed increase of animation enter and exit for delete channel modal.
+    - Adjusted speed increase of animation enter and exit for delete friend and block user modals.
 
 
 
