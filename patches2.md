@@ -1280,6 +1280,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Adjusted speed increase of animation enter and exit for friend request errors modal.
     - Adjusted speed increase of animation enter and exit for invite to server modal.
     - Adjusted wrapper layer for channel settings modal.
+    - Created a new hook called useCloseModalonOutSideClick in close modal hooks api util which takes in a bool usestate modal class name and exit transition class and a ref attached to the modal and listens for a click outside the modal and applies the transistion class to the modal and using a promise close the modal at the end of the animation at near perfect timing.
 
 ## Backend Changes
 
