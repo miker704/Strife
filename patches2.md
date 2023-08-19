@@ -1269,6 +1269,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Resync current user function to resync current user props when visiting the nitro store incase they are invited to dmServer and prevent them from being booted to the intrusion loading screen if they click on it from the nitro store.
     - Adjusted speed increase of animation enter and exit for user sub modals and server avatar modals.
     - Adjusted speed increase of animation enter and exit for create channel modal.
+    - Adjusted speed increase of animation enter and exit for create server modal.
 
 
 
