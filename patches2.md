@@ -1277,6 +1277,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Adjusted speed increase of animation enter and exit for delete channel modal.
     - Adjusted speed increase of animation enter and exit for delete friend and block user modals.
     - Adjusted speed increase of animation enter and exit for download apps modal.
+    - Adjusted speed increase of animation enter and exit for friend request errors modal.
 
 
 
