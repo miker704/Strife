@@ -1279,8 +1279,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Adjusted speed increase of animation enter and exit for download apps modal.
     - Adjusted speed increase of animation enter and exit for friend request errors modal.
     - Adjusted speed increase of animation enter and exit for invite to server modal.
-
-
+    - Adjusted wrapper layer for channel settings modal.
 
 ## Backend Changes
 
