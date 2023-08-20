@@ -1283,6 +1283,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created a new hook called useCloseModalonOutSideClick in close modal hooks api util which takes in a bool usestate modal class name and exit transition class and a ref attached to the modal and listens for a click outside the modal and applies the transistion class to the modal and using a promise close the modal at the end of the animation at near perfect timing.
     - Added Mega Upc Modal to be mounted to server members list.
     - Added Mega Upc Modal to be mounted to pending friends list.
+    - Added selectedfriends and toggle state to select a pending user to parse as the user to be viewed in mega upc modal in pending friends list.
+
 
 
 ## Backend Changes
