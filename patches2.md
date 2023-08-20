@@ -1290,6 +1290,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created a new hook called useCloseModalonESCWSubModals in close modal hooks api util which takes in a bool usestate modal class name and exit transition class and a bool to reference if the current modal has an sub modals active. The function listens for the esc press and applies the transistion class to the modal and using a promise close the modal at the end of the animation at near perfect timing. if however a submodal is currently open the esc listener is locked and does not exit out of the modal till the submodal closes and then waits for the next esc press and closes on that one if no submodals are open. It uses a similar functionality that is shared with how settings modals handle esc when any of their submodals are open, but this is for non settings modals and modals that do not occupy the entire screen. The functions bool to check if a submodal is open is optional and has a default value of false and the listener can be used even if a modal has no submodals to open, just leaving that parameter blank will allow it to work as the useCloseModalonESC hook which these two function will be replaced and be combined together.
     - Created A new Version of editFriendship modal but for use in the Mega Upc modal which handles creating a message, deleting friend, blocking and unblocking a user, and copying the user id. Uses styles from the original edit friendship modal.
     - Created Mega User friend options modal.jsx
+    - Created Mega User friend options modal container.
+
  
 ## Backend Changes
 
