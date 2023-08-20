@@ -1284,8 +1284,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Mega Upc Modal to be mounted to server members list.
     - Added Mega Upc Modal to be mounted to pending friends list.
     - Added selectedfriends and toggle state to select a pending user to parse as the user to be viewed in mega upc modal in pending friends list.
-
-
+    - Added Mega Upc Modal to be mounted on dm server header nav bar for one to one dm chat rooms which can be called by clicking the users name in the dm header nav bar.
 
 ## Backend Changes
 
