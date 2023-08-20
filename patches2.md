@@ -1285,6 +1285,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Mega Upc Modal to be mounted to pending friends list.
     - Added selectedfriends and toggle state to select a pending user to parse as the user to be viewed in mega upc modal in pending friends list.
     - Added Mega Upc Modal to be mounted on dm server header nav bar for one to one dm chat rooms which can be called by clicking the users name in the dm header nav bar.
+    - Added animation trick to Mega Upc modal when clicking on the mutual friends tab and clicking on a mutual friend instead of just re-rendering with the selected friends props an jQuery function is ran to disable animations above the main modal layer then with a settimeout switch the current viewed user, set the tab back to the about me section and another jQuery request is ran to remove the disable animations to reactivate the opening animation of the modal to give the illusion that the modal closed and opened again without having to complicate the process to achieve a similar visual effect.
 
 ## Backend Changes
 
