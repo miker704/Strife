@@ -1333,6 +1333,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up friendships.scss to deprecated folder.
     - Backed up global_vars_theme_light.scss to deprecated folder.
     - Backed up global_vars.scss to deprecated folder.
+    - Backed up global.scss to deprecated folder.
 
 
 ## Backend Changes
