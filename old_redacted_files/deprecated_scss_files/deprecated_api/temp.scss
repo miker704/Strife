@@ -1,0 +1,493 @@
+// @import "global_vars";
+
+// .fill-up-color-7 {
+//   background-color: #000000 !important;
+//   color: #000000;
+
+//   svg {
+//     fill: #000000;
+//   }
+// }
+
+// .fill-up-color-7 > img svg {
+//   background-color: #000000 !important;
+//   color: #000000;
+
+//   svg {
+//     fill: #000000;
+//   }
+// }
+
+// .default-pfp-color-7 {
+//   background-image: image_url("defaultSVG.svg");
+// }
+
+// .colors-1 {
+//   background-color: rgb(237, 66, 69) !important;
+//   color: rgb(237, 66, 69) !important;
+//   fill: rgb(237, 66, 69) !important;
+// }
+
+// .colors-2 {
+//   background-color: rgb(88, 101, 242) !important;
+//   color: rgb(88, 101, 242) !important;
+//   fill: rgb(88, 101, 242) !important;
+// }
+
+// .colors-3 {
+//   background-color: rgb(117, 126, 138) !important;
+//   color: rgb(117, 126, 138) !important;
+//   fill: rgb(117, 126, 138) !important;
+// }
+
+// .colors-4 {
+//   background-color: rgb(250, 166, 26) !important;
+//   color: rgb(250, 166, 26) !important;
+//   fill: rgb(250, 166, 26) !important;
+// }
+
+// .colors-5 {
+//   background-color: rgb(59, 165, 92) !important;
+//   color: rgb(59, 165, 92) !important;
+//   fill: rgb(59, 165, 92) !important;
+// }
+
+// .colors-6 {
+//   background-color: blue !important;
+//   color: blue !important;
+//   fill: blue !important;
+// }
+
+// .colors-7 {
+//   background-color: #000000 !important;
+//   color: #000000 !important;
+//   fill: #000000 !important;
+// }
+
+// .colors-8 {
+//   background-color: purple !important;
+//   color: purple !important;
+//   fill: purple !important;
+//   // background-color: rgb(235,69,159);
+// }
+
+// .colors-9 {
+//   background-color: cyan !important;
+//   color: cyan !important;
+//   fill: cyan !important;
+// }
+
+// .colors-10 {
+//   background-color: #005a17 !important;
+//   color: #005a17 !important;
+//   fill: #005a17 !important;
+// }
+
+// .icon-colors-1 {
+//   background-color: rgb(237, 66, 69) !important;
+//   color: rgb(237, 66, 69) !important;
+//   fill: rgb(237, 66, 69) !important;
+//   // background-image: image_url('defaultProfilePicRed.png');
+//   // background-position: center;
+//   // background-size: contain;
+//   // width: 2rem;
+//   // height: 2rem;
+
+//   content: url("defaultProfilePicRed.png");
+// }
+
+// .icon-colors-2 {
+//   background-color: rgb(88, 101, 242) !important;
+//   color: rgb(88, 101, 242) !important;
+//   fill: rgb(88, 101, 242) !important;
+//   // background-image: image_url('defaultProfilePicBlurple.png');
+//   // background-position: center;
+//   // background-size: contain;
+//   // width: 2rem;
+//   // height: 2rem;
+
+//   content: url("defaultProfilePicBlurple.png");
+// }
+
+// .icon-colors-3 {
+//   background-color: rgb(117, 126, 138) !important;
+//   color: rgb(117, 126, 138) !important;
+//   fill: rgb(117, 126, 138) !important;
+//   // background-image: image_url('defaultProfilePicGray.png');
+//   // background-position: center;
+//   // background-size: contain;
+//   // width: 2rem;
+//   // height: 2rem;
+
+//   content: url("defaultProfilePicGray.png");
+// }
+
+// .icon-colors-4 {
+//   background-color: rgb(250, 166, 26) !important;
+//   color: rgb(250, 166, 26) !important;
+//   fill: rgb(250, 166, 26) !important;
+//   // background-image: image_url('defaultProfilePicYellow.png');
+//   // background-position: center;
+//   // background-size: contain;
+//   // width: 2rem;
+//   // height: 2rem;
+
+//   content: url("defaultProfilePicYellow.png");
+// }
+
+// .icon-colors-5 {
+//   background-color: rgb(59, 165, 92) !important;
+//   color: rgb(59, 165, 92) !important;
+//   fill: rgb(59, 165, 92) !important;
+//   // background-image: image_url('defaultProfilePicGreen.png');
+//   // background-position: center;
+//   // background-size: contain;
+//   // width: 2rem;
+//   // height: 2rem;
+
+//   content: url("defaultProfilePicGreen.png");
+// }
+
+// .icon-colors-6 {
+//   background-color: blue !important;
+//   color: blue !important;
+//   fill: blue !important;
+//   // background-image: image_url('defaultProfilePicBlue.png');
+//   // background-position: center;
+//   // background-size: contain;
+//   // width: 2rem;
+//   // height: 2rem;
+
+//   content: url("defaultProfilePicBlue.png");
+// }
+
+// .icon-color5-7 {
+//   background-color: #000000 !important;
+//   color: #000000 !important;
+//   fill: #000000 !important;
+//   // background-image: image_url('defaultProfilePicBlack.png');
+//   // background-position: center;
+//   // background-size: contain;
+//   // width: 2rem;
+//   // height: 2rem;
+//   content: url("outlinepic.png");
+
+//   // content: url('defaultProfilePicBlack.png');
+// }
+
+// .icon-colors-7 {
+//   background-color: #000000 !important;
+//   color: #000000 !important;
+//   fill: #000000 !important;
+//   // background-image: image_url('defaultProfilePicBlack.png');
+//   // background-position: center;
+//   // background-size: contain;
+//   // width: 2rem;
+//   // height: 2rem;
+
+//   // content: url('defaultProfilePicBlack.png');
+//   content: url("defaultProfilePicPurple.png");
+// }
+
+// .icon-colors-8 {
+//   background-color: purple !important;
+//   color: purple !important;
+//   fill: purple !important;
+//   // background-color: rgb(235,69,159);
+//   // background-image: image_url('defaultProfilePicSecretPink.png');
+//   // background-position: center;
+//   // background-size: contain;
+//   // width: 2rem;
+//   // height: 2rem;
+
+//   content: url("defaultProfilePicSecretPink.png");
+// }
+
+// .icon-colors-9 {
+//   background-color: cyan !important;
+//   color: cyan !important;
+//   fill: cyan !important;
+//   // background-image: image_url('defaultProfilePicCyan.png');
+//   content: url("defaultProfilePicCyan.png");
+//   // width: 2rem;
+//   // height: 2rem;
+
+//   // background-position: center;
+//   // background-size: contain;
+// }
+
+// .icon-colors-10 {
+//   background-color: #005a17 !important;
+//   color: #005a17 !important;
+//   fill: #005a17 !important;
+//   // background-image: image_url('defaultProfilePicStrifeGreen.png');
+//   // background-position: center;
+//   // background-size: contain;
+//   // width: 2rem;
+//   // height: 2rem;
+
+//   content: url("defaultProfilePicStrifeGreen.png");
+// }
+
+// .group-chat-icon-color-1 {
+//   background-color: $group-chat-icon-color-1 !important;
+// }
+
+// .group-chat-icon-color-2 {
+//   background-color: $group-chat-icon-color-2 !important;
+// }
+
+// .group-chat-icon-color-3 {
+//   background-color: $group-chat-icon-color-3 !important;
+// }
+
+// .group-chat-icon-color-4 {
+//   background-color: $group-chat-icon-color-4 !important;
+// }
+
+// .group-chat-icon-color-5 {
+//   background-color: $group-chat-icon-color-5 !important;
+// }
+
+// .group-chat-icon-color-6 {
+//   background-color: $group-chat-icon-color-6 !important;
+// }
+
+// .group-chat-icon-color-7 {
+//   background-color: $group-chat-icon-color-7 !important;
+// }
+
+// .group-chat-icon-color-8 {
+//   background-color: $group-chat-icon-color-8 !important;
+// }
+
+// .group-chat-icon-color-9 {
+//   background-color: $group-chat-icon-color-9 !important;
+// }
+
+// .group-chat-icon-color-10 {
+//   background-color: $group-chat-icon-color-10 !important;
+// }
+
+// //use this stuff to wrap all components once we get
+// //intra wrapping and routing of components properly
+
+// // this is wrapped around every component excluding modals
+// .container-mapper {
+//   position: relative;
+//   overflow: hidden;
+//   width: 100%;
+//   height: 100%;
+//   display: -webkit-box;
+//   display: flex;
+// }
+
+// //appears 1st child within container mapper wraps server nav bar
+// .guildservernavbar-wrapper {
+//   overflow: hidden;
+//   display: -webkit-box;
+//   display: flex;
+//   -webkit-box-orient: vertical;
+//   -webkit-box-direction: normal;
+//   flex-direction: column;
+//   flex-shrink: 0;
+//   position: relative;
+//   width: 72px;
+//   flex-shrink: 0;
+// }
+
+// //appears after the above element ^ it is a sibiling wrapping
+// // all components besides server nav bar
+// .base-current-components {
+//   display: -webkit-box;
+//   display: flex;
+//   -webkit-box-orient: vertical;
+//   -webkit-box-direction: normal;
+//   overflow: hidden;
+//   flex-direction: column;
+//   position: relative;
+//   -webkit-box-flex: 1;
+//   flex-grow: 1;
+// }
+
+// // child of base-current wrapps all components that extend > 72-75px
+// // from left side of screen
+// .current-components-contents {
+//   display: -webkit-box;
+//   display: flex;
+//   -webkit-box-align: stretch;
+//   align-items: stretch;
+//   -webkit-box-pack: start;
+//   justify-content: flex-start;
+//   min-width: 0;
+//   min-height: 0;
+//   -webkit-box-flex: 1;
+//   flex: 1 1 auto;
+//   position: relative;
+// }
+
+// //home-nav-bar-container this element with the new changes
+// // causes it to have a zeroed height not doing anything
+// // lets fix that and make it useful for the entire app
+// //not just the homepage container upon solving
+// // intra component routing uncomment and replace the
+// // current homepage-nav-bar-container with this one.
+// // the avobe element might outright be the same so replace this
+// //with that one instead.
+// // .home-nav-bar-container{
+// //     background-color: #313338;
+// //     display: -webkit-box;
+// //     display: -ms-flexbox;
+// //     display: flex;
+// //     -webkit-box-align: stretch;
+// //     -ms-flex-align: stretch;
+// //     align-items: stretch;
+// //     -webkit-box-pack: start;
+// //     -ms-flex-pack: start;
+// //     justify-content: flex-start;
+// //     min-width: 0;
+// //     min-height: 0;
+// //     -webkit-box-flex: 1;
+// //     -ms-flex: 1 1 auto;
+// //     flex: 1 1 auto;
+// //     position: relative;
+// // }
+// //the above 2 components basically contain/ wrap both
+// //dmServer nav bar and user nav bar then another components
+// // that appear to the left of the are wrap as well but appear
+// //after dmNav and userNav.
+
+// //*/*/*/*/*/*/*/*/*/
+// //**/repalce ment*/*/
+// //*/*/*/*/*/*/*/*/*/
+
+// .appAsideWrapper {
+//   -webkit-box-flex: 1;
+//   -ms-flex: 1 1 auto;
+//   flex: 1 1 auto;
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-orient: horizontal;
+//   -webkit-box-direction: normal;
+//   -ms-flex-direction: row;
+//   flex-direction: row;
+//   min-height: 0;
+// }
+
+// .nonAppAsidePanel {
+//   -webkit-box-flex: 1;
+//   -ms-flex: 1;
+//   flex: 1;
+//   min-width: 0;
+// }
+
+// .app-main {
+//   z-index: auto;
+//   height: 100%;
+//   position: relative;
+// }
+
+// .app-main-inner {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   background-color: var(--background-tertiary);
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-orient: vertical;
+//   -webkit-box-direction: normal;
+//   -ms-flex-direction: column;
+//   flex-direction: column;
+// }
+
+// .app-bd-bg {
+//   background: var(--bg-overlay-app-frame, var(--background-tertiary));
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   right: 0;
+// }
+
+// .app-layer-main {
+//   position: relative;
+//   overflow: hidden;
+// }
+// .app-layer-main-sub {
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-orient: vertical;
+//   -webkit-box-direction: normal;
+//   -ms-flex-direction: column;
+//   flex-direction: column;
+//   -webkit-box-flex: 1;
+//   -ms-flex: 1 1 auto;
+//   flex: 1 1 auto;
+//   overflow: hidden;
+//   min-width: 0;
+//   min-height: 0;
+// }
+
+// .app-layer-main > .app-layer-container {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   overflow: hidden;
+//   -webkit-box-orient: vertical;
+//   -webkit-box-direction: normal;
+//   -ms-flex-direction: column;
+//   flex-direction: column;
+// }
+
+// .app-layer-main > .app-layer-container.animating {
+//   pointer-events: none;
+//   will-change: transform, opacity;
+// }
+
+// .stop-app-pulling{
+//   -webkit-transition-property: none !important;
+//   transition-property: none !important;
+//   -webkit-animation: none !important;
+//   animation: none !important;
+// }
+
+// .stop-animations * {
+//   -webkit-transition-property: none !important;
+//   transition-property: none !important;
+//   -webkit-animation: none !important;
+//   animation: none !important;
+// }
+
+// .app-layer-container {
+//   background-color: var(--background-primary);
+// }
+
+// .app-layer-container.baselayerClear {
+//   background-color: transparent;
+// }
+
+// .app-layer-main > .mass-modal-layer-container {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   overflow: hidden;
+//   -webkit-box-orient: vertical;
+//   -webkit-box-direction: normal;
+//   -ms-flex-direction: column;
+//   flex-direction: column;
+// }
