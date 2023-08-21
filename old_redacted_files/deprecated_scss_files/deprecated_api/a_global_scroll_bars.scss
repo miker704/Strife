@@ -1,0 +1,341 @@
+// @import "global_vars";
+
+// //scroll bars declared here to prevent overrides
+// .global-scroller {
+//   padding: 16px;
+//   height: 100%;
+//   margin-left: 2px;
+//   border-left: 1px solid $background-modifier-accent;
+// }
+
+// .global-scroll-thin-raw-attributes {
+//   scrollbar-color: $scrollbar-thin-thumb $scrollbar-thin-track;
+//   scrollbar-width: thin;
+// }
+
+// .global-scroll-faded-raw-attributes {
+//   scrollbar-color: transparent transparent;
+// }
+
+// .global-scroll-thin-raw-attributes.global-scroll-faded-raw-attributes:hover {
+//   scrollbar-color: $scrollbar-thin-thumb $scrollbar-thin-track;
+// }
+
+// .global-scroller-base {
+//   position: relative;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   min-height: 0;
+//   -webkit-box-flex: 1;
+//   flex: 1 1 auto;
+//   outline: 0;
+// }
+
+// .global-scroll-thin-raw-attributes::-webkit-scrollbar {
+//   width: 8px;
+//   height: 8px;
+// }
+
+// .global-scroll-thin-raw-attributes::-webkit-scrollbar-corner {
+//   background-color: transparent;
+// }
+
+// .global-scroll-thin-raw-attributes::-webkit-scrollbar-thumb {
+//   background-clip: padding-box;
+//   border: 2px solid transparent;
+//   border-radius: 4px;
+//   background-color: $scrollbar-thin-thumb;
+//   min-height: 40px;
+// }
+
+// .global-scroll-thin-raw-attributes::-webkit-scrollbar-track {
+//   border-color: $scrollbar-thin-track;
+//   background-color: $scrollbar-thin-track;
+//   border: 2px solid $scrollbar-thin-track;
+// }
+
+// .auto-scroll-raw-attributes {
+//   scrollbar-color: $scrollbar-auto-scrollbar-color-thumb
+//     $scrollbar-auto-scrollbar-color-track;
+//   scrollbar-width: auto;
+// }
+
+// .auto-scroll-raw-attributes::-webkit-scrollbar {
+//   width: 16px;
+//   height: 16px;
+// }
+
+// .auto-scroll-raw-attributes::-webkit-scrollbar-corner {
+//   background-color: transparent;
+// }
+
+// .auto-scroll-raw-attributes.global-scroll-faded-raw-attributes:hover {
+//   scrollbar-color: $scrollbar-auto-scrollbar-color-thumb
+//     $scrollbar-auto-scrollbar-color-track;
+// }
+
+// .auto-scroll-raw-attributes::-webkit-scrollbar-thumb,
+// .auto-scroll-raw-attributes::-webkit-scrollbar-track {
+//   border: 4px solid transparent;
+//   background-clip: padding-box;
+//   border-radius: 8px;
+// }
+
+// .auto-scroll-raw-attributes::-webkit-scrollbar-thumb {
+//   background-color: $scrollbar-auto-thumb;
+//   min-height: 40px;
+// }
+
+// .auto-scroll-raw-attributes::-webkit-scrollbar-track {
+//   background-color: $scrollbar-auto-track;
+// }
+
+// .global-scroll-faded-raw-attributes::-webkit-scrollbar-thumb,
+// .global-scroll-faded-raw-attributes::-webkit-scrollbar-track {
+//   visibility: hidden;
+// }
+
+// .global-scroll-faded-raw-attributes:hover::-webkit-scrollbar-thumb,
+// .global-scroll-faded-raw-attributes:hover::-webkit-scrollbar-track {
+//   visibility: visible;
+// }
+
+// .chat-scroller {
+//   // overflow-y: scroll;
+//   // overflow-x: hidden;
+//   // overflow-anchor: none;
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   outline: 0;
+// }
+
+// .global-scroll-none {
+//   scrollbar-width: none;
+// }
+
+// .global-scroll-none::-webkit-scrollbar {
+//   width: 0;
+//   height: 0;
+// }
+
+// .no-scroll {
+//   overflow: visible !important;
+// }
+
+// .server-message-chat-box-area::-webkit-scrollbar {
+//   display: none;
+// }
+
+// .chat-scroller::-webkit-scrollbar-track {
+//   margin-bottom: 8px;
+// }
+
+// .disableScrollAnchor {
+//   overflow-anchor: none;
+// }
+
+// .reactive-scroller {
+//   overflow-y: scroll;
+//   overflow-x: hidden;
+// }
+
+// .chat-input-tsa-webkit-scroll::-webkit-scrollbar {
+//   width: 12px;
+//   height: 12px;
+// }
+
+// .chat-input-tsa-webkit-scroll::-webkit-scrollbar-thumb,
+// .chat-input-tsa-webkit-scroll::-webkit-scrollbar-track {
+//   background-clip: padding-box;
+//   border: 4px solid transparent;
+// }
+
+// .chat-input-tsa-webkit-scroll::-webkit-scrollbar-track {
+//   border-width: initial;
+// }
+
+// .chat-input-tsa-webkit-scroll::-webkit-scrollbar-thumb {
+//   background-color: $primary-800-60;
+//   border-radius: 8px;
+// }
+
+// .global-scrollbar-ghost-hairline::-webkit-scrollbar {
+//   width: 4px;
+//   height: 4px;
+// }
+
+// .global-scrollbar-ghost-hairline::-webkit-scrollbar-thumb {
+//   background-color: $primary-800-60;
+//   border-radius: 2px;
+//   cursor: move;
+// }
+
+// .global-scrollbar-ghost-hairline::-webkit-scrollbar-track {
+//   background-color: transparent;
+//   border: none;
+// }
+
+// .global-scrollbar-no-border::-webkit-scrollbar-corner {
+//   border: none;
+//   background: none;
+// }
+
+// .tsa-scrollbar::-webkit-scrollbar {
+//   width: 14px;
+//   height: 14px;
+// }
+
+// .tsa-scrollbar::-webkit-scrollbar-thumb,
+// .tsa-scrollbar::-webkit-scrollbar-track {
+//   border-radius: 7px;
+//   background-clip: padding-box;
+//   border: 3px solid transparent;
+// }
+
+// .tsa-scrollbar::-webkit-scrollbar-thumb {
+//   background-color: $scrollbar-auto-thumb;
+// }
+
+// .tsa-scrollbar::-webkit-scrollbar-track {
+//   background-color: $scrollbar-auto-track;
+//   border-width: initial;
+// }
+
+// .exs-main-content-scroller-base {
+//   padding: 16px;
+//   height: 100%;
+// }
+
+// .root-with-shadow {
+//   -webkit-box-shadow: $dark-elevation-border, $dark-elevation-high;
+//   box-shadow: $dark-elevation-border, $dark-elevation-high;
+// }
+
+// @media (max-width: 485px) {
+//   .create-channel-modal {
+//     min-width: auto;
+//     max-width: 100%;
+//     width: 100%;
+//   }
+
+//   .fullscreenOnMobile {
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     border-radius: 0;
+//     max-height: none;
+//     overflow-y: auto;
+//     width: 100%;
+//   }
+
+//   .fullscreenOnMobile .ccm-submit-button-wrapper {
+//     border-radius: 0;
+//   }
+
+//   .fullscreenOnMobile .ccm-inner-flex {
+//     border-radius: 0;
+//   }
+// }
+
+// //light
+
+// .global-scroll-thin-raw-attributes-light {
+//   scrollbar-color: var(--scrollbar-thin-thumb) var(--scrollbar-thin-track);
+//   scrollbar-width: thin;
+// }
+
+// .global-scroll-thin-raw-attributes-light.global-scroll-faded-raw-attributes:hover {
+//   scrollbar-color: var(--scrollbar-thin-thumb) var(--scrollbar-thin-track);
+// }
+
+// .global-scroll-thin-raw-attributes-light::-webkit-scrollbar {
+//   width: 8px;
+//   height: 8px;
+// }
+
+// .global-scroll-thin-raw-attributes-light::-webkit-scrollbar-corner {
+//   background-color: transparent;
+// }
+
+// .global-scroll-thin-raw-attributes-light::-webkit-scrollbar-thumb {
+//   background-clip: padding-box;
+//   border: 2px solid transparent;
+//   border-radius: 4px;
+//   background-color: var(--scrollbar-thin-thumb);
+//   min-height: 40px;
+// }
+
+// .global-scroll-thin-raw-attributes-light::-webkit-scrollbar-track {
+//   border-color: var(--scrollbar-thin-track);
+//   background-color: var(--scrollbar-thin-track);
+//   border: 2px solid var(--scrollbar-thin-track);
+// }
+
+// .copy-clip-board-modal-scroller {
+//   padding: 6px 8px;
+// }
+
+// .mini-menu-scroller {
+//   padding: 6px 8px;
+// }
+
+// .uasm-scroller {
+//   z-index: 0;
+//   margin-right: -17px;
+//   margin-top: 16px;
+//   max-height: 236px;
+//   background-color: $background-secondary;
+// }
+
+// .uasm-scroller::-webkit-scrollbar-track {
+//   background-color: $background-secondary-alt !important;
+// }
+
+// .upc-overlay-background ::-webkit-scrollbar-thumb {
+//   background-color: var(--profile-body-divider-color);
+// }
+
+// .upc-overlay-background * {
+//   scrollbar-color: var(--profile-body-divider-color) var(--scrollbar-thin-track);
+// }
+
+// .upc-content-section-scroller {
+//   -webkit-box-flex: 0;
+//   -ms-flex: 0 1 auto;
+//   flex: 0 1 auto;
+//   min-height: 0;
+//   padding: 0 12px;
+//   -webkit-box-shadow: 0 -1px 0 var(--background-modifier-accent);
+//   box-shadow: 0 -1px 0 var(--background-modifier-accent);
+//   // -webkit-box-shadow: 0 -1px 0 var(--profile-body-divider-color);
+//   // box-shadow: 0 -1px 0 var(--profile-body-divider-color);
+// }
+
+// .upc-body-friend-options-scroller {
+//   padding: 2px 0px 4px 2px;
+// }
+
+// .upc-body-friend-options-scroller::-webkit-scrollbar-track {
+//   margin-bottom: 4px;
+// }
+
+// .nitro-scroller {
+//   background-color: var(--background-primary);
+//   contain: layout size;
+// }
+
+// .megaUpc-info-scroller {
+//   padding: 0px 12px;
+//   height: 100%;
+// }
+
+// .megaUpc-list-scroller{
+//   padding: 12px 0px;
+//   height: 100%;
+//   width: 100%;
+// }
