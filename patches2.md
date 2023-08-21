@@ -1303,6 +1303,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up splash.scss to deprecated folder.
     - Backed up z_global_scroll_bars.scss to deprecated folder.
     - Backed up a_global_scroll_bars.scss to deprecated folder.
+    - Backed up active_now_section.scss to deprecated folder.
 
 ## Backend Changes
 
