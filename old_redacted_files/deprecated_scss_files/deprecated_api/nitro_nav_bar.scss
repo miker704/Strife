@@ -1,0 +1,218 @@
+// @import 'global_vars';
+
+// .nitro-nav-bar-wrapper {
+//     position: relative;
+//     max-width: 224px;
+//     margin-left: 8px;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     display: block;
+//     padding: 1px 0;
+//     border-radius: 4px;
+//     -webkit-transition: none;
+//     transition: none;
+//     font-family: $global-font;
+// }
+
+// .nitro-nav-bar {
+//     padding-right: 8px;
+//     display: -webkit-box;
+//     -webkit-box-align: center;
+//     display: flex;
+//     align-items: center;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     width: 100%;
+//     color: $channels-default;
+//     cursor: pointer;
+//     border-radius: inherit;
+//     outline: 0;
+// }
+
+// .nitro-nav-bar:hover,
+// .nitro-nav-bar:focus-within,
+// .nitro-nav-bar.selected:hover,
+// .nitro-nav-bar.selected:focus-within {
+//     color: $interactive-hover;
+//     background-color: $background-modifier-hover;
+
+//     .nitro-avatar,
+//     .nitro-avatar-text {
+//         color: $interactive-hover;
+//     }
+// }
+
+// .nitro-nav-bar:active {
+//     color: $interactive-active;
+//     background-color: $background-modifier-active;
+// }
+
+// .nitro-nav-bar.selected {
+//     color: $interactive-active;
+//     background-color: $background-modifier-selected;
+
+//     .nitro-avatar,
+//     .nitro-avatar-text {
+//         color: $interactive-active;
+//     }
+// }
+
+
+
+// .nitro-nav-bar-link {
+//     display: -webkit-box;
+//     -webkit-box-align: center;
+//     display: flex;
+//     min-width: 0;
+//     -webkit-box-flex: 1;
+//     flex: 1 1 auto;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     align-items: center;
+//     color: inherit;
+//     outline: 0;
+//     text-decoration: none;
+//     cursor: pointer;
+// }
+
+
+// .nitro-avatar-wrapper {
+//     -webkit-box-flex: 1;
+//     flex-grow: 1;
+//     display: -webkit-box;
+//     -webkit-box-align: center;
+//     display: flex;
+//     align-items: center;
+//     min-width: 0;
+//     border-radius: 4px;
+//     height: 42px;
+//     padding: 0px 8px;
+//     outline: 0;
+// }
+
+// .nitro-avatar {
+
+//     -webkit-box-flex: 0;
+//     flex: 0 0 auto;
+//     width: 32px;
+//     height: 32px;
+//     margin-right: 12px;
+//     display: -webkit-box;
+//     -webkit-box-pack: center;
+//     -webkit-box-align: center;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     outline: 0;
+
+// }
+
+// .nitro-avatar-text-wrapper {
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     min-width: 0;
+//     -webkit-box-flex: 1;
+//     flex: 1 1 auto;
+//     outline: 0;
+// }
+
+// .nitro-avatar-text-inner {
+//     display: -webkit-box;
+//     -webkit-box-pack: start;
+//     -webkit-box-align: center;
+//     display: flex;
+//     justify-content: flex-start;
+//     align-items: center;
+//     outline: 0;
+// }
+
+// .nitro-avatar-text {
+//     outline: 0;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     font-size: 16px;
+//     line-height: 20px;
+//     font-weight: 500;
+//     -webkit-box-flex: 0;
+//     flex: 0 1 auto;
+//     font-family: $global-font;
+
+// }
+
+// .strife-nitro-lbl1 {
+//     display: flex;
+//     -webkit-box-pack: justify;
+//     justify-content: space-between;
+//     -webkit-box-align: center;
+//     align-items: center;
+//     position: relative;
+//     pointer-events: none;
+//     z-index: 2;
+//     box-sizing: border-box;
+
+// }
+
+// .strife-nitro-img1 {
+//     background-image: linear-gradient(90deg, $purple-nitro-from, $purple-nitro-to);
+//     color: $white-500;
+//     -webkit-box-align: center;
+//     align-items: center;
+//     display: flex;
+//     border-radius: 12px;
+//     font-weight: 600;
+//     font-size: 12px;
+//     line-height: 12px;
+//     margin-left: auto;
+//     padding: 4px 8px;
+//     pointer-events: all;
+//     text-transform: uppercase;
+//     box-sizing: border-box;
+//     font-family: $global-font;
+//     padding-right: 5px;
+// }
+
+// .strife-nitro-img1.strife {
+//     background-image: linear-gradient(90deg, $green-nitro-from, $green-nitro-to);
+// }
+
+// .strife-nitro-clock1 {
+//     padding-right: 2px;
+// }
+
+
+
+
+// .strife-nitro-lbl {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     position: relative;
+//     pointer-events: none;
+//     z-index: 23;
+//     box-sizing: border-box;
+
+// }
+
+// .strife-nitro-img {
+//     display: flex;
+//     border-radius: 12px;
+//     font-weight: 600;
+//     font-size: 12px;
+//     line-height: 12px;
+//     margin-left: auto;
+//     padding: 4px 8px;
+//     pointer-events: all;
+//     text-transform: uppercase;
+//     box-sizing: border-box;
+//     background-image: linear-gradient(90deg, $purple-nitro-from, $purple-nitro-to);
+//     color: $white-500;
+//     font-family: $global-font;
+//     padding-right: 5px;
+// }
+
+// .strife-nitro-img.strife {
+//     background-image: linear-gradient(90deg, $green-nitro-from, $green-nitro-to);
+// }
