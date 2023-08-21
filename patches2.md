@@ -1306,7 +1306,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up active_now_section.scss to deprecated folder.
     - Backed up approve.scss to deprecated folder.
     - Backed up call_grid.scss to deprecated folder.
-
+    - Backed up calls.scss to deprecated folder.
 
 ## Backend Changes
 
