@@ -1297,6 +1297,9 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Core Cable function calls to Mega Upc Modal relationship and create dm functions to allow the modal to interact asynchronously with any other area of the app  the has friendship actions and show up to the viewed user and they can then send back any interaction data back to the current user to have live changes in front of them this also applies to the mega modal upc if the other user has it open.
     - Added Core Cable function calls to Mega User options Modal relationship and create dm functions.
     - Added a props.fetchUser when clicking on a user in the mutual friends tab in mega upc modal to add that user to users entities state to allow that user to be interacted error free. 
+    - Moving all scss files that use scss global vars primarily to deprecated to switch to css vars for future theme switching.
+    - Backed up application.scss to deprecated folder.
+
 
 ## Backend Changes
 
