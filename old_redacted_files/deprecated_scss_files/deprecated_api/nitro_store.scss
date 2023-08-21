@@ -1,0 +1,958 @@
+// .nitro-main-container {
+//   overflow-x: hidden;
+//   overflow-y: auto;
+//   flex: 1 1 auto;
+//   display: flex;
+//   flex-direction: column;
+//   -webkit-overflow-scrolling: touch;
+//   background-color: var(--deprecated-store-bg);
+// }
+
+// .nitro-home-wrapper {
+//   height: 100%;
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .nitro-store-premium-container {
+//   position: relative;
+//   flex: 1 1 auto;
+//   margin: 0 auto;
+// }
+
+// .nitro-store-tier-0 {
+//   padding: 0px 32px;
+//   flex: 1;
+//   display: flex;
+//   flex-direction: column;
+//   margin: 0 auto;
+//   align-items: center;
+//   height: 100%;
+// }
+
+// .nitro-bottom-visibility-sensor {
+//   position: absolute;
+//   bottom: 0;
+//   height: 300px;
+// }
+
+// .nitro-empty-div {
+//   position: absolute;
+//   pointer-events: none;
+//   min-height: 0px;
+//   min-width: 1px;
+//   flex: 0 0 auto;
+//   height: 0px;
+// }
+
+// .strife-nitro-svg-background {
+//   position: absolute;
+//   z-index: -1;
+//   -webkit-mask-image: -webkit-gradient(
+//     linear,
+//     left top,
+//     left bottom,
+//     color-stop(48.68%, #000),
+//     to(transparent)
+//   );
+//   -webkit-mask-image: linear-gradient(180deg, #000 48.68%, transparent);
+//   mask-image: -webkit-gradient(
+//     linear,
+//     left top,
+//     left bottom,
+//     color-stop(48.68%, #000),
+//     to(transparent)
+//   );
+//   mask-image: linear-gradient(180deg, #000 48.68%, transparent);
+// }
+// .stop1-nitro {
+//   stop-color: var(--premium-tier-0-header-gradient-1);
+// }
+// .stop2-nitro {
+//   stop-color: var(--premium-tier-0-header-gradient-2);
+// }
+// .stop3-nitro {
+//   stop-color: var(--premium-tier-0-header-gradient-3);
+// }
+// .stop4-nitro {
+//   stop-color: var(--premium-tier-0-header-gradient-4);
+// }
+// .stop5-nitro {
+//   stop-color: var(--premium-tier-0-header-gradient-5);
+// }
+
+// .nitro-heroscreen {
+//   margin-bottom: 96px;
+//   padding-top: 96px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   position: relative;
+//   text-align: center;
+// }
+// .nitro-heroscreen-text-container {
+//   max-width: 650px;
+// }
+
+// .nitro-heroscreen-h2 {
+//   color: var(--white-500);
+//   font-family: var(--font-headline);
+//   font-size: 44px;
+//   line-height: 42px;
+//   font-weight: 800;
+// }
+
+// .nitro-heroscreen-subtext {
+//   font-size: 20px;
+//   line-height: 24px;
+//   font-family: var(--global-font);
+//   font-weight: 400;
+//   margin-top: 24px;
+//   margin-bottom: 32px;
+//   color: var(--white-500);
+// }
+
+// .nitro-heroscreen-button-container {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   gap: 16px;
+// }
+
+// .nitro-heroscreen-sub-button {
+//   color: var(--brand-experiment);
+//   background-color: var(--white-500);
+//   cursor: pointer;
+//   width: 160px;
+//   height: 40px;
+//   overflow: hidden;
+//   min-width: 96px;
+//   min-height: 38px;
+//   -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+//   transition: background-color 0.17s ease, color 0.17s ease;
+//   position: relative;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   border: none;
+//   border-radius: 3px;
+//   font-size: 14px;
+//   font-weight: 500;
+//   line-height: 16px;
+//   padding: 2px 16px;
+//   -webkit-user-drag: none;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+//   font-family: var(--global-font);
+//   text-rendering: optimizeLegibility;
+// }
+// .nitro-heroscreen-sub-button > * {
+//   pointer-events: none;
+// }
+// .nitro-heroscreen-sub-button-contents {
+//   display: flex;
+//   align-items: center;
+// }
+// .nitro-heroscreen-sub-button-text {
+//   max-width: 140px;
+//   white-space: nowrap;
+//   text-overflow: ellipsis;
+//   overflow: hidden;
+//   text-transform: capitalize;
+//   font-size: 14px;
+//   font-family: var(--global-font);
+// }
+
+// .nitro-heroscreen-sub-icon {
+//   margin-right: 4px;
+//   height: 20px;
+// }
+
+// .nitro-heroscreen-sub-button:hover {
+//   background-color: var(--brand-experiment-100);
+// }
+
+// .nitro-heroscreen-sub-button:active {
+//   background-color: var(--brand-experiment-200);
+// }
+
+// .nitro-heroscreen-gift-button {
+//   color: var(--white-500);
+//   border-color: var(--white-500);
+//   cursor: pointer;
+//   width: 160px;
+//   height: 40px;
+//   overflow: hidden;
+//   min-width: 96px;
+//   min-height: 38px;
+//   -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+//   transition: background-color 0.17s ease, color 0.17s ease;
+//   border-width: 1px;
+//   border-style: solid;
+//   position: relative;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   background: none;
+//   border-radius: 3px;
+//   font-size: 14px;
+//   font-weight: 500;
+//   line-height: 16px;
+//   padding: 2px 16px;
+//   -webkit-user-drag: none;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+//   font-family: var(--global-font);
+//   text-rendering: optimizeLegibility;
+// }
+
+// .nitro-heroscreen-gift-button-contents {
+//   display: flex;
+//   align-items: center;
+// }
+
+// .nitro-heroscreen-gift-button-text {
+//   max-width: 140px;
+//   white-space: nowrap;
+//   text-overflow: ellipsis;
+//   overflow: hidden;
+//   font-size: 14px;
+//   font-family: var(--global-font);
+// }
+
+// .nitro-present-icon {
+//   width: 16px;
+//   height: 16px;
+//   min-width: 16px;
+//   min-height: 16px;
+//   margin-right: 4px;
+// }
+
+// .nitro-sparkle-star-icon {
+//   color: var(--white-500);
+//   position: absolute;
+// }
+
+// .hero-sparkle-star1 {
+//   top: 60px;
+//   left: -60px;
+//   width: 16px;
+//   height: 32px;
+// }
+// .hero-sparkle-star2 {
+//   top: 98px;
+//   left: -12px;
+//   width: 16px;
+//   height: 32px;
+// }
+
+// .hero-sparkle-star3 {
+//   bottom: -24px;
+//   right: 20px;
+//   width: 16px;
+//   height: 32px;
+// }
+// .hero-sparkle-star4 {
+//   bottom: 16px;
+//   right: -36px;
+//   width: 24px;
+//   height: 48px;
+// }
+
+// .nitro-premium-cards-container {
+//   margin-bottom: 80px;
+//   max-width: 824px;
+//   width: 100%;
+// }
+
+// .nitro-premium-cards {
+//   display: flex;
+//   gap: 24px;
+//   width: 100%;
+// }
+
+// .tier-card-0 {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   border-radius: 16px;
+//   position: relative;
+//   color: var(--white-500);
+//   padding: 24px;
+//   width: 50%;
+//   background-image: linear-gradient(
+//     90deg,
+//     var(--brand-experiment),
+//     var(--sky-blue)
+//   );
+// }
+
+// .wumpus-card-img-container {
+//   position: absolute;
+//   width: 40%;
+//   top: 0;
+//   right: 0;
+//   border-top-right-radius: 16px;
+//   overflow: hidden;
+// }
+
+// .wumpus-img-wrapper {
+//   max-width: 270px;
+//   width: 100%;
+//   aspect-ratio: 270 / 242;
+//   display: block;
+//   position: relative;
+//   -webkit-user-drag: none;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+//   overflow: hidden;
+//   border-radius: 3px;
+// }
+
+// .tier-card-1-img {
+//   content: image_url("wumpus_wheel.svg");
+//   max-width: 270px;
+//   max-height: 242px;
+//   width: 100%;
+//   display: block;
+//   aspect-ratio: 270 / 242;
+// }
+
+// .tier-card-2-img {
+//   content: image_url("jetpack_wumpus.svg");
+//   max-width: 270px;
+//   max-height: 242px;
+//   width: 100%;
+//   display: block;
+//   aspect-ratio: 270 / 242;
+// }
+
+// .tier-card-2 {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   border-radius: 16px;
+//   position: relative;
+//   color: var(--white-500);
+//   padding: 24px;
+//   width: 50%;
+//   background-image: linear-gradient(
+//     90deg,
+//     var(--premium-tier-2-purple-for-gradients),
+//     var(--premium-tier-2-pink-for-gradients)
+//   );
+// }
+
+// .tier-benefits {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   margin-bottom: 8px;
+// }
+
+// .tier-benefits-text {
+//   font-size: 16px;
+//   line-height: 20px;
+//   font-weight: 400;
+//   font-family: var(--global-font);
+//   color: var(--white-500);
+// }
+
+// .tier-card-1-logo-container {
+//   display: flex;
+//   flex-direction: row;
+// }
+
+// .tier-card-1-logo {
+//   width: 106px;
+//   height: 40px;
+//   margin-bottom: 8px;
+// }
+// .tier-card-1-h2 {
+//   font-family: var(--global-font);
+//   font-size: 16px;
+//   line-height: 20px;
+//   font-weight: 500;
+//   color: var(--white-500);
+// }
+
+// .tier-card-1-h2:last-of-type {
+//   margin: 0 0 18px;
+// }
+
+// .tier-price {
+//   font-weight: 700;
+// }
+
+// .tier-card-1-icons {
+//   margin-right: 8px;
+//   width: 24px;
+//   height: 24px;
+// }
+
+// .tier-card-button {
+//   color: var(--brand-experiment);
+//   background-color: var(--white-500);
+//   cursor: pointer;
+//   margin-top: 60px;
+//   overflow: hidden;
+//   width: auto;
+//   height: 38px;
+//   min-width: 96px;
+//   min-height: 38px;
+//   -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+//   transition: background-color 0.17s ease, color 0.17s ease;
+//   position: relative;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   border: none;
+//   border-radius: 3px;
+//   font-size: 14px;
+//   font-weight: 500;
+//   line-height: 16px;
+//   padding: 2px 16px;
+//   -webkit-user-drag: none;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+//   font-family: var(--global-font);
+//   text-rendering: optimizeLegibility;
+// }
+// .tier-card-button > * {
+//   pointer-events: none;
+// }
+
+// .tier-card-sub-button {
+//   display: flex;
+//   align-items: center;
+// }
+
+// .tier-card-button:hover {
+//   background-color: var(--brand-experiment-100);
+// }
+
+// .tier-card-button:active {
+//   background-color: var(--brand-experiment-200);
+// }
+
+// .tier-card-2-banner-logo {
+//   margin-bottom: 8px;
+//   width: 96px;
+//   height: 24px;
+//   display: block;
+// }
+
+// .nitro-perks-container {
+//   margin-bottom: 86px;
+//   width: 100%;
+//   max-width: 1066px;
+//   margin: 0 auto;
+// }
+
+// .nitro-perks-container-h2 {
+//   text-align: center;
+//   margin-bottom: 32px;
+//   color: var(--header-primary);
+//   font-size: 32px;
+//   line-height: 40px;
+//   font-weight: 800;
+//   font-family: var(--global-font);
+// }
+
+// .bigNitroPerkCardContainer {
+//   display: grid;
+//   gap: 16px;
+//   grid-template-columns: repeat(auto-fit, minmax(398px, 1fr));
+//   margin-bottom: 16px;
+//   justify-items: center;
+// }
+
+// .bigNitroPerkCard {
+//   background-color: var(--background-secondary-alt);
+//   border-radius: 16px;
+//   padding: 40px;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+// .bigNitroPerkCard-h2 {
+//   margin-bottom: 32px;
+//   text-align: center;
+//   color: var(--header-primary);
+//   font-size: 24px;
+//   line-height: 30px;
+//   font-weight: 800;
+//   font-family: var(--global-font);
+// }
+
+// .bigNitroPerkCard-img-1 {
+//   max-width: 100%;
+//   margin: auto 0;
+//   content: image_url("bigPerk1.svg");
+// }
+// .bigNitroPerkCard-img-2 {
+//   max-width: 100%;
+//   margin: auto 0;
+//   content: image_url("bigPerk2.svg");
+// }
+// .bigNitroPerkCard-img-3 {
+//   max-width: 100%;
+//   margin: auto 0;
+//   content: image_url("bigPerk3.svg");
+// }
+// .bigNitroPerkCard-img-4 {
+//   max-width: 100%;
+//   margin: auto 0;
+//   content: image_url("bigPerk4.svg");
+// }
+
+// .smallNitroPerkCardContainer {
+//   display: grid;
+//   gap: 16px;
+//   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+//   justify-items: center;
+//   margin-bottom: 32px;
+// }
+// .smallNitroPerkCard {
+//   position: relative;
+//   background-color: var(--background-secondary-alt);
+//   border-radius: 16px;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   padding: 32px 24px;
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: space-between;
+// }
+
+// .smallNitroPerkCard-h2 {
+//   text-align: center;
+//   margin-bottom: 8px;
+//   margin-top: 16px;
+//   color: var(--header-primary);
+//   font-size: 24px;
+//   line-height: 30px;
+//   font-weight: 800;
+//   font-family: var(--global-font);
+// }
+
+// .smallNitroPerkCard-subtext {
+//   text-align: center;
+//   color: var(--text-normal);
+//   font-size: 14px;
+//   line-height: 18px;
+//   font-weight: 400;
+//   font-family: var(--global-font);
+// }
+
+// .client-card .smallNitroPerkCard-subtext {
+//   padding: 0px 30px;
+// }
+
+// .smallNitroPerkCard-img-1 {
+//   width: 202px;
+//   content: image_url("smallPerk1.svg");
+// }
+
+// .smallNitroPerkCard-img-2 {
+//   height: 132px;
+//   content: image_url("smallPerk2.svg");
+// }
+// .smallNitroPerkCard-img-3 {
+//   height: 132px;
+
+//   content: image_url("smallPerk3.svg");
+// }
+// .smallNitroPerkCard-img-4 {
+//   width: 195px;
+//   content: image_url("smallPerk4.png");
+// }
+// .smallNitroPerkCard-img-5 {
+//   width: 222px;
+//   content: image_url("smallPerk5.svg");
+// }
+// .smallNitroPerkCard-img-6 {
+//   width: 193px;
+//   content: image_url("smallPerk6.png");
+// }
+// .smallNitroPerkCard-img-7 {
+//   width: 116px;
+//   content: image_url("smallPerk7.png");
+// }
+// .smallNitroPerkCard-img-8 {
+//   width: 222px;
+//   content: image_url("smallPerk8.svg");
+// }
+
+// .smallNitroPerkCard-anchor {
+//   color: var(--text-link);
+//   text-decoration: var(--link-decoration);
+// }
+
+// .smallNitroPerkCard-anchor:hover {
+//   text-decoration: underline;
+// }
+// .nitro-plan-comparison-container {
+//   position: relative;
+//   width: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .nitro-plan-comparison-container-root {
+//   max-width: 700px;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .nitro-plan-comparison-container-root-header {
+//   margin-bottom: 44px;
+//   justify-content: center;
+//   text-align: center;
+//   color: var(--header-primary);
+//   font-family: var(--global-font);
+//   font-size: 32px;
+//   line-height: 40px;
+//   font-weight: 800;
+// }
+// .nitro-plan-comparison-table-wrapper {
+//   position: relative;
+//   padding: 2px;
+// }
+
+// .tier2ColumnOuterWrapper {
+//   border: 2px solid var(--premium-tier-2-purple-for-gradients-2);
+//   right: 0;
+//   border-radius: 16px;
+//   position: absolute;
+//   top: 0;
+//   width: 212px;
+//   height: 100%;
+//   z-index: 9;
+//   pointer-events: none;
+// }
+
+// .mostPopularTierPlan {
+//   background: linear-gradient(
+//     95.07deg,
+//     var(--premium-tier-2-purple-for-gradients),
+//     var(--premium-tier-2-purple-for-gradients-2) 49.96%,
+//     var(--premium-tier-2-pink-for-gradients) 95.93%
+//   );
+//   max-width: 112px;
+//   max-height: 24px;
+//   border-radius: 8px;
+//   padding: 4px 8px;
+//   z-index: 10;
+//   position: relative;
+//   margin: auto;
+//   top: -12px;
+// }
+
+// .mostPopularTierPlan-header {
+//   color: var(--white-500);
+//   text-transform: uppercase;
+//   text-align: center;
+//   font-size: 12px;
+//   line-height: 16px;
+//   font-weight: 800;
+//   font-family: var(--global-font);
+// }
+
+// .nitro-tier-plan-table {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .nitro-tier-plan-table-header-row {
+//   border-top-left-radius: 16px;
+//   border-top-right-radius: 16px;
+//   border-bottom: 1px solid var(--interactive-muted);
+//   height: 56px;
+//   margin-top: 24px;
+//   flex-direction: row;
+//   z-index: 5;
+//   display: flex;
+// }
+
+// .nitro-tier-headerCell1 {
+//   display: flex;
+//   flex: 1;
+//   justify-content: flex-start;
+//   text-align: left;
+// }
+// .nitro-tier-headerCell2 {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   width: 208px;
+// }
+// .nitro-tier-headerCell3 {
+//   justify-content: start;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   width: 208px;
+//   border-top-left-radius: 16px;
+//   border-top-right-radius: 16px;
+// }
+
+// .nitro-tier-headerCell1-header {
+//   font-size: 20px;
+//   line-height: 24px;
+//   font-weight: 800;
+//   font-family: var(--global-font);
+//   color: var(--header-primary);
+// }
+
+// .nitro-tier-table-nitro-basic-img {
+//   width: 100px;
+//   content: image_url("nitroPlanTableBasic.png");
+// }
+// .nitro-tier-table-nitro-img {
+//   width: 100px;
+//   content: image_url("nitroPlanTableNormal.png");
+// }
+
+// .nitro-tier-plan-table-normal-row {
+//   height: 68px;
+//   flex-direction: row;
+//   z-index: 5;
+//   display: flex;
+//   border-bottom: 1px solid var(--interactive-muted);
+// }
+// .nitro-tier-plan-table-bottom-row {
+//   border-bottom-left-radius: 16px;
+//   border-bottom-right-radius: 16px;
+//   height: 128px;
+//   flex-direction: row;
+//   z-index: 5;
+//   display: flex;
+// }
+
+// .nitroTableCellLabel {
+//   align-items: center;
+//   display: flex;
+//   flex: 1;
+//   justify-content: flex-start;
+//   text-align: left;
+// }
+// .nitroTableCellLabelContents {
+//   color: var(--text-normal);
+//   font-family: var(--global-font);
+//   font-size: 14px;
+//   line-height: 18px;
+//   font-weight: 400;
+// }
+
+// .nitroTdCell {
+//   justify-content: center;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   width: 208px;
+// }
+
+// .nitroTdCellContents {
+//   font-family: var(--global-font);
+//   color: var(--header-primary);
+//   font-size: 16px;
+//   line-height: 20px;
+//   font-weight: 600;
+// }
+// .nitroTdCellCheckMark {
+//   color: var(--interactive-active);
+// }
+
+// .nitroTdCellXMark {
+//   color: var(--interactive-muted);
+// }
+// .nitroTdCellContentsHiddenVisually {
+//   clip: rect(0 0 0 0);
+//   -webkit-clip-path: inset(50%);
+//   clip-path: inset(50%);
+//   height: 1px;
+//   overflow: hidden;
+//   position: absolute;
+//   white-space: nowrap;
+//   width: 1px;
+// }
+
+// .nitroTdButtonCell {
+//   padding-top: 16px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-start;
+//   gap: 16px;
+//   align-items: center;
+// }
+
+// .nitroTdBottomBorderRadius {
+//   border-bottom-left-radius: 16px;
+//   border-bottom-right-radius: 16px;
+// }
+
+// .nitro-plan-table-left-img-container {
+//   width: 197px;
+//   height: 486px;
+//   position: absolute;
+//   top: 10%;
+//   left: -32px;
+//   display: block;
+//   -webkit-user-drag: none;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+//   overflow: hidden;
+//   border-radius: 3px;
+// }
+// .nitro-plan-table-right-img-container {
+//   width: 241px;
+//   height: 552px;
+//   position: absolute;
+//   top: 40%;
+//   right: -32px;
+//   display: block;
+//   -webkit-user-drag: none;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+//   overflow: hidden;
+//   border-radius: 3px;
+// }
+
+// .nitro-plan-table-left-img {
+//   width: 197px !important;
+//   height: 486px !important;
+//   content: image_url("nitroTableLeft.svg");
+// }
+// .nitro-plan-table-right-img {
+//   width: 241px !important;
+//   height: 552px !important;
+//   content: image_url("nitroTableRight.svg");
+// }
+
+// @media screen and (max-width: 1560px) {
+//   .nitro-plan-table-left-img-container,
+//   .nitro-plan-table-right-img-container {
+//     display: none;
+//   }
+// }
+
+// .nitro-footer {
+//   text-align: center;
+//   position: relative;
+//   padding: 32px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   flex-direction: column;
+//   margin-top: 128px;
+//   margin-bottom: 156px;
+// }
+
+// .nitro-footer-header {
+//   color: var(--header-primary);
+//   margin-bottom: 24px;
+//   font-size: 32px;
+//   line-height: 40px;
+//   font-weight: 800;
+//   font-family: var(--global-font);
+// }
+
+// .nitro-footer-button-container {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .nitro-footer-button-container > :not(:last-child) {
+//   margin-right: 16px;
+// }
+
+// .nitro-footer > * {
+//   margin-bottom: 24px;
+// }
+
+// .footer-sparkleStar {
+//   position: absolute;
+// }
+
+// .sparkleStar-upper-left {
+//   top: 12px;
+//   left: 12px;
+//   width: 8px;
+//   height: 16px;
+//   color: #6bf;
+// }
+
+// .sparkleStar-left-center {
+//   top: 28px;
+//   left: 0;
+//   width: 12px;
+//   height: 24px;
+//   color: #5765f1;
+// }
+
+// .sparkleStar-upper-right {
+//   top: 44px;
+//   right: 0;
+//   width: 8px;
+//   height: 16px;
+//   color: #91ffac;
+// }
+// .sparkleStar-right-center {
+//   top: 64px;
+//   right: 12px;
+//   width: 12px;
+//   height: 24px;
+//   color: #ea459e;
+// }
+
+// .nitro-img-wrapper {
+//   width: 112px;
+//   height: 85px;
+//   position: absolute;
+//   bottom: 0;
+//   display: block;
+//   -webkit-user-select: text;
+//   -moz-user-select: text;
+//   -ms-user-select: text;
+//   user-select: text;
+//   overflow: hidden;
+//   border-radius: 3px;
+// }
+
+// .nitro-bottom-img {
+//   content: image_url("frog.svg");
+//   width: 112px;
+//   height: 85px;
+// }
+
+// .table-button-resize{
+//     width: 180px;
+//     height: 40px;
+// }
