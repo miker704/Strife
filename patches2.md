@@ -1361,6 +1361,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up temp.scss to deprecated folder.
     - Backed up temp2.scss to deprecated folder.
     - Backed up temp3.scss to deprecated folder.
+    - Backed up temp4.scss to deprecated folder.
 
 ## Backend Changes
 
