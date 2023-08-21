@@ -1356,7 +1356,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up sessions.scss to deprecated folder.
     - Backed up start_conversation_modal.scss to deprecated folder.
     - Backed up strife_core.scss to deprecated folder.
-
+    - Backed up strife_root_theme.scss to deprecated folder.
 
 ## Backend Changes
 
