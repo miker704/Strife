@@ -1,0 +1,946 @@
+// // // Place all the styles related to the api::sessions controller here.
+// // // They will automatically be included in application.css.
+// // // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// .session-app-container {
+//   flex: 1 1 auto;
+//   display: flex;
+//   flex-direction: row;
+//   min-height: 0;
+//   z-index: auto;
+//   height: 100%;
+//   position: relative;
+// }
+
+// .session-character-background {
+//   position: relative;
+//   width: 100vw;
+//   min-height: 100vh;
+//   overflow: auto;
+// }
+
+// .session-character-background .sessionauthbackground {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+// }
+
+// .session-wrapper {
+//   width: 100%;
+//   height: 100%;
+// }
+
+// .authBox {
+//   width: 480px;
+//   padding: 32px;
+//   font-size: 18px;
+//   -webkit-box-shadow: var(--dark-elevation-high);
+//   box-shadow: var(--dark-elevation-high);
+//   border-radius: 5px;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   color: var(--text-muted);
+//   background: var(--background-primary);
+//   font-family: var(--global-font);
+//   -webkit-animation-name: slideUp;
+//   -webkit-animation-duration: 0.3s;
+//   -webkit-animation-iteration-count: 1;
+//   animation-name: slideUp;
+//   animation-duration: 0.3s;
+//   animation-iteration-count: 1;
+
+//   select {
+//     background-color: var(--background-tertiary);
+//     font-size: 16px;
+//     font-family: var(--global-font);
+//     color: #dcddde;
+//     border: solid rgb(25, 25, 25) 1px;
+//     padding: 5px;
+//     margin: 0 5px 5px 5px;
+//     border-radius: 3px;
+//     height: 40px;
+//     scrollbar-width: thin;
+//     scrollbar-color: hsl(216, 7.2%, 13.5%) hsla(0, 0%, 0%, 0);
+//   }
+
+//   select#month {
+//     width: 35%;
+//     margin-left: 0;
+//   }
+
+//   select#day {
+//     width: 30%;
+//   }
+
+//   select#year {
+//     width: 30%;
+//     margin-right: 5px;
+//   }
+
+//   select:hover {
+//     border: solid black 1px;
+//     outline: none;
+//     transition: 0.25s;
+//   }
+
+//   select#year option:hover {
+//     box-shadow: 0 0 10px 100px #ffffff inset;
+//   }
+
+//   select option:focus {
+//     color: #191919;
+//   }
+
+//   option {
+//     background-color: var(--background-primary);
+//   }
+
+//   select:focus {
+//     border: none;
+//     outline: none;
+//   }
+
+//   select option:disabled {
+//     color: var(--text-muted);
+//   }
+
+//   select::-webkit-scrollbar {
+//     width: 8px;
+//     height: 8px;
+//   }
+
+//   select::-webkit-scrollbar-track {
+//     border-color: var(--background-primary);
+//     background-color: var(--background-primary);
+//     border: 2px solid var(--background-primary);
+//   }
+//   select::-webkit-scrollbar-corner {
+//     background-color: transparent;
+//   }
+//   select::-webkit-scrollbar-thumb {
+//     background-clip: padding-box;
+//     border: 2px solid transparent;
+//     border-radius: 4px;
+//     background-color: var(--scrollbar-thin-thumb);
+//     min-height: 40px;
+//   }
+// }
+
+// .authBox.expanded {
+//   width: 784px;
+//   -webkit-animation-name: slideDown;
+//   -webkit-animation-duration: 0.3s;
+//   -webkit-animation-iteration-count: 1;
+//   animation-name: slideDown;
+//   animation-duration: 0.3s;
+//   animation-iteration-count: 1;
+// }
+
+// .strife-full-logo {
+//   // content: image_url("strifesplashlogo.svg");
+//   background: image_url("strifesplashlogo.svg") no-repeat;
+//   height: 36px;
+//   width: 112px;
+//   display: none;
+//   flex-shrink: 0;
+//   margin-bottom: 16px;
+// }
+
+// .theme-dark.authBox .strife-full-logo {
+//   background: image_url("strifesplashlogo.svg") no-repeat;
+//   width: 130px;
+// }
+
+// .authbox-centering-wrapper {
+//   width: 100%;
+//   text-align: center;
+// }
+
+// .authBox-flex {
+//   flex: 1 1 auto;
+//   flex-direction: row;
+//   flex-wrap: nowrap;
+//   justify-content: flex-start;
+//   align-items: center;
+//   display: flex;
+// }
+
+// .authBox-MainLoginContainer {
+//   display: flex;
+//   flex-direction: column;
+//   flex-grow: 1;
+//   align-items: start;
+// }
+
+// .authBox-header {
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+//   width: 100%;
+// }
+// .authBox-header-h1 {
+//   color: var(--header-primary);
+//   font-weight: 600;
+//   margin-bottom: 8px;
+//   font-size: 24px;
+//   line-height: 30px;
+//   font-family: var(--global-font);
+// }
+// .authBox-header-subtext {
+//   font-family: var(--global-font);
+//   font-size: 16px;
+//   line-height: 20px;
+//   font-weight: 400;
+//   color: var(--header-secondary);
+// }
+
+// .signup-header {
+//   font-family: var(--global-font);
+//   font-size: 24px;
+//   line-height: 30px;
+//   font-weight: 600;
+//   color: var(--header-primary);
+// }
+
+// .auth-block {
+//   width: 100%;
+//   text-align: left;
+// }
+
+// .marginTop20px {
+//   margin-top: 20px;
+// }
+
+// // .authBox-vertical-seperator {
+// //   margin: 0px 32px;
+// //   border: 1px solid var(--background-modifier-accent);
+// // }
+
+// .session-vertical-sep {
+//   margin: 0px 32px;
+//   border: 1px solid var(--background-modifier-accent);
+// }
+
+// .forgotPassword-button-wrapper {
+//   text-align: left;
+//   margin-bottom: 10px;
+//   outline: 0;
+//   font-family: var(--global-font);
+//   color: var(--text-link);
+//   text-rendering: optimizeLegibility;
+//   position: relative;
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-pack: center;
+//   -ms-flex-pack: center;
+//   justify-content: center;
+//   -webkit-box-align: center;
+//   -ms-flex-align: center;
+//   align-items: center;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   background: none;
+//   border: none;
+//   border-radius: 3px;
+//   font-size: 14px;
+//   font-weight: 500;
+//   line-height: 16px;
+//   padding: 2px 16px;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+//   display: block;
+//   padding-left: 0;
+//   padding-right: 0;
+//   margin-bottom: 20px;
+//   margin-top: 4px;
+//   width: auto;
+//   height: auto;
+//   padding: 2px 4px;
+// }
+
+// .forgotPassword {
+//   text-align: left;
+//   margin-bottom: 10px;
+//   font-size: 14px;
+//   outline: 0;
+//   margin: 0 auto;
+//   white-space: nowrap;
+//   text-overflow: ellipsis;
+//   overflow: hidden;
+//   font-family: var(--global-font);
+//   color: var(--text-link);
+// }
+
+// .forgotPassword-button-wrapper:hover {
+//   text-decoration: underline;
+// }
+
+// .session-action-submit-button {
+//   background-color: var(--brand-experiment);
+//   color: var(--white-500);
+//   font-size: 16px;
+//   line-height: 24px;
+//   margin-bottom: 8px;
+//   width: 100%;
+//   transition: background-color 0.17s ease, color 0.17s ease;
+//   height: 44px;
+//   min-width: 130px;
+//   min-height: 44px;
+//   outline: 0;
+//   font-family: var(--global-font);
+//   text-rendering: optimizeLegibility;
+//   position: relative;
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-pack: center;
+//   -ms-flex-pack: center;
+//   justify-content: center;
+//   -webkit-box-align: center;
+//   -ms-flex-align: center;
+//   align-items: center;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   border: none;
+//   border-radius: 3px;
+//   font-weight: 500;
+//   padding: 2px 16px;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+// }
+
+// .session-action-submit-button:hover,
+// .demo2-login-button:hover,
+// .demo-login-button:hover {
+//   cursor: pointer;
+//   transition: 0.25s;
+//   background-color: var(--brand-experiment-560);
+// }
+
+// .session-action-submit-button:active,
+// .demo2-login-button:active,
+// .demo-login-button:active {
+//   background-color: var(--brand-experiment-600);
+// }
+
+// .session-action-txt {
+//   margin: 0 auto;
+//   white-space: nowrap;
+//   text-overflow: ellipsis;
+//   overflow: hidden;
+// }
+
+// .session-mt {
+//   margin-top: 4px;
+// }
+// .session-margin-top {
+//   margin-top: 20px;
+// }
+
+// .session-info-block-mb {
+//   margin-bottom: 20px;
+// }
+
+// .session-info-block {
+//   margin-top: 20px;
+//   width: 100%;
+//   text-align: left;
+// }
+
+// .needAnAccount {
+//   font-size: 14px;
+//   line-height: 16px;
+//   font-family: var(--global-font);
+//   color: var(--text-muted);
+// }
+
+// .needAnAccount-button {
+//   font-family: var(--global-font);
+//   color: var(--text-link);
+//   margin-left: 4px;
+//   margin-bottom: 0;
+//   vertical-align: bottom;
+//   padding: 0;
+//   width: auto;
+//   position: relative;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   background: none;
+//   border: none;
+//   border-radius: 3px;
+//   font-size: 14px;
+//   font-weight: 500;
+//   line-height: 16px;
+//   -webkit-user-drag: none;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+//   display: inline-block;
+// }
+
+// .session-label {
+//   display: block;
+//   color: var(--header-secondary);
+//   font-family: var(--global-font);
+//   margin-bottom: 8px;
+//   font-size: 12px;
+//   line-height: 16px;
+//   font-weight: 700;
+//   text-transform: uppercase;
+//   letter-spacing: 0.02em;
+// }
+
+// .required-star {
+//   color: var(--status-danger);
+//   padding-left: 4px;
+// }
+
+// .session-input-wrapper {
+//   font-family: var(--global-font);
+//   display: flex;
+//   align-items: center;
+//   font-size: 16px;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   width: 100%;
+//   border-radius: 3px;
+//   color: var(--text-normal);
+//   background-color: var(--input-background);
+//   border: none;
+//   -webkit-transition: border-color 0.2s ease-in-out;
+//   transition: border-color 0.2s ease-in-out;
+// }
+// .session-input-outer-wrapper {
+//   flex-grow: 1;
+//   display: flex;
+//   flex-direction: column;
+// }
+// .session-input-inner-wrapper {
+//   display: flex;
+//   flex-direction: column;
+// }
+// .session-input {
+//   padding: 10px;
+//   height: 40px;
+//   border: none;
+//   background-color: transparent;
+//   font-size: 16px;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   width: 100%;
+//   border-radius: 3px;
+//   color: var(--text-normal);
+//   background-color: var(--input-background);
+//   border: none;
+//   -webkit-transition: border-color 0.2s ease-in-out;
+//   transition: border-color 0.2s ease-in-out;
+//   text-rendering: optimizeLegibility;
+//   font-family: var(--global-font);
+// }
+
+// .navlinks {
+//   font-size: 14px;
+//   line-height: 16px;
+//   font-family: var(--global-font);
+//   color: var(--text-muted);
+// }
+
+// .demo-login-button {
+//   height: 40px;
+//   width: 70%;
+//   background-color: var(--brand-experiment);
+//   color: var(--white-500);
+//   border-radius: 3px;
+//   border: none;
+//   cursor: pointer;
+//   margin-bottom: 0px;
+//   font-family: var(--global-font);
+//   font-size: 13px;
+//   text-rendering: optimizeLegibility;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+// }
+
+// .demo2-login-button {
+//   height: 40px;
+//   width: 70%;
+//   background-color: var(--brand-experiment);
+//   color: var(--white-500);
+//   border-radius: 3px;
+//   border: none;
+//   cursor: pointer;
+//   margin-top: 4px;
+//   margin-bottom: 4px;
+//   font-family: var(--global-font);
+//   font-size: 13px;
+//   text-rendering: optimizeLegibility;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+// }
+
+// .demo-login-text-2 {
+//   color: var(--header-primary);
+//   font-weight: 600;
+//   margin-bottom: 8px;
+//   font-family: var(--global-font);
+//   font-size: 24px;
+//   line-height: 30px;
+// }
+
+// .b-day-container {
+//   display: flex;
+//   -webkit-box-orient: vertical;
+//   -webkit-box-direction: normal;
+//   -ms-flex-direction: column;
+//   flex-direction: column;
+//   margin-top: 20px;
+// }
+// .b-day-flex-container {
+//   width: 100%;
+//   display: flex;
+//   justify-content: space-between;
+//   margin-bottom: 4px;
+// }
+
+// .birthday-month {
+//   width: 35%;
+// }
+
+// .birthday-day {
+//   width: 30%;
+// }
+
+// .birthday-year {
+//   width: 30%;
+// }
+
+// .b-day-legend {
+//   color: var(--header-secondary);
+//   margin-bottom: 8px;
+//   font-size: 12px;
+//   line-height: 16px;
+//   font-weight: 700;
+//   text-transform: uppercase;
+//   letter-spacing: 0.02em;
+//   font-family: var(--global-font);
+// }
+
+// .dropbox-selector {
+//   width: 100%;
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-pack: justify;
+//   -ms-flex-pack: justify;
+//   justify-content: space-between;
+//   margin-bottom: 4px;
+// }
+
+// .wumpus-qr-login-wrapper {
+//   display: flex;
+//   -webkit-box-align: center;
+//   -ms-flex-align: center;
+//   align-items: center;
+//   position: relative;
+//   overflow: hidden;
+//   width: 240px;
+//   height: 344px;
+//   outline: 0;
+// }
+
+// .wumpus-qr-container-wrapper {
+//   padding: 8px;
+//   border-radius: 4px;
+//   width: 160px;
+//   height: 160px;
+//   background-color: var(--white-500);
+//   image-rendering: pixelated;
+//   position: absolute;
+//   outline: 0;
+//   -ms-interpolation-mode: nearest-neighbor;
+//   image-rendering: -webkit-optimize-contrast;
+//   image-rendering: -moz-crisp-edges;
+//   image-rendering: -o-pixelated;
+// }
+
+// .wumpus-section-split {
+//   -webkit-box-flex: 0;
+//   -ms-flex: 0 0 auto;
+//   flex: 0 0 auto;
+//   width: 100%;
+//   overflow: hidden;
+//   outline: 0;
+//   height: 100%;
+// }
+
+// .wumpus-inner-qr-login {
+//   -webkit-box-orient: vertical;
+//   -webkit-box-direction: normal;
+//   -ms-flex-direction: column;
+//   flex-direction: column;
+//   -webkit-box-pack: center;
+//   -ms-flex-pack: center;
+//   justify-content: center;
+//   height: 100%;
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-align: center;
+//   -ms-flex-align: center;
+//   align-items: center;
+//   outline: 0;
+// }
+
+// .wumpus-qr-code-container {
+//   width: 176px;
+//   height: 176px;
+//   position: relative;
+//   margin-bottom: 32px;
+//   outline: 0;
+//   display: flex;
+// }
+
+// .wumpus-qr-overlay {
+//   width: 100%;
+//   height: 100%;
+//   // height: 120%;
+//   position: absolute;
+//   -webkit-box-align: center;
+//   -ms-flex-align: center;
+//   align-items: center;
+//   -webkit-box-pack: center;
+//   -ms-flex-pack: center;
+//   justify-content: center;
+//   display: flex;
+//   outline: 0;
+// }
+
+// .wumpus-qr-overlay img {
+//   display: flex;
+// }
+
+// .wumpuslogin2 {
+//   width: 176px;
+//   height: 176px;
+//   // margin-bottom: 20px;
+//   margin-top: 20px;
+//   color: var(--white-500);
+//   content: image_url("discord-qr-image.png");
+// }
+
+// .spinning-cubes {
+//   outline: 0;
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-pack: center;
+//   justify-content: center;
+//   -webkit-box-align: center;
+//   align-items: center;
+//   image-rendering: -webkit-optimize-contrast;
+//   image-rendering: -moz-crisp-edges;
+//   image-rendering: -o-pixelated;
+//   image-rendering: pixelated;
+//   position: absolute;
+// }
+
+// .inner-cubes {
+//   position: relative;
+//   display: inline-block;
+//   width: 32px;
+//   height: 32px;
+//   contain: paint;
+//   outline: 0;
+// }
+
+// .moving-cubes .inner-cube {
+//   background-color: var(--brand-experiment-400);
+//   width: 10px;
+//   height: 10px;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   -webkit-animation: spin-moving-cubes 1.8s ease-in-out infinite;
+//   animation: spin-moving-cubes 1.8s ease-in-out infinite;
+//   outline: 0;
+// }
+
+// .moving-cubes .inner-cube:last-child {
+//   -webkit-animation-delay: -0.9s;
+//   animation-delay: -0.9s;
+// }
+
+// .session-text-size-md-normal {
+//   color: var(--header-secondary);
+//   font-family: var(--global-font);
+//   font-size: 16px;
+//   line-height: 20px;
+//   font-weight: 400;
+//   outline: 0;
+// }
+
+// .session-text-size-md-normal strong {
+//   font-weight: 600;
+//   outline: 0;
+// }
+
+// .authBox a {
+//   color: var(--text-link);
+//   text-decoration: none;
+//   cursor: pointer;
+// }
+
+// .authBox a:hover {
+//   text-decoration: underline;
+// }
+
+// .tos-container {
+//   color: var(--text-muted);
+//   font-family: var(--global-font);
+//   margin-top: 8px;
+//   font-size: 12px;
+//   font-weight: 400;
+//   line-height: 16px;
+// }
+
+// .already-have-account {
+//   position: relative;
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-pack: center;
+//   -ms-flex-pack: center;
+//   justify-content: center;
+//   -webkit-box-align: center;
+//   -ms-flex-align: center;
+//   align-items: center;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   background: none;
+//   border: none;
+//   border-radius: 3px;
+//   font-size: 14px;
+//   font-weight: 500;
+//   line-height: 16px;
+//   padding: 2px 16px;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+//   color: var(--text-link);
+//   font-family: var(--global-font);
+//   display: block;
+//   padding-left: 0;
+//   padding-right: 0;
+//   margin-top: 20px;
+//   outline: 0;
+//   text-rendering: optimizeLegibility;
+// }
+
+// .already-have-account-link {
+//   margin: 0 auto;
+//   white-space: nowrap;
+//   text-overflow: ellipsis;
+//   overflow: hidden;
+//   outline: 0;
+// }
+
+// .session-error {
+//   color: var(--text-danger);
+// }
+
+// .session-error-message {
+//   font-family: var(--global-font);
+//   font-size: 12px;
+//   font-weight: 500;
+//   font-style: italic;
+//   text-transform: none;
+// }
+
+// .session-error-message-seperator {
+//   padding-left: 4px;
+//   padding-right: 4px;
+// }
+
+// @media (min-width: 486px) {
+//   .session-wrapper {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     min-height: 580px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//   }
+// }
+
+// @media (max-width: 830px) {
+//   .authBox {
+//     max-width: 480px;
+//   }
+// }
+
+// @media (max-width: 830px) {
+//   .session-vertical-sep,
+//   .wumpus-qr-login-wrapper {
+//     display: none;
+//   }
+// }
+
+// //animations
+// @-webkit-keyframes slideDown {
+//   0% {
+//     opacity: 0;
+//     -webkit-transform: translateY(-40%) scale(1.2, 1.2);
+//     transform: translateY(-40%) scale(1.2, 1.2);
+//   }
+
+//   70% {
+//     opacity: 1;
+//     -webkit-transform: scale(1, 1);
+//     transform: scale(1, 1);
+//   }
+
+//   99% {
+//     -webkit-transform: translateY(1%);
+//     transform: translateY(1%);
+//   }
+
+//   100% {
+//     -webkit-transform: translateY(0%);
+//     transform: translateY(0%);
+//   }
+// }
+
+// @keyframes slideDown {
+//   0% {
+//     opacity: 0;
+//     -webkit-transform: translateY(-40%) scale(1.2, 1.2);
+//     transform: translateY(-40%) scale(1.2, 1.2);
+//   }
+
+//   70% {
+//     opacity: 1;
+//     -webkit-transform: scale(1, 1);
+//     transform: scale(1, 1);
+//   }
+
+//   99% {
+//     -webkit-transform: translateY(1%);
+//     transform: translateY(1%);
+//   }
+
+//   100% {
+//     -webkit-transform: translateY(0%);
+//     transform: translateY(0%);
+//   }
+// }
+
+// @-webkit-keyframes slideUp {
+//   0% {
+//     opacity: 0;
+//     -webkit-transform: translateY(0%) scale(1, 1);
+//     transform: translateY(0%) scale(1, 1);
+//   }
+
+//   70% {
+//     opacity: 0.5;
+//     -webkit-transform: scale(1.2, 1.2);
+//     transform: scale(1.2, 1.2);
+//   }
+
+//   99% {
+//     opacity: 1;
+//     -webkit-transform: translateY(1%);
+//     transform: translateY(1%);
+//   }
+
+//   100% {
+//     -webkit-transform: translateY(0%);
+//     transform: translateY(0%);
+//   }
+// }
+
+// @keyframes slideUp {
+//   0% {
+//     opacity: 0;
+//     -webkit-transform: translateY(0%) scale(1, 1);
+//     transform: translateY(0%) scale(1, 1);
+//   }
+
+//   70% {
+//     opacity: 0.5;
+//     -webkit-transform: scale(1.2, 1.2);
+//     transform: scale(1.2, 1.2);
+//   }
+
+//   99% {
+//     opacity: 1;
+//     -webkit-transform: translateY(1%);
+//     transform: translateY(1%);
+//   }
+
+//   100% {
+//     -webkit-transform: translateY(0%);
+//     transform: translateY(0%);
+//   }
+// }
+
+// @-webkit-keyframes spin-moving-cubes {
+//   25% {
+//     -webkit-transform: translateX(22px) rotate(-90deg) scale(0.5);
+//     transform: translateX(22px) rotate(-90deg) scale(0.5);
+//   }
+
+//   50% {
+//     -webkit-transform: translateX(22px) translateY(22px) rotate(-180deg);
+//     transform: translateX(22px) translateY(22px) rotate(-180deg);
+//   }
+
+//   75% {
+//     -webkit-transform: translateX(0) translateY(22px) rotate(-270deg) scale(0.5);
+//     transform: translateX(0) translateY(22px) rotate(-270deg) scale(0.5);
+//   }
+
+//   to {
+//     -webkit-transform: rotate(-1turn);
+//     transform: rotate(-1turn);
+//   }
+// }
+
+// @keyframes spin-moving-cubes {
+//   25% {
+//     -webkit-transform: translateX(22px) rotate(-90deg) scale(0.5);
+//     transform: translateX(22px) rotate(-90deg) scale(0.5);
+//   }
+
+//   50% {
+//     -webkit-transform: translateX(22px) translateY(22px) rotate(-180deg);
+//     transform: translateX(22px) translateY(22px) rotate(-180deg);
+//   }
+
+//   75% {
+//     -webkit-transform: translateX(0) translateY(22px) rotate(-270deg) scale(0.5);
+//     transform: translateX(0) translateY(22px) rotate(-270deg) scale(0.5);
+//   }
+
+//   to {
+//     -webkit-transform: rotate(-1turn);
+//     transform: rotate(-1turn);
+//   }
+// }
