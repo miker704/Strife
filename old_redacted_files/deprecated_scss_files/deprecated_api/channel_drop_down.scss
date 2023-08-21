@@ -1,0 +1,245 @@
+// //this is the file for channel drop down modal (the black modal that appears when clicking the delta symbol above
+// //the side channel bav bar)
+// @import "global_vars";
+
+// .channel-drop-down-layer {
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background: none !important;
+//   // pointer-events: none;
+//   z-index: 1002;
+//   outline: 0;
+//   user-select: none;
+//   position: absolute;
+// }
+
+// .channel-drop-down-pop-up {
+//   position: absolute;
+//   top: 56px;
+//   left: 82px;
+//   z-index: 1005;
+// }
+
+// @-webkit-keyframes channelDropDownRender {
+//   from {
+//     opacity: 0;
+//     -webkit-transform: scale(0.1);
+//     transform: scale(0.1);
+//   }
+//   to {
+//     opacity: 1;
+//     -webkit-transform: scale(1);
+//     transform: scale(1);
+//   }
+// }
+// @keyframes channelDropDownRender {
+//   from {
+//     opacity: 0;
+//     -webkit-transform: scale(0.1);
+//     transform: scale(0.1);
+//   }
+//   to {
+//     opacity: 1;
+//     -webkit-transform: scale(1);
+//     transform: scale(1);
+//   }
+// }
+
+// .channel-drop-down-pop-up-animate {
+//   -webkit-transition: opacity 0.12s ease-out, -webkit-transform 0.12s ease-out;
+//   transition: opacity 0.12s ease-out, -webkit-transform 0.12s ease-out;
+//   transition: transform 0.12s ease-out, opacity 0.12s ease-out;
+//   transition: transform 0.12s ease-out, opacity 0.12s ease-out,
+//     -webkit-transform 0.12s ease-out;
+//   -webkit-transform: scale(1);
+//   transform: scale(1);
+//   opacity: 1;
+//   transform-origin: top center;
+//   -webkit-animation-name: channelDropDownRender;
+//   -webkit-animation-duration: 0.15s;
+//   -webkit-animation-iteration-count: 1;
+//   -webkit-animation-timing-function: ease-out;
+//   animation-name: channelDropDownRender;
+//   animation-duration: 0.15s;
+//   animation-timing-function: ease-out;
+//   animation-iteration-count: 1;
+// }
+
+// .channel-drop-menu {
+//   outline: 0;
+//   width: 220px;
+//   position: relative;
+//   z-index: 1;
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+//   display: -webkit-box;
+//   display: flex;
+//   height: auto;
+//   cursor: default;
+//   max-height: calc(100vh - 32px);
+//   -webkit-box-shadow: $elevation-high;
+//   box-shadow: $elevation-high;
+//   background: $background-floating;
+//   border-radius: 4px;
+//   z-index: 1006;
+// }
+
+// .channel-drop-scroller {
+//   padding: 6px 8px;
+//   outline: 0;
+// }
+
+// .channel-drop-item {
+//   outline: 0;
+//   color: $interactive-normal;
+//   position: relative;
+//   margin: 2px 0;
+//   border-radius: 2px;
+//   font-size: 14px;
+//   font-weight: 500;
+//   line-height: 18px;
+//   cursor: pointer;
+//   box-sizing: border-box;
+//   display: -webkit-box;
+//   display: flex;
+//   -webkit-box-pack: justify;
+//   justify-content: space-between;
+//   -webkit-box-align: center;
+//   align-items: center;
+//   min-height: 32px;
+//   padding: 6px 8px;
+//   border-color: $interactive-normal;
+//   font-family: $global-font;
+// }
+
+// .server-boost-label {
+//   outline: 0;
+//   flex: 1 1 auto;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   font-size: 14px;
+//   font-family: $global-font;
+//   line-height: 18px;
+//   cursor: pointer;
+//   font-weight: 500;
+//   color: $interactive-normal;
+// }
+
+// .server-boost-icon-container {
+//   outline: 0;
+//   flex: 0 0 auto;
+//   height: 18px;
+//   width: 18px;
+//   margin-left: 8px;
+//   -webkit-box-flex: 0;
+//   position: relative;
+// }
+
+// .server-boost-icon {
+//   width: 18px;
+//   height: 18px;
+//   forced-color-adjust: none;
+//   // color is disable as discord does not have the boost icon color enabled
+//   // color: hsl(302, 100%, 72.5%);
+//   // color: $gemstone;
+// }
+
+// .channel-drop-sep {
+//   outline: 0;
+//   box-sizing: border-box;
+//   margin: 4px;
+//   border-bottom: 1px solid $background-modifier-accent;
+// }
+
+// .channel-drop-item.group2 {
+//   color: $brand-experiment-360;
+// }
+
+// .server-boost-label.ip {
+//   color: $brand-experiment-360;
+// }
+
+// .icon-ipcd {
+//   width: 18px;
+//   height: 18px;
+// }
+
+// .channel-drop-down-wrapper {
+//   user-select: none;
+//   outline: 0;
+// }
+
+// .channel-drop-down-container {
+//   user-select: none;
+//   outline: 0;
+// }
+
+// .channel-drop-down-modal {
+//   user-select: none;
+//   outline: 0;
+// }
+
+
+// .icon-cd-si,
+// .icon-cd-gear,
+// .icon-cd-cc,
+// .icon-cd-ccat,
+// .icon-cd-ce,
+// .icon-cd-ns,
+// .icon-cd-ps,
+// .icon-cd-esp,
+// .icon-cd-hmc,
+// .icon-cd-rr,
+// .icon-cd-ls,
+// .icon-cd-ad {
+//   width: 18px;
+//   height: 18px;
+// }
+
+// .channel-drop-item.redclr {
+//   // color: hsl(359, 87.3%, 59.8%) !important;
+//   color: $status-danger !important;
+
+//   .server-boost-label {
+//     // color: hsl(359, 87.3%, 59.8%) !important;
+//     color: $status-danger !important;
+//   }
+// }
+
+// .channel-drop-item.redclr:hover {
+//   background-color: $red-500;
+//   color: $white-500 !important;
+
+//   .server-boost-label {
+//     color: $white-500 !important;
+//   }
+// }
+
+// .channel-drop-item:hover {
+//   background-color: $brand-experiment-600;
+//   color: $white-500 !important;
+
+//   .server-boost-label {
+//     color: $white-500 !important;
+//   }
+
+//   .icon-cd-hmc .checkBox {
+//     color: $white-500 !important;
+//   }
+
+//   .icon-cd-hmc .checkMark {
+//     color: $brand-experiment-600;
+//   }
+// }
+
+// .icon-cd-hmc .checkBox {
+//   color: $brand-experiment-500;
+// }
+
+// .icon-cd-hmc .checkMark {
+//   color: $white-500;
+//   // background-color: hsl(235, 46.7%, 44.1%);
+// }
