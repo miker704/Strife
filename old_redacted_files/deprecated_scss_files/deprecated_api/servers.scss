@@ -1,0 +1,63 @@
+// // Place all the styles related to the api::Servers controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// @import 'global_vars';
+
+// .server-main-base{
+
+//     display: -webkit-box;
+//     -webkit-box-flex: 1;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+//     display: -ms-flexbox;
+//     -ms-flex-positive: 1;
+//     -ms-flex-direction: column;
+//     display: flex;
+//     flex-direction: column;
+//     flex-grow: 1;
+//     overflow: hidden;
+//     position: relative;
+
+// }
+
+// .server-content{
+
+//     display: -webkit-box;
+//     -webkit-box-align: stretch;
+//     -webkit-box-pack: start;
+//     -webkit-box-flex: 1;
+//     display: -ms-flexbox;
+//     -ms-flex: 1 1 auto;
+//     -ms-flex-align: stretch;
+//     -ms-flex-pack: start;
+//     display: flex;
+//     align-items: stretch;
+//     justify-content: flex-start;
+//     flex: 1 1 auto;
+//     min-width: 0;
+//     min-height: 0;
+//     position: relative;
+
+// }
+
+// .server-base {
+
+//     min-width: 0;
+//     min-height: 0;
+//     display: -webkit-box;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+//     -webkit-box-flex: 1;
+//     display: -ms-flexbox;
+//     -ms-flex: 1 1 auto;
+//     -ms-flex-direction: column;
+//     display: flex;
+//     flex-direction: column;
+//     flex: 1 1 auto;
+//     position: relative;
+//     overflow: hidden;
+//     background-color: $background-primary;
+//     // background: var(--bg-overlay-chat,var(--background-primary));
+
+// }
