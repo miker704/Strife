@@ -1291,6 +1291,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created A new Version of editFriendship modal but for use in the Mega Upc modal which handles creating a message, deleting friend, blocking and unblocking a user, and copying the user id. Uses styles from the original edit friendship modal.
     - Created Mega User friend options modal.jsx
     - Created Mega User friend options modal container.
+    - Attached new useCloseModalonESCWSubModals listener onto mega upc to allow the normal closeonESC hook to be attached to mega upc user options modal to allow the options modal to be closed on esc without closing the mega upc modal once the options modal is closed the mega upc modal can be closed on esc through the useCloseModalonESCWSubModals hook.
 
 ## Backend Changes
 
