@@ -1329,6 +1329,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up error_snack_bar.scss to deprecated folder.
     - Backed up explore_servers.scss to deprecated folder.
     - Backed up friend_options_modal.scss to deprecated folder.
+    - Backed up friend_request_failed_modal.scss to deprecated folder.
 
 
 ## Backend Changes
