@@ -1346,6 +1346,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up nitro_nav_bar.scss to deprecated folder.
     - Backed up nitro_store.scss to deprecated folder.
     - Backed up reset_sheet.scss to deprecated folder.
+    - Backed up scrollbar_backup.scss to deprecated folder.
 
 
 ## Backend Changes
