@@ -1313,6 +1313,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up channel_settings_modal.scss to deprecated folder.
     - Backed up channels.scss to deprecated folder.
     - Backed up delete_channel_modal.scss to deprecated folder.
+    - Backed up create_channel_modal.scss to deprecated folder.
+
 
 ## Backend Changes
 
