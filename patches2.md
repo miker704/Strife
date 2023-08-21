@@ -1310,6 +1310,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up channel_drop_down.scss to deprecated folder.
     - Backed up channel_memberships.scss to deprecated folder.
     - Backed up channel_nav_bar.scss to deprecated folder.
+    - Backed up channel_settings_modal.scss to deprecated folder.
 
 ## Backend Changes
 
