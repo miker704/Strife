@@ -1339,6 +1339,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up leave_server_modal.scss to deprecated folder.
     - Backed up loading_screens.scss to deprecated folder.
     - Backed up mega_user_account_cared.scss to deprecated folder.
+    - Backed up messages.scss to deprecated folder.
 
 
 ## Backend Changes
