@@ -1318,6 +1318,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up create_dm_modal.scss to deprecated folder.
     - Backed up delete_friend_confirmation_modal.scss to deprecated folder.
     - Backed up delete_messages_modal.scss to deprecated folder.
+    - Backed up delete_server_modal.scss to deprecated folder.
 
 ## Backend Changes
 
