@@ -1299,6 +1299,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added a props.fetchUser when clicking on a user in the mutual friends tab in mega upc modal to add that user to users entities state to allow that user to be interacted error free. 
     - Moving all scss files that use scss global vars primarily to deprecated to switch to css vars for future theme switching.
     - Backed up application.scss to deprecated folder.
+    - Backed up static_pages.scss to deprecated folder.
 
 
 ## Backend Changes
