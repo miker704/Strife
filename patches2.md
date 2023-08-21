@@ -1349,7 +1349,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up scrollbar_backup.scss to deprecated folder.
     - Backed up server_memberships.scss to deprecated folder.
     - Backed up server_header_nav_bar.scss to deprecated folder.
-
+    - Backed up server_members.scss to deprecated folder.
 
 ## Backend Changes
 
