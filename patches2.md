@@ -1292,6 +1292,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Mega User friend options modal.jsx
     - Created Mega User friend options modal container.
     - Attached new useCloseModalonESCWSubModals listener onto mega upc to allow the normal closeonESC hook to be attached to mega upc user options modal to allow the options modal to be closed on esc without closing the mega upc modal once the options modal is closed the mega upc modal can be closed on esc through the useCloseModalonESCWSubModals hook.
+    - Changed the way the onclick listener to open the mega upc modal in pending friends list works instead of calling it on the main friend-index-item div and call it on the inner friend-index-item-wrapper-inner div which allows it to be called onClick and render the modal without interfering with the action buttons as before clicking on the action buttons also opens the modal with this specification the modal does not open when clicking on the action buttons.
 
 ## Backend Changes
 
