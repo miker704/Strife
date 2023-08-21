@@ -1,0 +1,1098 @@
+// @import 'global_vars';
+
+// .clear-modal-wrapper {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     background: none !important;
+//     // pointer-events: none;
+//     z-index: 1002;
+//     outline: 0;
+// }
+
+
+// .create-dm-modal-popup {
+//     position: absolute;
+//     top: 186px;
+//     left: 278px;
+//     pointer-events: auto;
+//     outline: 0;
+// }
+
+
+// .create-dm-modal-focus-lock {
+//     min-height: 0;
+//     max-width: 100%;
+//     outline: 0;
+//     display: -webkit-box;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+//     display: flex;
+//     flex-direction: column;
+
+// }
+
+// .create-dm-modal {
+//     opacity: 1;
+//     transform: scale(1);
+//     outline: 0;
+//     width: 440px;
+//     max-height: 450px;
+//     min-height: 200px;
+//     border-radius: 4px;
+//     margin: 0 auto;
+//     pointer-events: all;
+//     position: relative;
+//     display: -webkit-box;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+//     display: flex;
+//     flex-direction: column;
+//     background-color: $modal-pop-up-bg-color;
+//     -webkit-box-shadow: $dark-elevation-border, $dark-elevation-high;
+//     box-shadow: $dark-elevation-border, $dark-elevation-high;
+//     -webkit-user-drag: none;
+//     -webkit-user-select: none;
+//     -ms-user-select: none;
+//     -moz-user-select: none;
+//     user-select: none;
+
+
+//     button[type="submit"]:disabled,
+//     button[type="button"]:disabled {
+//         cursor: not-allowed;
+//         opacity: 0.5;
+//         color: $white-500;
+//         background-color: $brand-experiment;
+//     }
+// }
+
+// .create-dm-header-sec {
+//     -webkit-box-flex: 0;
+//     flex: 0 0 auto;
+//     border-radius: 4px 4px 0px 0px;
+//     -webkit-transition: -webkit-box-shadow 0.1s ease-out;
+//     transition: box-shadow 0.1s ease-out, -webkit-box-shadow 0.1s ease-out;
+//     word-wrap: break-word;
+
+//     position: relative;
+//     padding: 16px;
+//     z-index: 1;
+//     overflow-x: hidden;
+
+//     display: -webkit-box;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+//     -webkit-box-pack: start;
+//     -webkit-box-align: stretch;
+//     display: flex;
+//     flex-direction: column;
+//     flex-wrap: nowrap;
+//     justify-content: flex-start;
+//     align-items: stretch;
+//     outline: 0;
+// }
+
+// .create-dm-header-h2 {
+//     color: $header-primary;
+//     font-weight: 600;
+//     font-size: 20px;
+//     line-height: 24px;
+//     font-family: $global-font;
+// }
+
+// .num-of-dm-members-selected {
+//     outline: 0;
+//     font-family: $global-font;
+//     font-size: 12px;
+//     line-height: 16px;
+//     margin-top: 4px;
+//     font-weight: 400;
+//     color: $primary-300;
+
+// }
+
+// .num-of-dm-members-selected.cDMS-error {
+//     color: $red-400 !important;
+// }
+
+// .create-dm-search-bar-wrapper {
+//     outline: 0;
+//     flex: 1 1 auto;
+//     margin-top: 20px;
+//     display: -webkit-box;
+//     -webkit-box-orient: horizontal;
+//     -webkit-box-direction: normal;
+//     -webkit-box-align: stretch;
+//     -webkit-box-pack: start;
+//     display: flex;
+//     flex-direction: row;
+//     flex-wrap: nowrap;
+//     justify-content: flex-start;
+//     align-items: stretch;
+// }
+
+// .create-dm-search-bar-outer-wrapper {
+//     outline: 0;
+//     border-radius: 4px;
+//     overflow: hidden;
+//     background-color: $background-tertiary;
+//     display: -webkit-box;
+//     display: flex;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     -webkit-box-flex: 1;
+//     flex: 1;
+//     -webkit-box-shadow: none;
+//     box-shadow: none;
+// }
+
+
+// .create-dm-search-bar-inner-wrapper {
+
+//     //////
+//     outline: 0;
+//     position: relative;
+//     display: -webkit-box;
+//     -webkit-box-flex: 1;
+//     -webkit-box-orient: horizontal;
+//     -webkit-box-direction: normal;
+//     flex: 1 1 auto;
+//     display: flex;
+//     flex-direction: row;
+//     flex-wrap: wrap;
+//     padding: 1px;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+
+//     ///////
+//     max-height: 130px;
+// }
+
+
+
+// .mini-box {
+//     font-family: $global-font;
+//     font-size: 16px;
+//     line-height: 32px;
+//     height: 30px;
+//     padding: 0px 8px;
+//     outline: 0;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     border-radius: 2px;
+//     text-align: center;
+//     margin: 1px;
+//     display: -webkit-box;
+//     -webkit-box-orient: horizontal;
+//     -webkit-box-direction: normal;
+//     -webkit-box-align: center;
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     cursor: pointer;
+//     -webkit-transition: none;
+//     transition: none;
+//     background-color: $background-primary;
+//     color: $text-normal;
+//     text-decoration: none;
+// }
+
+// .mini-box:hover {
+//     text-decoration: none;
+//     opacity: 0.9;
+// }
+
+// .close-3-icon {
+//     width: 12px;
+//     height: 12px;
+//     margin-left: 4px;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+// }
+
+// .create-dm-search-bar {
+//     outline: none;
+//     font-size: 16px;
+//     line-height: 32px;
+//     height: 30px;
+//     padding: 0px 8px;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     background: transparent;
+//     border: none;
+//     resize: none;
+//     -webkit-box-flex: 1;
+//     flex: 1;
+//     min-width: 48px;
+//     margin: 1px;
+//     appearance: none;
+//     color: $text-normal;
+//     text-rendering: optimizeLegibility;
+//     font-weight: 400;
+//     font-family: $global-font;
+// }
+
+// .create-dm-search-bar::placeholder {
+//     color: $text-muted;
+//     text-rendering: optimizeLegibility;
+//     font-family: $global-font;
+//     opacity: 1;
+//     font-weight: 400;
+//     font-size: 16px;
+// }
+
+// .create-dm-invis-div {
+//     position: absolute;
+//     pointer-events: none;
+//     min-height: 0;
+//     min-width: 1px;
+//     flex: 0 0 auto;
+//     height: 1px;
+//     outline: 0;
+// }
+
+
+// .create-dm-scroller {
+
+//     max-height: 145px;
+//     // max-height: 190px;
+//     outline: 0;
+// }
+
+
+
+// .create-dm-ul-list {
+//     height: auto;
+//     position: relative;
+//     outline: 0;
+// }
+
+// .create-dm-ul-list-div {
+//     outline: 0;
+//     height: 0px;
+// }
+
+
+// .create-dm-friend-wrapper {
+//     cursor: pointer;
+//     padding: 1px 0px;
+//     margin: 0px 4px 0px 12px;
+//     outline: 0;
+
+// }
+
+// .create-dm-friend-wrapper:hover {
+//     background-color: $primary-500-hsl-30;
+//     color: $white-500;
+//     flex: 1 1 auto;
+//     border-radius: 3px;
+// }
+
+// .create-dm-friend-inner-wrapper {
+//     outline: 0;
+//     display: -webkit-box;
+//     -webkit-box-orient: horizontal;
+//     -webkit-box-align: center;
+//     -webkit-box-pack: start;
+//     -webkit-box-direction: normal;
+//     display: flex;
+//     align-items: center;
+//     justify-content: flex-start;
+//     flex-wrap: nowrap;
+//     flex-direction: row;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     height: 40px;
+//     padding: 6px 8px;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     font-size: 14px;
+//     font-weight: 400;
+//     border-radius: 3px;
+//     flex: 1 1 auto;
+//     color: $primary-300;
+
+// }
+
+// .create-dm-avatar {
+//     width: 32px;
+//     height: 32px;
+//     flex-shrink: 0;
+//     margin: 0;
+//     position: relative;
+//     border-radius: 50%;
+//     outline: 0;
+// }
+
+// /* for svg masking */
+
+// .friend-avatar-svg-wrapper {
+//     width: 32px;
+//     height: 32px;
+//     flex-shrink: 0;
+//     margin: 0;
+//     position: relative;
+//     border-radius: 50%;
+//     outline: 0;
+
+// }
+
+// .svg-avatar-wrapping {
+//     position: absolute;
+//     contain: paint;
+// }
+
+
+// .status-mask {
+//     pointer-events: none;
+//     display: block;
+//     width: auto;
+//     position: absolute;
+// }
+
+// .svg-avatar-stack {
+//     display: grid;
+//     width: 100%;
+//     height: 100%;
+//     outline: 0;
+// }
+
+
+// .create-dm-avatar-svg-masked {
+//     display: block;
+//     -o-object-fit: cover;
+//     object-fit: cover;
+//     pointer-events: none;
+//     width: 100%;
+//     height: 100%;
+//     grid-area: 1/1;
+// }
+
+// .create-dm-avatar-svg-masked[alt] {
+//     text-indent: -9999px;
+// }
+
+// .create-dm-avatar-svg-masked:before {
+//     content: "";
+//     display: block;
+//     width: 100%;
+//     height: 100%;
+//     background-color: $background-modifier-accent;
+// }
+
+// .svg-masked-pointer-events {
+//     pointer-events: auto;
+//     outline: none;
+// }
+
+// /*end*/
+
+
+// .create-dm-user-info {
+//     flex: 1 1 auto;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     margin-left: 10px;
+//     margin-right: 10px;
+//     display: -webkit-box;
+//     -webkit-box-orient: horizontal;
+//     -webkit-box-direction: normal;
+//     -webkit-box-pack: start;
+//     -webkit-box-align: baseline;
+//     display: flex;
+//     flex-direction: row;
+//     flex-wrap: nowrap;
+//     justify-content: flex-start;
+//     align-items: baseline;
+//     outline: 0;
+// }
+
+// .create-dm-user-username-wrapper {
+//     margin-right: 4px;
+//     font-size: 16px;
+//     line-height: 20px;
+//     font-family: $global-font;
+//     font-weight: 500;
+//     color: $text-normal;
+//     outline: 0;
+// }
+
+// .create-dm-user-strife-tag {
+//     outline: 0;
+//     display: -webkit-box;
+//     -webkit-box-pack: start;
+//     -webkit-box-orient: horizontal;
+//     -webkit-box-direction: normal;
+//     -webkit-box-align: center;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: flex-start;
+//     align-items: center;
+//     overflow: hidden;
+//     font-size: 14px;
+//     font-family: $global-font;
+//     font-weight: 400;
+//     color: $text-muted;
+//     white-space: nowrap;
+//     line-height: 1.1;
+// }
+
+// .create-dm-user-user-name {
+//     -webkit-box-flex: 0;
+//     display: block;
+//     flex: 0 1 auto;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     outline: 0;
+//     font-size: 14px;
+//     font-family: $global-font;
+//     font-weight: 400;
+// }
+
+
+// .create-dm-check-box-wrapper {
+//     -webkit-box-flex: 0;
+//     flex: 0 0 auto;
+//     display: -webkit-box;
+//     -webkit-box-align: center;
+//     display: flex;
+//     align-items: center;
+//     position: relative;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+//     font-size: 16px;
+//     font-weight: 400;
+//     font-family: $global-font;
+//     max-width: 100%;
+//     outline: 0;
+
+// }
+
+// .create-dm-check-box {
+//     width: 22px;
+//     height: 22px;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     border-radius: 6px;
+//     -webkit-box-flex: 0;
+//     flex: 0 0 auto;
+//     display: -webkit-box;
+//     -webkit-box-pack: center;
+//     -webkit-box-align: center;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     border-width: 1px;
+//     border-style: solid;
+//     border-color: $primary-400;
+//     outline: 0;
+// }
+
+// .create-dm-check-box.checked {
+//     border-color: $control-brand-foreground;
+
+//     svg path {
+//         fill: $brand-500;
+//     }
+// }
+
+// .create-dm-footer {
+//     outline: 0;
+//     height: 1px;
+//     margin: 0 10px;
+//     // box-shadow: 0 -1px 0 $white-500-hsl-04;
+//     // odd behavior using a var does not work here
+//     // using calc method with a var 
+//     box-shadow: $white-500-bs;
+// }
+
+
+// .create-dm-button-sec {
+//     flex: 1 1 auto;
+//     padding: 20px;
+//     display: -webkit-box;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+//     -webkit-box-pack: start;
+//     -webkit-box-align: stretch;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-start;
+//     align-items: stretch;
+//     flex-wrap: nowrap;
+//     outline: 0;
+
+// }
+
+
+// .create-dm-button {
+//     height: 38px;
+//     min-width: 96px;
+//     min-height: 38px;
+//     width: 100%;
+//     -webkit-user-drag: none;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+//     outline: 0;
+//     -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+//     transition: background-color 0.17s ease, color 0.17s ease;
+//     text-rendering: optimizeLegibility;
+//     font-family: $global-font;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     // background: none;
+//     border: none;
+//     border-radius: 3px;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 16px;
+//     padding: 2px 16px;
+//     display: -webkit-box;
+//     -webkit-box-align: center;
+//     -webkit-box-pack: center;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     position: relative;
+//     background-color: $brand-experiment;
+//     color: $white-500;
+// }
+
+// .create-dm-button:hover {
+//     background-color: $brand-experiment-560;
+// }
+
+// .create-dm-button-text {
+//     outline: 0;
+//     margin: 0 auto;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     overflow: hidden;
+//     background-image: linear-gradient(0deg, transparent, transparent 1px, transparent 0, transparent 2px, transparent 0);
+// }
+
+// .create-dm-button-fake {
+//     height: 38px;
+//     min-width: 96px;
+//     min-height: 38px;
+//     width: 100%;
+//     -webkit-user-drag: none;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+//     outline: 0;
+//     -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+//     transition: background-color 0.17s ease, color 0.17s ease;
+//     text-rendering: optimizeLegibility;
+//     font-family: $global-font;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     border: none;
+//     border-radius: 3px;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 16px;
+//     padding: 2px 16px;
+//     display: -webkit-box;
+//     -webkit-box-align: center;
+//     -webkit-box-pack: center;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     position: relative;
+//     background-color: $brand-experiment;
+//     color: $white-500;
+//     opacity: 0.5;
+//     cursor: not-allowed;
+// }
+
+
+
+
+
+
+
+
+
+// .create-dm-no-results {
+//     flex: 1 1 auto;
+//     padding: 0px 48px;
+//     font-family: $global-font;
+//     font-weight: 500;
+//     font-size: 16px;
+//     line-height: 20px;
+//     text-align: center;
+//     max-height: 190px;
+//     margin-bottom: 20px;
+
+//     display: -webkit-box;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+//     -webkit-box-pack: center;
+//     -webkit-box-align: center;
+//     display: flex;
+//     flex-direction: column;
+//     flex-wrap: nowrap;
+//     justify-content: center;
+//     align-items: center;
+//     outline: 0;
+//     color: $primary-400;
+// }
+
+
+// .create-dm-no-results-error-state {
+//     width: 85px;
+//     height: 85px;
+//     background-repeat: no-repeat;
+//     background-position: 50%;
+//     background-size: cover;
+//     margin-bottom: 20px;
+//     outline: 0;
+//     background-image: image_url('createdmnoresults.svg');
+
+// }
+
+
+
+// .clear-modal-wrapper.homeBar {
+//     // transform: translate(-309px, -1px);
+//     // height: 100vh;
+//     // width: 99.5vw;
+
+//     .create-dm-modal-popup {
+//         // transform: translate(240px, -145px);
+//         // top: 42px;
+//         // right: 125px;
+//         // left: unset;
+//         top: 44px;
+//         right: 113px;
+//         left: unset;
+//     }
+
+//     .create-dm-modal-popup.dm-invite {
+//         position: absolute;
+//         top: 44px;
+//         right: 296px;
+
+//         // top: 42px;
+//         left: unset;
+//         // right: 300px;
+//         // transform: translate(50px, 0px);
+//     }
+
+
+    
+//     .create-dm-modal-popup.voice-call {
+//         position: absolute;
+//         top: 44px;
+//         right: 418px;
+//         left: unset;
+//     }
+
+//     .create-dm-modal-popup.video-call {
+//         position: absolute;
+//         top: 44px;
+//         right: 378px;
+//         left: unset;
+//     }
+
+// }
+
+// .create-dm-modal-popup.server {
+//     // transform: translate(240px, -145px);
+//     // top: 186px;
+//     // right: 300px;
+//     // left: 278px;
+//     // transform: translate(50px, 0px);
+//     position: unset;
+
+//     .user-pfp-svg-render {
+//         overflow: unset;
+
+//     }
+
+//     .faint-boost-shiny-button {
+//         margin-top: 0px;
+//         height: 30px;
+//         min-width: 20px;
+//         min-height: 20px;
+//         padding: 2px 10px;
+
+//     }
+
+//     .create-dm-check-box {
+//         width: 16px;
+//         height: 16px;
+//         margin-left: 6px;
+
+//     }
+
+//     .create-dm-check-box.checked {
+//         border-color: $control-brand-foreground-green-border;
+
+//         svg path {
+//             fill: $control-brand-foreground-green-check;
+//         }
+//     }
+
+// }
+
+
+
+
+// .create-dm-no-friends {
+//     width: 171px;
+//     height: 86px;
+//     background-repeat: no-repeat;
+//     background-position: 50%;
+//     background-size: cover;
+//     margin-bottom: 20px;
+//     outline: 0;
+//     background-image: image_url('createdmnofriends.svg');
+// }
+
+// .create-dm-no-friends-button {
+//     height: 32px;
+//     min-width: 60px;
+//     min-height: 32px;
+//     width: 100%;
+//     -webkit-user-drag: none;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+//     outline: 0;
+//     -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+//     transition: background-color 0.17s ease, color 0.17s ease;
+//     text-rendering: optimizeLegibility;
+//     font-family: $global-font;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     // background: none;
+//     border: none;
+//     border-radius: 3px;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 16px;
+//     padding: 2px 16px;
+//     display: -webkit-box;
+//     -webkit-box-align: center;
+//     -webkit-box-pack: center;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     position: relative;
+//     margin-top: 20px;
+//     background-color: $button-positive-background;
+//     color: $white-500;
+// }
+
+// .create-dm-no-friends-button:hover {
+//     background-color: $button-positive-background-hover;
+// }
+
+
+// .create-dm-no-friends-error-state-flex-wrapper {
+//     padding: 20px 20px 40px;
+//     font-weight: 500;
+//     font-size: 16px;
+//     line-height: 20px;
+//     text-align: center;
+//     outline: 0;
+//     flex: 1 1 auto;
+//     color: $primary-400;
+//     display: -webkit-box;
+//     -webkit-box-orient: vertical;
+//     -webkit-box-direction: normal;
+//     -webkit-box-pack: center;
+//     -webkit-box-align: center;
+//     display: flex;
+//     flex-direction: column;
+//     flex-wrap: nowrap;
+//     justify-content: center;
+//     align-items: center;
+//     font-family: $global-font;
+// }
+
+// .add-to-dm-not-friends-img {
+//     background-image: image_url('no_friends_lite.svg');
+//     width: 300px;
+//     height: 129px;
+//     background-repeat: no-repeat;
+//     background-position: 50%;
+//     background-size: cover;
+//     margin-bottom: 20px;
+//     outline: 0;
+// }
+
+
+// .add-friends-to-dm-button-not-friends {
+//     margin-top: 20px;
+//     height: 32px;
+//     min-width: 60px;
+//     min-height: 32px;
+//     width: auto;
+//     -webkit-user-drag: none;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+//     outline: 0;
+//     -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+//     transition: background-color 0.17s ease, color 0.17s ease;
+//     text-rendering: optimizeLegibility;
+//     font-family: $global-font;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     // background: none;
+//     border: none;
+//     border-radius: 3px;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 16px;
+//     padding: 2px 16px;
+//     display: -webkit-box;
+//     -webkit-box-align: center;
+//     -webkit-box-pack: center;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     position: relative;
+//     background-color: $brand-experiment;
+//     color: $white-500;
+// }
+
+// .add-friends-to-dm-button-not-friends:hover {
+//     background-color: $brand-experiment-560;
+// }
+
+
+// .invite-to-dm-add-button-wrapper {
+//     margin-left: 8px;
+//     outline: 0;
+// }
+
+// .invite-to-dm-add-button {
+//     height: 32px;
+//     min-width: 60px;
+//     min-height: 32px;
+//     width: auto;
+//     -webkit-user-drag: none;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+//     outline: 0;
+//     -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+//     transition: background-color 0.17s ease, color 0.17s ease;
+//     text-rendering: optimizeLegibility;
+//     font-family: $global-font;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     // background: none;
+//     border: none;
+//     border-radius: 3px;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 16px;
+//     padding: 2px 16px;
+//     display: -webkit-box;
+//     -webkit-box-align: center;
+//     -webkit-box-pack: center;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     position: relative;
+//     background-color: $brand-experiment;
+//     color: $white-500;
+// }
+
+// .invite-to-dm-add-button:hover {
+//     background-color: $brand-experiment-560;
+// }
+
+// .invite-to-dm-add-button-fake {
+//     height: 32px;
+//     min-width: 60px;
+//     min-height: 32px;
+//     width: auto;
+//     -webkit-user-drag: none;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+//     outline: 0;
+//     -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+//     transition: background-color 0.17s ease, color 0.17s ease;
+//     text-rendering: optimizeLegibility;
+//     font-family: $global-font;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     // background: none;
+//     border: none;
+//     border-radius: 3px;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 16px;
+//     padding: 2px 16px;
+//     display: -webkit-box;
+//     -webkit-box-align: center;
+//     -webkit-box-pack: center;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     position: relative;
+//     background-color: $brand-experiment;
+//     color: $white-500;
+//     opacity: 0.5;
+//     cursor: not-allowed;
+// }
+
+// .invite-to-dm-invite-link-header {
+//     margin-bottom: 8px;
+//     color: $header-secondary;
+//     font-weight: 700;
+//     text-transform: uppercase;
+//     letter-spacing: 0.02em;
+//     font-family: $global-font;
+//     font-size: 12px;
+//     line-height: 16px;
+// }
+
+// .invite-to-dm-invite-link-input-flex-wrapper {
+//     flex: 1 1 auto;
+//     font-size: 16px;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     width: 100%;
+//     border-radius: 3px;
+//     color: $text-normal;
+//     background-color: $input-background;
+//     font-family: $global-font;
+//     border: none;
+//     -webkit-transition: border-color 0.2s ease-in-out;
+//     transition: border-color 0.2s ease-in-out;
+//     display: -webkit-box;
+//     -webkit-box-orient: horizontal;
+//     -webkit-box-direction: normal;
+//     -webkit-box-pack: justify;
+//     -webkit-box-align: center;
+//     display: flex;
+//     flex-direction: row;
+//     flex-wrap: nowrap;
+//     justify-content: space-between;
+//     align-items: center;
+//     outline: 0;
+// }
+
+// .invite-to-dm-invite-link-input-wrapper {
+//     flex-grow: 1;
+//     display: flex;
+//     flex-direction: column;
+//     outline: 0;
+// }
+
+// .invite-to-dm-invite-link-input {
+//     padding: 10px;
+//     height: 40px;
+//     border: none;
+//     outline: 0;
+//     font-size: 16px;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     width: 100%;
+//     border-radius: 3px;
+//     color: $text-normal;
+//     background-color: $input-background;
+//     border: none;
+//     -webkit-transition: border-color 0.2s ease-in-out;
+//     transition: border-color 0.2s ease-in-out;
+//     font-family: $global-font;
+//     outline: 0;
+//     text-rendering: optimizeLegibility;
+// }
+
+// .invite-to-dm-invite-link-input::placeholder {
+//     color: $text-normal;
+//     font-family: $global-font;
+//     text-rendering: optimizeLegibility;
+//     font-size: 16px;
+
+// }
+
+// .invite-to-dm-copy-invite-link-button {
+//     color: $white-500;
+//     background-color: $brand-experiment;
+//     margin-right: 4px;
+//     width: 75px;
+//     height: 32px;
+//     min-width: 60px;
+//     min-height: 32px;
+//     -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+//     transition: background-color 0.17s ease, color 0.17s ease;
+//     position: relative;
+//     display: -webkit-box;
+//     -webkit-box-pack: center;
+//     -webkit-box-align: center;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     -webkit-box-sizing: border-box;
+//     box-sizing: border-box;
+//     border: none;
+//     border-radius: 3px;
+//     font-size: 14px;
+//     font-weight: 500;
+//     line-height: 16px;
+//     padding: 2px 16px;
+//     -webkit-user-drag: none;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+//     font-family: $global-font;
+//     text-rendering: optimizeLegibility;
+//     outline: 0;
+// }
+
+// .invite-to-dm-copy-invite-link-button:hover {
+//     background-color: $brand-experiment-560;
+// }
+
+// .invite-to-dm-copy-invite-link-button:active {
+//     background-color: $button-positive-background-hover;
+// }
+
+// .invite-to-dm-copy-invite-link-button.copy-successful {
+//     background-color: $button-positive-background-hover;
+// }
+
+
+
+// .invite-to-dm-small-text {
+//     color: $primary-300;
+//     outline: 0;
+//     font-weight: 400;
+//     font-size: 12px;
+//     line-height: 16px;
+//     font-family: $global-font;
+//     margin-top: 8px;
+// }
+
+// .create-dm-fetching-friends-state {
+//     width: 85px;
+//     height: 85px;
+//     margin-bottom: 20px;
+//     outline: 0;
+// }
