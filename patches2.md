@@ -1373,6 +1373,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up old theme mutation observer to deprecated folder.
     - Backed up an alternative theme mutation observer to deprecated folder.
     - Backed up an old user settings function to deprecated folder.
+    - Moved User search modal styles to deprecated as the component is a test component that has not been used for a long time.
 
 ## Backend Changes
 
