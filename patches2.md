@@ -1372,6 +1372,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Merged useCloseModalonESCWSubModals into useCloseModalonESC replacing both leaving only useCloseModalonESC.
     - Backed up old theme mutation observer to deprecated folder.
     - Backed up an alternative theme mutation observer to deprecated folder.
+    - Backed up an old user settings function to deprecated folder.
 
 ## Backend Changes
 
