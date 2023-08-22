@@ -1375,6 +1375,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up an old user settings function to deprecated folder.
     - Moved User search modal styles to deprecated as the component is a test component that has not been used for a long time.
     - Deleted User search modal styles frome ruby assets style sheets folder.
+    - Added modal close calls for mega upc modal when clicking create message in order to close the modal when telepoting to newly created dms or existing dms when in other areas of the app where the handler to close the modal remains in scope preventing closing of the modal automatically.
 
 ## Backend Changes
 
