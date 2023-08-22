@@ -16,3 +16,27 @@
 //         }
 //     })
 // })
+
+
+//save for later
+    // // theme observer prevent removal of theme
+    // useEffect(() => {
+    //     // console.log("theme element sstate = ")
+    //     // console.log(themeElement)
+    //     // console.log(themeElement.classList.contains(theme))
+    //     // console.log("theme element observer active = ")
+    //     if (props.currentUser.id === 2) {
+    //         $("html").attr('class', "theme-light");
+    //         setTheme('theme-light');
+    //         themeObserver.observe(themeElement, { attributes: true });
+    //     }
+    //     else {
+    //         setTheme('theme-dark');
+    //         themeObserver.observe(themeElement, { attributes: true });
+    //     }
+
+    //     return function cleanUp () {
+    //         // console.log("stop observing");
+    //         themeObserver.disconnect();
+    //     };
+    // }, []);
