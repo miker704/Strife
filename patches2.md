@@ -1378,6 +1378,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added modal close calls for mega upc modal when clicking create message in order to close the modal when telepoting to newly created dms or existing dms when in other areas of the app where the handler to close the modal remains in scope preventing closing of the modal automatically.
     - Added modal close calls for mega upc user options modal when clicking message option to close both the options modal and the mega upc modal when in different parts of the app to teleport to a dm and automatically close the modal.
     - Changed from react router link using to = path to div using props.history.push(path) in mega upc tab 2 for mutual servers.
+    - Add close mega upc hook when clicking on a server in mutual servers tab 2 in mega upc modal.
 
 ## Backend Changes
 
