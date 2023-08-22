@@ -1370,6 +1370,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up user_modals.scss to deprecated folder.
     - Backed up user_nav_bar.scss to deprecated folder.
     - Merged useCloseModalonESCWSubModals into useCloseModalonESC replacing both leaving only useCloseModalonESC.
+    - Backed up old theme mutation observer to deprecated folder.
 
 ## Backend Changes
 
