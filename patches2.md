@@ -1381,6 +1381,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Add close mega upc hook when clicking on a server in mutual servers tab 2 in mega upc modal.
     - Added styles for UPC Panel which is the side panel for one to one dm servers.
     - Added UPC panel.jsx.
+    - Added UPC panel container.js.
+
 
 ## Backend Changes
 
