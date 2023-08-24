@@ -1383,6 +1383,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added UPC panel.jsx.
     - Added UPC panel container.js.
     - Added Mega UPC Modal to be mounted when clicking on a mutual friend in UPC Panel.
+    - Added the first show blanks (blur data to be rendered from props/state sections of a component) to UPC Panel.
 
 ## Backend Changes
 
