@@ -1384,6 +1384,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added UPC panel container.js.
     - Added Mega UPC Modal to be mounted when clicking on a mutual friend in UPC Panel.
     - Added the first show blanks (blur data to be rendered from props/state sections of a component) to UPC Panel.
+    - Solved a bug in pending friends list when opening the Mega Upc Modal to interact with a the request if the pending list has only one in the list and upon rejecting or approving of the request to modal closes but if the request is rejected by the sender or the receiver and a new request from another user or the same user is received while the current user is still at the pending page the modal reopens solution was to use a useEffect to track the current incoming and outgoing requests if they both together reach zero close the modal if it is still open and if a request is received while still at the page the modal does not automatically open back up. 
 
 ## Backend Changes
 
