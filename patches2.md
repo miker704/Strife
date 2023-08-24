@@ -1382,7 +1382,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added styles for UPC Panel which is the side panel for one to one dm servers.
     - Added UPC panel.jsx.
     - Added UPC panel container.js.
-
+    - Added Mega UPC Modal to be mounted when clicking on a mutual friend in UPC Panel.
 
 ## Backend Changes
 
