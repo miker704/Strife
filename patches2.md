@@ -1380,6 +1380,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed from react router link using to = path to div using props.history.push(path) in mega upc tab 2 for mutual servers.
     - Add close mega upc hook when clicking on a server in mutual servers tab 2 in mega upc modal.
     - Added styles for UPC Panel which is the side panel for one to one dm servers.
+    - Added UPC panel.jsx.
 
 ## Backend Changes
 
