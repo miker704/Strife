@@ -1390,7 +1390,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Add the ability to teleport to an existing dmServer or create on when clicking the body of a friend list item in All friends page.
     - Since the change to use the newest version of ReactToolTip library v5.2+ bugs have been apparent most notably the tool tip sometimes remains if the mouse moves to fast off screen so to address this issue all the each almost all components will receive its own tooltip as before with the exception that instead of one tooltip per item it will be 1-3 per component where it will handle most of the items needing a tooltip, since using v5 most of the non modal tooltips have all been using the root tooltip, now the change will be for components to have their own tool tip component and using manualy isopen and setopen states to control the showing and hiding of the tool tip to ensure tooltip hanging is to a minimal. only components that suffer mostly from this problem will be using this fix.
     - Mounted tooltip component and using manual isopen and setopen to control tooltip in dm server header nav bar. 
-    - Mounted tooltip component and using manual isopen and setopen to control tooltip in server header nav bar. 
+    - Mounted tooltip component and using manual isopen and setopen to control tooltip in server header nav bar.
+    - Removed other server nav bar tooltip and arranged for those bubbles that use it to use the dynamic anchor select tooltip and using setopen and isopen props to control the hanging that the component suffers from. 
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
