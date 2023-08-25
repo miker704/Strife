@@ -1399,6 +1399,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Mounted tooltip component for blocked users list.
     - Mounted tooltip component for all friends list.
     - Mounted tooltip component for online friends list.
+    - Mounted tooltip component for pending friends list.
 
 
 ## Backend Changes
