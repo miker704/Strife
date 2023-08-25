@@ -1395,6 +1395,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Mounted tooltip component for dm chat room.
     - Mounted tooltip component for server chat room.
     - Mounted tooltip component for server members list.
+    - Mounted tooltip component for dmServer members list.
 
 
 ## Backend Changes
