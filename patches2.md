@@ -1394,6 +1394,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed other server nav bar tooltip and arranged for those bubbles that use it to use the dynamic anchor select tooltip and using setopen and isopen props to control the hanging that the component suffers from.
     - Mounted tooltip component for dm chat room.
     - Mounted tooltip component for server chat room.
+    - Mounted tooltip component for server members list.
+
 
 ## Backend Changes
 
