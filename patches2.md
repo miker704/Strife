@@ -1393,6 +1393,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Mounted tooltip component and using manual isopen and setopen to control tooltip in server header nav bar.
     - Removed other server nav bar tooltip and arranged for those bubbles that use it to use the dynamic anchor select tooltip and using setopen and isopen props to control the hanging that the component suffers from.
     - Mounted tooltip component for dm chat room.
+    - Mounted tooltip component for server chat room.
+
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
