@@ -1405,7 +1405,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Styles for the Boost Server Information Modal.
     - Created Styles for the Boost Server Plan Selection Slide 1 Modal.
     - Created Styles for the Boost Server Plan Selection Slide 2 Nitro Plan Suggestion Modal.
-    - Created Styles for the Boost Server Plan Selection Slide 3 Payment type selection Modal.
+    - Created Styles for the Boost Server Plan Selection Slide 3 Payment type selection slide Modal.
+    - Created Styles for the Boost Server Plan Selection Slide 4 Payment input slide Modal.
 
 
 ## Backend Changes
