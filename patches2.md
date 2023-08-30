@@ -1402,6 +1402,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Mounted tooltip component for pending friends list.
     - Mounted tooltip component for explore servers page.
     - Backed up deprecated useEffect function for new dm container in deprecated folder.
+    - Created Styles for the Server Boost Information Modal.
 
 ## Backend Changes
 
