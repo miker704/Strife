@@ -1410,6 +1410,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Styles for the Boost Server Plan Selection Slide 5 confirm purchase slide Modal.
     - Created Styles for the Boost Server Plan Selection Slide 6 purchase completed slide Modal.
     - Created Styles for the Select Nitro Pro slide Modal.
+    - Added AmeCard svg icon.
 
 ## Backend Changes
 
