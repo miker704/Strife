@@ -1404,6 +1404,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up deprecated useEffect function for new dm container in deprecated folder.
     - Created Styles for the Boost Server Information Modal.
     - Created Styles for the Boost Server Plan Selection Slide 1 Modal.
+    - Created Styles for the Boost Server Plan Selection Slide 2 Nitro Plan Suggestion Modal.
 
 
 ## Backend Changes
