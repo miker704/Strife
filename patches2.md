@@ -1422,6 +1422,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added ppCard.svg icon.
     - Added mcCard.svg icon.
     - Added boostSelectPlanHeader.svg icon.
+    - Added boostServerSelectPlanBackground.svg icon.
 
 
 
