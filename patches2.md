@@ -1424,6 +1424,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added boostSelectPlanHeader.svg icon.
     - Added boostServerSelectPlanBackground.svg icon.
     - Added gemAngel.svg Icon.
+    - Added staticFlyingWumpus.svg Icon.
 
 
 
