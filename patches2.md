@@ -1419,6 +1419,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added dccCard.svg icon.
     - Added vsCard.svg icon.
     - Added vnCard.svg icon.
+    - Added ppCard.svg icon.
 
 
 
