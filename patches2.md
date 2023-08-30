@@ -1429,6 +1429,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added strifeSplashLogo.svg Icon.
     - Added tier2CloudBannerBackground.svg Icon.
     - Added tier2CloudBannerForeground.svg Icon.
+    - Added flyingWumpus.gif file.
 
 
 
