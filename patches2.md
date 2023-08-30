@@ -1412,6 +1412,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Styles for the Select Nitro Pro slide Modal.
     - Added mutliple Card Icons svg icons.
     - Added ame.svg icon.
+    - Added blueCard.svg icon.
+
 
 
 ## Backend Changes
