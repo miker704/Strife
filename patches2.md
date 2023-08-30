@@ -1428,6 +1428,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added warnBlockIcon.svg Icon.
     - Added strifeSplashLogo.svg Icon.
     - Added tier2CloudBannerBackground.svg Icon.
+    - Added tier2CloudBannerForeground.svg Icon.
 
 
 
