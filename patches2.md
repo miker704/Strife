@@ -1426,7 +1426,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added gemAngel.svg Icon.
     - Added staticFlyingWumpus.svg Icon.
     - Added warnBlockIcon.svg Icon.
-    - Added svg_masks.svg Icon.
+    - Added strifeSplashLogo.svg Icon.
 
 
 
