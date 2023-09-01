@@ -1451,6 +1451,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Merged b5.jsx version of boost select plan modal into boost select plan modal to dry up code and produce a more efficent component.
     - Created Styles for Purchase nitro pro membership modal.
     - Created Styles for Purchase nitro basic membership modal.
+    - Created Styles for select nitro membership plan modal.
 
 
 
