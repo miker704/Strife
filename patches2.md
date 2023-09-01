@@ -1453,6 +1453,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Styles for Purchase nitro basic membership modal.
     - Created Styles for select nitro membership plan modal.
     - Created select nitro membership plan modal .jsx.
+    - Created select nitro membership plan modal container .js.
 
 
 
