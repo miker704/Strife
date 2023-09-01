@@ -1464,6 +1464,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Mounted Select nitro membership plan modal in nitro store.
     - Mounted Purchase nitro pro membership modal in Select nitro membership plan modal.
     - Mounted Purchase nitro basic membership modal in Select nitro membership plan modal.
+    - Mounted Purchase nitro basic membership modal in nitro store.
 
 
 
