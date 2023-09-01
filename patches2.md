@@ -1447,6 +1447,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved deprecated Boost Server Plan Selection Slide 2 Nitro Plan Suggestion Modal container .js to deprecated folder.
     - Moved deprecated Boost Server Plan Selection Slide 2 Nitro Plan Suggestion Modal.jsx to deprecated folder.
     - Moved full non dry version of boost select plan modal (b4.jsx) to deprecated folder.
+    - Moved dry version of boost select plan modal (b5.jsx) to deprecated folder.
 
 ## Backend Changes
 
