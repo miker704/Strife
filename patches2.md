@@ -1433,7 +1433,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added strife_spider_quad.png file.
     - Added nitroBasicFG.svg icon file.
     - Added drivingWumpus.gif icon file.
-
+    - Added serverboostanimated.gif icon file.
 
 ## Backend Changes
 
