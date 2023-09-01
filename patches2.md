@@ -1467,6 +1467,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Mounted Purchase nitro basic membership modal in nitro store.
     - Mounted Purchase nitro pro membership modal in nitro store.
     - Moved old deprecated channel nav bar without the collapsing channel lists to deprecated folder.
+    - Added the ability to show the option of gifting a nitro pro membership in the nitro pro membership modal.
 
 ## Backend Changes
 
