@@ -1417,8 +1417,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Boost Server Plan Selection Slide 4 Payment input slide Modal container .js.
     - Created Boost Server Plan Selection Slide 5 confirm purchase slide Modal .jsx.
     - Created Boost Server Plan Selection Slide 5 confirm purchase slide Modal container. js.
-
-
     - Created Styles for the Select Nitro Pro slide Modal.
     - Added mutliple Card Icons svg icons.
     - Added ame.svg icon.
@@ -1445,6 +1443,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added drivingWumpus.gif icon file.
     - Added serverboostanimated.gif icon file.
     - Moved deprecated boost payment review modal slide to deprecated folder.
+    - Moved deprecated boost payment modal slide to deprecated folder.
 
 ## Backend Changes
 
