@@ -1434,6 +1434,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added nitroBasicFG.svg icon file.
     - Added drivingWumpus.gif icon file.
     - Added serverboostanimated.gif icon file.
+    - Moved deprecated boost payment review modal slide to deprecated folder.
 
 ## Backend Changes
 
