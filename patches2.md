@@ -1462,6 +1462,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Mounted Purchase nitro pro membership modal in boost server modal to then be called in slide 2 nitro plan suggestion modal slide in select boost server plan modal.
     - Mounted boost server modal in server setting modal.
     - Mounted Select nitro membership plan modal in nitro store.
+    - Mounted Purchase nitro pro membership modal in Select nitro membership plan modal.
+
 
 
 ## Backend Changes
