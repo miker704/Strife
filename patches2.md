@@ -1444,7 +1444,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added serverboostanimated.gif icon file.
     - Moved deprecated boost payment review modal slide to deprecated folder.
     - Moved deprecated boost payment modal slide to deprecated folder.
-    - Moved deprecated Boost Server Plan Selection Slide 2 Nitro Plan Suggestion Modal .jsx to deprecated folder.
+    - Moved deprecated Boost Server Plan Selection Slide 2 Nitro Plan Suggestion Modal container .js to deprecated folder.
+    - Moved deprecated Boost Server Plan Selection Slide 2 Nitro Plan Suggestion Modal.jsx to deprecated folder.
 
 ## Backend Changes
 
