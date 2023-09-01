@@ -1411,6 +1411,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Styles for the Boost Server Plan Selection Slide 6 purchase completed slide Modal.
     - Created Boost Server Information Modal .jsx
     - Created Boost Server Information Modal container .js
+    - Created Boost Server Plan Selection Slide 2 Nitro Plan Suggestion Modal .jsx
+
 
     - Created Styles for the Select Nitro Pro slide Modal.
     - Added mutliple Card Icons svg icons.
