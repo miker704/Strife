@@ -1458,8 +1458,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Purchase nitro pro membership modal .jsx.
     - Created Purchase nitro basic membership modal .jsx.
     - Created Purchase nitro basic membership modal container .js.
-
-
+    - Mounted select boost server plan modal in boost server modal
 
 ## Backend Changes
 
