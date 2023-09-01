@@ -1431,6 +1431,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added tier2CloudBannerForeground.svg Icon.
     - Added flyingWumpus.gif file.
     - Added strife_spider_quad.png file.
+    - Added nitroBasicFG.svg icon file.
 
 ## Backend Changes
 
