@@ -1499,6 +1499,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Created back end function in users controller to return mutual friends between to users, this most notably applies to the current user and some other user being viewed by the mega upc modal and the planned user profile dm container. It finds both users by their ids and then using active record associations take the current users friends and the other users friends mapped to give their ids only and return the friends the current user has that matches ids from the other user.
 - Created back end function to grab mutual servers between two users it uses a similar process to the mutual friends function except it uses the servers_joined association and selects out those servers where the server id matches between the two users.
 - Returned the number of members a server has in explore.json.jbuilder for unexplored servers state.
+- Returned the number of online members a server has in explore.json.jbuilder for unexplored servers state.
 
 ### Front-End Changes
 
