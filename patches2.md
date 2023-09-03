@@ -1503,6 +1503,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Returned the server owner color tag  which is the color tag of the user that is the owner of the server for unexplored servers state.
 - Returned the dmServer owner color tag  which is the color tag of the user that is the owner of the dmServer for dmServers state.
 - Returned the if a dmServer is currently one to one which means it is a chat between 2 users.
+- Returned the other user that is not the current user for a one to one dmServer chat room.
 
 ### Front-End Changes
 
