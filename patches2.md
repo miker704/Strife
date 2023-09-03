@@ -1500,6 +1500,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Created back end function to grab mutual servers between two users it uses a similar process to the mutual friends function except it uses the servers_joined association and selects out those servers where the server id matches between the two users.
 - Returned the number of members a server has in explore.json.jbuilder for unexplored servers state.
 - Returned the number of online members a server has in explore.json.jbuilder for unexplored servers state.
+- Returned the server owner color tag  which is the color tag of the user that is the owner of the server for unexplored servers state.
 
 ### Front-End Changes
 
