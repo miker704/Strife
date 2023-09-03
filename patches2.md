@@ -1470,6 +1470,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added the ability to show the option of gifting a nitro pro membership in the nitro pro membership modal.
     - Added the ability to show the option of gifting a nitro basic membership in the nitro basic membership modal.
     - Added the ability to show the option of gifting a nitro basic or pro membership to be passed from the nitro store to and through the nitro plan selection modal.
+    - Added rescale for position for mini current user account card when screen is less than or equal to 573px in height.
 
 ## Backend Changes
 
