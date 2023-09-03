@@ -1501,6 +1501,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Returned the number of members a server has in explore.json.jbuilder for unexplored servers state.
 - Returned the number of online members a server has in explore.json.jbuilder for unexplored servers state.
 - Returned the server owner color tag  which is the color tag of the user that is the owner of the server for unexplored servers state.
+- Returned the dmServer owner color tag  which is the color tag of the user that is the owner of the dmServer for dmServers state.
 
 ### Front-End Changes
 
