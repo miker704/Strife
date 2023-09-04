@@ -1512,6 +1512,8 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Returned the dmServer owner color tag  which is the color tag of the user that is the owner of the dmServer for dmServers state.
 - Returned the if a dmServer is currently one to one which means it is a chat between 2 users.
 - Returned the other user that is not the current user for a one to one dmServer chat room.
+- Returned is a dmServer is a group chat that is if the dmServer has more than two members.
+-
 
 ### Front-End Changes
 
