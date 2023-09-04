@@ -1475,7 +1475,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added the ability to copy message id when clicking the copy id setting button for server channel messages.
     - Created styles for welcome message for text channels.
     - Created welcome text channel message.jsx.
-
+    - Created welcome text channel message container.js.
     - Added the welcome message for text channels.
 
 ## Backend Changes
