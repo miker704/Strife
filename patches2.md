@@ -1513,7 +1513,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Returned the if a dmServer is currently one to one which means it is a chat between 2 users.
 - Returned the other user that is not the current user for a one to one dmServer chat room.
 - Returned is a dmServer is a group chat that is if the dmServer has more than two members.
--
+- Created function in dmServer Modal to check if a dmServer qualifies as a group chat.
 
 ### Front-End Changes
 
