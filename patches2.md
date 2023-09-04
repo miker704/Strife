@@ -1479,6 +1479,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added the welcome message for text channels.
     - Added styles for welcome message for group chat dm Servers.
     - Added a Welcome Message for group chat dms.jsx
+    - Added a Welcome Message for group chat dms container.js
+
 
 ## Backend Changes
 
