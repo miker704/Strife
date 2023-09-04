@@ -1487,6 +1487,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added a Welcome Message for one to one dmservers.
     - Added a component spliter called DmFirstChatMessage which decides which type of Dm First chat message to render one to one or group chat.
     - Added DmFirstChatMessage container.js
+    - Added DmFirstChatMessage.jsx
 
 
 ## Backend Changes
