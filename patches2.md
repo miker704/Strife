@@ -1489,6 +1489,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added DmFirstChatMessage container.js
     - Added DmFirstChatMessage.jsx
     - Mounted DmFirstChatMessage in DmServerChat room.
+    - Mounted welcome text channel message in ServerChat room.
 
 ## Backend Changes
 
