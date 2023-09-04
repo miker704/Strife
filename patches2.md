@@ -1484,7 +1484,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added styles for welcome message for one to one dm Servers.
     - Added a Welcome Message for one to one dmservers.jsx
     - Added a Welcome Message for one to one dmservers container.js
-
+    - Added a Welcome Message for one to one dmservers.
 
 ## Backend Changes
 
