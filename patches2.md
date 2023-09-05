@@ -1490,6 +1490,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added DmFirstChatMessage.jsx
     - Mounted DmFirstChatMessage in DmServerChat room.
     - Mounted welcome text channel message in ServerChat room.
+    - Created Message Skeleton Component which is a combination of using Mui pre-built skeleton component and the message component styles shared between both servers and dm servers to make rendering placeholder/ blank blobs like those used in the UpcPanel component much easier this generates 10 random messages with random widths and chances for blob image attachments much easier, the upc panel wil continue to use its prebuilt blobs as the loading complexity is more adavanced and a chance to show off a custom made version of a prebuilt component.
 
 ## Backend Changes
 
