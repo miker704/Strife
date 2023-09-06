@@ -1494,11 +1494,12 @@ the need to create a private room is need to prevent unwanted members from enter
     - Renamed the DmServerMemberList.jsx component file from dm__server_list.jsx to dm_server_member_list.jsx.
     - Renamed the DmServerMemberListContainer.js component file from dm__server_list_Container.js to dm_server_member_list_container.js.
     - ReWorked frontend time formatting for dm message time stamps for dm messages from displaying time in 
-      messages created before yesterday display as "Mon Sept 04 2023", messages created yesterday as "Yesterday at 5:00 pm" and today as "5:00 pm" to days before yesterday numeric timestamp of date and time example "09/04/2023 2:33 am", yesterday as "Yesterday at 5:00 pm" and today as "Today at 5:00 pm".
+    messages created before yesterday display as "Mon Sept 04 2023", messages created yesterday as "Yesterday at 5:00 pm" and today as "5:00 pm" to days before yesterday numeric timestamp of date and time example "09/04/2023 2:33 am", yesterday as "Yesterday at 5:00 pm" and today as "Today at 5:00 pm".
     - Added Spinning cubes animation to nitro store tab upon entering the nitro store.
     - Added New Time Stamp Function for dm Messages that gives the full date in the format weekday, full month day, year time am/pm.
     - Added Tooltip to display full timestamp for dm messages.
     - Moved a now deprecated version of DmMessage jsx to deprecated.
+    - Moved a protype version deprecated of the server message control to deprecated folder.
   
 ## Backend Changes
 
