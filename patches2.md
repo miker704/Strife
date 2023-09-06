@@ -1541,6 +1541,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Redirected json returning of dm server messages to _dm_message.json.jbuilder instead of looping through the dm messages itself and extracting the needed attributes.
 - Removed old method of parsing dm_messages when rendering :show for dmServer.
 - Returned full date time stamp in format of weekday month day year time and am/pm for dm messages in _dm_messages.json.jbuilder.
+- Returned full date time stamp in format of weekday month day year time and am/pm for messages in _messages.json.jbuilder.
 
 ### Front-End Changes
 
