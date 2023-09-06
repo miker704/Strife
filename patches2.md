@@ -1493,6 +1493,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Message Skeleton Component which is a combination of using Mui pre-built skeleton component and the message component styles shared between both servers and dm servers to make rendering placeholder/ blank blobs like those used in the UpcPanel component much easier this generates 10 random messages with random widths and chances for blob image attachments much easier, the upc panel wil continue to use its prebuilt blobs as the loading complexity is more adavanced and a chance to show off a custom made version of a prebuilt component.
     - Renamed the DmServerMemberList.jsx component file from dm__server_list.jsx to dm_server_member_list.jsx.
     - Renamed the DmServerMemberListContainer.js component file from dm__server_list_Container.js to dm_server_member_list_container.js.
+    - ReWorked frontend time formatting for dm message time stamps for dm messages from displaying time in 
+      messages created before yesterday display as "Mon Sept 04 2023", messages created yesterday as "Yesterday at 5:00 pm" and today as "5:00 pm" to days before yesterday numeric timestamp of date and time example "09/04/2023 2:33 am", yesterday as "Yesterday at 5:00 pm" and today as "Today at 5:00 pm".
 
 ## Backend Changes
 
