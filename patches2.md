@@ -1499,7 +1499,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added New Time Stamp Function for dm Messages that gives the full date in the format weekday, full month day, year time am/pm.
     - Added Tooltip to display full timestamp for dm messages.
     - Moved a now deprecated version of DmMessage jsx to deprecated.
-    - Moved a protype version deprecated of the server message control to deprecated folder.
+    - Moved a protype version deprecated of the server message control using raw svg code to deprecated folder.
+    - Moved a protype version deprecated of the server message control using new svg react icons to deprecated folder.
   
 ## Backend Changes
 
