@@ -1538,6 +1538,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Removed unnecessary server assets in server.show.json.jbuilder file as it was never used. it is a nest version of half of the extrracted data for a server.
 - Redirected json returning of channel messages to _message.json.jbuilder instead of looping through the messages itself and extracting the needed attributes.
 - Removed old returning of channel messages from channel.show jbuilder file.
+- Redirected json returning of dm server messages to _dm_message.json.jbuilder instead of looping through the dm messages itself and extracting the needed attributes.
 
 ### Front-End Changes
 
