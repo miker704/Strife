@@ -1534,6 +1534,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Returned is a dmServer is a group chat that is if the dmServer has more than two members.
 - Created function in dmServer Modal to check if a dmServer qualifies as a group chat.
 - Created function to process time stamp for dm message creation time it is basically the same process used to process and format the time when returning a dmServer with its dm messages but converted into a function.
+- Created function to process time stamp for message creation time it is basically the same process used to process and format the time when returning a Servers channel with its messages but converted into a function.
 
 ### Front-End Changes
 
