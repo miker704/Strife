@@ -1537,6 +1537,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Created function to process time stamp for message creation time it is basically the same process used to process and format the time when returning a Servers channel with its messages but converted into a function.
 - Removed unnecessary server assets in server.show.json.jbuilder file as it was never used. it is a nest version of half of the extrracted data for a server.
 - Redirected json returning of channel messages to _message.json.jbuilder instead of looping through the messages itself and extracting the needed attributes.
+- Removed old returning of channel messages from channel.show jbuilder file.
 
 ### Front-End Changes
 
