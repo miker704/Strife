@@ -1539,6 +1539,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Redirected json returning of channel messages to _message.json.jbuilder instead of looping through the messages itself and extracting the needed attributes.
 - Removed old returning of channel messages from channel.show jbuilder file.
 - Redirected json returning of dm server messages to _dm_message.json.jbuilder instead of looping through the dm messages itself and extracting the needed attributes.
+- Removed old method of parsing dm_messages when rendering :show for dmServer.
 
 ### Front-End Changes
 
