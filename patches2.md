@@ -1505,6 +1505,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added temporary solutions to open message control via shift key to dm Messages.
     - Added temporary solutions to open message control via shift key to server channel Messages.
     - Added old commented out code from json.jbuilder files to a deprecated json jbuilder file and moved it to deprecated folder.
+    - Moved test22.jsx file to deprecated.
 
 ## Backend Changes
 
