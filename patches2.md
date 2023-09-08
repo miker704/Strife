@@ -1518,6 +1518,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added a ref to the edit dmMessage form so one it is open in addition to focusing on the input ref but also focus and scroll to the dmMessage edit body into proper view, discord does not do this and clicking on edit follow up message there is a 50% chance where when the edit form opens you will by also hovering over the message that is ontop of the one you are editing.
     - Finally rendered chat message dividers properly for dmMessages where message that where sent over a 24 hour period will be seperated with a divider stating the date of when those messages where sent.
     - Created Dm Message index .jsx which is basically a component that handles the rendering of the dm server messages instead of allowing all of that work to go to the dm chat room component.
+    - Created Dm Message index container.js.
 
 ## Backend Changes
 
