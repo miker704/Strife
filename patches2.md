@@ -1507,6 +1507,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added old commented out code from json.jbuilder files to a deprecated json jbuilder file and moved it to deprecated folder.
     - Moved test22.jsx file to deprecated.
     - Moved testsvgraw.jsx file to deprecated.
+    - Reworked how dmMessages will render in dm chatroom, dm_Messages now will render in a more compressed form where any new messages from the same user are sent within the span of 5mins (300 seconds) between the last message they sent with no other user messaging in between it will render all those messages in a compressed form where the compressed form only shows the dm_messsage body and no user name, avatar or time stamp header but will show a timestamp to the left of it if the message is hovered over. this gives the illusion that the dmMessages are part of the orginal first message the user sent 5 mins ago. The first message a user sends every 5 mins or in between messages of other users renders normally giving user name, timestamp header and avatar along with dm Message body. the follow up messages give the illusion of a continuation of the first message.
 
 ## Backend Changes
 
