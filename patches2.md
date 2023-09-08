@@ -1515,6 +1515,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added tooltip for follow up dm message time stamp.
     - Reworked how dmMessage body is returned from the messageBody function.
     - Remodeled the styling and structuring of the edit dm Message form looks and how it is rendered.
+    - Added a ref to the edit dmMessage form so one it is open in addition to focusing on the input ref but also focus and scroll to the dmMessage edit body into proper view, discord does not do this and clicking on edit follow up message there is a 50% chance where when the edit form opens you will by also hovering over the message that is ontop of the one you are editing.
+    
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
