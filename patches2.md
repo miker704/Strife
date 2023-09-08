@@ -1512,7 +1512,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added onHover and isHovered state functions as call back functions to prevent hanging tool tip for the buttons in dmMessageControl.
     - Added the ability when the user is holding shift while the dmMessage controller is expanded if the user clicked on the delete icon when still holding shift will outright delete the dmMessage without bringing up the delete confirmation modal.
     - Added a is_header prop for dmMessage controls to indicate which position for the control component to render if it is true it means its is not a follow up dm message where if false renders the control lower for a follow up dm message
-
+    - Added tooltip for follow up dm message time stamp.
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
