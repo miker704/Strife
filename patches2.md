@@ -1514,6 +1514,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added a is_header prop for dmMessage controls to indicate which position for the control component to render if it is true it means its is not a follow up dm message where if false renders the control lower for a follow up dm message
     - Added tooltip for follow up dm message time stamp.
     - Reworked how dmMessage body is returned from the messageBody function.
+    - Remodeled the styling and structuring of the edit dm Message form looks and how it is rendered.
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
