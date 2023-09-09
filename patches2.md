@@ -1519,6 +1519,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finally rendered chat message dividers properly for dmMessages where message that where sent over a 24 hour period will be seperated with a divider stating the date of when those messages where sent.
     - Created Dm Message index .jsx which is basically a component that handles the rendering of the dm server messages instead of allowing all of that work to go to the dm chat room component.
     - Created Dm Message index container.js.
+    - Moved timestamp functions to an external module and converted it to a hook due to be used in multiple components and need to prop drill and redelare the function is not needed.
 
 ## Backend Changes
 
