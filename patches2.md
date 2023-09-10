@@ -1538,6 +1538,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added the ability for the user to delete channel message when holding shift to expand the message control component and while holding shelf and click on the delete icon to will delete the message without bringing up the delete message modal.
     - Removed placeholder of edit dm message input.
     - Removed placeholder of edit channel message input.
+    - Added scroll to message upon opening edit message for server channel messages.
 
 ## Backend Changes
 
