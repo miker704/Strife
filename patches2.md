@@ -1537,6 +1537,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed scroll to bottom function to target and scroll to the bottom of the dm chat via dom querying instead of refs as the message list is no longer in the server chat component.
     - Added the ability for the user to delete channel message when holding shift to expand the message control component and while holding shelf and click on the delete icon to will delete the message without bringing up the delete message modal.
     - Removed placeholder of edit dm message input.
+    - Removed placeholder of edit channel message input.
 
 ## Backend Changes
 
