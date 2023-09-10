@@ -1531,6 +1531,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added timestamp tool tip in delete server channel message modal.
     - Added Server Message index container.js to map out channel messages.
     - Added Server Message index.jsx to map out channel messages.
+    - Changed the mapping of Server Messages to now all messages sent by a user in the span of 5 mins with now other user messaging in between will create a message with the users avatar and every follo uup message will just have the body and and timestamp of the left side of it the can be shown when hovering over it as well as a tool tip for it.
 
 ## Backend Changes
 
