@@ -1529,6 +1529,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up old version of Delete Dm message modal container.js to deprecated folder.
     - Added timestamp tool tip in delete dm message modal.
     - Added timestamp tool tip in delete server channel message modal.
+    - Added Server Message index container to map out channel messages.
 
 ## Backend Changes
 
