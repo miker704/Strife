@@ -1520,6 +1520,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Dm Message index .jsx which is basically a component that handles the rendering of the dm server messages instead of allowing all of that work to go to the dm chat room component.
     - Created Dm Message index container.js.
     - Moved timestamp functions to an external module and converted it to a hook due to be used in multiple components and need to prop drill and redelare the function is not needed.
+    - Removed oneToOneChatFirstMessage () from dm chat room and every component that it was prop drilled into as it has been replaced by the apporiated component of the same name.
 
 ## Backend Changes
 
