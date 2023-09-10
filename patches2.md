@@ -1522,7 +1522,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved timestamp functions to an external module and converted it to a hook due to be used in multiple components and need to prop drill and redelare the function is not needed.
     - Removed oneToOneChatFirstMessage () from dm chat room and every component that it was prop drilled into as it has been replaced by the apporiated component of the same name.
     - Moved a copy of dm chat room prior to the new version to deprecated folder.
-    - Moved serveral versions of dm chat room to deprecated folder.
+    - Moved several versions of dm chat room to deprecated folder.
+    - Uploaded custom hunt the wumpus logo.
 
 ## Backend Changes
 
