@@ -1524,6 +1524,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved a copy of dm chat room prior to the new version to deprecated folder.
     - Moved several versions of dm chat room to deprecated folder.
     - Uploaded custom hunt the wumpus logo.
+    - Made Several changes to server chat rooms including  remodeling similar to dm server chat rooms.
 
 ## Backend Changes
 
