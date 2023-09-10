@@ -1521,7 +1521,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Dm Message index container.js.
     - Moved timestamp functions to an external module and converted it to a hook due to be used in multiple components and need to prop drill and redelare the function is not needed.
     - Removed oneToOneChatFirstMessage () from dm chat room and every component that it was prop drilled into as it has been replaced by the apporiated component of the same name.
-
+    - Moved a copy of dm chat room prior to the new version to deprecated folder.
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
