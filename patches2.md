@@ -1527,7 +1527,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Made Several changes to server chat rooms including  remodeling similar to dm server chat rooms.
     - Backed up old version of Delete Dm message modal.jsx to deprecated folder.
     - Backed up old version of Delete Dm message modal container.js to deprecated folder.
-
+    - Added timestamp tool tip in delete dm message modal.
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
