@@ -1542,6 +1542,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed placeholder of edit dm message input.
     - Removed placeholder of edit channel message input.
     - Added scroll to message upon opening edit message for server channel messages.
+    - Added scroll to message upon opening edit message for server channel messages.
+    - Added onHover and isHovered state functions as call back functions to prevent hanging tool tip for the buttons in server channel MessageControl.
 
 ## Backend Changes
 
