@@ -1526,6 +1526,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded custom hunt the wumpus logo.
     - Made Several changes to server chat rooms including  remodeling similar to dm server chat rooms.
     - Backed up old version of Delete Dm message modal.jsx to deprecated folder.
+    - Backed up old version of Delete Dm message modal container.js to deprecated folder.
 
 ## Backend Changes
 
