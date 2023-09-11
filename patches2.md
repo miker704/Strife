@@ -1545,6 +1545,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added scroll to message upon opening edit message for server channel messages.
     - Added onHover and isHovered state functions as call back functions to prevent hanging tool tip for the buttons in server channel MessageControl.
     - Added is_header prop for server channel MessageControl.
+    - Updated selectors.
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
