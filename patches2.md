@@ -1554,6 +1554,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created file Server Invite Splash modal.jsx.
     - Created file Server Invite Splash modal container.js.
     - Finished Server Invite Splash Modal.
+    - Finished Server Banner Modal.
+
 
 ## Backend Changes
 
