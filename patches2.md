@@ -1603,6 +1603,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Added Server invite splash attachment to server modal.rb
 - Added backend function to change and remove server banner attachments.
 - Added backend function to change and remove server invite splash banner attachments.
+- Added bakend route to change/remove server banner.
 
 ### Front-End Changes
 
