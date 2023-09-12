@@ -1561,7 +1561,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Mounted server banner image if a server has one to replace the purple image in the server banner background section.
     - Moved non react portal version of action button pop up to deprecated.
     - Changed Action button pop up to use react portal and a new method of positioning.
-    - Move old verssion of server search (Explore Servers main) to deprecated folder.
+    - Move old version of server search (Explore Servers main) to deprecated folder.
+    - Changed Explore server page to Use the newly returned props for explore servers page, the need for certain functions to generate each loading guild card for each server is reduced and the render time is reduced drastically.
 
 ## Backend Changes
 
