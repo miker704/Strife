@@ -1567,6 +1567,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed mapping of server members to get the total number of online members of a server in explore servers.
     - Replaced color tag function in explore servers page to used to returned prop that extracts the server owners color tag from the back end.
     - Changed the execution to launch the action button pop up in explore servers page to call one function which will call all functions instead, instead of directly calling all 3 indiviually.
+    - Passed bounding client to action button pop up to adjust its position.
 
 ## Backend Changes
 
