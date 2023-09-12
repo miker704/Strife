@@ -1550,6 +1550,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Started Change Server Banner modal.
     - Created file Server Banner modal.jsx
     - Created file Server Banner modal container.js
+    - Started Change Server Invitation Splash (Background).
 
 ## Backend Changes
 
