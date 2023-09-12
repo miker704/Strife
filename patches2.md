@@ -1549,6 +1549,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved Deprecated server messages 2.jsx to deprecated folder.
     - Started Change Server Banner modal.
     - Created file Server Banner modal.jsx
+    - Created file Server Banner modal container.js
 
 ## Backend Changes
 
