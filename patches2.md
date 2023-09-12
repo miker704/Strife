@@ -1604,6 +1604,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Added backend function to change and remove server banner attachments.
 - Added backend function to change and remove server invite splash banner attachments.
 - Added bakend route to change/remove server banner.
+- Added bakend route to change/remove server invite splash banner.
 
 ### Front-End Changes
 
