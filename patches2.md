@@ -1546,7 +1546,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added onHover and isHovered state functions as call back functions to prevent hanging tool tip for the buttons in server channel MessageControl.
     - Added is_header prop for server channel MessageControl.
     - Updated selectors.
-    - Moved Deprecared server messages 2.jsx to deprecated folder.
+    - Moved Deprecated server messages 2.jsx to deprecated folder.
+    - Started Change Server Banner modal.
 
 ## Backend Changes
 
