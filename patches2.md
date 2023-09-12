@@ -1558,6 +1558,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Mounted Server Invite Splash Modal in server settings which can be accessed by clicking on the purple image in the Server Invite Background section.
     - Mounted Server Banner Modal in server settings which can be accessed by clicking on the purple image in the Server Banner Background section.
     - Mounted server invite splash image if a server has one to replace the purple image in the server invite background section.
+    - Mounted server banner image if a server has one to replace the purple image in the server banner background section.
 
 
 ## Backend Changes
