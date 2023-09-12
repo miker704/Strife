@@ -1617,6 +1617,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Add a get route to check for dmserver membership that returns a bool in dmServer membership api util.
 - Added a get route that submits the current user and another users ids to return mutual friends between them in session api util.
 - Added a get route that submits the current user and another users ids to return mutual servers between them in session api util.
+- Added ajax call to change/remove server banner in server apli util.js
 
 ### Other Changes
 
