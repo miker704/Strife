@@ -1554,7 +1554,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created file Server Invite Splash modal.jsx.
     - Created file Server Invite Splash modal container.js.
 
-
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
@@ -1601,7 +1600,8 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Backed up deprecated dm servers controller to deprecated folder.
 - Removed the creation of the default dm Message welcoming either group members or other user when creating a dmServer as the new first dm message containers on the front end replace the need for this.
 - Added Server banner attachment to server modal.rb
-- Added Server invite banner attachment to server modal.rb
+- Added Server invite splash attachment to server modal.rb
+- Added backend function to change and remove server banner attachments.
 
 ### Front-End Changes
 
