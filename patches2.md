@@ -1565,6 +1565,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed Explore server page to Use the newly returned props for explore servers page, the need for certain functions to generate each loading guild card for each server is reduced and the render time is reduced drastically.
     - Removed mapping of server members to get the total number of members of a server in explore servers.
     - Removed mapping of server members to get the total number of online members of a server in explore servers.
+    - Replaced color tag function in explore servers page to used to returned prop that extracts the server owners color tag from the back end.
 
 ## Backend Changes
 
