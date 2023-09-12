@@ -1563,6 +1563,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed Action button pop up to use react portal and a new method of positioning.
     - Move old version of server search (Explore Servers main) to deprecated folder.
     - Changed Explore server page to Use the newly returned props for explore servers page, the need for certain functions to generate each loading guild card for each server is reduced and the render time is reduced drastically.
+    - Removed mapping of server members to get the total number of members of a server in explore servers.
 
 ## Backend Changes
 
