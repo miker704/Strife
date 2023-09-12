@@ -1596,6 +1596,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Returned full date time stamp in format of weekday month day year time and am/pm for messages in _messages.json.jbuilder.
 - Backed up deprecated dm servers controller to deprecated folder.
 - Removed the creation of the default dm Message welcoming either group members or other user when creating a dmServer as the new first dm message containers on the front end replace the need for this.
+- Added Server banner attachment to server modal.rb
 
 ### Front-End Changes
 
