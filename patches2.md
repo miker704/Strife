@@ -1619,6 +1619,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Added a get route that submits the current user and another users ids to return mutual servers between them in session api util.
 - Added ajax call to change/remove server banner in server apli util.js
 - Added ajax call to change/remove server invite splash in server apli util.js
+- Binded ajax call the change/remove server banner to recieve server in server actions.js
 
 ### Other Changes
 
