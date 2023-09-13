@@ -1570,7 +1570,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Passed bounding client to action button pop up to adjust its position.
     - Changed the rendering of server avatar to be used as the server banner to actually using server banner in explore servers page.
     - Changed verified check mark star colors black and purple to know use secret pink (fuchsia) and light purple.
-
+    - Add Blue verified tool tip to explore servers page.
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
