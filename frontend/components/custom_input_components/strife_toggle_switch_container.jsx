@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
+import {useRef } from "react";
 
 
 /**
@@ -34,7 +34,7 @@ const StrifeToggleSwitch = (props = {
     checkedState: Boolean(),
     setCheckedState: Function(),
     customIndex: Number(),
-    name: String()
+    // name: String()
 }) => {
 
     const handleThisAnimationsMap = (customIndex, checkedState) => {
@@ -55,8 +55,6 @@ const StrifeToggleSwitch = (props = {
             x.lastElementChild.setAttribute('d', "M13.5582 8.96683L13.5582 11.0013L6.56192 11.0013L6.56192 8.96683L13.5582 8.96683Z");
 
             setTimeout(() => {
-                // x.firstElementChild.style.transition = "300ms ease-in-out";
-                // x.lastElementChild.style.transition = "300ms ease-in-out";
                 x.firstElementChild.setAttribute('fill', "rgba(35, 165, 90, 1)");
                 x.lastElementChild.setAttribute('fill', "rgba(35, 165, 90, 1)");
                 sliderBackGround.style.backgroundColor = "rgba(100, 142, 126,1)";
@@ -88,8 +86,6 @@ const StrifeToggleSwitch = (props = {
             x.firstElementChild.setAttribute('d', "M6.56666 11.0013L6.56666 8.96683L13.5667 8.96683L13.5667 11.0013L6.56666 11.0013Z");
             x.lastElementChild.setAttribute('d', "M13.5582 8.96683L13.5582 11.0013L6.56192 11.0013L6.56192 8.96683L13.5582 8.96683Z");
             setTimeout(() => {
-                // x.firstElementChild.style.transition = "300ms ease-in-out";
-                // x.lastElementChild.style.transition = "300ms ease-in-out";
                 x.firstElementChild.setAttribute('fill', "rgba(128, 132, 142, 1)");
                 x.lastElementChild.setAttribute('fill', "rgba(128, 132, 142, 1)");
                 sliderBackGround.style.backgroundColor = "rgba(100, 142, 126,1)";
@@ -111,8 +107,6 @@ const StrifeToggleSwitch = (props = {
 
 
     let pathRef = useRef(props.checkedState);
-    // console.log(`choice is ${props.name} ref states `);
-    // console.log(pathRef)
     let xMarkPaths = [
         "M5.13231 6.72963L6.7233 5.13864L14.855 13.2704L13.264 14.8614L5.13231 6.72963Z",
         "M13.2704 5.13864L14.8614 6.72963L6.72963 14.8614L5.13864 13.2704L13.2704 5.13864Z"
@@ -125,10 +119,6 @@ const StrifeToggleSwitch = (props = {
     let startingPaths = pathRef.current === false ? xMarkPaths : checkMarkPaths;
 
 
-    // console.log(`the result is `);
-    // console.log(`starting color : ${startingColor} `);
-    // console.log(`starting Paths = ${startingPaths} `);
-    // console.log(startingPaths);
 
     return (
         <div className="sts-label-row">
