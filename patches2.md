@@ -1574,6 +1574,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed how explore servers page works live searching has been changed to now where searching brings up another screen where live search can then run and clicking the back arrow will allow the user to return to the featured list.
     - Changed the live search to now use a filter search instead of the old html is-hidden method. As due to the reduced frontend rendering functions due to returing a majority of needed data from the backend the need for most of those functions is not needed and the filter search is fast enough to be used here.
     - Finalized Close hook modals util api.js.
+    - Finalized custom toggle switch component.
 
 ## Backend Changes
 
