@@ -1578,6 +1578,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Move old nitro store to deprecated as discord has repllaced the extra nitro buttons with just a snack bar component.
     - Added a snack bar to the nitro store to replace excess nitro buttons.
     - Added new nitro mini perk image to nitro store.
+    - Removed excessive nitro buttons from the nitro plan comparison grid.
 
 ## Backend Changes
 
