@@ -1576,6 +1576,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Close hook modals util api.js.
     - Finalized custom toggle switch component.
     - Move old nitro store to deprecated as discord has repllaced the extra nitro buttons with just a snack bar component.
+    - Added a snack bar to the nitro store to replace excess nitro buttons.
 
 ## Backend Changes
 
