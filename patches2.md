@@ -1579,6 +1579,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added a snack bar to the nitro store to replace excess nitro buttons.
     - Added new nitro mini perk image to nitro store.
     - Removed excessive nitro buttons from the nitro plan comparison grid.
+    - Added Snack bar animation for nitro store.
 
 ## Backend Changes
 
