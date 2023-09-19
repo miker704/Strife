@@ -1587,6 +1587,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved the now deprecated version of Suop Messenger modal which was made as a carbon copy for use for dm and server messages due to styling issues when using the normal Suop modal.
     - Moved the now deprecated version of Suop Messenger modal container to deprecated.
     - Moved the now deprecated version of Suop Messenger modal combined with Suop modal with travel to deprecated.
+    - Moved the now deprecated version of Suop Messenger modal combined with Suop modal with unset to deprecated.
 
 ## Backend Changes
 
