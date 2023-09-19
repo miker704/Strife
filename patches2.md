@@ -1634,6 +1634,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Added bakend route to change/remove server banner.
 - Added bakend route to change/remove server invite splash banner.
 - Attached gcIcon for group chat dmServers to be utilized later.
+- Backed up deprecated dm Messages controller to deprecated folder.
 
 ### Front-End Changes
 
