@@ -1583,6 +1583,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Text edits and additions to nitro store.
     - Moved Deprecated version of Server user options modal which is the normal uncompressed version to deprecated as it has been replaced with a more compact version as well as serving use for more than just member lists for dms/servers.
     - Moved Deprecated version of Suop modal to deprecated that is the compressed version of the orginal suop modal but only serves use for members lists.
+    - Moved Deprecated version of Suop modal to deprecated that is the compressed version of the orginal suop modal but only serves use for members lists but also features travel sliding to the position or near position of the selected member not used as its not as asctheically pleasing.
 
 ## Backend Changes
 
