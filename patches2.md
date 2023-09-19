@@ -1581,6 +1581,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed excessive nitro buttons from the nitro plan comparison grid.
     - Added Snack bar animation for nitro store.
     - Text edits and additions to nitro store.
+    - Moved Deprecated version of Server user options modal which is the normal uncompressed version to deprecated as it has been replaced with a more compact version as well as serving use for more than just member lists for dms/servers.
 
 ## Backend Changes
 
