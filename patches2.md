@@ -1591,6 +1591,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved a second version of Suop Messenger modal combined with Suop modal with unset to deprecated.
     - For messages in Both Dm Servers and normal Servers clicking on a the messages user name or profile picture will open the server user options modal.
     - Added suop messenger setup to deprecated.
+    - Reduced the amount of Servers to be displayed to a maximum of 20 servers in the featured section for Explore Servers Page.
 
 ## Backend Changes
 
