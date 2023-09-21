@@ -1651,6 +1651,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Backed up deprecated dm Messages controller to deprecated folder.
 - Added Backend route to change dm Server name.
 - Added Backend function to change dm Server name.
+- Added Backend function that executes in the  change dm Server name function to take the current user and create a   message indicating that they have changed the name of the dm server and send this message and a request to resync the dm server for all dmserver members currently in the chat room.
 
 ### Front-End Changes
 
