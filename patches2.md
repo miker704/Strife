@@ -1601,7 +1601,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Switch to promise based solution for refresh loading screen animation fade out instead of solely using settimeouts.
     - Switch to promise based solution for intrusion loading screen animation fade out instead of solely using settimeouts.
     - Switch to promise based solution for error boundary loading screen animation fade out instead of solely using settimeouts.
-
+    - Switch to promise based solution for delete server (telefrag) loading screen animation fade out instead of solely using settimeouts.
 
 ## Backend Changes
 
