@@ -1597,6 +1597,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added a new function to soley just update the name of a dmServer.
     - Changed the front end route for guild discovery from `/$/channels/guild-discovery/` to `/$/guild-discovery/`.
     - Changed the logic to activate the selected state for for guild discovery in server nav bar.
+    - Switch to promise based solution for loading screen animation fade out instead of solely using settimeouts.
 
 ## Backend Changes
 
