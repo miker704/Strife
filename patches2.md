@@ -1595,6 +1595,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Fixed Issues when dm Member changes banner, picture, or username this change is not reflect in the upc panel if the dm server is a one to one chat room.
     - Fixed issues with changing dm group chat names causing a double submit due to submitting upon unfocus of the inpu, fixed by removing the form tag and adding a bool state var that changes to true when in submission  and false when done so when pressing enter the blur is triggered in order to close the input form but also calls submit this  change prevent blur from submitting when enter is pressed and allows blur to submit when enter was not used.
     - Added a new function to soley just update the name of a dmServer.
+    - Changed the front end route for guild discovery from `/$/channels/guild-discovery/` to `/$/guild-discovery/`.
+    - Changed the logic to activate the selected state for for guild discovery in server nav bar.
 
 ## Backend Changes
 
@@ -1673,7 +1675,6 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Binded ajax call the change/remove server invite splash to recieve server in server actions.js
 - Added ajax call to update the name of a dm server in dm server api util.js.
 - Binded ajax call to update the name of a dm server in dmServer actions.
-- Changed the front end route for guild discovery from `/$/channels/guild-discovery/` to `/$/guild-discovery/`.
 
 ### Other Changes
 
