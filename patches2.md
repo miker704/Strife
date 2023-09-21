@@ -1593,6 +1593,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added suop messenger setup to deprecated.
     - Reduced the amount of Servers to be displayed to a maximum of 20 servers in the featured section for Explore Servers Page.
     - Fixed Issues when dm Member changes banner, picture, or username this change is not reflect in the upc panel if the dm server is a one to one chat room.
+    - Fixed issues with changing dm group chat names causing a double submit due to submitting upon unfocus of the inpu, fixed by removing the form tag and adding a bool state var that changes to true when in submission  and false when done so when pressing enter the blur is triggered in order to close the input form but also calls submit this  change prevent blur from submitting when enter is pressed and allows blur to submit when enter was not used.
 
 ## Backend Changes
 
