@@ -1599,6 +1599,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed the logic to activate the selected state for for guild discovery in server nav bar.
     - Switch to promise based solution for loading screen animation fade out instead of solely using settimeouts.
     - Switch to promise based solution for refresh loading screen animation fade out instead of solely using settimeouts.
+    - Switch to promise based solution for intrusion loading screen animation fade out instead of solely using settimeouts.
+
 
 
 ## Backend Changes
