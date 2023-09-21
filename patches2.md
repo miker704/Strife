@@ -1667,6 +1667,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Added ajax call to change/remove server invite splash in server apli util.js
 - Binded ajax call the change/remove server banner to recieve server in server actions.js
 - Binded ajax call the change/remove server invite splash to recieve server in server actions.js
+- Added ajax call to update the name of a dm server.
 
 ### Other Changes
 
