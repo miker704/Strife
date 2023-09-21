@@ -1606,6 +1606,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded eanBoostPerk.svg
     - Uploaded purpleStormAvatar.gif
     - Uploaded purpleElectricStorm.gif
+    - Uploaded strifeLogoBannerWumpus.png
+
 
 ## Backend Changes
 
