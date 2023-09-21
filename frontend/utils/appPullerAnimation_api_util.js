@@ -59,6 +59,8 @@ export const appPullerReleaseAnimation = () => {
                 offset: [0.0, 0.25, 0.5, 0.75, 1.0],
             },
             {
+                // easing: "linear(0, 0.25 75%, 1)",
+                easing: "ease-out",
                 duration: 300,
                 iterations: 1,
             }
@@ -69,6 +71,7 @@ export const appPullerReleaseAnimation = () => {
 
 
 export const appPullerPullAndHoldAnimation = () => {
+
     let appPuller = document.getElementById('app-puller');
     if (!appPuller) {
         // console.log("app puller does not exist creating one");
@@ -98,6 +101,7 @@ export const appPullerPullAndHoldAnimation = () => {
         Promise.all(appPuller.getAnimations().map((animation) => animation.finished),)
             .then(() => {
                 appPuller.classList.remove("animating");
+                appPuller.classList.add("stop-animations");
                 appPuller.style.opacity = "0";
                 appPuller.style.transform = 'scale(0.93) translateZ(0px)';
             });
@@ -108,6 +112,7 @@ export const appPullerPullAndHoldAnimation = () => {
 
 
 export const appPullerReleaseHoldAnimation = () => {
+
     let grabWrapper = document.getElementById("grab-wrapper");
     let appPuller = document.getElementById("app-puller");
     if (!grabWrapper) {
@@ -124,20 +129,29 @@ export const appPullerReleaseHoldAnimation = () => {
             appPuller = appPullerParent;
         }
     }
-    if (grabWrapper && appPuller) {
+    if (appPuller) {
+        appPuller.classList.remove("stop-animations");
+        appPuller.classList.add("animating");
         appPuller.style.removeProperty('opacity');
         appPuller.style.removeProperty('transform');
-        grabWrapper.style.opacity = 0.6;
+        // grabWrapper.style.opacity = 0.6;
         appPuller.animate(
             {
                 transform: ['scale(0.93) translateZ(0px)', 'scale(0.94) translateZ(0px)', 'scale(0.95) translateZ(0px)', 'scale(0.97) translateZ(0px)', 'scale(0.99) translateZ(0px)'],
                 offset: [0.0, 0.25, 0.5, 0.75, 1.0],
             },
             {
+                easing: "linear(0, 0.25 75%, 1)",
                 duration: 300,
                 iterations: 1,
             }
         );
+        Promise.all(appPuller.getAnimations().map((animation) => animation.finished),)
+            .then(() => {
+                appPuller.classList.remove("animating");
+                appPuller.classList.remove("stop-animations");
+                appPuller.style.removeProperty('opacity');
+                appPuller.style.removeProperty('transform');
+            });
     }
-
 }
