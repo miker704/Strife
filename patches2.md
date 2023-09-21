@@ -1673,6 +1673,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Binded ajax call the change/remove server invite splash to recieve server in server actions.js
 - Added ajax call to update the name of a dm server in dm server api util.js.
 - Binded ajax call to update the name of a dm server in dmServer actions.
+- Changed the front end route for guild discovery from `/$/channels/guild-discovery/` to `/$/guild-discovery/`.
 
 ### Other Changes
 
