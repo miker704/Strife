@@ -1670,7 +1670,6 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Added ajax call to update the name of a dm server in dm server api util.js.
 - Binded ajax call to update the name of a dm server in dmServer actions.
 
-
 ### Other Changes
 
 - Added Link to Patch notes (this file) in the README.MD file
