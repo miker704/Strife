@@ -1633,6 +1633,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized User Edit Phone Number Modal Container.
     - Finalized Remove User Phone Number Modal.
     - Finalized Remove User Phone Number Modal Container.
+    - Finalized Edit Username Modal.
 
 
 ## Backend Changes
