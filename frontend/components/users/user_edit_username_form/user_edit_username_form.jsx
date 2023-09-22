@@ -1,80 +1,78 @@
-import React from "react"
+import React from 'react';
+import { useState, useRef, useEffect } from "react";
+import REACT_PORTAL from '../../../utils/ReactPortal_api_util';
+import { Tooltip } from 'react-tooltip';
+import { CloseXIcon, QuestionMarkIcon } from '../../front_end_svgs/Strife_svgs';
+
+const EditUsernameForm = (props) => {
+
+    const popUpRef = useRef(null);
+
+    const [newUsername, setNewUsername] = useState('');
+    const [password, setPassword] = useState('');
 
 
-class EditUsernameForm extends React.Component {
-    constructor (props) {
-        super(props)
+    useEffect(() => {
 
-        this.state = { username: this.props.currentUser.username, password: "" }
+        setNewUsername(props.currentUser.username);
+        window.addEventListener('keyup', handleESC, false);
 
+        return function cleanUp () {
+            props.removeSessionErrors();
+            window.removeEventListener('keyup', handleESC, false);
 
-        this.cancel = false;
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleInput = this.handleInput.bind(this);
-        this.userNameErrors = this.userNameErrors.bind(this);
-        this.passwordErrors = this.passwordErrors.bind(this);
-
-    }
-
-    passwordErrors () {
-        if (this.props.errors.includes('Login or password is invalid')) {
-            return " - Password does not match.";
         }
-        else if (this.props.errors.includes("Error Incorrect Password !")) {
-            return " - Password does not match.";
+    }, []);
+
+
+    const handleSubModalCloseOnOutsideClick = (e) => {
+        e.preventDefault();
+        let modalToClose = document.getElementById("user-sub-modal");
+        if (modalToClose) {
+            modalToClose.classList.add("transition-out");
+            Promise.all(modalToClose.getAnimations().map((animation) => animation.finished),)
+                .then(() => {
+                    props.closeSubMod(props.formName);
+                    window.removeEventListener('keyup', handleESC, false);
+                }, () => {
+                    props.closeSubMod(props.formName);
+                    window.removeEventListener('keyup', handleESC, false);
+                });
         }
-        return "";
-    }
-
-
-
-    componentWillUnmount () {
-        this.props.removeSessionErrors()
-
-    }
-
-    handleInput (field) {
-        return (e) => { this.setState({ [field]: e.currentTarget.value }) }
-    }
-
-    handleSubmit (e) {
-        // e.preventDefault();
-
-        if (this.cancel) {
-            this.props.removeSessionErrors();
-            return;
+        else {
+            props.closeSubMod(props.formName);
+            window.removeEventListener('keyup', handleESC, false);
         }
-        let subState = {
-            id: this.props.currentUser.id,
-            username: this.state.username,
-            password: this.state.password
-        }
-
-        this.props.updateUserInfo(subState).then(() => {
-            App.StrifeCore.perform('transmit_to_other_channel', { currrentUserLocation: this.props.location.pathname })
-
-        })
-
     }
 
-    userNameErrors () {
 
-        let usernameErrorList = [
-            "Username can't be blank",
-            'Username is too short (minimum is 2 characters)',
-            'Username is too long (maximum is 32 characters)',
+    const handleESC = (e) => {
+        const keys = {
+            27: () => {
+                e.preventDefault();
+                handleSubModalCloseOnOutsideClick(e);
+            },
+        };
+        if (keys[e.keyCode]) {
+            keys[e.keyCode]();
+        }
+    }
+
+    const passwordErrors = () => {
+
+        let passwordErrorList = [
+            'Login or password is invalid',
+            'Error Incorrect Password !',
         ]
-
         //error messages can be a bit big lets make a reduced version 
-        let usernameErrorMessages = {
-            0: " - This field is required",
-            1: " - Must be between 2 and 32 in length",
-            2: ' - Must be between 2 and 32 in length',
+        let passwordErrorMessages = {
+            0: "Password does not match.",
+            1: "Password does not match.",
         }
 
-        for (let i = 0; i < usernameErrorList.length; i++) {
-            if (this.props.errors.includes(usernameErrorList[i])) {
-                return usernameErrorMessages[i];
+        for (let i = 0; i < passwordErrorList.length; i++) {
+            if (props.errors.includes(passwordErrorList[i])) {
+                return passwordErrorMessages[i];
             }
         }
 
@@ -82,80 +80,158 @@ class EditUsernameForm extends React.Component {
     }
 
 
-    render () {
-        let usernameErrorTag = this.props.errors.length > 0 ? "field-error" : "";
-        let passwordErrorTag = this.props.errors.length > 0 ? "field-error" : "";
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        props.removeSessionErrors();
 
-        return (
-            <div id="edit-userInfo-model" className="edit-userInfo-model" >
-                <div className="edit-username-header-section">
-                    <div className="edit-username-header">
-                        Change your username
-                    </div>
-                    <div className="edit-username-header-info">
-                        Enter a new username and your existing password
-                    </div>
-                </div>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="form-container1">
+        let subState = {
+            id: props.currentUser.id,
+            username: newUsername.trim(),
+            password: password
+        }
 
-                        <div className="form-username-sec">
-                            <h5 className="form-username-header"><label className={usernameErrorTag}>Username{this.userNameErrors()}</label></h5>
-                            <div className="username-form-input-sec">
-                                <div className="username-input-wrapper1">
-                                    <input placeholder={this.props.currentUser.username} value={this.state.username} onChange={this.handleInput("username")} className="input-1" type="text" />
-                                </div>
-                                <div className="username-input-wrapper2">
-                                    <span className="quarter-hash-tag">#</span>
-                                    <input className="input-2" type="text" placeholder={this.props.currentUser.strife_id_tag} disabled />
-                                </div>
+        let elipAnimation = document.getElementById('elip-spin');
+        let buttonText = document.getElementById("submit-button-text");
+        buttonText.innerHTML = "";
+        elipAnimation.classList.remove('is-hidden');
 
-                                <span className="form-question-mark">
-                                    <svg aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
-                                        <g fill="currentColor" fillRule="evenodd" transform="translate(7 4)">
-                                            <path d="M0 4.3258427C0 5.06741573.616438356 5.68539326 1.35616438 5.68539326 2.09589041
-                                         5.68539326 2.71232877 5.06741573 2.71232877 4.3258427 2.71232877 2.84269663 4.31506849
-                                          2.78089888 4.5 2.78089888 4.68493151 2.78089888 6.28767123 2.84269663 6.28767123
-                                           4.3258427L6.28767123 4.63483146C6.28767123 5.25280899 5.97945205 5.74719101 5.42465753
-                                            6.05617978L4.19178082 6.73595506C3.51369863 7.10674157 3.14383562 7.78651685 3.14383562
-                                             8.52808989L3.14383562 9.64044944C3.14383562 10.3820225 3.76027397 11 4.5 11 5.23972603
-                                              11 5.85616438 10.3820225 5.85616438 9.64044944L5.85616438 8.96067416 6.71917808 8.52808989C8.1369863
-                                               7.78651685 9 6.30337079 9 4.69662921L9 4.3258427C9 1.48314607 6.71917808 0 4.5 0 2.21917808 0 0 
-                                               1.48314607 0 4.3258427zM4.5 12C2.5 12 2.5 15 4.5 15 6.5 15 6.5 12 4.5 12L4.5 12z">
-                                            </path>
-                                        </g>
-                                    </svg>
-                                    <div className="user-settings-toggle4">Want to customize your tag? Get Nitro!</div>
+        props.updateUserInfo(subState).then(() => {
+            App.StrifeCore.perform('transmit_to_other_channel', { currrentUserLocation: props.location.pathname });
+            handleSubModalCloseOnOutsideClick(e);
+        })
+        setTimeout(() => {
+            elipAnimation.classList.add('is-hidden');
+            buttonText.innerHTML = "Done";
+        }, 285);
+    }
 
-                                </span>
+    const userNameErrors = () => {
 
-                            </div>
-                        </div>
-                        <div className="password-section">
-                            <h5 className="password-header1">
-                                <label className={passwordErrorTag}>Current Password{this.passwordErrors()}</label>
-                            </h5>
-                            <div className="input-3-password-wrapper">
-                                <input value={this.state.password} onChange={this.handleInput("password")} type="password" className="input-3-password" />
-                            </div>
-                        </div>
-                        <div className="username-edit-sep"></div>
-                    </div>
-                    <div className="username-edit-button-sec">
-                        <button type="submit" className="username-edit-submit-button" >Done</button>
-                        <button type="submit" onClick={() => this.cancel = true} className="username-edit-cancel-button">Cancel</button>
-                    </div>
+        let usernameErrorList = [
+            "Username can't be blank",
+            'Username is too short (minimum is 2 characters)',
+            'Username is too long (maximum is 32 characters)',
+        ]
+        //error messages can be a bit big lets make a reduced version 
+        let usernameErrorMessages = {
+            0: "This field is required",
+            1: "Must be between 2 and 32 in length",
+            2: 'Must be between 2 and 32 in length',
+        }
 
-
-
-                </form>
-            </div>
-
-        )
-
+        for (let i = 0; i < usernameErrorList.length; i++) {
+            if (props.errors.includes(usernameErrorList[i])) {
+                return usernameErrorMessages[i];
+            }
+        }
+        return "";
     }
 
 
-}
 
+
+    let ifUserError = props.errors.length > 0 && userNameErrors() !== "" ? (
+        <span className='user-sub-modal-field-input-error'>
+            <span className='user-sub-modal-field-input-error-sep'>-</span>
+            {userNameErrors()}
+        </span>
+    ) : ("");
+
+
+
+    let ifPassWordError = props.errors.length > 0 && passwordErrors() !== "" ? (
+        <span className='user-sub-modal-field-input-error'>
+            <span className='user-sub-modal-field-input-error-sep'>-</span>
+            {passwordErrors()}
+        </span>
+    ) : ("")
+
+
+
+    return (
+
+
+        <REACT_PORTAL wrapperId={'sub-modal'} classNameId={'subModal'} onClick={(e) => e.stopPropagation()}>
+            <div className="sub-modal-layer" onClick={(e) => handleSubModalCloseOnOutsideClick(e)}>
+                <div className='sub-modal-backdrop'></div>
+                <div className='user-sub-modal-wrapper'>
+                    <div className='user-sub-modal-focus-lock'>
+                        <div className='user-sub-modal' id="user-sub-modal" ref={popUpRef} onClick={(e) => e.stopPropagation()}>
+                            <div className='user-sub-modal-header-container-username-edit' style={{ flex: `0 0 auto` }}>
+                                <div className='user-sub-modal-title'>Change your username</div>
+                                <div className='user-sub-modal-title-subtext'>Enter a new username and your existing password.</div>
+                                <button type='button' className='user-sub-modal-x-to-close-button' onClick={(e) => handleSubModalCloseOnOutsideClick(e)}>
+                                    <div className='global-button-contents'>
+                                        <CloseXIcon className="closeIconX" />
+                                    </div>
+                                </button>
+                            </div>
+                            <form onSubmit={handleSubmit}>
+                                <div className='user-sub-modal-form-content global-scroll-thin-raw-attributes global-scroller-base' style={{ overflow: `hidden scroll`, paddingRight: `8px` }}>
+                                    <div>
+                                        <h2 className={`usubm-field-header ${userNameErrors() !== "" ? `usubm-field-input-error-color` : ``}`}>
+                                            Username
+                                            {ifUserError}
+                                        </h2>
+                                        <div className='usubm-username-wrapper'>
+                                            <div className='user-sub-modal-username-input-wrapper'>
+                                                <input className="user-sub-modal-username-input-field" type="text"
+                                                    maxLength={32} value={newUsername} autoFocus
+                                                    spellCheck={false} onChange={(e) => setNewUsername(e.currentTarget.value)}
+                                                />
+                                            </div>
+                                            <div className='user-sub-modal-strife-tag-wrapper'>
+                                                <span className='user-sub-modal-strife-tag-hash'>#</span>
+                                                <input className="user-sub-modal-strife-tag-input-field"
+                                                    type="text" placeholder={`${props.currentUser.strife_id_tag}`}
+                                                    disabled readOnly={true}
+                                                />
+                                                <span className='user-sub-modal-form-question-mark' data-tooltip-position-strategy='fixed'
+                                                    data-tooltip-id="sub-modal-tool-tip-1" data-tooltip-content={`Want to customize your tag? Get $TR!F3 N!TR0!`}>
+                                                    <QuestionMarkIcon />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='user-sub-modal-password-container'>
+
+                                        <h2 className={`usubm-field-header ${passwordErrors() !== "" ? `usubm-field-input-error-color` : ``}`}>
+                                            Current Password
+                                            {ifPassWordError}
+                                        </h2>
+                                        <div className='user-sub-modal-password-wrapper'>
+                                            <input className="user-sub-modal-password-input-field" type="password"
+                                                maxLength={999} value={password} autoComplete='off'
+                                                spellCheck={false} onChange={(e) => setPassword(e.currentTarget.value)}
+                                            />
+                                        </div>
+
+                                    </div>
+                                    <div className='user-sub-modal-form-sep'></div>
+                                </div>
+                                <div className='user-sub-modal-button-footer-container'>
+                                    <button id="username-submit-button" type='submit' className='user-sub-modal-submit-button'>
+                                        <span id='elip-spin' className="spinner-ellipsis spinner-dots is-hidden" role='img'>
+                                            <span className="inner-spinner-dots-container pulsing-ellipsis">
+                                                <span className="spin-dot spin-dot-item"></span>
+                                                <span className="spin-dot spin-dot-item"></span>
+                                                <span className="spin-dot spin-dot-item"></span>
+                                            </span>
+                                        </span>
+                                        <div id="submit-button-text" className='look-filled-button-contents global-button-contents'>Done</div>
+                                    </button>
+                                    <button type='button' className='user-sub-modal-cancel-button' onClick={(e) => handleSubModalCloseOnOutsideClick(e)}>
+                                        <div className='look-filled-button-contents global-button-contents'>Cancel</div>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <Tooltip className='thread-tool-tip' id="sub-modal-tool-tip-1" place="top" />
+                </div>
+            </div>
+        </REACT_PORTAL>
+    )
+
+}
 export default EditUsernameForm;
