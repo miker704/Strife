@@ -1679,6 +1679,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Boost Server Select Plan Modal Container.
     - Finalized Chat Room First messsage scss styles.
     - Finalized Channel Drop Down Modal.
+    - Finalized Channel Drop Down Modal Container.
 
 
 ## Backend Changes
