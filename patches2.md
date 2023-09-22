@@ -1649,6 +1649,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Disable User Account Modal Container.
     - Finalized Delete User Account Modal.
     - Finalized Delete User Account Modal Container.
+    - Finalized LogOut Modal.
 
 
 
