@@ -1,0 +1,213 @@
+.upc-profile-panel {
+  position: relative;
+  width: 340px;
+}
+
+.userPanelOuter {
+  height: 100%;
+  padding: 0;
+}
+
+.userPanelInner {
+  height: 100%;
+}
+
+.userPanelInner::before {
+  height: 100%;
+  width: 100%;
+  content: "";
+  pointer-events: none;
+  background-color: var(--profile-gradient-overlay-color);
+  position: absolute;
+}
+
+.userPanelInner:hover .upc-strife-nitro-wrapper,
+.upc-panel-banner-pro:hover .upc-strife-nitro-wrapper {
+  opacity: 1;
+  transform: translateZ(0);
+}
+
+.userProfileInnerPanel {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  border-radius: 8px 8px 0 0;
+}
+
+.userPanelInnerTheme {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(var(--profile-gradient-primary-color)),
+    to(var(--profile-gradient-secondary-color))
+  );
+  background: linear-gradient(
+    var(--profile-gradient-primary-color),
+    var(--profile-gradient-secondary-color)
+  );
+}
+
+.userPanel-overlay-background {
+  padding: 0px 12px 12px;
+  margin: 16px;
+}
+
+.upc-profile-panel-connections {
+  margin: 6px 16px;
+  padding: 0px;
+}
+
+.app-list-themed-container {
+  margin-top: 12px;
+}
+
+.avatarPositionPanel {
+  top: 72px;
+  left: 18px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+}
+
+.panel-badge-group {
+  display: flex;
+  justify-content: center;
+  min-height: 28px;
+  margin: 8px 16px 0px 0px;
+}
+
+.panel-badge-list {
+  background-color: var(--profile-body-background-color);
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 198px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2px;
+  min-height: 22px;
+  padding: 4px;
+}
+
+.mutual-server-guild-list-tab {
+  width: 100%;
+}
+
+.mutual-friends-guild-list-tab {
+  width: 100%;
+}
+
+.mutual-friends-guild-list-tab-divider {
+  border-top: 1px solid var(--profile-body-divider-color);
+}
+
+.collapse-tab-button {
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 0;
+  height: 48px;
+  padding: 13px 12px 11px;
+  width: 100%;
+  min-width: 96px;
+  min-height: 38px;
+  -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+  transition: background-color 0.17s ease, color 0.17s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: var(--global-font);
+  text-rendering: optimizeLegibility;
+}
+
+.collapse-tab-button-contents {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 100%;
+}
+
+.collapse-tab-button-text-content {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: var(--global-font);
+  color: var(--text-normal);
+}
+
+.collapse-tab-button-chevron-container {
+  display: flex;
+  color: var(--text-normal);
+  justify-content: right;
+  flex: 1;
+  height: 100%;
+}
+
+.pp-chevron-icon {
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+
+.chevronPointRight {
+  -webkit-transform: rotate3d(0, 0, -1, 90deg);
+  transform: rotate3d(0, 0, -1, 90deg);
+}
+.chevronPointDown {
+  -webkit-transform: rotate3d(0, 0, -1, 0deg);
+  transform: rotate3d(0, 0, -1, 0deg);
+}
+
+.upc-profile-panel-connection-list {
+  margin-bottom: 12px;
+  margin-right: 8px;
+}
+
+.upc-profile-panel-connection-list.isCollapsed {
+  display: none;
+}
+
+.userPanel-bottom-sep {
+  position: absolute;
+  pointer-events: none;
+  min-height: 0px;
+  min-width: 1px;
+  flex: 0 0 auto;
+  height: 0px;
+}
+
+.upc-panel-banner-pro {
+  max-width: 340px;
+  width: 100%;
+  height: 120px;
+  min-height: 120px;
+  border-radius: 4px 4px 0px 0px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  // position: relative;
+  transition: background-color 0.1s;
+}
