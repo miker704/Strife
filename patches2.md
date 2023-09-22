@@ -1758,6 +1758,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Add Friends.
     - Finalized Add Friends Container.
     - Finalized Friends Home Page.
+    - Finalized Friends Home Page Container.
 
 
 ## Backend Changes
