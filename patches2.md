@@ -1723,6 +1723,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Session Sign Up Form Container.
     - Finalized Session Sign In Form Container. 
     - Finalized Session Form.
+    - Finalized Session Form scss styles.
 
 
 ## Backend Changes
