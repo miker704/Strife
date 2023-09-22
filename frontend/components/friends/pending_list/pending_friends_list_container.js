@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { selectFriendStatus, } from '../../../utils/selectors_api_util';
-import { requestFriendships, updateFriendship, deleteFriendship, removeFriendshipErrors , requestAllFriendships} from '../../../actions/friendship_actions';
+import { selectFriendStatus} from '../../../utils/selectors_api_util';
+import { requestFriendships, updateFriendship, deleteFriendship, removeFriendshipErrors, requestAllFriendships } from '../../../actions/friendship_actions';
 import PendingFriendList from './pending_friends_list';
+
 
 const mSTP = (state) => {
     return {
@@ -21,7 +22,7 @@ const mDTP = (dispatch) => {
         updateFriendship: (ids) => dispatch(updateFriendship(ids)),
         deleteFriendship: (ids) => dispatch(deleteFriendship(ids)),
         removeFriendshipErrors: () => dispatch(removeFriendshipErrors()),
-        requestAllFriendships: ()=> dispatch(requestAllFriendships())
+        requestAllFriendships: () => dispatch(requestAllFriendships())
     }
 };
 
