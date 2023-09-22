@@ -1667,6 +1667,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Friend Request Error Modal.
     - Finalized User Nav Bar.
     - Finalized User Nav Bar container.
+    - Finalized Subscribe to nitro modal scss styles.
 
 
 ## Backend Changes
