@@ -1771,7 +1771,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Block User Confirmation Modal.
     - Finalized Block User Confirmation Modal Container.
     - Finalized Dm Server actions.
-    - Finalized Create Server Styles.
+    - Finalized Create Server Modal Styles.
+    - Finalized Mini Current User UPC Modal Styles.
 
 
 ## Backend Changes
