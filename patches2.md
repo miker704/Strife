@@ -1692,6 +1692,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Nitro Store.
     - Finalized Nitro Store Container.
     - Finalized Nitro Selection Modal.
+    - Finalized Nitro Selection Modal Container.
 
 
 ## Backend Changes
