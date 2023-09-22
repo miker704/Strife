@@ -10,20 +10,19 @@ const mSTP = (state) => {
     return {
         // currentUser: state.entities.users[state.session.id],
         currentUser: state.currentUser,
-
         errors: state.errors.session
     }
 };
 
 const mDTP = (dispatch) => {
     return {
-        updateUserInfo : (user) => {dispatch(updateUserInfo(user))},
+        updateUserInfo: (user) => dispatch(updateUserInfo(user)),
         openModal: (modal) => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal()),
         removeSessionErrors: () => dispatch(removeSessionErrors()),
-        handleESC : (e) => handleKeyUp(e)
+        handleESC: (e) => handleKeyUp(e)
     }
 };
 
-const EditUserEmailContainer = withRouter(connect(mSTP,mDTP)(EditUserEmailForm))
+const EditUserEmailContainer = withRouter(connect(mSTP, mDTP)(EditUserEmailForm))
 export default EditUserEmailContainer;
