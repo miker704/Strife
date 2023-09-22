@@ -1713,6 +1713,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Mega Upc Modal Tab 1 Container.
     - Finalized Mega Upc Modal Tab 2.
     - Finalized Mega Upc Modal Tab 2 Container.
+    - Finalized Mega Upc Modal Tab 3.
 
 
 ## Backend Changes
