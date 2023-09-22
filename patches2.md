@@ -1607,6 +1607,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded purpleStormAvatar.gif
     - Uploaded purpleElectricStorm.gif
     - Uploaded strifeLogoBannerWumpus.png
+    - Moved deprecated Message Skeleton components to deprecated.
     - Finalized Message Skeleton and MessageList Skeleton.
     - Finalized Guild Server list Skeleton and Guild Server Grid Skeleton.
     - Finalized Loading Screen.
