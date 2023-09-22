@@ -1,216 +1,183 @@
-//this is the file for the server/channel edit settings modal
-
+//this is the file for channel drop down modal (the black modal that appears when clicking the delta symbol above
+//the side channel bav bar)
 
 .channel-drop-down-layer {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: none !important;
-    // pointer-events: none;
-    z-index: 1002;
-    outline: 0;
-    forced-color-adjust: none;
-    user-select: none;
-    position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: none !important;
+  // pointer-events: none;
+  z-index: 1002;
+  outline: 0;
+  user-select: none;
+  position: absolute;
 }
 
-
 .channel-drop-down-pop-up {
-    forced-color-adjust: none;
-    position: absolute;
-    top: 56px;
-    // left: 7px;
-    left: 10px;
-    z-index: 1005;
+  position: absolute;
+  top: 56px;
+  left: 82px;
+  z-index: 1005;
+}
 
+@-webkit-keyframes channelDropDownRender {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes channelDropDownRender {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }
 
 .channel-drop-down-pop-up-animate {
-    forced-color-adjust: none;
-    outline: 0;
-    -webkit-transition: opacity .12s ease-out, -webkit-transform .12s ease-out;
-    transition: opacity .12s ease-out, -webkit-transform .12s ease-out;
-    transition: transform .12s ease-out, opacity .12s ease-out;
-    transition: transform .12s ease-out, opacity .12s ease-out, -webkit-transform .12s ease-out;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 1;
-    transform-origin: top center;
+  -webkit-transition: opacity 0.12s ease-out, -webkit-transform 0.12s ease-out;
+  transition: opacity 0.12s ease-out, -webkit-transform 0.12s ease-out;
+  transition: transform 0.12s ease-out, opacity 0.12s ease-out;
+  transition: transform 0.12s ease-out, opacity 0.12s ease-out,
+    -webkit-transform 0.12s ease-out;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  transform-origin: top center;
+  -webkit-animation-name: channelDropDownRender;
+  -webkit-animation-duration: 0.15s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+  animation-name: channelDropDownRender;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
 }
 
-
 .channel-drop-menu {
-    outline: 0;
-    forced-color-adjust: none;
-    width: 220px;
-    position: relative;
-    z-index: 1;
-    box-sizing: border-box;
-    display: flex;
-    height: auto;
-    cursor: default;
-    max-height: calc(100vh - 32px);
-    box-shadow: 0px 8px 16px 0px hsla(0, 0%, 0%, 0.24);
-    background: #111214;
-    border-radius: 4px;
-    z-index: 1006;
-
+  outline: 0;
+  width: 220px;
+  position: relative;
+  z-index: 1;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: flex;
+  height: auto;
+  cursor: default;
+  max-height: calc(100vh - 32px);
+  -webkit-box-shadow: var(--elevation-high);
+  box-shadow: var(--elevation-high);
+  background: var(--background-floating);
+  border-radius: 4px;
+  z-index: 1006;
 }
 
 .channel-drop-scroller {
-    overflow: hidden scroll;
-    padding-right: 0px;
-    forced-color-adjust: none;
-    outline: 0;
-    padding: 6px 8px;
-    position: relative;
-    box-sizing: border-box;
-    min-height: 0;
-    flex: 1 1 auto;
-
+  padding: 6px 8px;
+  outline: 0;
 }
-
-
-.channel-drop-scroller::-webkit-scrollbar-track {
-    border-color: hsla(0, 0%, 0%, 0);
-    background-color: hsla(0, 0%, 0%, 0);
-    border: 2px solid hsla(0, 0%, 0%, 0);
-}
-
-.channel-drop-scroller::-webkit-scrollbar-thumb {
-    background-clip: padding-box;
-    border: 2px solid #0000;
-    border-radius: 4px;
-    background-color: hsl(216, 7.2%, 13.5%);
-    min-height: 40px;
-}
-
-.channel-drop-scroller::-webkit-scrollbar-corner {
-    background-color: #0000;
-}
-
-.channel-drop-scroller::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
 
 .channel-drop-item {
-    forced-color-adjust: none;
-    outline: 0;
-    color: hsl(215, 8.8%, 73.3%);
-    position: relative;
-    margin: 2px 0;
-    border-radius: 2px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 18px;
-    cursor: pointer;
-    box-sizing: border-box;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    align-items: center;
-    min-height: 32px;
-    padding: 6px 8px;
-    border-color: hsl(215, 8.8%, 73.3%);
-    font-family: "Whitney";
-
+  outline: 0;
+  color: var(--interactive-normal);
+  position: relative;
+  margin: 2px 0;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  min-height: 32px;
+  padding: 6px 8px;
+  border-color: var(--interactive-normal);
+  font-family: var(--global-font);
 }
 
-
-
 .server-boost-label {
-    forced-color-adjust: none;
-    outline: 0;
-    flex: 1 1 auto;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 14px;
-    font-family: "Whitney";
-    line-height: 18px;
-    cursor: pointer;
-    color: hsl(216, 3.7%, 73.5%);
-
+  outline: 0;
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-family: var(--global-font);
+  line-height: 18px;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--interactive-normal);
 }
 
 .server-boost-icon-container {
-    forced-color-adjust: none;
-    outline: 0;
-    flex: 0 0 auto;
-    height: 18px;
-    width: 18px;
-    margin-left: 8px;
-    -webkit-box-flex: 0;
-
-    position: relative;
+  outline: 0;
+  flex: 0 0 auto;
+  height: 18px;
+  width: 18px;
+  margin-left: 8px;
+  -webkit-box-flex: 0;
+  position: relative;
 }
 
 .server-boost-icon {
-    width: 18px;
-    height: 18px;
-    forced-color-adjust: none;
-    // color is disable as discord does not have the boost icon color enabled
-    // color: hsl(302, 100%, 72.5%);
-    // color: $gemstone;
-
+  width: 18px;
+  height: 18px;
 }
 
 .channel-drop-sep {
-    forced-color-adjust: none;
-    outline: 0;
-    box-sizing: border-box;
-    margin: 4px;
-    // border-bottom: 1px solid hsla(217, 7.6%, 33.5%, 0.48);
-    border-bottom: 1px solid hsla(228, 6%, 32.5%, 0.48);
-
+  outline: 0;
+  box-sizing: border-box;
+  margin: 4px;
+  border-bottom: 1px solid var(--background-modifier-accent);
 }
 
-
 .channel-drop-item.group2 {
-    color: hsl(235, 86.1%, 77.5%);
+  color: var(--brand-experiment-360);
 }
 
 .server-boost-label.ip {
-    color: hsl(235, 86.1%, 77.5%);
+  color: var(--brand-experiment-360);
 }
-
 
 .icon-ipcd {
-    width: 18px;
-    height: 18px;
-    forced-color-adjust: none;
+  width: 18px;
+  height: 18px;
 }
-
 
 .channel-drop-down-wrapper {
-    user-select: none;
-    outline: 0;
-    forced-color-adjust: none;
-
+  user-select: none;
+  outline: 0;
 }
 
-
-
-
 .channel-drop-down-container {
-    user-select: none;
-    outline: 0;
-    forced-color-adjust: none;
-
+  user-select: none;
+  outline: 0;
 }
 
 .channel-drop-down-modal {
-    user-select: none;
-    outline: 0;
-    forced-color-adjust: none;
-
+  user-select: none;
+  outline: 0;
 }
 
+.icon-cd-si,
 .icon-cd-gear,
 .icon-cd-cc,
 .icon-cd-ccat,
@@ -222,54 +189,48 @@
 .icon-cd-rr,
 .icon-cd-ls,
 .icon-cd-ad {
-    width: 18px;
-    height: 18px;
-    forced-color-adjust: none;
+  width: 18px;
+  height: 18px;
 }
 
 .channel-drop-item.redclr {
-    color: hsl(359, 87.3%, 59.8%) !important;
+  color: var(--status-danger) !important;
 
-    .server-boost-label {
-        color: hsl(359, 87.3%, 59.8%) !important;
-    }
+  .server-boost-label {
+    color: var(--status-danger) !important;
+  }
 }
 
 .channel-drop-item.redclr:hover {
-    background-color: hsl(360, 60.2%, 39.4%);
-    color: hsl(0, 0%, 100%) !important;
+  background-color: var(--red-500);
+  color: var(--white-500) !important;
 
-    .server-boost-label {
-        color: hsl(0, 0%, 100%) !important;
-
-
-    }
+  .server-boost-label {
+    color: var(--white-500) !important;
+  }
 }
 
 .channel-drop-item:hover {
-    background-color: hsl(235, 46.7%, 44.1%);
-    color: hsl(0, 0%, 100%) !important;
+  background-color: var(--brand-experiment-600);
+  color: var(--white-500) !important;
 
-    .server-boost-label {
-        color: hsl(0, 0%, 100%) !important;
-    }
-    .icon-cd-hmc .checkBox {
-        color: hsl(0, 0%, 100%) !important;
+  .server-boost-label {
+    color: var(--white-500) !important;
+  }
 
-    }
-    
-    .icon-cd-hmc .checkMark {
-        color: hsl(235, 46.7%, 44.1%);
-    }
+  .icon-cd-hmc .checkBox {
+    color: var(--white-500) !important;
+  }
 
+  .icon-cd-hmc .checkMark {
+    color: var(--brand-experiment-600);
+  }
 }
 
-
 .icon-cd-hmc .checkBox {
-    color: rgb(88, 101, 242);
+  color: var(--brand-experiment-500);
 }
 
 .icon-cd-hmc .checkMark {
-    color: hsl(0, 0%, 100%);
-    // background-color: hsl(235, 46.7%, 44.1%);
+  color: var(--white-500);
 }
