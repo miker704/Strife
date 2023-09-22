@@ -1729,7 +1729,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Channels scss styles.
     - Finalized UPC Panel.
     - Finalized UPC Panel Container.
-
+    - Finalized Create Dm Modal.
 
 ## Backend Changes
 
