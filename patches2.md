@@ -1603,6 +1603,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Switch to promise based solution for error boundary loading screen animation fade out instead of solely using settimeouts.
     - Switch to promise based solution for delete server (telefrag) loading screen animation fade out instead of solely using settimeouts.
     - Added Delete Dm server modal file to be used later.
+    - Added Delete Dm server modal Container file to be used later.
     - Finalized AppPuller util.js
     - Uploaded eanBoostPerk.svg
     - Uploaded purpleStormAvatar.gif
