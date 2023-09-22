@@ -1664,6 +1664,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Splash Body.
     - Finalized Splash Container.
     - Changed Current Patch notes link in README.md file to redirect to this file.
+    - Finalized Friend Request Error Modal.
 
 
 
