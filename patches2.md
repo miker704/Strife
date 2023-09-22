@@ -1739,6 +1739,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized No Friends Dm Modal Container.
     - Finalized NOT Friends Dm Modal.
     - Finalized NOT Friends Dm Modal Container.
+    - Finalized Dm Message reducer.
 
 ## Backend Changes
 
