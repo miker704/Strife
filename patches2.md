@@ -1662,6 +1662,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Splash Nav Bar.
     - Finalized Splash Footer.
     - Finalized Splash Body.
+    - Finalized Splash Container.
 
 
 
