@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 import { selectFriendStatus } from '../../../utils/selectors_api_util';
 import { requestFriendships, updateFriendship, deleteFriendship, removeFriendshipErrors, createFriendship } from '../../../actions/friendship_actions';
 import { openModal, closeModal } from '../../../actions/modal_actions';
-import { fetchUserByStrifeId, removeSessionErrors } from '../../../actions/session_actions';
+import { fetchUserByStrifeId, removeSessionErrors, searchUsers } from '../../../actions/session_actions';
 import AddFriends from './add_friends';
 
 const mSTP = (state) => {
@@ -25,6 +25,7 @@ const mDTP = (dispatch) => {
         createFriendship: (ids) => dispatch(createFriendship(ids)),
         updateFriendship: (ids) => dispatch(updateFriendship(ids)),
         deleteFriendship: (ids) => dispatch(deleteFriendship(ids)),
+        searchUsers:(username) => dispatch(searchUsers(username)),
         removeFriendshipErrors: () => dispatch(removeFriendshipErrors()),
         openModal: (modal) => dispatch(openModal(modal)),
         removeSessionErrors: () => dispatch(removeSessionErrors()),
