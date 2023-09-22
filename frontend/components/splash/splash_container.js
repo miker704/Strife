@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-import Splash from './splash';
 import SplashMain from './splash_main.jsx';
 
 // const mSTP = state => ({
@@ -12,7 +11,8 @@ import SplashMain from './splash_main.jsx';
 
 
 const mSTP = state => ({
-  state: state
+  loggedIn: Boolean(state.session.id),
+  // state: state
 });
 
 
