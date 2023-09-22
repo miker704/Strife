@@ -1,21 +1,32 @@
 import React from "react";
-import SplashNav from "./splash_nav";
-import Splash from "./splash";
+import SplashNavBar from "./splash_nav_bar";
+import SplashBody from "./splash_body";
 import SplashFooter from "./splash_footer";
+import { useEffect } from "react";
 
-class SplashMain extends React.Component{
-    constructor(props){
-        super(props);
-    }
-    render(){
-         return(
-            <div>
-                <SplashNav/>
-                <Splash/>
-                <SplashFooter/>
+const SplashMain = (props) => {
+
+
+    // useEffect(() => {
+    //     document.getElementById('root').style.overflow = "hidden scroll";
+    //     return function cleanUp () {
+    //         document.getElementById("root").removeAttribute("style");
+    //     }
+
+    // }, [])
+
+
+    return (
+
+        <div id="app-mount">
+            <div className='splash-home-container'>
+                <SplashNavBar />
+                <SplashBody />
+                <SplashFooter />
             </div>
-         )
-    }
+        </div>
+
+    )
 }
 
 export default SplashMain;
