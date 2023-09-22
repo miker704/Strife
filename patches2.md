@@ -1625,6 +1625,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized TeleFrag Loading Screen Container.
     - Finalized User owns server warning.
     - Finalized User owns server warning container.
+    - Added Preview server reducer.
 
 ## Backend Changes
 
