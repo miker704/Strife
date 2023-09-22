@@ -1681,6 +1681,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Channel Drop Down Modal.
     - Finalized Channel Drop Down Modal Container.
     - Finalized Channel Drop Down Modal SCSS styles.
+    - Finalized Nitro Header Nav Bar.
 
 
 ## Backend Changes
