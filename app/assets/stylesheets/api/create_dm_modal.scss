@@ -1,73 +1,42 @@
-// $error-red: #ED4245;
-$error-red: rgb(242, 63, 66);
+@import 'global_vars';
 
 .clear-modal-wrapper {
-    // bottom: 0;
-    // background: none !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: none !important;
     // pointer-events: none;
-    // z-index: 1002;
-    // outline: 0;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // forced-color-adjust: none;
-    // right: 0;
-
-    z-index: 3;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: calc(100vh);
-    width: calc(100vw);
-    background-color: #0000;
-    transform: translate(-75px, 0px);
-
+    z-index: 1002;
+    outline: 0;
 }
-
-
-.clear-modal-wrapper-server {
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    animation-name: wrapperRender;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
-    z-index: 3;
-
-}
-
-
 
 
 .create-dm-modal-popup {
     position: absolute;
     top: 186px;
     left: 278px;
-    forced-color-adjust: none;
     pointer-events: auto;
     outline: 0;
 }
 
+
 .create-dm-modal-focus-lock {
-    flex-direction: column;
     min-height: 0;
     max-width: 100%;
     outline: 0;
-    forced-color-adjust: none;
-    display: flex;
+    display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-
+    display: flex;
+    flex-direction: column;
 
 }
 
 .create-dm-modal {
     opacity: 1;
     transform: scale(1);
-    forced-color-adjust: none;
     outline: 0;
     width: 440px;
     max-height: 450px;
@@ -76,177 +45,183 @@ $error-red: rgb(242, 63, 66);
     margin: 0 auto;
     pointer-events: all;
     position: relative;
-    flex-direction: column;
-    display: flex;
+    display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    background-color: #313338;
-    box-shadow: 0 0 0 1px hsla(216, 7.2%, 13.5%, 0.6), 0 2px 10px 0 hsla(0, 0%, 0%, 0.2);
+    display: flex;
+    flex-direction: column;
+    background-color: $modal-pop-up-bg-color;
+    -webkit-box-shadow: $dark-elevation-border, $dark-elevation-high;
+    box-shadow: $dark-elevation-border, $dark-elevation-high;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 
-    button[type="submit"]:disabled {
+
+    button[type="submit"]:disabled,
+    button[type="button"]:disabled {
         cursor: not-allowed;
-        opacity: .5;
-        color: hsl(0, 0%, 100%);
-        background-color: hsl(235, 85.6%, 64.7%);
-        forced-color-adjust: none;
+        opacity: 0.5;
+        color: $white-500;
+        background-color: $brand-experiment;
     }
 }
 
 .create-dm-header-sec {
-    forced-color-adjust: none;
-    flex: 0 0 auto;
-    border-radius: 4px 4px 0 0;
-    transition: box-shadow .1s ease-out, -webkit-box-shadow .1s ease-out;
-    word-wrap: break-word;
-    position: relative;
     -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    border-radius: 4px 4px 0px 0px;
+    -webkit-transition: -webkit-box-shadow 0.1s ease-out;
+    transition: box-shadow 0.1s ease-out, -webkit-box-shadow 0.1s ease-out;
+    word-wrap: break-word;
+
+    position: relative;
     padding: 16px;
     z-index: 1;
     overflow-x: hidden;
+
+    display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-box-pack: start;
+    -webkit-box-align: stretch;
+    display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    -webkit-box-pack: start;
     align-items: stretch;
-    -webkit-box-align: stretch;
-    display: flex;
     outline: 0;
 }
 
 .create-dm-header-h2 {
-    forced-color-adjust: none;
-    color: #FFFFFF;
-    font-weight: 500;
+    color: $header-primary;
+    font-weight: 600;
     font-size: 20px;
     line-height: 24px;
-    font-family: "ABC Ginto Normal";
+    font-family: $global-font;
 }
 
 .num-of-dm-members-selected {
-    forced-color-adjust: none;
     outline: 0;
-    font-family: "Whitney";
+    font-family: $global-font;
     font-size: 12px;
     line-height: 16px;
     margin-top: 4px;
     font-weight: 400;
-    color: hsl(216, 3.7%, 73.5%);
+    color: $primary-300;
 
+}
+
+.num-of-dm-members-selected.cDMS-error {
+    color: $red-400 !important;
 }
 
 .create-dm-search-bar-wrapper {
-    forced-color-adjust: none;
     outline: 0;
     flex: 1 1 auto;
     margin-top: 20px;
+    display: -webkit-box;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
+    -webkit-box-align: stretch;
+    -webkit-box-pack: start;
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    -webkit-box-align: stretch;
-    display: flex;
+    align-items: stretch;
 }
 
 .create-dm-search-bar-outer-wrapper {
-    forced-color-adjust: none;
     outline: 0;
     border-radius: 4px;
     overflow: hidden;
-    background-color: #1e1f22;
+    background-color: $background-tertiary;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    flex: 1;
-    box-shadow: none;
     -webkit-box-flex: 1;
+    flex: 1;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 
 .create-dm-search-bar-inner-wrapper {
-    forced-color-adjust: none;
+
+    //////
     outline: 0;
-    // overflow: hidden scroll;
-    padding-right: 0px;
     position: relative;
+    display: -webkit-box;
     -webkit-box-flex: 1;
-    flex: 1 1 auto;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
+    flex: 1 1 auto;
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 1px;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    display: flex;
+
+    ///////
     max-height: 130px;
-    overflow: hidden scroll;
 }
 
-
-
-.create-dm-search-bar-inner-wrapper::-webkit-scrollbar {
-    width: 5px;
-}
-
-.create-dm-search-bar-inner-wrapper::-webkit-scrollbar-thumb {
-    background: rgb(30, 35, 40);
-    border-radius: 5px;
-    visibility: hidden;
-}
-
-.create-dm-search-bar-inner-wrapper:hover::-webkit-scrollbar-thumb {
-    visibility: visible;
-}
-
-.create-dm-search-bar-inner-wrapper::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background: rgb(40, 45, 50);
-    visibility: hidden;
-
-}
-
-.create-dm-search-bar-inner-wrapper:hover::-webkit-scrollbar-track {
-    visibility: visible;
-}
 
 
 .mini-box {
+    font-family: $global-font;
     font-size: 16px;
-    font-family: "Whitney";
     line-height: 32px;
     height: 30px;
-    padding: 0 8px;
-    forced-color-adjust: none;
+    padding: 0px 8px;
     outline: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: 2px;
     text-align: center;
     margin: 1px;
-    align-items: center;
+    display: -webkit-box;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    display: flex;
     -webkit-box-align: center;
+    display: flex;
     flex-direction: row;
+    align-items: center;
     cursor: pointer;
+    -webkit-transition: none;
     transition: none;
-    background-color: hsl(220, 7.7%, 22.9%);
-    color: hsl(210, 2.9%, 86.7%);
+    background-color: $background-primary;
+    color: $text-normal;
     text-decoration: none;
 }
 
+.mini-box:hover {
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.close-3-icon {
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
 .create-dm-search-bar {
     outline: none;
     font-size: 16px;
     line-height: 32px;
     height: 30px;
-    padding: 0 8px;
-    forced-color-adjust: none;
+    padding: 0px 8px;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    background: #0000;
+    background: transparent;
     border: none;
     resize: none;
     -webkit-box-flex: 1;
@@ -254,119 +229,92 @@ $error-red: rgb(242, 63, 66);
     min-width: 48px;
     margin: 1px;
     appearance: none;
-    color: hsl(210, 2.9%, 86.7%);
+    color: $text-normal;
     text-rendering: optimizeLegibility;
     font-weight: 400;
-    font-size: 16px;
-    font-family: "Whitney";
+    font-family: $global-font;
 }
 
 .create-dm-search-bar::placeholder {
-    color: rgb(148, 155, 164);
+    color: $text-muted;
     text-rendering: optimizeLegibility;
-    font-family: "Whitney"; // change to gg "sans";
-    // font-family: "gg sans";
+    font-family: $global-font;
     opacity: 1;
     font-weight: 400;
+    font-size: 16px;
 }
+
+.create-dm-invis-div {
+    position: absolute;
+    pointer-events: none;
+    min-height: 0;
+    min-width: 1px;
+    flex: 0 0 auto;
+    height: 1px;
+    outline: 0;
+}
+
 
 .create-dm-scroller {
-    overflow: hidden scroll;
-    padding-right: 0px;
-    forced-color-adjust: none;
+
     max-height: 145px;
-    flex: 1 1 auto;
-    box-sizing: border-box;
-    min-height: 0;
-    -webkit-box-flex: 1;
-    position: relative;
+    // max-height: 190px;
     outline: 0;
-    margin-right: 10px;
 }
-
-.create-dm-scroller::-webkit-scrollbar {
-    width: 5px;
-}
-
-.create-dm-scroller::-webkit-scrollbar-thumb {
-    background: rgb(30, 35, 40);
-    border-radius: 5px;
-    visibility: hidden;
-}
-
-.create-dm-scroller:hover::-webkit-scrollbar-thumb {
-    visibility: visible;
-}
-
-.create-dm-scroller::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background: rgb(40, 45, 50);
-    visibility: hidden;
-
-}
-
-.create-dm-scroller:hover::-webkit-scrollbar-track {
-    visibility: visible;
-}
-
 
 
 
 .create-dm-ul-list {
     height: auto;
-    forced-color-adjust: none;
     position: relative;
-
     outline: 0;
 }
 
 .create-dm-ul-list-div {
     outline: 0;
-    forced-color-adjust: none;
     height: 0px;
 }
 
 
 .create-dm-friend-wrapper {
     cursor: pointer;
-    padding: 1px 0;
-    margin: 0 4px 0 12px;
+    padding: 1px 0px;
+    margin: 0px 4px 0px 12px;
     outline: 0;
-    forced-color-adjust: none;
 
 }
 
 .create-dm-friend-wrapper:hover {
-    background-color: hsla(217, 7.6%, 33.5%, 0.3);
-    color: hsl(0, 0%, 100%);
+    background-color: $primary-500-hsl-30;
+    color: $white-500;
     flex: 1 1 auto;
-    border-radius: 4px;
+    border-radius: 3px;
 }
 
-
 .create-dm-friend-inner-wrapper {
-    forced-color-adjust: none;
     outline: 0;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-align: center;
+    -webkit-box-pack: start;
+    -webkit-box-direction: normal;
     display: flex;
     align-items: center;
-    -webkit-box-align: center;
     justify-content: flex-start;
-    -webkit-box-pack: start;
     flex-wrap: nowrap;
     flex-direction: row;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     height: 40px;
     padding: 6px 8px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 400;
     border-radius: 3px;
     flex: 1 1 auto;
-    color: hsl(216, 3.7%, 73.5%);
+    color: $primary-300;
 
 }
 
@@ -375,173 +323,154 @@ $error-red: rgb(242, 63, 66);
     height: 32px;
     flex-shrink: 0;
     margin: 0;
-    forced-color-adjust: none;
+    position: relative;
+    border-radius: 50%;
+    outline: 0;
+}
+
+/* for svg masking */
+
+.friend-avatar-svg-wrapper {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    margin: 0;
     position: relative;
     border-radius: 50%;
     outline: 0;
 
-
-    flex: 0 0 auto;
-    margin-right: 12px;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    justify-content: center;
-    -webkit-box-flex: 0;
-    -webkit-box-pack: center;
 }
 
-.create-dm-avatar-info {
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+.svg-avatar-wrapping {
+    position: absolute;
+    contain: paint;
 }
 
 
-.create-dm-avatar-info>img {
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
+.status-mask {
+    pointer-events: none;
+    display: block;
+    width: auto;
+    position: absolute;
 }
+
+.svg-avatar-stack {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    outline: 0;
+}
+
+
+.create-dm-avatar-svg-masked {
+    display: block;
+    -o-object-fit: cover;
+    object-fit: cover;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    grid-area: 1/1;
+}
+
+.create-dm-avatar-svg-masked[alt] {
+    text-indent: -9999px;
+}
+
+.create-dm-avatar-svg-masked:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $background-modifier-accent;
+}
+
+.svg-masked-pointer-events {
+    pointer-events: auto;
+    outline: none;
+}
+
+/*end*/
+
 
 .create-dm-user-info {
     flex: 1 1 auto;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    forced-color-adjust: none;
     margin-left: 10px;
     margin-right: 10px;
+    display: -webkit-box;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
+    -webkit-box-pack: start;
+    -webkit-box-align: baseline;
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    -webkit-box-pack: start;
     align-items: baseline;
-    -webkit-box-align: baseline;
-    display: flex;
     outline: 0;
 }
 
 .create-dm-user-username-wrapper {
     margin-right: 4px;
-    forced-color-adjust: none;
-    font-size: 14px;
-    line-height: 18px;
-    font-family: "Whitney";
-    font-weight: 400;
-    color: hsl(210, 2.9%, 86.7%);
+    font-size: 16px;
+    line-height: 20px;
+    font-family: $global-font;
+    font-weight: 500;
+    color: $text-normal;
     outline: 0;
-
 }
 
 .create-dm-user-strife-tag {
     outline: 0;
-    opacity: 0.5;
-    forced-color-adjust: none;
-    display: flex;
+    display: -webkit-box;
     -webkit-box-pack: start;
-    justify-content: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
     -webkit-box-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
     overflow: hidden;
+    font-size: 14px;
+    font-family: $global-font;
+    font-weight: 400;
+    color: $text-muted;
+    white-space: nowrap;
     line-height: 1.1;
-    font-size: 15px;
-    font-family: "Whitney";
 }
 
 .create-dm-user-user-name {
     -webkit-box-flex: 0;
     display: block;
-    forced-color-adjust: none;
     flex: 0 1 auto;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     outline: 0;
-    font-size: 15px;
-    font-family: "Whitney";
-
-}
-
-
-
-
-
-
-.create-dm-footer {
-    outline: 0;
-    forced-color-adjust: none;
-    height: 1px;
-    margin: 0 10px;
-    box-shadow: 0 -1px 0 hsla(0, 0%, 100%, 0.04);
-}
-
-.create-dm-button-sec {
-
-    flex: 1 1 auto;
-    forced-color-adjust: none;
-    padding: 20px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    -webkit-box-align: stretch;
-    display: flex;
-    outline: 0;
-}
-
-
-.create-dm-button {
-    height: 38px;
-    min-width: 96px;
-    min-height: 38px;
-    width: 100%;
-    forced-color-adjust: none;
-    user-select: none;
-    outline: 0;
-    transition: background-color .17s ease, color .17s ease;
-    text-rendering: optimizeLegibility;
-    font-family: "Whitney";
-    box-sizing: border-box;
-    // background: none;
-    border: none;
-    border-radius: 3px;
     font-size: 14px;
-    font-weight: 500;
-    line-height: 16px;
-    padding: 2px 16px;
-    align-items: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    display: flex;
-    -webkit-box-pack: center;
-    position: relative;
-    background-color: #4c6cee;
-    color: #FFFFFF;
+    font-family: $global-font;
+    font-weight: 400;
 }
 
-.create-dm-button-text {
-    forced-color-adjust: none;
-    outline: 0;
-    margin: 0 auto;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
 
 .create-dm-check-box-wrapper {
-    flex: 0 0 auto;
     -webkit-box-flex: 0;
-    forced-color-adjust: none;
-    align-items: center;
+    flex: 0 0 auto;
+    display: -webkit-box;
     -webkit-box-align: center;
     display: flex;
+    align-items: center;
     position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     font-size: 16px;
+    font-weight: 400;
+    font-family: $global-font;
     max-width: 100%;
     outline: 0;
 
@@ -550,68 +479,234 @@ $error-red: rgb(242, 63, 66);
 .create-dm-check-box {
     width: 22px;
     height: 22px;
-    forced-color-adjust: none;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    justify-content: center;
-    -webkit-box-pack: center;
     border-radius: 6px;
+    -webkit-box-flex: 0;
     flex: 0 0 auto;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-width: 1px;
     border-style: solid;
-    -webkit-box-flex: 0;
-    // border-color: hsl(218, 4.6%, 46.9%);
-    border-color: hsl(223, 5.8%, 52.9%);
-    -webkit-box-align: center;
-    align-items: center;
-    display: flex;
+    border-color: $primary-400;
     outline: 0;
 }
 
-
-.num-of-dm-members-selected.cDMS-error {
-    color: $error-red;
-}
-
-
 .create-dm-check-box.checked {
-    // border-color: hsl(217, 7.6%, 33.5%);
-    border-color: hsl(235, 86.1%, 77.5%);
+    border-color: $control-brand-foreground;
 
     svg path {
-        // fill: hsl(217, 7.6%, 33.5%);
-        fill: rgb(88, 101, 242);
+        fill: $brand-500;
     }
 }
 
-.close-3-icon {
-    width: 12px;
-    height: 12px;
-    margin-left: 4px;
+.create-dm-footer {
+    outline: 0;
+    height: 1px;
+    margin: 0 10px;
+    // box-shadow: 0 -1px 0 $white-500-hsl-04;
+    // odd behavior using a var does not work here
+    // using calc method with a var 
+    box-shadow: $white-500-bs;
+}
+
+
+.create-dm-button-sec {
+    flex: 1 1 auto;
+    padding: 20px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-box-pack: start;
+    -webkit-box-align: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    outline: 0;
+
+}
+
+
+.create-dm-button {
+    height: 38px;
+    min-width: 96px;
+    min-height: 38px;
+    width: 100%;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 0;
+    -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+    transition: background-color 0.17s ease, color 0.17s ease;
+    text-rendering: optimizeLegibility;
+    font-family: $global-font;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    forced-color-adjust: none;
+    // background: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: $brand-experiment;
+    color: $white-500;
+}
+
+.create-dm-button:hover {
+    background-color: $brand-experiment-560;
+}
+
+.create-dm-button-text {
+    outline: 0;
+    margin: 0 auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background-image: linear-gradient(0deg, transparent, transparent 1px, transparent 0, transparent 2px, transparent 0);
+}
+
+.create-dm-button-fake {
+    height: 38px;
+    min-width: 96px;
+    min-height: 38px;
+    width: 100%;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 0;
+    -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+    transition: background-color 0.17s ease, color 0.17s ease;
+    text-rendering: optimizeLegibility;
+    font-family: $global-font;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: $brand-experiment;
+    color: $white-500;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+.create-dm-no-results {
+    flex: 1 1 auto;
+    padding: 0px 48px;
+    font-family: $global-font;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    max-height: 190px;
+    margin-bottom: 20px;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    outline: 0;
+    color: $primary-400;
+}
+
+
+.create-dm-no-results-error-state {
+    width: 85px;
+    height: 85px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    margin-bottom: 20px;
+    outline: 0;
+    background-image: image_url('createdmnoresults.svg');
+
 }
 
 
 
 .clear-modal-wrapper.homeBar {
-    transform: translate(-309px, -1px);
-    height: 100vh;
-    width: 99.5vw;
+    // transform: translate(-309px, -1px);
+    // height: 100vh;
+    // width: 99.5vw;
 
     .create-dm-modal-popup {
         // transform: translate(240px, -145px);
-        top: 42px;
-        right: 125px;
+        // top: 42px;
+        // right: 125px;
+        // left: unset;
+        top: 44px;
+        right: 113px;
         left: unset;
     }
 
     .create-dm-modal-popup.dm-invite {
-        // transform: translate(240px, -145px);
-        top: 42px;
-        right: 300px;
+        position: absolute;
+        top: 44px;
+        right: 296px;
+
+        // top: 42px;
         left: unset;
-        transform: translate(50px, 0px);
+        // right: 300px;
+        // transform: translate(50px, 0px);
     }
+
+
+    
+    .create-dm-modal-popup.voice-call {
+        position: absolute;
+        top: 44px;
+        right: 418px;
+        left: unset;
+    }
+
+    .create-dm-modal-popup.video-call {
+        position: absolute;
+        top: 44px;
+        right: 378px;
+        left: unset;
+    }
+
 }
 
 .create-dm-modal-popup.server {
@@ -644,10 +739,10 @@ $error-red: rgb(242, 63, 66);
     }
 
     .create-dm-check-box.checked {
-        border-color: #8ff91e;
+        border-color: $control-brand-foreground-green-border;
 
         svg path {
-            fill: #35ff2d;
+            fill: $control-brand-foreground-green-check;
         }
     }
 
@@ -655,44 +750,349 @@ $error-red: rgb(242, 63, 66);
 
 
 
-.create-dm-no-results {
-    flex: 1 1 auto;
-    padding: 0 48px;
-    font-family: "Whitney";
-    // font-family: "gg sans";
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    max-height: 190px;
-    margin-bottom: 20px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    outline: 0;
-    color: rgb(128, 132, 142);
-}
 
-
-.create-dm-no-results-error-state {
-    width: 85px;
-    height: 85px;
+.create-dm-no-friends {
+    width: 171px;
+    height: 86px;
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: cover;
     margin-bottom: 20px;
     outline: 0;
-    background-image: image_url('createdmnoresults.svg');
+    background-image: image_url('createdmnofriends.svg');
+}
 
+.create-dm-no-friends-button {
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+    width: 100%;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 0;
+    -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+    transition: background-color 0.17s ease, color 0.17s ease;
+    text-rendering: optimizeLegibility;
+    font-family: $global-font;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    // background: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 20px;
+    background-color: $button-positive-background;
+    color: $white-500;
+}
+
+.create-dm-no-friends-button:hover {
+    background-color: $button-positive-background-hover;
+}
+
+
+.create-dm-no-friends-error-state-flex-wrapper {
+    padding: 20px 20px 40px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    outline: 0;
+    flex: 1 1 auto;
+    color: $primary-400;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-family: $global-font;
+}
+
+.add-to-dm-not-friends-img {
+    background-image: image_url('no_friends_lite.svg');
+    width: 300px;
+    height: 129px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    margin-bottom: 20px;
+    outline: 0;
+}
+
+
+.add-friends-to-dm-button-not-friends {
+    margin-top: 20px;
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+    width: auto;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 0;
+    -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+    transition: background-color 0.17s ease, color 0.17s ease;
+    text-rendering: optimizeLegibility;
+    font-family: $global-font;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    // background: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: $brand-experiment;
+    color: $white-500;
+}
+
+.add-friends-to-dm-button-not-friends:hover {
+    background-color: $brand-experiment-560;
+}
+
+
+.invite-to-dm-add-button-wrapper {
+    margin-left: 8px;
+    outline: 0;
+}
+
+.invite-to-dm-add-button {
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+    width: auto;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 0;
+    -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+    transition: background-color 0.17s ease, color 0.17s ease;
+    text-rendering: optimizeLegibility;
+    font-family: $global-font;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    // background: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: $brand-experiment;
+    color: $white-500;
+}
+
+.invite-to-dm-add-button:hover {
+    background-color: $brand-experiment-560;
+}
+
+.invite-to-dm-add-button-fake {
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+    width: auto;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 0;
+    -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+    transition: background-color 0.17s ease, color 0.17s ease;
+    text-rendering: optimizeLegibility;
+    font-family: $global-font;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    // background: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: $brand-experiment;
+    color: $white-500;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.invite-to-dm-invite-link-header {
+    margin-bottom: 8px;
+    color: $header-secondary;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-family: $global-font;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.invite-to-dm-invite-link-input-flex-wrapper {
+    flex: 1 1 auto;
+    font-size: 16px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 3px;
+    color: $text-normal;
+    background-color: $input-background;
+    font-family: $global-font;
+    border: none;
+    -webkit-transition: border-color 0.2s ease-in-out;
+    transition: border-color 0.2s ease-in-out;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    outline: 0;
+}
+
+.invite-to-dm-invite-link-input-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    outline: 0;
+}
+
+.invite-to-dm-invite-link-input {
+    padding: 10px;
+    height: 40px;
+    border: none;
+    outline: 0;
+    font-size: 16px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 3px;
+    color: $text-normal;
+    background-color: $input-background;
+    border: none;
+    -webkit-transition: border-color 0.2s ease-in-out;
+    transition: border-color 0.2s ease-in-out;
+    font-family: $global-font;
+    outline: 0;
+    text-rendering: optimizeLegibility;
+}
+
+.invite-to-dm-invite-link-input::placeholder {
+    color: $text-normal;
+    font-family: $global-font;
+    text-rendering: optimizeLegibility;
+    font-size: 16px;
+
+}
+
+.invite-to-dm-copy-invite-link-button {
+    color: $white-500;
+    background-color: $brand-experiment;
+    margin-right: 4px;
+    width: 75px;
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+    -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+    transition: background-color 0.17s ease, color 0.17s ease;
+    position: relative;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: $global-font;
+    text-rendering: optimizeLegibility;
+    outline: 0;
+}
+
+.invite-to-dm-copy-invite-link-button:hover {
+    background-color: $brand-experiment-560;
+}
+
+.invite-to-dm-copy-invite-link-button:active {
+    background-color: $button-positive-background-hover;
+}
+
+.invite-to-dm-copy-invite-link-button.copy-successful {
+    background-color: $button-positive-background-hover;
+}
+
+
+
+.invite-to-dm-small-text {
+    color: $primary-300;
+    outline: 0;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: $global-font;
+    margin-top: 8px;
+}
+
+.create-dm-fetching-friends-state {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 20px;
+    outline: 0;
 }
