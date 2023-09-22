@@ -1760,6 +1760,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Friends Home Page.
     - Finalized Friends Home Page Container.
     - Finalized Delete Friend Confirmation Modal.
+    - Finalized Delete Friend Confirmation Modal Container.
 
 
 ## Backend Changes
