@@ -1,0 +1,286 @@
+// dm chat room first message
+
+// one to one dm chat rooms
+
+.chat-room-first-message-container {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  justify-content: flex-end;
+  margin: 16px;
+}
+
+.chat-room-avatar-wrapper {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  border-radius: 50%;
+}
+
+.chat-room-avatar-svg-wrapper {
+  position: absolute;
+  contain: paint;
+  pointer-events: none;
+  display: block;
+  width: auto;
+}
+
+.chat-room-avatar-image-stack {
+  display: grid;
+  width: 100%;
+  height: 100%;
+}
+.chat-room-avatar-image {
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.chat-room-avatar-image::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-modifier-accent);
+}
+
+.chat-room-header-first-msg {
+  font-weight: 700;
+  margin: 8px 0px;
+  color: var(--header-primary);
+  font-family: var(--global-font);
+  font-size: 32px;
+  line-height: 40px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.chat-room-header-first-msg-inner-content {
+  color: var(--header-secondary);
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.chat-room-header-first-msg-inner-content-header {
+  margin-bottom: 20px;
+  color: var(--header-primary);
+  font-weight: 500;
+  font-family: var(--global-font);
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.chat-room-o2o-dm-relationship-action-container {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.chat-room-o2o-mutual-servers-container {
+  margin-right: 8px;
+  display: flex;
+}
+
+.chat-room-o2o-mutual-servers-text {
+  font-family: var(--global-font);
+  font-size: 14px;
+  line-height: 18px;
+  cursor: pointer;
+  color: var(--interactive-normal);
+  font-weight: 400;
+}
+
+.chat-room-o2o-action-text {
+  font-family: var(--global-font);
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--header-secondary);
+  font-weight: 400;
+  margin-right: 8px;
+}
+
+.chat-room-mutual-servers-avatar-mask {
+  width: 24px;
+  height: 24px;
+  contain: paint;
+}
+
+.chat-room-mutual-servers-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.chat-room-mutual-servers-avatar-1-2 {
+  margin-right: -4px;
+}
+
+.chat-room-o2o-divider {
+  width: 4px;
+  height: 4px;
+  margin: 0px 16px;
+  border-radius: 50%;
+  background-color: var(--background-accent);
+}
+
+.chat-room-o2o-action-button.gray {
+  background-color: var(--button-secondary-background);
+}
+
+.chat-room-o2o-action-button.blue {
+  background-color: var(--brand-experiment);
+}
+.chat-room-o2o-action-button.red {
+  background-color: var(--button-danger-background);
+}
+
+.chat-room-o2o-action-button {
+  color: var(--white-500);
+  cursor: pointer;
+  width: auto;
+  margin-right: 8px;
+  height: 24px;
+  min-width: 52px;
+  min-height: 24px;
+  -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+  transition: background-color 0.17s ease, color 0.17s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: var(--global-font);
+  text-rendering: optimizeLegibility;
+}
+
+.chat-room-o2o-action-button.gray:hover {
+  background-color: var(--button-secondary-background-hover);
+}
+
+.chat-room-o2o-action-button.gray:active {
+  background-color: var(--button-secondary-background-active);
+}
+
+.chat-room-o2o-action-button.blue:hover {
+  background-color: var(--brand-experiment-560);
+}
+
+.chat-room-o2o-action-button.blue:active {
+  background-color: var(--brand-experiment-600);
+}
+.chat-room-o2o-action-button.blue:disabled {
+  background-color: var(--brand-experiment);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.chat-room-o2o-action-button.blue.disabled {
+  opacity: 0.5;
+  background-color: var(--brand-experiment);
+  cursor: not-allowed;
+}
+
+.chat-room-o2o-action-button.red:hover {
+  background-color: var(--button-danger-background-hover);
+}
+
+.chat-room-o2o-action-button.red:active {
+  background-color: var(--button-danger-background-active);
+}
+
+// group chat
+.chat-room-dm-gc-sroller-spacer {
+  display: block;
+  height: 30px;
+  width: 1px;
+  flex: 0 0 auto;
+  pointer-events: none;
+}
+
+.chat-room-dm-gc-sroller-spacer:empty {
+  height: 16px;
+}
+
+// servers text channels
+.chat-room-text-channel-button-container {
+  margin-top: 8px;
+}
+.chat-room-text-channel-edit-button-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  color: var(--text-link);
+  margin-right: 8px;
+  padding: 6px;
+  border-radius: 4px;
+  width: auto;
+  display: inline;
+  height: auto;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  font-family: var(--global-font);
+  text-rendering: optimizeLegibility;
+}
+.chat-room-text-channel-edit-button-container:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+.chat-room-text-channel-edit-button-icon-container {
+  flex: 1 1 auto;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.chat-room-text-channel-edit-button-icon {
+  margin-right: 6px;
+}
+.chat-room-text-channel-edit-button-inner-text {
+  font-weight: 400;
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+}
