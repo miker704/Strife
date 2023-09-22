@@ -1677,6 +1677,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Nitro Store scss styles.
     - Finalized Boost Server Select Plan Modal.
     - Finalized Boost Server Select Plan Modal Container.
+    - Finalized Chat Room First messsage scss styles.
 
 
 ## Backend Changes
