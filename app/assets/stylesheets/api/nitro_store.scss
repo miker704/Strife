@@ -1003,7 +1003,6 @@
     -webkit-transform: translateY(-80%) translateZ(0);
     transform: translateY(-80%) translateZ(0);
   }
-
 }
 
 @-webkit-keyframes nitroSnackBarEnter {
@@ -1025,7 +1024,6 @@
 }
 
 .nitro-snack-bar-container {
-  margin-bottom: 42px;
   display: flex;
   justify-content: center;
   pointer-events: none;
@@ -1034,10 +1032,9 @@
   bottom: 0;
   width: 100%;
   z-index: 10;
-  opacity: 0;
-
   transform: translateY(-100%);
   opacity: 1;
+  margin-bottom: 42px;
   -webkit-animation: nitroSnackBarEnter ease-in-out 0.3s 1;
   animation: nitroSnackBarEnter ease-in-out 0.3s 1;
 }
@@ -1052,11 +1049,11 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: flex;
-  padding: 13px 27px 13px 13px;
+  padding: 12px;
   pointer-events: all;
   position: relative;
-  width: 438px;
 }
+
 .nitro-snack-bar-inner::before {
   border: 2px solid transparent;
   border-radius: inherit;
@@ -1127,18 +1124,40 @@
   user-select: none;
   font-family: var(--global-font);
   text-rendering: optimizeLegibility;
-  -webkit-transition: background-color 0.17s ease, color 0.17s ease;
-  transition: background-color 0.17s ease, color 0.17s ease;
-  width: auto;
-  width: 160px;
-  height: 40px;
-  min-width: 96px;
-  min-height: 38px;
 }
+
+
+.nitro-snack-bar-button-size {
+  border-radius: var(--custom-button-button-md-height);
+  height: var(--custom-button-button-md-height);
+  width: var(--custom-button-button-md-width);
+  min-width: var(--custom-button-button-md-width);
+  min-height: var(--custom-button-button-md-height);
+}
+.nsbb-look-inverted {
+  -webkit-transition: background-color var(--custom-button-transition-duration)
+      ease,
+    color var(--custom-button-transition-duration) ease;
+  transition: background-color var(--custom-button-transition-duration) ease,
+    color var(--custom-button-transition-duration) ease;
+}
+
+.nsbb-look-outlined {
+  -webkit-transition: color var(--custom-button-transition-duration) ease,
+    background-color var(--custom-button-transition-duration) ease,
+    border-color var(--custom-button-transition-duration) ease;
+  transition: color var(--custom-button-transition-duration) ease,
+    background-color var(--custom-button-transition-duration) ease,
+    border-color var(--custom-button-transition-duration) ease;
+  border-width: 1px;
+  border-style: solid;
+}
+
 .nitro-snack-bar-bttn.white {
   overflow: hidden;
   color: var(--brand-experiment);
   background-color: var(--white-500);
+  width: 160px;
 }
 .nitro-snack-bar-bttn.white:hover {
   background-color: var(--brand-experiment-100);
@@ -1148,6 +1167,7 @@
 }
 
 .nitro-snack-bar-bttn.clear {
+  width: 160px;
   background: none;
   border-width: 1px;
   border-style: solid;
