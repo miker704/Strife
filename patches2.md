@@ -1744,6 +1744,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Welcome Text Channel First Message Container.
     - Finalized Strife Root Theme for patch v4.
     - Finalized Download Apps SCSS Styles.
+    - Finalized Friend Options Modal Styles.
 
 ## Backend Changes
 
