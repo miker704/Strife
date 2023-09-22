@@ -1685,6 +1685,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Nitro Header Nav Bar Container.
     - Finalized UPC Panel Scss Styles.
     - Finalized Active Now Section.
+    - Finalized Active Now Section Container.
 
 
 
