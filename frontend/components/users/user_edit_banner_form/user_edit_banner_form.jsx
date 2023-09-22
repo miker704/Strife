@@ -1,185 +1,256 @@
 import React from "react"
 import user_Default_Banner from '../../../../app/assets/images/default_banner.svg';
-class EditUserBanner extends React.Component {
-    constructor (props) {
-        super(props)
-        this.state = {
-            banner: '',
-            banner_url: this.props.currentUser.banner,
-            submit: false,
-            remove_UB: false
+import REACT_PORTAL from "../../../utils/ReactPortal_api_util";
+import { useState, useRef, useEffect } from "react";
+import { CloseXIcon } from "../../front_end_svgs/Strife_svgs";
+
+
+const EditUserBanner = (props) => {
+
+    const popUpRef = useRef(null);
+    const [banner, setBanner] = useState('');
+    const [banner_url, setBannerUrl] = useState('');
+    const [remove_UB, setRemoveUB] = useState(false);
+    const [renderButton, setRenderButton] = useState('');
+    const file_Input_Ref = useRef(null);
+    const [inSubmission, setInSubmission] = useState(false);
+
+    useEffect(() => {
+        setBannerUrl(props.currentUser.banner);
+        if (props.currentUser.banner === undefined) {
+            setRenderButton(saveButton);
+        }
+        else {
+            setRenderButton(removeButton);
+        }
+
+        window.addEventListener('keyup', handleESC, false);
+
+        return function cleanUp () {
+            props.removeSessionErrors();
+            window.removeEventListener('keyup', handleESC, false);
 
         }
 
-        this.file_input = null;
-        this.cancel = false;
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleInput = this.handleInput.bind(this);
-        this.handleFileInput = this.handleFileInput.bind(this);
-        this.fileProcessingErrors = this.fileProcessingErrors.bind(this);
-        this.handleRemoveBannerSubmission = this.handleRemoveBannerSubmission.bind(this);
-    }
-
-    componentDidUpdate (prevProps) {
-        if (this.state.submit && prevProps.currentUser !== this.props.currentUser) { return };
-    }
+    }, []);
 
 
-    handleRemoveBannerSubmission (e) {
+    useEffect(() => {
+
+        if (props.currentUser.banner !== undefined) {
+            if (banner_url !== props.currentUser.banner) {
+                setRenderButton(saveButton);
+            }
+            else if (banner_url === props.currentUser.banner) {
+                setRenderButton(removeButton);
+            }
+        }
+        else {
+            setRenderButton(saveButton);
+        }
+    }, [banner_url]);
+
+
+    const handleSubModalCloseOnOutsideClick = (e) => {
         e.preventDefault();
+        if (inSubmission === false) {
+            let modalToClose = document.getElementById("user-sub-modal-edit-banner");
+            if (modalToClose) {
+                modalToClose.classList.add("transition-out");
+                Promise.all(modalToClose.getAnimations().map((animation) => animation.finished),)
+                    .then(() => {
+                        props.closeSubMod(props.formName);
+                        window.removeEventListener('keyup', handleESC, false);
+                    }, () => {
+                        props.closeSubMod(props.formName);
+                        window.removeEventListener('keyup', handleESC, false);
+                    });
+            }
+            else {
+                props.closeSubMod(props.formName);
+                window.removeEventListener('keyup', handleESC, false);
+            }
 
-        if (this.props.currentUser.banner) {
-            this.setState({
-                remove_UB: true,
-                banner: null,
-                banner_url: ''
-            })
         }
-        let formData = new FormData();
-        formData.append('user[remove_UB]', this.state.remove_UB);
-        this.props.changeUserBanner(this.props.currentUser.id, formData);
-       
     }
 
-    fileProcessingErrors () {
-        if (this.props.errors.includes('cannot process file')) {
-            return " - file is bad format/failed to process";
+    const handleESC = (e) => {
+        const keys = {
+            27: () => {
+                e.preventDefault();
+                handleSubModalCloseOnOutsideClick(e);
+            },
+        };
+        if (keys[e.keyCode]) {
+            keys[e.keyCode]();
+        }
+    }
+
+
+    const fileProcessingErrors = () => {
+        if (props.errors.includes('cannot process file')) {
+            return "file is bad format/failed to process";
         }
         return "";
     }
 
 
-    handleFileInput (e) {
+    const handleRemoveBannerSubmission = (e) => {
+        e.preventDefault();
+        props.removeSessionErrors();
+        let submitButton = document.getElementById('submit-banner');
+        submitButton.disabled = true;
+
+        if (props.currentUser.banner) {
+            setRemoveUB(true);
+            setBanner(null);
+            setBannerUrl('');
+
+        }
+        let formData = new FormData();
+        formData.append('user[remove_UB]', remove_UB);
+        props.changeUserBanner(props.currentUser.id, formData).then(() => {
+            App.StrifeCore.perform('transmit_to_other_channel', { currrentUserLocation: props.location.pathname });
+            submitButton.disabled = false;
+        }, (error) => {
+            submitButton.disabled = false;
+        });
+
+    }
+
+
+    const handleFileInput = (e) => {
         const fileReader = new FileReader();
         const file = e.currentTarget.files[0];
-     
-        fileReader.onloadend = () => {
-            this.setState({
-                banner_url: fileReader.result,
-                banner: file
-            });
 
-            if (this.props.currentUser.banner !== undefined) {
-                if (this.state.banner_url !== this.props.currentUser.banner) {
-                    document.getElementById('rm-banner-button').classList.add('is-hidden');
-                    document.getElementById('save-banner-button').classList.remove('is-hidden');
-                }
-            }
+        fileReader.onloadend = () => {
+
+            setBannerUrl(fileReader.result);
+            setBanner(file);
+
         }
 
         if (file) {
             fileReader.readAsDataURL(file);
         }
         else {
-            this.setState({ banner_url: "", banner: null })
+            setBannerUrl("");
+            setBanner(null);
         }
 
-
-
     }
 
-    componentDidMount () {
-        this.file_input = document.querySelector("input[type=file]");
-    }
 
-    componentWillUnmount () {
-        this.props.removeSessionErrors()
-    }
 
-    handleInput (input) {
-        return (e) => { this.setState({ [input]: e.currentTarget.value }) }
-    }
-
-    handleSubmit (e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        if (this.cancel === true) {
-            this.props.removeSessionErrors();
-            return;
-        }
+        props.removeSessionErrors();
+        let modalToClose = document.getElementById("user-sub-modal-edit-banner");
+        let submitButton = document.getElementById('submit-banner');
+        submitButton.disabled = true;
+        setInSubmission(true);
+
         let formData = new FormData();
-        let submissionState = {};
-        formData.append('user[username]', this.props.currentUser.username);
-        if (this.state.banner) {
-            formData.append('user[user_Banner]', this.state.banner);
-            submissionState = {
-                id: this.props.currentUser.id,
-                user_Banner: this.state.banner
-            }
+
+
+        formData.append('user[username]', props.currentUser.username);
+        if (banner) {
+            formData.append('user[user_Banner]', banner);
         }
 
-        this.props.changeUserBanner(this.props.currentUser.id, formData);
+        props.changeUserBanner(props.currentUser.id, formData).then(() => {
+            App.StrifeCore.perform('transmit_to_other_channel', { currrentUserLocation: props.location.pathname });
+            handleSubModalCloseOnOutsideClick(e);
+        }, (error) => {
+            setInSubmission(false);
+            submitButton.disabled = false;
+        });
 
-        this.setState({
-            submit: true,
-        })
     }
 
-    render () {
 
-        let fileErrorTag = this.props.errors.length > 0 ? "field-error" : "";
+    let ifFileError = props.errors.length > 0 && fileProcessingErrors() !== "" ? (
+        <span className='user-sub-modal-field-input-error'>
+            <span className='user-sub-modal-field-input-error-sep'>-</span>
+            {fileProcessingErrors()}
+        </span>
+    ) : ("");
 
-        return (
 
-            <div id="edit-userInfo-model" className="edit-userInfo-model" >
-                <div className="edit-username-header-section">
-                    <div className="edit-username-header">
-                        Change your Banner
-                    </div>
-                    <div className="edit-username-header-info">
-                        Upload a .jpg, .jpeg, .gif, or .png file
-                    </div>
-                </div>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="form-container1">
+    let removeButton = (
+        <button id='submit-banner' type='button' className={`user-sub-modal-edit-pfp-submit-button`} onClick={(e) => handleRemoveBannerSubmission(e)}>
+            <div id="submit-button-text" className='look-filled-button-contents global-button-contents'>Remove</div>
+        </button>
+    );
+    let saveButton = (
+        <button id='submit-banner' type='submit' className={`user-sub-modal-edit-pfp-submit-button`}>
+            <div id="submit-button-text" className='look-filled-button-contents global-button-contents'>Apply</div>
+        </button>
+    );
 
-                        <div className="form-username-sec">
-                            <h5 className="form-username-header"> <label className={fileErrorTag}>Banner{this.fileProcessingErrors()}</label></h5>
-                            <div className="username-form-input-sec">
-                                <div className={`username-input-wrapper-banner`}>
 
-                                    <div className={`user-Banner-wrapper ${this.state.banner_url === undefined ||
-                                        this.state.banner_url === '' ? `color-${this.props.currentUser.color_tag}` : ``}`}
-                                        onClick={() => this.file_input.click()}>
-                                        <p className="user-pfp-header">Upload new banner</p>
-                                        <img className="img-upload-hint-icon" />
-                                        <img className="user-Banner"
-                                            src={`${this.state.banner_url === undefined ||
-                                                this.state.banner_url === '' ?
-                                                user_Default_Banner : this.state.banner_url}`}
-                                            alt={'defaultUserPFP'} />
+    return (
+
+        <REACT_PORTAL wrapperId={'sub-modal'} classNameId={'subModal'} onClick={(e) => e.stopPropagation()}>
+            <div className="sub-modal-layer" onClick={(e) => handleSubModalCloseOnOutsideClick(e)}>
+                <div className='sub-modal-backdrop'></div>
+                <div className='user-sub-modal-wrapper'>
+                    <div className='user-sub-modal-focus-lock'>
+                        <div className='user-sub-modal-edit-banner' id="user-sub-modal-edit-banner" ref={popUpRef} onClick={(e) => e.stopPropagation()}>
+                            <div className='usub-edit-pfp-header' style={{ flex: `0 0 auto` }}>
+                                <div className='usub-edit-pfp-header-title'>
+                                    Change Your Banner
+                                </div>
+                                <div className='usub-edit-pfp-header-title-subtext'>Upload a .jpg, .jpeg, .gif, or .png file</div>
+                                <button type='button' className='user-sub-modal-x-to-close-button' onClick={(e) => handleSubModalCloseOnOutsideClick(e)}>
+                                    <div className='global-button-contents'>
+                                        <CloseXIcon className="closeIconX" />
+                                    </div>
+                                </button>
+                            </div>
+
+                            <form onSubmit={handleSubmit}>
+
+                                <div className='user-sub-modal-edit-pfp-scroll global-scroll-thin-raw-attributes global-scroller-base' style={{ overflow: `hidden scroll`, paddingRight: `8px` }}>
+                                    <div className="usub-edit-pfp-input-wrapper">
+                                        <h2 className={`usubm-field-header ${fileProcessingErrors() !== "" ? `usubm-field-input-error-color` : ``}`}>
+                                            Banner
+                                            {ifFileError}
+                                        </h2>
+                                    </div>
+                                    <div className='usub-edit-banner-display-container' onClick={(e) => file_Input_Ref.current.click()}>
+                                        {
+                                            banner_url ? (
+                                                <img className="usub-edit-banner-display-img" src={banner_url} alt=" " />
+                                            ) : (
+                                                <img className={`usub-edit-banner-display-img color-${props.currentUser.color_tag}`} src={user_Default_Banner} alt=" " />
+                                            )
+                                        }
+                                        <div className="usub-edit-banner-hover-hint">Upload New Profile Banner</div>
+                                        <img className="usub-img-upload-banner-hint-icon" alt=" " />
+                                        <div className="usub-overlay-edit-banner"></div>
+                                        <input type='file' accept=".jpg, .jpeg, .png, .gif" onChange={(e) => handleFileInput(e)} ref={file_Input_Ref} />
+
                                     </div>
 
-                                    {/* <input type='file' accept=".jpg, .jpeg, .png, .gif" onChange={this.handleFileInput} disabled={this.props.currentUser.banner === undefined ? false : true} />
-                                     */}
-                                    <input type='file' accept=".jpg, .jpeg, .png, .gif" onChange={this.handleFileInput} />
-
+                                    <div className='user-sub-modal-form-sep'></div>
                                 </div>
-                            </div>
+
+                                <div className='user-sub-modal-edit-pfp-button-footer-container'>
+                                    <div className='usubm-edit-pfp-buttons-right'>
+                                        <button type='button' className='user-sub-modal-edit-pfp-cancel-button' onClick={(e) => handleSubModalCloseOnOutsideClick(e)}>
+                                            <div className='look-filled-button-contents global-button-contents'>Cancel</div>
+                                        </button>
+                                        {renderButton}
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-
-                        <div className="username-edit-sep"></div>
                     </div>
-                    <div className="username-edit-button-sec">
-                        <button type="submit" id='save-banner-button'
-                            className={`username-edit-submit-button ${this.props.currentUser.banner === undefined ? `` : `is-hidden`}`}>
-                            Save
-                        </button>
-                        <button id='rm-banner-button' type="button" onClick={(e) => this.handleRemoveBannerSubmission(e)}
-                            className={`username-edit-submit-button ${this.props.currentUser.banner !== undefined ? `` : `is-hidden`}`}>
-                            Remove
-                        </button>
-                        <button type="submit" onClick={() => this.cancel = true} className="username-edit-cancel-button">Cancel</button>
-                    </div>
-
-                </form>
+                </div>
             </div>
-
-        )
-
-
-    }
-
-
+        </REACT_PORTAL>
+    )
 
 }
 
