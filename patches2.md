@@ -1721,7 +1721,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Mini Current User Upc Modal Container.
     - Finalized Start Conversation Search Modal scss styles (scss var based).
     - Finalized Session Sign Up Form Container.
-    - Finalized Session Sign In Form Container.
+    - Finalized Session Sign In Form Container. 
 
 
 ## Backend Changes
