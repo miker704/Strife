@@ -1611,6 +1611,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Guild Server list Skeleton and Guild Server Grid Skeleton.
     - Finalized Loading Screen.
     - Finalized Loading Screen container.
+    - Finalized Error Boundary.
 
 
 ## Backend Changes
