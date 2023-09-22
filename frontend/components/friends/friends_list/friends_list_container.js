@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import FriendShipIndex from './friends_list';
 import { requestFriendships, removeFriendshipErrors, requestAllFriendships } from '../../../actions/friendship_actions';
-import { selectFriendStatus, selectAllFriends } from '../../../utils/selectors_api_util';
+import { selectFriendStatus} from '../../../utils/selectors_api_util';
 import { openModal } from '../../../actions/modal_actions';
 import { createDmServer, removeDmServerErrors } from '../../../actions/dm_server_actions';
 import { reSyncCurrentUser } from '../../../actions/session_actions';
@@ -13,8 +13,6 @@ const mSTP = (state) => {
         currentUser: state.currentUser,
         currentUserId: state.session.id,
         friends: selectFriendStatus(state, 3),
-        // friends: selectAllFriends(state, 3),
-
         dmServers: Object.values(state.entities.dmServers),
         errors: state.errors.friendship,
         dmServerErrors: state.errors.dmServer
