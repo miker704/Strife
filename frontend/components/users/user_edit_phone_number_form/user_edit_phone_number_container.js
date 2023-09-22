@@ -17,11 +17,11 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return {
-        updateUserInfo : (user) => {dispatch(updateUserInfo(user))},
+        updateUserInfo: (user) => dispatch(updateUserInfo(user)),
         openModal: (modal) => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal()),
         removeSessionErrors: () => dispatch(removeSessionErrors()),
-        handleESC : (e) => handleKeyUp(e)
+        handleESC: (e) => handleKeyUp(e)
     }
 };
 
