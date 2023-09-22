@@ -1,101 +1,156 @@
-import React from "react"
-import { Link, Redirect } from 'react-router-dom'
+import React from 'react';
+import { useState, useRef, useEffect } from "react";
+import REACT_PORTAL from '../../../utils/ReactPortal_api_util';
 
 
-class RemoveUserPhoneNumberForm extends React.Component {
-    constructor (props) {
-        super(props)
+const RemoveUserPhoneNumberForm = (props) => {
 
-        this.state = {
-            phone_number: "",
-            password: ""
+    const popUpRef = useRef(null);
+
+    const [password, setPassword] = useState('');
+
+
+    useEffect(() => {
+
+        window.addEventListener('keyup', handleESC, false);
+
+        return function cleanUp () {
+            props.removeSessionErrors();
+            window.removeEventListener('keyup', handleESC, false);
+
         }
+    }, []);
 
 
-        this.cancel = false;
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleInput = this.handleInput.bind(this);
-        this.passwordErrors = this.passwordErrors.bind(this);
-
+    const handleSubModalCloseOnOutsideClick = (e) => {
+        e.preventDefault();
+        let modalToClose = document.getElementById("user-sub-modal");
+        if (modalToClose) {
+            modalToClose.classList.add("transition-out");
+            Promise.all(modalToClose.getAnimations().map((animation) => animation.finished),)
+                .then(() => {
+                    props.closeSubMod(props.formName);
+                    window.removeEventListener('keyup', handleESC, false);
+                }, () => {
+                    props.closeSubMod(props.formName);
+                    window.removeEventListener('keyup', handleESC, false);
+                });
+        }
+        else {
+            props.closeSubMod(props.formName);
+            window.removeEventListener('keyup', handleESC, false);
+        }
     }
 
-    passwordErrors () {
-        if (this.props.errors.includes('Login or password is invalid')) {
-            return " - Password does not match.";
+    const handleESC = (e) => {
+        const keys = {
+            27: () => {
+                e.preventDefault();
+                handleSubModalCloseOnOutsideClick(e);
+            },
+        };
+        if (keys[e.keyCode]) {
+            keys[e.keyCode]();
         }
-        else if (this.props.errors.includes('Error Incorrect Password !')) {
-            return " - Password does not match.";
+    }
+
+
+    const passwordErrors = () => {
+
+        let passwordErrorList = [
+            'Login or password is invalid',
+            'Error Incorrect Password !',
+        ]
+        //error messages can be a bit big lets make a reduced version 
+        let passwordErrorMessages = {
+            0: "Password does not match.",
+            1: "Password does not match.",
         }
+
+        for (let i = 0; i < passwordErrorList.length; i++) {
+            if (props.errors.includes(passwordErrorList[i])) {
+                return passwordErrorMessages[i];
+            }
+        }
+
         return "";
     }
 
 
-    componentWillUnmount () {
-        this.props.removeSessionErrors()
-    }
 
-    handleInput (field) {
-        return (e) => { this.setState({ [field]: e.currentTarget.value }) }
-    }
-    handleSubmit (e) {
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-        if (this.cancel === true) {
-            this.props.removeSessionErrors();
-            return;
-        }
+        props.removeSessionErrors();
 
         let submissionState = {
-            id: this.props.currentUser.id,
-            // phone_number: nil,
-            password: this.state.password
-        }
-       
-        // this.props.updateUserInfo(submissionState)
-        this.props.removePhoneNumber(submissionState);
+            id: props.currentUser.id,
+            password: password
+        };
+
+        props.removePhoneNumber(submissionState).then(() => {
+            handleSubModalCloseOnOutsideClick(e);
+        });
     }
 
 
 
-    render () {
-        let passwordErrorTag = this.props.errors.length > 0 ? "field-error" : "";
+    let ifError = props.errors.length > 0 ? (
+        <div className='user-sub-modal-remove-phone-errors'>{passwordErrors()}</div>
+    ) : ("");
 
-        return (
+    const submissionBlocker = (e) => {
+        e.preventDefault();
+        if (document.getElementById("rpn-pwi").value === "" || document.getElementById("rpn-pwi").value === null) {
+            document.getElementById("remove-phone-number").disabled = true;
+        }
+        else {
+            document.getElementById("remove-phone-number").disabled = false;
+        }
+    }
 
-            <div id="edit-userInfo-model" className="edit-userInfo-model" >
-                <div className="remove-phone-form-header-wrapper">
-                    <div className="remove-phone-header">
-                        Remove Phone Number
+    return (
+
+        <REACT_PORTAL wrapperId={'sub-modal'} classNameId={'subModal'} onClick={(e) => e.stopPropagation()}>
+            <div className="sub-modal-layer" onClick={(e) => handleSubModalCloseOnOutsideClick(e)}>
+                <div className='sub-modal-backdrop'></div>
+                <div className='user-sub-modal-wrapper'>
+                    <div className='user-sub-modal-focus-lock'>
+                        <div className='user-sub-modal' id="user-sub-modal" ref={popUpRef} onClick={(e) => e.stopPropagation()}>
+                            <form onSubmit={handleSubmit}>
+                                <div className='user-sub-modal-header-container-remove-phone-number' style={{ flex: `0 0 auto` }}>
+                                    <h1 className='user-sub-modal-phone-number-title'>Remove phone number</h1>
+                                </div>
+                                <div className='user-sub-modal-form-content-remove-number global-scroll-thin-raw-attributes global-scroller-base' style={{ overflow: `hidden scroll`, paddingRight: `8px` }}>
+                                    <div className='user-sub-modal-remove-phone-pw-wrap'>
+                                        <h2 className='usubm-field-header'>
+                                            Password
+                                        </h2>
+                                        <div className='user-sub-modal-password-wrapper'>
+                                            <input id="rpn-pwi" className="user-sub-modal-password-input-field" type="password"
+                                                maxLength={999} value={password} autoComplete='off' onKeyUp={(e) => submissionBlocker(e)}
+                                                spellCheck={false} onChange={(e) => setPassword(e.currentTarget.value)}
+                                            />
+                                        </div>
+                                        {ifError}
+                                    </div>
+                                    <div className='user-sub-modal-form-remove-phone-sep'></div>
+                                </div>
+                                <div className='user-sub-modal-button-footer-container'>
+                                    <button id="remove-phone-number" type='submit' className='user-sub-modal-submit-button' disabled>
+                                        <div id="submit-button-text" className='look-filled-button-contents global-button-contents'>Remove</div>
+                                    </button>
+                                    <button type='button' className='user-sub-modal-remv-phone-cancel-button' onClick={(e) => handleSubModalCloseOnOutsideClick(e)}>
+                                        <div className='look-filled-button-contents global-button-contents'>Cancel</div>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="form-container1">
-
-                      
-                        <div className="password-section">
-                            <h5 className="password-header1">
-                                <label className={passwordErrorTag}>Password{this.passwordErrors()}</label>
-                            </h5>
-                            <div className="input-3-password-wrapper">
-                                <input value={this.state.password} onChange={this.handleInput("password")} type="password" className="input-3-password" />
-                            </div>
-                        </div>
-                        <div className="username-edit-sep"></div>
-                    </div>
-                    <div className="username-edit-button-sec">
-                        <button type="submit" className="username-edit-submit-button">Done</button>
-                        <button type="submit" onClick={() => this.cancel = true} className="username-edit-cancel-button">Cancel</button>
-                    </div>
-
-
-
-                </form>
             </div>
-
-        )
-    }
-
-
-
+        </REACT_PORTAL>
+    )
 
 
 
