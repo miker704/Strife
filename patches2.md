@@ -1620,6 +1620,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Update Loading Screen Container.
     - Finalized Intrusion Loading Screen.
     - Finalized Intrusion Loading Screen Container.
+    - Finalized TeleFrag Loading Screen.
 
 
 ## Backend Changes
