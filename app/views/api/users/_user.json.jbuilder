@@ -7,3 +7,5 @@ json.set! :friend_request_status, current_user.friendship_status(user)
 json.ownedServers user.owned_servers.map{|ownedServer| ownedServer.id} if user.id == current_user.id
 json.serversJoined user.servers_joined.map{|sj| sj.id} if user.id == current_user.id
 json.dmServersJoined user.dm_servers.map{|dmsms| dmsms.id} if user.id == current_user.id
+json.numberOfFriends user.friends.length if user.id == current_user.id
+json.accountCreatedOn user.joined_date
