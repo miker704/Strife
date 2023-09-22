@@ -1701,6 +1701,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Action Button PopUp Modal Container.
     - Finalized Server Avatar Modal.
     - Finalized Server Avatar Modal Container.
+    - Finalized Server Banner Modal.
 
 
 ## Backend Changes
