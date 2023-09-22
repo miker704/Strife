@@ -1,448 +1,367 @@
-@import 'global_vars';
-
-
-
 @keyframes ffrmWrapperUnRender {
+  0% {
+    opacity: 1;
+  }
 
-    0% {
-        opacity: 1;
-    }
+  70% {
+    opacity: 0.85;
+  }
 
-    70% {
-        opacity: 0.85;
-    }
-
-    100% {
-        opacity: 0.6;
-
-    }
-
+  100% {
+    opacity: 0.6;
+  }
 }
 
 @-webkit-keyframes ffrmWrapperUnRender {
+  0% {
+    opacity: 1;
+  }
 
+  70% {
+    opacity: 0.85;
+  }
 
-    0% {
-        opacity: 1;
-    }
-
-    70% {
-        opacity: 0.85;
-    }
-
-    100% {
-        opacity: 0.6;
-
-    }
+  100% {
+    opacity: 0.6;
+  }
 }
 
-
-
 @keyframes ffrmWrapperRender {
+  0% {
+    opacity: 0;
+  }
 
-    0% {
-        opacity: 0;
-    }
+  70% {
+    opacity: 1;
+  }
 
-    70% {
-        opacity: 1;
-    }
-
-    100% {}
-
+  100% {
+  }
 }
 
 @-webkit-keyframes ffrmWrapperRender {
+  0% {
+    opacity: 0;
+  }
 
-    0% {
-        opacity: 0;
-    }
+  70% {
+    opacity: 1;
+  }
 
-    70% {
-        opacity: 1;
-    }
-
-    100% {}
-
+  100% {
+  }
 }
 
-
 @keyframes ffrmModalAppear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
 
-    0% {
-        opacity: 0;
-        -webkit-transform: scale(0.5, 0.5);
-        transform: scale(0.5, 0.5);
-    }
-
-    70% {
-        opacity: 1;
-    }
-
-    100% {
-        -webkit-transform: scale(1, 1);
-        transform: scale(1, 1);
-    }
-
-
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
 }
 
 @-webkit-keyframes ffrmModalAppear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
 
-    0% {
-        opacity: 0;
-        -webkit-transform: scale(0.5, 0.5);
-        transform: scale(0.5, 0.5);
-    }
-
-    70% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(1, 1);
-        -webkit-transform: scale(1, 1);
-
-    }
-
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
 }
 
 @keyframes ffrmModalDisappear {
-
-    0% {
-        opacity: 1;
-        transform: scale(1, 1);
-        -webkit-transform: scale(1, 1);
-    }
-
-    70% {
-        opacity: 0.5;
-    }
-
-    100% {
-        transform: scale(0.5, 0.5);
-        -webkit-transform: scale(0.5, 0.5);
-        opacity: 0.1;
-
-    }
-
+  from {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
 }
 
 @-webkit-keyframes ffrmModalDisappear {
-
-    0% {
-        opacity: 1;
-        transform: scale(1, 1);
-        -webkit-transform: scale(1, 1);
-    }
-
-    70% {
-        opacity: 0.5;
-    }
-
-    100% {
-        transform: scale(0.5, 0.5);
-        -webkit-transform: scale(0.5, 0.5);
-        opacity: 0.1;
-
-    }
-
+  from {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
 }
-
-
-
-
 
 .ffrm-layer-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: none !important;
-    pointer-events: none;
-    z-index: 1002;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: none !important;
+  pointer-events: none;
+  z-index: 1002;
 }
 
-
 .frfm-backdrop {
-    transform: translateZ(0);
-    outline: 0;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    pointer-events: all;
-    opacity: 0.85;
-    background: $black-500;
-
+  transform: translateZ(0);
+  outline: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: all;
+  opacity: 0.85;
+  background: var(--black-500);
 }
 
 .frfm-wrapper {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    min-height: 0;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    outline: 0;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    -webkit-animation-name: ffrmWrapperRender ;
-    -webkit-animation-duration: 0.3s;
-    -webkit-animation-iteration-count: 1;
-    animation-name: ffrmWrapperRender ;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  min-height: 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 0;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-animation-name: ffrmWrapperRender;
+  -webkit-animation-duration: 0.25s;
+  -webkit-animation-iteration-count: 1;
+  animation-name: ffrmWrapperRender;
+  animation-duration: 0.25s;
+  animation-iteration-count: 1;
 }
 
 .frfm {
-    outline: 0;
-    min-height: 0;
-    max-width: 100%;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    display: flex;
-    flex-direction: column;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    -webkit-animation-name: ffrmModalAppear;
-    -webkit-animation-duration: 0.3s;
-    -webkit-animation-iteration-count: 1;
-    animation-name: ffrmModalAppear;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
-
+  outline: 0;
+  min-height: 0;
+  max-width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  display: flex;
+  flex-direction: column;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-animation-name: ffrmModalAppear;
+  -webkit-animation-duration: 0.25s;
+  -webkit-animation-iteration-count: 1;
+  animation-name: ffrmModalAppear;
+  animation-duration: 0.25s;
+  animation-iteration-count: 1;
 }
 
-.frfm.transition-out{
-    -webkit-animation-name: ffrmModalDisappear;
-    -webkit-animation-duration: 0.3s;
-    -webkit-animation-iteration-count: 1;
-    animation-name: ffrmModalDisappear;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
+.frfm.transition-out {
+  -webkit-animation-name: ffrmModalDisappear;
+  -webkit-animation-duration: 0.15s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: ffrmModalDisappear;
+  animation-duration: 0.15s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
 }
-
-
 
 .frfm-inner {
-    outline: 0;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    display: flex;
-    flex-direction: column;
-    border-radius: 4px;
-    margin: 0 auto;
-    pointer-events: all;
-    position: relative;
-    background-color: $modal-pop-up-bg-color;
-    width: 440px;
-    max-height: 720px;
-    min-height: 200px;
-    word-wrap: break-word;
-    opacity: 1;
-    transform: scale(1);
-    box-shadow: $dark-elevation-border, $dark-elevation-high;
-
+  outline: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  margin: 0 auto;
+  pointer-events: all;
+  position: relative;
+  background-color: var(--modal-pop-up-bg-color);
+  width: 440px;
+  max-height: 720px;
+  min-height: 200px;
+  word-wrap: break-word;
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: var(--dark-elevation-border), var(--dark-elevation-high);
 }
 
 .form-class-200 {
-    height: 100%;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    display: flex;
-    flex-direction: column;
-    //
-    word-wrap: break-word;
+  height: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  display: flex;
+  flex-direction: column;
+  //
+  word-wrap: break-word;
 }
 
 .form-content-1 {
-    overflow: hidden scroll;
-    padding-right: 8px;
+  position: relative;
+  z-index: 0;
+  border-radius: 5px 5px 0px 0px;
+  outline: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 16px;
 
-    position: relative;
-    z-index: 0;
-    border-radius: 5px 5px 0px 0px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    min-height: 0;
-    -webkit-box-flex: 1;
-    flex: 1 1 auto;
-    outline: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 16px;
-    scrollbar-width: thin;
-    scrollbar-color: $scrollbar-thin-thumb $scrollbar-thin-track;
-
+  //
+  padding-right: 16px;
+  overflow-x: hidden;
 }
-
-.form-content-1::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-.form-content-1::-webkit-scrollbar-corner {
-    background-color: transparent;
-}
-
-.form-content-1::-webkit-scrollbar-thumb {
-    background-clip: padding-box;
-    border: 2px solid transparent;
-    border-radius: 4px;
-    background-color: $scrollbar-thin-thumb;
-    min-height: 40px;
-}
-
-.form-content-1::-webkit-scrollbar-track {
-    border-color: $scrollbar-thin-track;
-    background-color: $scrollbar-thin-track;
-    border: 2px solid $scrollbar-thin-track;
-}
-
-
 
 .form-content-1-inner {
-    height: 100%;
-    flex: 1 1 auto;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-box-pack: center;
-    -webkit-box-align: stretch;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: stretch;
-    outline: 0;
+  height: 100%;
+  flex: 1 1 auto;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: center;
+  -webkit-box-align: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  outline: 0;
 }
 
 .form-content-1-header {
-    -webkit-box-flex: 1;
-    flex: 1;
-    cursor: default;
-    font-weight: 600;
-    font-family: $global-font;
-    font-size: 16px;
-    line-height: 20px;
-    text-transform: uppercase;
-    margin-top: 8px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: $header-primary;
+  -webkit-box-flex: 1;
+  flex: 1;
+  cursor: default;
+  font-weight: 600;
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--header-primary);
 }
 
 .form-content-1-subtext {
-    outline: 0;
-    color: $text-normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    font-family: $global-font;
+  outline: 0;
+  color: var(--text-normal);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  font-family: var(--global-font);
 }
 
 .frfm-div-sep {
-    position: absolute;
-    pointer-events: none;
-    min-height: 0px;
-    min-width: 1px;
-    flex: 0 0 auto;
-    height: 20px;
-    outline: 0;
+  position: absolute;
+  pointer-events: none;
+  min-height: 0px;
+  min-width: 1px;
+  flex: 0 0 auto;
+  height: 20px;
+  outline: 0;
 }
 
 .frfm-button-sec {
-    flex: 0 0 auto;
-    outline: 0;
-    border-radius: 0 0 5px 5px;
+  flex: 0 0 auto;
+  outline: 0;
+  border-radius: 0 0 5px 5px;
 
+  background-color: var(--modal-footer-bg-color-button-wrapper);
+  box-shadow: inset 0 1px 0 var(--primary-630-hsl);
 
-    background-color: $modal-footer-bg-color-button-wrapper;
-    box-shadow: inset 0 1px 0 $primary-630-hsl;
-
-
-    position: relative;
-    -webkit-box-flex: 0;
-    padding: 16px;
-    z-index: 1;
-    overflow-x: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-    -webkit-box-align: stretch;
-    -webkit-box-pack: justify;
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: stretch;
-
+  position: relative;
+  -webkit-box-flex: 0;
+  padding: 16px;
+  z-index: 1;
+  overflow-x: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-box-align: stretch;
+  -webkit-box-pack: justify;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
 .frfm-button {
-    -webkit-box-flex: 1;
-    flex: 1 1 45%;
-    outline: 0;
+  -webkit-box-flex: 1;
+  flex: 1 1 45%;
+  outline: 0;
 
-    height: 50px;
-    min-width: 148px;
-    min-height: 50px;
-    font-size: 16px;
-    line-height: normal;
-    padding: 2px 20px;
-    transition: background-color 0.17s ease, color 0.17s ease;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    position: relative;
-    display: -webkit-box;
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: none;
-    border: none;
-    border-radius: 3px;
+  height: 50px;
+  min-width: 148px;
+  min-height: 50px;
+  font-size: 16px;
+  line-height: normal;
+  padding: 2px 20px;
+  transition: background-color 0.17s ease, color 0.17s ease;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 3px;
 
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
-    font-weight: 500;
-    width: auto;
-    font-family: $global-font;
-    text-rendering: optimizeLegibility;
-    color: $white-500;
-    background-color: $brand-experiment;
+  font-weight: 500;
+  width: auto;
+  font-family: var(--global-font);
+  text-rendering: optimizeLegibility;
+  color: var(--white-500);
+  background-color: var(--brand-experiment);
 }
 
-
 .frfm-button:hover {
-    color: $white-500;
-    background-color: $brand-experiment-560;
+  color: var(--white-500);
+  background-color: var(--brand-experiment-560);
+}
+
+.frfm-button:active {
+  background-color: var(--brand-experiment-600);
 }
