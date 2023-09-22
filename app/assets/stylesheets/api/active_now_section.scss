@@ -1,0 +1,777 @@
+@import 'global_vars';
+
+.now-playing-activity-section {
+    -webkit-box-flex: 0;
+    flex: 0 1 30%;
+    min-width: 360px;
+    max-width: 420px;
+    background-color: $background-secondary;
+    outline: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.active-now-section-container {
+    height: 100%;
+    background-color: $background-primary;
+}
+
+
+.action-now-scroller {
+    padding: 16px;
+    height: 100%;
+    margin-left: 2px;
+    border-left: 1px solid $background-modifier-accent;
+}
+
+
+
+
+.active-now-section-header {
+    margin: 8px 0px 16px;
+    font-weight: 800;
+    font-family: $global-font;
+    color: $header-primary;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+
+
+.active-now-section-empty-card {
+    background-color: $background-primary;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 16px;
+    outline: 0;
+}
+
+
+.active-now-section-empty-card-header {
+    font-size: 16px;
+    line-height: 20px;
+    font-family: $global-font;
+    font-weight: 600;
+    color: $header-primary;
+    margin-bottom: 4px;
+}
+
+.active-now-section-empty-card-subtext {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: $global-font;
+    color: $interactive-normal;
+    outline: 0;
+}
+
+
+
+.active-now-empty-card-div-sep {
+    position: absolute;
+    pointer-events: none;
+    min-height: 0px;
+    min-width: 1px;
+    flex: 0 0 auto;
+    height: 16px;
+    outline: 0;
+}
+
+
+.active-now-friend-item-card {
+    margin-top: 8px;
+    border-radius: 8px;
+    background-color: $background-secondary;
+    border: 1px solid $background-modifier-accent;
+    cursor: pointer;
+    padding: 16px;
+    outline: 0;
+}
+
+.active-now-friend-item-card:hover {
+    background-color: $primary-800;
+
+    //swap to theme-dark .
+    .acfic-header-strife-discriminator-tag {
+        visibility: visible;
+    }
+
+    .acfic-header-activty-name {
+        text-overflow: unset;
+        -webkit-animation: move 15s linear infinite;
+        animation: move 15s linear infinite;
+        overflow: visible;
+    }
+
+    .cut-off-sliders {
+        overflow: hidden;
+    }
+
+    .applicationStreamingSection-activity {
+        text-overflow: unset;
+        overflow: visible;
+        -webkit-animation: move 15s linear infinite;
+        animation: move 15s linear infinite;
+    }
+
+
+}
+
+
+.active-now-friend-item-card:first-of-type {
+    margin-top: 0;
+}
+
+.active-now-friend-item-card-header {
+    grid-template-columns: 32px minmax(20px, auto);
+    position: relative;
+    display: grid;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 36px;
+    grid-gap: 12px;
+}
+
+.anficard-header-avatar-wrapper {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    border-radius: 50%;
+    outline: 0;
+}
+
+.anficard-header-avatar {
+    cursor: pointer;
+}
+
+.anficard-svg {
+    position: absolute;
+    contain: paint;
+}
+
+.anficard-svg-mask {
+    position: absolute;
+    pointer-events: none;
+    display: block;
+    width: auto;
+}
+
+.anficard-svg-pointer-events {
+    pointer-events: auto;
+    outline: none;
+}
+
+.anficard-svg-avatar-stack {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    outline: 0;
+}
+
+
+.anficard-svg-avatar-pfp {
+    display: block;
+    -o-object-fit: cover;
+    object-fit: cover;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    grid-area: 1/1;
+}
+
+.anficard-svg-avatar-pfp[alt] {
+    text-indent: -9999px;
+}
+
+.anficard-svg-avatar-pfp:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $background-modifier-accent;
+}
+
+.acfic-header-username {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: $global-font;
+    font-weight: 600;
+    color: $text-normal;
+    outline: 0;
+}
+
+.acfic-header-strife-discriminator-tag {
+    font-size: 14px;
+    line-height: 16px;
+    visibility: hidden;
+    // color: $header-secondary;
+    color: $text-normal;
+    font-family: $global-font;
+    font-weight: 500;
+    outline: 0;
+}
+
+
+
+.acfic-header-channel-type-name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: $global-font;
+    font-weight: 400;
+    color: $header-secondary;
+    outline: 0;
+}
+
+
+.active-now-friend-item-card-body {
+    margin-top: 12px;
+    border-radius: 8px;
+    background-color: $primary-630;
+    outline: 0;
+}
+
+.anficb-section-sep {
+    background-color: $primary-660;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 1px;
+    outline: 0;
+}
+
+.anficb-section {
+    position: relative;
+    padding: 12px;
+    background-color: $background-primary;
+}
+
+.anficb-section:only-child {
+    border-radius: 8px;
+}
+
+.anficb-section:first-child {
+    border-radius: 8px 8px 0px 0px;
+}
+
+.anficb-section:last-child {
+    border-radius: 0px 0px 8px 8px;
+}
+
+.anficb-voice-section {
+    -webkit-box-align: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 32px minmax(20px, auto) -webkit-max-content;
+    grid-template-columns: 32px minmax(20px, auto) max-content;
+    grid-gap: 12px;
+    outline: 0;
+}
+
+.anficb-voice-section-assets {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 0;
+
+}
+
+.anficb-voice-section-guild-img,
+.anficb-voice-section-no-guild-img-wrapper {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    -webkit-mask: url('voiceSectionMask.svg');
+    mask: url('voiceSectionMask.svg');
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    mask-type: luminance;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.anficb-voice-section-no-guild-img-wrapper {
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white-500;
+    background: $primary-700;
+}
+
+//add .theme-dark.anficb-voice-section-no-guild-img-wrapper
+// background color and color
+
+.anficb-voice-section-no-guild-img {
+    font-size: 10px;
+    display: inline-block;
+    overflow: hidden;
+    outline: 0;
+}
+
+.anficb-voice-section-guild-img[alt] {
+    text-indent: -9999px;
+}
+
+.anficb-voice-section-assets-icon-wrapper {
+    outline: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    //move this to .theme dark .class name
+    background-color: $primary-800;
+}
+
+.voiceSectionIcon {
+    color: $primary-300;
+    width: 10px;
+    height: 10px;
+    outline: 0;
+}
+
+.anficb-voice-section-details {
+    cursor: pointer;
+    outline: 0;
+}
+
+.anficb-voice-section-details-servername {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: $global-font;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    color: $text-normal;
+    outline: 0;
+}
+
+.anficb-voice-section-details-activity {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    outline: 0;
+    color: $text-normal;
+    font-weight: 400;
+    font-family: $global-font;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.anficb-voice-section-member-wrapper {
+    display: -webkit-box;
+    -webkit-box-pack: end;
+    -webkit-box-align: center;
+    display: flex;
+    height: 24px;
+    justify-content: flex-end;
+    align-items: center;
+    outline: 0;
+
+}
+
+.anficbvs-partyMembers {
+    display: -webkit-box;
+    display: flex;
+    height: 24px;
+    outline: 0;
+}
+
+.partyMember-known {
+    cursor: pointer;
+}
+
+.partyMembers-M1 {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    margin-left: -2px;
+    -webkit-mask: url('voicePartyMemberMasker.svg');
+    mask: url('voicePartyMemberMasker.svg');
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    mask-type: luminance;
+    outline: 0;
+}
+
+
+.partyMembers-M1:last-child {
+    -webkit-mask: none;
+    mask: none;
+}
+
+.partyMembers-M1:first-child {
+    margin-left: 0;
+}
+
+.partyMember-svg-wrapper {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: 0;
+}
+
+.partyMember-svg-layer {
+    contain: paint;
+    position: absolute;
+}
+
+.partyMember-svg-mask {
+    pointer-events: none;
+    position: absolute;
+    display: block;
+    width: auto;
+}
+
+.partyMember-avatar-stack {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    outline: 0;
+}
+
+.partyMember-avatar-pfp {
+    display: block;
+    -o-object-fit: cover;
+    object-fit: cover;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    grid-area: 1/1;
+}
+
+.partyMember-avatar-pfp[alt] {
+    text-indent: -9999px;
+}
+
+.partyMember-avatar-pfp::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $background-modifier-accent;
+}
+
+.partyMember-overflow {
+    height: 24px;
+    min-width: 24px;
+    padding: 0 4px;
+    margin-left: -2px;
+    font-weight: 600;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 12px;
+    color: $header-secondary;
+    background-color: $background-secondary;
+    line-height: 16px;
+    font-size: 14px;
+    outline: 0;
+    font-family: $global-font;
+}
+
+
+.applicationStreamingSection {
+    display: grid;
+    grid-template-columns: 32px minmax(20px, auto) max-content;
+    grid-gap: 12px;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: 0;
+}
+
+.wrapper-applicationStreamingAvatar {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50%;
+    outline: 0;
+
+}
+
+.applicationStreamingAvatar-svg {
+    position: absolute;
+    contain: paint;
+}
+
+.applicationStreamingAvatar-svg-mask {
+    position: absolute;
+    pointer-events: none;
+    display: block;
+    width: auto;
+}
+
+.applicationStreamingAvatar-stack {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    outline: 0;
+}
+
+.applicationStreamingAvatar-img {
+    display: block;
+    -o-object-fit: cover;
+    object-fit: cover;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    grid-area: 1/1;
+}
+
+.applicationStreamingAvatar-img[alt] {
+    text-indent: -9999px;
+}
+
+.applicationStreamingAvatar-img::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $background-modifier-accent;
+}
+
+
+
+.applicationStreamingSection-username {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: $global-font;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    color: $text-normal;
+    outline: 0;
+}
+
+.applicationStreamingSection-activity {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: $global-font;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: $text-normal;
+    outline: 0;
+
+    strong {
+        font-weight: 600;
+        outline: 0;
+    }
+}
+
+.acfic-header-activty-name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: $global-font;
+    font-weight: 400;
+    color: $header-secondary;
+    outline: 0;
+}
+
+.cut-off-sliders {
+    overflow: visible;
+}
+
+.applicationStreaming-live {
+    background-color: $red-400;
+    border-radius: 16px;
+    padding: 0 6px;
+    font-weight: 600;
+    font-family: $global-font;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    color: $white-500;
+    text-align: center;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    outline: 0;
+}
+
+.applicationStreamingPreviewWrapper {
+    margin-top: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: 0;
+    position: relative;
+    background-color: $primary-660;
+    //move this to .theme dark .class name
+
+    padding-top: 56.25%;
+}
+
+
+.aspw-inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    outline: 0;
+
+}
+
+.applicationStreamingPreview-size {
+    height: 100%;
+    width: 100%;
+    outline: 0;
+
+}
+
+.applicationStreamingPreview-flex {
+    flex: 1 1 auto;
+    height: 100%;
+    width: 100%;
+    outline: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+
+}
+
+.emptyPreviewImage {
+    width: 80%;
+    height: 60%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    background-image: image_url('streamingPreview.svg');
+    outline: 0;
+
+}
+
+.emptyPreviewImage-text {
+
+    outline: 0;
+    font-weight: 400;
+    font-family: $global-font;
+    font-size: 14px;
+    line-height: 18px;
+    color: $header-secondary;
+}
+
+.applicationStreamingHoverWrapper {
+    -webkit-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: 0;
+
+}
+
+.applicationStreamingHoverText {
+    background: $black-500-hsl-06;
+    color: $white-500;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: $global-font;
+    line-height: 20px;
+    padding: 8px 20px;
+    border-radius: 20px;
+    outline: 0;
+}
+
+.applicationStreamingPreviewWrapper:hover .applicationStreamingHoverWrapper {
+    opacity: 1;
+}
+
+
+
+@-webkit-keyframes move {
+    to {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+
+@keyframes move {
+    to {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
