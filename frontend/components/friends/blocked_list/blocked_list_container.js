@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { selectFriendStatus } from '../../../utils/selectors_api_util';
-import { requestFriendships, deleteFriendship, removeFriendshipErrors, requestAllFriendships , unBlockUser} from '../../../actions/friendship_actions';
+import { requestFriendships, removeFriendshipErrors, requestAllFriendships , unBlockUser} from '../../../actions/friendship_actions';
 import BlockedList from './blocked_list';
 
 const mSTP = (state) => {
