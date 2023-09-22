@@ -1699,6 +1699,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Subscribe to Nitro Pro Modal Container.
     - Finalized Action Button PopUp Modal.
     - Finalized Action Button PopUp Modal Container.
+    - Finalized Server Avatar Modal.
 
 
 ## Backend Changes
