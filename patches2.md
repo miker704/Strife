@@ -1742,6 +1742,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Dm Message reducer.
     - Finalized Welcome Text Channel First Message.
     - Finalized Welcome Text Channel First Message Container.
+    - Finalized Strife Root Theme for patch v4.
 
 ## Backend Changes
 
