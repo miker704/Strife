@@ -1686,6 +1686,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized UPC Panel Scss Styles.
     - Finalized Active Now Section.
     - Finalized Active Now Section Container.
+    - Finalized Active Now Section SCSS Styles.
 
 
 
