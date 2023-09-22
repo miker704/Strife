@@ -1715,6 +1715,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Mega Upc Modal Tab 2 Container.
     - Finalized Mega Upc Modal Tab 3.
     - Finalized Mega Upc Modal Tab 3 Container.
+    - Finalized Mega Upc Friend Options.
     - Finalized Mini Current User Upc Modal.
     - Finalized Mini Current User Upc Modal Container.
 
