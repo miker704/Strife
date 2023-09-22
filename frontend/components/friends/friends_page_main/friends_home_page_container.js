@@ -7,6 +7,7 @@ import { reSyncCurrentUser } from '../../../actions/session_actions';
 import { fetchDmServers } from '../../../actions/dm_server_actions';
 import { fetchServers } from '../../../actions/server_actions';
 import { selectFriendStatusOnline } from '../../../utils/selectors_api_util';
+import { openModal, openModalWithProps } from '../../../actions/modal_actions';
 
 const mSTP = (state) => {
     return {
@@ -19,7 +20,7 @@ const mSTP = (state) => {
     }
 }
 
-const mDTP  = (dispatch) => {
+const mDTP = (dispatch) => {
     return {
         requestFriendships: () => dispatch(requestFriendships()),
         removeFriendshipErrors: () => dispatch(removeFriendshipErrors()),
@@ -27,9 +28,11 @@ const mDTP  = (dispatch) => {
         requestAllFriendships: () => dispatch(requestAllFriendships()),
         reSyncCurrentUser: (currentUser) => dispatch(reSyncCurrentUser(currentUser)),
         fetchUserDmServers: (currentUserId) => dispatch(fetchDmServers(currentUserId)),
-        fetchUserServers: (currentUserId) => dispatch(fetchServers(currentUserId))
+        fetchUserServers: (currentUserId) => dispatch(fetchServers(currentUserId)),
+        openModal: (modal) => dispatch(openModal(modal)),
+        openModalWithProps: (modal_Props) => dispatch(openModalWithProps(modal_Props)),
     };
 };
 
-const HomePageContainer = withRouter(connect(mSTP,mDTP)(FriendsHomePageContainer));
+const HomePageContainer = withRouter(connect(mSTP, mDTP)(FriendsHomePageContainer));
 export default HomePageContainer;
