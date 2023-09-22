@@ -17,13 +17,12 @@ const mSTP = (state) => {
             server_name: "",
         },
         errors: state.errors.server,
-        errorsChannel: state.errors.channel
+        channelErrors: state.errors.channel
     }
 }
 const mDTP = (dispatch) => {
     return {
-        action: (server) => dispatch(createServer(server)),
-        // createServer: (server) => dispatch(createServer(server)),
+        createServer: (server) => dispatch(createServer(server)),
         fetchJoinedServer: (serverId) => dispatch(fetchServer(serverId)),
         removeServerErrors: () => dispatch(removeServerErrors()),
         openModal: (modal) => dispatch(openModal(modal)),
