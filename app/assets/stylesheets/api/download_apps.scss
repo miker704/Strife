@@ -1,5 +1,3 @@
-@import "global_vars";
-
 @keyframes dAModalAppear {
   0% {
     opacity: 0;
@@ -130,7 +128,7 @@
 
 .da-backdrop {
   outline: 0;
-  background: var(--black-500, #{$black-500});
+  background: var(--black-500);
   opacity: 0.85;
   pointer-events: all;
   transform: translateZ(0);
@@ -191,8 +189,8 @@
   margin: 0 auto;
   pointer-events: all;
   position: relative;
-  background-color: $white-500 !important;
-  box-shadow: $light-elevation-border, $light-elevation-high !important;
+  background-color: var(--white-500) !important;
+  box-shadow: var(--light-elevation-border), var(--light-elevation-high) !important;
   -webkit-animation-name: dAModalAppear;
   -webkit-animation-duration: 0.2s;
   -webkit-animation-iteration-count: 1;
@@ -224,7 +222,7 @@
 }
 
 .close-da {
-  color: $download-modal-close-button;
+  color: var(--download-modal-close-button);
   position: absolute;
   top: 12px;
   right: 12px;
@@ -250,12 +248,12 @@
   line-height: 16px;
   user-select: none;
   outline: 0;
-  font-family: $global-font;
+  font-family: var(--global-font);
   text-rendering: optimizeLegibility;
 }
 
 .close-da:hover {
-  color: $download-modal-close-button;
+  color: var(--download-modal-close-button-hover);
   opacity: 1;
 }
 
@@ -288,12 +286,12 @@
   text-align: center;
   align-items: center;
   margin-bottom: 7px;
-  color: $platform-wraps-header;
+  color: var(--platform-wraps-header);
   -webkit-box-align: center;
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-  font-family: $global-font;
+  font-family: var(--global-font);
 }
 
 .platforms-ul {
@@ -303,7 +301,7 @@
 
 .platforms-li-item {
   backface-visibility: hidden;
-  border: 2px solid $platform-item-color;
+  border: 2px solid var(--platform-item-color);
   padding: 32px 12px 12px;
   position: relative;
   -webkit-box-orient: vertical;
@@ -321,7 +319,7 @@
 
 .platforms-li-item:hover {
   transform: scale(1.025);
-  border-color: $brand-experiment;
+  border-color: var(--brand-experiment);
 
   .platform-apple-icon {
     // visibility: hidden;
@@ -371,7 +369,7 @@
   .download-app-buttons-anchor,
   .download-app-buttons-anchor-2,
   .download-app-buttons-anchor-3 {
-    background-color: $brand-experiment;
+    background-color: var(--brand-experiment);
   }
 }
 
@@ -521,10 +519,10 @@
 }
 
 .da-icon-header {
-  color: $platform-icon-header;
+  color: var(--platform-icon-header);
   text-align: center;
   font-weight: 600;
-  font-family: $global-font;
+  font-family: var(--global-font);
   font-size: 20px;
   line-height: 24px;
 }
@@ -539,7 +537,7 @@
   flex-grow: 1;
   text-decoration: none;
   outline: 0;
-  background-color: $platform-item-color;
+  background-color: var(--platform-item-color);
   text-align: center;
   border-radius: 3px;
   font-weight: 500;
@@ -547,8 +545,8 @@
   padding: 12px 0;
   margin-top: 16px;
   transition: background-color 0.3s ease-in-out;
-  color: $white-500;
-  font-family: $global-font;
+  color: var(--white-500);
+  font-family: var(--global-font);
 }
 
 .download-app-buttons-anchor-2 {
@@ -556,7 +554,7 @@
   flex-grow: 1;
   text-decoration: none;
   outline: 0;
-  background-color: $platform-item-color;
+  background-color: var(--platform-item-color);
   text-align: center;
   border-radius: 3px;
   font-weight: 500;
@@ -564,9 +562,9 @@
   padding: 12px 0;
   margin-top: 16px;
   transition: background-color 0.3s ease-in-out;
-  color: $white-500;
+  color: var(--white-500);
   width: 65px;
-  font-family: $global-font;
+  font-family: var(--global-font);
 }
 
 .download-app-buttons-anchor-3 {
@@ -574,7 +572,7 @@
   flex-grow: 1;
   text-decoration: none;
   outline: 0;
-  background-color: $platform-item-color;
+  background-color: var(--platform-item-color);
   text-align: center;
   border-radius: 3px;
   font-weight: 500;
@@ -582,10 +580,10 @@
   padding: 12px 0;
   margin-top: 16px;
   transition: background-color 0.3s ease-in-out;
-  color: $white-500;
+  color: var(--white-500);
   width: 65px;
   margin-left: 12px;
-  font-family: $global-font;
+  font-family: var(--global-font);
 }
 
 .mobile-platforms {
@@ -602,11 +600,11 @@
 .mobile-header {
   font-size: 20px;
   line-height: 4px;
-  font-family: $global-font;
+  font-family: var(--global-font);
   font-weight: 600;
   align-items: center;
   margin-bottom: 10px;
-  color: $platform-icon-header;
+  color: var(--platform-icon-header);
   -webkit-box-align: center;
   text-align: center;
 }
