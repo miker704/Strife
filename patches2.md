@@ -1626,6 +1626,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized User owns server warning.
     - Finalized User owns server warning container.
     - Added Preview server reducer.
+    - Finalized dm_member api util.js
 
 ## Backend Changes
 
