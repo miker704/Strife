@@ -1670,6 +1670,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Subscribe to nitro modal scss styles.
     - Finalized Strife Toggle Switch scss styles.
     - Finalized Create Dm Modal scss styles (scss var based).
+    - Finalized Boost Server Modal scss styles.
 
 
 ## Backend Changes
