@@ -1719,7 +1719,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Mega Upc Friend Options Container.
     - Finalized Mini Current User Upc Modal.
     - Finalized Mini Current User Upc Modal Container.
-
+    - Finalized Start Conversation Search Modal scss styles (scss var based).
 
 ## Backend Changes
 
