@@ -1754,7 +1754,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Online Friends.
     - Finalized Online Friends Container.
     - Finalized Pending Friends List.
-
+    - Finalized Pending Friends List Container.
 
 ## Backend Changes
 
