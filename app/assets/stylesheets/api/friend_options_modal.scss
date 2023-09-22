@@ -1,203 +1,125 @@
-.fo-layer {
-    forced-color-adjust: none;
-    background: none !important;
-    z-index: 1002;
-    transform: translate(-309px, -48px);
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: transparent;
-
-
+.mfom-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: none !important;
+  // pointer-events: none;
+  z-index: 1002;
 }
 
-.fo-layer2 {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1002;
-
-    forced-color-adjust: none;
-    background: none !important;
-    background-color: #0000;
+.mfom-inner-layer {
+  position: absolute;
+  pointer-events: auto;
+  transform: translate3d(15px, 28px, 0px);
 }
 
-
-.fo-theme {
-    position: absolute;
-    left: 986px;
-    top: 183px;
-    forced-color-adjust: none;
-    transform: translate3d(7px, 28px, 0px);
-    width: 188px;
-    min-width: 188px;
-    max-width: 188px;
-    height: 116px;
-    min-height: 116px;
-    max-height: 116px;
+.mfom-menu {
+  min-width: 188px;
+  max-width: 320px;
+  z-index: 1;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  height: auto;
+  cursor: default;
+  max-height: calc(100vh - 32px);
+  -webkit-box-shadow: var(--elevation-high);
+  box-shadow: var(--elevation-high);
+  background: var(--background-floating);
+  border-radius: 4px;
 }
 
-.fo-theme2 {
-    position: absolute;
-    left: 650px;
-    top: 183px;
-    forced-color-adjust: none;
-    transform: translate3d(7px, 28px, 0px);
-    width: 188px;
-    min-width: 188px;
-    max-width: 188px;
-    height: 116px;
-    min-height: 116px;
-    max-height: 116px;
+.mfom-item {
+  color: var(--interactive-normal);
+  border-color: var(--interactive-normal);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 32px;
+  padding: 6px 8px;
+  margin: 2px 0px;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--global-font);
+  line-height: 18px;
+  cursor: pointer;
 }
 
-.fo-flex-wrapper2 {
-    min-width: 188px;
-    max-width: 188px;
-    min-height: 20px;
-    max-height: 116px;
-    forced-color-adjust: none;
-    outline: 0;
-    border-radius: 4px;
-    display: flex;
-    height: auto;
-    cursor: default;
-    max-height: calc(100vh - 32px);
-    box-sizing: border-box;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.24);
-    background: hsl(225, 7.7%, 10.2%);
-
-
+.mfom-item:hover {
+  background-color: var(--brand-experiment-560);
+  color: var(--white-500);
 }
 
-
-
-.fo-flex-wrapper {
-    min-width: 188px;
-    max-width: 188px;
-    min-height: 116px;
-    max-height: 116px;
-    forced-color-adjust: none;
-    outline: 0;
-    border-radius: 4px;
-    display: flex;
-    height: auto;
-    cursor: default;
-    max-height: calc(100vh - 32px);
-    box-sizing: border-box;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.24);
-    background: hsl(225, 7.7%, 10.2%);
-
-
+.mfom-item:active {
+  background-color: var(--brand-experiment-600);
+  color: var(--white-500);
 }
 
-.fo-scroller {
-    forced-color-adjust: none;
-    outline: 0;
-    // overflow: hidden scroll;
-    padding-right: 0px;
-    padding: 6px 8px;
-    box-sizing: border-box;
-    min-height: 0;
-    -webkit-box-flex: 1;
-    position: relative;
-    flex: 1 1 auto;
+.mfom-item-label {
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.fo-scroller-2 {
-    forced-color-adjust: none;
-    outline: 0;
-    // overflow: hidden scroll;
-    padding-right: 0px;
-    box-sizing: border-box;
-    min-height: 0;
-    -webkit-box-flex: 1;
-    position: relative;
-    flex: 1 1 auto;
+.mfom-item.red {
+  color: var(--status-danger);
 }
 
-
-
-
-
-
-.fo-item-container {
-    forced-color-adjust: none;
-    outline: 0;
-    position: relative;
-    margin: 2px 0;
-    border-radius: 2px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 18px;
-    cursor: pointer;
-    align-items: center;
-    min-height: 32px;
-    padding: 6px 8px;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    display: flex;
-    -webkit-box-pack: justify;
-    box-sizing: border-box;
-    color: hsl(216, 3.7%, 73.5%);
-    border-color: hsl(216, 3.7%, 73.5%);
-    font-family: "Whitney";
-
+.mfom-item.red:hover {
+  color: var(--white-500);
+  background-color: var(--red-500);
 }
 
-
-.fo-item-container:hover {
-    background-color: hsl(235, 46.7%, 44.1%);
-    color: hsl(0, 0%, 100%);
-    background-color: hsl(235, 51.4%, 52.4%);
+.mfom-item.red:active {
+  color: var(--white-500);
+  background-color: var(--red-500);
 }
 
-.fo-item-name {
-    forced-color-adjust: none;
-    outline: 0;
-    flex: 1 1 auto;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-box-flex: 1;
+.mfom-item.green {
+  color: var(--green-2425);
 }
 
-
-
-.fo-options-bottom-div {
-    outline: 0;
-    forced-color-adjust: none;
-    position: absolute;
-    pointer-events: none;
-    min-height: 0px;
-    min-width: 1px;
-    flex: 0 0 auto;
-    height: 6px;
+.mfom-item.green:hover {
+  background-color: var(--green-2500);
+  color: var(--white-500);
+}
+.mfom-item.green:active {
+  background-color: var(--green-2500);
+  color: var(--white-500);
 }
 
-.fo-item-container.red {
-    color: hsl(359, 82.6%, 59.45%);
+.mfom-bottom-div {
+  position: absolute;
+  pointer-events: none;
+  min-height: 0px;
+  min-width: 1px;
+  flex: 0 0 auto;
+  height: 6px;
 }
 
-
-.fo-item-container.red:hover {
-    background-color: hsl(359, 66.7%, 54.1%);
-    color: hsl(0, 0%, 100%);
-}
-.fo-item-container.green {
-    // color: #3BA55D;
-    color: hsl(139, 47%, 44%);
+.mfom-content-seperator {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 4px;
+  border-bottom: 1px solid var(--background-modifier-accent);
 }
 
-.fo-item-container.green:hover {
-    background-color: hsl(139, 31.1%, 38.65%);
-    color: hsl(0, 0%, 100%);
+.mfom-icon-container {
+  position: relative;
+  flex: 0 0 auto;
+  height: 18px;
+  width: 18px;
+  margin-left: 8px;
 }
+.mfom-id-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/*end*/
