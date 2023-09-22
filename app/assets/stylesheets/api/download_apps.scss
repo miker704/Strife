@@ -1,684 +1,612 @@
-@import 'global_vars';
-
+@import "global_vars";
 
 @keyframes dAModalAppear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
 
-    0% {
-        opacity: 0;
-        transform: scale(0.5, 0.5);
-        -webkit-transform: scale(0.5, 0.5);
-
-    }
-
-    70% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(1, 1);
-        -webkit-transform: scale(1, 1);
-
-    }
-
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
 }
 
-
-
 @-webkit-keyframes dAModalAppear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
 
-    0% {
-        opacity: 0;
-        transform: scale(0.5, 0.5);
-        -webkit-transform: scale(0.5, 0.5);
-
-    }
-
-    70% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(1, 1);
-        -webkit-transform: scale(1, 1);
-
-    }
-
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
 }
 
 @keyframes dAModalDisappear {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
 
-    0% {
-        opacity: 1;
-        transform: scale(1, 1);
-        -webkit-transform: scale(1, 1);
-
-    }
-
-    70% {
-        opacity: 0.5;
-    }
-
-    100% {
-        transform: scale(0.5, 0.5);
-        -webkit-transform: scale(0.5, 0.5);
-        opacity: 0.0;
-
-    }
-
+  100% {
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+    opacity: 0;
+  }
 }
-
-
-
 
 @-webkit-keyframes dAModalDisappear {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
 
-    0% {
-        opacity: 1;
-        transform: scale(1, 1);
-        -webkit-transform: scale(1, 1);
-
-    }
-
-    70% {
-        opacity: 0.5;
-    }
-
-    100% {
-        transform: scale(0.5, 0.5);
-        -webkit-transform: scale(0.5, 0.5);
-        opacity: 0.0;
-
-    }
-
+  100% {
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+    opacity: 0;
+  }
 }
 
-
-
-
 @keyframes dAWrapperRender {
+  0% {
+    opacity: 0;
+  }
 
-    0% {
-        opacity: 0;
-    }
+  70% {
+    opacity: 1;
+  }
 
-    70% {
-        opacity: 1;
-    }
-
-    100% {}
-
+  100% {
+  }
 }
 
 @-webkit-keyframes dAWrapperRender {
+  0% {
+    opacity: 0;
+  }
 
-    0% {
-        opacity: 0;
-    }
+  70% {
+    opacity: 1;
+  }
 
-    70% {
-        opacity: 1;
-    }
-
-    100% {}
-
+  100% {
+  }
 }
 
 @keyframes dAWrapperUnRender {
+  0% {
+    opacity: 1;
+  }
 
-    0% {
-        opacity: 1;
-    }
+  70% {
+    opacity: 0.85;
+  }
 
-    70% {
-        opacity: 0.85;
-    }
-
-    100% {
-        opacity: 0.6;
-
-    }
-
+  100% {
+    opacity: 0.6;
+  }
 }
 
 @-webkit-keyframes dAWrapperUnRender {
+  0% {
+    opacity: 1;
+  }
 
+  70% {
+    opacity: 0.85;
+  }
 
-    0% {
-        opacity: 1;
-    }
-
-    70% {
-        opacity: 0.85;
-    }
-
-    100% {
-        opacity: 0.6;
-
-    }
+  100% {
+    opacity: 0.6;
+  }
 }
 
-
-
 .da-layer {
-    outline: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: none !important;
-    pointer-events: none;
-    z-index: 1002;
-    animation-name: dAWrapperRender;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
-    -webkit-animation-name: dAWrapperRender;
-    -webkit-animation-duration: 0.3s;
-    -webkit-animation-iteration-count: 1;
+  outline: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: none !important;
+  pointer-events: none;
+  z-index: 1002;
+  -webkit-animation-name: dAWrapperRender;
+  -webkit-animation-duration: 0.2s;
+  -webkit-animation-iteration-count: 1;
+  animation-name: dAWrapperRender;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
 }
 
 .da-backdrop {
-    outline: 0;
-    background: transparent;
-    opacity: 0.85;
-    pointer-events: all;
-    transform: translateZ(0);
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  outline: 0;
+  background: var(--black-500, #{$black-500});
+  opacity: 0.85;
+  pointer-events: all;
+  transform: translateZ(0);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .da-flex-layer {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    outline: 0;
-    -webkit-box-align: center;
-    align-items: center;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    min-height: 0;
-    padding-top: 40px;
-    padding-bottom: 40px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  outline: 0;
+  -webkit-box-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  min-height: 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .da-focus-lock {
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    min-height: 0;
-    max-width: 100%;
-    outline: 0;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  min-height: 0;
+  max-width: 100%;
+  outline: 0;
 }
 
 .da-dl-apps {
-    opacity: 1;
-    transform: scale(1);
-    outline: 0;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    border-radius: 5px;
-    -webkit-box-pack: center;
-    justify-content: center;
-    min-width: 880px;
-    min-height: 387px;
-    padding: 32px;
-    width: 440px;
-    max-height: 720px;
-    margin: 0 auto;
-    pointer-events: all;
-    position: relative;
-    background-color: $white-500 !important;
-    box-shadow: $light-elevation-border, $light-elevation-high !important;
-    animation-name: dAModalAppear;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
-    -webkit-animation-name: dAModalAppear;
-    -webkit-animation-duration: 0.3s;
-    -webkit-animation-iteration-count: 1;
-
-
+  opacity: 1;
+  transform: scale(1);
+  outline: 0;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  border-radius: 5px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  min-width: 880px;
+  min-height: 387px;
+  padding: 32px;
+  width: 440px;
+  max-height: 720px;
+  margin: 0 auto;
+  pointer-events: all;
+  position: relative;
+  background-color: $white-500 !important;
+  box-shadow: $light-elevation-border, $light-elevation-high !important;
+  -webkit-animation-name: dAModalAppear;
+  -webkit-animation-duration: 0.2s;
+  -webkit-animation-iteration-count: 1;
+  animation-name: dAModalAppear;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
 }
 
 .da-dl-apps.transition-out {
-    animation-name: dAModalDisappear;
-    animation-duration: 0.2s;
-    animation-iteration-count: 1;
-    -webkit-animation-name: dAModalDisappear;
-    -webkit-animation-duration: 0.2s;
-    -webkit-animation-iteration-count: 1;
+  -webkit-animation-name: dAModalDisappear;
+  -webkit-animation-duration: 0.15s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: dAModalDisappear;
+  animation-duration: 0.15s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
 }
-
-
-
 
 .da-dl-apps-inner {
-    outline: 0;
-    display: flex;
-    margin: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-    -webkit-box-pack: center;
+  outline: 0;
+  display: flex;
+  margin: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  -webkit-box-pack: center;
 }
 
-
 .close-da {
-    color: $download-modal-close-button;
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    height: 26px;
-    padding: 4px;
-    transition: opacity .2s ease-in-out;
-    opacity: 0.5;
-    cursor: pointer;
-    border-radius: 3px;
-    box-sizing: content-box;
-    width: auto;
-    border: 0;
-    margin: 0;
-    // background: #0000;
-    background: transparent;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 16px;
-    user-select: none;
-    outline: 0;
-    font-family: $global-font;
-    text-rendering: optimizeLegibility;
+  color: $download-modal-close-button;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  height: 26px;
+  padding: 4px;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0.5;
+  cursor: pointer;
+  border-radius: 3px;
+  box-sizing: content-box;
+  width: auto;
+  border: 0;
+  margin: 0;
+  // background: #0000;
+  background: transparent;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  user-select: none;
+  outline: 0;
+  font-family: $global-font;
+  text-rendering: optimizeLegibility;
 }
 
 .close-da:hover {
-    color: $download-modal-close-button;
-    opacity: 1;
+  color: $download-modal-close-button;
+  opacity: 1;
 }
 
 .close-da-contents {
-    outline: 0;
-    background-image: linear-gradient(0deg, transparent, transparent 1px, transparent 0, transparent 2px, transparent 0);
-
+  outline: 0;
+  background-image: linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    transparent 0,
+    transparent 2px,
+    transparent 0
+  );
 }
 
 .close-da-icon {
-    forced-color-adjust: none;
+  forced-color-adjust: none;
 }
 
 .platform-wraps {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    display: flex;
-    outline: 0;
-    flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  display: flex;
+  outline: 0;
+  flex-direction: column;
 }
 
-
 .platform-wraps-h3 {
-    outline: 0;
-    text-align: center;
-    align-items: center;
-    margin-bottom: 7px;
-    color: $platform-wraps-header;
-    -webkit-box-align: center;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
-    font-family: $global-font;
-
+  outline: 0;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 7px;
+  color: $platform-wraps-header;
+  -webkit-box-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  font-family: $global-font;
 }
 
 .platforms-ul {
-    display: flex;
-    list-style: none;
+  display: flex;
+  list-style: none;
 }
 
 .platforms-li-item {
-    backface-visibility: hidden;
-    border: 2px solid $platform-item-color;
-    padding: 32px 12px 12px;
-    position: relative;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    transition: all .3s ease-in-out;
-    flex-direction: column;
-    flex-shrink: 0;
-    border-radius: 8px;
-    margin-left: 15px;
-    height: 260px;
-    width: 196px;
-    box-sizing: border-box;
-    display: flex;
+  backface-visibility: hidden;
+  border: 2px solid $platform-item-color;
+  padding: 32px 12px 12px;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  transition: all 0.3s ease-in-out;
+  flex-direction: column;
+  flex-shrink: 0;
+  border-radius: 8px;
+  margin-left: 15px;
+  height: 260px;
+  width: 196px;
+  box-sizing: border-box;
+  display: flex;
 }
 
 .platforms-li-item:hover {
-    transform: scale(1.025);
-    border-color: $brand-experiment;
+  transform: scale(1.025);
+  border-color: $brand-experiment;
 
-    .platform-apple-icon {
-        // visibility: hidden;
-        opacity: 0;
-    }
+  .platform-apple-icon {
+    // visibility: hidden;
+    opacity: 0;
+  }
 
-    .platform-apple-icon-active {
-        opacity: unset;
-    }
+  .platform-apple-icon-active {
+    opacity: unset;
+  }
 
-    .platform-windows-icon {
-        // visibility: hidden;
-        opacity: 0;
-    }
+  .platform-windows-icon {
+    // visibility: hidden;
+    opacity: 0;
+  }
 
-    .platform-windows-icon-active {
-        opacity: unset;
-    }
+  .platform-windows-icon-active {
+    opacity: unset;
+  }
 
-    .platform-linux-icon {
-        // visibility: hidden;
-        opacity: 0;
-    }
+  .platform-linux-icon {
+    // visibility: hidden;
+    opacity: 0;
+  }
 
-    .platform-linux-icon-active {
-        opacity: unset;
-    }
+  .platform-linux-icon-active {
+    opacity: unset;
+  }
 
-    .platform-android-icon {
-        // visibility: hidden;
-        opacity: 0;
-    }
+  .platform-android-icon {
+    // visibility: hidden;
+    opacity: 0;
+  }
 
-    .platform-android-icon-active {
-        opacity: unset;
-    }
+  .platform-android-icon-active {
+    opacity: unset;
+  }
 
-    .platform-apple-ios-icon {
-        // visibility: hidden;
-        opacity: 0;
-    }
+  .platform-apple-ios-icon {
+    // visibility: hidden;
+    opacity: 0;
+  }
 
-    .platform-apple-ios-icon-active {
-        opacity: unset;
-    }
+  .platform-apple-ios-icon-active {
+    opacity: unset;
+  }
 
-    .download-app-buttons-anchor,
-    .download-app-buttons-anchor-2,
-    .download-app-buttons-anchor-3 {
-        background-color: $brand-experiment;
-    }
-
+  .download-app-buttons-anchor,
+  .download-app-buttons-anchor-2,
+  .download-app-buttons-anchor-3 {
+    background-color: $brand-experiment;
+  }
 }
 
-
 .platforms-li-item-inner-wrapper {
-    justify-content: space-between;
-    -webkit-box-flex: 1;
-    -webkit-box-pack: justify;
-    flex-grow: 1;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    outline: 0;
+  justify-content: space-between;
+  -webkit-box-flex: 1;
+  -webkit-box-pack: justify;
+  flex-grow: 1;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  outline: 0;
 }
 
 .platforms-icon-wrap {
-    align-self: center;
-    position: relative;
-    width: 100px;
-    height: 100px;
-    outline: 0;
-
+  align-self: center;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  outline: 0;
 }
 
 .platform-apple-icon {
-    transition: opacity .3s ease-in-out;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    content: image_url('macos.svg');
-    align-self: center;
-    outline: 0;
+  transition: opacity 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: image_url("macos.svg");
+  align-self: center;
+  outline: 0;
 }
 
 .platform-apple-icon-active {
-    content: image_url('macos-blue.svg');
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    align-self: center;
-    outline: 0;
+  content: image_url("macos-blue.svg");
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-self: center;
+  outline: 0;
 }
 
-
-
-
 .platform-windows-icon {
-    transition: opacity .3s ease-in-out;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    content: image_url('windows.svg');
-    align-self: center;
-    outline: 0;
+  transition: opacity 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: image_url("windows.svg");
+  align-self: center;
+  outline: 0;
 }
 
 .platform-windows-icon-active {
-    content: image_url('windows-blue.svg');
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    align-self: center;
-    outline: 0;
+  content: image_url("windows-blue.svg");
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-self: center;
+  outline: 0;
 }
 
-
-
-
-
 .platform-linux-icon {
-    transition: opacity .3s ease-in-out;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    content: image_url('linux.svg');
-    align-self: center;
-    outline: 0;
+  transition: opacity 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: image_url("linux.svg");
+  align-self: center;
+  outline: 0;
 }
 
 .platform-linux-icon-active {
-    content: image_url('linux-blue.svg');
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    align-self: center;
-    outline: 0;
+  content: image_url("linux-blue.svg");
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-self: center;
+  outline: 0;
 }
 
 .platform-apple-ios-icon {
-    transition: opacity .3s ease-in-out;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    content: image_url('apple.svg');
-    align-self: center;
-    outline: 0;
+  transition: opacity 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: image_url("apple.svg");
+  align-self: center;
+  outline: 0;
 }
 
 .platform-apple-ios-icon-active {
-    content: image_url('apple-blue.svg');
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    align-self: center;
-    outline: 0;
+  content: image_url("apple-blue.svg");
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-self: center;
+  outline: 0;
 }
 
-
 .platform-android-icon {
-    transition: opacity .3s ease-in-out;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    content: image_url('android.svg');
-    align-self: center;
-    outline: 0;
+  transition: opacity 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: image_url("android.svg");
+  align-self: center;
+  outline: 0;
 }
 
 .platform-android-icon-active {
-    content: image_url('android-blue.svg');
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    align-self: center;
-    outline: 0;
+  content: image_url("android-blue.svg");
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-self: center;
+  outline: 0;
 }
 
-
-
-
-
 .da-icon-header {
-    color: $platform-icon-header;
-    text-align: center;
-    font-weight: 600;
-    font-family: $global-font;
-    font-size: 20px;
-    line-height: 24px;
+  color: $platform-icon-header;
+  text-align: center;
+  font-weight: 600;
+  font-family: $global-font;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .download-app-buttons {
-    outline: 0;
-    display: flex;
-
+  outline: 0;
+  display: flex;
 }
 
 .download-app-buttons-anchor {
-    -webkit-box-flex: 1;
-    flex-grow: 1;
-    text-decoration: none;
-    outline: 0;
-    background-color: $platform-item-color;
-    text-align: center;
-    border-radius: 3px;
-    font-weight: 500;
-    font-size: 14px;
-    padding: 12px 0;
-    margin-top: 16px;
-    transition: background-color .3s ease-in-out;
-    color: $white-500;
-    font-family: $global-font;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  text-decoration: none;
+  outline: 0;
+  background-color: $platform-item-color;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 12px 0;
+  margin-top: 16px;
+  transition: background-color 0.3s ease-in-out;
+  color: $white-500;
+  font-family: $global-font;
 }
 
-
 .download-app-buttons-anchor-2 {
-    -webkit-box-flex: 1;
-    flex-grow: 1;
-    text-decoration: none;
-    outline: 0;
-    background-color: $platform-item-color;
-    text-align: center;
-    border-radius: 3px;
-    font-weight: 500;
-    font-size: 14px;
-    padding: 12px 0;
-    margin-top: 16px;
-    transition: background-color .3s ease-in-out;
-    color: $white-500;
-    width: 65px;
-    font-family: $global-font;
-
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  text-decoration: none;
+  outline: 0;
+  background-color: $platform-item-color;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 12px 0;
+  margin-top: 16px;
+  transition: background-color 0.3s ease-in-out;
+  color: $white-500;
+  width: 65px;
+  font-family: $global-font;
 }
 
 .download-app-buttons-anchor-3 {
-    -webkit-box-flex: 1;
-    flex-grow: 1;
-    text-decoration: none;
-    outline: 0;
-    background-color: $platform-item-color;
-    text-align: center;
-    border-radius: 3px;
-    font-weight: 500;
-    font-size: 14px;
-    padding: 12px 0;
-    margin-top: 16px;
-    transition: background-color .3s ease-in-out;
-    color: $white-500;
-    width: 65px;
-    margin-left: 12px;
-    font-family: $global-font;
-
-
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  text-decoration: none;
+  outline: 0;
+  background-color: $platform-item-color;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 12px 0;
+  margin-top: 16px;
+  transition: background-color 0.3s ease-in-out;
+  color: $white-500;
+  width: 65px;
+  margin-left: 12px;
+  font-family: $global-font;
 }
 
-
-
-
-
 .mobile-platforms {
-    outline: 0;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-top: 32px;
+  outline: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 32px;
 }
 
 .mobile-header {
-    font-size: 20px;
-    line-height: 4px;
-    font-family: $global-font;
-    font-weight: 600;
-    align-items: center;
-    margin-bottom: 10px;
-    color: $platform-icon-header;
-    -webkit-box-align: center;
-    text-align: center;
-
+  font-size: 20px;
+  line-height: 4px;
+  font-family: $global-font;
+  font-weight: 600;
+  align-items: center;
+  margin-bottom: 10px;
+  color: $platform-icon-header;
+  -webkit-box-align: center;
+  text-align: center;
 }
