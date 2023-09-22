@@ -1734,6 +1734,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Create Dm Modal HomeBar Version.
     - Finalized Create Dm Modal HomeBar Version Container.
     - Finalized No Friends Dm Modal HomeBar Version.
+    - Finalized No Friends Dm Modal HomeBar Version Container.
 
 
 ## Backend Changes
