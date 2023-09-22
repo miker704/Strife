@@ -1,0 +1,104 @@
+.nitro-header-nav-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  width: 100%;
+  flex: 0 0 auto;
+  height: 48px;
+  padding: 0 8px;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: default;
+  z-index: 2;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  color: var(--text-normal);
+  background: var(--background-primary);
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.nitro-header-nav-bar::before {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  -webkit-box-shadow: var(--elevation-low);
+  box-shadow: var(--elevation-low);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.nitro-header-nav-bar-children {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.nitro-header-nav-bar-icon-wrapper {
+  position: relative;
+  height: 24px;
+  width: auto;
+  flex: 0 0 auto;
+  margin: 0 8px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.nhnbi-ball {
+  display: block;
+  width: 24px;
+  height: 24px;
+  -webkit-app-region: no-drag;
+  color: var(--channel-icon);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.nitro-header-nav-bar-title-wrapper {
+  margin: 0 8px 0 0;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  min-width: auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.nitro-header-nav-bar-title-contents {
+  justify-content: flex-start;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: var(--header-primary);
+  font-weight: 600;
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.nitro-header-nav-bar-children::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 100%;
+  background: var(--background-primary);
+}
