@@ -1338,7 +1338,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Backed up invite_to_server.scss to deprecated folder.
     - Backed up leave_server_modal.scss to deprecated folder.
     - Backed up loading_screens.scss to deprecated folder.
-    - Backed up mega_user_account_cared.scss to deprecated folder.
+    - Backed up mega_user_account_card.scss to deprecated folder.
     - Backed up messages.scss to deprecated folder.
     - Backed up mini_user_account_card.scss to deprecated folder.
     - Backed up mini_current_user_account_card.scss to deprecated folder.
@@ -1740,6 +1740,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized NOT Friends Dm Modal.
     - Finalized NOT Friends Dm Modal Container.
     - Finalized Dm Message reducer.
+    
 
 ## Backend Changes
 
@@ -1799,6 +1800,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Added Backend function that executes in the change dm Server name function to take the current user and create a   message indicating that they have changed the name of the dm server and send this message and a request to resync the dm server for all dmserver members currently in the chat room.
 - Fixed Tranmission state cable to update changes to a usser dms if they are in a dmserver currently changes to username, avatar or banner will activate this change.
 - Added better validation to dmServer name in dm server model.rb, the length is only allowed to be 1-100 characters in length while and can be null for initial setup only.
+- Finalized _user.json.jbuilder for patch v4.
 
 ### Front-End Changes
 
