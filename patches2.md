@@ -1653,7 +1653,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized LogOut Modal Container.
     - Finalized User Settings Modal.
     - Finalized User Settings Modal Container.
-
+    - Finalized Strife Svgs Library.
 
 
 
