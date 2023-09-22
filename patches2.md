@@ -1629,6 +1629,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized dm_member api util.js
     - Finalized Copy Strife Tag Modal.
     - Finalized Copy Strife Tag Modal Container.
+    - Finalized User Edit Phone Number Modal.
     - Finalized User Edit Phone Number Modal Container.
 
 ## Backend Changes
