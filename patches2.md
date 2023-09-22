@@ -1749,14 +1749,14 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized User Nav Bar Styles.
     - Finalized Friend Request Failed Modal Styles.
     - Finalized Edit Friendship Modal.
-    - Finalized All Friends.
-    - Finalized All Friends Container.
-    - Finalized Online Friends.
-    - Finalized Online Friends Container.
+    - Finalized All Friends List.
+    - Finalized All Friends List Container.
+    - Finalized Online Friends List.
+    - Finalized Online Friends List Container.
     - Finalized Pending Friends List.
     - Finalized Pending Friends List Container.
-    - Finalized Add Friends.
-    - Finalized Add Friends Container.
+    - Finalized Add Friends List.
+    - Finalized Add Friends List Container.
     - Finalized Blocked User List.
     - Finalized Blocked User List Container.
     - Finalized Friends Home Page.
