@@ -1727,6 +1727,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized User Asset Search Modal.
     - Finalized User Asset Search Modal Container.
     - Finalized Channels scss styles.
+    - Finalized UPC Panel.
 
 
 ## Backend Changes
