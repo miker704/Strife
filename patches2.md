@@ -1688,6 +1688,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Active Now Section Container.
     - Finalized Active Now Section SCSS Styles.
     - Finalized Error Snack Bar Scss Styles.
+    - Readjusted Nitro Store Styles.
 
 
 
