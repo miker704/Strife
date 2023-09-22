@@ -8,12 +8,9 @@ const mSTP = (state) => {
     return {
         // currentUser: state.entities.users[state.session.id],
         currentUser: state.currentUser,
-
         errors: state.errors.session,
-
     }
 };
-
 
 
 const mDTP = (dispatch) => {
@@ -21,8 +18,8 @@ const mDTP = (dispatch) => {
         disableUserAccount: (user) => dispatch(disableUserAccount(user)),
         logoutUser: () => dispatch(logoutUser()),
         removeSessionErrors: () => dispatch(removeSessionErrors()),
-        closeModal:() => dispatch(closeModal()),
-        removeUserAccount: (userId) => dispatch(removeUserAccount(userId))
+        closeModal: () => dispatch(closeModal()),
+        removeUserAccount: (userId) => dispatch(removeUserAccount(userId)),
     }
 };
 
