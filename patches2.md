@@ -1628,6 +1628,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Preview server reducer.
     - Finalized dm_member api util.js
     - Finalized Copy Strife Tag Modal.
+    - Finalized Copy Strife Tag Modal Container.
 
 ## Backend Changes
 
