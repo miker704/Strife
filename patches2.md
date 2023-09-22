@@ -1751,6 +1751,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Edit Friendship Modal.
     - Finalized All Friends.
     - Finalized All Friends Container.
+    - Finalized Online Friends.
 
 
 ## Backend Changes
