@@ -1636,6 +1636,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Edit Username Modal.
     - Finalized Edit Username Modal Container.
     - Finalized Edit User Email Modal.
+    - Finalized Edit User Email Modal Container.
 
 
 ## Backend Changes
