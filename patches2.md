@@ -1613,6 +1613,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Loading Screen container.
     - Finalized Error Boundary.
     - Finalized Error Boundary Loading Screen.
+    - Finalized Error Boundary Loading Screen Container.
 
 ## Backend Changes
 
