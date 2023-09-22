@@ -1776,7 +1776,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Mega UPC Modal Styles.
     - Finalized Nitro Nav Bar Styles.
     - Finalized Servers Main Base styles.
-
+    - Finalized leaver server modal styles.
 
 ## Backend Changes
 
