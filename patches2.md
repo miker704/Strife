@@ -1757,6 +1757,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Pending Friends List Container.
     - Finalized Add Friends.
     - Finalized Add Friends Container.
+    - Finalized Blocked User List.
+
     - Finalized Friends Home Page.
     - Finalized Friends Home Page Container.
     - Finalized Delete Friend Confirmation Modal.
