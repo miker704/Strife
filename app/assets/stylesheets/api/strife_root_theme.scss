@@ -1,0 +1,1373 @@
+:root {
+
+    --global-font: "gg sans";
+    --font-headline : "ABC Ginto Nord";
+    --font-code: Consolas, Andale Mono WT, Andale Mono, Lucida Console,
+        Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono,
+        Nimbus Mono L, Monaco, Courier New, Courier, monospace;
+    //box shadows
+    --dark-elevation-border: 0px 0px 0px 1px rgba(30, 31, 34, 0.6);
+    --dark-elevation-high: 0px 2px 10px 0px rgba(0, 0, 0, 0.2);
+    --light-elevation-border: 0px 0px 0px 1px hsla(210, 9.3%, 78.8%, 0.3);
+    --light-elevation-high: 0px 2px 10px 0px hsla(0, 0%, 0%, 0.1);
+    --tool-tip-elevation-high: 0px 8px 16px 0px rgba(0, 0, 0, 0.24);
+    --elevation-high: 0px 8px 16px rgba(0, 0, 0, 0.24);
+    --elevation-medium: 0px 4px 4px 0px rgba(0, 0, 0, 0.16);
+    --elevation-stroke: 0px 0px 0px 1px rgba(2, 2, 2, 0.15);
+    --elevation-low: 0px 1px 0px 0px rgba(2, 2, 2, 0.2), 0px 1.5px 0px 0px rgba(6, 6, 7, 0.05), 0px 2px 0px 0px rgba(2, 2, 2, 0.05);
+    --white-500-bs: 0 -1px 0px 0px hsla(0, 0%, 100%, 0.04);
+    --exs-search-box-border: 0px 0px 0px 1px hsl(248, 85%, 60%), 0px 0px 0px 2px hsl(249, 85%, 84%), 0px 0px 0px 3px hsl(249, 85%, 84%);
+    --uasm-gray-box-shadow: rgba(28, 36, 43, 0.6);
+
+
+    //linear gradient colors
+    --dmshnb-after: hsla(220, 8%, 23%, 0);
+    --chat-input-box-before: rgba(54, 57, 63, 0);
+
+
+    --cs-divider-color: rgba(114, 118, 125, 0.3);
+    //background colors
+    --modal-pop-up-bg-color: rgb(49, 51, 56);
+    --modal-background:rgb(49, 51, 56);
+    --background-floating: rgb(17, 18, 20);
+    --public-draft-editor-bg: hsla(0, 0%, 100%, 0);
+
+
+    //text colors
+    --header-primary: rgb(242, 243, 245);
+    --platform-wraps-header: #060607;
+    --platform-icon-header: #060607;
+    //general colors
+
+    --white-500: rgb(255, 255, 255);
+    --white-500-hsl-01: rgba(255, 255, 255, 0.1);
+    --white-500-hsl-03: hsla(0, 0%, 100%, 0.3);
+    --white-500-hsl-04: hsla(0, 0%, 100%, 0.4);
+    --black-500: hsl(0, 0%, 0%);
+    --black-500-alpha-1: hsla(0, 0%, 0%, 1);
+    --black-500-hsl-005: hsla(0, 0%, 0%, 0.05);
+    --black-500-hsl-01: hsla(0, 0%, 0%, 0.1);
+    --black-500-hsl-02: hsla(0, 0%, 0%, 0.2);
+    --black-500-hsl-024: hsla(0, 0%, 0%, 0.24);
+    --black-500-hsl-03: hsla(0, 0%, 0%, 0.3);
+    --black-500-hsl-45: hsla(0, 0%, 0%, 0.45);
+    --black-500-hsl-50: hsla(0, 0%, 0%, 0.5);
+    --black-500-hsl-06: hsla(0, 0%, 0%, 0.6);
+    --black-500-hsl-075: hsla(0, 0%, 0%, 0.75);
+    --vanta-black: rgb(1, 1, 0);
+    --black-raw: rgb(0, 0, 0);
+    --brand-100:rgb(247, 247, 254);
+    --brand-200: rgb(222, 224, 252);
+    --brand-260: rgb(201, 205, 251);
+    --brand-360: rgb(148, 156, 247);
+    --brand-400: rgb(121, 131, 245);
+    --brand-500: rgb(88, 101, 242);
+    --brand-500-hsl: rgba(88, 101, 242, 0.298);
+    --brand-560: rgb(71, 82, 196);
+    --brand-600: hsl(235, 46.7%, 44.1%);
+    --blue-345: rgb(0, 168, 252);
+    --blue-350: rgb(62, 112, 221);
+    --blue-430: rgb(0, 108, 231);
+    --blue-1000: rgb(34, 9, 249);
+    --blue-1050: rgb(16, 0, 56);
+    --blue-1100: rgb(45, 141, 214);
+    --blue-raw: rgb(0, 0, 255);
+    --sky-blue: rgb(0, 123, 194);
+    --bronze-raw: rgb(205, 127, 50);
+    --primary-100: rgb(249, 249, 249);
+    --primary-100-hsl-06: rgba(249, 249, 249, 0.6);
+    --primary-130: rgb(242, 243, 245);
+    --primary-150: rgb(41, 43, 47);
+    --primary-160: rgb(235, 237, 239);
+    --primary-200: hsl(216, 9.8%, 90%);
+    --primary-230: rgb(219, 222, 225);
+    --primary-300: rgb(196, 201, 206);
+    --primary-330: rgb(181, 186, 193);
+    --primary-360: hsl(214, 8.1%, 61.2%);
+    --primary-400: rgb(128, 132, 142);
+    --primary-400-hsl-016: rgba(128, 132, 142, 0.16);
+    --primary-400-hsl-02: rgba(128, 132, 142, 0.2);
+    --primary-400-hsl-024: rgba(128, 132, 142, 0.24);
+
+
+
+    --primary-401-hsl-03: rgba(128, 132, 142, 0.3);
+    --primary-401: rgba(78, 80, 88, 0.6);
+    --primary-430: rgb(109, 111, 120);
+
+    --primary-460: rgb(92, 94, 102);
+
+    --primary-500: rgb(78, 80, 88);
+    --primary-500-non-alpha: rgb(78, 80, 88);
+    --primary-500-hsl-30: rgba(78, 80, 88, 0.3);
+    --primary-500-hsl-48: rgba(78, 80, 88, 0.48);
+    --primary-500-hsl-60: rgba(78, 80, 88, 0.6);
+    --primary-500-hsl-75: rgba(78, 80, 88, 0.75);
+    --primary-500-bg-color: rgb(78, 80, 88);
+    --primary-500-48: rgba(78, 80, 88, 0.48);
+    --primary-501: rgb(78, 80, 88);
+    --primary-505: rgba(2, 2, 2, 0.06);
+    --primary-530: rgb(65, 67, 74);
+    --primary-560: rgb(56, 58, 64);
+    --primary-600: rgb(49, 51, 56);
+    --primary-630: hsl(220, 7%, 18%);
+    --primary-630-hsl: rgba(43, 45, 49, 0.6);
+    --primary-660: rgb(35, 36, 40);
+    --primary-700: rgb(30, 31, 34);
+    --primary-730: hsl(225, 7.1%, 11%);
+    --primary-800: rgb(17, 18, 20);
+    --primary-800-lvl-2: rgb(56, 58, 64);
+    --primary-800-30: rgba(17, 18, 20, 0.3);
+    --primary-800-60: hsla(225, 7.7%, 10.2%, 0.6);
+    --primary-860: hsla(240, 7.7%, 2.5%, 1);
+    --primary-2000: rgb(32, 34, 37);
+    --primary-2050: rgba(54,57,63,0);
+    --red-400: rgb(242, 63, 66);
+    --red-400-2: rgb(242, 64, 67);
+    --red-430: hsl(358, 68.8%, 53.5%);
+    --red-345: rgb(250, 119, 124);
+    --red-460: rgb(186, 48, 51);
+    --red-500: rgb(161, 40, 40);
+    --red-530: rgb(143, 32, 34);
+    --red-550: rgb(161, 45, 47);
+    --red-1000: rgb(159, 45, 47);
+    --red-1050: rgb(232, 16, 16);
+    --red-2000: rgb(242, 63, 67);
+    --red-2500: rgb(138, 0, 0);
+    --red-2550: rgb(255, 0, 0);
+    --red-2600: rgb(230, 27, 88);
+    --red-3000: rgb(237, 66, 69);
+    --pure-red: var(--red-2550);
+    --red-orange: rgb(228, 66, 53);
+    --gray-500: rgb(128, 132, 142);
+    --gray-600: rgb(117, 126, 138);
+    --gray-650: #AAAAAA;
+    --gray-switch: rgb(128, 132, 142);
+    --green-switch: hsl(145, 65%, 39%);
+    --green-330: rgb(45, 199, 112);
+    --green-360: rgb(35, 165, 89);
+    --green-430: rgb(36, 128, 70);
+    --green-500: rgb(26, 99, 52);
+    --green-501: rgb(27, 103, 54);
+    --green-530: rgb(21, 86, 43);
+    --green-600: rgb(35, 165, 90);
+    --green-1500: #0DFF92;
+    --green-1600: #8ff91e;
+    --green-1650: #35ff2d;
+    --green-1675: #32CD32;
+    --green-1700: rgb(50, 205, 50);
+    --green-1750: #AC5C;
+    --green-2000: rgb(35, 165, 90);
+    --green-2050: rgb(0, 234, 52);
+    --green-2100: rgb(0, 90, 23);
+    --green-2150: rgb(0, 251, 5);
+    --green-2200: rgb(0, 90, 23);
+    --green-2300: rgb(41, 197, 102);
+    --green-2400: rgb(59, 165, 92);
+    --green-2425: rgb(59, 165, 93);
+    --green-2500: rgb(68, 129, 87);
+    --dark-green: rgb(1, 18, 1);
+    --gold-raw: rgb(255, 215, 0);
+    --cyan-raw: rgb(0, 255, 255);
+    --light-cyan: rgb(7, 168, 237);
+    --black-ice: rgb(1, 18, 18);
+    --dark-blurred-cyan: rgba(19, 77, 64, 0.67);
+    --green-yellow: rgb(173, 255, 47);
+    --orange-100: rgb(225, 114, 31);
+    --yellow-430: rgb(154, 100, 13);
+    --yellow-300: rgb(240, 177, 50);
+    --yellow-1000: rgb(240, 178, 50);
+    --yellow-1100: rgb(239, 188, 18);
+    --yellow-1200: rgb(250, 166, 26);
+    --yellow-emoji: #ffc959;
+    --yellow-green: hsl(80, 61%, 50%);
+    --premium-perk-orange:rgb(252, 149, 75);
+    --premium-perk-green:rgb(134, 220, 197);
+    --premium-perk-blue:rgb(128, 166, 255);
+    --premium-perk-purple:rgb(208, 154, 255);
+    --premium-perk-pink:rgb(255, 128, 244);
+    --premium-perk-yellow:rgb(254, 215, 72);
+    --premium-perk-dark-blue:rgb(65, 116, 218);
+    --purple-100: rgb(255, 115, 250);
+    --purple-110: rgb(179, 119, 243);
+    --purple-200: rgb(133, 119, 227);
+    --ultra-violet: rgb(158, 0, 255);
+    --magenta: rgb(255, 0, 255);
+    --purple-1000: #e60073;
+    --purple-1050: #ff4da6;
+    --purple-1100: rgb(144, 79, 173);
+    --purple-raw: rgb(128, 0, 128);
+    --purple-nitro-from: rgb(135, 78, 193);
+    --purple-nitro-to: rgb(170, 92, 145);
+    --purple-nitro-from-old: rgb(133, 77, 194);
+    --purple-nitro-to-old: rgb(172, 92, 143);
+    --purple-to-blue: rgb(93, 51, 216);
+    --deep-purple-blue: rgb(49, 28, 118);
+    --pink-to-purple-100: rgb(232, 132, 250);
+    --pink-to-purple-200: rgb(203, 88, 249);
+    --pink-to-purple-300: rgb(182, 78, 250);
+    --pink-to-purple-400: rgb(161, 72, 250);
+    --pink-1000: rgb(235, 69, 159);
+    --teal-100: rgb(25, 180, 145);
+    --platform-item-color: #747f8d;
+    --channel-icon: rgb(128, 132, 142);
+    --draft-editor: hsla(0, 0%, 100%, 0.0);
+    --modal-footer-bg-color-button-wrapper: rgb(43, 45, 49);
+    --red-danger-button-background: rgb(218, 55, 60);
+    --red-danger-button-background-hover: rgb(161, 40, 40);
+    --button-underline-color: transparent;
+    --download-modal-close-button: #4f5660;
+    --download-modal-close-button-hover: #2e3338;
+
+    --transparent: hsla(0, 0%, 0%, 0);
+    --silver-raw: rgb(192, 192, 192);
+    --saturation-factor: 1;
+    //scroll bars
+    --scrollbar-thin-thumb: hsl(225, 7.1%, 11%);
+    --scrollbar-thin-track: hsla(0, 0%, 0%, 0);
+    --scrollbar-auto-thumb: hsl(225, 7%, 11%);
+    --scrollbar-auto-track: hsl(220, 7%, 18%);
+
+    --link-decoration: none;
+
+    --input-placeholder-text-dark: rgb(135, 137, 140);
+
+    --saturation-factor: 1;
+    --brand-experiment-100: var(--brand-100);
+    --brand-experiment-200: var(--brand-200);
+    --brand-experiment-360: var(--brand-360);
+    --brand-experiment-400: var(--brand-400);
+    --brand-experiment: var(--brand-500);
+    --brand-experiment-500: var(--brand-500);
+    --brand-experiment-560: var(--brand-560);
+    --brand-experiment-600: var(--brand-600);
+
+
+    --deprecated-text-input-border-hover: rgb(2, 2, 2);
+    --upload-pfp-box-shadow: rgba(47, 49, 54, 0.6);
+    --premium-tier-2-purple-for-gradients: rgb(132, 71, 198);
+    --premium-tier-2-purple-for-gradients-2: rgb(185, 69, 193);
+    --premium-tier-2-pink-for-gradients: rgb(171, 93, 139);
+    --premium-tier-2-pink-for-gradients-2: rgb(182, 62, 193);
+    --premium-tier-0-header-gradient-1: rgb(54, 54, 187);
+    --premium-tier-0-header-gradient-2: rgb(70, 113, 232);
+    --premium-tier-0-header-gradient-3:rgb(131, 119, 235);
+    --premium-tier-0-header-gradient-4: rgb(232, 130, 241);
+    --premium-tier-0-header-gradient-5: rgb(223, 144, 176);
+
+
+    --profile-gradient-primary-color: rgb(35, 36, 40);
+    --profile-body-background-color: rgb(17, 18, 20);
+    --profile-body-divider-color: rgba(78, 80, 88, 0.48);
+
+
+
+    --quad-damage-gradient: radial-gradient(circle at center,
+            var(--white-500) 0% 24%, var(--pink-to-purple-100) 25%, var(--pink-to-purple-200) 35%,
+            var(--pink-to-purple-300) 45%, var(--pink-to-purple-400) 55%, var(--purple-to-blue) 65%,
+            var(--deep-purple-blue) 75%, var(--ultra-violet) 85%, var(--magenta) 100%);
+
+
+
+    --beserk-gradient: radial-gradient(circle at center, var(--green-2150) 0% 11.5%, var(--pure-red) 35% 85%, var(--black-500) 100%);
+
+    --invulnerability: radial-gradient(circle at center, var(--green-yellow) 0% 23.5%, var(--green-2050) 25% 80%, var(--green-2200) 80% 100%);
+    --regeneration-gradient: radial-gradient(circle at center, var(--light-cyan) 0% 25%, var(--cyan-raw) 25% 90%, var(--blue-1000) 90% 100%);
+
+
+
+
+    --decoration-to-avatar-ratio: 1.2;
+    --custom-avatar-avatar-decoration-border-position: calc((0.5 - var(--decoration-to-avatar-ratio)/2)*100%);
+    --custom-button-button-xl-width: 148px;
+    --custom-button-button-xl-height: 50px;
+    --custom-button-button-lg-width: 130px;
+    --custom-button-button-lg-height: 44px;
+    --custom-button-button-md-width: 96px;
+    --custom-button-button-md-height: 38px;
+    --custom-button-button-sm-width: 60px;
+    --custom-button-button-sm-height: 32px;
+    --custom-button-button-tn-height: 24px;
+    --custom-button-button-tn-width: 52px;
+    --custom-button-link-underline-width: 1px;
+    --custom-button-link-underline-offset: 1px;
+    --custom-button-link-underline-stop: calc(var(--custom-button-link-underline-width) + var(--custom-button-link-underline-offset));
+    --custom-button-filled-hover: 0.1;
+    --custom-button-filled-active: 0.2;
+    --custom-button-transition-duration: 170ms;
+    --custom-modal-min-width-large: 800px;
+}
+
+
+//special vars for sizings
+:root {
+    --spacing-4: 4px;
+    --spacing-8: 8px;
+    --spacing-12: 12px;
+    --spacing-16: 16px;
+    --spacing-24: 24px;
+    --spacing-32: 32px;
+    --spacing-40: 40px;
+    --spacing-48: 48px;
+    --spacing-56: 56px;
+    --spacing-64: 64px;
+    --spacing-72: 72px;
+    --spacing-80: 80px;
+    --spacing-96: 96px;
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-xxl: 32px;
+    --radius-round: 2147483647px;
+
+    --page-max-width: 1260px;
+    --page-max-width-med: 1024px;
+    --num-grid-columns: 4;
+    --page-gutter: 24px;
+    --section-spacing: 56px;
+
+
+
+
+
+
+    --brand: #5865f2;
+    --brand-gradient: linear-gradient(90deg,#8ea1e1,#7289da);
+    --greyple: #99aab5;
+    --dark-not-black: #2c2f33;
+    --focus-border: #00b0f4;
+    --status-green: #43b581;
+    --text-link: #00b0f4;
+    --off-white: #f6f6f6;
+    --white: #fff;
+    --not-quite-black: #23272a;
+    --not-quite-black-rgb: 35,39,42;
+    --black: #000;
+    --ekko-red: #de2761;
+}
+
+
+
+
+// unStyle ReactDom Route LinK
+.unStyle {
+    text-decoration: none;
+}
+
+
+//is-hidden
+
+.is-hidden {
+    display: none !important;
+}
+
+.is-visible{
+    visibility: hidden !important;
+}
+
+.look-filled-button-contents {
+    margin: 0 auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.global-button-contents {
+    --button--underline-color: transparent;
+    background-image: linear-gradient(0deg, transparent, transparent 1px, var(--button--underline-color) 0, var(--button--underline-color) 2px, transparent 0);
+    outline: 0;
+}
+
+.nitro-snack-bar-bttn .global-button-contents{
+    --button--underline-color: transparent;
+    background-image: -webkit-gradient(linear,left bottom,left top,from(transparent),color-stop(transparent),color-stop(var(--button--underline-color)),color-stop(var(--button--underline-color)),to(transparent));
+    background-image: linear-gradient(0deg,transparent,transparent var(--custom-button-link-underline-offset),var(--button--underline-color) var(--custom-button-link-underline-offset),var(--button--underline-color) var(--custom-button-link-underline-stop),transparent var(--custom-button-link-underline-stop));
+}
+
+
+.user-sub-modal-edit-pfp-cancel-button:hover {
+    .global-button-contents {
+        --button--underline-color: var(--white-500);
+    }
+}
+
+.usm-field-list-item-reveal-button:hover {
+    .global-button-contents {
+        --button--underline-color: var(--text-link);
+    }
+}
+
+.theme-dark .sbm-footer-close-button:hover, .theme-dark .bsspm-footer-close-button:hover, .npsm-back-button:hover, .sbm-back-button:hover{
+    .global-button-contents {
+        --button--underline-color: var(--white-500);
+    }
+}
+
+.theme-dark .bsspm-action-icon-wrapper{
+    background: var(--primary-500);
+}
+.theme-dark .bsspm-action-icon-wrapper.disabled{
+    opacity: 0.5;
+}
+
+.theme-dark .rounded-checkbox-ver{
+    border-color: var(--primary-400);
+}
+
+.usm-field-list-item-remove-phone-number-button:hover {
+    .global-button-contents {
+        --button--underline-color: var(--white-500);
+    }
+}
+
+.user-sub-modal-cancel-button:hover {
+    .global-button-contents {
+        --button--underline-color: var(--white-500);
+    }
+}
+
+.user-sub-modal-remv-phone-cancel-button:hover {
+    .global-button-contents {
+        --button--underline-color: var(--white-500);
+    }
+}
+
+.user-sub-modal-acc-rmv-cancel-button:hover {
+    .global-button-contents {
+        --button--underline-color: var(--white-500);
+    }
+}
+
+.forgotPassword-button-wrapper:hover {
+    .global-button-contents {
+        --button--underline-color: var(--text-link);
+    }
+}
+.needAnAccount-button:hover {
+    .global-button-contents {
+        --button--underline-color: var(--text-link);
+    }
+}
+
+.snack-bar-reset-button:hover{
+    .global-button-contents {
+        --button--underline-color: var(--white-500);
+    }
+}
+
+.blank-blob{
+    border-radius: 0.5rem;
+}
+.blank-blob{
+    flex: 0 0 auto;
+    height: 1rem;
+    line-height: 1.375rem;
+    vertical-align: middle;
+    margin-top: 0.1875rem;
+    background-color: var(--text-normal);
+}
+.blank-blob+.blank-blob{
+    margin-left: 0.25rem;
+}
+
+.blank-blob-banner-pro{
+    flex: 0 0 auto;
+    height: 7.5rem;
+    line-height: 1.375rem;
+    vertical-align: middle;
+    margin-top: 0.1875rem;
+    background-color: var(--text-normal);
+    opacity: 0.08;
+}
+
+.blank-attachment-container {
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+}
+
+.blank-attachment {
+    background-color: var(--text-normal);
+    margin-top: 0.125rem;
+    height: 120px;
+    width: 240px;
+    border-radius: 6px;
+}
+
+
+.theme-dark .stsnm-banner-header-icon, .theme-light .stsnm-banner-header-icon{
+    color: var(--white-500);
+}
+
+.theme-dark .guildIconAvatarSvgMasked{
+    background-color: var(--background-secondary-alt);
+}
+
+.theme-dark .guild-search-bar-box {
+    background-color: var(--primary-500);
+    -webkit-box-shadow: 0 2px 5px 0 var(--black-500-02);
+    box-shadow: 0 2px 5px 0 var(--black-500-02);
+}
+.theme-dark .guild-search-bar-box .guild-search-bar-input::placeholder{
+    color: var(--white-500-hsl-03);
+}
+
+.theme-dark .guild-search-mag-icon{
+    color: vae(--white-500-hsl-03);
+}
+
+.theme-light {
+    --light-elevation-border: 0px 0px 0px 1px hsla(210, 9.3%, 78.8%, 0.3);
+    --light-elevation-high: 0px 2px 10px 0px hsla(0, 0%, 0%, 0.1);
+    --modal-background: var(--white-500);
+    --header-primary: var(--primary-860);
+    --header-secondary: var(--primary-500);
+    --interactive-normal: var(--primary-500);
+    --interactive-hover: var(--primary-600);
+    --scrollbar-thin-thumb: var(--primary-500-hsl-30);
+    --scrollbar-thin-track: var(--transparent);
+    --scrollbar-auto-scrollbar-color-thumb: var(--primary-700);
+    --scrollbar-auto-scrollbar-color-track: var(--primary-630);
+    --scrollbar-auto-thumb: var(--primary-600);
+    --scrollbar-auto-track: var(--primary-860);
+
+
+    --background-modifier-accent: var(--primary-400-hsl-024);
+    --background-modifier-active: var(--primary-400-hsl-02);
+    --background-modifier-hover: var(--primary-400-hsl-016);
+    --background-modifier-selected: var(--primary-400-hsl-024);
+    --background-secondary-alt: var(--primary-160);
+
+    --background-primary: var(--white-500);
+    --background-secondary: var(--primary-130);
+    --background-secondary-alt: var(--primary-160);
+    --background-tertiary: var(--primary-200);
+    --text-brand: var(--brand-500);
+    --text-danger: var(--red-500);
+    --text-normal: var(--primary-600);
+    --text-positive: var(--green-430);
+    --text-muted: var(--primary-460);
+    --text-link: var(--blue-430);
+    --text-link-low-saturation: var(--blue-430);
+    --text-warning: var(--yellow-430);
+    --status-danger: var(--red-430);
+
+    --modal-footer-background: var(--primary-130);
+    --button-secondary-background: var(--primary-430);
+    --button-secondary-background-active: var(--primary-530);
+    --button-secondary-background-disabled: var(--primary-430);
+    --button-secondary-background-hover: var(--primary-500);
+
+
+    --input-background: var(--primary-200);
+    --input-placeholder-text: var(--primary-560);
+
+
+    --font-weight-semibold-1x-light-theme: 600;
+}
+
+
+
+.theme-dark {
+    // //button colors
+    --activity-card-background:var(--primary-700);
+    --button-outline-danger-background: var(--white-500);
+    --button-outline-danger-background-active: var(--red-460);
+    --button-outline-danger-background-hover: var(--red-430);
+    --button-outline-danger-border: var(--red-400);
+    --button-outline-danger-border-active: var(--red-430);
+    --button-outline-danger-border-hover: var(--red-430);
+    --button-outline-danger-text: var(--white-500);
+    --button-outline-danger-text-active: var(--white-500);
+    --button-outline-danger-text-hover: var(--white-500);
+
+    --button-secondary-background: var(--primary-500);
+    --button-secondary-background-active: var(--primary-400);
+    --button-secondary-background-disabled: var(--primary-500);
+    --button-secondary-background-hover: var(--primary-430);
+
+    --deprecated-store-bg: var(--primary-600);
+
+    --button-danger-background: var(--red-430);
+    --button-danger-background-hover: var(--red-500);
+    --button-danger-background-active: var(--red-530);
+    --button-outline-positive-background-hover: var(--green-430);
+    --button-outline-positive-border: var(--green-360);
+    --button-outline-positive-border-hover: var(--green-430);
+    --button-positive-background: var(--green-430);
+    --button-positive-background-hover: var(--green-500);
+    --button-positive-background-hover-2: var(--green-501);
+    --button-positive-background-active: var(--green-530);
+    --button-outline-positive-background-active: var(--green-530);
+    --button-outline-positive-border-active: var(--green-530);
+    --status-positive-background: var(--green-430);
+
+    // //scroll bars
+
+    --scrollbar-auto-scrollbar-color-thumb: var(--primary-730);
+    --scrollbar-auto-scrollbar-color-track: var(--primary-630);
+    // //var to var
+    --brand-experiment-100: var(--brand-100);
+    --brand-experiment-200: var(--brand-200);
+    --brand-experiment-360: var(--brand-360);
+    --brand-experiment-400: var(--brand-400);
+    --brand-experiment: var(--brand-500);
+    --brand-experiment-500: var(--brand-500);
+    --brand-experiment-560: var(--brand-560);
+    --brand-experiment-600: var(--brand-600);
+    --background-primary: var(--primary-600);
+    --background-secondary: var(--primary-630);
+    --background-secondary-alt: var(--primary-660);
+    --background-modifier-accent: var(--primary-500-48);
+    --background-modifier-hover: var(--primary-500-hsl-30);
+    --background-modifier-selected: var(--primary-500-hsl-60);
+    --background-modifier-active: var(--primary-500-hsl-48);
+    --background-tertiary: var(--primary-700);
+    --background-accent: var(--primary-530);
+    --background-loading-screen: var(--primary-2000);
+    --control-brand-foreground: var(--brand-360);
+    --control-brand-foreground-green-border: var(--green-1600);
+    --control-brand-foreground-green-check: var(--green-1650);
+    --channels-default: var(--primary-360);
+    --header-secondary: var(--primary-330);
+    --interactive-normal: var(--primary-330);
+    --interactive-hover: var(--primary-230);
+    --interactive-active: var(--white-500);
+    --interactive-muted: var(--primary-500);
+    --text-link: var(--blue-345);
+    --text-muted: var(--primary-360);
+    --text-normal: var(--primary-230);
+    --text-danger: var(--red-345);
+    --text-warning: var(--yellow-300);
+    --text-positive: var(--green-330);
+    --status-positive-text: var(--white-500);
+    --info-danger-foreground: var(--red-400);
+    --info-positive-foreground: var(--green-360);
+    --input-background: var(--primary-700);
+    --deprecated-text-input-bg: var(--primary-700);
+    --deprecated-text-input-border: var(--black-500-hsl-03);
+    --input-placeholder-text: var(--primary-560);
+    --status-warning-background: var(--yellow-300);
+    --status-danger: var(--red-400);
+    --gemstone: var(--purple-100);
+    --guild-icon-border: var(--primary-150);
+    --mention-foreground: var(--brand-260);
+    --mention-background: var(--brand-500-hsl);
+    --channeltextarea-background: var(--primary-800-lvl-2);
+    --channeltextarea-placeholder: var(--primary-430);
+    --background-message-hover: var(--primary-505);
+    --guild-boosting-blue: var(--blue-350);
+    --guild-boosting-purple: var(--purple-110);
+    --server-error-red: var(--red-1050);
+    --strife-toggle-switch-on: var(--green-600);
+    --strife-toggle-switch-off: var(--gray-500);
+    --strife-green-circle: var(--green-2050);
+    --strife-nitro-logo-green-pre: var(--green-1700);
+    --strife-nitro-logo-green-post: var(--green-1750);
+    --glow-purple-pre: var(--purple-1000);
+    --glow-purple-post: var(--purple-1050);
+    --blood-red: var(--red-2500);
+    --pure-red: var(--red-2550);
+    // //special 
+    --secret-pink: var(--pink-1000);
+    --green-nitro-from: var(--dark-blurred-cyan);
+    --green-nitro-to: var(--green-1675);
+    // //online statuses
+    --svg-online-status-online: var(--green-2000);
+    --svg-online-status-dnd: var(--red-2000);
+    --svg-online-status-blocked: var(--red-2000);
+    --svg-online-status-offline: var(--gray-500);
+    --svg-online-status-invisible: var(--gray-500);
+    --svg-online-status-idle: var(--yellow-1000);
+
+    // //default group chat icon avatar colors
+    --group-chat-icon-color-1: var(--red-2600);
+    --group-chat-icon-color-2: var(--blue-1100);
+    --group-chat-icon-color-3: var(--orange-100);
+    --group-chat-icon-color-4: var(--yellow-1100);
+    --group-chat-icon-color-5: var(--green-2300);
+    --group-chat-icon-color-6: var(--purple-1100);
+    --group-chat-icon-color-7: var(--red-orange);
+    --group-chat-icon-color-8: var(--secret-pink);
+    --group-chat-icon-color-9: var(--teal-100);
+    --group-chat-icon-color-10: var(--green-2200);
+
+    // //default user icon avatar colors
+    --user-avatar-color-1: var(--red-3000);
+    --user-avatar-color-2: var(--brand-experiment);
+    --user-avatar-color-3: var(--gray-600);
+    --user-avatar-color-4: var(--yellow-1200);
+    --user-avatar-color-5: var(--green-2400);
+    --user-avatar-color-6: var(--blue-raw);
+    --user-avatar-color-7: var(--purple-200);
+    --user-avatar-color-8: var(--secret-pink);
+    --user-avatar-color-9: var(--cyan-raw);
+    --user-avatar-color-10: var(--green-2200);
+    --user-avatar-color-7-deprecated: var(--black-raw);
+
+
+    --modal-background: var(--primary-600);
+    --modal-footer-background: var(--primary-630);
+
+    --premium-upc-strife-nitro-badge: rgba(32, 34, 37, 0.8);
+
+
+    --profile-gradient-primary-color: var(--background-secondary-alt);
+    --profile-gradient-secondary-color: var(--background-secondary-alt);
+    --profile-gradient-overlay-color: transparent;
+    --profile-gradient-button-color: var(--button-secondary-background);
+    --profile-avatar-border-color: var(--background-secondary-alt);
+    --profile-message-input-border-color: var(--background-modifier-accent);
+    --profile-body-background-color: var(--background-floating);
+    --profile-body-background-hover: var(--background-modifier-hover);
+    --profile-body-divider-color: var(--background-modifier-accent);
+    --profile-role-pill-background-color: var(--background-secondary-alt);
+    --profile-role-pill-border-color: var(--interactive-normal);
+
+
+
+
+}
+
+
+.theme-dark.custom-theme-background {
+    --bg-overlay-color: 0 0 0;
+    --bg-overlay-color-inverse: 255 255 255;
+    --bg-overlay-opacity-1: 0.85;
+    --bg-overlay-opacity-2: 0.8;
+    --bg-overlay-opacity-3: 0.7;
+    --bg-overlay-opacity-4: 0.5;
+    --bg-overlay-opacity-5: 0.4;
+    --bg-overlay-opacity-6: 0.1;
+    --bg-overlay-opacity-hover: 0.5;
+    --bg-overlay-opacity-hover-inverse: 0.08;
+    --bg-overlay-opacity-active: 0.45;
+    --bg-overlay-opacity-active-inverse: 0.1;
+    --bg-overlay-opacity-selected: 0.4;
+    --bg-overlay-opacity-selected-inverse: 0.15;
+    --bg-overlay-opacity-chat: 0.8;
+    --bg-overlay-opacity-home: 0.85;
+    --bg-overlay-opacity-home-card: 0.8;
+    --bg-overlay-opacity-app-frame: var(--bg-overlay-opacity-4)
+}
+
+.theme-light.custom-theme-background {
+    --bg-overlay-color: 255 255 255;
+    --bg-overlay-color-inverse: 0 0 0;
+    --bg-overlay-opacity-1: 0.9;
+    --bg-overlay-opacity-2: 0.8;
+    --bg-overlay-opacity-3: 0.7;
+    --bg-overlay-opacity-4: 0.6;
+    --bg-overlay-opacity-5: 0.3;
+    --bg-overlay-opacity-6: 0.15;
+    --bg-overlay-opacity-hover: 0.7;
+    --bg-overlay-opacity-hover-inverse: 0.02;
+    --bg-overlay-opacity-active: 0.65;
+    --bg-overlay-opacity-active-inverse: 0.03;
+    --bg-overlay-opacity-selected: 0.6;
+    --bg-overlay-opacity-selected-inverse: 0.04;
+    --bg-overlay-opacity-chat: 0.9;
+    --bg-overlay-opacity-home: 0.7;
+    --bg-overlay-opacity-home-card: 0.9;
+    --bg-overlay-opacity-app-frame: var(--bg-overlay-opacity-5)
+}
+
+.custom-theme-background {
+    --bg-overlay-1: linear-gradient(rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-1)), rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-1))) fixed 0 0/cover, var(--custom-theme-background) fixed 0 0/cover;
+    --bg-overlay-2: linear-gradient(rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-2)), rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-2))) fixed 0 0/cover, var(--custom-theme-background) fixed 0 0/cover;
+    --bg-overlay-3: linear-gradient(rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-3)), rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-3))) fixed 0 0/cover, var(--custom-theme-background) fixed 0 0/cover;
+    --bg-overlay-4: linear-gradient(rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-4)), rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-4))) fixed 0 0/cover, var(--custom-theme-background) fixed 0 0/cover;
+    --bg-overlay-5: linear-gradient(rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-5)), rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-5))) fixed 0 0/cover, var(--custom-theme-background) fixed 0 0/cover;
+    --bg-overlay-6: linear-gradient(rgb(var(--bg-overlay-color-inverse)/var(--bg-overlay-opacity-6)), rgb(var(--bg-overlay-color-inverse)/var(--bg-overlay-opacity-6))) fixed 0 0/cover, var(--custom-theme-background) fixed 0 0/cover;
+    --bg-overlay-hover: linear-gradient(rgb(var(--bg-overlay-color-inverse)/var(--bg-overlay-opacity-hover-inverse)), rgb(var(--bg-overlay-color-inverse)/var(--bg-overlay-opacity-hover-inverse))) fixed 0 0/cover, linear-gradient(rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-hover)), rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-hover))) fixed 0 0/cover, var(--custom-theme-background) fixed 0 0/cover;
+    --bg-overlay-active: linear-gradient(rgb(var(--bg-overlay-color-inverse)/var(--bg-overlay-opacity-active-inverse)), rgb(var(--bg-overlay-color-inverse)/var(--bg-overlay-opacity-active-inverse))) fixed 0 0/cover, linear-gradient(rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-active)), rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-active))) fixed 0 0/cover, var(--custom-theme-background) fixed 0 0/cover;
+    --bg-overlay-selected: linear-gradient(rgb(var(--bg-overlay-color-inverse)/var(--bg-overlay-opacity-selected-inverse)), rgb(var(--bg-overlay-color-inverse)/var(--bg-overlay-opacity-selected-inverse))) fixed 0 0/cover, linear-gradient(rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-selected)), rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-selected))) fixed 0 0/cover, var(--custom-theme-background) fixed 0 0/cover;
+    --bg-overlay-chat: linear-gradient(rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-chat)), rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-chat))) fixed 0 0/cover, var(--custom-theme-background) fixed 0 0/cover;
+    --bg-overlay-home: linear-gradient(rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-home)), rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-home))) fixed 0 0/cover, var(--custom-theme-background) fixed 0 0/cover;
+    --bg-overlay-home-card: linear-gradient(rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-home-card)), rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-home-card))) fixed 0 0/cover, var(--custom-theme-background) fixed 0 0/cover;
+    --bg-overlay-app-frame: linear-gradient(rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-app-frame)), rgb(var(--bg-overlay-color)/var(--bg-overlay-opacity-app-frame))) fixed 0 0/cover, var(--custom-theme-background) fixed 0 0/cover
+}
+
+.theme-dark .channel-nav-bar-container-wrapper {
+    background: var(--bg-overlay-3, var(--background-secondary));
+}
+
+.def-channel-item:hover .def-channel-content {
+    background: var(--bg-overlay-hover, var(--background-modifier-hover));
+}
+
+.def-channel-item.selected-channel {
+
+    .def-channel-content {
+        background: var(--bg-overlay-selected, var(--background-modifier-selected));
+    }
+
+    .default-channel-name {
+        color: var(--interactive-active);
+        font-weight: var(--font-weight-semibold-1x-light-theme, 500);
+    }
+}
+
+
+.theme-dark .user-nav-bar {
+    background: var(--bg-overlay-1, var(--background-secondary-alt));
+}
+
+.theme-light .user-nav-bar {
+    background: var(--bg-overlay-3, var(--background-secondary-alt));
+}
+
+// .dm-members-index-container{
+//     background: var(--bg-overlay-chat,var(--background-secondary));
+// }
+
+
+.theme-dark .user-sub-modal {
+    -webkit-box-shadow: var(--dark-elevation-border), var(--dark-elevation-high);
+    box-shadow: var(--dark-elevation-border), var(--dark-elevation-high);
+}
+
+.theme-dark .user-sub-modal-button-footer-container {
+    -webkit-box-shadow: inset 0 1px 0 var(--primary-630-hsl);
+    box-shadow: inset 0 1px 0 var(--primary-630-hsl);
+}
+
+.theme-dark .sbm-button-footer-container, .theme-dark .npsm-button-footer-container{
+    -webkit-box-shadow: inset 0 1px 0 var(--primary-630-hsl);
+    box-shadow: inset 0 1px 0 var(--primary-630-hsl);
+}
+
+.theme-dark .create-server-footer-button-container,
+.theme-dark .create-server-footer-button-container-2,
+.theme-dark .create-server-footer-button-container-3 {
+    -webkit-box-shadow: inset 0 1px 0 var(--primary-630-hsl);
+    box-shadow: inset 0 1px 0 var(--primary-630-hsl);
+}
+
+.theme-dark .join-server-back-button:hover {
+    .global-button-contents {
+        --button--underline-color: var(--white-500);
+    }
+}
+
+
+.theme-light .create-server-footer-button-container,
+.theme-light .create-server-footer-button-container-2,
+.theme-light .create-server-footer-button-container-3 {
+    -webkit-box-shadow: inset 0 1px 0 var(--primary-100-hsl-06);
+    box-shadow: inset 0 1px 0 var(--primary-100-hsl-06);
+}
+
+
+
+.theme-light .join-server-back-button:hover {
+    .global-button-contents {
+        --button--underline-color: var(--primary-400);
+    }
+}
+
+.theme-dark .chat-input-form:before{
+    background: -webkit-gradient(linear,left top,left bottom,from(var(--primary-2050)),to(var(--background-primary)));
+    background: linear-gradient(180deg,var(--primary-2050) 0,var(--background-primary));
+}
+
+.theme-dark .nitro-header-nav-bar{
+    background: var(--bg-overlay-2,var(--background-primary));
+}
+
+
+.theme-dark .nitro-header-nav-bar-children::after{
+    background: -webkit-gradient(linear,left top,right top,from(var(--primary-2050)),to(var(--background-primary)));
+    background: linear-gradient(90deg,var(--primary-2050) 0,var(--background-primary));
+}
+
+#root,
+body {
+    text-rendering: optimizeLegibility;
+    forced-color-adjust: none;
+    //pre
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    outline: 0;
+
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    font-family: var(--global-font);
+    background-color: rgb(30, 31, 34);
+    // background-color: var(--background-tertiary);
+
+}
+
+// #root,
+// .app-puller,
+// body {
+//     background: var(--bg-overlay-app-frame, var(--background-tertiary));
+//     text-rendering: optimizeLegibility
+// }
+
+.app-puller {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-family: var(--global-font);
+    height: 100%;
+    width: 100%;
+
+}
+
+
+
+.app-puller.shrink-app {
+    background-color: transparent;
+    -webkit-animation-name: shrinkAppTransition;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
+    animation-name: shrinkAppTransition;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    // transform: scale(0.93) translateZ(0px);
+}
+
+
+.app-puller.grow-app {
+    background-color: transparent;
+    -webkit-animation-name: growAppTransition;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-iteration-count: 1;
+    animation-name: growAppTransition;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    transform: scale(0.93) translateZ(0px);
+}
+
+
+@keyframes shrinkAppTransition {
+    // 0% {
+    //   transform: scale(0.93) translateZ(0px);
+
+    // }
+
+    // 100% {
+    //   transform: scale(1) translateZ(0px);
+    // }
+
+    0% {
+        transform: scale(0.99) translateZ(0px);
+        -webkit-transform: scale(0.99) translateZ(0px);
+
+
+    }
+
+    25% {
+        transform: scale(0.97) translateZ(0px);
+        -webkit-transform: scale(0.97) translateZ(0px);
+
+
+    }
+
+    50% {
+        transform: scale(0.95) translateZ(0px);
+        -webkit-transform: scale(0.95) translateZ(0px);
+
+    }
+
+    75% {
+        transform: scale(0.94) translateZ(0px);
+        -webkit-transform: scale(0.94) translateZ(0px);
+
+
+    }
+
+    100% {
+        transform: scale(0.93) translateZ(0px);
+        -webkit-transform: scale(0.93) translateZ(0px);
+
+    }
+}
+
+@-webkit-keyframes shrinkAppTransition {
+    0% {
+        transform: scale(0.99) translateZ(0px);
+        -webkit-transform: scale(0.99) translateZ(0px);
+
+
+    }
+
+    25% {
+        transform: scale(0.97) translateZ(0px);
+        -webkit-transform: scale(0.97) translateZ(0px);
+
+
+    }
+
+    50% {
+        transform: scale(0.95) translateZ(0px);
+        -webkit-transform: scale(0.95) translateZ(0px);
+
+
+    }
+
+    75% {
+        transform: scale(0.94) translateZ(0px);
+        -webkit-transform: scale(0.94) translateZ(0px);
+
+
+    }
+
+    100% {
+        transform: scale(0.93) translateZ(0px);
+        -webkit-transform: scale(0.93) translateZ(0px);
+
+    }
+}
+
+@keyframes growAppTransition {
+
+
+    0% {
+        transform: scale(0.93) translateZ(0px);
+        -webkit-transform: scale(0.93) translateZ(0px);
+
+
+    }
+
+    25% {
+        transform: scale(0.94) translateZ(0px);
+        -webkit-transform: scale(0.94) translateZ(0px);
+
+
+    }
+
+    50% {
+        transform: scale(0.95) translateZ(0px);
+        -webkit-transform: scale(0.95) translateZ(0px);
+
+    }
+
+    75% {
+        transform: scale(0.97) translateZ(0px);
+        -webkit-transform: scale(0.97) translateZ(0px);
+
+
+    }
+
+    100% {
+
+        transform: scale(0.99) translateZ(0px);
+        -webkit-transform: scale(0.99) translateZ(0px);
+
+    }
+}
+
+@-webkit-keyframes growAppTransition {
+    0% {
+        transform: scale(0.93) translateZ(0px);
+        -webkit-transform: scale(0.93) translateZ(0px);
+
+
+    }
+
+    25% {
+        transform: scale(0.94) translateZ(0px);
+        -webkit-transform: scale(0.94) translateZ(0px);
+
+
+    }
+
+    50% {
+        transform: scale(0.95) translateZ(0px);
+        -webkit-transform: scale(0.95) translateZ(0px);
+
+    }
+
+    75% {
+        transform: scale(0.97) translateZ(0px);
+        -webkit-transform: scale(0.97) translateZ(0px);
+
+
+    }
+
+    100% {
+
+        transform: scale(0.99) translateZ(0px);
+        -webkit-transform: scale(0.99) translateZ(0px);
+
+    }
+}
+
+
+
+//upc themes for each user
+.user-upc-profile-colors-0 {
+    --profile-gradient-primary-color: var(--background-secondary-alt);
+    --profile-gradient-secondary-color: var(--background-secondary-alt);
+    --profile-gradient-overlay-color: transparent;
+    --profile-gradient-button-color: var(--button-secondary-background);
+    --profile-avatar-border-color: var(--background-secondary-alt);
+    --profile-message-input-border-color: var(--background-modifier-accent);
+    --profile-body-background-color: var(--background-floating);
+    --profile-body-background-hover: var(--background-modifier-hover);
+    --profile-body-divider-color: var(--background-modifier-accent);
+    --profile-role-pill-background-color: var(--background-secondary-alt);
+    --profile-role-pill-border-color: var(--interactive-normal);
+}
+
+.user-upc-profile-colors-1 {
+    --profile-gradient-primary-color: rgb(224, 37, 0);
+    --profile-gradient-secondary-color: hsla(0, 0%, 0%, 1);
+    --profile-gradient-button-color: rgb(166, 0, 0);
+    --profile-gradient-overlay-color: hsla(0, 0%, 0%, 0.6);
+    --profile-body-background-color: hsla(0, 0%, 0%, 0.45);
+    --profile-body-background-hover: hsla(0, 0%, 100%, 0.16);
+    --profile-body-divider-color: hsla(0, 0%, 100%, 0.24);
+    --profile-avatar-border-color: rgb(89, 15, 0);
+    --profile-message-input-border-color: hsl(7.7, 90.03%, 45.72%);
+    --profile-note-background-color: hsla(0, 0%, 0%, 0.3);
+    --profile-role-pill-background-color: hsla(228, 6.67%, 14.71%, 0.5);
+    // --profile-role-pill-border-color: hsla(0, 0%, 100%, 0.2);
+    --profile-role-pill-border-color: hsla(0, 82.45%, 49.56%, 0.88);
+}
+
+
+
+.user-upc-profile-colors-2 {
+
+    --profile-gradient-primary-color: rgb(93, 59, 246);
+    --profile-gradient-secondary-color: hsl(235, 56.1%, 36.46%);
+    --profile-gradient-overlay-color: hsla(0, 0%, 0%, 0.6);
+    --profile-gradient-button-color: rgb(8, 29, 152);
+    --profile-avatar-border-color: hsl(253, 80%, 33%, );
+    --profile-message-input-border-color: hsl(252, 100%, 50%);
+    --profile-body-background-color: hsla(0, 0%, 0%, 0.45);
+    --profile-body-background-hover: hsla(0, 0%, 100%, 0.16);
+    --profile-body-divider-color: hsla(0, 0%, 100%, 0.24);
+    --profile-role-pill-background-color: hsla(0, 0%, 0%, 0.3);
+    --profile-role-pill-border-color: var(--brand-experiment);
+
+}
+
+.user-upc-profile-colors-3 {
+
+    --profile-gradient-primary-color: rgb(150, 150, 150);
+    --profile-gradient-secondary-color: rgb(29, 29, 29);
+    --profile-gradient-overlay-color: hsla(0, 0%, 0%, 0.45);
+    --profile-avatar-border-color: var(--background-secondary-alt);
+    --profile-gradient-button-color: var(--button-secondary-background);
+    --profile-message-input-border-color: rgb(103, 103, 103);
+    --profile-body-background-color: hsla(0, 0%, 0%, 0.45);
+    --profile-body-background-hover: hsla(0, 0%, 100%, 0.16);
+    --profile-body-divider-color: hsla(0, 0%, 100%, 0.24);
+    --profile-role-pill-background-color: var(--background-secondary-alt);
+    --profile-role-pill-border-color: var(--interactive-normal);
+    --profile-note-background-color: var(--black-500-hsl-03);
+
+}
+
+
+.user-upc-profile-colors-4 {
+
+    --profile-gradient-primary-color: rgb(209, 133, 8);
+    --profile-gradient-secondary-color: hsl(35.43, 78.41%, 23.64%);
+    --profile-gradient-button-color: hsla(44, 12%, 24.5%, 1);
+    --profile-gradient-overlay-color: hsla(0, 0%, 0%, 0.6);
+    --profile-body-background-color: var(--black-500-hsl-50);
+    --profile-body-background-hover: hsla(0, 0%, 100%, 0.16);
+    --profile-body-divider-color: hsla(0, 0%, 100%, 0.24);
+    --profile-avatar-border-color: hsla(40, 12%, 9.8%, 1);
+    --profile-message-input-border-color: hsl(43, 73.36%, 41.34%);
+    --profile-note-background-color: hsla(0, 0%, 0%, 0.3);
+    --profile-role-pill-background-color: hsla(228, 6.67%, 14.71%, 0.5);
+    --profile-role-pill-border-color: var(--gold-raw);
+
+}
+
+.user-upc-profile-colors-5 {
+
+    --profile-gradient-primary-color: hsla(165, 67.2%, 35.9%, 1);
+    --profile-gradient-secondary-color: hsla(152, 88.2%, 46.5%, 1);
+    --profile-gradient-button-color: hsla(158, 100%, 12.2%, 1);
+    --profile-gradient-overlay-color: hsla(0, 0%, 0%, 0.6);
+    --profile-body-background-color: hsla(0, 0%, 0%, 0.6);
+    --profile-body-background-hover: hsla(0, 0%, 100%, 0.16);
+    --profile-body-divider-color: hsla(0, 0%, 100%, 0.24);
+    --profile-avatar-border-color: hsla(165, 67.1%, 14.3%, 1);
+    --profile-message-input-border-color: hsla(154, 55.6%, 38.8%, 1);
+    --profile-note-background-color: hsla(0, 0%, 0%, 0.3);
+    --profile-role-pill-background-color: hsla(228, 6.67%, 14.71%, 0.5);
+    --profile-role-pill-border-color: hsl(120.21, 100%, 50%);
+
+}
+
+
+
+
+.user-upc-profile-colors-6 {
+
+    --profile-gradient-primary-color: hsl(214, 100%, 46.26%);
+    --profile-gradient-secondary-color: hsl(240, 83.42%, 18.46%);
+    --profile-gradient-button-color: hsla(214, 64.9%, 33.5%, 1);
+    --profile-gradient-overlay-color: hsla(0, 0%, 0%, 0.6);
+    --profile-body-background-color: hsla(0, 0%, 0%, 0.45);
+    --profile-body-background-hover: hsla(0, 0%, 100%, 0.16);
+    --profile-body-divider-color: hsla(0, 0%, 100%, 0.24);
+    --profile-avatar-border-color: hsla(214, 64.7%, 13.3%, 1);
+    --profile-message-input-border-color: hsl(238, 81.29%, 51.14%);
+    --profile-note-background-color: hsla(0, 0%, 0%, 0.3);
+    --profile-role-pill-background-color: hsla(228, 6.67%, 14.71%, 0.5);
+    --profile-role-pill-border-color: var(--brand-experiment);
+
+}
+
+
+
+.user-upc-profile-colors-7 {
+
+    --profile-gradient-primary-color: hsla(265, 100%, 50%, 1);
+    --profile-gradient-secondary-color: var(--ultra-violet);
+    --profile-gradient-button-color: hsla(254, 100%, 61.6%, 1);
+    --profile-gradient-overlay-color: hsla(0, 0%, 0%, 0.6);
+    --profile-body-background-color: hsla(0, 0%, 0%, 0.45);
+    --profile-body-background-hover: hsla(0, 0%, 100%, 0.16);
+    --profile-body-divider-color: hsla(0, 0%, 100%, 0.24);
+    --profile-avatar-border-color: hsla(265, 100%, 20%, 1);
+    --profile-note-background-color: hsla(0, 0%, 0%, 0.3);
+    --profile-role-pill-background-color: hsla(228, 6.67%, 14.71%, 0.5);
+    --profile-role-pill-border-color: var(--purple-200);
+    --profile-message-input-border-color: hsla(269, 64.2%, 41.6%, 1);
+
+}
+
+
+
+.user-upc-profile-colors-8 {
+    --profile-gradient-primary-color: hsla(295, 70.4%, 45.1%, 1);
+    --profile-gradient-secondary-color: hsla(279, 65.4%, 73.9%, 1);
+    --profile-gradient-button-color: hsla(293, 100%, 28.8%, 1);
+    --profile-gradient-overlay-color: hsla(0, 0%, 0%, 0.6);
+    --profile-body-background-color: hsla(0, 0%, 0%, 0.45);
+    --profile-body-background-hover: hsla(0, 0%, 100%, 0.16);
+    --profile-body-divider-color: hsla(0, 0%, 100%, 0.24);
+    --profile-avatar-border-color: hsla(294, 71.4%, 17.8%, 1);
+    --profile-message-input-border-color: hsla(276, 20.9%, 53.9%, 1);
+    --profile-note-background-color: hsla(0, 0%, 0%, 0.3);
+    --profile-role-pill-background-color: hsla(228, 6.67%, 14.71%, 0.5);
+    --profile-role-pill-border-color: var(--pink-1000);
+
+}
+
+
+
+.user-upc-profile-colors-9 {
+    --profile-gradient-primary-color: rgb(104, 12, 255);
+    --profile-gradient-secondary-color: hsla(196, 100%, 51.4%, 1);
+    --profile-gradient-button-color: hsla(180, 17.6%, 23.3%, 1);
+    --profile-gradient-overlay-color: hsla(0, 0%, 0%, 0.6);
+    --profile-body-background-color: hsla(0, 0%, 0%, 0.45);
+    --profile-body-background-hover: hsla(0, 0%, 100%, 0.16);
+    --profile-body-divider-color: hsla(0, 0%, 100%, 0.24);
+    --profile-avatar-border-color: hsla(180, 50%, 3.1%, 1);
+    --profile-message-input-border-color: hsl(198, 81.93%, 58.05%);
+    --profile-note-background-color: hsla(0, 0%, 0%, 0.3);
+    --profile-role-pill-background-color: hsla(228, 6.67%, 14.71%, 0.5);
+    --profile-role-pill-border-color: hsla(196, 89%, 49%, 1);
+}
+
+
+.user-upc-profile-colors-10 {
+
+    --profile-gradient-primary-color: hsl(0, 62.99%, 33.43%);
+    --profile-gradient-secondary-color: hsla(100, 48.6%, 35.1%, 1);
+    --profile-gradient-button-color: hsla(206, 4.9%, 28%, 1);
+    --profile-gradient-overlay-color: hsla(0, 0%, 0%, 0.6);
+    --profile-body-background-color: hsla(0, 0%, 0%, 0.45);
+    --profile-body-background-hover: hsla(0, 0%, 100%, 0.16);
+    --profile-body-divider-color: hsla(0, 0%, 100%, 0.24);
+    --profile-avatar-border-color: hsla(200, 12%, 4.9%, 1);
+    --profile-message-input-border-color: hsl(128.53, 75.75%, 45.58%);
+    --profile-note-background-color: hsla(0, 0%, 0%, 0.3);
+    --profile-role-pill-background-color: hsla(228, 6.67%, 14.71%, 0.5);
+    --profile-role-pill-border-color: var(--green-2200);
+
+}
+
+
+
+
+.user-upc-profile-colors-0.alt {
+    --profile-gradient-secondary-color: var(--background-secondary-alt);
+}
+
+.user-upc-profile-colors-1.alt {
+    --profile-gradient-secondary-color: hsl(240.3, 76.67%, 50.45%);
+}
+
+.user-upc-profile-colors-2.alt {
+    // --profile-gradient-secondary-color: hsl(297.06, 73.56%, 38.96%);
+    --profile-gradient-secondary-color: hsl(55, 86%, 65%);
+    --profile-message-input-border-color: hsl(50.07, 95.19%, 49.62%);
+}
+
+.user-upc-profile-colors-3.alt {
+    --profile-gradient-secondary-color: var(--bronze-raw);
+    --profile-message-input-border-color: rgb(209, 178 ,9);
+}
+
+.user-upc-profile-colors-4.alt {
+    --profile-gradient-primary-color: hsl(16, 100%, 50%);
+    --profile-gradient-secondary-color: var(--silver-raw);
+}
+
+.user-upc-profile-colors-5.alt {
+    --profile-gradient-primary-color: #0edf7e;
+    --profile-gradient-secondary-color: #df0e70;
+}
+
+
+.user-upc-profile-colors-6.alt {
+    --profile-gradient-primary-color: hsl(214, 100%, 46%);
+    --profile-gradient-secondary-color: hsl(4, 100%, 46%);
+    --profile-message-input-border-color: hsl(202, 100%, 50%);
+}
+
+.user-upc-profile-colors-7.alt {
+    --profile-gradient-secondary-color: hsl(25, 100%, 50%);
+    --profile-message-input-border-color: var(--magenta);
+}
+
+.user-upc-profile-colors-8.alt {
+    --profile-gradient-primary-color: rgb(233, 15, 133);
+    --profile-gradient-secondary-color: rgb(69, 160, 235);
+    --profile-message-input-border-color: hsl(289, 100%, 50%);
+}
+
+.user-upc-profile-colors-9.alt {
+    --profile-gradient-primary-color: hsl(196, 100%, 51%);
+    --profile-gradient-secondary-color: hsl(16, 100%, 51%);
+    --profile-message-input-border-color: hsl(198, 68%, 55%);
+}
+
+.user-upc-profile-colors-10.alt {
+    --profile-gradient-secondary-color: #c93fff;
+    --profile-message-input-border-color: hsl(128.53, 75.75%, 45.58%);
+}
