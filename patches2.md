@@ -1746,6 +1746,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Download Apps SCSS Styles.
     - Finalized Friend Options Modal Styles.
     - Finalized Delete Friend Confirmation Modal Styles.
+    - Finalized User Nav Bar Styles.
+
 
 ## Backend Changes
 
