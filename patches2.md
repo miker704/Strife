@@ -1748,6 +1748,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Delete Friend Confirmation Modal Styles.
     - Finalized User Nav Bar Styles.
     - Finalized Friend Request Failed Modal Styles.
+    - Finalized Edit Friendship Modal.
 
 
 ## Backend Changes
