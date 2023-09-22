@@ -13,7 +13,7 @@ const dmMessageReducer = (state = {}, action) => {
             nextState[action.dm_message.id] = action.dm_message;
             return nextState;
         case REMOVE_DM_MESSAGE:
-            delete nextState[action.dm_message.id]
+            delete nextState[action.dm_messageId]
             return nextState;
 
         case RECEIVE_DM_SERVER:
@@ -24,8 +24,6 @@ const dmMessageReducer = (state = {}, action) => {
         case REMOVE_DM_SERVER:
             return {};
 
-        case REMOVE_DM_MEMBER:
-            return {};
         case LOGOUT_CURRENT_USER:
             return {};
         default:
