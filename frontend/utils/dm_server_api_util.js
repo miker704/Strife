@@ -12,6 +12,8 @@ export const createDmServer = (dmserver) =>
 export const updateDmServer = (dmserverId,dmserver) =>
     $.ajax({ url: `/api/dm_servers/${dmserverId}`, method: "PATCH", data: { dm_server: dmserver } })
 
+export const updateDmServerName = (dmserverId,dmserver) =>
+    $.ajax({ url: `/api/dm_servers/${dmserverId}/updatedmsName/`, method: "PATCH", data: { dm_server: dmserver } })    
 
 export const deleteDmServer = (dmserverId) =>
     $.ajax({ url: `/api/dm_servers/${dmserverId}`, method: "DELETE" })
