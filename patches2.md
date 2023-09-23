@@ -1780,6 +1780,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Dm server Main Container styles.
     - Finalized Dm server Api Util.
     - Finalized servers Api Util.js.
+    - Finalized Channel Api Util.js.
 
 ## Backend Changes
 
