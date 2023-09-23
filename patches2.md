@@ -1781,7 +1781,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Dm server Api Util.
     - Finalized servers Api Util.js.
     - Finalized Channel Api Util.js.
-
+    - Finalized Server Membership Api Util.js.
+    
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
