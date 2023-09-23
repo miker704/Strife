@@ -1778,6 +1778,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Servers Main Base styles.
     - Finalized leaver server modal styles.
     - Finalized Dm server Main Container styles.
+    - Finalized Dm server Api Util.
+
 
 ## Backend Changes
 
