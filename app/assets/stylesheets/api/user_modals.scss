@@ -1,998 +1,1549 @@
 //user modal styles this is an extension of the users.scss style sheet made to reduce the long file and organize styles better
+//user sub modal animation.
 
+@-webkit-keyframes userSubModalWrapperRender {
+  0% {
+    opacity: 0;
+  }
 
-//edit user name modal form called on user profile file name 
-
-.edit-userInfo-overlay {
-    z-index: 105;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(10, 10, 10, .9);
-}
-
-.edit-userInfo-modal-wrapper {
-    z-index: 110;
-    position: absolute;
-    top: 0;
-    left: 0;
-    // height: 100vh;
-    // width: 100vw;
-    background-color: rgba(0, 0, 0, 0.8);
-
-
-
-    height: 100%;
-    width: 100%;
-    animation-name: userEditInfoWrapperRender;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
-
-
-
-
-
-
-
-
-    // width: 100vw;
-    // height: 100vh;
-
-    // display: flex;
-    // top: 0;
-    // bottom: 0;
-    // left: 0;
-    // right: 0;
-    // position: absolute;
-    // z-index: 101;
-    // /* display: -webkit-box; */
-    // box-sizing: border-box;
-    // color: #3a3a3a;
-    // user-select: none;
-}
-
-.edit-user-flex-box {
-    flex-direction: column;
-    min-height: 0;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    display: flex;
-    -webkit-box-pack: center;
-    align-items: center;
-    -webkit-box-align: center;
-    forced-color-adjust: none;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-.edit-userInfo-model {
-    animation-name: userEditInfoModalAppear;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
-    z-index: 20;
-    forced-color-adjust: none;
-    width: 440px;
-    max-height: 720px;
-    min-height: 200px;
+  70% {
     opacity: 1;
+  }
+
+  100% {
+  }
+}
+
+@keyframes userSubModalWrapperRender {
+  0% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+  }
+}
+
+@-webkit-keyframes userSubModalModalAppear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes userSubModalModalAppear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+
+@-webkit-keyframes userSubModalModalDisappear {
+  from {
+    opacity: 0.5;
+    -webkit-transform: scale(1);
     transform: scale(1);
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    min-height: 0;
-    max-width: 100%;
-    flex-direction: column;
-    border-radius: 4px;
-    margin: 0 auto;
-    pointer-events: all;
-    position: relative;
-    background-color: hsl(220, 7.7%, 22.9%);
-    user-select: none;
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
 }
 
-.edit-userInfo-model input[type=file] {
-    display: none;
+@keyframes userSubModalModalDisappear {
+  from {
+    opacity: 0.5;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.25);
+    transform: scale(0.25);
+  }
 }
 
-
-.edit-username-header-section {
-    align-items: center;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    flex-direction: column;
-    -webkit-box-align: center;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    border-radius: 4px 4px 0 0;
-    transition: box-shadow .1s ease-out, -webkit-box-shadow .1s ease-out;
-    word-wrap: break-word;
-    position: relative;
-    -webkit-box-flex: 0;
-    padding: 16px;
-    z-index: 1;
-    overflow-x: hidden;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    -webkit-box-pack: start;
+.sub-modal-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: none !important;
+  pointer-events: none;
+  z-index: 1002;
 }
 
-.edit-username-header {
-    forced-color-adjust: none;
-    text-align: center;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 30px;
-    color: #FFFFFF;
-    font-family: "Whitney";
-
+.sub-modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  pointer-events: all;
+  opacity: 0.85;
+  background: var(--black-500);
 }
 
-.edit-username-header-info {
-    color: hsl(216, 3.7%, 73.5%);
-    forced-color-adjust: none;
-    margin-top: 8px;
-    text-align: center;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 400;
-    font-family: "Whitney";
-
+.user-sub-modal-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-animation-name: userSubModalWrapperRender;
+  -webkit-animation-duration: 0.25s;
+  -webkit-animation-iteration-count: 1;
+  animation-name: userSubModalWrapperRender;
+  animation-duration: 0.25s;
+  animation-iteration-count: 1;
 }
 
-
-
-
-
-
-
-
-
-
-@keyframes userEditInfoWrapperRender {
-
-    0% {
-        opacity: 0;
-    }
-
-    70% {
-        opacity: 1;
-    }
-
-    100% {}
-
+.user-sub-modal-focus-lock {
+  min-height: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
+.user-sub-modal {
+  opacity: 1;
+  transform: scale(1);
+  width: 440px;
+  max-height: 720px;
+  min-height: 200px;
+  background-color: var(--modal-pop-up-bg-color);
+  border-radius: 4px;
+  margin: 0 auto;
+  pointer-events: all;
+  position: relative;
+  // max-height: 100%;
+  display: flex;
+  flex-direction: column;
 
+  -webkit-animation-name: userSubModalModalAppear;
+  -webkit-animation-duration: 0.25s;
+  -webkit-animation-iteration-count: 1;
+  animation-name: userSubModalModalAppear;
+  animation-duration: 0.25s;
+  animation-iteration-count: 1;
 
-@keyframes userEditInfoModalAppear {
+  -webkit-box-shadow: var(--dark-elevation-border), var(--dark-elevation-high);
+  box-shadow: var(--dark-elevation-border), var(--dark-elevation-high);
 
-    0% {
-        opacity: 0;
-        transform: scale(0.5, 0.5);
-    }
-
-    70% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(1, 1);
-    }
-
-}
-
-@keyframes userEditInfoModalDisappear {
-
-    0% {
-        opacity: 1;
-        transform: scale(1, 1);
-    }
-
-    70% {
-        opacity: 0.5;
-    }
-
-    100% {
-        transform: scale(0.5, 0.5);
-    }
-
-}
-
-
-.edit-userInfo-model.transition-out {
-    animation-name: userEditInfoModalDisappear;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
-}
-
-
-.edit-user-info-exit-button {
-    color: #A6ABB0;
-    display: flex;
-    justify-content: flex-end;
-    opacity: 1;
-    forced-color-adjust: none;
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    height: 26px;
-    padding: 4px;
-    transition: opacity .2s ease-in-out;
-    cursor: pointer;
-    border-radius: 3px;
-    box-sizing: content-box;
-    width: auto;
-    background: #0000;
-    border: 0;
-    margin: 0;
-    z-index: 22;
-
-}
-
-.edit-user-info-exit-button:hover {
-    svg path {
-        fill: #2E3338;
-        transition: 0.2s;
-    }
-}
-
-
-
-.form-container1 {
-    // overflow: hidden scroll;
-    padding-right: 8px;
-    forced-color-adjust: none;
-    padding-bottom: 16px;
-    position: relative;
-    z-index: 0;
-    border-radius: 5px 5px 0 0;
-    padding-left: 16px;
-    box-sizing: border-box;
-    min-height: 0;
-    -webkit-box-flex: 1;
-    flex: 1 1 auto;
-}
-
-
-
-.form-username-header {
-    margin-bottom: 8px;
-    forced-color-adjust: none;
-    font-size: 12px;
-    line-height: 16px;
-    font-weight: 500;
-    text-transform: uppercase;
-    -webkit-box-flex: 1;
-    flex: 1;
-    cursor: default;
-    font-family: "ABC Ginto Normal";
-    color: hsl(216, 3.7%, 73.5%);
-}
-
-.username-form-input-sec {
-    transition: border-color .2s ease-in-out;
-    border: none;
-    box-sizing: border-box;
-    width: 100%;
-    border-radius: 3px;
-    font-size: 16px;
-    align-items: center;
-    -webkit-box-align: center;
-    display: flex;
-    forced-color-adjust: none;
-    background-color: hsl(216, 7.2%, 13.5%);
-    color: hsl(210, 2.9%, 86.7%);
-}
-
-.username-input-wrapper1 {
-    forced-color-adjust: none;
-    -webkit-box-flex: 1;
-    flex-grow: 1;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-}
-
-.username-input-wrapper-banner {
-    forced-color-adjust: none;
-    -webkit-box-flex: 1;
-    flex-grow: 1;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-
-
-.username-input-wrapper2 {
-    forced-color-adjust: none;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-}
-
-.form-question-mark {
-    forced-color-adjust: none;
-    display: flex;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 2px;
-    margin-right: 4px;
-    padding: 0;
-    min-width: 0;
-    min-height: 0;
-    align-items: center;
-    -webkit-box-pack: center;
-    display: flex;
-    -webkit-box-align: center;
-    background-color: hsl(235, 85.6%, 64.7%);
-}
-
-.input-1 {
-    forced-color-adjust: none;
-    border: none;
-    // background-color: #0000;
-    background-color: hsl(216, 7.2%, 13.5%);
-    font-size: 16px;
-    box-sizing: border-box;
-    width: 100%;
-    border-radius: 3px;
-    color: hsl(210, 2.9%, 86.7%);
-    text-rendering: optimizeLegibility;
-    font-family: "Whitney";
-    transition: border-color .2s ease-in-out;
-    font-weight: 400;
-    outline: none;
-}
-
-.input-2 {
-    padding: 10px;
-    height: 40px;
-    transition: border-color .2s ease-in-out;
-    border-radius: 3px;
-    box-sizing: border-box;
-    font-size: 16px;
-    color: hsl(210, 3.9%, 86.7%);
-    border: none;
-    background-color: #0000;
-    forced-color-adjust: none;
-    text-rendering: optimizeLegibility;
-    font-weight: 400;
-    width: 100px;
-    outline: none;
-    padding-left: 32px;
-    font-family: Consolas, Andale Mono WT, Andale Mono, Lucida Console,
-        Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono,
-        Liberation Mono, Nimbus Mono L, Monaco, Courier New, Courier, monospace;
-}
-
-.input-2:disabled {
-    user-select: none;
+  button[type="button"]:disabled,
+  button[type="submit"]:disabled {
     cursor: not-allowed;
-    opacity: .5;
+    opacity: 0.5;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.quarter-hash-tag {
-    color: hsl(214, 4%, 65.3%);
-    user-select: none;
-    position: absolute;
-    height: 40px;
-    padding-top: 10px;
-    padding-left: 20px;
-    line-height: normal;
-    font-size: 16px;
-    forced-color-adjust: none;
-    opacity: .5;
-
+.user-sub-modal.transition-out {
+  -webkit-animation-name: userSubModalModalDisappear;
+  -webkit-animation-duration: 0.2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: userSubModalModalDisappear;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
 }
 
-.user-settings-toggle4 {
-    width: 164px;
-    height: 51px;
-    font-family: "Ginto";
-    font-weight: 500;
-    transform: translate(0px, 60px);
-    visibility: hidden;
-    background-color: #191919;
-    color: #fff;
-    z-index: 6;
-    border-radius: 5px;
-    font-size: 12px;
-    display: flex;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
+.user-sub-modal-header-container {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  font-family: var(--global-font);
 }
 
-.form-question-mark:hover .user-settings-toggle4 {
-    visibility: visible;
+.user-sub-modal-header-container-username-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px 4px 0px 0px;
+  transition: box-shadow 0.1s ease-out, -webkit-box-shadow 0.1s ease-out;
+  word-wrap: break-word;
+  position: relative;
+  flex: 0 0 auto;
+  padding: 24px 16px;
+  z-index: 1;
+  overflow-x: hidden;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
 }
 
-.password-section {
-    forced-color-adjust: none;
-    margin-top: 16px;
+.usubm-header-transition {
+  border-radius: 4px 4px 0px 0px;
+  transition: box-shadow 0.1s ease-out, -webkit-box-shadow 0.1s ease-out;
+  word-wrap: break-word;
 }
 
-.password-header1 {
-    flex: 1;
-    cursor: default;
-    font-family: "ABC Ginto Normal";
-    -webkit-box-flex: 1;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 12px;
-    line-height: 16px;
-    margin-bottom: 8px;
-    forced-color-adjust: none;
-    color: hsl(216, 3.7%, 73.5%);
-
+.usubm-header {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 16px;
+  z-index: 1;
+  overflow-x: hidden;
 }
 
-.input-3-password-wrapper {
-    forced-color-adjust: none;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
+.usubm-direction-row {
+  flex-direction: row;
 }
 
-.input-3-password {
-    forced-color-adjust: none;
-    padding: 10px;
-    height: 40px;
-    font-size: 16px;
-    box-sizing: border-box;
-    width: 100%;
-    border-radius: 3px;
-    color: hsl(210, 2.9%, 86.7%);
-    background-color: hsl(216, 7.2%, 13.5%);
-    border: none;
-    transition: border-color .2s ease-in-out;
-    font-family: "Whitney";
-    text-rendering: optimizeLegibility;
-    font-weight: 400;
-    outline: none;
+.usubm-no-wrap {
+  flex-wrap: nowrap;
 }
 
-.username-edit-button-sec {
-    flex: 0 0 auto;
-    forced-color-adjust: none;
-    border-radius: 0 0 5px 5px;
-    background-color: hsl(223, 6.9%, 19.8%);
-    box-shadow: inset 0 1px 0 hsla(223, 6.9%, 19.8%, .6);
-    padding: 16px;
-    z-index: 1;
-    overflow-x: hidden;
-    position: relative;
-    -webkit-box-flex: 0;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-    flex-wrap: nowrap;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-    -webkit-box-pack: start;
-    align-items: stretch;
-    -webkit-box-align: stretch;
-    display: flex;
+.usubm-justify-start {
+  justify-content: flex-start;
 }
 
-
-
-.username-edit-cancel-button {
-    cursor: pointer;
-    font-family: "Whitney";
-    text-rendering: optimizeLegibility;
-    user-select: none;
-    box-sizing: border-box;
-    background: none;
-    border: none;
-    border-radius: 3px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 16px;
-    padding: 2px 16px;
-    align-items: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    display: flex;
-    -webkit-box-pack: center;
-    position: relative;
-    height: 38px;
-    min-width: 96px;
-    min-height: 38px;
-    width: auto;
-    margin-right: 8px;
-    forced-color-adjust: none;
-    color: #FFFFFF;
+.usubm-align-center {
+  align-items: center;
 }
 
-.username-edit-cancel-button:hover {
-    text-decoration: underline;
+.usubm-flex-container {
+  display: flex;
 }
 
-
-.username-edit-submit-button {
-    forced-color-adjust: none;
-    color: #FFFFFF;
-    width: auto;
-    height: 38px;
-    min-width: 96px;
-    min-height: 38px;
-    background-color: hsl(235, 85.6%, 64.7%);
-    transition: background-color .17s ease, color .17s ease;
-    position: relative;
-    text-rendering: optimizeLegibility;
-    font-family: "Whitney";
-    user-select: none;
-    box-sizing: border-box;
-    // background: none;
-    border: none;
-    border-radius: 3px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 16px;
-    padding: 2px 16px;
-    align-items: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    display: flex;
-    -webkit-box-pack: center;
-
+.user-sub-modal-title {
+  text-align: center;
+  font-weight: 700;
+  font-family: var(--global-font);
+  font-size: 24px;
+  line-height: 30px;
+  color: var(--header-primary);
 }
 
-.username-edit-submit-button:hover {
-    background-color: hsl(235, 51.4%, 52.4%);
+.user-sub-modal-title-subtext {
+  margin-top: 8px;
+  text-align: center;
+  font-weight: 400;
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--header-secondary);
 }
 
-.username-edit-sep {
-    position: absolute;
-    pointer-events: none;
-    min-height: 0px;
-    min-width: 1px;
-    flex: 0 0 auto;
-    height: 16px;
-    forced-color-adjust: none;
+.user-sub-modal-x-to-close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  height: 26px;
+  padding: 4px;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0.5;
+  cursor: pointer;
+  border-radius: 3px;
+  color: var(--interactive-normal);
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  width: auto;
+  background: transparent;
+  border: 0;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  text-rendering: optimizeLegibility;
+  font-family: var(--global-font);
 }
 
-
-.input-4-email {
-    forced-color-adjust: none;
-    padding: 10px;
-    height: 40px;
-    border: none;
-    // background-color: #0000;
-    background-color: hsl(216, 7.2%, 13.5%);
-    font-size: 16px;
-    box-sizing: border-box;
-    width: 100%;
-    border-radius: 3px;
-    color: hsl(210, 2.9%, 86.7%);
-    text-rendering: optimizeLegibility;
-    font-family: "Whitney";
-    transition: border-color .2s ease-in-out;
-    font-weight: 400;
-    outline: none;
+.user-sub-modal-x-to-close-button:hover {
+  opacity: 1;
+  color: var(--interactive-hover);
 }
 
-.email-input-wrapper {
-    forced-color-adjust: none;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
+.user-sub-modal-form-content {
+  padding-bottom: 16px;
+  position: relative;
+  z-index: 0;
+  border-radius: 5px 5px 0px 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+  overflow-x: hidden;
 }
 
-
-.form-email-header-info {
-    color: hsl(216, 3.7%, 73.5%);
-    forced-color-adjust: none;
-    text-align: center;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 400;
-    font-family: "Whitney";
+.user-sub-modal-button-footer-container {
+  -webkit-box-shadow: inset 0 1px 0 var(--primary-630-hsl);
+  box-shadow: inset 0 1px 0 var(--primary-630-hsl);
+  flex: 0 0 auto;
+  border-radius: 0px 0px 5px 5px;
+  background-color: var(--modal-footer-bg-color-button-wrapper);
+  position: relative;
+  padding: 16px;
+  z-index: 1;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
-
-
-//phone number change
-
-
-
-.phone-modal {
-    forced-color-adjust: none;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-height: 0;
-    max-width: 100%;
+.user-sub-modal-cancel-button {
+  color: var(--white-500);
+  margin-right: 8px;
+  width: auto;
+  height: 38px;
+  min-width: 96px;
+  min-height: 38px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  text-rendering: optimizeLegibility;
+  font-family: var(--global-font);
 }
 
-.phone-modal-outer {
-    opacity: 1;
-    transform: scale(1);
-    box-shadow: 0 0 0 1px hsla(216, 7.2%, 13.5%, 0.6), 2px 10px 0 hsla(0, 0%, 0%, 0.2);
-    forced-color-adjust: none;
-    position: relative;
-    width: 440px;
-    min-height: 252px;
-    padding: 16px;
-    margin-top: 60px;
-    max-height: 720px;
-    border-radius: 4px;
-    margin: 0 auto;
-    pointer-events: all;
-    background-color: hsl(220, 7.7%, 22.9%);
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    justify-content: center;
-    -webkit-box-pack: center;
+.user-sub-modal-submit-button {
+  color: var(--white-500);
+  background-color: var(--brand-experiment);
+  width: auto;
+  height: 38px;
+  min-width: 96px;
+  min-height: 38px;
+  transition: background-color 0.17s ease, color 0.17s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  text-rendering: optimizeLegibility;
+  font-family: var(--global-font);
 }
 
-.phone-container {
-    position: absolute;
-    top: -150px;
-    left: 130px;
-    right: 130px;
-    forced-color-adjust: none;
+.user-sub-modal-submit-button:hover {
+  background-color: var(--brand-experiment-560);
 }
 
-
-//remove phone number password form 
-.remove-phone-form-header-wrapper {
-    flex: 0 0 auto;
-    forced-color-adjust: none;
-    border-radius: 4px 4px 0 0;
-    transition: box-shadow .1s ease-out, -webkit-box-shadow .1s ease-out;
-    word-wrap: break-word;
-    position: relative;
-    -webkit-box-flex: 0;
-    padding: 16px;
-    z-index: 1;
-    overflow-x: hidden;
-    flex-direction: row;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-box-pack: start;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    -webkit-box-align: center;
-    align-items: center;
-    display: flex;
+.user-sub-modal-submit-button:active {
+  background-color: var(--brand-experiment-600);
 }
 
-.remove-phone-header {
-    forced-color-adjust: none;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    font-family: "ABC Ginto Normal";
-    color: #FFFFFF;
-
+.user-sub-modal-form-sep {
+  position: absolute;
+  pointer-events: none;
+  min-height: 0px;
+  min-width: 1px;
+  flex: 0 0 auto;
+  height: 16px;
 }
 
+// edit username modal
 
-.password-header-flex-container {
-    flex: 0 0 auto;
-    align-items: center;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    flex-direction: column;
-    -webkit-box-align: center;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    forced-color-adjust: none;
-    transition: box-shadow .1s ease-out, -webkit-box-shadow .1s ease-out;
-    word-wrap: break-word;
-    padding: 16px;
-    z-index: 1;
-    overflow-x: hidden;
-    position: relative;
-    -webkit-box-flex: 0;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    -webkit-box-pack: start;
+.usubm-field-header {
+  margin-bottom: 8px;
+  font-family: var(--global-font);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--header-secondary);
 }
 
-.password-modal {
-    flex-direction: column;
-    min-height: 0;
-    max-width: 100%;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    forced-color-adjust: none;
-
+.usubm-username-wrapper {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 3px;
+  color: var(--text-normal);
+  background-color: var(--input-background);
+  border: none;
+  -webkit-transition: border-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
 }
 
-
-
-.password-modal-inner-wrapper {
-    opacity: 1;
-    transform: scale(1);
-    width: 440px;
-    max-height: 720px;
-    min-height: 200px;
-    border-radius: 4px;
-    margin: 0 auto;
-    pointer-events: all;
-    position: relative;
-    background-color: hsl(220, 7.7%, 22.9%);
-    box-shadow: 0 0 0 1px hsla(216, 7.2%, 13.5%, 0.6), 2px 10px 0 hsla(0, 0%, 0%, 0.2);
-    forced-color-adjust: none;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-
-
+.user-sub-modal-username-input-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-
-
-.password-main-header {
-    forced-color-adjust: none;
-    text-align: center;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 30px;
-    color: #FFFFFF;
-    font-family: "Whitney";
-    text-rendering: optimizeLegibility;
-    user-select: none;
-    pointer-events: all;
-    word-wrap: break-word;
+.user-sub-modal-username-input-field {
+  border: none;
+  background-color: var(--input-background);
+  background-color: transparent;
+  text-transform: lowercase;
+  padding: 10px;
+  height: 40px;
+  font-size: 16px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 3px;
+  color: var(--text-normal);
+  -webkit-transition: border-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
+  text-rendering: optimizeLegibility;
+  font-family: var(--global-font);
 }
 
-.password-header-info {
-    forced-color-adjust: none;
-    color: hsl(216, 3.7%, 73.5%);
-    margin-top: 8px;
-    text-align: center;
-    font-family: "Whitney";
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 400;
-    -webkit-box-direction: normal;
-    word-wrap: break-word;
-
+.user-sub-modal-strife-tag-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-
-
-
-.demo-edit-lock-warning {
-    position: relative;
-    left: 30%;
-    color: brown;
-    font-family: "ABC Ginto Nord";
-    font-weight: 900;
-    text-rendering: optimizeLegibility;
-    text-decoration: underline;
-    text-transform: uppercase;
-    font-size: 14px;
-    transform: translate(-22px, 250px);
-    z-index: 9999;
-    opacity: 1;
+.user-sub-modal-strife-tag-hash {
+  color: var(--primary-400);
+  position: absolute;
+  height: 40px;
+  padding-top: 20px;
+  padding-left: 20px;
+  line-height: normal;
+  font-size: 16px;
+  opacity: 0.5;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-rendering: optimizeLegibility;
+  font-family: var(--global-font);
 }
 
-
-.disable-or-delete-container-warning {
-    margin-right: 4%;
-    margin-left: 4%;
-    margin-top: 10px;
-    padding: 10px;
-    height: 60px;
-    color: #fff;
-    background-color: #faa81a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    font-family: "Whitney";
-    font-size: 16px;
-    font-weight: 500;
-
-    .disable-delete-account-name {
-        font-weight: 900;
-        text-decoration: underline;
-    }
-
+.user-sub-modal-strife-tag-input-field {
+  padding: 10px;
+  height: 40px;
+  transition: border-color 0.2s ease-in-out;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: var(--text-normal);
+  border: none;
+  background-color: transparent;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+  width: 100px;
+  outline: none;
+  padding-left: 32px;
+  font-family: var(--font-code);
 }
 
-.disable-or-delete-container-warning2 {
-    margin-right: 4%;
-    margin-left: 4%;
-    margin-top: 10px;
-    padding: 10px;
-    height: 60px;
-    color: #fff;
-    background-color: #faa81a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    font-family: "Whitney";
-    font-size: 16px;
-    font-weight: 500;
-
-
+.user-sub-modal-strife-tag-input-field:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
-.has-servers-subtitle-wrapper {
-    padding-right: 8px;
-    padding-bottom: 20px;
-    forced-color-adjust: none;
-    position: relative;
-    z-index: 0;
-    border-radius: 5px 5px 0 0;
-    padding-left: 16px;
-    flex: 1 1 auto;
-    min-height: 0;
-    -webkit-box-flex: 1;
-    box-sizing: border-box;
+.user-sub-modal-form-question-mark {
+  display: flex;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 2px;
+  margin-right: 4px;
+  padding: 0;
+  min-width: 0;
+  min-height: 0;
+  align-items: center;
+  background-color: var(--brand-experiment);
+  color: var(--header-primary);
 }
 
-.has-servers-subtitle {
-    font-family: "Whitney";
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 400;
-    color: hsl(210, 2.9%, 86.7%);
+.user-sub-modal-form-question-mark:hover {
+  background-color: var(--brand-experiment-560);
 }
 
-
-.cancel-button-float {
-    cursor: pointer;
-    font-family: "Whitney";
-    text-rendering: optimizeLegibility;
-    user-select: none;
-    box-sizing: border-box;
-    background: none;
-    border: none;
-    border-radius: 3px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 16px;
-    padding: 2px 16px;
-    align-items: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    display: flex;
-    -webkit-box-pack: center;
-    position: relative;
-    height: 38px;
-    min-width: 96px;
-    min-height: 38px;
-    width: auto;
-    margin-right: 8px;
-    forced-color-adjust: none;
-    color: #FFFFFF;
-    transform: translate(17px, -53px);
-    z-index: 21;
+.user-sub-modal-password-container {
+  margin-top: 16px;
 }
 
-
-
-
-
-
-// pfp - stylings
-
-.user-pfp-wrapper {
-    position: relative;
-    height: 100px;
-    width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+.user-sub-modal-password-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
-.user-pfp-wrapper.svgwrap {
-    position: relative;
-    height: 100px;
-    width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-
+.user-sub-modal-password-input-field {
+  padding: 10px;
+  height: 40px;
+  font-size: 16px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 3px;
+  color: var(--text-normal);
+  background-color: var(--input-background);
+  border: none;
+  -webkit-transition: border-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
+  text-rendering: optimizeLegibility;
+  font-family: var(--global-font);
 }
 
-
-
-.user-pfp-header {
-    color: #fff;
-    user-select: none;
-    text-align: center;
-    font-size: small;
-    line-height: 100px;
-    position: absolute;
-    border-radius: 50%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    visibility: hidden;
-    background-color: #474b52;
-    font-family: "Whitney";
-
+.user-sub-modal-field-input-error {
+  font-size: 12px;
+  font-weight: 500;
+  font-style: italic;
+  text-transform: none;
+  color: var(--text-danger);
 }
 
-
-
-.user-pfp-wrapper:hover .user-pfp-header {
-    visibility: visible;
-    cursor: pointer;
-    opacity: 85%;
+.user-sub-modal-field-input-error-sep {
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
-
-.user-pfp {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    background: none;
-    margin: 8px;
-    transition: border-radius .1s;
-    object-fit: cover;
-    object-position: center;
+.usubm-field-input-error-color {
+  color: var(--text-danger);
 }
 
-.user-pfp-svgwr {
-    border-radius: 50%;
-    width: 100px;
-    height: 50px;
+//edit email
+
+.user-sub-modal-title-subtext-email {
+  text-align: center;
+  font-weight: 400;
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--header-secondary);
 }
 
-#display-user-pfp {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
+.user-sub-modal-email-input-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
+.user-sub-modal-email-input-field {
+  border: none;
+  background-color: var(--input-background);
+  padding: 10px;
+  height: 40px;
+  font-size: 16px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 3px;
+  color: var(--text-normal);
+  -webkit-transition: border-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
+  text-rendering: optimizeLegibility;
+  font-family: var(--global-font);
+}
 
-.img-upload-hint-icon {
-    content: image_url('uploadimghint.svg');
-    background-color: hsl(210, 2.9%, 86.7%);
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: auto;
-    width: 28px;
-    height: 28px;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px 0 hsla(0, 0%, 0%, 0.2);
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
+.header-email-img {
+  position: absolute;
+  top: -140px;
+  left: 120px;
+  content: image_url("addemail.gif");
+}
+
+//edit pfp modal
+
+.user-sub-modal-edit-pfp {
+  opacity: 1;
+  transform: scale(1);
+
+  width: 600px;
+  max-height: 800px;
+  min-height: 400px;
+
+  background-color: var(--modal-pop-up-bg-color);
+  border-radius: 4px;
+  margin: 0 auto;
+  pointer-events: all;
+  position: relative;
+  // max-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  -webkit-animation-name: userSubModalModalAppear;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-iteration-count: 1;
+  animation-name: userSubModalModalAppear;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+
+  -webkit-box-shadow: var(--dark-elevation-border), var(--dark-elevation-high);
+  box-shadow: var(--dark-elevation-border), var(--dark-elevation-high);
+
+  button[type="button"]:disabled,
+  button[type="submit"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.user-sub-modal-edit-pfp.transition-out {
+  -webkit-animation-name: userSubModalModalDisappear;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-iteration-count: 1;
+  animation-name: userSubModalModalDisappear;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+}
+
+.usub-edit-pfp-header {
+  display: flex;
+  // flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px 4px 0px 0px;
+  transition: box-shadow 0.1s ease-out, -webkit-box-shadow 0.1s ease-out;
+  word-wrap: break-word;
+  position: relative;
+  flex: 0 0 auto;
+  padding: 16px;
+  z-index: 1;
+  overflow-x: hidden;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.usub-edit-pfp-header-title {
+  text-align: center;
+  color: var(--header-primary);
+  font-weight: 700;
+  line-height: 24px;
+  font-size: 24px;
+  font-family: var(--global-font);
+  flex: 1;
+  cursor: default;
+}
+
+.usub-edit-pfp-header-title-subtext {
+  margin-top: 8px;
+  text-align: center;
+  font-weight: 400;
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--header-secondary);
+}
+
+.user-sub-modal-edit-pfp-scroll {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 0;
+  border-radius: 5px 5px 0px 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+  overflow-x: hidden;
+}
+
+.usub-edit-pfp-display-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--black-500);
+  border-radius: 4px;
+  min-height: 300px;
+  height: 400px;
+  max-height: 500px;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.usub-edit-pfp-display-container:hover .usub-edit-pfp-hover-hint {
+  box-shadow: var(--elevation-high), inset 0px 0px 120px var(--black-500-hsl-06);
+  visibility: visible;
+  cursor: pointer;
+  opacity: 85%;
+}
+
+.server-avatar-modal-default-image-uploader-acro {
+  box-sizing: border-box;
+  font-size: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: var(--global-font);
+  color: var(--white-500);
+  text-overflow: ellipsis;
+  background-color: transparent;
+}
+
+.usub-edit-pfp-display-img {
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px);
+  width: 399.425px;
+  min-width: 399.425px;
+  height: 399.425px;
+  border-radius: 50%;
+  pointer-events: all;
+  position: absolute;
+}
+
+.user-sub-modal-edit-pfp-button-footer-container {
+  -webkit-box-shadow: inset 0 1px 0 var(--primary-630-hsl);
+  box-shadow: inset 0 1px 0 var(--primary-630-hsl);
+  flex: 0 0 auto;
+  border-radius: 0px 0px 5px 5px;
+  background-color: var(--modal-footer-bg-color-button-wrapper);
+  position: relative;
+  padding: 16px;
+  z-index: 1;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+.usubm-edit-pfp-buttons-right {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.user-sub-modal-edit-pfp-cancel-button {
+  color: var(--white-500);
+  margin-right: 12px;
+  width: auto;
+  height: 32px;
+  min-width: 60px;
+  min-height: 32px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  text-rendering: optimizeLegibility;
+  font-family: var(--global-font);
+}
+
+.user-sub-modal-edit-pfp-submit-button {
+  color: var(--white-500);
+  background-color: var(--brand-experiment);
+  width: auto;
+  height: 32px;
+  min-width: 60px;
+  min-height: 32px;
+  transition: background-color 0.17s ease, color 0.17s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  text-rendering: optimizeLegibility;
+  font-family: var(--global-font);
+}
+
+.user-sub-modal-edit-pfp-submit-button:hover {
+  background-color: var(--brand-experiment-560);
+}
+
+.user-sub-modal-edit-pfp-submit-button:active {
+  background-color: var(--brand-experiment-600);
+}
+
+.usub-edit-pfp-input-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.usub-edit-pfp-hover-hint {
+  color: var(--white-500);
+  text-align: center;
+  font-size: 24px;
+  line-height: 400px;
+  width: 399.425px;
+  height: 399.425px;
+  position: absolute;
+  border-radius: 50%;
+  // top: 0;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
+  visibility: hidden;
+  background-color: var(--primary-500);
+  font-family: var(--global-font);
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.usub-img-upload-hint-icon {
+  content: image_url("uploadimghint.svg");
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: auto;
+  width: 56px;
+  height: 56px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-200);
+  -webkit-box-shadow: 0px 2px 4px 0px var(--black-500-hsl-02);
+  box-shadow: 0px 2px 4px 0px var(--black-500-hsl-02);
+  outline: 0;
+  box-sizing: border-box;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.usub-pfp-wrapper {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.usub-overlay-edit-pfp {
+  width: 399.425px;
+  height: 399.425px;
+  opacity: 1;
+  border-radius: 50%;
+  z-index: 1;
+  border: 5px solid var(--white-500);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  pointer-events: none;
+  position: absolute;
+  -webkit-box-shadow: var(--upload-pfp-box-shadow) 0 0 0 9999px;
+  box-shadow: 0 0 0 9999px var(--upload-pfp-box-shadow);
+}
+
+//edit banner
+.user-sub-modal-edit-banner {
+  opacity: 1;
+  transform: scale(1);
+
+  width: 800px;
+  max-height: 800px;
+  min-height: 400px;
+
+  background-color: var(--modal-pop-up-bg-color);
+  border-radius: 4px;
+  margin: 0 auto;
+  pointer-events: all;
+  position: relative;
+  // max-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  -webkit-animation-name: userSubModalModalAppear;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-iteration-count: 1;
+  animation-name: userSubModalModalAppear;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+
+  -webkit-box-shadow: var(--dark-elevation-border), var(--dark-elevation-high);
+  box-shadow: var(--dark-elevation-border), var(--dark-elevation-high);
+
+  button[type="button"]:disabled,
+  button[type="submit"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.user-sub-modal-edit-banner.transition-out {
+  -webkit-animation-name: userSubModalModalDisappear;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-iteration-count: 1;
+  animation-name: userSubModalModalDisappear;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+}
+
+.usub-edit-banner-display-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--black-500);
+  border-radius: 4px;
+  min-height: 300px;
+  height: 440px;
+  max-height: 500px;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.usub-edit-banner-display-container:hover .usub-edit-banner-hover-hint {
+  box-shadow: var(--elevation-high), inset 0px 0px 120px var(--black-500-hsl-06);
+  visibility: visible;
+  cursor: pointer;
+  opacity: 85%;
+}
+
+.usub-edit-banner-hover-hint {
+  color: var(--white-500);
+  text-align: center;
+  font-size: 24px;
+  line-height: 400px;
+  width: 699.425px;
+  height: 399.425px;
+  position: absolute;
+  visibility: hidden;
+  background-color: var(--primary-500);
+  font-family: var(--global-font);
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.usub-img-upload-banner-hint-icon {
+  content: image_url("uploadimghint.svg");
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: auto;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-200);
+  -webkit-box-shadow: 0px 2px 4px 0px var(--black-500-hsl-02);
+  box-shadow: 0px 2px 4px 0px var(--black-500-hsl-02);
+  outline: 0;
+  box-sizing: border-box;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.usub-overlay-edit-banner {
+  width: 699.425px;
+  height: 399.425px;
+  opacity: 1;
+  z-index: 1;
+  border: 5px solid var(--white-500);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  pointer-events: none;
+  position: absolute;
+  -webkit-box-shadow: var(--upload-pfp-box-shadow) 0 0 0 9999px;
+  box-shadow: 0 0 0 9999px var(--upload-pfp-box-shadow);
+}
+
+.usub-edit-banner-display-img {
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px);
+  width: 699.425px;
+  min-width: 699.425px;
+  height: 399.425px;
+  pointer-events: all;
+  position: absolute;
+}
+
+//remove phone number
+
+.user-sub-modal-header-container-remove-phone-number {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 4px 4px 0px 0px;
+  transition: box-shadow 0.1s ease-out, -webkit-box-shadow 0.1s ease-out;
+  word-wrap: break-word;
+  position: relative;
+  flex: 0 0 auto;
+  padding: 16px;
+  z-index: 1;
+  overflow-x: hidden;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.user-sub-modal-phone-number-title {
+  font-weight: 600;
+  font-family: var(--global-font);
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--header-primary);
+} 
+
+.user-sub-modal-form-content-remove-number {
+  position: relative;
+  z-index: 0;
+  border-radius: 5px 5px 0px 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+  overflow-x: hidden;
+}
+
+.user-sub-modal-remove-phone-pw-wrap {
+  margin-bottom: 20px;
+}
+
+.user-sub-modal-remove-phone-errors {
+  margin-top: 8px;
+  color: var(--text-danger);
+  font-family: var(--global-font);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.user-sub-modal-form-remove-phone-sep {
+  position: absolute;
+  pointer-events: none;
+  min-height: 0px;
+  min-width: 1px;
+  flex: 0 0 auto;
+  height: 0px;
+}
+
+.user-sub-modal-remv-phone-cancel-button {
+  color: var(--white-500);
+  width: auto;
+  height: 38px;
+  min-width: 96px;
+  min-height: 38px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  text-rendering: optimizeLegibility;
+  font-family: var(--global-font);
+}
+
+//user owns servers warning modal
+
+.user-sub-modal-uownssw-flex-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 4px 4px 0px 0px;
+  transition: box-shadow 0.1s ease-out, -webkit-box-shadow 0.1s ease-out;
+  word-wrap: break-word;
+  position: relative;
+  flex: 0 0 auto;
+  padding: 16px;
+  z-index: 1;
+  overflow-x: hidden;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.user-sub-modal-uownssw-title {
+  font-weight: 600;
+  font-family: var(--global-font);
+  font-size: 20px;
+  line-height: 24px;
+  color:var(--header-primary);
+}
+
+.user-sub-modal-form-content-uownssw {
+  position: relative;
+  z-index: 0;
+  border-radius: 5px 5px 0px 0px;
+  padding-bottom: 20px;
+  padding-left: 16px;
+  padding-right: 16px;
+  overflow-x: hidden;
+}
+
+.usubm-uownssw-subtext {
+  font-weight: 400;
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--text-normal);
+}
+
+.user-sub-modal-form-uownssw-sep {
+  position: absolute;
+  pointer-events: none;
+  min-height: 0px;
+  min-width: 1px;
+  flex: 0 0 auto;
+  height: 20px;
+}
+
+//update password modal
+
+.usubm-current-password-subtext {
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-family: var(--global-font);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--header-secondary);
+}
+
+//update/change phone number modal
+
+.user-sub-modal-edit-phone-number {
+  opacity: 1;
+  transform: scale(1);
+  position: relative;
+  width: 440px;
+  min-height: 252px;
+  max-height: 720px;
+
+  background-color: var(--modal-pop-up-bg-color);
+  border-radius: 4px;
+  margin: 0 auto;
+  pointer-events: all;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  -webkit-animation-name: userSubModalModalAppear;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-iteration-count: 1;
+  animation-name: userSubModalModalAppear;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+
+  -webkit-box-shadow: var(--dark-elevation-border), var(--dark-elevation-high);
+  box-shadow: var(--dark-elevation-border), var(--dark-elevation-high);
+
+  button[type="button"]:disabled,
+  button[type="submit"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.user-sub-modal-edit-phone-number.transition-out {
+  -webkit-animation-name: userSubModalModalDisappear;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-iteration-count: 1;
+  animation-name: userSubModalModalDisappear;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+}
+
+.phone-number-animation-icon-container {
+  position: absolute;
+  top: -150px;
+  left: 145px;
+  right: 110px;
+}
+
+.user-sub-modal-title-change-number {
+  font-family: var(--global-font);
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: auto;
+  padding-top: 40px;
+  margin-bottom: 8px;
+  color: var(--header-primary);
+}
+
+.user-sub-modal-title-change-number-description1 {
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text-normal);
+}
+
+.user-sub-modal-title-subtext-change-number {
+  margin-top: 8px;
+  text-align: center;
+  font-weight: 400;
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--header-secondary);
+}
+
+//disable account modal
+
+.user-sub-modal-acc-rmv-form-content {
+  position: relative;
+  z-index: 0;
+  border-radius: 5px 5px 0px 0px;
+  padding-left: 16px;
+  padding-right: 16px;
+  overflow-x: hidden;
+}
+
+.user-sub-modal-acc-rmv-header {
+  font-weight: 600;
+  font-family: var(--global-font);
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--header-primary);
+}
+
+.user-sub-modal-acc-rmv-card-warning-wrapper {
+  background-color: var(--status-warning-background);
+  padding: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  border-radius: 5px;
+  border: 1px solid var(--status-warning-background);
+}
+
+.user-sub-modal-acc-rmv-card-warning {
+  color: var(--white-500);
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.user-sub-modal-acc-rmv-pw-error {
+  color: var(--text-danger);
+  margin-top: 8px;
+  font-family: var(--global-font);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.user-sub-modal-acc-rmv-cancel-button {
+  color: var(--white-500);
+  width: auto;
+  height: 38px;
+  min-width: 96px;
+  min-height: 38px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  text-rendering: optimizeLegibility;
+  font-family: var(--global-font);
+}
+
+//confirm logout modal
+
+.user-sub-modal-logout-button {
+  color: var(--white-500);
+  background-color: var(--button-danger-background);
+  width: auto;
+  height: 38px;
+  min-width: 96px;
+  min-height: 38px;
+  transition: background-color 0.17s ease, color 0.17s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  text-rendering: optimizeLegibility;
+  font-family: var(--global-font);
+}
+
+.user-sub-modal-logout-button:hover {
+  background-color: var(--button-danger-background-hover);
+}
+
+.user-sub-modal-logout-button:active {
+  background-color: var(--button-danger-background-active);
+}
+
+// copy user id (strife tag in this instance) modal
+
+.copy-clip-board-sub-modal-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: none !important;
+  z-index: 1002;
+}
+
+.copy-clip-board-modal-animate-container {
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.copy-clip-board-modal-layer {
+  position: absolute;
+  pointer-events: auto;
+  left: 708.67px;
+  top: 223px;
+}
+
+.copy-clip-board-modal {
+  min-width: 188px;
+  max-width: 320px;
+  z-index: 1;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  height: auto;
+  cursor: default;
+  max-height: calc(100vh - 32px);
+  -webkit-box-shadow: var(--elevation-high);
+  box-shadow: var(--elevation-high);
+  background: var(--background-floating);
+  border-radius: 4px;
+  -webkit-user-drag: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.copy-clip-board-modal-content {
+  color: var(--interactive-normal);
+  border-color: var(--interactive-normal);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 32px;
+  padding: 6px 8px;
+  margin: 2px 0;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  font-family: var(--global-font);
+  cursor: pointer;
+}
+
+.copy-id-div-content {
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.copy-clip-board-modal-content:hover {
+  background-color: var(--brand-experiment-600);
+  color: var(--white-500);
+}
+
+.copy-clip-board-modal-content:active {
+  background-color: var(--brand-experiment-600);
+  color: var(--white-500);
+}
+
+.copy-clip-board-modal-id-icon-container {
+  position: relative;
+  flex: 0 0 auto;
+  height: 18px;
+  width: 18px;
+  margin-left: 8px;
+}
+
+.copy-clip-board-modal-id-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.copy-clip-board-modal-sep {
+  position: absolute;
+  pointer-events: none;
+  min-height: 0px;
+  min-width: 1px;
+  flex: 0 0 auto;
+  height: 6px;
 }
