@@ -1820,7 +1820,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Styles and Conversion from SCSS Vars to CSS for all scroll bars in the app located in the global scroll bars scss file.    
     - Finalized Styles and Conversion from SCSS Vars to CSS for channel settings modal.
     - Finalized Styles and Conversion from SCSS Vars to CSS for server settings modal.
-
+    - Finalized Styles and Conversion from SCSS Vars to CSS for user sub modals.
 ## Backend Changes
 
 - Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
