@@ -1817,6 +1817,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Styles and Conversion from SCSS Vars to CSS for create channel modal.
     - Finalized Styles and Conversion from SCSS Vars to CSS for invite to server modal.
     - Finalized Styles and Conversion from SCSS Vars to CSS for Mega UPC modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for all scroll barss in the app located in the global scroll bars scss file.    
 
 
 
