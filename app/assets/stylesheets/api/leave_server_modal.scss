@@ -273,7 +273,7 @@
   height: 38px;
   min-width: 96px;
   min-height: 38px;
-  background-color: var(--red-danger-button-background);
+  background-color: var(--button-danger-background);
   transition: background-color 0.17s ease, color 0.17s ease;
   position: relative;
   text-rendering: optimizeLegibility;
@@ -295,7 +295,10 @@
 }
 
 .leave-server-submit-button:hover {
-  background-color: var(--red-danger-button-background-hover);
+  background-color: var(--button-danger-background-hover);
+}
+.leave-server-submit-button:active {
+  background-color: var(--button-danger-background-active);
 }
 
 .leave-server-cancel-button {
