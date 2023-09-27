@@ -55,14 +55,14 @@
     background-color: var(--background-tertiary);
     font-size: 16px;
     font-family: var(--global-font);
-    color: #dcddde;
-    border: solid rgb(25, 25, 25) 1px;
+    color: var(--plain-select-box-text);
+    border: solid var(--plain-select-box-focus) 1px;
     padding: 5px;
     margin: 0 5px 5px 5px;
     border-radius: 3px;
     height: 40px;
     scrollbar-width: thin;
-    scrollbar-color: hsl(216, 7.2%, 13.5%) hsla(0, 0%, 0%, 0);
+    scrollbar-color: var(--primary-2000) var(--transparent);
   }
 
   select#month {
@@ -80,17 +80,17 @@
   }
 
   select:hover {
-    border: solid black 1px;
+    border: solid var(--black-500) 1px;
     outline: none;
     transition: 0.25s;
   }
 
   select#year option:hover {
-    box-shadow: 0 0 10px 100px #ffffff inset;
+    box-shadow: 0 0 10px 100px var(--white-500) inset;
   }
 
   select option:focus {
-    color: #191919;
+    color: var(--plain-select-box-focus);
   }
 
   option {
