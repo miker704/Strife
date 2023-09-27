@@ -1802,7 +1802,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Styles and Conversion from SCSS Vars to CSS for start conversation modal styles.
     - Finalized Styles and Conversion from SCSS Vars to CSS for all styles for all loading screens.
     - Finalized Styles and Conversion from SCSS Vars to CSS for Create dm modal.
-
+    - Finalized Styles and Conversion from SCSS Vars to CSS for Create dm modal home bar version.
 
 ## Backend Changes
 
