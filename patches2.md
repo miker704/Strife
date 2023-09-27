@@ -1784,6 +1784,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Server Membership Api Util.js.
     - Finalized Splash Page Styles adding more css vars.
     - Finalized Styles and Conversion from SCSS Vars to CSS for Channel nav bar styles.
+    - Updated unused animations file.
 
 ## Backend Changes
 
