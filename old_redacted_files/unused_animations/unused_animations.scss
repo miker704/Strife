@@ -899,3 +899,56 @@
 //     animation-iteration-count: 1;
 //     animation-timing-function: ease-in-out;
 // }
+
+
+// @-webkit-keyframes completedSliding {
+//     0% {
+//       -webkit-transform: scale(0.8);
+//       transform: scale(0.8);
+//       background-color: hsl(228, 6%, 33%);
+//     }
+  
+//     20% {
+//       -webkit-box-shadow: 0 0 0 0 hsla(145, 65%, 39%, 0.5);
+//       box-shadow: 0 0 0 0 hsla(145, 65%, 39%, 0.5);
+//     }
+  
+//     60% {
+//       -webkit-transform: scale(1.2);
+//       transform: scale(1.2);
+//       background-color: hsl(146, 86.6%, 64.9%);
+//     }
+  
+//     to {
+//       -webkit-transform: scale(1);
+//       transform: scale(1);
+//       -webkit-box-shadow: 0 0 0 2px hsl(145, 65%, 39%);
+//       box-shadow: 0 0 0 2px hsl(145, 65%, 39%);
+//     }
+//   }
+
+// @keyframes completedSliding {
+//     0% {
+//       -webkit-transform: scale(0.8);
+//       transform: scale(0.8);
+//       background-color: hsl(228, 6%, 33%);
+//     }
+  
+//     20% {
+//       -webkit-box-shadow: 0 0 0 0 hsla(145, 65%, 39%, 0.5);
+//       box-shadow: 0 0 0 0 hsla(145, 65%, 39%, 0.5);
+//     }
+  
+//     60% {
+//       -webkit-transform: scale(1.2);
+//       transform: scale(1.2);
+//       background-color: hsl(146, 86.6%, 64.9%);
+//     }
+  
+//     to {
+//       -webkit-transform: scale(1);
+//       transform: scale(1);
+//       -webkit-box-shadow: 0 0 0 2px hsl(145, 65%, 39%);
+//       box-shadow: 0 0 0 2px hsl(145, 65%, 39%);
+//     }
+//   }
