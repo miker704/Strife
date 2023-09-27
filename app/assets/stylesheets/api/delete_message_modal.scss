@@ -1,634 +1,600 @@
-@import 'global_vars';
-
-
-
 @keyframes deleteMessageWrapperRender {
+  0% {
+    opacity: 0;
+  }
 
-    0% {
-        opacity: 0;
-    }
+  70% {
+    opacity: 1;
+  }
 
-    70% {
-        opacity: 1;
-    }
-
-    100% {}
-
+  100% {
+  }
 }
 
 @-webkit-keyframes deleteMessageWrapperRender {
+  0% {
+    opacity: 0;
+  }
 
-    0% {
-        opacity: 0;
-    }
+  70% {
+    opacity: 1;
+  }
 
-    70% {
-        opacity: 1;
-    }
-
-    100% {}
-
+  100% {
+  }
 }
 
 @keyframes deleteMessageWrapperUnRender {
+  0% {
+    opacity: 1;
+  }
 
-    0% {
-        opacity: 1;
-    }
+  70% {
+    opacity: 0.85;
+  }
 
-    70% {
-        opacity: 0.85;
-    }
-
-    100% {
-        opacity: 0.6;
-
-    }
-
+  100% {
+    opacity: 0.6;
+  }
 }
 
 @-webkit-keyframes deleteMessageWrapperUnRender {
+  0% {
+    opacity: 1;
+  }
 
+  70% {
+    opacity: 0.85;
+  }
 
-    0% {
-        opacity: 1;
-    }
-
-    70% {
-        opacity: 0.85;
-    }
-
-    100% {
-        opacity: 0.6;
-
-    }
+  100% {
+    opacity: 0.6;
+  }
 }
 
-
 @keyframes deleteMessageModalAppear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
 
-    0% {
-        opacity: 0;
-        -webkit-transform: scale(0.5, 0.5);
-        transform: scale(0.5, 0.5);
-    }
-
-    70% {
-        opacity: 1;
-    }
-
-    100% {
-        -webkit-transform: scale(1, 1);
-        transform: scale(1, 1);
-    }
-
-
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
 }
 
 @-webkit-keyframes deleteMessageModalAppear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
 
-    0% {
-        opacity: 0;
-        -webkit-transform: scale(0.5, 0.5);
-        transform: scale(0.5, 0.5);
-    }
-
-    70% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(1, 1);
-        -webkit-transform: scale(1, 1);
-
-    }
-
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+  }
 }
 
 @keyframes deleteMessageModalDisappear {
-
-    0% {
-        opacity: 1;
-        transform: scale(1, 1);
-        -webkit-transform: scale(1, 1);
-    }
-
-    70% {
-        opacity: 0.5;
-    }
-
-    100% {
-        transform: scale(0.5, 0.5);
-        -webkit-transform: scale(0.5, 0.5);
-        opacity: 0.1;
-
-    }
-
+  from {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
 }
 
 @-webkit-keyframes deleteMessageModalDisappear {
-
-    0% {
-        opacity: 1;
-        transform: scale(1, 1);
-        -webkit-transform: scale(1, 1);
-    }
-
-    70% {
-        opacity: 0.5;
-    }
-
-    100% {
-        transform: scale(0.5, 0.5);
-        -webkit-transform: scale(0.5, 0.5);
-        opacity: 0.1;
-
-    }
-
+  from {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
 }
-
-
 
 .delete-message-modal-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: none !important;
-    pointer-events: none;
-    z-index: 1002;
-    outline: 0;
-    forced-color-adjust: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: none !important;
+  pointer-events: none;
+  z-index: 1002;
+  outline: 0;
 
-    animation-name: deleteMessageWrapperRender;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
-    -webkit-animation-name: deleteMessageWrapperRender;
-    -webkit-animation-duration: 0.3s;
-    -webkit-animation-iteration-count: 1;
+  -webkit-animation-name: deleteMessageWrapperRender;
+  -webkit-animation-duration: 0.2s;
+  -webkit-animation-iteration-count: 1;
+  animation-name: deleteMessageWrapperRender;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
 }
-
 
 .delete-message-modal-backdrop {
-    outline: 0;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transform: translateZ(0);
-    pointer-events: all;
-    opacity: 0.85;
-    background: transparent;
+  outline: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(0);
+  pointer-events: all;
+  opacity: 0.85;
+  background: var(--black-500);
 }
 
-
 .delete-message-modal-inner-layer {
-    outline: 0;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 0;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  outline: 0;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .delete-message-modal-focus-lock {
-    outline: 0;
-    min-height: 0;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
+  outline: 0;
+  min-height: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-
 .delete-message-modal-root {
-    outline: 0;
-    width: 440px;
-    max-height: 720px;
-    min-height: 200px;
-    background-color: $modal-pop-up-bg-color;
-    border-radius: 4px;
-    margin: 0 auto;
-    pointer-events: all;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    opacity: 1;
-    transform: scale(1);
-    box-shadow: $dark-elevation-border, $dark-elevation-high;
-    -ms-user-select: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    animation-name: deleteMessageModalAppear;
-    animation-duration: 0.3s;
-    animation-iteration-count: 1;
-    -webkit-animation-name: deleteMessageModalAppear;
-    -webkit-animation-duration: 0.3s;
-    -webkit-animation-iteration-count: 1;
-    button[type="submit"]:disabled {
-        cursor: not-allowed;
-        opacity: 0.5;
-        color: $white-500;
-        // forced-color-adjust: none;
-    }
+  outline: 0;
+  width: 440px;
+  max-height: 720px;
+  min-height: 200px;
+  background-color: var(--modal-pop-up-bg-color);
+  border-radius: 4px;
+  margin: 0 auto;
+  pointer-events: all;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: var(--dark-elevation-border), var(--dark-elevation-high);
+  -ms-user-select: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -webkit-animation-name: deleteMessageModalAppear;
+  -webkit-animation-duration: 0.2s;
+  -webkit-animation-iteration-count: 1;
+  animation-name: deleteMessageModalAppear;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+
+  button[type="submit"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    color: var(--white-500);
+  }
 }
 
 .delete-message-modal-root.transition-out {
-    animation-name: deleteMessageModalDisappear;
-    animation-duration: 0.2s;
-    animation-iteration-count: 1;
-    -webkit-animation-name: deleteMessageModalDisappear;
-    -webkit-animation-duration: 0.2s;
-    -webkit-animation-iteration-count: 1;
+  -webkit-animation-name: deleteMessageModalDisappear;
+  -webkit-animation-duration: 0.15s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: deleteMessageModalDisappear;
+  animation-duration: 0.15s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
 }
 
-
-
 .delete-message-modal-inner-flex {
-    outline: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    position: relative;
-    flex: 0 0 auto;
-    padding: 16px;
-    z-index: 1;
-    overflow-x: hidden;
-    border-radius: 4px 4px 0 0;
-    transition: box-shadow .1s ease-out, -webkit-box-shadow .1s ease-out;
-    word-wrap: break-word;
-    flex: 0 0 auto;
-
+  outline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  position: relative;
+  flex: 0 0 auto;
+  padding: 16px;
+  z-index: 1;
+  overflow-x: hidden;
+  border-radius: 4px 4px 0 0;
+  transition: box-shadow 0.1s ease-out, -webkit-box-shadow 0.1s ease-out;
+  word-wrap: break-word;
+  flex: 0 0 auto;
 }
 
 .delete-msg-h2 {
-    outline: 0;
-    font-family: $global-font;
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 600;
-    color: $header-primary;
+  outline: 0;
+  font-family: var(--global-font);
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  color: var(--header-primary);
 }
-
-
 
 .delete-this-message-wrapper {
-    outline: 0;
-    position: relative;
-    z-index: 0;
-    border-radius: 5px 5px 0 0;
-    padding-left: 16px;
-    // padding-right: 16px;
-    overflow-x: hidden;
-    position: relative;
-    box-sizing: border-box;
-    min-height: 0;
-    flex: 1 1 auto;
-    padding-bottom: 20px;
-    padding-right: 8px;
-    overflow: hidden scroll;
-}
-
-.delete-this-message-wrapper::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-.delete-this-message-wrapper::-webkit-corner {
-    background-color: transparent;
-}
-
-.delete-this-message-wrapper::-webkit-scrollbar-thumb {
-    background-clip: padding-box;
-    border: 2px solid transparent;
-    border-radius: 4px;
-    background-color: $scrollbar-thin-thumb;
-    min-height: 40px;
-}
-
-.delete-this-message-wrapper::-webkit-scrollbar-track {
-    border-color: $scrollbar-thin-track;
-    background-color: $scrollbar-thin-track;
-    border: 2px solid $scrollbar-thin-track;
+  outline: 0;
+  position: relative;
+  z-index: 0;
+  border-radius: 5px 5px 0 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  overflow-x: hidden;
+  padding-bottom: 20px;
 }
 
 .dtm-subtext {
-    outline: 0;
-    font-family: $global-font;
-    color: $text-normal;
-    font-size: 16px;
-    line-height: 20px;
-    margin-bottom: 20px;
-    font-weight: 400;
+  outline: 0;
+  font-family: var(--global-font);
+  color: var(--text-normal);
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 20px;
+  font-weight: 400;
 }
 
 .delete-this-message-container {
-    outline: 0;
-    position: relative;
-    border-radius: 3px;
-    overflow: hidden;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    pointer-events: none;
-    box-shadow: $dark-elevation-border, $dark-elevation-high;
-    background-color: $primary-600;
+  outline: 0;
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  pointer-events: none;
+  box-shadow: var(--dark-elevation-border), var(--dark-elevation-high);
+  background-color: var(--primary-600);
 }
 
 .delete-msg-box {
-    outline: 0;
-    forced-color-adjust: none;
+  outline: 0;
 }
 
 .deleted-message-container {
-    padding-left: 72px;
-    padding-top: 0.125rem;
-    padding-bottom: 0.125rem;
-    outline: 0;
-    position: relative;
-    word-wrap: break-word;
-    user-select: text;
-    -webkit-box-flex: 0;
-    flex: 0 0 auto;
-    padding-right: 16px;
-    min-height: 1.375rem;
+  padding-left: 72px;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+  outline: 0;
+  position: relative;
+  word-wrap: break-word;
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  padding-right: 16px;
+  min-height: 1.375rem;
+
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
+.deleted-message-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 
 .deleted-message-inners {
-    position: static;
-    outline: 0;
-    margin-left: 0;
-    padding-left: 0;
-    text-indent: 0;
+  position: static;
+  outline: 0;
+  margin-left: 0;
+  padding-left: 0;
+  text-indent: 0;
 }
 
 .deleted-message-owner {
-    overflow: hidden;
-    display: block;
-    position: relative;
-    line-height: 1.375rem;
-    min-height: 1.375rem;
-    color: $text-muted;
-    white-space: break-spaces;
-    word-wrap: pre-wrap;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  line-height: 1.375rem;
+  min-height: 1.375rem;
+  color: var(--text-muted);
+  white-space: break-spaces;
+  word-wrap: pre-wrap;
 }
 
 .deleted-message-username-wrapper {
-    margin-right: 0.25rem;
-    outline: 0;
+  margin-right: 0.25rem;
+  outline: 0;
 }
 
 .deleted-message-username {
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.375rem;
-    color: $header-primary;
-    font-family: $global-font;
-    display: inline;
-    vertical-align: baseline;
-    position: relative;
-    overflow: hidden;
-    flex-shrink: 0;
-    outline: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.375rem;
+  color: var(--header-primary);
+  font-family: var(--global-font);
+  display: inline;
+  vertical-align: baseline;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  outline: 0;
 }
 
 .deleted-message-time-stamp {
-    font-size: 0.75rem;
-    line-height: 1.375rem;
-    color: $text-muted;
-    vertical-align: baseline;
-    display: inline-block;
-    height: 1.25rem;
-    cursor: default;
-    pointer-events: none;
-    font-weight: 500;
-    font-family: $global-font;
+  font-size: 0.75rem;
+  line-height: 1.375rem;
+  color: var(--text-muted);
+  vertical-align: baseline;
+  display: inline-block;
+  height: 1.25rem;
+  cursor: default;
+  pointer-events: all;
+  font-weight: 500;
+  font-family: var(--global-font);
+  outline: 0;
+  margin-left: 0.25rem;
+}
+
+.deleted-msg-i-tag-sep {
+  position: absolute;
+  opacity: 0;
+  display: inline-block;
+  font-style: normal;
 }
 
 .deleted-message-content {
-    margin-left: -72px;
-    padding-left: 72px;
-    overflow: hidden;
-    position: relative;
-    text-indent: 0;
-    outline: 0;
-    font-size: 1rem;
-    line-height: 1.375rem;
-    white-space: pre-wrap;
-    white-space: break-spaces;
-    word-wrap: break-word;
-    color: $text-normal;
-    font-family: $global-font;
+  margin-left: -72px;
+  padding-left: 72px;
+  overflow: hidden;
+  position: relative;
+  text-indent: 0;
+  outline: 0;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  white-space: pre-wrap;
+  white-space: break-spaces;
+  word-wrap: break-word;
+  color: var(--text-normal);
+  font-family: var(--global-font);
+
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.deleted-message-content-accessories {
+  display: grid;
+  grid-auto-flow: row;
+  grid-row-gap: 0.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  text-indent: 0;
+  min-height: 0;
+  min-width: 0;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+  position: relative;
+  outline: 0;
+}
+
+.deleted-message-content-accessories:empty {
+  display: none;
 }
 
 .delete-server-msg-sep {
-    position: absolute;
-    pointer-events: none;
-    min-height: 0px;
-    min-width: 1px;
-    flex: 0 0 auto;
-    height: 20px;
-    outline: 0;
+  position: absolute;
+  pointer-events: none;
+  min-height: 0px;
+  min-width: 1px;
+  flex: 0 0 auto;
+  height: 20px;
+  outline: 0;
 }
 
 .deleted-message-pro-tips-container {
-    margin-top: 20px;
-    outline: 0;
+  margin-top: 20px;
+  outline: 0;
 }
 
-
 .deleted-message-pro-tips-header {
-    outline: 0;
-    line-height: 18px;
-    font-family: $global-font;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: $text-positive;
+  outline: 0;
+  line-height: 18px;
+  font-family: var(--global-font);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: var(--text-positive);
 }
 
 .deleted-message-pro-tips-subtext {
-    font-size: 14px;
-    font-family: $global-font;
-    line-height: 16px;
-    opacity: 0.6;
-    font-weight: 400;
+  font-size: 14px;
+  font-family: var(--global-font);
+  line-height: 16px;
+  opacity: 0.6;
+  font-weight: 400;
+  outline: 0;
+  color: var(--text-normal);
+
+  strong {
+    font-weight: 600;
     outline: 0;
-    color: $text-normal;
-
-    strong {
-        font-weight: 600;
-        outline: 0;
-    }
+  }
 }
-
-
 
 .delete-server-msg-button-sec {
-    outline: 0;
-    box-shadow: inset 0 1px 0 $primary-630-hsl;
-    flex: 0 0 auto;
-    border-radius: 0 0 5px 5px;
-    background-color: $modal-footer-bg-color-button-wrapper;
-    position: relative;
-    flex: 0 0 auto;
-    padding: 16px;
-    z-index: 1;
-    overflow-x: hidden;
-    flex-direction: row-reverse;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    display: flex;
+  outline: 0;
+  box-shadow: inset 0 1px 0 var(--primary-630-hsl);
+  flex: 0 0 auto;
+  border-radius: 0 0 5px 5px;
+  background-color: var(--modal-footer-bg-color-button-wrapper);
+  position: relative;
+  padding: 16px;
+  z-index: 1;
+  overflow-x: hidden;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  display: flex;
 }
 
-
-
-
 .delete-server-msg-submit-button {
-    color: $white-500;
-    width: auto;
-    height: 38px;
-    min-width: 96px;
-    min-height: 38px;
-    background-color: $red-danger-button-background;
-    transition: background-color .17s ease, color .17s ease;
-    position: relative;
-    text-rendering: optimizeLegibility;
-    font-family: $global-font;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    box-sizing: border-box;
-    // background: none;
-    border: none;
-    border-radius: 3px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 16px;
-    padding: 2px 16px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-
+  color: var(--white-500);
+  width: auto;
+  height: 38px;
+  min-width: 96px;
+  min-height: 38px;
+  background-color: var(--button-danger-background);
+  transition: background-color 0.17s ease, color 0.17s ease;
+  position: relative;
+  text-rendering: optimizeLegibility;
+  font-family: var(--global-font);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+  // background: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
 .delete-server-msg-submit-button:hover {
-    background-color: $red-danger-button-background-hover;
+  background-color: var(--button-danger-background-hover);
 }
 
+.delete-server-msg-submit-button:active {
+  background-color: var(--button-danger-background-active);
+}
 
 .delete-server-msg-cancel-button {
-    cursor: pointer;
-    font-family: $global-font;
-    text-rendering: optimizeLegibility;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    box-sizing: border-box;
-    background: none;
-    border: none;
-    border-radius: 3px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 16px;
-    padding: 2px 16px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    position: relative;
-    height: 38px;
-    min-width: 96px;
-    min-height: 38px;
-    width: auto;
-    margin-right: 8px;
-    color: $white-500;
+  cursor: pointer;
+  font-family: var(--global-font);
+  text-rendering: optimizeLegibility;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  height: 38px;
+  min-width: 96px;
+  min-height: 38px;
+  width: auto;
+  color: var(--white-500);
 }
-
 
 .delete-server-msg-cancel-button:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
+.delete-server-msg-button-contents {
+  margin: 0 auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background-image: linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    transparent 0,
+    transparent 2px,
+    transparent 0
+  );
+}
 
 .delete-message-member-avatar-img {
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    margin-right: 10px;
-    user-select: none;
-    -webkit-user-drag: none;
-    position: absolute;
-    left: 16px;
-    cursor: pointer;
-    flex: 0 0 auto;
-    pointer-events: none;
-    z-index: 1;
+  position: absolute;
+  left: 16px;
+  margin-top: calc(4px - 0.125rem);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.delete-message-member-avatar-img>img {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    margin-top: calc(4px - 0.125rem);
-    user-select: none;
-    -webkit-user-drag: none;
+.delete-message-member-avatar-img::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-modifier-accent);
 }
 
-.delete-message-member-avatar-img>img::before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: $background-modifier-accent;
+.delete-message-member-avatar-img[alt] {
+  text-indent: -9999px;
 }
-
-.delete-message-member-avatar-img>img[alt] {
-    text-indent: -9999px;
-}
-
 
 .fake-delete-message-submit-button {
-    color: $white-500;
-    width: auto;
-    height: 38px;
-    min-width: 96px;
-    min-height: 38px;
-    background-color: $red-danger-button-background;
-    transition: background-color .17s ease, color .17s ease;
-    position: relative;
-    text-rendering: optimizeLegibility;
-    font-family: $global-font;
-    user-select: none;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 3px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 16px;
-    padding: 2px 16px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    cursor: not-allowed;
-    opacity: 0.5;
-
-}
-
-.delete-channel-submit-button:hover:not(:disabled) {
-    background-color: $red-danger-button-background-hover;
+  color: var(--white-500);
+  width: auto;
+  height: 38px;
+  min-width: 96px;
+  min-height: 38px;
+  background-color: var(--button-danger-background);
+  transition: background-color 0.17s ease, color 0.17s ease;
+  position: relative;
+  text-rendering: optimizeLegibility;
+  font-family: var(--global-font);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  cursor: not-allowed;
+  opacity: 0.5;
 }
