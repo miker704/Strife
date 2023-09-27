@@ -1825,7 +1825,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Styles and Conversion from SCSS Vars to CSS for edit username modal.
     - Finalized Styles and Conversion from SCSS Vars to CSS for edit user avatar modal.
     - Finalized Styles and Conversion from SCSS Vars to CSS for edit user banner modal.
-
+    - Finalized Styles and Conversion from SCSS Vars to CSS for edit user password modal.
 
 
 
