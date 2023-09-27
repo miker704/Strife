@@ -1806,7 +1806,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Styles and Conversion from SCSS Vars to CSS for no friends dm modal home bar version.
     - Finalized Styles and Conversion from SCSS Vars to CSS for no friends dm modal.
     - Finalized Styles and Conversion from SCSS Vars to CSS for not friends dm modal.
-
+    - Finalized Styles and Conversion from SCSS Vars to CSS for invite to dm modal.
 
 ## Backend Changes
 
