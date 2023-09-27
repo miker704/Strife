@@ -1792,7 +1792,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Styles and Conversion from SCSS Vars to CSS for message styles.        
     - Finalized Styles and Conversion from SCSS Vars to CSS for friendship styles.
     - Finalized Styles and Conversion from SCSS Vars to CSS for dm message styles.
-    - Finalized Styles and Conversion from SCSS Vars to CSS for dm members list styles.    
+    - Finalized Styles and Conversion from SCSS Vars to CSS for dm server members list styles.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for dm server header nav bar styles.      
 
 ## Backend Changes
 
