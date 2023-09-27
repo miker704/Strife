@@ -1832,7 +1832,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Styles and Conversion from SCSS Vars to CSS for remove user phone number modal.
     - Finalized Styles and Conversion from SCSS Vars to CSS for user owns servers modal.
     - Finalized Styles and Conversion from SCSS Vars to CSS for disable user account modal.    
-
+    - Finalized Styles and Conversion from SCSS Vars to CSS for delete user account modal.
 
 ## Backend Changes
 
