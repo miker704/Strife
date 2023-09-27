@@ -1837,6 +1837,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Styles and Conversion from SCSS Vars to CSS for copy user strife tag modal.
     - Finalized Styles and Conversion from SCSS Vars to CSS for user setttings modal.    
     - Finalized Dm Servers Reducer.
+    - Finalized Tool Tips Styles.
 
 ## Backend Changes
 
