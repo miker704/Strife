@@ -1786,6 +1786,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Styles and Conversion from SCSS Vars to CSS for Channel nav bar styles.
     - Updated unused animations file.
     - Finalized Styles and Conversion from SCSS Vars to CSS for Active Now Section styles.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for Explore Servers styles.
 
 ## Backend Changes
 
