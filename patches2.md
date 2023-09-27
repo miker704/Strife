@@ -1828,7 +1828,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Styles and Conversion from SCSS Vars to CSS for edit user password modal.
     - Finalized Styles and Conversion from SCSS Vars to CSS for edit user phone number modal.
     - Finalized Styles and Conversion from SCSS Vars to CSS for edit user email modal.
-
+    - Finalized Styles and Conversion from SCSS Vars to CSS for log out modal.
 
 
 ## Backend Changes
