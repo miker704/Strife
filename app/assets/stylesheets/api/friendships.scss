@@ -2,1578 +2,1230 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //friendship bar
-$off-grey: #B9BBBE;
+//friends button dm nav bar button and home  bar button
 
 .friends-nav-bar-wrapper {
-    position: relative;
-    max-width: 225px;
-    width: 215px;
-    margin-left: 4px;
-    forced-color-adjust: none;
-    box-sizing: border-box;
-    display: block;
-    padding: 1px 0;
-    border-radius: 4px;
-    transition: none;
-    margin-top: 8px;
+  position: relative;
+  max-width: 224px;
+  margin-left: 8px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  padding: 1px 0;
+  border-radius: 4px;
+  -webkit-transition: none;
+  transition: none;
+  font-family: var(--global-font);
 }
 
 .friends-nav-bar {
-    forced-color-adjust: none;
-    padding-right: 8px;
-    // color: #FFFFFF;
-    // color: hsl(223, 3.4%, 60.2%);
-    // color: #989AA2;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    box-sizing: border-box;
-    width: 100%;
-    cursor: pointer;
-    border-radius: inherit;
-    // background-color: hsla(217,7.6%,33.5%,0.6);
-    text-rendering: optimizeLegibility;
+  padding-right: 8px;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  display: flex;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  color: var(--channels-default);
+  cursor: pointer;
+  border-radius: inherit;
+  outline: 0;
 }
 
 .friends-nav-bar:hover,
-.friends-nav-bar:focus-within {
-    // filter: brightness(125%);
-    // color: hsl(210, 2.9%, 86.7%);
-    // background-color: hsla(217, 7.6%, 33.5%, 0.4);
-    background-color: #35373c;
-    color: hsl(228, 8.8%, 88.8%);
+.friends-nav-bar:focus-within,
+.friends-nav-bar.selected:hover,
+.friends-nav-bar.selected:focus-within {
+  color: var(--interactive-hover);
+  background-color: var(--background-modifier-hover);
 
-    .friend-avatar-text,
-    .friend-avatar {
-        color: hsl(228, 8.8%, 88.8%);
-
-    }
+  .friend-avatar-text,
+  .friend-avatar {
+    color: var(--interactive-hover);
+  }
 }
 
 .friends-nav-bar:active {
-    color: #FFFFFF;
-    background-color: hsla(217, 7.6%, 33.5%, 0.48);
+  color: var(--interactive-active);
+  background-color: var(--background-modifier-active);
 }
 
-.friends-nav-bar.selected-x {
-    // background-color: #3f4249;
-    background: rgba(78, 80, 88, 0.6);
-    // color: hsl(210, 9.1%, 95.7%);
+.friends-nav-bar.selected {
+  color: var(--interactive-active);
+  background-color: var(--background-modifier-selected);
 
-    .friend-avatar-text,
-    .friend-avatar {
-        color: hsl(210, 9.1%, 95.7%);
-        // filter: brightness(125%);
-    }
+  .friend-avatar-text,
+  .friend-avatar {
+    color: var(--interactive-active);
+  }
 }
-
 
 .friends-nav-bar-link {
-    align-items: center;
-    color: inherit;
-    forced-color-adjust: none;
-    flex: 1 1 auto;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -webkit-box-align: center;
-    display: flex;
-    min-width: 0;
-    -webkit-box-flex: 1;
-    text-decoration: none;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  display: flex;
+  min-width: 0;
+  -webkit-box-flex: 1;
+  flex: 1 1 auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  align-items: center;
+  color: inherit;
+  outline: 0;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-
 .friend-avatar-wrapper {
-    forced-color-adjust: none;
-    -webkit-box-flex: 1;
-    flex-grow: 1;
-    align-items: center;
-    display: flex;
-    -webkit-box-align: center;
-    min-width: 0;
-    border-radius: 4px;
-    height: 42px;
-    padding: 0 8px;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  border-radius: 4px;
+  height: 42px;
+  padding: 0px 8px;
+  outline: 0;
 }
 
 .friend-avatar {
-    forced-color-adjust: none;
-    flex: 0 0 auto;
-    width: 32px;
-    height: 32px;
-    margin-right: 12px;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    justify-content: center;
-    -webkit-box-flex: 0;
-    -webkit-box-pack: center;
-    color: hsl(228, 5.1%, 61.6%);
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 0;
 }
 
 .friend-avatar-text-wrapper {
-    forced-color-adjust: none;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    flex: 1 1 auto;
-    min-width: 0;
-    -webkit-box-flex: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  min-width: 0;
+  -webkit-box-flex: 1;
+  flex: 1 1 auto;
+  outline: 0;
 }
 
 .friend-avatar-text-inner {
-    align-items: center;
-    justify-content: flex-start;
-    -webkit-box-align: center;
-    display: flex;
-    -webkit-box-pack: start;
-    forced-color-adjust: none;
+  display: -webkit-box;
+  -webkit-box-pack: start;
+  -webkit-box-align: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  outline: 0;
 }
 
 .friend-avatar-text {
-    forced-color-adjust: none;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 600;
-    -webkit-box-flex: 0;
-    flex: 0 1 auto;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    font-family: "Whitney";
-    color: #989AA2;
-
+  outline: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  -webkit-box-flex: 0;
+  flex: 0 1 auto;
+  font-family: var(--global-font);
 }
 
+//end/////////////////////////////////
 
+.home-page-friend-tab-body {
+  height: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  outline: 0;
+}
 
+.home-page-friend-tab-body::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  -webkit-box-shadow: var(--elevation-low);
+  box-shadow: var(--elevation-low);
+  z-index: 1;
+  pointer-events: none;
+}
 
-.friend-index-container {
+.friendslist-column {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-box-flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow: hidden;
+  outline: 0;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 
-    // height: calc(100% - 0px);
-    // width: 105vh;
+  button[type="submit"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    color: var(--white-500);
+    background-color: var(--brand-experiment);
+  }
+}
 
-    padding-right: 3px;
-    display: flex;
-    flex-direction: column;
-    user-select: none;
-    flex: 1 1 auto;
-    overflow: hidden;
-
-
-
-
-    button[type="submit"]:disabled {
-        cursor: not-allowed;
-        opacity: .5;
-        color: hsl(0, 0%, 100%);
-        background-color: hsl(235, 85.6%, 64.7%);
-        forced-color-adjust: none;
-    }
+.friend-index-sep {
+  position: absolute;
+  pointer-events: none;
+  min-height: 0px;
+  min-width: 1px;
+  flex: 0 0 auto;
+  height: 8px;
+  outline: 0;
 }
 
 .friend-index {
-    overflow: hidden scroll;
-    padding-bottom: 8px;
-    margin-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 8px;
 }
 
-.all-friends {
-    margin: 16px 20px 8px 30px;
-    font-family: 'ABC Ginto Normal';
-    color: #B9BBBE;
-    font-size: 12px;
-    line-height: 16px;
-    font-weight: 600;
-    letter-spacing: 0.25px;
-    cursor: default;
-    // padding-bottom: 10px;
-
-    // transform: translate(0px, 15px);
-
+.home-page-friend-tab-section-title {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-box-align: center;
+  -webkit-box-pack: justify;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.friend-index-item-wrapper {
-    // margin: 0px 30px 0px 20px;
-    // padding: 0px 10px;
-    // overflow: hidden scroll;
-    height: 92vh;
-    // transform: translate(0px, 22px);
+.all-friends-title {
+  margin: 16px 20px 8px 30px;
+  font-family: var(--global-font);
+  color: var(--header-secondary);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: default;
+  -webkit-box-flex: 1;
+  flex: 1 1 auto;
 }
-
-
-.friend-index::-webkit-scrollbar {
-    width: 8px;
-}
-
-.friend-index::-webkit-scrollbar-thumb {
-    background: rgb(30, 35, 40);
-    border-radius: 8px;
-}
-
-
-.friend-index::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background: rgb(40, 45, 50);
-}
-
-
 
 .friend-index-item {
-    border-top: 1px solid #ffffff0f;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 62px;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
 
+  display: flex;
+  flex-direction: row;
 
-    //
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    flex-direction: row;
-    margin-left: 30px;
-    margin-right: 20px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    // overflow: hidden;
-    box-sizing: border-box;
-    cursor: pointer;
-    border-top: 1px solid hsla(217, 7.6%, 33.5%, 0.48);
+  align-items: center;
+  justify-content: space-between;
+  height: 62px;
+  opacity: 1;
 
-    &:hover .friend-tag>span {
-        visibility: visible;
-    }
+  margin-left: 30px;
+  margin-right: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
 
-    // &:hover .friend-msg-button{
-    //     filter: brightness(1.3);
-    // }
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-top: 1px solid var(--background-modifier-accent);
+  outline: 0;
+
+  // &:hover .friend-tag>span {
+  //     visibility: visible;
+  // }
+
+  &:hover .strife-discriminator-tag {
+    visibility: visible;
+  }
 }
 
 .friend-index-item:hover {
-    height: 62px;
-    opacity: 1;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border-radius: 8px;
-    border-color: #0000;
-    padding: 16px 10px;
-    // background: hsla(217, 7.6%, 33.5%, 0.4);
-    background-color: #393c41;
-    forced-color-adjust: none;
-    margin: 0 10px 0 20px;
+  height: 62px;
+  opacity: 1;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 8px;
+  border-color: transparent;
+  padding: 16px 10px;
+  background-color: var(--background-modifier-hover);
+  margin: 0 10px 0 20px;
+  cursor: pointer;
 
-    .pending-check-icon,
-    .friend-msg-button,
-    .friend-options-button,
-    .pending-deny-icon {
-        background-color: #1E1F22;
-    }
+  .strife-discriminator-tag {
+    visibility: visible;
+  }
+
+  .friend-action-button {
+    background-color: var(--background-tertiary);
+  }
 }
 
+.friend-index-item.hoveredState {
+  height: 62px;
+  opacity: 1;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 8px;
+  border-color: transparent;
+  padding: 16px 10px;
+  background-color: var(--background-modifier-hover);
+  margin: 0 10px 0 20px;
+  cursor: pointer;
 
+  .strife-discriminator-tag {
+    visibility: visible;
+  }
+
+  .friend-action-button {
+    background-color: var(--background-tertiary);
+  }
+}
 
 .friend-info {
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+  display: -webkit-flex;
+  display: flex;
+  overflow: hidden;
+  outline: 0;
 }
 
-
-.friend-info>img {
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
+.friend-info:hover {
+  .strife-discriminator-tag {
+    visibility: visible;
+  }
 }
 
 .friend-index-item-wrapper-inner {
-    forced-color-adjust: none;
-    display: flex;
-    justify-content: space-between;
-    max-width: 100%;
-    align-items: center;
-    -webkit-box-pack: justify;
-    flex-grow: 1;
-    -webkit-box-align: center;
-    -webkit-box-flex: 1;
-
-}
-
-.friend-account-info-wrapper-super {
-    forced-color-adjust: none;
-    display: flex;
-    // overflow: hidden;
-    box-sizing: content-box;
+  display: -webkit-flex;
+  -webkit-box-flex: 1;
+  -webkit-box-pack: justify;
+  -webkit-box-align: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  outline: 0;
 }
 
 .friend-account-info-wrapper {
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    overflow: hidden;
-    forced-color-adjust: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  outline: 0;
 }
 
 .friend-account-info {
-    display: flex;
-    forced-color-adjust: none;
-    overflow: hidden;
-    -webkit-box-flex: 1;
-    flex-grow: 1;
-    -webkit-box-align: end;
-    align-items: flex-end;
-    line-height: 1.1;
-    -webkit-box-pack: start;
-    justify-content: flex-start;
-
+  display: -webkit-box;
+  -webkit-box-flex: 1;
+  -webkit-box-align: end;
+  -webkit-box-pack: start;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-end;
+  justify-content: flex-start;
+  overflow: hidden;
+  line-height: 1.1;
+  outline: 0;
 }
 
+/*svg maskihng for friends pages*/
 
-.friend-tag {
-    forced-color-adjust: none;
-    margin-left: 12px;
-    font-weight: 600;
-    font-size: 16px;
-    // color: #FFFFFF;
-    color: #F3F4F5;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: block;
-    font-family: "Whitney";
+.friends-page-avatar-svg-wrapper {
+  width: 32px;
+  height: 32px;
+  margin: 0px 12px 0px 0px;
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 50%;
+  outline: 0;
+}
 
+.friends-svg-avatar-wrapping {
+  position: absolute;
+  contain: paint;
+}
 
-    span {
-        visibility: hidden;
-        font-size: 14px;
-        // color: $off-grey;
-        color: #B8B9BF;
-    }
+.friend-status-mask {
+  pointer-events: none;
+  display: block;
+  width: auto;
+  position: absolute;
+}
+
+.friend-svg-avatar-stack {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  outline: 0;
+}
+
+.friend-avatar-pfp {
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.friend-avatar-pfp[alt] {
+  text-indent: -9999px;
+}
+
+.friend-avatar-pfp:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-modifier-accent);
+}
+
+.friend-svg-masked-pointer-events {
+  pointer-events: auto;
+  outline: none;
+}
+
+/*friend avatar masking end*/
+
+.friend-tag-username {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: var(--header-primary);
+  font-weight: 600;
+  font-size: 16px;
+  outline: 0;
+  -webkit-box-flex: 0;
+  display: block;
+  flex: 0 1 auto;
+  font-family: var(--global-font);
+}
+
+.strife-discriminator-tag {
+  font-size: 14px;
+  line-height: 16px;
+  visibility: hidden;
+  color: var(--header-secondary);
+  font-family: var(--global-font);
+  font-weight: 500;
+  outline: 0;
 }
 
 .subtext {
-    forced-color-adjust: none;
-    color: hsl(216, 3.7%, 73.5%);
-    font-size: 12px;
-    margin-left: 12px;
-    display: flex;
-    // align-items: center;
-    // justify-content: center;
-    // flex-direction: row;
+  color: var(--header-secondary);
+  font-size: 12px;
+  outline: 0;
 }
 
 .subtext-inner {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    // overflow: hidden;
-    forced-color-adjust: none;
-    font-size: 14px;
-    font-family: "Whitney";
-    // color: #B9BBBE;
-    color: #B8B9BF;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 14px;
+  font-family: var(--global-font);
+  color: var(--header-secondary);
+  outline: 0;
 }
 
-
-
-.friends-page-content-wrapper {
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-    forced-color-adjust: none;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    width: calc(100vw - 313px);
-    // height: 93vh;
-    height: 100vh;
-    transform: translate(309px, 48px);
-    align-content: center;
-    align-items: flex-end;
-
-
-
-
-
-
+.subtext-friend-request-status {
+  color: var(--header-secondary);
+  font-size: 12px;
+  font-family: var(--global-font);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-
-
-
-.friend-list-sec-container {
-    top: 0px;
-    left: 0px;
-    position: absolute;
-    width: calc(100vw - 310px);
-    // height: 95vh;
-
-    // height: 93vh;
-
-    // transform: translate(309px, 34px);
-    // transform: translate(309px, 48px);
-
-    // background-color: #36393F;
-    background-color: #313338;
-    z-index: -1;
-
-
-    forced-color-adjust: none;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-
-    // flex-direction: column;
-    flex-direction: row;
-
-    -webkit-box-flex: 1;
-    flex: 1 1 auto;
-    overflow: hidden;
-
-
-
+.homepage-friends-search-bar {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-flex: 0;
+  flex: none;
+  margin: 16px 20px 8px 30px;
+  display: -webkit-box;
+  display: flex;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: var(--background-tertiary);
+  outline: 0;
 }
 
+.homepage-friends-search-bar-inner {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  -webkit-box-flex: 1;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-box-align: center;
 
-
-.active-now-section-wrapper {
-    flex: 0 1 30%;
-    min-width: 360px;
-    max-width: 420px;
-    // max-width: 360px;
-    -webkit-box-flex: 0;
-    // background: hsl(223, 6.95%, 19.8%);
-    background-color: #313338;
-    forced-color-adjust: none;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1px;
+  min-width: 0;
+  outline: 0;
 }
 
+.homepage-friends-search-bar-input {
+  color: var(--text-normal);
+  appearance: none;
+  -webkit-box-flex: 1;
+  flex: 1;
+  min-width: 48px;
+  margin: 1px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  resize: none;
+  background: transparent;
 
-.active-now-section {
-    forced-color-adjust: none;
-    height: 93vh;
-    // background-color: hsl(220, 7.7%, 22.9%);
-    background-color: #313338;
-    user-select: none;
+  font-size: 16px;
+  line-height: 32px;
+  height: 30px;
+  padding: 0 8px;
+
+  outline: none;
+  font-family: var(--global-font);
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
 }
 
-.active-now-section-scroller {
-    // overflow: hidden scroll;
-    padding-right: 8px;
-    forced-color-adjust: none;
-    padding: 16px;
-    height: 95%;
-    margin-left: 2px;
-    border-left: 1px solid hsla(217, 7.6%, 33.5%, 0.48);
+.homepage-friends-search-bar-input::placeholder {
+  font-family: var(--global-font);
+  opacity: 1;
+  color: var(--text-muted);
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
 }
-
-.active-now-header {
-    margin: 8px 0 16px;
-    font-weight: 700;
-    font-family: "ABC Ginto Normal";
-    color: #FFFFFF;
-    forced-color-adjust: none;
-    font-size: 20px;
-    line-height: 24px;
-}
-
-.empty-card {
-    forced-color-adjust: none;
-    // background: hsl(220, 7.7%, 22.9%);
-    background-color: #313338;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    text-align: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    border-radius: 8px;
-    padding: 16px;
-}
-
-
-.empty-card-header {
-    font-size: 16px;
-    line-height: 20px;
-    font-family: "ABC Ginto Normal";
-    font-weight: 500;
-    color: #FFFFFF;
-    margin-bottom: 4px;
-    forced-color-adjust: none;
-}
-
-.empty-card-text {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    font-family: "Whitney";
-    color: hsl(216, 3.7%, 73.5%);
-    forced-color-adjust: none;
-
-}
-
-.empty-card-div {
-    forced-color-adjust: none;
-    position: absolute;
-    pointer-events: none;
-    min-height: 0px;
-    min-width: 1px;
-    flex: 0 0 auto;
-    height: 16px;
-}
-
-
-
-
-
-
-.all-search-bar {
-    forced-color-adjust: none;
-    -webkit-box-flex: 0;
-    flex: none;
-    margin: 16px 20px 8px 30px;
-    display: flex;
-    border-radius: 4px;
-    overflow: hidden;
-    // background-color: hsl(216, 7.2%, 13.5%);
-    background-color: #1e1f22;
-    // transform: translate(0px, 10px);
-
-
-}
-
-
-.all-search-bar-inner {
-    forced-color-adjust: none;
-    position: relative;
-    -webkit-box-orient: horizontal;
-    flex-direction: row;
-    -webkit-box-direction: normal;
-    flex-wrap: wrap;
-    padding: 1px;
-    min-width: 0;
-    -webkit-box-align: center;
-    align-items: center;
-    box-sizing: border-box;
-    display: flex;
-    -webkit-box-flex: 1;
-    flex: 1 1 auto;
-}
-
-.input-all-friends {
-    color: hsl(210, 2.9%, 86.7%);
-    // color: hsl(228, 5.1%, 61.6%);
-    appearance: none;
-    flex: 1;
-    min-width: 48px;
-    margin: 1px;
-    box-sizing: border-box;
-    background: #0000;
-    border: none;
-    resize: none;
-    -webkit-box-flex: 1;
-    forced-color-adjust: none;
-    font-size: 16px;
-    line-height: 32px;
-    height: 30px;
-    padding: 0 8px;
-    outline: none;
-    font-family: "Whitney";
-
-}
-
-
-.input-all-friends::placeholder {
-    font-family: "Whitney";
-    opacity: 1;
-    color: hsl(228, 5.1%, 61.6%);
-    text-rendering: optimizeLegibility;
-    font-weight: 400;
-}
-
 
 .magnify-icon-wrapper {
-    width: 32px;
-    height: 32px;
-    forced-color-adjust: none;
-    justify-content: center;
-    -webkit-box-align: center;
-    display: flex;
-    -webkit-box-pack: center;
-    align-items: center;
-    cursor: text;
-    box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: text;
+  outline: 0;
 }
 
 .magnify-icon {
-    width: 20px;
-    height: 20px;
-    forced-color-adjust: none;
-    position: relative;
-
+  width: 20px;
+  height: 20px;
+  position: relative;
+  outline: 0;
 }
 
-// .mag-icon1 {
-//     transform: rotate(0deg);
-//     opacity: 1;
-//     color: hsl(216, 3.7%, 73.5%);
-//     transition: transform .1s ease-out, opacity .1s ease-out, -webkit-transform .1s ease-out;
-//     width: 100%;
-//     height: 100%;
-//     z-index: 2;
-//     box-sizing: border-box;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     forced-color-adjust: none;
-
-
-// }
-
-// .clear-mag-icon1 {
-//     transform: rotate(90deg);
-//     opacity: 1;
-//     color: hsl(216, 3.7%, 73.5%);
-//     transition: transform .1s ease-out, opacity .1s ease-out, -webkit-transform .1s ease-out;
-//     width: 100%;
-//     height: 100%;
-//     z-index: 2;
-//     box-sizing: border-box;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     forced-color-adjust: none;
-//     opacity: 0;
-// }
-
 .mag-icon1 {
-    forced-color-adjust: none;
-    // color: hsl(216, 3.7%, 73.5%);
-    color: hsl(231, 5.2%, 73.5%);
-    box-sizing: border-box;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    -webkit-transition: opacity .1s ease-out, -webkit-transform .1s ease-out;
-    transition: opacity .1s ease-out, -webkit-transform .1s ease-out;
-    transition: transform .1s ease-out, opacity .1s ease-out;
-    transition: transform .1s ease-out, opacity .1s ease-out, -webkit-transform .1s ease-out;
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    opacity: 0;
+  color: var(--interactive-normal);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  -webkit-transition: opacity 0.1s ease-out, -webkit-transform 0.1s ease-out;
+  transition: opacity 0.1s ease-out, -webkit-transform 0.1s ease-out;
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out,
+    -webkit-transform 0.1s ease-out;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .mag-icon1.visible-x {
-    transform: rotate(0deg);
-    opacity: 1;
+  transform: rotate(0deg);
+  opacity: 1;
 }
-
 
 .empty-state-container {
-    forced-color-adjust: none;
-    position: relative;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-
-
-
-.blocked-users-empty {
-    opacity: 1;
-    forced-color-adjust: none;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-
+.empty-state-users-empty {
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 0;
 }
 
-.blocked-users-flex {
-    width: 100%;
-    height: 100%;
-    max-width: 440px;
-    margin-left: auto;
-    margin-right: auto;
-    forced-color-adjust: none;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    -webkit-box-pack: center;
-    flex: 1 1 auto;
-    align-items: center;
-    -webkit-box-align: center;
+.empty-state-users-flex {
+  width: 100%;
+  height: 100%;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+  outline: 0;
+}
+
+.empty-state-users-inner-flex {
+  flex: 0 1 auto;
+  outline: 0;
+}
+
+.empty-state-users-inner-flex-inner-text {
+  font-size: 16px;
+  font-family: var(--global-font);
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 8px;
+  outline: 0;
+  color: var(--text-muted);
 }
 
 .cant-block-wumpus {
-    flex: 0 1 auto;
-    width: 433px;
-    height: 232px;
-    forced-color-adjust: none;
-    background-size: 100% 100%;
-    margin-bottom: 40px;
-    content: image_url('unblock_wumpus.svg');
+  flex: 0 1 auto;
+  width: 433px;
+  height: 232px;
+  background-size: 100% 100%;
+  margin-bottom: 40px;
+  content: image_url("unblock_wumpus.svg");
+  outline: 0;
 }
 
-.block-wumpus-text {
-    flex: 0 1 auto;
-    forced-color-adjust: none;
-    font-size: 16px;
-    font-family: "Whitney";
-    margin-top: 8px;
-    line-height: 20px;
-    text-align: center;
-    color: hsl(214, 4%, 65.3%);
+.cant-block-wumpus[alt] {
+  text-indent: -9999px;
 }
 
 .no_pending_requests-icon {
-    flex: 0 1 auto;
-    width: 433px;
-    height: 232px;
-    forced-color-adjust: none;
-    background-size: 100% 100%;
-    margin-bottom: 40px;
-    content: image_url('no_friend_requests.svg');
+  flex: 0 1 auto;
+  width: 433px;
+  height: 232px;
+  background-size: 100% 100%;
+  margin-bottom: 40px;
+  content: image_url("no_friend_requests.svg");
+  outline: 0;
+}
+
+.no_pending_requests-icon[alt] {
+  text-indent: -9999px;
 }
 
 .no-friends-online-icon {
-    flex: 0 1 auto;
-    width: 433px;
-    height: 232px;
-    forced-color-adjust: none;
-    background-size: 100% 100%;
-    margin-bottom: 40px;
-    content: image_url('no_friends_online.svg');
+  flex: 0 1 auto;
+  width: 433px;
+  height: 232px;
+  background-size: 100% 100%;
+  margin-bottom: 40px;
+  content: image_url("no_friends_online.svg");
+  outline: 0;
+}
+
+.no-friends-online-icon[alt] {
+  text-indent: -9999px;
 }
 
 .add-friends-icon {
-    flex: 0 1 auto;
-    width: 433px;
-    height: 232px;
-    forced-color-adjust: none;
-    background-size: 100% 100%;
-    margin-bottom: 40px;
-    content: image_url('add_friends_wumpus.svg');
+  flex: 0 1 auto;
+  width: 376px;
+  height: 162px;
+  background-size: 100% 100%;
+  margin-bottom: 40px;
+  content: image_url("add_friends_wumpus.svg");
+  outline: 0;
 }
 
+.add-friends-icon[alt] {
+  text-indent: -9999px;
+}
 
+.friend-actions {
+  margin-left: 8px;
+  display: -webkit-box;
+  display: flex;
+  outline: 0;
+}
 
+.friend-action-button:first-child {
+  margin-left: 0;
+}
 
+.friend-action-button {
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--interactive-normal);
+  background-color: var(--background-secondary);
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: 0;
+  margin-left: 10px;
+}
+
+.friend-msg-svg-icon,
+.friend-options-svg-icon,
+.friend-x-svg-icon,
+.friend-check-mark-svg-icon,
+.unblock-user-svg-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.friend-action-button:hover {
+  color: var(--interactive-hover) !important;
+}
+.friend-action-button:active {
+  color: var(--interactive-active) !important;
+  background-color: var(--background-modifier-active) !important;
+}
+
+.friend-action-button:hover svg {
+  filter: brightness(1.3);
+}
+
+.friend-action-button:hover .friend-msg-svg-icon,
+.friend-action-button:hover .friend-options-svg-icon {
+  filter: brightness(1.3);
+}
+
+.friend-action-button:hover .friend-msg-svg-icon,
+.friend-action-button:hover .friend-options-svg-icon {
+  color: var(--interactive-hover);
+}
+
+.friend-action-button.red-button:hover {
+  color: var(--info-danger-foreground);
+}
+
+.friend-action-button.green-button:hover {
+  color: var(--info-positive-foreground);
+}
+
+.friend-action-button.red-button:hover .friend-x-svg-icon {
+  color: var(--info-danger-foreground);
+}
+
+.friend-action-button.red-button:hover .unblock-user-svg-icon {
+  color: var(--info-danger-foreground);
+}
+
+.friend-action-button.green-button:hover .friend-check-mark-svg-icon {
+  color: var(--info-positive-foreground);
+}
+
+//all friends page
+.no-friends-all-page-redirect-button {
+  font-family: var(--global-font);
+  text-rendering: optimizeLegibility;
+  outline: 0;
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-transition: background-color 0.17s ease, color 0.17s ease;
+  transition: background-color 0.17s ease, color 0.17s ease;
+  height: 38px;
+  min-width: 96px;
+  min-height: 38px;
+  width: auto;
+  margin-top: 20px;
+  cursor: pointer;
+  color: var(--white-500);
+  background-color: var(--brand-experiment);
+}
+
+.no-friends-all-page-redirect-button:hover {
+  color: var(--white-500);
+  background-color: var(--brand-experiment-560);
+}
+.no-friends-all-page-redirect-button:active {
+  color: var(--white-500);
+  background-color: var(--brand-experiment-600);
+}
+
+.nfapr-button-contents {
+  margin: 0 auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background-image: linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    transparent 0,
+    transparent 2px,
+    transparent 0
+  );
+}
 
 //add friend section
 
 .add-friend-header-wrapper-1 {
-    flex-shrink: 0;
-    border-bottom: 1px solid hsla(217, 7.6%, 33.5%, 0.48);
-    padding: 20px 30px;
-    forced-color-adjust: none;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--background-modifier-accent);
+  padding: 20px 30px;
 }
 
 .add-friend-header-1 {
-    margin-bottom: 8px;
-    forced-color-adjust: none;
-    color: #FFFFFF;
-    font-size: 16px;
-    line-height: 20px;
-    text-transform: uppercase;
-    font-weight: 500;
-    flex: 1;
-    cursor: default;
-    -webkit-box-flex: 1;
-    font-family: "ABC Ginto Normal";
-
+  margin-bottom: 8px;
+  color: var(--header-primary);
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  -webkit-box-flex: 1;
+  flex: 1;
+  cursor: default;
+  font-family: var(--global-font);
 }
 
 .add-friend-header-wrapper-2 {
-    forced-color-adjust: none;
-    flex-shrink: 0;
-    padding: 20px 30px;
+  flex-shrink: 0;
+  padding: 20px 30px;
 }
-
 
 .add-friend-header-2 {
-    forced-color-adjust: none;
-    margin: 0;
-    color: #FFFFFF;
-    font-size: 16px;
-    line-height: 20px;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-family: "ABC Ginto Normal";
-    flex: 1;
-    cursor: default;
-    -webkit-box-flex: 1;
-
+  margin: 0;
+  color: var(--header-primary);
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--global-font);
+  -webkit-box-flex: 1;
+  flex: 1;
+  cursor: default;
 }
 
-
 .add-friend-subtitle {
-    forced-color-adjust: none;
-    color: hsl(216, 3.7%, 73.5%);
-    cursor: default;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 400;
-    font-family: "Whitney";
-
+  color: var(--header-secondary);
+  cursor: default;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  font-family: var(--global-font);
 }
 
 .add-friend-input-search-wrapper {
-    forced-color-adjust: none;
-    -webkit-box-align: center;
-    align-items: center;
-    display: flex;
-    margin-top: 16px;
-    padding: 0 12px;
-    position: relative;
-    border-radius: 8px;
-    // background-color: hsl(216, 7.2%, 13.5%);
-    background-color: #1e1f22;
-    border: 1px solid hsla(0, 0%, 0%, 0.3);
-
+  display: -webkit-box;
+  -webkit-box-align: center;
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  padding: 0 12px;
+  position: relative;
+  border-radius: 8px;
+  background-color: var(--deprecated-text-input-bg);
+  border: 1px solid var(--deprecated-text-input-border);
+  outline: 0;
 }
 
 .add-friend-input-search-wrapper:focus-within {
-    border-color: hsl(197, 100%, 47.8%);
+  border-color: var(--text-link);
 }
 
 .add-friend-input-search-wrapper.frsuccess {
-    border-color: rgb(35, 165, 89);
-}
-
-.add-friend-input-search-inner-wrapper {
-    forced-color-adjust: none;
-    background-color: transparent;
-    border: none;
-    box-sizing: border-box;
-    flex: 1 1 auto;
-    margin-right: 16px;
-    padding: 4px 0;
-    z-index: 1;
-    color: hsl(210, 2.9%, 86.7%);
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: .04em;
-    line-height: 20px;
-    white-space: pre;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-
-
-}
-
-.add-friend-input-bar {
-    forced-color-adjust: none;
-    background-color: unset;
-    border: none;
-    padding: 0;
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: .04em;
-    line-height: 20px;
-    white-space: pre;
-    height: 40px;
-    box-sizing: border-box;
-    width: 100%;
-    border-radius: 3px;
-    outline: none;
-    transition: border-color .2s ease-in-out;
-    // color: hsl(210, 2.9%, 86.7%);
-    color: hsl(228, 8.8%, 88.8%);
-    font-family: "Whitney";
-    text-rendering: optimizeLegibility;
-
-}
-
-
-.add-friend-input-bar::placeholder {
-    text-rendering: optimizeLegibility;
-    font-family: "Whitney";
-    color: hsl(216, 2.1%, 53.9%);
-    user-select: none;
+  border-color: var(--green-360);
 }
 
 .add-friend-input-search-wrapper.frf-ERROR {
-    // border-color: hsl(359, 82.6%, 59.4%);
-    border-color: rgb(250, 119, 124);
-
+  border-color: var(--status-danger);
 }
 
+.add-friend-input-search-wrapper.fr-success {
+  border-color: var(--green-360);
+}
 
+.add-friend-input-search-wrapper.fr-failed-ERROR {
+  border-color: var(--status-danger);
+}
+
+.frf-ERROR {
+  color: var(--text-danger);
+  font-family: var(--global-font);
+  cursor: default;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  margin-top: 8px;
+  outline: 0;
+}
+
+.frs-display {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  cursor: default;
+  font-family: var(--global-font);
+  color: var(--text-positive);
+  outline: 0;
+  margin-top: 8px;
+
+  strong {
+    font-weight: 600;
+    outline: 0;
+  }
+}
+
+.addfriend-input-hint {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: var(--interactive-muted);
+  font-family: var(--global-font);
+  cursor: text;
+  top: 15px;
+  pointer-events: none;
+  position: absolute;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 20px;
+  white-space: pre;
+  outline: 0;
+}
+
+.add-friend-input-search-inner-wrapper {
+  background-color: transparent;
+  border: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  -webkit-box-flex: 1;
+  flex: 1 1 auto;
+  margin-right: 16px;
+  padding: 4px 0;
+  z-index: 1;
+  color: var(--text-normal);
+
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 20px;
+  white-space: pre;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  display: flex;
+  flex-direction: column;
+  outline: 0;
+}
+
+.add-friend-input-bar {
+  background-color: unset;
+  border: none;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 20px;
+  white-space: pre;
+  height: 40px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 3px;
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
+  color: var(--text-normal);
+  font-family: var(--global-font);
+  text-rendering: optimizeLegibility;
+  outline: 0;
+}
+
+.add-friend-input-bar::placeholder {
+  text-rendering: optimizeLegibility;
+  font-family: var(--global-font);
+  color: var(--input-placeholder-text-dark);
+  user-select: none;
+}
 
 .add-friend-button {
-    user-select: none;
-    forced-color-adjust: none;
-    box-sizing: border-box;
-    background: none;
-    border: none;
-    border-radius: 3px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 16px;
-    padding: 2px 16px;
-    align-items: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    display: flex;
-    -webkit-box-pack: center;
-    position: relative;
-    transition: background-color .17s ease, color .17s ease;
-    font-family: "Whitney";
-    text-rendering: optimizeLegibility;
-    outline: none;
-    height: 32px;
-    min-width: 60px;
-    min-height: 32px;
-    width: auto;
-    cursor: pointer;
-    color: hsl(0, 0%, 100%);
-    background-color: hsl(235, 85.6%, 64.7%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: background-color 0.17s ease, color 0.17s ease;
+  font-family: var(--global-font);
+  text-rendering: optimizeLegibility;
+  outline: none;
+  height: 32px;
+  min-width: 60px;
+  min-height: 32px;
+  width: auto;
+  cursor: pointer;
+  color: var(--white-500);
+  background-color: var(--brand-experiment);
+}
 
+.add-friend-button:hover {
+  background-color: var(--brand-experiment-560);
+}
 
+.add-friend-button:active {
+  background-color: var(--brand-experiment-600);
 }
 
 .add-friend-button-text {
-    margin: 0 auto;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    forced-color-adjust: none;
-    font-size: 14px;
-    font-family: "Whitney";
-
+  margin: 0 auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 14px;
+  font-family: var(--global-font);
+  background-image: linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    transparent 0,
+    transparent 2px,
+    transparent 0
+  );
+  outline: 0;
 }
 
-
 .add-friend-grid {
-    forced-color-adjust: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    // place-items: center; //disable temporarly
-    padding: 0 20px;
-    column-gap: 32px;
-    row-gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // place-items: center; //disable temporarly
+  padding: 0 20px;
+  column-gap: 32px;
+  row-gap: 20px;
+  outline: 0;
 }
 
 .add-friend-grid-button-wrapper {
-    forced-color-adjust: none;
-    cursor: pointer;
-    border-radius: 8px;
-    align-items: center;
-    width: 100%;
-    display: flex;
-    -webkit-box-align: center;
-    border: 1px solid hsla(217, 7.6%, 33.5%, 0.48);
-    // background-color: hsl(223, 6.9%, 19.8%);
-    background-color: #2b2d31;
-    outline: 0;
-    font-family: "Whitney";
-    text-rendering: optimizeLegibility;
-
-
+  display: -webkit-box;
+  -webkit-box-align: center;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 100%;
+  border: 1px solid var(--background-modifier-accent);
+  background-color: var(--background-secondary);
+  outline: 0;
+  font-family: var(--global-font);
+  text-rendering: optimizeLegibility;
 }
 
 .add-friend-grid-button-wrapper:hover {
-    background-color: hsla(217, 7.6%, 33.5%, 0.4);
+  background-color: var(--background-modifier-hover);
+
+  .arrow-3B {
+    color: var(--interactive-hover);
+  }
 }
 
-
 .add-friend-grid-button-icon {
-    content: image_url('dont_Have_Server_Invite.svg');
-    forced-color-adjust: none;
-    display: flex;
-    width: 36px;
-    height: 36px;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    margin: 8px;
-    border-radius: 8px;
-    background-color: hsl(139, 47.3%, 43.9%);
-    filter: saturate(1);
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin: 8px;
+  border-radius: 8px;
+  background-color: var(--green-360);
+  filter: saturate(1);
+  content: image_url("dont_Have_Server_Invite.svg");
+}
 
+.add-friend-grid-button-icon[alt] {
+  text-indent: -9999px;
 }
 
 .add-friend-grid-button-text {
-    font-weight: 500;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    forced-color-adjust: none;
-    font-size: 16px;
-    line-height: 20px;
-    font-family: "Whitney";
-    // color: hsl(210, 2.9%, 86.7%);
-    outline: 0;
-    color: #E0E1E5;
-
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: var(--global-font);
+  color: var(--text-normal);
+  outline: 0;
 }
 
 .arrow-3B {
-    forced-color-adjust: none;
-    // color: hsl(216, 3.7%, 73.5%);
-    color: hsl(231, 5.2%, 73.5%);
-    margin-left: auto;
-    margin-right: 16px;
+  color: var(--interactive-normal);
+  margin-left: auto;
+  margin-right: 16px;
 }
 
 .empty-state-container-2 {
-    flex: 1 1 auto;
-    position: relative;
-    -webkit-box-flex: 1;
-    forced-color-adjust: none;
-
-
+  -webkit-box-flex: 1;
+  flex: 1 1 auto;
+  position: relative;
+  outline: 0;
 }
 
 .empty-friends-container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  outline: 0;
+  opacity: 1;
 }
 
-
 .empty-friends-container-flex {
-    width: 100%;
-    height: 100%;
-    max-width: 440px;
-    margin-left: auto;
-    margin-right: auto;
-    forced-color-adjust: none;
-    flex: 1 1 auto;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    -webkit-box-align: center;
-    outline: 0;
-    display: flex;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+  outline: 0;
 }
 
 .add-friends-icon-2 {
-    flex: 0 1 auto;
-    width: 376px;
-    height: 162px;
-    forced-color-adjust: none;
-    background-size: 100% 100%;
-    margin-bottom: 40px;
-    content: image_url('add_friends_wumpus.svg');
-    outline: 0;
+  flex: 0 1 auto;
+  width: 376px;
+  height: 162px;
+  background-size: 100% 100%;
+  margin-bottom: 40px;
+  content: image_url("add_friends_wumpus.svg");
+  outline: 0;
+}
+
+.add-friends-icon-2[alt] {
+  text-indent: -9999px;
 }
 
 .add-friends-flex-text-wrapper {
-    outline: 0;
-    forced-color-adjust: none;
-    flex: 0 1 auto;
+  outline: 0;
+  flex: 0 1 auto;
 }
 
 .add-friends-flex-text {
-    font-size: 16px;
-    line-height: 20px;
-    forced-color-adjust: none;
-    text-align: center;
-    margin-top: 8px;
-    outline: 0;
-    color: hsl(214, 4%, 65.3%);
-    font-family: "Whitney";
-}
-
-
-
-.friend-msg-actions {
-    forced-color-adjust: none;
-    margin-left: 8px;
-    display: flex;
-    outline: 0;
-}
-
-.friend-msg-button {
-    forced-color-adjust: none;
-    margin-left: 0;
-    cursor: pointer;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    // color: hsl(216, 3.7%, 73.5%);
-    color: #b8b9bf;
-    // background-color: hsl(223, 6.9%, 19.8%);
-    background-color: #2b2d31;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    outline: 0;
-
-}
-
-.icon-1WV {
-    width: 20px;
-    height: 20px;
-    forced-color-adjust: none;
-}
-
-.icon-1WVC {
-    width: 20px;
-    height: 20px;
-    forced-color-adjust: none;
-}
-
-
-.friend-options-button {
-    forced-color-adjust: none;
-    cursor: pointer;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    // color: hsl(216, 3.7%, 73.5%);
-    color: #b8b9bf;
-    // background-color: hsl(223, 6.9%, 19.8%);
-    background-color: #2b2d31;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    margin-left: 10px;
-    outline: 0;
-
-
-}
-
-.icon-1WVg {
-    width: 20px;
-    height: 20px;
-    forced-color-adjust: none;
-}
-
-
-.friend-msg-button:hover .pending-request-actions-tool-tip,
-.friend-msg-button:hover .pending-request-actions-tool-tip-triangle {
-    visibility: visible;
-    z-index: 10;
-}
-
-.friend-options-button:hover .pending-request-actions-tool-tip,
-.friend-options-button:hover .pending-request-actions-tool-tip-triangle {
-    visibility: visible;
-    z-index: 10;
-}
-
-
-.pending-request-actions {
-    forced-color-adjust: none;
-    margin-left: 8px;
-    display: flex;
-    outline: 0;
-}
-
-
-.pending-check-icon {
-    forced-color-adjust: none;
-    margin-left: 0;
-    cursor: pointer;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    // color: hsl(216, 3.7%, 73.5%);
-    color: #b8b9bf;
-    // background-color: hsl(223, 6.9%, 19.8%);
-    background-color: #2b2d31;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    outline: 0;
-    // position: relative;
-
-}
-
-
-.pending-deny-icon {
-    forced-color-adjust: none;
-    cursor: pointer;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    // color: hsl(216, 3.7%, 73.5%);
-    color: #b8b9bf;
-    // background-color: hsl(223, 6.9%, 19.8%);
-    background-color: #2b2d31;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    margin-left: 10px;
-    outline: 0;
-
-}
-
-.pending-request-actions-tool-tip {
-    // display: none;
-    visibility: hidden;
-    position: absolute;
-    // top: -40px;
-    // background: #191919;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 4px;
-    width: fit-content;
-    // color: #B9BBBE;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    transform: translate(0px, -42px);
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    z-index: 6;
-    font-family: "Whitney";
-    background: #000000 !important;
-    color: hsl(228, 8.8%, 88.8%) !important;
-
-}
-
-.pending-request-actions-tool-tip-triangle {
-    // display: none;
-    visibility: hidden;
-    position: absolute;
-    // top: -12px;
-    height: 0;
-    width: 0;
-    border-style: solid;
-    border-color: #191919 transparent transparent transparent;
-    border-width: 6px 6px 0 6px;
-    transform: translate(0px, -24px);
-    // background-color: #191919;
-}
-
-
-
-
-.pending-deny-icon:hover .pending-request-actions-tool-tip,
-.pending-deny-icon:hover .pending-request-actions-tool-tip-triangle {
-    visibility: visible;
-    z-index: 10;
-
-}
-
-.pending-check-icon:hover .pending-request-actions-tool-tip,
-.pending-check-icon:hover .pending-request-actions-tool-tip-triangle {
-    visibility: visible;
-    z-index: 10;
-
-
-}
-
-.friend-msg-button:hover svg,
-.friend-options-button:hover svg {
-    filter: brightness(1.3);
-
-}
-
-
-// .pending-request-actions .pending-deny-icon:hover {
-//     color: #ED4245;
-//     filter: brightness(1.3);
-// }
-
-// .pending-request-actions .pending-check-icon:hover {
-//     color: #3BA55D;
-//     filter: brightness(1.3);
-// }
-
-.pending-request-actions .pending-check-icon:hover svg {
-    filter: brightness(1.3);
-
-}
-
-.pending-request-actions .pending-deny-icon:hover svg {
-    filter: brightness(1.3);
-
-}
-
-.pending-request-actions .red-button:hover {
-    color: #ED4245;
-
-}
-
-.pending-request-actions .green-button:hover {
-    color: #3BA55D;
-
-
-}
-
-// .pending-deny-icon:hover {
-// color: #ED4245;
-// filter: brightness(1.3);
-// }
-
-// .pending-check-icon:hover {
-//     // color: #3BA55D;
-//     filter: brightness(1.3);
-// }
-
-// .pending-deny-icon:hover {
-//     color: #ED4245;
-//     filter: brightness(1.3);
-// }
-
-// .pending-check-icon:hover {
-//     color: #3BA55D;
-//     filter: brightness(1.3);
-// }
-
-
-.pending-ul-list li:first-child {
-
-    .pending-request-actions-tool-tip {
-        padding: 3px 12px;
-        font-size: 10px;
-        transform: translate3d(0px, -19px, 189px);
-    }
-
-    .pending-request-actions-tool-tip-triangle {
-        border-width: 6px 3px 0 3px;
-        transform: translate(0px, -1px);
-
-    }
-}
-
-// .friend-index-container.block {
-// transform: translate(0px, 20px);
-
-// .friend-index-item-wrapper {
-//     height: 92vh;
-//     transform: translate(0px, 22px);
-// }
-
-// .all-friends {
-//     margin: 24px 20px 8px 30px;
-//     font-family: 'ABC Ginto Normal';
-//     color: #B9BBBE;
-//     font-size: 12px;
-//     line-height: 16px;
-//     font-weight: 600;
-//     letter-spacing: 0.25px;
-//     cursor: default;
-//     transform: translate(0px, 15px);
-// }
-
-// .all-search-bar {
-//     transform: translate(0px, 10px);
-// }
-// }
-
-.is-hidden {
-    display: none !important;
-}
-
-
-
-// this is a react tool tip everything must be overrided with !important
-.message-tool-tip {
-
-    background: #000000 !important;
-    color: hsl(228, 8.8%, 88.8%) !important;
-    // background: #191919 !important;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    padding: 6px 12px !important;
-    border-radius: 4px !important;
-    // color: #B9BBBE !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
-    font-family: "Whitney" !important;
-
-}
-
-
-.more-message-tool-tip {
-
-    background: #000000 !important;
-    color: hsl(228, 8.8%, 88.8%) !important;
-    // background: #191919 !important;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    padding: 6px 12px !important;
-    border-radius: 4px !important;
-    // color: #B9BBBE !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
-    font-family: "Whitney" !important;
-    width: fit-content !important;
-}
-
-
-.remove-message-tool-tip {
-
-    background: #000000 !important;
-    color: hsl(228, 8.8%, 88.8%) !important;
-    // background: #191919 !important;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    padding: 6px 12px !important;
-    border-radius: 4px !important;
-    // color: #B9BBBE !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
-    font-family: "Whitney" !important;
-    width: fit-content !important;
-
-}
-
-.cancel-message-tool-tip {
-
-    background: #000000 !important;
-    color: hsl(228, 8.8%, 88.8%) !important;
-    // background: #191919 !important;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    padding: 6px 12px !important;
-    border-radius: 4px !important;
-    // color: #B9BBBE !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
-    font-family: "Whitney" !important;
-    width: fit-content !important;
-}
-
-.accept-message-tool-tip {
-
-    background: #000000 !important;
-    color: hsl(228, 8.8%, 88.8%) !important;
-    // background: #191919 !important;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    padding: 6px 12px !important;
-    border-radius: 4px !important;
-    // color: #B9BBBE !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
-    font-family: "Whitney" !important;
-    width: fit-content !important;
-}
-
-.ignore-message-tool-tip {
-
-
-    background: #000000 !important;
-    color: hsl(228, 8.8%, 88.8%) !important;
-    // background: #191919 !important;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    padding: 6px 12px !important;
-    border-radius: 4px !important;
-    // color: #B9BBBE !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
-    font-family: "Whitney" !important;
-    width: fit-content !important;
-}
-
-.friend-index.activl {
-    overflow: hidden scroll;
-    // height: 80vh;
-}
-
-
-.activity-online-friend-idx {
-    border-top: 1px solid #ffffff0f;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 62px;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    flex-direction: row;
-    margin-left: 30px;
-    margin-right: 20px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
-    // overflow: hidden;
-    box-sizing: border-box;
-    cursor: pointer;
-    border-top: 1px solid hsla(217, 7.6%, 33.5%, 0.48);
-
-    &:hover .friend-tag>span {
-        visibility: visible;
-    }
-
-
-    width: 300px;
-    text-overflow: ellipsis;
-
-    .subtext {
-        text-overflow: ellipsis;
-        width: 200px;
-    }
-
-    .subtext-inner {
-        text-overflow: ellipsis;
-
-    }
-}
-
-.activity-online-friend-idx:hover {
-    height: 62px;
-    opacity: 1;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border-radius: 8px;
-    border-color: #0000;
-    padding: 16px 10px;
-    background: hsla(217, 7.6%, 33.5%, 0.4);
-    forced-color-adjust: none;
-    margin: 0 10px 0 20px;
-}
-
-.activity-online-friend-idx :hover {
-    .subtext-inner {
-        text-overflow: unset;
-        // transform: translateX(100%);
-        animation: move 15s linear infinite
-    }
-}
-
-
-@keyframes move {
-    to {
-        transform: translateX(-100%);
-    }
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 8px;
+  outline: 0;
+  color: var(--text-muted);
+  font-family: var(--global-font);
 }
