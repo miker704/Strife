@@ -1,16 +1,136 @@
-// /* rest css sheet aligns to discords own css reset  */
+// /* reset css sheet aligns to discords own css reset  */
 
+//importing fonts that discord uses
 
+@font-face {
+  font-family: "Ginto Nord";
+  src: url("GintoNord.otf");
+}
 
+@font-face {
+  font-family: "Ginto Normal";
+  src: url("GintoNormal.otf");
+}
+
+@font-face {
+  font-family: "Ginto";
+  src: url("GintoMedium.otf");
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("Helvetica.ttf");
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("HelveticaNeue.ttf");
+}
+
+@font-face {
+  font-family: "Whitney";
+  src: url("WhitneyBook.otf");
+}
+
+@font-face {
+  font-family: "ABC Ginto Normal";
+  src: url("GintoMedium.otf");
+}
+
+@font-face {
+  font-family: "ABC Ginto Nord";
+  font-style: normal;
+  font-weight: 800;
+  src: url("AbcGintoNordNormal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "ABC Ginto Nord";
+  font-style: italic;
+  font-weight: 800;
+  src: url("AbcGintoNormalItalic.woff2") format("woff2");
+}
+
+//importing and testing the new gg sans fonts that are used by
+//discord.
+
+@font-face {
+  font-family: "gg sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("ggsansnormal400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "gg sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("ggsans500normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "gg sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("ggsans600normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "gg sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("ggsansnormal700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "gg sans";
+  font-style: normal;
+  font-weight: 800;
+  src: url("ggsansnormal800.woff2") format("woff2");
+}
+
+//italic
+
+@font-face {
+  font-family: "gg sans";
+  font-style: italic;
+  font-weight: 400;
+  src: url("ggsansitalic400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "gg sans";
+  font-style: italic;
+  font-weight: 500;
+  src: url("ggsansItalic500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "gg sans";
+  font-style: italic;
+  font-weight: 600;
+  src: url("ggsansitalic600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "gg sans";
+  font-style: italic;
+  font-weight: 700;
+  src: url("ggsansitalic700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "gg sans";
+  font-style: italic;
+  font-weight: 800;
+  src: url("ggsansitalic800.woff2") format("woff2");
+}
 
 html,
 body {
-	margin: 0;
-	padding: 0;
+  height: 100%;
+  width: 100%;
 }
-
-
-
 
 html,
 body,
@@ -93,12 +213,14 @@ time,
 mark,
 audio,
 video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 
 article,
@@ -112,163 +234,187 @@ hgroup,
 menu,
 nav,
 section {
-	display: block;
+  display: block;
 }
 
 body {
-	line-height: 1.5;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  font-family: var(--global-font);
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: transparent;
 }
 
 ol,
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-	quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-	content: '';
-	content: none;
+  content: "";
+  content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 input {
-	border: none;
-	background: none;
+  border: none;
+  background: none;
 }
 
-
-//importing fonts that discord uses
-
-@font-face {
-	font-family: "Ginto Nord";
-	src: url("GintoNord.otf");
+img[alt] {
+  text-indent: -9999px;
 }
 
-@font-face {
-	font-family: "Ginto Normal";
-	src: url("GintoNormal.otf");
+::-webkit-input-placeholder,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--global-font);
+  text-rendering: optimizeLegibility;
 }
 
-@font-face {
-	font-family: "Ginto";
-	src: url("GintoMedium.otf");
+::-moz-placeholder,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--global-font);
+  text-rendering: optimizeLegibility;
 }
 
-@font-face {
-	font-family: "Helvetica";
-	src: url("Helvetica.ttf");
+:-ms-input-placeholder,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--global-font);
+  text-rendering: optimizeLegibility;
 }
 
-@font-face {
-	font-family: "Helvetica Neue";
-	src: url("HelveticaNeue.ttf");
+::placeholder,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--global-font);
+  text-rendering: optimizeLegibility;
 }
 
-
-@font-face {
-	font-family: "Whitney";
-	src: url("WhitneyBook.otf");
+::-webkit-input-placeholder,
+input,
+select,
+textarea {
+  font-family: var(--global-font);
+  font-weight: 400;
 }
 
-@font-face {
-	font-family: "ABC Ginto Normal";
-	src: url("GintoMedium.otf");
+::-moz-placeholder,
+input,
+select,
+textarea {
+  font-family: var(--global-font);
+  font-weight: 400;
 }
 
-
-
-//importing and testing the new gg sans fonts that are used by
-//discord. 
-
-@font-face {
-	font-family: "gg sans";
-	font-style: normal;
-	font-weight: 400;
-	src: url("ggsansnormal400.woff2")format("woff2");
+:-ms-input-placeholder,
+input,
+select,
+textarea {
+  font-family: var(--global-font);
+  font-weight: 400;
 }
 
-@font-face {
-	font-family: "gg sans";
-	font-style: normal;
-	font-weight: 500;
-	src: url("ggsans500normal.woff2")format("woff2");
+::placeholder,
+input,
+select,
+textarea {
+  font-family: var(--global-font);
+  font-weight: 400;
 }
 
-@font-face {
-	font-family: "gg sans";
-	font-style: normal;
-	font-weight: 600;
-	src: url("ggsans600normal.woff2")format("woff2");
+a,
+button,
+div,
+input,
+label,
+select,
+span,
+strong,
+textarea {
+  outline: 0;
 }
 
-@font-face {
-	font-family: "gg sans";
-	font-style: normal;
-	font-weight: 700;
-	src: url("ggsansnormal700.woff2")format("woff2");
+a {
+  color: var(--text-link);
+  text-decoration: none;
+  cursor: pointer;
 }
 
-@font-face {
-	font-family: "gg sans";
-	font-style: normal;
-	font-weight: 800;
-	src: url("ggsansnormal800.woff2")format("woff2");
+a img {
+  border: none;
 }
 
-//italic
-
-
-@font-face {
-	font-family: "gg sans";
-	font-style: italic;
-	font-weight: 400;
-	src: url("ggsansitalic400.woff2")format("woff2");
+strong {
+  font-weight: 600;
 }
 
-@font-face {
-	font-family: "gg sans";
-	font-style: italic;
-	font-weight: 500;
-	src: url("ggsansItalic500.woff2")format("woff2");
+button {
+  font-family: var(--global-font);
+  font-weight: 500;
+  border: 0;
+  cursor: pointer;
 }
 
-
-
-@font-face {
-	font-family: "gg sans";
-	font-style: italic;
-	font-weight: 600;
-	src: url("ggsansitalic600.woff2")format("woff2");
+code {
+  font-family: var(--font-code);
+  font-size: 14px;
+  line-height: 16px;
 }
 
-
-
-
-
-@font-face {
-	font-family: "gg sans";
-	font-style: italic;
-	font-weight: 700;
-	src: url("ggsansitalic700.woff2")format("woff2");
+p {
+  margin: 14px 0;
 }
 
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  display: none;
+  appearance: none;
+}
 
+input[type="search"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
 
-
-@font-face {
-	font-family: "gg sans";
-	font-style: italic;
-	font-weight: 800;
-	src: url("ggsansitalic800.woff2")format("woff2");
+input[type="search"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
 }
