@@ -1927,6 +1927,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Dm ChatRoom hook up cable.
     - Finalized Dm Messages Index.
     - Finalized Dm Messages Index Container.
+    - Finalized Games List for User Assest Search Modal.
 
 
 
