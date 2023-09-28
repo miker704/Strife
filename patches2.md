@@ -1628,6 +1628,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved Deprecated new server nav bar test 5 higher level file to deprecated.
     - Moved Deprecated Class Based server nav bar to deprecated.
     - Added conditional check to loading screen.
+    - Moved current non prod version of dm chat room to deprecated folder.
     - Added conditional check to telefrag loading screen.
     - Added conditional check to refresh loading screen.
     - Added conditional check to update loading screen.
