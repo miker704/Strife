@@ -84,7 +84,7 @@ export const MessageSkeleton = ({ item, idx }) => {
                         {
                             numOfRows.map((ele, idx) => {
                                 const wordCols = new Array(randomNumOfColumns()).fill(`${ele}-word-${idx}`).map((ele, idx) => `${ele}-${idx}`);
-                                return ( 
+                                return (
                                     <div style={{ display: `flex` }} key={ele}>
                                         {
                                             wordCols.map((word, idx) => {
@@ -126,6 +126,23 @@ export const MessageSkeletonList = () => {
                 <MessageSkeleton item={8} idx={8} />
                 <MessageSkeleton item={9} idx={9} />
                 <MessageSkeleton item={10} idx={10} />
+            </ol>
+        </>
+    )
+
+}
+
+export const MessageSkeletonList__Custom_Length = ({ listLength }) => {
+    return (
+        <>
+            <ol className="chat-scroller-inner" id="ol-message-list">
+                {
+                    Array(listLength)
+                        .fill(1)
+                        .map((item, index) => (
+                            <MessageSkeleton item={index} idx={index} />
+                        ))
+                }
             </ol>
         </>
     )
