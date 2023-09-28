@@ -1,418 +1,279 @@
 // Place all the styles related to the api::Calls controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-// body {
-//     background: #ECEFF1;
-//     color: rgba(0, 0, 0, 0.87);
-//     font-family: Roboto, Helvetica, Arial, sans-serif;
-//     margin: 0;
-//     padding: 0;
-// }
-
-// #message {
-//     background: white;
-//     max-width: 360px;
-//     margin: 100px auto 16px;
-//     padding: 32px 24px;
-//     border-radius: 3px;
-// }
-
-// #message h2 {
-//     color: #ffa100;
-//     font-weight: bold;
-//     font-size: 16px;
-//     margin: 0 0 8px;
-// }
-
-// #message h1 {
-//     font-size: 22px;
-//     font-weight: 300;
-//     color: rgba(0, 0, 0, 0.6);
-//     margin: 0 0 16px;
-// }
-
-// #message p {
-//     line-height: 140%;
-//     margin: 16px 0 24px;
-//     font-size: 14px;
-// }
-
-// #message a {
-//     display: block;
-//     text-align: center;
-//     background: #039be5;
-//     text-transform: uppercase;
-//     text-decoration: none;
-//     color: white;
-//     padding: 16px;
-//     border-radius: 4px;
-// }
-
-// #message,
-// #message a {
-//     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-// }
-
-// #load {
-//     color: rgba(0, 0, 0, 0.4);
-//     text-align: center;
-//     font-size: 13px;
-// }
-
-// @media (max-width: 600px) {
-
-
-//     body,
-   
-//     #message {
-//         margin-top: 0;
-//         background: white;
-//         box-shadow: none;
-//     }
-
-//     body {
-//         border-top: 16px solid #ffa100;
-//     }
-// }
-
-// body {
-//     margin: 1em;
-// }
-
-// button {
-//     margin: 0.2em 0.1em;
-// }
-
-// div#videos {
-//     display: flex;
-//     flex-direction: row;
-//     flex-wrap: wrap;
-// }
 
 div#videos {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-
-div#videos>video {
-    background: black;
-    width: 640px;
-    height: 100%;
-    display: block;
-    margin: 1em;
+div#videos > video {
+  background: var(--black-500);
+  width: 640px;
+  height: 100%;
+  display: block;
+  margin: 1em;
 }
 
-
-#remoteVideo>video {
-    background: black;
-    width: 640px;
-    height: 100%;
-    display: block;
-    margin: 1em;
+#remoteVideo > video {
+  background: var(--black-500);
+  width: 640px;
+  height: 100%;
+  display: block;
+  margin: 1em;
 }
 
-// #remoteVideo{
-//     background: black;
-//     width: 640px;
-//     height: 320px;
-//     display: flex;
-//     margin: 1em;
-// }
-
-
-
-div#remote-video-container>video {
-    background: black;
-    width: 640px;
-    height: 100%;
-    display: block;
-    margin: 1em;
+div#remote-video-container > video {
+  background: var(--black-500);
+  width: 640px;
+  height: 100%;
+  display: block;
+  margin: 1em;
 }
 
 .strife-web-call-wrapper {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: #0000;
-    z-index: 10;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: var(--black-500);
+  z-index: 10;
 }
-
-// .strife-web-call-container {
-//     width: 100%;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-// }
-
-// #remote-video-container {
-
-//     margin: 0 auto;
-
-// }
-
-// #local-video {
-//     max-height: 15%;
-// }
-
-// #remote-video-container>video {
-//     max-height: 480px;
-//     min-height: 480px;
-
-//     margin: 0 auto;
-// }
-
-// .video-controls {
-//     max-height: 60px;
-// }
-
 
 .strife-web-call-container2 {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
-
 .leave-call {
-    text-transform: uppercase;
-    background: #f04747;
-    border-radius: 4px;
-    border: none;
-    color: #fff;
-    padding: 10px;
-    margin-left: 12px;
+  text-transform: uppercase;
+  background: var(--button-danger-background);
+  border-radius: 4px;
+  border: none;
+  color: var(--white-500);
+  padding: 10px;
+  margin-left: 12px;
 }
 
 .join-call {
-    text-transform: uppercase;
-    background: #00b300;
-    border-radius: 4px;
-    border: none;
-    color: #fff;
-    padding: 10px;
-    margin-right: 12px;
-    min-width: 77px;
+  text-transform: uppercase;
+  background: var(--button-positive-background);
+  border-radius: 4px;
+  border: none;
+  color: var(--white-500);
+  padding: 10px;
+  margin-right: 12px;
+  min-width: 77px;
 }
 
 .join-call:hover,
 .leave-call:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-
 .strife-web-call-container {
-    // width: 100%;
-    width: 100vw;
-    height: 100vh;
-    // overflow: hidden scroll;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  // width: 100%;
+  width: 100vw;
+  height: 100vh;
+  // overflow: hidden scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #remote-video-container {
-
-    margin: 0 auto;
-
+  margin: 0 auto;
 }
 
 #local-video {
-    max-height: 15%;
+  max-height: 15%;
 }
 
-#remote-video-container>video {
-    max-height: 480px;
-    min-height: 480px;
-    margin: 0 auto;
+#remote-video-container > video {
+  max-height: 480px;
+  min-height: 480px;
+  margin: 0 auto;
 }
 
 .video-controls {
-    max-height: 60px;
-    display: flex;
-    // justify-content: space-evenly;
-    margin-top: 10px;
-    margin-left: 12px;
+  max-height: 60px;
+  display: flex;
+  // justify-content: space-evenly;
+  margin-top: 10px;
+  margin-left: 12px;
 }
 
 #vidContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 
 .local-video-flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    max-height: 500px;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-height: 500px;
 }
-
-
 
 .faint-boost-shiny-button.start-video-call-button,
 .faint-boost-shiny-button.drop-video-call-button {
-    min-width: 180px;
-    max-width: 180px;
-    max-height: 36px;
-    min-height: 36px;
-    font-family: "ABC Ginto Normal";
-    font-size: 16px;
-    font-weight: 500;
-    margin-left: 6px;
-    // color: #6200ee;
+  min-width: 180px;
+  max-width: 180px;
+  max-height: 36px;
+  min-height: 36px;
+  font-family: var(--global-font);
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 6px;
 }
 
 .faint-boost-shiny-button.start-video-call-button:disabled {
-    box-shadow: 0px 0px 0px 0px #0003, 0px 0px 0px 0px #00000024, 0px 0px 0px 0px #0000001f;
+  box-shadow: 0px 0px 0px 0px var(--black-500-hsl-02),
+    0px 0px 0px 0px var(--black-500-hsl-0141),
+    0px 0px 0px 0px var(--black-500-hsl-0122);
+  color: transparent;
+  background-color: transparent;
+
+  .icon-phone-2 {
+    box-shadow: 0px 0px 0px 0px var(--black-500-hsl-02),
+      0px 0px 0px 0px var(--black-500-hsl-0141),
+      0px 0px 0px 0px var(--black-500-hsl-0122);
+    fill: transparent;
     color: transparent;
+    visibility: hidden;
+  }
+
+  .shiny-button-contents {
+    box-shadow: 0px 0px 0px 0px var(--black-500-hsl-02),
+      0px 0px 0px 0px var(--black-500-hsl-0141),
+      0px 0px 0px 0px var(--black-500-hsl-0122);
+    color: transparent;
+
     background-color: transparent;
+  }
 
-    .icon-phone-2 {
-        box-shadow: 0px 0px 0px 0px #0003, 0px 0px 0px 0px #00000024, 0px 0px 0px 0px #0000001f;
-        fill: transparent;
-        color: transparent;
-        visibility: hidden;
-
-    }
-
-    .shiny-button-contents {
-        box-shadow: 0px 0px 0px 0px #0003, 0px 0px 0px 0px #00000024, 0px 0px 0px 0px #0000001f;
-        // color: #e0e0e0 !important;
-        color: transparent;
-
-        background-color: transparent;
-
-    }
-
-    .shiny-button-container {
-        animation: none;
-    }
+  .shiny-button-container {
+    animation: none;
+  }
 }
 
 .faint-boost-shiny-button.drop-video-call-button {
-    background-color: #f04747;
+  background-color: var(--button-danger-background);
 }
 
 .icon-phone-2 {
-    forced-color-adjust: none;
-    outline: 0;
-    width: 24px;
-    height: 24px;
-    color: hsl(216, 3.7%, 73.5%);
-    display: flex;
-    transition: color .15s ease-in-out;
-
+  outline: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--interactive-normal);
+  display: flex;
+  transition: color 0.15s ease-in-out;
 }
 
 .faint-boost-shiny-button.start-video-call-button:hover {
-    .icon-phone-2 {
-        color: hsl(210, 2.9%, 86.7%);
-    }
+  .icon-phone-2 {
+    color: var(--interactive-hover);
+  }
+}
+.faint-boost-shiny-button.start-video-call-button:active {
+  .icon-phone-2 {
+    color: var(--interactive-active);
+  }
 }
 
 .faint-boost-shiny-button.drop-video-call-button:active {
-    background-color: hsl(359, 66.7%, 54.1%);
-    color: hsl(0, 0%, 100%) !important;
+  background-color: var(--button-danger-background);
+  color: var(--white-500) !important;
 
-    .disconnect-call-icon {
-        color: hsl(210, 2.9%, 86.7%);
-
-    }
+  .disconnect-call-icon {
+    color: var(--interactive-active);
+  }
 }
 
 .faint-boost-shiny-button.drop-video-call-button:hover {
-    background-color: hsl(359, 66.7%, 54.1%);
-    color: hsl(0, 0%, 100%) !important;
+  background-color: var(--button-danger-background-hover);
+  color: var(--white-500) !important;
 
-    .disconnect-call-icon {
-        color: hsl(210, 2.9%, 86.7%);
-    }
+  .disconnect-call-icon {
+    color: var(--interactive-hover);
+  }
+}
+.faint-boost-shiny-button.drop-video-call-button:active {
+  background-color: var(--button-danger-background-active);
+  color: var(--white-500) !important;
+
+  .disconnect-call-icon {
+    color: var(--interactive-active);
+  }
 }
 
-
-
-
 .faint-boost-shiny-button.drop-video-call-button:disabled {
-    box-shadow: 0px 0px 0px 0px #0003, 0px 0px 0px 0px #00000024, 0px 0px 0px 0px #0000001f;
+  box-shadow: 0px 0px 0px 0px var(--black-500-hsl-02),
+    0px 0px 0px 0px var(--black-500-hsl-0141),
+    0px 0px 0px 0px var(--black-500-hsl-0122);
+  color: transparent;
+  background-color: transparent;
+
+  .disconnect-call-icon {
+    box-shadow: 0px 0px 0px 0px var(--black-500-hsl-02),
+      0px 0px 0px 0px var(--black-500-hsl-0141),
+      0px 0px 0px 0px var(--black-500-hsl-0122);
+    fill: transparent;
     color: transparent;
+    visibility: hidden;
+  }
+
+  .shiny-button-contents {
+    box-shadow: 0px 0px 0px 0px var(--black-500-hsl-02),
+      0px 0px 0px 0px var(--black-500-hsl-0141),
+      0px 0px 0px 0px var(--black-500-hsl-0122);
+    color: transparent;
+
     background-color: transparent;
+  }
 
-    .disconnect-call-icon {
-        box-shadow: 0px 0px 0px 0px #0003, 0px 0px 0px 0px #00000024, 0px 0px 0px 0px #0000001f;
-        // color: #e0e0e0 !important;
-        fill: transparent;
-        color: transparent;
-        visibility: hidden;
-    }
-
-    .shiny-button-contents {
-        box-shadow: 0px 0px 0px 0px #0003, 0px 0px 0px 0px #00000024, 0px 0px 0px 0px #0000001f;
-        // color: #e0e0e0 !important;
-        color: transparent;
-
-        background-color: transparent;
-
-    }
-
-    .shiny-button-container {
-        animation: none;
-    }
+  .shiny-button-container {
+    animation: none;
+  }
 }
 
 .disconnect-call-icon {
-    forced-color-adjust: none;
-    outline: 0;
-    width: 24px;
-    height: 24px;
-    color: hsl(216, 3.7%, 73.5%);
-    display: flex;
-    transition: color .15s ease-in-out;
+  outline: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--interactive-normal);
+  display: flex;
+  transition: color 0.15s ease-in-out;
 }
-
-// .icon-phone-2:hover,
-// .disconnect-call-icon:hover {
-//     color: hsl(210, 2.9%, 86.7%);
-
-// }
-
-
 
 .friend-index-item-wrapper-inner.call:hover {
-    .friend-tag>span {
-        visibility: visible;
-    }
+  .friend-tag > span {
+    visibility: visible;
+  }
 }
 
-
-.friend-index-item-wrapper-inner.call{
-    max-width: 640px;
-    min-width: 640px;
+.friend-index-item-wrapper-inner.call {
+  max-width: 640px;
+  min-width: 640px;
 }
 
-
-.friend-index-item.call{
-    max-width: 640px;
-    min-width: 640px;
-    margin-right: 0px;
-    margin-left: 16px;
-
+.friend-index-item.call {
+  max-width: 640px;
+  min-width: 640px;
+  margin-right: 0px;
+  margin-left: 16px;
 }
 
-
-.x-to-close-video-call{
-    color: #A6ABB0;
-    cursor: pointer;
-    z-index: 3;
-    float: right;
+.x-to-close-video-call {
+  color: var(--vid-call-exit-icon);
+  cursor: pointer;
+  z-index: 3;
+  float: right;
 }
