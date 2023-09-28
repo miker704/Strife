@@ -1,11 +1,10 @@
 import React from "react";
 import { useEffect, useRef } from "react";
-// import { closeOnEsc, closeHookModalOnOutsideClick } from "../../../utils/close_hook_modals_api_utils";
+import REACT_PORTAL from "../../../utils/ReactPortal_api_util";
+import { appPullerReleaseHoldAnimation } from "../../../utils/appPullerAnimation_api_util";
 
 const DeleteChannelModal = (props) => {
     const popupRef = useRef();
-    // closeHookModalOnOutsideClick(popupRef, props.setChannelDeletion);
-    // closeOnEsc(props.setChannelDeletion);
 
     // const [] = useState();
 
@@ -26,12 +25,7 @@ const DeleteChannelModal = (props) => {
         const keys = {
             27: () => {
                 e.preventDefault();
-                document.getElementById('delete-channel-modal').classList.add("transition-out");
-                setTimeout(() => {
-                    props.setChannelDeletion(false);
-                    window.removeEventListener('keyup', handleESC, false);
-                }, 300);
-
+                handleCloseOnOuterClick(e);
             },
         };
         if (keys[e.keyCode]) {
@@ -41,11 +35,23 @@ const DeleteChannelModal = (props) => {
 
     const handleCloseOnOuterClick = (e) => {
         e.preventDefault();
-        document.getElementById('delete-channel-modal').classList.add("transition-out");
-        setTimeout(() => {
-            props.setChannelDeletion(false);
+        let modalToClose = document.getElementById('delete-channel-modal');
+        if (modalToClose) {
+            modalToClose.classList.add("transition-out");
+            Promise.all(modalToClose.getAnimations().map((animation) => animation.finished),)
+                .then(() => {
+                    props.closeSubMod(props.formName);
+                    window.removeEventListener('keyup', handleESC, false);
+
+                }, () => {
+                    props.closeSubMod(props.formName);
+                    window.removeEventListener('keyup', handleESC, false);
+                });
+        }
+        else {
+            props.closeSubMod(props.formName);
             window.removeEventListener('keyup', handleESC, false);
-        }, 300);
+        }
     }
 
 
@@ -56,7 +62,8 @@ const DeleteChannelModal = (props) => {
         e.preventDefault(); // prevent tiny warning for form disconnection
 
         if (props.currentChannel.id !== props.server.general_channel_id) {
-            props.setChannelDeletion(false);
+            props.closeSubMod(props.formName);
+            appPullerReleaseHoldAnimation();
             props.closeModal();
             if (props.history.location.pathname !== `/$/channels/${props.server.id}/${props.server.general_channel_id}`) {
                 props.history.push(`/$/channels/${props.server.id}/${props.server.general_channel_id}`);
@@ -67,7 +74,7 @@ const DeleteChannelModal = (props) => {
         }
         else {
             //prevent deletion of general channel through XSS attacks (form hijackings)
-            props.setChannelDeletion(false);
+            handleCloseOnOuterClick(e);
         }
     }
 
@@ -91,37 +98,43 @@ const DeleteChannelModal = (props) => {
 
     let deleteChannelButton = props.currentChannel.id === props.server.general_channel_id ? (
         <div className="fake-delete-channel-submit-button">
-            Delete Channel
+            <div className="delete-channel-button-contents">Delete Channel</div>
         </div>
     ) : (
         <button type="submit" className="delete-channel-submit-button">
-            Delete Channel
+            <div className="delete-channel-button-contents">Delete Channel</div>
         </button >
     );
 
+
     return (
-        <div className="delete-channel-wrapper"  >
-            <div className="delete-channel-backdrop" onClick={(e) => handleCloseOnOuterClick(e)}></div>
-            <div className="delete-channel-layer">
-                <div className="delete-channel-focus-lock" onClick={e => e.stopPropagation()} ref={popupRef}>
-                    <div className="delete-channel-root" id="delete-channel-modal">
-                        <div className="delete-channel-flex" >
-                            <h2 className="delete-channel-header">
-                                Delete Channel
-                            </h2>
+        <REACT_PORTAL wrapperId={'sub-modal'} classNameId={'subModal'} onClick={(e) => e.stopPropagation()}>
+            <div className="delete-channel-wrapper"  >
+                <div className="delete-channel-backdrop" onClick={(e) => handleCloseOnOuterClick(e)}></div>
+                <div className="delete-channel-layer">
+                    <div className="delete-channel-focus-lock" onClick={e => e.stopPropagation()} ref={popupRef}>
+                        <div className="delete-channel-root" id="delete-channel-modal">
+                            <div className="delete-channel-flex" >
+                                <h2 className="delete-channel-header">
+                                    Delete Channel
+                                </h2>
+                            </div>
+                            <div className="delete-channel-content-scroll-base global-scroller-base global-scroll-thin-raw-attributes" style={{ overflow: "hidden scroll", paddingRight: `8px` }}>
+                                {deleteChannelMessage}
+                                <div className="delete-channel-sep"></div>
+                            </div>
+                            <form onSubmit={handleDeleteChannel} className="delete-channel-button-flex-wrapper">
+                                {deleteChannelButton}
+                                <button type="button" onClick={(e) => handleCloseOnOuterClick(e)} className="delete-channel-cancel-button">
+                                    <div className="delete-channel-button-contents">Cancel</div>
+                                </button>
+                            </form>
                         </div>
-                        <div className="delete-channel-content-scroll-base" >
-                            {deleteChannelMessage}
-                            <div className="delete-channel-sep"></div>
-                        </div>
-                        <form onSubmit={handleDeleteChannel} className="delete-channel-button-flex-wrapper">
-                            {deleteChannelButton}
-                            <button type="button" onClick={(e) => handleCloseOnOuterClick(e)} className="delete-channel-cancel-button">Cancel</button>
-                        </form>
                     </div>
                 </div>
             </div>
-        </div>
+        </REACT_PORTAL >
+
     )
 
 
