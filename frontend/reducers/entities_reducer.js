@@ -7,6 +7,7 @@ import dmServerReducer from "./dm_server_reducer.js";
 import dmMessageReducer from "./dm_message_reducer.js";
 import userSearchReducer from "./user_search_reducer.js";
 import friendshipReducer from "./friendship_reducer.js";
+// import friendshipsSortedReducer from "./friendshipsSorted_reducer.js";
 
 const EntitiesReducer = combineReducers({
     users: userReducer,
@@ -17,6 +18,7 @@ const EntitiesReducer = combineReducers({
     dmMessages: dmMessageReducer,
     userSearch: userSearchReducer,
     friendships: friendshipReducer,
+    // friendshipsSorted: friendshipsSortedReducer,
 });
 
 export default EntitiesReducer;
