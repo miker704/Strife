@@ -5,7 +5,7 @@ import DefaultPFPSVG from "../../../../app/assets/images/defaultPFPSVG.svg";
 import GroupChatIcon from '../../../../app/assets/images/groupChatIcon.svg';
 import REACT_PORTAL from "../../../utils/ReactPortal_api_util";
 import { Tooltip } from "react-tooltip";
-import { HashIcon, LoudSpeakerLockIcon, SMSIcon } from "../../front_end_svgs/Strife_svgs";
+import { GameControllerIcon, HashIcon, LoudSpeakerLockIcon, SMSIcon } from "../../front_end_svgs/Strife_svgs";
 
 const StartConversationSearchBarModal = (props) => {
 
@@ -13,6 +13,7 @@ const StartConversationSearchBarModal = (props) => {
     useEffect(() => {
         window.addEventListener('keyup', props.handleESC, false);
         props.requestAllFriendships();
+        setGames(randomGamesList(randomLength(5, 30)));
         return function cleanUp () {
             window.removeEventListener('keyup', props.handleESC, false);
         }
@@ -23,7 +24,9 @@ const StartConversationSearchBarModal = (props) => {
     const dmMembersArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
     const queryKeys = ['username', 'strife_id_tag', 'channel_name', 'server_name', 'channel_type'];
     // const queryShortCut = ['!', '@', '#', '*'];
+    const randomLength = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
+    const [games, setGames] = useState([]);
     const [queryShortCut, setQueryShortCut] = useState({
         '!': false,
         '@': false,
@@ -220,6 +223,50 @@ const StartConversationSearchBarModal = (props) => {
     const extractFriends = props.friends;
     const extractDmServers = props.dmServers;
 
+
+    const randomGamesList = (len) => {
+        const randomGames = [
+            'Centipede.js', 'BlueStacks 5.0', 'Fortnite',
+            'Paint-By-Numbers', 'Doom (1993)', 'Quake (1996)', 'BattleField',
+            'Call of Duty',
+            'Wolfenstein', 'Grand Theft Auto V', 'Roblox',
+            'Minecraft', 'League of Legends', 'Dota 2',
+            'Overwatch', 'Rocket League', 'Cyberpunk 2077', 'Monster Hunter - Iceborne',
+            "PlayerUnknown's Battlegrounds", 'ARK: Survival Evolved', 'Red Dead Redemption 2',
+            'Rainbow 6', 'Apex Legends', 'Destiny 2', 'Turok', 'Saints Row',
+            'Counter-Strike', 'World of Warcraft', 'Fall Guys', 'Among Us',
+            'Forza Horizon 5', 'Valorant', 'Bloodborne', 'Demon Souls', 'Elden Ring',
+            'Dark Souls', 'Borderlands', 'Borderlands 2', 'Borderlands 3', 'Yakuza', 'Tetris',
+            'Tax-Man', 'Candy Crush', 'Halo', 'Watching Anime', 'Angry Birds',
+            'DRAGON BALL Z: KAKAROT', 'Dead by Daylight', 'Portal 2', 'Half-Life', 'Cuphead',
+            'MultiVersus', 'For Honor', 'Far Cry 6', 'Crysis', 'Resident Evil 7',
+            'Dino Crisis', "Papers, Please", 'Carnivores', 'Jurassic World Evolution',
+            'Chasm: The Rift', 'Microsoft Flight Simulator', 'Genshin Impact', 'Super Mario 2',
+            'Team Fortress 2', 'Unreal Tournament', 'Blood', 'Duke Nukem', 'Serious Sam',
+            'Max Payne', 'Left 4 Dead 2', 'Dead Island', 'Planet Zoo', 'Alien Isolation',
+            'AMID EVIL', 'Super Castlevania IV', "Garry's Mod", 'Dusk', 'Super Mario Bros 2',
+            'Plague Inc: Evolved', 'Monster Hunter Rise', 'Diablo III', 'Goat Simulator',
+            'The Elder Scrolls V: Skyrim', 'The Elder Scrolls IV: Oblivion', 'DOOM (2016)', 'DOOM ETERNAL',
+            'QUAKE CHAMPIONS', 'Call of Duty Warzone', 'Turok 2 - Seeds of Evil', 'Killing Floor 2',
+            'Diablo IV', 'Dead Island 2', 'Jurassic World Evolution 2', 'Senran Kagura', 'Street Fighter 6',
+            'Carnivores 2', 'Carnivores: Ice Age', 'Dino Crisis 2', 'Pac-Man', 'Face-Man',
+            "Tom Clancy's Ghost Recon Wildlands", 'Ghost of Tsushima', 'Nioh', 'Nioh 2', 'Mortal Kombat',
+            'Runescape',
+        ];
+
+        const result = Array.from(randomGames)
+        const shuffled = result.sort(() => Math.floor(0.5 - Math.random()));
+        const selected = shuffled.slice(0, len);
+        return selected;
+
+    }
+
+
+
+
+
+
+
     const liveSearch = () => {
 
         let allItems = document.querySelectorAll("[role=option]");
@@ -227,7 +274,7 @@ const StartConversationSearchBarModal = (props) => {
         let search_query = document.getElementById('uas-search').value;
         let count = 0;
         let foundCount = 0;
-        const quickSwitchKeys = ['!', '@', '#', '*', '$'];
+        const quickSwitchKeys = ['!', '@', '#', '*', '$', '&'];
         let qSK = false;
         let quickSwitchKey = '';
 
@@ -476,7 +523,7 @@ const StartConversationSearchBarModal = (props) => {
                                         </div>
 
                                         <div>
-                                            <div id="ucth-dms" className="uas-content-type-header" data-quickswitchkey='$'>
+                                            <div id="ucth-dms" className="uas-content-type-header" data-quickswitchkey='&'>
                                                 <div className="uas-content-header">{`${quickSwitchActiveText === true ? `Seaching DM's` : `DM's`}`}</div>
                                             </div>
                                             {
@@ -493,7 +540,7 @@ const StartConversationSearchBarModal = (props) => {
                                                                     }
                                                                 }
                                                             }}
-                                                            data-quickswitchkey='$'
+                                                            data-quickswitchkey='&'
                                                             id={`uid_100 dmServer-item-${dmServer.id}`} role={'option'} key={`dmServer-${dmServer.id}`}>
                                                             <Link to={`/$/channels/@me/${dmServer.id}`} style={{ textDecoration: `none` }}
                                                                 onClick={() => props.closeModal()}>
@@ -568,6 +615,40 @@ const StartConversationSearchBarModal = (props) => {
                                                 })
                                             }
                                         </div>
+                                        <div>
+                                            <div id="ucth-games" className="uas-content-type-header" data-quickswitchkey='$'>
+                                                <div className="uas-content-header">{`${quickSwitchActiveText === true ? `Seaching Games` : `Games`}`}</div>
+                                            </div>
+                                            {
+                                                games.map((game, idx) => {
+                                                    return (
+                                                        <div className="result-item"
+                                                            onMouseEnter={(e) => {
+                                                                if (mouseOverScroll === true) {
+                                                                    if (searchText.length > 0 && potentialResult === true) {
+                                                                        adjustArrowPos(e)
+                                                                    }
+                                                                }
+                                                            }}
+                                                            data-quickswitchkey='$'
+                                                            id={`uid_100 game-item-${idx}`} role={'option'} key={`game-${idx}`}>
+                                                            <div style={{ textDecoration: `none` }}
+                                                                onClick={() => props.closeModal()}>
+                                                                <div className="result-item-inner">
+                                                                    <div className="result-item-server-guild-card-container">
+                                                                        <GameControllerIcon className="uasm-channel-hash-icon" />
+                                                                    </div>
+                                                                    <div className="result-item-server-name">
+                                                                        <span className="result-item-match">{game}</span>
+                                                                    </div>
+                                                                    <div className="misc-x"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                })
+                                            }
+                                        </div>
                                     </div>
                                 </div>
 
@@ -589,6 +670,7 @@ const StartConversationSearchBarModal = (props) => {
                                         <span aria-label="Voice Channels" className="autoCompleteQuerySymbol">!</span>
                                         <span aria-label="Servers" className="autoCompleteQuerySymbol">*</span>
                                         <span aria-label="DM's" className="autoCompleteQuerySymbol">$</span>
+                                        <span aria-label="Games" className="autoCompleteQuerySymbol">&</span>
                                         {` `}to narrow results.{` `}
                                         <a className="uas-learn-more" href="https://support.discord.com/hc/en-us/articles/115000070311" target="_blank" rel="noreferrer noopener">Learn more</a>
                                     </div>
