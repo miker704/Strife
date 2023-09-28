@@ -8,7 +8,7 @@ import { appPullerPullAnimation, appPullerPullAndHoldAnimation } from "../../../
 import {
     AddCircleIcon, AddEventIcon, AddFolderIcon, AppDirectoryBotIcon, CheckBoxCheckedIcon,
     CheckBoxUnCheckedIcon, GemBoostIcon, InviteMemberIcon, LeaveServerIcon, NotificationBellIcon,
-    PenEditIcon, PrivacyShieldIcon, ReportRaidShieldIcon, ServerInsightsIcon, SettingsIcon
+    PenEditIcon, PrivateLockIcon, PrivacyShieldIcon, ReportRaidShieldIcon, ServerInsightsIcon, SettingsIcon, SMSIcon
 }
     from "../../front_end_svgs/Strife_svgs";
 
@@ -152,6 +152,12 @@ const ChannelDropDown = (props) => {
 
                                     }
                                     <div className={`channel-drop-item`}>
+                                        <div className="server-boost-label">Active Threads</div>
+                                        <div className="server-boost-icon-container">
+                                            <SMSIcon className="icon-cd-atsms" />
+                                        </div>
+                                    </div>
+                                    <div className={`channel-drop-item`}>
                                         <div className="server-boost-label">App Directory</div>
                                         <div className="server-boost-icon-container">
                                             <AppDirectoryBotIcon className="icon-cd-ad" />
@@ -162,7 +168,7 @@ const ChannelDropDown = (props) => {
                                 <div role={"group"}>
 
                                     <div className="channel-drop-item" onClick={() => setCheckMark(!checkMark)}>
-                                        <div className="server-boost-label">Show All Channels (Beta)</div>
+                                        <div className="server-boost-label">Show All Channels</div>
                                         <div className="server-boost-icon-container">
                                             {checkBoxRender}
                                         </div>
@@ -200,6 +206,16 @@ const ChannelDropDown = (props) => {
                                 </div>
                                 <div className="channel-drop-sep"></div>
                                 <div role={"group"}>
+                                    {
+                                        props.currentUser.id === serverOwnerId ? (
+                                            <div className={`channel-drop-item redclr`}>
+                                                <div className="server-boost-label">Security Actions</div>
+                                                <div className="server-boost-icon-container">
+                                                    <PrivateLockIcon className="icon-cd-plsa" />
+                                                </div>
+                                            </div>
+                                        ) : (null)
+                                    }
 
                                     {
                                         props.currentUser.id === serverOwnerId ? (
