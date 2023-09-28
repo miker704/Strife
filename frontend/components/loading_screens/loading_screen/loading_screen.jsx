@@ -7,7 +7,7 @@ const LoadingScreen = (props) => {
 
     useEffect(() => {
         setLoadingMessage(props.selectedLoadingMsg);
-        if (props.ui_modal.length > 0) { props.closeModal(); }
+        if (props.ui_modal?.length > 0) { props.closeModal(); }
         props.receiveStrifeB0t();
         if (props.history.location.pathname !== "/$/channels/@me") {
             let lsd = document.getElementById('loading-screen-wrapper');
