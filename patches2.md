@@ -1630,7 +1630,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added conditional check to loading screen.
     - Added conditional check to telefrag loading screen.
     - Added conditional check to refresh loading screen.
-
+    - Added conditional check to update loading screen.
     - Update Core styles.
     - Finalized Message Skeleton and MessageList Skeleton.
     - Finalized Guild Server list Skeleton and Guild Server Grid Skeleton.
