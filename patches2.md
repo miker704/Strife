@@ -1930,6 +1930,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Games List for User Assest Search Modal.
     - Finalized Channel Drop Down Modal Styles for new icons.
     - Finalized Channel Drop Down Modal for new icons.
+    - Finalized Invite to Server Modal Pre Demo Auth.
 
 
 
