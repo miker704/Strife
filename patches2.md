@@ -1853,7 +1853,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Styles for call containers.
     - Finalized Styles and Conversion from SCSS Vars to CSS for server nav bar.        
     - Finalized Styles and Conversion from SCSS Vars to CSS for global styles.        
-    - Finalized Styles and Conversion from SCSS Vars to CSS for global SCSS Vars.        
+    - Finalized Styles and Conversion from SCSS Vars to CSS for global SCSS Vars.
+    - Finalized Styles for reset sheet.             
 
 ## Backend Changes
 
