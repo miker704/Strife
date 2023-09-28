@@ -33,5 +33,4 @@ const mDTP = (dispatch) => {
 
 
 const DMNavBarContainer = withRouter(connect(mSTP, mDTP)(DmNavBar));
-
 export default DMNavBarContainer;
