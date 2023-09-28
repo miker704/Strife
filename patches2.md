@@ -1880,6 +1880,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Message Reducer.
     - Finalized o2o dm chat first message component.
     - Finalized o2o dm chat first message container.
+    - Finalized video and voice call component.
 
 
 
