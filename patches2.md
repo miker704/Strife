@@ -1873,6 +1873,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Start Conversation Search Modal.
     - Finalized DmServer Nav Bar.
     - Finalized DmServer Nav Bar Container.
+    - Finalized DmServer First Message Parser Component.
 
 
 ## Backend Changes
