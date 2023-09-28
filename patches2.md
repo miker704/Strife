@@ -1883,6 +1883,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized video and voice call component.
     - Finalized invite to dm server modal.
     - Finalized invite to dm server modal container.
+    - Finalized Dm Server Member List.
 
 
 
