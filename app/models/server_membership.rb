@@ -35,4 +35,14 @@ class ServerMembership < ApplicationRecord
             end
     end
 
+
+    def date_joined
+        attributes['created_at'].strftime("%m/%d/%Y")
+    end
+
+    def date_joined_for_upc
+        attributes['created_at'].strftime("%b %d, %Y")
+    end
+
+
 end
