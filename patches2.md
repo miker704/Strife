@@ -1627,7 +1627,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved Deprecated new server nav bar test 4 higher level file to deprecated.
     - Moved Deprecated new server nav bar test 5 higher level file to deprecated.
     - Moved Deprecated Class Based server nav bar to deprecated.
-
     - Finalized Message Skeleton and MessageList Skeleton.
     - Finalized Guild Server list Skeleton and Guild Server Grid Skeleton.
     - Finalized Loading Screen.
@@ -1851,6 +1850,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Styles and Conversion from SCSS Vars to CSS for user setttings modal.    
     - Finalized Dm Servers Reducer.
     - Finalized Tool Tips Styles.
+    - Finalized Styles for call containers.    
 
 ## Backend Changes
 
