@@ -621,7 +621,7 @@ const StartConversationSearchBarModal = (props) => {
                                         </div>
                                     </div>
                                 </div>
-                                <Tooltip className="thread-tool-tip" id="modal-tip-a" place="top" />
+                                <Tooltip className="thread-tool-tip" id="modal-tip-a" place="top" closeOnScroll={true} closeOnResize={true} />
                             </div>
                         </div>
                     </div>
