@@ -1984,6 +1984,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Finalized Dm Servers Controller.rb for patch v4.
 - Finalized Dm Members Controller.rb for patch v4.
 - Finalized Channels Controller.rb for patch v4.
+- Finalized Current backend routes.rb for patch v4.
 
 
 ### Front-End Changes
