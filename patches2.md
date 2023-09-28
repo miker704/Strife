@@ -1938,6 +1938,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Dm Server.
     - Finalized Dm Server Container.
     - Finalized FriendShip Reducer.
+    - Finalized Entities Reducer.
 
 
 
