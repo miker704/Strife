@@ -1857,6 +1857,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Styles and Conversion from SCSS Vars to CSS for global SCSS Vars.
     - Finalized Styles for reset sheet.
     - Finalized Group Chat First Message Component.
+    - Finalized Group Chat First Message Container.
 
 ## Backend Changes
 
