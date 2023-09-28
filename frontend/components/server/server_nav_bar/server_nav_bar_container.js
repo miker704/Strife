@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import ServerNavBar from "./server_nav_bar.jsx";
-// import ServerNavBar from "./snb3_no_path";
 import {  withRouter } from "react-router";
 import { fetchServer, fetchServers } from "../../../actions/server_actions";
 import {openModal} from "../../../actions/modal_actions.js";
