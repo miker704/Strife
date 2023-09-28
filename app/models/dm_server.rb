@@ -15,11 +15,14 @@
 class DmServer < ApplicationRecord
     validates :owner_id, presence: true
     # validates :dm_server_name, allow_nil: true
+    validates :dm_server_name, length: {minimum:1, maximum:100}, allow_nil: true
     belongs_to :user, class_name: "User", foreign_key: "owner_id"
     has_many :dm_messages, class_name: "DmMessage", foreign_key: "dm_server_id", dependent: :destroy
     has_many :dm_members, class_name: "DmMember", foreign_key: "dm_server_id", dependent: :destroy
     has_many :members, through: :dm_members, source: :member
     after_create :add_dm_members
+
+    has_one_attached :gcIcon
 
     def add_dm_members
         self.member_ids.each do |memberId| 
@@ -27,5 +30,16 @@ class DmServer < ApplicationRecord
         end
     end
 
+    def is_one_to_one?
+        return self.members.length == 2
+    end
+
+    def is_Group_chat?
+        return self.members.length > 2
+    end
+
+    def generate_temp_dm_name(current_user)
+        dm_name = self.members.filter_map{|member| member.username if member.id != current_user.id}.join(", ")
+    end
 
 end
