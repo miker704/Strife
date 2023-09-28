@@ -1,4 +1,5 @@
 require 'open-uri'
+
 class Api::UsersController < ApplicationController
     skip_before_action :verify_authenticity_token
     
@@ -40,19 +41,21 @@ class Api::UsersController < ApplicationController
             invalid_password_error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['Error Incorrect Password !']
             render json: invalid_password_error, status: 401
            
-            # render json: @user.errors.full_messages, status: 401
         end
     end
     
     #delele phone number
     def delete_PhoneNumber 
+
         @user = User.find(params[:id])
+        
         if @user && @user.is_password?(params[:user][:password])
             @user.phone_number=nil
             @user.save!
             render :show
         else
-            render json: @user.errors.full_messages, status: 401
+            invalid_password_error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['Error Incorrect Password !']
+            render json: invalid_password_error, status: 401
         end
         
     end
@@ -98,7 +101,6 @@ class Api::UsersController < ApplicationController
                 render json: process_File_Error, status: 400
             end
         else
-
             process_File_Error = @user.errors.full_messages.length > 0 ? @user.errors.full_messages : ['cannot process file']
             render json: process_File_Error, status: 400
         end
@@ -115,7 +117,11 @@ class Api::UsersController < ApplicationController
             confirm_new_password = params[:user][:confirmNewPassword]
             #now check to see if new password matches old password if so wave error
 
-            if new_password.length < 8 || new_password.length > 72
+            if new_password.length == 0
+                @user.errors.add(:error,'new password cannot be blank')
+                render json: @user.errors.full_messages, status: 401
+
+            elsif new_password.length < 8 || new_password.length > 72
                 @user.errors.add(:error,'new password must be 8 to 72 in length')
                 render json: @user.errors.full_messages, status: 401
 
@@ -140,6 +146,7 @@ class Api::UsersController < ApplicationController
         end
 
     end
+    
 
 
     #search up other users
@@ -154,7 +161,38 @@ class Api::UsersController < ApplicationController
     # grab full log of users data
     def user_data_extraction
         @user = User.find(params[:id])
-        render :userExtraction
+        if @user
+            render :userExtraction
+        else
+            render json: ["User cannot be found!"], status: 404
+        end
+    end
+
+
+
+    def mutual_friends
+        @user = User.find(params[:id])
+        @otherUser = User.find(params[:other_user_id])
+        if @user && @otherUser
+            other_users_friends = @otherUser.friends.map{|friend| friend.id}
+            @users = @user.friends.select{|friend| other_users_friends.include?(friend.id)}
+            render :index
+        else
+            render json: ["User cannot be found!"], status: 404
+        end
+
+    end
+
+    def mutual_servers
+        @user = User.find(params[:id])
+        @otherUser = User.find(params[:other_user_id])
+        if @user && @otherUser
+            other_users_servers = @otherUser.servers_joined.map{|server| server.id}
+            @servers = @user.servers_joined.select{|server| other_users_servers.include?(server.id)}
+            render 'api/servers/compressIndex'
+        else
+            render json: ["User cannot be found!"], status: 404
+        end
     end
 
 
@@ -165,6 +203,48 @@ class Api::UsersController < ApplicationController
         end
 
         @user = User.find_by(strife_id_tag: params[:user_strife_id_tag].to_i)
+
+        if @user
+            render :show
+        else
+            render json: ["User Does not exists with that STRIFE ID Tag !"], status: 404
+        end
+
+
+    end
+
+
+
+    def fetch_user_by_strife_id_or_username
+        @user=nil
+        # puts 'params'.colorize(:red)
+        # puts params
+        # puts params[:user][:username]
+
+        # check if user name is blank if so result to search by tag
+        if(params[:user][:username] == '' && params[:user][:strife_id_tag] == '-000')
+            # puts 'ERROR both blank !'.colorize(:red)
+            render json: ['Please enter proper format username + # + STRIFE ID Tag.'], status: 404
+            return
+        elsif (params[:user][:username].length != 0 && params[:user][:strife_id_tag] != '-000')
+            # puts 'neither both blank !'.colorize(:red)
+
+            @user = User.find_by(username: params[:user][:username].to_s, strife_id_tag: params[:user][:strife_id_tag].to_i)
+
+        elsif(params[:user][:username].length != 0 && params[:user][:strife_id_tag] == '-000')
+            # puts 'tag is blank  search by username !'.colorize(:red)
+
+            @user = User.find_by(username: params[:user][:username])
+            # puts 'user'.colorize(:red)
+            # puts @user
+
+        elsif(params[:user][:username].length == 0 && params[:user][:strife_id_tag] != '-000')
+            # puts 'name blank search by tag!'.colorize(:red)
+            @user = User.find_by(strife_id_tag: params[:user][:strife_id_tag].to_i)
+        end
+
+        # puts 'user'.colorize(:red)
+        # puts @user
 
         if @user
             render :show
@@ -201,7 +281,7 @@ class Api::UsersController < ApplicationController
 
     private
     def user_params
-        return params.require(:user).permit(:email,:username,:birthday,:password,:online,:phone_number,:photo,:remove_PFP,:user_Banner,:remove_UB)
+        return params.require(:user).permit(:email,:username,:birthday,:password,:online,:phone_number,:photo,:remove_PFP,:user_Banner,:remove_UB, :other_user_id)
     end
 
     
