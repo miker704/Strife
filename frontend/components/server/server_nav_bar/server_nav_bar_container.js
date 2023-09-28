@@ -1,13 +1,12 @@
 import { connect } from "react-redux";
 import ServerNavBar from "./server_nav_bar.jsx";
+// import ServerNavBar from "./snb3_no_path";
 import {  withRouter } from "react-router";
 import { fetchServer, fetchServers } from "../../../actions/server_actions";
 import {openModal} from "../../../actions/modal_actions.js";
 
 const mSTP = (state, ownProps) => {
-    
     return {
-        // currentUser: state.entities.users[state.session.id],
         currentUser: state.currentUser,
         servers: Object.values(state.entities.servers),
         serverId: ownProps.match.params.serverId,
