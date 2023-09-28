@@ -8,11 +8,11 @@ import DeleteServerChannelMessageModal from "./delete_server_message_modal";
 const mSTP = (state, ownProps) => {
 
     return {
+        currentUser: state.currentUser,
         currentUserId: state.session.id,
         message: state.ui.modalProps.message,
         serverId: state.ui.modalProps.serverId,
         channelId: state.ui.modalProps.channelId,
-        formatTime: state.ui.modalProps.formatTime,
         messageAuthor: state.ui.modalProps.messageAuthor
     }
 }
