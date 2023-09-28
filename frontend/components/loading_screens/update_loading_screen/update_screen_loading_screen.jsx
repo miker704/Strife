@@ -6,7 +6,7 @@ const UpdateLoadingScreen = (props) => {
     const [loadingMessage, setLoadingMessage] = useState('');
     useEffect(() => {
         setLoadingMessage(props.selectedLoadingMsg);
-        if (props.ui_modal.length > 0) { props.closeModal(); }
+        if (props.ui_modal?.length > 0) { props.closeModal(); }
         props.receiveStrifeB0t();
         props.fetchUser(props.currentUserId);
         if (props.history.location.pathname !== "/$/channels/@me") {
