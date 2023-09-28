@@ -1940,7 +1940,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Finalized Channel model.rb for patch v4.
 - Finalized Dm Message model.rb for patch v4.
 - Finalized Message model.rb for patch v4.
-
+- Finalized Channel: show.json.jbuilder for patch v4.
 
 ### Front-End Changes
 
