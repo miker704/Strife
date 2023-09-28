@@ -1904,12 +1904,13 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Delete Server Modal Container.
     - Finalized Select DmServer Members for Call Modal.
     - Finalized Select DmServer Members for Call Modal Container.
-    - Finalized Select DmServer Header Nav Bar.
-    - Finalized Select DmServer Header Nav Bar Container.
+    - Finalized DmServer Header Nav Bar.
+    - Finalized DmServer Header Nav Bar Container.
     - Finalized Modal Manager Container.
     - Finalized Modal Manager.
     - Finalized Server Messages.
     - Finalized Server Messages Container.
+    - Finalized Server Header Nav Bar.
 
 
 
