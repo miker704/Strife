@@ -1,6 +1,7 @@
 import React from "react";
 import { JOIN_CALL, LEAVE_CALL, EXCHANGE, ice } from "../../../actions/video_and_voice_calls_actions.js";
 import { broadcastData } from "../../../utils/voice_and_video_calls_api_util";
+import { DisconnectPhoneCallIcon, VoiceCallPhoneIcon } from "../../front_end_svgs/Strife_svgs.jsx";
 
 class STRIFE_WEB_RTC_DM_CALL extends React.Component {
     constructor (props) {
@@ -100,9 +101,9 @@ class STRIFE_WEB_RTC_DM_CALL extends React.Component {
                     }
                 },
             });
-            this.setState({
-                startCall: true,
-            })
+        this.setState({
+            startCall: true,
+        })
     }
 
     leaveCall (e) {
@@ -192,7 +193,7 @@ class STRIFE_WEB_RTC_DM_CALL extends React.Component {
                 // document.getElementById('remoteVideo').style.background = "none";
                 // document.getElementById('remoteVideo').style.height = `100%`;
                 // this.remoteVideo.appendChild(remoteVid);
-                this.remoteVideo.id=`remoteVideo+${userId}`;
+                this.remoteVideo.id = `remoteVideo+${userId}`;
                 this.remoteVideo.srcObject = e.streams[0];
                 vidcount++
 
@@ -263,14 +264,7 @@ class STRIFE_WEB_RTC_DM_CALL extends React.Component {
                 <div id="buttons">
                     <div className="video-controls">
                         <button disabled={this.state.joinCall} type="button" id="Join-call" className="faint-boost-shiny-button start-call-button" onClick={this._V_CALL_CONSTRUCTOR_.bind(this)}>
-                            <svg x="0" y="0" className="icon-phone-2" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
-                                <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M11 5V3C16.515 3 21 7.486 21 13H19C19 
-                                8.589 15.411 5 11 5ZM17 13H15C15 10.795 13.206 9 11 9V7C14.309 7 17 9.691 17 13ZM11 11V13H13C13 
-                                11.896 12.105 11 11 11ZM14 16H18C18.553 16 19 16.447 19 17V21C19 21.553 18.553 22 18 22H13C6.925 
-                                22 2 17.075 2 11V6C2 5.447 2.448 5 3 5H7C7.553 5 8 5.447 8 6V10C8 10.553 7.553 11 7 11H6C6.063 
-                                14.938 9 18 13 18V17C13 16.447 13.447 16 14 16Z">
-                                </path>
-                            </svg>
+                            <VoiceCallPhoneIcon className="icon-phone-2" />
                             <div className="shiny-button-contents">
                                 Join Call
                                 <div className="shiny-button-container">
@@ -281,14 +275,7 @@ class STRIFE_WEB_RTC_DM_CALL extends React.Component {
                             </div>
                         </button>
                         <button disabled={this.state.startCall} type="button" id="start-call" className="faint-boost-shiny-button start-call-button" onClick={this.joinCall.bind(this)}>
-                            <svg x="0" y="0" className="icon-phone-2" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
-                                <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M11 5V3C16.515 3 21 7.486 21 13H19C19 
-                                8.589 15.411 5 11 5ZM17 13H15C15 10.795 13.206 9 11 9V7C14.309 7 17 9.691 17 13ZM11 11V13H13C13 
-                                11.896 12.105 11 11 11ZM14 16H18C18.553 16 19 16.447 19 17V21C19 21.553 18.553 22 18 22H13C6.925 
-                                22 2 17.075 2 11V6C2 5.447 2.448 5 3 5H7C7.553 5 8 5.447 8 6V10C8 10.553 7.553 11 7 11H6C6.063 
-                                14.938 9 18 13 18V17C13 16.447 13.447 16 14 16Z">
-                                </path>
-                            </svg>
+                            <VoiceCallPhoneIcon className="icon-phone-2" />
                             <div className="shiny-button-contents">
                                 Start Call
                                 <div className="shiny-button-container">
@@ -299,15 +286,7 @@ class STRIFE_WEB_RTC_DM_CALL extends React.Component {
                             </div>
                         </button>
                         <button disabled={this.state.leaveCall} type="button" id="leave-call" className="faint-boost-shiny-button drop-call-button" onClick={this.leaveCall.bind(this)}>
-                            <svg className="disconnect-call-icon" aria-hidden="true" role="img" width="24" height="24"
-                                viewBox="0 0 24 24">
-                                <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M21.1169 1.11603L22.8839 
-                                    2.88403L19.7679 6.00003L22.8839 9.11603L21.1169 10.884L17.9999 7.76803L14.8839 10.884L13.1169 
-                                    9.11603L16.2329 6.00003L13.1169 2.88403L14.8839 1.11603L17.9999 4.23203L21.1169 1.11603ZM18 22H13C6.925 
-                                    22 2 17.075 2 11V6C2 5.447 2.448 5 3 5H7C7.553 5 8 5.447 8 6V10C8 10.553 7.553 11 7 11H6C6.063 14.938 9 18 13 
-                                    18V17C13 16.447 13.447 16 14 16H18C18.553 16 19 16.447 19 17V21C19 21.553 18.553 22 18 22Z">
-                                </path>
-                            </svg>
+                            <DisconnectPhoneCallIcon className="disconnect-call-icon" />
                             <div className="shiny-button-contents">
                                 Leave Call
                                 <div className="shiny-button-container">
@@ -323,7 +302,7 @@ class STRIFE_WEB_RTC_DM_CALL extends React.Component {
                 <div id="videos">
                     <video id="localVideo" muted autoPlay playsInline></video>
                     {/* <div id="remoteVideo"></div> */}
-                    <video id="remoteVideo"autoPlay playsInline></video>
+                    <video id="remoteVideo" autoPlay playsInline></video>
 
                 </div>
             </div>
