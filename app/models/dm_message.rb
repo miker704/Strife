@@ -23,4 +23,15 @@ class DmMessage < ApplicationRecord
     belongs_to :message_creator, class_name: "User", foreign_key: "sender_id"
     belongs_to :dm_server, class_name: "DmServer", foreign_key: "dm_server_id"
 
+
+    def dm_message_Info
+        attributes['created_at'].strftime("%m/%d/%Y %H:%M")
+    end
+
+    def dm_message_time_stamp_slashes
+        est = Time.zone.utc_to_local(self.created_at)
+        est = est + 4.hours
+        return est.strftime("%-m/%-d/%Y %-I:%M:%S %p")
+    end
+
 end
