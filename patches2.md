@@ -1616,6 +1616,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Re - Enabled check if demo user to lock access to demo user related session and user apps.
     - Created Deprecated Tool Tips Styles File.
     - Move Deprecated new server nav bar styles to deprecarted folder.
+    - Move Deprecated new server nav bar higher level styles to deprecarted folder.
 
     - Finalized Message Skeleton and MessageList Skeleton.
     - Finalized Guild Server list Skeleton and Guild Server Grid Skeleton.
