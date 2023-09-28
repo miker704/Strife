@@ -1,41 +1,41 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
-import ReactTooltip from "react-tooltip";
-import user_Default_PFP from '../../../../app/assets/images/discord_PFP.svg';
 import { closeOnEsc, closeHookModalOnOutsideClick } from "../../../utils/close_hook_modals_api_utils";
+import DefaultPFPSVG3 from "../../../../app/assets/images/defaultPFPSVG3.svg";
+import ServerMessageControlContainer from "../server_message_control/server_message_control_container";
+import { StrifeBotTagIcon } from "../../front_end_svgs/Strife_svgs";
+import { useToolTipFullTimeStamp, useFormatTimeStampMessageBody } from "../../../utils/useTimeStamp_api_utils";
 
-const ServerMessages = ({
-
-    currentUserId,
-    message,
-    serverMembers,
-    messageAuthor,
-    formatTime,
-    serverId,
-    channelId,
-    updateMessage,
-    deleteMessage,
-    openModal,
-    openModalWithProps,
-    strifeBot,
-    channelName,
-    channel,
-    server,
-
-}) => {
+const ServerMessages = (props) => {
 
     const [showMsgEdit, setShowMsgEdit] = useState(false);
-    const [value, setValue] = useState(message.body);
+    const [value, setValue] = useState(props.message.body);
+    const [enableExpand, setEnableExpand] = useState(false);
+    const [_SHIFT, setShift] = useState(false);
     const editMsgRef = useRef(null);
-    const popUpRef = useRef();
+    const editMsgFormRef = useRef(null);
+    const popUpRef = useRef(null);
+    const buttonRef = useRef(null);
+    const [selectedMsg, setSelectedMsg] = useState({});
+
+
+    useEffect(() => {
+        if (props.msgUpc === true) {
+            $(`#message-id-${selectedMsg?.id}`).addClass("selected");
+        }
+        if (props.msgUpc === false) {
+            $(`#message-id-${selectedMsg?.id}`).removeClass("selected");
+            setSelectedMsg({})
+        }
+    }, [props.msgUpc])
 
     const openEdit = () => {
         setShowMsgEdit(true);
-
     }
 
     useEffect(() => {
         if (showMsgEdit) {
+            editMsgFormRef.current.scrollIntoView(true);
             editMsgRef.current.focus();
         }
     })
@@ -44,33 +44,31 @@ const ServerMessages = ({
         e.preventDefault();
         e.stopPropagation();
 
-
         if (value.length === 0 || value.replace(/\s/g, '').length === 0) {
             //reset back the value to dmMessage body just incase user aborts deletion
             // if a user sends a blank message or a message containing only spaces ask if the user
             //wants to delete their message instead.
-            setValue(message.body);
-            openModalWithProps({
-                currentUserId: currentUserId,
-                message: message,
-                formatTime: formatTime,
-                serverId: serverId,
-                channelId: channelId,
-                messageAuthor: messageAuthor
-
+            setValue(props.message.body);
+            props.openModalWithProps({
+                message: props.message,
+                serverId: props.serverId,
+                channelId: props.channelId,
+                messageAuthor: props.messageAuthor,
+                server: props.server,
             });
-            openModal('DeleteServerChannelMessage');
+            props.setRenderDeleteChannelMessage(true);
+
         }
 
-        else if (value !== message.body) {
+        else if (value !== props.message.body) {
 
             let editedMessage = {
-                id: message.id,
-                body: value,
-                channel_id: parseInt(channelId),
-                author_id: currentUserId
+                id: props.message.id,
+                body: value.trim(),
+                channel_id: parseInt(props.channelId),
+                author_id: props.currentUser.id
             }
-            updateMessage(editedMessage);
+            props.updateMessage(editedMessage);
         }
 
         setShowMsgEdit(false);
@@ -78,148 +76,223 @@ const ServerMessages = ({
 
     const closeEdit = (bool) => {
         setShowMsgEdit(bool);
-        setValue(message.body);
+        setValue(props.message.body);
     }
 
     closeOnEsc(closeEdit);
-    closeHookModalOnOutsideClick(popUpRef, closeEdit)
+    closeHookModalOnOutsideClick(popUpRef, closeEdit);
     const editInput = (
-        <form onSubmit={handleEdit} className="message-form-edit" >
-            <textarea
-                onFocus={(e)=>e.currentTarget.setSelectionRange(e.currentTarget.value.length,e.currentTarget.value.length)}
-                value={value}
-                onChange={(e) => setValue(e.currentTarget.value)}
-                className="server-message-chat-box-area"
-                rows={value.split('\n').length}
-                minLength={1}
-                maxLength={2000}
-                placeholder={`${message.body}`}
-                spellCheck={false}
-                ref={editMsgRef}
-                onKeyDown={(e) => {
-                    if (e.code === 'Enter' && !e.shiftKey) {
-                        handleEdit(e);
-                    }
-                }} />
-            <div>
-                escape to <span onClick={() => closeEdit(false)}>cancel</span> &#8226;
+        <div>
+            <form className="message-form-edit" onSubmit={handleEdit}>
+                <div className="chat-input-text-area-scroller chat-input-tsa-webkit-scroll" ref={editMsgFormRef}>
+                    <div className="edit-msg-input-inner-flex">
+                        <div className="inner-scroller-text-area">
+                            <div>
+                                <textarea
+                                    onFocus={(e) => e.currentTarget.setSelectionRange(e.currentTarget.value.length, e.currentTarget.value.length)}
+                                    value={value}
+                                    onChange={(e) => setValue(e.currentTarget.value)}
+                                    className="server-message-chat-box-area edit-msg-ta-chat-box"
+                                    rows={value.split('\n').length}
+                                    minLength={1}
+                                    maxLength={2000}
+                                    spellCheck={false}
+                                    autoFocus={true}
+                                    ref={editMsgRef}
+                                    onKeyDown={(e) => {
+                                        if (e.code === 'Enter' && !e.shiftKey) {
+                                            handleEdit(e);
+                                        }
+                                    }} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div className="message-form-operations">
+                escape to <a onClick={() => closeEdit(false)}>cancel</a> &#8226;
                 enter to {` `}
-                <span onClick={handleEdit}>save</span>
+                <a onClick={handleEdit}>save</a>
             </div>
-        </form>
+        </div>
     )
 
-
     const messageBody = () => {
-        if (currentUserId === message.author_id) {
+        if (props.currentUser.id === props.message.author_id) {
             return (
                 <>
-                    {showMsgEdit ? editInput : message.body}
+                    {showMsgEdit ? editInput :
+                        (<div className="chat-message">{props.message.body}</div>)
+                    }
                 </>
             )
         }
         else {
             return (
                 <>
-                    {message.body}
+                    <div className="chat-message">
+                        {props.message.body}
+                    </div>
                 </>
             )
         }
     }
 
 
-    const render_User_PFP = user_Default_PFP;
-    let messageAuthorName = message.author_id !== messageAuthor.id ? message.authorName : messageAuthor.username;
+    const expandButtonList = (e) => {
+        e.stopPropagation();
+        if (e.shiftKey) {
+            setShift(true);
+        }
+        else {
+            setShift(false);
+        }
+    }
+    const compressButtonList = (e) => {
+        // e.stopPropagation();
+        if (!e.shiftKey) {
+            setShift(false);
+        }
+    }
+
+    const Strife_Bot_IDs = [1, 2, 3, 4];
+    let if_Bot_tag = (
+        <span className="server-message-bot-tag">
+            <StrifeBotTagIcon className="server-message-bot-tag-check-mark" data-tooltip-id="msgbs-thread-tip" data-tooltip-place="top" data-tooltip-content={`${props.message.author_id === 1 ? `$y$t3m M3$$@g3` : `Verified $TR!F3 B0T`}`} />
+            <span className="server-message-bot-tag-text ">{`${props.message.author_id === 1 ? `$Y$T3M` : `$TR!F3 B0T`}`}</span>
+        </span>
+    );
+    let renderBotTag = Strife_Bot_IDs.includes(props.message.author_id) ? (if_Bot_tag) : ("");
+    let messageAuthorName = props.message.author_id !== props.messageAuthor.id ? props.message.authorName : props.messageAuthor.username;
 
     return (
-        <li className={`chat-message-item ${showMsgEdit === true ? `selected`:``}`} key={message.id} ref={popUpRef}>
 
-            <div className="message-wrapper-contents">
-                <div className="message-wrapper1">
+        <>
+            {
+                props.msgIdx === 0 || props.message.seconds - props.channelMessages[props.msgIdx - 1].seconds >= 300 || props.message.author_id !== props.channelMessages[props.msgIdx - 1].author_id ?
+                    (
+                        <>
+                            {
+                                props.msgIdx === 0 || props.message.date !== props.channelMessages[props.msgIdx - 1].date ? (
+                                    <div className="chat-divider">
+                                        <span className="chat-divider-content">{`${props.message.date}`}</span>
+                                    </div>
+                                ) : (null)
+                            }
 
-                    <div className={`${messageAuthor.photo === undefined ?
-                        `chat-user-pfp-svg-render color-${messageAuthor.color_tag}` :
-                        `chat-member-avatar-img`}`}>
-                        <img src={`${messageAuthor.photo === undefined
-                            ? render_User_PFP : messageAuthor.photo}`} alt="SMPFP" />
-                    </div>
 
-                    <h2 className="chat-member-username-header">
-                        <span className="chat-member-username-wrap">
-                            {/* <span className="chat-member-username">{message.authorName}</span> */}
-                            <span className="chat-member-username">{messageAuthorName}</span>
+                            <li className={`chat-message-item ${showMsgEdit === true ? `selected` : ``}`} id={`message-id-${props.message.id}`} key={props.message.id} ref={popUpRef} tabIndex={-1}
+                                // onMouseEnter={(e) => { e.preventDefault(); popUpRef.current.focus({ preventScroll: true, focusVisible: false }); }}
+                                // onMouseLeave={(e) => { popUpRef.current.blur(); setShift(false); }}
+                                // onKeyUp={(e) => { if (popUpRef?.current.focus && !e.shiftKey) { setShift(false); } }}
+                                // onKeyDown={(e) => { if (popUpRef?.current.focus && e.shiftKey) { setShift(true); } }}
+                                onMouseEnter={(e) => {
+                                    document.addEventListener("keydown", expandButtonList);
+                                    document.addEventListener('keyup', compressButtonList);
+                                }}
+                                onMouseLeave={(e) => {
+                                    document.removeEventListener("keydown", expandButtonList);
+                                    document.removeEventListener('keyup', compressButtonList);
+                                }}
+                            >
+                                <div className="message-wrapper1" ref={buttonRef} tabIndex={-1}>
+                                    <div className="message-wrapper-contents">
+                                        {
+                                            props.messageAuthor.photo === undefined ? (
+                                                <img className={`chat-member-avatar-img color-${props.messageAuthor.color_tag}`} src={DefaultPFPSVG3} alt=" "
+                                                    onClick={(e) => {
+                                                        setSelectedMsg(props.message)
+                                                        props.handleOpenSUOMM(e, props.messageAuthor);
+                                                    }} />
+                                            ) : (
+                                                <img className="chat-member-avatar-img" src={props.messageAuthor.photo} alt=" " onClick={(e) => {
+                                                    setSelectedMsg(props.message)
+                                                    props.handleOpenSUOMM(e, props.messageAuthor);
+                                                }} />
+                                            )
+                                        }
 
-                        </span>
-                        <span className="chat-message-timestamp-wrap">
-                            <p className="chat-message-timestamp">
-                                {formatTime(message.created_at)}
-                            </p>
-                        </span>
-                    </h2>
-                    <div className="chat-message">
-                        {messageBody()}
-                    </div>
-                </div>
-                <div className={`message-accessories-button-wrapper ${currentUserId === message.author_id ? `` : `is-hidden`}`}>
-                    <div className="message-accessories-button" data-tip data-for="edit-message" onClick={() => openEdit()}>
-                        <svg className="pen-icon" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M19.2929 9.8299L19.9409 9.18278C21.353 7.77064 
-                                     21.353 5.47197 19.9409 4.05892C18.5287 2.64678 16.2292 2.64678 14.817 4.05892L14.1699 4.70694L19.2929 
-                                     9.8299ZM12.8962 5.97688L5.18469 13.6906L10.3085 18.813L18.0201 11.0992L12.8962 5.97688ZM4.11851 
-                                     20.9704L8.75906 19.8112L4.18692 15.239L3.02678 19.8796C2.95028 20.1856 3.04028 20.5105 3.26349 
-                                     20.7337C3.48669 20.9569 3.8116 21.046 4.11851 20.9704Z" fill="currentColor">
-                            </path>
-                        </svg>
+                                        <h3 className="chat-member-username-header">
+                                            <span className="chat-member-username-wrap">
+                                                <span role="button" tabIndex={0} className="chat-member-username" onClick={(e) => {
+                                                    setSelectedMsg(props.message)
+                                                    props.handleOpenSUOMM(e, props.messageAuthor, "userNameClicked");
+                                                }}>
+                                                    {messageAuthorName}
+                                                </span>
+                                                {renderBotTag}
+                                            </span>
+                                            <span className="chat-message-timestamp" data-tooltip-id="scmsgsTimeStamp-thread-tip" data-tooltip-place="top"
+                                                data-tooltip-content={`${useToolTipFullTimeStamp(props.message.created_at)}`}>
+                                                <time dateTime={`${props.message.created_at}`}>
+                                                    <i className="chat-message-timestamp-i"> — </i>
+                                                    {useFormatTimeStampMessageBody(props.message.created_at)}
+                                                </time>
+                                            </span>
+                                        </h3>
+                                        {messageBody()}
+                                    </div>
 
-                    </div>
-                    <div className="message-accessories-button" data-tip data-for="delete-message"
-                        onClick={() => {
-                            openModalWithProps({
-                                currentUserId: currentUserId,
-                                message: message,
-                                formatTime: formatTime,
-                                serverId: serverId,
-                                channelId: channelId,
-                                messageAuthor: messageAuthor
+                                    <ServerMessageControlContainer
+                                        showMsgEdit={showMsgEdit} openEdit={openEdit} strifeBot={props.strifeBot}
+                                        setRenderDeleteChannelMessage={props.setRenderDeleteChannelMessage}
+                                        key={`server-channel-msg-Controller-${props.message.id}`}
+                                        message={props.message} messageAuthor={props.messageAuthor}
+                                        server={props.server} channelId={props.match.params.channelId}
+                                        serverId={props.match.params.serverId}
+                                        is_header={true} setMsgCtrlTTHover={props.setMsgCtrlTTHover}
+                                        setMsgCtrlSRTTHover={props.setMsgCtrlSRTTHover}
+                                        _SHIFT={_SHIFT}
+                                    />
+                                </div>
+                            </li>
+                        </>
 
-                            });
-                            openModal('DeleteServerChannelMessage');
-
-                        }}>
-                        <svg className="trash-message-icon" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24">
-                            <path fill="currentColor" d="M15 3.999V2H9V3.999H3V5.999H21V3.999H15Z">
-                            </path>
-                            <path fill="currentColor" d="M5 6.99902V18.999C5 20.101 5.897 20.999 7 20.999H17C18.103 20.999
-                                    19 20.101 19 18.999V6.99902H5ZM11 17H9V11H11V17ZM15 17H13V11H15V17Z">
-                            </path>
-                        </svg>
-
-                    </div>
-                </div>
-            </div>
-            <ReactTooltip
-                className="thread-tool-tip"
-                textColor="#B9BBBE"
-                backgroundColor="#191919"
-                id="edit-message"
-                place="top"
-                effect="solid">
-                Edit
-            </ReactTooltip>
-
-            <ReactTooltip
-                className="thread-tool-tip"
-                textColor="#B9BBBE"
-                backgroundColor="#191919"
-                id="delete-message"
-                place="top"
-                effect="solid">
-                Delete
-            </ReactTooltip>
-        </li>
-
+                    ) : (
+                        <li className={`chat-message-item ${showMsgEdit === true ? `selected` : ``}`} id={`message-id-${props.message.id}`} key={props.message.id} ref={popUpRef} tabIndex={-1}
+                            // onMouseEnter={(e) => { e.preventDefault(); popUpRef.current.focus({ preventScroll: true, focusVisible: false }); }}
+                            // onMouseLeave={(e) => { popUpRef.current.blur(); setShift(false); }}
+                            // onKeyUp={(e) => { if (popUpRef?.current.focus && !e.shiftKey) { setShift(false); } }}
+                            // onKeyDown={(e) => { if (popUpRef?.current.focus && e.shiftKey) { setShift(true); } }}
+                            onMouseEnter={(e) => {
+                                document.addEventListener("keydown", expandButtonList);
+                                document.addEventListener('keyup', compressButtonList);
+                            }}
+                            onMouseLeave={(e) => {
+                                document.removeEventListener("keydown", expandButtonList);
+                                document.removeEventListener('keyup', compressButtonList);
+                            }}
+                        >
+                            <div className="message-wrapper1 follow-up-msg" ref={buttonRef} tabIndex={-1}>
+                                <div className="message-wrapper-contents">
+                                    <span className="chat-message-hover-timestamp" data-tooltip-id="scmsgsTimeStamp-thread-tip"
+                                        data-tooltip-place="top" data-tooltip-position-strategy="fixed"
+                                        data-tooltip-content={`${useToolTipFullTimeStamp(props.message.created_at)}`}>
+                                        <time dateTime={`${props.message.created_at}`}>
+                                            <i className="chat-message-timestamp-i"> [ </i>
+                                            {`${props.message.time}`}
+                                            <i className="chat-message-timestamp-i"> ] </i>
+                                        </time>
+                                    </span>
+                                    {messageBody()}
+                                </div>
+                                <ServerMessageControlContainer
+                                    showMsgEdit={showMsgEdit} openEdit={openEdit} strifeBot={props.strifeBot}
+                                    setRenderDeleteChannelMessage={props.setRenderDeleteChannelMessage}
+                                    key={`server-channel-msg-Controller-${props.message.id}`}
+                                    message={props.message} messageAuthor={props.messageAuthor}
+                                    server={props.server} channelId={props.match.params.channelId}
+                                    serverId={props.match.params.serverId}
+                                    is_header={false} setMsgCtrlTTHover={props.setMsgCtrlTTHover}
+                                    setMsgCtrlSRTTHover={props.setMsgCtrlSRTTHover}
+                                    _SHIFT={_SHIFT}
+                                />
+                            </div>
+                        </li>
+                    )
+            }
+        </>
     )
-
 
 }
 export default ServerMessages;
