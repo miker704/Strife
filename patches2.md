@@ -1871,6 +1871,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Channel Settings Modal.
     - Finalized Channel Settings Modal Container.
     - Finalized Start Conversation Search Modal.
+    - Finalized DmServer Nav Bar.
 
 
 ## Backend Changes
