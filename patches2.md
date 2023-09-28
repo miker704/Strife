@@ -1616,14 +1616,14 @@ the need to create a private room is need to prevent unwanted members from enter
     - Re - Enabled check if demo user to lock access to demo user related session and user apps.
     - Created Deprecated Tool Tips Styles File.
     - Changed Server Nav Bar Component from class based component to functional component.
-    - Move Deprecated new server nav bar styles to deprecarted folder.
-    - Move Deprecated new server nav bar higher level styles to deprecarted folder.
+    - Moved Deprecated new server nav bar styles to deprecated folder.
+    - Moved other Deprecated new server nav bar styles to deprecated folder.
+    - Moved Deprecated new server nav bar higher level styles to deprecated folder.
     - Backed up older server nav bar styles to deprecated.
     - Moved Deprecated new server nav bar test 1 file to deprecated.
     - Moved Deprecated new server nav bar test 2 file to deprecated.
     - Moved Deprecated new server nav bar test 4 higher level file to deprecated.
     - Moved Deprecated new server nav bar test 5 higher level file to deprecated.
-
     - Moved Deprecated Class Based server nav bar to deprecated.
 
     - Finalized Message Skeleton and MessageList Skeleton.
