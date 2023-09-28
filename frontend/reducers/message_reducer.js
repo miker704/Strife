@@ -43,9 +43,9 @@ const messageReducer = (state = {}, action) => {
         //the same applies for servers leave a server those messages in there 
         // will be lost to the user  also if a user creates a new server
         // messages from other servers wont leak into / persist into the new/ other servers 
-        case RECEIVE_SERVER:
-            nextState = action.server.messages ? action.server.messages : {};
-            return nextState;
+        // case RECEIVE_SERVER:
+        //     nextState = action.server.messages ? action.server.messages : {};
+        //     return nextState;
 
         case REMOVE_SERVER:
             return {};
