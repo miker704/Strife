@@ -6,32 +6,18 @@ import { openModal, closeModal } from "../../../actions/modal_actions.js";
 import { handleKeyUp } from "../../../utils/modal_api_util";
 import CreateChannelModal from "./create_channel_modal.jsx";
 
-const extractServerProps = (state, ownProps) => {
-    let locationString = ownProps.location.pathname;
-    let newLoc = locationString.split('/$/channels/').join('').split('/');
-    return newLoc;
-}
-
-
 const mSTP = (state, ownProps) => {
 
-    const getIds = extractServerProps(state, ownProps);
     return {
 
-
-        // currentUser: state.entities.users[state.session.id],
         currentUser: state.currentUser,
-        server: state.entities.servers[parseInt(getIds[0])],
-        channel: state.entities.channels[parseInt(getIds[1])],
-        channels: Object.values(state.entities.channels),
-        currentChannelId: getIds[1],
-        serverId: getIds[0],
+        server: state.entities.servers[ownProps.serverParams.serverId],
+        serverId: ownProps.serverParams.serverId,
         errors: state.errors.channel,
         serverErrors: state.errors.server,
         sessionErrors: state.errors.session,
         servers: state.entities.servers,
-        channelType : state.ui.modalProps.channelType
-
+        channelType: state.ui.modalProps.channelType || -1,
 
     }
 }
