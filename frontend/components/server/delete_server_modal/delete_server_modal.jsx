@@ -1,9 +1,12 @@
 import React from "react";
 import { useRef, useEffect, useState } from "react";
+import REACT_PORTAL from "../../../utils/ReactPortal_api_util";
+import { appPullerReleaseHoldAnimation } from "../../../utils/appPullerAnimation_api_util";
 
 const DeleteServerModal = (props) => {
     const popupRef = useRef();
     const [confirmServerName, setConfirmServerName] = useState("");
+    const inputRef = useRef();
 
 
     useEffect(() => {
@@ -22,11 +25,8 @@ const DeleteServerModal = (props) => {
         const keys = {
             27: () => {
                 e.preventDefault();
-                document.getElementById('delete-server-modal').classList.add("transition-out");
-                setTimeout(() => {
-                    props.setServerDeletion(false);
-                    window.removeEventListener('keyup', handleESC, false);
-                }, 300);
+                handleCloseModal(e);
+                window.removeEventListener('keyup', handleESC, false);
             },
         };
         if (keys[e.keyCode]) {
@@ -37,11 +37,22 @@ const DeleteServerModal = (props) => {
 
     const handleCloseModal = (e) => {
         e.preventDefault();
-        document.getElementById('delete-server-modal').classList.add("transition-out");
-        setTimeout(() => {
-            props.setServerDeletion(false);
+        let modalToClose = document.getElementById('delete-server-modal')
+        if (modalToClose) {
+            modalToClose.classList.add("transition-out");
+            Promise.all(modalToClose.getAnimations().map((animation) => animation.finished),)
+                .then(() => {
+                    props.closeSubMod(props.formName);
+                    window.removeEventListener('keyup', handleESC, false);
+                }, () => {
+                    props.closeSubMod(props.formName);
+                    window.removeEventListener('keyup', handleESC, false);
+                });
+        }
+        else {
+            props.closeSubMod(props.formName);
             window.removeEventListener('keyup', handleESC, false);
-        }, 300);
+        }
     }
 
 
@@ -56,6 +67,8 @@ const DeleteServerModal = (props) => {
         let purged_Members = Object.values(props.server.users).map((user) => user.id);
         purged_Members = purged_Members.filter((userID) => userID !== props.currentUser.id);
         props.verifyName(subState).then(() => {
+            props.closeSubMod(props.formName);
+            appPullerReleaseHoldAnimation();
             props.closeModal();
             props.history.push('/$/channels/@me');
             props.deleteServer(props.server.id).then(() => {
@@ -64,7 +77,7 @@ const DeleteServerModal = (props) => {
             });
 
         })
-        props.removeServerErrors()
+        props.removeServerErrors();
 
     }
     const renderServerNameErrors = () => {
@@ -94,56 +107,62 @@ const DeleteServerModal = (props) => {
     ) : ("");
 
     return (
-
-        <div className="delete-server-modal-layer-container" onClick={(e) => handleCloseModal(e)}>
-            <div className="delete-server-modal-backdrop"></div>
-            <div className="delete-server-layer">
-                <div className="delete-server-focus-lock">
-                    <div id="delete-server-modal" className="delete-server-modal" onClick={(e) => e.stopPropagation()} ref={popupRef}>
-                        <form onSubmit={handleDeleteServerEXE}>
-                            <div className="delete-server-form-header-wrapper">
-                                <h1 className="delete-server-form-header">
-                                    Delete{` `}{`'${props.server.server_name}'`}
-                                </h1>
-                            </div>
-                            <div className="delete-server-scroll-base">
-                                <div className="delete-server-warning-card">
-                                    <div className="delete-server-warning-text">
-                                        Are You sure that you want to delete{` `}
-                                        <strong>{`${props.server.server_name}`}</strong>?
-                                        This action cannot be undone.
-                                    </div>
+        <REACT_PORTAL wrapperId={'sub-modal'} classNameId={'subModal'} onClick={(e) => e.stopPropagation()}>
+            <div className="delete-server-modal-layer-container" onClick={(e) => handleCloseModal(e)}>
+                <div className="delete-server-modal-backdrop"></div>
+                <div className="delete-server-layer">
+                    <div className="delete-server-focus-lock">
+                        <div id="delete-server-modal" className="delete-server-modal" onClick={(e) => e.stopPropagation()} ref={popupRef}>
+                            <form onSubmit={handleDeleteServerEXE}>
+                                <div className="delete-server-form-header-wrapper">
+                                    <h1 className="delete-server-form-header">
+                                        Delete{` `}{`'${props.server.server_name}'`}
+                                    </h1>
                                 </div>
-                                <div className="delete-server-spacing">
-                                    <h2 className="delete-server-input-header">
-                                        Enter Server Name
-                                    </h2>
-                                    <div className="delete-server-input-name-wrapper">
-                                        <input
-                                            value={confirmServerName}
-                                            onChange={(e) => setConfirmServerName(e.currentTarget.value)}
-                                            type="text"
-                                            className="input-server-name"
-                                            spellCheck={false}
-                                            autoComplete="off"
-                                            id="confirm-delete-server"
-                                        />
+                                <div className="delete-server-scroll-base global-scroller-base global-scroll-thin-raw-attributes" style={{ overflow: "hidden scroll", paddingRight: `8px` }}>
+                                    <div className="delete-server-warning-card">
+                                        <div className="delete-server-warning-text">
+                                            Are You sure that you want to delete{` `}
+                                            <strong>{`${props.server.server_name}`}</strong>?
+                                            This action cannot be undone.
+                                        </div>
                                     </div>
-                                    {serverNameErrorsTag}
+                                    <div className="delete-server-spacing">
+                                        <h2 className="delete-server-input-header">
+                                            Enter Server Name
+                                        </h2>
+                                        <div className="delete-server-input-name-wrapper">
+                                            <input
+                                                value={confirmServerName}
+                                                onChange={(e) => setConfirmServerName(e.currentTarget.value)}
+                                                type="text"
+                                                autoFocus={true}
+                                                maxLength={100}
+                                                ref={inputRef}
+                                                className="input-server-name"
+                                                spellCheck={false}
+                                                autoComplete="off"
+                                                id="confirm-delete-server"
+                                            />
+                                        </div>
+                                        {serverNameErrorsTag}
+                                    </div>
+                                    <div className="delete-server-sep"></div>
                                 </div>
-                                <div className="delete-server-sep"></div>
-                            </div>
-                            <div className="delete-server-button-sec">
-                                <button type="submit" className="delete-server-submit-button">Delete Server</button>
-                                <button type="button" onClick={(e) => handleCloseModal(e)} className="delete-server-cancel-button">Cancel</button>
-                            </div>
-                        </form>
+                                <div className="delete-server-button-sec">
+                                    <button type="submit" className="delete-server-submit-button">
+                                        <div className="delete-server-button-inner-contents">Delete Server</div>
+                                    </button>
+                                    <button type="button" onClick={(e) => handleCloseModal(e)} className="delete-server-cancel-button">
+                                        <div className="delete-server-button-inner-contents">Cancel</div>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-
+        </REACT_PORTAL >
     )
 
 }
