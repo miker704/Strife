@@ -1878,6 +1878,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Delete DmServer Message Modal.
     - Finalized Delete DmServer Message Modal Container.
     - Finalized Message Reducer.
+    - Finalized o2o dm chat first message component.
 
 
 ## Backend Changes
