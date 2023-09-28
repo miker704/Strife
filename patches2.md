@@ -1938,6 +1938,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Finalized Server Model.rb for patch v4.
 - Finalized Server Membership model.rb for patch v4.
 - Finalized Channel model.rb for patch v4.
+- Finalized Dm Message model.rb for patch v4.
 
 
 ### Front-End Changes
