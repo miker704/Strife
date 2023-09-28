@@ -1931,6 +1931,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Channel Drop Down Modal Styles for new icons.
     - Finalized Channel Drop Down Modal for new icons.
     - Finalized Invite to Server Modal Pre Demo Auth.
+    - Finalized Invite to Server Modal Container.
 
 
 
