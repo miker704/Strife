@@ -17,7 +17,7 @@ const mSTP = (state, ownProps) => {
         serverId: ownProps.match.params.serverId,
         errors: state.errors.server,
         channelErrors: state.errors.channel,
-        currentChannel: state.entities.channels[ownProps.match.params.channelId]
+        currentChannel: state.entities.channels[ownProps.match.params.channelId],
     }
 
 }
