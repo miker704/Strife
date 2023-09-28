@@ -1866,6 +1866,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Create Channel Modal Container.
     - Finalized Delete Channel Modal.
     - Finalized Delete Channel Modal Container.
+    - Finalized Channel Nav Bar.
+
 
 ## Backend Changes
 
