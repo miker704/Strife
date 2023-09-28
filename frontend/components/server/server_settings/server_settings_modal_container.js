@@ -9,33 +9,19 @@ import { openModal, closeModal } from "../../../actions/modal_actions.js";
 import { handleKeyUp } from "../../../utils/modal_api_util";
 import { logoutUser, removeSessionErrors } from "../../../actions/session_actions";
 
-const extractServerProps = (state, ownProps) => {
-    let locationString = ownProps.location.pathname;
-    let newLoc = locationString.split('/$/channels/').join('').split('/');
-    return newLoc;
-}
-
-
 
 const mSTP = (state, ownProps) => {
 
-    const getIds = extractServerProps(state, ownProps);
-
     return {
-        
 
-        // currentUser: state.entities.users[state.session.id],
         currentUser: state.currentUser,
-        server: state.entities.servers[parseInt(getIds[0])],
-        channel: state.entities.channels[parseInt(getIds[1])],
-        channels: Object.values(state.entities.channels),
-        currentChannelId: getIds[1],
-        serverId: getIds[0],
+        server: state.entities.servers[ownProps.serverParams.serverId],
+        channels: Object.values(state.entities.channels) || [],
+        serverId: parseInt(ownProps.serverParams.serverId),
         errors: state.errors.server,
         channelErrors: state.errors.channel,
         sessionErrors: state.errors.session,
         servers: state.entities.servers
-
     }
 }
 
@@ -53,7 +39,7 @@ const mDTP = (dispatch, ownProps) => {
         fetchServer: (serverId) => dispatch(fetchServer(serverId)),
         fetchUserServers: (user) => dispatch(fetchServers(user)),
         fetchServers: () => dispatch(fetchServers()),
-        updateServer: (serverId,formData) => dispatch(updateServer(serverId,formData)),
+        updateServer: (serverId, formData) => dispatch(updateServer(serverId, formData)),
         deleteServer: (serverId) => dispatch(deleteServer(serverId)),
         removeServerErrors: () => dispatch(removeServerErrors()),
 
