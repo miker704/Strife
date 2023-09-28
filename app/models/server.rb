@@ -34,6 +34,8 @@ class Server < ApplicationRecord
 
 
     has_one_attached :server_Icon
+    has_one_attached :server_banner
+    has_one_attached :invite_splash
 
     after_create :create_Default_Channel
     after_create :create_OwnerShip
