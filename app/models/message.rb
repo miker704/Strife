@@ -29,4 +29,11 @@ class Message < ApplicationRecord
         attributes['created_at'].strftime("%m/%d/%Y %H:%M")
     end
 
+    def message_time_stamp_slashes
+        est = Time.zone.utc_to_local(self.created_at)
+        est = est + 4.hours
+        return est.strftime("%-m/%-d/%Y %-I:%M:%S %p")
+    end
+
+
 end
