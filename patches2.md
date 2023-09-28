@@ -1617,7 +1617,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Deprecated Tool Tips Styles File.
     - Move Deprecated new server nav bar styles to deprecarted folder.
     - Move Deprecated new server nav bar higher level styles to deprecarted folder.
-
+    - Backed up older server nav bar styles to deprecated.
     - Finalized Message Skeleton and MessageList Skeleton.
     - Finalized Guild Server list Skeleton and Guild Server Grid Skeleton.
     - Finalized Loading Screen.
