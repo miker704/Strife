@@ -5,7 +5,7 @@ const DeletedServerLoadingScreen = (props) => {
 
     useEffect(() => {
 
-        if (props.ui_modal.length > 0) { props.closeModal(); }
+        if (props.ui_modal?.length > 0) { props.closeModal(); }
 
         if (props.history.location.pathname !== "/$/channels/@me") {
             let lsd = document.getElementById('loading-screen-wrapper');
