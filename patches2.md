@@ -1864,6 +1864,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Group Chat First Message Container.
     - Finalized Create Channel Modal.
     - Finalized Create Channel Modal Container.
+    - Finalized Delete Channel Modal.
 
 
 ## Backend Changes
