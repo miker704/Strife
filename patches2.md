@@ -1935,6 +1935,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Invite to DmServer Modal level 2.
     - Finalized Server Nav Bar.
     - Finalized Server Nav Bar Container.
+    - Finalized Dm Server.
 
 
 
