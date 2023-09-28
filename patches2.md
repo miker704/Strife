@@ -1924,6 +1924,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Message Skeleton Custom List Length.
     - Finalized Dm ChatRoom.
     - Finalized Dm ChatRoom Container.
+    - Finalized Dm ChatRoom hook up cable.
 
 
 
