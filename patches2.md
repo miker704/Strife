@@ -1895,8 +1895,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Leave server modal.
     - Finalized Leave server modal container.
     - Finalized Modal actions.js.
-    - Finalized Dm Messages.
-    - Finalized Dm Messages Container.
+    - Finalized Dm Server Messages.
+    - Finalized Dm Server Messages Container.
     - Finalized Server Settings Modal.
     - Finalized Server Settings Modal Container.
     - Finalized User Reducer.
@@ -1908,6 +1908,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Select DmServer Header Nav Bar Container.
     - Finalized Modal Manager Container.
     - Finalized Modal Manager.
+    - Finalized Server Messages.
 
 
 
