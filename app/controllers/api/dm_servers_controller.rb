@@ -14,9 +14,6 @@ class Api::DmServersController < ApplicationController
     end
     
     def create 
-      
-        direct_message = 'This is the beginning of your direct message history with'
-        group_message = 'Welcome to the beginning of your Group Chat'
 
         found_existing_dm_server = current_user.dm_servers.includes(:members).select{|dms| dms.member_ids.sort === dm_server_params[:dm_member_ids].map(&:to_i)}
 
@@ -34,19 +31,9 @@ class Api::DmServersController < ApplicationController
 
         
         if @dm_server.save
-            # dm_Members_to_add = dm_server_params[:dm_member_ids]
-            # dm_Members_to_add.each do |member_id|
-            #     DmMember.create!(dm_server_id: @dm_server.id,dm_member_id: member_id)
-            # end
-            if @dm_server.member_ids.length == 2
-                DmMessage.create!(body: direct_message, sender_id: 1, dm_server_id: @dm_server.id)
-            else
-                DmMessage.create!(body: group_message, sender_id: 1, dm_server_id: @dm_server.id)
-            end
-
             render :show
         else
-                render json: @dm_server.errors.full_messages, status: 400
+            render json: @dm_server.errors.full_messages, status: 400
         end
 
 
@@ -63,15 +50,12 @@ class Api::DmServersController < ApplicationController
     def update
         @dm_server = DmServer.find(params[:id])
         # dm_Members_to_add = dm_server_params[:dm_member_ids]
-        
         # if(dm_Members_to_add.length != @dm_server.members.length){
         #     dm_Members_to_add.each do |member_id|
             
         #         DmMember.create!(dm_server_id: @dm_server.id,dm_member_id: member_id)
         #     end
         # }
-
-
         if @dm_server && @dm_server.update(dm_server_params)
             render :show
         else
@@ -80,10 +64,28 @@ class Api::DmServersController < ApplicationController
 
     end
 
-    def async_redirect(dmServer,path)
-        DmChannel.broadcast_to(dmServer, head:302, path: path )
+    def update_dm_name
+        @dm_server = DmServer.find(params[:id])
+        if @dm_server
+            @dm_server.dm_server_name = dm_server_params[:dm_server_name]
+            @dm_server.save!
+            async_dms_update(@dm_server)
+            render :show
+        else
+            render json: @dm_server.errors.full_messages, status: 422
+        end
     end
-    
+
+
+    def async_dms_update (dmServer)
+        @response_Message = "#{current_user.username} changed the chat name: #{dmServer.dm_server_name}"
+        @dm_update_message = DmMessage.create!(body: @response_Message, sender_id: current_user.id, dm_server_id: dmServer.id)
+        DmChannel.broadcast_to(dmServer, type: 'DMS_UPDATED')
+    end
+
+    def async_redirect(dmServer,path)
+        DmChannel.broadcast_to(dmServer, head:302, path: path, type: "REJECT_ALL_DM_MEMBERS_DESTROYING_DM_SERVER")
+    end
 
     def destroy
         @dm_server = DmServer.find_by(id: params[:id])
