@@ -1615,6 +1615,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved deprecated Message Skeleton components to deprecated.
     - Re - Enabled check if demo user to lock access to demo user related session and user apps.
     - Created Deprecated Tool Tips Styles File.
+    - Changed Server Nav Bar Component from class based component to functional component.
     - Move Deprecated new server nav bar styles to deprecarted folder.
     - Move Deprecated new server nav bar higher level styles to deprecarted folder.
     - Backed up older server nav bar styles to deprecated.
