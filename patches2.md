@@ -1897,6 +1897,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Modal actions.js.
     - Finalized Dm Messages.
     - Finalized Dm Messages Container.
+    - Finalized Server Settings Modal.
 
 
 
