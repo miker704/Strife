@@ -12,14 +12,10 @@ const mSTP = (state,ownProps) => {
 }
 const mDTP = (dispatch) => {
     return {
-        // openModalWithProps: (modal,modal_props) => dispatch(openModalWithProps(modal,modal_props)),
         openModalWithProps: (modal_props) => dispatch(openModalWithProps(modal_props)),
-
         closeModal: ()=> dispatch(closeModal())
     }
 }
 
-// const ModalManagerContainer = connect(mSTP,mDTP)(withRouter(ModalManager));
 const ModalManagerContainer = withRouter(connect(mSTP,mDTP)(ModalManager));
-// const ModalManagerContainer = connect(mSTP,mDTP)(ModalManager);
 export default ModalManagerContainer;
