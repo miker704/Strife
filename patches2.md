@@ -1933,6 +1933,8 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Finalized users : _user.json.jbuilder for patch v4.
 - Finalized servers : explore.json.jbuilder for patch v4.
 - Finalized DmServer model.rb for patch v4.
+- Finalized Users Controller.rb for patch v4.
+
 
 ### Front-End Changes
 
