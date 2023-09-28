@@ -17,6 +17,7 @@
 class Channel < ApplicationRecord
     validates :channel_name, :server_id, presence: true
     validates :channel_name, uniqueness: {scope: :server_id, message: 'Only one channel in a server can have that name'}
+    validates :channel_name, length: {minimum:1, maximum:100}
     validates :channel_type, inclusion: {in: [1,2]}
 
     belongs_to :server, class_name: "Server", foreign_key: "server_id"
