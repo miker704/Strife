@@ -18,7 +18,7 @@
     --white-500-bs: 0 -1px 0px 0px hsla(0, 0%, 100%, 0.04);
     --exs-search-box-border: 0px 0px 0px 1px hsl(248, 85%, 60%), 0px 0px 0px 2px hsl(249, 85%, 84%), 0px 0px 0px 3px hsl(249, 85%, 84%);
     --uasm-gray-box-shadow: rgba(28, 36, 43, 0.6);
-
+    --splash-page-button-box-shadows: 0 8px 15px rgba(0, 0, 0, 0.2);
 
     //linear gradient colors
     --dmshnb-after: hsla(220, 8%, 23%, 0);
@@ -47,6 +47,8 @@
     --black-500-alpha-1: hsla(0, 0%, 0%, 1);
     --black-500-hsl-005: hsla(0, 0%, 0%, 0.05);
     --black-500-hsl-01: hsla(0, 0%, 0%, 0.1);
+    --black-500-hsl-0122: hsla(0, 0%, 0%, 0.122);
+    --black-500-hsl-0141: hsla(0, 0%, 0%, 0.141);
     --black-500-hsl-02: hsla(0, 0%, 0%, 0.2);
     --black-500-hsl-024: hsla(0, 0%, 0%, 0.24);
     --black-500-hsl-03: hsla(0, 0%, 0%, 0.3);
@@ -54,6 +56,7 @@
     --black-500-hsl-50: hsla(0, 0%, 0%, 0.5);
     --black-500-hsl-06: hsla(0, 0%, 0%, 0.6);
     --black-500-hsl-075: hsla(0, 0%, 0%, 0.75);
+    --black-500-hsl-08: rgba(0, 0, 0, 0.8);
     --vanta-black: rgb(1, 1, 0);
     --black-raw: rgb(0, 0, 0);
     --brand-100:rgb(247, 247, 254);
@@ -122,6 +125,8 @@
     --primary-860: hsla(240, 7.7%, 2.5%, 1);
     --primary-2000: rgb(32, 34, 37);
     --primary-2050: rgba(54,57,63,0);
+    --plain-select-box-focus: rgb(25,25,25);
+    --plain-select-box-text:rgb(220, 221, 222);
     --red-400: rgb(242, 63, 66);
     --red-400-2: rgb(242, 64, 67);
     --red-430: hsl(358, 68.8%, 53.5%);
@@ -142,10 +147,13 @@
     --gray-500: rgb(128, 132, 142);
     --gray-600: rgb(117, 126, 138);
     --gray-650: #AAAAAA;
+    --gray-1000:rgb(116, 127, 141);
     --gray-switch: rgb(128, 132, 142);
     --green-switch: hsl(145, 65%, 39%);
+    --green-switch-mid-animation:rgb(88, 243, 155);
     --green-330: rgb(45, 199, 112);
     --green-360: rgb(35, 165, 89);
+    --green-360-05:rgba(35, 164, 89, 0.5);
     --green-430: rgb(36, 128, 70);
     --green-500: rgb(26, 99, 52);
     --green-501: rgb(27, 103, 54);
@@ -229,9 +237,9 @@
     --scrollbar-auto-track: hsl(220, 7%, 18%);
 
     --link-decoration: none;
-
+    --warning-danger-text: var(--red-3000);
     --input-placeholder-text-dark: rgb(135, 137, 140);
-
+    --vid-call-exit-icon:#A6ABB0;
     --saturation-factor: 1;
     --brand-experiment-100: var(--brand-100);
     --brand-experiment-200: var(--brand-200);
@@ -260,6 +268,42 @@
     --profile-body-background-color: rgb(17, 18, 20);
     --profile-body-divider-color: rgba(78, 80, 88, 0.48);
 
+    // //special 
+    --secret-pink: var(--pink-1000);
+    --green-nitro-from: var(--dark-blurred-cyan);
+    --green-nitro-to: var(--green-1675);
+    // //online statuses
+    --svg-online-status-online: var(--green-2000);
+    --svg-online-status-dnd: var(--red-2000);
+    --svg-online-status-blocked: var(--red-2000);
+    --svg-online-status-offline: var(--gray-500);
+    --svg-online-status-invisible: var(--gray-500);
+    --svg-online-status-idle: var(--yellow-1000);
+
+    // //default group chat icon avatar colors
+    --group-chat-icon-color-1: var(--red-2600);
+    --group-chat-icon-color-2: var(--blue-1100);
+    --group-chat-icon-color-3: var(--orange-100);
+    --group-chat-icon-color-4: var(--yellow-1100);
+    --group-chat-icon-color-5: var(--green-2300);
+    --group-chat-icon-color-6: var(--purple-1100);
+    --group-chat-icon-color-7: var(--red-orange);
+    --group-chat-icon-color-8: var(--secret-pink);
+    --group-chat-icon-color-9: var(--teal-100);
+    --group-chat-icon-color-10: var(--green-2200);
+
+    // //default user icon avatar colors
+    --user-avatar-color-1: var(--red-3000);
+    --user-avatar-color-2: var(--brand-experiment);
+    --user-avatar-color-3: var(--gray-600);
+    --user-avatar-color-4: var(--yellow-1200);
+    --user-avatar-color-5: var(--green-2400);
+    --user-avatar-color-6: var(--blue-raw);
+    --user-avatar-color-7: var(--purple-200);
+    --user-avatar-color-8: var(--secret-pink);
+    --user-avatar-color-9: var(--cyan-raw);
+    --user-avatar-color-10: var(--green-2200);
+    --user-avatar-color-7-deprecated: var(--black-raw);
 
 
     --quad-damage-gradient: radial-gradient(circle at center,
@@ -271,12 +315,13 @@
 
     --beserk-gradient: radial-gradient(circle at center, var(--green-2150) 0% 11.5%, var(--pure-red) 35% 85%, var(--black-500) 100%);
 
-    --invulnerability: radial-gradient(circle at center, var(--green-yellow) 0% 23.5%, var(--green-2050) 25% 80%, var(--green-2200) 80% 100%);
+    --invulnerability-gradient: radial-gradient(circle at center, var(--green-yellow) 0% 23.5%, var(--green-2050) 25% 80%, var(--green-2200) 80% 100%);
     --regeneration-gradient: radial-gradient(circle at center, var(--light-cyan) 0% 25%, var(--cyan-raw) 25% 90%, var(--blue-1000) 90% 100%);
 
-
-
-
+    --splash-banner-background:rgb(64, 78, 237);
+    --splash-banner-button-hover: var(--primary-600);
+    --upc-default-banner-bg:rgb(93, 100, 244);
+    --empty-messages-container-bg:rgb(54, 57, 63);
     --decoration-to-avatar-ratio: 1.2;
     --custom-avatar-avatar-decoration-border-position: calc((0.5 - var(--decoration-to-avatar-ratio)/2)*100%);
     --custom-button-button-xl-width: 148px;
@@ -328,11 +373,6 @@
     --page-gutter: 24px;
     --section-spacing: 56px;
 
-
-
-
-
-
     --brand: #5865f2;
     --brand-gradient: linear-gradient(90deg,#8ea1e1,#7289da);
     --greyple: #99aab5;
@@ -348,14 +388,10 @@
     --ekko-red: #de2761;
 }
 
-
-
-
 // unStyle ReactDom Route LinK
 .unStyle {
     text-decoration: none;
 }
-
 
 //is-hidden
 
@@ -669,42 +705,9 @@
     --glow-purple-post: var(--purple-1050);
     --blood-red: var(--red-2500);
     --pure-red: var(--red-2550);
-    // //special 
-    --secret-pink: var(--pink-1000);
-    --green-nitro-from: var(--dark-blurred-cyan);
-    --green-nitro-to: var(--green-1675);
-    // //online statuses
-    --svg-online-status-online: var(--green-2000);
-    --svg-online-status-dnd: var(--red-2000);
-    --svg-online-status-blocked: var(--red-2000);
-    --svg-online-status-offline: var(--gray-500);
-    --svg-online-status-invisible: var(--gray-500);
-    --svg-online-status-idle: var(--yellow-1000);
 
-    // //default group chat icon avatar colors
-    --group-chat-icon-color-1: var(--red-2600);
-    --group-chat-icon-color-2: var(--blue-1100);
-    --group-chat-icon-color-3: var(--orange-100);
-    --group-chat-icon-color-4: var(--yellow-1100);
-    --group-chat-icon-color-5: var(--green-2300);
-    --group-chat-icon-color-6: var(--purple-1100);
-    --group-chat-icon-color-7: var(--red-orange);
-    --group-chat-icon-color-8: var(--secret-pink);
-    --group-chat-icon-color-9: var(--teal-100);
-    --group-chat-icon-color-10: var(--green-2200);
 
-    // //default user icon avatar colors
-    --user-avatar-color-1: var(--red-3000);
-    --user-avatar-color-2: var(--brand-experiment);
-    --user-avatar-color-3: var(--gray-600);
-    --user-avatar-color-4: var(--yellow-1200);
-    --user-avatar-color-5: var(--green-2400);
-    --user-avatar-color-6: var(--blue-raw);
-    --user-avatar-color-7: var(--purple-200);
-    --user-avatar-color-8: var(--secret-pink);
-    --user-avatar-color-9: var(--cyan-raw);
-    --user-avatar-color-10: var(--green-2200);
-    --user-avatar-color-7-deprecated: var(--black-raw);
+    
 
 
     --modal-background: var(--primary-600);
@@ -868,8 +871,8 @@
 }
 
 .theme-dark .chat-input-form:before{
-    background: -webkit-gradient(linear,left top,left bottom,from(var(--primary-2050)),to(var(--background-primary)));
-    background: linear-gradient(180deg,var(--primary-2050) 0,var(--background-primary));
+    background: -webkit-gradient(linear,left top,left bottom,from(var(--chat-input-box-before)),to(var(--background-primary)));
+    background: linear-gradient(180deg,var(--chat-input-box-before) 0,var(--background-primary));
 }
 
 .theme-dark .nitro-header-nav-bar{
@@ -915,6 +918,189 @@ body {
 //     background: var(--bg-overlay-app-frame, var(--background-tertiary));
 //     text-rendering: optimizeLegibility
 // }
+.container-mapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: flex;
+  }
+  
+  //appears 1st child within container mapper wraps server nav bar
+  .guildservernavbar-wrapper {
+    overflow: hidden;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    flex-shrink: 0;
+    position: relative;
+    width: 72px;
+    flex-shrink: 0;
+  }
+  
+  //appears after the above element ^ it is a sibiling wrapping
+  // all components besides server nav bar
+  .base-current-components {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    overflow: hidden;
+    flex-direction: column;
+    position: relative;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+  }
+  
+  // child of base-current wrapps all components that extend > 72-75px
+  // from left side of screen
+  .current-components-contents {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    min-width: 0;
+    min-height: 0;
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    position: relative;
+  }
+
+.appAsideWrapper {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    min-height: 0;
+  }
+  
+  .nonAppAsidePanel {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .app-main {
+    z-index: auto;
+    height: 100%;
+    position: relative;
+  }
+  
+  .app-main-inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--background-tertiary);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  
+  .app-bd-bg {
+    background: var(--bg-overlay-app-frame, var(--background-tertiary));
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .app-layer-main {
+    position: relative;
+    overflow: hidden;
+  }
+  .app-layer-main-sub {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    overflow: hidden;
+    min-width: 0;
+    min-height: 0;
+  }
+  
+  .app-layer-main > .app-layer-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  
+  .app-layer-main > .app-layer-container.animating {
+    pointer-events: none;
+    will-change: transform, opacity;
+  }
+  
+  .stop-app-pulling{
+    -webkit-transition-property: none !important;
+    transition-property: none !important;
+    -webkit-animation: none !important;
+    animation: none !important;
+  }
+  
+  .stop-animations * {
+    -webkit-transition-property: none !important;
+    transition-property: none !important;
+    -webkit-animation: none !important;
+    animation: none !important;
+  }
+  
+  .app-layer-container {
+    background-color: var(--background-primary);
+  }
+  
+  .app-layer-container.baselayerClear {
+    background-color: transparent;
+  }
+  
+  .app-layer-main > .mass-modal-layer-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
 
 .app-puller {
     position: absolute;
@@ -936,8 +1122,6 @@ body {
 
 }
 
-
-
 .app-puller.shrink-app {
     background-color: transparent;
     -webkit-animation-name: shrinkAppTransition;
@@ -948,7 +1132,6 @@ body {
     animation-iteration-count: 1;
     // transform: scale(0.93) translateZ(0px);
 }
-
 
 .app-puller.grow-app {
     background-color: transparent;
@@ -1371,3 +1554,253 @@ body {
     --profile-gradient-secondary-color: #c93fff;
     --profile-message-input-border-color: hsl(128.53, 75.75%, 45.58%);
 }
+
+.color-1 {
+    background-color: var(--user-avatar-color-1) !important;
+  }
+  
+  .color-2 {
+    background-color: var(--user-avatar-color-2) !important;
+  }
+  
+  .color-3 {
+    background-color: var(--user-avatar-color-3) !important;
+  }
+  
+  .color-4 {
+    background-color: var(--user-avatar-color-4) !important;
+  }
+  
+  .color-5 {
+    background-color: var(--user-avatar-color-5) !important;
+  }
+  
+  .color-6 {
+    background-color: var(--user-avatar-color-6) !important;
+  }
+  
+  .color-7 {
+    background-color: var(--user-avatar-color-7) !important;
+  }
+  
+  .color-8 {
+    background-color: var(--user-avatar-color-8) !important;
+  }
+  
+  .color-9 {
+    background-color: var(--user-avatar-color-9) !important;
+  }
+  
+  .color-10 {
+    background-color: var(--user-avatar-color-10) !important;
+  }
+  
+  .fill-color-1 {
+    color: var(--user-avatar-color-1) !important;
+  }
+  
+  .fill-color-2 {
+    color: var(--user-avatar-color-2) !important;
+  }
+  
+  .fill-color-3 {
+    color: var(--user-avatar-color-3) !important;
+  }
+  
+  .fill-color-4 {
+    color: var(--user-avatar-color-4) !important;
+  }
+  
+  .fill-color-5 {
+    color: var(--user-avatar-color-5) !important;
+  }
+  
+  .fill-color-6 {
+    color: var(--user-avatar-color-6) !important;
+  }
+  
+  .fill-color-7 {
+    color: var(--user-avatar-color-7) !important;
+  }
+  
+  .fill-color-8 {
+    color: var(--user-avatar-color-8) !important;
+  }
+  
+  .fill-color-9 {
+    color: var(--user-avatar-color-9) !important;
+  }
+  
+  .fill-color-10 {
+    color: var(--user-avatar-color-10) !important;
+  }
+  
+  .icon-colors-1 {
+    background-color: var(--user-avatar-color-1) !important;
+    color: var(--user-avatar-color-1) !important;
+    fill: var(--user-avatar-color-1) !important;
+    content: url("defaultProfilePicRed.png");
+  }
+  
+  .icon-colors-2 {
+    background-color: var(--user-avatar-color-2) !important;
+    color: var(--user-avatar-color-2) !important;
+    fill: var(--user-avatar-color-2) !important;
+    content: url("defaultProfilePicBlurple.png");
+  }
+  
+  .icon-colors-3 {
+    background-color: var(--user-avatar-color-3) !important;
+    color: var(--user-avatar-color-3) !important;
+    fill: var(--user-avatar-color-3) !important;
+    content: url("defaultProfilePicGray.png");
+  }
+  
+  .icon-colors-4 {
+    background-color: var(--user-avatar-color-4) !important;
+    color: var(--user-avatar-color-4) !important;
+    fill: var(--user-avatar-color-4) !important;
+    content: url("defaultProfilePicYellow.png");
+  }
+  
+  .icon-colors-5 {
+    background-color: var(--user-avatar-color-5) !important;
+    color: var(--user-avatar-color-5) !important;
+    fill: var(--user-avatar-color-5) !important;
+    content: url("defaultProfilePicGreen.png");
+  }
+  
+  .icon-colors-6 {
+    background-color: var(--user-avatar-color-6) !important;
+    color: var(--user-avatar-color-6) !important;
+    fill: var(--user-avatar-color-6) !important;
+    content: url("defaultProfilePicBlue.png");
+  }
+  
+  .icon-colors-7 {
+    background-color: var(--user-avatar-color-7) !important;
+    color: var(--user-avatar-color-7) !important;
+    fill: var(--user-avatar-color-7) !important;
+    content: url("defaultProfilePicPurple.png");
+  }
+  
+  .icon-colors-8 {
+    background-color: var(--user-avatar-color-8) !important;
+    color: var(--user-avatar-color-8) !important;
+    fill: var(--user-avatar-color-8) !important;
+    content: url("defaultProfilePicSecretPink.png");
+  }
+  
+  .icon-colors-9 {
+    background-color: var(--user-avatar-color-9) !important;
+    color: var(--user-avatar-color-9) !important;
+    fill: var(--user-avatar-color-9) !important;
+    content: url("defaultProfilePicCyan.png");
+  }
+  
+  .icon-colors-10 {
+    background-color: var(--user-avatar-color-10) !important;
+    color: var(--user-avatar-color-10) !important;
+    fill: var(--user-avatar-color-10) !important;
+    content: url("defaultProfilePicStrifeGreen.png");
+  }
+  
+  .colors-1 {
+    background-color: var(--user-avatar-color-1) !important;
+    color: var(--user-avatar-color-1) !important;
+    fill: var(--user-avatar-color-1) !important;
+  }
+  
+  .colors-2 {
+    background-color: var(--user-avatar-color-2) !important;
+    color: var(--user-avatar-color-2) !important;
+    fill: var(--user-avatar-color-2) !important;
+  }
+  
+  .colors-3 {
+    background-color: var(--user-avatar-color-3) !important;
+    color: var(--user-avatar-color-3) !important;
+    fill: var(--user-avatar-color-3) !important;
+  }
+  
+  .colors-4 {
+    background-color: var(--user-avatar-color-4) !important;
+    color: var(--user-avatar-color-4) !important;
+    fill: var(--user-avatar-color-4) !important;
+  }
+  
+  .colors-5 {
+    background-color: var(--user-avatar-color-5) !important;
+    color: var(--user-avatar-color-5) !important;
+    fill: var(--user-avatar-color-5) !important;
+  }
+  
+  .colors-6 {
+    background-color: var(--user-avatar-color-6) !important;
+    color: var(--user-avatar-color-6) !important;
+    fill: var(--user-avatar-color-6) !important;
+  }
+  
+  .colors-7 {
+    background-color: var(--user-avatar-color-7) !important;
+    color: var(--user-avatar-color-7) !important;
+    fill: var(--user-avatar-color-7) !important;
+  }
+  
+  .colors-8 {
+    background-color: var(--user-avatar-color-8) !important;
+    color: var(--user-avatar-color-8) !important;
+    fill: var(--user-avatar-color-8) !important;
+  }
+  
+  .colors-9 {
+    background-color: var(--user-avatar-color-9) !important;
+    color: var(--user-avatar-color-9) !important;
+    fill: var(--user-avatar-color-9) !important;
+  }
+  
+  .colors-10 {
+    background-color: var(--user-avatar-color-10) !important;
+    color: var(--user-avatar-color-10) !important;
+    fill: var(--user-avatar-color-10) !important;
+  }
+
+.group-chat-icon-color-1 {
+    background-color: var(--group-chat-icon-color-1) !important;
+  }
+  
+  .group-chat-icon-color-2 {
+    background-color: var(--group-chat-icon-color-2) !important;
+  }
+  
+  .group-chat-icon-color-3 {
+    background-color: var(--group-chat-icon-color-3) !important;
+  }
+  
+  .group-chat-icon-color-4 {
+    background-color: var(--group-chat-icon-color-4) !important;
+  }
+  
+  .group-chat-icon-color-5 {
+    background-color: var(--group-chat-icon-color-5) !important;
+  }
+  
+  .group-chat-icon-color-6 {
+    background-color: var(--group-chat-icon-color-6) !important;
+  }
+  
+  .group-chat-icon-color-7 {
+    background-color: var(--group-chat-icon-color-7) !important;
+  }
+  
+  .group-chat-icon-color-8 {
+    background-color: var(--group-chat-icon-color-8) !important;
+  }
+  
+  .group-chat-icon-color-9 {
+    background-color: var(--group-chat-icon-color-9) !important;
+  }
+  
+  .group-chat-icon-color-10 {
+    background-color: var(--group-chat-icon-color-10) !important;
+  }
