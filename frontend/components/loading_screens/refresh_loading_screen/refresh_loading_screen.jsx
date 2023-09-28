@@ -16,7 +16,7 @@ const RefreshLoadingScreen = (props) => {
     useEffect(() => {
 
         //prevent this screen from showing if just signing into $TR!F3
-        if (props.ui_modal.length > 0) { props.closeModal(); }
+        if (props.ui_modal?.length > 0) { props.closeModal(); }
 
         if (props.history.location.pathname !== `/$/loading/`) {
             let lsd =  document.getElementById('loading-screen-wrapper');
