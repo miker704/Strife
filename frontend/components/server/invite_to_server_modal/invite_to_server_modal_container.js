@@ -8,7 +8,8 @@ import { handleKeyUp } from "../../../utils/modal_api_util";
 import { requestFriendships, removeFriendshipErrors, requestAllFriendships } from "../../../actions/friendship_actions.js";
 import { fetchDmServers, removeDmServerErrors } from "../../../actions/dm_server_actions.js";
 import { selectAllFriends } from "../../../utils/selectors_api_util.js";
-import InviteToServerModal from "./invite_to_server_modal.jsx";
+// import InviteToServerModal from "./invite_to_server_modal.jsx";
+import InviteToServerModal from "./invite_to_server_modal1.jsx";
 
 const mSTP = (state, ownProps) => {
     return {
