@@ -8,7 +8,7 @@ const LoadingDmChatRoom = (props) => {
     const chatInputRef = useRef(null);
     return (
         <main className="server-chat-container">
-            <div className="message-wrapper">
+            <div className="messages-container-wrapper">
                 <div className="chat-scroller auto-scroll-raw-attributes global-scroller-base disableScrollAnchor reactive-scroller">
                     <div className="chat-scroller-content">
                         <MessageSkeletonList />
