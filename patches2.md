@@ -1948,6 +1948,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Swapped message accessories for dm message settings to dm messages.
     - Changed message wrapper to messages-container-wrapper for dm chat rooms.
     - Changed message wrapper to messages-container-wrapper for server chat rooms.
+    - Changed message wrapper1 to message-wrapper for messages in server chat rooms.
 
 
 
