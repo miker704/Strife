@@ -245,7 +245,7 @@ class DmChatRoom extends React.Component {
         if (this.state.renderSkeleton === false) {
             return (
                 <main className="server-chat-container">
-                    <div className="message-wrapper">
+                    <div className="messages-container-wrapper">
                         <div className="chat-scroller auto-scroll-raw-attributes global-scroller-base disableScrollAnchor reactive-scroller" ref={this.chatScrollerRef}>
                             <div className="chat-scroller-content">
                                 <ol className="chat-scroller-inner" >
