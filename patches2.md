@@ -2024,6 +2024,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Finalized Channels Controller.rb for patch v4.
 - Finalized Current backend routes.rb for patch v4.
 - Finalized Temp DmServer Name Generator function when there is no set name for a dmServer speeds up front-end rendering.
+- Finalized DmServer : show.json.jbuilder for patch v4.
 
 
 ### Front-End Changes
