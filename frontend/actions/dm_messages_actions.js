@@ -35,31 +35,35 @@ export const removeDmMessageErrors = () => {
 
 //removing received as the are no longer need they are being called at message received from AC
 
+// added back the received dispatch as if the connection is interupted any deleted or updated message on the users
+//end will not render on the current users end resulting in a message that is deleted to remain until the dmserver is 
+// resynced
 
 // export const createDmMessage = (dm_msg) => (dispatch) =>
-//    DM_MESSAGEAPIUTIL.createDmMessage(dm_msg).then((dm_message) => dispatch(receiveDmMessage(dm_message)),
-//         (err) => dispatch(receiveDmMessageErrors(err.responseJSON)))
+//     DM_MESSAGEAPIUTIL.createDmMessage(dm_msg)
 
 
-        export const createDmMessage = (dm_msg) => (dispatch) =>
-        DM_MESSAGEAPIUTIL.createDmMessage(dm_msg)
-        // .then((dm_message) => dispatch(receiveDmMessage(dm_message)),
-        //      (err) => dispatch(receiveDmMessageErrors(err.responseJSON)))
+export const sendDmMessage = (dm_msg) => (dispatch) =>
+    DM_MESSAGEAPIUTIL.createDmMessage(dm_msg);
+
+export const createDmMessage = (dm_msg) => (dispatch) =>
+    DM_MESSAGEAPIUTIL.createDmMessage(dm_msg)
+        .then((dm_message) => dispatch(receiveDmMessage(dm_message)),
+            (err) => dispatch(receiveDmMessageErrors(err.responseJSON)))
+
+export const updateDmMessage = (dm_msg) => (dispatch) =>
+    DM_MESSAGEAPIUTIL.updateDmMessage(dm_msg).then((dm_message) => dispatch(receiveDmMessage(dm_message)),
+        (err) => dispatch(receiveDmMessageErrors(err.responseJSON)))
 
 
 // export const updateDmMessage = (dm_msg) => (dispatch) =>
-// DM_MESSAGEAPIUTIL.updateDmMessage(dm_msg).then((dm_message) => dispatch(receiveDmMessage(dm_message)),
-//         (err) => dispatch(receiveDmMessageErrors(err.responseJSON)))
-
-
-        export const updateDmMessage = (dm_msg) => (dispatch) =>
-        DM_MESSAGEAPIUTIL.updateDmMessage(dm_msg)
-
-
-// export const deleteDmMessage = (dm_msgId) => (dispatch) =>
-// DM_MESSAGEAPIUTIL.deleteDmMessage(dm_msgId).then((dm_messageId) => dispatch(removeDmMessage(dm_messageId)),
-//         (err) => dispatch(receiveDmMessageErrors(err.responseJSON)))
+//     DM_MESSAGEAPIUTIL.updateDmMessage(dm_msg)
 
 
 export const deleteDmMessage = (dm_msgId) => (dispatch) =>
-DM_MESSAGEAPIUTIL.deleteDmMessage(dm_msgId)
+    DM_MESSAGEAPIUTIL.deleteDmMessage(dm_msgId).then((dm_messageId) => dispatch(removeDmMessage(dm_messageId)),
+        (err) => dispatch(receiveDmMessageErrors(err.responseJSON)))
+
+
+// export const deleteDmMessage = (dm_msgId) => (dispatch) =>
+//     DM_MESSAGEAPIUTIL.deleteDmMessage(dm_msgId);
