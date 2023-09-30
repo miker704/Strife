@@ -842,6 +842,11 @@
 
 //edit and delete buttons
 .message-accessories {
+  display: grid;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+
   grid-auto-flow: row;
   grid-row-gap: 0.25rem;
   grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
@@ -1254,5 +1259,299 @@
   position: relative;
   font-weight: 500;
   vertical-align: top;
+}
 
+//invitations
+
+.i2smsg-ism-msg-silink {
+  color: var(--text-link);
+  word-break: break-word;
+  text-decoration: var(--link-decoration);
+  cursor: pointer;
+}
+.i2smsg-ism-msg-silink:hover {
+  text-decoration: underline;
+}
+
+.message-accessories-inner-wrapper {
+  cursor: default;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: var(--background-secondary);
+  border-radius: 4px;
+  padding: 16px;
+  max-width: 432px;
+  min-width: 160px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.message-accessories > * {
+  justify-self: start;
+  align-self: start;
+}
+.i2smsg-server-invite-splash-container {
+  position: relative;
+  background-color: var(--background-modifier-accent);
+  border-radius: 4px 4px 0 0;
+  height: 64px;
+  margin: -16px -16px 16px;
+  overflow: hidden;
+}
+.i2smsg-server-invite-splash {
+  opacity: 1;
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-transition: opacity 0.125s;
+  transition: opacity 0.125s;
+  width: 100%;
+  height: 100%;
+}
+.i2smsg-im-h5 {
+  font-weight: 700;
+  margin-bottom: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: var(--interactive-normal);
+  font-size: 12px;
+  line-height: 16px;
+  font-family: var(--global-font);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.i2smsg-im-content {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 16px;
+}
+
+.i2smsg-im-headerline {
+  display: flex;
+  flex: 1000 0 auto;
+  align-items: center;
+  max-width: 100%;
+  gap: 16px;
+}
+
+.i2smsg-server-avatar-icon {
+  background-color: var(--background-primary);
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  position: relative;
+  background-clip: padding-box;
+  background-color: none;
+  background-position: 50%;
+  background-size: 100% 100%;
+}
+
+.i2smsg-server-info-container {
+  flex: 1 1 auto;
+  min-width: 1px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.i2smsg-server-info-wrapper {
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 2px;
+  color: var(--header-primary);
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.i2smsg-server-info-title {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.i2smsg-server-guild-name-wrapper {
+  align-items: center;
+  display: flex;
+  flex: 0 1 auto;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.i2smsg-server-guild-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--global-font);
+}
+
+.i2smsg-server-info-badge {
+  margin-left: 4px;
+}
+.i2smsg-server-guild-badge-container {
+  margin-right: 8px;
+}
+.i2smsg-server-flower-star-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+
+.i2smsg-server-members-info {
+  font-size: 14px;
+  color: var(--interactive-normal);
+  line-height: 16px;
+  font-family: var(--global-font);
+  font-weight: 400;
+}
+
+.i2smsg-server-members-status-counts {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  column-gap: 12px;
+}
+.i2smsg-server-members-status-wrapper {
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  flex-flow: nowrap;
+  min-width: 0;
+}
+.i2smsg-sms-online-status {
+  background-color: var(--green-360);
+  display: block;
+  margin-right: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+.i2smsg-server-members-status-member-count {
+  flex: 0 1 auto;
+  margin-right: 8px;
+  color: var(--interactive-normal);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.i2smsg-server-members-status-member-count:last-child {
+  margin-right: 0;
+}
+
+.i2smsg-sms-offline-status {
+  background-color: var(--primary-400);
+  display: block;
+  margin-right: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.i2smsg-im-join-button {
+  color: var(--white-500);
+  background-color: var(--button-positive-background);
+  cursor: pointer;
+  line-height: 20px;
+  align-self: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: 1 0 auto;
+  height: 40px;
+  width: auto;
+  -webkit-transition: background-color var(--custom-button-transition-duration)
+      ease,
+    color var(--custom-button-transition-duration) ease;
+  transition: background-color var(--custom-button-transition-duration) ease,
+    color var(--custom-button-transition-duration) ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 2px 16px;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: var(--global-font);
+  text-rendering: optimizeLegibility;
+}
+.i2smsg-im-join-button:hover {
+  background-color: var(--button-positive-background-hover);
+}
+.i2smsg-im-join-button:active {
+  background-color: var(--button-positive-background-active);
+}
+
+.i2smsg-im-joined-button {
+  color: var(--white-500);
+  background-color: var(--brand-experiment);
+  cursor: not-allowed;
+  line-height: 20px;
+  align-self: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: 1 0 auto;
+  height: 40px;
+  width: auto;
+  -webkit-transition: background-color var(--custom-button-transition-duration)
+      ease,
+    color var(--custom-button-transition-duration) ease;
+  transition: background-color var(--custom-button-transition-duration) ease,
+    color var(--custom-button-transition-duration) ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 2px 16px;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: var(--global-font);
+  text-rendering: optimizeLegibility;
+  opacity: 0.5;
+}
+.i2smsg-im-joined-button:hover {
+  background-color: var(--brand-experiment-560);
+  opacity: 0.5;
+}
+.i2smsg-im-joined-button:active {
+  background-color: var(--brand-experiment-600);
+  opacity: 0.5;
 }
