@@ -7,7 +7,6 @@ const DmMessageSettings = (props) => {
                 props.currentUser.id === props.dmMessage.sender_id ?
                     (
                         <>
-                            <div className="message-accessories"></div>
                             <div className="message-accessories-button-container" onMouseLeave={(e) => { e.stopPropagation(); props.setMsgCtrlTTHover(false); props.setMsgCtrlSRTTHover(false); }}>
                                 <div className={`message-accessories-button-layer ${props.is_header ? `is-header` : ``}`}>
                                     <div className={`message-accessories-button-wrapper1`} >
@@ -135,7 +134,6 @@ const DmMessageSettings = (props) => {
                     )
                     : (
                         <>
-                            <div className="message-accessories"></div>
                             <div className="message-accessories-button-container" onMouseLeave={(e) => { e.stopPropagation(); props.setMsgCtrlTTHover(false); props.setMsgCtrlSRTTHover(false); }}>
                                 <div className={`message-accessories-button-layer ${props.is_header ? `is-header` : ``}`}>
                                     <div className={`message-accessories-button-wrapper1`} >
