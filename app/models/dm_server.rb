@@ -39,7 +39,7 @@ class DmServer < ApplicationRecord
     end
 
     def generate_temp_dm_name(current_user)
-        dm_name = self.members.filter_map{|member| member.username if member.id != current_user.id}.join(", ")
+        dm_name = self.members.filter_map{|member| member.username if member.id != current_user.id}.sort{ |a, b| a <=> b }.join(", ")
     end
 
 end
