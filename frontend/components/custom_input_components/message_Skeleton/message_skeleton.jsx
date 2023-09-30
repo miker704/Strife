@@ -55,7 +55,7 @@ export const MessageSkeleton = ({ item, idx }) => {
 
     return (
         <li className={`chat-message-item skeleton`} key={`skeleton-msg-${item}-${idx}`}>
-            <div className="message-wrapper1" tabIndex={-1}>
+            <div className="message-wrapper" tabIndex={-1}>
                 <div className="message-wrapper-contents">
                     <div className="chat-member-avatar-img">
                         <StyledSkeleton animation="wave" variant="circular" height={40} width={40} sx={{ borderRadius: `50%` }} />
