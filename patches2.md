@@ -1944,6 +1944,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Invite to Server Modal container.
     - Finalized Message Invite variant styles.
     - Finalized sendDmMessage function which is a variant of the create dm message function dedicated for sending message outside of said dm in modals.
+    - Finalized modal state reducer.
 
 
 
