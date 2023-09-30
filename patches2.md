@@ -1947,6 +1947,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized modal state reducer.
     - Swapped message accessories for dm message settings to dm messages.
     - Changed message wrapper to messages-container-wrapper for dm chat rooms.
+    - Changed message wrapper to messages-container-wrapper for server chat rooms.
 
 
 
