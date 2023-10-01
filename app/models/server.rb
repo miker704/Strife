@@ -32,6 +32,8 @@ class Server < ApplicationRecord
     has_many :server_members, class_name: "ServerMembership", foreign_key: "server_id", dependent: :destroy
     has_many :members, through: :server_members, source: :user
 
+    # has_many :invitations, foreign_key: "invitation", class_name: "DmMessage", dependent: :destroy
+    # has_many :invitations, foreign_key: :invitation, class_name: :DmMessage, dependent: :destroy
 
     has_one_attached :server_Icon
     has_one_attached :server_banner
