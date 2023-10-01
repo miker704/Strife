@@ -9,12 +9,23 @@ export const EXPLORE_SERVERS = "EXPLORE_SERVERS";
 export const REMOVE_UNEXPLORED_SERVERS = "REMOVE_UNEXPLORED_SERVERS";
 export const JOINING_SERVER = "JOINING_SERVER";
 
+//web socket Redux dispatch action this is to prevent calling fetchserver when a user is browsing a server and overwrites
+//the current state with newservers assets before reverting back to the correct server.
+export const WEB_SOCKET_RECEIVE_SERVER = "WEB_SOCKET_RECEIVE_SERVER";
+export const WEB_SOCKET_RECEIVE_SERVERS = "WEB_SOCKET_RECEIVE_SERVERS";
+export const WEB_SOCKET_REMOVE_SERVER = "WEB_SOCKET_REMOVE_SERVER";
+
+
+
+
 export const receiveServer = (server) => {
     return {
         type: RECEIVE_SERVER,
         server
     }
 }
+
+
 
 export const receiveServers = (servers) => {
     return {
@@ -75,9 +86,35 @@ export const clearUnexploredServers = () => {
 }
 
 
+//Web socket Dispatch functions 
+
+export const receiveServerViaWebSocket = (server) => {
+
+    return {
+        type: WEB_SOCKET_RECEIVE_SERVER,
+        server
+    }
+}
+
+export const receiveServersViaWebSocket = (servers) => {
+
+    return {
+        type: WEB_SOCKET_RECEIVE_SERVERS,
+        servers
+    }
+}
+
+export const removeServerViaWebSocket = (serverId) => {
+    return {
+        type: WEB_SOCKET_REMOVE_SERVER,
+        serverId
+    }
+}
+
+
 
 export const fetchServers = (user) => (dispatch) =>
-    ServerAPI.fetchServers(user).then((servers) => { dispatch(receiveServers(servers)) }, (err) => { dispatch(receiveServerErrors(err.responseJSON)) })
+    ServerAPI.fetchServers(user).then((servers) => { return dispatch(receiveServers(servers)) }, (err) => { dispatch(receiveServerErrors(err.responseJSON)) })
 
 export const fetchServer = (serverId) => (dispatch) =>
     ServerAPI.fetchServer(serverId).then((server) => { return dispatch(receiveServer(server)) })
@@ -127,3 +164,23 @@ export const joiningServer = (inviteCode) => (dispatch) =>
     },
         (err) => { dispatch(receiveServerErrors(err.responseJSON)) });
 
+
+export const changeServerBanner = (serverId, formData) => (dispatch) =>
+    ServerAPI.changeServerBanner(serverId, formData).then((server) => (dispatch(receiveServer(server))), (err) => (dispatch(receiveServerErrors(err.responseJSON))));
+
+export const changeServerInviteSplash = (serverId, formData) => (dispatch) =>
+    ServerAPI.changeServerInviteSplash(serverId, formData).then((server) => (dispatch(receiveServer(server))), (err) => (dispatch(receiveServerErrors(err.responseJSON))));
+
+//web socket api functions
+
+export const webSocketFetchServer = (serverId) => (dispatch) =>
+    ServerAPI.fetchServer(serverId).then((server) => { return dispatch(receiveServerViaWebSocket(server)) })
+
+
+
+export const webSocketFetchServers = (user) => (dispatch) =>
+    ServerAPI.fetchServers(user).then((servers) => { dispatch(receiveServers(servers)) }, (err) => { dispatch(receiveServerErrors(err.responseJSON)) })
+
+
+// export const webSocketDeleteServer = (serverId) => (dispatch) =>
+//     ServerAPI.deleteServer(serverId).then(() => { dispatch(removeServer(serverId)) })
