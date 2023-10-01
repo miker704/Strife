@@ -1975,6 +1975,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Upgraded Invite to Server Modal.
     - Moved new message server invite to dm server invite to server modal v1 to deprecated folder.
     - Moved new message server invite to dm server invite to server modal v2 to deprecated folder.
+    - Logger Update to DmServer Cable.
 
 
 
