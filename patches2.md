@@ -1963,7 +1963,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Swapped message accessories for server message settings to server messages.
     - Switched enter key listener for edit dm message from e.code to e.key to also use numpad enter.
     - Switched enter key listener for edit server message from e.code to e.key to also use numpad enter.
-
+    - Finalized Server Messages Index.
 
 
 
