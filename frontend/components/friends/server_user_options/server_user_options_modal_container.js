@@ -7,11 +7,12 @@ import { createDmServer, removeDmServerErrors, fetchDmServer, deleteDmServer } f
 import { deleteDmMember } from '../../../actions/dm_member_actions';
 import { createChannelMembership, deleteChannelMembership } from "../../../actions/channel_membership_actions.js";
 import { createServerMembership, deleteServerMembership } from "../../../actions/server_membership_actions.js";
-import { fetchUser } from '../../../actions/session_actions.js';
+import { fetchUser, removeSessionErrors } from '../../../actions/session_actions.js';
 import { removeServerErrors, fetchServer } from "../../../actions/server_actions.js";
 import { removeChannelErrors, fetchChannel } from "../../../actions/channel_actions.js";
 import { reSyncCurrentUser } from "../../../actions/session_actions.js";
-import {createDmMessage} from '../../../actions/dm_messages_actions.js';
+import { sendDmMessage } from '../../../actions/dm_messages_actions.js';
+import { openModal } from "../../../actions/modal_actions";
 
 const mSTP = (state, ownProps) => {
     return {
@@ -27,11 +28,15 @@ const mSTP = (state, ownProps) => {
         channels: Object.values(state.entities.channels),
         servers: Object.values(state.entities.servers),
         serverErrors: state.errors.server,
-        channelErrors: state.errors.channel
-
+        channelErrors: state.errors.channel,
+        sessionErrors: state.errors.session,
+        users: Object.values(state.entities.users),
+        messageVersion: ownProps.messageVersion || false,
+        getClientRect: ownProps.getClientRect || {},
+        serverMemberShipDate: ownProps.serverMemberShipDate || "",
+        userNameClicked: ownProps.userNameClicked || false,
     }
 };
-
 
 const mDTP = (dispatch, ownProps) => {
     return {
@@ -39,9 +44,10 @@ const mDTP = (dispatch, ownProps) => {
         requestFriendships: () => dispatch(requestFriendships()),
         removeFriendshipErrors: () => dispatch(removeFriendshipErrors()),
         removeDmServerErrors: () => dispatch(removeDmServerErrors()),
+        removeSessionErrors: () => dispatch(removeSessionErrors()),
         deleteFriendship: (ids) => dispatch(deleteFriendship(ids)),
         blockUser: (ids) => dispatch(blockUser(ids)),
-        unBlockUser:(ids) => dispatch(unBlockUser(ids)),
+        unBlockUser: (ids) => dispatch(unBlockUser(ids)),
         updateFriendship: (ids) => dispatch(updateFriendship(ids)),
         createFriendship: (ids) => dispatch(createFriendship(ids)),
         kickUserfromGroupChat: (dm_memberId, dm_member) => dispatch(deleteDmMember(dm_memberId, dm_member)),
@@ -66,13 +72,13 @@ const mDTP = (dispatch, ownProps) => {
         removeServerErrors: () => dispatch(removeServerErrors()),
 
         //reSync current user props
-        reSyncCurrentUser : (currentUserId) => dispatch(reSyncCurrentUser(currentUserId)),
-        createDmMessage: (dmMsg) => dispatch(createDmMessage(dmMsg))
+        reSyncCurrentUser: (currentUserId) => dispatch(reSyncCurrentUser(currentUserId)),
+        sendDmMessage: (dmMsg) => dispatch(sendDmMessage(dmMsg)),
+        openModal: (modal) => dispatch(openModal(modal)),
 
     }
 };
 
 const ServerUserOptionsModalContainer = withRouter(connect(mSTP, mDTP)(ServerUserOptionsModal));
+// const ServerUserOptionsModalContainer = withRouter(connect(mSTP, mDTP)(ServerUserOptionsModalK10));
 export default ServerUserOptionsModalContainer;
-
-
