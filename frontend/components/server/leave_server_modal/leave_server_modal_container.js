@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { removeChannelErrors } from "../../../actions/channel_actions.js";
-import { fetchServer, fetchServers, removeServerErrors } from "../../../actions/server_actions.js";
+import { fetchServer, fetchServers, removeServerErrors, removeServer } from "../../../actions/server_actions.js";
 import { deleteServerMembership } from "../../../actions/server_membership_actions.js";
 import LeaveServerModal from "./leave_server_modal.jsx";
 
@@ -39,6 +39,7 @@ const mDTP = (dispatch, ownProps) => {
         fetchServer: (serverId) => dispatch(fetchServer(serverId)),
         fetchUserServers: (user) => dispatch(fetchServers(user)),
         removeServerErrors: () => dispatch(removeServerErrors()),
+        removeServer: (serverId) => dispatch(removeServer(serverId)),
 
         //channel api functions
 
