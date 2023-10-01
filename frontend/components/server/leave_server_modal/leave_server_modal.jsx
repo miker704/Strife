@@ -36,6 +36,7 @@ const LeaveServerModal = (props) => {
         props.setRenderLeaveServer(false);
         props.history.push('/$/channels/@me')
         props.deleteServerMembership(props.currentUser.id, subState).then(() => {
+            props.removeServer(props.server.id);
             props.fetchUserServers(props.currentUser.id)
         })
         return;
