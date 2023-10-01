@@ -1965,6 +1965,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Switched enter key listener for edit server message from e.code to e.key to also use numpad enter.
     - Finalized Server Messages Index.
     - Finalized Server Messages Index Container.
+    - Finalized User Interface reducer.
 
 
 
