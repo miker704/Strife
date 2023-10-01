@@ -32,47 +32,173 @@ class Api::ServersController < ApplicationController
     end
     
     def create
-        @server = Server.new(server_params)
-        if @server.save
+        @server = nil
+        serverChannelSetup = {} 
+
+            case server_params[:serverTemplate]
+                when 'Default'
+                    serverChannelSetup = {
+                        channelInfoNames: [],
+                        channelTextNames: [],
+                        channelVoiceNames: ['General'],
+                    }
+                when 'Local Community'
+                    serverChannelSetup = {
+                        channelInfoNames: ['welcome-and-rules', "announcements", 'resources'],
+                        channelTextNames: ["meeting-plans", 'off-topic'],
+                        channelVoiceNames: ['Lounge', "Meeting Room"],
+                    }
+                when 'Artists & Creators'
+                    serverChannelSetup = {
+                        channelInfoNames: ['welcome-and-rules', "announcements"],
+                        channelTextNames: ["events", 'ideas-and-feedback'],
+                        channelVoiceNames: ['Lounge', 'Community Hangout', "Stream Room"],
+                    }
+                when 'Friends'
+                    serverChannelSetup = {
+                        channelInfoNames: [],
+                        channelTextNames: ["games", 'music'],
+                        channelVoiceNames: ['Lounge', "Stream Room"],
+                    }
+                when 'Study Group'
+                    serverChannelSetup = {
+                        channelInfoNames: ['welcome-and-rules', 'notes-resources'],
+                        channelTextNames: ["homework-help", 'session-planning', 'off-topic'],
+                        channelVoiceNames: ['Lounge', "Study Room 1", "Study Room 2"],
+                    }
+                when 'School Club'
+                    serverChannelSetup = {
+                        channelInfoNames: ['welcome-and-rules', "announcements", 'resources'],
+                        channelTextNames: ["meeting-plans", 'off-topic'],
+                        channelVoiceNames: ['Lounge', "Meeting Room 1", "Meeting Room 2"],
+                    }
+                when 'Gaming'
+                  serverChannelSetup = {
+                    channelInfoNames: [],
+                    channelTextNames: ["clips-and-highlights"],
+                    channelVoiceNames: ['Lobby', "Gaming"],
+                }
+                else
+                    serverChannelSetup = {
+                        channelInfoNames: [],
+                        channelTextNames: [],
+                        channelVoiceNames: ['General'],
+                    }
+            end
+
+        if server_params[:server_Icon]
+            @server = Server.new(
+                server_name: server_params[:server_name],
+                server_owner_id: server_params[:server_owner_id],
+                public: server_params[:public],
+                server_Icon: server_params[:server_Icon]
+            )
+        else
+            @server = Server.new(
+                server_name: server_params[:server_name],
+                server_owner_id: server_params[:server_owner_id],
+                public: server_params[:public],
+            )
+
+        end
+
+        if @server.save 
+            channelType=0
+            serverChannelSetup.each do |channelTemplate, names|
+                if serverChannelSetup[channelTemplate].length === 0
+                    next
+                else
+                    if channelTemplate == :channelInfoNames || channelTemplate == :channelTextNames
+                        channelType = 1
+                    elsif channelTemplate == :channelVoiceNames
+                        channelType = 2
+                    end
+                    serverChannelSetup[channelTemplate].each do |channelName|
+                        @channel = Channel.create!(channel_name: channelName, channel_type: channelType, server_id: @server.id)
+                    end
+                end
+            end
             render :show
         else
           render json: @server.errors.full_messages, status: 422
         end
+
     end
+
 
     def edit
         @server = Server.find(params[:id])
         render :edit
     end
-    
+
 
     def update
         # @server = Server.find(params[:id])
         @server = Server.where("id = #{params[:id]}").includes(:channels).first
 
-
         if @server
-            if server_params[:server_Icon_Remove]
-                @server.server_Icon.purge
-                @server.channels.each do |channel|
-                    StrifeServer.broadcast_to(channel, head: 203)
-                end
-                render :show
-            elsif @server.update(server_params)
-                @server.channels.each do |channel|
-                    StrifeServer.broadcast_to(channel, head: 203)
-                end
 
-                render :show
+            # if @server.update(server_params.except(:server_Icon_Remove).reject{|_, v| v.blank?})
+            if @server.update(server_params.except(:server_Icon_Remove))
+
+                if server_params[:server_Icon_Remove]
+                    @server.server_Icon.purge
+                end
+                @server.save!
+                    # @server.channels.each do |channel|
+                    #     StrifeServer.broadcast_to(channel, head: 203, type: "UPDATE_SERVER")
+                    # end
+                    render :show
             else
-                 render json: @server.errors.full_messages, status: 400
+                render json: @server.errors.full_messages, status: 400
             end
 
         else
           render json: @server.errors.full_messages, status: 400
         end
     end
-    
+
+
+    def change_server_banner
+        @server = Server.find_by(id: params[:id])
+        if @server 
+            if server_params[:remove_SB]
+                @server.server_banner.purge
+                @server.save!
+                render :show
+            elsif @server.update(server_params)
+                @server.save!
+                render :show
+            else
+                process_File_Error = @server.errors.full_messages.length > 0 ? @server.errors.full_messages : ['cannot process file']
+                render json: process_File_Error, status: 400
+            end
+        else
+            process_File_Error = @server.errors.full_messages.length > 0 ? @server.errors.full_messages : ['cannot process file']
+            render json: process_File_Error, status: 400
+        end
+    end
+
+    def change_server_invite_splash
+        @server = Server.find_by(id: params[:id])
+        if @server 
+            if server_params[:remove_SISB]
+                @server.invite_splash.purge
+                @server.save!
+                render :show
+            elsif @server.update(server_params)
+                @server.save!
+                render :show
+            else
+                process_File_Error = @server.errors.full_messages.length > 0 ? @server.errors.full_messages : ['cannot process file']
+                render json: process_File_Error, status: 400
+            end
+        else
+            process_File_Error = @server.errors.full_messages.length > 0 ? @server.errors.full_messages : ['cannot process file']
+            render json: process_File_Error, status: 400
+        end
+    end
+
 
     def join_server
         @current_user = userId
@@ -124,7 +250,8 @@ class Api::ServersController < ApplicationController
         @response_Message = " #{server.server_name} self destructing redirecting everyone to home ...1...2...3..."
         server.channels.each do |channel|
             @message=Message.create!(body: @response_Message, author_id: 1, channel_id: channel.id)
-            StrifeServer.broadcast_to(channel, message: @message, head: 302, path: '/$/telefrag/')
+            StrifeServer.broadcast_to channel,type: 'RECEIVE_CHANNEL_MESSAGE', **from_template('api/messages/show', message: @message)
+            StrifeServer.broadcast_to(channel, message: @message, head: 302, path: '/$/telefrag/', type: 'SERVER_SELF_DESTRUCTION')
         end
     end
 
@@ -147,7 +274,10 @@ class Api::ServersController < ApplicationController
     
     private
         def server_params
-            return params.require(:server).permit(:server_name,:server_owner_id,:public,:server_Icon, :server_Icon_Remove)
+            return params.require(:server).permit(:server_name,:server_owner_id,:public,:server_Icon, :server_Icon_Remove, :serverTemplate, :server_banner, :remove_SB, :invite_splash, :remove_SISB)
+        end
+        def update_server_params
+            return params.require(:server).permit(:server_name,:server_owner_id,:public,:server_Icon, :server_Icon_Remove, :invite_code, :server_icon)
         end
         def userId
             return params[:user]
