@@ -2069,6 +2069,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Finalized Dm Message: _DmMessage.json.jbuilder.
 - Finalized Dm Message: show.json.jbuilder.
 - Finalized Server: show.json.jbuilder.
+- Finalized Server: _server.json.jbuilder.
 
 
 ### Front-End Changes
