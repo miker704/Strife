@@ -106,14 +106,15 @@ class DmChatRoom extends React.Component {
                             this.props.removeDmMessage(dm_message.id);
                             break;
                         case "MEMBER_UPDATED":
+                            console.info(`%c [$TR!FE DM_SERVER_CHAT_ROOM M0N!T0R]: [DMS_MEMBER_UPDATED]`, "color:#05dc28");
                             this.props.fetchDmServer(this.props.dmServerId);
                             break;
                         case "NEW_DMS_MEMBER":
-                            console.info(`%c NEW_DMS_MEMBER : `, "color:#05dc28");
+                            console.info(`%c [$TR!FE DM_SERVER_CHAT_ROOM M0N!T0R]: [NEW_DMS_MEMBER]`, "color:#05dc28");
                             this.props.fetchDmServer(this.props.dmServerId);
                             break;
                         case "REMOVE_DMS_MEMBER":
-                            console.info(`%c [$TR!FE DM_SERVER_CHAT_ROOM M0N!T0R]: REMOVED_DMS_MEMBER : `, "color:#05dc28");
+                            console.info(`%c [$TR!FE DM_SERVER_CHAT_ROOM M0N!T0R]: [REMOVED_DMS_MEMBER]`, "color:#05dc28");
                             this.props.reSyncCurrentUser(this.props.currentUserId).then((action) => {
                                 let currUser = action.currentUser;
                                 if (!currUser.dmServersJoined.includes(parseInt(this.props.dmServerId))) {
@@ -126,11 +127,12 @@ class DmChatRoom extends React.Component {
                             })
                             break;
                         case "DMS_UPDATED":
-                            console.info(`%c[$TR!FE DM_SERVER_CHAT_ROOM M0N!T0R]: DMS_UPDATED : `, "color:#05dc28");
+                            console.info(`%c[$TR!FE DM_SERVER_CHAT_ROOM M0N!T0R]: [DMS_UPDATED]`, "color:#05dc28");
                             this.props.fetchDmServer(this.props.dmServerId);
                             break;
                         case "REJECT_ALL_DM_MEMBERS_DESTROYING_DM_SERVER":
                             if (head === 302 && path === '/$/telefrag/') {
+                                console.warn(`%c[$TR!FE DM_SERVER_CHAT_ROOM M0N!T0R]: %c[_DESTROYING_DM_SERVER_ %c] %c@ [Teleporting Home .... %c]`, "color:#00FD61;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;");
                                 this.props.history.push(`/$/telefrag/`);
                             }
                             break;
@@ -153,7 +155,8 @@ class DmChatRoom extends React.Component {
                 this.scrollToBottomOfChat("instant");
             }, 1000);
         }
-        // if (prevState.renderSkeleton === true && this.state.renderSkeleton === false) { this.scrollToBottomOfChat("smooth"); }
+        if(this.props.DmMessages[0] !== prevProps.DmMessages[0]){this.scrollToBottomOfChat("auto");}
+
         if (this.props.DmMessages.length > prevProps.DmMessages.length) {
             this.scrollToBottomOfChat("instant");
             this.scrollToBottomOfChat("auto");
