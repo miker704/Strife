@@ -1969,6 +1969,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Prevented channel list drop down from collapsing and expanding when selecting create channel modal in channel nav bar.
     - Removed Commented out code in server settings modal.
     - Changed the warp path for the current user to general channel only if they are currently in the channel to be deleted in delete channel modal.
+    - Added Remove server dispatch for leave server modal.
 
 
 
