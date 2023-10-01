@@ -1988,6 +1988,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Channel Reducer.
     - Finalized Current User Reducer.
     - Finalized Core.js replaced it with _CORE_.jsx.
+    - Finalized Core.container.
+
 
 
 ## Backend Changes
