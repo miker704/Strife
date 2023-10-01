@@ -1990,7 +1990,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Core.js replaced it with _CORE_.jsx.
     - Finalized Core.container.
     - Finalized CORE_CABLE.js.
-
+    - Finalized Strife Main Container.
 
 
 ## Backend Changes
