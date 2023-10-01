@@ -2047,6 +2047,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Swapped back to returning the processed dm message via controller methods and not just action cable for the reason being if the websockets disconnects the current user is still able have their screen.
 - Swapped back to returning the processed message via controller methods and not just action cable for the reason being if the websockets disconnects the current user is still able have their screen.
 - Created a view for dm messages showVC.json.jbuilder.
+- Created a view for  messages showVC.json.jbuilder.
 
 ### Front-End Changes
 
