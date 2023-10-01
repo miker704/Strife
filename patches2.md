@@ -2001,6 +2001,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Dm Member Actions.
     - Finalized Server MemberShip Actions.
     - Finalized app.jsx.
+    - Moved Protected server route type.jsx version to deprecated.
 
 
 ## Backend Changes
