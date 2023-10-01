@@ -23,21 +23,14 @@ import {
 // (i.e changing from online taB to friendrequests tab basically casuses state.friends 6to only have online friends
 // its best to call on action and filter after ) 
 
-
-
 const receiveFriends = (state, friendships) => {
     if (!friendships) { return state; }
     let nextState = Object.assign({}, state);
-
     for (let [id, friendship] of Object.entries(friendships)) {
-
         nextState[id] = friendship;
-
     }
     return nextState;
 }
-
-
 
 
 const selectOnlineFriends = (state, friendships) => {
@@ -50,8 +43,6 @@ const selectOnlineFriends = (state, friendships) => {
 
             nextState[id] = friendship;
         }
-
-
     }
     return nextState;
 }
@@ -78,13 +69,7 @@ const friendshipReducer = (state = {}, action) => {
 
         case RECEIVE_ALL_FRIENDS:
             return action.friendships;
-        // console.log("action is ");
-        // console.log(action.friendships);
         // return receiveFriends(state, action.friendships);
-
-
-
-
 
         // case RECEIVE_ALL_FRIEND_REQUESTS:
         //     return action.friendships;
@@ -92,14 +77,11 @@ const friendshipReducer = (state = {}, action) => {
         // case 'RECEIVE_ONLINE_FRIENDS':
         //     return Object.assign({}, state, action.payload);
 
-
         // case RECEIVE_FRIENDSHIP:
         //     nextState = Object.assign({}, state);
         //     user = nextState[action.friendship.friend_id];
         //     user.friend_request_status = action.friendship.friend_request_status;
         //     return nextState;
-
-
 
         // case REMOVE_FRIENDSHIP:
         //     nextState = Object.assign({}, state);
@@ -108,7 +90,6 @@ const friendshipReducer = (state = {}, action) => {
         //     return nextState;
         case LOGOUT_CURRENT_USER:
             return {};
-
         default:
             return state;
     }
@@ -117,8 +98,6 @@ const friendshipReducer = (state = {}, action) => {
 
 
 export default friendshipReducer;
-
-
 
 //THUNK ASYC FUNCTION
 
