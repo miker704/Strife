@@ -2083,6 +2083,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Finalized FriendShip: show.json.jbuilder.
 - Near Finalization for Message Controller for patch v4.
 - Finalized Dm_Members showViaCable.json.jbuilder.
+- Finalized Dm_Members show.json.jbuilder.
 
 
 ### Front-End Changes
