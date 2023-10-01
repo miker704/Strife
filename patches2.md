@@ -2073,6 +2073,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Finalized Server: index.json.jbuilder.
 - Finalized Server.rb model for patch v4.
 - Finalized DmMessage.rb model for patch v4.
+- Finalized Channel.rb model for patch v4, removed welcome message after create as its been handled on the front end.
 
 
 ### Front-End Changes
