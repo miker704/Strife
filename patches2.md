@@ -1961,6 +1961,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created No text channels chat room container.
     - Finalized No text channels chat room container.
     - Swapped message accessories for server message settings to server messages.
+    - Switched enter key listener for edit dm message from e.code to e.key to also use numpad enter.
 
 
 
