@@ -1981,6 +1981,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Friendship api util.js.
     - Finalized Session api util.js.
     - Uploaded Svg_masks.svg.
+    - Uploaded Svg_masks2.svg.
 
 
 
