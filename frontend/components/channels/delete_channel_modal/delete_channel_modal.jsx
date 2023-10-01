@@ -65,7 +65,8 @@ const DeleteChannelModal = (props) => {
             props.closeSubMod(props.formName);
             appPullerReleaseHoldAnimation();
             props.closeModal();
-            if (props.history.location.pathname !== `/$/channels/${props.server.id}/${props.server.general_channel_id}`) {
+
+            if (props.history.location.pathname === `/$/channels/${props.server.id}/${props.currentChannel.id}`) {
                 props.history.push(`/$/channels/${props.server.id}/${props.server.general_channel_id}`);
             }
             props.deleteChannel(props.currentChannel.id).then(() => {
