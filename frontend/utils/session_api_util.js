@@ -53,3 +53,7 @@ export const reSyncCurrentUser = (userId) => $.ajax({ url: `/api/users/${userId}
 export const fetchUser = (userId) => $.ajax({ url: `/api/users/${userId}/`, method: "GET" });
 export const fetchUsers = () => $.ajax({ url: `/api/users/`, method: "GET" });
 export const fetchUserByStrifeId = (user_strife_id_tag) => $.ajax({ url: `/api/fetchbystrifeId/${user_strife_id_tag}`, method: "GET", data: { user_strife_id_tag } });
+export const fetchUserByUserNameOrStrifeID = (user) => $.ajax({ url: `/api/fetchbyuserbynameorIdTag/`, method: "GET", data: { user } });
+export const fetchUserFullData = (userId) => $.ajax({ url: `/api/users/${userId}/extractData/`, method: "GET" });
+export const fetchMutualFriends = (account_ids) => $.ajax({ url: `/api/users/${account_ids['userId']}/mutualFriends/`, method: "GET", data:  account_ids });
+export const fetchMutualServers = (account_ids) => $.ajax({ url: `/api/users/${account_ids['userId']}/mutualServers/`, method: "GET", data:  account_ids });
