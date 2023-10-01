@@ -2072,6 +2072,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Added Websocket remove channel dispatcher.
 - Added Websocket receive channel dispatcher.
 - Added Websocket update channel dispatcher.
+- Added update channel dispatcher.
 
 
 ### Other Changes
