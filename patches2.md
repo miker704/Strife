@@ -2070,6 +2070,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Added ajax call to update the name of a dm server in dm server api util.js.
 - Binded ajax call to update the name of a dm server in dmServer actions.
 - Added Websocket remove channel dispatcher.
+- Added Websocket recieve channel dispatcher.
 
 ### Other Changes
 
