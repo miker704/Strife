@@ -5,8 +5,12 @@ import { withRouter } from "react-router";
 import { Route, Redirect } from "react-router";
 
 const mSTP = (state,ownProps) => {
+
+    const paramsExclusion = ['guild-discovery', 'nitro', '@me']
+
     return {
         isMember: state.currentUser.serversJoined.includes(parseInt(ownProps.match.params.serverId))
+        // isMember: paramsExclusion.includes(ownProps.match.params.serverId)? true : state.currentUser.serversJoined.includes(parseInt(ownProps.match.params.serverId))
     }
 }
 
