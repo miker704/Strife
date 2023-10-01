@@ -1995,6 +1995,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Route.utils.js.
     - Finalized Server Actions.
     - Finalized Server User Options Modal Container.
+    - Finalized Channel Actions.
 
 
 ## Backend Changes
