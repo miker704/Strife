@@ -1,34 +1,27 @@
 .call-grid-wrapper {
-    forced-color-adjust: none;
     outline: 0;
     height: 100%;
-
     display: flex;
     position: relative;
     -webkit-box-flex: 0;
     flex: 0 0 auto;
-    background-color: hsl(216, 7.2%, 13.5%);
+    background-color: var(--background-tertiary);
     z-index: 2;
 }
 
-
-
-
-
 .server-call-container {
-    forced-color-adjust: none;
     outline: 0;
     flex: 1 1 auto;
     -webkit-box-flex: 1;
     background: transparent;
     overflow: hidden;
+    /*background: var(--black-500);*/
 }
 
 .call-root {
-    forced-color-adjust: none;
     outline: 0;
-    cursor: none;
-    color: hsl(0, 0%, 100%);
+    // cursor: none;
+    color: var(--white-500);
     height: 100%;
     width: 100%;
     position: relative;
@@ -38,7 +31,6 @@
 }
 
 .call-flex {
-    forced-color-adjust: none;
     outline: 0;
     flex: 1 1 auto;
     align-self: stretch;
@@ -51,7 +43,6 @@
 
 
 .call-room-scroller {
-    forced-color-adjust: none;
     outline: 0;
     overflow: hidden scroll;
     padding-right: 0px;
@@ -125,7 +116,6 @@
 
 .call-room-list {
     inset: 177.5px 0px 169.5px 8px;
-    forced-color-adjust: none;
     outline: 0;
     contain: layout;
     position: absolute;
@@ -133,7 +123,6 @@
 
 
 .call-room-members-row {
-    forced-color-adjust: none;
     outline: 0;
     display: flex;
     justify-content: center;
@@ -142,7 +131,6 @@
 .call-room-member-card-title {
     width: 467px;
     margin-bottom: 0;
-    forced-color-adjust: none;
     outline: 0;
     align-items: center;
     display: flex;
@@ -152,7 +140,6 @@
 .call-room-member-card-outer {
     width: 100%;
     padding-top: auto;
-    forced-color-adjust: none;
     outline: 0;
     position: relative;
 }
@@ -163,7 +150,6 @@
     right: 0;
     bottom: 0;
     left: 0;
-    forced-color-adjust: none;
     outline: 0;
 }
 
@@ -171,13 +157,11 @@
     display: flex;
     position: relative;
     height: 100%;
-    forced-color-adjust: none;
     outline: 0;
 }
 
 .call-room-member-title-wrapper {
     cursor: inherit;
-    forced-color-adjust: none;
     outline: 0;
     display: flex;
     flex: 1 1 100%;
@@ -191,7 +175,6 @@
 .call-room-member-title-child {
     flex: 1 1 100%;
     display: flex;
-    forced-color-adjust: none;
     outline: 0;
 
 }
@@ -200,14 +183,12 @@
     width: 0;
     height: 0;
     pointer-events: none;
-    forced-color-adjust: none;
     outline: 0;
 
 }
 
 
 .crm-content {
-    forced-color-adjust: none;
     outline: 0;
     position: absolute;
     top: 0;
@@ -223,7 +204,6 @@
 
 
 .crm-bk{
-    forced-color-adjust: none;
     outline: 0;
     width: 100%;
     height: 100%;
@@ -240,7 +220,6 @@
 
 
 .crm-indicators {
-    forced-color-adjust: none;
     outline: 0;
     position: absolute;
     display: flex;
@@ -252,7 +231,6 @@
 
 
 .crm-overlay {
-    forced-color-adjust: none;
     outline: 0;
     justify-content: space-between;
     position: absolute;
@@ -269,12 +247,11 @@
 }
 
 .crm-med-text {
-    forced-color-adjust: none;
     outline: 0;
     opacity: 0;
     border-radius: 8px;
     background: hsla(0, 0%, 0%, 0.55);
-    color: hsl(0, 0%, 100%);
+    color: var(--white-500);
     padding: 6px 12px;
     flex: 0 1 auto;
     margin-right: 8px;
@@ -282,7 +259,7 @@
     display: flex;
     align-items: center;
     font-weight: 400;
-    font-family: "Whitney";
+    font-family: var(--global-font);
     font-size: 16px;
     line-height: 20px;
 }
@@ -291,7 +268,6 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    forced-color-adjust: none;
     outline: 0;
 }
 
@@ -299,7 +275,6 @@
     flex: 0 0 auto;
     display: flex;
     align-items: center;
-    forced-color-adjust: none;
     outline: 0;
 }
 
@@ -321,14 +296,12 @@
     bottom: 0;
     border-radius: 8px;
     pointer-events: none;
-    forced-color-adjust: none;
     outline: 0;
 
 }
 
 
 .list-height {
-    forced-color-adjust: none;
     outline: 0;
     height: 617px;
     visibility: hidden;
@@ -341,13 +314,11 @@
     min-width: 1px;
     flex: 0 0 auto;
     height: 0px;
-    forced-color-adjust: none;
     outline: 0;
 }
 
 
 .disconnect-call-icon {
-    forced-color-adjust: none;
     outline: 0;
 
 }
