@@ -2064,6 +2064,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Backed up message controller to deprecated.
 - Finalized DmServers: _Dmserver.json.jbuilder.
 - Finalized Message: _Message.json.jbuilder.
+- Finalized ServerMembership: _ServerMembership.json.jbuilder.
 
 
 ### Front-End Changes
