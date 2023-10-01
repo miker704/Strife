@@ -6,10 +6,10 @@ class Api::DmMessagesController < ApplicationController
     @dm_server = DmServer.find_by(id: @dm_message[:dm_server_id])
     if @dm_message.save
 
-      DmChannel.broadcast_to @dm_server,
-                             from_template('api/dm_messages/show', dm_message: @dm_message)
-      render json: nil, status: :ok
-
+      DmChannel.broadcast_to @dm_server, type: 'RECEIVE_DM_MESSAGE',
+                             **from_template('api/dm_messages/show', dm_message: @dm_message)                       
+      # render json: nil, status: :ok
+      render :showVc
     else
       render json: @dm_message.errors.full_messages, status: 400
     end
@@ -19,25 +19,24 @@ class Api::DmMessagesController < ApplicationController
     @dm_message = DmMessage.find_by(id: params[:id])
     @dm_server = DmServer.find_by(id: @dm_message[:dm_server_id])
 
-    if @dm_message.update(dm_message_params)
-      DmChannel.broadcast_to @dm_server,
-                             from_template('api/dm_messages/show', dm_message: @dm_message)
-      render json: nil, status: :ok
+    if @dm_message.sender_id == current_user.id && @dm_message.update(dm_message_params)
+      DmChannel.broadcast_to @dm_server, type: 'UPDATE_DM_MESSAGE',
+      **from_template('api/dm_messages/show', dm_message: @dm_message)                    
+      # render json: nil, status: :ok
+      render :showVc
     else
       render json: @dm_message.errors.full_messages, status: 400
-      # 422
     end
   end
 
   def destroy
     @dm_message = DmMessage.find_by(id: params[:id])
     @dm_server = DmServer.find_by(id: @dm_message[:dm_server_id])
-
-    if @dm_message.destroy
-      DmChannel.broadcast_to @dm_server,
-                             from_template('api/dm_messages/show', dm_message: @dm_message)
-      render json: nil, status: :ok
-
+    if @dm_message.sender_id == current_user.id && @dm_message.destroy
+      DmChannel.broadcast_to @dm_server, type: "REMOVE_DM_MESSAGE",
+      **from_template('api/dm_messages/show', dm_message: @dm_message)
+      # render json: nil, status: :ok
+      render json: @dm_message.id
     else
       render json: @dm_message.errors.full_messages, status: 400
     end
