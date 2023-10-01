@@ -2115,6 +2115,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Near Finalization for Message Controller for patch v4.
 - Finalized Dm_Members showViaCable.json.jbuilder.
 - Finalized Dm_Members show.json.jbuilder.
+- Finalized Dm_Members showAll.json.jbuilder.
 - Finalized FriendShips Controller for patch v4.
 - Finalized Users Controller for patch v4.
 - Finalized Channels Controller for patch v4.
