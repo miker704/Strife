@@ -1978,6 +1978,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Logger Update to DmServer Cable.
     - Finalized Server Reducer.
     - Finalized Server Container.
+    - Finalized Friendship api util.js.
 
 
 ## Backend Changes
