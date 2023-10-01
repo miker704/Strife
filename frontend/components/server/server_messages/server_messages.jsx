@@ -100,7 +100,7 @@ const ServerMessages = (props) => {
                                     autoFocus={true}
                                     ref={editMsgRef}
                                     onKeyDown={(e) => {
-                                        if (e.code === 'Enter' && !e.shiftKey) {
+                                        if (e.key === 'Enter' && !e.shiftKey) {
                                             handleEdit(e);
                                         }
                                     }} />
@@ -195,7 +195,7 @@ const ServerMessages = (props) => {
                                     document.removeEventListener('keyup', compressButtonList);
                                 }}
                             >
-                                <div className="message-wrapper1" ref={buttonRef} tabIndex={-1}>
+                                <div className="message-wrapper" ref={buttonRef} tabIndex={-1}>
                                     <div className="message-wrapper-contents">
                                         {
                                             props.messageAuthor.photo === undefined ? (
@@ -232,7 +232,7 @@ const ServerMessages = (props) => {
                                         </h3>
                                         {messageBody()}
                                     </div>
-
+                                    <div className="message-accessories"></div>
                                     <ServerMessageControlContainer
                                         showMsgEdit={showMsgEdit} openEdit={openEdit} strifeBot={props.strifeBot}
                                         setRenderDeleteChannelMessage={props.setRenderDeleteChannelMessage}
@@ -263,7 +263,7 @@ const ServerMessages = (props) => {
                                 document.removeEventListener('keyup', compressButtonList);
                             }}
                         >
-                            <div className="message-wrapper1 follow-up-msg" ref={buttonRef} tabIndex={-1}>
+                            <div className="message-wrapper follow-up-msg" ref={buttonRef} tabIndex={-1}>
                                 <div className="message-wrapper-contents">
                                     <span className="chat-message-hover-timestamp" data-tooltip-id="scmsgsTimeStamp-thread-tip"
                                         data-tooltip-place="top" data-tooltip-position-strategy="fixed"
@@ -276,6 +276,7 @@ const ServerMessages = (props) => {
                                     </span>
                                     {messageBody()}
                                 </div>
+                                <div className="message-accessories"></div>
                                 <ServerMessageControlContainer
                                     showMsgEdit={showMsgEdit} openEdit={openEdit} strifeBot={props.strifeBot}
                                     setRenderDeleteChannelMessage={props.setRenderDeleteChannelMessage}
