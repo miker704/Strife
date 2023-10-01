@@ -5,9 +5,9 @@ import {
     RESYNC_CURRENT_USER
 } from "../actions/session_actions.js";
 
-import { RECEIVE_DM_SERVER, REMOVE_DM_SERVER } from "../actions/dm_server_actions.js";
-import { RECEIVE_SERVER, REMOVE_SERVER } from '../actions/server_actions.js';
-
+import { RECEIVE_DM_SERVER, REMOVE_DM_SERVER, WEB_SOCKET_RECEIVE_DM_SERVER } from "../actions/dm_server_actions.js";
+import { RECEIVE_SERVER, REMOVE_SERVER, WEB_SOCKET_RECEIVE_SERVER } from '../actions/server_actions.js';
+// import { RECEIVE_FRIENDSHIP } from "../actions/friendship_actions.js";
 
 const extractCurrentUser = (state, users) => {
     if (!users) { return state; }
@@ -80,6 +80,9 @@ const currentUserReducer = (state = {}, action) => {
         case RESYNC_CURRENT_USER:
             return action.currentUser;
 
+
+        // case RECEIVE_FRIENDSHIP:
+        //     return state;
         case RECEIVE_USERS:
 
             return extractCurrentUser(state, action.users);
@@ -88,12 +91,17 @@ const currentUserReducer = (state = {}, action) => {
         case RECEIVE_DM_SERVER:
             return extractCurrentUserDmMemberShip(state, action.dmserver.members);
 
+        case WEB_SOCKET_RECEIVE_DM_SERVER:
+            return extractCurrentUserDmMemberShip(state, action.dmserver.members);
+
         // case REMOVE_DM_SERVER:
         //     return removeDeletedDmServer(state, action.dmserverId);
 
         case RECEIVE_SERVER:
             return extractCurrentUser(state, action.server.users);
 
+        case WEB_SOCKET_RECEIVE_SERVER:
+            return extractCurrentUser(state, action.server.users);
 
         case REMOVE_SERVER:
             return removeDeletedServer(state, action.serverId);
