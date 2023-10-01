@@ -1958,6 +1958,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized message style formating for dm chat room.
     - Finalized dm messages with new style formating.
     - Created Loading channel chat room container.
+    - Created No text channels chat room container.
 
 
 
