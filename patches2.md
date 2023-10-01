@@ -1998,6 +1998,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Channel Actions.
     - Finalized Session Actions.
     - Finalized FriendShips Actions.
+    - Finalized Dm Member Actions.
 
 
 ## Backend Changes
