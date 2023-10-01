@@ -1972,6 +1972,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Remove server dispatch for leave server modal.
     - Added Remove server dispatch for leave server modal container.
     - Upgraded Invite to Server Modal Container.
+    - Upgraded Invite to Server Modal.
 
 
 
