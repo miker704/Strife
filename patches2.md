@@ -2042,6 +2042,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Backed up Channel.rb model to deprecated.
 - Backed up Channel_controller.rb to deprecated.
 - Upgraded rails action cable library file usage switched from action_cable to actioncable for rails 8.
+- Added Action Cable logger to be enabled on app cable.
 
 
 ### Front-End Changes
