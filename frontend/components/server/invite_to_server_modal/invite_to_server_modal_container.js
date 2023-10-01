@@ -6,10 +6,11 @@ import { createServerMembership, createServerMembershipViaInjectionOfDmMembers }
 import { closeModal } from "../../../actions/modal_actions.js";
 import { handleKeyUp } from "../../../utils/modal_api_util";
 import { requestFriendships, removeFriendshipErrors, requestAllFriendships } from "../../../actions/friendship_actions.js";
-import { fetchDmServers, removeDmServerErrors } from "../../../actions/dm_server_actions.js";
+import { fetchDmServers, removeDmServerErrors, createDmServer } from "../../../actions/dm_server_actions.js";
+import { sendDmMessage, removeDmMessageErrors } from "../../../actions/dm_messages_actions.js";
 import { selectAllFriends } from "../../../utils/selectors_api_util.js";
-// import InviteToServerModal from "./invite_to_server_modal.jsx";
-import InviteToServerModal from "./invite_to_server_modal1.jsx";
+import { reSyncCurrentUser } from "../../../actions/session_actions.js";
+import InviteToServerModal from "./invite_to_server_modal.jsx";
 
 const mSTP = (state, ownProps) => {
     return {
@@ -21,11 +22,13 @@ const mSTP = (state, ownProps) => {
         currentChannelId: state.ui.modalProps.ChannelId || -1,
         serverId: ownProps.serverParams.serverId,
         mod_Channel_ID: state.ui.modalProps.ChannelId || -1,
-        i2smType : state.ui.modalProps.ChannelId === -1 ? "CDDM" : "NORMAL",  
+        i2smType: state.ui.modalProps.ChannelId === -1 ? "CDDM" : "NORMAL",
         channels: Object.values(state.entities.channels),
         errors: state.errors.server,
         channelErrors: state.errors.channel,
         friendShipErrors: state.errors.friendship,
+        dmServerErrors: state.errors.dmServer,
+        dmMessageErrors: state.errors.dmMessage,
         servers: state.entities.servers,
         friends: selectAllFriends(state, 3),
         dmServers: state.entities.dmServers,
@@ -39,6 +42,9 @@ const mDTP = (dispatch, ownProps) => {
 
     return {
 
+
+        reSyncCurrentUser: (currentUserId) => dispatch(reSyncCurrentUser(currentUserId)),
+
         //server api functions
         fetchServer: (serverId) => dispatch(fetchServer(serverId)),
         fetchUserServers: (user) => dispatch(fetchServers(user)),
@@ -48,14 +54,16 @@ const mDTP = (dispatch, ownProps) => {
         //dmserver fetches
         fetchDmServers: (userId) => dispatch(fetchDmServers(userId)),
         removeDmServerErrors: () => dispatch(removeDmServerErrors()),
+        createDmServer: (dmserver) => dispatch(createDmServer(dmserver)),
+
+        //dm Messages 
+        sendDmMessage: (dmMsg) => dispatch(sendDmMessage(dmMsg)),
+        removeDmMessageErrors: () => dispatch(removeDmMessageErrors()),
 
         //friend ship stuff
         removeFriendshipErrors: () => dispatch(removeFriendshipErrors()),
         requestAllFriendships: () => dispatch(requestAllFriendships()),
         requestFriendships: () => dispatch(requestFriendships()),
-
-
-
 
         //channel api functions
 
