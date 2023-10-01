@@ -19,8 +19,6 @@ class Api::MessagesController < ApplicationController
         @channel = Channel.find_by(id: @message[:channel_id])
 
         if @message.author_id == current_user.id &&  @message.update(message_params)
-            # StrifeServer.broadcast_to @channel,
-            # from_template('api/messages/show', message: @message)
             StrifeServer.broadcast_to @channel, type: 'UPDATE_CHANNEL_MESSAGE', **from_template('api/messages/show', message: @message)
             render json: nil, status: :ok
         else
@@ -33,17 +31,6 @@ class Api::MessagesController < ApplicationController
     def destroy
         @message = Message.find_by(id: params[:id])
         @channel = Channel.find_by(id: @message[:channel_id])
-
-        # # if @message.destroy
-        # if @message.author_id == current_user.id && @message
-        #     StrifeServer.broadcast_to(@channel, message: @message.id, head: 101)
-        #     @message.destroy
-        #     # StrifeServer.broadcast_to (@channel, deletedMessage: @message, head: 410)
-        #     # from_template('api/messages/show', message: @message)
-        #     render json: nil, status: :ok
-        # else
-        #     render json: @message.errors.full_messages , status: 400
-        # end
         if @message.author_id == current_user.id && @message.destroy
             StrifeServer.broadcast_to @channel, type: 'REMOVE_CHANNEL_MESSAGE', **from_template('api/messages/show', message: @message)
             render json: nil, status: :ok
