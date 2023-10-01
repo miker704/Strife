@@ -1997,6 +1997,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Server User Options Modal Container.
     - Finalized Channel Actions.
     - Finalized Session Actions.
+    - Finalized FriendShips Actions.
 
 
 ## Backend Changes
