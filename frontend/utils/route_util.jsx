@@ -29,8 +29,18 @@ const Protected = ({ loggedIn, path, component: Component, exact }) => (
     />
 );
 
-
-
+const ProtectedRejectBack = ({ loggedIn, path, component: Component, exact }) => {
+    return (
+        <Route
+            path={'*'}
+            exact={exact}
+            render={props => (
+                loggedIn ? <Redirect to={`/$/channels/@me`} /> : <Redirect to={`/login`} />
+            )}
+        />
+    )
+};
 
 export const AuthRoute = withRouter(connect(mSTP)(Auth));
 export const ProtectedRoute = withRouter(connect(mSTP)(Protected));
+export const RejectRoute = withRouter(connect(mSTP)(ProtectedRejectBack));
