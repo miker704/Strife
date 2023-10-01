@@ -5,7 +5,7 @@ import { fetchChannel, createChannel, updateChannel, deleteChannel, removeChanne
 import { fetchServer, fetchServers, removeServerErrors, deleteServer, updateServer } from "../../../actions/server_actions.js";
 import { createChannelMembership, deleteChannelMembership } from "../../../actions/channel_membership_actions.js";
 import { createServerMembership, deleteServerMembership } from "../../../actions/server_membership_actions.js";
-import { openModal } from "../../../actions/modal_actions.js";
+import { openModal, closeModal, openModalWithProps } from "../../../actions/modal_actions.js";
 
 const mSTP = (state, ownProps) => {
 
@@ -21,8 +21,9 @@ const mSTP = (state, ownProps) => {
         errors: state.errors.server,
         channelErrors: state.errors.channel,
         currentChannel: state.entities.channels[ownProps.match.params.channelId],
-        users: state.entities.users
-
+        users: state.entities.users,
+        ui_modal: state.ui.modal,
+        modalProps: state.ui.modalProps,
     }
 }
 
@@ -60,6 +61,8 @@ const mDTP = (dispatch, ownProps) => {
 
         // modal api functions
         openModal: modal => dispatch(openModal(modal)),
+        closeModal: () => dispatch(closeModal()),
+        openModalWithProps: (modal_with_props) => dispatch(openModalWithProps(modal_with_props))
     }
 }
 
