@@ -2072,6 +2072,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Finalized Server: _server.json.jbuilder.
 - Finalized Server: index.json.jbuilder.
 - Finalized Server.rb model for patch v4.
+- Finalized DmMessage.rb model for patch v4.
 
 
 ### Front-End Changes
