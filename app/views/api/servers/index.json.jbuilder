@@ -23,6 +23,11 @@ end
                 json.set! member.id do
                     json.partial! 'api/users/user', user: member
                     json.photo url_for(member.photo) if member.photo.attached?
+                    sm = member.server_memberships.find_by(server_id: server.id)
+                    est = Time.zone.utc_to_local(sm.created_at)
+                    est = est + 4.hours
+                  # json.serverMembershipDateJoined est.strftime("%-m/%-d/%Y %-I:%M:%S %p")
+                  json.serverMembershipDateJoined sm.date_joined_for_upc
                 end
             end
           end
