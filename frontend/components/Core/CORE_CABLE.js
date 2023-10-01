@@ -1,10 +1,11 @@
 import { receiveAllFriends } from "../../actions/friendship_actions";
-import { fetchServer, fetchServers, receiveServer, receiveServers, removeServer } from "../../actions/server_actions";
-import { fetchDmServer, fetchDmServers, receiveDmServer, receiveDmServers, removeDmServer } from "../../actions/dm_server_actions";
+import { fetchServer, fetchServers, receiveServer, receiveServers, removeServer, webSocketFetchServer } from "../../actions/server_actions";
+import { fetchDmServer, fetchDmServers, receiveDmServer, receiveDmServers, removeDmServer, removeDmServerViaWebSocket, webSocketFetchDmServer } from "../../actions/dm_server_actions";
 import { reSyncCurrentUser, fetchUser } from "../../actions/session_actions";
+import { closeModal } from "../../actions/modal_actions";
 import React from "react";
 
-const _STRIFE_CORE_CABLE_ = (store, _history, props, history, currentUserId, dispatch) => (
+const _STRIFE_CORE_CABLE_ = (store, _global_history, props, history, currentUserId, dispatch) => (
     App.StrifeCore = App.cable.subscriptions.create({ channel: 'StrifeCore', id: store.getState().session.id }, {
         // "color:#800080;"
         //"#00FD61"
@@ -21,9 +22,7 @@ const _STRIFE_CORE_CABLE_ = (store, _history, props, history, currentUserId, dis
             // console.table(data);
             // console.log('Storage : ');
             // console.log(store.getState());
-            // console.log('history : ');
-            // console.log(_history.location.pathname);
-            
+
             let currentDate = new Date();
             let time = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds() + ":" + currentDate.getMilliseconds();
             switch (data.type) {
@@ -37,6 +36,11 @@ const _STRIFE_CORE_CABLE_ = (store, _history, props, history, currentUserId, dis
                     store.dispatch(fetchServer(data.newServerId));
                     console.info(`%c[$TR!FE M0N!T0R]: %c[SERVER_REFRESH%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
                     break;
+
+                case 'WEB_SOCKET_RECEIVE_SERVER':
+                    store.dispatch(webSocketFetchServer(data.newServerId));
+                    console.info(`%c[$TR!FE M0N!T0R]: %c[WEB_SOCKET_SERVER_REFRESH%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
+                    break;
                 //invoked if deemed necessary
                 case 'RECEIVE_SERVERS':
                     store.dispatch(fetchServers(store.getState().session.id));
@@ -44,6 +48,9 @@ const _STRIFE_CORE_CABLE_ = (store, _history, props, history, currentUserId, dis
                     break;
 
                 case 'REMOVE_SERVER':
+                    if (store.getState().ui.modal !== null) {
+                        store.dispatch(closeModal());
+                    }
                     store.dispatch(removeServer(data.removedServerId));
                     console.info(`%c[$TR!FE M0N!T0R]: %c[SERVER_REMOVAL%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;");
                     break;
@@ -53,22 +60,26 @@ const _STRIFE_CORE_CABLE_ = (store, _history, props, history, currentUserId, dis
                     store.dispatch(fetchDmServer(data.newDmServerId));
                     console.info(`%c[$TR!FE M0N!T0R]: %c[DM_SERVER_REFRESH%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
                     break;
+
+                case 'WEB_SOCKET_RECEIVE_DM_SERVER':
+                    store.dispatch(webSocketFetchDmServer(data.newDmServerId)).then(() => {
+                        store.dispatch(reSyncCurrentUser(store.getState().session.id));
+                    });
+                    console.info(`%c[$TR!FE M0N!T0R]: %c[W3B_$0CK3T_R3C3!V3_DM_SERVER%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
+                    break;
                 //if invited to a DM_SERVER refresh
                 case 'RECEIVE_DM_SERVERS':
                     const id = parseInt(data.core.split("$TR!F3_").join(''));
                     store.dispatch(fetchDmServers(store.getState().session.id));
                     console.info(`%c[$TR!FE M0N!T0R]: %c[DM_SERVER_REFRESH%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
                     break;
-                case 'RECEIVE_DM_SERVERS_RESYNC_USER':
-
-                    store.dispatch(fetchDmServers(store.getState().session.id)).then(() => {
-                        store.dispatch(reSyncCurrentUser(store.getState().session.id));
-                    });
-                    console.info(`%c[$TR!FE M0N!T0R]: %c[DM_SERVER_REFRESH_USER_RESYNC%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
-                    break;
                 //insurance incase a user is rm when they arent in said dm at the moment
                 case 'REMOVE_DM_SERVER':
                     store.dispatch(removeDmServer(data.removedDmServerId));
+                    console.info(`%c[$TR!FE M0N!T0R]: %c[DM_SERVER_REMOVAL%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;");
+                    break;
+                case 'WEB_SOCKET_REMOVE_DM_SERVER':
+                    store.dispatch(removeDmServerViaWebSocket(data.removedDmServerId));
                     console.info(`%c[$TR!FE M0N!T0R]: %c[DM_SERVER_REMOVAL%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;");
                     break;
                 case 'RESYNC_CURRENT_USER':
@@ -79,7 +90,6 @@ const _STRIFE_CORE_CABLE_ = (store, _history, props, history, currentUserId, dis
                 //reason why the action has occured on the receiving users end
                 case 'RECEIVE_ALL_FRIENDS':
                     break;
-
                 case 'RECEIVE_FRIEND_REQUEST':
                     store.dispatch(fetchUser(data.friendId));
                     console.info(`%c[$TR!FE M0N!T0R]: %c[RECEIVED_A_FRIEND_REQUEST%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
@@ -101,8 +111,12 @@ const _STRIFE_CORE_CABLE_ = (store, _history, props, history, currentUserId, dis
                     console.info(`%c[$TR!FE M0N!T0R]: %c[RECEIVED_A_UNBLOCK_REQUEST%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
                     break;
                 case 'RECEIVE_USER':
-                    store.dispatch(fetchUser(data.friendId));
-                    console.info(`%c[$TR!FE M0N!T0R]: %c[RECEIVED_A_FRIEND_REQUEST%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
+                    store.dispatch(fetchUser(data.userId));
+                    console.info(`%c[$TR!FE M0N!T0R]: %c[RECEIVED_USER_DATA%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
+                    break;
+                case 'RECEIVE_USER_UPDATE':
+                    store.dispatch(fetchUser(data.userId));
+                    console.info(`%c[$TR!FE M0N!T0R]: %c[RECEIVED_USER_DATA_UPDATE%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
                     break;
                 default:
                     console.warn(`%c[$TR!FE M0N!T0R]: %c[UNKNOWN REQUEST%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;");
