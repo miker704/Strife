@@ -12,8 +12,6 @@ const _STRIFE_CORE_ = (props) => {
             // _STRIFE_CORE_CABLE_(_CABLE_STORE_, _HISTORY_, props);
             // _STRIFE_CORE_CABLE_(_CABLE_STORE_, _HISTORY_);
             _STRIFE_CORE_CABLE_(_CABLE_STORE_);
-
-
         }
         return function _DECONSTRUCTOR_ () {
             if (_CABLE_STORE_.getState().session.id === null) {
