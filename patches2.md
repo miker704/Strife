@@ -1979,6 +1979,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Server Reducer.
     - Finalized Server Container.
     - Finalized Friendship api util.js.
+    - Finalized Session api util.js.
+
 
 
 ## Backend Changes
