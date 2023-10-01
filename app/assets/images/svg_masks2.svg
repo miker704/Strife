@@ -1,0 +1,28 @@
+<svg viewBox="0 0 1 1" aria-hidden="true" style="position: absolute; pointer-events: none; top: -1px; left: -1px; width: 1px; height: 1px;">
+    <linearGradient id="feb41f16-5c7c-4cc5-aa0d-5c4005e1d0b6">
+        <stop offset=".1762" stop-color="var(--premium-tier-0-blue-for-gradients)"></stop>
+        <stop offset="0.5351" stop-color="var(--premium-tier-0-blue-for-gradients-2)"></stop>
+        <stop offset="1" stop-color="var(--premium-tier-0-purple-for-gradients)"></stop>
+    </linearGradient>
+    <linearGradient id="af8c2394-5c74-429f-bfd7-99223b9ac0bb">
+        <stop stop-color="var(--premium-tier-1-blue)"></stop>
+        <stop offset="1" stop-color="var(--premium-tier-1-purple)"></stop>
+    </linearGradient>
+    <linearGradient id="c5a5b961-d144-47f8-a880-2226eb4f4613">
+        <stop stop-color="var(--premium-tier-2-purple-for-gradients)"></stop>
+        <stop offset="0.502368" stop-color="var(--premium-tier-2-purple-for-gradients-2)"></stop>
+        <stop offset="1" stop-color="var(--premium-tier-2-pink-for-gradients)"></stop>
+    </linearGradient>
+    <linearGradient id="987b28fd-5634-4216-b2e6-d2639a6946f6">
+        <stop stop-color="var(--guild-boosting-blue)"></stop>
+        <stop offset="1" stop-color="var(--guild-boosting-purple)"></stop>
+    </linearGradient>
+    <linearGradient id="4b0ad51a-10d7-44cd-8a14-db91dd4f74d2">
+        <stop stop-color="var(--premium-tier-2-purple)"></stop>
+        <stop offset="1" stop-color="var(--premium-tier-2-pink)"></stop>
+    </linearGradient>
+    <linearGradient id="41097faf-10f1-49e2-9bfc-2a532cdfec54" gradientTransform="rotate(45)">
+        <stop offset="0" stop-color="var(--premium-tier-2-purple)"></stop>
+        <stop offset="1" stop-color="var(--premium-tier-2-pink)"></stop>
+    </linearGradient>
+</svg>
