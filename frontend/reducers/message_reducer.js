@@ -31,9 +31,6 @@ const messageReducer = (state = {}, action) => {
 
         // case REMOVE_CHANNEL:
 
-            // console.log("current message state is ", state);
-            // console.log("current message next state is ", nextState);
-            // console.log("current payload ", action.channelPayload);
             // return {};
 
         case RECEIVE_CHANNEL_MEMBERSHIP:
