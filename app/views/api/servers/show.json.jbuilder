@@ -1,12 +1,5 @@
 json.partial! 'api/servers/server', server: @server
 
-
-json.server do 
-    json.general_channel_id @server.channels.order(:id).first.id
-    # json.general_channel_id @server.channels.first.id
-    json.extract! @server, :id, :server_name, :server_owner_id, :public, :server_icon, :invite_code
-  end
-
 #users in server
 
   json.users do 
@@ -14,6 +7,11 @@ json.server do
       json.set! member.id do
         json.partial! 'api/users/user', user: member
         json.photo url_for(member.photo) if member.photo.attached?
+        sm = member.server_memberships.find_by(server_id: @server.id)
+          est = Time.zone.utc_to_local(sm.created_at)
+          est = est + 4.hours
+        # json.serverMembershipDateJoined est.strftime("%-m/%-d/%Y %-I:%M:%S %p")
+        json.serverMembershipDateJoined sm.date_joined_for_upc
       end
     end
   end
@@ -57,31 +55,15 @@ json.server do
   end
   
 
-  #render the messages of the first channel in the in the server
+#render the messages of the first channel in the in the server
 # this logic will basically be the same for channels dm channels and servers
 # messages = @server.channels.first.messages.includes(:user)
-  
 
-
-  json.messages do 
-    messages = @server.channels.order(:id).first.messages.includes(:user)
-    # messages = @server.channels.first.messages.includes(:user)
-    messages.each do |message|
-      json.set! message.id do
-        #get eastern time zone
-        est = Time.zone.utc_to_local(message.created_at)
-        est = est + 4.hours
-        json.created_at est.strftime("%-m/%-d/%Y %-I:%M:%S %p")
-        json.extract! message, :id, :channel_id, :author_id, :body
-        json.authorName message.user.username
-        # json.author do
-        #   json.set! message.user.id do
-        #   json.authorName message.user.username
-        #   json.color_tag message.user.color_tag
-        #   json.photo url_for(message.user.photo) if message.user.photo.attached?
-        #   end
-        # end
-      end
-    end
-  end
-  
+# json.messages do 
+#   messages = @server.channels.order(:id).first.messages.includes(:user)
+#   messages.each do |message|
+#     json.set! message.id do
+#       json.partial! 'api/messages/message', message:message
+#     end
+#   end
+# end
