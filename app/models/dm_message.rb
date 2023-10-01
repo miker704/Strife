@@ -23,6 +23,8 @@ class DmMessage < ApplicationRecord
     belongs_to :message_creator, class_name: "User", foreign_key: "sender_id"
     belongs_to :dm_server, class_name: "DmServer", foreign_key: "dm_server_id"
 
+    # belongs_to :invited_server, class_name: "Server", foreign_key: "invitation", optional: true
+    # belongs_to :invited_server, foreign_key: :invitation, class_name: :Server, optional: true
 
     def dm_message_Info
         attributes['created_at'].strftime("%m/%d/%Y %H:%M")
