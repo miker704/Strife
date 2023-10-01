@@ -162,6 +162,19 @@ export const fetchUserByStrifeId = user_strife_id_tag => (dispatch) =>
 
 
 
+
+export const fetchUserByUserNameOrStrifeID = (user) => (dispatch) =>
+    SessionAPIUtil.fetchUserByUserNameOrStrifeID(user).then((user) => {
+
+        return dispatch(receiveUser(user));
+    },
+        (err) => { dispatch(receiveSessionErrors(err.responseJSON)) });
+
+
+
+
+
+
 export const fetchUser = (userId) => (dispatch) =>
     SessionAPIUtil.fetchUser(userId).then((user) => {
         return dispatch(receiveUser(user));
@@ -180,3 +193,9 @@ export const reSyncCurrentUser = (userId) => (dispatch) =>
         return dispatch(reSyncUser(user));
     }, (err) => { dispatch(receiveSessionErrors(err.responseJSON)) });
 
+
+
+export const fetchUserFullData = (userId) => (dispatch) =>
+    SessionAPIUtil.fetchUserFullData(userId).then((user) => {
+        return dispatch(receiveUser(user));
+    }, (err) => { dispatch(receiveSessionErrors(err.responseJSON)) });
