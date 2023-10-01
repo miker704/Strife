@@ -1,6 +1,6 @@
 
 import { RECEIVE_SERVER, REMOVE_SERVER } from "../actions/server_actions";
-import { RECEIVE_CHANNEL, REMOVE_CHANNEL } from "../actions/channel_actions";
+import { RECEIVE_CHANNEL, REMOVE_CHANNEL, WEB_SOCKET_RECEIVE_CHANNEL } from "../actions/channel_actions";
 
 //if you leave a server you leave its channels / if a server has no channels
 import { RECEIVE_SERVER_MEMBERSHIP, REMOVE_SERVER_MEMBERSHIP } from "../actions/server_membership_actions";
@@ -15,21 +15,20 @@ const channelReducer = (state = {}, action) => {
 
         case RECEIVE_CHANNEL:
             nextState[action.channelPayload.channel.id] = action.channelPayload.channel;
+            return nextState;
 
+        case WEB_SOCKET_RECEIVE_CHANNEL:
+            nextState[action.channelPayload.channel.id] = action.channelPayload.channel;
             return nextState;
 
         case RECEIVE_CHANNEL_MEMBERSHIP:
-
             nextState[action.channelmembership.channel.id] = action.channelmembership.channel;
             return nextState;
-
 
         case RECEIVE_SERVER:
 
             nextState = action.server.channels ? action.server.channels : {}
-
             return nextState;
-
 
         case RECEIVE_SERVER_MEMBERSHIP:
 
@@ -37,14 +36,6 @@ const channelReducer = (state = {}, action) => {
             return nextState;
 
         case REMOVE_SERVER:
-
-            return {};
-
-
-
-
-        case REMOVE_SERVER_MEMBERSHIP:
-
             return {};
 
         case REMOVE_CHANNEL:
