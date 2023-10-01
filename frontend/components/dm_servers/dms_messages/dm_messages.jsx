@@ -96,7 +96,7 @@ const DMMessages = (props) => {
                                     autoFocus={true}
                                     ref={editDMRef}
                                     onKeyDown={(e) => {
-                                        if (e.code === 'Enter' && !e.shiftKey) {
+                                        if (e.key === 'Enter' && !e.shiftKey) {
                                             handleEdit(e);
                                         }
                                     }} />
