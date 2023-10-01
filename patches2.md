@@ -2091,6 +2091,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Finalized FriendShip: incomingFriendRequests.json.jbuilder.
 - Finalized FriendShip: allFriends.json.jbuilder.
 - Finalized FriendShip: onlineFriends.json.jbuilder.
+- Finalized FriendShip: offlineFriends.json.jbuilder.
 - Near Finalization for Message Controller for patch v4.
 - Finalized Dm_Members showViaCable.json.jbuilder.
 - Finalized Dm_Members show.json.jbuilder.
