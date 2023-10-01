@@ -18,6 +18,7 @@ const InviteToServerModal = (props) => {
     const findIfMemberAlready = (member) => Object.values(props.server.users).findIndex(friend => friend.id === member.id);
     const findIfMemberAlreadyByIds = (member) => Object.values(props.server.users).findIndex(friend => friend.id === member);
     const checkViaId = (member) => Object.values(props.server.users).findIndex(user => user.id === member);
+    const dmMembersArray = (a, b) => a.length === b.length && a.every((val, idx) => val === b[idx]);
 
     let rendered_Default_PFP = DefaultPFPSVG;
     const [error, setError] = useState(null);
@@ -29,6 +30,7 @@ const InviteToServerModal = (props) => {
     const [hasInvites, setHasInvites] = useState(false);
     const [noFriendsToInvite, setNoFriendsToInvite] = useState(false);
     const [channelUndefined, setChannelUndefined] = useState(false);
+    const _AUTH_IDS = [1, 2, 3, 4];
 
     useEffect(() => {
         if (props.i2smType === "CDDM") {
@@ -54,12 +56,12 @@ const InviteToServerModal = (props) => {
     useEffect(() => {
         window.addEventListener('keyup', handleESC, false);
         return function cleanup () {
-            props.removeFriendshipErrors();
-            props.removeServerErrors();
-            props.removeDmServerErrors();
-            props.removeChannelErrors();
+            if (props.errors.length > 0) { props.removeServerErrors(); }
+            if (props.channelErrors.length > 0) { props.removeChannelErrors(); }
+            if (props.friendShipErrors.length > 0) { props.removeFriendshipErrors(); }
+            if (props.dmServerErrors.length > 0) { props.removeDmServerErrors(); }
+            if (props.dmMessageErrors.length > 0) { props.removeDmMessageErrors(); }
             window.removeEventListener('keyup', handleESC, false);
-
         }
     }, []);
 
@@ -96,7 +98,9 @@ const InviteToServerModal = (props) => {
             fetchDmServers(props.currentUser.id)
                 .then(res => {
 
-                    let rx = Object.values(res).filter((dmServer) => {
+                    let dmsReduction = Object.values(res).filter((dmServer) => dmServer.one_to_one_dm === false);
+
+                    let rx = dmsReduction.filter((dmServer) => {
                         if (Object.values(dmServer.members).filter(member => findIfMemberAlready(member) === -1).length > 0) {
                             let removeBlockedUsers = Object.values(dmServer.members).filter(member => member.friend_request_status >= 0);
                             dmServer.members = removeBlockedUsers;
@@ -105,7 +109,7 @@ const InviteToServerModal = (props) => {
                     })
                     let result = rx.map((dmServer) => {
                         dmServer.username = generateDmServerName(dmServer);
-                        dmServer.color_tag = generateDmServerIconColor(dmServer)
+                        dmServer.color_tag = dmServer.dm_server_color_tag ? dmServer.dm_server_color_tag : generateDmServerIconColor(dmServer)
                         dmServer.type = "DM_SERVER";
                         let dmIds = Object.values(dmServer.members).map((member) => member.id);
                         dmServer.members = dmIds.filter(dmMID => findIfMemberAlreadyByIds(dmMID) === -1);
@@ -135,6 +139,9 @@ const InviteToServerModal = (props) => {
     const generateDmServerIconColor = (dmServer) => {
 
         let membersOfThisDmS = Object.values(dmServer.members);
+        if (dmServer.dm_server_color_tag) {
+            return dmServer.dm_server_color_tag;
+        }
         let color_tag = "";
         if (membersOfThisDmS.length === 2) {
             let user = membersOfThisDmS.filter(member => member.id !== props.currentUser.id);
@@ -159,6 +166,9 @@ const InviteToServerModal = (props) => {
         })
     }
 
+
+
+
     const inviteUserToServerFromADmServer = (dmServer) => {
         const sERVER_ID = parseInt(props.serverId)
         let button = document.getElementById(`ivsmbutton dms-${dmServer.id}`);
@@ -168,6 +178,15 @@ const InviteToServerModal = (props) => {
         buttonText.innerText = "";
         let disableAllButtons = document.querySelectorAll('.i2sm-invite-member-button');
         disableAllButtons.forEach((button) => button.disabled = true);
+        // const messageHash = {
+        //     body: "You've been invited to join a server",
+        //     sender_id: parseInt(props.currentUser.id),
+        //     dm_server_id: dmServer.id
+        // }
+        // if (_AUTH_IDS.includes(props.currentUser.id)) {
+        //     console.log("user is a demo account inviting entire dm server");
+        //     props.sendDmMessage(messageHash);
+        // }
 
         props.createServerMembershipViaInjectionOfDmMembers({ memberIds: dmServer.members, server_id: sERVER_ID }).then(() => {
             App.StrifeCore.perform('webSocketReceiveNewServerViaInviteInjextion', { memberIds: dmServer.members, server_id: sERVER_ID });
@@ -195,7 +214,11 @@ const InviteToServerModal = (props) => {
 
         let disableAllButtons = document.querySelectorAll('.i2sm-invite-member-button');
         disableAllButtons.forEach((button) => button.disabled = true);
-
+        
+        // if (_AUTH_IDS.includes(props.currentUser.id)) {
+        //     console.log("user is a demo account");
+        //     sendUserServerInviteToDm(friend);
+        // }
         props.createServerMembership({ user_id: friend.id, server_id: sERVER_ID }).then(() => {
             App.StrifeCore.perform('webSocketReceiveNewServerViaInvite', { user_id: friend.id, server_id: sERVER_ID });
             setTimeout(() => {
@@ -211,6 +234,42 @@ const InviteToServerModal = (props) => {
 
     }
 
+    const sendUserServerInviteToDm = (friend) => {
+
+        const memberIds = [props.currentUser.id, parseInt(friend.id)].sort((a, b) => a - b);
+        // debugger
+        for (let dmServer of Object.values(props.dmServers)) {
+            if (dmMembersArray(Object.values(dmServer.members).map((member) => member.id).sort((a, b) => a - b), memberIds)) {
+                if (props.history.location.pathname !== `/$/channels/@me/${dmServer.id}`) {
+                    const messageHash = {
+                        body: "You've been invited to join a server",
+                        sender_id: parseInt(props.currentUser.id),
+                        dm_server_id: dmServer.id
+                    }
+                    props.sendDmMessage(messageHash);
+                }
+                return;
+            }
+        }
+        // if dmserver does not already exists create one
+        let submissionState = {
+            owner_id: props.currentUser.id,
+            dm_member_ids: memberIds
+        }
+        let newDmServer;
+        props.createDmServer(submissionState).then((action) => {
+            newDmServer = action.dmserver;
+            const messageHash = {
+                body: "You've been invited to join a server",
+                sender_id: parseInt(props.currentUser.id),
+                dm_server_id: newDmServer.id
+            }
+            props.sendDmMessage(messageHash);
+            App.StrifeCore.perform('parse_New_Invited_DM_Member', { dm_member_id: friend.id, dm_server_id: newDmServer.id });
+            props.reSyncCurrentUser(props.currentUser.id);
+        });
+        return;
+    }
 
     const filterOutFriends = items.filter((friend, idx) => {
         const index = findIfMemberAlready(friend)
