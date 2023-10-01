@@ -1985,6 +1985,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Protect Server Container Route.
     - Finalized UI Reducer.
     - Finalized Message Reducer.
+    - Finalized Channel Reducer.
 
 
 ## Backend Changes
