@@ -2004,6 +2004,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved Protected server route type.jsx version to deprecated.
     - Created Typing bubbles (gray) svg which will be used to created the typing animation when a user is typing chat rooms.
     - Cleared temps.scss.
+    - Made some edits to call grid styles.scss
 
 
 
