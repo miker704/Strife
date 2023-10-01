@@ -323,6 +323,25 @@
     --upc-default-banner-bg:rgb(93, 100, 244);
     --empty-messages-container-bg:rgb(54, 57, 63);
     --decoration-to-avatar-ratio: 1.2;
+
+
+
+    --custom-index-scrollbar-width: 10px;
+    --custom-index-scrollbar-margin: 3px;
+    --custom-emoji-size-emoji: 1.375em;
+    --custom-emoji-size-jumbo-emoji: 3rem;
+    --custom-margin-margin-x-small: 4px;
+    --custom-margin-margin-small: 8px;
+    --custom-margin-margin-medium: 20px;
+    --custom-margin-margin-large: 40px;
+    --custom-margin-margin-x-large: 60px;
+    --custom-media-queries-media-query-mobile-header: 849px;
+    --custom-media-queries-media-query-mobile: 768px;
+    --custom-scrollbar-scrollbar-width: 14px;
+    --custom-scrollbar-scrollbar-margin: 3px;
+    --custom-scrollbar-border-radius: calc(
+      var(--custom-scrollbar-scrollbar-width) / 2
+    );
     --custom-avatar-avatar-decoration-border-position: calc((0.5 - var(--decoration-to-avatar-ratio)/2)*100%);
     --custom-button-button-xl-width: 148px;
     --custom-button-button-xl-height: 50px;
