@@ -656,15 +656,6 @@ const ServerSettingsModal = (props) => {
         setServerIconPhotoUrl("");
         setServerIconPhoto(null);
 
-        // const formData = new FormData();
-        // formData.append('server[server_Icon_Remove]', removeServerIcon);
-        // props.updateServer(props.server.id, formData).then((action) => {
-        //     let updatedServer = action.server;
-        //     App.StrifeCore.perform('_Serve_Server_Update_To_Members_Force_Refresh_', { updatedServerID: updatedServer.id })
-        //     // App.StrifeCore.perform('_Serve_Server_Update_To_Members_',{updatedServerID: updatedServer.id})
-
-        // })
-
     }
 
     const handleSnackBarSubmit = (e) => {
@@ -680,7 +671,6 @@ const ServerSettingsModal = (props) => {
         formData.append('server[server_name]', newServerName.trim());
         props.updateServer(props.server.id, formData).then((action) => {
             let updatedServer = action.server;
-            // App.StrifeCore.perform('_Serve_Server_Update_To_Members_',{updatedServerID: updatedServer.id})
             App.StrifeCore.perform('_Serve_Server_Update_To_Members_Force_Refresh_', { updatedServerID: updatedServer.id })
             setFreeze(false);
         });
@@ -697,7 +687,6 @@ const ServerSettingsModal = (props) => {
 
         props.updateServer(props.server.id, formData).then((action) => {
             let updatedServer = action.server;
-            // App.StrifeCore.perform('_Serve_Server_Update_To_Members_',{updatedServerID: updatedServer.id})
             App.StrifeCore.perform('_Serve_Server_Update_To_Members_Force_Refresh_', { updatedServerID: updatedServer.id })
             setFreeze(false);
         });
@@ -757,8 +746,6 @@ const ServerSettingsModal = (props) => {
         props.updateServer(props.server.id, formData).then((action) => {
             let updatedServer = action.server;
             App.StrifeCore.perform('_Serve_Server_Update_To_Members_Force_Refresh_', { updatedServerID: updatedServer.id })
-            // App.StrifeCore.perform('_Serve_Server_Update_To_Members_',{updatedServerID: updatedServer.id})
-
         });
 
     }
