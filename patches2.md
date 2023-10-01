@@ -2069,6 +2069,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Binded ajax call the change/remove server invite splash to recieve server in server actions.js
 - Added ajax call to update the name of a dm server in dm server api util.js.
 - Binded ajax call to update the name of a dm server in dmServer actions.
+- Added Websocket remove channel dispatcher.
 
 ### Other Changes
 
