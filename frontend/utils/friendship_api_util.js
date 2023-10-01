@@ -17,7 +17,10 @@ export const deleteFriendship = (account_ids) =>
         data: { friendship: account_ids }
     });
 
-export const requestAllOnlineFriends = () => $.ajax({ url: `/api/friendships/`, method: 'GET' });
+export const requestAllOnlineFriends = (userId) => $.ajax({ url: `/api/friendships/${userId}/onlinefriends/`, method: 'GET' });
+export const requestAllOfflineFriends = (userId) => $.ajax({ url: `/api/friendships/${userId}/offlinefriends/`, method: 'GET' });
+export const requestAllLevelThreeFriends = (userId) => $.ajax({ url: `/api/friendships/${userId}/allfriends/`, method: 'GET' });
+
 export const requestFriendRequests = () => $.ajax({ url: `/api/friendships/`, method: 'GET' });
 export const requestBlockedUsers = () => $.ajax({ url: `/api/friendships/`, method: 'GET' });
 export const requestAllFriendships = () => $.ajax({ url: `/api/friendships/`, method: 'GET' });
@@ -35,4 +38,11 @@ export const unBlockUser = (account_ids) =>
         url: `/api/friendships/unblockuser/`,
         method: "PATCH",
         data: { friendship: account_ids }
+    });
+
+
+export const fetchAllFriendsSorted = (userId) =>
+    $.ajax({
+        url: `/api/friendships/${userId}/allfriendssorted`,
+        method: "GET",
     });
