@@ -28,7 +28,7 @@ class User < ApplicationRecord
     # validates :email, :username, :password_digest, :birthday, :session_token, presence: true
     # validates :username, uniqueness: true, length: {minimum: 2, maximum: 50}
     # validates :email, uniqueness: true
-    # validates :phone, uniqueness: true, allow_nil: true\
+    # validates :phone, uniqueness: true, allow_nil: true
     # validates :password_digest, :id_tag, presence: true
 
 
@@ -207,5 +207,11 @@ class User < ApplicationRecord
         ServerMembership.create!(user_id: self.id, server_id: 1)
         end
     end
+
+    def joined_date
+        # attributes['created_at'].strftime("%m/%d/%Y")
+        attributes['created_at'].strftime("%b %d, %Y")
+    end
+
 
 end
