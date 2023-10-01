@@ -1957,6 +1957,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized message wrappper for message skeleton.
     - Finalized message style formating for dm chat room.
     - Finalized dm messages with new style formating.
+    - Created Loading channel chat room container.
 
 
 
