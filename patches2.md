@@ -2056,6 +2056,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Created a view for dm messages showVC.json.jbuilder.
 - Created a view for  messages showVC.json.jbuilder.
 - Backed up message controller to deprecated.
+- Finalized DmServers: _Dmserver.json.jbuilder.
 
 ### Front-End Changes
 
