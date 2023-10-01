@@ -217,33 +217,33 @@ class Api::UsersController < ApplicationController
 
     def fetch_user_by_strife_id_or_username
         @user=nil
-        # puts 'params'.colorize(:red)
+        # puts 'params'
         # puts params
         # puts params[:user][:username]
 
         # check if user name is blank if so result to search by tag
         if(params[:user][:username] == '' && params[:user][:strife_id_tag] == '-000')
-            # puts 'ERROR both blank !'.colorize(:red)
+            # puts 'ERROR both blank !'
             render json: ['Please enter proper format username + # + STRIFE ID Tag.'], status: 404
             return
         elsif (params[:user][:username].length != 0 && params[:user][:strife_id_tag] != '-000')
-            # puts 'neither both blank !'.colorize(:red)
+            # puts 'neither both blank !'
 
             @user = User.find_by(username: params[:user][:username].to_s, strife_id_tag: params[:user][:strife_id_tag].to_i)
 
         elsif(params[:user][:username].length != 0 && params[:user][:strife_id_tag] == '-000')
-            # puts 'tag is blank  search by username !'.colorize(:red)
+            # puts 'tag is blank  search by username !'
 
             @user = User.find_by(username: params[:user][:username])
-            # puts 'user'.colorize(:red)
+            # puts 'user'
             # puts @user
 
         elsif(params[:user][:username].length == 0 && params[:user][:strife_id_tag] != '-000')
-            # puts 'name blank search by tag!'.colorize(:red)
+            # puts 'name blank search by tag!'
             @user = User.find_by(strife_id_tag: params[:user][:strife_id_tag].to_i)
         end
 
-        # puts 'user'.colorize(:red)
+        # puts 'user'
         # puts @user
 
         if @user
