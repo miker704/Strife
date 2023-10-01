@@ -7,10 +7,9 @@ const ServerMessageControl = (props) => {
                 props.currentUser.id === props.message.author_id ?
                     (
                         <>
-                            <div className="message-accessories"></div>
                             <div className="message-accessories-button-container" onMouseLeave={(e) => { e.stopPropagation(); props.setMsgCtrlTTHover(false); props.setMsgCtrlSRTTHover(false); }}>
                                 <div className={`message-accessories-button-layer ${props.is_header ? `is-header` : ``}`}>
-                                    <div className={`message-accessories-button-wrapper1`} >
+                                    <div className={`message-accessories-button-wrapper`} >
 
                                         {
                                             props._SHIFT ? (
@@ -130,10 +129,9 @@ const ServerMessageControl = (props) => {
                     )
                     : (
                         <>
-                            <div className="message-accessories"></div>
                             <div className="message-accessories-button-container" onMouseLeave={(e) => { e.stopPropagation(); props.setMsgCtrlTTHover(false); props.setMsgCtrlSRTTHover(false); }}>
                                 <div className={`message-accessories-button-layer ${props.is_header ? `is-header` : ``}`}>
-                                    <div className={`message-accessories-button-wrapper1`} >
+                                    <div className={`message-accessories-button-wrapper`} >
                                         {
                                             props._SHIFT ? (
                                                 <div className="message-accessories-button" data-tooltip-id="msgbs-thread-tip" data-tooltip-place="top" data-tooltip-content="Copy Message ID"
