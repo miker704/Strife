@@ -29,8 +29,12 @@ const messageReducer = (state = {}, action) => {
             return nextState;
 
 
-        case REMOVE_CHANNEL:
-            return {};
+        // case REMOVE_CHANNEL:
+
+            // console.log("current message state is ", state);
+            // console.log("current message next state is ", nextState);
+            // console.log("current payload ", action.channelPayload);
+            // return {};
 
         case RECEIVE_CHANNEL_MEMBERSHIP:
 
@@ -50,12 +54,6 @@ const messageReducer = (state = {}, action) => {
         case REMOVE_SERVER:
             return {};
 
-        case RECEIVE_SERVER_MEMBERSHIP:
-            nextState = action.servermembership.messages ? action.servermembership.messages : {};
-            return nextState;
-
-        case REMOVE_SERVER_MEMBERSHIP:
-            return {};
         case LOGOUT_CURRENT_USER:
             return {};
 
