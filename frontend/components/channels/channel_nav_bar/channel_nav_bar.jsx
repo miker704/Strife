@@ -256,7 +256,9 @@ const ChannelNavBar = (props) => {
                                     {props.currentUserId === props.server.server_owner_id ? (
                                         <div className="channel-plus-div" data-tooltip-place="top" data-tooltip-id="thread-tip" data-tooltip-content={'Create Channel'}>
                                             <button type="button" className="add-channel-button"
-                                                onClick={() => {
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    e.stopPropagation();
                                                     props.openModalWithProps({ channelType: 1 })
                                                     props.openModal('CreateChannel');
                                                 }}>
@@ -288,7 +290,9 @@ const ChannelNavBar = (props) => {
                                         props.currentUserId === props.server.server_owner_id ? (
                                             <div className="channel-plus-div" data-tooltip-place="top" data-tooltip-id="thread-tip" data-tooltip-content={'Create Channel'}>
                                                 <button type="button" className="add-channel-button"
-                                                    onClick={() => {
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        e.stopPropagation();
                                                         props.openModalWithProps({ channelType: 2 })
                                                         props.openModal('CreateChannel');
                                                     }}>
