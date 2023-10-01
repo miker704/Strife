@@ -1982,7 +1982,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Session api util.js.
     - Uploaded Svg_masks.svg.
     - Uploaded Svg_masks2.svg.
-
+    - Finalized Protect Server Container Route.
 
 
 ## Backend Changes
@@ -2101,7 +2101,6 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Finalized Channels Controller for patch v4.
 - Finalized Server MemberShips Controller for patch v4.
 
-
 ### Front-End Changes
 
 - Added Custom Built in Hook components for detecting when a component is mounted or not, this is used to delay to triggering of css animation effects of some elements upon initial rendering.
@@ -2125,7 +2124,6 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Added Websocket receive channel dispatcher.
 - Added Websocket update channel dispatcher.
 - Added update channel dispatcher.
-
 
 ### Other Changes
 
