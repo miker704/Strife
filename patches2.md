@@ -2044,7 +2044,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Backed up Channel_controller.rb to deprecated.
 - Upgraded rails action cable library file usage switched from action_cable to actioncable for rails 8.
 - Added Action Cable logger to be enabled on app cable.
-
+- Swapped back to returning the processed dm message via controller methods and not just action cable for the reason being if the websockets disconnects the current user is still able have their screen.
 
 ### Front-End Changes
 
