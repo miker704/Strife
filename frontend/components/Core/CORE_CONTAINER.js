@@ -1,7 +1,9 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { closeModal } from "../../actions/modal_actions";
-import _STRIFE_CORE_ from "./CORE";
+import { closeModal, openModal, openModalWithProps } from "../../actions/modal_actions";
+import _STRIFE_CORE_ from "./_CORE_";
+
+
 const mSTP = (state, ownProps) => {
     // yeah this is basically a root reducer 
     return {
@@ -43,7 +45,9 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
     return {
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        openModal: modal => dispatch(openModal(modal)),
+        openModalWithProps: (modal_with_props) => dispatch(openModalWithProps(modal_with_props))
     }
 }
 
