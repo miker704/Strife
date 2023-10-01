@@ -2044,6 +2044,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Fixed Tranmission state cable to update changes to a usser dms if they are in a dmserver currently changes to username, avatar or banner will activate this change.
 - Added better validation to dmServer name in dm server model.rb, the length is only allowed to be 1-100 characters in length while and can be null for initial setup only.
 - Finalized users : _user.json.jbuilder for patch v4.
+- Finalized users : userExtraction.json.jbuilder for patch v4.
 - Finalized servers : explore.json.jbuilder for patch v4.
 - Finalized DmServer model.rb for patch v4.
 - Finalized Users Controller.rb for patch v4.
