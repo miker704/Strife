@@ -71,11 +71,17 @@ class Api::ServerMembershipsController < ApplicationController
 
 
     def async_welcome_new_members_via_injextion(server, new_server_members, channel)
-        last_member = "and "+ new_server_members.pop 
-        new_server_members.push(last_member)
+        if new_server_members.length > 1
+            last_member = "and "+ new_server_members.pop 
+            new_server_members.push(last_member)
+        end
+
         @response_Message = "Welcome #{new_server_members.join(", ")} to #{server.server_name}!"
         @message=Message.create!(body: @response_Message, author_id: 1, channel_id: channel.id)
-        StrifeServer.broadcast_to(channel,head: 100)
+        StrifeServer.broadcast_to channel,type: 'RECEIVE_CHANNEL_MESSAGE', **from_template('api/messages/show', message: @message)
+        server.channels.each do |channel|
+            StrifeServer.broadcast_to(channel,head: 100, type:"SERVER_MEMBER_INJEXTION")
+        end
     end
 
 
@@ -83,7 +89,10 @@ class Api::ServerMembershipsController < ApplicationController
         @new_Server_Member = User.find_by(id: new_server_member.user_id)
         @response_Message = "Welcome @#{@new_Server_Member.username} to #{server.server_name}!"
         @message=Message.create!(body: @response_Message, author_id: 1, channel_id: channel.id)
-        StrifeServer.broadcast_to(channel,head: 100)
+        StrifeServer.broadcast_to channel,type: 'RECEIVE_CHANNEL_MESSAGE', **from_template('api/messages/show', message: @message)
+        server.channels.each do |channel|
+            StrifeServer.broadcast_to(channel,head: 100, type:"NEW_SERVER_MEMBER")
+        end
     end
 
     def async_ban_member_from_Server(server, banned_user, banned)
@@ -96,7 +105,8 @@ class Api::ServerMembershipsController < ApplicationController
         server.channels.each do |channel|
             @message=Message.create!(body: @response_Message, author_id: 1, channel_id: channel.id)
             # StrifeServer.broadcast_to(channel, message: @message, head: 101, path: '/$TR!F3-INTRUSION-PREVENTION/', banned: banned, bannedUser: banned_user)
-            StrifeServer.broadcast_to(channel, head: 101, path: '/$/$TR!F3-INTRUSION-PREVENTION/', banned: banned, bannedUser: banned_user.id)
+            StrifeServer.broadcast_to channel,type: 'RECEIVE_CHANNEL_MESSAGE', **from_template('api/messages/show', message: @message)
+            StrifeServer.broadcast_to(channel, head: 101, path: '/$/$TR!F3-INTRUSION-PREVENTION/', banned: banned, bannedUser: banned_user.id, type: "REMOVE_SERVER_MEMBER")
 
         end
     end
