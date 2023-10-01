@@ -1967,6 +1967,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Server Messages Index Container.
     - Finalized User Interface reducer.
     - Prevented channel list drop down from collapsing and expanding when selecting create channel modal in channel nav bar.
+    - Removed Commented out code in server settings modal.
 
 
 
