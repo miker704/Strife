@@ -1,5 +1,5 @@
 class Api::ChannelsController < ApplicationController
-    # skip_before_action :verify_authenticity_token
+    skip_before_action :verify_authenticity_token
 
     def show
         @current_user = current_user
@@ -13,7 +13,7 @@ class Api::ChannelsController < ApplicationController
         if @channel.save
             @server = Server.find_by(id: @channel.server_id)
             @server.channels.each do |channel|
-                StrifeServer.broadcast_to(channel, head: 201, type: 'NewChannel')
+                StrifeServer.broadcast_to(channel, head: 201, type: 'NEW_CHANNEL', channel: @channel)
             end
           render :show
         else
@@ -108,17 +108,13 @@ class Api::ChannelsController < ApplicationController
             end
 
     end
-
-
     
     def update
         @channel = Channel.find_by(id: params[:id])
         if @channel.update(channel_params)
-          @default_channel_message = @channel.messages.first
-          @default_channel_message.update(body: "Welcome to ##{@channel.channel_name} channel !")
           @server = Server.find_by(id: @channel.server_id)
             @server.channels.each do |channel|
-                StrifeServer.broadcast_to(channel, head: 202, type: 'UpdateChannel')
+                StrifeServer.broadcast_to(channel, head: 202, type: 'UPDATE_CHANNEL', channel: @channel)
             end
           render :show
         else
@@ -131,7 +127,7 @@ class Api::ChannelsController < ApplicationController
         @server = Server.find_by(id: @channel.server_id)
         if @channel
             @server.channels.each do |channel|
-                StrifeServer.broadcast_to(channel, head: 302, type: 'DeleteChannel',  channel: @channel)
+                StrifeServer.broadcast_to(channel, head: 302, type: 'DELETE_CHANNEL',  channel: @channel)
             end
         #   sleep(2)
           @channel.destroy
