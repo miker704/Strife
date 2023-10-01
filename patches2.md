@@ -2086,6 +2086,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Finalized User.rb model for patch v4.
 - Finalized Channel.rb model for patch v4, removed welcome message after create as its been handled on the front end.
 - Finalized FriendShip: show.json.jbuilder.
+- Finalized FriendShip: allFriendsSorted.json.jbuilder.
 - Near Finalization for Message Controller for patch v4.
 - Finalized Dm_Members showViaCable.json.jbuilder.
 - Finalized Dm_Members show.json.jbuilder.
