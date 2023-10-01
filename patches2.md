@@ -1983,6 +1983,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded Svg_masks.svg.
     - Uploaded Svg_masks2.svg.
     - Finalized Protect Server Container Route.
+    - Finalized UI Reducer.
 
 
 ## Backend Changes
