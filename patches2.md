@@ -2006,6 +2006,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Cleared temps.scss.
     - Made some edits to call grid styles.scss.
     - Moved old Server Chat room to deprecated folder.
+    - Moved new Server Chat room lvl 2 with server message index to deprecated folder.
 
 
 
