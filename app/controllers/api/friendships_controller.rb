@@ -20,6 +20,38 @@ class Api::FriendshipsController < ApplicationController
         end
     end
     
+    def fetchOnlineFriends
+        @user = current_user
+        @friendships =  @user.friendships.all
+        render :onlinefriends
+    end
+    def fetchOfflineFriends
+        @user = current_user
+        @friendships =  @user.friendships.all
+        render :offlinefriends
+    end
+    def fetchAllFriends
+        @user = current_user
+        @friendships =  @user.friendships.all
+        render :allfriends
+    end
+    def fetchAllFriendsSorted
+        @user = current_user
+        @friendships =  @user.friendships.all
+        render :allfriendssorted
+    end
+    def fetchOutgoingFriendRequests
+        @user = current_user
+        @friendships =  @user.friendships.all
+        render :outgoingfriendrequests
+    end
+    def fetchIncomingFriendRequests
+        @user = current_user
+        @friendships =  @user.friendships.all
+        render :incomingfriendrequests
+    end
+    
+
     def create
         #create a friend request 
        
