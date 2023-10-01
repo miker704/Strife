@@ -1,12 +1,11 @@
-
-
-@user.friends.each do |friend|
-    json.set! friend.id do
-        json.partial! 'api/users/user', user: friend
-    end
-end
-json.serversJoined @user.servers_joined.map{|sj| sj}
-json.dmServersJoined @user.dm_servers.map{|dmsms| dmsms} 
-json.voiceChannels @user.servers_joined.map{|server|server.channels.where('channel_type = 2')}.reject{|c| c.empty?}
-json.textChannels @user.servers_joined.map{|server|server.channels.where('channel_type = 1')}.reject{|c| c.empty?}
-
+json.extract! @user, :id, :username, :email, :online, :strife_id_tag, :color_tag
+json.extract! @user, :phone_number 
+json.photo url_for(@user.photo) if @user.photo.attached?
+json.banner url_for(@user.user_Banner) if @user.user_Banner.attached?
+json.set! :friend_request_status, current_user.friendship_status(@user)
+#add the current user condition to skip this code if they arent signed in reduces load times greatly
+json.ownedServers @user.owned_servers.map{|ownedServer| ownedServer.id}
+json.serversJoined @user.servers_joined.map{|sj| sj.id}
+json.dmServersJoined @user.dm_servers.map{|dmsms| dmsms.id}
+json.friends @user.friends.map{|friendId| friendId.id}
+json.accountCreatedOn @user.joined_date
