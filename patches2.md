@@ -2041,6 +2041,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved test_33_message_controller_near_present_in_list to deprecated folder.
     - Finalized Test_page1.
     - Finalized Test12 messsge invitation prototype.
+    - Finalized TestBench Container.
 
 
 ## Backend Changes
