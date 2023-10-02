@@ -2025,8 +2025,10 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Server Chat Room Container.
     - Finalized WebPackAnaylzer.js.
     - Finalized WebPackConfig.js.
-    - Deleted old prev_tests to deprecated folder.
+    - Deleted old prev_tests.
     - Moved old prev_tests to deprecated folder.
+    - Deleted old test_page.
+
 
 ## Backend Changes
 
