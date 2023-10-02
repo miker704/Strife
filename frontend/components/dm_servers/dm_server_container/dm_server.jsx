@@ -81,6 +81,9 @@ const DmServer = (props) => {
         if (props.dmServer?.one_to_one_dm) {
             checkIFBlocked();
         }
+        else{
+            setUserBlocked(false);
+        }
     }, [props.users])
 
     const setHideMembersListContainer = () => {
