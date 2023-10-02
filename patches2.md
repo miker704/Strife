@@ -2011,7 +2011,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added PlaceHolder change when user has selected at least one friend from Type the username of a friend to Find or start a conversation in create dm modal.
     - Added PlaceHolder change when user has selected at least one friend from Type the username of a friend to Find or start a conversation in create dm modal home bar version.
     - Added PlaceHolder change when user has selected at least one friend from Type the username of a friend to Find or start a conversation in invite to dm modal.
-
+    - Added PlaceHolder change when user has selected at least one friend from Type the username of a friend to Find or start a conversation in invite to dm modal lvl 2.
 
 
 ## Backend Changes
