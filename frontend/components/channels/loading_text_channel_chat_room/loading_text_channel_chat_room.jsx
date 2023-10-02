@@ -38,7 +38,7 @@ const LoadingTextChannelChatRoom = (props) => {
                                         rows={value.split('\n').length}
                                         minLength={1}
                                         maxLength={2000}
-                                        placeholder={`Message ${props.placeholderText}`}
+                                        placeholder={parseInt(props.serverId) === 1 ? 'You do not have permission to send messages in this channel.' : `Message #${props.channelName}`}
                                         spellCheck={false}
                                         autoFocus={true}
                                         ref={chatInputRef}
