@@ -82,15 +82,14 @@ class ServerChatRoom extends React.Component {
     subscribe () {
 
         //plug the cable
-        const cable = createConsumer('ws://localhost:3000/cable'); // /cable mounts to local host that rails server is running on 
+        // const cable = createConsumer('ws://localhost:3000/cable'); // /cable mounts to local host that rails server is running on 
         // const cable = createConsumer('wss://strife-v1.herokuapp.com/cable'); // /cable mounts to local host that rails server is running on
-        // const cable = createConsumer('wss://strife.onrender.com/cable');
+        const cable = createConsumer('wss://strife.onrender.com/cable');
         this.subscription = cable.subscriptions.create(
             { channel: 'StrifeServer', id: this.props.match.params.channelId },
             {
                 received: ({ message, head, path, type, channel, banned, bannedUser }) => {
 
-                    console.info(`%c INCOMING DATA after : `, "color:#05dc28", message, head, path, type, channel, banned, bannedUser);
 
                     switch (type) {
                         case 'RECEIVE_CHANNEL_MESSAGE':
