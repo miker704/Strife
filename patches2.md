@@ -2034,6 +2034,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved test_6 page add friends page prototype to deprecated folder.
     - Moved test_6 page add friends page prototype backup to deprecated folder.
     - Moved test_12 page to deprecated folder.
+    - Moved test_5 page to deprecated folder.
 
 
 ## Backend Changes
