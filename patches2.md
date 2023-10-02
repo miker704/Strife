@@ -2023,6 +2023,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Text Channel Loading component.
     - Finalized Server User Options Modal.
     - Finalized Server Chat Room Container.
+    - Finalized WebPackAnaylzer.js.
 
 
 ## Backend Changes
