@@ -55,16 +55,12 @@ const Server = (props) => {
 
     useEffect(() => {
 
-        console.log("%c SERVER Component mounted: ", "color:#008000");
-        console.log(`%c CONNECTED TO SERVER OF ID : ${props.serverId} `, "color:#05dc28");
-
         props.fetchServer(props.serverId);
         setShowAllTextChannels(true);
         setShowAllVoiceChannels(true);
         setLoadingMessages(true);
 
         return function cleanup () {
-            console.log(`%c SERVER Component UNMOUNTED: ${props.serverId}`, "color:#FF0000");
 
             if (props.errors.length > 0) {
                 props.removeServerErrors();
