@@ -2051,6 +2051,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded strifeLogoBanner.png.
     - Uploaded defaultProfilePicBlack.png.
     - Uploaded outlinePic.png.
+    - Uploaded strife_spider.png.
 
 
 
