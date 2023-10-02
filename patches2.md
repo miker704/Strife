@@ -2020,7 +2020,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added styles for Welcome Voice Channel Text chat icon.svg.
     - Fixed scroll issue when typing in chat for dm chat room.
     - Finalized Text Channel Loading container.
-
+    - Finalized Text Channel Loading component.
 
 
 ## Backend Changes
