@@ -1171,6 +1171,23 @@
   user-select: none;
 }
 
+.welcomeVoiceTextChannelMessage-icon {
+  width: 68px;
+  height: 68px;
+  margin-top: 16px;
+  border-radius: 50%;
+  background-color: var(--background-accent);
+  background-image: image_url("voiceChannelWelcomeIcon.svg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
 .server-message-bot-tag {
   height: 0.9375rem;
   padding: 0 0.275rem;
