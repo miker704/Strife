@@ -2008,6 +2008,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old Server Chat room to deprecated folder.
     - Moved new Server Chat room lvl 2 with server message index to deprecated folder.
     - Moved new Server Chat room lvl 3 to deprecated folder.
+    - Added PlaceHolder change when user has selected at least one friend from Type the username of a friend to Find or start a conversation in create dm modal.
 
 
 
