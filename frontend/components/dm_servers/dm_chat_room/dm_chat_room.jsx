@@ -204,7 +204,13 @@ class DmChatRoom extends React.Component {
         let groupMembers = new Array();
 
         if (this.props.dmServer.dm_server_name !== null) {
-            this.setState({ placeholderText: `${this.props.dmServer.dm_server_name}` });
+             if (members.length === 2) {
+                this.setState({ placeholderText: `@${this.props.dmServer.dm_server_name}` });
+             }
+             else{
+                 this.setState({ placeholderText: `${this.props.dmServer.dm_server_name}` });
+             }
+
         }
 
         else if (members.length === 2) {
