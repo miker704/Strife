@@ -2016,6 +2016,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added a check to turn off blocked user snack bar within DM Server main container to prevent the chance from it appearing in group dms and other dm chats where it the user is not blocked.
     - Created loading text channel chatroom component to be displayed upon entering a channel chat room.
     - Created loading text channel chatroom container to be displayed upon entering a channel chat room.
+    - Added Welcome Voice Channel Text chat icon.svg.
 
 
 ## Backend Changes
