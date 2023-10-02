@@ -5,7 +5,6 @@ import { fetchServer, fetchServers, deleteServer, removeServerErrors, removeServ
 import { receiveMessage, createMessage, removeMessageErrors, removeMessage } from "../../../actions/message_actions.js";
 import { reSyncCurrentUser } from "../../../actions/session_actions.js";
 import ServerChatRoom from "./server_chat_room.jsx";
-// import ServerChatRoom from "./server_chat_room3.jsx";
 
 const mSTP = (state, ownProps) => {
 
