@@ -2037,6 +2037,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved test_5 page to deprecated folder.
     - Moved test_4 page to deprecated folder.
     - Moved test_page1_message_controllers_lvl1_prototype to deprecated folder.
+    - Moved test_11_message_controller_near_present to deprecated folder.
 
 
 ## Backend Changes
