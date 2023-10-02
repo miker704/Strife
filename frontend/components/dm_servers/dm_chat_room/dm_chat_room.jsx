@@ -62,10 +62,6 @@ class DmChatRoom extends React.Component {
 
 
     scrollToBottomOfChat = (speed) => {
-        // let oLScrollerSpacer = document.querySelector(".ol-scroller-spacer");
-        // if (oLScrollerSpacer) {
-        //     oLScrollerSpacer.scrollIntoView({ behavior: speed, block: 'end' });
-        // }
         if (this.oLLSpacerRef?.current) {
             this.oLLSpacerRef?.current.focus();
             if (this.chatScrollerRef?.current) {
@@ -85,9 +81,9 @@ class DmChatRoom extends React.Component {
     subscribe () {
 
         //plug the cable
-        // const cable = createConsumer('ws://localhost:3000/cable'); // /cable mounts to local host that rails server is running on 
+        const cable = createConsumer('ws://localhost:3000/cable'); // /cable mounts to local host that rails server is running on 
         // const cable = createConsumer('wss://strife-v1.herokuapp.com/cable'); // /cable mounts to local host that rails server is running on 
-        const cable = createConsumer('wss://strife.onrender.com/cable');
+        // const cable = createConsumer('wss://strife.onrender.com/cable');
         this.subscription = cable.subscriptions.create(
             { channel: 'DmChannel', id: this.props.dmServerId },
             {
@@ -148,19 +144,18 @@ class DmChatRoom extends React.Component {
     }
 
     componentDidUpdate (prevProps, prevState) {
-        if (this.state.renderSkeleton === false) {
+        if (prevState.renderSkeleton === true && this.state.renderSkeleton === false) {
             this.scrollToBottomOfChat("smooth");
             this.scrollToBottomOfChat("auto");
             setTimeout(() => {
                 this.scrollToBottomOfChat("instant");
             }, 1000);
         }
-        if(this.props.DmMessages[0] !== prevProps.DmMessages[0]){this.scrollToBottomOfChat("auto");}
-
+        if (this.props.DmMessages[0] !== prevProps.DmMessages[0]) { this.scrollToBottomOfChat("auto"); }
         if (this.props.DmMessages.length > prevProps.DmMessages.length) {
-            this.scrollToBottomOfChat("instant");
-            this.scrollToBottomOfChat("auto");
+            this.scrollToBottomOfChat("smooth");
         }
+
         if (prevProps.dmMembers.length !== this.props.dmMembers.length) {
             this.renderPlaceHolder();
             this.chatInputRef.current?.focus();
