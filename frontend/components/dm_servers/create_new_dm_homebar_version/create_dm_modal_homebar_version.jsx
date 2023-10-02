@@ -209,7 +209,7 @@ const CreateDmModalHomeBar = (props) => {
                                                             }
                                                         }}
                                                         onChange={(e) => setSearchText(e.currentTarget.value)}
-                                                        placeholder="Type the username of a friend"
+                                                        placeholder={selectedFriends.length > 0 ? "Find or start a conversation" : "Type the username of a friend"}
                                                     />
                                                     <div className="create-dm-invis-div"></div>
                                                 </div>
