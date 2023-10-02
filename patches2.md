@@ -2017,6 +2017,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created loading text channel chatroom component to be displayed upon entering a channel chat room.
     - Created loading text channel chatroom container to be displayed upon entering a channel chat room.
     - Added Welcome Voice Channel Text chat icon.svg.
+    - Added styles for Welcome Voice Channel Text chat icon.svg.
+
 
 
 ## Backend Changes
