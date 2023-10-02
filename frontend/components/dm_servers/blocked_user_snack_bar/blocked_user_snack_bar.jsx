@@ -10,6 +10,9 @@ const BlockedUserSnackBar = (props) => {
                 setMemberData(newfriend);
             })
         }
+        else if (props.dmServer?.one_to_one_dm === false) {
+            props.setUserBlocked(false);
+        }
         return function cleanUp () {
             if (props.errors.length > 0) {
                 props.removeSessionErrors();
