@@ -2029,7 +2029,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old prev_tests to deprecated folder.
     - Deleted old test_page.
     - Deleted moved old test_page to deprecated folder.
-    - Deleted moved test_page container to deprecated folder.
+    - Moved test_page container to deprecated folder.
+    - Moved test_2 page to deprecated folder.
 
 
 ## Backend Changes
