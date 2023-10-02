@@ -1,6 +1,6 @@
 // webpack.config.js
 var path = require('path');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 module.exports = {
   entry: './frontend/strife.jsx',
 
@@ -37,8 +37,8 @@ module.exports = {
       "@mui/styled-engine": "@mui/styled-engine-sc"
     }
   },
-  plugins: [
-    new BundleAnalyzerPlugin()
-  ],
+  // plugins: [
+  //   new BundleAnalyzerPlugin()
+  // ],
 };
 
