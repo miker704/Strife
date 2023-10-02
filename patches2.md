@@ -2049,6 +2049,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Fixed DM Server Chat Room placeholder.
     - Uploaded discord_pfp.svg.
     - Uploaded strifeLogoBanner.png.
+    - Uploaded defaultProfilePicBlack.png.
+    - Uploaded outlinePic.png.
 
 
 
