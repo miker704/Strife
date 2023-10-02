@@ -2014,6 +2014,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added PlaceHolder change when user has selected at least one friend from Type the username of a friend to Find or start a conversation in invite to dm modal lvl 2.
     - Added a check to turn off blocked user snack bar within blocked user snack bar to prevent the chance from it appearing in group dms and other dm chats where it the user is not blocked.
     - Added a check to turn off blocked user snack bar within DM Server main container to prevent the chance from it appearing in group dms and other dm chats where it the user is not blocked.
+    - Created loading channel chatroom component to be displayed upon entering a channel chat room.
 
 ## Backend Changes
 
