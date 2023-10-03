@@ -1,4 +1,4 @@
-# PATCH NOTES
+# PATCH NOTES V4.00
 
 ## Future additions and pending changes
   
@@ -56,7 +56,7 @@ link if possible.
 - same will be implemented for servers, Servers have voice and video call disabled as the current state of the app interferes with this working and
 the need to create a private room is need to prevent unwanted members from entering a call. (note multi web call where previously possible but could not be done on command and would randomly occur when the goal was never to 3 or more callers at once also due to certain limitations of rails and deployment platforms normal one to one chat is already stressful on app performance and webRTC has given multiple warnings on the number of ice canidates it can process even though the api can handle many callers at onces)
 
-## PATCH NOTES v4.00 - 5/1/2023 - OnGoing
+## PATCH NOTES v4.00 - 5/1/2023 - 10/3/2023
 
 ## Major Changes and Fixes
 
@@ -2182,7 +2182,6 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Added server_channel.rb in action cable files to be used later, imported from a previous protype project.
 - Added connection utils in connections.rb for server channels and strife server to be used later.
 - Finalized strife_core.rb cable.
-
 
 ### Front-End Changes
 
