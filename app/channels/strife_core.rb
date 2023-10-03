@@ -49,21 +49,33 @@ class StrifeCore < ApplicationCable::Channel
                          dmsms.members.where(online: true).pluck(:id)
                        end.flatten!.uniq!.delete_if { |dmsms| dmsms == current_user.id }
 
-      puts 'CURRENT ONE TO ONE DMSERVERS'.colorize(:yellow)
-      puts one_to_one_dm_servers.inspect
-      puts 'CURRENT All DMSERVERS'.colorize(:yellow)
-      puts all_dm_servers.inspect
+      # puts 'CURRENT ONE TO ONE DMSERVERS'.colorize(:yellow)
+      # puts one_to_one_dm_servers.inspect
+      # puts 'CURRENT All DMSERVERS'.colorize(:yellow)
+      # puts all_dm_servers.inspect
+
+      # use this for later 
+      # puts 'CURRENT DMSERVER CO MEMBERS'.colorize(:yellow)
+      # dm_co_members = current_user.dm_members.where(online: true).pluck(:id).uniq!.delete_if{|dmsmId| dmsmId == current_user.id}
+      # puts dm_co_members.inspect
+      # puts 'CURRENT SERVER CO MEMBERS'.colorize(:red)
+      # server_co_members = current_user.server_co_members.where(online:true).pluck(:id).uniq!.delete_if{|smId| smId == current_user.id}
+      # puts server_co_members
+      # puts 'CURRENT SIGNAL MEMBERS'.colorize(:green)
+      # signal_users = (dm_co_members+server_co_members).uniq!
+      # puts signal_users
+      
 
       if currentLocation.include?('/$/channels/') && currentLocation != '/$/channels/guild-discovery/' && currentLocation != '/$/channels/@me'
         if currentLocation.include?('/$/channels/@me/')
           currentLocation = currentLocation.split('/$/channels/@me/').join('').to_i
           @dm_server = DmServer.find(currentLocation)
-          DmChannel.broadcast_to(@dm_server, head: 111)
+          DmChannel.broadcast_to(@dm_server, head: 111, type: "MEMBER_UPDATED")
           one_to_one_dm_servers.each do |dms|
             if dms.id == @dm_server.id
               next
             else
-              DmChannel.broadcast_to(dms, head: 111)
+              DmChannel.broadcast_to(dms, head: 111, type: "MEMBER_UPDATED")
             end
           end
           parse_Mass_Broadcast_User_Updated(all_dm_servers)
@@ -71,7 +83,7 @@ class StrifeCore < ApplicationCable::Channel
         elsif currentLocation.include?('/$/channels/') && !currentLocation.include?('@me')
           currentLocation = currentLocation.split('/$/channels/').join('').split('/').map(&:to_i)
           @channel = Channel.find(currentLocation[1])
-          StrifeServer.broadcast_to(@channel, head: 1012)
+          StrifeServer.broadcast_to(@channel, head: 1012, type: "MEMBER_UPDATED")
         else
           print 'CURRENT LOCATION IS'.colorize(:yellow)
           print currentLocation.colorize(:yellow)
@@ -97,70 +109,41 @@ class StrifeCore < ApplicationCable::Channel
     # return HeartBeat;
   end
 
-  def transmit_New_DmServer(_dmServer)
-    print 'new DMSERVER  IS'.colorize(:yellow)
-    puts _dmServer.inspect.colorize(:yellow)
-    # debugger
-    StrifeCore.broadcast_to('$TR!F3', type: 'FETCHDMSERVER')
-    # @new_DmServer = DmServer.find_by(id: _dmServer['newDmServer']['id'].to_i)
-    # @new_DmServer_members = @new_DmServer.members.where(online: true).pluck(:id).delete_if{|dmsmid| dmsmid == current_user.id}
-    # print '@NEW_DM_SERVER members IS :'.colorize(:yellow)
-    # puts @new_DmServer_members.inspect.colorize(:yellow)
-    # parse_Invites_To_New_DmServer(@new_DmServer_members,@new_DmServer.id)
-  end
-
   def parse_Mass_Broadcast_User_Updated(_user_Array)
     _user_Array.each do |user|
       core = '$TR!F3_' + user.to_s
+      parse_fetch_user_update(core)
       received({ type: 'RECEIVE_DM_SERVERS', core: core })
     end
   end
 
-  def parse_Invites_To_New_DmServer(_pre_added_Dm_Members,_dm_Server_id)
-    # This function is not really needed as its the need for all these look up is unneccesary and we
-    # can easily speed up by using the frontend and call the existing invites function instead
-    puts 'SENDING _NEW_DM_SERVER_ TO PRE INVITED MEMBERS'.colorize(:yellow) 
-    _pre_added_Dm_Members.each do |userId|
-        @new_DmMember = User.find_by(id: userId)
+  def parse_fetch_user_update(user_core)
+    # puts 'CURRENT USER'.colorize(:red)
+    # puts current_user.inspect.colorize(:yellow)
+    # puts current_user.id
+    received({ type: 'RECEIVE_USER_UPDATE', core: user_core, userId: current_user.id })
+
+  end
+
+#  Final replace above and below functions
+  def parse_New_Invited_DM_Member(_added_Dm_Member)
+        # find if member is online if not do not bother with a broadcast
+        puts 'SENDING INVITE TO NEW DM_MEMBER'.colorize(:yellow) 
+        @new_DmMember = User.find_by(id: _added_Dm_Member['dm_member_id'].to_i)
         if @new_DmMember.online == true
           puts 'USER IS ONLINE:'.colorize(:yellow)
           core = '$TR!F3_' + @new_DmMember.id.to_s
-          received({ type: 'RECEIVE_DM_SERVER', core: core, newDmServerId: _dm_Server_id })
+          received({ type: 'WEB_SOCKET_RECEIVE_DM_SERVER', core: core, newDmServerId: _added_Dm_Member['dm_server_id'] })
         end
-    end
   end
 
-  def parse_Invites_To_Existing_DmServer(_added_Dm_Member)
-    # find if member is online if not do not bother with a broadcast
-    puts 'SENDING INVITE TO NEW DM_MEMBER'.colorize(:yellow) 
-    @new_DmMember = User.find_by(id: _added_Dm_Member['dm_member_id'].to_i)
-    if @new_DmMember.online == true
-      puts 'USER IS ONLINE:'.colorize(:yellow)
-      core = '$TR!F3_' + @new_DmMember.id.to_s
-      received({ type: 'RECEIVE_DM_SERVER', core: core, newDmServerId: _added_Dm_Member['dm_server_id'] })
-    end
-  end
-
-  def parse_Invites_To_Existing_DmServer_INVOKE_DMS_REFRESH(_added_Dm_Member)
-    # find if member is online if not do not bother with a broadcast
-    puts 'SENDING INVITE TO NEW DM_MEMBER AND _INVOKE_DMS_REFRESH'.colorize(:yellow) 
-    @new_DmMember = User.find_by(id: _added_Dm_Member['dm_member_id'].to_i)
-    if @new_DmMember.online == true
-      puts 'USER IS ONLINE:'.colorize(:yellow)
-      core = '$TR!F3_' + @new_DmMember.id.to_s
-      # received({ type: 'RECEIVE_DM_SERVER', core: core, newDmServerId: _added_Dm_Member['dm_server_id'] })
-      # received({ type: 'RECEIVE_DM_SERVERS', core: core, newDmServerId: _added_Dm_Member['dm_server_id'] }) 
-      received({ type: 'RECEIVE_DM_SERVERS_RESYNC_USER', core: core, newDmServerId: _added_Dm_Member['dm_server_id'] }) 
-    end
-  end
 
   def kick_User_From_DmServer(_kicked_member)
     puts "\e[\033[1;91m KICKED MEMBER \e[1;91m\n"
     @kicked_DmMember = User.find_by(id: _kicked_member['dm_member_id'].to_i)
     if @kicked_DmMember.online == true
       core = '$TR!F3_' + @kicked_DmMember.id.to_s
-      # received({ type: 'REMOVE_DM_SERVER', core: core, removedDmServerId: _kicked_member['dm_server_id'] })
-      received({ type: 'RECEIVE_DM_SERVERS', core: core})
+      received({ type: 'WEB_SOCKET_REMOVE_DM_SERVER', core: core, removedDmServerId: _kicked_member['dm_server_id'] })
     end
   end
 
@@ -180,25 +163,10 @@ class StrifeCore < ApplicationCable::Channel
       puts @remove_DMS_ID
       # received({ type: 'REMOVE_DM_SERVER', core: core, removedDmServerId: @remove_DMS_ID})
       received({ type: 'RECEIVE_DM_SERVERS', core: core})
+      # received({ type: 'WEB_SOCKET_REMOVE_DM_SERVER', core: core, removedDmServerId: @remove_DMS_ID })
     end
 
-    # @purged_DMMembers = _purged_Dm_Members['dm_members'].to_a.filter_map{|user| user['id'].to_i if user['id'].to_i != current_user.id}
-    # @remove_DMS_ID = _purged_Dm_Members['dm_server_id'].to_i
-    
-    # @purged_DMMembers_IDS.each do |userID|
-
-    # end
-
-    # @kicked_DmMember = User.find_by(id: _purged.to_i)
-    # # if @kicked_DmMember.online == true
-    #   core = '$TR!F3_' + _purged_Dm_Members.to_s
-    #   puts 'CORE'.colorize(:red)
-    #   puts core
-    #   puts 'DMSERVERID'.colorize(:red)
-    #   puts _dmServerID
-    
-    #   received({ type: 'REMOVE_DM_SERVER', core: core, removedDmServerId: _dmServerID })
-    # end
+   
   end
 
   def parse_Invites_To_Existing_Server(_added_Server_Member)
@@ -210,6 +178,28 @@ class StrifeCore < ApplicationCable::Channel
     end
   end
 
+
+  def webSocketReceiveNewServerViaInvite(_added_Server_Member)
+    @new_Server_Member = User.find_by(id: _added_Server_Member['user_id'].to_i)
+    if @new_Server_Member.online == true
+      core = '$TR!F3_' + @new_Server_Member.id.to_s
+      received({ type: 'WEB_SOCKET_RECEIVE_SERVER', core: core, newServerId: _added_Server_Member['server_id'].to_i })
+    end
+  end
+
+  def webSocketReceiveNewServerViaInviteInjextion(_added_Server_Members)
+    membersToSignal = _added_Server_Members['memberIds']
+    membersToSignal.each do |memberId|
+      @new_Server_Member = User.find_by(id: memberId.to_i)
+      if @new_Server_Member.online == true
+        core = '$TR!F3_' + @new_Server_Member.id.to_s
+        received({ type: 'WEB_SOCKET_RECEIVE_SERVER', core: core, newServerId: _added_Server_Members['server_id'].to_i })
+      end
+    end
+  end
+
+
+
   def _ASYNC_Ban_User_From_Server_(_banned_member)
     puts "BANNNED MEMBER".colorize(:red)
     # puts "\e[\033[1;91m\]"
@@ -219,6 +209,7 @@ class StrifeCore < ApplicationCable::Channel
     if @banned_Server_Member.online == true
       core = '$TR!F3_' + @banned_Server_Member.id.to_s
       received({ type: 'REMOVE_SERVER', core: core, removedServerId: _banned_member['server_id'] })
+      # received({ type: 'RECEIVE_SERVERS', core: core})
     end
   end
 
@@ -236,19 +227,6 @@ class StrifeCore < ApplicationCable::Channel
 
   end
 
-  def _Serve_Server_Update_To_Members_(_Server_Info)
-      puts 'UPDATING SERVER'.colorize(:green)
-      puts _Server_Info.inspect.colorize(:green)
-      @server_to_update = Server.find_by(id: _Server_Info['updatedServerID'].to_i)
-      @server_to_update_members = @server_to_update.members.where(online: true).pluck(:id).delete_if{|smid| smid == @server_to_update.server_owner_id}
-      puts @server_to_update_members.inspect.colorize(:magenta)
-      @server_to_update_members.each do |memberId|
-        core = '$TR!F3_' + memberId.to_s
-        received({ type: 'RECEIVE_SERVER', core: core, newServerId: @server_to_update.id })
-      end
-  end
-
-
   def _Serve_Server_Update_To_Members_Force_Refresh_(_Server_Info)
     puts 'UPDATING SERVER'.colorize(:green)
     puts _Server_Info.inspect.colorize(:green)
@@ -257,7 +235,7 @@ class StrifeCore < ApplicationCable::Channel
     puts @server_to_update_members.inspect.colorize(:magenta)
     @server_to_update_members.each do |memberId|
       core = '$TR!F3_' + memberId.to_s
-      received({ type: 'RECEIVE_SERVERS', core: core})
+      received({ type: 'WEB_SOCKET_RECEIVE_SERVER', core: core, newServerId: _Server_Info['updatedServerID'].to_i })
     end
 end
 
@@ -333,14 +311,6 @@ end
     end
   end
 
-  def parse_Mass_Broadcast_User_Updated_Server(_user_Array); end
-
-  def mass_Invite_To_Server(_server_membership); end
-
-  def mass_Invite_To_DM_Server_Creation; end
-
-  def mass_Invite_To_Server; end
-
   def track_HeartBeat
     @current_core_HR = rand(59..150)
     puts "\e[0;35m HeartBeat At #{@current_core_HR} \e[0m\n"
@@ -357,13 +327,13 @@ end
       when 'RECEIVE_DM_SERVERS'
         core = data[:core]
         self.class.broadcast_to(core, data)
-      when 'RECEIVE_DM_SERVERS_RESYNC_USER'
-        core = data[:core]
-        self.class.broadcast_to(core, data)
       when 'RECEIVE_DM_SERVER'
         core = data[:core]
         self.class.broadcast_to(core, data)
       when 'REMOVE_DM_SERVER'
+        core = data[:core]
+        self.class.broadcast_to(core, data)
+      when 'WEB_SOCKET_REMOVE_DM_SERVER'
         core = data[:core]
         self.class.broadcast_to(core, data)
       when 'RECEIVE_SERVERS'
@@ -375,6 +345,9 @@ end
       when 'REMOVE_SERVER'
         core = data[:core]
         self.class.broadcast_to(core, data)
+      when 'WEB_SOCKET_RECEIVE_SERVER'
+        core = data[:core]
+        self.class.broadcast_to(core, data)  
       when 'RECEIVE_ALL_FRIENDS'
         core = data[:core]
         self.class.broadcast_to(core, data)
@@ -396,6 +369,12 @@ end
       when 'REMOVE_FRIEND'
         core = data[:core]
         self.class.broadcast_to(core, data)
+      when 'RECEIVE_USER_UPDATE'
+        core = data[:core]
+        self.class.broadcast_to(core, data)
+      when 'RECEIVE_USER'
+        core = data[:core]
+        self.class.broadcast_to(core, data)  
       when 'RESYNC_CURRENT_USER'
         core = data[:core]
         self.class.broadcast_to(core, data)
@@ -404,20 +383,6 @@ end
         self.class.broadcast_to(core, data)
     end
 
-    # if data[:type] == 'HEART_BEAT'
-    #   self.class.broadcast_to(@current_core, data)
-
-    # elsif data[:type] == 'RECEIVE_DM_SERVERS'
-    #   core = data[:core]
-    #   self.class.broadcast_to(core, data)
-
-    # elsif data[:type] == 'RECEIVE_DM_SERVER'
-    #   core = data[:core]
-    #   self.class.broadcast_to(core, data)
-    # elsif data[:type] == 'REMOVE_DM_SERVER'
-    #   core = data[:core]
-    #   self.class.broadcast_to(core, data)
-    # end
   end
 
   def unsubscribed
