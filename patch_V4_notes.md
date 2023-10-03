@@ -2060,6 +2060,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed the link the patches2.md to Patch_V4_notes.md in README.md.
     - Changed to createRoot instead of ReactDom.render to use react 18 instead of react 17 in strife.jsx.
     - Finalized strife.jsx.
+    - Finalized _CORE_.jsx.
 
 ## Backend Changes
 
