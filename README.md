@@ -37,7 +37,7 @@
 
 ## Technologies Utilized
 
-STRIFE "$TR!F3" as of Patch V3.0:
+STRIFE "$TR!F3" as of Patch V4.0:
 
 * Front-End
   * ```React``` and ```Redux``` for frontend state management, design and rendering of components.
@@ -109,4 +109,4 @@ STRIFE "$TR!F3" as of Patch V3.0:
 
 ## Project Stats
 
-* Current Project development time ~||> 3952 hours
+* Current Project development time ~||> 4500 hours
