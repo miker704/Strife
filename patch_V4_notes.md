@@ -1,0 +1,2213 @@
+# PATCH NOTES
+
+## Future additions and pending changes
+  
+- Preparing to update to React v18
+  - Changes will require fixing setInvervals, setTimeouts, modals that popup on within components other than the ModalMangerContainer.
+
+- Action and process flow of banning and kicking users from a server or a dmServer will be reworked and
+    be optimized by the Core Cable anaylzing the location of said user deciding the best course of action on whether
+    a user should re-receive all their dm/servers or just a single one. The hope is also to reduce and eliminate problem areas on re-renders such as channel messages re-rendering a previous or newly received server/channels messages for half a second before reverting back to the proper messages.
+  - many more
+
+### DmServer Plans
+
+- Dmserver can manually be deleted via clicking the x icon next to it (creator only, leave the dmServer if a member)
+  - (Anticipated) DmServers that become group chats (3-10 users) removing a user when they are 3 remaining deletes the dmServer in order to prevent a   duplicate chat of the same individuals regardless if it exists already or not. Change will be to check if there is a dm between those remaining two users if it exists the dmServer will be deleted if it doesnt deletion is aborted and the 3rd member that was being removed will be removed normally.
+  - One to One chats when clicking on the new show user profile icon will render a profile card of the user.
+
+### Server Plans
+
+- Server Banners, Channel and Server descriptions which can be vieweds on the explore servers page
+  - Explore Servers page will render a servers banner and server description if the server owner has added them instead of the default description and
+  banner (if server has an avatar it gets rendered as a banner in the explore servers page)
+- Servers will now have their theme type assigned via the backend,
+  -Thus the channel creation for them will be moved to the backend to reduce redux calls for all the channels created and just receive the server itself which will give all the channels with it.
+
+#### Channels
+
+- Ability to give channels a description.
+- Allow channels to be private, thus requiring an invite to that channel
+- Channel Categories.
+
+### Messaging as Whole
+
+- Be able to message chain (reply to a comment)
+- @ a user/ mention a user - (with upgrading to rails 7 this will be more hassle free to implement correctly)
+- Inviting a user as Non Demo or admin account should work normally as in it creates a dm and with an invite to join.
+- emojis
+- Message/ notification inbox intergration
+- Default message for channels and dm servers to be changed to match more of discords.
+- Allow messages to send images
+- Allow a url parser, anaylze if a text matches a url and provide a small modal/ component to wrap out send
+link if possible.
+- Allow url parser to embed youtube videos.
+
+### General/Util
+
+- Attempts to address draggable containers
+- Context menus across the application
+- Add Moz kit values to every style as FireFox is currently now unsupported as many styles glitch out in the browser. Microsoft edge, and Google Chrome are the only support browsers.
+
+### Video / Voice Calling
+
+- Re-add just voice only calling to dmServers.
+- work on creating a unique room for individuals to talk in a dmServer also allowing more than users to talk at once current limits is 1 to 1 conversations.
+- same will be implemented for servers, Servers have voice and video call disabled as the current state of the app interferes with this working and
+the need to create a private room is need to prevent unwanted members from entering a call. (note multi web call where previously possible but could not be done on command and would randomly occur when the goal was never to 3 or more callers at once also due to certain limitations of rails and deployment platforms normal one to one chat is already stressful on app performance and webRTC has given multiple warnings on the number of ice canidates it can process even though the api can handle many callers at onces)
+
+## PATCH NOTES v4.00 - 5/1/2023 - OnGoing
+
+## Major Changes and Fixes
+
+    - Added the use of Material UI libraries for easier and more stable components for inputs, forms, radio buttons, etc.
+    - Added Alias for MUI libraries in webpack "@mui/material/" is mapped to the folder "@mui/material/modern" which contains all MUIs components for modern browser versions instead of grabbing the legacy version of the components for the normal unmapped path "@mui/material/".
+    - Addressed issue with speed of application and rendering of components such as the channel settings modal which uses MUI components, importing and using one component even something small such as a button or even a form label from the MUI library causes a rendering slow down. After some investigations it was determined that the rendering speed for channel settings modal went from 0.5-3ms to around 3 - 9 seconds. Optimizations included removal of the majority of MUI components that used the sx={{}} style prop containing more than 5 styles as it was determined that sx prop has a performance overhead at times although not noticeable in most cases, it also helps reduce code clutter and increase readability, now components with a large amount of styles are moved into a styled component which at first before using the sx prop , worked fine in designing components but for some odd reason would not allow proper functionality of the component, problem was that the component was wrapped in the functional component that was calling it in the render. so the fix was to seperate the styled component from the functional component and call it inside the functional component and the styled component works correctly. these have given slight increases to performance. but the slow down was still noticeable, production build of the app removed the performace overhead and the app works at its normal speeds but in development components being called to render in that contain mui components are extremely slow to appear, after extensive investigation the cause was mui styling engine which was the emotion style engine, upon calling to render some component containing a mui component the header tags would generate a large amount of style tags containing the styles of the mui components and the customized styles which override the default mui styles.  Inorder to speed up rendering the styling engine for mui has been switched from emotion to "@mui/styled-engine-sc" which also allows better rendering of styled component types and eliminates the generation of style tags in the header tags of the application when a mui component loads in. this was address by adding  "@mui/styled-engine": "@mui/styled-engine-sc" as alias in the webpack config file.
+
+## C0R3 @P! glitches and bugs addressed and added changes
+
+### Glitches and bugs Addressed
+
+    - Passed -1 as channel type to allow the subtext in create channel modal to not appear when opening it from the channel drop down container.
+
+#### User Security && Application Security
+
+- A potential risky html/jsx code has been addressed in Channel Drop Down modal. Prior the modal would return avaliable options that can be selected based on the level of authorization the user has either they are a server member or the server owner it will render options that they have access to. However the modal returns Un-Authorized options as invisible, to the U.I. but it is present in the html which can be exploited and can possibly crash the app if enable. The reason for this is the modal returns the options while deciding whether or not to hide them or not. This has been addressed by having the decisons for those options decided before the returning jsx is returned.
+
+- Fixed certain forms and buttons in delete channel modal from being XSS attacked or fall victim to form hijacking.
+- Added Protection features to prevent XSS attacks and form hi-jacking on delete server messages of other users.
+
+### UI and Cosmetic Fixes and Changes
+
+    - UI Fixes (Cosmetic):
+    - Added Autofocus on text message area input in dmServers.
+    - Added Autofocus on text message area input in Servers.
+    - Added Autofocus on text message area input in add friends input.
+    - Re-modeled invite members to server modal to reflect that of discords and is no longer a re-hashed version of the create dmServer modal.
+    - Adjusted colors of the create dmServer modal.
+    - Adjusted colors of the invite to dmServer modal.
+    - Adjusted colors of the old invite to Server modal.
+    - Adjusted case un-sensitive search on the old invite to Server modal.
+    - Added Clear/Reset search function to Invite to Server Modal.
+    - Added Clear/Reset search function to online friends page.
+    - Added Clear/Reset search function to all friends page.
+    - Added Clear/Reset search function to pending friends page.
+    - Added Clear/Reset search function to blocked users page.
+    - Added online/offline status on invite to existing dmServer modal
+    - Removed Spell Check on Email and Username inputs on Sign up Forms
+    - Removed Spell Check on Email Input for login forms
+    - Recreated create dm server modal that pops up for the homebar into a seperate component as a small amount of data passed can affect its placement.
+    - Fixed the button messages on both create dm modal on home bar and nav bar to display create dm or create group dm based on the number of users selected. 
+    - Added Online/Offline Status in create dm Server modal via dmServer nav bar.
+    - Added Online/Offline Status in create dm Server modal via home nav bar.
+    - Added a variety of various style options for online and offline status for various modals.
+    - Added adjustment for 4k screens for active now section (will be moving to present day styles onwards).
+    - Adjusted error color text on create dm member modals and invite to dmServer modals.
+    - Reworked search alogrithm for create dm modal via dm nav bar.
+    - Changed color check box check mark and check box with check mark on create dm modal via dm nav bar, home bar and invite to dm server modals.
+    - Reworked the search algorithm on create dm modal via home nav bar.
+    - Added a no result image when failing to find a search result in create dm modal via home nav bar.
+    - Added a no result image when failing to find a search result in create dm modal via dm server nav bar.
+    - Adjusted colors in some components in server settings modal.
+    - Edited Inactive channel default text in server settings modal from "No Active Channel" to "No Inactive Channel".
+    - Added New options on the left hand side in the Server Settings Modal.
+    - Reorganized setting options in user profile/ user settings modal.
+    - Changed background color of channel drop down container modal.
+    - Added App directory option to Channel Drop Down Container.
+    - Added styles for App Directory option in channel drop down modal.
+    - Added back Server Settings to non-server owners in channel drop down modal, but it is disable till
+    new modals are added. 
+    - Added recoloring and style updates to Channel drop down modal.
+    - Refactored channel drop down modal return html/jsx to prevent options that users do not have access too from appearing in the html file structure but are disabled these are not rendered visually in the u.i. but are present in the html file structure and can be enabled through editing the struture through dev tools. To prevent only authorized options to be rendered in both the html file structure and the u.i. the options are decided before the returning jsx. prior the returning jsx decided to hide which ever options it needed leaving said option to be hidden by styling it to be invisible instead of not rendering it at all.
+    - Added discords beta "Show all Channels" option in channel drop down modal.
+    - Add styles for Show all Channels option in channel drop down modal.
+    - Added 2 state variables to toggle check marks in two different check mark options in channel drop down modal. 
+    - Temporarly removed server settings for users that are not the server owner in channel drop down menu.
+    - removed user drag and select on various texts and avatars on various components. 
+    - Re-added private lock svg for creating private channels.
+    - Fixed a bug where channel type defaults to text channels when opening create channel modal from the channel drop down modal.
+    - Added new Styles to create channel modal.
+    - Removed a few text descriptions from create channels modal.
+    - Added feature to disable the create channel button until a name is entered into the the channel name input.
+    - Disabled creation of private channels regardless if the channel name input has text or not once the slider for private channels is turned on any proceed attempt to create a private channel is disabled the create channel button is disabled.
+    - Changed the create channel button text from "Create Channel" to "Next" when private channel selection is enabled.
+    - Prevent a length greater than 100 characters in create channel name input from being submited if input is able to be submit it it will deny creation of such a channel.
+    - Shift placement of item tool bar to the correct div on the server header nav bar.
+    - Fixed a issue where channel names that reach 100 characters push out the item tool bar in the server header nav bar.
+    - Added Height function to create channel modal to handle more added elements while using it.
+    - Added clear channel errors when clicking the create channel button when using the create channel modal after failing to create a channel prior.
+    - Remodeled Channel settings modal. 
+    - Moved old channel settings modal to deprecated files folder.
+    - Revamped styles for channel settings modal.
+    - Imported discords new font gg sans in each type used by discord.
+    - used gg sans font for channel settings modal.
+    - preparing to switch to gg sans on every component in $TR!F3.
+    - added loud speaker svg image for voice channels in channel settings.
+    - Add slide in animation for channel errors when attempting to change channel name in channel settings modal.
+    - Added more error detection in channel settings modal.
+    - Restyled Delete Channel modal
+    - Prevent form hijacking on delete channel modal.
+    - Moved old delete channel modal to deprecated folder.
+    - Prevent general channel from being deleted when using the delete channel modal, prevent deletion through form hijacking and XSS attacks.
+    - Global vars with SCSS Vars for quicker and more consistant styling of commonly used styles.
+    - Imported Material UI libraries (MUI) for custom ui components such as sliders that are more easier to build, style and work with.
+    - Created workable slider in channel settings modal using MUI Slider components.
+    - Placed specs for old slider using divs in old channel settings modal in the deprecated files folder.
+    - Added missing/misplaced animation for delete channel modal.
+    - Prevent Warping to the general channel when deleting a channel when the user is already at the general channel.
+    - Added a new animation that aligns closer to discords animation when opening the channel settings modal.
+    - Added App pulling animation for opening channel settings modal, when opening the channel settings modal the app is pulled in to about 
+      96% of the orginal size closing the modal also plays an animation behind the animation of closing the channel settings where the main app
+      re-shrinks to 96% size and grows back to 100% after the modal if fully closed.
+    - Fixed escape listener bug on delete server modal where clicking outside the modal to close it causes a bug that refuses to bind to any sub modal
+     hence clicking escape will close both the sub and main modal. issue is due to an old method of removing listeners when opening a sub modal and adding listeners to that sub modal a set time out is used to readd the listener to the main modal upon closing the sub modal however the timing is what causes the bug so removing the settime out fixes this. settimouts are added to the sub modal to allow the closing animation to fully play.
+    - Remodeled and re styled delete server modal.
+    - Addressed warp issue when failing to delete server when using the delete server form.
+    - changed the close modal event when click cancel on the delete channel form.
+    - Changed CSS vars to SCSS and updated colors and fonts to downloads modal.
+    - Switched from Css to SCSS vars for server nav bar.
+    - Fixed hover problems on server bubbles.
+    - Fixed a problem on the server nav bar where if a server bubble for a server is using a custom avatar
+      selecting that server does not keep the bubble expanded. Addressed the issue by adding a missing style the decrease the border radius by 30% on an img type.
+    - Addressed an issue where a missing feature of selecting the following bubbles on the server nav bar
+      explore public servers, create a server, download apps, bubbles if these bubbles are clicked the bubble itself does not retain 30% border radius or the color changes for a selected bubble. Addressed by using a similar approach to the home bubble for explore servers bubble attaching the guild link to a condition to ensure the selected bubble shows as selected while at the explore servers page.
+      Also by using the ui state rto check which modals are currently open either download apps, or create a server if so set a custom class to show the bubble that is is selected and active and "pop" the bubble when the modal is closed this works when in the explore servers page of in any other server clicking on the modal bubbles allows those bubbles to expand as well while still having the current server bubble expanded at the same time.
+    - Changed tooltip for the home bubble to say Direct Messages instead of Home.
+    - Restyled the Tool Tips for server, explore servers, download apps, and create a server modal bubbles.
+    - Changed font type for the text in the Server Acronyms bubbles.
+    - Restyled Server Header Nav Bar switching to SCSS vars, font styles, colors, changed tool tip sizes.
+    - Changed the tool tip message for hiding server members list when clicked to say either "Hide Members List" or "Show Members List" depending on the current state of the members list if it is hidden or not.
+    - Addressed hover and color issues for the icon of hiding member list depending on if it is false or not. 
+    - Remodeled Delete Server Message Modal.
+    - Restyled Delete Server Message Modal.
+    - Switched to SCSS Vars for styles in Delete Server Message Modal.
+    - Added Pro tip indicator for Delete Server Message Modal.
+    - Added enter and exit animations for Delete Server message modal.
+    - Adjusted Server Container base Color.
+    - Added animation enter and exit to leave server modal
+    - Restyled Leave Server Modal.
+    - Switched to functional component for download apps modal.
+    - Added Open and Exit Animations for Download apps modal.
+    - Switched to SCSS vars for Invite to Server Modal.
+    - Added Animations for Enter and exiting Invite To Server Modal.
+    - Added Loud Speaker Icon for Invite to Server Modal.
+    - Added direct pass through for channel id to get the proper channel to appear in Invite to Server Modal.
+    - Restyled Explore Servers Page.
+    - Switched to SCSS Vars in Explore Servers Page.
+    - Added "Try search for them" footer at the bottom of the explore servers page.
+    - Changed Action Button Pop Up for grabbing the server invite link changed the text from the base server invite link to Copy Server ID.
+    - Changed button size for the join buttons in explore servers page for 4k screens.
+    - Changed placement of Action Button Popup on 4k screens.
+    - Restyled Server Chat room message area.
+    - Swapped to SCSS Vars for styles in Server Chat room messages.
+    - Added a condition to change the styles of the current message being edited.
+    - Restyled Edit message modal.
+    - Restyled Server Messages.
+    - Added Custom Tool tips for Edit Message options container.
+    - Added more Options for Edit Message Options Container.
+    - Reduced exit animation for delete server message modal.
+    - Added Protection features to prevent XSS attacks and form hi-jacking on delete server messages of other users.
+    - Add control functionality to edit message options container holding the shift key while hovering over a message will expand the edit message options button group revealing more options for users to select. releasing the shift key shrinks the button group back while moving the mouse away from the message also disables the listener too.
+    - Fixed a bug that would crash the app when user clicked to open the invite to server modal from the channel drop down modal due too the needed props not being passed to invite to server modal from channel drop down.
+    - Passed the channel id that is mapped to the invite to server modal button on the channel nav bar and used it via ownprops to extract the channels state to get that props of the channel instead of using a function.
+    - Adjusted the flex container to webkit and mss flex boxes to allow proper alignment of the channel type icons and the channel name in the the invite to server modal. 
+    - Switched to SCSS Vars in Servers Settings Modal.
+    - Remodeled Server Settings Modal.
+    - Restyled Server Settings Modal from ground up.
+    - Added a better resolution image of Boost Progress bar.
+    - Moved Old Server Settings Modal to deprecated folder.
+    - Created custom toggle switch that uses a similar svg animation to that of discords.
+    - Styled custom toggle switch.
+    - Removed old server error style from global styles.
+    - Added MUI components to Server Settings Modal converted static Select Boxes to Select MUI components.
+    - Fixed Styling issue with border radius and div element wrapping svg element that caused the radio   item to mis-align in the radio group in Server Settings.
+    - Fixed Styling Issue with radio group and radio items in Channel Settings Modal.
+    - Replaced Mui Radio Group, Radio Button, FormControl and FormcontrolLabel with the orginal custom made radio group in Channel Settings Modal.
+    - Replaced Mui Radio Group, Radio Button, FormControl and FormcontrolLabel with the orginal custom made radio group in Server Settings Modal.
+    - Moved Mui Styles and components for Radio group for Channel Settings  Modal to deprecated inputs file.
+    - Removed Redacted Code from StrifeToggleSwitch module.
+    - Renamed StrifeToggleSwitch module file.
+    - Fixed An issue where swapping between servers too fast and visiting the channel settings upon entering the server would cause a crash due to props.channel.channel_type not being synced fast enough. fixed by returning null if !props.channel which as a result returned the modal enter/exit animation effects to simulate a delay effect when missing props are not synced to the modal and introduce a useEffect to attempt to rescue the channelSettings Modal.If the useEffect syncs the modal appears.
+    - Restyled Channel Drop Down Modal switched to SCSS Global Vars. 
+    - Switch to SCSS Vars for Friend Request Failed Error Modal.
+    - Restyled Friend Request Failed Error Modal.
+    - Removed the old error information text in Friend Request Failed Error Modal: "Hm, didn't work. Double check that the capitalization, spelling, any spaces, and numbers are correct." and changed it to the new version "Hm, didn't work. Double check that the username is correct". As discord moves to use usernames as the method for submitting friend requests instead of nitro tags. $TR!F3 will move in a similar fashion.
+    - Added enter and exit animations for Friend Request Failed Error Modal.
+    - Added outside and esc listeners for exiting Friend Request Failed Error Modal.
+    - Changed Friend Request Failed Error Modal from a class based component to a functional component.
+    - Moved old Class based Friend Request Failed Error Modal to deprecated folder.
+    - Created third Modal mod (named "modal-struct-2") which removes the double backdrop color effect on small modals.
+    - Applied third modal mod on Friend Request Failed Error Modal.
+    - Removed user drag on server bubbles that have avatars.
+    - Added Update Is Ready Icon to Homepage Header NavBar. 
+    - Added Update Is Ready Icon to Server Header NavBar.
+    - Added Update Is Ready Icon to DmServer Header NavBar.
+    - Function with a low probability to reveal the  Update Is Ready Icon in Homepage Header NavBar clicking it removes the icon and as of right now redirects to the loading screen (will update to redirect to a dedicated update screen).
+    - Fixed an issue where search in the online friends tab changes from online - # count to All Friends - #count. 
+    - Added New Update Loading Screen.
+    - Added New Update Loading Screen Container.
+    - Update Is ready Icon when clicked now goes to the upload loading screen instead of the normal loading screen.
+    - Switched to SCSS Vars for styles for Loading, intrusion, serverDeleted (Warp), and update screens.
+    - Restyled styles for Loading, intrusion, serverDeleted (Warp), and update screens.
+    - Added circular progress style and animations to the update screens and certain warp containers.
+    - Added Different Sized animations for each loading screen type.
+    - Each Warp Screen (Loading) has its own unique color.
+    - Switched from linear to radial gradients for styling loading screens.
+    - Add fade away transition effect on warp/loading screens to fade into the path `/$/channels/@me/`
+    - Added Show Update Icon Probability and click to remove and redirect to update screen in Server Header NavBar.
+    - Added Show Update Icon Probability and click to remove and redirect to update screen in DmServer Header NavBar.
+    - Fixed selection color issue with hide/show member list in DmServer Header NavBar.
+    - Added conditional rendering to display hide or show members list for the tool tip when clicking the group chat member icon in DmServer Header NavBar.
+    - Swapped from Div element to section element in HomePage Header NavBar.
+    - Swapped from Div element to section element in Server Header NavBar.
+    - Swapped from Div element to section element in DmServer Header NavBar.
+    - Swapped from Div element to Aside element in Server Member List. 
+    - Switched to SCSS Vars for styles for Server Header Nav Bar.
+    - Restyled styles for Server Header Nav Bar.
+    - Switched to SCSS Vars for styles for DmServer Header Nav Bar.
+    - Restyled styles for DmServer Header Nav Bar.
+    - Switched to SCSS Vars for styles for Server Container.
+    - Restyled styles for Server Container.
+    - Switched to SCSS Vars for styles for Channels Container.
+    - Restyled styles for Channels Container.
+    - Switched to SCSS Vars for styles for HomePage Header NavBar.
+    - Restyled styles for HomePage Header NavBar.
+    - Switched to SCSS Vars for styles for Server Members List.
+    - Restyled styles for Server Members List.
+    - Switched to SCSS Vars for styles for DmServer Members List.
+    - Restyled styles for DmServer Members List.
+    - Removed unused old DmServer Header Nav Bar version 2 file from the frontend folder and moved it to deprecated folder.
+    - Moved old DmServer Header Nav Bar to deprecated folder as it was replaced by a superior version.
+    - Replaced Old DmServer Header NavBar.
+    - Restructured Dm Server Header NavBar.
+    - Replaced @ symbol and group chat svg icon on the Dm Server Header Nav Bar with the other user profile picture for one to one dm chats and a group chat icon for dm chats greater than 2 members.
+    -Moved the trigger function to allow editing of the dm Server name on to the inner  most div prior to the input component to prevent click in the middle of the header bar and being able to edit the dmServer name unintentionally.
+    - Add click away to submit dmServer name change now pressing enter or clicking away after typing when the input looses focus the name will be submitted.
+    - Fixed the lighting up of icons for hide members and hide user when clicked.
+    - Provided condtional rendering of tool tips that change based on whether the hide members and hide user are selected or not.
+    - Used more highly optmized condtional rendering removed unsafe instances of is hidden style.
+    - Created a Replica of Discords Default Group Chat icon in svg format using boxy-svg editor with a circle background to allow use of a single file while being able to be recolored based on a random group members color tag.
+    - Fixed an issue where the Dmserver Nav Bar Component Duplicates itself due to a weird routing issue
+    - Reduced the name input size for Dm Servers in the DmServer Header Nav bar for a min of 1 to a max of 100 in length, implemented in the backend as well also with being allow to be nil.
+    - Created a Replica of the discord default profile picture with a circle background that can be filled with boxy-svg editor to allow use of a single fill to server as the default profile avatar for all users as a users color tag can color the fills background allowing for custom images.
+    -Mounted masking Svg component at app.jsx that allows for universaly masking of profile avatars and certain images arounf the app.
+    - Removed Purple color for users and replaced it with the Secret Pink Color that is the Secret Pink Avatar uses in discord (in discord the discriminator is mod by 5 and the remainder is some number between 0-4 which is what will determine your color of your profile picture which is 5 different pictures but there is a 6th secret picture that is not attainable and it is a secret pink colored avatar since $TR!F3 offers up to ten different default colors for user profile pictures we skipped the discriminator modulus part and used svgs to gives color to the profile pictures).
+    - Achieved masking with Svgs with linear and circular gradients for online statuses for user profile avatars preparation to replace each component containing profile avatars with them replacing the old plain circles made from divs. 
+    - Switched to SCSS Vars for Create Channel ModaL.
+    - Restyled Create a Channel Modal.
+    - Replaced old radio button filling method in Create channel modal.
+    - Removed old toggle switch button and replaced it with custom made toggle switch in create channel modal.
+    - Added Event Listeners for exiting modal on outside click, cancel, form complete, and escape in create channel modal.
+    - Using new Svg masking for online statuses replaced how user profile avatars are rendered in DmServer Members List.
+    - Remove UL list and li items for rendering members in DmServer Members List with a mapped divs.
+    - Applied better conditional rendering for the group owner icon in DmServer Members List.
+    - Using new Svg masking for online statuses replaced how user profile avatars are rendered in Server Members List.
+    - Remove UL list and li items for rendering members in Server Members List with a mapped divs.
+    - Applied better conditional rendering for the Server owner icon in Server Members List.
+    - Applied conditional rendering for which user is selected in Server Members List.
+    - Resolved a problem where the change name input field did not grow when type only after state due to displaying a static var of the server name changed it to display current state like an input element does.
+    - Removed focusing on group/server owner icons and rect statuses
+    - For the Dm Server Members list users are not able to notice which member is currently selected unlike in the server members list on discord this
+    feature is allowed on $TR!F3 as it allows more cleaner ui.
+    - Added Tool Tips in Server Members List for the online status badges for user avatars.
+    - Added Tool Tips in DmServer Members List for the online status badges for user avatars. 
+    - Removed the display of the offline status badge for offline users in Server Members List as they are faded out to begin with and are rendered under the offline members list section plus the removal of the badge allows the online users to pop up more since the offline members are wrapped into a slightly smaller svg. This is the same as discord and was going to be ignored before the visual affect was noticed.
+    - Removed the display of the offline status badge for offline users in DmServer Members List as they are faded out to begin with, the removal of the badge allows the online users to pop up more since the offline members are wrapped into a slightly smaller svg. This is the same as discord and was going to be ignored before the visual affect was noticed.
+    - Replaced the Black color linked to users with a color tag of seven with a light purple color iunstead this is due to a visual distoration of svgs whose background is filled with a black or any dark shades of color causes it to appear smaller visually but in fact to is the same size. Since default profile pictures are not using png versions for the default profile picture and a single svg just colored in removing black as a color filling option has been removed.
+    - Moved Old Dm Server Members List to deprecated Folder.
+    - Moved Old Server Members List to deprecated Folder.
+    - Changed text for All friends Page if a user has no friends.
+    - Breaking Down Friends Homepage Container (Main DashBoard) into seperate Components.
+    - Added New Pic for the active now section if the user is "Streaming a game/something".
+    - Moved old JSX Structure for Active now Container to Deprecated Folder.
+    - Moved old styles for Active now Container to Deprecated Folder.
+    - Added unused functions from new version of Active Now Section in the deprecated Active Now section File.
+    - Added old Friendships stylesheet which contains styles for the old friendship pages, friend nav button on dm Server nav bar, and friend text and icon on home header nav bar to deprecated folder.
+    - Moved Old version of Friends Homepage (Home Dashboard) to deprecated folder.
+    - Moved Old version of Online Friends List to deprecated folder.
+    - Moved Old version of Pending Friends List to deprecated folder.
+    - Moved Old version of Add Friends Page to deprecated folder.
+    - Moved Old version of All Friends List to deprecated folder.
+    - Moved Old version of Blocked Users List to deprecated folder.
+    - Switched to SCSS Vars for all friendship pages i.e Homepage, Online, All, Pending, Blocked, Active Now, Friends Home Page Header Nav Bar Icon & Text, Friends Dm Nav Bar Button, and Add Friends Components.
+    - Restyled Homepage, Online, All, Pending, Blocked, Active Now, and Add Friends Components.
+    - Replaced Online Friends List Component.
+    - Replaced All Friends List Component.
+    - Replaced Pending Friends List Component.
+    - Replaced Blocked Users List Component.
+    - Replaced Add Friends Page Component.
+    - Replaced Friends Home Page (Main DashBoard) Component.
+    - Split Active Now Section Container into its own component as its growth has far exceeded its simple version and is to big to house all its functionality in the dash board component.
+    - Intergrated Active Now Container into Home Page container.
+    - Add a Redirect Button if the User has no friends and is in the all friends page list a button will appear called add friend which will redirect to the add friends page when clicked.
+    - Moved class based component of Add Friends Page to deprecated.
+    - Replaced class based component of Add Friends Page to a functional component as the complexity of the component is not enough to be a class based component.
+    - Moved class based component of Pending Friends List to deprecated.
+    - Replaced Class based Pending Friends List with a functional version.
+    - Moved class based component of Blocked User List to deprecated.
+    - Replaced Class based Blocked User List with a functional version.
+    - Add state vars to hold error messages when friend requests fail in add friends page to maintain the error messages returned from redux state to remain on the DOM when the Friendship error modal appears/disappears as the modal clears the error state in redux wrapping it into state allows it to remain and by shown after the Friendship error modal disappears. 
+    - Add a heavy modified search functionality for the input handler for the add friends input field in the add friends page component. It detects when typing a hashtag and prevents the user from entering any non number value, only allowing the user to enter a 4 digit number representing the users $TR!F3 tag. When the user deletes the hashtag from the input field it allows them to once again type anything.
+    Adding a # in the input proceeded with any number less than 4 digits pressing any non number will reset the tag input deleting the input past the hashtag placeing a hash tag in between the text will remove text after the first hashtag as this represents and ensures that the hash is to indicate tag input and what ever is after the hash is suspected to be the tag. The input field max size has been set to be 37 chars in length. 32 for the username (which is the max username length) and 5 characters for the # and the 4 digit tag number. inputing the hash after the username modifies the maxlength of the inputfield to then proceed to by 4 characters more than the current input text unless it reaches over 37 chars long. Example default max length is 37 inputing a username of 10 chars long then adding a hash
+    will now restrict the input to become 15 chars long with 11 chars taken by the username and hash and the remaining 4 will be the tag number which the input will then until the hash is removed take only a 4 digit number adding any non numeric character between these numbers will delete the input till the hashtag reseting the tag input removing the hashtag allows other chars to be entered again and the 
+    input max length resizes back to 37. if a hash tag is entered as the 36 or 37th character the input max length will not change to prevent an submission of something that wouldnt be successful anyways. 
+    - In Add Friends page added the ability when inputing a hashtag to then reveal a shadow placeholder element that shows the user a hint of what they should be typing adding the # then reveals a placeholder of 4 "0"s hinting the user to input the tag number of the user as the user procceds to input numbers the placeholder will shrink the number of zeros depending on the how many numbers the user has currently inputed. when the user removes the hash tag the shadow placeholder is removed.
+    - Added Red border color around the input field in the add friends page if a friend request attempt was unsuccessful.
+    - Added Green border color around the input field in the add friends page if a friend request attempt was successful.
+    - Added the feature when a friend request is successful to show a success message containing the username#$TR!F3_tag_id of the user the current user has successfully sent a friend request to.
+    - Added the functionality to reset state holding redux state errors and clear redux error state, and reset any error or success style modifiers and messages when the user inputs any text into the input field in add friends page this function is called in submission blocker which checks if the input has text or not and enables or disables the submit button depending on if the input field has data or not and the input handler also calls the function if needed.
+    - Removed the render friend ship error modal function and instead call it in a reject promise if the friend request fails.
+    - Added onReject functions after the then() function of the promise dispatch functions in add friends page.
+    - Upon Successful friend request the input field will clear in add friends page.
+    - Changed Most Scrollbars throughout the application to use similar class names based on their style needs as most components have very similar requirements for scrollbars so adding a generic global variants for all components to use instead of component exclusive versions. Another reason for this is to dry up some code along with being allow for all 
+    scrollbars to be modified if a theme is switched without have to manually restyle each scrollbar.
+    - Add autofocus and input refs to delete server modal.
+    - Add autofocus and input refs to create channel modal.
+    - Removed Button Margin misalignment in Create Channel Modal.
+    - Removed Button Margin misalignment in Delete Server Modal.
+    - Removed Button Margin misalignment in Leave Server Modal.
+    - Removed Button Margin misalignment in Delete Server Messages Modal.
+    - Switch to Global ScrollBar Variants in Create Channel Modal.
+    - Switch to Global ScrollBar Variant in Delete Server Messages Modal.
+    - Switch to Global ScrollBar Variant in Delete Server Modal.
+    - Switch to Global ScrollBar Variant in Leave Server Modal.
+    - Switch to Global ScrollBar Variants in Active Now Section.
+    - Switch to Global ScrollBar Variant in Explore Servers Side NavBar.
+    - Switch to Global ScrollBar Variant in Friend Request Error Modal.
+    - Switch to Global ScrollBar Variants in Main Explore Servers Page.
+    - Switch to Global ScrollBar Variant in Dm Server Members List.
+    - Switch to Global ScrollBar Variant in Server Members List.
+    - Switch to Global ScrollBar Variant in All Friends List.
+    - Switch to Global ScrollBar Variant in Online Friends List.
+    - Switch to Global ScrollBar Variant in Pending Friend Request List.
+    - Switch to Global ScrollBar Variant in Blocked Users List.
+    - Switch to Global ScrollBar Variant in Channel Drop Down Modal.
+    - Switch to Global ScrollBar Variants in Channel Settings Modal.
+    - Switch to Global ScrollBar Variants in Server Settings Modal.
+    - Switch to Global ScrollBar Variants in Invite to Server Modal.
+    - Switch to Global ScrollBar Variants in Server Chat Room Message Area.
+    - Switch to Global ScrollBar Variants in Server Chat Room Text Area Input.
+    - Switch to Global ScrollBar Variants in DmServer Chat Room Message Area.
+    - Switch to Global ScrollBar Variants in DmServer Chat Room Text Area Input.
+    - Restyled Root Render Error State Page.
+    - Added Seperate Animation state for Root Error Render Page.
+    - In DmServer Chat rooms added refs to chat input field.
+    - In DmServer Chat rooms fixed place Holder bug where swapping to other dmServers cause the name of the previous room. This is caused from the place holder variable being a this variable and its value is created and assigned from a function that is passed to another component and called there. This was fixed by moving said placeholder text as a state variable and created a function to be called when the component is mounted to then run the needed algorithm to generate the placeholder in the input field. In addition when every a room is switched the function is called again to obtain a new placeholder preventing the old one from appearing.
+    - Added the ability for placeholders to use the DmServer name if it exists instead of autogenerating a temporary name as a place holder based on the chats members.
+    - When Switching dmServers added the ref on the chat message input box to refocus.
+    - In Server Chat rooms added refs to chat input field.
+    - When Switching Servers added the ref on the chat message input box to refocus.
+    - When Switching channel with a Servers added the ref on the chat message input box to refocus.
+    - Added extra Components to invite Server Modal including temporarly replacing redux dispatching to friends state and use a raw fetch to simulate similar loading to that of discords.
+    -Added a Rescue to invite to server modal which renders the spining cubes animation while the modal resyncs its props.
+    - If user has no friends or has no friends to invite to a server (all friends of the user are joined in the server) to render a smaller version of the invite to server modal that shows a copy server link id and share it.
+    - Added random chance for the server owner to see the add image to server invite link invite to server modal.
+    - Refined the search algorithm for search the available friends instead of using is hidden a filter is used instead.
+    - Refining live search allows to conditionally render no results found when search return no results without the need for is-hidden props.
+    - Added DmServers To invite to Server Modal where a users dms will be parsed as a selectable option to invite which invites all the members of that chat room into said server, if a user is already in the server but is in said dm they will be filtered out from being invited. Inviting any users via a dmServer if those users are available as individual options to invite by themselves or if they are invitable from another dmserver choice inviting them from a dmServer will remove their options for a stand alone invite, and filter them out from being sent an invite for any dmServer choices they may be in.
+    - Changed the rendering of messages when adding a member to a server only the first channel of the server will give a message about the invited person.
+    -Prevent the inviting of blocked by and blocked users when selecting a dmServer as the invite option in invite to server modal.
+    - Added new Redux action to handle inviting multiple members (from a dmServer) at once in invite to server modal.
+    - Added new ajax api call to handle inviting multiple members (from a dmServer) at once in invite to server modal.
+    - Implemented new rescue tatics for invite to server modal, including spinning cube animations, null screen overlay and if a rescue fails a user can just click on the animation or over lay to leave the modal. also if a null screen is activated then the modal will close itself after some time ahas passed.
+    - Added proper triggers and conditions to render the correct modal the first time instead of loading one and switching to the other when a condtion is made upon initial render for invite to server modal.
+    - To Prevent redux store from changing every thing in the background behind invite to server modal most dispatch calls are replaced with the raw ajax call without a dispatch or fetch requests.
+    - Combined both dmServers and friends together inorder for them to be searchable and auto refilter themselves when users are added in dmServers.
+    - Switched To SCSS Vars for user nav bar container.
+    - Restyled user nav bar container.
+    - Add div scroller on User nav bar where status is displayed first and on hover the username and strife tag.
+    - Add on Mouse enter and Mouse leave event function listeners to activate a forced hover state for the div scroller in UserNav Bar.
+    - Move Old Styles for user nav bar to deprecated folder.
+    - Move Old function component version for user nav bar to deprecated folder.
+    - Replaced previous method of rendering user avatars with svg masking in user nav bar.
+    - Added online status badges to user avatars in user nav bar using svg masking.
+    - Switched To SCSS Vars for DmServer nav bar container.
+    - Restyled DmServer nav bar container.
+    - Move Old Styles for DmServer nav bar to deprecated folder.
+    - Replaced Class Based component version of DmServer Nav Bar with a Functional Component.
+    - Move Old Class based component version for DmServer nav bar to deprecated folder.
+    - Restyled Friend nav bar button in DmServer Nav Bar.
+    - Moved old Friend page Styles to deprecated folder.
+    - Switched to SCSS Vars for Friend pages.
+    - Restyled Nitro nav bar button in DmServer Nav Bar.
+    - Switched to SCSS Vars for Nitro nav bar.
+    - Moved old styles for Nitro nav bar to deprecated folder.
+    - Add random chance for the nitro nav button to switch to a different color.
+    - Replaced previous method of rendering user avatars with svg masking in DmServer nav bar.
+    - Removed online status bubbles and function to render it on user avatars in DmServer nav bar due to svg rendering does it automatically.
+    - Replaced previous method of rendering dmServer icon avatars with svg masking in DmServer nav bar.
+    - Replaced previous svg image use for dmServer avatars with a newer on in dmServer nav bar.
+    - Add global scroll bars style sheet.
+    - Add scroll bar backups for reference to old version of previopusly used styled bars for components across the app.
+    - Add Nav into DmServer Nav Bar.
+    - Add Section into User Nav Bar.
+    - Switched to SCSS vars for Create Dm Modal, Create Dm Modal Homebar, and Invite to Dm Modal.
+    - Restyled Create Dm Modal, Create Dm Modal Homebar, and Invite to Dm Modal.
+    - Remodeled Create Dm Modal, Create Dm Modal Homebar, and Invite to Dm Modal.
+    - Add states for switching to different modals for create dm modal variants if one has no friends, no friends to add and is not friends with the current on to one dm member.
+    - Moved from in component modal call to modal manager for all create dm modal variants.
+    - Switched to props params for all create dm modal variants instead of using deconstructed params.
+    - Moved old Channel nav bar to Deprecated folder.
+    - Removed unused server chat room file.
+    - Moved old second Channel settings to Deprecated folder.
+    - Moved old create channel modal to deprecated folder.
+    - Moved old nitro style file to deprecated folder.
+    - Deleted Old alternative that was unsed move a copy of it to deprecated Channel nav bar file.
+    - Moved old a copy create channel modal to deprecated folder.
+    - Created and moved old user nav style file to deprecated folder.
+    - Created and moved old friends error request modal to deprecated.
+    - Created and moved old functional user nav bar to deprecated.
+    - Created and moved old second deprecated version of server settings modal to deprecated.
+    - Created and moved old  deprecated version of server members list to deprecated.
+    - Created and moved old  deprecated version of invite to dm modal to deprecated.
+    - Created and moved old second deprecated version of friends homepage to deprecated.
+    - Created and moved old deprecated version of DmServer Nav Bar to deprecated.
+    - Switched from class based to functional based component for DmServer Nav Bar.
+    - Created and moved old deprecated version of DmServer members list to deprecated.
+    - Created and moved old deprecated version of DmServer header nav bar to deprecated.
+    - Created and moved old second deprecated version of DmServer header nav bar to deprecated.
+    - Moved old created dm modal style file to deprecated folder.
+    - Created and moved old deprecated version of create dm modal to deprecated.
+    - Created and moved old deprecated version of create dm modal home bar version to deprecated.
+    - Created and moved second deprecated version of create dm modal home bar version to deprecated.
+    - Created and moved deprecated version of delete dm message modal to deprecated.
+    - Restructured error loading screen aka root.html.erb file.
+    - Updated Bundle License.
+    - Replaced All Current Alt tags for images with a null prop to work well with negative text indentation.
+    - Add a scroll ref to scroll to the selected dm server when clicked on.
+    - Modified Selector Functions that sort friend state out based on statuses to sort objects more precisely by lowercasing user names to sort more accurately as js .sort() method places uppercase letters before lowercase.
+    - For Create DmModals added the ability to use the backspace button to deselect the last selected user that was click to be potientially invited to the dm server if the search text is blank hitting back space removes the last seleceted friend if any was selected.
+    - Moved Old Version of select dm members for video calling modal to deprecated.
+    - Remodeled select dm members for video calling modal.
+    - Remodeled select dm members call modal top be used for both either video, or just voice calling.
+    - Reconfigured the following modals Create DmServer, Create DmServer HomeBar Version, InviteToDmServer Modal and Select Dm Members for video ad voice calling to be deployed via the modal manager instead of being called in the contained component where it it can be launched from, the reason for this is to prepare for react version 18 which stops modals from being deployed with in the same component that may overflow be rendered invisible.
+    - These Modals will be deployed in a sub modal container instead later on.
+    - Added a no friends to add modal when in dm servers clicking the dm server side bar create dm modal button or the invite/create dm modal button in  dm header bar, or homepage header bar in a that pop up if a user has no friends or does not have any friends at all to invite (including not being friends with anyone in the dmserver) which will warp to the homepage and enable the add friends tab if they are in a dm server already.
+    - Added another modal that is displayed in a one to one dmServer when clicking on the dmserver header bar and clicking add dm members button if the user is not friends with the other user in the dm chat they are not allowed to invite anyone till they become friends there is a button to submit a friend request to that user once the user is added it will check if the user has any friends to invite or if they do display the no friends to add modal or a variant of the invite to dmServer modal.
+    -Remodeled select dm members for video calling modal.
+    -Remodeled select dm members for voice calling modal.
+    - Add a switch props for select dm members for calling modal depending on which button pressed will switch styles and specific call modals based on whether video or voice call is pressed.
+    - Added voice call option when clicking the phone icon in dmServers to select members to invite to a call, this is disabled for now.
+    - Add in Select Dm Members to call to have the form handle which cally type it is and deploy the appropiate call modal, this is switched back to the previous on submit function for now while voice call modal is worked on.
+    - Added Select Dm Members to invite to call be deployed from within the dm serve app bar to just be called to be opened from their and be spawned from the modal manager.
+    - Move old Select Dm Members to Call modal to deprecated.
+    - Move old Select Dm Members to Call modal container to deprecated.
+    - Swapped to props param instead of deconstructured prop params for Select Dm Members to Call modal;
+    - Passed useparams to Select Dm Members to Call modal to get the current dm server;
+    - Swapped Friends homepage from a class based component to a function component in order to use a call back to use location from certain modals.
+    - Moved Class Based component of friends homepage container to deprecated folder.
+    - Created Styles sheet for delete friend confirmation modal.
+    - Created Delete friend confirmation modal which will pop up when proceeding to delete a friend.
+    - Created Delete friend confirmation modal container.
+    - Removed Unused user search modal that has never been used to deprecated folder as a reference file.
+    - Switched to SCSS vars temporaly for Create Server Modal.
+    - Create Server Modal uses discords light theme so preparations have been made to switch to starting the theme switching feature earlier. started the conversion fo scss vars and mapping them to the light theme equivalent.
+    - Restyled create server modal.
+    - Remodeled and reworked create server modal.
+    - Moved old styles of create server modal to deprecated.
+    - Moved old class based component of create server modal to deprecated.
+    - Switched to functional based component for create server modal.
+    - Swapped Create Server function using a template option in create server modal from the front end to the backend.
+    - Switched to SCSS Vars for styles for Channel Nav Bar.
+    - Restyled Channel Nav Bar.
+    - Remodeled Channel Nav Bar.
+    - Moved Old Channel Nav Bar Styles to deprecated folder.
+    - Moved Old Channel Nav Bar to deprecated folder.
+    - Modified SCSS/CSS reset sheet to match more closely to discords reset of html styling values.
+    - Replaced the backend controller function for create servers with a combination of the frontend server creation from the create server modal that uses a template to create channels for server setup. The backend controller takes the template type and creates the pre made channels on the backend instead of the frontend allowing for much more faster creation and reducing unecessary redux calls from numberous channel creations and fetches when creating a server with a template with multiple channels.
+    - Made a create channel dispatch function that can be used to in combination of create server modal for creating multiple channels then injecting those channels in that server state. this is made but replaced with a direct method but kept as a backup as an alternative.
+    - Made a channel injection api function.
+    - Made a channel injection redux dispatch function.
+    - Made a channel injection redux dispatch variable which is received by server reducer to inject the channels into server redux state.
+    - Made a backend function to create channels based on server template in channel controller.
+    - Moved a backup alternative create dm modal that uses fetch instead of redux dispatch to deprecated folder.
+    - Replaced the filter search that uses the is-hidden attribute to hide non matching results and show the no results found in Online Friends List Page.
+    - Moved Online Friends List Page that uses the old search method to deprecated folder.
+    - Removed the Blue X to clear search from search inputs across the entire app via reset sheet.
+    - Added input refocus when clicking the gray X to reset the search when in live search in online friends page.
+    - Replaced the filter search that uses the is-hidden attribute to hide non matching results and show the no results found in All Friends List Page.
+    - Moved All Friends List Page that uses the old search method to deprecated folder.
+    - Added input refocus when clicking the gray X to reset the search when in live search in All friends page.
+    - Added input refocus when clicking the gray X to reset the search when in live search in Block Users page.
+    - Moved Blocked Users Page that uses the old search method to deprecated folder.
+    - Replaced the filter search that uses the is-hidden attribute to hide non matching results and show the no results found in Blocked Users Page.
+    - Added input refocus when clicking the gray X to reset the search when in live search in Pending requests page.
+    - Replaced the filter search that uses the is-hidden attribute to hide non matching results and show the no results found in Pending requests Page.
+    - Moved Pending Requests Page that uses the old search method to deprecated folder.
+    - Removed Blocked Users - # count to Blocked - # count in Blocked users page.
+    - Removed Pending Friend Requests - # count to Pending - # count in Pending Friend Requests page.
+    - Adjust the subtext sizing of each list element in blocked users page.
+    - Adjust the subtext sizing of each list element in Pending Friend Requests page.
+    - Added Pulsing ellipis animation to create server button in create server modal.
+    - Added Pulsing ellipis animation to join server button in create server modal.
+    - Created Util Function to return the mask url of online user badge.
+    - Created Util Function to return the badge color of online user badge.
+    - Switched to SCSS Vars for User Settings Modal.
+    - Restyled User Settings Modal.
+    - Remodeled User Settings Modal.
+    - Backed up old styles for user settings modal to deprecated folder.
+    - Backed up old version of user settings modal to deprecated folder.
+    - Replaced Class based component of user settings modal with a function component version.
+    - Designed fake buttons/divs for user settings modal to prevent XSS attacks.
+    - Moved Deprecated Class based component version of all submodals belonging to user settings to deprecated folder.
+    - Moved Deprecated Class based component version of Edit User Avatar modal to deprecated.
+    - Moved Deprecated Class based component version of Edit User Banner modal to deprecated.
+    - Moved Deprecated Class based component version of Edit User Password modal to deprecated.
+    - Moved Deprecated Class based component version of Edit User Username modal to deprecated.
+    - Moved Deprecated Class based component version of Edit User Email modal to deprecated.
+    - Moved Deprecated Class based component version of Edit User Phone Number modal to deprecated.
+    - Moved Deprecated Class based component version of Disable User Account modal to deprecated.
+    - Moved Deprecated Class based component version of Delete User Account modal to deprecated.
+    - Moved Deprecated Class based component version of  Delete User Phone number modal to deprecated.
+    - Moved Deprecated Class based component version of Search User modal to deprecated.
+    - Moved Deprecated Class based component version of User owns servers modal to deprecated.
+    - Fixed a backend issue related to returing errors when using the remove phone number modal.
+    - Added Connect Container for User Owns Servers Warning Modal.
+    - Added container for edit user display name modal.
+    - Created edit user display name modal for editing the user display name when that feature is fully added.
+    - Created a Logout Modal to confirm if a user wants to logout this is to prevent accidently clicking logout and signing out unintentionally.
+    - Created connect container for logout modal.
+    - Moved Old Class Based Component Version of the Loading Screen Container to Deprecated Folder.
+    - Moved Old Class Based Component Version of the Updating Loading Screen Container to Deprecated Folder.
+    - Moved Old Class Based Component Version of the Intrusion Loading Screen Container to Deprecated Folder.
+    - Moved Old Class Based Component Version of the Warp Loading Screen Container to Deprecated Folder.
+    - Replaced Class Based Component Version of the Loading Screen Container with a Functional Component.
+    - Replaced Class Based Component Version of the Warp Loading Screen Container with a Functional Component.
+    - Replaced Class Based Component Version of the Intrusion Loading Screen Container with a Functional Component.
+    - Replaced Class Based Component Version of the Updating Loading Screen Container with a Functional Component.
+    - Created Copy Strife_id tag pop up modal.
+    - Create Connect Container for Copy Strife_id tag pop up modal.
+    - ReStyled User Settings Modal.
+    - Re-modeled User Settings Modal.
+    - Switched From Class Based Component for User Settings to a Function Component.
+    - ReStyled Edit User Avatar modal.
+    - Re-Modeled Edit User Avatar modal.
+    - Edit User Avatar modal is now more inline to the actual discords version.
+    - Switched From Class Based Component for Edit User Avatar to a Function Component.
+    - ReStyled Edit User Banner modal.
+    - Re-Modeled Edit User Banner modal.
+    - Edit User Banner modal is now more inline to the actual discords version.
+    - Switched From Class Based Component for Edit User Banner modal to a Function Component.
+    - ReStyled Edit User Password modal.
+    - Re-Modeled Edit User Password modal.
+    - Switched From Class Based Component for Edit User Password modal to a Function Component.
+    - ReStyled Edit User Email modal.
+    - Re-Modeled Edit User Email modal.
+    - Added Email Image to Edit User Email Modal.
+    - Add Edit user Email Image.
+    - Switched From Class Based Component for Edit User Email modal to a Function Component.
+    - ReStyled Edit User Phone Number modal.
+    - Re-Modeled Edit User Phone Number modal.
+    - Added Phone Image to edit user Phone number modal.
+    - Added Add Phone Number Svg file.
+    - Switched From Class Based Component for Edit User Phone Number modal to a Function Component.
+    - Re-Modeled Edit User Username modal.
+    - ReStyled Edit User Username modal.
+    - Switched From Class Based Component for Edit User Username modal to a Function Component.
+    - Re-Modeled Disable User Account modal.
+    - ReStyled Disable User Account modal.
+    - Switched From Class Based Component for Disable User Account modal to a Function Component.
+    - ReStyled Delete User Account modal.
+    - Re-Modeled Delete User Account modal.
+    - Switched From Class Based Component for Delete User Account modal to a Function Component.
+    - ReStyled User Owns Servers Warning modal.
+    - ReModeled User Owns Servers Warning modal.
+    - Switched From Class Based Component for User Owns Servers Warning modal to a Function Component.
+    - Export Raw Code of User Owns Servers Warning modal to Disable user Account modal.
+    - Disable user Account modal added a ajax fetch of the current user instead of a redux dispatch to ensure faster deployment of the proper modal if current user has servers display user owns servers modal else display the disable account modal.
+    - Export Raw Code of User Owns Servers Warning modal to Delete user Account modal.
+    - Delete user Account modal added a ajax fetch of the current user instead of a redux dispatch to ensure faster deployment of the proper modal if current user has servers display user owns servers modal else display the delete account modal.
+    - Removed the Resync current user redux dispatch function for for both delete and disable account buttons in user settings modal which was used a protection to prevent a user from speeding through deleting their account when they own a server. the function is intentionally slowed down to prevent deploying the wrong modal. This has been removed and deployed in those sub modals itself. using a ajax function and state loading listeners to render the right modal and render it nearly instantly.
+    - Renamed UserProfileContainer to UserSettingsContainer in  modal and sub modal manager.
+    - Renamed openModal choice "userProfile" to "userSettings" in channel drop down menu, user nav bar,
+    and in modal, sub modal manager.
+    - Renamed User Profile folder to User Settings.
+    - Renamed User Profile container to User Settings Container.
+    - Renamed User Profile modal to User settings instead.
+    - Update System version number on all major modals in user, server, and channel settings.
+    - Add App Puller animation to user settings in modal manager.
+    - Added App Puller animation to user settings when exiting with click x button or hitting escape.
+    - Add tik tok icon in the socials section in user settings.
+    - Fixed rendering of errors on all user sub modals to allow only the errored input field to turn read and give the error message instead of all the fields.
+    - Created Edit Display name modal.
+    - Created Edit Display name container.
+    - Temporalily disable the reveal and usage of edit display name container till backend preparations are complete.
+    - Added strife id image badge to user settings similar to discords badge that was added to members that joined prior to the full deprecation of the discriminator tag system in favor for a unique username system, $TR!F3 will continue to use the tag system along with the new user name system as well.
+    - Added tool tip message when hovering over strife id tag legacy badge.
+    - Added strife id tag legacy badge image.
+    - Added new nitro icon symbol for the left hand side of user settings which has the chance to spawn in 2 different colors as well as the ablilty to spawn the classic 1 month tag but in 2 different colors as well.
+    - Added a new custom hook to fill the right color of the masked online status badge for a users avatar
+    without the need for heavy string interpolation and is pre ready for new online statuses for users when added.
+    - Added a new custom hook to mask user avatars with their current online status without having to clutter jsx styling with conditional statements in the future users can have more online status types and this hook will make it easier to deploy the right online status badge.
+    - Added new hook to return a default png image of default profile avatars for users based on color id without the need to import said files repeatedly where they are needed.
+    - Created a New System to deploy modals using a custom built hook called React Portals which teleports the modal to an empty div element on the dom using react create portal feature this will help lessen the complexity and bugs associated with passing props to modal manager to deploy a modal that needs proper params this reduces crashes and allows less needs for reverse prop drilling from child to parent.
+    - Wrapped All user Sub Modals with new portal hook to deploy on the dom without the need of replacing the current main on screen modal.
+    - Fixed a bug where re-renders on sub modals re-render the user settings modal underneath causing 
+    for the escape on esc listener for user settings to reactivate fixed by adding a state condtion to block the listener from trigger when a sub modal is deployed.
+    - Moved Old Styled for User Modals to Deprecated.
+    - Moved old styles for mini friendship options modal to deprecated.
+    - Moved old version of friendship options modal to deprecated.
+    - Switched to a non params deconstructed version of friendship options modal.
+    - Remodeled friendship options modal.
+    - Added React portal wrapper to friendship options modal.
+    - Added SubModal1 div to teleport sub modals to. 
+    - Added SubModal2 div to teleport sub modals to.
+    - Switched to SCSS Vars for friendship options modal.
+    - Restyled friendship options modal.
+    - Created Confirm Friendship Delete modal to confirm deleting a friend when clicking remove friend in friendship options modal.
+    - Created Confirm Friendship Delete modal styles.
+    - Created Confirm Friendship Delete modal connect container.
+    - Removed the old delete friendship modal for deleting a friend when clicking delete friend in friendship options modal in favor of using a callback state function to close the modal and activate the confirm friendship delete modal to appear.
+    - Added new render function in online friends list to deploy friendship options modal.
+    - Added new render function in All friends list to deploy friendship options modal.
+    - Added new render function that activates via a call back in All friends list to close friendship options modal and deploy confirm friendship delete modal if remove friend is clicked in friendship options modal.
+    - Added new render function that activates via a call back in online friends list to close friendship options modal and deploy confirm friendship delete modal if remove friend is clicked in friendship options modal.
+    - Added Default Yellow png user avatar pic.
+    - Added Default Secret Pink png user avatar pic.
+    - Added Default purple png user avatar pic.
+    - Added Default red png user avatar pic.
+    - Added Default Cyan png user avatar pic.
+    - Added Default gray png user avatar pic.
+    - Added Default blue png user avatar pic.
+    - Added Default blurple png user avatar pic.
+    - Added Default green png user avatar pic.
+    - Added Default $TR!F3 green png user avatar pic.
+    - Added Returnfillmaskcolor and returnmaskbadgeimg in all friends list.
+    - Switched to SCSS Vars for start conversation modal.
+    - ReStyled start conversation modal.
+    - ReModeled start conversation modal.
+    - Moved old styles for start conversation modal to deprecated.
+    - Moved old version start conversation modal to deprecated.
+    - Moved a version of start conversation modal to deprecated that features an implementation of _live_search that induces a filter to filter out object which removes the the old version of live search that hides elements using is-hidden however do to scertain condtions involved in rendering (elements are rendered under a header of their type which causes 5 instances to of live search to run at once and cannot be concat to be one list as rendering under the type header is not possible and with the 5 instance method is to slow around 2 seconds to filter from blank to 1 character) .
+    - Moved a version of start conversation modal to deprecated that features a working version that has the arrow movement for scroll and auto casting to first divs however they are bugs so it is moved to backup.
+    - Changed the rendering functions for generating dmServer names and profile pic for start conversation model by importing the new version of those functions from dmServer nav bar.
+    - Changed friend pfp rendering method in start conversation model.
+    - Changed the styling of the server default guild icon to be gray instead of blurple in start conversation container.
+    - Changed the styling of the message button for friends in start conversation container.
+    - Added a working Quick Switch functionality for start conversation model that uses the old version of livesearch that use query selecting and  using is-hidden styles to hide thje non matching elements from view but still keep them on the DOM this allows this search method superior in performance than the new livesearch method as the new method filters out the lists and re renders the list on the DOM. While the old method just changes the styling and removes uits display property. Due to that large amount of data and the need for mutliple seperate lists make the filter rendering method to slow and performance heavy for use in this modal will the is-hidden method has blazing performance on large data sets that are rendered into MULTIPLE LISTS as one instance of the function can run and tackle multiple elements all kinds if they match a query selector. the Quick Switch functionality is to allow quick hopping to a certain object inorder to find results faster than scrolling through a large list of data. it is basically a catergory filter by pressing  one of these !,@,#,$,* keys as the first character basically filters out all items that are not associated with that type. using data-* attribute to assign these query keys to list items for quick filtering.
+    - Added a working method of arrow tracking with the mouse and hopping to the first element in the search results in start converstation modal. The real version of this in discord uses complex listeners and various conditions cause arrow misalignment so a version that allows basic arrow movement was implemented and certain cases where notable scenerios where arrows would be outside the model have been taken care of by just rejecting the attempt to move the arrows.
+    - Added a back up to the normal version of start conversation search modal that has the normal live search and no arrow tracking in deprecated folder.
+    - Switched to SCSS Vars for Server User Options Modal.
+    - Restyled Server User Options Modal.
+    - Remodeled Server User Options Modal.
+    - Moved old version of Server User Options Modal to deprecated.
+    - Moved old styles of Server User Options Modal to deprecated.
+    - Created custom colorings for Server User Options Modal for each user based on their color tags.
+    - Created a second custom color pattern for Server User Options Modal for each user based on their color tags.
+    - Discovered a bug where messaging a user using the server user options modal via the message input once sending the message and the dm already exists upon teleporting the message actually is sent to the wrong dm hence that message never appears the the correct dm it appears in the previous dm that the user was in prior to messaging the other user, if the user is in a server and does this it fails to create the message but in turn teleport the the existing dm fixed by passing the correct dm id to the new message so it can be created in the proper dm the id variable is is similar to the prop  drill dmserverid variable and was missing the dot access operator i.e. : dmServer : dmServerId  <--- this variable is prop drilled the proper id was dmServer: dmServer.id.
+    - Created Block User Confirmation Modal to confirm if the user wants to block a user.
+    - Created Block User Confirmation Modal.
+    - Created Block User Confirmation Modal Container.
+    - Moved Deconstructed version of server member list to deprecated.
+    - Moved Deconstructed version of Dm Server member list to deprecated.
+    - Remodeled Server Member list to be non prop deconstructed.
+    - Remodeled Dm Server Member list to be non prop deconstructed.
+    - Added several modifications to server user options modal including protection against invalid options being ran if the the user being interacted with has modified the relationship status with the current user. A fetch request is ran to check if the current user being interacted with has a valid relationship status before executing any request whether it be to send a friend request or message the user when that user has already just sent a friend request or blocked the current user the fetch validates the relationship to see if the action is valid to execute if so it proceeds if not it closes the modal.
+    - Added input validation to the message input to check if the message length is 0 or is of the length of 0 after removing white spaces in server user options modal before sending the message. Before any validation was implemented an invalid message length would end up warping to the dm if it exists or creating the dm but the message entered failed to be created as it is of invalid length.
+    - Added numpad enter key to send a message along with the prior implemented normal enter key in server user options modal.
+    - Wrapped Server User Options modal in React Portal container.
+    - Split the delete friendship function into 3 different functions due to new complex modal handling for deleting friends in Server User Options Modal. relationship status of 1 , 2, 3  are split into different functions previously the delete function handles all of these statuses but are now split into dedicated functions a status of 1 that is to be deleted indicates a cancel friend request option is now handled by cancel friend request function, a status of 2 meaning ignore friend request is handled by the ignore friend request status function while a status of 3 means delete friend which is handled by the orignal function with the exception that the deletion function is not ran on this status immediately now due to new ui implementations.
+    - The orginal delete friendship function that now handles friend status of 3 in server user options modal now closes the modal and opens the confirm delete friend modal to confirm the deletion of the friend.
+    - The orginal block user function in server user options modal now closes the modal and opens the confirm block request modal to confirm blocking the user.
+    - Added Server user options modal to be rendered by a function in server members list component.
+    - Added Server user options modal to be rendered by a function in dm server members list component.
+    - Added Delete friendship confirmation modal to be rendered by a function in dm server members list component which is triggered by a call back in server user options modal if the delete friendship option is clicked.
+    - Added Block user confirmation modal to be rendered by a function in dm server members list component which is triggered by a call back in server user options modal if the block user option is clicked.
+    - Added Delete friendship confirmation modal to be rendered by a function in server members list component which is triggered by a call back in server user options modal if the delete friendship option is clicked.
+    - Added Block user confirmation modal to be rendered by a function in server members list component which is triggered by a call back in server user options modal if the block user option is clicked.
+    - Added a pencil icon for the current user to edit their profile when hovering over their banner if clicked it opens the user settings modal in server user options modal.
+    - Added many new display features for server user options modal including themed versions of the modal based on the color tags of the user it can render 4 variants 2 default options and 2 options that are colored based on the users color tag and a special rare spawn of an alternative version of that users color pallette.
+    - Added time account created, and current time server membership created which is displayed depending on if the server user options modal is called in a dmserver or server it also show different headers in dms it will  joined $TR!F3 as the section title and the time they joined while in a server it will show member since as the title and both the time they joined $TR!F3 along the time they joined that server next to those options the discord logo is displayed and the server icon is also displayed if the server has no avatar a generic place holder is given.
+    - Added about section in server user options modal if called in a server that shows a generic loading ... message along with a loading gif image.
+    - Added roles section in server user options modal if called in a server that gives a chance to show no roles or roles as the title along with a generic server member role if user is not the server owner. while the server owner has the role of server owner and if the current user is the server owner an add role button is displayed as well.
+    - Added click to add note section in server user options modal.
+    - Added custom spawn variable for class tag to be used to style the theme of the server user options modal.
+    - Added useEffect hook to server User Options Modal to grab the latest data of the currently viewed user to resync member options from core cable and member data in case the user being view does a member action on the current user.
+    - Added useRef to file input in edit user profile avatar modal instead of using a variable for consistent file input handling. 
+    - Added useRef to file input in edit user profile banner modal instead of using a variable for consistent file input handling.
+    - Added transmit core cable function on both removebanner and changebanner functions to resync across the app in edit banner modal.
+    - Added conditional protection to kick user from group chat (dmServer) in server user options modal which is to check to see if the dmMember being viewed is still a member before attempting to kick them from the dm server. fetches dmMember and checks if the dmMember is still or is a member of the dmServer if true proceed with kicking, else it is likely they have left the dmServer and if that is the case close the modal instead.
+    - Added conditional protection to ban user from a server in server user options modal which is to check to see if the server Member being viewed is still a member before attempting to ban them from the server. fetches the server member is still or is a member of the Server if true proceed with the ban, else it is likely they have left the Server and if that is the case close the modal instead.
+    - Added 4 roles names with dedicated role colors 3 which are randomly generated for server members while 1 is dedicated to only the server owner themselves.
+    - Edited the handle popup to function in dmserver members list for passing to server user options modal which decides the placement of the modal passed on the where the member that was clicked on is in the list and place the modal close that the users name. this checks for screen sizes of 4k or 1080p and decides the placement. Since Server User options modal has been redesigned the modal has no one size but multiple sizes previously they are only 2 dedicated sizes reaching 238px to 396px. This range was for both servers and dmserver versions of the modal. However the redesign makes a max and minimum sizes 
+    different for servers and dmservers themselves the server version reaches from 450px - 670px which at the max consumes most of the screen. so calculations are now different for both versions the dmserver version of handling placement takes into account of the minimum and max sizes possible of the dmserver version of the modal.
+    - Edited the handle popup top function for placement of the server users options modal in server members list for changes related to the same problems for the dmserver version of this function for servers the placement of the modal on 1080p screens will 90% of the time be at the highest position due to the potential max size of the modal can reach over 96% of the screen size for 1080p screens however for 4k screens the modal handles placement more elegantly by placing the modal near the server members name in the members list.
+    - Passed a rawpopup top variable that grabs the non modified top value to server user options modal in both dmserver and server member list components.
+    - Created a listener in server user options modal that listens for when the user resizes the window or moves the window to a screen with different resolution/size and readjust the placement of the modal by rescaling using the same popup top functions from the dmserver and server member list components check what type of modal it is whether server or dmserver dedicated and using the raw pop up top value recalculate the placement including being able to readjust when being dragged from 4k to 1080 and vice versa and when the window is resized also added media query function to handle thw width and placement when the window is resized smaller than the full screen size of the monitor it is being viewed which works in tandum with the listener function while the listener function repositions the top attribute of the modal based on the height of the current screen while the media query handle the width of the screen and resizes the modal and shifts it to the right when the width of the browser is shrunk.
+    - Backed up test and old modal placement function from server and dm memberlist container for server user options modal placement in deprecated folder.
+    - Added $TR!F3 B0T tag to server members list component
+    - Removed User Nav Bar from frontend routes.
+    - Removed Dm Server Nav Bar from frontend routes.
+    - Placed User Navbar into the nav section container of where it used to float above on.
+    - Placed User Nav bar into explore servers nav bar.
+    - Placed User Nav bar into dm servers nav bar.
+    - Placed User Nav Bar into Channel nav bar.
+    - Fixed a glitch where channel drop down modal does not close when opening user settings modal and 
+    shows itself after a restyling of components.
+    - Placed DmServerNavBar in Friends homepage container (Dashboard).
+    - Placed DmServerNavBar in Dmserver Container instead of routing it seperately.
+    - Placed DmServerNavBar in Dmserver Container instead of routing it seperately.
+    - Moved route to guild discovery to all /$/channels routes instead of loading screens.
+    - Changed All main base containers used to seperate all content on each section in HomePage for each component to be contained in one big div the the exception of the server nav bar. All Homepage container now contains all together user nav bar, dmServernav homepage header bar, active now section and friend list components all in one component where none are routed in differntly, with the exception of server nav bar.
+    - Changed All main base containers in Dmservers to allow all dmserver components to be routed together
+    dmserver header bar, dmServer Navbar, dmServer Chat room , dmServer memberslist, user nav bar are all contained in one component with the exception of server nav bar. 
+    - Changed All main base containers in servers to allow all server components to be routed together
+    server header bar, Server Chat room ,Server memberslist, user nav bar are all contained in one component with the exception of server nav bar.
+    - Changed All main base containers in guild discovery to allow all guild discovery components to be routed together guild discovery nav bar user nav bar, and guild container list are all contained in one component with the exception of server nav bar.
+    - Added Theme dark class to the html tag will be reverting SCSS vars to CSS vars and applying those style vars to all components in the future also allowing the swapping of theme in user settings in the near future.
+    - Wrapped channel drop down in REACT_PORTAL hook.
+    - Added open animation for channel drop down modal.
+    - Added SCSS Vars to styles for Dm Server Main Container.
+    - Restyled Dm Server Main Container.
+    - Remodeled Dm Server Main Container.
+    - Moved old Dm Server Main Container styles to deprecated.
+    - Moved old Dm Server Main Container to deprecated.
+    - Changed Dm Server Main Container from class based component to functional component.
+    - Added SCSS Vars to styles for Server Main Container.
+    - Restyled Server Main Container.
+    - Remodeled Server Main Container.
+    - Switch from Class based component to functional based component for Server Main Container.
+    - Moved old styles for Server Main Container to deprecated.
+    - Moved old Server Main Container to deprecated.
+    - Restyled Splash Page.
+    - Created new icon banner to replace the generic disord banner logo on the splash page where the discord wumpus icon and $TR!F3 in text is added to an actual complete svg icon like the orginal.
+    - Remodeled Splash Header Nav Bar.
+    - Remodeled Splash Main Container.
+    - Remodeled Splash Footer Container.
+    - Remodeled Splash Body Container.
+    - Restyled Splash Body Container.
+    - Restyled Splash Footer Container.
+    - Restyled Splash Main Container.
+    - Restyled Splash Header Nav Bar.
+    - Replaced Class Based component with a functional based component for Splash Header Nav Bar.
+    - Replaced Class Based component with a functional based component for Splash Main Container.
+    - Replaced Class Based component with a functional based component for Splash Footer Container.
+    - Replaced Class Based component with a functional based component for Splash Body Container.
+    - Moved old styles for splash page to deprecated.
+    - Moved old Splash Header Nav Bar to deprecated.
+    - Moved old Splash Body Container to deprecated.
+    - Moved old Splash Footer Container to deprecated.
+    - Moved old Splash Main Container to deprecated.
+    - Imported new ABC Ginto Nord font Normal.
+    - Imported new ABC Ginto Nord font Italic.
+    - Backed up old sessions styles pre april 2023 in deprecated folder.
+    - Backed up old sessions styles post april 2023 to pre august 2023 in deprecated folder.
+    - Backed up new splash foot with all links in favor for keep custom links instead in deprecated folder.
+    - Imported Svg component to replace discord login background converted this component into a proper react svg component and imported it as a jsx component itself to save space.
+    - Restyled Session Form.
+    - Remodeled Sessions form to feature an svg based background color and font adjustments along with error handling etc.
+    - Moved old session component to deprecated.
+    - Moved old sessions2 component to deprecated.
+    - Moved old sessions4 component to deprecated.
+    - Added Clouds svg image for splash screen background.
+    - Backed up new session form with normal select input to deprecated in favor for mui select input component.
+    - Changed sessions component from class based to functional based component.
+    - Reworked the qr spinner animation for sessions sign in form page replaced the clearinterval variable with a useref variable instead which clears the the setinterval timer upon switch forms or leaving the component.
+    - Replaced Normal Select Input with a mui select input component instead to have more style control for sessions form.
+    - Moved old session sign in container to deprecated.
+    - Changed Session sign in container.
+    - Moved old session sign up container to deprecated.
+    - Changed Session sign up container.
+    - Added prevention for user to create an account when not filling all of the birthday date fields.
+    - Added trim() whitespace for username to prevent usernames that are only spaces and while allow spaces in between names.
+    - Adjusted year input options for select input on sign up form by reducing years selected by 4 years removing current year and 2 years past the current year and removing the earliest birth year by one. 
+    - Speed up the opening animation for channel drop down modal.
+    - Replaced Server Settings modal with the best version made so far.
+    - Added condtional handler to prevent closing of server settings modal when a submodal is active to the escape button listener.
+    - Added submodal states and current active submodal states in  server settings modal.
+    - Changed the rendering of submodals in server settings used a function to render delete server when its active state is true. 
+    - Changed click to logout in server settings modal to instead to open the confirm logout modal instead to prevent accidental logouts.
+    - Wrapped Delete server modal with REACT_PORTAL HOOK.
+    - Changed the way uploading a server icon works clicking the bubble allows chnaging of the icon and then clicking upload image uploads it. and the remove button removes the image. Now if the bubble is used clicking upload image button will change the image as normal but if the bubble is not used clicking the upload button will open thew edit server avatar modal.
+    - Created Server Avatar Modal.
+    - Created Server Avatar Modal Container.
+    - When upload image button is clicked then the Server Avatar Modal is opened.
+    - Backed up the Current Server Settings Modal that uploads images without opening the Server avatar modal to deprecated.
+    - Added extra deprecated styles to deprecated edit friendship options modal.
+    - Wrapped Delete Channel Modal in react portal.
+    - Added new render submodal method in channel setttings modal.
+    - Added new condtional escape listener to channel settings modal.
+    - Added confirm logout modal to channel settings modal to replace direct click to logout function.
+    - Moved nav bar folder and its contents to deprecated as they where never used.
+    - Moved /nav_bar/home bar to deprecated.
+    - Moved /nav_bar/home bar container to deprecated.
+    - Moved /nav_bar/nav bar container to deprecated.
+    - Moved /nav_bar/nav bar to deprecated.
+    - Moved /nav_bar/ main nav bar to deprecated.
+    - Moved /nav_bar/ main nav bar container to deprecated.
+    - Deleted nav bar folder and its contents as they where never used.
+    - Deleted /nav_bar/home bar.
+    - Deleted /nav_bar/home bar container.
+    - Deleted /nav_bar/nav bar container.
+    - Deleted /nav_bar/nav bar.
+    - Deleted /nav_bar/main nav bar.
+    - Deleted /nav_bar/main nav bar container.
+    - Deleted removed unused/uncalled modals from the modal manager container as they are called without them.
+    - Removed FriendShip error modal from modal manager.
+    - Wrapped FriendShip error modal in REACT_PORTAL and deployed it via state in add friends page.
+    - Removed props.closeModal() and replaced it with a state callback to close FriendShip error modal.
+    - Removed Leave Server modal from modal manager.
+    - Wrapped Leave Server modal  in REACT_PORTAL and deployed it via state from server main container passing a call back through channel nav bar to channel drop down modal when leave server is clicked it closes channel drop down and functions as it normally does when confirming to leave server.
+    - Removed props.closeModal() and replaced it with a state callback to close leave server modal.
+    - Removed unused mstp and mdtp from leave server modal container.
+    - Changed inline condtional rendering for channel drop down to function condtional rendering.
+    - Removed NoFriendsCreateDm Modal from modal manager. 
+    - Used State and functional rendering in DmServer Nav Bar to render NoFriendsCreateDm Modal without modal manager. 
+    - Removed props.closemodal() function from NoFriendsCreateDm Modal and used a state callback to close it instead.
+    - Removed props.closemodal() function from CreateDm Modal and used a state callback to close it instead.
+    - Removed CreateDm Modal from modal manager once again and rendered it in DmServerNav bar like the original version except using a portal which will work in react 18.
+    - Rendered CreateDm Modal via functional condtional rendering and passing a call back to close it from dm server nav bar.
+    - Removed createDm modal Home bar version from modal manager.
+    - Re-added createDm modal Home bar version to be rendered once again inside homepage container.
+    - Removed props.closemodal() function from createDm modal Home bar version and used a state callback to close it instead.
+    - Moved the Deconstructed prop version of dmServer Header nav bar to deprecated.
+    - Replaced the Deconstructed prop version of dmServer Header nav bar to non-deconstructed one.
+    - Removed NoFriends Dm Modal from modal manager.
+    - Removed props.closemodal() from NoFriends Dm Modal and used state call back to close it.
+    - Removed NoTFriendsDmModal from modal manager.
+    - Removed props.closemodal() from NoTFriendsDmModal and used state call back to close it.
+    - Removed InviteToDmServer from modal manager.
+    - Removed props.closemodal() from InviteToDmServer and used state call back to close it.
+    - Removed InviteToDmServer from modal manager once again and rendered it in DmServerHeaderNavbar like the original version except using a portal which will work in react 18.
+    - Removed InviteToDMCallModal from modal manager.
+    - Removed props.closemodal() from InviteToDMCallModal and used state call back to close it.
+    - Removed InviteToDMCallModal from modal manager once again and rendered it in DmServerHeaderNavbar like the original version except using a portal which will work in react 18.
+    - Moved the Deconstructed prop version of Server Header nav bar to deprecated.
+    - Replaced the Deconstructed prop version of Server Header nav bar to non-deconstructed one.
+    - Moved the Deconstructed prop version of DmMessageEdit to deprecated.
+    - Replaced the Deconstructed prop version of DmMessageEdit to non-deconstructed one.
+    - Backed up the styles previously used for avatar images for messages in chat rooms.
+    - Backed up channel nav bar with open modal with props.
+    - Wrapped Create channel modal with react portal.
+    - Removed Create channel modal from modal manager.
+    - Placed Create channel modal into server main container and use a state call back function to open it.
+    - Passed State callback to open create channel modal and state pass params to pass data to create channel modal into channel drop down modal.
+    - Passed state params and state open call back for create channel modal to channel nav bar to open it for both voice and text channels.
+    - Fixed a bug in componentdidUpdate where the chatinputref would crash when creating a voice channel as the ref does not point to anything as voice channels do not have chat input boxes at the moment. 
+    - Attempted to convert the dm message area to a functional component however many problems with intial rendering where messages do not render on a page refresh. so all attempts are moved to deprecated.
+    - Renamed DmMessages to DmChatRoom.
+    - Renamed DmMessagesContainer to DmChatRoomContainer.
+    - Removed action.dmServer.users and replaced it with return action.dmservers.members instead since,
+    all other functions use it instead.
+    - Backed up deconstructed server messages container to deprecated.
+    - Replaced Server Messsages container with a non prop deconstructed version.
+    - Wrapped DeleteDmMessage in React Portal.
+    - Removed DeleteDmMessage from Modal Manager.
+    - Deployed DeleteDmMessage from the DmServer main container but pass props and state to it as normal through open modal props, but opening it through a state call back function. (Will be reverted to the old props.openModal() but not throught a rendering through modal manager).
+    - Removed StartConversationSearch modal from modal manager.
+    - Deployed the render of StartConversationSearch modal from Root level component and is then called on normally by props.openModal() and closed via props.closeModal() without the use of the modal manager component.
+    - Wrapped DeleteServerChannelMessage in React Portal.
+    - Removed DeleteServerChannelMessage from Modal Manager.
+    - Deployed DeleteServerChannelMessage from the Server main container but pass props and state to it as normal through open modal props, but opening it through a state call back function. (Will be reverted to the old props.openModal() but not throught a rendering through modal manager).
+    - Removed DownloadApps Modal from Modal Manager.
+    - Wrapped DownloadApps Modal in REACT PORTAL.
+    - Moved the rendering of DownloadApps Modal to root level.
+    - Added Trim for white spaces when submiting a message in dmServers.
+    - Added regex replace to check for white spaces and valid length > 0 when submiting a message in dmServers.
+    - Added another componentdidupdate condition if the number of members in the dmserver change via inviting or kicking a member the re-render of the dmServer Placeholder in the message area will re-render.
+    - Added Trim for white spaces when submiting a message in Servers.
+    - Added regex replace to check for white spaces and valid length > 0 when submiting a message in Servers.
+    - Remove CreateServer Modal from modal manager.
+    - Deployed Rendering of CreateServer Modal from mounting it at the root.
+    - Wrapped CreateServer Modal in REACT PORTAL.
+    - Added Splash Chevron for splash page.
+    - Added upc Loading Status gif for Server User Options modal.
+    - Added Session login background raw SVG file.
+    - Added left side splash banner.
+    - Added right side splash banner.
+    - Added RefreshPageLoading screen to later be used.
+    - Added RefreshPageLoading screen container to later be used.
+    - Add Trim to edit dmServers message.
+    - Add Trim to edit Servers message.
+    - Added a mutation observer theme observer that anaylzes for changes to the current app theme if it is removed by abnormal means it is added back to keep the styles in check.
+    - Moved Loading Screen to a more organized folder.
+    - Moved Loading Screen Container to a more organized folder.
+    - Moved Intrustion Prevention Loading Screen to a more organized folder.
+    - Moved Intrustion Prevention Loading Screen container to a more organized folder.
+    - Moved Deleted Server Loading Screen container to a more organized folder.
+    - Moved Deleted Server Loading Screen to a more organized folder.
+    - Moved Update Loading Screen to a more organized folder.
+    - Moved Update Loading Screen Container to a more organized folder.
+    - Moved Refresh Loading Screen Container to a more organized folder.
+    - Moved Refresh Loading Screen to a more organized folder.
+    - Added refresh loading screen that spawns a random loading screen style and animation upon hitting refresh anywhere within the app by hitting F5 or 
+    hitting the browser refresh button.
+    - Fixed a mass stall glitch when inviting a user to server the following happens user invited gains membership to server along with memberships to all channels of said server then a message is created welcoming that user to the server. when creating an invite using a dmserver passing all of the members create a welcome message. when ever a message is created it re-renders the server to render the new member added to the server. this causes alot of re-renders which stall the app and bottleneck the database. In Order to reduce unnecessary re-rendering due to injection of multiple server members via passing dmserver members as an invite instead of re-rendering for each message create for each member (Welcome @username to server_name) have one message containing all the members and push it to re-render the server to a minimim rate of around 1-3 server dispatches.
+    - Removed Invite to Server Modal from modal manager.
+    - Deployed invite to server modal from server main container.
+    - Removed Props.closeModal() from invite to server modal and used a state callback function to open and close it while using the props.openmodalwithprops() function to pass props needed to use it as normal.
+    - Wrapped invite to server modal with REACT PORTAL wrapped portal around all conditional renders of it.
+    - Provided a new condtional rendering for invite to server modal where since the component is now mounted to the same level as the server container it has direct access to the params property by itself without the need to pass it as props to it however if the user is somehow routed in only serverId and not channelId prevent the requests for receiving the channel, friendships, and dms of the user and display the modal in a version where there is no data. This occurs when the route is /$/channels/:serverId instead of /$/channels/:serverId/:channelId and the modal is opened from channel drop down modal. since there is no current channel an id of -1 is used instead if that pass id is -1 set a new prop type that represents a special version of the modal to handle this situation and basically skip all fetches and render a plain version of the modal.- Removed Invite to Server Modal from modal manager.
+    - Deployed invite to server modal from server main container.
+    - Removed Props.closeModal() from invite to server modal and used a state callback function to open and close it while using the props.openmodalwithprops() function to pass props needed to use it as normal.
+    - Wrapped invite to server modal with REACT PORTAL wrapped portal around all conditional renders of it.
+    - Provided a new condtional rendering for invite to server modal where since the component is now mounted to the same level as the server container it has direct access to the params property by itself without the need to pass it as props to it however if the user is somehow routed in only serverId and not channelId prevent the requests for receiving the channel, friendships, and dms of the user and display the modal in a version where there is no data. This occurs when the route is /$/channels/:serverId instead of /$/channels/:serverId/:channelId and the modal is opened from channel drop down modal. since there is no current channel an id of -1 is used instead if that pass id is -1 set a new prop type that represents a special version of the modal to handle this situation and basically skip all fetches and render a plain version of the modal.
+    - Moved previous new version of invite to server modal to deprecated.
+    - Moved previous version of invite to server modal container to deprecated.
+    - Moved version 1 of new invite to server modal to deprecated.
+    - Moved version 2 of new invite to server modal to deprecated.
+    - Moved version 3 of new invite to server modal to deprecated.
+    - Moved version 4 of new invite to server modal to deprecated.
+    - Moved version 5 of new invite to server modal to deprecated.
+    - Moved version 6 of new invite to server modal to deprecated as a back up.
+    - Moved version 7 of new invite to server modal to deprecated.
+    - Moved version 8 of new invite to server modal to deprecated as a back up.
+    - Added a new route container type to check if the path currently being used while logged in does not 
+    match redirect back to the home dashboard tyo be used later.
+    - Added a new selector to select the first channel of a server which will be used in the coming future.
+    - Created a new version of usePrevProps hook called usePrevious.
+    - Moved Basic app puller both pull and release animations to deprecated as a backup.
+    - Created a util file called app puller which contains 4 different app puller animations which are used on server, channel, and user settings, 2 close animations and 2 open animations including a holding 93% scale of the main app while the modal is open.
+    - Removed user settings modal from modal manager.
+    - Deployed user settings at the root level.
+    - reworked REACT PORTAL API Wrapper which now has some protections including being able to generate a portal if no portal element exists and renders the modal within the portal and delete it after the modal is closed using a useLayoutEffect. Also React Portal now takes in a classNameId which is then used when creating a portal gate to be added along with the wrapperid to form both the id and classname attribute of the portal gate. Also depending on the classnameId it will generate a specific type of portal and render it at aa specific position, These changes allow for more secure and error free rendering and allow but submodals and setting modals to be rendered.
+    - Moved deprecated original react portal api assets to deprecated.
+    - Moved deprecated conditional rendering react portal api assets to deprecated.
+    - Moved deprecated conditional rendering of mass react portal api assets to deprecated.
+    - Moved old version of channel settings modal container.
+    - Changed channel name in left side nav bar from using channel.channel_name, to the newChannelName input value so as the input changes in change channel name so does the name in the left nav at the same time.
+    - Removed channel settings modal from modal manager.
+    - Add Channel settings modal to render from main server container. 
+    - Wrapped Channel settings modal in a REACT_PORTAL.
+    - Moved Deprecated Rescue version of channel settings to deprecated.
+    - Moved deprecated channel settings container to deprecated.
+    - Moved variable based channel settings modal to deprecated.
+    - Moved text channel based channel settings modal to deprecated.
+    - Moved voice channel based channel settings modal to deprecated.
+    - Fixed a performance issue in channel settings modal when svg icon "Chevron Icon" which is used as the icon for the mui select components to indicate drop down menu open, is converted to a mui svgIcon component. The problems is that this they of component most be declared outside the component it will be used in as since is takes in props (in this case mui controller props, controlled by the mui library) react renderd this icon as a component itself and declaring it within a component and using it causes lag due to this component takes in props and the component its delcared in takes props too, tasks such as text input slow it down. delcaring and converting the icon into a mui svg component allows it to render faster and stop lag. 
+    - Removed spinning cube animation in channel settings modal as the likely hood for the component to not be mounted do to slow down of parsing location into props is not an issue as the component no longer has to be reversed prop drilled from redux state channel settings component rendered by modal manager, channel settings modal is now rendered within the server container and has no need for complex prop passing.
+    - Removed raw app pulling animations for user settings modal when closing the modal via click or esc press and used the appPullerRelease animation function which uses the same raw code but offers some protections against certain elements or styles being missing.
+    - Removed raw app pulling animations for closing via click or esc press for channel settings modal and used the appPuller release function instead.
+    - Removed raw app pulling animations for closing via click or esc press for server settings modal and used the appPuller release function instead.
+    - Removed raw app pulling open animation for opening user settings and used the appPullfunction instead to dry up code.
+    - Removed raw app pulling open animation for opening channel settings and used the appPullfunction instead to dry up code.
+    - Removed raw app pulling open animation for opening server settings and used the appPullfunction instead to dry up code.
+    - Created Error Boundary component to handle errors for channel settings modal.
+    - Created Error Boundary loading screen which is the fall back component incase channel settings error out.
+    - Wrapped channel settings modal in a error boundary fall back to error boundary loading screen and wrapped channel settings modal with a suspense with a fallback with the spinning cube animation loading screen used in channel settings modal.
+    - Add more condtional protection for channel settings modal where if the current server id does not match the server id of the selected channel that owns that channel the modal is closed and the error boundary component is signaled this is activated on rare instances of server hopping but clicking channel settings during the delay between the switching of servers where the action to open channel settings executes as soon as the server room has full switched this used to crash the app and was a bit more easily to be executed when channel settings opened from modal manager as the algorthim to parse the current path to obtain the needed data would sometimes not be fast enough to execute in time before the render and crash, the switch from props to state helped significantly and reduce crash occurence significantly however, the addition of a loading screen to render in placement of fetching the needed props before rendering or if the channel does not match the loading screen will load and attempt to fetch the data and re-render the modal. now the physical channel is passed into the redux state to be used but the server ids dont match outright close the modal in order to prevent unauthorization of editing a channel. the need to do a fetch of the channel when opening the channel settings causes a slow down also a glitch where closing the modal to fast causes the channel settings modal to overlay the app and try to re-render when it should close, these changes for just using state allow these rare occurencies to be furthered impossible to occur.
+    - Fixed performance issue in server settings modal that was similar to the performance issue in channel settings related to delcaring and using the svg icon that is converted into a MUI SVGIcon component within the component itself. 
+    - For channel nav bar passed the physical channel to ensure better protections of server hopping issues.
+    - Moved old version of server settings modal container to deprecated.
+    - Moved a current prop based version of channel settings modal to deprecated.
+    - Moved current non optmized version of channel settings to deprecated.
+    - Moved voice channel settings to deprecated.
+    - Moved unused current channel settings container to deprecated.
+    - Moved class based modal manager to deprecated.
+    - Added closeModal for update loading screen in case a user has some modal that uses modal redux state to close it and prevent opening it
+    again unintentionally.
+    - Added close modal to intrustion loading screen.
+    - Added close modal to loading screen.
+    - Added close modal to error boundary loading screen.
+    - Added close modal to refresh loading screen.
+    - Added close modal to delete server loading screen.
+    - Added a new version of use previous hook in utils.
+    - Added a new version of useIsComponentMounted hook called useIsMountedFirstRender in utils.
+    - Added tool tip for server invite background level 1 icon.
+    - Added tool tip for server banner background level 2 icon.
+    - Removed Server Settings modal from modal manager.
+    - Rendered Server Settings modal from server main container.
+    - Wrapped Server Settings modal in REACT PORTAL.
+    - Backed up the old create a server function for create a server in create server modal in deprecated.
+    - Adjusted the create server submit function in create server modal.
+    - Created Active Server, DmServer, and Channel dispatch functions to set the currently active chat room state.
+    - Created a Active Chatroom reducer to handle the Active server, dmServer and channel dispatches.
+    - Added Active Chat room reducer to the combined reducer of ui state to be used later in the future. 
+    - Changed the conditional rendering of search icons in explore servers page.
+    - Added Reset search function when clicking the x icon in explore servers to clear search input.
+    - Added hover style for the x button in search input for explore servers page.
+    - Added the ability for the other user to approved the friend request sent through the not friends dm modal.
+    - Removed SetTimeOuts for 99% of all animation closings for modals and replaced with a a promise instead.
+    - Add Promise animation close to create channel modal.
+    - Add Promise animation close to create server modal.
+    - Add Promise animation close to block user modal.
+    - Add Promise animation close to delete friendship modal.
+    - Add Promise animation close to user owns servers modal.
+    - Add Promise animation close to disable user account modal.
+    - Add Promise animation close to delete user account modal.
+    - Add Promise animation close to confirm logout modal.
+    - Add Promise animation close to delete channel modal.
+    - Add Promise animation close to delete server modal.
+    - Add Promise animation close to delete server channel message modal.
+    - Add Promise animation close to delete dmServer message modal.
+    - Add Promise animation close to edit server avatar modal.
+    - Add Promise animation close to edit user avatar modal.
+    - Add Promise animation close to edit user banner modal.
+    - Add Promise animation close to edit user email modal.
+    - Add Promise animation close to edit user username modal.
+    - Add Promise animation close to edit user display name modal.
+    - Add Promise animation close to edit user password modal.
+    - Add Promise animation close to edit user phone number modal.
+    - Add Promise animation close to remove user phone number modal.
+    - Add Promise animation close to invite to server modal.
+    - Add Promise animation close to leave server modal.
+    - Add Promise animation close to friendship error modal.
+    - Add Promise animation close to user settings modal.
+    - Add Promise animation close to channel settings modal.
+    - Add Promise animation close to server settings modal.
+    - Created styles for snack bar popup for settings modal.
+    - Implemented snack bar popup for channel settings modal where if currently when changing the state of the channel name it will pop up and clicking out of the modal will cause the modal to play an error shaking animation along with a color changing animation preventing manual leaving of the channel settings modal via click until the user resets the changes being made or saves them.
+    - Removed the shiny button to submit name change in channel settings modal in favor of updating the name via the snack bar popup.
+    - Backed up channel settings modal that contains the name change button in deprecated.
+    - Backed up create channel container in deprecated.
+    - Backed up server settings modal before implementing snack bar.
+    - Add snack bar popup for server settings modal.
+    - Replaced Update server name button with the snack bar save changes button in server settings.
+    - Replaced Update channel name button with the snack bar save changes button in channel settings.
+    - Replaced direct removal of server avatar and must be done through snack bar.
+    - Backed up unused channel modal with channel update name button.
+    - Backed up unused channel settings modal with channel update name button.
+    - Backed up unused server settings modal with server update name button and without the snack bar.
+    - Replaced channel.channel name as the place holder with newchannelname state variable for place holder in channel settings.
+    - Replaced placeholder for server name in server settings modal.
+    - Added error shaking animation for channel settings that will shaking the modal when attempting to exit the modal if the channel name state is changed without saving it.
+    - Added error shaking animation for server settings that will shaking the modal when attempting to exit the modal if the server name state is changed, avatar is attempted to be removed or added without saving it.
+    - Removed alternate server settings modal to deprecated.
+    - Moved file test bench 8 which which was the test bench file for the development of the new server user options modal to deprecated.
+    - Removed ReactToolTip import and component in every active component in the app, due to the massive changes of the npm package react tool tip upgraded from ~v4 to ~v5.2 where the npm package has gone under massive changes which includes a huge overhaul on how the component works its implementation and its abilities all of which required the removal of the react tool tip import library in favor of tooltip instead (package can be import as Reacttooltip as aliasis but was skipped as the need to build the reacttooltip component in most components is not needed as much). The library now allows a single tooltip component routed at the root component of the application to be able to be called on any component within the app to show a tool tip for it without the need to created multiple tool tips for each component itself the only time a component needs its own tooltip its due to styling differences or if the component has muliple tooltips that vary in styles i.e. a single component with 3 different styled tooltips from the root tooltip needs 3 individual tooltips for it  unless it is used else where in the app those tooltips can be mounted at root. However most tooltips are ran and called to spawn from the main root tooltip mounted at the file _STRIFE_CORE_ (basically app.jsx) the only exceptions are specialized tool tips that have a special rendering, for example have a svg in its body or using the special render prop which targets elements in a list, or if the tooltip is needed in a modal which almost all modals except 1 are no longer rendered through modal manager component or within the calling component itself but called to be rendered through the REACT_PORTAL component which appears off the main dom and cannot be accessed by the main tool tip to be shown (it shows behind the modal).
+    Also the need to conditionally and dynamically render tooltips based on conditions is not very friendly in react tool tip v4 as it requires a reacttooltip rebuild function to be called to rebuild to tool tip to get the tooltips to appear properly due to changing conditional rendering, also the large amount of reacttool tip components have been reduced which leads to slightly faster run times and previoulsy reacttooltip components where being created for each element in a list i.e. a list of 50 items lead to 50 individual reactTooltips being built which is not needed one tool tip with the right functionality and conditional logic can be used for all items in a list which speeds up rendering time signifcanltly and reduces any performance issue due to this. (one reacttooltip component takes about 1ms to load but on a page where the user inside a seerver they own and has a list of 50 servers, 50 members, header bar, channel nav bar with 50 channels (25 voice, 25 text), user nav bar messages and message control components can which hundreds of tool tip components i.e (317 in this example)being generated and render whenever they are triggered when one can be used almost all components). So attempts have been made to clean up ReactTooltip components an replace them with either a call to the main tooltip or to their own tooltip in each component in the app.
+    - Removed ReactTool tip imports and components from channel nav bar (11 total) and replaced with the new tool tip implementation and the tool tip is called from the root tool tip mounted at the root of the app.
+    - Removed ReactTool tip imports and components (1) from create channel modal and replaced it with the new ToolTip Component instead.
+    - Removed ReactTool tip imports and components (2) from user settings modal and replaced it with one new ToolTip Component instead.
+    - Removed ReactTool tip imports and components (1) from edit username modal and replaced it with one new ToolTip Component instead.
+    - Removed ReactTool tip imports and components (1) from server settings modal and replaced it with one new ToolTip Component instead.
+    - Removed ReactTool tip imports and components (3) from explore servers page and replaced it with a call to root tool tip.
+    - Removed ReactTool tip imports and components (6) from server user options modal and replaced it with one new ToolTip Component instead.
+    - Removed ReactTool tip imports and components (2) from start conversation user modal and replaced it with one new ToolTip Component instead.
+    - Removed ReactTool tip imports and components (1) from invite to server modal and replaced it with one new ToolTip Component instead.
+    - Removed ReactTool tip imports and components (1) from invite to server modal and replaced it with one new ToolTip Component instead.
+    - Removed ReactTool tip imports and components (1) from blocked users page and replaced it with a call to the new root ToolTip Component instead.
+    - Removed ReactTool tip imports and components (3) from pending friends page and replaced it with a call to the new root ToolTip Component instead.
+    - Removed ReactTool tip imports and components (2) from all friends list page and replaced it with a call to the new root ToolTip Component instead.
+    - Removed ReactTool tip imports and components (2) from online friends list page and replaced it with a call to the new root ToolTip Component instead.
+    - Removed ReactTool tip imports and components (1) from action button modal and replaced it with a new ToolTip Component instead.
+    - Removed ReactTool tip imports and components (2) from dm members list and replaced it with a call to the new root ToolTip Component instead.
+    - Added a call to root tool tip component in dm members list to show online statuses of a member.
+    - Removed ReactTool tip imports and components (2) from server members list and replaced it with a call to the new root ToolTip Component instead.
+    - Added a call to root tool tip component in server members list to show online statuses of a member.
+    - Removed ReactTool tip imports and components (2) from server members list and replaced it with a call to the new root ToolTip Component instead.
+    - Removed ReactTool tip imports and components (9) from dmserver header nav bar and replaced it with a call to the new root ToolTip Component instead.
+    - Removed ReactTool tip imports and components (7) from server header nav bar and replaced it with a call to the new root ToolTip Component instead.    
+    - Removed ReactTool tip imports and components (3) from user nav bar and replaced it with 3 new ToolTip Component instead.
+    - Removed ReactTool tip imports and components (1) from dm nav bar and replaced it with a new ToolTip Component instead.
+    - Added 2 new tool tip components to dm nav bar 1 to replace the reactTooltip component for the tooltip to display create dm on the plus icon. And a new tool tip component that conditional selects dmservers that have names whose lengths hit 19 or more characters long to display a tool tip of the full name of the dmServer. this tooltip is using the render prop to render its content. Which was used in a seperate version of this project to test the new tooltip library update on the server nav bar to great success the same technique is used here.
+    - Added a call to root tooltip to show a tooltip of the online status of a (user) for one to one dmServer chats in dmServer nav bar.
+    - Removed ReactTooltip import and components (2) from message action control in Dmserver message component and temporaily added a call to root tool tip to render a tool tip. Until the full message control component is finished.
+    - Removed ReactTooltip import and components (2) from message action control in Server message component and temporaily added a call to root tool tip to render a tool tip. Until the full message control component is finished.    
+    - Removed an additional (8) ReactTooltip components from a test version of message action control in Server message component and temporaily added a call to root tool tip to render a tool tip. Until the full message control component is finished.
+    - Removed ReactTooltip import and components (5) from Server nav bar component and replaced them with (5) Tooltips instead, including one that uses conditional rendering to generate a tool tip bubble displaying the server name for each server bubble but only using  one tool tip component instead of having one react tool tip component be generated for each server bubble. it uses rendering and a anchor select (basically a query selector) to grab the right bubble and show that server name itself.
+    - Added a new variation of the notifcation bell icon in server header nav bar where clicking shows a strike through indicating mute.
+    - Added a chance for a red strike through of the muted variation of the notifcation bell in server header nav bar.
+    - Added currently typing svg for potential use in the future to display when the user types in the chat bar.
+    - Added no channels image for future use when a server has no channels.
+    - Added large hash tag image for future use to server as the welcome message for text channels in a server.
+    - Replaced a majority of styles for all the previously used tool tips for each react tool tip component with a few new ones and retired most as most tooltips now use one main main component and serves the styles needed for most of the tooltips to begin with.
+    - Changed exit style animations for create a server modal.
+    - Changed exit style animations for create channel modal.
+    - Changed exit style animations for delete server channel message modal.
+    - Changed exit style animations for delete dmServer message modal.
+    - Moved Test Bench 2 file to deprecated.
+    - Moved test Bench 3 file to deprecated.
+    - Moved deprecated strife switch component to deprecated.
+    - Moved forceful invite to server modal to deprecated in favor of differentiating between demo and non demo accounts.
+    - Moved onclick to copy server link to parent div element of the current div that the function is called on to allow clicking on the copy id icon to be registered as a click to copy as well and exit the modal. In Action Button modal. 
+    - Inorder to make code more cleaner and easier to maintain and provide an overall less annoyance in handling svgs, a library of all svgs will be created in order to make this process easier almost all raw embedded svg code will be taken an be converted into react components and be imported as components in place of the raw svg code to make code maintaince easier. Using the SVGR tools and SVGO in order to optimize the svg code and reduce the overall space taken by svg code reducing some module sizes down by anywhere from 10% - 70 % in size .
+    - Removed all raw embedded svg code from splash nav and converted each svg into its own component and replaced the embedded code with svg components.
+    - Took all raw Embedded svg code from splash body and converted it to an svg component and replaced the embedded code with it.
+    - Converted all svgs code in splash footer to svg components.
+    - Removed all raw svg embedded code in channel drop down container and replaced it with svg component versions of them.
+    - Removed all raw svg embedded code in create channel modal and replaced them with svg components.
+    - Add theme-dark class to the html of application.html.erb
+    - Removed all raw svg embedded code in channel nav bar and replaced them with svg components.
+    - Removed all raw svg embedded code in download apps modal and replaced them with svg components.
+    - Removed all raw svg embedded code in channel settings modal and replaced them with svg components.
+    - Removed all raw svg embedded code in server avatar modal and replaced them with svg components.
+    - Removed all raw svg embedded code in user avatar modal and replaced them with svg components.
+    - Removed all raw svg embedded code in user banner modal and replaced them with svg components.
+    - Removed all raw svg embedded code in user edit display name modal and replaced them with svg components.
+    - Removed all raw svg embedded code in user edit password modal and replaced them with svg components.
+    - Removed all raw svg embedded code in user edit email modal and replaced them with svg components.
+    - Removed all raw svg embedded code in user edit username modal and replaced them with svg components.
+    - Removed all raw svg embedded code in user edit user phone number modal and replaced them with svg components.
+    - Removed all raw svg embedded code in create a server modal and replaced them with svg components.
+    - Fixed tiny warning issue in create a modal server where when warping to guild discovery when already there.
+    - Removed all raw svg embedded code in user settings modal and replaced them with svg components.
+    - Switch title tool tip to react tool tip for nitro icon on the user banner in user settings modal.
+    - Removed all raw svg embedded code in server settings modal and replaced them with svg components.
+    - Removed all raw svg embedded code in create DM modal and replaced them with svg components.
+    - Removed all raw svg embedded code in create DM modal home bar version and replaced them with svg components.
+    - Removed all raw svg embedded code in blocked users page and replaced them with svg components.
+    - Removed all raw svg embedded code in all friends page and replaced them with svg components.
+    - Removed all raw svg embedded code in online friends page and replaced them with svg components.
+    - Removed all raw svg embedded code in add friends page and replaced them with svg components.
+    - Removed all raw svg embedded code in pending friends page and replaced them with svg components.
+    - Converted Online friends list page to a non deconstructed prop based component.
+    - Removed all raw svg embedded code in invite to dm modal and replaced them with svg components.
+    - Removed all raw svg embedded code in invite to dm modal v2 and replaced them with svg components.
+    - Removed all raw svg embedded code in select dm members for video call modal and replaced them with svg components.
+    - Uploaded new svg group chat icon for group chat avatars.
+    - Removed all raw svg embedded code in dm members list and replaced them with svg components.
+    - Removed all raw svg embedded code in server members list and replaced them with svg components.
+    - Added Reset live search function to invite to server modal.
+    - Removed all raw svg embedded code in invite to server modal and replaced them with svg components.
+    - Removed all raw svg embedded code in start conversation modal and replaced them with svg components.
+    - Removed all raw svg embedded code in active now section and replaced them with svg components (only loud speaker icon all other icons are foreign objects from user assets).
+    - Removed all raw svg embedded code in dm nav bar and replaced them with svg components.
+    - Removed all raw svg embedded code in friends home page and replaced them with svg components.
+    - Removed all raw svg embedded code in dm server header nav bar and replaced them with svg components.
+    - Removed all raw svg embedded code in server header nav bar and replaced them with svg components.
+    - Removed all raw svg embedded code in dm call container and replaced them with svg components.
+    - Removed all raw svg embedded code in dm call v2 container and replaced them with svg components.
+    - Removed all raw svg embedded code in voice call container and replaced them with svg components.
+    - Fixed Spacing issue with attach button in chat input area.    
+    - Removed all raw svg embedded code in dm chat room container and replaced them with svg components.
+    - Removed all raw svg embedded code in server chat room container and replaced them with svg components.
+    - Fixed icon spacing issues for both chat inputs in dm and server chat rooms.
+    - Removed all raw svg embedded code in explore servers nav container and replaced them with svg components.
+    - Removed all raw svg embedded code in explore servers page container and replaced them with svg components.
+    - Removed all raw svg embedded code in copy strife tag modal and replaced them with svg components.
+    - Removed all raw svg embedded code in action button container modal and replaced them with svg components.
+    - Removed all raw svg embedded code in user nav bar and replaced them with svg components.
+    - Created Nitro Header Nav bar.
+    - Created Nitro Header Nav bar container.
+    - Created Nitro Header Nav bar styles.
+    - Created many Nitro Store Page images.
+    - Created many Nitro Store Page icons.
+    - Created Nitro Store Page.
+    - Created Nitro Store Page container.
+    - Uploaded bigperk1.svg
+    - Uploaded bigperk2.svg
+    - Uploaded bigperk3.svg
+    - Uploaded bigperk4.svg
+    - Uploaded frog.svg
+    - Uploaded jetpackwumpus.svg
+    - Uploaded wumpus_wheel.svg
+    - Uploaded smallPerk1.svg
+    - Uploaded smallPerk2.svg
+    - Uploaded smallPerk3.svg
+    - Uploaded smallPerk4.png
+    - Uploaded smallPerk5.svg
+    - Uploaded smallPerk6.png
+    - Uploaded smallPerk7.png
+    - Uploaded smallPerk8.svg
+    - Uploaded nitroPlanTableBasic.png
+    - Uploaded nitroPlanTableNormal.png
+    - Uploaded nitroTableLeft.svg
+    - Uploaded nitroTableRight.svg
+    - Uploaded createdmnofriends.svg
+    - Uploaded voicePartyMemberMasker.svg
+    - Uploaded voiceSectionMask.svg
+    - Uploaded no_friends_lite.svg
+    - Backed up old svg embedded code before converting 90% of svgs to react components in deprecated folder.
+    - Backed up old version of dm server messages to deprecated folder.
+    - Backed up old version of server messages to deprecated folder.
+    - Modified textchat2.svg.
+    - Modified textchat3.svg.
+    - Removed old version of boostexample.png
+    - Uploaded defaultPFPSVG.svg - default user avatar img
+    - Uploaded defaultPFPSVG3.svg 
+    - Modified closeHookModals util file.
+    - Finalized userPFP_api_util.js (return default userPFP hook)
+    - Finalized REACT PORTAL.
+    - Finalized App Puller Animation Hook.
+    - Moved unused animation style sheet to to deprecated to reduce load on the browser as the style sheet is included when loading the page even through none on the styles are used.
+    - Finalized styles for splash page.
+    - Pushed user_online_activity badge mask hook.
+    - Pushed user status badge color hook.
+    - Pushed Session Background SVG component.
+    - Deprecated app.jsx to deprecated folder
+    - Created Styles for Mini Current user profile card, which shares a majority of styles similaar to the server user options modal.
+    - Updated tech stack in readme.md
+    - Created Mini Current User modal.jsx
+    - Created Mini Current User modal container.js
+    - Mini Current user profile card can now be called by clicking the user`s name on the user nav bar near the user settings icon, this allows a quick briefing of quick settings for the user and allow another way to logout features a hover menu that expands out and allows the user to logout through it. The modal call to render comes from the user nav bar itself.
+    - Uploaded happyFaceSmile.svg used for current user card.
+    - Added Project build time in readme.md
+    - Started on Mega User Profile card which gives a larger over view of a user shows some user info and two other tab sections to view the mutual servers and friends in common between the users.
+    - Uploaded noFriendsInCommon.svg which is the image displayed in mega upc when both the current user and the user being viewed does not have any mutual friends.
+    - Uploaded noMutualServers.svg which is the image displayed in mega upc when both the current user and the user being viewed does not have any mutual servers.
+    - Created Styles for Mega Upc Modal which have many shared styles between server user options modal and mini current user profile card.
+    - Deleted core.jsx file replaced with an actual used file _CORE_.jsx which is the main apps routing of components which goes as follows root (contains provider, hash router, store, and app) -> app (routes to auth pages for sign up login and splash page redirects to /$/ (_CORE.jsx) once signed in) _CORE_.jsx is much different than the previous used core.jsx as that file was never used, and is differerent from the previous app.jsx as before app.jsx runs all the routes through it but do to major styling differences including certain assets that must be present in the app when signed in cause scaling and styling issues for the splash page to make this simply the routing for all logined in required componentss be routed in another container also when signed in Core_cable runs on path /$/ but this path was reserve only for this but made sense to run all logged in components routes to it as well as a bunch of util functions so _CORE_.jsx runs core cable and routing to all logged in required components. this also replaced the makeshift CORE.js file which runs through a container but returns no jsx and runs only the core cable functions now this functionality in placed in _CORE_.jsx and returns the routes of all logged in required components in the app.
+    - Created Container file for Mega UPC modal.
+    - Created Jsx file for Mega UPC modal.
+    - In order to reduce the potential large file size mega upc modal may have code spliting has been implemented.
+    - Created MegaUpcTab1 jsx file which is the about me section table that is selected by default upon loading the megaUpc modal.
+    - Created MegaUpcTab1 container.
+    - Created MegaUpcTab2.jsx which is for mutual servers between the current user and the currently viewed user which when one of the servers is clicked warps the current user to that server. 
+    - Created MegaUpcTab2 container.
+    - Created MegaUpcTab3.jsx which is for mutual friends between the current user and the user beign viewed clicking on the user should change the modal to view that user instead.
+    - Created MegaUpcTab3 container.
+    - Added the spinning loading gif animation as a place holder for the about me section for mega upc modal in tab 1 about me section.
+    - Added mega upc modal to view the current users profile to be rendered from user nav bar which can be opened from going to the mini upc current user card and clicking on the users avatar circle that shows the hover hint view profile. The modal itself for the current user prevents any of the tabs from being selected (they are not rendered) and any relation ship buttons are not rendered for the current user just the about me tab. Soon the modal will be added an rendered in a few other areas of the app including, clicking on the user name in dmServer header nav bar for one to one dm chats opening server user options modal in both dmServer and server member lists and clicking on  a user from the pending friends list. 
+    - Fixed a bug with channel settings modal when opening sub modals would completely overwrite state due to not returning the previous state.
+    - Fixed a bug with user settings modal when opening sub modals would completely overwrite state due to not returning the previous state.
+    - Fixed a bug with server settings modal when opening sub modals would completely overwrite state due to not returning the previous state.
+    - Changed to pass formName from a string to props.formName for props.closeSubModal in delete user account modal.
+    - Changed to pass formName from a string to props.formName for props.closeSubModal in disable user account modal.
+    - Changed to pass formName from a string to props.formName for props.closeSubModal in edit username modal.
+    - Changed to pass formName from a string to props.formName for props.closeSubModal in edit user email modal.
+    - Changed to pass formName from a string to props.formName for props.closeSubModal in edit user display name modal.
+    - Changed to pass formName from a string to props.formName for props.closeSubModal in edit user banner modal.
+    - Changed to pass formName from a string to props.formName for props.closeSubModal in edit user avatar modal.
+    - Changed to pass formName from a string to props.formName for props.closeSubModal in edit user phone number modal.
+    - Changed to pass formName from a string to props.formName for props.closeSubModal in delete user phone number modal.
+    - Changed to pass formName from a string to props.formName for props.closeSubModal in change user password modal.                 
+    - Fixed a bug on in sessions forms where when attempting to login is unsuccessful and clicking  forgot password which redirects to register page shows the same errors on email and password inputs as it did on the login page solution was to remove the session errors when clicking on the link.
+    - Fixed to bug in sessions where errors would havve a chance to remain when click links that cycle between login and register by passing a function to when clicking on the link to check if they are any errors if so clear them. they are 3 links that switch between the login and sign up forms, already have an account, forgot password, and register.
+    - Removed unused errors function in sessions form.
+    - Removed commented out deprecated select options for the birthday input for sessions form, it has been replaced by the mui version and the old select options for birthday input have already been backed up to deprecated folder.
+    - Fixed a bug with the homepage when switching between friends list tabs  would completely overwrite state due to not returning the previous state.
+    - Addressed tiny warning issue when the no friends modal appears and the user clicks on the add friend button a tiny warning would pop up if the current location is the same, it has been addressed by checking if the current location is the same beefore warping, else close the modal.
+    - Addressed a solution to the nofriends modal when teleporting to activate the add friends page if the current location is the same as the location we want to teleport to props.history will not push at all to the path and if teleporting is successful pushing again to switch back to add friends if the user went from '/$/channels/@me/' to '/$/channels/@me' history will push but the state to move to add friends page will not so in order to fix this the following was changed in the useEffect in the homepage that checks for the togglevalue (teleport value) if it is true run the changes, removal of the setState for the tablist and replaced it with the opentab function passing in "add_friends" which resets all tabs and then opens the passed in tab, this is used instead of the direct setTabstate as it allows moving to the add friends tab through the nofriends modal regradless of the current tab the user is in, it usually assumes that the online tab is open so it wont work for the other tabs. second once the value teleportvalue is true and add friends is switched to we replace the history state variable with an empty hash as the useEffect to switch between tabs by the nofriends modal only works when the teleport value changes. Third in nofriends modal 2 condtions are used checking if we are not at the path to teleport to push to '/$/channels/@me/' else if we are at that path push to '/$/channels/@me' which allows the modal when clicking on the add friend button to always switch to the add_friends tab regardless of the current tab or homepage tab or if the nofriends modal is opened from DmNavBar or HomeHeaderNavBar.
+    - Changed the functionality of not friends modal where instead if the friend request was already sent and the other user opens the modal and clicks the send friend request button it closes the modal and does nothing, now it approves the friend request instead.
+    - Added a useEffect to check to see if edit friendship modal is open in online friends list page if true using jquery add a hoverState class to maintain the hover styles when the modal is open on that selected friend as prior opening the modal would remove the hover styles. once the edit friendship modal closes another jquery function is ran when the condtion for the edit friendship modal is open returns false removes the hoverState class.
+    - Added a useEffect to check to see if edit friendship modal is open in all friends list page if true using jquery add a hoverState class to maintain the hover styles when the modal is open on that selected friend as prior opening the modal would remove the hover styles. once the edit friendship modal closes another jquery function is ran when the condtion for the edit friendship modal is open returns false removes the hoverState class.
+    - Made a switch in Not friends modal to allow async request using user state and core cable sending friendship updates to allow buttons to change depending on friendship types including if the modal is open and the other user accepts the friend request the modal will close through using state and useeffect instead of using props.
+    - Moved old version of Not friends modal that uses primarly props to deprecated.
+    - Fixed a bug in the home page when switching between tabs would completely overwrite the tab state due to not returning the previous state.
+    - Fixed a bug with mega upc modal when switching between tabs would completely overwrite the tab state due to not returning the previous state.
+    - Created a new hook called useCloseModalonESC in close modal hooks api util which takes in a bool usestate modal class name and exit transition class and listens for the esc press and applies the transistion class to the modal and using a promise close the modal at the end of the animation at near perfect timing.
+    - Added Resync current user function to resync current user props when visiting the nitro store incase they are invited to dmServer and prevent them from being booted to the intrusion loading screen if they click on it from the nitro store.
+    - Adjusted speed increase of animation enter and exit for user sub modals and server avatar modals.
+    - Adjusted speed increase of animation enter and exit for create channel modal.
+    - Adjusted speed increase of animation enter and exit for create server modal.
+    - Adjusted speed increase of animation enter and exit for delete message modals for both dm messages and server channel messages.
+    - Adjusted speed increase of animation enter and exit for create server modal.
+    - Adjusted speed increase of animation enter and exit for delete server modal.
+    - Adjusted speed increase of animation enter and exit for leave server modal.
+    - Adjusted speed increase of animation enter and exit for delete channel modal.
+    - Adjusted speed increase of animation enter and exit for delete friend and block user modals.
+    - Adjusted speed increase of animation enter and exit for download apps modal.
+    - Adjusted speed increase of animation enter and exit for friend request errors modal.
+    - Adjusted speed increase of animation enter and exit for invite to server modal.
+    - Adjusted wrapper layer for channel settings modal.
+    - Created a new hook called useCloseModalonOutSideClick in close modal hooks api util which takes in a bool usestate modal class name and exit transition class and a ref attached to the modal and listens for a click outside the modal and applies the transistion class to the modal and using a promise close the modal at the end of the animation at near perfect timing.
+    - Added Mega Upc Modal to be mounted to server members list.
+    - Added Mega Upc Modal to be mounted to pending friends list.
+    - Added selectedfriends and toggle state to select a pending user to parse as the user to be viewed in mega upc modal in pending friends list.
+    - Added Mega Upc Modal to be mounted on dm server header nav bar for one to one dm chat rooms which can be called by clicking the users name in the dm header nav bar.
+    - Added animation trick to Mega Upc modal when clicking on the mutual friends tab and clicking on a mutual friend instead of just re-rendering with the selected friends props an jQuery function is ran to disable animations above the main modal layer then with a settimeout switch the current viewed user, set the tab back to the about me section and another jQuery request is ran to remove the disable animations to reactivate the opening animation of the modal to give the illusion that the modal closed and opened again without having to complicate the process to achieve a similar visual effect.
+    - Made some style changes in order to ensure the spinning cubes are properly centered when clicking mutual friends or mutual servers tab in mega upc modal.
+    - Created a new hook called useCloseModalonESCWSubModals in close modal hooks api util which takes in a bool usestate modal class name and exit transition class and a bool to reference if the current modal has an sub modals active. The function listens for the esc press and applies the transistion class to the modal and using a promise close the modal at the end of the animation at near perfect timing. if however a submodal is currently open the esc listener is locked and does not exit out of the modal till the submodal closes and then waits for the next esc press and closes on that one if no submodals are open. It uses a similar functionality that is shared with how settings modals handle esc when any of their submodals are open, but this is for non settings modals and modals that do not occupy the entire screen. The functions bool to check if a submodal is open is optional and has a default value of false and the listener can be used even if a modal has no submodals to open, just leaving that parameter blank will allow it to work as the useCloseModalonESC hook which these two function will be replaced and be combined together.
+    - Created A new Version of editFriendship modal but for use in the Mega Upc modal which handles creating a message, deleting friend, blocking and unblocking a user, and copying the user id. Uses styles from the original edit friendship modal.
+    - Created Mega User friend options modal.jsx
+    - Created Mega User friend options modal container.
+    - Attached new useCloseModalonESCWSubModals listener onto mega upc to allow the normal closeonESC hook to be attached to mega upc user options modal to allow the options modal to be closed on esc without closing the mega upc modal once the options modal is closed the mega upc modal can be closed on esc through the useCloseModalonESCWSubModals hook.
+    - Changed the way the onclick listener to open the mega upc modal in pending friends list works instead of calling it on the main friend-index-item div and call it on the inner friend-index-item-wrapper-inner div which allows it to be called onClick and render the modal without interfering with the action buttons as before clicking on the action buttons also opens the modal with this specification the modal does not open when clicking on the action buttons.
+    - Added an extra condition to one of the useEffects in mega upc that resyncs the current viewed users props when that users relationships with the current user changed is to when the user selects the user to view in the mega upc and clicks on the mutual friends tab and clicks on the another user to view from that list which in turn switches the member and memberstatus usestates to load that user for the mega upc and does a fetch for this user to add to redux state to the user entities state if the mega upc modal is being used in a dmServer or server and the number of members has changed the dm or server resyncs which removes the current viewed user from the user entities redux state if the currently viewed user is not a member of the current server or dmServer as the resync replaces the users state with the members of the server/dmServer which means any action within the modal that involves relationships will cause errors as the user is not in the entities user state and cannot run the changes the user reducer does. To address this an added change to the useEffect that resyncs the current viewed users props is to add an addition condition to check if the user being viewed is not in the user entities state and the components member.id exists fetch the user again and add it back to the users entities state which then allows all relationship interactons in the modal to work as normal.
+    - Added Core Cable function calls to Mega Upc Modal relationship and create dm functions to allow the modal to interact asynchronously with any other area of the app  the has friendship actions and show up to the viewed user and they can then send back any interaction data back to the current user to have live changes in front of them this also applies to the mega modal upc if the other user has it open.
+    - Added Core Cable function calls to Mega User options Modal relationship and create dm functions.
+    - Added a props.fetchUser when clicking on a user in the mutual friends tab in mega upc modal to add that user to users entities state to allow that user to be interacted error free. 
+    - Moving all scss files that use scss global vars primarily to deprecated to switch to css vars for future theme switching.
+    - Backed up application.scss to deprecated folder.
+    - Backed up static_pages.scss to deprecated folder.
+    - Backed up splash.scss to deprecated folder.
+    - Backed up z_global_scroll_bars.scss to deprecated folder.
+    - Backed up a_global_scroll_bars.scss to deprecated folder.
+    - Backed up active_now_section.scss to deprecated folder.
+    - Backed up approve.scss to deprecated folder.
+    - Backed up call_grid.scss to deprecated folder.
+    - Backed up calls.scss to deprecated folder.
+    - Backed up channel_drop_down.scss to deprecated folder.
+    - Backed up channel_memberships.scss to deprecated folder.
+    - Backed up channel_nav_bar.scss to deprecated folder.
+    - Backed up channel_settings_modal.scss to deprecated folder.
+    - Backed up channels.scss to deprecated folder.
+    - Backed up delete_channel_modal.scss to deprecated folder.
+    - Backed up create_channel_modal.scss to deprecated folder.
+    - Backed up create_server_modal.scss to deprecated folder.
+    - Backed up create_dm_modal.scss to deprecated folder.
+    - Backed up delete_friend_confirmation_modal.scss to deprecated folder.
+    - Backed up delete_messages_modal.scss to deprecated folder.
+    - Backed up delete_server_modal.scss to deprecated folder.
+    - Backed up dispose.scss to deprecated folder.
+    - Backed up dm_members.scss to deprecated folder.
+    - Backed up dm_messages.scss to deprecated folder.
+    - Backed up dm_server_header_nav_bar.scss to deprecated folder.
+    - Backed up dm_server_nav_bar.scss to deprecated folder.
+    - Backed up dm_servers.scss to deprecated folder.
+    - Backed up download_apps_modal.scss to deprecated folder.
+    - Backed up error_snack_bar.scss to deprecated folder.
+    - Backed up explore_servers.scss to deprecated folder.
+    - Backed up friend_options_modal.scss to deprecated folder.
+    - Backed up friend_request_failed_modal.scss to deprecated folder.
+    - Backed up friendships.scss to deprecated folder.
+    - Backed up global_vars_theme_light.scss to deprecated folder.
+    - Backed up global_vars.scss to deprecated folder.
+    - Backed up global.scss to deprecated folder.
+    - Backed up home_nav_bar.scss to deprecated folder.
+    - Backed up invite_to_server.scss to deprecated folder.
+    - Backed up leave_server_modal.scss to deprecated folder.
+    - Backed up loading_screens.scss to deprecated folder.
+    - Backed up mega_user_account_card.scss to deprecated folder.
+    - Backed up messages.scss to deprecated folder.
+    - Backed up mini_user_account_card.scss to deprecated folder.
+    - Backed up mini_current_user_account_card.scss to deprecated folder.
+    - Backed up nitro_header_nav_bar.scss to deprecated folder.
+    - Backed up nitro_nav_bar.scss to deprecated folder.
+    - Backed up nitro_store.scss to deprecated folder.
+    - Backed up reset_sheet.scss to deprecated folder.
+    - Backed up scrollbar_backup.scss to deprecated folder.
+    - Backed up server_memberships.scss to deprecated folder.
+    - Backed up server_header_nav_bar.scss to deprecated folder.
+    - Backed up server_members.scss to deprecated folder.
+    - Backed up server_nav_bar.scss to deprecated folder.
+    - Backed up server_settings_modal.scss to deprecated folder.
+    - Backed up servers.scss to deprecated folder.
+    - Backed up sessions.scss to deprecated folder.
+    - Backed up start_conversation_modal.scss to deprecated folder.
+    - Backed up strife_core.scss to deprecated folder.
+    - Backed up strife_root_theme.scss to deprecated folder.
+    - Backed up strife_toggle_switch.scss to deprecated folder.
+    - Backed up temp.scss to deprecated folder.
+    - Backed up temp2.scss to deprecated folder.
+    - Backed up temp3.scss to deprecated folder.
+    - Backed up temp4.scss to deprecated folder.
+    - Backed up temp6.scss to deprecated folder.
+    - Backed up temp7.scss to deprecated folder.
+    - Backed up user_search_modal.scss to deprecated folder.
+    - Backed up tooltips.scss to deprecated folder.
+    - Backed up users.scss to deprecated folder.
+    - Backed up user_modals.scss to deprecated folder.
+    - Backed up user_nav_bar.scss to deprecated folder.
+    - Merged useCloseModalonESCWSubModals into useCloseModalonESC replacing both leaving only useCloseModalonESC.
+    - Backed up old theme mutation observer to deprecated folder.
+    - Backed up an alternative theme mutation observer to deprecated folder.
+    - Backed up an old user settings function to deprecated folder.
+    - Moved User search modal styles to deprecated as the component is a test component that has not been used for a long time.
+    - Deleted User search modal styles frome ruby assets style sheets folder.
+    - Added modal close calls for mega upc modal when clicking create message in order to close the modal when telepoting to newly created dms or existing dms when in other areas of the app where the handler to close the modal remains in scope preventing closing of the modal automatically.
+    - Added modal close calls for mega upc user options modal when clicking message option to close both the options modal and the mega upc modal when in different parts of the app to teleport to a dm and automatically close the modal.
+    - Changed from react router link using to = path to div using props.history.push(path) in mega upc tab 2 for mutual servers.
+    - Add close mega upc hook when clicking on a server in mutual servers tab 2 in mega upc modal.
+    - Added styles for UPC Panel which is the side panel for one to one dm servers.
+    - Added UPC panel.jsx.
+    - Added UPC panel container.js.
+    - Added Mega UPC Modal to be mounted when clicking on a mutual friend in UPC Panel.
+    - Added the first show blanks (blur data to be rendered from props/state sections of a component) to UPC Panel.
+    - Solved a bug in pending friends list when opening the Mega Upc Modal to interact with a the request if the pending list has only one in the list and upon rejecting or approving of the request to modal closes but if the request is rejected by the sender or the receiver and a new request from another user or the same user is received while the current user is still at the pending page the modal reopens solution was to use a useEffect to track the current incoming and outgoing requests if they both together reach zero close the modal if it is still open and if a request is received while still at the page the modal does not automatically open back up. 
+    - Moved the action button group outside of inner index wrapper in online friends list page.
+    - Add the ability to teleport to an existing dmServer or create on when clicking the body of a friend list item in online friends page.
+    - Add the ability to teleport to an existing dmServer or create on when clicking the body of a friend list item in All friends page.
+    - Since the change to use the newest version of ReactToolTip library v5.2+ bugs have been apparent most notably the tool tip sometimes remains if the mouse moves to fast off screen so to address this issue all the each almost all components will receive its own tooltip as before with the exception that instead of one tooltip per item it will be 1-3 per component where it will handle most of the items needing a tooltip, since using v5 most of the non modal tooltips have all been using the root tooltip, now the change will be for components to have their own tool tip component and using manualy isopen and setopen states to control the showing and hiding of the tool tip to ensure tooltip hanging is to a minimal. only components that suffer mostly from this problem will be using this fix.
+    - Mounted tooltip component and using manual isopen and setopen to control tooltip in dm server header nav bar. 
+    - Mounted tooltip component and using manual isopen and setopen to control tooltip in server header nav bar.
+    - Removed other server nav bar tooltip and arranged for those bubbles that use it to use the dynamic anchor select tooltip and using setopen and isopen props to control the hanging that the component suffers from.
+    - Mounted tooltip component for dm chat room.
+    - Mounted tooltip component for server chat room.
+    - Mounted tooltip component for server members list.
+    - Mounted tooltip component for dmServer members list.
+    - Mounted tooltip component for blocked users list.
+    - Mounted tooltip component for all friends list.
+    - Mounted tooltip component for online friends list.
+    - Mounted tooltip component for pending friends list.
+    - Mounted tooltip component for explore servers page.
+    - Backed up deprecated useEffect function for new dm container in deprecated folder.
+    - Created Styles for the Boost Server Information Modal.
+    - Created Styles for the Boost Server Plan Selection Slide 1 Modal.
+    - Created Styles for the Boost Server Plan Selection Slide 2 Nitro Plan Suggestion Modal.
+    - Created Styles for the Boost Server Plan Selection Slide 3 Payment type selection slide Modal.
+    - Created Styles for the Boost Server Plan Selection Slide 4 Payment input slide Modal.
+    - Created Styles for the Boost Server Plan Selection Slide 5 confirm purchase slide Modal.
+    - Created Styles for the Boost Server Plan Selection Slide 6 purchase completed slide Modal.
+    - Created Boost Server Information Modal .jsx
+    - Created Boost Server Information Modal container .js
+    - Created Boost Server Plan Selection Slide 2 Nitro Plan Suggestion Modal .jsx
+    - Created Boost Server Plan Selection Slide 2 Nitro Plan Suggestion Modal container .js
+    - Created Boost Server Plan Selection Slide 4 Payment input slide Modal .jsx.
+    - Created Boost Server Plan Selection Slide 4 Payment input slide Modal container .js.
+    - Created Boost Server Plan Selection Slide 5 confirm purchase slide Modal .jsx.
+    - Created Boost Server Plan Selection Slide 5 confirm purchase slide Modal container. js.
+    - Created Styles for the Select Nitro Pro slide Modal.
+    - Added mutliple Card Icons svg icons.
+    - Added ame.svg icon.
+    - Added blueCard.svg icon.
+    - Added goldCard.svg icon.
+    - Added dcyCard.svg icon.
+    - Added jcCard.svg icon.
+    - Added dccCard.svg icon.
+    - Added vsCard.svg icon.
+    - Added vnCard.svg icon.
+    - Added ppCard.svg icon.
+    - Added mcCard.svg icon.
+    - Added boostSelectPlanHeader.svg icon.
+    - Added boostServerSelectPlanBackground.svg icon.
+    - Added gemAngel.svg Icon.
+    - Added staticFlyingWumpus.svg Icon.
+    - Added warnBlockIcon.svg Icon.
+    - Added strifeSplashLogo.svg Icon.
+    - Added tier2CloudBannerBackground.svg Icon.
+    - Added tier2CloudBannerForeground.svg Icon.
+    - Added flyingWumpus.gif file.
+    - Added strife_spider_quad.png file.
+    - Added nitroBasicFG.svg icon file.
+    - Added drivingWumpus.gif icon file.
+    - Added serverboostanimated.gif icon file.
+    - Moved deprecated boost payment review modal slide to deprecated folder.
+    - Moved deprecated boost payment modal slide to deprecated folder.
+    - Moved deprecated Boost Server Plan Selection Slide 2 Nitro Plan Suggestion Modal container .js to deprecated folder.
+    - Moved deprecated Boost Server Plan Selection Slide 2 Nitro Plan Suggestion Modal.jsx to deprecated folder.
+    - Moved full non dry version of boost select plan modal (b4.jsx) to deprecated folder.
+    - Moved dry version of boost select plan modal (b5.jsx) to deprecated folder.
+    - Merged b5.jsx version of boost select plan modal into boost select plan modal to dry up code and produce a more efficent component.
+    - Created Styles for Purchase nitro pro membership modal.
+    - Created Styles for Purchase nitro basic membership modal.
+    - Created Styles for select nitro membership plan modal.
+    - Created select nitro membership plan modal .jsx.
+    - Created select nitro membership plan modal container .js.
+    - Created Purchase nitro pro membership modal container .js.
+    - Created Purchase nitro pro membership modal .jsx.
+    - Created Purchase nitro basic membership modal .jsx.
+    - Created Purchase nitro basic membership modal container .js.
+    - Mounted select boost server plan modal in boost server modal.
+    - Mounted Purchase nitro pro membership modal in boost server modal to then be called in slide 2 nitro plan suggestion modal slide in select boost server plan modal.
+    - Mounted boost server modal in server setting modal.
+    - Mounted Select nitro membership plan modal in nitro store.
+    - Mounted Purchase nitro pro membership modal in Select nitro membership plan modal.
+    - Mounted Purchase nitro basic membership modal in Select nitro membership plan modal.
+    - Mounted Purchase nitro basic membership modal in nitro store.
+    - Mounted Purchase nitro pro membership modal in nitro store.
+    - Moved old deprecated channel nav bar without the collapsing channel lists to deprecated folder.
+    - Added the ability to show the option of gifting a nitro pro membership in the nitro pro membership modal.
+    - Added the ability to show the option of gifting a nitro basic membership in the nitro basic membership modal.
+    - Added the ability to show the option of gifting a nitro basic or pro membership to be passed from the nitro store to and through the nitro plan selection modal.
+    - Added rescale for position for mini current user account card when screen is less than or equal to 573px in height.
+    - Added the ability to copy dm message id when clicking the copy id setting button for dm server messages.
+    - Added the ability to copy message id when clicking the copy id setting button for server channel messages.
+    - Created styles for welcome message for text channels.
+    - Created welcome text channel message.jsx.
+    - Created welcome text channel message container.js.
+    - Added the welcome message for text channels.
+    - Added styles for welcome message for group chat dm Servers.
+    - Added a Welcome Message for group chat dmservers.jsx
+    - Added a Welcome Message for group chat dmservers container.js
+    - Added a Welcome Message for group chat dmservers.
+    - Added styles for welcome message for one to one dm Servers.
+    - Added a Welcome Message for one to one dmservers.jsx
+    - Added a Welcome Message for one to one dmservers container.js
+    - Added a Welcome Message for one to one dmservers.
+    - Added a component spliter called DmFirstChatMessage which decides which type of Dm First chat message to render one to one or group chat.
+    - Added DmFirstChatMessage container.js
+    - Added DmFirstChatMessage.jsx
+    - Mounted DmFirstChatMessage in DmServerChat room.
+    - Mounted welcome text channel message in ServerChat room.
+    - Created Message Skeleton Component which is a combination of using Mui pre-built skeleton component and the message component styles shared between both servers and dm servers to make rendering placeholder/ blank blobs like those used in the UpcPanel component much easier this generates 10 random messages with random widths and chances for blob image attachments much easier, the upc panel wil continue to use its prebuilt blobs as the loading complexity is more adavanced and a chance to show off a custom made version of a prebuilt component.
+    - Renamed the DmServerMemberList.jsx component file from dm__server_list.jsx to dm_server_member_list.jsx.
+    - Renamed the DmServerMemberListContainer.js component file from dm__server_list_Container.js to dm_server_member_list_container.js.
+    - ReWorked frontend time formatting for dm message time stamps for dm messages from displaying time in 
+    messages created before yesterday display as "Mon Sept 04 2023", messages created yesterday as "Yesterday at 5:00 pm" and today as "5:00 pm" to days before yesterday numeric timestamp of date and time example "09/04/2023 2:33 am", yesterday as "Yesterday at 5:00 pm" and today as "Today at 5:00 pm".
+    - Added Spinning cubes animation to nitro store tab upon entering the nitro store.
+    - Added New Time Stamp Function for dm Messages that gives the full date in the format weekday, full month day, year time am/pm.
+    - Added Tooltip to display full timestamp for dm messages.
+    - Moved a now deprecated version of DmMessage jsx to deprecated.
+    - Moved a protype version deprecated of the server message control using raw svg code to deprecated folder.
+    - Moved a protype version deprecated of the server message control using new svg react icons to deprecated folder.
+    - Solved the message control expansion problem after months since development of the expanding message control that expands for more options for a message by holding shift to open it it has been moved to deprecated to be used later as after look at how discord employees there method it seems that there method uses a listener that eventaully will target all message controls for each messsage on the page. Hover this version that was built controls only the message control component that is currently being hovered over and does not expand any previous hovered buttons but at the problems lied in the fact that it uses a focus and blur to achieve this which causes problems such as stop auto scroll on loading a chat room and the mouse is in the middle of the message list it stops the auto scroll and scrolled to the current hovered message and also takss away the focus of the chat ref input for the text area. This was ssolved by enabling the preventscroll on focus to true to stop the auto scrolling hover it does not stop from taking away the auto focus for other important elements. At the moment this is a near perfect solution and beats out discord implementation but due to the fact that the focus becomes diverted the method to employ 2 listener functions on mouse enter and mouse leave allows for the text area to remain focused while being able to control the component however just like discord any hovered message where the control component is hovered  will be controlled and be activated when not even hovering over that message at the moment. Basically just like discord a chat room with 20 messages hovering over 10 of those messages will register an event listener to that message to listen when the mouse enter listen for a key press of shift and then expand the message control component all previous hovered messages will be opened as well where as the custom  ref based solution targets one and only one at a time and removes the lister when the mouse leaves the message. the discord listener method will be used until a viable solution to fully handle the ref methods downsides in achieved.
+    - Added temporary solutions to open message control via shift key to dm Messages.
+    - Added temporary solutions to open message control via shift key to server channel Messages.
+    - Added old commented out code from json.jbuilder files to a deprecated json jbuilder file and moved it to deprecated folder.
+    - Moved test22.jsx file to deprecated.
+    - Moved testsvgraw.jsx file to deprecated.
+    - Reworked how dmMessages will render in dm chatroom, dm_Messages now will render in a more compressed form where any new messages from the same user are sent within the span of 5mins (300 seconds) between the last message they sent with no other user messaging in between it will render all those messages in a compressed form where the compressed form only shows the dm_messsage body and no user name, avatar or time stamp header but will show a timestamp to the left of it if the message is hovered over. this gives the illusion that the dmMessages are part of the orginal first message the user sent 5 mins ago. The first message a user sends every 5 mins or in between messages of other users renders normally giving user name, timestamp header and avatar along with dm Message body. the follow up messages give the illusion of a continuation of the first message.
+    - Fixed a display issue with dm Message settings control component when editing a message too make the controls disappear properly.
+    - Added onHover and isHovered state functions as call back functions to prevent hanging tool tip for the buttons in dmMessageControl.
+    - Added the ability when the user is holding shift while the dmMessage controller is expanded if the user clicked on the delete icon when still holding shift will outright delete the dmMessage without bringing up the delete confirmation modal.
+    - Added a is_header prop for dmMessage controls to indicate which position for the control component to render if it is true it means its is not a follow up dm message where if false renders the control lower for a follow up dm message
+    - Added tooltip for follow up dm message time stamp.
+    - Reworked how dmMessage body is returned from the messageBody function.
+    - Remodeled the styling and structuring of the edit dm Message form looks and how it is rendered.
+    - Added a ref to the edit dmMessage form so one it is open in addition to focusing on the input ref but also focus and scroll to the dmMessage edit body into proper view, discord does not do this and clicking on edit follow up message there is a 50% chance where when the edit form opens you will by also hovering over the message that is ontop of the one you are editing.
+    - Finally rendered chat message dividers properly for dmMessages where message that where sent over a 24 hour period will be seperated with a divider stating the date of when those messages where sent.
+    - Created Dm Message index .jsx which is basically a component that handles the rendering of the dm server messages instead of allowing all of that work to go to the dm chat room component.
+    - Created Dm Message index container.js.
+    - Moved timestamp functions to an external module and converted it to a hook due to be used in multiple components and need to prop drill and redelare the function is not needed.
+    - Removed oneToOneChatFirstMessage () from dm chat room and every component that it was prop drilled into as it has been replaced by the appropiated  component of the same name.
+    - Removed renderGroupChatFirstMessage () from dm chat room and every component that it was prop drilled into as it has been replaced by the appropiated component of the same name.
+    - Removed the prop drilling of the format time function in dm chat room components.
+    - Removed the prop drilling of the format time function in server chat room components.
+    - Moved a copy of dm chat room prior to the new version to deprecated folder.
+    - Moved several versions of dm chat room to deprecated folder.
+    - Uploaded custom hunt the wumpus logo.
+    - Made Several changes to server chat rooms including  remodeling similar to dm server chat rooms.
+    - Backed up old version of Delete Dm message modal.jsx to deprecated folder.
+    - Backed up old version of Delete Dm message modal container.js to deprecated folder.
+    - Added timestamp tool tip in delete dm message modal.
+    - Added timestamp tool tip in delete server channel message modal.
+    - Added Server Message index container.js to map out channel messages.
+    - Added Server Message index.jsx to map out channel messages.
+    - Changed the mapping of Server Messages to now all messages sent by a user in the span of 5 mins with now other user messaging in between will create a message with the users avatar and every follo uup message will just have the body and and timestamp of the left side of it the can be shown when hovering over it as well as a tool tip for it.
+    - Added chat divider with date time stamp for each 24 hour period for server channel messages.
+    - Changed scroll to bottom function to target and scroll to the bottom of the dm chat via dom querying instead of refs as the message list is no longer in the dm chat component.
+    - Changed scroll to bottom function to target and scroll to the bottom of the dm chat via dom querying instead of refs as the message list is no longer in the server chat component.
+    - Added the ability for the user to delete channel message when holding shift to expand the message control component and while holding shelf and click on the delete icon to will delete the message without bringing up the delete message modal.
+    - Removed placeholder of edit dm message input.
+    - Removed placeholder of edit channel message input.
+    - Added scroll to message upon opening edit message for server channel messages.
+    - Added scroll to message upon opening edit message for server channel messages.
+    - Added onHover and isHovered state functions as call back functions to prevent hanging tool tip for the buttons in server channel MessageControl.
+    - Added is_header prop for server channel MessageControl.
+    - Updated selectors.
+    - Moved Deprecated server messages 2.jsx to deprecated folder.
+    - Started Change Server Banner modal.
+    - Created file Server Banner modal.jsx.
+    - Created file Server Banner modal container.js.
+    - Started Change Server Invitation Splash (Background).
+    - Created file Server Invite Splash modal.jsx.
+    - Created file Server Invite Splash modal container.js.
+    - Finished Server Invite Splash Modal.
+    - Finished Server Banner Modal.
+    - Mounted Server Invite Splash Modal in server settings which can be accessed by clicking on the purple image in the Server Invite Background section.
+    - Mounted Server Banner Modal in server settings which can be accessed by clicking on the purple image in the Server Banner Background section.
+    - Mounted server invite splash image if a server has one to replace the purple image in the server invite background section.
+    - Mounted server banner image if a server has one to replace the purple image in the server banner background section.
+    - Moved non react portal version of action button pop up to deprecated.
+    - Changed Action button pop up to use react portal and a new method of positioning.
+    - Move old version of server search (Explore Servers main) to deprecated folder.
+    - Changed Explore server page to Use the newly returned props for explore servers page, the need for certain functions to generate each loading guild card for each server is reduced and the render time is reduced drastically.
+    - Removed mapping of server members to get the total number of members of a server in explore servers.
+    - Removed mapping of server members to get the total number of online members of a server in explore servers.
+    - Replaced color tag function in explore servers page to used to returned prop that extracts the server owners color tag from the back end.
+    - Changed the execution to launch the action button pop up in explore servers page to call one function which will call all functions instead, instead of directly calling all 3 indiviually.
+    - Passed bounding client to action button pop up to adjust its position.
+    - Changed the rendering of server avatar to be used as the server banner to actually using server banner in explore servers page.
+    - Changed verified check mark star colors black and purple to know use secret pink (fuchsia) and light purple.
+    - Add Blue verified tool tip to explore servers page.
+    - Changed how explore servers page works live searching has been changed to now where searching brings up another screen where live search can then run and clicking the back arrow will allow the user to return to the featured list.
+    - Changed the live search to now use a filter search instead of the old html is-hidden method. As due to the reduced frontend rendering functions due to returing a majority of needed data from the backend the need for most of those functions is not needed and the filter search is fast enough to be used here.
+    - Finalized Close hook modals util api.js.
+    - Finalized custom toggle switch component.
+    - Move old nitro store to deprecated as discord has repllaced the extra nitro buttons with just a snack bar component.
+    - Added a snack bar to the nitro store to replace excess nitro buttons.
+    - Added new nitro mini perk image to nitro store.
+    - Removed excessive nitro buttons from the nitro plan comparison grid.
+    - Added Snack bar animation for nitro store.
+    - Text edits and additions to nitro store.
+    - Moved Deprecated version of Server user options modal which is the normal uncompressed version to deprecated as it has been replaced with a more compact version as well as serving use for more than just member lists for dms/servers.
+    - Moved Deprecated version of Suop modal to deprecated that is the compressed version of the orginal suop modal but only serves use for members lists.
+    - Moved Deprecated version of Suop modal to deprecated that is the compressed version of the orginal suop modal but only serves use for members lists but also features travel sliding to the position or near position of the selected member not used as its not as asctheically pleasing.
+    - Moved the now deprecated version of Suop Messenger modal which was made as a carbon copy for use for dm and server messages due to styling issues when using the normal Suop modal.
+    - Moved the now deprecated version of Suop Messenger modal container to deprecated.
+    - Moved the now deprecated version of Suop Messenger modal combined with Suop modal with travel to deprecated.
+    - Moved the now deprecated version of Suop Messenger modal combined with Suop modal with unset to deprecated.
+    - Moved a second version of Suop Messenger modal combined with Suop modal with unset to deprecated.
+    - For messages in Both Dm Servers and normal Servers clicking on a the messages user name or profile picture will open the server user options modal.
+    - Added suop messenger setup to deprecated.
+    - Reduced the amount of Servers to be displayed to a maximum of 20 servers in the featured section for Explore Servers Page.
+    - Fixed Issues when dm Member changes banner, picture, or username this change is not reflect in the upc panel if the dm server is a one to one chat room.
+    - Fixed issues with changing dm group chat names causing a double submit due to submitting upon unfocus of the inpu, fixed by removing the form tag and adding a bool state var that changes to true when in submission  and false when done so when pressing enter the blur is triggered in order to close the input form but also calls submit this  change prevent blur from submitting when enter is pressed and allows blur to submit when enter was not used.
+    - Added a new function to soley just update the name of a dmServer.
+    - Changed the front end route for guild discovery from `/$/channels/guild-discovery/` to `/$/guild-discovery/`.
+    - Changed the logic to activate the selected state for for guild discovery in server nav bar.
+    - Switch to promise based solution for loading screen animation fade out instead of solely using settimeouts.
+    - Switch to promise based solution for refresh loading screen animation fade out instead of solely using settimeouts.
+    - Switch to promise based solution for intrusion loading screen animation fade out instead of solely using settimeouts.
+    - Switch to promise based solution for error boundary loading screen animation fade out instead of solely using settimeouts.
+    - Switch to promise based solution for delete server (telefrag) loading screen animation fade out instead of solely using settimeouts.
+    - Added Delete Dm server modal file to be used later.
+    - Added Delete Dm server modal Container file to be used later.
+    - Added Leave Dm server modal file to be used later.
+    - Added Leave Dm server modal Container file to be used later.
+    - Created Loading Dm Chat module which is made to load blank dm message skeletons and prevent the user from sending messages while the dm server loads.
+    - Finalized AppPuller util.js
+    - Uploaded eanBoostPerk.svg
+    - Uploaded purpleStormAvatar.gif
+    - Uploaded purpleElectricStorm.gif
+    - Uploaded strifeLogoBannerWumpus.png
+    - Moved deprecated Message Skeleton components to deprecated.
+    - Re - Enabled check if demo user to lock access to demo user related session and user apps.
+    - Created Deprecated Tool Tips Styles File.
+    - Changed Server Nav Bar Component from class based component to functional component.
+    - Moved Deprecated new server nav bar styles to deprecated folder.
+    - Moved other Deprecated new server nav bar styles to deprecated folder.
+    - Moved Deprecated new server nav bar higher level styles to deprecated folder.
+    - Backed up older server nav bar styles to deprecated.
+    - Moved Deprecated new server nav bar test 1 file to deprecated.
+    - Moved Deprecated new server nav bar test 2 file to deprecated.
+    - Moved Deprecated new server nav bar test 3 file to deprecated.
+    - Moved Deprecated new server nav bar test 3 file no path to deprecated.
+    - Moved Deprecated new server nav bar test 4 higher level file to deprecated.
+    - Moved Deprecated new server nav bar test 5 higher level file to deprecated.
+    - Moved Deprecated Class Based server nav bar to deprecated.
+    - Added conditional check to loading screen.
+    - Moved current non prod version of dm chat room to deprecated folder.
+    - Added conditional check to telefrag loading screen.
+    - Added conditional check to refresh loading screen.
+    - Added conditional check to update loading screen.
+    - Update Core styles.
+    - Finalized Message Skeleton and MessageList Skeleton.
+    - Finalized Guild Server list Skeleton and Guild Server Grid Skeleton.
+    - Finalized Loading Screen.
+    - Finalized Loading Screen container.
+    - Finalized Error Boundary.
+    - Finalized Error Boundary Loading Screen.
+    - Finalized Error Boundary Loading Screen Container.
+    - Finalized Refresh Loading Screen.
+    - Finalized Refresh Loading Screen Container.
+    - Finalized Update Loading Screen.
+    - Finalized Update Loading Screen Container.
+    - Finalized Intrusion Loading Screen.
+    - Finalized Intrusion Loading Screen Container.
+    - Finalized TeleFrag Loading Screen.
+    - Finalized TeleFrag Loading Screen Container.
+    - Finalized User owns server warning.
+    - Finalized User owns server warning container.
+    - Added Preview server reducer.
+    - Finalized dm_member api util.js
+    - Finalized Copy Strife Tag Modal.
+    - Finalized Copy Strife Tag Modal Container.
+    - Finalized User Edit Phone Number Modal.
+    - Finalized User Edit Phone Number Modal Container.
+    - Finalized Remove User Phone Number Modal.
+    - Finalized Remove User Phone Number Modal Container.
+    - Finalized Edit Username Modal.
+    - Finalized Edit Username Modal Container.
+    - Finalized Edit User Display Name Modal.
+    - Finalized Edit User Display Name Modal Container.
+    - Finalized Edit User Email Modal.
+    - Finalized Edit User Email Modal Container.
+    - Finalized Edit User Password Modal.
+    - Finalized Edit User Password Modal Container.
+    - Finalized Edit User PFP Modal.
+    - Finalized Edit User PFP Modal Container.
+    - Finalized Edit User Banner Modal.
+    - Finalized Edit User Banner Modal Container.
+    - Finalized Disable User Account Modal.
+    - Finalized Disable User Account Modal Container.
+    - Finalized Delete User Account Modal.
+    - Finalized Delete User Account Modal Container.
+    - Finalized LogOut Modal.
+    - Finalized LogOut Modal Container.
+    - Finalized User Settings Modal.
+    - Finalized User Settings Modal Container.
+    - Finalized Strife Svgs Library.
+    - Finalized Spinning Cubes.
+    - Finalized Spinning Cubes Container.
+    - Finalized Download Apps Modal.
+    - Finalized Download Apps Modal scss styles (scss var based).
+    - Finalized Splash Main.
+    - Finalized Splash Nav Bar.
+    - Finalized Splash Footer.
+    - Finalized Splash Body.
+    - Finalized Splash Container.
+    - Changed Current Patch notes link in README.md file to redirect to this file.
+    - Finalized Friend Request Error Modal.
+    - Finalized User Nav Bar.
+    - Finalized User Nav Bar container.
+    - Finalized Subscribe to nitro modal scss styles.
+    - Finalized Strife Toggle Switch scss styles.
+    - Finalized Create Dm Modal scss styles (scss var based).
+    - Finalized Boost Server Modal scss styles.
+    - Finalized Boost Server Modal.
+    - Finalized Boost Server Modal Container.
+    - Finalized Nitro header nav bar scss styles.
+    - Finalized Nitro Store scss styles.
+    - Finalized Boost Server Select Plan Modal.
+    - Finalized Boost Server Select Plan Modal Container.
+    - Finalized Chat Room First messsage scss styles.
+    - Finalized Channel Drop Down Modal.
+    - Finalized Channel Drop Down Modal Container.
+    - Finalized Channel Drop Down Modal SCSS styles.
+    - Finalized Nitro Header Nav Bar.
+    - Finalized Nitro Header Nav Bar Container.
+    - Finalized UPC Panel Scss Styles.
+    - Finalized Active Now Section.
+    - Finalized Active Now Section Container.
+    - Finalized Active Now Section SCSS Styles.
+    - Finalized Error Snack Bar Scss Styles.
+    - Readjusted Nitro Store Styles.
+    - Finalized Nitro Store.
+    - Finalized Nitro Store Container.
+    - Finalized Nitro Selection Modal.
+    - Finalized Nitro Selection Modal Container.
+    - Finalized Subscribe to Nitro Basic Modal.
+    - Finalized Subscribe to Nitro Basic Modal Container.
+    - Finalized Subscribe to Nitro Pro Modal.
+    - Finalized Subscribe to Nitro Pro Modal Container.
+    - Finalized Action Button PopUp Modal.
+    - Finalized Action Button PopUp Modal Container.
+    - Finalized Server Avatar Modal.
+    - Finalized Server Avatar Modal Container.
+    - Finalized Server Banner Modal.
+    - Finalized Server Banner Modal Container.
+    - Finalized Server Invite Splash Banner Modal.
+    - Finalized Server Invite Splash Banner Modal Container.
+    - Finalized Create Server Modal.
+    - Finalized Create Server Modal Container.
+    - Finalized Mega Upc Modal.
+    - Finalized Mega Upc Modal Container.
+    - Finalized Mega Upc Modal Tab 1.
+    - Finalized Mega Upc Modal Tab 1 Container.
+    - Finalized Mega Upc Modal Tab 2.
+    - Finalized Mega Upc Modal Tab 2 Container.
+    - Finalized Mega Upc Modal Tab 3.
+    - Finalized Mega Upc Modal Tab 3 Container.
+    - Finalized Mega Upc Friend Options.
+    - Finalized Mega Upc Friend Options Container.
+    - Finalized Mini Current User Upc Modal.
+    - Finalized Mini Current User Upc Modal Container.
+    - Finalized Start Conversation Search Modal scss styles (scss var based).
+    - Finalized Session Sign Up Form Container.
+    - Finalized Session Sign In Form Container. 
+    - Finalized Session Form.
+    - Finalized Session Form scss styles.
+    - Finalized User Asset Search Modal.
+    - Finalized User Asset Search Modal Container.
+    - Finalized Channels scss styles.
+    - Finalized UPC Panel.
+    - Finalized UPC Panel Container.
+    - Finalized Create Dm Modal.
+    - Finalized Create Dm Modal Container.
+    - Finalized Create Dm Modal HomeBar Version.
+    - Finalized Create Dm Modal HomeBar Version Container.
+    - Finalized No Friends Dm Modal HomeBar Version.
+    - Finalized No Friends Dm Modal HomeBar Version Container.
+    - Finalized No Friends Dm Modal.
+    - Finalized No Friends Dm Modal Container.
+    - Finalized NOT Friends Dm Modal.
+    - Finalized NOT Friends Dm Modal Container.
+    - Finalized Dm Message reducer.
+    - Finalized Welcome Text Channel First Message.
+    - Finalized Welcome Text Channel First Message Container.
+    - Finalized Strife Root Theme for patch v4.
+    - Finalized Download Apps SCSS Styles.
+    - Finalized Friend Options Modal Styles.
+    - Finalized Delete Friend Confirmation Modal Styles.
+    - Finalized User Nav Bar Styles.
+    - Finalized Friend Request Failed Modal Styles.
+    - Finalized Edit Friendship Modal.
+    - Finalized All Friends List.
+    - Finalized All Friends List Container.
+    - Finalized Online Friends List.
+    - Finalized Online Friends List Container.
+    - Finalized Pending Friends List.
+    - Finalized Pending Friends List Container.
+    - Finalized Add Friends.
+    - Finalized Add Friends Container.
+    - Finalized Blocked User List.
+    - Finalized Blocked User List Container.
+    - Finalized Friends Home Page.
+    - Finalized Friends Home Page Container.
+    - Finalized Delete Friend Confirmation Modal.
+    - Finalized Delete Friend Confirmation Modal Container.
+    - Finalized Block User Confirmation Modal.
+    - Finalized Block User Confirmation Modal Container.
+    - Finalized Dm Server actions.
+    - Finalized Create Server Modal Styles.
+    - Finalized Mini Current User UPC Modal Styles.
+    - Finalized Mega UPC Modal Styles.
+    - Finalized Nitro Nav Bar Styles.
+    - Finalized Servers Main Base styles.
+    - Finalized leaver server modal styles.
+    - Finalized Dm server Main Container styles.
+    - Finalized Dm server Api Util.
+    - Finalized servers Api Util.js.
+    - Finalized Channel Api Util.js.
+    - Finalized Server Membership Api Util.js.
+    - Finalized Splash Page Styles adding more css vars.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for Channel nav bar styles.
+    - Updated unused animations file.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for Active Now Section styles.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for Explore Servers styles.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for Home header Nav bar styles.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for UPC Modal styles.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for message styles.        
+    - Finalized Styles and Conversion from SCSS Vars to CSS for friendship styles.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for dm message styles.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for dm server members list styles.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for dm server header nav bar styles.      
+    - Finalized Styles and Conversion from SCSS Vars to CSS for dm server nav bar styles.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for server header nav bar styles.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for sessions styles.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for server members list styles.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for delete friend confirmation modal styles.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for start conversation modal styles.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for all styles for all loading screens.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for Create dm modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for Create dm modal home bar version.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for no friends dm modal home bar version.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for no friends dm modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for not friends dm modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for invite to dm modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for invite to dm voice call modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for invite to dm video call modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for delete message modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for delete server modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for delete channel modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for leave server modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for create channel modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for invite to server modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for Mega UPC modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for all scroll bars in the app located in the global scroll bars scss file.    
+    - Finalized Styles and Conversion from SCSS Vars to CSS for channel settings modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for server settings modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for user sub modals.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for edit user display name modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for edit username modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for edit user avatar modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for edit user banner modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for edit user password modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for edit user phone number modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for edit user email modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for log out modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for remove user phone number modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for user owns servers modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for disable user account modal.    
+    - Finalized Styles and Conversion from SCSS Vars to CSS for delete user account modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for copy user strife tag modal.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for user setttings modal.    
+    - Finalized Dm Servers Reducer.
+    - Finalized Tool Tips Styles.
+    - Finalized Styles for call containers.
+    - Finalized Styles and Conversion from SCSS Vars to CSS for server nav bar.        
+    - Finalized Styles and Conversion from SCSS Vars to CSS for global styles.        
+    - Finalized Styles and Conversion from SCSS Vars to CSS for global SCSS Vars.
+    - Finalized Styles for reset sheet.
+    - Finalized Group Chat First Message Component.
+    - Finalized Group Chat First Message Container.
+    - Finalized Create Channel Modal.
+    - Finalized Create Channel Modal Container.
+    - Finalized Delete Channel Modal.
+    - Finalized Delete Channel Modal Container.
+    - Finalized Channel Nav Bar.
+    - Finalized Channel Nav Bar Container.
+    - Finalized Channel Settings Modal.
+    - Finalized Channel Settings Modal Container.
+    - Finalized Start Conversation Search Modal.
+    - Finalized DmServer Nav Bar.
+    - Finalized DmServer Nav Bar Container.
+    - Finalized DmServer First Message Parser Component.
+    - Finalized DmServer First Message Parser Container.
+    - Finalized Delete DmServer Message Modal.
+    - Finalized Delete DmServer Message Modal Container.
+    - Finalized Message Reducer.
+    - Finalized o2o dm chat first message component.
+    - Finalized o2o dm chat first message container.
+    - Finalized video and voice call component.
+    - Finalized invite to dm server modal.
+    - Finalized invite to dm server modal container.
+    - Finalized Dm Server Member List.
+    - Finalized Dm Server Member List Container.
+    - Finalized Server Member List.
+    - Finalized Server Member List Container.
+    - Finalized Explore Servers Page.
+    - Finalized Explore Servers Container.
+    - Finalized Explore Servers Nav Bar.
+    - Finalized Voice Call Component.
+    - Finalized DM Call Component.
+    - Finalized Leave server modal.
+    - Finalized Leave server modal container.
+    - Finalized Modal actions.js.
+    - Finalized Dm Server Messages.
+    - Finalized Dm Server Messages Container.
+    - Finalized Server Settings Modal.
+    - Finalized Server Settings Modal Container.
+    - Finalized User Reducer.
+    - Finalized Delete Server Modal.
+    - Finalized Delete Server Modal Container.
+    - Finalized Select DmServer Members for Call Modal.
+    - Finalized Select DmServer Members for Call Modal Container.
+    - Finalized DmServer Header Nav Bar.
+    - Finalized DmServer Header Nav Bar Container.
+    - Finalized Modal Manager Container.
+    - Finalized Modal Manager.
+    - Finalized Server Messages.
+    - Finalized Server Messages Container.
+    - Finalized Server Header Nav Bar.
+    - Finalized Server Header Nav Bar Container.
+    - Finalized Delete Server Message Modal.
+    - Finalized Delete Server Message Modal Container.
+    - Finalized Dm Server Message Settings.
+    - Finalized Dm Server Message Settings Container.
+    - Finalized Server Message Settings.
+    - Finalized Server Message Settings Container.
+    - Finalized Blocked User Snack Bar.
+    - Finalized Blocked User Snack Bar Container.
+    - Finalized Message Skeleton Custom List Length.
+    - Finalized Dm ChatRoom.
+    - Finalized Dm ChatRoom Container.
+    - Finalized Dm ChatRoom hook up cable.
+    - Finalized Dm Messages Index.
+    - Finalized Dm Messages Index Container.
+    - Finalized Games List for User Assest Search Modal.
+    - Finalized Channel Drop Down Modal Styles for new icons.
+    - Finalized Channel Drop Down Modal for new icons.
+    - Finalized Invite to Server Modal Pre Demo Auth.
+    - Finalized Invite to Server Modal Container.
+    - Finalized Invite to DmServer Modal level 2.
+    - Finalized Server Nav Bar.
+    - Finalized Server Nav Bar Container.
+    - Finalized Dm Server.
+    - Finalized Dm Server Container.
+    - Finalized FriendShip Reducer.
+    - Finalized Entities Reducer.
+    - Finalized FriendShipSorted Reducer.
+    - Finalized Invite to Server Modal container.
+    - Finalized Message Invite variant styles.
+    - Finalized sendDmMessage function which is a variant of the create dm message function dedicated for sending message outside of said dm in modals.
+    - Finalized modal state reducer.
+    - Swapped message accessories for dm message settings to dm messages.
+    - Changed message wrapper to messages-container-wrapper for dm chat rooms.
+    - Changed message wrapper to messages-container-wrapper for server chat rooms.
+    - Changed message wrapper to messages-container-wrapper for message skeletons in loading dm chat rooms.
+    - Changed message wrapper1 to message-wrapper for messages in server chat rooms.
+    - Changed message wrapper1 to message-wrapper for dm messages in dm chat rooms.
+    - Changed message-accessories-button-wrapper1 to message-accessories-button-wrapper for dm messages settings.
+    - Changed message-accessories-button-wrapper1 to message-accessories-button-wrapper for server messages settings.
+    - Finalized styles for message formatting and controls.
+    - Finalized message wrappper for message skeleton.
+    - Finalized message style formating for dm chat room.
+    - Finalized dm messages with new style formating.
+    - Created Loading channel chat room container.
+    - Created No text channels chat room container.
+    - Finalized No text channels chat room container.
+    - Swapped message accessories for server message settings to server messages.
+    - Switched enter key listener for edit dm message from e.code to e.key to also use numpad enter.
+    - Switched enter key listener for edit server message from e.code to e.key to also use numpad enter.
+    - Finalized Server Messages Index.
+    - Finalized Server Messages Index Container.
+    - Finalized User Interface reducer.
+    - Prevented channel list drop down from collapsing and expanding when selecting create channel modal in channel nav bar.
+    - Removed Commented out code in server settings modal.
+    - Changed the warp path for the current user to general channel only if they are currently in the channel to be deleted in delete channel modal.
+    - Added Remove server dispatch for leave server modal.
+    - Added Remove server dispatch for leave server modal container.
+    - Upgraded Invite to Server Modal Container.
+    - Upgraded Invite to Server Modal.
+    - Moved new message server invite to dm server invite to server modal v1 to deprecated folder.
+    - Moved new message server invite to dm server invite to server modal v2 to deprecated folder.
+    - Logger Update to DmServer Cable.
+    - Finalized Server Reducer.
+    - Finalized Server Container.
+    - Finalized Friendship api util.js.
+    - Finalized Session api util.js.
+    - Uploaded Svg_masks.svg.
+    - Uploaded Svg_masks2.svg.
+    - Finalized Protect Server Container Route.
+    - Finalized UI Reducer.
+    - Finalized Message Reducer.
+    - Finalized Channel Reducer.
+    - Finalized Current User Reducer.
+    - Finalized Core.js replaced it with _CORE_.jsx.
+    - Finalized Core.container.
+    - Finalized CORE_CABLE.js.
+    - Finalized Strife Main Container.
+    - Finalized Strife Main.
+    - Finalized Route.utils.js.
+    - Finalized Server Actions.
+    - Finalized Server User Options Modal Container.
+    - Finalized Channel Actions.
+    - Finalized Session Actions.
+    - Finalized FriendShips Actions.
+    - Finalized Dm Member Actions.
+    - Finalized Server MemberShip Actions.
+    - Finalized app.jsx.
+    - Moved Protected server route type.jsx version to deprecated.
+    - Created Typing bubbles (gray) svg which will be used to created the typing animation when a user is typing chat rooms.
+    - Cleared temps.scss.
+    - Made some edits to call grid styles.scss.
+    - Moved old Server Chat room to deprecated folder.
+    - Moved new Server Chat room lvl 2 with server message index to deprecated folder.
+    - Moved new Server Chat room lvl 3 to deprecated folder.
+    - Added PlaceHolder change when user has selected at least one friend from Type the username of a friend to Find or start a conversation in create dm modal.
+    - Added PlaceHolder change when user has selected at least one friend from Type the username of a friend to Find or start a conversation in create dm modal home bar version.
+    - Added PlaceHolder change when user has selected at least one friend from Type the username of a friend to Find or start a conversation in invite to dm modal.
+    - Added PlaceHolder change when user has selected at least one friend from Type the username of a friend to Find or start a conversation in invite to dm modal lvl 2.
+    - Added a check to turn off blocked user snack bar within blocked user snack bar to prevent the chance from it appearing in group dms and other dm chats where it the user is not blocked.
+    - Added a check to turn off blocked user snack bar within DM Server main container to prevent the chance from it appearing in group dms and other dm chats where it the user is not blocked.
+    - Created loading text channel chatroom component to be displayed upon entering a channel chat room.
+    - Created loading text channel chatroom container to be displayed upon entering a channel chat room.
+    - Added Welcome Voice Channel Text chat icon.svg.
+    - Added styles for Welcome Voice Channel Text chat icon.svg.
+    - Fixed scroll issue when typing in chat for dm chat room.
+    - Finalized Text Channel Loading container.
+    - Finalized Text Channel Loading component.
+    - Finalized Server User Options Modal.
+    - Finalized Server Chat Room Container.
+    - Finalized WebPackAnaylzer.js.
+    - Finalized WebPackConfig.js.
+    - Deleted old prev_tests.
+    - Moved old prev_tests to deprecated folder.
+    - Deleted old test_page.
+    - Deleted moved old test_page to deprecated folder.
+    - Moved test_page container to deprecated folder.
+    - Moved test_2 page to deprecated folder.
+    - Moved test_6 page add friends page prototype to deprecated folder.
+    - Moved test_6 page add friends page prototype backup to deprecated folder.
+    - Moved test_12 page to deprecated folder.
+    - Moved test_5 page to deprecated folder.
+    - Moved test_4 page to deprecated folder.
+    - Moved test_page1_message_controllers_lvl1_prototype to deprecated folder.
+    - Moved test_11_message_controller_near_present to deprecated folder.
+    - Moved test_33_message_controller_near_present_in_list to deprecated folder.
+    - Finalized Test_page1.
+    - Finalized Test12 messsge invitation prototype.
+    - Finalized TestBench Container.
+    - Finalized Server Main .
+    - Finalized Server Main Container.
+    - Finalized Server Chat Room.
+    - Finalized DM Server Chat Room Cable.
+    - Fixed DM Server Chat Room placeholder.
+    - Uploaded discord_pfp.svg.
+    - Uploaded strifeLogoBanner.png.
+    - Uploaded defaultProfilePicBlack.png.
+    - Uploaded outlinePic.png.
+    - Uploaded strife_spider.png.
+    - Finalized SUOP Messenger Modal.
+    - Finalized SUOP Messenger Modal Container.
+    - Finalized _APP.jsx.
+
+## Backend Changes
+
+- Discord does allow channels with name of more than 100 characters long but instead of erroring out it splices the name after the 100 character and creates it. So changes to the backend to prevent channel if the name fails to fall in a specified range between 1 and 100 characters.
+- Added a return of friend info through friend show  jbuilder.json file to potentially allow the friendship state to fully sync with the user state when
+when friend actions are executed. (Friend actions orginate in the user state as the natural way to meet new users is through this state and actions such as creating a friendship is using data from the user state to create the friendship while the friendship state is used to refer to all friends/ relationships with statuses of -1, 1,2,3) of the current user in certain modals as it is not volatile like the user state. The user state changes constantly as switching between servers, and dmServers the user state becomes filled with users that are members of those entities which would force users who are not friends with the current user to appear in lists/modals that use the users friends. the friend state renders all relations and filters out what is needed and shows the type of friendships without being modified by the users state. However many actions involving friendships do not get modded into the friendship reducer as the data returned by friend actions only partially contains data to complete further actions involving friendships the extra needed data comes from the user state so returning an extra portion of data from the friendships view file can allow friendship state to be used more in the app than just a hard filtered state. The potiental of this is yet to be tested and fully intergrated.
+- Changed the rendering of messages when adding a member to a server only the first channel of the server will give a message about the invited person.
+- Added a new function that passes in an array of member ids to grant server and channel memberships when inviting members of a group/dm server.
+- Add another backend strife core cable action to parse members that where invited via a dm server in invite to server modal.
+- Added new route to  call the new function to handle inviting multiple members (from a dmServer) at once from the invite to server modal in the server_memberships controller.
+- Edited backend error messages for changing user passwords for when the new passowrd filed is blank.
+- Fixed an error where removing phone number in remove phone number modal does not give an error on wrong password input due to not returning custom invaild password error.
+- Edited Routing for fetching dm member status, changed the route and edited it to get_dm_member instead also changed the function attached to it to return the dm member data instead.
+- Added a new route to check if a dm_member is still a member of a dmserver attached the route to dmServers instead of dmMembers to bybass naming it a generic /api/"generic name"/ route in order to bypass the get route needed the id of the object itself and needing to execute different functions or return different data this passes a bool value to indicate if membership is true or not without passing all the dmServer membership data instead which in the future will be larger.
+- Added a new route attached to dmServer to receive dm membership data the functionailiy is the same as the show for dm membership but more dedicated to the current dm server that dm membership belongs to.
+- Added a new Route to obtain server membership data of a server member.
+- Added a new route attached to servers to obtain server membership data of a server member similar to the show server membership route/ function but more dedicated/ attached to the server the membership belongs too.
+- Added new route to obtain a bool value indicating if a server member is still a member of a server.
+- Create function to check if a user is still a member of a server.
+- Create function to check if a user is still a member of a dm server.
+- Added a change where injecting multiple members into a server by inviting a dmservers members to the server would cause a stall if the list of added members reach over 30 although this scenerio is impossible as dm servers have a max of 10 members reducing the amount of renders is needed. the re-renders is caused by the amount of new welcome messsages for each new member of the server with a re-render of the server to show the new added member. So a new welcome message function is created for injecting so many members at a time it welcomes all the new added members to the server in one messsage with all the new members names.
+- Backed up server update function to deprecated prior to implementing snack bar.
+- Replaced server update function with considerations for snackbar implementation able to parse removal of icon after updating and filtering out the removal icon bool from update params.
+- Created a new backend route to obtain the mutual friends between two users.
+- Created a new backend route to obtain the mutual servers between two users.
+- Created back end function in users controller to return mutual friends between to users, this most notably applies to the current user and some other user being viewed by the mega upc modal and the planned user profile dm container. It finds both users by their ids and then using active record associations take the current users friends and the other users friends mapped to give their ids only and return the friends the current user has that matches ids from the other user.
+- Created back end function to grab mutual servers between two users it uses a similar process to the mutual friends function except it uses the servers_joined association and selects out those servers where the server id matches between the two users.
+- Returned the number of members a server has in explore.json.jbuilder for unexplored servers state.
+- Returned the number of online members a server has in explore.json.jbuilder for unexplored servers state.
+- Returned the server owner color tag  which is the color tag of the user that is the owner of the server for unexplored servers state.
+- Returned the dmServer owner color tag  which is the color tag of the user that is the owner of the dmServer for dmServers state.
+- Returned the if a dmServer is currently one to one which means it is a chat between 2 users.
+- Returned the other user that is not the current user for a one to one dmServer chat room.
+- Returned is a dmServer is a group chat that is if the dmServer has more than two members.
+- Created function in dmServer Modal to check if a dmServer qualifies as a group chat.
+- Created function to process time stamp for dm message creation time it is basically the same process used to process and format the time when returning a dmServer with its dm messages but converted into a function.
+- Created function to process time stamp for message creation time it is basically the same process used to process and format the time when returning a Servers channel with its messages but converted into a function.
+- Removed unnecessary server assets in server.show.json.jbuilder file as it was never used. it is a nest version of half of the extrracted data for a server.
+- Redirected json returning of channel messages to _message.json.jbuilder instead of looping through the messages itself and extracting the needed attributes.
+- Removed old returning of channel messages from channel.show jbuilder file.
+- Redirected json returning of dm server messages to _dm_message.json.jbuilder instead of looping through the dm messages itself and extracting the needed attributes.
+- Removed old method of parsing dm_messages when rendering :show for dmServer.
+- Returned full date time stamp in format of weekday month day year time and am/pm for dm messages in _dm_messages.json.jbuilder.
+- Returned full date time stamp in format of weekday month day year time and am/pm for messages in _messages.json.jbuilder.
+- Backed up deprecated dm servers controller to deprecated folder.
+- Removed the creation of the default dm Message welcoming either group members or other user when creating a dmServer as the new first dm message containers on the front end replace the need for this.
+- Added Server banner attachment to server modal.rb
+- Added Server invite splash attachment to server modal.rb
+- Added backend function to change and remove server banner attachments.
+- Added backend function to change and remove server invite splash banner attachments.
+- Added bakend route to change/remove server banner.
+- Added bakend route to change/remove server invite splash banner.
+- Attached gcIcon for group chat dmServers to be utilized later.
+- Backed up deprecated dm Messages controller to deprecated folder.
+- Added Backend route to change dm Server name.
+- Added Backend function to change dm Server name.
+- Added Backend function that executes in the change dm Server name function to take the current user and create a   message indicating that they have changed the name of the dm server and send this message and a request to resync the dm server for all dmserver members currently in the chat room.
+- Fixed Tranmission state cable to update changes to a usser dms if they are in a dmserver currently changes to username, avatar or banner will activate this change.
+- Added better validation to dmServer name in dm server model.rb, the length is only allowed to be 1-100 characters in length while and can be null for initial setup only.
+- Finalized users : _user.json.jbuilder for patch v4.
+- Finalized users : userExtraction.json.jbuilder for patch v4.
+- Finalized servers : explore.json.jbuilder for patch v4.
+- Finalized DmServer model.rb for patch v4.
+- Finalized Users Controller.rb for patch v4.
+- Finalized Server Memberships Controller.rb for patch v4.
+- Finalized Server Model.rb for patch v4.
+- Finalized Server Membership model.rb for patch v4.
+- Finalized Channel model.rb for patch v4.
+- Finalized Dm Message model.rb for patch v4.
+- Finalized Message model.rb for patch v4.
+- Finalized Channel: show.json.jbuilder for patch v4.
+- Finalized Dm Servers Controller.rb for patch v4.
+- Finalized Dm Members Controller.rb for patch v4.
+- Finalized Channels Controller.rb for patch v4.
+- Finalized Current backend routes.rb for patch v4.
+- Finalized Temp DmServer Name Generator function when there is no set name for a dmServer speeds up front-end rendering.
+- Finalized DmServer : show.json.jbuilder for patch v4.
+- Backed up Channel.rb model to deprecated.
+- Backed up Channel_controller.rb to deprecated.
+- Upgraded rails action cable library file usage switched from action_cable to actioncable for rails 8.
+- Added Action Cable logger to be enabled on app cable.
+- Swapped back to returning the processed dm message via controller methods and not just action cable for the reason being if the websockets disconnects the current user is still able have their screen.
+- Swapped back to returning the processed message via controller methods and not just action cable for the reason being if the websockets disconnects the current user is still able have their screen.
+- Created a view for dm messages showVC.json.jbuilder.
+- Created a view for  messages showVC.json.jbuilder.
+- Backed up message controller to deprecated.
+- Finalized DmServers: _Dmserver.json.jbuilder.
+- Finalized Message: _Message.json.jbuilder.
+- Finalized ServerMembership: _ServerMembership.json.jbuilder.
+- Finalized ServerMembership: show.json.jbuilder.
+- Finalized Dm Message: _DmMessage.json.jbuilder.
+- Finalized Dm Message: show.json.jbuilder.
+- Finalized Channel: show.json.jbuilder.
+- Finalized Server: show.json.jbuilder.
+- Finalized Server: _server.json.jbuilder.
+- Finalized Server: index.json.jbuilder.
+- Finalized Server: compressIndex.json.jbuilder.
+- Finalized Server.rb model for patch v4.
+- Finalized DmMessage.rb model for patch v4.
+- Finalized DmMessage Controller for patch v4.
+- Finalized User.rb model for patch v4.
+- Finalized Channel.rb model for patch v4, removed welcome message after create as its been handled on the front end.
+- Finalized FriendShip: show.json.jbuilder.
+- Finalized FriendShip: allFriendsSorted.json.jbuilder.
+- Finalized FriendShip: outGoingFriendRequests.json.jbuilder.
+- Finalized FriendShip: incomingFriendRequests.json.jbuilder.
+- Finalized FriendShip: allFriends.json.jbuilder.
+- Finalized FriendShip: onlineFriends.json.jbuilder.
+- Finalized FriendShip: offlineFriends.json.jbuilder.
+- Near Finalization for Message Controller for patch v4.
+- Finalized Dm_Members showViaCable.json.jbuilder.
+- Finalized Dm_Members show.json.jbuilder.
+- Finalized Dm_Members showAll.json.jbuilder.
+- Finalized FriendShips Controller for patch v4.
+- Finalized Users Controller for patch v4.
+- Finalized Channels Controller for patch v4.
+- Finalized Server MemberShips Controller for patch v4.
+
+### Front-End Changes
+
+- Added Custom Built in Hook components for detecting when a component is mounted or not, this is used to delay to triggering of css animation effects of some elements upon initial rendering.
+- Added new routes to get server membership data in server membership api util.
+- Added get route for server membership when not in its dedicated server in server membership api util.
+- Added get route for server membership that is dedicated to the server it belongs to in server membership api util.
+- Add a get route to check for server membership that returns a bool in server membership api util.
+- Added new routes to get dmserver membership data in dmserver membership api util.
+- Added get route for dm server membership when not in its dedicated dm server in dmserver membership api util.
+- Added get route for dm server membership that is dedicated to the dmServer it belongs to in dmserver membership api util.
+- Add a get route to check for dmserver membership that returns a bool in dmServer membership api util.
+- Added a get route that submits the current user and another users ids to return mutual friends between them in session api util.
+- Added a get route that submits the current user and another users ids to return mutual servers between them in session api util.
+- Added ajax call to change/remove server banner in server apli util.js
+- Added ajax call to change/remove server invite splash in server apli util.js
+- Binded ajax call the change/remove server banner to recieve server in server actions.js
+- Binded ajax call the change/remove server invite splash to recieve server in server actions.js
+- Added ajax call to update the name of a dm server in dm server api util.js.
+- Binded ajax call to update the name of a dm server in dmServer actions.
+- Added Websocket remove channel dispatcher.
+- Added Websocket receive channel dispatcher.
+- Added Websocket update channel dispatcher.
+- Added update channel dispatcher.
+
+### Other Changes
+
+- Added Link to Patch notes (this file) in the README.MD file
+- Started to swap to scss features to replace commonly used styles.
+- Add new Selector Function to extract directly from the friendship state and get a users friends based on a friendships status indicated via a number between -2 - +3, previously a selector of similar functionality was used but extracted from the users state instead.
+- Added JsDoc To Friendship Selectors.
+- Added JsDoc to Strife Switch Component.
+- Added JsDoc to REACT PORTAL Component.
+- Upgraded NPM Package for react tool tip.
+- Added SVGR and SVGO as tools in README.md
+- Updated MIT License.
+- Updated Apache License.
+
+---
