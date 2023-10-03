@@ -2177,6 +2177,7 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Finalized Users Controller for patch v4.
 - Finalized Channels Controller for patch v4.
 - Finalized Server MemberShips Controller for patch v4.
+- Added server_channel.rb in action cable files to be used later, imported from a previous protype project.
 
 ### Front-End Changes
 
