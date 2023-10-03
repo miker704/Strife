@@ -2053,6 +2053,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded outlinePic.png.
     - Uploaded strife_spider.png.
     - Finalized SUOP Messenger Modal.
+    - Finalized SUOP Messenger Modal Container.
 
 
 
