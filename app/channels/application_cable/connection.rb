@@ -1,6 +1,6 @@
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
-    identified_by :current_user, :dmServers, :strifeServerChannelsStreaming
+    identified_by :current_user, :dmServers, :strifeServerChannelsStreaming, :serverChannelsStreaming, :strifesServerStreaming
     
     def current_user
       @current_user ||= User.find_by(session_token: request.session[:session_token])
@@ -13,7 +13,13 @@ module ApplicationCable
       @strifeServerChannelsStreaming ||= []
     end
 
+    def serverChannelsStreaming
+      @serverChannelsStreaming ||= []
+    end
 
+    def strifesServerStreaming
+      @strifesServerStreaming ||= []
+    end
 
     private
 
