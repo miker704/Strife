@@ -2179,6 +2179,8 @@ when friend actions are executed. (Friend actions orginate in the user state as 
 - Finalized Server MemberShips Controller for patch v4.
 - Added server_channel.rb in action cable files to be used later, imported from a previous protype project.
 - Added connection utils in connections.rb for server channels and strife server to be used later.
+- Finalized strife_core.rb cable.
+
 
 ### Front-End Changes
 
