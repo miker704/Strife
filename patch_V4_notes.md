@@ -2055,6 +2055,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized SUOP Messenger Modal.
     - Finalized SUOP Messenger Modal Container.
     - Finalized _APP.jsx.
+    - Renamed Patches.md to Patch_V3_notes.md.
 
 ## Backend Changes
 
