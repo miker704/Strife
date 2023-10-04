@@ -45,10 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	window.dispatch = store.dispatch;
 	
 	//Do not use libaries need to updated first react 18 interferes with react-tool-tip and skips loadscreens
-	// const rootContainer = document.getElementById('root');
-	// const ROOT = createRoot(rootContainer);
-	// ROOT.render(<Root store={store} />);
+	const rootContainer = document.getElementById('root');
+	const ROOT = createRoot(rootContainer);
+	ROOT.render(<Root store={store} />);
 	
 	
-	ReactDOM.render(<Root store={store} />, document.getElementById('root'));
+	// ReactDOM.render(<Root store={store} />, document.getElementById('root'));
 })
