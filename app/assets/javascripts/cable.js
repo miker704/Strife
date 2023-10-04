@@ -7,6 +7,7 @@
 
 (function() {
   this.App || (this.App = {});
+  // ActionCable.logger.enabled = true;
   App.cable = ActionCable.createConsumer();
 
 }).call(this);
