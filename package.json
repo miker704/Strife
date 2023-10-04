@@ -2,7 +2,7 @@
   "name": "strife",
   "private": true,
   "description": "Discord - \"disagreement between people.\"     Synonym Strife - \"angry or bitter disagreement over fundamental issues; conflict\"",
-  "version": "1.0.0",
+  "version": "4.0.0",
   "main": "index.js",
   "directories": {
     "lib": "lib",
