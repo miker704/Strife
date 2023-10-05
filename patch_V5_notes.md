@@ -80,3 +80,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added proper cable updates to all channels of a server when a user joins using an invite link.
     - Added new returns for Server _server.json.jbuilder.
     - Removed unneeded general channel in Server : explore.json.jbuilder.
+    - Removed unneeded general channel in Server : index.json.jbuilder.
