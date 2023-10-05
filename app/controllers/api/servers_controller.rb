@@ -220,8 +220,9 @@ class Api::ServersController < ApplicationController
                             receiver_id: current_user.id
                         )
                     @message=Message.create!(body: @response_Message, author_id: 1, channel_id: channel.id)
-                    StrifeServer.broadcast_to(channel,message: @message, head: 100)
-                    # StrifeServer.broadcast_to(channel, head: 100)
+                    # StrifeServer.broadcast_to(channel,message: @message, head: 100,type: '')
+                    StrifeServer.broadcast_to channel,type: 'RECEIVE_CHANNEL_MESSAGE', **from_template('api/messages/show', message: @message)
+                    StrifeServer.broadcast_to(channel,head: 100, type:"NEW_SERVER_MEMBER")
 
                     end
                         render :show
