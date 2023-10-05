@@ -23,12 +23,23 @@
   banner (if server has an avatar it gets rendered as a banner in the explore servers page)
 - Servers will now have their theme type assigned via the backend,
   -Thus the channel creation for them will be moved to the backend to reduce redux calls for all the channels created and just receive the server itself which will give all the channels with it.
+- Allow Servers to have no channels and be able to render to users when reloading the page and signing in.
+- Allow the deletion of general channel,  a server with no channels leads to rendering no servers.
+- Server Folder Bubble servers within servers
+- Allow servers to be dragged and placed (requires placement values)
+- When creating a server 2 channel catergories for a default server, voice and text are created and those channels are then inserted into those catergories.
 
-#### Channels
+
+### Channels
 
 - Ability to give channels a description.
 - Allow channels to be private, thus requiring an invite to that channel
-- Channel Categories.
+- Allow the deletion of general channel.
+- Channel Categories (channel that contains channels).
+- Allow channels to be dragged and placed (requires placement values).
+- Add new channel types including quick access member list, Q&A. etc
+- Voice channels will have a complete different rendering scheme yielding no member list instead of a side acordian where text messages can be viewed.
+- Voice channels for servers will now feature calling.
 
 ### Messaging as Whole
 
@@ -42,6 +53,9 @@
 - Allow a url parser, anaylze if a text matches a url and provide a small modal/ component to wrap out send
 link if possible.
 - Allow url parser to embed youtube videos.
+- Display edit, read status for messages.
+- Allow dmMessages to be part of a server where the relationship is a server invite.
+
 
 ### General/Util
 
