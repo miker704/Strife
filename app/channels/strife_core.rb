@@ -83,7 +83,11 @@ class StrifeCore < ApplicationCable::Channel
         elsif currentLocation.include?('/$/channels/') && !currentLocation.include?('@me')
           currentLocation = currentLocation.split('/$/channels/').join('').split('/').map(&:to_i)
           @channel = Channel.find(currentLocation[1])
-          StrifeServer.broadcast_to(@channel, head: 1012, type: "MEMBER_UPDATED")
+          @current_server = Server.find(currentLocation[0])
+          @current_server.channels.each do |channel|
+            StrifeServer.broadcast_to(channel, head: 1012, type: "MEMBER_UPDATED")
+          end
+          # StrifeServer.broadcast_to(@channel, head: 1012, type: "MEMBER_UPDATED")
         else
           print 'CURRENT LOCATION IS'.colorize(:yellow)
           print currentLocation.colorize(:yellow)
