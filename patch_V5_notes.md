@@ -77,3 +77,4 @@ the need to create a private room is need to prevent unwanted members from enter
 ## Backend Changes
 
     - Changed to signal every channel in a server to resync the server when as user in the server updates there name, avatar or banner. instead of only the channel they are in to allow updates to be sync with other users in the server but are currently in a different channel of the server.
+    - Added proper cable updates to all channels of a server when a user joins using an invite link.
