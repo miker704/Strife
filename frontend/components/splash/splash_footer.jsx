@@ -46,7 +46,7 @@ const SplashFooter = (props) => {
         <div className='splash-footer-spacer'></div>
         <div className='splash-footer-route-section'>
           <h5 className='splash-footer-header-h5'>Project Status</h5>
-          <a className="splash-footer-nav-link" href="https://github.com/miker704/Strife/blob/main/patches2.md" target="_blank">
+          <a className="splash-footer-nav-link" href="https://github.com/miker704/Strife/blob/main/patch_V4_notes.md" target="_blank">
             <div className='splash-footer-nav-link-inner-text'>Current Patches v5</div>
           </a>
         </div>
