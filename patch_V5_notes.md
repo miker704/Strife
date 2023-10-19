@@ -10,6 +10,8 @@
     a user should re-receive all their dm/servers or just a single one. The hope is also to reduce and eliminate problem areas on re-renders such as channel messages re-rendering a previous or newly received server/channels messages for half a second before reverting back to the proper messages.
   - many more
 
+- Will be adding the new shop page.
+
 ### DmServer Plans
 
 - Dmserver can manually be deleted via clicking the x icon next to it (creator only, leave the dmServer if a member)
