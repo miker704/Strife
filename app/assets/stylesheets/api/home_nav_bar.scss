@@ -57,16 +57,14 @@
 }
 
 .home-nav-bar {
-  display: -webkit-box;
-  -webkit-box-flex: 0;
-  -webkit-box-align: center;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   flex: 0 0 auto;
-  align-items: center;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   height: 48px;
-  padding: 0 8px;
+  min-height: 48px;
+  padding: 8px;
   font-size: 16px;
   line-height: 20px;
   cursor: default;
@@ -76,15 +74,18 @@
   position: relative;
   color: var(--text-normal);
   background-color: var(--background-primary);
-
-  // -webkit-box-shadow: var(--elevation-low);
-  // box-shadow: var(--elevation-low);
-
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
   user-select: none;
+}
+
+
+.home-nav-bar-upper-container{
+  display: flex;
+  flex: 1;
+  box-sizing: border-box;
 }
 
 .home-nav-bar-children {
