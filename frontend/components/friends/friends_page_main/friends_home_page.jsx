@@ -190,61 +190,63 @@ const FriendsHomePageContainer = (props) => {
                 <DMNavBarContainer />
                 <main className="home-nav-bar-container-inner-wrapper">
                     <section className="home-nav-bar">
-                        <div className="home-nav-bar-children">
-                            <div className="home-friends-icon-wrapper">
-                                <FriendsRaiseHandIcon className="home-friends-icon" width={24} height={24} />
-                            </div>
-                            <div className="home-nav-bar-friends-title-wrapper">
-                                <h1 className="home-nav-bar-title-text">Friends</h1>
-                            </div>
-                            <div className="home-friend-divider"></div>
-                            <div className="friends-tab-list">
-                                <div onClick={() => handleClick("online")} className={`online-tab ${tabType.online ? "selected" : ""}`}>Online</div>
-                                <div onClick={() => handleClick("All")} className={`all-tab ${tabType.All ? "selected" : ""}`}>All</div>
-                                <div onClick={() => handleClick("Pending")} className={`pending-tab ${tabType.Pending ? "selected" : ""}`}>Pending</div>
-                                <div onClick={() => handleClick("Blocked")} className={`blocked-tab ${tabType.Blocked ? "selected" : ""}`} >Blocked</div>
-                                <div onClick={() => handleClick("Add_Friend")} className={`add-friend-tab ${tabType.Add_Friend ? "selected" : ""}`} ><span>Add Friend</span></div>
-
-                            </div>
-                        </div>
-                        {renderCreateDMModalHBV()}
-                        {renderNoFriendsDmModal()}
-                        <div className="home-nav-tool-bar">
-                            <div className="invite-tool-bar">
-                                <div className="home-nav-tool-bar-icon-wrapper" id="itbgdm"
-                                    onClick={(e) => handleOpenCreateDmModalHombarVersion(e)}>
-                                    <SMSPlusIcon className="invite-tool-bar-group-dm-icon" />
-                                    <div className="home-bar-tool-tip">New Group DM</div>
-                                    <div className="home-bar-tool-tip-triangle"></div>
+                        <div className="home-nav-bar-upper-container">
+                            <div className="home-nav-bar-children">
+                                <div className="home-friends-icon-wrapper">
+                                    <FriendsRaiseHandIcon className="home-friends-icon" width={24} height={24} />
+                                </div>
+                                <div className="home-nav-bar-friends-title-wrapper">
+                                    <h1 className="home-nav-bar-title-text">Friends</h1>
                                 </div>
                                 <div className="home-friend-divider"></div>
-                            </div>
+                                <div className="friends-tab-list">
+                                    <div onClick={() => handleClick("online")} className={`online-tab ${tabType.online ? "selected" : ""}`}>Online</div>
+                                    <div onClick={() => handleClick("All")} className={`all-tab ${tabType.All ? "selected" : ""}`}>All</div>
+                                    <div onClick={() => handleClick("Pending")} className={`pending-tab ${tabType.Pending ? "selected" : ""}`}>Pending</div>
+                                    <div onClick={() => handleClick("Blocked")} className={`blocked-tab ${tabType.Blocked ? "selected" : ""}`} >Blocked</div>
+                                    <div onClick={() => handleClick("Add_Friend")} className={`add-friend-tab ${tabType.Add_Friend ? "selected" : ""}`} ><span>Add Friend</span></div>
 
-                            {
-                                showUpdate && (
-                                    <div className="update-ready-tool-bar" onClick={(e) => handleRemoveUpdateIcon(e)}>
-                                        <div className="home-nav-tool-bar-icon-wrapper">
-                                            <UpdateReadyIcon className="icon-home-update-ready" />
-                                            <div className="home-bar-tool-tip">Update Ready!</div>
-                                            <div className="home-bar-tool-tip-triangle"></div>
-                                        </div>
-                                    </div>)
-                            }
-
-                            <div className="inbox-tool-bar">
-                                <div className="home-nav-tool-bar-icon-wrapper">
-                                    <InboxIcon className="inbox-tool-bar-icon" />
                                 </div>
-                                <div className="home-bar-tool-tip">Inbox</div>
-                                <div className="home-bar-tool-tip-triangle"></div>
                             </div>
-                            <a className="help-tool-bar" href="https://support.discord.com" target="_blank" rel="noreferrer noopener">
-                                <div className="help-tool-bar-icon-wrapper">
-                                    <HelpIcon className="help-tool-bar-icon" />
-                                    <div className="home-bar-tool-tip">Help</div>
+                            {renderCreateDMModalHBV()}
+                            {renderNoFriendsDmModal()}
+                            <div className="home-nav-tool-bar">
+                                <div className="invite-tool-bar">
+                                    <div className="home-nav-tool-bar-icon-wrapper" id="itbgdm"
+                                        onClick={(e) => handleOpenCreateDmModalHombarVersion(e)}>
+                                        <SMSPlusIcon className="invite-tool-bar-group-dm-icon" />
+                                        <div className="home-bar-tool-tip">New Group DM</div>
+                                        <div className="home-bar-tool-tip-triangle"></div>
+                                    </div>
+                                    <div className="home-friend-divider"></div>
+                                </div>
+
+                                {
+                                    showUpdate && (
+                                        <div className="update-ready-tool-bar" onClick={(e) => handleRemoveUpdateIcon(e)}>
+                                            <div className="home-nav-tool-bar-icon-wrapper">
+                                                <UpdateReadyIcon className="icon-home-update-ready" />
+                                                <div className="home-bar-tool-tip">Update Ready!</div>
+                                                <div className="home-bar-tool-tip-triangle"></div>
+                                            </div>
+                                        </div>)
+                                }
+
+                                <div className="inbox-tool-bar">
+                                    <div className="home-nav-tool-bar-icon-wrapper">
+                                        <InboxIcon className="inbox-tool-bar-icon" />
+                                    </div>
+                                    <div className="home-bar-tool-tip">Inbox</div>
                                     <div className="home-bar-tool-tip-triangle"></div>
                                 </div>
-                            </a>
+                                <a className="help-tool-bar" href="https://support.discord.com" target="_blank" rel="noreferrer noopener">
+                                    <div className="help-tool-bar-icon-wrapper">
+                                        <HelpIcon className="help-tool-bar-icon" />
+                                        <div className="home-bar-tool-tip">Help</div>
+                                        <div className="home-bar-tool-tip-triangle"></div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </section>
                     <div className="home-page-friend-tab-body">
