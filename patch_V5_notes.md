@@ -84,3 +84,25 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed unneeded general channel in Server : explore.json.jbuilder.
     - Removed unneeded general channel in Server : index.json.jbuilder.
     - Removed unneeded general channel in Server : compressIndex.json.jbuilder.
+
+## Frontend Changes
+
+    - Started Shop page components.
+    -  Created Shop header nav bar.
+    -  Created Shop header nav bar container.
+    -  Created Shop header nav bar styles.
+    -  Created Shop styles.
+    -  Created Shop Container.
+    -  Created Shop page.
+    -  Created Shop dm Nav bar button.
+    -  Added styles for Shop dm Nav bar buttons including coloring in dm nav bar styles.
+    - Added shop icon to dm nav bar.
+    - Added new route to enter the shop in dm nav bar.
+    - Added new route for shop component in _CORE_.
+    - Mounted Shop Component in _CORE_ to the route `/$/SH0P/`.
+    - Added new flex container to surround child and tool bar elements in home header nav bar in both styles and component.
+    - Added new flex container to surround child and tool bar elements in nitro header nav bar in both styles and component.
+    - Added new flex container to surround child and tool bar elements in server header nav barin both styles and component.
+    - Added new flex container to surround child and tool bar elements in dm server header nav barin both styles and component.
+    - Added styles in dm server header nav bar for one to one chat rooms for aka names.
+    - Added aka names for one to one chats in dm server header nav bar.
