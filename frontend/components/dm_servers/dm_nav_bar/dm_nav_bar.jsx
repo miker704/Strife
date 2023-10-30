@@ -10,7 +10,7 @@ import { reSyncCurrentUser } from '../../../utils/session_api_util';
 import { returnUserBadgeFillColor } from '../../../utils/user_status_badge_color_api_util';
 import { returnUserOnlineActivityStatusBadgeMaskIMG } from '../../../utils/user_online_activity_status_badge_api_util';
 import NoFriendsDMModalContainer from '../no_friends_dm_modal/no_friends_dm_modal_container';
-import { CloseXIcon, FriendsRaiseHandIcon, SharpAddIcon, StrifeNitroBadgeIcon, StrifeNitroLabelIcon } from '../../front_end_svgs/Strife_svgs';
+import { CloseXIcon, FriendsRaiseHandIcon, SharpAddIcon, StrifeNitroBadgeIcon, StrifeNitroLabelIcon, StrifeShopIcon } from '../../front_end_svgs/Strife_svgs';
 
 
 const DmNavBar = (props) => {
@@ -197,6 +197,26 @@ const DmNavBar = (props) => {
                                 </Link>
                             </div>
                         </li>
+
+                        <li className='shop-dm-nav-button-nav-bar-wrapper' key={`dmsnb-$TRIF3-SH0P`}>
+                            <div className={`shop-dm-nav-button-nav-bar ${props.location?.pathname === `/$/$H0P/` ? `selected` : ``}`} >
+                                <Link className='shop-nav-bar-link' to={`/$/$H0P/`}>
+                                    <div className='shop-avatar-wrapper'>
+                                        <div className='shop-avatar-icon'>
+                                            <StrifeShopIcon className="dm-nav-bar-channel-item-shop-icon" width={23} height={18} />
+                                        </div>
+                                        <div className='shop-avatar-text-wrapper'>
+                                            <div className='shop-avatar-text-inner'>
+                                                <div className='shop-avatar-text'>
+                                                    Shop
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+                            </div>
+                        </li>
+
                         <h2 className='dm-nav-bar-channel-header-container'>
                             <span className="dmsnb-chc-title">Direct Messages</span>
                             <div data-tooltip-id="create-dm-tool-tip" data-tooltip-content='Create DM' className="dm-server-nav-bar-add-dm-button"
