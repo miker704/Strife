@@ -3153,7 +3153,7 @@ export const StrifeShopIcon = (props) => (
 
 
 export const EnableCameraViewIcon = (props) => (
-    <svg width={24} height={24} aria-hidden="true" viewBox="0 0 24 24" {...props}>
+    <svg width={24} height={24} aria-hidden="true" viewBox="0 0 24 24" {...props} className="">
         <path
             fill="currentColor"
             d="M12 5C5.648 5 1 12 1 12s4.648 7 11 7 11-7 11-7-4.648-7-11-7Zm0 11a4 4 0 1 1 0-8 4 4 0 0 1 0 8Z"
