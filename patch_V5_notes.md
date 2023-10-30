@@ -106,4 +106,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added aka names for one to one chats in dm server header nav bar.
     - Added shopBannerHeaderSparkle.png img.
     - Added shopHeaderBannerBackground.png img.
+    - Added shopBannerHeaderForeground.png img.
+
 
