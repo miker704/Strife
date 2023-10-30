@@ -429,6 +429,10 @@
     overflow: hidden;
 }
 
+.button-look-inverted,.button-look-filled{
+  transition: background-color var(--custom-button-transition-duration)ease,color var(--custom-button-transition-duration)ease;
+}
+
 .global-button-contents {
     --button--underline-color: transparent;
     background-image: linear-gradient(0deg, transparent, transparent 1px, var(--button--underline-color) 0, var(--button--underline-color) 2px, transparent 0);
@@ -436,6 +440,14 @@
     background-image: linear-gradient(0deg,transparent,transparent var(--custom-button-link-underline-offset),var(--button--underline-color) var(--custom-button-link-underline-offset),var(--button--underline-color) var(--custom-button-link-underline-stop),transparent var(--custom-button-link-underline-stop));
     outline: 0;
 }
+
+.global-button-size-medium{
+  width: var(--custom-button-button-md-width);
+  height: var(--custom-button-button-md-height);
+  min-width: var(--custom-button-button-md-width);
+  min-height: var(--custom-button-button-md-height);
+}
+
 
 .nitro-snack-bar-bttn .global-button-contents{
     --button--underline-color: transparent;
