@@ -21,6 +21,7 @@ import DownloadAppsContainer from "../server/download_apps/download_apps_contain
 import RefreshLoadingScreenContainer from "../loading_screens/refresh_loading_screen/refresh_loading_container";
 import UserSettingsContainer from "../users/user_settings/user_settings_container";
 import NitroStoreContainer from "../nitro/nitro_store_container/nitro_store_container";
+import StrifeShopContainer from "../strife_shop/strife_shop_container/strife_shop_container";
 import { appPullerPullAnimation, appPullerPullAndHoldAnimation, appPullerReleaseAnimation, appPullerReleaseHoldAnimation } from "../../utils/appPullerAnimation_api_util";
 import { Tooltip } from 'react-tooltip';
 import TestPageContainer from '../test_bench/test_container.js';
@@ -519,7 +520,7 @@ const _STRIFE_CORE_ = (props) => {
                                 <div className="app-layer-main app-layer-main-sub">
                                     <div className="app-layer-container baselayerClear" id='app-puller'>
                                         <div className='container-mapper'>
-                                            <ProtectedRoute path={['/$/$T0R3/', "/$/guild-discovery/", "/$/channels/:serverId/"]} component={ServerNavBarContainer} />
+                                            <ProtectedRoute path={['/$/$T0R3/', '/$/$H0P/', "/$/guild-discovery/", "/$/channels/:serverId/"]} component={ServerNavBarContainer} />
 
                                             {/* <ProtectedRoute path="/$/test/" component={TestPageContainer} /> */}
 
@@ -537,6 +538,7 @@ const _STRIFE_CORE_ = (props) => {
                                                 <ProtectedRoute path="/$/telefrag/" component={DeletedServerLoadingScreenContainer} />
                                                 <ProtectedRoute path='/$/$TR!F3-INTRUSION-PREVENTION/' component={IntrusionPreventionLoadingScreenContainer} />
                                                 <ProtectedRoute path='/$/$T0R3/' component={NitroStoreContainer} />
+                                                <ProtectedRoute path='/$/$H0P/' component={StrifeShopContainer} />
                                                 <ProtectedRoute path="/$/guild-discovery/" component={ExploreServersContainer} />
                                             </Switch>
                                             {/* <RejectRoute path="*"/> */}
