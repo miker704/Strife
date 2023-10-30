@@ -3,15 +3,15 @@
 .server-header-bar {
   flex: 0 0 auto;
   background: var(--background-primary);
-  -webkit-box-flex: 0;
   box-sizing: border-box;
   display: flex;
-  -webkit-box-align: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   min-width: 0;
   color: var(--text-normal);
   height: 48px;
-  padding: 0 8px;
+  min-height: 48px;
+  padding: 8px;
   font-size: 16px;
   line-height: 20px;
   cursor: default;
@@ -21,25 +21,15 @@
   -moz-user-select: none;
   user-select: none;
   font-family: var(--global-font);
-
-  // top: 0px;
-  // left: 0px;
-
-  // width: calc(100vw - 312px);
-
-  // position: absolute;
-  // width: calc(100vw - 310px);
-  // transform: translate(309px, 0px);
-
-  // box-shadow: 0 1px 0 hsla(240, 11.1%, 1.8%, 0.2), 0 1.5px 0 hsla(240, 7.7%, 2.5%, 0.05), 0 2px 0 hsla(240, 11.1%, 1.8%, 0.05);
-
-  // -webkit-box-shadow: var(--elevation-low);
-  // box-shadow: var(--elevation-low);
-
-  // z-index: 2;
   z-index: 100;
   position: relative;
   width: 100%;
+}
+
+.server-header-nav-bar-upper-container{
+  display: flex;
+  flex: 1;
+  box-sizing: border-box;
 }
 
 .server-bar-children {
