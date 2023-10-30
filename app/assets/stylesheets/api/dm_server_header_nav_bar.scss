@@ -1,47 +1,35 @@
 //header navbar that displays on top of the screen of each dm server
 .dm-server-header-bar {
   background: var(--background-primary);
-  -webkit-box-flex: 0;
   flex: 0 0 auto;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   min-width: 0;
   height: 48px;
-  padding: 0 8px;
+  padding: 8px;
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
   font-family: var(--global-font);
   cursor: default;
-
-  // transform: translate(309px, 0px);
-  // width: calc(100vw - 310px);
-
-  // top: 0px;
-  // left: 0px;
-  // width: calc(100vw - 312px);
-
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
   user-select: none;
-
   color: var(--text-normal);
-
-  //discord removed box shadow here but keeping it as it is more aestheticly pleasing
-  // box-shadow: 0 1px 0 hsla(240, 11.1%, 1.8%, 0.2), 0 1.5px 0 hsla(240, 7.7%, 2.5%, 0.05), 0 2px 0 hsla(240, 11.1%, 1.8%, 0.05);
-  // -webkit-box-shadow: var(--elevation-low);
-  // box-shadow: var(--elevation-low);
-
-  // z-index: 2;
   z-index: 100;
   position: relative;
   width: 100%;
+  min-height: 48px;
+}
+
+.dm-server-header-nav-bar-upper-container {
+  display: flex;
+  flex: 1;
+  box-sizing: border-box;
 }
 
 .dm-server-bar-children {
@@ -210,6 +198,59 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   outline: 0;
+}
+
+.dmshb-divider {
+  width: 1px;
+  height: 24px;
+  margin: 0 8px;
+  flex: 0 0 auto;
+  background: var(--background-modifier-accent);
+}
+
+
+.dmshb-aka-badge{
+  margin-left: 8px;
+  background-color: var(--background-secondary);
+  color: var(--header-secondary);
+  box-sizing: border-box;
+  padding: 0 6px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border-radius: 8px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  text-align: center;
+  flex: 0 0 auto;
+  font-family: var(--global-font);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+
+.dmshb-nicknames{
+  width: 100%;
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0 0 0 8px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--header-secondary);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.dmshb-nicknames-inlinetip{
+  display: inline;
+  box-sizing: border-box;
 }
 
 .dmshb-tool-bar {
