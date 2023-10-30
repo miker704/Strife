@@ -900,12 +900,13 @@
     background: linear-gradient(180deg,var(--chat-input-box-before) 0,var(--background-primary));
 }
 
-.theme-dark .nitro-header-nav-bar{
+.theme-dark .nitro-header-nav-bar, .theme-dark .shop-header-nav-bar, .theme-dark .dm-server-header-bar, .theme-dark .server-header-bar, .theme-dark .home-nav-bar{
     background: var(--bg-overlay-2,var(--background-primary));
 }
 
 
-.theme-dark .nitro-header-nav-bar-children::after{
+.theme-dark .nitro-header-nav-bar-children::after, .theme-dark .shop-header-nav-bar-children::after,
+.theme-dark .dm-server-bar-children::after, .theme-dark .server-bar-children::after, .theme-dark .home-nav-bar-children {
     background: -webkit-gradient(linear,left top,right top,from(var(--primary-2050)),to(var(--background-primary)));
     background: linear-gradient(90deg,var(--primary-2050) 0,var(--background-primary));
 }
