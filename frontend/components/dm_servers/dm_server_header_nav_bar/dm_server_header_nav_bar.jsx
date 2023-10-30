@@ -326,13 +326,23 @@ const DmServerHeaderNavBar = (props) => {
     ) : ('');
 
     let oneToOneChatDisplayName = membersOfthisServer.length === 2 ? (
-        <div className={`dms-hbar-name`} onClick={(e) => handleSelectDmMemberForMegaUpc(e)}>
-            <h1 className="dms-hbar-name-header" data-tooltip-place="bottom" data-tooltip-id="thread-tip-dmshnb"
-                data-tooltip-content={`${displayName + otherUserStrifeTag}`} onMouseEnter={(e) => setHovered(true)}
-                onMouseLeave={(e) => setHovered(false)}>
-                {displayName}
-            </h1>
-        </div>
+        <>
+            <div className={`dms-hbar-name`} onClick={(e) => handleSelectDmMemberForMegaUpc(e)}>
+                <h1 className="dms-hbar-name-header" data-tooltip-place="bottom" data-tooltip-id="thread-tip-dmshnb"
+                    data-tooltip-content={`${displayName + otherUserStrifeTag}`} onMouseEnter={(e) => setHovered(true)}
+                    onMouseLeave={(e) => setHovered(false)}>
+                    {displayName}
+                </h1>
+            </div>
+            <div className="dmshb-divider"></div>
+            <div className="dmshb-aka-badge">AKA</div>
+            <div className="dmshb-nicknames">
+                <div className="dmshb-nicknames-inlinetip" data-tooltip-place="bottom" data-tooltip-id="thread-tip-dmshnb" data-tooltip-content={`${displayName}`}
+                    onMouseEnter={(e) => setHovered(true)} onMouseLeave={(e) => setHovered(false)}>
+                    <span role="button" onClick={(e) => handleSelectDmMemberForMegaUpc(e)}>{displayName}</span>
+                </div>
+            </div>
+        </>
     ) : ('');
 
     let groupChatDisplayName = membersOfthisServer.length > 2 ? (
@@ -406,118 +416,117 @@ const DmServerHeaderNavBar = (props) => {
             {/* {renderVoiceCallModal()} */}
             {renderInviteToDMSModal()}
             {renderMegaUpcModal()}
-
-            <div className="dm-server-bar-children">
-                <div>
-                    {renderedGroupChatIcon}
-                    {renderedOtherDmMemberAvatar}
+            <div className="dm-server-header-nav-bar-upper-container">
+                <div className="dm-server-bar-children">
+                    <div>
+                        {renderedGroupChatIcon}
+                        {renderedOtherDmMemberAvatar}
+                    </div>
+                    {oneToOneChatDisplayName}
+                    {groupChatDisplayName}
                 </div>
 
-                {oneToOneChatDisplayName}
-                {groupChatDisplayName}
+                <div className="dmshb-tool-bar">
 
-                <div className="dmshb-spacer"></div>
-            </div>
+                    <div className="dmshb-tool-icon-wrapper" data-tooltip-place="bottom" data-tooltip-id="thread-tip-dmshnb"
+                        data-tooltip-content={'Start Voice Call'}
+                        onMouseEnter={(e) => setHovered(true)}
+                        onMouseLeave={(e) => setHovered(false)}
+                    // onClick={(e) => { handlePopupShowVoiceCall(e) }}
+                    >
+                        <VoiceCallPhoneIcon className="icon-phone" />
+                    </div>
 
-            <div className="dmshb-tool-bar">
+                    <div className="dmshb-tool-icon-wrapper" data-tooltip-place="bottom"
+                        data-tooltip-id="thread-tip-dmshnb" data-tooltip-content={'Start Video Call'}
+                        onMouseEnter={(e) => setHovered(true)}
+                        onMouseLeave={(e) => setHovered(false)}
+                        onClick={(e) => { handlePopupShowVideoCall(e) }}>
+                        <VideoCameraIcon className="icon-webcall" />
+                    </div>
 
-                <div className="dmshb-tool-icon-wrapper" data-tooltip-place="bottom" data-tooltip-id="thread-tip-dmshnb"
-                    data-tooltip-content={'Start Voice Call'}
-                    onMouseEnter={(e) => setHovered(true)}
-                    onMouseLeave={(e) => setHovered(false)}
-                // onClick={(e) => { handlePopupShowVoiceCall(e) }}
-                >
-                    <VoiceCallPhoneIcon className="icon-phone" />
-                </div>
+                    <div className="dmshb-tool-icon-wrapper" data-tooltip-place="bottom"
+                        data-tooltip-id="thread-tip-dmshnb" data-tooltip-content={'Pinned Messages'}
+                        onMouseEnter={(e) => setHovered(true)}
+                        onMouseLeave={(e) => setHovered(false)}>
+                        <PinnedIcon className="icon-pin-messages" />
+                    </div>
 
-                <div className="dmshb-tool-icon-wrapper" data-tooltip-place="bottom"
-                    data-tooltip-id="thread-tip-dmshnb" data-tooltip-content={'Start Video Call'}
-                    onMouseEnter={(e) => setHovered(true)}
-                    onMouseLeave={(e) => setHovered(false)}
-                    onClick={(e) => { handlePopupShowVideoCall(e) }}>
-                    <VideoCameraIcon className="icon-webcall" />
-                </div>
+                    <div
+                        className="dmshb-tool-icon-wrapper"
+                        data-tooltip-place="bottom" data-tooltip-id="thread-tip-dmshnb" data-tooltip-content={'Add Friends to DM'}
+                        onMouseEnter={(e) => setHovered(true)}
+                        onMouseLeave={(e) => setHovered(false)}
+                        onClick={(e) => {
+                            handleOpenModal(e);
+                        }}
 
-                <div className="dmshb-tool-icon-wrapper" data-tooltip-place="bottom"
-                    data-tooltip-id="thread-tip-dmshnb" data-tooltip-content={'Pinned Messages'}
-                    onMouseEnter={(e) => setHovered(true)}
-                    onMouseLeave={(e) => setHovered(false)}>
-                    <PinnedIcon className="icon-pin-messages" />
-                </div>
+                    >
+                        <InviteMemberIcon className="icon-add-members" />
+                    </div>
 
-                <div
-                    className="dmshb-tool-icon-wrapper"
-                    data-tooltip-place="bottom" data-tooltip-id="thread-tip-dmshnb" data-tooltip-content={'Add Friends to DM'}
-                    onMouseEnter={(e) => setHovered(true)}
-                    onMouseLeave={(e) => setHovered(false)}
-                    onClick={(e) => {
-                        handleOpenModal(e);
-                    }}
+                    {renderUserProfileIconAndContainer}
+                    {renderMembersIconAndContainer}
 
-                >
-                    <InviteMemberIcon className="icon-add-members" />
-                </div>
-
-                {renderUserProfileIconAndContainer}
-                {renderMembersIconAndContainer}
-
-                <div className="dmshbar-search-bar-wrapper" >
-                    <div className="dmshbar-search-bar-inner-wrapper">
-                        <div className="dmshbar-search-bar">
-                            <div className="draft-edit">
-                                <div className="public-draft-edit">
-                                    <div className="public-draft-edit-placeholder">Search</div>
-                                </div>
-                                <div className="public-draft-editor-container">
-                                    <div className="public-draft-editor-container-placeholder">
-                                        <div className="data-contents">
-                                            <div className="data-block">
-                                                <div className="data-key-offset">
-                                                    <span className="data-key-offset2"></span>
+                    <div className="dmshbar-search-bar-wrapper" >
+                        <div className="dmshbar-search-bar-inner-wrapper">
+                            <div className="dmshbar-search-bar">
+                                <div className="draft-edit">
+                                    <div className="public-draft-edit">
+                                        <div className="public-draft-edit-placeholder">Search</div>
+                                    </div>
+                                    <div className="public-draft-editor-container">
+                                        <div className="public-draft-editor-container-placeholder">
+                                            <div className="data-contents">
+                                                <div className="data-block">
+                                                    <div className="data-key-offset">
+                                                        <span className="data-key-offset2"></span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="dmshbar-mag-icon-container">
-                                <div className="mag-container">
-                                    <SearchMagIcon className="mag-icon-2-visible" />
-                                    <SearchXIcon className="mag-icon-2" />
+                                <div className="dmshbar-mag-icon-container">
+                                    <div className="mag-container">
+                                        <SearchMagIcon className="mag-icon-2-visible" />
+                                        <SearchXIcon className="mag-icon-2" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                {
-                    showUpdate && (
-                        <div className="dmshb-tool-icon-wrapper" data-tooltip-place="bottom" data-tooltip-id="thread-tip-dmshnb" data-tooltip-content={'Update Ready!'}
-                            onMouseEnter={(e) => setHovered(true)}
-                            onMouseLeave={(e) => setHovered(false)}
-                            onClick={(e) => handleRemoveUpdateIcon(e)}>
-                            <UpdateReadyIcon className="icon-dmshnb-update-ready" />
-                        </div>
-                    )
-                }
+                    {
+                        showUpdate && (
+                            <div className="dmshb-tool-icon-wrapper" data-tooltip-place="bottom" data-tooltip-id="thread-tip-dmshnb" data-tooltip-content={'Update Ready!'}
+                                onMouseEnter={(e) => setHovered(true)}
+                                onMouseLeave={(e) => setHovered(false)}
+                                onClick={(e) => handleRemoveUpdateIcon(e)}>
+                                <UpdateReadyIcon className="icon-dmshnb-update-ready" />
+                            </div>
+                        )
+                    }
 
-                <div className="dmshb-tool-icon-wrapper" data-tooltip-place="bottom" data-tooltip-id="thread-tip-dmshnb"
-                    onMouseEnter={(e) => setHovered(true)}
-                    onMouseLeave={(e) => setHovered(false)}
-                    data-tooltip-content={'Inbox'}>
-                    <InboxIcon className="icon-dms-inbox" />
-                </div>
-                <a className="dmshnb-help-tool-bar" href="https://support.discord.com" target="_blank" rel="noreferrer noopener">
-                    <div className="dmshnb-help-tool-bar-icon-wrapper" data-tooltip-place="bottom"
-                        data-tooltip-id="thread-tip-dmshnb" data-tooltip-content={'Help'}
+                    <div className="dmshb-tool-icon-wrapper" data-tooltip-place="bottom" data-tooltip-id="thread-tip-dmshnb"
                         onMouseEnter={(e) => setHovered(true)}
                         onMouseLeave={(e) => setHovered(false)}
-                    >
-                        <HelpIcon className="icon-dmshnb-help" />
+                        data-tooltip-content={'Inbox'}>
+                        <InboxIcon className="icon-dms-inbox" />
                     </div>
-                </a>
+                    <a className="dmshnb-help-tool-bar" href="https://support.discord.com" target="_blank" rel="noreferrer noopener">
+                        <div className="dmshnb-help-tool-bar-icon-wrapper" data-tooltip-place="bottom"
+                            data-tooltip-id="thread-tip-dmshnb" data-tooltip-content={'Help'}
+                            onMouseEnter={(e) => setHovered(true)}
+                            onMouseLeave={(e) => setHovered(false)}
+                        >
+                            <HelpIcon className="icon-dmshnb-help" />
+                        </div>
+                    </a>
+                </div>
             </div>
             <Tooltip className="thread-tool-tip" id="thread-tip-dmshnb" place="bottom" closeOnResize={true} isOpen={hovered} />
+
         </section>
     )
 }
