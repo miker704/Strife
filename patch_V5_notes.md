@@ -31,7 +31,6 @@
 - Allow servers to be dragged and placed (requires placement values)
 - When creating a server 2 channel catergories for a default server, voice and text are created and those channels are then inserted into those catergories.
 
-
 ### Channels
 
 - Ability to give channels a description.
@@ -57,7 +56,6 @@ link if possible.
 - Allow url parser to embed youtube videos.
 - Display edit, read status for messages.
 - Allow dmMessages to be part of a server where the relationship is a server invite.
-
 
 ### General/Util
 
