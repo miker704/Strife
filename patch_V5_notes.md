@@ -104,4 +104,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new flex container to surround child and tool bar elements in dm server header nav barin both styles and component.
     - Added styles in dm server header nav bar for one to one chat rooms for aka names.
     - Added aka names for one to one chats in dm server header nav bar.
-    - Added Strife shop banner sparkle png img.
+    - Added shopBannerHeaderSparkle.png img.
+    - Added shopHeaderBannerBackground.png img.
+
