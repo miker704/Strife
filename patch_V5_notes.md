@@ -111,6 +111,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added disxcore.png img.
     - Added halloweenLogo.png img.
     - Added halloweenWumpusFaded.png img.
+    - Added halloweenCatGrave.png img.
 
     - Created StrifeShop Icon and added to StrifeSvgs Library.
     - Created EnableCameraPreview Icon and added to StrifeSvgs Library.
