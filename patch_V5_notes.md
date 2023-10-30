@@ -115,6 +115,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added shopHalloweenbg.png img.
     - Added shopbackgroundbanner.png img.
     - Added shopWumpusdisxcorelogo.png img.
+    - Added techhud.png img.
 
     - Created StrifeShop Icon and added to StrifeSvgs Library.
     - Created EnableCameraPreview Icon and added to StrifeSvgs Library.
