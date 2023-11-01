@@ -146,4 +146,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added punkGirlIntro.png img.
     - Added ghostSkullsLoop.png img.
     - Added ghostSkullsIntro.png img.
+    - Added ghostSkullsThumbnail.png img.
 
