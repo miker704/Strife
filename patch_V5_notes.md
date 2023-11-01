@@ -239,4 +239,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added sayanLoop.png img.
     - Added waterSplashLoop.png img.
     - Added vinesLoop.png img.
-
+    - Added vinesGlow.png img.
