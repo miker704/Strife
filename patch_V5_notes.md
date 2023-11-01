@@ -171,6 +171,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added vinesThumbnail.png img.
     - Added cerealThumbnail.png img.
     - Added rainThumbnail.png img.
+    - Added earthquakeThumbnail.png img.
     
 
 
