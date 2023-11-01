@@ -175,15 +175,1399 @@
   min-width: 500px;
 }
 
+.shop-hero-description {
+  max-width: 50%;
+}
+.shop-hero-description > * {
+  margin-left: 64px;
+  margin-right: 32px;
+}
+.shop-hero-description-with-side-bar {
+  outline: 0;
+}
+
+.shop-hero-eyebrow {
+  border: 1px solid var(--white-500);
+  border-radius: 32px;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  margin-bottom: 10px;
+  padding: 2px;
+  font-family: var(--global-font);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.shop-hero-eyebrow-span-txt {
+  padding-left: 2px;
+  padding-right: 4px;
+  letter-spacing: 0.75px;
+  font-weight: 500;
+}
+
+.shop-hero-h2 {
+  font-family: var(--global-font);
+  font-size: 44px;
+  line-height: 42px;
+  font-weight: 800;
+}
+.shop-hero-subtitle {
+  margin-top: 16px;
+  font-family: var(--global-font);
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.shop-buttons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  text-rendering: optimizeLegibility;
+  font-family: var(--global-font);
+}
+
+.shop-hero-button {
+  cursor: pointer;
+  margin-top: 16px;
+  width: auto;
+  color: var(--brand-experiment);
+  background-color: var(--white-500);
+}
+.shop-hero-button:hover {
+  background-color: var(--brand-experiment-100);
+  opacity: 0.9;
+}
+
+.shop-hero-button:active {
+  background-color: var(--brand-experiment-200);
+}
+
+.shopPremiumSubscribeButton {
+  display: flex;
+  align-items: center;
+}
+.shopbuttonText {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.shop-premium-nitro-ball-icon {
+  margin-right: 4px;
+  height: 20px;
+}
+
+.shop-hero-banner-background-wrapper {
+  max-width: 45%;
+  height: inherit;
+  overflow: hidden;
+  border-radius: 0 0 32px;
+  display: flex;
+}
+
+.shop-hero-banner-background-img {
+  position: relative;
+  height: 320px;
+  margin-top: 75px;
+  margin-right: 20px;
+  content: image_url("shopHeaderBannerBackground.png");
+}
+
+.shop-hero-banner-foreground {
+  position: absolute;
+  right: 50px;
+  bottom: -12px;
+  height: 100px;
+  content: image_url("shopBannerHeaderForeground.png");
+}
+
+.shop-hero-banner-hand {
+  content: image_url("shopHeaderBannerHand.png");
+  position: absolute;
+  height: 180px;
+  right: 126px;
+}
+
+.shop-hero-banner-large-Top-sparkle {
+  top: -16px;
+  right: 400px;
+  position: absolute;
+  height: 65px;
+  content: image_url("shopBannerHeaderSparkle.png");
+}
+
+.shop-hero-banner-smallTop-Sparkle {
+  right: 380px;
+  top: 36px;
+  position: absolute;
+  height: 30px;
+  content: image_url("shopBannerHeaderSparkle.png");
+}
+
+.shop-hero-banner-large-Left-sparkle {
+  right: 480px;
+  bottom: 100px;
+  position: absolute;
+  height: 65px;
+  content: image_url("shopBannerHeaderSparkle.png");
+}
+.shop-hero-banner-smallLeft-Sparkle {
+  right: 510px;
+  bottom: 85px;
+  position: absolute;
+  height: 30px;
+  content: image_url("shopBannerHeaderSparkle.png");
+}
+
+.shop-hero-banner-large-Right-sparkle {
+  right: 16px;
+  top: 56px;
+  position: absolute;
+  height: 65px;
+  content: image_url("shopBannerHeaderSparkle.png");
+}
+
+.shop-hero-banner-smallRight-Sparkle {
+  right: -8px;
+  position: absolute;
+  height: 30px;
+  content: image_url("shopBannerHeaderSparkle.png");
+}
+
 .shop-banner-card {
-    padding: 32px;
-    border-radius: var(--radius-xxl);
-    max-width: 100%;
-    max-height: 100%;
-    position: relative;
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
+  padding: 32px;
+  border-radius: var(--radius-xxl);
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.shop-banner-card-background-image {
+  position: absolute;
+  border-radius: var(--radius-xxl);
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background: image_url("shopbackgroundbanner.png") 0% 0% / cover;
+}
+
+.shop-bc-content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 1;
+}
+
+.shop-bc-strife-banner-logo {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+}
+
+.shop-bc-banner-front {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  content: image_url("disxcore.png");
+}
+
+.shop-bc-banner-text {
+  max-width: 460px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  font-family: var(--global-font);
+}
+
+.shop-bc-premium-unlock-hook {
+  cursor: pointer;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+.shop-bc-premium-unlock-hook-text {
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.shop-bc-deco-section {
+  display: flex;
+  gap: 20px;
+  z-index: 1;
+}
+
+.spinkInterface {
+  margin-top: 4px;
+}
+.sBlueHeadSet {
+  margin-top: 120px;
+}
+
+.sgreenSmoke {
+  margin-top: 20px;
+}
+
+.ssxcore-icon-wrapper {
+  position: relative;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+.ssxcore-svg-mask {
+  position: absolute;
+  contain: paint;
+  pointer-events: none;
+  display: block;
+  width: auto;
+}
+.ssxcore-svg-avatar-decoration {
+  position: absolute;
+  top: var(--custom-avatar-avatar-decoration-border-position);
+  left: var(--custom-avatar-avatar-decoration-border-position);
+  pointer-events: none;
+  contain: paint;
+}
+
+.ssxcore-avatar-stack {
+  display: grid;
+  width: 100%;
+  height: 100%;
+}
+
+.ssxcore-avatar-img {
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+  content: image_url("shopwumpusdisxcorelogo.png");
+}
+
+.ssxcore-avatar-img::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-modifier-accent);
+}
+
+.ssxcore-tech-hud {
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+  content: image_url("techhud.png");
+}
+
+.ssxcore-tech-hud::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-modifier-accent);
+}
+
+.ssxcore-shakingBlueHeadset {
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+  content: image_url("shakingBlueHeadset.png");
+}
+
+.ssxcore-shakingBlueHeadset::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-modifier-accent);
+}
+
+.ssxcore-greenSmokeScreen {
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+  content: image_url("greenSmokeScreen.png");
+}
+
+.ssxcore-greenSmokeScreen::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-modifier-accent);
+}
+
+.shop-bc-badge {
+  height: 16px;
+  border-radius: 16px;
+  background: var(--custom-premium-colors-premium-gradient-tier-2-tri-color);
+  padding: 1px 4px 3px;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+
+.shop-bc-badge-premium-nitro-ball-icon {
+  color: white;
+  height: 18px;
+}
+
+.shop-hero-eyebrow-premium-nitro-ball-icon {
+  height: 16px;
+}
+
+.shop-banner-img {
+  grid-column: 1/-1;
+  margin-top: 40px;
+  position: relative;
+  width: 100%;
+  max-width: 1060px;
+  min-height: 240px;
+  border-radius: var(--radius-xxl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-16);
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  height: 100%;
+}
+
+.shop-banner-halloween {
+  background: image_url("shopHalloweenbg.png") 0% 0% / cover border-box
+    border-box;
+  outline-color: var(--shop-banner-halloween-outline-color);
+}
+
+.shop-strife-banner-logo-halloween {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  gap: 3px;
+}
+
+.shop-strife-banner-logo-halloween-icon {
+  width: auto;
+  height: 20px;
+}
+
+.shop-halloween-logo {
+  z-index: 1;
+  max-height: 96px;
+  content: image_url("halloweenLogo.png");
+}
+
+.shop-halloween-subtext {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  font-family: var(--global-font);
+  z-index: 1;
+}
+
+.shop-item-type {
+  text-transform: uppercase;
+  margin-top: 26px;
+  margin-bottom: 10px;
+  font-family: var(--global-font);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+}
+
+.shop-item-cards-container {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+  overflow: visible;
+}
+
+.shop-item-card {
+  border-radius: var(--radius-xxl);
+  border: 2px solid transparent;
+  grid-column: auto;
+  min-width: 100%;
+  transition: transform 1s, box-shadow.5s;
+  padding: 40px 32px 32px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.shop-item-card:hover,
+.shop-item-card:focus-within {
+  transform: translateY(-4px);
+}
+
+.shop-item-card.halloween-items:hover {
+  box-shadow: rgb(81, 127, 219) 0px 0px 25px 1px !important;
+}
+
+.shop-item-card.fall-items:hover {
+  box-shadow: rgb(255, 194, 102) 0px 0px 25px 1px !important;
+}
+
+.shop-item-card.fantasy-items:hover {
+  box-shadow: rgb(20, 97, 68) 0px 0px 25px 1px !important;
+}
+
+.shop-item-card.anime-items:hover {
+  box-shadow: rgb(75, 120, 175) 0px 0px 25px 1px !important;
+}
+
+.shop-item-card.breakfast-items:hover {
+  box-shadow: rgb(232, 177, 105) 0px 0px 25px 1px !important;
+}
+
+.shop-item-card-inner {
+  position: relative;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.shop-item-card-inner-text {
+  margin-top: 32px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.shop-item-card-inner-product-name {
+  position: relative;
+}
+.shop-item-card-inner-product-details {
+  display: flex;
+  position: relative;
+  flex: 1;
+}
+
+.shop-item-card:hover .shop-item-card-inner-blur,
+.shop-item-card:focus-within .shop-item-card-inner-blur {
+  opacity: 0;
+}
+.shop-item-card:hover .shop-item-card-inner-hover,
+.shop-item-card:focus-within .shop-item-card-inner-hover {
+  opacity: 1;
+  transform: translatey(0%);
+}
+
+.shop-item-card-inner-blur {
+  opacity: 1;
+  transition: opacity.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  flex: 1;
+}
+
+.shop-item-card-inner-blur-text-lrg {
+  font-family: var(--global-font);
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.shop-item-card-inner-blur-text-med {
+  margin-top: 4px;
+  word-wrap: break-word;
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.shop-item-price-tags-container {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: flex-end;
+}
+.shop-item-price-tags-h2-medium {
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.shop-item-striked-price {
+  -webkit-text-decoration: line-through;
+  text-decoration: line-through;
+  opacity: 0.7;
+  font-weight: 600;
+}
+
+.shop-item-nitro-ball-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  margin-right: 4px;
+}
+.shop-item-price {
+  font-weight: 600;
+}
+.shop-item-card-inner-hover {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  opacity: 0;
+  transition: all.5s;
+  transform: translatey(20%);
+}
+
+.shop-item-card-inner-hover-upsell-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.shop-item-card-button-container {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+}
+
+.shop-item-shiny-button {
+  cursor: pointer;
+  overflow: hidden;
+  color: var(--white-500);
+  background-color: var(--button-positive-background);
+  width: 100%;
+}
+
+.shop-item-shiny-button:hover {
+  background-color: var(--button-positive-background-hover);
+}
+.shop-item-shiny-button:active {
+  background-color: var(--button-positive-background-active);
+}
+
+.shop-item-preview-button {
+  padding: 0 7px;
+  background-color: var(--background-accent);
+  cursor: pointer;
+  color: var(--white-500);
+  height: auto;
+}
+.shop-item-preview-button:hover {
+  opacity: 0.8;
+}
+.shop-item-previewButtonInner {
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.halloween-wumpus-avatar-img {
+  content: image_url("halloweenWumpusFaded.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.halloween-wumpus-avatar-img::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-modifier-accent);
+}
+
+.halloween-cat-grave {
+  content: image_url("halloweenCatGrave.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.halloween-cat-grave::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-modifier-accent);
+}
+
+.halloween-ghosts {
+  content: image_url("halloweenGhosts.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.halloween-ghosts::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-modifier-accent);
+}
+
+.halloween-minions {
+  content: image_url("flyingPumpkin.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.halloween-minions::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-modifier-accent);
+}
+
+.halloween-jack-o-lantern {
+  content: image_url("pumpkinNBats.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.halloween-jack-o-lantern::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-modifier-accent);
+}
+
+.shop-item-type-title-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.shop-item-profileEffectPreview {
+  position: relative;
+  height: 120px;
+  width: 200px;
+  top: -10px;
+  margin: 0 auto;
+}
+.shop-item-profileEffectPreviewContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 390px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  z-index: 0;
+}
+
+.shop-item-upc-preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  content: image_url("shopUpcProfileEffectPrePreview.png");
+}
+
+.shop-item-upc-profile-effects {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity.6s ease-in-out;
+}
+
+.shop-item-upc-profile-effects-inner {
+  overflow: hidden;
+  position: absolute;
+  border-radius: 8px;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.shop-item-ghoulish-graffiti {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("punkGirlThumbnail.png");
+}
+
+.shop-item-card-inner-text.shop-item-card-inner-text-profile-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--transparent),
+    var(--transparent),
+    var(--black-500-hsl-08)
+  );
+}
+
+.shop-item-slime-zombie {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("slimeZombieThumbnail.png");
+}
+
+.shop-item-ghost-skulls {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("ghostSkullsThumbnail.png");
+}
+
+.shop-item-card:hover {
+  .shop-item-ghoulish-graffiti {
+    -webkit-animation-delay: 0.75s;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-name: ghoulish-graffiti-cycle;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-name: ghoulish-graffiti-cycle;
+    animation-duration: 5s;
+    animation-delay: 0.75s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  .shop-item-slime-zombie {
+    -webkit-animation-delay: 0.75s;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-name: slime-zombie-cycle;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-name: slime-zombie-cycle;
+    animation-duration: 5s;
+    animation-delay: 0.75s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  .shop-item-ghost-skulls {
+    -webkit-animation-delay: 0.75s;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-name: ghost-skulls-cycle;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-name: ghost-skulls-cycle;
+    animation-duration: 5s;
+    animation-delay: 0.75s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes ghoulish-graffiti-cycle {
+  0% {
+    content: image_url("punkGirlIntro.png");
+  }
+  100% {
+    content: image_url("punkGirlLoop.png");
+  }
+}
+@-webkit-keyframes ghoulish-graffiti-cycle {
+  0% {
+    content: image_url("punkGirlIntro.png");
+  }
+  100% {
+    content: image_url("punkGirlLoop.png");
+  }
+}
+
+@keyframes slime-zombie-cycle {
+  0% {
+    content: image_url("slimeZombieIntro.png");
+  }
+  100% {
+    content: image_url("slimeZombieLoop.png");
+  }
+}
+@-webkit-keyframes slime-zombie-cycle {
+  0% {
+    content: image_url("slimeZombieIntro.png");
+  }
+  100% {
+    content: image_url("slimeZombieLoop.png");
+  }
+}
+
+@keyframes ghost-skulls-cycle {
+  0% {
+    content: image_url("ghostSkullsIntro.png");
+  }
+  100% {
+    content: image_url("ghostSkullsLoop.png");
+  }
+}
+@-webkit-keyframes ghost-skulls-cycle {
+  0% {
+    content: image_url("ghostSkullsIntro.png");
+  }
+  100% {
+    content: image_url("ghostSkullsLoop.png");
+  }
+}
+
+.shop-banner-fall {
+  background: image_url("shopFallBanner.png") 0% 0% / cover border-box
+    border-box;
+  outline-color: var(--shop-banner-fall-outline-color);
+}
+
+.shop-fall-banner-logo {
+  z-index: 1;
+  max-height: 96px;
+  content: image_url("shopFallBannerLogo.png");
+}
+
+.shop-banner-breakfast {
+  background: image_url("shopBreakfastBanner.png") 0% 0% / cover border-box
+    border-box;
+  outline-color: var(--shop-banner-breakfast-outline-color);
+}
+
+.shop-banner-breakfast-logo {
+  z-index: 1;
+  max-height: 96px;
+  content: image_url("shopBreakfastBannerLogo.png");
+}
+
+.shop-banner-fantasy {
+  background: image_url("shopFantasyBanner.png") 0% 0% / cover border-box
+    border-box;
+  outline-color: var(--shop-banner-fantasy-outline-color);
+}
+
+.shop-banner-fantasy-logo {
+  z-index: 1;
+  max-height: 96px;
+  content: image_url("shopFantasyBannerLogo.png");
+}
+.shop-banner-anime {
+  background: image_url("shopAnimeBanner.png") 0% 0% / cover border-box
+    border-box;
+  outline-color: var(--shop-banner-anime-outline-color);
+}
+
+.shop-banner-anime-logo {
+  z-index: 1;
+  max-height: 96px;
+  content: image_url("shopAnimeBannerLogo.png");
+}
+
+//shop fall animations
+
+.fall-leaves-image {
+  content: image_url("fallLeavesStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.fall-fox-hat-image {
+  content: image_url("foxHatStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.fall-frog-hat-image {
+  content: image_url("frogHatStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.fall-pumpkin-spice-image {
+  content: image_url("pumpkinSpiceStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+//fantasy
+.fantasy-flaming-sword {
+  content: image_url("flamingSwordStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.fantasy-magic-potion {
+  content: image_url("magicPotionStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.fantasy-fairy-sprites {
+  content: image_url("fairySpriteStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.fantasy-wizard-staff {
+  content: image_url("wizardStaffStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.fantasy-glowing-runes {
+  content: image_url("glowingRunesStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.fantasy-defensive-shield {
+  content: image_url("fantasyDefenseShieldStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.fantasy-skull-medallion {
+  content: image_url("skullMedallionStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.fantasy-treasure-n-key {
+  content: image_url("treasureNKeyStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+//anime
+
+.anime-radiating-energy {
+  content: image_url("radiatingEnergyStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.anime-soul-leaving-body {
+  content: image_url("soulLeavingBodyStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.anime-sweat-drops {
+  content: image_url("sweatDropsStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.anime-starry-eyed {
+  content: image_url("starryEyedStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.anime-in-love {
+  content: image_url("inLoveStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.anime-shocked {
+  content: image_url("animeShockedStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.anime-angry {
+  content: image_url("animeAngryStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+//breakfast
+
+.breakfast-items-toast {
+  content: image_url("toastStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.breakfast-items-morning-coffee {
+  content: image_url("morningCoffeeStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.breakfast-items-fried-eggs {
+  content: image_url("friedEggsStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.breakfast-items-blueberry-jam {
+  content: image_url("bbJamStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.breakfast-items-donuts {
+  content: image_url("donutsStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.breakfast-items-pancakes {
+  content: image_url("pancakesStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+//profile effects
+
+.shop-item-fall-foliage {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("fallLeavesThumbnail.png");
+}
+.shop-item-fall-lilly-pad-life {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("rainThumbnail.png");
+}
+.shop-item-fantasy-hydro-blast {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: url("waterSplashThumbnail.png");
+}
+.shop-item-fantasy-sakura-dreams {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("sakuraThumbnail.png");
+}
+.shop-item-fantasy-mystic-vines {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("vinesThumbnail.png");
+}
+.shop-item-fantasy-pixie-dust {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("fairyThumbnail.png");
+}
+
+.shop-item-anime-magic-hearts {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("magicGirlThumbnail.png");
+}
+.shop-item-anime-shatter {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("earthquakeThumbnail.png");
+}
+.shop-item-anime-shuriken-strike {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("shurikenThumbnail.png");
+}
+.shop-item-anime-power-surge {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("sayanThumbnail.png");
+}
+
+.shop-item-breakfast-strife-cereal-o-s {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("cerealThumbnail.png");
+}
+.shop-item-breakfast-plate {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("plateThumbnail.png");
+}
+
+.shop-item-card:hover {
+  .fall-leaves-image {
+    content: image_url("fallLeavesAnimated.png");
+  }
+
+  .fall-pumpkin-spice-image {
+    content: image_url("pumpkinSpiceAnimated.png");
+  }
+
+  .fall-fox-hat-image {
+    content: image_url("foxHatAnimated.png");
+  }
+  .fall-frog-hat-image {
+    content: image_url("frogHatAnimated.png");
+  }
+
+  .fantasy-flaming-sword {
+    content: image_url("flamingSwordAnimated.png");
+  }
+  .fantasy-fairy-sprites {
+    content: image_url("fairySpriteAnimated.png");
+  }
+  .fantasy-defensive-shield {
+    content: image_url("fantasyDefenseShieldAnimated.png");
+  }
+  .fantasy-magic-potion {
+    content: image_url("magicPotionAnimated.png");
+  }
+
+  .fantasy-wizard-staff {
+    content: image_url("wizardStaffAnimated.png");
+  }
+  .fantasy-glowing-runes {
+    content: image_url("glowingRunesAnimated.png");
+  }
+
+  .fantasy-skull-medallion {
+    content: image_url("skullMedallionAnimated.png");
+  }
+  .fantasy-treasure-n-key {
+    content: image_url("treasureNKeyAnimated.png");
+  }
+
+  .anime-radiating-energy {
+    content: image_url("radiatingEnergyAnimated.png");
+  }
+
+  .anime-soul-leaving-body {
+    content: image_url("soulLeavingBodyAnimated.png");
+  }
+  .anime-sweat-drops {
+    content: image_url("sweatDropsAnimated.png");
+  }
+  .anime-starry-eyed {
+    content: image_url("starryEyedAnimated.png");
+  }
+  .anime-in-love {
+    content: image_url("inLoveAnimated.png");
+  }
+  .anime-shocked {
+    content: image_url("animeShockedAnimated.png");
+  }
+  .anime-angry {
+    content: image_url("animeAngryAnimated.png");
+  }
+
+  .breakfast-items-toast {
+    content: image_url("toastAnimated.png");
+  }
+  .breakfast-items-morning-coffee {
+    content: image_url("morningCoffeeAnimated.png");
+  }
+
+  .breakfast-items-fried-eggs {
+    content: image_url("friedEggsAnimated.png");
+  }
+
+  .breakfast-items-blueberry-jam {
+    content: image_url("bbJamAnimated.png");
+  }
+
+  .breakfast-items-donuts {
+    content: image_url("donutsAnimated.png");
+  }
+
+  .breakfast-items-pancakes {
+    content: image_url("pancakesAnimated.png");
+  }
 }
