@@ -209,4 +209,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added animeShockedAnimated.png img.
     - Added animeAngryStatic.png img.
     - Added animeAngryAnimated.png img.
-
+    - Added skullMedallionStatic.png img.
