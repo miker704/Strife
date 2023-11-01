@@ -165,4 +165,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added inLoveAnimated.png img.
     - Added donutsStatic.png img.
     - Added donutsAnimated.png img.
+    - Added starryEyedAnimated.png img.
     
