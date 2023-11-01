@@ -194,4 +194,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added morningCoffeeAnimated.png img.
     - Added morningCoffeeStatic.png img.
     - Added treasureNKeyStatic.png img.
+    - Added treasureNKeyAnimated.png img.
 
