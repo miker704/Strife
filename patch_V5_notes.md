@@ -182,6 +182,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added friedEggsStatic.png img.
     - Added friedEggsAnimated.png img.
     - Added bbJamStatic.png img.
+    - Added bbJamAnimated.png img.
 
 
 
