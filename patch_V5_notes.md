@@ -142,4 +142,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added slimeZombieLoop.png img.
     - Added slimeZombieThumbnail.png img.
     - Added punkGirlThumbnail.png img.
+    - Added punkGirlLoop.png img.
 
