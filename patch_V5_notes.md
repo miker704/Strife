@@ -233,5 +233,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added cerealLoop.png img.
     - Added earthquakeLoop.png img.
     - Added shurikenLoop.png img.
+    - Added plateLoop.png img.
 
 
