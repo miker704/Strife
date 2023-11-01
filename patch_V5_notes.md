@@ -124,7 +124,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added greenSmokeScreen.png img.
     - Added renamed greenSmokeScreen.png img to greenSmokeScreenStatic.png.
     - Added greenSmokeScreenAnimated.png img.
-
+    - Added renamed shakingBlueHeadset.png img to shakingBlueHeadsetStatic.png.
     - Created StrifeShop Icon and added to StrifeSvgs Library.
     - Created EnableCameraPreview Icon and added to StrifeSvgs Library.
     - Updated Styles for Shop.
