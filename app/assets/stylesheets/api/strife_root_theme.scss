@@ -325,7 +325,12 @@
     --decoration-to-avatar-ratio: 1.2;
 
 
-
+    --custom-premium-colors-premium-gradient-tier-2-tri-color: linear-gradient(
+      90deg,
+      var(--premium-tier-2-purple-for-gradients),
+      var(--premium-tier-2-purple-for-gradients-2),
+      var(--premium-tier-2-pink-for-gradients)
+    );
     --custom-index-scrollbar-width: 10px;
     --custom-index-scrollbar-margin: 3px;
     --custom-emoji-size-emoji: 1.375em;
@@ -360,6 +365,13 @@
     --custom-button-filled-active: 0.2;
     --custom-button-transition-duration: 170ms;
     --custom-modal-min-width-large: 800px;
+
+
+    --shop-banner-halloween-outline-color:rgba(44, 73, 129, 0.4);
+    --shop-banner-fall-outline-color:rgba(183, 111, 52, 0.4);
+    --shop-banner-anime-outline-color:rgba(46, 68, 118, 0.4);
+    --shop-banner-fantasy-outline-color:rgba(11, 61, 40, 0.4);
+    --shop-banner-breakfast-outline-color: rgba(176, 117, 54, 0.4);
 }
 
 
@@ -447,8 +459,12 @@
   min-width: var(--custom-button-button-md-width);
   min-height: var(--custom-button-button-md-height);
 }
-
-
+.global-button-growth{
+  width:auto;
+}
+.global-button-full-width{
+  width:100%;
+}
 .nitro-snack-bar-bttn .global-button-contents{
     --button--underline-color: transparent;
     background-image: -webkit-gradient(linear,left bottom,left top,from(transparent),color-stop(transparent),color-stop(var(--button--underline-color)),color-stop(var(--button--underline-color)),to(transparent));
