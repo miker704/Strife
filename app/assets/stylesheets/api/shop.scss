@@ -821,7 +821,7 @@
 }
 
 .halloween-cat-grave {
-  content: image_url("halloweenCatGrave.png");
+  content: image_url("halloweenCatGraveStatic.png");
   display: block;
   -o-object-fit: cover;
   object-fit: cover;
@@ -839,7 +839,7 @@
 }
 
 .halloween-ghosts {
-  content: image_url("halloweenGhosts.png");
+  content: image_url("halloweenGhostsStatic.png");
   display: block;
   -o-object-fit: cover;
   object-fit: cover;
@@ -858,7 +858,7 @@
 }
 
 .halloween-minions {
-  content: image_url("flyingPumpkin.png");
+  content: image_url("halloweenMinionsStatic.png");
   display: block;
   -o-object-fit: cover;
   object-fit: cover;
@@ -877,7 +877,7 @@
 }
 
 .halloween-jack-o-lantern {
-  content: image_url("pumpkinNBats.png");
+  content: image_url("jackolaternStatic.png");
   display: block;
   -o-object-fit: cover;
   object-fit: cover;
@@ -1570,4 +1570,18 @@
   .breakfast-items-pancakes {
     content: image_url("pancakesAnimated.png");
   }
+
+  .halloween-cat-grave {
+    content: image_url("halloweenCatGraveAnimated.png");
+  }
+  .halloween-minions {
+    content: image_url("halloweenMinionsAnimated.png");
+  }
+  .halloween-ghosts {
+    content: image_url("halloweenGhostsAnimated.png");
+  }
+  .halloween-jack-o-lantern {
+    content: image_url("jackolaternAnimated.png");
+  }
+  
 }
