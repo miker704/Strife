@@ -125,6 +125,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Updated Styles for Shop.
     - Updated Styles for core theme.
     - Updated Shop page.
+    - Added halloweenGhostsAnimated.png img.
+
     - Added fallLeavesAnimated.png img.
     - Added fallLeavesStatic.png img.
     - Added frogHatStatic.png img.
