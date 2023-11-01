@@ -133,4 +133,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added shopAnimeBanner.png img.
     - Added shopAnimeBannerLogo.png img.
     - Added shopBreakfastBanner.png img.
+    - Added shopBreakfastBannerLogo.png img.
 
