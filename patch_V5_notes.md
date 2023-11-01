@@ -131,4 +131,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added foxHatAnimated.png img.
     - Added shopUPCProfileEffectPrePreview.png img.
     - Added shopAnimeBanner.png img.
+    - Added shopAnimeBannerLogo.png img.
 
