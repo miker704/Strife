@@ -204,4 +204,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added fantasyDefenseShieldAnimated.png img.
     - Added fantasyDefenseShieldStatic.png img.
     - Added fairySpriteStatic.png img.
+    - Added fairySpriteAnimated.png img.
 
