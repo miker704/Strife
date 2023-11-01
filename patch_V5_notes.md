@@ -202,4 +202,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added radiatingEnergyStatic.png img.
     - Added radiatingEnergyAnimated.png img.
     - Added fantasyDefenseShieldAnimated.png img.
+    - Added fantasyDefenseShieldStatic.png img.
 
