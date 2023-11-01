@@ -178,6 +178,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added magicGirlThumbnail.png img.
     - Added sakuraThumbnail.png img.
     - Added sayanThumbnail.png img.
+    - Added shurikenThumbnail.png img.
 
 
 
