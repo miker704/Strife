@@ -174,6 +174,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added earthquakeThumbnail.png img.
     - Added fallLeavesThumbnail.png img.
     - Added plateThumbnail.png img.
+    - Added fairyThumbnail.png img.
 
 
 
