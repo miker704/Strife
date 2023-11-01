@@ -231,5 +231,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added magicGirlIntro.png img.
     - Added magicGirlLoop.png img.
     - Added cerealLoop.png img.
+    - Added earthquakeLoop.png img.
 
 
