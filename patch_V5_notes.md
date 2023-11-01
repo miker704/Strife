@@ -222,4 +222,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added cerealIntro.png img.
     - Added fairyIntro.png img.
     - Added sayanIntro.png img.
-    -
+    - Added sakuraIntro.png img.
