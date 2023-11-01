@@ -198,4 +198,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added soulLeavingBodyAnimated.png img.
     - Added soulLeavingBodyStatic.png img.
     - Added glowingRunesAnimated.png img.
+    - Added glowingRunesStatic.png img.
 
