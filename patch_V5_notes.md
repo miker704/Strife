@@ -162,4 +162,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added wizardStaffStatic.png img.
     - Added wizardStaffAnimated.png img.
     - Added inLoveStatic.png img.
+    - Added inLoveAnimated.png img.
     
