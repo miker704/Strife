@@ -119,7 +119,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added shopWumpusdisxcorelogo.png img.
     - Added techhud.png img.
     - Added renamed techhud.png img to techHudStatic.png.
-    - Added techhud.png img.
+    - Added techhudAnimated.png img.
 
     - Added shakingBlueHeadset.png img.
     - Added greenSmokeScreen.png img.
