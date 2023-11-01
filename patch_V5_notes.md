@@ -126,5 +126,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added fallLeavesAnimated.png img.
     - Added fallLeavesStatic.png img.
     - Added frogHatStatic.png img.
+    - Added frogHatAnimated.png img.
   
 
