@@ -227,5 +227,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added vinesIntro.png img.
     - Added plateIntro.png img.
     - Added waterSplashIntro.png img.
+    - Added earthquakeIntro.png img.
 
 
