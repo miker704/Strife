@@ -180,6 +180,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added sayanThumbnail.png img.
     - Added shurikenThumbnail.png img.
     - Added friedEggsStatic.png img.
+    - Added friedEggsAnimated.png img.
 
 
 
