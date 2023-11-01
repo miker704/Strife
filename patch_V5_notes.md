@@ -129,6 +129,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added halloweenGhostsStatic.png img.
     - Added halloweenMinionsStatic.png img.
     - Added halloweenMinionsAnimated.png img.
+    - Added jackolaternAnimated.png img.
 
     - Added fallLeavesAnimated.png img.
     - Added fallLeavesStatic.png img.
