@@ -224,3 +224,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added sayanIntro.png img.
     - Added sakuraIntro.png img.
     - Added shurikenIntro.png img.
+    - Added vinesIntro.png img.
+
