@@ -200,4 +200,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added glowingRunesAnimated.png img.
     - Added glowingRunesStatic.png img.
     - Added radiatingEnergyStatic.png img.
+    - Added radiatingEnergyAnimated.png img.
 
