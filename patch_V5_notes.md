@@ -121,4 +121,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created StrifeShop Icon and added to StrifeSvgs Library.
     - Created EnableCameraPreview Icon and added to StrifeSvgs Library.
     - Updated Styles for Shop.
+    - Updated Styles for core theme.
+    - Updated Shop page.
+  
 
