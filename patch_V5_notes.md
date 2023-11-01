@@ -140,4 +140,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added shopFantasyBannerLogo.png img.
     - Added slimeZombieIntro.png img.
     - Added slimeZombieLoop.png img.
+    - Added slimeZombieThumbnail.png img.
 
