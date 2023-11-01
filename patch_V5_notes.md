@@ -112,6 +112,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added halloweenLogo.png img.
     - Added halloweenWumpusFaded.png img.
     - Added halloweenCatGrave.png img.
+    - Renamed halloweenCatGrave.png halloweenCatGraveStatic.png to img.
+    -
     - Added shopHalloweenbg.png img.
     - Added shopbackgroundbanner.png img.
     - Added shopWumpusdisxcorelogo.png img.
@@ -149,4 +151,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added ghostSkullsThumbnail.png img.
     - Added pumpkinSpiceStatic.png img.
     - Added pumpkinSpiceAnimated.png img.
-
+    
