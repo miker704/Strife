@@ -148,4 +148,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added ghostSkullsIntro.png img.
     - Added ghostSkullsThumbnail.png img.
     - Added pumpkinSpiceStatic.png img.
+    - Added pumpkinSpiceAnimated.png img.
 
