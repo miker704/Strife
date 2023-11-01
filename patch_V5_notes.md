@@ -158,4 +158,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added pumpkinSpiceStatic.png img.
     - Added pumpkinSpiceAnimated.png img.
     - Added toastStatic.png img.
+    - Added toastAnimated.png img.
+    - Added wizardStaffStatic.png img.
     
