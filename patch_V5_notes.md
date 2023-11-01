@@ -221,4 +221,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added rainIntro.png img.
     - Added cerealIntro.png img.
     - Added fairyIntro.png img.
+    - Added sayanIntro.png img.
     -
