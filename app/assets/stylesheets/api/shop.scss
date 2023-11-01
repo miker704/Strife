@@ -486,7 +486,7 @@
   width: 100%;
   height: 100%;
   grid-area: 1/1;
-  content: image_url("techhud.png");
+  content: image_url("techhudStatic.png");
 }
 
 .ssxcore-tech-hud::before {
@@ -505,7 +505,7 @@
   width: 100%;
   height: 100%;
   grid-area: 1/1;
-  content: image_url("shakingBlueHeadset.png");
+  content: image_url("shakingBlueHeadsetStatic.png");
 }
 
 .ssxcore-shakingBlueHeadset::before {
@@ -524,7 +524,7 @@
   width: 100%;
   height: 100%;
   grid-area: 1/1;
-  content: image_url("greenSmokeScreen.png");
+  content: image_url("greenSmokeScreenStatic.png");
 }
 
 .ssxcore-greenSmokeScreen::before {
@@ -533,6 +533,18 @@
   width: 100%;
   height: 100%;
   background-color: var(--background-modifier-accent);
+}
+
+.shop-banner-card:hover {
+  .ssxcore-greenSmokeScreen {
+    content: image_url("greenSmokeScreenAnimated.png");
+  }
+  .ssxcore-shakingBlueHeadset {
+    content: image_url("shakingBlueHeadsetAnimated.png");
+  }
+  .ssxcore-tech-hud {
+    content: image_url("techhudAnimated.png");
+  }
 }
 
 .shop-bc-badge {
@@ -1614,9 +1626,9 @@
 .anime-sweat-drops::before,
 .anime-starry-eyed::before,
 .anime-in-love::before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: var(--background-modifier-accent);
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-modifier-accent);
 }
