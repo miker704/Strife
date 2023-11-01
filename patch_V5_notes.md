@@ -186,6 +186,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added flamingSwordAnimated.png img.
     - Added flamingSwordStatic.png img.
     - Added magicPotionStatic.png img.
-
+    - Added magicPotionAnimated.png img.
 
 
