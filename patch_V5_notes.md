@@ -242,5 +242,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added vinesGlow.png img.
     - Added new vinesIntro.png img.
     - Added new vinesIntro1.png img.
-    - Added new introBranch.png img.
+    - Added introBranch.png img.
+    - Added introLeavesLoop.png img.
 
