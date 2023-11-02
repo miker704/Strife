@@ -15,6 +15,9 @@ const StrifeShop = (props) => {
         subToNitroBasic: false,
     });
 
+    const [leavesHover, setLeavesHover] = React.useState(false);
+    const [vinesHover, setVinesHover] = React.useState(false);
+
 
     useEffect(() => {
         props.reSyncCurrentUser(props.currentUser.id);
@@ -886,6 +889,8 @@ const StrifeShop = (props) => {
                                             </div>
                                             <div className="shop-item-cards-container">
                                                 <div className="shop-item-card fall-items" role="button" tabIndex={0}
+                                                    onMouseEnter={() => setLeavesHover(true)}
+                                                    onMouseLeave={() => setLeavesHover(false)}
                                                     style={{
                                                         background: `linear-gradient(rgb(255, 194, 102), rgb(107, 25, 0)) border-box border-box`,
                                                         borderColor: `rgba(183, 111, 52, 0.4)`,
@@ -899,7 +904,8 @@ const StrifeShop = (props) => {
                                                             <div>
                                                                 <div className="shop-item-upc-profile-effects">
                                                                     <div className="shop-item-upc-profile-effects-inner">
-                                                                        <img className="shop-item-fall-foliage" alt=" " style={{ top: `0px` }} />
+                                                                        <img className='shop-item-fall-foliage-static' alt=" " style={{ top: `0px` }} />
+                                                                        <img className={`shop-item-fall-foliage-leaves ${leavesHover ? `` : `is-hidden`}`} alt=" " />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1098,14 +1104,14 @@ const StrifeShop = (props) => {
                                                         <svg width="120" height="120" viewBox="0 0 120 120" className="ssxcore-svg-mask" aria-hidden="true">
                                                             <foreignObject x="0" y="0" width="120" height="120" mask="url(#svg-mask-avatar-default)">
                                                                 <div className="ssxcore-avatar-stack">
-                                                                    <img alt=" " className="fantasy-magic-potion" aria-hidden="true" />
+                                                                    <img alt=" " className="halloween-wumpus-avatar-img" aria-hidden="true" />
                                                                 </div>
                                                             </foreignObject>
                                                         </svg>
                                                         <svg width="144" height="144" viewBox="0 0 144 144" className="ssxcore-svg-avatar-decoration" aria-hidden="true">
                                                             <foreignObject x="0" y="0" width="144" height="144" mask="url(#)">
                                                                 <div className="ssxcore-avatar-stack">
-                                                                    <img className="halloween-jack-o-lantern" alt=" " aria-hidden="true" />
+                                                                    <img className="fantasy-magic-potion" alt=" " aria-hidden="true" />
                                                                 </div>
                                                             </foreignObject>
                                                         </svg>
@@ -1668,6 +1674,8 @@ const StrifeShop = (props) => {
                                                 </div>
 
                                                 <div className="shop-item-card fantasy-items" role="button" tabIndex={0}
+                                                    onMouseEnter={() => setVinesHover(true)}
+                                                    onMouseLeave={() => setVinesHover(false)}
                                                     style={{
                                                         background: `linear-gradient(rgb(20, 97, 68), rgb(2, 24, 13)) border-box border-box`,
                                                         borderColor: `rgba(11, 61, 40, 0.4)`,
@@ -1680,7 +1688,8 @@ const StrifeShop = (props) => {
                                                             <div>
                                                                 <div className="shop-item-upc-profile-effects">
                                                                     <div className="shop-item-upc-profile-effects-inner">
-                                                                        <img className="shop-item-fantasy-mystic-vines" alt=" " style={{ top: `0px` }} />
+                                                                        <img className={`shop-item-fantasy-mystic-vines`} alt=" " style={{ top: `0px` }} />
+                                                                        <img className={`shop-item-fantasy-mystic-glowing-vines ${vinesHover ? `` : `is-hidden`}`} alt=" " />
                                                                     </div>
                                                                 </div>
                                                             </div>
