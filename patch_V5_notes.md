@@ -240,3 +240,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added waterSplashLoop.png img.
     - Added vinesLoop.png img.
     - Added vinesGlow.png img.
+    - Added new vinesIntro.png img.
