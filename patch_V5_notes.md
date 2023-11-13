@@ -247,3 +247,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added leavesLoop.png img.
     - Started Profile effect preview modal.
     - Started Profile effect preview modal container.
+    - Started avatar effect preview modal.
+
