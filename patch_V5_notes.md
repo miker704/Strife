@@ -254,3 +254,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Profile Effect Preview version of Fall title banner.png.
     - Added fakeActivityPencil.png.
     - Added ppeFallBGBanner.png.
+    - Added fallLeavesInfiniteThumbNail.png.
