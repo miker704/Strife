@@ -251,3 +251,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Started Avatar effect preview modal container.
     - Started Styles for Profile effect modal.
     - Started Styles for Avatar effect modal.
+    - Added Profile Effect Preview version of Fall title banner.png.
