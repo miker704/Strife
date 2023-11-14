@@ -3,11 +3,15 @@
     Discord - "disagreement between people."
     Synonym Strife - "angry or bitter disagreement over fundamental issues; conflict"
 
-## [LIVE LINK](https://strife.onrender.com/)
+## [LIVE LINK - Heroku.com](https://strife-v1.herokuapp.com/)
 
-[STRIFE](https://strife.onrender.com/) stylized as [$TR!F3](https://strife.onrender.com/) is fully comprehensive, pixel perfect, functional clone of the popular VoIP and instant messaging platform [Discord](https://discord.com/)
+## [LIVE LINK - Render.com](https://strife.onrender.com/)
 
-### [Current Patch Notes](./patch_V4_notes.md)
+[STRIFE](https://strife-v1.herokuapp.com/) stylized as [$TR!F3](https://strife-v1.herokuapp.com/) is fully comprehensive, pixel perfect, functional clone of the popular VoIP and instant messaging platform [Discord](https://discord.com/)
+
+### [Current Patch Notes for Active Build](./patch_V4_notes.md)
+
+### [Current Patch Notes for Future Release](./patch_V5_notes.md)
 
 ***
 
@@ -62,12 +66,13 @@ STRIFE "$TR!F3" as of Patch V4.0:
 * Full-Stack
   * ```WebRTC``` Api in combination with Rails ActionCable  to allow both video and voice calling between users.
   * ```Rails Action Cable```, ```Redis```, and ```JavaScripts @rails/actioncable``` as the Applications WebSocket Provider handling both front-end and back-end request allowing for async functionality across the entire application. Allowing for live updates in receiving user updates, friend requests, invited dmServers and Servers, Live text messaging, voice and video calling.
-  * ```Render``` $TR!F3 currently uses [Render](https://render.com/) as is deployment and live hosting service.
+  * ```Render``` $TR!F3 currently uses [Render](https://render.com/) as an alternative deployment platform and live hosting service.
+  * ```Heroku``` STRIFE has moved backed to Heroku and will serve as the main live deployment and hosting service for STRIFE.
+
 * Former Tech Stack
   * ```Emotion``` the emotion library/engine is a "performant" and flexible CSS in JS Library which is used by default the styling engine ```Material UI``` uses to style its components. Despite being "performant" this engine has been replaced with a better alternative as using material ui with it causes massive slowdown on rendering components that use mui components. As it generates style tags for all styles for each mui component in the header tag, which can be hundreds of style tags being generated at a time which slows the app down signifcantly after investigation it was quickly replaced with one of MUI's alternative styling engines ```@mui/styled-engine-sc``` otherwise known as MUI Styled Engine for Styled Components.
   * ```Rails version 5.2.8``` this was used as part of the default tech stack required by App Academy as the project grew and this version of rails has ceased support by the rails development team and was nearing its support on Heroku. The version of rails and ruby was moved to the newer versions in transistion to the current versions of ruby and ruby on rails.
   * ```Ruby version 2.5.1``` this was used as part of the default tech stack required by App Academy as the project grew and this version of rails has ceased support by the rails development team and was nearing its support on Heroku. The version of rails and ruby was moved to the newer versions in transistion to the current versions of ruby and ruby on rails.
-  * ```Heroku``` this was previously used as STRIFE's live deployment and hosting service but do due Heroku's elimination of its free tier, STRIFE has moved to ```Render``` and will move to ```RailWay``` in the future.
 
 * Future Stack
   * ```RUST``` as the backend programming language and ```Rocket.rs``` as the web application framework.
