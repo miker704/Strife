@@ -287,6 +287,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added breakfast effect theme to profile effect preview modal.
     - Added Ghoulish Graffiti profile effect to profile effect preview modal.
     - Added styles for Ghoulish Graffiti profile effect to profile effect preview modal.
+    - Added Zombie Slime profile effect to profile effect preview modal.
 
 
 
