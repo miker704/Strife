@@ -90,7 +90,7 @@ class ServerChatRoom extends React.Component {
             {
                 received: ({ message, head, path, type, channel, banned, bannedUser }) => {
 
-                    console.info(`%c INCOMING DATA after : `, "color:#05dc28", message, head, path, type, channel, banned, bannedUser);
+                    // console.info(`%c INCOMING DATA after : `, "color:#05dc28", message, head, path, type, channel, banned, bannedUser);
 
                     switch (type) {
                         case 'RECEIVE_CHANNEL_MESSAGE':
