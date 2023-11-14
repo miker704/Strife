@@ -1081,7 +1081,6 @@
     animation-timing-function: ease-in-out;
   }
 
-
   .shop-item-fantasy-hydro-blast {
     -webkit-animation-delay: 0.75s;
     -webkit-animation-duration: 5s;
@@ -1361,7 +1360,6 @@
 @keyframes fantasy-mystic-vines-cycle {
   0% {
     content: image_url("vinesIntro.png");
-
   }
 
   100% {
@@ -1372,7 +1370,6 @@
 @-webkit-keyframes fantasy-mystic-vines-cycle {
   0% {
     content: image_url("vinesIntro.png");
-
   }
 
   100% {
@@ -1395,7 +1392,6 @@
   }
   100% {
     content: image_url("vinesGlow.png");
-
   }
 }
 
@@ -1846,6 +1842,24 @@
   width: 100%;
   position: absolute;
   content: image_url("fallLeavesThumbnail.png");
+}
+
+.shop-item-fall-foliage-infinite {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("fallLeavesInfiniteThumbNail.png");
+  -webkit-animation-delay: 0.75s;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-name: fall-branch-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: fall-branch-cycle;
+  animation-duration: 3s;
+  animation-delay: 0.75s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
 }
 
 .shop-item-fall-foliage-moving {
