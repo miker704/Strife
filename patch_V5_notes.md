@@ -264,4 +264,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added fallLeavesInfiniteThumbNail.png.
     - Edited shop styles.
     - Edited root styles.
-
+    - Added a large amount of preview profile effect modal styles.
