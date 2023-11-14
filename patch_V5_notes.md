@@ -306,6 +306,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added styles for Magic Hearts profile effect to profile effect preview modal.
     - Added Power Surge profile effect to profile effect preview modal.
     - Added styles for Power Surge profile effect to profile effect preview modal.
+    - Added strife-Os profile effect to profile effect preview modal.
 
 
 
