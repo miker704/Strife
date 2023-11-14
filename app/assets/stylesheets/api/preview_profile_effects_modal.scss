@@ -1,3 +1,55 @@
+@-webkit-keyframes ppeModalPopOutAnimation {
+  from {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes ppeModalPopOutAnimation {
+  from {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes ppeModalExitAnimation {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes ppeModalExitAnimation {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
 .ppe-modal-container-layer {
   background: none !important;
   position: absolute;
@@ -44,7 +96,7 @@
   max-width: 100%;
 }
 
-.ppe-modal {
+.ppe-modal-root {
   border-radius: var(--radius-sm);
   background-color: transparent;
   min-height: 570px;
@@ -56,6 +108,27 @@
   max-height: 100%;
   opacity: 1;
   transform: scale(1);
+  -webkit-animation-name: ppeModalPopOutAnimation;
+  -webkit-animation-duration: 0.2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+  animation-name: ppeModalPopOutAnimation;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+}
+
+.ppe-modal-root.transition-out {
+  -webkit-animation-name: ppeModalExitAnimation;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-duration: 0.15s;
+  -webkit-animation-iteration-count: 1;
+  animation-name: ppeModalExitAnimation;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-duration: 0.15s;
+  animation-iteration-count: 1;
 }
 
 .ppe-modal-content {
@@ -87,7 +160,30 @@
   padding-top: 4px;
   max-height: 18px;
 }
-
+.ppe-halloween-title-banner {
+  content: image_url("halloweenLogo.png");
+  padding-right: 6px;
+  padding-top: 4px;
+  max-height: 18px;
+}
+.ppe-fantasy-title-banner {
+  content: image_url("shopFantasyBannerLogo.png");
+  padding-right: 6px;
+  padding-top: 4px;
+  max-height: 18px;
+}
+.ppe-anime-title-banner {
+  content: image_url("shopAnimeBannerLogo.png");
+  padding-right: 6px;
+  padding-top: 4px;
+  max-height: 18px;
+}
+.ppe-breakfast-title-banner {
+  content: image_url("shopBreakfastBannerLogo.png");
+  padding-right: 6px;
+  padding-top: 4px;
+  max-height: 18px;
+}
 .ppe-profile-effect-description-container {
   margin-bottom: 38px;
 }
@@ -204,6 +300,23 @@
 .ppe-collectible-preview-category-banner.fall-bg-banner {
   background-size: cover;
   background-image: image_url("ppeFallBgBanner.jpg");
+}
+.ppe-collectible-preview-category-banner.ppe-halloween-bg-banner {
+  background-size: cover;
+  background-image: image_url("shopHalloweenbg.png");
+}
+.ppe-collectible-preview-category-banner.ppe-fantasy-bg-banner {
+  background-size: cover;
+  background-image: image_url("shopFantasyBanner.png");
+}
+
+.ppe-collectible-preview-category-banner.ppe-anime-bg-banner {
+  background-size: cover;
+  background-image: image_url("shopAnimeBanner.png");
+}
+.ppe-collectible-preview-category-banner.ppe-breakfast-bg-banner {
+  background-size: cover;
+  background-image: image_url("shopBreakfastBanner.png");
 }
 
 .ppepes-preview-container-inner {
@@ -367,44 +480,102 @@
   color: var(--header-primary);
 }
 
-.ppe-fakeActivity-layout{
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
+.ppe-fakeActivity-layout {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
 }
-.ppe-fakeActivity-icon{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 auto;
-    width: 64px;
-    height: 64px;
-    border-radius: 8px;
-    margin-right: 16px;
-    background-color: var(--brand-experiment-600);
-}
-
-.ppe-fake-activity-pencil-icon{
-    display: block;
-    width: 48px;
-    height: 48px;
-    transform: none;
-    content: image_url("fakeActivityPencil.png");
+.ppe-fakeActivity-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  margin-right: 16px;
+  background-color: var(--brand-experiment-600);
 }
 
-.ppe-fakeActivity-content{
-    flex: 1 1 auto;
+.ppe-fake-activity-pencil-icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  transform: none;
+  content: image_url("fakeActivityPencil.png");
 }
-.ppe-fakeActivity-content-semi-bold{
+
+.ppe-fakeActivity-content {
+  flex: 1 1 auto;
+}
+.ppe-fakeActivity-content-semi-bold {
   font-family: var(--global-font);
   font-size: 14px;
   line-height: 18px;
   font-weight: 600;
   color: var(--text-normal);
 }
-.default-text-color{
-    color: var(--text-normal);
+.default-text-color {
+  color: var(--text-normal);
 }
-.ppe-fakeActivity-timeValues{
-    font-family: var(--font-code);
+.ppe-fakeActivity-timeValues {
+  font-family: var(--font-code);
+}
+
+//profile effects
+
+.shop-item-fall-foliage-infinite {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("fallLeavesInfiniteThumbNail.png");
+  -webkit-animation-delay: 0.75s;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-name: fall-branch-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: fall-branch-cycle;
+  animation-duration: 3s;
+  animation-delay: 0.75s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+.ppe-shop-item-fall-lilly-pad-life {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("rainIntro.png");
+  -webkit-animation-delay: 4s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: ppefall-lillypad-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: ppefall-lillypad-cycle;
+  animation-duration: 5s;
+  animation-delay: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ppefall-lillypad-cycle {
+  0% {
+    content: image_url("rainIntro.png");
+  }
+  100% {
+    content: image_url("rainLoop.png");
+  }
+}
+
+@-webkit-keyframes ppefall-lillypad-cycle {
+  0% {
+    content: image_url("rainIntro.png");
+  }
+  100% {
+    content: image_url("rainLoop.png");
+  }
 }
