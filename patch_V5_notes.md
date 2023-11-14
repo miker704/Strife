@@ -290,6 +290,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Zombie Slime profile effect to profile effect preview modal.
     - Added styles for Zombie Slime profile effect to profile effect preview modal.
     - Added Dark Omens profile effect to profile effect preview modal.
+    - Added styles for Dark Omens profile effect to profile effect preview modal.
 
 
 
