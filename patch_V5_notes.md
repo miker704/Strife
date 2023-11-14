@@ -78,6 +78,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Package assest update.
     - Moded production file for herkou.
     - Moded server chat room file for herkou.
+    - Moded dm server chat room file for herkou.
+
 
 ## Backend Changes
 
