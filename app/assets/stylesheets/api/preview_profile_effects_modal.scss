@@ -579,3 +579,65 @@
     content: image_url("rainLoop.png");
   }
 }
+
+.ppe-shop-item-ghoulish-graffiti {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("punkGirlIntro.png");
+  -webkit-animation-delay: 4s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: ghoulish-graffiti-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: ghoulish-graffiti-cycle;
+  animation-duration: 5s;
+  animation-delay: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.ppe-shop-item-slime-zombie {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("slimeZombieIntro.png");
+  -webkit-animation-delay: 4s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: slime-zombie-cycle;
+  animation-name: slime-zombie-cycle;
+  animation-duration: 5s;
+  animation-delay: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.ppe-shop-item-ghost-skulls {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("ghostSkullsIntro.png");
+  -webkit-animation-delay: 4s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: ghost-skulls-cycle;
+  animation-name: ghost-skulls-cycle;
+  animation-duration: 5s;
+  animation-delay: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+
