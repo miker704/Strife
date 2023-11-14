@@ -48,7 +48,6 @@ class DmChatRoom extends React.Component {
                 this.props.fetchDmServer(this.props.dmServerId)
                     .then(() => {
                         this.setState({ renderSkeleton: false });
-                        // this.scrollToBottomOfChat("smooth");
                     });
                 this.renderPlaceHolder();
             }
@@ -82,8 +81,8 @@ class DmChatRoom extends React.Component {
 
         //plug the cable
         // const cable = createConsumer('ws://localhost:3000/cable'); // /cable mounts to local host that rails server is running on 
-        // const cable = createConsumer('wss://strife-v1.herokuapp.com/cable'); // /cable mounts to local host that rails server is running on 
-        const cable = createConsumer('wss://strife.onrender.com/cable');
+        const cable = createConsumer('wss://strife-v1.herokuapp.com/cable'); // /cable mounts to local host that rails server is running on 
+        // const cable = createConsumer('wss://strife.onrender.com/cable');
         this.subscription = cable.subscriptions.create(
             { channel: 'DmChannel', id: this.props.dmServerId },
             {
@@ -153,7 +152,8 @@ class DmChatRoom extends React.Component {
         }
         if (this.props.DmMessages[0] !== prevProps.DmMessages[0]) { this.scrollToBottomOfChat("auto"); }
         if (this.props.DmMessages.length > prevProps.DmMessages.length) {
-            this.scrollToBottomOfChat("smooth");
+            this.scrollToBottomOfChat("instant");
+            this.scrollToBottomOfChat("auto");
         }
 
         if (prevProps.dmMembers.length !== this.props.dmMembers.length) {
