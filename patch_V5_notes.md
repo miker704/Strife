@@ -302,5 +302,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Pixie Dust profile effect to profile effect preview modal.
     - Added styles for Pixie Dust profile effect to profile effect preview modal.
     - Added BlankEffectImage.png to be used in pauses between animations for profile effects.
+    - Added Magic Hearts profile effect to profile effect preview modal.
+
 
 
