@@ -268,3 +268,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Plugged SubToNitroProModal to all unlock with nitro buttons wihin the shop page around 40-45.
     - Renamed AvatarEffectPreviewModal to AvatarDecorationPreviewModal.
     - Renamed AvatarEffectPreviewModalContainer to AvatarDecorationPreviewModalContainer.
+    - Completed AvatarDecorationPreviewModalContainer.
