@@ -3,6 +3,7 @@ import StrifeShopHeaderNavBarContainer from "../strife_shop_header_nav_bar/strif
 import DMNavBarContainer from "../../dm_servers/dm_nav_bar/dm_nav_bar_container";
 import { useEffect, useState, useRef } from "react";
 import { EnableCameraViewIcon, StrifeBannerLogo, StrifeNitroBadgeIcon } from "../../front_end_svgs/Strife_svgs";
+import SubscribeToStrifeNitroProModalContainer from "../../nitro/subscribe_to_nitro_modal/subscribe_to_nitro_pro_modal_container";
 
 
 const StrifeShop = (props) => {
@@ -23,6 +24,26 @@ const StrifeShop = (props) => {
         props.reSyncCurrentUser(props.currentUser.id);
     }, []);
 
+    const openModal = (field, isGift = false) => {
+        setCurrentSubModal(previousState => {
+            return { ...previousState, [field]: true };
+        });
+        setGift(isGift);
+    }
+    const closeForm = (field) => {
+        setCurrentSubModal(previousState => {
+            return { ...previousState, [field]: false };
+        });
+        setGift(false);
+    }
+
+    const renderNitroProModal = () => {
+        if (currentSubModal.subToNitroPro === true) {
+            return (
+                <SubscribeToStrifeNitroProModalContainer closeSubMod={closeForm} formName={"subToNitroPro"} gifted={gift} />
+            )
+        }
+    }
 
     return (
         <div className="server-main-base">
@@ -30,6 +51,7 @@ const StrifeShop = (props) => {
                 <DMNavBarContainer />
                 <div className="shop-main-container">
                     <StrifeShopHeaderNavBarContainer />
+                    {renderNitroProModal()}
                     <div className="shop-scroll auto-scroll-raw-attributes global-scroller-base" style={{ overflow: `hidden scroll`, paddingRight: `0px` }}>
                         <div className="shop-page-wrapper">
                             <main className="shop-main-page">
@@ -44,7 +66,8 @@ const StrifeShop = (props) => {
                                         <div className="shop-hero-subtitle" style={{ color: `white` }}>
                                             Charming. Fierce. Hungry. Whatever your vibe, buy and collect your favorite styles for your profile for any occasion. Only with N!TR0.
                                         </div>
-                                        <button type="button" className="shop-buttons shop-hero-button global-button-growth global-button-size-medium button-look-inverted">
+                                        <button type="button" className="shop-buttons shop-hero-button global-button-growth global-button-size-medium button-look-inverted"
+                                            onClick={(e) => openModal("subToNitroPro")}>
                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -73,7 +96,7 @@ const StrifeShop = (props) => {
                                         <img className="shop-bc-banner-front" alt=" " />
                                         <span className="shop-bc-banner-text" style={{ color: `white` }}>
                                             Collect these bonus avatar decorations for extra style when you subscribe to N!TR0!{`${` `}`}
-                                            <span className="shop-bc-premium-unlock-hook" role="button" tabIndex={0}>
+                                            <span className="shop-bc-premium-unlock-hook" role="button" tabIndex={0} onClick={(e) => openModal("subToNitroPro")}>
                                                 <span className="shop-bc-premium-unlock-hook-text" style={{ color: `white` }}>Unlock with N!TR0</span>
                                             </span>
                                         </span>
@@ -196,7 +219,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -260,7 +284,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -324,7 +349,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -388,7 +414,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -461,7 +488,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -526,7 +554,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -589,7 +618,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -667,7 +697,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -731,7 +762,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -795,7 +827,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -859,7 +892,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -931,7 +965,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -993,7 +1028,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -1071,7 +1107,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1135,7 +1172,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1199,7 +1237,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1263,7 +1302,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1327,7 +1367,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1391,7 +1432,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1454,7 +1496,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1518,7 +1561,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1587,7 +1631,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -1650,7 +1695,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -1715,7 +1761,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -1778,7 +1825,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -1856,7 +1904,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1920,7 +1969,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1984,7 +2034,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2047,7 +2098,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2111,7 +2163,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2175,7 +2228,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2239,7 +2293,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2309,7 +2364,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -2372,7 +2428,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -2435,7 +2492,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -2498,7 +2556,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -2576,7 +2635,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2640,7 +2700,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2704,7 +2765,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2768,7 +2830,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2831,7 +2894,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2894,7 +2958,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2963,7 +3028,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -3025,7 +3091,8 @@ const StrifeShop = (props) => {
                                                                 <div className="shop-item-card-inner-hover-upsell-container">
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
-                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
+                                                                        <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                                            onClick={(e) => openModal("subToNitroPro")}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
