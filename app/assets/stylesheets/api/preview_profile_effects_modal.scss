@@ -640,4 +640,243 @@
   animation-fill-mode: forwards;
 }
 
+.ppe-shop-item-fantasy-hydro-blast {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("waterSplashIntro.png");
+  -webkit-animation-delay: 4s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: fantasy-hydro-blast-cycle;
+  animation-name: fantasy-hydro-blast-cycle;
+  animation-duration: 5s;
+  animation-delay: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
 
+.ppe-shop-item-fantasy-sakura-dreams-main {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("sakuraIntro.png");
+}
+
+.ppe-shop-item-fantasy-sakura-dreams {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("sakuraIntro.png");
+  -webkit-animation-delay: 4s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: fantasy-sakura-dreams-cycle;
+  animation-name: fantasy-sakura-dreams-cycle;
+  animation-duration: 5s;
+  animation-delay: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.ppe-shop-item-fantasy-mystic-vines {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("vinesThumbnail.png");
+  -webkit-animation-delay: 4s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: fantasy-mystic-vines-cycle;
+  animation-name: fantasy-mystic-vines-cycle;
+  animation-duration: 5s;
+  animation-delay: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.ppe-shop-item-fantasy-mystic-glowing-vines {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("vinesLoop.png");
+  -webkit-animation-delay: 4s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: fantasy-mystic-glowing-vines-cycle;
+  animation-name: fantasy-mystic-glowing-vines-cycle;
+  animation-duration: 5s;
+  animation-delay: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.ppe-shop-item-fantasy-pixie-dust {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 4s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: ppe-fantasy-pixie-dust-cycle;
+  animation-name: ppe-fantasy-pixie-dust-cycle;
+  animation-duration: 5s;
+  animation-delay: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ppe-fantasy-pixie-dust-cycle {
+  0% {
+    content: image_url("fairyIntro.png");
+  }
+  100% {
+    content: image_url("blankEffect.png");
+  }
+}
+
+@-webkit-keyframes ppe-fantasy-pixie-dust-cycle {
+  0% {
+    content: image_url("fairyIntro.png");
+  }
+  100% {
+    content: image_url("blankEffect.png");
+  }
+}
+
+.ppe-shop-item-anime-magic-hearts {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("magicGirlIntro.png");
+  -webkit-animation-delay: 4s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: anime-magic-hearts-cycle;
+  animation-name: anime-magic-hearts-cycle;
+  animation-duration: 5s;
+  animation-delay: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.ppe-shop-item-anime-shatter {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("earthquakeIntro.png");
+  -webkit-animation-delay: 4s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: anime-shatter-cycle;
+  animation-name: anime-shatter-cycle;
+  animation-duration: 5s;
+  animation-delay: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.ppe-shop-item-anime-shuriken-strike {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("shurikenIntro.png");
+  -webkit-animation-delay: 4s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: anime-shuriken-strike-cycle;
+  animation-name: anime-shuriken-strike-cycle;
+  animation-duration: 5s;
+  animation-delay: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.ppe-shop-item-anime-power-surge {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("sayanIntro.png");
+  -webkit-animation-delay: 4s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: anime-power-surge-cycle;
+  animation-name: anime-power-surge-cycle;
+  animation-duration: 5s;
+  animation-delay: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.ppe-shop-item-breakfast-strife-cereal-o-s {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("cerealIntro.png");
+  -webkit-animation-delay: 4s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: breakfast-strife-cereal-o-s-cycle;
+  animation-name: breakfast-strife-cereal-o-s-cycle;
+  animation-duration: 5s;
+  animation-delay: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.ppe-shop-item-breakfast-plate {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("plateIntro.png");
+  -webkit-animation-delay: 4s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: breakfast-plate-cycle;
+  animation-name: breakfast-plate-cycle;
+  animation-duration: 5s;
+  animation-delay: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
