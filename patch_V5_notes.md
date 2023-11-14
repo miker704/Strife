@@ -266,3 +266,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added a large amount of preview profile effect modal styles.
     - Completed profile effect preview modal container.
     - Plugged SubToNitroProModal to all unlock with nitro buttons wihin the shop page around 40-45.
+    - Renamed AvatarEffectPreviewModal to AvatarDecorationPreviewModal.
