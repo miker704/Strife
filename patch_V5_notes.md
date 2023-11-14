@@ -263,3 +263,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added ppeFallBGBanner.png.
     - Added fallLeavesInfiniteThumbNail.png.
     - Edited shop styles.
+    - Edited root styles.
+
