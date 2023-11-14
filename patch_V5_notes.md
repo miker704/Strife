@@ -74,6 +74,8 @@ the need to create a private room is need to prevent unwanted members from enter
 
 ## Major Changes and Fixes
 
+    - Moded application.html.erb for heroku.
+
 ## Backend Changes
 
     - Changed to signal every channel in a server to resync the server when as user in the server updates there name, avatar or banner. instead of only the channel they are in to allow updates to be sync with other users in the server but are currently in a different channel of the server.
