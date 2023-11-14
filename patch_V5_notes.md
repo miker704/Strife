@@ -271,3 +271,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Completed AvatarDecorationPreviewModalContainer.
     - Added hashTemplates to dry up profile effect types for the profile effect modal.
     - Added Scrollbar style for profile effect modal.
+    - Started AvatarDecorationPreviewModal.
