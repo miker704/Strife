@@ -283,6 +283,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added fall effect theme to profile effect preview modal.
     - Added styles for fall effect theme to profile effect preview modal.
     - Added halloween effect theme to profile effect preview modal.
+    - Added styles for halloween effect theme to profile effect preview modal.
+
     - Added fantasy effect theme to profile effect preview modal.
     - Added anime effect theme to profile effect preview modal.
     - Added breakfast effect theme to profile effect preview modal.
