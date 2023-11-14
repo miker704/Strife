@@ -298,6 +298,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Hydro Blast profile effect to profile effect preview modal.
     - Added styles for Hydro Blast profile effect to profile effect preview modal.
     - Added Sakura Dreams profile effect to profile effect preview modal.
+    - Added styles for Sakura Dreams profile effect to profile effect preview modal.
     
 
 
