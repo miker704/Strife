@@ -57,6 +57,7 @@
     --black-500-hsl-06: hsla(0, 0%, 0%, 0.6);
     --black-500-hsl-075: hsla(0, 0%, 0%, 0.75);
     --black-500-hsl-08: rgba(0, 0, 0, 0.8);
+    --black-500-hsl-085: rgba(0, 0, 0, 0.85);
     --vanta-black: rgb(1, 1, 0);
     --black-raw: rgb(0, 0, 0);
     --brand-100:rgb(247, 247, 254);
@@ -372,6 +373,10 @@
     --shop-banner-anime-outline-color:rgba(46, 68, 118, 0.4);
     --shop-banner-fantasy-outline-color:rgba(11, 61, 40, 0.4);
     --shop-banner-breakfast-outline-color: rgba(176, 117, 54, 0.4);
+
+
+    --custom-user-profile-themed-container-user-popout-width: 340px;
+    --custom-user-profile-themed-container-user-profile-modal-width: 600px;
 }
 
 
@@ -541,6 +546,18 @@
         --button--underline-color: var(--white-500);
     }
 }
+
+.closeWithCircleBackgroundIcon{
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--black-500-hsl-085);
+  border-radius: 50%;
+  padding: 0px;
+}
+
 
 .theme-dark .i2smsg-server-avatar-icon{
   background-color: var(--primary-600);
