@@ -75,6 +75,7 @@ the need to create a private room is need to prevent unwanted members from enter
 ## Major Changes and Fixes
 
     - Moded application.html.erb for heroku.
+    - Package assest update.
 
 ## Backend Changes
 
