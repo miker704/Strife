@@ -273,3 +273,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Scrollbar style for profile effect modal.
     - Started AvatarDecorationPreviewModal.
     - Added various templates for profile effect modal.
+    - Added mulitple state effects for deploying profile effect modals in shop page.
