@@ -276,3 +276,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added multiple state effects for deploying profile effect modals in shop page.
     - Added multiple state effects for deploying avatar decoration modals in shop page.
     - Added edits to readme.md.
+    - Added lilly pad profile effect to be profile effect preview modal.
