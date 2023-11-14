@@ -9,9 +9,9 @@
 
 [STRIFE](https://strife-v1.herokuapp.com/) stylized as [$TR!F3](https://strife-v1.herokuapp.com/) is fully comprehensive, pixel perfect, functional clone of the popular VoIP and instant messaging platform [Discord](https://discord.com/)
 
-### [Current Patch Notes for Active Build](./patch_V4_notes.md)
+### [Current Patch Notes for Active Build V4.0](./patch_V4_notes.md)
 
-### [Current Patch Notes for Future Release](./patch_V5_notes.md)
+### [Current Patch Notes for Future Release V5.0](./patch_V5_notes.md)
 
 ***
 
