@@ -304,6 +304,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added BlankEffectImage.png to be used in pauses between animations for profile effects.
     - Added Magic Hearts profile effect to profile effect preview modal.
     - Added styles for Magic Hearts profile effect to profile effect preview modal.
+    - Added Power Surge profile effect to profile effect preview modal.
 
 
 
