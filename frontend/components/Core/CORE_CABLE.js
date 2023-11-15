@@ -118,6 +118,11 @@ const _STRIFE_CORE_CABLE_ = (store, _global_history, props, history, currentUser
                     store.dispatch(fetchUser(data.userId));
                     console.info(`%c[$TR!FE M0N!T0R]: %c[RECEIVED_USER_DATA_UPDATE%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
                     break;
+                case 'RECEIVE_CURRENT_USER_UPDATE':
+                    store.dispatch(fetchUser(data.userId));
+                    store.dispatch(reSyncCurrentUser(data.userId));
+                    console.info(`%c[$TR!FE M0N!T0R]: %c[RECEIVED_CURRENT_USER_DATA_UPDATE%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#8442f4;", "color:#8442f4;", "color:#00FD61;", "color:#00FD61;");
+                    break;
                 default:
                     console.warn(`%c[$TR!FE M0N!T0R]: %c[UNKNOWN REQUEST%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;");
                     break;
