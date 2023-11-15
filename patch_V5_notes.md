@@ -88,6 +88,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed unneeded general channel in Server : explore.json.jbuilder.
     - Removed unneeded general channel in Server : index.json.jbuilder.
     - Removed unneeded general channel in Server : compressIndex.json.jbuilder.
+    - Added Asyc request to resync the current user in strife_core Cable if the user updates their avatar or banner in 
+    another tab while in the shop page.
 
 ## Frontend Changes
 
@@ -408,4 +410,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Completed Avatar Decoration Preview Modal.
     - Added edits to shop styles.
     - Added massive changes and additions to styles for preview effect and avatar decoration preview modals.
+    
 
