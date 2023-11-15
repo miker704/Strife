@@ -376,3 +376,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Starry Eyed Avatar Decoration to Avatar Decoration preview modal.
     - Added styles for Starry Eyed Avatar Decoration to Avatar Decoration preview modal.
     - Added In Love Avatar Decoration to Avatar Decoration preview modal.
+    - Added styles for In Love Avatar Decoration to Avatar Decoration preview modal.
