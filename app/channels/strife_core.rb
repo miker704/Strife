@@ -91,7 +91,11 @@ class StrifeCore < ApplicationCable::Channel
         else
           print 'CURRENT LOCATION IS'.colorize(:yellow)
           print currentLocation.colorize(:yellow)
+          print currentLocation
         end
+      elsif currentLocation.include?('/$/$H0P/')
+        core = '$TR!F3_' + current_user.id.to_s
+        parse_fetch_current_user_update(core)
       end
     end
   end
@@ -127,6 +131,9 @@ class StrifeCore < ApplicationCable::Channel
     # puts current_user.id
     received({ type: 'RECEIVE_USER_UPDATE', core: user_core, userId: current_user.id })
 
+  end
+  def parse_fetch_current_user_update(user_core)
+    received({ type: 'RECEIVE_CURRENT_USER_UPDATE', core: user_core, userId: current_user.id })
   end
 
 #  Final replace above and below functions
@@ -380,6 +387,9 @@ end
         core = data[:core]
         self.class.broadcast_to(core, data)  
       when 'RESYNC_CURRENT_USER'
+        core = data[:core]
+        self.class.broadcast_to(core, data)
+      when 'RECEIVE_CURRENT_USER_UPDATE'
         core = data[:core]
         self.class.broadcast_to(core, data)
       else
