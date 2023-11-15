@@ -374,7 +374,7 @@ const BoostServerSelectPlanModal = (props) => {
                                     You could be paying{`${` `}`}
                                     <strong>30% less</strong>{`${` `}`}
                                     for each Boost, and get an additional 2 Boosts with{`${` `}`}
-                                    <a className="upSellFooter-anchor" role="button" tabIndex={0}>Discord Nitro</a>
+                                    <a className="upSellFooter-anchor" role="button" tabIndex={0}>$TR!F3 Nitro</a>
                                     !
                                 </div>
                             </div>
@@ -426,7 +426,7 @@ const BoostServerSelectPlanModal = (props) => {
             </button>
             <div className="nitro-plan-suggestion-icon" />
             <div className="npsm-body-text">
-                Boost at a better price with Discord Nitro! For {`${` `}`}
+                Boost at a better price with $TR!F3 Nitro! For {`${` `}`}
                 <strong>$9.99/Month</strong>
                 {`${` `}`}you’ll get:
             </div>
@@ -441,7 +441,7 @@ const BoostServerSelectPlanModal = (props) => {
                 </div>
                 <div className="sbm-perk-row">
                     <div className="sbm-perk-container"><NitroHappyFaceIcon className="sbm-perk-icon npsm-happy-face-icon" /></div>
-                    <div className="sbm-perk-description">Superpower chat perks: animated emoji, custom Discord tag, and more</div>
+                    <div className="sbm-perk-description">Superpower chat perks: animated emoji, custom $TR!F3 tag, and more</div>
                 </div>
                 <div className="sbm-perk-row">
                     <div className="sbm-perk-container"><ComputerStreamingIcon className="sbm-perk-icon npsm-streaming-icon" /></div>
