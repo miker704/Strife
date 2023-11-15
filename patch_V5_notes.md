@@ -325,3 +325,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Shuriken Strike profile effect to profile effect preview modal.
     - Added styles for Shuriken Strike profile effect to profile effect preview modal.
     - Mounted Profile Effect Preview Modal to each preview button on each profile effect card in the shop page.
+    - Mounted SubscribeToNitroProModal to Profile Effect Preview Modal.
