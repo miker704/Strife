@@ -403,6 +403,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added sakuraDreamsInfinite.png.
     - Added vinesEnd.png.
     - Added vinesFullCycle.png.
-
+    - Mounted Avatar Decoration Preview Modal in shop page to every preview button on every avatar decoration card.
 
 
