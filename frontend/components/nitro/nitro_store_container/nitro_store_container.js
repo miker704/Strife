@@ -3,6 +3,7 @@ import { withRouter } from "react-router";
 import { openModal, closeModal, openModalWithProps } from "../../../actions/modal_actions";
 import { reSyncCurrentUser } from "../../../actions/session_actions";
 import NitroStore from "./nitro_store";
+
 const mSTP = (state, ownProps) => {
 
     return {
