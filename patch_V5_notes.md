@@ -420,4 +420,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added TopStretchedSparkleStart Svg Icon.
     - Changed the perks for the nitro selection modal.
     - Added CustomAppIcons.svg.
+    - Added mallow.svg.
+
 
