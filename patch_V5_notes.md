@@ -416,3 +416,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Replaced N!TR0 with Nitro to fit button test in Avatar Decoration Preview Modal.
     - Replaced N!TR0 with Nitro to fit button test in Profile Effect Preview Modal.
     - Completed Shop Page.
+    - Added BottomStretchedSparkleStart Svg Icon.
