@@ -4,7 +4,8 @@ import DMNavBarContainer from "../../dm_servers/dm_nav_bar/dm_nav_bar_container"
 import { useEffect, useState, useRef } from "react";
 import { EnableCameraViewIcon, StrifeBannerLogo, StrifeNitroBadgeIcon } from "../../front_end_svgs/Strife_svgs";
 import SubscribeToStrifeNitroProModalContainer from "../../nitro/subscribe_to_nitro_modal/subscribe_to_nitro_pro_modal_container";
-
+import ProfileEffectPreviewModalContainer from "../profile_effect_preview_modal/profile_effect_preview_modal_container";
+import AvatarDecorationPreviewModalContainer from "../avatar_decorations_preview_modal/avatar_decoration_preview_modal_container";
 
 const StrifeShop = (props) => {
 
@@ -14,33 +15,71 @@ const StrifeShop = (props) => {
         nitroPlanSelection: false,
         subToNitroPro: false,
         subToNitroBasic: false,
+        profileEffectModal: false,
+        avatarDecorationPreviewModal: false,
     });
 
     const [leavesHover, setLeavesHover] = React.useState(false);
     const [vinesHover, setVinesHover] = React.useState(false);
+    const [shurikenHover, setShurikenHover] = React.useState(false);
+    const [sakuraDreamsHover, setSakuraDreamsHover] = React.useState(false);
+    const [shatterHover, setShatterHover] = React.useState(false);
 
+
+    const [profileEffectThemeType, setProfileEffectThemeType] = React.useState("");
+    const [profileEffectObj, setProfileEffectThemeObj] = React.useState("");
+    const [avatarEffectObj, setAvatarEffectThemeObj] = React.useState("");
 
     useEffect(() => {
         props.reSyncCurrentUser(props.currentUser.id);
     }, []);
 
-    const openModal = (field, isGift = false) => {
+    const openModal = (field, profileEffectTheme = "", profileThemeObj = "", avatarEffectObj = "", isGift = false) => {
         setCurrentSubModal(previousState => {
             return { ...previousState, [field]: true };
         });
+
         setGift(isGift);
+        setProfileEffectThemeType(profileEffectTheme);
+        setProfileEffectThemeObj(profileThemeObj);
+        setAvatarEffectThemeObj(avatarEffectObj);
     }
     const closeForm = (field) => {
         setCurrentSubModal(previousState => {
             return { ...previousState, [field]: false };
         });
         setGift(false);
+        setProfileEffectThemeType("");
+        setProfileEffectThemeObj("");
+        setAvatarEffectThemeObj("");
     }
 
     const renderNitroProModal = () => {
         if (currentSubModal.subToNitroPro === true) {
             return (
                 <SubscribeToStrifeNitroProModalContainer closeSubMod={closeForm} formName={"subToNitroPro"} gifted={gift} />
+            )
+        }
+    }
+
+    const renderProfileEffectModal = () => {
+        if (currentSubModal.profileEffectModal === true) {
+            return (
+                <ProfileEffectPreviewModalContainer closeSubMod={closeForm}
+                    formName={"profileEffectModal"} profileEffectThemeType={profileEffectThemeType}
+                    profileThemeObj={profileEffectObj}
+                />
+            )
+        }
+    }
+
+    const renderAvatarDecorationModal = () => {
+        if (currentSubModal.avatarDecorationPreviewModal === true) {
+            return (
+                <AvatarDecorationPreviewModalContainer closeSubMod={closeForm}
+                    formName={"avatarDecorationPreviewModal"} profileEffectThemeType={profileEffectThemeType}
+                    avatarEffectObj={avatarEffectObj}
+                />
             )
         }
     }
@@ -52,6 +91,8 @@ const StrifeShop = (props) => {
                 <div className="shop-main-container">
                     <StrifeShopHeaderNavBarContainer />
                     {renderNitroProModal()}
+                    {renderProfileEffectModal()}
+                    {renderAvatarDecorationModal()}
                     <div className="shop-scroll auto-scroll-raw-attributes global-scroller-base" style={{ overflow: `hidden scroll`, paddingRight: `0px` }}>
                         <div className="shop-page-wrapper">
                             <main className="shop-main-page">
@@ -67,7 +108,7 @@ const StrifeShop = (props) => {
                                             Charming. Fierce. Hungry. Whatever your vibe, buy and collect your favorite styles for your profile for any occasion. Only with N!TR0.
                                         </div>
                                         <button type="button" className="shop-buttons shop-hero-button global-button-growth global-button-size-medium button-look-inverted"
-                                            onClick={(e) => openModal("subToNitroPro")}>
+                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -96,7 +137,7 @@ const StrifeShop = (props) => {
                                         <img className="shop-bc-banner-front" alt=" " />
                                         <span className="shop-bc-banner-text" style={{ color: `white` }}>
                                             Collect these bonus avatar decorations for extra style when you subscribe to N!TR0!{`${` `}`}
-                                            <span className="shop-bc-premium-unlock-hook" role="button" tabIndex={0} onClick={(e) => openModal("subToNitroPro")}>
+                                            <span className="shop-bc-premium-unlock-hook" role="button" tabIndex={0} onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                 <span className="shop-bc-premium-unlock-hook-text" style={{ color: `white` }}>Unlock with N!TR0</span>
                                             </span>
                                         </span>
@@ -179,6 +220,10 @@ const StrifeShop = (props) => {
                                             <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
                                             <div className="shop-item-cards-container">
                                                 <div className="shop-item-card halloween-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "halloween-effect", "", "graveyardCat");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(81, 127, 219), rgb(6, 14, 35)) border-box border-box`,
                                                         borderColor: `rgba(44, 73, 129, 0.4)`,
@@ -220,7 +265,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -231,7 +276,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "halloween-effect", "", "graveyardCat");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -244,6 +293,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card halloween-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "halloween-effect", "", "ghosts");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(81, 127, 219), rgb(6, 14, 35)) border-box border-box`,
                                                         borderColor: `rgba(44, 73, 129, 0.4)`,
@@ -285,7 +338,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -296,7 +349,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "halloween-effect", "", "ghosts");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -309,6 +366,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card halloween-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "halloween-effect", "", "minions");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(81, 127, 219), rgb(6, 14, 35)) border-box border-box`,
                                                         borderColor: `rgba(44, 73, 129, 0.4)`,
@@ -350,7 +411,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -361,7 +422,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "halloween-effect", "", "minions");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -374,6 +439,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card halloween-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "halloween-effect", "", "jackOLantern");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(81, 127, 219), rgb(6, 14, 35)) border-box border-box`,
                                                         borderColor: `rgba(44, 73, 129, 0.4)`,
@@ -415,7 +484,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -426,7 +495,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "halloween-effect", "", "jackOLantern");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -449,6 +522,10 @@ const StrifeShop = (props) => {
                                             <div className="shop-item-cards-container">
 
                                                 <div className="shop-item-card halloween-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("profileEffectModal", "halloween-effect", "ghoulishGraffiti");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(81, 127, 219), rgb(6, 14, 35)) border-box border-box`,
                                                         borderColor: `rgba(44, 73, 129, 0.4)`,
@@ -489,7 +566,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -500,7 +577,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("profileEffectModal", "halloween-effect", "ghoulishGraffiti");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -513,12 +594,14 @@ const StrifeShop = (props) => {
                                                 </div>
 
                                                 <div className="shop-item-card halloween-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("profileEffectModal", "halloween-effect", "zombieSlime");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(81, 127, 219), rgb(6, 14, 35)) border-box border-box`,
                                                         borderColor: `rgba(44, 73, 129, 0.4)`,
                                                         boxShadow: `none`,
-                                                        // boxShadow: `rgb(81, 127, 219) 0px 0px 25px 1px;`
-
                                                     }} >
 
 
@@ -555,7 +638,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -566,7 +649,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("profileEffectModal", "halloween-effect", "zombieSlime");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -579,6 +666,10 @@ const StrifeShop = (props) => {
                                                 </div>
 
                                                 <div className="shop-item-card halloween-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("profileEffectModal", "halloween-effect", "darkOmens");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(81, 127, 219), rgb(6, 14, 35)) border-box border-box`,
                                                         borderColor: `rgba(44, 73, 129, 0.4)`,
@@ -619,7 +710,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -630,7 +721,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("profileEffectModal", "halloween-effect", "darkOmens");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -657,6 +752,10 @@ const StrifeShop = (props) => {
                                             <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
                                             <div className="shop-item-cards-container">
                                                 <div className="shop-item-card fall-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "fall-effect", "", "fallLeaves");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(255, 194, 102), rgb(107, 25, 0)) border-box border-box`,
                                                         borderColor: `rgba(183, 111, 52, 0.4)`,
@@ -698,7 +797,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -709,7 +808,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "fall-effect", "", "fallLeaves");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -722,6 +825,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card fall-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "fall-effect", "", "pumpkinSpice");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(255, 194, 102), rgb(107, 25, 0)) border-box border-box`,
                                                         borderColor: `rgba(183, 111, 52, 0.4)`,
@@ -763,7 +870,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -774,7 +881,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "fall-effect", "", "pumpkinSpice");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -787,6 +898,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card fall-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "fall-effect", "", "frogHat");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(255, 194, 102), rgb(107, 25, 0)) border-box border-box`,
                                                         borderColor: `rgba(183, 111, 52, 0.4)`,
@@ -828,7 +943,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -839,7 +954,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "fall-effect", "", "frogHat");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -852,6 +971,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card fall-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "fall-effect", "", "foxHat");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(255, 194, 102), rgb(107, 25, 0)) border-box border-box`,
                                                         borderColor: `rgba(183, 111, 52, 0.4)`,
@@ -893,7 +1016,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -904,7 +1027,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "fall-effect", "", "foxHat");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -925,6 +1052,10 @@ const StrifeShop = (props) => {
                                                 <div className="shop-item-card fall-items" role="button" tabIndex={0}
                                                     onMouseEnter={() => setLeavesHover(true)}
                                                     onMouseLeave={() => setLeavesHover(false)}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("profileEffectModal", "fall-effect", "fallFoliage");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(255, 194, 102), rgb(107, 25, 0)) border-box border-box`,
                                                         borderColor: `rgba(183, 111, 52, 0.4)`,
@@ -966,7 +1097,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -977,7 +1108,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("profileEffectModal", "fall-effect", "fallFoliage");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -989,6 +1124,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card fall-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("profileEffectModal", "fall-effect", "lillyPad");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(255, 194, 102), rgb(107, 25, 0)) border-box border-box`,
                                                         borderColor: `rgba(183, 111, 52, 0.4)`,
@@ -1029,7 +1168,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -1040,7 +1179,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("profileEffectModal", "fall-effect", "lillyPad");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -1067,6 +1210,10 @@ const StrifeShop = (props) => {
                                             <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
                                             <div className="shop-item-cards-container">
                                                 <div className="shop-item-card fantasy-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "fantasy-effect", "", "flamingSword");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(20, 97, 68), rgb(2, 24, 13)) border-box border-box`,
                                                         borderColor: `rgba(11, 61, 40, 0.4)`,
@@ -1108,7 +1255,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1119,7 +1266,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "fantasy-effect", "", "flamingSword");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -1132,6 +1283,10 @@ const StrifeShop = (props) => {
                                                 </div>
 
                                                 <div className="shop-item-card fantasy-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "fantasy-effect", "", "magicPotion");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(20, 97, 68), rgb(2, 24, 13)) border-box border-box`,
                                                         borderColor: `rgba(11, 61, 40, 0.4)`,
@@ -1173,7 +1328,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1184,7 +1339,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "fantasy-effect", "", "magicPotion");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -1197,6 +1356,10 @@ const StrifeShop = (props) => {
                                                 </div>
 
                                                 <div className="shop-item-card fantasy-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "fantasy-effect", "", "fairySprites");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(20, 97, 68), rgb(2, 24, 13)) border-box border-box`,
                                                         borderColor: `rgba(11, 61, 40, 0.4)`,
@@ -1238,7 +1401,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1249,7 +1412,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "fantasy-effect", "", "fairySprites");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -1262,6 +1429,10 @@ const StrifeShop = (props) => {
                                                 </div>
 
                                                 <div className="shop-item-card fantasy-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "fantasy-effect", "", "wizardsStaff");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(20, 97, 68), rgb(2, 24, 13)) border-box border-box`,
                                                         borderColor: `rgba(11, 61, 40, 0.4)`,
@@ -1303,7 +1474,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1314,7 +1485,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "fantasy-effect", "", "wizardsStaff");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -1327,6 +1502,10 @@ const StrifeShop = (props) => {
                                                 </div>
 
                                                 <div className="shop-item-card fantasy-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "fantasy-effect", "", "glowingRunes");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(20, 97, 68), rgb(2, 24, 13)) border-box border-box`,
                                                         borderColor: `rgba(11, 61, 40, 0.4)`,
@@ -1368,7 +1547,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1379,7 +1558,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "fantasy-effect", "", "glowingRunes");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -1392,6 +1575,10 @@ const StrifeShop = (props) => {
                                                 </div>
 
                                                 <div className="shop-item-card fantasy-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "fantasy-effect", "", "defensiveShield");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(20, 97, 68), rgb(2, 24, 13)) border-box border-box`,
                                                         borderColor: `rgba(11, 61, 40, 0.4)`,
@@ -1433,7 +1620,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1444,7 +1631,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "fantasy-effect", "", "defensiveShield");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -1456,6 +1647,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card fantasy-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "fantasy-effect", "", "skullMedallion");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(20, 97, 68), rgb(2, 24, 13)) border-box border-box`,
                                                         borderColor: `rgba(11, 61, 40, 0.4)`,
@@ -1497,7 +1692,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1508,7 +1703,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "fantasy-effect", "", "skullMedallion");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -1521,6 +1720,10 @@ const StrifeShop = (props) => {
                                                 </div>
 
                                                 <div className="shop-item-card fantasy-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "fantasy-effect", "", "treasureNKey");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(20, 97, 68), rgb(2, 24, 13)) border-box border-box`,
                                                         borderColor: `rgba(11, 61, 40, 0.4)`,
@@ -1562,7 +1765,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1573,7 +1776,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "fantasy-effect", "", "treasureNKey");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -1592,6 +1799,10 @@ const StrifeShop = (props) => {
                                             </div>
                                             <div className="shop-item-cards-container">
                                                 <div className="shop-item-card fantasy-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("profileEffectModal", "fantasy-effect", "hydroBlast");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(20, 97, 68), rgb(2, 24, 13)) border-box border-box`,
                                                         borderColor: `rgba(11, 61, 40, 0.4)`,
@@ -1632,7 +1843,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -1643,7 +1854,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("profileEffectModal", "fantasy-effect", "hydroBlast");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -1656,6 +1871,12 @@ const StrifeShop = (props) => {
                                                 </div>
 
                                                 <div className="shop-item-card fantasy-items" role="button" tabIndex={0}
+                                                    onMouseEnter={() => setSakuraDreamsHover(true)}
+                                                    onMouseLeave={() => setSakuraDreamsHover(false)}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("profileEffectModal", "fantasy-effect", "sakuraDreams");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(20, 97, 68), rgb(2, 24, 13)) border-box border-box`,
                                                         borderColor: `rgba(11, 61, 40, 0.4)`,
@@ -1669,7 +1890,16 @@ const StrifeShop = (props) => {
                                                             <div>
                                                                 <div className="shop-item-upc-profile-effects">
                                                                     <div className="shop-item-upc-profile-effects-inner">
-                                                                        <img className="shop-item-fantasy-sakura-dreams" alt=" " style={{ top: `0px` }} />
+                                                                        {
+                                                                            sakuraDreamsHover ? (
+                                                                                <>
+                                                                                    <img className="shop-item-fantasy-sakura-dreams-tree" alt=" " style={{ top: `0px` }} />
+                                                                                    <img className="shop-item-fantasy-sakura-dreams-petals" alt=" " style={{ top: `0px` }} />
+                                                                                </>
+                                                                            ) : (
+                                                                                <img className="shop-item-fantasy-sakura-dreams" alt=" " style={{ top: `0px` }} />
+                                                                            )
+                                                                        }
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1696,7 +1926,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -1707,7 +1937,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("profileEffectModal", "fantasy-effect", "sakuraDreams");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -1722,6 +1956,10 @@ const StrifeShop = (props) => {
                                                 <div className="shop-item-card fantasy-items" role="button" tabIndex={0}
                                                     onMouseEnter={() => setVinesHover(true)}
                                                     onMouseLeave={() => setVinesHover(false)}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("profileEffectModal", "fantasy-effect", "mysticVines");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(20, 97, 68), rgb(2, 24, 13)) border-box border-box`,
                                                         borderColor: `rgba(11, 61, 40, 0.4)`,
@@ -1734,8 +1972,17 @@ const StrifeShop = (props) => {
                                                             <div>
                                                                 <div className="shop-item-upc-profile-effects">
                                                                     <div className="shop-item-upc-profile-effects-inner">
-                                                                        <img className={`shop-item-fantasy-mystic-vines`} alt=" " style={{ top: `0px` }} />
-                                                                        <img className={`shop-item-fantasy-mystic-glowing-vines ${vinesHover ? `` : `is-hidden`}`} alt=" " />
+                                                                        {
+                                                                            vinesHover ? (
+                                                                                <>
+                                                                                    <img className={`shop-item-fantasy-mystic-vines-growing-cycle`} alt=" " style={{ top: `0px` }} />
+                                                                                    <img className={`shop-item-fantasy-mystic-vines-loop`} alt=" " style={{ top: `0px` }} />
+                                                                                </>
+                                                                            ) : (
+                                                                                <img className={`shop-item-fantasy-mystic-vines`} alt=" " style={{ top: `0px` }} />
+                                                                            )
+                                                                        }
+
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1762,7 +2009,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -1773,7 +2020,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("profileEffectModal", "fantasy-effect", "mysticVines");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -1786,6 +2037,10 @@ const StrifeShop = (props) => {
                                                 </div>
 
                                                 <div className="shop-item-card fantasy-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("profileEffectModal", "fantasy-effect", "pixieDust");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(20, 97, 68), rgb(2, 24, 13)) border-box border-box`,
                                                         borderColor: `rgba(11, 61, 40, 0.4)`,
@@ -1826,7 +2081,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -1837,7 +2092,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("profileEffectModal", "fantasy-effect", "pixieDust");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -1864,6 +2123,10 @@ const StrifeShop = (props) => {
                                             <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
                                             <div className="shop-item-cards-container">
                                                 <div className="shop-item-card anime-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "anime-effect", "", "radiatingEnergy");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(75, 120, 175), rgb(15, 14, 57)) border-box border-box`,
                                                         borderColor: `rgba(46, 68, 118, 0.4)`,
@@ -1905,7 +2168,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1916,7 +2179,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "anime-effect", "", "radiatingEnergy");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -1929,6 +2196,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card anime-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "anime-effect", "", "soulLeavingBody");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(75, 120, 175), rgb(15, 14, 57)) border-box border-box`,
                                                         borderColor: `rgba(46, 68, 118, 0.4)`,
@@ -1970,7 +2241,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -1981,7 +2252,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "anime-effect", "", "soulLeavingBody");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -1995,6 +2270,10 @@ const StrifeShop = (props) => {
                                                 </div>
 
                                                 <div className="shop-item-card anime-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "anime-effect", "", "sweatDrops");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(75, 120, 175), rgb(15, 14, 57)) border-box border-box`,
                                                         borderColor: `rgba(46, 68, 118, 0.4)`,
@@ -2035,7 +2314,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2046,7 +2325,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "anime-effect", "", "sweatDrops");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -2058,6 +2341,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card anime-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "anime-effect", "", "starryEyed");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(75, 120, 175), rgb(15, 14, 57)) border-box border-box`,
                                                         borderColor: `rgba(46, 68, 118, 0.4)`,
@@ -2099,7 +2386,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2110,7 +2397,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "anime-effect", "", "starryEyed");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -2123,6 +2414,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card anime-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "anime-effect", "", "inLove");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(75, 120, 175), rgb(15, 14, 57)) border-box border-box`,
                                                         borderColor: `rgba(46, 68, 118, 0.4)`,
@@ -2164,7 +2459,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2175,7 +2470,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "anime-effect", "", "inLove");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -2188,6 +2487,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card anime-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "anime-effect", "", "shocked");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(75, 120, 175), rgb(15, 14, 57)) border-box border-box`,
                                                         borderColor: `rgba(46, 68, 118, 0.4)`,
@@ -2229,7 +2532,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2240,7 +2543,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "anime-effect", "", "shocked");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -2253,6 +2560,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card anime-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "anime-effect", "", "angry");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(75, 120, 175), rgb(15, 14, 57)) border-box border-box`,
                                                         borderColor: `rgba(46, 68, 118, 0.4)`,
@@ -2294,7 +2605,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2305,7 +2616,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "anime-effect", "", "angry");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -2325,6 +2640,10 @@ const StrifeShop = (props) => {
                                             <div className="shop-item-cards-container">
 
                                                 <div className="shop-item-card anime-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("profileEffectModal", "anime-effect", "magicHearts");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(75, 120, 175), rgb(15, 14, 57)) border-box border-box`,
                                                         borderColor: `rgba(46, 68, 118, 0.4)`,
@@ -2365,7 +2684,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -2376,7 +2695,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("profileEffectModal", "anime-effect", "magicHearts");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -2389,6 +2712,12 @@ const StrifeShop = (props) => {
                                                 </div>
 
                                                 <div className="shop-item-card anime-items" role="button" tabIndex={0}
+                                                    onMouseEnter={() => setShatterHover(true)}
+                                                    onMouseLeave={() => setShatterHover(false)}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("profileEffectModal", "anime-effect", "shatterEffect");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(75, 120, 175), rgb(15, 14, 57)) border-box border-box`,
                                                         borderColor: `rgba(46, 68, 118, 0.4)`,
@@ -2402,7 +2731,16 @@ const StrifeShop = (props) => {
                                                             <div>
                                                                 <div className="shop-item-upc-profile-effects">
                                                                     <div className="shop-item-upc-profile-effects-inner">
-                                                                        <img className="shop-item-anime-shatter" alt=" " style={{ top: `0px` }} />
+                                                                        {
+                                                                            shatterHover ? (
+                                                                                <>
+                                                                                    <img className="shop-item-anime-shattered-glass" alt=" " style={{ top: `0px` }} />
+                                                                                    <img className="shop-item-anime-shattered-flames" alt=" " style={{ top: `0px` }} />
+                                                                                </>
+                                                                            ) : (
+                                                                                <img className="shop-item-anime-shatter" alt=" " style={{ top: `0px` }} />
+                                                                            )
+                                                                        }
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2429,7 +2767,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -2440,7 +2778,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("profileEffectModal", "anime-effect", "shatterEffect");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -2453,6 +2795,12 @@ const StrifeShop = (props) => {
                                                 </div>
 
                                                 <div className="shop-item-card anime-items" role="button" tabIndex={0}
+                                                    onMouseEnter={() => setShurikenHover(true)}
+                                                    onMouseLeave={() => setShurikenHover(false)}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("profileEffectModal", "anime-effect", "shurikenStrike");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(75, 120, 175), rgb(15, 14, 57)) border-box border-box`,
                                                         borderColor: `rgba(46, 68, 118, 0.4)`,
@@ -2466,7 +2814,16 @@ const StrifeShop = (props) => {
                                                             <div>
                                                                 <div className="shop-item-upc-profile-effects">
                                                                     <div className="shop-item-upc-profile-effects-inner">
-                                                                        <img className="shop-item-anime-shuriken-strike" alt=" " style={{ top: `0px` }} />
+                                                                        {
+                                                                            shurikenHover ? (
+                                                                                <>
+                                                                                    <img className={`shop-item-anime-shuriken-strike-intro ${shurikenHover ? `` : ``}`} alt=" " style={{ top: `0px` }} />
+                                                                                    <img className="shop-item-anime-shuriken-strike-loop" alt=" " style={{ top: `0px` }} />
+                                                                                </>
+                                                                            ) : (
+                                                                                <img className="shop-item-anime-shuriken-strike" alt=" " style={{ top: `0px` }} />
+                                                                            )
+                                                                        }
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2493,7 +2850,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -2504,7 +2861,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("profileEffectModal", "anime-effect", "shurikenStrike");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -2517,6 +2878,10 @@ const StrifeShop = (props) => {
                                                 </div>
 
                                                 <div className="shop-item-card anime-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("profileEffectModal", "anime-effect", "powerSurge");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(75, 120, 175), rgb(15, 14, 57)) border-box border-box`,
                                                         borderColor: `rgba(46, 68, 118, 0.4)`,
@@ -2557,7 +2922,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -2568,7 +2933,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("profileEffectModal", "anime-effect", "powerSurge");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -2595,6 +2964,10 @@ const StrifeShop = (props) => {
                                             <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
                                             <div className="shop-item-cards-container">
                                                 <div className="shop-item-card breakfast-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "breakfast-effect", "", "toast");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(232, 177, 105), rgb(122, 59, 0)) border-box border-box`,
                                                         borderColor: `rgba(176, 117, 54, 0.4)`,
@@ -2636,7 +3009,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2647,7 +3020,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "breakfast-effect", "", "toast");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -2660,6 +3037,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card breakfast-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "breakfast-effect", "", "morningCoffee");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(232, 177, 105), rgb(122, 59, 0)) border-box border-box`,
                                                         borderColor: `rgba(176, 117, 54, 0.4)`,
@@ -2701,7 +3082,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2712,7 +3093,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "breakfast-effect", "", "morningCoffee");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -2725,6 +3110,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card breakfast-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "breakfast-effect", "", "friedEgg");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(232, 177, 105), rgb(122, 59, 0)) border-box border-box`,
                                                         borderColor: `rgba(176, 117, 54, 0.4)`,
@@ -2766,7 +3155,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2777,7 +3166,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "breakfast-effect", "", "friedEgg");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -2790,6 +3183,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card breakfast-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "breakfast-effect", "", "blueberryJam");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(232, 177, 105), rgb(122, 59, 0)) border-box border-box`,
                                                         borderColor: `rgba(176, 117, 54, 0.4)`,
@@ -2831,7 +3228,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2842,7 +3239,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "breakfast-effect", "", "blueberryJam");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -2854,6 +3255,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card breakfast-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "breakfast-effect", "", "donut");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(232, 177, 105), rgb(122, 59, 0)) border-box border-box`,
                                                         borderColor: `rgba(176, 117, 54, 0.4)`,
@@ -2895,7 +3300,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2906,7 +3311,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "breakfast-effect", "", "donut");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -2918,6 +3327,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card breakfast-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("avatarDecorationPreviewModal", "breakfast-effect", "", "pancakes");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(232, 177, 105), rgb(122, 59, 0)) border-box border-box`,
                                                         borderColor: `rgba(176, 117, 54, 0.4)`,
@@ -2959,7 +3372,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this decoration is only available with Nitro.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with Nitro</span>
@@ -2970,7 +3383,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("avatarDecorationPreviewModal", "breakfast-effect", "", "pancakes");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -2989,6 +3406,10 @@ const StrifeShop = (props) => {
                                             </div>
                                             <div className="shop-item-cards-container">
                                                 <div className="shop-item-card breakfast-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("profileEffectModal", "breakfast-effect", "strifeOs");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(232, 177, 105), rgb(122, 59, 0)) border-box border-box`,
                                                         borderColor: `rgba(176, 117, 54, 0.4)`,
@@ -3013,7 +3434,7 @@ const StrifeShop = (props) => {
                                                         <div className="shop-item-card-inner-product-name"></div>
                                                         <div className="shop-item-card-inner-product-details">
                                                             <div className="shop-item-card-inner-blur">
-                                                                <div className="shop-item-card-inner-blur-text-lrg" style={{ color: `white` }}>Discord-Os</div>
+                                                                <div className="shop-item-card-inner-blur-text-lrg" style={{ color: `white` }}>$TR!F3-Os</div>
                                                                 <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Bet you can't have just one bowl.</div>
                                                                 <div className="shop-item-price-tags-container" >
                                                                     <h2 className="shop-item-price-tags-h2-medium" style={{ color: `white` }}><span className="shop-item-striked-price">$11.99</span></h2>
@@ -3029,7 +3450,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -3040,7 +3461,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("profileEffectModal", "breakfast-effect", "strifeOs");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
@@ -3052,6 +3477,10 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className="shop-item-card breakfast-items" role="button" tabIndex={0}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        openModal("profileEffectModal", "breakfast-effect", "breakfastPlate");
+                                                    }}
                                                     style={{
                                                         background: `linear-gradient(rgb(232, 177, 105), rgb(122, 59, 0)) border-box border-box`,
                                                         borderColor: `rgba(176, 117, 54, 0.4)`,
@@ -3092,7 +3521,7 @@ const StrifeShop = (props) => {
                                                                     <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>Access to purchase this effect is only available with N!TR0.</div>
                                                                     <div className="shop-item-card-button-container">
                                                                         <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                                            onClick={(e) => openModal("subToNitroPro")}>
+                                                                            onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                                             <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                                 <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
                                                                                 <span className="shopbuttonText">Unlock Shop with N!TR0</span>
@@ -3103,7 +3532,11 @@ const StrifeShop = (props) => {
                                                                                 </div>
                                                                             </div>
                                                                         </button>
-                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled">
+                                                                        <button type="button" className="shop-buttons shop-item-preview-button global-button-growth button-look-filled"
+                                                                            onClick={(e) => {
+                                                                                e.preventDefault();
+                                                                                openModal("profileEffectModal", "breakfast-effect", "breakfastPlate");
+                                                                            }}>
                                                                             <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
                                                                                 <EnableCameraViewIcon height={24} width={24} />
                                                                             </div>
