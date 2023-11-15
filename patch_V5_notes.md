@@ -424,7 +424,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added nitroStoreProfileCards.svg.
     - Added eveningGemAngel.svg.
     - Added purpleNitroStoreNitroBadge.svg.
-
+    - Added purpleNitroThemeColorsIcon.svg.
 
 
 
