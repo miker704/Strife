@@ -352,5 +352,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Fox Hat Avatar Decoration to Avatar Decoration preview modal.
     - Added styles for Fox Hat Avatar Decoration to Avatar Decoration preview modal.
     - Added Flaming Sword Avatar Decoration to Avatar Decoration preview modal.
+    - Added styles for Flaming Sword Avatar Decoration to Avatar Decoration preview modal.
 
 
