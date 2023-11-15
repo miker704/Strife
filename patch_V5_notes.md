@@ -329,6 +329,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Add proper close ESC and outside click listeners to Profile Effect Preview Modal and its submodal SubscribeToNitroProModal.
     - Mounted SubscribeToNitroProModal to Avatar Decoration Preview Modal.
     - Mounted Profile Effect Preview Modal to each profile effect card to be opened on card click in the shop page.
-
+    - Completed Profile effect preview modal.
 
 
