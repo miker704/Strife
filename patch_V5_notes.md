@@ -434,3 +434,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added more styles to root theme.
     - Moved old version of nitro store pre november to deprecated folder.
     - Updated to nitro store container.
+    - Finalized Update to nitro store.
