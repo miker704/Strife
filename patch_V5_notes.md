@@ -340,6 +340,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Ghosts Avatar Decoration to Avatar Decoration preview modal.
     - Added styles for Ghosts Avatar Decoration to Avatar Decoration preview modal.
     - Added Minions Avatar Decoration to Avatar Decoration preview modal.
+    - Added styles for Minions Avatar Decoration to Avatar Decoration preview modal.
 
 
 
