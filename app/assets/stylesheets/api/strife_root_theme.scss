@@ -66,6 +66,7 @@
     --brand-360: rgb(148, 156, 247);
     --brand-400: rgb(121, 131, 245);
     --brand-500: rgb(88, 101, 242);
+    --brand-500-hsl-01: rgba(88, 101, 242,0.10);
     --brand-500-hsl: rgba(88, 101, 242, 0.298);
     --brand-560: rgb(71, 82, 196);
     --brand-600: hsl(235, 46.7%, 44.1%);
@@ -117,6 +118,7 @@
     --primary-630: hsl(220, 7%, 18%);
     --primary-630-hsl: rgba(43, 45, 49, 0.6);
     --primary-660: rgb(35, 36, 40);
+    --primary-660-hsl-05: rgba(36, 37, 41,0.5);
     --primary-700: rgb(30, 31, 34);
     --primary-730: hsl(225, 7.1%, 11%);
     --primary-800: rgb(17, 18, 20);
@@ -263,7 +265,8 @@
     --premium-tier-0-header-gradient-3:rgb(131, 119, 235);
     --premium-tier-0-header-gradient-4: rgb(232, 130, 241);
     --premium-tier-0-header-gradient-5: rgb(223, 144, 176);
-
+    --premium-tier-2-purple: rgb(180, 115, 245);
+    --premium-tier-2-pink: rgb(227, 145, 170);
 
     --profile-gradient-primary-color: rgb(35, 36, 40);
     --profile-body-background-color: rgb(17, 18, 20);
@@ -396,8 +399,84 @@
       40px + var(--custom-message-margin-horizontal) +
         var(--custom-message-margin-horizontal)
     );
+    --premium-tier-0-purple-for-gradients: hsl(
+      var(--premium-tier-0-purple-for-gradients-hsl) / 1
+    );
+    --premium-tier-0-blue-for-gradients: hsl(
+      var(--premium-tier-0-blue-for-gradients-hsl) / 1
+    );
+
+    --custom-outbound-promotion-redemption-modal-art-height: 120px;
+  --custom-premium-colors-premium-gradient-tier-0: linear-gradient(
+    to right,
+    var(--premium-tier-0-purple-for-gradients),
+    var(--premium-tier-0-blue-for-gradients)
+  );
+  --custom-premium-colors-premium-gradient-tier-1: linear-gradient(
+    to right,
+    var(--premium-tier-1-blue-for-gradients),
+    var(--premium-tier-1-dark-blue-for-gradients)
+  );
+  --custom-premium-colors-premium-gradient-tier-2: linear-gradient(
+    to right,
+    var(--premium-tier-2-purple-for-gradients),
+    var(--premium-tier-2-pink-for-gradients)
+  );
+  --custom-premium-colors-premium-gradient-tier-2-transparent: linear-gradient(
+    to right,
+    hsl(var(--premium-tier-2-purple-for-gradients-hsl) / 0.3),
+    hsl(var(--premium-tier-2-pink-for-gradients-hsl) / 0.3)
+  );
+  --custom-premium-colors-premium-gradient-tier-2-diagonal: linear-gradient(
+    45deg,
+    var(--premium-tier-2-purple-for-gradients),
+    var(--premium-tier-2-pink-for-gradients)
+  );
+  --custom-premium-colors-premium-gradient-tier-2-tri-color: linear-gradient(
+    to right,
+    var(--premium-tier-2-purple-for-gradients),
+    var(--premium-tier-2-purple-for-gradients-2),
+    var(--premium-tier-2-pink-for-gradients)
+  );
+  --custom-premium-colors-premium-gradient-tier-2-old: linear-gradient(
+    to right,
+    var(--premium-tier-2-purple),
+    var(--premium-tier-2-pink)
+  );
 }
 
+//raw hsl
+
+:root{
+  --premium-tier-0-purple-for-gradients-hsl: 235
+  calc(var(--saturation-factor, 1) * 85.6%) 64.7%;
+  --premium-tier-0-blue-for-gradients-hsl: 202
+  calc(var(--saturation-factor, 1) * 100%) 38%;
+  --premium-tier-1-blue-for-gradients: hsl(
+    var(--premium-tier-1-blue-for-gradients-hsl) / 1
+  );
+  --premium-tier-1-blue-for-gradients-hsl: 235
+    calc(var(--saturation-factor, 1) * 85.6%) 64.7%;
+  --premium-tier-1-dark-blue-for-gradients: hsl(
+    var(--premium-tier-1-dark-blue-for-gradients-hsl) / 1
+  );
+  --premium-tier-1-dark-blue-for-gradients-hsl: 235
+    calc(var(--saturation-factor, 1) * 68.5%) 52.7%;
+
+    --premium-tier-2-purple-for-gradients-hsl: 269
+      calc(var(--saturation-factor, 1) * 52.7%) 52.7%;
+
+      --premium-tier-2-pink-for-gradients-hsl: 325
+      calc(var(--saturation-factor, 1) * 31.7%) 51.8%;
+
+
+      // --premium-tier-2-purple: hsl(var(--premium-tier-2-purple-hsl) / 1);
+      // --premium-tier-2-purple-hsl: 270 calc(var(--saturation-factor, 1) * 86.7%)
+      //   70.6%;
+  
+        // --premium-tier-2-pink: hsl(var(--premium-tier-2-pink-hsl) / 1);
+        // --premium-tier-2-pink-hsl: 342 calc(var(--saturation-factor, 1) * 58%) 72.9%;
+}
 
 //special vars for sizings
 :root {
