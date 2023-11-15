@@ -369,3 +369,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added styles for Treasure and Key Avatar Decoration to Avatar Decoration preview modal.
     - Added Radiating Energy Avatar Decoration to Avatar Decoration preview modal.
     - Added styles for Radiating Energy Avatar Decoration to Avatar Decoration preview modal.
+    - Added Soul Leaving Body Avatar Decoration to Avatar Decoration preview modal.
+
