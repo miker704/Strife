@@ -711,7 +711,7 @@ const UserSettings = (props) => {
                               </div>
                               <div className='usm-children'>
                                 <div className='usm-two-factor-auth-subtext'>
-                                  Protect your Discord account with an extra layer of security. Once configured, you'll be required
+                                  Protect your $TR!F3 account with an extra layer of security. Once configured, you'll be required
                                   to enter both your password and an authentication code from your mobile phone in order to sign in.
                                 </div>
                                 <div>
