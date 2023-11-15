@@ -1093,18 +1093,18 @@
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
   }
-  .shop-item-fantasy-mystic-vines {
-    -webkit-animation-duration: 5s;
-    -webkit-animation-name: fantasy-mystic-vines-cycle;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-fill-mode: forwards;
-    animation-name: fantasy-mystic-vines-cycle;
-    animation-duration: 5s;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-  }
+  // .shop-item-fantasy-mystic-vines {
+  //   -webkit-animation-duration: 5s;
+  //   -webkit-animation-name: fantasy-mystic-vines-cycle;
+  //   -webkit-animation-iteration-count: 1;
+  //   -webkit-animation-timing-function: ease-in-out;
+  //   -webkit-animation-fill-mode: forwards;
+  //   animation-name: fantasy-mystic-vines-cycle;
+  //   animation-duration: 5s;
+  //   animation-iteration-count: 1;
+  //   animation-timing-function: ease-in-out;
+  //   animation-fill-mode: forwards;
+  // }
   .shop-item-fantasy-pixie-dust {
     -webkit-animation-delay: 0.75s;
     -webkit-animation-duration: 5s;
@@ -1117,18 +1117,18 @@
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
   }
-  .shop-item-fantasy-sakura-dreams {
-    -webkit-animation-delay: 0.75s;
-    -webkit-animation-duration: 5s;
-    -webkit-animation-name: fantasy-sakura-dreams-cycle;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-name: fantasy-sakura-dreams-cycle;
-    animation-duration: 5s;
-    animation-delay: 0.75s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-  }
+  // .shop-item-fantasy-sakura-dreams {
+  //   -webkit-animation-delay: 0.75s;
+  //   -webkit-animation-duration: 5s;
+  //   -webkit-animation-name: fantasy-sakura-dreams-cycle;
+  //   -webkit-animation-iteration-count: infinite;
+  //   -webkit-animation-timing-function: ease-in-out;
+  //   animation-name: fantasy-sakura-dreams-cycle;
+  //   animation-duration: 5s;
+  //   animation-delay: 0.75s;
+  //   animation-iteration-count: infinite;
+  //   animation-timing-function: ease-in-out;
+  // }
 
   .shop-item-anime-power-surge {
     -webkit-animation-delay: 0.75s;
@@ -1142,30 +1142,30 @@
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
   }
-  .shop-item-anime-shatter {
-    -webkit-animation-delay: 0.75s;
-    -webkit-animation-duration: 5s;
-    -webkit-animation-name: anime-shatter-cycle;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-name: anime-shatter-cycle;
-    animation-duration: 5s;
-    animation-delay: 0.75s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-  }
-  .shop-item-anime-shuriken-strike {
-    -webkit-animation-delay: 0.75s;
-    -webkit-animation-duration: 5s;
-    -webkit-animation-name: anime-shuriken-strike-cycle;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-name: anime-shuriken-strike-cycle;
-    animation-duration: 5s;
-    animation-delay: 0.75s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-  }
+  // .shop-item-anime-shatter {
+  //   -webkit-animation-delay: 0.75s;
+  //   -webkit-animation-duration: 5s;
+  //   -webkit-animation-name: anime-shatter-cycle;
+  //   -webkit-animation-iteration-count: infinite;
+  //   -webkit-animation-timing-function: ease-in-out;
+  //   animation-name: anime-shatter-cycle;
+  //   animation-duration: 5s;
+  //   animation-delay: 0.75s;
+  //   animation-iteration-count: infinite;
+  //   animation-timing-function: ease-in-out;
+  // }
+  // .shop-item-anime-shuriken-strike {
+  //   -webkit-animation-delay: 0.75s;
+  //   -webkit-animation-duration: 5s;
+  //   -webkit-animation-name: anime-shuriken-strike-cycle;
+  //   -webkit-animation-iteration-count: infinite;
+  //   -webkit-animation-timing-function: ease-in-out;
+  //   animation-name: anime-shuriken-strike-cycle;
+  //   animation-duration: 5s;
+  //   animation-delay: 0.75s;
+  //   animation-iteration-count: infinite;
+  //   animation-timing-function: ease-in-out;
+  // }
 
   .shop-item-anime-magic-hearts {
     -webkit-animation-delay: 0.75s;
@@ -1395,6 +1395,42 @@
   }
 }
 
+@keyframes fantasy-mystic-vines-grow-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("vinesFullCycle.png");
+  }
+}
+
+@-webkit-keyframes fantasy-mystic-vines-grow-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("vinesFullCycle.png");
+  }
+}
+
+@keyframes fantasy-mystic-vines-loop-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("vinesLoop.png");
+  }
+}
+
+@-webkit-keyframes fantasy-mystic-vines-loop-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("vinesLoop.png");
+  }
+}
+
 @keyframes fantasy-hydro-blast-cycle {
   0% {
     content: image_url("waterSplashIntro.png");
@@ -1461,6 +1497,42 @@
 @-webkit-keyframes anime-shuriken-strike-cycle {
   0% {
     content: image_url("shurikenIntro.png");
+  }
+  100% {
+    content: image_url("shurikenLoop.png");
+  }
+}
+
+@keyframes anime-shuriken-strike-cycle-main {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("shurikenIntroInfinite.png");
+  }
+}
+
+@-webkit-keyframes anime-shuriken-strike-cycle-main {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("shurikenIntroInfinite.png");
+  }
+}
+
+@keyframes anime-shuriken-strike-throw {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("shurikenLoop.png");
+  }
+}
+
+@-webkit-keyframes anime-shuriken-strike-throw {
+  0% {
+    content: image_url("blankEffect.png");
   }
   100% {
     content: image_url("shurikenLoop.png");
@@ -1844,24 +1916,6 @@
   content: image_url("fallLeavesThumbnail.png");
 }
 
-.shop-item-fall-foliage-infinite {
-  top: 0;
-  left: 0;
-  width: 100%;
-  position: absolute;
-  content: image_url("fallLeavesInfiniteThumbNail.png");
-  -webkit-animation-delay: 0.75s;
-  -webkit-animation-duration: 3s;
-  -webkit-animation-name: fall-branch-cycle;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-timing-function: ease-in-out;
-  animation-name: fall-branch-cycle;
-  animation-duration: 3s;
-  animation-delay: 0.75s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in-out;
-}
-
 .shop-item-fall-foliage-moving {
   top: 0;
   left: 0;
@@ -1890,6 +1944,44 @@
   position: absolute;
   content: image_url("sakuraThumbnail.png");
 }
+.shop-item-fantasy-sakura-dreams-tree {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("sakuraDreamsTreeEnd.png");
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-name: ppe-fantasy-sakura-dreams-cycle;
+  animation-name: ppe-fantasy-sakura-dreams-cycle;
+  animation-duration: 4s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+.shop-item-fantasy-sakura-dreams-petals {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 1s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: ppe-fantasy-sakura-dreams-cycle-petals;
+  animation-name: ppe-fantasy-sakura-dreams-cycle-petals;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
 .shop-item-fantasy-mystic-vines {
   top: 0;
   left: 0;
@@ -1903,6 +1995,44 @@
   width: 100%;
   position: absolute;
   content: image_url("vinesLoop.png");
+}
+
+.shop-item-fantasy-mystic-vines-growing-cycle {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("vinesEnd.png");
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 8.25s;
+  -webkit-animation-name: fantasy-mystic-vines-grow-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: fantasy-mystic-vines-grow-cycle;
+  animation-delay: 0s;
+  animation-duration: 8.25s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+.shop-item-fantasy-mystic-vines-loop {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 6s;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-name: fantasy-mystic-vines-loop-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: fantasy-mystic-vines-loop-cycle;
+  animation-delay: 6s;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 .shop-item-fantasy-pixie-dust {
@@ -1927,6 +2057,43 @@
   position: absolute;
   content: image_url("earthquakeThumbnail.png");
 }
+.shop-item-anime-shattered-glass {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("shatterEnd.png");
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-name: ppe-anime-shatter;
+  animation-name: ppe-anime-shatter;
+  animation-duration: 5s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+.shop-item-anime-shattered-flames {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 5s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: ppe-anime-shatter-cycle;
+  animation-name: ppe-anime-shatter-cycle;
+  animation-duration: 5s;
+  animation-delay: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
 .shop-item-anime-shuriken-strike {
   top: 0;
   left: 0;
@@ -1934,6 +2101,44 @@
   position: absolute;
   content: image_url("shurikenThumbnail.png");
 }
+.shop-item-anime-shuriken-strike-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("shurikenEnd.png");
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: anime-shuriken-strike-cycle-main;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: anime-shuriken-strike-cycle-main;
+  animation-duration: 5s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+.shop-item-anime-shuriken-strike-loop {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 5s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: anime-shuriken-strike-throw;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: anime-shuriken-strike-throw;
+  animation-duration: 5s;
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
 .shop-item-anime-power-surge {
   top: 0;
   left: 0;
@@ -2094,4 +2299,12 @@
   width: 100%;
   height: 100%;
   background-color: var(--background-modifier-accent);
+}
+
+.stop-animation-effect-cycle * {
+  -webkit-transition-property: none !important;
+  transition-property: none !important;
+  -webkit-animation: none !important;
+  animation: none !important;
+  content: none !important;
 }
