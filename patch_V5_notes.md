@@ -374,5 +374,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Sweat Drops Avatar Decoration to Avatar Decoration preview modal.
     - Added styles for Sweat Drops Avatar Decoration to Avatar Decoration preview modal.
     - Added Starry Eyed Avatar Decoration to Avatar Decoration preview modal.
+    - Added styles for Starry Eyed Avatar Decoration to Avatar Decoration preview modal.
 
 
