@@ -243,6 +243,7 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
+  padding: 0px 40px 0px 20px;
 }
 
 .ppe-close-button-button {
@@ -347,11 +348,12 @@
   padding: 4px;
 }
 .profileEffectsModalCustomPreview-UPC {
-  width: 280px;
-}
-.profileEffectsModalCustomPreview-UPC-themed {
   width: 288px;
 }
+.profileEffectsModalCustomPreview-UPC-themed {
+  width: 348px;
+}
+
 .profileEffectCustomizationPreview {
   position: relative;
   min-height: 280px;
@@ -419,7 +421,21 @@
 
 .ppe-upc-bannerSVGwrapper-pro {
   min-width: 280px;
+  min-height: 120px;
+  z-index: 1;
+  contain: paint;
+}
+
+.ppe-upc-bannerSVGwrapper-avatarDecoVersion {
+  min-width: 340px;
   min-height: 90px;
+  z-index: 1;
+  contain: paint;
+}
+
+.ppe-upc-bannerSVGwrapper-avatarDecoVersion-pro {
+  min-width: 340px;
+  min-height: 120px;
   z-index: 1;
   contain: paint;
 }
@@ -459,6 +475,31 @@
 .ppe-upc-banner-pro {
   background-color: var(--upc-default-banner-bg);
   max-width: 280px;
+  width: 100%;
+  height: 120px;
+  min-height: 120px;
+  border-radius: 4px 4px 0px 0px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  transition: background-color 0.1s;
+}
+
+.ppe-upc-adp-banner {
+  background-color: var(--upc-default-banner-bg);
+  max-width: 340px;
+  width: 100%;
+  // height: 60px;
+  height: 90px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  transition: background-color 0.1s;
+}
+
+.ppe-upc-adp-banner-pro {
+  background-color: var(--upc-default-banner-bg);
+  max-width: 340px;
   width: 100%;
   height: 120px;
   min-height: 120px;
@@ -523,23 +564,74 @@
 }
 
 //profile effects
-
+.ppe-shop-item-fall-foliage-leaves {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("leavesLoop.png");
+  -webkit-animation-delay: 2s;
+  -webkit-animation-duration: 6s;
+  -webkit-animation-name: ppe-fall-foliage-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: ppe-fall-foliage-cycle;
+  animation-duration: 6s;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
 .shop-item-fall-foliage-infinite {
   top: 0;
   left: 0;
   width: 100%;
   position: absolute;
-  content: image_url("fallLeavesInfiniteThumbNail.png");
-  -webkit-animation-delay: 0.75s;
+  content: image_url("introBranchStatic.png");
+  -webkit-animation-delay: 0s;
   -webkit-animation-duration: 3s;
-  -webkit-animation-name: fall-branch-cycle;
+  -webkit-animation-name: ppe-fall-branch-cycle;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
-  animation-name: fall-branch-cycle;
+  animation-name: ppe-fall-branch-cycle;
   animation-duration: 3s;
-  animation-delay: 0.75s;
+  animation-delay: 0s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
+}
+@keyframes ppe-fall-branch-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("introBranch.png");
+  }
+}
+
+@-webkit-keyframes ppe-fall-branch-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("introBranch.png");
+  }
+}
+
+@keyframes ppe-fall-foliage-cycle {
+  0% {
+    content: image_url("introLeavesLoop.png");
+  }
+  100% {
+    content: image_url("leavesLoop.png");
+  }
+}
+
+@-webkit-keyframes ppe-fall-foliage-cycle {
+  0% {
+    content: image_url("introLeavesLoop.png");
+  }
+  100% {
+    content: image_url("leavesLoop.png");
+  }
 }
 
 .ppe-shop-item-fall-lilly-pad-life {
@@ -547,8 +639,8 @@
   left: 0;
   width: 100%;
   position: absolute;
-  content: image_url("rainIntro.png");
-  -webkit-animation-delay: 4s;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 1s;
   -webkit-animation-duration: 5s;
   -webkit-animation-name: ppefall-lillypad-cycle;
   -webkit-animation-iteration-count: 1;
@@ -556,7 +648,7 @@
   -webkit-animation-fill-mode: forwards;
   animation-name: ppefall-lillypad-cycle;
   animation-duration: 5s;
-  animation-delay: 4s;
+  animation-delay: 1s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
@@ -605,14 +697,28 @@
   left: 0;
   width: 100%;
   position: absolute;
-  content: image_url("slimeZombieIntro.png");
-  -webkit-animation-delay: 4s;
-  -webkit-animation-duration: 5s;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 0.75s;
+  -webkit-animation-duration: 6s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-fill-mode: forwards;
   -webkit-animation-name: slime-zombie-cycle;
   animation-name: slime-zombie-cycle;
+  animation-duration: 6s;
+  animation-delay: 0.75s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.ppe-shop-item-slime-zombie-slime {
+  -webkit-animation-delay: 4s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: ppe-slime-zombie-cycle;
+  animation-name: ppe-slime-zombie-cycle;
   animation-duration: 5s;
   animation-delay: 4s;
   animation-iteration-count: 1;
@@ -620,21 +726,38 @@
   animation-fill-mode: forwards;
 }
 
+@keyframes ppe-slime-zombie-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("slimeZombieLoop.png");
+  }
+}
+@-webkit-keyframes ppe-slime-zombie-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("slimeZombieLoop.png");
+  }
+}
+
 .ppe-shop-item-ghost-skulls {
   top: 0;
   left: 0;
   width: 100%;
   position: absolute;
-  content: image_url("ghostSkullsIntro.png");
-  -webkit-animation-delay: 4s;
-  -webkit-animation-duration: 5s;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 1s;
+  -webkit-animation-duration: 6s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-fill-mode: forwards;
   -webkit-animation-name: ghost-skulls-cycle;
   animation-name: ghost-skulls-cycle;
-  animation-duration: 5s;
-  animation-delay: 4s;
+  animation-duration: 6s;
+  animation-delay: 1s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
@@ -645,8 +768,8 @@
   left: 0;
   width: 100%;
   position: absolute;
-  content: image_url("waterSplashIntro.png");
-  -webkit-animation-delay: 4s;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 1s;
   -webkit-animation-duration: 5s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
@@ -654,7 +777,7 @@
   -webkit-animation-name: fantasy-hydro-blast-cycle;
   animation-name: fantasy-hydro-blast-cycle;
   animation-duration: 5s;
-  animation-delay: 4s;
+  animation-delay: 1s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
@@ -665,7 +788,17 @@
   left: 0;
   width: 100%;
   position: absolute;
-  content: image_url("sakuraIntro.png");
+  content: image_url("sakuraDreamsTreeEnd.png");
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-name: ppe-fantasy-sakura-dreams-cycle;
+  animation-name: ppe-fantasy-sakura-dreams-cycle;
+  animation-duration: 4s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
 }
 
 .ppe-shop-item-fantasy-sakura-dreams {
@@ -673,57 +806,103 @@
   left: 0;
   width: 100%;
   position: absolute;
-  content: image_url("sakuraIntro.png");
-  -webkit-animation-delay: 4s;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 1s;
   -webkit-animation-duration: 5s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-fill-mode: forwards;
-  -webkit-animation-name: fantasy-sakura-dreams-cycle;
-  animation-name: fantasy-sakura-dreams-cycle;
+  -webkit-animation-name: ppe-fantasy-sakura-dreams-cycle-petals;
+  animation-name: ppe-fantasy-sakura-dreams-cycle-petals;
   animation-duration: 5s;
-  animation-delay: 4s;
+  animation-delay: 1s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
+
+@keyframes ppe-fantasy-sakura-dreams-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    // content: image_url("sakuraIntro.png");
+    content: image_url("sakuraDreamsInfinite.png");
+  }
+}
+
+@-webkit-keyframes ppe-fantasy-sakura-dreams-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    // content: image_url("sakuraIntro.png");
+    content: image_url("sakuraDreamsInfinite.png");
+  }
+}
+
+@keyframes ppe-fantasy-sakura-dreams-cycle-petals {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("sakuraLoop.png");
+  }
+}
+
+@-webkit-keyframes ppe-fantasy-sakura-dreams-cycle-petals {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("sakuraLoop.png");
+  }
+}
+
 .ppe-shop-item-fantasy-mystic-vines {
   top: 0;
   left: 0;
   width: 100%;
   position: absolute;
-  content: image_url("vinesThumbnail.png");
-  -webkit-animation-delay: 4s;
-  -webkit-animation-duration: 5s;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-  -webkit-animation-name: fantasy-mystic-vines-cycle;
-  animation-name: fantasy-mystic-vines-cycle;
-  animation-duration: 5s;
-  animation-delay: 4s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
+  content: image_url("vinesIntro1.png");
 }
+
 .ppe-shop-item-fantasy-mystic-glowing-vines {
   top: 0;
   left: 0;
   width: 100%;
   position: absolute;
-  content: image_url("vinesLoop.png");
-  -webkit-animation-delay: 4s;
-  -webkit-animation-duration: 5s;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 2s;
+  -webkit-animation-duration: 2s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-  -webkit-animation-name: fantasy-mystic-glowing-vines-cycle;
-  animation-name: fantasy-mystic-glowing-vines-cycle;
-  animation-duration: 5s;
-  animation-delay: 4s;
+  //   -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: ppe-fantasy-mystic-glowing-vines-cycle;
+  animation-name: ppe-fantasy-mystic-glowing-vines-cycle;
+  animation-duration: 2s;
+  animation-delay: 2s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
+  //   animation-fill-mode: forwards;
+}
+
+@keyframes ppe-fantasy-mystic-glowing-vines-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("vinesGlow.png");
+  }
+}
+
+@-webkit-keyframes ppe-fantasy-mystic-glowing-vines-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("vinesGlow.png");
+  }
 }
 
 .ppe-shop-item-fantasy-pixie-dust {
@@ -732,7 +911,7 @@
   width: 100%;
   position: absolute;
   content: image_url("blankEffect.png");
-  -webkit-animation-delay: 4s;
+  -webkit-animation-delay: 1s;
   -webkit-animation-duration: 5s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: ease-in-out;
@@ -740,7 +919,7 @@
   -webkit-animation-name: ppe-fantasy-pixie-dust-cycle;
   animation-name: ppe-fantasy-pixie-dust-cycle;
   animation-duration: 5s;
-  animation-delay: 4s;
+  animation-delay: 1s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
@@ -770,7 +949,7 @@
   width: 100%;
   position: absolute;
   content: image_url("magicGirlIntro.png");
-  -webkit-animation-delay: 4s;
+  -webkit-animation-delay: 1s;
   -webkit-animation-duration: 5s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
@@ -778,7 +957,7 @@
   -webkit-animation-name: anime-magic-hearts-cycle;
   animation-name: anime-magic-hearts-cycle;
   animation-duration: 5s;
-  animation-delay: 4s;
+  animation-delay: 1s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
@@ -788,19 +967,71 @@
   left: 0;
   width: 100%;
   position: absolute;
-  content: image_url("earthquakeIntro.png");
-  -webkit-animation-delay: 4s;
+  content: image_url("shatterEnd.png");
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-name: ppe-anime-shatter;
+  animation-name: ppe-anime-shatter;
+  animation-duration: 5s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+.ppe-shop-item-anime-shatter-flame {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 5s;
   -webkit-animation-duration: 5s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-fill-mode: forwards;
-  -webkit-animation-name: anime-shatter-cycle;
-  animation-name: anime-shatter-cycle;
+  -webkit-animation-name: ppe-anime-shatter-cycle;
+  animation-name: ppe-anime-shatter-cycle;
   animation-duration: 5s;
-  animation-delay: 4s;
+  animation-delay: 5s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+}
+
+@keyframes ppe-anime-shatter {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("earthQuakeIntroInfinite.png");
+  }
+}
+
+@-webkit-keyframes ppe-anime-shatter {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("earthQuakeIntroInfinite.png");
+  }
+}
+@keyframes ppe-anime-shatter-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("earthquakeLoop.png");
+  }
+}
+
+@-webkit-keyframes ppe-anime-shatter-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("earthquakeLoop.png");
+  }
 }
 
 .ppe-shop-item-anime-shuriken-strike {
@@ -808,27 +1039,79 @@
   left: 0;
   width: 100%;
   position: absolute;
-  content: image_url("shurikenIntro.png");
+  content: image_url("shurikenEnd.png");
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-name: ppe-anime-shuriken-strike;
+  animation-name: ppe-anime-shuriken-strike;
+  animation-duration: 5s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+.ppe-shop-item-anime-shuriken-strike-throws {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
   -webkit-animation-delay: 4s;
   -webkit-animation-duration: 5s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-fill-mode: forwards;
-  -webkit-animation-name: anime-shuriken-strike-cycle;
-  animation-name: anime-shuriken-strike-cycle;
+  -webkit-animation-name: ppe-anime-shuriken-strike-cycle;
+  animation-name: ppe-anime-shuriken-strike-cycle;
   animation-duration: 5s;
   animation-delay: 4s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
+@keyframes ppe-anime-shuriken-strike {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("shurikenIntroInfinite.png");
+  }
+}
+
+@-webkit-keyframes ppe-anime-shuriken-strike {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("shurikenIntroInfinite.png");
+  }
+}
+@keyframes ppe-anime-shuriken-strike-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("shurikenLoop.png");
+  }
+}
+
+@-webkit-keyframes ppe-anime-shuriken-strike-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("shurikenLoop.png");
+  }
+}
+
 .ppe-shop-item-anime-power-surge {
   top: 0;
   left: 0;
   width: 100%;
   position: absolute;
-  content: image_url("sayanIntro.png");
-  -webkit-animation-delay: 4s;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 0.75s;
   -webkit-animation-duration: 5s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
@@ -836,7 +1119,7 @@
   -webkit-animation-name: anime-power-surge-cycle;
   animation-name: anime-power-surge-cycle;
   animation-duration: 5s;
-  animation-delay: 4s;
+  animation-delay: 0.75s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
@@ -847,8 +1130,8 @@
   left: 0;
   width: 100%;
   position: absolute;
-  content: image_url("cerealIntro.png");
-  -webkit-animation-delay: 4s;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 0.75s;
   -webkit-animation-duration: 5s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
@@ -856,7 +1139,7 @@
   -webkit-animation-name: breakfast-strife-cereal-o-s-cycle;
   animation-name: breakfast-strife-cereal-o-s-cycle;
   animation-duration: 5s;
-  animation-delay: 4s;
+  animation-delay: 0.75s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
@@ -866,8 +1149,8 @@
   left: 0;
   width: 100%;
   position: absolute;
-  content: image_url("plateIntro.png");
-  -webkit-animation-delay: 4s;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 0.75s;
   -webkit-animation-duration: 5s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
@@ -875,8 +1158,536 @@
   -webkit-animation-name: breakfast-plate-cycle;
   animation-name: breakfast-plate-cycle;
   animation-duration: 5s;
-  animation-delay: 4s;
+  animation-delay: 0.75s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+}
+
+.ppem-AvatarPreviewContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.ppem-AvatarPreview-inner-wrapper {
+  position: relative;
+  border-radius: 50%;
+  width: 152px;
+  height: 152px;
+}
+.ppem-AvatarDeco-ChatPreview {
+  font-family: var(--global-font);
+  border-color: var(--background-tertiary);
+  background: var(--bg-overlay-chat, var(--background-primary));
+  border-radius: var(--radius-sm);
+  position: relative;
+  bottom: 44px;
+  left: 42px;
+  width: 290px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 16px;
+  gap: 12px;
+  z-index: 3;
+  border-width: 1px;
+  border-style: solid;
+}
+.ppem-AD-Chat-mock-message {
+  font-family: var(--global-font);
+
+  padding-top: var(--custom-message-spacing-vertical-container-cozy);
+  padding-bottom: var(--custom-message-spacing-vertical-container-cozy);
+  padding-left: var(--custom-message-margin-left-content-cozy);
+  padding-right: 12px !important;
+  margin-left: -12px;
+  max-width: 220px;
+
+  position: relative;
+  word-wrap: break-word;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  user-select: text;
+  flex: 0 0 auto;
+  min-height: 1.375rem;
+}
+.ppem-AD-Chat-mock-message-contents {
+  position: static;
+  margin-left: 0;
+  padding-left: 0;
+  text-indent: 0;
+}
+.ppem-AD-Chat-mock-message-contents-header2 {
+  font-family: var(--global-font);
+  overflow: hidden;
+  display: block;
+  position: relative;
+  line-height: 1.375rem;
+  min-height: 1.375rem;
+  color: var(--text-muted);
+  white-space: break-spaces;
+}
+
+.ppem-AD-Chat-mock-message-username-container {
+  margin-right: 0.25rem;
+}
+.ppem-AD-Chat-mock-message-username {
+  display: inline-block;
+  max-width: 112px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: -6px;
+  font-family: var(--global-font);
+
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.375rem;
+  color: var(--header-primary);
+  vertical-align: baseline;
+  position: relative;
+  flex-shrink: 0;
+}
+.ppem-AD-Chat-mock-message-timestamp-container {
+  font-size: 0.75rem;
+  line-height: 1.375rem;
+  color: var(--text-muted);
+  vertical-align: baseline;
+  margin-left: 0.25rem;
+  display: inline-block;
+  height: 1.25rem;
+  cursor: default;
+  pointer-events: none;
+  font-weight: 500;
+  font-family: var(--global-font);
+}
+.ppem-AD-Chat-mock-message-inline-timestamp {
+  font-family: var(--global-font);
+}
+.ppem-AD-Chat-mock-message-i-tag-timestamp {
+  position: absolute;
+  opacity: 0;
+  display: inline-block;
+  font-style: normal;
+  font-family: var(--global-font);
+}
+.ppem-AD-Chat-mock-message-textContent {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  user-select: text;
+  margin-left: calc(-1 * var(--custom-message-margin-left-content-cozy));
+  padding-left: var(--custom-message-margin-left-content-cozy);
+
+  overflow: hidden;
+  position: relative;
+  text-indent: 0;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  white-space: pre-wrap;
+  white-space: break-spaces;
+  word-wrap: break-word;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  user-select: text;
+  color: var(--text-normal);
+  font-family: var(--global-font);
+}
+.ppem-AD-Chat-mock-message-input {
+  background: var(--bg-overlay-3, var(--channeltextarea-background));
+  border-radius: var(--radius-md);
+  height: 40px;
+  padding: 0 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ppem-AD-Chat-mock-message-input-button {
+  color: var(--interactive-normal);
+}
+
+.ppem-AD-Chat-mock-msg-avatar {
+  position: absolute;
+  left: var(--custom-message-margin-horizontal);
+  margin-top: calc(4px - var(--custom-message-spacing-vertical-container-cozy));
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  flex: 0 0 auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ppe-fall-leaves-image {
+  content: image_url("fallLeavesAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.ppe-fall-pumpkin-spice-image {
+  content: image_url("pumpkinSpiceAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.ppe-fall-fox-hat-image {
+  content: image_url("foxHatAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-fall-frog-hat-image {
+  content: image_url("frogHatAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.ppe-fantasy-flaming-sword {
+  content: image_url("flamingSwordAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-fantasy-fairy-sprites {
+  content: image_url("fairySpriteAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-fantasy-defensive-shield {
+  content: image_url("fantasyDefenseShieldAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-fantasy-magic-potion {
+  content: image_url("magicPotionAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.ppe-fantasy-wizard-staff {
+  content: image_url("wizardStaffAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-fantasy-glowing-runes {
+  content: image_url("glowingRunesAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.ppe-fantasy-skull-medallion {
+  content: image_url("skullMedallionAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-fantasy-treasure-n-key {
+  content: image_url("treasureNKeyAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.ppe-anime-radiating-energy {
+  content: image_url("radiatingEnergyAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.ppe-anime-soul-leaving-body {
+  content: image_url("soulLeavingBodyAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-anime-sweat-drops {
+  content: image_url("sweatDropsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-anime-starry-eyed {
+  content: image_url("starryEyedAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-anime-in-love {
+  content: image_url("inLoveAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-anime-shocked {
+  content: image_url("animeShockedAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-anime-angry {
+  content: image_url("animeAngryAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.ppe-breakfast-items-toast {
+  content: image_url("toastAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-breakfast-items-morning-coffee {
+  content: image_url("morningCoffeeAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.ppe-breakfast-items-fried-eggs {
+  content: image_url("friedEggsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.ppe-breakfast-items-blueberry-jam {
+  content: image_url("bbJamAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.ppe-breakfast-items-donuts {
+  content: image_url("donutsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.ppe-breakfast-items-pancakes {
+  content: image_url("pancakesAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.ppe-halloween-cat-grave {
+  content: image_url("halloweenCatGraveAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-halloween-minions {
+  content: image_url("halloweenMinionsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-halloween-ghosts {
+  content: image_url("halloweenGhostsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-halloween-jack-o-lantern {
+  content: image_url("jackolaternAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.ppe-halloween-jack-o-lantern::before,
+.ppe-halloween-ghosts::before,
+.ppe-halloween-minions::before,
+.ppe-halloween-cat-grave::before,
+.ppe-breakfast-items-blueberry-jam::before,
+.ppe-breakfast-items-pancakes::before,
+.ppe-breakfast-items-donuts::before,
+.ppe-breakfast-items-fried-eggs::before,
+.ppe-breakfast-items-morning-coffee::before,
+.ppe-breakfast-items-toast::before,
+.ppe-anime-angry::before,
+.ppe-anime-shocked::before,
+.ppe-fall-leaves-image::before,
+.ppe-fall-pumpkin-spice-image::before,
+.ppe-fall-fox-hat-image::before,
+.ppe-fall-frog-hat-image::before,
+.ppe-fantasy-flaming-sword::before,
+.ppe-fantasy-fairy-sprites::before,
+.ppe-fantasy-defensive-shield::before,
+.ppe-fantasy-magic-potion::before,
+.ppe-fantasy-wizard-staff::before,
+.ppe-fantasy-glowing-runes::before,
+.ppe-fantasy-skull-medallion::before,
+.ppe-fantasy-treasure-n-key::before,
+.ppe-anime-radiating-energy::before,
+.ppe-anime-soul-leaving-body::before,
+.ppe-anime-sweat-drops::before,
+.ppe-anime-starry-eyed::before,
+.ppe-anime-in-love::before,
+.ppem-AD-Chat-mock-msg-avatar::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-modifier-accent);
+}
+.ppem-AD-Chat-mock-msg-avatar-decoration {
+  position: absolute;
+  z-index: 1;
+  left: calc(
+    var(--custom-message-margin-horizontal) -
+      (
+        var(--custom-message-avatar-decoration-size) -
+          var(--custom-message-avatar-size)
+      ) / 2
+  );
+  margin-top: calc(
+    4px - var(--custom-message-spacing-vertical-container-cozy) -
+      (
+        var(--custom-message-avatar-decoration-size) -
+          var(--custom-message-avatar-size)
+      ) / 2
+  );
+  width: var(--custom-message-avatar-decoration-size);
+  height: var(--custom-message-avatar-decoration-size);
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
