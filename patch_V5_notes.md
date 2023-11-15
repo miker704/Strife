@@ -310,6 +310,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added styles for strife-Os profile effect to profile effect preview modal.
     - Added breakfast profile effect to profile effect preview modal.
     - Added styles for breakfast profile effect to profile effect preview modal.
+    - Added Shatter profile effect to profile effect preview modal.
 
 
 
