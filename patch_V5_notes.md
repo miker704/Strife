@@ -399,5 +399,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added shatterEnd.png.
     - Added introBranchStatic.png.
     - Added sakuraDreamsTreeEnd.png.
+    - Added sakuraDreamsInfinite.png.
 
 
