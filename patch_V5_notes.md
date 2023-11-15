@@ -360,3 +360,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Wizard's Staff Avatar Decoration to Avatar Decoration preview modal.
     - Added styles for Wizard's Staff Avatar Decoration to Avatar Decoration preview modal.
     - Added Glowing Runes Avatar Decoration to Avatar Decoration preview modal.
+    - Added styles for Glowing Runes Avatar Decoration to Avatar Decoration preview modal.
