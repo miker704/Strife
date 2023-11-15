@@ -230,12 +230,12 @@ const NitroStore = (props) => {
                                                             <div className="nsWNS-Card" role="button" tabIndex={0}>
                                                                 <div className="nsWNS-Card-cover below-card-shader"></div>
                                                                 <h2 className="nsWNS-h2">Early Access</h2>
-                                                                <div className="nsWNS-subtitle nsWNS-Card-small-text">Be the first to try some of our newest Discord features. Now including early access to Clips!</div>
+                                                                <div className="nsWNS-subtitle nsWNS-Card-small-text">Be the first to try some of our newest $TR!F3 features. Now including early access to Clips!</div>
                                                                 <img className="nsWNS-Card-img-1" alt=" " />
                                                                 <div className="nsWNS-Card-description">
                                                                     <h2 className="nsWNS-h2">Early Access</h2>
                                                                     <div className="nsWNS-Card-small-text">
-                                                                        Be the first to try some of our newest Discord features. Now including early access to Clips!
+                                                                        Be the first to try some of our newest $TR!F3 features. Now including early access to Clips!
                                                                         <br />
                                                                         <br />
                                                                         Get Nitro to get in on the inside scoop.
@@ -358,15 +358,15 @@ const NitroStore = (props) => {
                                                             <div className="nsWNS-Card" role="button" tabIndex={0}>
                                                                 <div className="nsWNS-Card-cover below-card-shader"></div>
                                                                 <h2 className="nsWNS-h2">Color Your Experience</h2>
-                                                                <div className="nsWNS-subtitle nsWNS-Card-small-text">Add your vibe to Discord with unique theme colors.</div>
+                                                                <div className="nsWNS-subtitle nsWNS-Card-small-text">Add your vibe to $TR!F3 with unique theme colors.</div>
                                                                 <img className="nsWNS-Card-img-5" alt=" " />
                                                                 <div className="nsWNS-Card-description">
                                                                     <h2 className="nsWNS-h2">Color Your Experience</h2>
                                                                     <div className="nsWNS-Card-small-text">
-                                                                        Add your vibe to Discord with unique theme colors.
+                                                                        Add your vibe to $TR!F3 with unique theme colors.
                                                                         <br />
                                                                         <br />
-                                                                        Bring some fresh hues to your Discord views with themes. Choose from over 20 color themes, like Cotton Candy, Midnight Blurple, and many more.
+                                                                        Bring some fresh hues to your $TR!F3 views with themes. Choose from over 20 color themes, like Cotton Candy, Midnight Blurple, and many more.
                                                                     </div>
                                                                     <button type="button" className="nsWNS-Card-Buttons nitro-item-shiny-button-blue global-button-size-medium button-look-filled global-button-growth"
                                                                         onClick={(e) => { appPullerPullAndHoldAnimation(); props.openModal('userSettings'); }}
