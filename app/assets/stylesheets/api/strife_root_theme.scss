@@ -377,6 +377,25 @@
 
     --custom-user-profile-themed-container-user-popout-width: 340px;
     --custom-user-profile-themed-container-user-profile-modal-width: 600px;
+
+
+
+    --custom-full-screen-layer-animation-duration: 150ms;
+    --custom-layout-sidebar-width: 232px;
+    --custom-message-avatar-size: 40px;
+    --custom-message-avatar-decoration-size: calc(
+      var(--custom-message-avatar-size) * var(--decoration-to-avatar-ratio)
+    );
+    --custom-message-margin-horizontal: 16px;
+    --custom-message-margin-compact-indent: 5rem;
+    --custom-message-spacing-vertical-container-cozy: 0.125rem;
+    --custom-message-padding-vertical-container-compact: 0.125rem;
+    --custom-message-meta-space: 0.25rem;
+    --custom-message-reply-indent: 0.625rem;
+    --custom-message-margin-left-content-cozy: calc(
+      40px + var(--custom-message-margin-horizontal) +
+        var(--custom-message-margin-horizontal)
+    );
 }
 
 
