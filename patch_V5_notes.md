@@ -428,6 +428,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added videoBGIcons.svg.
     - Added specialMemberPricing.svg.
     - Added wumpusOpeningDoorWithKey.svg.
+    - Added new changed to the Nitro Store.
 
 
 
