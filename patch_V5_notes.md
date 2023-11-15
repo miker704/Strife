@@ -392,4 +392,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Donut Avatar Decoration to Avatar Decoration preview modal.
     - Added styles for Donut Avatar Decoration to Avatar Decoration preview modal.
     - Added Pancakes Avatar Decoration to Avatar Decoration preview modal.
+    - Added styles for Pancakes Avatar Decoration to Avatar Decoration preview modal.
 
