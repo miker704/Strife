@@ -347,5 +347,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added styles for Fall Leaves Avatar Decoration to Avatar Decoration preview modal.
     - Added Pumpkin Spice Avatar Decoration to Avatar Decoration preview modal.
     - Added styles for Pumpkin Spice Avatar Decoration to Avatar Decoration preview modal.
+    - Added Frog Hat Avatar Decoration to Avatar Decoration preview modal.
 
 
