@@ -317,3 +317,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Renamed shurikenloop.png to shurikenLoop.png.
     - Added more custom variables to strife core styles.
     - Added more styles to shop page.
+    - Added more styles to shop pages to activate hover effects of profile effect cards more accurately.
+
