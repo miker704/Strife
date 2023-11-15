@@ -332,7 +332,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Mounted SubscribeToNitroProModal to Avatar Decoration Preview Modal.
     - Add proper close ESC and outside click listeners to Avatar Decoration Preview Modal and its submodal SubscribeToNitroProModal.
     - Mounted Profile Effect Preview Modal to each profile effect card to be opened on card click in the shop page.
-    - Completed Profile effect preview modal.
+    - Completed Profile Effect Preview Modal.
     - Reworked to hover effect for Shatter profile effect card in the shop page to be more accurate.
     - Reworked to hover effect for Shuriken profile effect card in the shop page to be more accurate.
     - Reworked to hover effect for Sakura profile effect card in the shop page to be more accurate.
@@ -414,4 +414,5 @@ the need to create a private room is need to prevent unwanted members from enter
     another tab while in the shop page.
     - Replaced N!TR0 with Nitro to fit button test in shop page.
     - Replaced N!TR0 with Nitro to fit button test in Avatar Decoration Preview Modal.
+    - Replaced N!TR0 with Nitro to fit button test in Profile Effect Preview Modal.
     - Completed Shop Page.
