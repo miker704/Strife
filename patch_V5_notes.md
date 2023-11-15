@@ -342,6 +342,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Minions Avatar Decoration to Avatar Decoration preview modal.
     - Added styles for Minions Avatar Decoration to Avatar Decoration preview modal.
     - Added Jack o lantern Avatar Decoration to Avatar Decoration preview modal.
-
+    - Added styles for Jack o lantern Avatar Decoration to Avatar Decoration preview modal.
 
 
