@@ -412,4 +412,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added massive changes and additions to styles for preview effect and avatar decoration preview modals.
     - Added Asyc request to resync the current user in CORE_CABLE if the user updates their avatar or banner in 
     another tab while in the shop page.
+    - Replaced N!TR0 with Nitro to fit button test in shop page.
     - Completed Shop Page.
