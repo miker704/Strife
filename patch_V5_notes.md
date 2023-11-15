@@ -418,4 +418,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Completed Shop Page.
     - Added BottomStretchedSparkleStart Svg Icon.
     - Added TopStretchedSparkleStart Svg Icon.
+    - Changed the perks for the nitro selection modal.
 
