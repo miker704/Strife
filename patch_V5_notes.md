@@ -430,6 +430,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added wumpusOpeningDoorWithKey.svg.
     - Added new changes to the Nitro Store.
     - Added new new styles to the Nitro Store.
+    - Added instant shine animation.
     
 
 
