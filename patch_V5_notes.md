@@ -378,3 +378,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added In Love Avatar Decoration to Avatar Decoration preview modal.
     - Added styles for In Love Avatar Decoration to Avatar Decoration preview modal.
     - Added Shocked Avatar Decoration to Avatar Decoration preview modal.
+    - Added styles for Shocked Avatar Decoration to Avatar Decoration preview modal.
+
