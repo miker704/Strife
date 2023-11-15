@@ -4,27 +4,94 @@ import REACT_PORTAL from "../../../utils/ReactPortal_api_util";
 import { CloseXIcon, StrifeBotTagIcon, StrifeNitroBadgeIcon } from "../../front_end_svgs/Strife_svgs";
 import { returnUserOnlineActivityStatusBadgeMaskIMG } from "../../../utils/user_online_activity_status_badge_api_util";
 import { returnUserBadgeFillColor } from "../../../utils/user_status_badge_color_api_util";
+import SubscribeToStrifeNitroProModalContainer from "../../nitro/subscribe_to_nitro_modal/subscribe_to_nitro_pro_modal_container";
 
 const ProfileEffectPreviewModal = (props) => {
+
+    const [isSubModMounted, setIsSubModMounted] = useState(false);
+
+    useEffect(() => {
+        if (isSubModMounted === true) {
+            window.removeEventListener('keyup', overrideCloseModal, false);
+        }
+        else if (isSubModMounted === false) {
+            window.addEventListener('keyup', overrideCloseModal, false);
+        }
+        return function cleanUp () {
+            window.removeEventListener('keyup', overrideCloseModal, false);
+        }
+    }, [isSubModMounted])
+
+
     const [spinCubes, setSpinCubes] = React.useState(true);
     const [gift, setGift] = React.useState(false);
     const [currentSubModal, setCurrentSubModal] = useState({
         subToNitroPro: false,
     });
-
     const [time, setTime] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
+    const popUpRef = useRef(null);
+
+    const openModal = (field, isGift = false) => {
+        setCurrentSubModal(previousState => {
+            return { ...previousState, [field]: true };
+        });
+        setGift(isGift);
+        window.removeEventListener('keyup', overrideCloseModal, false);
+        setIsSubModMounted(true);
+    }
 
 
-    const [testEffect, setTestEffect] = React.useState("halloween-effect");
-    const [testPPEffect, setTestPPEffect] = React.useState("halloween-effect");
+    const closeForm = (field) => {
+        setCurrentSubModal(previousState => {
+            return { ...previousState, [field]: false };
+        });
+        setGift(false);
+        setIsSubModMounted(false);
+        window.addEventListener('keyup', overrideCloseModal, false);
+    }
 
+    const overrideCloseModal = (e) => {
+        const keys = {
+            27: () => {
+                e.preventDefault();
+                e.stopPropagation();
+                handleCloseModal(e);
+                window.removeEventListener('keyup', overrideCloseModal, false);
+            },
+        };
+        if (isSubModMounted === false && keys[e.keyCode]) {
+            keys[e.keyCode]();
+        }
+    }
+
+    const handleCloseModal = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (isSubModMounted === false) {
+            let modalToClose = document.getElementById('ppe-modal-root')
+            if (modalToClose) {
+                modalToClose.classList.add("transition-out");
+                Promise.all(modalToClose.getAnimations().map((animation) => animation.finished),)
+                    .then(() => {
+                        props.closeSubMod(props.formName);
+                        window.removeEventListener('keyup', overrideCloseModal, false);
+                    }, () => {
+                        props.closeSubMod(props.formName);
+                        window.removeEventListener('keyup', overrideCloseModal, false);
+                    });
+            }
+            else {
+                props.closeSubMod(props.formName);
+                window.removeEventListener('keyup', overrideCloseModal, false);
+            }
+        }
+    }
 
     useEffect(() => {
         let intervalId;
         setIsRunning(true);
         if (isRunning) {
-            // setting time from 0 to 1 every 10 milisecond using javascript setInterval method
             intervalId = setInterval(() => setTime(time + 1), 10);
         }
         return () => {
@@ -48,16 +115,16 @@ const ProfileEffectPreviewModal = (props) => {
     const profileEffectBgBanner = {
         "fall-effect": "fall-bg-banner",
         "halloween-effect": "ppe-halloween-bg-banner",
-        "fantasy-effect": { background: `linear-gradient(135deg, rgb(81, 127, 219), rgb(6, 14, 35))` },
-        "anime-effect": { background: `linear-gradient(135deg, rgb(81, 127, 219), rgb(6, 14, 35))` },
-        "breakfast-effect": { background: `linear-gradient(135deg, rgb(81, 127, 219), rgb(6, 14, 35))` },
+        "fantasy-effect": "ppe-fantasy-bg-banner",
+        "anime-effect": "ppe-anime-bg-banner",
+        "breakfast-effect": "ppe-breakfast-bg-banner",
     }
     const profileEffectTitleBanner = {
         "fall-effect": "ppe-fall-title-banner",
         "halloween-effect": "ppe-halloween-title-banner",
-        "fantasy-effect": { background: `linear-gradient(135deg, rgb(81, 127, 219), rgb(6, 14, 35))` },
-        "anime-effect": { background: `linear-gradient(135deg, rgb(81, 127, 219), rgb(6, 14, 35))` },
-        "breakfast-effect": { background: `linear-gradient(135deg, rgb(81, 127, 219), rgb(6, 14, 35))` },
+        "fantasy-effect": "ppe-fantasy-title-banner",
+        "anime-effect": "ppe-anime-title-banner",
+        "breakfast-effect": "ppe-breakfast-title-banner",
     }
 
     const salePrice = {
@@ -136,7 +203,7 @@ const ProfileEffectPreviewModal = (props) => {
 
     const defaultcolorPalleteRef = useRef(Math.random());
     const colorPalleteAltRef = useRef(Math.random());
-    let upcColorPallete = 'ppe-upc theme-dark userProfileOuterTheme profileEffectsModalCustomPreview-UPC-themed profileEffectCustomizationPreview-themed' +
+    let upcColorPallete = 'ppe-upc theme-dark userProfileOuterTheme profileEffectsModalCustomPreview-UPC profileEffectCustomizationPreview-themed' +
         ((defaultcolorPalleteRef.current > 0.50) ? ' ' + 'user-upc-profile-colors-0' : ' ' + `user-upc-profile-colors-${props.currentUser.color_tag}`) +
         ((colorPalleteAltRef.current > 0.90) ? ' ' + 'alt' : '');
 
@@ -159,15 +226,13 @@ const ProfileEffectPreviewModal = (props) => {
                     <circle fill="black" cx="58" cy="82" r="46"></circle>
                 </mask>
                 <foreignObject x="0" y="0" width="100%" height="100%" overflow="visible" mask="url(#uid_1414)">
-                    {/* <div className={`ppe-upc-banner color-${props.currentUser.color_tag}`}> */}
-                    <div className={`ppe-upc-banner color-${1}`}>
-
+                    <div className={`ppe-upc-banner color-${props.currentUser.color_tag}`}>
                     </div>
                 </foreignObject>
             </svg>
 
         ) : (
-            <svg className="upc-bannerSVGwrapper-pro" viewBox="0 0 280 120">
+            <svg className="ppe-upc-bannerSVGwrapper-pro" viewBox="0 0 280 120">
                 <mask id="uid_3244">
                     <rect fill="white" x="0" y="0" width="100%" height="100%"></rect>
                     <circle fill="black" cx="58" cy="112" r="46"></circle>
@@ -273,209 +338,194 @@ const ProfileEffectPreviewModal = (props) => {
         "fallFoliage": (
             <>
                 <img className='shop-item-fall-foliage-infinite' alt=" " style={{ top: `0px` }} />
-                <img className={`shop-item-fall-foliage-leaves`} alt=" " />
+                <img className={`ppe-shop-item-fall-foliage-leaves`} alt=" " />
             </>
         ),
         "lillyPad": (
             <>
                 <img className="ppe-shop-item-fall-lilly-pad-life" alt=" " style={{ top: `0px` }} />
             </>
-        )
+        ),
+        "ghoulishGraffiti": (
+            <>
+                <img className="ppe-shop-item-ghoulish-graffiti" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+
+        "zombieSlime": (
+            <>
+                <img className="ppe-shop-item-slime-zombie" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "darkOmens": (
+            <>
+                <img className="ppe-shop-item-ghost-skulls" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+
+        "hydroBlast": (
+            <>
+                <img className="ppe-shop-item-fantasy-hydro-blast" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "sakuraDreams": (
+            <>
+                <img className="ppe-shop-item-fantasy-sakura-dreams-main" alt=" " style={{ top: `0px` }} />
+                <img className="ppe-shop-item-fantasy-sakura-dreams" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "mysticVines": (
+            <>
+                <img className={`shop-item-fantasy-mystic-vines-growing-cycle`} alt=" " style={{ top: `0px` }} />
+                <img className={`shop-item-fantasy-mystic-vines-loop`} alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "pixieDust": (
+            <>
+                <img className="ppe-shop-item-fantasy-pixie-dust" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "magicHearts": (
+            <>
+                <img className="ppe-shop-item-anime-magic-hearts" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "shatterEffect": (
+            <>
+                <img className="ppe-shop-item-anime-shatter" alt=" " style={{ top: `0px` }} />
+                <img className="ppe-shop-item-anime-shatter-flame" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "shurikenStrike": (
+            <>
+                <img className="ppe-shop-item-anime-shuriken-strike" alt=" " style={{ top: `0px` }} />
+                <img className="ppe-shop-item-anime-shuriken-strike-throws" alt=" " style={{ top: `0px` }} />
+
+            </>
+        ),
+        "powerSurge": (
+            <>
+                <img className="ppe-shop-item-anime-power-surge" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "strifeOs": (
+            <>
+                <img className="ppe-shop-item-breakfast-strife-cereal-o-s" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "breakfastPlate": (
+            <>
+                <img className="ppe-shop-item-breakfast-plate" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+
+
     }
 
-
-
-    let fallFoliagePreview = (
-        <div className="shop-item-upc-profile-effects">
-            <div className="shop-item-upc-profile-effects-inner">
-                <img className='shop-item-fall-foliage-infinite' alt=" " style={{ top: `0px` }} />
-                <img className={`shop-item-fall-foliage-leaves`} alt=" " />
-            </div>
-        </div>
-    );
-
-    let hydroBlastPreview = (
-        <div className="shop-item-upc-profile-effects">
-            <div className="shop-item-upc-profile-effects-inner">
-                <img className='shop-item-fall-foliage-infinite' alt=" " style={{ top: `0px` }} />
-                <img className={`shop-item-fall-foliage-leaves`} alt=" " />
-            </div>
-        </div>
-    );
-    let sakuraDreamsPreview = (
-        <div className="shop-item-upc-profile-effects">
-            <div className="shop-item-upc-profile-effects-inner">
-                <img className='shop-item-fall-foliage-infinite' alt=" " style={{ top: `0px` }} />
-                <img className={`shop-item-fall-foliage-leaves`} alt=" " />
-            </div>
-        </div>
-    );
-
-    let mysticVinesPreview = (
-        <div className="shop-item-upc-profile-effects">
-            <div className="shop-item-upc-profile-effects-inner">
-                <img className='shop-item-fall-foliage-infinite' alt=" " style={{ top: `0px` }} />
-                <img className={`shop-item-fall-foliage-leaves`} alt=" " />
-            </div>
-        </div>
-    );
-
-    let pixieDustPreview = (
-        <div className="shop-item-upc-profile-effects">
-            <div className="shop-item-upc-profile-effects-inner">
-                <img className='shop-item-fall-foliage-infinite' alt=" " style={{ top: `0px` }} />
-                <img className={`shop-item-fall-foliage-leaves`} alt=" " />
-            </div>
-        </div>
-    );
-
-
-    let magicHeartsPreview = (
-        <div className="shop-item-upc-profile-effects">
-            <div className="shop-item-upc-profile-effects-inner">
-                <img className='shop-item-fall-foliage-infinite' alt=" " style={{ top: `0px` }} />
-                <img className={`shop-item-fall-foliage-leaves`} alt=" " />
-            </div>
-        </div>
-    );
-
-    let shatterPreview = (
-        <div className="shop-item-upc-profile-effects">
-            <div className="shop-item-upc-profile-effects-inner">
-                <img className='shop-item-fall-foliage-infinite' alt=" " style={{ top: `0px` }} />
-                <img className={`shop-item-fall-foliage-leaves`} alt=" " />
-            </div>
-        </div>
-    );
-    let shurikenStrikePreview = (
-        <div className="shop-item-upc-profile-effects">
-            <div className="shop-item-upc-profile-effects-inner">
-                <img className='shop-item-fall-foliage-infinite' alt=" " style={{ top: `0px` }} />
-                <img className={`shop-item-fall-foliage-leaves`} alt=" " />
-            </div>
-        </div>
-    );
-    let powerSurgePreview = (
-        <div className="shop-item-upc-profile-effects">
-            <div className="shop-item-upc-profile-effects-inner">
-                <img className='shop-item-fall-foliage-infinite' alt=" " style={{ top: `0px` }} />
-                <img className={`shop-item-fall-foliage-leaves`} alt=" " />
-            </div>
-        </div>
-    );
-
-    let strife0sPreview = (
-        <div className="shop-item-upc-profile-effects">
-            <div className="shop-item-upc-profile-effects-inner">
-                <img className='shop-item-fall-foliage-infinite' alt=" " style={{ top: `0px` }} />
-                <img className={`shop-item-fall-foliage-leaves`} alt=" " />
-            </div>
-        </div>
-    );
-
-
-    let breakfastPlatePreview = (
-        <div className="shop-item-upc-profile-effects">
-            <div className="shop-item-upc-profile-effects-inner">
-                <img className='shop-item-fall-foliage-infinite' alt=" " style={{ top: `0px` }} />
-                <img className={`shop-item-fall-foliage-leaves`} alt=" " />
-            </div>
-        </div>
-    );
+    const renderNitroProModal = () => {
+        if (currentSubModal.subToNitroPro === true) {
+            return (
+                <SubscribeToStrifeNitroProModalContainer closeSubMod={closeForm} formName={"subToNitroPro"} gifted={gift} />
+            )
+        }
+    }
 
     return (
         <REACT_PORTAL wrapperId={'sub-modal'} classNameId={'subModal'} onClick={(e) => e.stopPropagation()}>
-            <div className="ppe-modal-container-layer">
-                <div className="ppe-modal-backdrop "></div>
+            <div className="ppe-modal-container-layer" onClick={(e) => handleCloseModal(e)}>
+                <div className="ppe-modal-backdrop" style={{ opacity: `${isSubModMounted ? 0 : 0.85}` }}></div>
                 <div className="ppe-modal-layer">
                     <div className="ppe-modal-focus-lock">
-                        <div className="ppe-modal-root">
-                            <div className="ppe-modal-content global-scroll-thin-raw-attributes global-scroller-base" style={{ overflow: `hidden scroll`, paddingRight: `0px` }}>
-                                <div className="ppe-modal-collectible-info-container" style={profileThemeEffects[testEffect]}>
-                                    <div className="ppem-collectible-info-title-container">
-                                        <div>
-                                            <img className={profileEffectTitleBanner[testEffect]} alt=" " />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="ppe-profile-effect-description-container">
-                                            <div className="ppe-type-pill-label">
-                                                <div className="ppe-type-pill-label-text" style={{ color: `white` }}>
-                                                    Profile Effect
+                        {
+                            isSubModMounted === false ? (
+                                <div className="ppe-modal-root" id="ppe-modal-root" ref={popUpRef} onClick={(e) => e.stopPropagation()}>
+                                    <div className="ppe-modal-content global-scroll-thin-raw-attributes global-scroller-base" style={{ overflow: `hidden scroll`, paddingRight: `0px` }}>
+                                        <div className="ppe-modal-collectible-info-container" style={profileThemeEffects[props.profileEffectThemeType]}>
+                                            <div className="ppem-collectible-info-title-container">
+                                                <div>
+                                                    <img className={profileEffectTitleBanner[props.profileEffectThemeType]} alt=" " />
                                                 </div>
                                             </div>
-                                            <h2 className="ppe-profile-effect-h2" style={{ color: `white` }}>Fall Foliage</h2>
-                                            <div className="ppe-profile-effect-small-text-description" style={{ color: `white` }}>Getting ready for sweater weather.</div>
-                                            <div className="ppe-ped-price-tags-container">
-                                                <h2 className="shop-item-price-tags-h2-medium" style={{ color: `white` }}><span className="shop-item-striked-price">$9.99</span></h2>
-                                                <h2 className="shop-item-price-tags-h2-medium" style={{ color: `white` }}>
-                                                    <StrifeNitroBadgeIcon className="shop-item-nitro-ball-icon" height={24} width={24} />
-                                                    <span className="shop-item-price">$6.99</span>
-                                                </h2>
-                                            </div>
-                                        </div>
-                                        <div className="shop-item-card-button-container">
-                                            <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width">
-                                                <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
-                                                    <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
-                                                    <span className="shopbuttonText">Unlock Shop with N!TR0</span>
-                                                    <div className="shiny-button-container">
-                                                        <div className="shiny-button-flex">
-                                                            <div className="shiny-button-inner"></div>
+                                            <div>
+                                                <div className="ppe-profile-effect-description-container">
+                                                    <div className="ppe-type-pill-label">
+                                                        <div className="ppe-type-pill-label-text" style={{ color: `white` }}>
+                                                            Profile Effect
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </button>
-                                        </div>
-                                        <div className="ppe-ped-fine-print-disclaimer">
-                                            After subscribing to Nitro, you’ll have to purchase this effect separately. Nitro subscriptions become non-refundable once you’ve purchased a effect.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="ppe-modal-collectible-preview-container-noChat">
-                                    <div className={`ppe-collectible-preview-category-banner ${profileEffectBgBanner[testEffect]}`}></div>
-                                    <div className="ppe-profile-effects-preview-container-inner ppepes-preview-container-inner">
-                                        <div className={upcColorPallete}>
-                                            <div className={`user-mini-upc-inner ${props.currentUser.banner === undefined ? `userProfileThemeWithOutBanner` : `userProfileThemeWithBanner`}`}>
-                                                {/* {fallFoliagePreview} */}
-                                                <div className="shop-item-upc-profile-effects">
-                                                    <div className="shop-item-upc-profile-effects-inner">
-                                                        {/* {profileEffectPreviewImgs["fallFoliage"]} */}
-                                                        {profileEffectPreviewImgs["lillyPad"]}
+                                                    <h2 className="ppe-profile-effect-h2" style={{ color: `white` }}>{`${profileEffectName[props.profileThemeObj]}`}</h2>
+                                                    <div className="ppe-profile-effect-small-text-description" style={{ color: `white` }}>{`${profileEffectDescription[props.profileThemeObj]}`}</div>
+                                                    <div className="ppe-ped-price-tags-container">
+                                                        <h2 className="shop-item-price-tags-h2-medium" style={{ color: `white` }}><span className="shop-item-striked-price">{`$${strikeThroughPrice[props.profileThemeObj]}`}</span></h2>
+                                                        <h2 className="shop-item-price-tags-h2-medium" style={{ color: `white` }}>
+                                                            <StrifeNitroBadgeIcon className="shop-item-nitro-ball-icon" height={24} width={24} />
+                                                            <span className="shop-item-price">{`$${salePrice[props.profileThemeObj]}`}</span>
+                                                        </h2>
                                                     </div>
                                                 </div>
-                                                {memberBanner}
-                                                {mp1}
-                                                {badgeContainer}
-                                                <div className='upc-popout-overlay-background upc-overlay-background ppe-customization-upc-body' >
+                                                <div className="shop-item-card-button-container">
+                                                    <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                                                        onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
+                                                        <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
+                                                            <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
+                                                            <span className="shopbuttonText">Unlock Shop with N!TR0</span>
+                                                            <div className="shiny-button-container">
+                                                                <div className="shiny-button-flex">
+                                                                    <div className="shiny-button-inner"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+                                                </div>
+                                                <div className="ppe-ped-fine-print-disclaimer">
+                                                    After subscribing to Nitro, you’ll have to purchase this effect separately. Nitro subscriptions become non-refundable once you’ve purchased a effect.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="ppe-modal-collectible-preview-container-noChat">
+                                            <div className={`ppe-collectible-preview-category-banner ${profileEffectBgBanner[props.profileEffectThemeType]}`}></div>
+                                            <div className="ppe-profile-effects-preview-container-inner ppepes-preview-container-inner">
+                                                <div className={upcColorPallete}>
+                                                    <div className={`user-mini-upc-inner ${props.currentUser.banner === undefined ? `userProfileThemeWithOutBanner` : `userProfileThemeWithBanner`}`}>
+                                                        <div className="shop-item-upc-profile-effects">
+                                                            <div className="shop-item-upc-profile-effects-inner">
+                                                                {profileEffectPreviewImgs[props.profileThemeObj]}
+                                                            </div>
+                                                        </div>
+                                                        {memberBanner}
+                                                        {mp1}
+                                                        {badgeContainer}
+                                                        <div className='upc-popout-overlay-background upc-overlay-background ppe-customization-upc-body' >
 
-                                                    <div className='upc-section-content ppe-upc-section-content-container' >
-                                                        <div>
-                                                            <div className='upc-user-text'>
-                                                                <h3 className='upc-user-display-name'>{props.currentUser.username}</h3>
-                                                                <div className='upc-header-username-tag-wrapper'>
-                                                                    <span className='upc-username'>{props.currentUser.username}</span>
-                                                                    <span className='upc-strife-tag'>#{props.currentUser.strife_id_tag}</span>
-                                                                    {if_Bot_tag}
+                                                            <div className='upc-section-content ppe-upc-section-content-container' >
+                                                                <div>
+                                                                    <div className='upc-user-text'>
+                                                                        <h3 className='upc-user-display-name'>{props.currentUser.username}</h3>
+                                                                        <div className='upc-header-username-tag-wrapper'>
+                                                                            <span className='upc-username'>{props.currentUser.username}</span>
+                                                                            <span className='upc-strife-tag'>#{props.currentUser.strife_id_tag}</span>
+                                                                            {if_Bot_tag}
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="ppe-upc-content-divider"></div>
-                                                    <div className="upc-section-content ppe-upc-last-section">
-                                                        <div className="ppe-fakeActivity-title">
-                                                            Customizing My Profile
-                                                        </div>
-                                                        <div className="ppe-fakeActivity-layout">
-                                                            <div className="ppe-fakeActivity-icon">
-                                                                <img className="ppe-fake-activity-pencil-icon" alt=" " />
-                                                            </div>
-                                                            <div className="ppe-fakeActivity-content">
-                                                                <div className="ppe-fakeActivity-content-semi-bold">User Profile</div>
-                                                                <div className="ppe-profile-effect-small-text-description default-text-color">
-                                                                    <span className="ppe-fakeActivity-timeValues">
-                                                                        {`${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`}
-                                                                    </span>{`${` `}`} elapsed
+                                                            <div className="ppe-upc-content-divider"></div>
+                                                            <div className="upc-section-content ppe-upc-last-section">
+                                                                <div className="ppe-fakeActivity-title">
+                                                                    Customizing My Profile
+                                                                </div>
+                                                                <div className="ppe-fakeActivity-layout">
+                                                                    <div className="ppe-fakeActivity-icon">
+                                                                        <img className="ppe-fake-activity-pencil-icon" alt=" " />
+                                                                    </div>
+                                                                    <div className="ppe-fakeActivity-content">
+                                                                        <div className="ppe-fakeActivity-content-semi-bold">User Profile</div>
+                                                                        <div className="ppe-profile-effect-small-text-description default-text-color">
+                                                                            <span className="ppe-fakeActivity-timeValues">
+                                                                                {`${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`}
+                                                                            </span>{`${` `}`} elapsed
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -483,22 +533,22 @@ const ProfileEffectPreviewModal = (props) => {
                                                 </div>
                                             </div>
                                         </div>
+                                        <button className="ppe-close-button-button" type="button" onClick={(e) => handleCloseModal(e)}>
+                                            <div className="global-button-contents closeWithCircleBackgroundIcon">
+                                                <CloseXIcon className="ppe-close-button-icon" />
+                                            </div>
+                                        </button>
+                                        <div className="ppe-modal-bottom-sep"></div>
                                     </div>
                                 </div>
-                                <button className="ppe-close-button-button" type="button" onClick={() => props.closeModal()}>
-                                    <div className="global-button-contents closeWithCircleBackgroundIcon">
-                                        <CloseXIcon className="ppe-close-button-icon" />
-                                    </div>
-                                </button>
-                                <div className="ppe-modal-bottom-sep"></div>
-                            </div>
-                        </div>
+                            ) : ("")
+                        }
+                        {renderNitroProModal()}
                     </div>
                 </div>
             </div>
         </REACT_PORTAL >
-
-    )
+    );
 
 }
 export default ProfileEffectPreviewModal;
