@@ -1,6 +1,6 @@
 import React from "react";
 import NitroHeaderNavBarContainer from "../nitro_header_nav_bar/nitro_header_nav_bar_container";
-import { AcceptFriendRequestIcon, ChatPresentIcon, CloseXIcon, ComputerStreamingIcon, GemBoostIcon, MiniProfileCardIcon, NitroBasicBannerIcon, NitroHappyFaceIcon, NitroStoreSuperReactionIcon, NitroTier2LogoIcon, NitroUpArrowIcon, SparkleStarIcon, StrifeNitroBadgeIcon, StrifeNitroStoreBackground } from "../../front_end_svgs/Strife_svgs";
+import { AcceptFriendRequestIcon, BottomStretchedStarSparkleIcon, ChatPresentIcon, CloseXIcon, ComputerStreamingIcon, GemBoostIcon, MiniProfileCardIcon, NitroBasicBannerIcon, NitroHappyFaceIcon, NitroStoreSuperReactionIcon, NitroTier2LogoIcon, NitroUpArrowIcon, SparkleStarIcon, StrifeNitroBadgeIcon, StrifeNitroStoreBackground, TopStretchedStarSparkleIcon } from "../../front_end_svgs/Strife_svgs";
 import DMNavBarContainer from "../../dm_servers/dm_nav_bar/dm_nav_bar_container";
 import { useEffect, useState, useRef } from "react";
 import { appPullerPullAnimation, appPullerPullAndHoldAnimation } from "../../../utils/appPullerAnimation_api_util";
@@ -146,18 +146,23 @@ const NitroStore = (props) => {
                                                                     <div className="tier-benefits-text">Custom emoji anywhere</div>
                                                                 </div>
                                                                 <div className="tier-benefits">
+                                                                    <NitroStoreSuperReactionIcon className="tier-card-1-icons" />
+                                                                    <div className="tier-benefits-text">Unlimited Super Reactions</div>
+                                                                </div>
+                                                                <div className="tier-benefits">
                                                                     <StrifeNitroBadgeIcon className="tier-card-1-icons" height={24} width={24} />
                                                                     <div className="tier-benefits-text">Special N!TR0 badge on your profile</div>
                                                                 </div>
-                                                                <div className="tier-benefits">
-                                                                    <NitroStoreSuperReactionIcon className="tier-card-1-icons" />
-                                                                    <div className="tier-benefits-text">2 Super Reactions per week</div>
-                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <button type="button" className="tier-card-button" onClick={(e) => openModal("subToNitroBasic")}>
+                                                        <button type="button" className="tier-card-button look-outlined" onClick={(e) => openModal("subToNitroBasic")}>
                                                             <div className="global-button-contents look-filled-button-contents tier-card-sub-button">
                                                                 <span className="nitro-heroscreen-sub-button-text">Subscribe</span>
+                                                                <div className="nitro-shiny-button-container">
+                                                                    <div className="shiny-button-flex">
+                                                                        <div className="shiny-button-inner"></div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </button>
                                                     </div>
@@ -181,12 +186,12 @@ const NitroStore = (props) => {
                                                                 <div className="tier-benefits-text">Custom emoji anywhere</div>
                                                             </div>
                                                             <div className="tier-benefits">
-                                                                <ComputerStreamingIcon className="tier-card-1-icons" />
-                                                                <div className="tier-benefits-text">HD video streaming</div>
+                                                                <NitroStoreSuperReactionIcon className="tier-card-1-icons" />
+                                                                <div className="tier-benefits-text">Unlimited Super Reactions</div>
                                                             </div>
                                                             <div className="tier-benefits">
-                                                                <NitroStoreSuperReactionIcon className="tier-card-1-icons" />
-                                                                <div className="tier-benefits-text">5 Super Reactions per week</div>
+                                                                <ComputerStreamingIcon className="tier-card-1-icons" />
+                                                                <div className="tier-benefits-text">HD video streaming</div>
                                                             </div>
                                                             <div className="tier-benefits">
                                                                 <GemBoostIcon className="tier-card-1-icons" />
@@ -200,46 +205,242 @@ const NitroStore = (props) => {
                                                         <button type="button" className="tier-card-button" onClick={(e) => openModal("subToNitroPro")}>
                                                             <div className="global-button-contents look-filled-button-contents tier-card-sub-button">
                                                                 <span className="nitro-heroscreen-sub-button-text">Subscribe</span>
+                                                                <div className="nitro-shiny-button-container brandShine_4button">
+                                                                    <div className="shiny-button-flex">
+                                                                        <div className="shiny-button-inner"></div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </button>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="nitro-perks-container">
-                                                <h2 className="nitro-perks-container-h2">Favorite $TR!F3 N!TR0 Perks</h2>
-                                                <div className="bigNitroPerkCardContainer">
-                                                    <div className="bigNitroPerkCard">
-                                                        <h2 className="bigNitroPerkCard-h2">Hype, roast, and meme with custom emoji anywhere</h2>
-                                                        <img className="bigNitroPerkCard-img-1" alt=" " />
+
+
+                                            <div className="nitro-whats-new-section">
+                                                <div className="nitro-whats-new-section-row">
+                                                    <h2 className="nitro-whats-new-section-row-h2" style={{ color: `var(--header-primary)` }}>
+                                                        See What's New With Nitro
+                                                    </h2>
+                                                    <div className="nitro-whats-new-section-row-subtitle" style={{ color: `var(--header-primary)` }}>
+                                                        These are the freshest offerings exclusive for our illustrious Nitro members. We're adding more all the time!
                                                     </div>
-                                                    <div className="bigNitroPerkCard">
-                                                        <h2 className="bigNitroPerkCard-h2">Unlock perks for your communities with 2 Server Boosts</h2>
-                                                        <img className="bigNitroPerkCard-img-2" alt=" " />
-                                                    </div>
-                                                    <div className="bigNitroPerkCard">
-                                                        <h2 className="bigNitroPerkCard-h2">Stream apps and games in sweet, sweet HD</h2>
-                                                        <img className="bigNitroPerkCard-img-3" alt=" " />
-                                                    </div>
-                                                    <div className="bigNitroPerkCard">
-                                                        <h2 className="bigNitroPerkCard-h2">From clips to pics, share away with bigger file uploads</h2>
-                                                        <img className="bigNitroPerkCard-img-4" alt=" " />
+                                                    <div className="nitro-whats-new-section-card-container">
+                                                        <div className="noFlipCardContainer">
+                                                            <div className="nsWNS-Card" role="button" tabIndex={0}>
+                                                                <div className="nsWNS-Card-cover below-card-shader"></div>
+                                                                <h2 className="nsWNS-h2">Early Access</h2>
+                                                                <div className="nsWNS-subtitle nsWNS-Card-small-text">Be the first to try some of our newest Discord features. Now including early access to Clips!</div>
+                                                                <img className="nsWNS-Card-img-1" alt=" " />
+                                                                <div className="nsWNS-Card-description">
+                                                                    <h2 className="nsWNS-h2">Early Access</h2>
+                                                                    <div className="nsWNS-Card-small-text">
+                                                                        Be the first to try some of our newest Discord features. Now including early access to Clips!
+                                                                        <br />
+                                                                        <br />
+                                                                        Get Nitro to get in on the inside scoop.
+                                                                    </div>
+                                                                    <button type="button" className="nsWNS-Card-Buttons nitro-item-shiny-button global-button-size-medium button-look-filled global-button-growth"
+                                                                        onClick={(e) => openModal("subToNitroPro")}
+                                                                    >
+                                                                        <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
+                                                                            <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
+                                                                            <span className="shopbuttonText">Subscribe to Nitro</span>
+                                                                            <div className="nitro-shiny-button-container brandShine_4button">
+                                                                                <div className="shiny-button-flex">
+                                                                                    <div className="shiny-button-inner"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </button>
+                                                                </div>
+                                                                <div className="nsWNS-Card-cover above-card-shader"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="noFlipCardContainer">
+                                                            <div className="nsWNS-Card" role="button" tabIndex={0}>
+                                                                <div className="nsWNS-Card-cover below-card-shader"></div>
+                                                                <h2 className="nsWNS-h2">Special Member Pricing</h2>
+                                                                <div className="nsWNS-subtitle nsWNS-Card-small-text">Snag sweet discounts on any (or every!) item at the Shop.</div>
+                                                                <img className="nsWNS-Card-img-2" alt=" " />
+                                                                <div className="nsWNS-Card-description">
+                                                                    <h2 className="nsWNS-h2">Special Member Pricing</h2>
+                                                                    <div className="nsWNS-Card-small-text">
+                                                                        Snag sweet discounts on any (or every!) item at the Shop.
+                                                                        <br />
+                                                                        <br />
+                                                                        Join Nitro to take advantage of these exclusive prices.
+                                                                    </div>
+                                                                    <button type="button" className="nsWNS-Card-Buttons nitro-item-shiny-button global-button-size-medium button-look-filled global-button-growth"
+                                                                        onClick={(e) => openModal("subToNitroPro")}
+                                                                    >
+                                                                        <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
+                                                                            <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
+                                                                            <span className="shopbuttonText">Subscribe to Nitro</span>
+                                                                            <div className="nitro-shiny-button-container brandShine_4button">
+                                                                                <div className="shiny-button-flex">
+                                                                                    <div className="shiny-button-inner"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </button>
+                                                                </div>
+                                                                <div className="nsWNS-Card-cover above-card-shader"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="noFlipCardContainer">
+                                                            <div className="nsWNS-Card" role="button" tabIndex={0}>
+                                                                <div className="nsWNS-Card-cover below-card-shader"></div>
+                                                                <h2 className="nsWNS-h2">Unlimited Super Reactions</h2>
+                                                                <div className="nsWNS-subtitle nsWNS-Card-small-text">We made Super Reactions unlimited so you can unleash the chaos in your chats.</div>
+                                                                <img className="nsWNS-Card-img-3" alt=" " />
+                                                                <div className="nsWNS-Card-description">
+                                                                    <h2 className="nsWNS-h2">Unlimited Super Reactions</h2>
+                                                                    <div className="nsWNS-Card-small-text">
+                                                                        We made Super Reactions unlimited so you can unleash the chaos in your chats.
+                                                                        <br />
+                                                                        <br />
+                                                                        Supercharge your own conversations with any tier of Nitro.
+                                                                    </div>
+                                                                    <button type="button" className="nsWNS-Card-Buttons nitro-item-shiny-button global-button-size-medium button-look-filled global-button-growth"
+                                                                        onClick={(e) => openModal("subToNitroPro")}
+                                                                    >
+                                                                        <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
+                                                                            <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
+                                                                            <span className="shopbuttonText">Subscribe to Nitro</span>
+                                                                            <div className="nitro-shiny-button-container brandShine_4button">
+                                                                                <div className="shiny-button-flex">
+                                                                                    <div className="shiny-button-inner"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </button>
+                                                                </div>
+                                                                <div className="nsWNS-Card-cover above-card-shader"></div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div className="smallNitroPerkCardContainer">
+                                                <div className="nitro-whats-new-section-row">
+                                                    <h2 className="nitro-whats-new-section-row-h2" style={{ color: `var(--header-primary)` }}>
+                                                        Check Out These Nitro Favorites
+                                                    </h2>
+                                                    <div className="nitro-whats-new-section-row-subtitle" style={{ color: `var(--header-primary)` }}>
+                                                        Explore the most popular perks that come with your Nitro subscription.
+                                                    </div>
+                                                    <div className="nitro-whats-new-section-card-container">
+                                                        <div className="noFlipCardContainer">
+                                                            <div className="nsWNS-Card" role="button" tabIndex={0}>
+                                                                <div className="nsWNS-Card-cover below-card-shader"></div>
+                                                                <h2 className="nsWNS-h2">Customize Your Profile</h2>
+                                                                <div className="nsWNS-subtitle nsWNS-Card-small-text">Use a different avatar, profile theme, banner, and bio in each of your servers.</div>
+                                                                <img className="nsWNS-Card-img-4" alt=" " />
+                                                                <div className="nsWNS-Card-description">
+                                                                    <h2 className="nsWNS-h2">Customize Your Profile</h2>
+                                                                    <div className="nsWNS-Card-small-text">
+                                                                        Use a different avatar, profile theme, banner, and bio in each of your servers.
+                                                                        <br />
+                                                                        <br />
+                                                                        Explore all the ways to customize your profiles across servers. Only available with Nitro.
+                                                                    </div>
+                                                                    <button type="button" className="nsWNS-Card-Buttons nitro-item-shiny-button-blue global-button-size-medium button-look-filled global-button-growth"
+                                                                        onClick={(e) => { appPullerPullAndHoldAnimation(); props.openModal('userSettings'); }}
+                                                                    >
+                                                                        <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
+                                                                            <span className="shopbuttonText">Take me there</span>
+                                                                        </div>
+                                                                    </button>
+                                                                </div>
+                                                                <div className="nsWNS-Card-cover above-card-shader"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="noFlipCardContainer">
+                                                            <div className="nsWNS-Card" role="button" tabIndex={0}>
+                                                                <div className="nsWNS-Card-cover below-card-shader"></div>
+                                                                <h2 className="nsWNS-h2">Color Your Experience</h2>
+                                                                <div className="nsWNS-subtitle nsWNS-Card-small-text">Add your vibe to Discord with unique theme colors.</div>
+                                                                <img className="nsWNS-Card-img-5" alt=" " />
+                                                                <div className="nsWNS-Card-description">
+                                                                    <h2 className="nsWNS-h2">Color Your Experience</h2>
+                                                                    <div className="nsWNS-Card-small-text">
+                                                                        Add your vibe to Discord with unique theme colors.
+                                                                        <br />
+                                                                        <br />
+                                                                        Bring some fresh hues to your Discord views with themes. Choose from over 20 color themes, like Cotton Candy, Midnight Blurple, and many more.
+                                                                    </div>
+                                                                    <button type="button" className="nsWNS-Card-Buttons nitro-item-shiny-button-blue global-button-size-medium button-look-filled global-button-growth"
+                                                                        onClick={(e) => { appPullerPullAndHoldAnimation(); props.openModal('userSettings'); }}
+                                                                    >
+                                                                        <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
+                                                                            <span className="shopbuttonText">Take me there</span>
+                                                                        </div>
+                                                                    </button>
+                                                                </div>
+                                                                <div className="nsWNS-Card-cover above-card-shader"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="noFlipCardContainer">
+                                                            <div className="nsWNS-Card" role="button" tabIndex={0}>
+                                                                <div className="nsWNS-Card-cover below-card-shader"></div>
+                                                                <h2 className="nsWNS-h2">2 Server Boosts + 30% off</h2>
+                                                                <div className="nsWNS-subtitle nsWNS-Card-small-text">Give your favorite communities a boost and unlock awesome perks.</div>
+                                                                <img className="nsWNS-Card-img-6" alt=" " />
+                                                                <div className="nsWNS-Card-description">
+                                                                    <h2 className="nsWNS-h2">2 Server Boosts + 30% off</h2>
+                                                                    <div className="nsWNS-Card-small-text">
+                                                                        Give your favorite communities a boost and unlock awesome perks.
+                                                                        <br />
+                                                                        <br />
+                                                                        Support your favorite communities and friend servers! Nitro members get 2 free Boosts & 30% off all others.
+                                                                    </div>
+                                                                    <button type="button" className="nsWNS-Card-Buttons nitro-item-shiny-button-blue global-button-size-medium button-look-filled global-button-growth"
+                                                                        onClick={(e) => { appPullerPullAndHoldAnimation(); props.openModal('userSettings'); }}
+                                                                    >
+                                                                        <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
+                                                                            <span className="shopbuttonText">Take me there</span>
+                                                                        </div>
+                                                                    </button>
+                                                                </div>
+                                                                <div className="nsWNS-Card-cover above-card-shader"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <TopStretchedStarSparkleIcon width={453} height={28} className="stretchedSparklesTop" />
+                                                <BottomStretchedStarSparkleIcon width={470} height={28} className="stretchedSparklesBottom" />
+                                            </div>
+
+                                            <div className="nitro-perks-container">
+                                                <h2 className="nitro-perks-container-h2">Favorite $TR!F3 N!TR0 Perks</h2>
+
+                                                <div className="smallNitroPerkCardContainerLVL2">
                                                     <div className="smallNitroPerkCard">
-                                                        <div className="nitro-perk-ea-label">Early Access</div>
-                                                        <img className="smallNitroPerkCard-img-ea-1" alt=" " />
+                                                        <img className="bigToSmallNitroPerkCard-img-1" alt=" " />
                                                         <div>
-                                                            <h2 className="smallNitroPerkCard-h2">Remix on Mobile</h2>
-                                                            <div className="smallNitroPerkCard-subtext">Media editing and meme creation, at the speed of $TR!F3.</div>
+                                                            <h2 className="smallNitroPerkCard-h2">More Emoji Power</h2>
+                                                            <div className="smallNitroPerkCard-subtext">Hype, roast, and meme with custom emoji anywhere.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="smallNitroPerkCard">
+                                                        <img className="bigToSmallNitroPerkCard-img-3" alt=" " />
+                                                        <div>
+                                                            <h2 className="smallNitroPerkCard-h2">HD Video</h2>
+                                                            <div className="smallNitroPerkCard-subtext">Better video resolutions for all your streams. Stream apps and games in sweet, sweet HD.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="smallNitroPerkCard">
+                                                        <img className="bigToSmallNitroPerkCard-img-4" alt=" " />
+                                                        <div>
+                                                            <h2 className="smallNitroPerkCard-h2">500MB Uploads</h2>
+                                                            <div className="smallNitroPerkCard-subtext">Upload what you want with increased 500MB upload size.</div>
                                                         </div>
                                                     </div>
 
-                                                    <div className="smallNitroPerkCard client-card">
-                                                        <img className="smallNitroPerkCard-img-1" alt=" " />
+                                                    <div className="smallNitroPerkCard">
+                                                        <img className="smallNitroPerkCard-img-9" alt=" " />
                                                         <div>
-                                                            <h2 className="smallNitroPerkCard-h2">Color Themes</h2>
-                                                            <div className="smallNitroPerkCard-subtext">Add your vibe to $TR!F3 with unique theme colors.</div>
+                                                            <h2 className="smallNitroPerkCard-h2">Custom App Icons</h2>
+                                                            <div className="smallNitroPerkCard-subtext">Choose a mobile and in-app desktop icon that fits your vibe.</div>
                                                         </div>
                                                     </div>
                                                     <div className="smallNitroPerkCard">
@@ -250,47 +451,33 @@ const NitroStore = (props) => {
                                                         </div>
                                                     </div>
                                                     <div className="smallNitroPerkCard">
+                                                        <img className="smallNitroPerkCard-img-10" alt=" " />
+                                                        <div>
+                                                            <h2 className="smallNitroPerkCard-h2">Video Backgrounds</h2>
+                                                            <div className="smallNitroPerkCard-subtext">Make video calls unique with your own backgrounds.</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="smallNitroPerkCard">
                                                         <img className="smallNitroPerkCard-img-3" alt=" " />
                                                         <div>
                                                             <h2 className="smallNitroPerkCard-h2">Super Reactions</h2>
                                                             <div className="smallNitroPerkCard-subtext">Hype up the chat with action-packed, animated reactions.</div>
                                                         </div>
                                                     </div>
-                                                    <div className="smallNitroPerkCard">
-                                                        <img className="smallNitroPerkCard-img-4" alt=" " />
-                                                        <div>
-                                                            <h2 className="smallNitroPerkCard-h2">Custom Profiles</h2>
-                                                            <div className="smallNitroPerkCard-subtext">Use a different avatar, profile theme, banner, and bio in each of your servers.{`${` `}`}
-                                                                <a className="smallNitroPerkCard-anchor" role="button" tabIndex={0} onClick={(e) => { appPullerPullAndHoldAnimation(); props.openModal('userSettings'); }}>Try it out.</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+
                                                     <div className="smallNitroPerkCard">
                                                         <img className="smallNitroPerkCard-img-5" alt=" " />
                                                         <div>
                                                             <h2 className="smallNitroPerkCard-h2">Special Sticker Access</h2>
-                                                            <div className="smallNitroPerkCard-subtext">Use custom stickers anywhere.</div>
+                                                            <div className="smallNitroPerkCard-subtext">Use custom stickers anywhere and access 300+ N!TR0 exclusives.</div>
                                                         </div>
                                                     </div>
                                                     <div className="smallNitroPerkCard">
-                                                        <img className="smallNitroPerkCard-img-6" alt=" " />
+                                                        <img className="smallNitroPerkCard-img-11" alt=" " />
                                                         <div>
-                                                            <h2 className="smallNitroPerkCard-h2">N!TR0 Badge</h2>
-                                                            <div className="smallNitroPerkCard-subtext">Show off your N!TR0 membership with a badge in your profile.</div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="smallNitroPerkCard">
-                                                        <img className="smallNitroPerkCard-img-7" alt=" " />
-                                                        <div>
-                                                            <h2 className="smallNitroPerkCard-h2">More Servers</h2>
-                                                            <div className="smallNitroPerkCard-subtext">Join up to 200 of your favorite servers.</div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="smallNitroPerkCard">
-                                                        <img className="smallNitroPerkCard-img-8" alt=" " />
-                                                        <div>
-                                                            <h2 className="smallNitroPerkCard-h2">Longer Messages</h2>
-                                                            <div className="smallNitroPerkCard-subtext">Say what's on your mind with an increased character count.</div>
+                                                            <h2 className="smallNitroPerkCard-h2">Subscriber Badge</h2>
+                                                            <div className="smallNitroPerkCard-subtext">Get this cool badge for being a Nitro subscriber.</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -359,13 +546,28 @@ const NitroStore = (props) => {
                                                                 </tr>
                                                                 <tr className="nitro-tier-plan-table-normal-row">
                                                                     <th scope="row" className="nitroTableCellLabel">
+                                                                        <div className="nitroTableCellLabelContents">Custom App Icons</div>
+                                                                    </th>
+                                                                    <td className="nitroTdCell">
+                                                                        <AcceptFriendRequestIcon className="nitroTdCellCheckMark" />
+                                                                        <div className="nitroTdCellContentsHiddenVisually">Included</div>
+                                                                    </td>
+                                                                    <td className="nitroTdCell">
+                                                                        <AcceptFriendRequestIcon className="nitroTdCellCheckMark" />
+                                                                        <div className="nitroTdCellContentsHiddenVisually">Included</div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr className="nitro-tier-plan-table-normal-row">
+                                                                    <th scope="row" className="nitroTableCellLabel">
                                                                         <div className="nitroTableCellLabelContents">Super Reactions</div>
                                                                     </th>
                                                                     <td className="nitroTdCell">
-                                                                        <div className="nitroTdCellContents">2/week</div>
+                                                                        <AcceptFriendRequestIcon className="nitroTdCellCheckMark" />
+                                                                        <div className="nitroTdCellContentsHiddenVisually">Included</div>
                                                                     </td>
                                                                     <td className="nitroTdCell">
-                                                                        <div className="nitroTdCellContents">5/week</div>
+                                                                        <AcceptFriendRequestIcon className="nitroTdCellCheckMark" />
+                                                                        <div className="nitroTdCellContentsHiddenVisually">Included</div>
                                                                     </td>
                                                                 </tr>
                                                                 <tr className="nitro-tier-plan-table-normal-row">
@@ -420,6 +622,19 @@ const NitroStore = (props) => {
                                                                 <tr className="nitro-tier-plan-table-normal-row">
                                                                     <th scope="row" className="nitroTableCellLabel">
                                                                         <div className="nitroTableCellLabelContents">Custom server profiles</div>
+                                                                    </th>
+                                                                    <td className="nitroTdCell">
+                                                                        <CloseXIcon className="nitroTdCellXMark" />
+                                                                        <div className="nitroTdCellContentsHiddenVisually">Not included</div>
+                                                                    </td>
+                                                                    <td className="nitroTdCell">
+                                                                        <AcceptFriendRequestIcon className="nitroTdCellCheckMark" />
+                                                                        <div className="nitroTdCellContentsHiddenVisually">Included</div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr className="nitro-tier-plan-table-normal-row">
+                                                                    <th scope="row" className="nitroTableCellLabel">
+                                                                        <div className="nitroTableCellLabelContents">Access to shop and exclusive avatar decorations</div>
                                                                     </th>
                                                                     <td className="nitroTdCell">
                                                                         <CloseXIcon className="nitroTdCellXMark" />
@@ -547,6 +762,11 @@ const NitroStore = (props) => {
                                                         <div className="global-button-contents look-filled-button-contents nitro-heroscreen-sub-button-contents">
                                                             <StrifeNitroBadgeIcon className="nitro-heroscreen-sub-icon" height={24} width={24} />
                                                             <span className="nitro-heroscreen-sub-button-text">Subscribe</span>
+                                                            <div className="nitro-shiny-button-container brandShine_4button">
+                                                                <div className="shiny-button-flex">
+                                                                    <div className="shiny-button-inner"></div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </button>
                                                     <button type="button" className="nitro-snack-bar-bttn nitro-snack-bar-button-size nsbb-look-outlined clear" onClick={(e) => openModal("nitroPlanSelection", true)}>
