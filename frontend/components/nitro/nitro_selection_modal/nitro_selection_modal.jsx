@@ -120,12 +120,12 @@ const NitroSelectionModal = (props) => {
                                                         <div className="tier-benefits-text">Custom emoji anywhere</div>
                                                     </div>
                                                     <div className="tier-benefits">
-                                                        <ComputerStreamingIcon className="tier-card-1-icons" />
-                                                        <div className="tier-benefits-text">HD video streaming</div>
+                                                        <NitroStoreSuperReactionIcon className="tier-card-1-icons" />
+                                                        <div className="tier-benefits-text">Unlimited Super Reactions</div>
                                                     </div>
                                                     <div className="tier-benefits">
-                                                        <NitroStoreSuperReactionIcon className="tier-card-1-icons" />
-                                                        <div className="tier-benefits-text">5 Super Reactions per week</div>
+                                                        <ComputerStreamingIcon className="tier-card-1-icons" />
+                                                        <div className="tier-benefits-text">HD video streaming</div>
                                                     </div>
                                                     <div className="tier-benefits">
                                                         <GemBoostIcon className="tier-card-1-icons" />
@@ -165,12 +165,12 @@ const NitroSelectionModal = (props) => {
                                                             <div className="tier-benefits-text">Custom emoji anywhere</div>
                                                         </div>
                                                         <div className="tier-benefits">
-                                                            <StrifeNitroBadgeIcon className="tier-card-1-icons" height={24} width={24} />
-                                                            <div className="tier-benefits-text">Special N!TR0 badge on your profile</div>
+                                                            <NitroStoreSuperReactionIcon className="tier-card-1-icons" />
+                                                            <div className="tier-benefits-text">Unlimited Super Reactions</div>
                                                         </div>
                                                         <div className="tier-benefits">
-                                                            <NitroStoreSuperReactionIcon className="tier-card-1-icons" />
-                                                            <div className="tier-benefits-text">2 Super Reactions per week</div>
+                                                            <StrifeNitroBadgeIcon className="tier-card-1-icons" height={24} width={24} />
+                                                            <div className="tier-benefits-text">Special N!TR0 badge on your profile</div>
                                                         </div>
                                                     </div>
                                                 </div>
