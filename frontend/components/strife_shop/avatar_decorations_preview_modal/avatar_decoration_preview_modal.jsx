@@ -625,7 +625,7 @@ const AvatarDecorationPreviewModal = (props) => {
                                                         onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
                                                         <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                             <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
-                                                            <span className="shopbuttonText">Unlock Shop with N!TR0</span>
+                                                            <span className="shopbuttonText">Unlock Shop with Nitro</span>
                                                             <div className="shiny-button-container">
                                                                 <div className="shiny-button-flex">
                                                                     <div className="shiny-button-inner"></div>
