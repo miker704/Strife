@@ -331,5 +331,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Mounted Profile Effect Preview Modal to each profile effect card to be opened on card click in the shop page.
     - Completed Profile effect preview modal.
     - Reworked to hover effect for Shatter profile effect card in the shop page to be more accurate.
+    - Reworked to hover effect for Shuriken profile effect card in the shop page to be more accurate.
+
 
 
