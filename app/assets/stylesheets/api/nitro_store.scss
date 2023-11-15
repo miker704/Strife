@@ -22,7 +22,7 @@
 }
 
 .nitro-store-tier-0 {
-  padding: 0px 32px;
+  // padding: 0px 32px; // remove for the current update to the nitro store
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -462,10 +462,11 @@
 }
 
 .nitro-perks-container {
-  margin-bottom: 86px;
   width: 100%;
+  position: relative;
   max-width: 1066px;
   margin: 0 auto;
+  margin-bottom: 86px;
 }
 
 .nitro-perks-container-h2 {
@@ -512,6 +513,11 @@
   margin: auto 0;
   content: image_url("bigPerk1.svg");
 }
+.bigToSmallNitroPerkCard-img-1 {
+  width: 210px;
+  content: image_url("bigPerk1.svg");
+}
+
 .bigNitroPerkCard-img-2 {
   max-width: 100%;
   margin: auto 0;
@@ -522,9 +528,17 @@
   margin: auto 0;
   content: image_url("bigPerk3.svg");
 }
+.bigToSmallNitroPerkCard-img-3 {
+  width: 175px;
+  content: image_url("bigPerk3.svg");
+}
 .bigNitroPerkCard-img-4 {
   max-width: 100%;
   margin: auto 0;
+  content: image_url("bigPerk4.svg");
+}
+.bigToSmallNitroPerkCard-img-4 {
+  width: 220px;
   content: image_url("bigPerk4.svg");
 }
 
@@ -535,6 +549,16 @@
   justify-items: center;
   margin-bottom: 32px;
 }
+
+.smallNitroPerkCardContainerLVL2 {
+  display: grid;
+  grid-gap: 16px;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  justify-items: center;
+  margin-bottom: 32px;
+}
+
 .smallNitroPerkCard {
   position: relative;
   background-color: var(--background-secondary-alt);
@@ -612,6 +636,18 @@
 .smallNitroPerkCard-img-8 {
   width: 222px;
   content: image_url("smallPerk8.svg");
+}
+
+.smallNitroPerkCard-img-9 {
+  content: image_url("customAppIcons.svg");
+}
+.smallNitroPerkCard-img-10 {
+  width: 222px;
+  content: image_url("videoBGIcons.svg");
+}
+
+.smallNitroPerkCard-img-11 {
+  content: image_url("purpleNitroStoreNitroBadge.svg");
 }
 
 .smallNitroPerkCard-anchor {
@@ -1126,7 +1162,6 @@
   text-rendering: optimizeLegibility;
 }
 
-
 .nitro-snack-bar-button-size {
   border-radius: var(--custom-button-button-md-height);
   height: var(--custom-button-button-md-height);
@@ -1211,4 +1246,373 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
+}
+
+.nitro-whats-new-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  margin-bottom: 64px;
+  background-image: var(
+    --custom-premium-colors-premium-gradient-tier-2-transparent
+  );
+  border-radius: var(--radius-lg);
+}
+
+.nitro-whats-new-section-row {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc(100% - 32px);
+  max-width: 1066px;
+}
+.nitro-whats-new-section-row-h2 {
+  margin: 0 24px 16px;
+  text-align: center;
+  font-family: var(--global-font);
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 800;
+}
+.nitro-whats-new-section-row-subtitle {
+  max-width: 100%;
+  text-align: center;
+  margin: 0 24px 24px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  font-family: var(--global-font);
+}
+.nitro-whats-new-section-card-container {
+  display: grid;
+  grid-gap: 16px;
+  gap: 16px;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (min-width: 960px) {
+  .nitro-whats-new-section-card-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.noFlipCardContainer,
+.flipCardContainer {
+  display: flex;
+  width: 100%;
+  filter: saturate(1);
+  filter: saturate(var(--saturation-factor, 1));
+}
+
+.nsWNS-Card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 24px;
+  background-color: var(--background-secondary-alt);
+  border-radius: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.2s ease-in-out;
+}
+.noFlipCardContainer:hover .nsWNS-Card {
+  box-shadow: var(--elevation-medium);
+  transform: translateY(-8px);
+}
+.nsWNS-Card:hover .nsWNS-Card-description {
+  opacity: 1;
+}
+
+.nsWNS-Card:hover .nsWNS-Card-description button {
+  pointer-events: all;
+  bottom: 24px;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.nsWNS-Card-cover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+  border-radius: 20px;
+}
+.below-card-shader {
+  background-image: linear-gradient(
+    to bottom,
+    var(--primary-660-hsl-05) 0%,
+    rgba(0, 0, 0, 0) 60%
+  );
+  z-index: 1;
+}
+.above-card-shader {
+  background-color: var(--black-500-hsl-06);
+  z-index: 30;
+}
+
+.nsWNS-h2 {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  margin-bottom: 8px;
+  width: 100%;
+  white-space: pre-wrap;
+  background-color: var(--header-primary);
+  z-index: 10;
+  font-family: var(--global-font);
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 800;
+}
+.nsWNS-subtitle {
+  margin-bottom: 16px;
+  flex-grow: 1;
+  width: 100%;
+  z-index: 10;
+}
+.nsWNS-Card-small-text {
+  font-family: var(--global-font);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  color: var(--text-normal);
+}
+
+.nsWNS-Card-img-1 {
+  content: image_url("wumpusOpeningDoorWithKey.svg");
+  width: 100%;
+  z-index: 10;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.nsWNS-Card-img-2 {
+  content: image_url("specialMemberPricing.svg");
+  width: 100%;
+  z-index: 10;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.nsWNS-Card-img-3 {
+  content: image_url("mallow.svg");
+  width: 100%;
+  z-index: 10;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.nsWNS-Card-img-4 {
+  content: image_url("nitroStoreProfileCards.svg");
+  width: 100%;
+  z-index: 10;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.nsWNS-Card-img-5 {
+  content: image_url("purpleNitroThemeColorsIcon.svg");
+  width: 100%;
+  z-index: 10;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.nsWNS-Card-img-6 {
+  content: image_url("eveningGemAngel.svg");
+  width: 100%;
+  z-index: 10;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+}
+.nsWNS-Card:hover .nsWNS-Card-img-1,
+.nsWNS-Card:hover .nsWNS-Card-img-2,
+.nsWNS-Card:hover .nsWNS-Card-img-3,
+.nsWNS-Card:hover .nsWNS-Card-img-4,
+.nsWNS-Card:hover .nsWNS-Card-img-5,
+.nsWNS-Card:hover .nsWNS-Card-img-6 {
+  margin: -24px;
+  width: calc(100% + 48px);
+  border-radius: 20px;
+}
+
+.nsWNS-Card-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all.2s ease-in-out;
+  border-radius: 20px;
+  background-image: linear-gradient(
+    to bottom,
+    var(--background-secondary-alt) 50%,
+    var(--primary-660-hsl-05) 80%
+  );
+  z-index: 20;
+  font-family: var(--global-font);
+}
+
+.nsWNS-Card-description button {
+  // position: absolute;
+  // left: 24px;
+  // right: 24px;
+  // bottom: 24px;
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 8px;
+  opacity: 0.5;
+  transform: scale(0.75);
+  transition: all 0.2s ease-in-out;
+}
+
+.stretchedSparklesTop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translatey(-50%);
+}
+.stretchedSparklesBottom {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  transform: translatey(50%);
+}
+.brandShine_4button {
+  color: var(--brand-500-hsl-01) !important;
+}
+
+.nsWNS-Card-Buttons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  text-rendering: optimizeLegibility;
+  font-family: var(--global-font);
+}
+
+.nitro-item-shiny-button-blue {
+  cursor: pointer;
+  overflow: hidden;
+  color: var(--white-500);
+  background-color: var(--brand-experiment);
+  width: 100%;
+}
+
+.nitro-item-shiny-button-blue:hover {
+  background-color: var(--brand-experiment-560);
+}
+.nitro-item-shiny-button-blue:active {
+  background-color: var(--brand-experiment-600);
+}
+.nitro-shiny-button-container {
+  box-sizing: border-box;
+  left: -50%;
+  position: absolute;
+  top: -50%;
+  bottom: 0;
+  right: 0;
+
+  color: var(--white-500-hsl-01);
+  outline: 0;
+  pointer-events: none;
+}
+
+.nitro-item-shiny-button {
+  cursor: pointer;
+  overflow: hidden;
+  color: var(--white-500);
+  background-color: var(--button-positive-background);
+  width: 100%;
+}
+
+.nitro-item-shiny-button:hover {
+  background-color: var(--button-positive-background-hover);
+  .nitro-shiny-button-container {
+    -webkit-animation-delay: 0.75s;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-name: ShinyButtons;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-name: ShinyButtons;
+    animation-duration: 2s;
+    animation-delay: 0.75s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+}
+.nitro-item-shiny-button:active {
+  background-color: var(--button-positive-background-active);
+}
+
+.tier-card-button:hover {
+  .nitro-shiny-button-container {
+    -webkit-animation-delay: 0.75s;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-name: ShinyButtons;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-name: ShinyButtons;
+    animation-duration: 2s;
+    animation-delay: 0.75s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+}
+.nitro-snack-bar-bttn.white:hover {
+  .nitro-shiny-button-container {
+    -webkit-animation-duration: 2.5s;
+    -webkit-animation-name: ShinyButtons;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-name: ShinyButtons;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+.tier-card-button.look-outlined {
+  color: var(--white-500);
+  border-color: var(--white-500);
+  background: none;
+  border-width: 1px;
+  border-style: solid;
 }
