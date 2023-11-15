@@ -396,3 +396,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added shurikenEnd.png.
     - Added earthQuakeIntroInfinite.png.
     - Added shurikenIntroInfinite.png.
+    - Added shatterEnd.png.
+
