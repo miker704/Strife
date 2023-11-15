@@ -407,4 +407,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Mounted Avatar Decoration Preview Modal in shop page to open when clicking any avatar decoration card.
     - Completed Avatar Decoration Preview Modal.
     - Added edits to shop styles.
+    - Added massive changes and additions to styles for preview effect and avatar decoration preview modals.
 
