@@ -405,5 +405,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added vinesFullCycle.png.
     - Mounted Avatar Decoration Preview Modal in shop page to every preview button on every avatar decoration card.
     - Mounted Avatar Decoration Preview Modal in shop page to open when clicking any avatar decoration card.
-
-
+    - Completed Avatar Decoration Preview Modal.
