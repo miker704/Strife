@@ -394,3 +394,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Pancakes Avatar Decoration to Avatar Decoration preview modal.
     - Added styles for Pancakes Avatar Decoration to Avatar Decoration preview modal.
     - Added shurikenEnd.png.
+    - Added earthQuakeIntroInfinite.png.
