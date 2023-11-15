@@ -365,3 +365,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added styles for Defensive Shield Avatar Decoration to Avatar Decoration preview modal.
     - Added Skull Medallion Avatar Decoration to Avatar Decoration preview modal.
     - Added styles for Skull Medallion Avatar Decoration to Avatar Decoration preview modal.
+    - Added Treasure and Key Avatar Decoration to Avatar Decoration preview modal.
