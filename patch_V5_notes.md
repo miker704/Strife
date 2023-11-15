@@ -384,4 +384,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Toast Avatar Decoration to Avatar Decoration preview modal.
     - Added styles for Toast Avatar Decoration to Avatar Decoration preview modal.
     - Added Morning Coffee Avatar Decoration to Avatar Decoration preview modal.
+    - Added styles for Morning Coffee Avatar Decoration to Avatar Decoration preview modal.
 
