@@ -362,3 +362,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Glowing Runes Avatar Decoration to Avatar Decoration preview modal.
     - Added styles for Glowing Runes Avatar Decoration to Avatar Decoration preview modal.
     - Added Defensive Shield Avatar Decoration to Avatar Decoration preview modal.
+    - Added styles for Defensive Shield Avatar Decoration to Avatar Decoration preview modal.
