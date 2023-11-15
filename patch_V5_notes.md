@@ -337,6 +337,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Reworked to hover effect for Fall Foliage profile effect card in the shop page to be more accurate.
     - Added Graveyard Cat Avatar Decoration to Avatar Decoration preview modal.
     - Added styles for Graveyard Cat Avatar Decoration to Avatar Decoration preview modal.
+    - Added Ghosts Avatar Decoration to Avatar Decoration preview modal.
 
 
 
