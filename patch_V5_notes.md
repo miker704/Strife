@@ -333,6 +333,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Reworked to hover effect for Shatter profile effect card in the shop page to be more accurate.
     - Reworked to hover effect for Shuriken profile effect card in the shop page to be more accurate.
     - Reworked to hover effect for Sakura profile effect card in the shop page to be more accurate.
+    - Reworked to hover effect for Mystic Vines profile effect card in the shop page to be more accurate.
 
 
 
