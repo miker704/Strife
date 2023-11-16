@@ -436,3 +436,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Updated to nitro store container.
     - Finalized Update to nitro store.
     - Added 1 extra second to the load time to the loading screen.
+    - Added resize styles to shop page.
