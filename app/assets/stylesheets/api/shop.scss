@@ -2308,3 +2308,45 @@
   animation: none !important;
   content: none !important;
 }
+
+//@media styles
+
+@media (max-width: 1375px) {
+  .shop-hero-banner-large-Left-sparkle,
+  .shop-hero-banner-smallLeft-Sparkle {
+    display: none;
+  }
+}
+
+@media (max-width: 1075px) {
+  .shop-hero-banner-large-Top-sparkle {
+    right: 300px;
+  }
+  .shop-hero-banner-smallTop-Sparkle {
+    right: 280px;
+  }
+  .shop-hero-banner-hand {
+    right: 32px;
+  }
+  .shop-hero-banner-foreground {
+    right: 16px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .shop-hero-description-with-side-bar > * {
+    margin-left: 16px;
+  }
+}
+@media (max-width: 1075px) {
+  .shop-hero-description > * {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width: 975px) {
+  .spinkInterface {
+    height: 20px;
+    width: 20px;
+  }
+}
