@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 import { requestFriendships, removeFriendshipErrors, requestAllFriendships } from '../../../actions/friendship_actions';
 import { removeDmServerErrors } from '../../../actions/dm_server_actions';
 import FriendsHomePageContainer from './friends_home_page';
-import { reSyncCurrentUser } from '../../../actions/session_actions';
+import { reSyncCurrentUser, receiveStrifeB0t } from '../../../actions/session_actions';
 import { fetchDmServers } from '../../../actions/dm_server_actions';
 import { fetchServers } from '../../../actions/server_actions';
 import { selectFriendStatusOnline } from '../../../utils/selectors_api_util';
@@ -31,6 +31,7 @@ const mDTP = (dispatch) => {
         fetchUserServers: (currentUserId) => dispatch(fetchServers(currentUserId)),
         openModal: (modal) => dispatch(openModal(modal)),
         openModalWithProps: (modal_Props) => dispatch(openModalWithProps(modal_Props)),
+        receiveStrifeB0t: () => dispatch(receiveStrifeB0t()),
     };
 };
 
