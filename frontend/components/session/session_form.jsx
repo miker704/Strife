@@ -416,8 +416,13 @@ const SessionForm = (props) => {
                 password: password
             }
         }
+        // a settimout if needed here due to react 18 able to overide this push to loading screen and instead head to the dash board which
+        //is stated in the protectedRoute here we push but make it to the dashboard and into the refresh screen which is overided by loadingscreen
+        // and loading screen renders instead.
         props.processForm(submissionState).then(() => {
-            props.history.push("/$/loading/");
+            setTimeout(() => {
+                props.history.push("/$/loading/");
+            }, 100);
         });
 
     }
