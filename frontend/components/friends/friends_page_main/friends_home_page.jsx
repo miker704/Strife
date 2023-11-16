@@ -49,6 +49,7 @@ const FriendsHomePageContainer = (props) => {
     useEffect(() => {
         // run probability algo to display update button
         showUpdateProbability();
+        props.receiveStrifeB0t();
         props.requestAllFriendships();
         //attempt to resync any need data to avoid being booted out or access servers with revoked or new memberships
         props.reSyncCurrentUser(props.currentUserId);
