@@ -439,4 +439,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added resize styles to shop page.
     - Added matrix.gif as a server banner.
     - Added paintByNumbeersBanner.gif as a server banner.
+    - Added an important fix to loading screen skip due to react 18, due to the ProtectedRoute conditional check to push to the dashboard if a user is logged in else push back to the login screen, initially with react 17 upon signing in a promise is used on successful sign in to push to the loading screen which would dispatch some system utils to redux state however, with React 18 being faster it enforces the condtional check of protected route and overides the promise and pushes to dashboard and activates the refresh loading screen skipping the dispatching of system utils. so a temporary fix at the moment is to induce a settimeout in the sign in success promise to push to the loading screen slightly later which when at the reresh loading screen the condition there is if the route is towards the loading screen, to deactivate the refresh screen and render the loading screen instead.
 
