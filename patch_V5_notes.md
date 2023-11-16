@@ -435,3 +435,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old version of nitro store pre november to deprecated folder.
     - Updated to nitro store container.
     - Finalized Update to nitro store.
+    - Added 1 extra second to the load time to the loading screen.
