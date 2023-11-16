@@ -24,7 +24,7 @@ const LoadingScreen = (props) => {
                 else {
                     props.history.push("/$/channels/@me");
                 }
-            }, 5000);
+            }, 6000);
         }
     }, []);
 
