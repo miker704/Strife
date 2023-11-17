@@ -458,7 +458,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added regexIconB.png as a user avatar.
     - Added regexIconP.png as a user avatar.
     - Added zonTanAvatar.png as a user avatar.
-
+    - Added yagyuu_senran_kagura_avatar.jpg as a user avatar.
 
 
 
