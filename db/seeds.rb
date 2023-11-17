@@ -28,7 +28,7 @@ Mr_Wumpus = User.create!(
   online: true
 )
 Mr_Wumpus.photo.attach(io: File.open('app/assets/images/discord_Strife_logo.png'), filename: 'discord_Strife_logo.png')
-Mr_Wumpus.user_Banner.attach(io: File.open('app/assets/images/banners/user_banners/strifeLogobannerWumpus.PNG'), filename:'strifeLogobannerWumpus.PNG')
+Mr_Wumpus.user_Banner.attach(io: File.open('app/assets/images/strifeLogobannerWumpus.PNG'), filename:'strifeLogobannerWumpus.PNG')
 
 StrifeMainServer = Server.create!(
   server_owner_id: Mr_Wumpus.id,
