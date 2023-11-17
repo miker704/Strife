@@ -450,4 +450,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added doomCodeBackground.jpg as a server banner.
     - Added lineAlertBanner.jpg as a server banner.
     - Added htmlCodeBg.jpg as a server banner.
+    - Added faceMan.gif as a user banner.
+
 
