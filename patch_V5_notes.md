@@ -462,3 +462,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added yagyuu_senran_kagura_banner.jpg as a user banner.
     - Moved old seed file to deprecated folder.
     - Added more seeds to seed file.
+    - Added more links to the footer in the splash page including links to render and heroku deployments of $TR!F3 along with links to patch notes and changes for $TR!F3-v4 and a link to the current patch notes for the in progress build of $TR!F3-v5.
