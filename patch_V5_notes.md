@@ -446,4 +446,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Thumbnail_PaintByNumbers.jpg as a server invite splash icon.
     - Added codingBG.jpg as a server banner.
     - Added compCodeBG.jpg as a server banner.
+    - Added madlibsBanner.jpg as a server banner.
 
