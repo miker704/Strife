@@ -460,8 +460,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added zonTanAvatar.png as a user avatar.
     - Added yagyuu_senran_kagura_avatar.jpg as a user avatar.
     - Added yagyuu_senran_kagura_banner.jpg as a user banner.
-
-
-
-
-
+    - Add moved old seed file to deprecated folder.
