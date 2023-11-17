@@ -447,4 +447,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added codingBG.jpg as a server banner.
     - Added compCodeBG.jpg as a server banner.
     - Added madlibsBanner.jpg as a server banner.
+    - Added doomCodeBackground.jpg as a server banner.
 
