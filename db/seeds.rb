@@ -99,8 +99,8 @@ DefaultServer = Server.create!(
   server_name: 'Demo Server',
   public: true
 )
-DefaultServer.server_Icon.attach(io: File.open('app/assets/images/discord_Strife_logo.png'),
-                                    filename: 'discord_Strife_logo.png')
+DefaultServer.server_Icon.attach(io: File.open('app/assets/images/walking.gif'),
+                                    filename: 'walking.gif')
 DefaultServer.server_banner.attach(io: File.open('app/assets/images/banners/server_banners/moving-blue-flames.gif'),
                                     filename: 'moving-blue-flames.gif')                       
 # DefaultServer.invite_splash.attach(io: File.open('app/assets/images/banners/server_banners/moving-blue-flames.gif'),
