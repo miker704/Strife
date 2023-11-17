@@ -453,6 +453,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added faceMan.gif as a user banner.
     - Added faceManAvatar.png as a user avatar.
     - Added AnimeGirlHeadPhones.jpg as a user avatar.
+    - Added purpleFlowers.jpg as a user avatar.
+
 
 
 
