@@ -28,15 +28,19 @@ Mr_Wumpus = User.create!(
   online: true
 )
 Mr_Wumpus.photo.attach(io: File.open('app/assets/images/discord_Strife_logo.png'), filename: 'discord_Strife_logo.png')
+Mr_Wumpus.user_Banner.attach(io: File.open('app/assets/images/banners/user_banners/strifeLogobannerWumpus.PNG'), filename:'strifeLogobannerWumpus.PNG')
 
 StrifeMainServer = Server.create!(
   server_owner_id: Mr_Wumpus.id,
   server_name: 'Welcome To $TR!F3',
   public: true
 )
-
-StrifeMainServer.server_Icon.attach(io: File.open('app/assets/images/discord_Strife_logo.png'),
-                                    filename: 'discord_Strife_logo.png')
+StrifeMainServer.server_Icon.attach(io: File.open('app/assets/images/wumpus_Strife_logo.png'),
+                                    filename: 'wumpus_Strife_logo.png')
+StrifeMainServer.server_banner.attach(io: File.open('app/assets/images/strifeLogobannerWumpus.PNG'),
+                                    filename: 'strifeLogobannerWumpus.PNG')                       
+StrifeMainServer.invite_splash.attach(io: File.open('app/assets/images/strifeLogobannerWumpus.PNG'),
+                                    filename: 'strifeLogobannerWumpus.PNG')                                                      
 ServerMembership.create(server_id: StrifeMainServer.id, user_id: Mr_Wumpus.id)
 
 Message.create(channel_id: StrifeMainServer.channels.first.id, author_id: Mr_Wumpus.id,
@@ -53,7 +57,10 @@ Message.create(channel_id: StrifeMainServer.channels.first.id, author_id: Mr_Wum
         Please note USING YOUR OWN ACCOUNT WILL NOT REVEAL PRIVATE SERVERS IN THE EXPLORE SERVERS PAGE!
         You will have to attain the invite code normally, however the join process will still be the same.
         Welcome to $TR!F3 Hope You Enjoy It - R3J3XT!0N (Michael Ramoutar) Creator of $TR!F3.')
-
+Message.create(channel_id: StrifeMainServer.channels.first.id, author_id: Mr_Wumpus.id,
+          body: 'Please note that all media assets in this app are property of Discord, other Artists, and myself.')
+Message.create(channel_id: StrifeMainServer.channels.first.id, author_id: Mr_Wumpus.id,
+            body: 'Please note that this app aims to be almost up to date with the initial facing features of Discord.')          
 # demo user 1
 Demouser1 = User.create!(
   username: 'DemoUser1',
@@ -72,7 +79,8 @@ Demouser2 = User.create!(
   birthday: Date.new(1997, 0o3, 10),
   phone_number: '+17185557890'
 )
-
+Demouser2.photo.attach(io: File.open('app/assets/images/strife_spider.png'), filename: 'strife_spider.png')
+Demouser2.user_Banner.attach(io: File.open('app/assets/images/banners/user_banners/purpleElectricStorm.gif'), filename:'purpleElectricStorm.gif')
 Stacy = User.create!(
   username: 'Stacy',
   email: 'Demo56@strife.com',
@@ -81,12 +89,19 @@ Stacy = User.create!(
   phone_number: '+17185557891',
   online: true
 )
-
+Stacy.photo.attach(io: File.open('app/assets/images/strife_spider_quad.png'), filename: 'strife_spider_quad.png')
+Stacy.user_Banner.attach(io: File.open('app/assets/images/banners/user_banners/animebunny.jpg'), filename:'animebunny.jpg')
 DefaultServer = Server.create!(
   server_owner_id: Demouser1.id,
   server_name: 'Demo Server',
   public: true
 )
+DefaultServer.server_Icon.attach(io: File.open('app/assets/images/discord_Strife_logo.png'),
+                                    filename: 'discord_Strife_logo.png')
+DefaultServer.server_banner.attach(io: File.open('app/assets/images/banners/server_banners/moving-blue-flames.gif'),
+                                    filename: 'moving-blue-flames.gif')                       
+DefaultServer.invite_splash.attach(io: File.open('app/assets/images/banners/server_banners/moving-blue-flames.gif'),
+                                    filename: 'moving-blue-flames.gif')      
 # use channels.first to create message in server general channel
 Message.create(channel_id: DefaultServer.channels.first.id, author_id: Mr_Wumpus.id,
                body: 'Hello There Vistor Welcome! You can invite your friends to your Server and start chatting, you can also create or delete channels if you wish!')
@@ -121,7 +136,7 @@ Message.create(channel_id: DemoChannel.id, author_id: Mr_Wumpus.id, body: 'Click
 Spencer = User.create(
   email: 'Iascone@aa.com',
   username: 'Iascone',
-  password: 'great TA',
+  password: 'greatTA4aa',
   birthday: Date.new(1990, 0o3, 10),
   phone_number: '+17185557892',
   online: true
@@ -129,12 +144,13 @@ Spencer = User.create(
 
 Ayce = User.create(
   email: 'ayce@aa.com',
-  username: 'Ayce machine',
+  username: 'Ayce Machine',
   password: '12348hello',
   birthday: Date.new(1990, 0o3, 10),
   phone_number: '+17185557893'
 )
-
+Ayce.photo.attach(io: File.open('app/assets/images/AnimeGirlHeadPhones.jpg'), filename:'AnimeGirlHeadPhones.jpg')
+Ayce.user_Banner.attach(io: File.open('app/assets/images/banners/user_banners/flowers.jpg'), filename:'flowers.jpg')
 Jwong = User.create(
   email: 'jwong@hhl.com',
   username: 'Jwong',
@@ -151,12 +167,17 @@ KinKa = User.create!(
   phone_number: '+17185557897',
   online: true
 )
+KinKa.photo.attach(io: File.open('app/assets/images/faceManAvatar.png'), filename:'faceManAvatar.png')
+KinKa.user_Banner.attach(io: File.open('app/assets/images/banners/user_banners/faceMan.gif'), filename:'faceMan.gif')
 
 KinKaServer = Server.create!(
   server_owner_id: KinKa.id,
   server_name: 'Kin Ka Attendance',
   public: true
 )
+KinKaServer.server_Icon.attach(io: File.open('app/assets/images/appacc.png'), filename: 'appacc.png')
+KinKaServer.server_banner.attach(io: File.open('app/assets/images/banners/user_banners/dragonbanner.jpg'),
+                           filename: 'dragonbanner.jpg')        
 Message.create(channel_id: KinKaServer.channels.first.id, author_id: KinKa.id,
                body: 'Hi Welcome to Our Server This will be for attendance and our Circle Time visit KinKaCircle everyday @ 5:30pm for attendance and Circle Time discussion.')
 
@@ -165,6 +186,9 @@ AyceServer = Server.create!(
   server_name: 'Ayce Attendance',
   public: true
 )
+AyceServer.server_Icon.attach(io: File.open('app/assets/images/appacc.png'), filename: 'appacc.png')
+AyceServer.server_banner.attach(io: File.open('app/assets/images/banners/user_banners/archangel.jpg'),
+                           filename: 'archangel.jpg')        
 Message.create(channel_id: AyceServer.channels.first.id, author_id: Ayce.id,
                body: 'Hi Welcome to Our Server This will be for attendance and our Circle Time visit AyceCircle everyday @ 5:30pm for attendance and Circle Time discussion.')
 
@@ -291,10 +315,21 @@ MichaelR = User.create!(
   phone_number: '+17185520000',
   online: true
 )
+MichaelR.photo.attach(io: File.open('app/assets/images/regexIconb.png'), filename: 'regexIconb.png')
+MichaelR.user_Banner.attach(io: File.open('app/assets/images/banners/user_banners/yagyuu_senran_kagura_banner.jpg'), filename:'yagyuu_senran_kagura_banner.jpg')
+
 KrystalR = User.create!(username: 'KrystalR', email: 'KrystalR@strife.com', password: 'Qwerty1234',
                         birthday: Date.new(1997, 8, 10), phone_number: '+17185520001', online: true)
+KrystalR.photo.attach(io: File.open('app/assets/images/yagyuu_senran_kagura_avatar.jpg'), filename: 'yagyuu_senran_kagura_avatar.jpg')
+KrystalR.user_Banner.attach(io: File.open('app/assets/images/banners/user_banners/yagyuu_senran_kagura_banner.jpg'), filename:'yagyuu_senran_kagura_banner.jpg')
+
+
 Vivian = User.create!(username: 'Vivian', email: 'vivianC@strife.com', password: 'Qwerty1234',
                       birthday: Date.new(1990, 0o3, 10), phone_number: '+17185520002', online: true)
+Vivian.photo.attach(io: File.open('app/assets/images/zoneTanAvatar.png'), filename: 'zoneTanAvatar.png')
+Vivian.user_Banner.attach(io: File.open('app/assets/images/banners/user_banners/zonetandesktop.gif'), filename:'zonetandesktop.gif')
+
+
 MikeC = User.create!(username: 'MichaelC', email: 'MikeC@strife.com', password: 'Qwerty1234',
                      birthday: Date.new(1990, 0o3, 10), phone_number: '+17185520003')
 MikeH = User.create!(username: 'MichaelH', email: 'MikeH@strife.com', password: 'Qwerty1234',
@@ -319,6 +354,8 @@ Leo = User.create!(username: 'Leo', email: 'LeoC@strife.com', password: 'Qwerty1
                    phone_number: '+17185520013', online: true)
 Karen = User.create!(username: 'Karen', email: 'KarenP@strife.com', password: 'Qwerty1234',
                      birthday: Date.new(1990, 0o3, 10), phone_number: '+17185520014')
+Karen.photo.attach(io: File.open('app/assets/images/banners/user_banners/sunflowers.jpg'), filename: 'sunflowers.jpg')
+Karen.user_Banner.attach(io: File.open('app/assets/images/banners/user_banners/shooting.gif'), filename:'shooting.gif')                     
 Gabriel = User.create!(username: 'Gabriel', email: 'GabrielG@strife.com', password: 'Qwerty1234',
                        birthday: Date.new(1990, 0o3, 10), phone_number: '+17185520015', online: true)
 David_allen = User.create!(username: 'David-allen', email: 'David-allen@strife.com', password: 'Qwerty1234',
@@ -511,7 +548,8 @@ Appaco = Server.create!(
   public: true
 )
 Appaco.server_Icon.attach(io: File.open('app/assets/images/appacc.png'), filename: 'appacc.png')
-
+Appaco.server_banner.attach(io: File.open('app/assets/images/banners/server_banners/codingBg.jpg'),
+                           filename: 'codingBg.jpg')                                                        
 ServerMembership.create(server_id: Appaco.id, user_id: KinKa.id)
 ServerMembership.create(server_id: Appaco.id, user_id: Ayce.id)
 ServerMembership.create(server_id: Appaco.id, user_id: Jwong.id)
@@ -615,7 +653,8 @@ AppacStrife = Server.create!(
   public: true
 )
 AppacStrife.server_Icon.attach(io: File.open('app/assets/images/Appacademylogo.png'), filename: 'Appacademylogo.png')
-
+AppacStrife.server_banner.attach(io: File.open('app/assets/images/banners/server_banners/htmlCodeBg.jpg'),
+                           filename: 'htmlCodeBg.jpg')                       
 ServerMembership.create(server_id: AppacStrife.id, user_id: MichaelR.id)
 ServerMembership.create(server_id: AppacStrife.id, user_id: KrystalR.id)
 ServerMembership.create(server_id: AppacStrife.id, user_id: Vivian.id)
@@ -666,6 +705,11 @@ Server2 = Server.create!(
   server_name: 'App/ac - TA Server',
   public: false
 )
+
+Server2.server_Icon.attach(io: File.open('app/assets/images/appacc.png'), filename: 'appacc.png')
+Server2.server_banner.attach(io: File.open('app/assets/images/banners/server_banners/compCodeBg.jpg'),
+                           filename: 'compCodeBg.jpg')                       
+
 ServerMembership.create(server_id: Server2.id, user_id: KinKa.id)
 ServerMembership.create(server_id: Server2.id, user_id: VictorH.id)
 ServerMembership.create(server_id: Server2.id, user_id: Ayce.id)
@@ -691,6 +735,9 @@ Server3 = Server.create!(
   public: false
 )
 Server3.server_Icon.attach(io: File.open('app/assets/images/botservericon.png'), filename: 'botservericon.png')
+Server3.server_banner.attach(io: File.open('app/assets/images/banners/server_banners/matrix.gif'),
+                           filename: 'matrix.gif')                       
+
 ServerMembership.create(server_id: Server3.id, user_id: Mr_Wumpus.id)
 ServerMembership.create(server_id: Server3.id, user_id: Demouser2.id)
 ServerMembership.create(server_id: Server3.id, user_id: Stacy.id)
@@ -717,6 +764,10 @@ Server4 = Server.create!(
   server_name: "Vivian's Server",
   public: false
 )
+Server4.server_Icon.attach(io: File.open('app/assets/images/purpleFlowers.jpg'),
+                           filename: 'purpleFlowers.jpg')
+Server4.server_banner.attach(io: File.open('app/assets/images/banners/user_banners/animebunny.jpg'),
+                           filename: 'animebunny.jpg')                       
 
 ServerMembership.create(server_id: Server4.id, user_id: Vivian.id)
 ServerMembership.create(server_id: Server4.id, user_id: Karen.id)
@@ -738,7 +789,11 @@ Server5 = Server.create!(
   server_name: "MichaelR's Server",
   public: false
 )
-
+Server5.server_Icon.attach(io: File.open('app/assets/images/regexIcon.png'),
+                           filename: 'regexIcon.png')
+Server5.server_banner.attach(io: File.open('app/assets/images/banners/server_banners/doomCodeBackground.jpg'),
+                           filename: 'doomCodeBackground.jpg')                       
+     
 ServerMembership.create(server_id: Server5.id, user_id: MichaelR.id)
 ServerMembership.create(server_id: Server5.id, user_id: KrystalR.id)
 ServerMembership.create(server_id: Server5.id, user_id: EricB.id)
@@ -766,6 +821,9 @@ Server6 = Server.create!(
 )
 Server6.server_Icon.attach(io: File.open('app/assets/images/paintbynumbersicon.png'),
                            filename: 'paintbynumbersicon.png')
+Server6.server_banner.attach(io: File.open('app/assets/images/banners/server_banners/paintByNumbersBanner.gif'),
+                           filename: 'paintByNumbersBanner.gif')                       
+
 ServerMembership.create(server_id: Server6.id, user_id: Karen.id)
 ServerMembership.create(server_id: Server6.id, user_id: Gabriel.id)
 ServerMembership.create(server_id: Server6.id, user_id: MichaelR.id)
@@ -808,6 +866,8 @@ Server7 = Server.create!(
   public: false
 )
 Server7.server_Icon.attach(io: File.open('app/assets/images/linealerticon.png'), filename: 'linealerticon.png')
+Server7.server_banner.attach(io: File.open('app/assets/images/banners/server_banners/lineAlertBanner.jpg'), filename: 'lineAlertBanner.jpg')
+
 ServerMembership.create(server_id: Server7.id, user_id: Leo.id)
 ServerMembership.create(server_id: Server7.id, user_id: Vivian.id)
 ServerMembership.create(server_id: Server7.id, user_id: NikhilK.id)
@@ -839,6 +899,8 @@ Server8 = Server.create!(
   public: false
 )
 Server8.server_Icon.attach(io: File.open('app/assets/images/madlibsicon.png'), filename: 'madlibsicon.png')
+Server8.server_banner.attach(io: File.open('app/assets/images/banners/server_banners/madlibsBanner.jpg'), filename: 'madlibsBanner.jpg')
+
 ServerMembership.create(server_id: Server8.id, user_id: DuncanM.id)
 ServerMembership.create(server_id: Server8.id, user_id: MikeH.id)
 ServerMembership.create(server_id: Server8.id, user_id: NaranI.id)
@@ -859,6 +921,8 @@ Server9 = Server.create!(
   public: false
 )
 Server9.server_Icon.attach(io: File.open('app/assets/images/trexicon.png'), filename: 'trexicon.png')
+Server9.server_banner.attach(io: File.open('app/assets/images/banners/server_banners/dinadopt.jpg'), filename: 'dinadopt.jpg')
+
 ServerMembership.create(server_id: Server9.id, user_id: VeraH.id)
 ServerMembership.create(server_id: Server9.id, user_id: AlanN.id)
 ServerMembership.create(server_id: Server9.id, user_id: MikeC.id)
@@ -921,6 +985,7 @@ Server10 = Server.create!(
 )
 
 Server10.server_Icon.attach(io: File.open('app/assets/images/pickapeticon.png'), filename: 'pickapeticon.png')
+Server10.server_banner.attach(io: File.open('app/assets/images/banners/server_banners/pickapet.gif'), filename: 'pickapet.gif')
 
 ServerMembership.create(server_id: Server10.id, user_id: MadeleineP.id)
 ServerMembership.create(server_id: Server10.id, user_id: DavidZ.id)
@@ -975,6 +1040,7 @@ Server11 = Server.create!(
 )
 
 Server11.server_Icon.attach(io: File.open('app/assets/images/funIdeasicon.png'), filename: 'funIdeasicon.png')
+Server11.server_banner.attach(io: File.open('app/assets/images/banners/server_banners/funfinder.gif'), filename: 'funfinder.gif')
 
 ServerMembership.create(server_id: Server11.id, user_id: David_allen.id)
 ServerMembership.create(server_id: Server11.id, user_id: EricB.id)
