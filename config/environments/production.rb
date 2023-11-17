@@ -43,17 +43,17 @@ Rails.application.configure do
   config.active_storage.service = :amazon_prod
   config.time_zone = 'Eastern Time (US & Canada)'
   config.active_record.default_timezone = :local
-  config.action_cable.url = 'wss://strife-v1.herokuapp.com/cable'
-  config.web_socket_server_url = 'wss://strife-v1.herokuapp.com/cable'
-  config.action_cable.allowed_request_origins = ['http://strife-v1.herokuapp.com', 'https://strife-v1.herokuapp.com']
+  # config.action_cable.url = 'wss://strife-v1.herokuapp.com/cable'
+  # config.web_socket_server_url = 'wss://strife-v1.herokuapp.com/cable'
+  # config.action_cable.allowed_request_origins = ['http://strife-v1.herokuapp.com', 'https://strife-v1.herokuapp.com']
   
   # config.action_cable.url = 'wss://strife-v4.herokuapp.com/cable'
   # config.web_socket_server_url = 'wss://strife-v4.herokuapp.com/cable'
   # config.action_cable.allowed_request_origins = ['http://strife-v4.herokuapp.com', 'https://strife-v4.herokuapp.com']
 
-  # config.action_cable.url = 'wss://strife.onrender.com/cable'
-  # config.web_socket_server_url = 'wss://strife.onrender.com/cable'
-  # config.action_cable.allowed_request_origins = ['http://strife.onrender.com', 'https://strife.onrender.com']
+  config.action_cable.url = 'wss://strife.onrender.com/cable'
+  config.web_socket_server_url = 'wss://strife.onrender.com/cable'
+  config.action_cable.allowed_request_origins = ['http://strife.onrender.com', 'https://strife.onrender.com']
 
   
   # Mount Action Cable outside main process or domain.
