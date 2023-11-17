@@ -463,3 +463,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old seed file to deprecated folder.
     - Added more seeds to seed file.
     - Added more links to the footer in the splash page including links to render and heroku deployments of $TR!F3 along with links to patch notes and changes for $TR!F3-v4 and a link to the current patch notes for the in progress build of $TR!F3-v5.
+    - Reduced the amount of seed assets for render deployment due to the fact that render's free tier does not offer enough hardware capabilites to render DOM content past 15-20mbs. 
