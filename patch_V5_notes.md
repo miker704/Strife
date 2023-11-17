@@ -466,4 +466,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Reduced the amount of seed assets for render deployment due to the fact that render's free tier does not offer enough hardware capabilites to render DOM content past 15-20mbs.
     - Reduced the amount of seed assets for render deployment due to the fact that render's free tier does not offer enough hardware capabilites to render DOM content past 15-20mbs.
     - Added walking.gif.
-  
+    - Added dedicated render_seed_file.rb in deprecated for use for render deployments only.
