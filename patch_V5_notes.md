@@ -468,3 +468,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added walking.gif.
     - Added dedicated render_seed_file.rb in deprecated for use for render deployments only.
     - Started to create a hook for createConsumer.
+    - Completed hook for createConsumer.
