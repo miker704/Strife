@@ -451,5 +451,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added lineAlertBanner.jpg as a server banner.
     - Added htmlCodeBg.jpg as a server banner.
     - Added faceMan.gif as a user banner.
+    - Added faceManAvatar.png as a user avatar.
+
 
 
