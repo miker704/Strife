@@ -6,7 +6,6 @@ import BlockedUserSnackBarContainer from "../blocked_user_snack_bar/blocked_user
 import DMMessagesContainer from "../dms_messages/dm_messages_container";
 import DmChatFirstMessageContainer from "../dm_first_message/dm_first_message_container";
 import LoadingDmChatRoom from "../loading_dm_chat_room/loading_dm_chat_room";
-import { useCreateConsumerCableURL } from "../../../utils/useCreateConsumer_api_util";
 
 class DmChatRoom extends React.Component {
     constructor (props) {
@@ -83,9 +82,7 @@ class DmChatRoom extends React.Component {
         //plug the cable
         // const cable = createConsumer('ws://localhost:3000/cable'); // /cable mounts to local host that rails server is running on 
         // const cable = createConsumer('wss://strife-v1.herokuapp.com/cable'); // /cable mounts to local host that rails server is running on 
-        // const cable = createConsumer('wss://strife.onrender.com/cable');
-        const cable = createConsumer(useCreateConsumerCableURL());
-
+        const cable = createConsumer('wss://strife.onrender.com/cable');
         this.subscription = cable.subscriptions.create(
             { channel: 'DmChannel', id: this.props.dmServerId },
             {
