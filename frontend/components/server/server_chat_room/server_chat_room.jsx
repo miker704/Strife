@@ -5,7 +5,6 @@ import { ChatAddFileIcon, ChatGIFIcon, ChatPresentIcon, ChatStickerIcon, SmileyF
 import { Tooltip } from "react-tooltip";
 import WelcomeTextChannelMessageFirstMessageContainer from "../../channels/welcome_text_channel_first_message/welcome_text_channel_first_message_container";
 import LoadingTextChannelChatRoomContainer from "../../channels/loading_text_channel_chat_room/loading_text_channel_chat_room_container";
-import { useCreateConsumerCableURL } from "../../../utils/useCreateConsumer_api_util";
 
 class ServerChatRoom extends React.Component {
     constructor (props) {
@@ -82,14 +81,10 @@ class ServerChatRoom extends React.Component {
 
     subscribe () {
 
-
         //plug the cable
         // const cable = createConsumer('ws://localhost:3000/cable'); // /cable mounts to local host that rails server is running on 
         // const cable = createConsumer('wss://strife-v1.herokuapp.com/cable'); // /cable mounts to local host that rails server is running on
-        // const cable = createConsumer('wss://strife.onrender.com/cable');
-        // Changes to stop the annoying process of swapping these constantly
-        const cable = createConsumer(useCreateConsumerCableURL());
-
+        const cable = createConsumer('wss://strife.onrender.com/cable');
         this.subscription = cable.subscriptions.create(
             { channel: 'StrifeServer', id: this.props.match.params.channelId },
             {
