@@ -7,6 +7,8 @@
 
 ## [LIVE LINK - Render.com](https://strife.onrender.com/)
 
+![dashboard_img](./readme_resources/dashboard.PNG)
+
 [STRIFE](https://strife-v1.herokuapp.com/) stylized as [$TR!F3](https://strife-v1.herokuapp.com/) is fully comprehensive, pixel perfect, functional clone of the popular VoIP platform [Discord](https://discord.com/) unlike other discord clones scattered around on the internet $TR!F3 is NOT a basic run of the mill clone that just features the basic UI layout of discord and live messaging between users. $TRIF3 is a substantial clone, possessing features not seen in others, it features the full UI layout and functionality of Discord. It also features Voice and Video calling between users two features that are not in other clones. $TR!F3 is fully asynchronous, being able to serve and render updates to users through web sockets, interactions between users such as sending invites, relationship interactions (sending/denying friend requests or blocking users), messaging, calling, updating a user or server's name, avatar, or banner, kicking or banning a user from chat all happen and reflect in real time for all online users NO BROWSER REFRESH REQUIRED.
 
 ### [Current Patch Notes for Active Build V4.0](./patch_V4_notes.md)
@@ -99,11 +101,11 @@ STRIFE "$TR!F3" as of Patch V4.0:
 * bundle exec rails db:setup
 * In a seperate console run npm run start
 * In the previous console run rails s or rails s -p {"DESIRED_PORT_NUMBER"}
-* Project is currently supported to be used in browsers Microsoft Edge and Google Chrome. Mozilla Firefox can be used but currently the styles need to be added to fully support it. Many styles are no longer supported in Mozilla browser and glitch out as a result.
 
 ## Disclaimer and Project Usage
 
 * If you are viewing project on render current on 11/18/2023 please note that the Render.com deployment of this project is too slow as renders free tier is unable to handle the current seed data. Please see the Heroku version for the best performance and all the features I have been able to place into $TR!F3. Please browse this app as you would discord as this is not only something that just looks like discord but functions just like it featuring modals and effects similar to the real thing when using it.
+* If browsing this app on either DemoUser1 or DemoUser2 accounts note that Demo and bot accounts are not allowed to change their user props. this is to prevent other browsers from modifying any credentials to these accounts to prevent any future user from browsing the app on these accounts.
 * Feel free to offer suggestions, fixes, or optimizations to the project, if there are any bugs please submit a pull request or raise an issue stating the bug, and also any potential fixes if any. If offering a potential fix please do your best to explain your findings, your method of addressing the issue, also please test and provide such test examples as well. It will make it easier for me to check and merge the change. (If your fix is passable I will merge the pull request/contribution, You'll also receive credit on the line of code and in any upcoming patch notes )
 * This projects visual assests are of the property and owned by Discord and other Artist.
 * You cannot use this project in anyway to monetize, sell or receive profit from it or any versions of it even those created by other users.
