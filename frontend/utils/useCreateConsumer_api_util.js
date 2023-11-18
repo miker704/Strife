@@ -9,11 +9,11 @@
 export const useCreateConsumerCableURL = () => {
     const LOCAL_HOST_CABLE_URL = 'ws://localhost:3000/cable';
     if (process.env.NODE_ENV !== "production") {
-        console.info(`%c CURRENTLY USING ${process.env.NODE_ENV}, CONNECTED TO LOCAL HOST CABLE URL : `, "color:#05dc28", LOCAL_HOST_CABLE_URL);
+        console.info(`%c CURRENTLY USING LOCAL , CONNECTED TO LOCAL HOST CABLE URL : `, "color:#05dc28");
         return LOCAL_HOST_CABLE_URL;
     }
     else {
-        console.log(`%c CURRENTLY USING ${process.env.NODE_ENV}, CONNECTED TO URL:`, "color:#FF0000", process.env.CABLE_URL);
+        console.log(`%c CURRENTLY USING PROD, CONNECTED TO URL:`, "color:#FF0000");
         return process.env.CABLE_URL;
     }
 }
