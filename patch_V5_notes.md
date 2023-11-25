@@ -469,3 +469,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added dedicated render_seed_file.rb in deprecated for use for render deployments only.
     - Started to create a hook for createConsumer.
     - Completed hook for createConsumer.
+    - Adjusted the space between tool tip and the create dm button in dm nav bar due to space taken up by the shop icon.
