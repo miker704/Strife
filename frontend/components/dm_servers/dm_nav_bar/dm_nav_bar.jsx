@@ -228,7 +228,7 @@ const DmNavBar = (props) => {
                             </div>
 
                             <Tooltip className="create-DM-tool-tip-style"
-                                id="create-dm-tool-tip" place="top"
+                                id="create-dm-tool-tip" place="top" 
                                 positionStrategy="fixed" closeOnResize={true} closeOnScroll={true}
                             />
                         </h2>
