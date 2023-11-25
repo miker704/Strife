@@ -470,3 +470,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Started to create a hook for createConsumer.
     - Completed hook for createConsumer.
     - Adjusted the space between tool tip and the create dm button in dm nav bar due to space taken up by the shop icon.
+    - Removed styles for the create dm tooltip top attribute  and set it to automatically be handled by react tool tip.
