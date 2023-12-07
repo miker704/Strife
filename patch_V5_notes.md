@@ -483,4 +483,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Styles for avatar decoration String Lights static version.
     - Added Styles for avatar decoration Fresh Pine static version.
     - Added Styles for avatar decoration snow globe static version.
+    - Added Styles for avatar decoration new year 2024 static version.
 
