@@ -486,3 +486,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Styles for avatar decoration new year 2024 static version.
     - Added freshPineAnimated.png.
     - Added newYear2024Animated.png.
+    - Added stringLightsAnimated.png.
