@@ -489,3 +489,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added stringLightsAnimated.png.
     - Added snowGlobeAnimated.png.
     - Added Styles for avatar decoration String Lights animated version.
+    - Added Styles for avatar decoration Fresh Pine animated version.
