@@ -487,3 +487,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added freshPineAnimated.png.
     - Added newYear2024Animated.png.
     - Added stringLightsAnimated.png.
+    - Added snowGlobeAnimated.png.
