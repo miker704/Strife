@@ -472,3 +472,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Adjusted the space between tool tip and the create dm button in dm nav bar due to space taken up by the shop icon.
     - Removed styles for the create dm tooltip top attribute  and set it to automatically be handled by react tool tip.    
     - Adjusted the top placement for the create dm modal due to the new shop icon being added.
+    - Started Shop Page update for the upcoming winter holidays.
