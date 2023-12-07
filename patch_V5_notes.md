@@ -477,3 +477,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added shopWinterWonderlandBannerLogo.png.
     - Added winter wonderland outline color variable to root styles.
     - Added freshPineStatic.png.
+    - Added newYear2024Static.png.
