@@ -480,6 +480,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added newYear2024Static.png.
     - Added snowGlobeStatic.png.
     - Added stringLightsStatic.png.
-    - Added Styles for avatar decoration String Lights.
-    - Added Styles for avatar decoration Fresh Pine.
+    - Added Styles for avatar decoration String Lights static version.
+    - Added Styles for avatar decoration Fresh Pine static version.
+    - Added Styles for avatar decoration snow globe static version.
 
