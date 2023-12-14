@@ -502,4 +502,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added winter wonderland avatar decoration new year 2024 to the shop page.
     - Added winter wonderland avatar decoration fresh pine to the shop page.
     - Added winter wonderland avatar decoration snow globe to the shop page.
+    - Added winter wonderland avatar decoration String Lights to the shop page.
+
 
