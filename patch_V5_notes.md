@@ -498,3 +498,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Fixed a visual bug in the shop page that as of 12/14/2023 has presented itself where for some odd reason the mask of svg for 
     avatar decorations would not allow them to be displayed due to the mask url being (#) logically this would not work to begin with but for some reason was working for over a month. The issue has been addressed and now works fine.
     - Fixed mask(#) bug in avatar decorations preview modal.
+    - Added winter wonderland avatar decorations to the shop page.
