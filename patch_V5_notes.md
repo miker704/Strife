@@ -492,3 +492,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Styles for avatar decoration Fresh Pine animated version.
     - Added Styles for avatar decoration Snow Globe animated version.
     - Added Styles for avatar decoration New Year 2024 animated version.
+    - Readjusted color gradient for winter wonderland decoration section in the shop.
