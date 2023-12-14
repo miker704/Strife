@@ -500,3 +500,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Fixed mask(#) bug in avatar decorations preview modal.
     - Added winter wonderland avatar decorations to the shop page.
     - Added winter wonderland avatar decoration new year 2024 to the shop page.
+    - Added winter wonderland avatar decoration fresh pine to the shop page.
