@@ -514,5 +514,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Profile effect item card component in order to dry up code concering item cards for profile effects in shop page.
     - Created ProfileEffectItemCard.jsx.
     - Created ProfileEffectItemCardContainer.js.
+    - Converted all Avatar Decoration item cards from the shop page into individual components by passing in their props into the AvatarDecorationItemCard component reduces current code for shop page from 4k + lines of code to less than 1500.
 
 
