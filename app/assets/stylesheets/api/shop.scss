@@ -674,6 +674,10 @@
   box-shadow: rgb(232, 177, 105) 0px 0px 25px 1px !important;
 }
 
+.shop-item-card.winter-wonderland-items:hover {
+  box-shadow: rgb(71, 126, 255) 0px 0px 25px 1px !important;
+}
+
 .shop-item-card-inner {
   position: relative;
   border-radius: 50%;
@@ -743,6 +747,20 @@
   font-weight: 600;
   display: inline-flex;
   align-items: center;
+
+  //newly added december 2023
+  white-space: pre-wrap;
+}
+
+.shop-item-price-tags-h2-xsmall {
+  font-family: var(--global-font);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  white-space: pre-wrap;
+  opacity: 0.7;
 }
 
 .shop-item-striked-price {
@@ -758,6 +776,14 @@
   margin-left: 8px;
   margin-right: 4px;
 }
+.shop-item-nitro-ball-icon-faded {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  margin-right: 2px;
+  opacity: 0.7;
+}
+
 .shop-item-price {
   font-weight: 600;
 }
@@ -799,6 +825,13 @@
   background-color: var(--button-positive-background-active);
 }
 
+.shop-item-purchase-button {
+  cursor: pointer;
+  overflow: hidden;
+  color: var(--white-500);
+  background-color: var(--brand-experiment);
+}
+
 .shop-item-preview-button {
   padding: 0 7px;
   background-color: var(--background-accent);
@@ -806,6 +839,14 @@
   color: var(--white-500);
   height: auto;
 }
+.shop-item-gift-button {
+  padding: 0 7px;
+  cursor: pointer;
+  height: auto;
+}
+
+.shop-item-purchase-button:hover,
+.shop-item-gift-button:hover,
 .shop-item-preview-button:hover {
   opacity: 0.8;
 }
@@ -1215,6 +1256,7 @@
     animation-iteration-count: 1;
     animation-timing-function: ease-in-out;
   }
+
 }
 
 @keyframes ghoulish-graffiti-cycle {
@@ -1590,6 +1632,40 @@
   }
 }
 
+@keyframes deck-the-halls-cycle {
+  0% {
+    content: image_url("deckTheHallsInfinite.png");
+  }
+  100% {
+    content: image_url("deckTheHallsLoop.png");
+  }
+}
+@-webkit-keyframes deck-the-halls-cycle {
+  0% {
+    content: image_url("deckTheHallsInfinite.png");
+  }
+  100% {
+    content: image_url("deckTheHallsLoop.png");
+  }
+}
+
+@keyframes snowman-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("snowManIntroInfinite.png");
+  }
+}
+@-webkit-keyframes snowman-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("snowManIntroInfinite.png");
+  }
+}
+
 .shop-banner-fall {
   background: image_url("shopFallBanner.png") 0% 0% / cover border-box
     border-box;
@@ -1625,6 +1701,19 @@
   max-height: 96px;
   content: image_url("shopFantasyBannerLogo.png");
 }
+
+.shop-banner-winter-wonderland {
+  background: image_url("shopWinterWonderlandBanner.png") 0% 0% / cover
+    border-box border-box;
+  outline-color: var(--shop-banner-winter-wonderland-outline-color);
+}
+
+.shop-banner-winter-wonderland-logo {
+  z-index: 1;
+  max-height: 96px;
+  content: image_url("shopWinterWonderlandBannerLogo.png");
+}
+
 .shop-banner-anime {
   background: image_url("shopAnimeBanner.png") 0% 0% / cover border-box
     border-box;
@@ -1906,6 +1995,48 @@
   grid-area: 1/1;
 }
 
+//winter wonderland
+.winter-wonderland-new-year {
+  content: image_url("newYear2024Static.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.winter-wonderland-fresh-pine {
+  content: image_url("freshPineStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.winter-wonderland-snow-globe {
+  content: image_url("snowGlobeStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.winter-wonderland-string-lights {
+  content: image_url("stringLightsStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
 //profile effects
 
 .shop-item-fall-foliage-static {
@@ -2162,6 +2293,97 @@
   content: image_url("plateThumbnail.png");
 }
 
+.shop-item-winter-wonderland-deck-the-halls {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("deckTheHallsThumbnail.png");
+}
+
+.shop-item-winter-wonderland-deck-the-halls-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-name: deck-the-halls-cycle;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: deck-the-halls-cycle;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in-out;
+}
+
+.shop-item-winter-wonderland-snowman {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("snowManThumbnail.png");
+}
+
+.shop-item-winter-wonderland-snowman-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("snowManPreLoop.png");
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: snowman-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: snowman-cycle;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+.shop-item-winter-wonderland-snowman-loop {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 5s;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-name: snowman-cycle2;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: snowman-cycle2;
+  animation-duration: 2s;
+  animation-delay: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes snowman-cycle2 {
+  0% {
+    content: image_url("snowManLoop.png");
+
+  }
+  100% {
+    content: image_url("snowManLoop.png");
+  }
+}
+@-webkit-keyframes snowman-cycle2 {
+  0% {
+    content: image_url("snowManLoop.png");
+
+  }
+  100% {
+    content: image_url("snowManLoop.png");
+  }
+}
+
 .shop-item-card:hover {
   .fall-leaves-image {
     content: image_url("fallLeavesAnimated.png");
@@ -2263,6 +2485,19 @@
   .halloween-jack-o-lantern {
     content: image_url("jackolaternAnimated.png");
   }
+
+  .winter-wonderland-new-year {
+    content: image_url("newYearAnimated.png");
+  }
+  .winter-wonderland-fresh-pine {
+    content: image_url("freshPineAnimated.png");
+  }
+  .winter-wonderland-snow-globe {
+    content: image_url("snowGlobeAnimated.png");
+  }
+  .winter-wonderland-string-lights {
+    content: image_url("stringLightsAnimated.png");
+  }
 }
 
 .halloween-jack-o-lantern::before,
@@ -2293,7 +2528,11 @@
 .anime-soul-leaving-body::before,
 .anime-sweat-drops::before,
 .anime-starry-eyed::before,
-.anime-in-love::before {
+.anime-in-love::before,
+.winter-wonderland-new-year::before,
+.winter-wonderland-fresh-pine::before,
+.winter-wonderland-snow-globe::before,
+.winter-wonderland-string-lights::before {
   content: "";
   display: block;
   width: 100%;
