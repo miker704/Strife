@@ -539,4 +539,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added boostedRelicLoop.png.
     - Added cyberSpaceThumbnail.png.
     - Added cyberSpaceIntro.png.
+    - Added cyberSpaceLoop.png.
 
