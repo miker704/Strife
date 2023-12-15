@@ -531,5 +531,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added snowManIntroInfinite.png.
     - Added new tool tip for avatar decoration and profile preview effect item cards for the gift button.
     - Added styles for new tool tip for avatar decoration and profile preview effect item cards for the gift button.
-
+    - Added abd changed styles for the shop.
 
