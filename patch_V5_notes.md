@@ -508,3 +508,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added winter wonderland avatar decoration fresh pine to the avatar decorations preview modal.
     - Added winter wonderland avatar decoration snow globe to the avatar decorations preview modal.
     - Added winter wonderland avatar decoration String Lights to the avatar decorations preview modal.
+    - Created AvatarDecoration item card component in order to dry up code concering item cards for avatar decorations in shop page.
+    
+
