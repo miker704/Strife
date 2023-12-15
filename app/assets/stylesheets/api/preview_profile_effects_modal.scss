@@ -184,6 +184,21 @@
   padding-top: 4px;
   max-height: 18px;
 }
+
+.ppe-winter-wonderland-title-banner {
+  content: image_url("shopWinterWonderlandBannerLogo.png");
+  padding-right: 6px;
+  padding-top: 4px;
+  max-height: 25px;
+}
+
+.ppe-disxcore-title-banner {
+  content: image_url("disxcoreSmall.png");
+  padding-right: 6px;
+  padding-top: 4px;
+  max-height: 18px;
+}
+
 .ppe-profile-effect-description-container {
   margin-bottom: 38px;
 }
@@ -318,6 +333,17 @@
 .ppe-collectible-preview-category-banner.ppe-breakfast-bg-banner {
   background-size: cover;
   background-image: image_url("shopBreakfastBanner.png");
+}
+.ppe-collectible-preview-category-banner.ppe-winter-wonderland-bg-banner {
+  background-size: cover;
+  background-image: image_url("shopWinterWonderlandBanner.png");
+  // right: 0;
+  // background-position: center;
+}
+
+.ppe-collectible-preview-category-banner.ppe-disxcore-bg-banner {
+  background-size: cover;
+  background-image: image_url("shopbackgroundbanner.png");
 }
 
 .ppepes-preview-container-inner {
@@ -1631,6 +1657,78 @@
   grid-area: 1/1;
 }
 
+.ppe-winter-wonderland-new-year-2024 {
+  content: image_url("newYearAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.ppe-winter-wonderland-fresh-pine {
+  content: image_url("freshPineAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-winter-wonderland-snow-globe {
+  content: image_url("snowGlobeAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-winter-wonderland-string-lights {
+  content: image_url("stringLightsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-ssxcore-greenSmokeScreen{
+  content: image_url("greenSmokeScreenAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-ssxcore-tech-hud{
+  content: image_url("techhudAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-ssxcore-shakingBlueHeadset{
+  content: image_url("shakingBlueHeadsetAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
 .ppe-halloween-jack-o-lantern::before,
 .ppe-halloween-ghosts::before,
 .ppe-halloween-minions::before,
@@ -1660,7 +1758,14 @@
 .ppe-anime-sweat-drops::before,
 .ppe-anime-starry-eyed::before,
 .ppe-anime-in-love::before,
-.ppem-AD-Chat-mock-msg-avatar::before {
+.ppem-AD-Chat-mock-msg-avatar::before,
+.ppe-winter-wonderland-new-year-2024::before,
+.ppe-winter-wonderland-fresh-pine::before,
+.ppe-winter-wonderland-snow-globe::before,
+.ppe-winter-wonderland-string-lights::before,
+.ppe-ssxcore-greenSmokeScreen::before,
+.ppe-ssxcore-tech-hud::before,
+.ppe-ssxcore-shakingBlueHeadset::before {
   content: "";
   display: block;
   width: 100%;
