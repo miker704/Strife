@@ -528,4 +528,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added snowManLoop.png.
     - Added snowManPreLoop.png.
     - Added snowManIntro.png.
+    - Added snowManIntroInfinite.png.
 
