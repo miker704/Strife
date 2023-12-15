@@ -678,6 +678,10 @@
   box-shadow: rgb(71, 126, 255) 0px 0px 25px 1px !important;
 }
 
+.shop-item-card.disxcore-items:hover {
+  box-shadow: rgb(116, 37, 101) 0px 0px 25px 1px !important;
+}
+
 .shop-item-card-inner {
   position: relative;
   border-radius: 50%;
@@ -750,6 +754,14 @@
 
   //newly added december 2023
   white-space: pre-wrap;
+}
+
+.shop-item-price-tags-h2-medium-semi-bold {
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  margin-top: 16px;
 }
 
 .shop-item-price-tags-h2-xsmall {
@@ -1256,7 +1268,6 @@
     animation-iteration-count: 1;
     animation-timing-function: ease-in-out;
   }
-
 }
 
 @keyframes ghoulish-graffiti-cycle {
@@ -1724,6 +1735,17 @@
   z-index: 1;
   max-height: 96px;
   content: image_url("shopAnimeBannerLogo.png");
+}
+
+.shop-banner-disxcore {
+  background: image_url("shopbackgroundbanner.png") 0% 0% / cover border-box
+    border-box;
+  outline-color: var(--shop-banner-disxcore-outline-color);
+}
+.shop-banner-disxcore-logo {
+  z-index: 1;
+  max-height: 96px;
+  content: image_url("disxcore.png");
 }
 
 //shop fall animations
@@ -2368,7 +2390,6 @@
 @keyframes snowman-cycle2 {
   0% {
     content: image_url("snowManLoop.png");
-
   }
   100% {
     content: image_url("snowManLoop.png");
@@ -2377,10 +2398,157 @@
 @-webkit-keyframes snowman-cycle2 {
   0% {
     content: image_url("snowManLoop.png");
-
   }
   100% {
     content: image_url("snowManLoop.png");
+  }
+}
+
+.shop-item-disxcore-boosted-relic {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("boostedRelicThumbnail.png");
+}
+.shop-item-disxcore-boosted-relic-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-duration: 5.5s;
+  -webkit-animation-name: boosted-relic-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: boosted-relic-cycle;
+  animation-duration: 5.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+.shop-item-disxcore-boosted-relic-loop {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 5.75s;
+  -webkit-animation-duration: 5.6s;
+  -webkit-animation-name: boosted-relic-cycle1;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: boosted-relic-cycle1;
+  animation-duration: 5.6s;
+  animation-delay: 5.75s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes boosted-relic-cycle {
+  0% {
+    content: image_url("boostedRelicIntro.png");
+  }
+  100% {
+    content: image_url("blankEffect.png");
+  }
+}
+@-webkit-keyframes boosted-relic-cycle {
+  0% {
+    content: image_url("boostedRelicIntro.png");
+  }
+  100% {
+    content: image_url("blankEffect.png");
+  }
+}
+
+@keyframes boosted-relic-cycle1 {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("boostedRelicLoop.png");
+  }
+}
+@-webkit-keyframes boosted-relic-cycle1 {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("boostedRelicLoop.png");
+  }
+}
+
+.shop-item-disxcore-cyberspace {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("cyberSpaceThumbnail.png");
+}
+.shop-item-disxcore-cyberspace-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: cyberspace-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: cyberspace-cycle;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+.shop-item-disxcore-cyberspace-loop {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 5s;
+  -webkit-animation-duration: 5.6s;
+  -webkit-animation-name: cyberspace-cycle1;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: cyberspace-cycle1;
+  animation-duration:5.6s;
+  animation-delay: 5s;
+  animation-iteration-count:infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes cyberspace-cycle {
+  0% {
+    content: image_url("cyberSpaceIntro.png");
+  }
+  100% {
+    content: image_url("blankEffect.png");
+  }
+}
+@-webkit-keyframes cyberspace-cycle {
+  0% {
+    content: image_url("cyberSpaceIntro.png");
+  }
+  100% {
+    content: image_url("blankEffect.png");
+  }
+}
+
+@keyframes cyberspace-cycle1 {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("cyberSpaceLoop.png");
+  }
+}
+@-webkit-keyframes cyberspace-cycle1 {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("cyberSpaceLoop.png");
   }
 }
 
@@ -2498,6 +2666,16 @@
   .winter-wonderland-string-lights {
     content: image_url("stringLightsAnimated.png");
   }
+
+  .ssxcore-greenSmokeScreen {
+    content: image_url("greenSmokeScreenAnimated.png");
+  }
+  .ssxcore-shakingBlueHeadset {
+    content: image_url("shakingBlueHeadsetAnimated.png");
+  }
+  .ssxcore-tech-hud {
+    content: image_url("techhudAnimated.png");
+  }
 }
 
 .halloween-jack-o-lantern::before,
@@ -2588,4 +2766,35 @@
     height: 20px;
     width: 20px;
   }
+}
+.shop-premium-wheel-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 0 4px;
+  background: var(--custom-premium-colors-premium-gradient-tier-2-diagonal);
+  z-index: 2;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border-radius: 8px;
+  box-sizing: border-box;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  color: var(--white-500);
+  text-align: center;
+  flex: 0 0 auto;
+  font-family: var(--global-font);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.shop-item-nitro-premium-wheel-icon {
+  color: var(--white-500);
+  width: 16px;
+  height: 16px;
 }
