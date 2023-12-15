@@ -544,5 +544,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Disxcore headset avatar decoration item card to shop page.
     - Added Disxcore smoke avatar decoration item card to shop page.
     - Added Disxcore futuristic ui avatar decoration item card to shop page.
+    - Added Disxcore boost relic profile effect item card to shop page.
 
 
