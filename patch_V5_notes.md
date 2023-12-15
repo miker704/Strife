@@ -521,3 +521,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added the Snowy Shenanigans profile effect item card to shop page.
     - Added styles for the Snowy Shenanigans profile effect item card.
     - Added deckTheHallsInfinite.png.
+    - Added deckTheHallsIntro.png.
