@@ -548,3 +548,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Disxcore cyberspace profile effect item card to shop page.
     - Added styles for all cyberspace profile effect item.
     - Added styles for all disxcore profile effect items and avatar decos in shop.
+    - Added more style vars to root style sheet.
