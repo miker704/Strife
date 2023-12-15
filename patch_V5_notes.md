@@ -532,4 +532,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new tool tip for avatar decoration and profile preview effect item cards for the gift button.
     - Added styles for new tool tip for avatar decoration and profile preview effect item cards for the gift button.
     - Added new and changed styles for the shop.
-
+    - Added Disxcore avatar decoration item cards to the the shop page.
