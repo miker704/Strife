@@ -536,4 +536,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Disxcore profile effect item cards to the the shop page.
     - Added boostedRelicThumbnail.png.
     - Added boostedRelicIntro.png.
+    - Added boostedRelicLoop.png.
 
