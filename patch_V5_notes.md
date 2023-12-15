@@ -516,5 +516,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created ProfileEffectItemCardContainer.js.
     - Converted all Avatar Decoration item cards from the shop page into individual components by passing in their props into the AvatarDecorationItemCard component reduces current code for shop page from 4k + lines of code to less than 1500.
     - Converted all Profile effect item cards from the shop page into individual components by passing in their props into the ProfileEffectItemCard component reduces current code for shop page from 4k + lines of code to less than 1500.
-    - Added the Deck the Halls profile effect to shop page.
+    - Added the Deck the Halls profile effect item card to shop page.
+    - Added styles for the Deck the Halls profile effect item card.
 
