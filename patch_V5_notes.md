@@ -524,4 +524,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added deckTheHallsIntro.png.
     - Added deckTheHallsLoop.png.
     - Added deckTheHallsThumbnail.png.
+    - Added snowManThumbnail.png.
 
