@@ -587,4 +587,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added styles for Monsters Doodlezard avatar decoration item card .
     - Added styles for Monsters Glop avatar decoration item card .
     - Added styles for Monsters Gawblehop avatar decoration item card .
+    - Added Monsters Beamchop avatar decoration item card to avatar decoration modal.
 
