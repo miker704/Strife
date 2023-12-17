@@ -598,3 +598,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added styles for Monsters banner and title.
     - Added Monsters banner and title to the shop page.
     - Added Monsters Profile effect for goozilla to the shop page.
+    - Added Monsters Profile effect for goozilla to Profile effect preview modal.
