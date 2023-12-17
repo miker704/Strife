@@ -554,3 +554,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added beamChopAnimated.png.
     - Added chewbertStatic.png.
     - Added chewbertAnimated.png.
+    - Added chuckStatic.png.
