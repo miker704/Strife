@@ -565,3 +565,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added stinkumsStatic.png.
     - Added stinkumsAnimated.png.
     - Added winkleStatic.png.
+    - Added winkleAnimated.png.
