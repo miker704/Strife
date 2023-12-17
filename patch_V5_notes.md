@@ -563,3 +563,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added glopStatic.png.
     - Added glopAnimated.png.
     - Added stinkumsStatic.png.
+    - Added stinkumsAnimated.png.
