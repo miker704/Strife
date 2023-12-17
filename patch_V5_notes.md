@@ -551,3 +551,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added more style vars to root style sheet.
     - Added monsterPopThumbnail.png.
     - Added beamChopStatic.png.
+    - Added beamChopAnimated.png.
