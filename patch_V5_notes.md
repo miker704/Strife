@@ -532,6 +532,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new tool tip for avatar decoration and profile preview effect item cards for the gift button.
     - Added styles for new tool tip for avatar decoration and profile preview effect item cards for the gift button.
     - Added new and changed styles for the shop.
+    - Added newly styled Disxcore banner and title to the the shop page.
     - Added Disxcore avatar decoration item cards to the the shop page.
     - Added Disxcore profile effect item cards to the the shop page.
     - Added boostedRelicThumbnail.png.
@@ -578,4 +579,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Monsters Doodlezard avatar decoration item card to the the shop page.
     - Added Monsters Glop avatar decoration item card to the the shop page.
     - Added Monsters Gawblehop avatar decoration item card to the the shop page.
+    - Added Monsters Beamchop avatar decoration item card to the the shop page.
 
