@@ -590,4 +590,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Monsters Beamchop avatar decoration item card to avatar decoration modal.
     - Added Monsters Stinkums avatar decoration item card to avatar decoration modal.
     - Added Monsters Chuck avatar decoration item card to avatar decoration modal.
+    - Added Monsters Winkle avatar decoration item card to avatar decoration modal.
 
