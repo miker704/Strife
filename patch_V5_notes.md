@@ -572,4 +572,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Monsters profile effect item cards to the the shop page.
     - Added Monsters Beamchop avatar decoration item card to the the shop page.
     - Added Monsters Stinkums avatar decoration item card to the the shop page.
+    - Added Monsters Chuck avatar decoration item card to the the shop page.
 
