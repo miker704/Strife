@@ -568,3 +568,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added winkleAnimated.png.
     - Added shopMonstersBanner.png.
     - Added shopMonstersBannerLogo.png.
+    - Added Monsters avatar decoration item cards to the the shop page.
