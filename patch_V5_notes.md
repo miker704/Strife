@@ -594,3 +594,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Monsters Chewbert avatar decoration item card to avatar decoration modal.
     - Added Monsters Doodlezard avatar decoration item card to avatar decoration modal.
     - Added Monsters Glop avatar decoration item card to avatar decoration modal.
+    - Added Monsters Gawblehop avatar decoration item card to avatar decoration modal.
