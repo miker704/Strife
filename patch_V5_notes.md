@@ -569,7 +569,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added winkleAnimated.png.
     - Added shopMonstersBanner.png.
     - Added shopMonstersBannerLogo.png.
-    - Added Monsters avatar decoration item cards to the the shop page.
+    - Added Monsters avatar decoration item cards to the shop page.
     - Added Monsters profile effect item cards to the the shop page.
     - Added Monsters Beamchop avatar decoration item card to the the shop page.
     - Added Monsters Stinkums avatar decoration item card to the the shop page.
@@ -595,3 +595,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Monsters Doodlezard avatar decoration item card to avatar decoration modal.
     - Added Monsters Glop avatar decoration item card to avatar decoration modal.
     - Added Monsters Gawblehop avatar decoration item card to avatar decoration modal.
+    - Added styles for Monsters banner and title to the shop page.
