@@ -576,4 +576,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Monsters Winkle avatar decoration item card to the the shop page.
     - Added Monsters Chewbert avatar decoration item card to the the shop page.
     - Added Monsters Doodlezard avatar decoration item card to the the shop page.
+    - Added Monsters Glop avatar decoration item card to the the shop page.
 
