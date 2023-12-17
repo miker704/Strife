@@ -605,5 +605,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added styles and animations for Monsters heartzilla Profile effect.
     - Added Monsters Monster Pop Profile effect to the shop page.
     - Added Monsters Monster Pop Profile effect to Profile effect preview modal.
+    - Added styles and animations for Monsters Monster Pop Profile effect.
 
 
