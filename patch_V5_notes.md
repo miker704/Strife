@@ -597,5 +597,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Monsters Gawblehop avatar decoration item card to avatar decoration modal.
     - Added styles for Monsters banner and title.
     - Added Monsters banner and title to the shop page.
-    - Added Monsters Profile effect for goozilla to the shop page.
-    - Added Monsters Profile effect for goozilla to Profile effect preview modal.
+    - Added Monsters goozilla Profile effect to the shop page.
+    - Added Monsters goozilla Profile effect to Profile effect preview modal.
+    - Added styles for Monsters goozilla Profile effect.
