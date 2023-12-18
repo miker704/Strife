@@ -625,6 +625,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added monsterPopLoop.png.
     - Added monsterPopIntroMonsterInfinite.png.
     - Added monsterPopIntroGlassInfinite.png.
+    - Added monsterPopGlassEnd.png.
 
 
 
