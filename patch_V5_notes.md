@@ -609,5 +609,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added goozillaThumbnail.png.
     - Added heartzillaThumbnail.png.
     - Added tool tip to user badge icon on preview upc for preview avatar decorations modal.
+    - Added tool tip to user badge icon on preview upc for preview profile effects modal.
 
 
