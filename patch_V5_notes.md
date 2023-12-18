@@ -612,6 +612,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added tool tip to user badge icon on preview upc for preview profile effects modal.
     - Added goozillaIntroClaw.png.
     - Added goozillaIntroClawInfinite.png.
-    - Added goozillaIntroClawSlime.png.
+    - Added goozillaIntroSlime.png.
+    - Added goozillaIntroSlimeInfinite.png.
 
 
