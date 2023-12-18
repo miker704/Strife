@@ -616,6 +616,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added goozillaIntroSlimeInfinite.png.
     - Added goozillaLoop.png.
     - Added goozillaReducedMotion.png.
+    - Added heartzillaEnd.png.
 
 
 
