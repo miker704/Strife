@@ -2262,6 +2262,25 @@ export const NitroSmilingFaceIcon = (props) => (
     </svg>
 )
 
+export const NitroSmilingFaceBlueIcon = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        fill="none"
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        className=""
+        {...props}
+    >
+        <path
+            fill="var(--premium-perk-blue)"
+            fillRule="evenodd"
+            d="M12 23a11 11 0 1 0 0-22 11 11 0 0 0 0 22ZM6.5 13a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm-9.8 1.17a1 1 0 0 1 1.39.27 3.5 3.5 0 0 0 5.82 0 1 1 0 0 1 1.66 1.12 5.5 5.5 0 0 1-9.14 0 1 1 0 0 1 .27-1.4Z"
+            clipRule="evenodd"
+        />
+    </svg>
+)
 
 
 export const NitroUpArrowIcon = (props) => (
@@ -2720,6 +2739,25 @@ export const ProfilePanelChevronIcon = (props) => (
 
 export const PersonShieldIcon = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={23}
+        height={23}
+        fill="none"
+        aria-hidden="true"
+        className=""
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <path
+            fill="var(--premium-perk-orange)"
+            fillRule="evenodd"
+            d="M3.47 5.18c.27-.4.64-.74 1.1-.96l6.09-3.05a3 3 0 0 1 2.68 0l6.1 3.05A2.83 2.83 0 0 1 21 6.75v3.5a14.17 14.17 0 0 1-8.42 12.5c-.37.16-.79.16-1.16 0A14.18 14.18 0 0 1 3 9.77V6.75c0-.57.17-1.11.47-1.57Zm2.95 10.3A12.18 12.18 0 0 0 12 20.82a12.18 12.18 0 0 0 5.58-5.32 9.49 9.49 0 0 0-5.11-1.5h-.94c-1.88 0-3.63.55-5.11 1.49ZM12 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
+            clipRule="evenodd"
+        />
+    </svg>
+);
+export const PersonShieldIconOld = (props) => (
+    <svg
         width={20}
         height={23}
         aria-hidden="true"
@@ -2736,7 +2774,31 @@ export const PersonShieldIcon = (props) => (
 );
 
 
+
 export const ScreenShareIcon = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        fill="none"
+        aria-hidden="true"
+        className=""
+        {...props}
+    >
+        <path
+            fill="var(--premium-perk-green)"
+            fillRule="evenodd"
+            d="M2 5a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5Zm16 3a1 1 0 0 0-.3-.7l-3-3a1 1 0 1 0-1.4 1.4L14.58 7H13a6 6 0 0 0-6 6 1 1 0 1 0 2 0 4 4 0 0 1 4-4h1.59l-1.3 1.3a1 1 0 0 0 1.42 1.4l3-3A1 1 0 0 0 18 8Z"
+            clipRule="evenodd"
+        />
+        <path
+            fill="var(--premium-perk-green)"
+            d="M13 19.5c0 .28.22.5.5.5H15a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2h1.5a.5.5 0 0 0 .5-.5v-2c0-.28.22-.5.5-.5h1c.28 0 .5.22.5.5v2Z"
+        />
+    </svg>
+);
+
+export const ScreenShareIconOld = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={24}
@@ -2754,7 +2816,6 @@ export const ScreenShareIcon = (props) => (
         />
     </svg>
 );
-
 export const XDIcon = (props) => (
     <svg
         width={24}
@@ -2772,6 +2833,29 @@ export const XDIcon = (props) => (
 );
 
 export const StickerIcon = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        fill="none"
+        aria-hidden="true"
+        className=""
+        {...props}
+    >
+        <path
+            fill="var(--premium-perk-purple)"
+            fillRule="evenodd"
+            d="M6 2h12a4 4 0 0 1 4 4v7.5a.5.5 0 0 1-.5.5H19a5 5 0 0 0-5 5v2.5a.5.5 0 0 1-.5.5H6a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4Zm.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM19 8.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm-9.91 2.94a1 1 0 0 0-1.66 1.12 5.5 5.5 0 0 0 9.14 0 1 1 0 0 0-1.66-1.12 3.5 3.5 0 0 1-5.82 0Z"
+            clipRule="evenodd"
+        />
+        <path
+            fill="var(--premium-perk-purple)"
+            d="M21.66 16c.03 0 .05.03.04.06a3 3 0 0 1-.58.82l-4.24 4.24a3 3 0 0 1-.82.58.04.04 0 0 1-.06-.04V19a3 3 0 0 1 3-3h2.66Z"
+        />
+    </svg>
+)
+
+export const StickerIconOld = (props) => (
     <svg
         width={24}
         height={24}
@@ -2795,8 +2879,6 @@ export const StickerIcon = (props) => (
         />
     </svg>
 )
-
-
 export const MinusIcon = (props) => (
     <svg
         width={24}
