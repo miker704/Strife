@@ -644,4 +644,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed old price container and created a new one in avatar decoration preview modal.
     - Removed old price container and created a new one in profile effect preview modal.
     - Passed is nitro exclusive props to profile effect preview modal.
+    - Passed is nitro exclusive props to avatar decoration preview modal.
+
 
