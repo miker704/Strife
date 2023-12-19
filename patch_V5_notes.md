@@ -629,4 +629,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added monsterPopIntroMonster.png.
     - Removed old starting shop banner and replaced it with a holiday version in shop page.
     - Created holiday version of initial shop banner for the shop page.
-
+    - Added shopHeaderBannerHolidayBackground.png.
