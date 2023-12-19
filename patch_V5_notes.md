@@ -632,3 +632,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added shopHeaderBannerHolidayBackground.png.
     - Added shopHeaderBannerHolidaysHand.png.
     - Added shopChrismasSnowingBgBanner.png.
+    - Added shopHeaderBannerEmptyShelf.png.
