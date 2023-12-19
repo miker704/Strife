@@ -657,6 +657,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added NitroSmilingFaceIcon.
     - Added new version of ComputerStreamingIcon, backed up old version under suffix old.
     - Added NitroStoreSuperReactionIcon2024.
+    - Added new version of MiniProfileCardIcon, backed up old version under suffix old.
 
 
     - Changed icons for nitro tier 1 and tier 2 including NitroHappyFaceIcon to NitroSmilingFaceIcon.
