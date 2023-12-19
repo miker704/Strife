@@ -663,3 +663,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed icons for nitro tier 1 and tier 2 including NitroHappyFaceIcon to NitroSmilingFaceIcon, NitroUpArrowIcon to NitroUploadArrowIcon, NitroStoreSuperReactionIcon to NitroStoreSuperReactionIcon2024 in nitro store page.
     - Added ChatPresentIcon2024.
     - Finalized new svg nitro icons in strifeSvg library.
+    - Changed icons for nitro tier 1 and tier 2 including NitroHappyFaceIcon to NitroSmilingFaceIcon, NitroUpArrowIcon to NitroUploadArrowIcon, NitroStoreSuperReactionIcon to NitroStoreSuperReactionIcon2024 in nitro selection modal.
