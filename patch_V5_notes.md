@@ -678,5 +678,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of PenEditIcon, backed up old version under suffix old all components using it has been changed to the new version.
     - Adjusted size for new penEditIcon in Channel Drop Down Modal.
     - Adjusted size for new penEditIcon in MegaUPC Modal.
-
+    - Adjusted nitro badge size for MegaUPC Modal.
 
