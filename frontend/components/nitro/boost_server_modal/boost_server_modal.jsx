@@ -1,5 +1,5 @@
 import React from "react";
-import { CloseXIcon, PersonShieldIcon, ScreenShareIcon, StickerIcon, XDIcon } from "../../front_end_svgs/Strife_svgs";
+import { CloseXIcon, NitroSmilingFaceBlueIcon, PersonShieldIcon, ScreenShareIcon, StickerIcon } from "../../front_end_svgs/Strife_svgs";
 import { useEffect, useRef, useState } from "react";
 import REACT_PORTAL from "../../../utils/ReactPortal_api_util";
 import BoostServerSelectPlanModalContainer from "../boost_select_plan_modal/boost_server_select_plan_modal_container";
@@ -119,7 +119,7 @@ const BoostServerModal = (props) => {
                                                                     <div className="sbm-perk-description">Screen share in 1080p/60fps</div>
                                                                 </div>
                                                                 <div className="sbm-perk-row">
-                                                                    <div className="sbm-perk-container"><XDIcon className="sbm-perk-icon" /></div>
+                                                                    <div className="sbm-perk-container"><NitroSmilingFaceBlueIcon className="sbm-perk-icon" /></div>
                                                                     <div className="sbm-perk-description">Powerful upgrades: larger file upload sizes, increased audio quality, and more!</div>
                                                                 </div>
                                                             </div>
