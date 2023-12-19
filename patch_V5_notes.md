@@ -653,6 +653,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved the old version of the avatar decoration preview modal to the deprecated folder. 
     - Moved the old version of the profile effect preview modal to the deprecated folder. 
     - Changed StrifeNitroBadgeIcon to a newer version this has changed the icon in every component that uses it.
+    - Added new version of StrifeNitroBadgeIcon, backed up old version under suffix old.
     - Changed nitro tier one card button back to filled state in nitro store.
     - Added NitroSmilingFaceIcon.
     - Added new version of ComputerStreamingIcon, backed up old version under suffix old.
