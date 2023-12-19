@@ -194,7 +194,7 @@ const ChannelDropDown = (props) => {
                                     <div className="channel-drop-item" onClick={() => { appPullerPullAndHoldAnimation(); props.openModal('userSettings'); props.setShowPopUp(false); }}>
                                         <div className="server-boost-label">Edit Server Profile</div>
                                         <div className="server-boost-icon-container">
-                                            <PenEditIcon className="icon-cd-esp" />
+                                            <PenEditIcon className="icon-cd-esp" height={16} width={16}/>
                                         </div>
                                     </div>
                                     <div className="channel-drop-item" onClick={() => setCheckMark2(!checkMark2)}>
