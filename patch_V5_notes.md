@@ -665,3 +665,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized new svg nitro icons in strifeSvg library.
     - Changed icons for nitro tier 1 and tier 2 including NitroHappyFaceIcon to NitroSmilingFaceIcon, NitroUpArrowIcon to NitroUploadArrowIcon, NitroStoreSuperReactionIcon to NitroStoreSuperReactionIcon2024 in nitro selection modal.
     - Made new changes to the nitro store including warping to the shop page when clicking on the visit the shop button on the special shop perks item card.
+    - Changed special shop perks item card button from green to blue.
