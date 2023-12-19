@@ -651,3 +651,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Re-Implemented the proper Avatar Decoration preview in the AvatarDecorationModal that masks the users avatar, online status and avatar decoration properly where the online status now appears over the avatar decoration. 
     - Moved the old version of the Strife Shop to the deprecated folder.
     - Moved the old version of the avatar decoration preview modal to the deprecated folder. 
+    - Moved the old version of the profile effect preview modal to the deprecated folder. 
