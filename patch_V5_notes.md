@@ -635,4 +635,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added shopHeaderBannerEmptyShelf.png.
     - Added buy decoration and gift button to avatar decoration preview modal for non nitro exclusive avatar decorations.
     - Removed old unlock with nitro button and added Unlock with nitro button for nitro exclusive avatar decorations in avatar decoration preview modal.
-   
+    - Added buy decoration and gift button to profile effect preview modal for non nitro exclusive profile effects.
