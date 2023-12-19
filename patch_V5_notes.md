@@ -630,3 +630,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed old starting shop banner and replaced it with a holiday version in shop page.
     - Created holiday version of initial shop banner for the shop page.
     - Added shopHeaderBannerHolidayBackground.png.
+    - Added shopHeaderBannerHolidaysHand.png.
