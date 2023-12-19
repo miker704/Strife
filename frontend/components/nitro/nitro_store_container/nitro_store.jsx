@@ -1,6 +1,11 @@
 import React from "react";
 import NitroHeaderNavBarContainer from "../nitro_header_nav_bar/nitro_header_nav_bar_container";
-import { AcceptFriendRequestIcon, BottomStretchedStarSparkleIcon, ChatPresentIcon, CloseXIcon, ComputerStreamingIcon, GemBoostIcon, MiniProfileCardIcon, NitroBasicBannerIcon, NitroHappyFaceIcon, NitroStoreSuperReactionIcon, NitroTier2LogoIcon, NitroUpArrowIcon, SparkleStarIcon, StrifeNitroBadgeIcon, StrifeNitroStoreBackground, TopStretchedStarSparkleIcon } from "../../front_end_svgs/Strife_svgs";
+import {
+    AcceptFriendRequestIcon, BottomStretchedStarSparkleIcon, ChatPresentIcon, CloseXIcon,
+    ComputerStreamingIcon, GemBoostIcon, MiniProfileCardIcon, NitroBasicBannerIcon,
+    NitroSmilingFaceIcon, NitroStoreSuperReactionIcon2024, NitroTier2LogoIcon, NitroUploadArrowIcon,
+    SparkleStarIcon, StrifeNitroBadgeIcon, StrifeNitroStoreBackground, TopStretchedStarSparkleIcon
+} from "../../front_end_svgs/Strife_svgs";
 import DMNavBarContainer from "../../dm_servers/dm_nav_bar/dm_nav_bar_container";
 import { useEffect, useState, useRef } from "react";
 import { appPullerPullAnimation, appPullerPullAndHoldAnimation } from "../../../utils/appPullerAnimation_api_util";
@@ -40,6 +45,17 @@ const NitroStore = (props) => {
             return { ...previousState, [field]: false };
         });
         setGift(false);
+    }
+
+    const warpToExploreToShop = (e) => {
+        e.preventDefault();
+        if (props.history.location.pathname !== `/$/$H0P/`) {
+            props.history.push(`/$/$H0P/`);
+        }
+        else {
+            return;
+        }
+
     }
 
     const renderNitroBasicModal = () => {
@@ -138,15 +154,15 @@ const NitroStore = (props) => {
                                                                     <span className="tier-price">$2.99</span> / month
                                                                 </h2>
                                                                 <div className="tier-benefits">
-                                                                    <NitroUpArrowIcon className="tier-card-1-icons" />
+                                                                    <NitroUploadArrowIcon className="tier-card-1-icons" />
                                                                     <div className="tier-benefits-text">50MB uploads</div>
                                                                 </div>
                                                                 <div className="tier-benefits">
-                                                                    <NitroHappyFaceIcon className="tier-card-1-icons" />
+                                                                    <NitroSmilingFaceIcon className="tier-card-1-icons" />
                                                                     <div className="tier-benefits-text">Custom emoji anywhere</div>
                                                                 </div>
                                                                 <div className="tier-benefits">
-                                                                    <NitroStoreSuperReactionIcon className="tier-card-1-icons" />
+                                                                    <NitroStoreSuperReactionIcon2024 className="tier-card-1-icons" />
                                                                     <div className="tier-benefits-text">Unlimited Super Reactions</div>
                                                                 </div>
                                                                 <div className="tier-benefits">
@@ -155,10 +171,10 @@ const NitroStore = (props) => {
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <button type="button" className="tier-card-button look-outlined" onClick={(e) => openModal("subToNitroBasic")}>
+                                                        <button type="button" className="tier-card-button" onClick={(e) => openModal("subToNitroBasic")}>
                                                             <div className="global-button-contents look-filled-button-contents tier-card-sub-button">
                                                                 <span className="nitro-heroscreen-sub-button-text">Subscribe</span>
-                                                                <div className="nitro-shiny-button-container">
+                                                                <div className="nitro-shiny-button-container brandShine_4button">
                                                                     <div className="shiny-button-flex">
                                                                         <div className="shiny-button-inner"></div>
                                                                     </div>
@@ -178,15 +194,15 @@ const NitroStore = (props) => {
                                                                 <span className="tier-price">$9.99</span> / month
                                                             </h2>
                                                             <div className="tier-benefits">
-                                                                <NitroUpArrowIcon className="tier-card-1-icons" />
+                                                                <NitroUploadArrowIcon className="tier-card-1-icons" />
                                                                 <div className="tier-benefits-text">500MB uploads</div>
                                                             </div>
                                                             <div className="tier-benefits">
-                                                                <NitroHappyFaceIcon className="tier-card-1-icons" />
+                                                                <NitroSmilingFaceIcon className="tier-card-1-icons" />
                                                                 <div className="tier-benefits-text">Custom emoji anywhere</div>
                                                             </div>
                                                             <div className="tier-benefits">
-                                                                <NitroStoreSuperReactionIcon className="tier-card-1-icons" />
+                                                                <NitroStoreSuperReactionIcon2024 className="tier-card-1-icons" />
                                                                 <div className="tier-benefits-text">Unlimited Super Reactions</div>
                                                             </div>
                                                             <div className="tier-benefits">
@@ -245,7 +261,7 @@ const NitroStore = (props) => {
                                                                     >
                                                                         <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                             <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
-                                                                            <span className="shopbuttonText">Subscribe to Nitro</span>
+                                                                            <span className="shopbuttonText">Get Nitro</span>
                                                                             <div className="nitro-shiny-button-container brandShine_4button">
                                                                                 <div className="shiny-button-flex">
                                                                                     <div className="shiny-button-inner"></div>
@@ -260,30 +276,29 @@ const NitroStore = (props) => {
                                                         <div className="noFlipCardContainer">
                                                             <div className="nsWNS-Card" role="button" tabIndex={0}>
                                                                 <div className="nsWNS-Card-cover below-card-shader"></div>
-                                                                <h2 className="nsWNS-h2">Special Member Pricing</h2>
-                                                                <div className="nsWNS-subtitle nsWNS-Card-small-text">Snag sweet discounts on any (or every!) item at the Shop.</div>
+                                                                <h2 className="nsWNS-h2">Special Shop Perks</h2>
+                                                                <div className="nsWNS-subtitle nsWNS-Card-small-text">Enjoy member pricing plus Nitro exclusive items in the Shop.</div>
                                                                 <img className="nsWNS-Card-img-2" alt=" " />
                                                                 <div className="nsWNS-Card-description">
-                                                                    <h2 className="nsWNS-h2">Special Member Pricing</h2>
+                                                                    <h2 className="nsWNS-h2">Special Shop Perks</h2>
                                                                     <div className="nsWNS-Card-small-text">
-                                                                        Snag sweet discounts on any (or every!) item at the Shop.
+                                                                        Enjoy member pricing plus Nitro exclusive items in the Shop.
                                                                         <br />
                                                                         <br />
                                                                         Join Nitro to take advantage of these exclusive prices.
                                                                     </div>
-                                                                    <button type="button" className="nsWNS-Card-Buttons nitro-item-shiny-button global-button-size-medium button-look-filled global-button-growth"
-                                                                        onClick={(e) => openModal("subToNitroPro")}
+
+
+                                                                    <button type="button" className="nsWNS-Card-Buttons nitro-item-shiny-button-blue global-button-size-medium button-look-filled global-button-growth"
+                                                                        onClick={(e) => warpToExploreToShop(e)}
                                                                     >
                                                                         <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
-                                                                            <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
-                                                                            <span className="shopbuttonText">Subscribe to Nitro</span>
-                                                                            <div className="nitro-shiny-button-container brandShine_4button">
-                                                                                <div className="shiny-button-flex">
-                                                                                    <div className="shiny-button-inner"></div>
-                                                                                </div>
-                                                                            </div>
+                                                                            <span className="shopbuttonText">Visit the Shop</span>
                                                                         </div>
                                                                     </button>
+
+
+
                                                                 </div>
                                                                 <div className="nsWNS-Card-cover above-card-shader"></div>
                                                             </div>
@@ -307,7 +322,7 @@ const NitroStore = (props) => {
                                                                     >
                                                                         <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
                                                                             <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
-                                                                            <span className="shopbuttonText">Subscribe to Nitro</span>
+                                                                            <span className="shopbuttonText">Get Nitro</span>
                                                                             <div className="nitro-shiny-button-container brandShine_4button">
                                                                                 <div className="shiny-button-flex">
                                                                                     <div className="shiny-button-inner"></div>
