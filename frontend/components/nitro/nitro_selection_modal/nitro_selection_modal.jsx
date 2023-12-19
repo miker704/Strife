@@ -1,5 +1,8 @@
 import React from "react";
-import { CloseXIcon, ComputerStreamingIcon, GemBoostIcon, MiniProfileCardIcon, NitroBasicBannerIcon, NitroHappyFaceIcon, NitroStoreSuperReactionIcon, NitroTier2LogoIcon, NitroUpArrowIcon, SparkleStarIcon, StrifeNitroBadgeIcon } from "../../front_end_svgs/Strife_svgs";
+import {
+    CloseXIcon, ComputerStreamingIcon, GemBoostIcon, MiniProfileCardIcon,
+    NitroBasicBannerIcon, NitroSmilingFaceIcon, NitroStoreSuperReactionIcon2024, NitroTier2LogoIcon, NitroUploadArrowIcon, StrifeNitroBadgeIcon
+} from "../../front_end_svgs/Strife_svgs";
 import { useEffect, useRef, useState } from "react";
 import REACT_PORTAL from "../../../utils/ReactPortal_api_util";
 import { Tooltip } from "react-tooltip";
@@ -112,15 +115,15 @@ const NitroSelectionModal = (props) => {
                                                         <span className="tier-price">$99.99</span> / year
                                                     </h2>
                                                     <div className="tier-benefits">
-                                                        <NitroUpArrowIcon className="tier-card-1-icons" />
+                                                        <NitroUploadArrowIcon className="tier-card-1-icons" />
                                                         <div className="tier-benefits-text">500MB uploads</div>
                                                     </div>
                                                     <div className="tier-benefits">
-                                                        <NitroHappyFaceIcon className="tier-card-1-icons" />
+                                                        <NitroSmilingFaceIcon className="tier-card-1-icons" />
                                                         <div className="tier-benefits-text">Custom emoji anywhere</div>
                                                     </div>
                                                     <div className="tier-benefits">
-                                                        <NitroStoreSuperReactionIcon className="tier-card-1-icons" />
+                                                        <NitroStoreSuperReactionIcon2024 className="tier-card-1-icons" />
                                                         <div className="tier-benefits-text">Unlimited Super Reactions</div>
                                                     </div>
                                                     <div className="tier-benefits">
@@ -157,15 +160,15 @@ const NitroSelectionModal = (props) => {
                                                             <span className="tier-price">$29.99</span> / year
                                                         </h2>
                                                         <div className="tier-benefits">
-                                                            <NitroUpArrowIcon className="tier-card-1-icons" />
+                                                            <NitroUploadArrowIcon className="tier-card-1-icons" />
                                                             <div className="tier-benefits-text">50MB uploads</div>
                                                         </div>
                                                         <div className="tier-benefits">
-                                                            <NitroHappyFaceIcon className="tier-card-1-icons" />
+                                                            <NitroSmilingFaceIcon className="tier-card-1-icons" />
                                                             <div className="tier-benefits-text">Custom emoji anywhere</div>
                                                         </div>
                                                         <div className="tier-benefits">
-                                                            <NitroStoreSuperReactionIcon className="tier-card-1-icons" />
+                                                            <NitroStoreSuperReactionIcon2024 className="tier-card-1-icons" />
                                                             <div className="tier-benefits-text">Unlimited Super Reactions</div>
                                                         </div>
                                                         <div className="tier-benefits">
