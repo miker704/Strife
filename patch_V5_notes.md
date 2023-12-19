@@ -667,3 +667,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Made new changes to the nitro store including warping to the shop page when clicking on the visit the shop button on the special shop perks item card.
     - Changed special shop perks item card button from green to blue.
     - Added NitroSmilingFaceBlueIcon.
+    - Added new version of PersonShieldIcon, backed up old version under suffix old.
