@@ -642,4 +642,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added tool tip for gift button in avatar decoration preview modal.
     - Added tool tip for gift button in profile effect preview modal.
     - Removed old price container and created a new one in avatar decoration preview modal.
+    - Removed old price container and created a new one in profile effect preview modal.
+
 
