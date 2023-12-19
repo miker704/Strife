@@ -1322,6 +1322,27 @@ export const SearchXIcon = (props) => (
 
 export const MoreOptionsIcon = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        fill="none"
+        aria-hidden="true"
+        className=""
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            fillRule="evenodd"
+            d="M10 4a2 2 0 1 0 4 0 2 2 0 0 0-4 0Zm2 10a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm0 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"
+            clipRule="evenodd"
+        />
+    </svg>
+)
+
+
+export const MoreOptionsIconOld = (props) => (
+    <svg
         className=""
         width={24}
         height={24}
@@ -1338,7 +1359,6 @@ export const MoreOptionsIcon = (props) => (
         </g>
     </svg>
 )
-
 
 export const CancelFriendRequestIcon = (props) => (
     <svg
