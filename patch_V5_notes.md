@@ -672,3 +672,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of StickerIcon, backed up old version under suffix old.
     - Updated icons in boost server modal.
     - Replaced XDIcon with NitroSmilingFaceBlueIcon in boost server modal.
+    - Added SubscribeToNitroBasic Modal to Strife shop page.
