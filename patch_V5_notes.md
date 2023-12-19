@@ -647,5 +647,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Passed is nitro exclusive props to avatar decoration preview modal.
     - Changed a few styles for avatar decoration preview modal.
     - Changed a few styles for profile effect preview modal.
-
+    - Fixed styles for chewbert where the static version was displaying the winkle decoration.
 
