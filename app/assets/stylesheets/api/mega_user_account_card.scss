@@ -261,6 +261,28 @@
   transform: translateZ(0);
 }
 
+.mupc-strife-nitro-badge {
+  box-sizing: border-box;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--white-500);
+  text-align: center;
+  flex: 0 0 auto;
+  border-radius: 10px;
+  padding: 0 6px;
+  font-family: var(--global-font);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background-color: var(--premium-upc-strife-nitro-badge);
+}
+
 .megaUpc-avatar-wrapper {
   position: absolute;
   top: -68px;
