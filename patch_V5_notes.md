@@ -646,4 +646,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Passed is nitro exclusive props to profile effect preview modal.
     - Passed is nitro exclusive props to avatar decoration preview modal.
     - Changed a few styles for avatar decoration preview modal.
+    - Changed a few styles for profile effect preview modal.
+
 
