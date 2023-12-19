@@ -1030,7 +1030,7 @@ export const OverFlowEllipsisIcon = (props) => (
 
 
 
-export const StrifeNitroBadgeIcon = (props) => (
+export const StrifeNitroBadgeIconOldVersion = (props) => (
     <svg
         width={16}
         height={16}
@@ -1044,6 +1044,30 @@ export const StrifeNitroBadgeIcon = (props) => (
             fill="currentColor"
             d="M2.99 9.358a.78.78 0 0 1-.782.766h-.426A.781.781 0 0 1 1 9.358c0-.418.355-.766.782-.766h.426a.78.78 0 0 1 .782.766Zm19.257-.21c1.847 3.832.142 8.43-3.909 10.24-3.908 1.742-8.598.07-10.374-3.761a7.294 7.294 0 0 1-.64-2.438H5.761a.781.781 0 0 1-.782-.766.78.78 0 0 1 .782-.766h2.274a.78.78 0 0 0 .782-.767.781.781 0 0 0-.782-.766H4.41a.781.781 0 0 1-.782-.766c0-.418.356-.766.782-.766h5.045a.781.781 0 0 0 .782-.767.78.78 0 0 0-.782-.766h-2.06c-.64 0-1.209-.487-1.209-1.184 0-.627.498-1.184 1.208-1.184h8.03c2.842.14 5.543 1.741 6.822 4.458Zm-8.98-.767c-2.248 1.011-3.233 3.616-2.201 5.819 1.032 2.202 3.69 3.168 5.937 2.157 2.247-1.012 3.232-3.617 2.2-5.82-1.032-2.202-3.69-3.168-5.937-2.156Zm3.58 1.464 1.42 2.369c.072.14.072.209 0 .348l-1.42 2.368c-.072.14-.214.14-.285.14h-2.771c-.142 0-.214-.07-.284-.14l-1.422-2.368c-.07-.14-.07-.209 0-.348l1.422-2.369c.07-.139.213-.139.284-.139h2.771c.142-.07.213 0 .284.14Z"
         />
+    </svg>
+)
+
+
+export const StrifeNitroBadgeIcon = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        fill="none"
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        role="img"
+        className=""
+        {...props}
+    >
+        <path fill="currentColor" d="M15 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+        <path
+            fill="currentColor"
+            fillRule="evenodd"
+            d="M7 4a1 1 0 0 0 0 2h3a1 1 0 1 1 0 2H5.5a1 1 0 0 0 0 2H8a1 1 0 1 1 0 2H6a1 1 0 1 0 0 2h1.25A8 8 0 1 0 15 4H7Zm8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
+            clipRule="evenodd"
+        />
+        <path fill="currentColor" d="M2.5 10a1 1 0 0 0 0-2H2a1 1 0 0 0 0 2h.5Z" />
     </svg>
 )
 
@@ -1723,6 +1747,30 @@ export const ChatPresentIcon = (props) => (
 );
 
 
+export const ChatPresentIcon2024 = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        fill="none"
+        viewBox="0 0 24 24"
+        className=""
+        aria-hidden="true"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            fillRule="evenodd"
+            d="M4 6a4 4 0 0 1 4-4h.09c1.8 0 3.39 1.18 3.91 2.9A4.09 4.09 0 0 1 15.91 2H16a4 4 0 0 1 3.46 6H20a2 2 0 0 1 2 2v1.5a.5.5 0 0 1-.5.5h-19a.5.5 0 0 1-.5-.5V10c0-1.1.9-2 2-2h.54A3.98 3.98 0 0 1 4 6Zm12 2a2 2 0 1 0 0-4h-.09c-.96 0-1.8.65-2.02 1.58L13.29 8H16Zm-5.89-2.42.6 2.42H8a2 2 0 1 1 0-4h.09c.96 0 1.8.65 2.02 1.58Z"
+            clipRule="evenodd"
+        />
+        <path
+            fill="currentColor"
+            d="M3 20c0 1.1.9 2 2 2h5.5a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5V20Zm10.5 2a.5.5 0 0 1-.5-.5v-7c0-.28.22-.5.5-.5h7c.28 0 .5.22.5.5V20a2 2 0 0 1-2 2h-5.5Z"
+        />
+    </svg>
+);
+
 export const ChatGIFIcon = (props) => (
     <svg
         width={24}
@@ -2148,6 +2196,35 @@ export const NitroStoreSuperReactionIcon = (props) => (
     </svg>
 )
 
+
+export const NitroStoreSuperReactionIcon2024 = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={18}
+        height={18}
+        fill="none"
+        aria-hidden="true"
+        className=""
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            fillRule="evenodd"
+            d="M15.4 1.53A11 11 0 0 0 1.63 15.68c1.4-1.2 3.8-.81 4.54 1.18l.26.7.7.27c2 .73 2.4 3.14 1.19 4.54A11 11 0 0 0 22.47 8.6a2.93 2.93 0 0 1-5.21-.57l-.34-.93a.05.05 0 0 0-.03-.03l-.93-.34a2.93 2.93 0 0 1-.56-5.2ZM6.5 11a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm9 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm-2.79.54c.27-.43.02-.95-.43-1.09l-4.06-1.23c-.45-.14-.94.15-.96.66a3.02 3.02 0 0 0 2.05 3.06c1.29.4 2.66-.21 3.4-1.4Z"
+            clipRule="evenodd"
+        />
+        <path
+            fill="currentColor"
+            d="M19.42 3.88c.24.22.48.46.7.7a4 4 0 0 0-.12.14c-.2-.27-.45-.51-.72-.72l.14-.12Z"
+        />
+        <path
+            fill="currentColor"
+            d="M19.09.63a.97.97 0 0 1 1.82 0l.34.93a2 2 0 0 0 1.19 1.19l.93.34a.97.97 0 0 1 0 1.82l-.93.34a2 2 0 0 0-1.19 1.19l-.34.93a.97.97 0 0 1-1.82 0l-.34-.93a2 2 0 0 0-1.19-1.19l-.93-.34a.97.97 0 0 1 0-1.82l.93-.34a2 2 0 0 0 1.19-1.19l.34-.93ZM2.7 17.55a.85.85 0 0 1 1.6 0l.26.71a2 2 0 0 0 1.18 1.18l.7.26a.85.85 0 0 1 0 1.6l-.7.26a2 2 0 0 0-1.18 1.18l-.26.7a.85.85 0 0 1-1.6 0l-.26-.7a2 2 0 0 0-1.18-1.18l-.7-.26a.85.85 0 0 1 0-1.6l.7-.26a2 2 0 0 0 1.18-1.18l.26-.7Z"
+        />
+    </svg>
+)
+
 export const NitroHappyFaceIcon = (props) => (
     <svg
         width={24}
@@ -2163,6 +2240,29 @@ export const NitroHappyFaceIcon = (props) => (
         />
     </svg>
 )
+
+
+export const NitroSmilingFaceIcon = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        fill="none"
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        className=""
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            fillRule="evenodd"
+            d="M12 23a11 11 0 1 0 0-22 11 11 0 0 0 0 22ZM6.5 13a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm-9.8 1.17a1 1 0 0 1 1.39.27 3.5 3.5 0 0 0 5.82 0 1 1 0 0 1 1.66 1.12 5.5 5.5 0 0 1-9.14 0 1 1 0 0 1 .27-1.4Z"
+            clipRule="evenodd"
+        />
+    </svg>
+)
+
+
 
 export const NitroUpArrowIcon = (props) => (
     <svg
@@ -2181,6 +2281,27 @@ export const NitroUpArrowIcon = (props) => (
         />
     </svg>
 )
+
+export const NitroUploadArrowIcon = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        fill="none"
+        aria-hidden="true"
+        className=""
+        viewBox="0 0 24 24"
+
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            d="M13 16V5.41l3.3 3.3a1 1 0 1 0 1.4-1.42l-5-5a1 1 0 0 0-1.4 0l-5 5a1 1 0 0 0 1.4 1.42L11 5.4V16a1 1 0 1 0 2 0ZM3 20a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2H3Z"
+        />
+    </svg>
+)
+
+
 
 
 export const NitroTier2LogoIcon = (props) => (
@@ -2203,6 +2324,30 @@ export const NitroTier2LogoIcon = (props) => (
 
 export const ComputerStreamingIcon = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        fill="none"
+        aria-hidden="true"
+        className=""
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            fillRule="evenodd"
+            d="M2 5a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5Zm16 3a1 1 0 0 0-.3-.7l-3-3a1 1 0 1 0-1.4 1.4L14.58 7H13a6 6 0 0 0-6 6 1 1 0 1 0 2 0 4 4 0 0 1 4-4h1.59l-1.3 1.3a1 1 0 0 0 1.42 1.4l3-3A1 1 0 0 0 18 8Z"
+            clipRule="evenodd"
+        />
+        <path
+            fill="currentColor"
+            d="M13 19.5c0 .28.22.5.5.5H15a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2h1.5a.5.5 0 0 0 .5-.5v-2c0-.28.22-.5.5-.5h1c.28 0 .5.22.5.5v2Z"
+        />
+    </svg>
+)
+
+export const ComputerStreamingIconOld = (props) => (
+    <svg
         width={24}
         height={24}
         aria-hidden="true"
@@ -2223,6 +2368,26 @@ export const ComputerStreamingIcon = (props) => (
 
 export const MiniProfileCardIcon = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={25}
+        height={25}
+        fill="none"
+        aria-hidden="true"
+        className=""
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            fillRule="evenodd"
+            d="M5 2a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3H5Zm10 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 9.83A5.83 5.83 0 0 1 11.83 12h.34A5.83 5.83 0 0 1 18 17.83c0 .65-.52 1.17-1.17 1.17h-.08a.52.52 0 0 1-.5-.4c-.22-.87-.54-1.69-.83-2.3-.1-.23-.42-.15-.42.1v2.1a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1-.5-.5v-2.1c0-.25-.31-.33-.42-.1-.3.61-.61 1.43-.83 2.3a.52.52 0 0 1-.5.4h-.08C6.52 19 6 18.48 6 17.83Z"
+            clipRule="evenodd"
+        />
+    </svg>
+)
+
+export const MiniProfileCardIconOld = (props) => (
+    <svg
         width={25}
         height={25}
         aria-hidden="true"
@@ -2241,7 +2406,6 @@ export const MiniProfileCardIcon = (props) => (
         </defs>
     </svg>
 )
-
 
 
 export const DownloadUpdateIcon = (props) => (
