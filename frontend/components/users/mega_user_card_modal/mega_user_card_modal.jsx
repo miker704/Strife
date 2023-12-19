@@ -152,7 +152,7 @@ const MegaUPCModal = (props) => {
     let pencilIcon = member.id === props.currentUser.id ? (
         <div className='megaUpc-pencil-container' data-tooltip-position-strategy='fixed' data-tooltip-id="suom-tool-tip"
             data-tooltip-content={`Edit Profile`} onClick={(e) => handleOpenUserSettings(e)}>
-            <PenEditIcon aria-label="Edit Profile" className="upc-pencil-icon" aria-hidden="false" role="img" width={18} height={18} />
+            <PenEditIcon aria-label="Edit Profile" className="upc-pencil-icon" aria-hidden="false" role="img" width={24} height={24} /> 
         </div>
     ) : ("");
 
