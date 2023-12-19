@@ -108,8 +108,8 @@ const MegaUPCModal = (props) => {
         <div className='upc-strife-nitro-wrapper' data-tooltip-id="suom-tool-tip"
             data-tooltip-position-strategy='fixed' data-tooltip-place='bottom'
             data-tooltip-content={"Customize your own profile theme, banner, animated avatar, and more with $TR!F3 N!TR0!"}>
-            <div className="upc-strife-nitro-badge">
-                <StrifeNitroBadgeIcon className="upc-strife-nitro-icon" height={16} width={16} />
+            <div className="mupc-strife-nitro-badge">
+                <StrifeNitroBadgeIcon className="upc-strife-nitro-icon" height={20} width={20} />
             </div>
         </div>
     );
