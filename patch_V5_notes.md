@@ -648,4 +648,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed a few styles for avatar decoration preview modal.
     - Changed a few styles for profile effect preview modal.
     - Fixed styles for chewbert where the static version was displaying the winkle decoration.
-
+    - Re-Implemented the proper Avatar Decoration preview in the AvatarDecorationModal that masks the users avatar, online status and avatar decoration properly where the online status now appears over the avatar decoration. 
