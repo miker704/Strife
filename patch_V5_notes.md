@@ -675,4 +675,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added SubscribeToNitroBasic Modal to Strife shop page.
     - Added SubscribeToNitroBasic Modal to Avatar Decoration Preview Modal.
     - Added SubscribeToNitroBasic Modal to Profile Effect Preview Modal.
+    - Added new version of PenEditIcon, backed up old version under suffix old all components using it has been changed to the new version.
+
+
 
