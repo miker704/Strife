@@ -1702,6 +1702,27 @@ export const OwnerCrownIcon = (props) => (
 
 export const StrifeBotTagIcon = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        width={16}
+        height={16}
+        aria-hidden="false"
+        aria-label="Verified Bot"
+        className="sml-bot-check-mark"
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            fillRule="evenodd"
+            d="M18.7 7.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4l3.3 3.29 7.3-7.3a1 1 0 0 1 1.4 0Z"
+            clipRule="evenodd"
+        />
+    </svg>
+)
+
+export const StrifeBotTagIconOld = (props) => (
+    <svg
         width={16}
         height={16}
         aria-hidden="false"
@@ -1716,8 +1737,6 @@ export const StrifeBotTagIcon = (props) => (
         />
     </svg>
 )
-
-
 
 
 export const FriendsRaiseHandIcon = (props) => (
@@ -3140,6 +3159,26 @@ export const CUPCDNDStatusIcon = (props) => (
 
 export const CaretIcon = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        width={24}
+        height={24}
+        aria-hidden="true"
+        className="caret-icon"
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            d="M9.3 5.3a1 1 0 0 0 0 1.4l5.29 5.3-5.3 5.3a1 1 0 1 0 1.42 1.4l6-6a1 1 0 0 0 0-1.4l-6-6a1 1 0 0 0-1.42 0Z"
+        />
+    </svg>
+)
+
+
+
+export const CaretIconOld = (props) => (
+    <svg
         width={24}
         height={24}
         aria-hidden="true"
@@ -3157,7 +3196,6 @@ export const CaretIcon = (props) => (
         </g>
     </svg>
 )
-
 
 export const ReverseArrowsIcon = (props) => (
     <svg
