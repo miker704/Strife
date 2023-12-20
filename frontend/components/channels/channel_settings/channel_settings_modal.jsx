@@ -99,6 +99,9 @@ const SelectRegion = styled(Select)(({ theme }) => ({
 
     '.MuiSelect-select': {
         backgroundColor: '#1e1f22',
+        minHeight: '19.45px',
+        height: '19.45px',
+        maxHeight: '19.45px',
         '.selectRegionSvgCheckMark': {
             display: 'none !important',
         }
@@ -120,7 +123,9 @@ const SelectRegion = styled(Select)(({ theme }) => ({
     },
 
     '.MuiOutlinedInput-input': {
-        padding: '10px 8px 8px 10px',
+        // padding: '10px 8px 8px 10px',
+        padding: '8px 8px 8px 12px',
+
     }
 
 }));
