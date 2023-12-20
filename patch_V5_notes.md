@@ -783,6 +783,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Addressed warp bug for when clicking on the Explore discoverable servers button in create a server modal.
     - Added new version of ChainLinkIcon backed up old version under suffix old.
     - Added new version of AddReactionIcon backed up old version under suffix old.
+    - Added new version of ReplyArrowIcon backed up old version under suffix old.
 
 
 
