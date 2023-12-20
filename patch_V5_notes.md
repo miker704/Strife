@@ -722,4 +722,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of AddRolePlusIcon backed up old version under suffix old.
     - Added PopOutWindowIcon.
     - Added PopOutWindowIcon to server settings Members tab.
+    - Added new version of TrashCanIcon backed up old version under suffix old.
 
