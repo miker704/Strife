@@ -747,4 +747,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of ChatGIFIcon backed up old version under suffix old.
     - Added new version of ChatStickerIcon backed up old version under suffix old.
     - Added new version of AddCircleIcon backed up old version under suffix old.
+    - Added new version of InviteMemberIcon backed up old version under suffix old.
 
