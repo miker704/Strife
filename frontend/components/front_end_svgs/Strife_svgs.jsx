@@ -696,15 +696,21 @@ export const HashIcon = (props) => (
 
 
 export const HashLockIcon = (props) => (
-    <svg width={24} height={24} className="" role="img" viewBox="0 0 24 24" aria-hidden="true"{...props}>
+    <svg width={24} height={24} className=""
+        role="img" viewBox="0 0 24 24" aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        {...props}>
         <path
             fill="currentColor"
-            d="M14 8a1 1 0 0 0-1-1H9.76l.606-3.413A.5.5 0 0 0 9.873 3H8.89a.5.5 0 0 0-.492.413L7.76 7H4.18a.5.5 0 0 0-.492.414l-.175 1A.5.5 0 0 0 4.005 9H7.41l-1.06 6H2.77a.5.5 0 0 0-.492.414l-.175 1a.5.5 0 0 0 .492.586H6l-.606 3.413a.5.5 0 0 0 .493.587h.984a.5.5 0 0 0 .492-.413L8 17h6l-.606 3.413a.5.5 0 0 0 .493.587h.984a.5.5 0 0 0 .492-.413L16 17h3.58a.5.5 0 0 0 .492-.414l.175-1a.5.5 0 0 0-.492-.586H16.35l.326-1.844a.985.985 0 1 0-1.94-.343L14.35 15h-6l1.06-6H13a1 1 0 0 0 1-1Z"
+            fillRule="evenodd"
+            d="M16 4h.5v-.5a2.5 2.5 0 0 1 5 0V4h.5a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm4-.5V4h-2v-.5a1 1 0 1 1 2 0Z"
+            clipRule="evenodd"
             className="foreground-path-1"
         />
         <path
             fill="currentColor"
-            d="M21.025 5V4c0-1.12-.975-2-2.025-2-1.05 0-2 .88-2 2v1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V5.975A.975.975 0 0 0 21.025 5ZM20 5h-2V4a1 1 0 1 1 2 0v1Z"
+            d="M12.5 8c.28 0 .5.22.5.5V9c0 .1 0 .2.02.31.03.34-.21.69-.56.69H9.85l-.67 4h4.97l.28-1.68c.06-.34.44-.52.77-.43a3 3 0 0 0 .8.11c.27 0 .47.24.43.5l-.25 1.5H20a1 1 0 1 1 0 2h-4.15l-.86 5.16a1 1 0 0 1-1.98-.32l.8-4.84H8.86L8 21.16a1 1 0 0 1-2-.32L6.82 16H3a1 1 0 1 1 0-2h4.15l.67-4H4a1 1 0 1 1 0-2h4.15l.86-5.16a1 1 0 1 1 1.98.32L10.19 8h2.31Z"
             className="foreground-path-1"
         />
     </svg>
@@ -736,20 +742,25 @@ export const LoudSpeakerIcon = (props) => (
 
 
 export const LoudSpeakerLockIcon = (props) => (
-    <svg width={24} height={24} className="" viewBox="0 0 24 24" aria-hidden="true" role="img" {...props}>
+    <svg width={24} height={24}
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        className="" viewBox="0 0 24 24" aria-hidden="true" role="img"  {...props}>
         <path
+
             fill="currentColor"
             fillRule="evenodd"
-            d="M15 12v.002c0 .551-.449 1-1 1v2c1.654 0 3-1.345 3-3V12h-2Zm4 0v.002c0 2.757-2.243 5-5 5v2c3.86 0 7-3.139 7-7V12h-2Zm-8.707-8.704A1.002 1.002 0 0 1 12 4.002v16a1 1 0 0 1-1.707.708L6 16.002H3c-.55 0-1-.45-1-1v-6c0-.549.45-1 1-1h3l4.293-4.706Z"
+            d="M16 4h.5v-.5a2.5 2.5 0 0 1 5 0V4h.5a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm4-.5V4h-2v-.5a1 1 0 1 1 2 0Z"
             className="foreground-path-1"
             clipRule="evenodd"
         />
         <path
             fill="currentColor"
-            d="M21.025 5V4c0-1.12-.975-2-2.025-2-1.05 0-2 .88-2 2v1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V5.975A.975.975 0 0 0 21.025 5ZM20 5h-2V4a1 1 0 1 1 2 0v1Z"
+            d="M11 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1h-.06a1 1 0 0 1-.74-.32L5.92 17H3a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h2.92l4.28-4.68a1 1 0 0 1 .74-.32H11Zm9.5 10c-.28 0-.5.22-.52.5a7 7 0 0 1-5.13 6.25c-.48.13-.85.55-.85 1.05v.03c0 .6.52 1.06 1.1.92a9 9 0 0 0 6.89-8.25.48.48 0 0 0-.49-.5h-1Zm-4 0c-.28 0-.5.23-.54.5a3 3 0 0 1-1.33 2.02c-.35.23-.63.6-.63 1.02v.14c0 .63.59 1.1 1.16.83a5 5 0 0 0 2.82-4.01c.02-.28-.2-.5-.48-.5h-1Z"
             className="foreground-path-1"
         />
     </svg>
+
 )
 
 
