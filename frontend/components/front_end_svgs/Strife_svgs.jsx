@@ -3444,7 +3444,7 @@ export const BoostModalNitroBallOld = (props) => (
 )
 
 
-export const WarnILockIcon = (props) => {
+export const WarnILockIcon = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={20}
@@ -3463,7 +3463,7 @@ export const WarnILockIcon = (props) => {
             clipRule="evenodd"
         />
     </svg>
-}
+)
 
 
 export const BoostSparkleStarIcon = (props) => (
