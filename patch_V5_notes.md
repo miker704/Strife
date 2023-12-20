@@ -718,3 +718,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added cashAppCard.svg.
     - Added cash app option to boost server select plan modal.
     - Updates to boost server select plan modal.
+    - Updates to styles for boost server select plan modal.
