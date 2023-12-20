@@ -156,7 +156,9 @@ const SelectInActiveChannel = styled(Select)(({ theme }) => ({
         cursor: 'not-allowed',
         WebkitTextFillColor: '#dbdee1',
     },
-
+    '.MuiSelect-select.Mui-disabled .MuiSvgIcon-root': {
+        opacity: '0.6',
+    },
     '.MuiSelect-select': {
         backgroundColor: '#1e1f22',
         borderColor: '#1e1f22',
@@ -171,9 +173,12 @@ const SelectInActiveChannel = styled(Select)(({ theme }) => ({
         width: '320px',
         minWidth: '320px',
         maxWidth: '320px',
-        minHeight: '42px',
-        height: '42px',
-        maxHeight: '42px',
+        // minHeight: '42px',
+        // height: '42px',
+        // maxHeight: '42px',
+        minHeight: '37.45px',
+        height: '37.45px',
+        maxHeight: '37.45px',
 
         '.selectRegionSvgCheckMark': {
             display: 'none !important',
@@ -182,6 +187,12 @@ const SelectInActiveChannel = styled(Select)(({ theme }) => ({
     },
     '.MuiSvgIcon-root': {
         color: '#dbdee1',
+        // height: `18px`,
+        // width: `18px`
+    },
+
+    '.MuiSvgIcon-root.Mui-disabled': {
+        opacity: '0.6',
     },
 
     "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
@@ -198,7 +209,6 @@ const SelectInActiveChannel = styled(Select)(({ theme }) => ({
 
     '.MuiOutlinedInput-input': {
         padding: '8px 8px 8px 16px',
-
     },
 
 
@@ -226,9 +236,12 @@ const SelectSystemMessagesChannel = styled(Select)(({ theme }) => ({
         width: '660px',
         minWidth: '660px',
         maxWidth: '660px',
-        minHeight: '42px',
-        height: '42px',
-        maxHeight: '42px',
+        // minHeight: '42px',
+        // height: '42px',
+        // maxHeight: '42px',
+        minHeight: '37.45px',
+        height: '37.45px',
+        maxHeight: '37.45px',
 
         '.selectRegionSvgCheckMark': {
             display: 'none !important',
@@ -237,6 +250,8 @@ const SelectSystemMessagesChannel = styled(Select)(({ theme }) => ({
     },
     '.MuiSvgIcon-root': {
         color: '#dbdee1',
+        // height: `18px`,
+        // width: `18px`
     },
 
     "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
@@ -253,7 +268,6 @@ const SelectSystemMessagesChannel = styled(Select)(({ theme }) => ({
 
     '.MuiOutlinedInput-input': {
         padding: '8px 8px 8px 16px',
-
     }
 
 }));
@@ -1052,7 +1066,7 @@ const ServerSettingsModal = (props) => {
                                     <div className="server-settings-sidebar-list-item" role="tab">
                                         <div className="server-settings-sidebar-list-item-inner-special">
                                             Server Boost Status
-                                            <GemBoostIcon className="ssm-server-boost-icon" />
+                                            <GemBoostIcon className="ssm-server-boost-icon" height={16} width={10} />
                                         </div>
                                     </div>
                                     <div className="server-settings-sidebar-list-sep"></div>
