@@ -2568,6 +2568,23 @@ export const WumpusIcon = (props) => (
 
 export const AddRolePlusIcon = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        width={24}
+        height={24}
+        aria-hidden="true"
+        className=""
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            d="M13 5a1 1 0 1 0-2 0v6H5a1 1 0 1 0 0 2h6v6a1 1 0 1 0 2 0v-6h6a1 1 0 1 0 0-2h-6V5Z"
+        />
+    </svg>
+)
+export const AddRolePlusIconOld = (props) => (
+    <svg
         width={24}
         height={24}
         aria-hidden="true"
@@ -2581,7 +2598,6 @@ export const AddRolePlusIcon = (props) => (
         />
     </svg>
 )
-
 
 export const StrifeNitroStoreBackground = (props) => (
     <svg
@@ -3388,10 +3404,36 @@ export const MinusIcon = (props) => (
 
 export const BoostModalNitroBall = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        fill="none"
+        aria-hidden="true"
+        className="upSellFooter-icon"
+        {...props}
+    >
+        <path
+            fill="url(#purple-nitro-ball-app)"
+            d="M15 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"
+        />
+        <path
+            fill="url(#purple-nitro-ball-app)"
+            fillRule="evenodd"
+            d="M7 4a1 1 0 0 0 0 2h3a1 1 0 1 1 0 2H5.5a1 1 0 0 0 0 2H8a1 1 0 1 1 0 2H6a1 1 0 1 0 0 2h1.25A8 8 0 1 0 15 4H7Zm8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
+            clipRule="evenodd"
+        />
+        <path
+            fill="url(#purple-nitro-ball-app)"
+            d="M2.5 10a1 1 0 0 0 0-2H2a1 1 0 0 0 0 2h.5Z"
+        />
+    </svg>
+)
+export const BoostModalNitroBallOld = (props) => (
+    <svg
         width={24}
         height={24}
         aria-hidden="true"
-        className="upsellFooterIcon-2hvqqe"
+        className="upSellFooter-icon"
         {...props}
     >
         <path
@@ -3400,6 +3442,28 @@ export const BoostModalNitroBall = (props) => (
         />
     </svg>
 )
+
+
+export const WarnILockIcon = (props) => {
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={20}
+        height={20}
+        fill="none"
+        aria-hidden="true"
+        className=""
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <circle cx={12} cy={12} r={10} fill="transparent" />
+        <path
+            fill="var(--text-warning)"
+            fillRule="evenodd"
+            d="M23 12a11 11 0 1 1-22 0 11 11 0 0 1 22 0Zm-9.5-4.75a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0Zm-.77 3.96a1 1 0 1 0-1.96-.42l-1.04 4.86a2.77 2.77 0 0 0 4.31 2.83l.24-.17a1 1 0 1 0-1.16-1.62l-.24.17a.77.77 0 0 1-1.2-.79l1.05-4.86Z"
+            clipRule="evenodd"
+        />
+    </svg>
+}
 
 
 export const BoostSparkleStarIcon = (props) => (
