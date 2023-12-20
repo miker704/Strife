@@ -695,6 +695,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of GameControllerIcon backed up old version under suffix old.
     - Added new version of MusicalNoteIcon backed up old version under suffix old.
     - Added new version of GraduationCapIcon backed up old version under suffix old.
+    - Added new version of NeutronIcon backed up old version under suffix old.
+
 
 
 
