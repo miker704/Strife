@@ -60,7 +60,7 @@ const UserSettings = (props) => {
     setUserPhone(props.currentUser.phone_number)
     setScrambleUserEmailString(scrambleEmail());
     setScrambleUserPhoneString(scramblePhoneNumber());
-    // checkIfDemoUser();
+    checkIfDemoUser();
 
     if (isSubModMounted === true) {
 
