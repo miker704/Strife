@@ -730,4 +730,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added updates to styles for server settings modal.
     - Updated build number in Channel settings modal.
     - Adjusted mui sizes for channel settings.
-
+    - Added new version of StrifeBotTagIcon backed up old version under suffix old.
