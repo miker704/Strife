@@ -1101,10 +1101,9 @@ const ServerSettingsModal = (props) => {
                                     </div>
                                     <div className="server-settings-sidebar-list-sep"></div>
                                     <div className="ssm-version-number">
-                                        <span>Stable 210566 (fc3ede1)</span>
+                                        <span>Stable 255464 (f0b3159) ($TR!F3-V5-Alpha-Build)</span>
                                         <br />
                                         <span>Windows 11 64-bit</span>
-
                                     </div>
                                 </div>
                             </nav>
