@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import { useState, useRef, useEffect } from "react";
 import FriendRequestErrorModalContainer from "../friend_request_error_modal/friend_request_error_modal_container";
-import { LeftChevronArrowIcon } from "../../front_end_svgs/Strife_svgs";
+import { LeftChevronArrowIcon, AddFriendsExploreCompassIcon } from "../../front_end_svgs/Strife_svgs";
 
 
 const AddFriends = (props) => {
@@ -252,6 +252,15 @@ const AddFriends = (props) => {
 
     }
 
+    const warpToExploreServers = (e) => {
+        e.preventDefault();
+        if (props.history.location.pathname !== `/$/guild-discovery/`) {
+            props.history.push(`/$/guild-discovery/`);
+        }
+        else {
+            return;
+        }
+    }
 
     let friendRequestSuccessful = friendRequestSuccess === true ? (
         <div className={"frs-display"}>{renderFriendRequestSuccess()}</div>
@@ -336,15 +345,14 @@ const AddFriends = (props) => {
                 </h2>
             </header>
 
-
             <div className="add-friend-grid" >
-                <Link className="unStyle" to={`/$/channels/guild-discovery/`}>
-                    <button type="button" className="add-friend-grid-button-wrapper"  >
-                        <img className="add-friend-grid-button-icon" alt=" " />
-                        <div className="add-friend-grid-button-text">Explore Discoverable Servers</div>
-                        <LeftChevronArrowIcon className="arrow-3B" />
-                    </button>
-                </Link>
+                <button type="button" className="add-friend-grid-button-wrapper" onClick={(e) => { e.preventDefault(); warpToExploreServers(e); }}>
+                    <div className="add-friends-explore-compass-icon">
+                        <AddFriendsExploreCompassIcon width={24} height={24} />
+                    </div>
+                    <div className="add-friend-grid-button-text">Explore Discoverable Servers</div>
+                    <LeftChevronArrowIcon className="arrow-3B" />
+                </button>
             </div>
 
             <div className="empty-state-container-2">
