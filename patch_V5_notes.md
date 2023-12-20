@@ -758,3 +758,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of LeaveServerIcon backed up old version under suffix old.
     - Added new version of NotificationBellMutedIcon backed up old version under suffix old.
     - Added new version of ThreadsIcon backed up old version under suffix old.
+    - Added new version of PinnedIcon backed up old version under suffix old.
+
