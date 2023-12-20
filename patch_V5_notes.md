@@ -779,6 +779,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of AcceptFriendRequestIcon backed up old version under suffix old.
     - Added new version of AddFriendsExploreCompassIcon backed up old version under suffix old.
     - Changed the old explore servers icon to the newer version and in svg form in add friends page.
+    - Added Warp function to head to explore servers page from clicking on the Explore discoverable servers button in add friends page.
 
 
 
