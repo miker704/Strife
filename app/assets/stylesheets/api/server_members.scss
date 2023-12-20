@@ -316,3 +316,13 @@
   font-family: var(--global-font);
   text-transform: uppercase;
 }
+
+
+.server-member-list-layout-member-inner {
+  padding-top: calc(
+    0.5 * var(--custom-member-list-item-avatar-decoration-padding)
+  );
+  padding-bottom: calc(
+    0.5 * var(--custom-member-list-item-avatar-decoration-padding)
+  );
+}
