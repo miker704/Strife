@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
-import { HashIcon, HelpIcon, HideMembersListIcon, InboxIcon, LoudSpeakerIcon, NotificationBellIcon, NotificationBellMutedIcon, NotificationBellMutedRedIcon, PinnedIcon, SearchMagIcon, SearchXIcon, ThreadsIcon, UpdateReadyIcon } from "../../front_end_svgs/Strife_svgs";
+import { HashIcon, HelpIcon, HideMembersListIcon, InboxIcon, LoudSpeakerIcon, NotificationBellIcon, NotificationBellMutedIcon, PinnedIcon, SearchMagIcon, SearchXIcon, ThreadsIcon, UpdateReadyIcon } from "../../front_end_svgs/Strife_svgs";
 import { Tooltip } from "react-tooltip";
 
 const ServerHeaderNavBar = (props) => {
@@ -12,7 +12,6 @@ const ServerHeaderNavBar = (props) => {
     const [channelType, setChannelType] = useState(1);
     const [showUpdate, setShowUpdate] = useState(false);
     const [muteNotifications, setMuteNotifications] = useState(false);
-    const strikethroughChance = useRef(Math.random() > 0.5);
     const [hovered, setHovered] = useState(false);
 
     useEffect(() => {
@@ -89,12 +88,7 @@ const ServerHeaderNavBar = (props) => {
                             !muteNotifications ? (
                                 <NotificationBellIcon className="icon-shnb-ns" />
                             ) : (
-
-                                strikethroughChance.current ? (
-                                    <NotificationBellMutedRedIcon className="icon-shnb-ns" />
-                                ) : (
-                                    <NotificationBellMutedIcon className="icon-shnb-ns" />
-                                )
+                                <NotificationBellMutedIcon className="icon-shnb-ns" />
                             )
                         }
 
