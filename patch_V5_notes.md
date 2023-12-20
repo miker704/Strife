@@ -720,4 +720,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Updates to boost server select plan modal.
     - Updates to styles for boost server select plan modal.
     - Added new version of AddRolePlusIcon backed up old version under suffix old.
-
+    - Added PopOutWindowIcon.
