@@ -1682,8 +1682,10 @@ export const HideMembersListIcon = (props) => (
 
 export const VoiceCallPhoneIcon = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
         width={24}
         height={24}
+        fill="none"
         aria-hidden="true"
         className=""
         viewBox="0 0 24 24"
@@ -1691,9 +1693,11 @@ export const VoiceCallPhoneIcon = (props) => (
     >
         <path
             fill="currentColor"
-            fillRule="evenodd"
-            d="M11 5V3c5.515 0 10 4.486 10 10h-2c0-4.411-3.589-8-8-8Zm6 8h-2c0-2.205-1.794-4-4-4V7c3.309 0 6 2.691 6 6Zm-6-2v2h2a2 2 0 0 0-2-2Zm3 5h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-5C6.925 22 2 17.075 2 11V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H6c.063 3.938 3 7 7 7v-1a1 1 0 0 1 1-1Z"
-            clipRule="evenodd"
+            d="M2 7.4A5.4 5.4 0 0 1 7.4 2c.36 0 .7.22.83.55l1.93 4.64a1 1 0 0 1-.43 1.25L7 10a8.52 8.52 0 0 0 7 7l1.12-2.24a1 1 0 0 1 1.19-.51l5.06 1.56c.38.11.63.46.63.85C22 19.6 19.6 22 16.66 22h-.37C8.39 22 2 15.6 2 7.71V7.4ZM13 3a1 1 0 0 1 1-1 8 8 0 0 1 8 8 1 1 0 1 1-2 0 6 6 0 0 0-6-6 1 1 0 0 1-1-1Z"
+        />
+        <path
+            fill="currentColor"
+            d="M13 7a1 1 0 0 1 1-1 4 4 0 0 1 4 4 1 1 0 1 1-2 0 2 2 0 0 0-2-2 1 1 0 0 1-1-1Z"
         />
     </svg>
 )
@@ -1701,6 +1705,8 @@ export const VoiceCallPhoneIcon = (props) => (
 
 export const VideoCameraIcon = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
         width={24}
         height={24}
         aria-hidden="true"
@@ -1710,7 +1716,7 @@ export const VideoCameraIcon = (props) => (
     >
         <path
             fill="currentColor"
-            d="M21.526 8.149a1 1 0 0 0-.973-.044L18 9.382V7c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v10c0 1.104.897 2 2 2h12c1.103 0 2-.896 2-2v-2.382l2.553 1.276a.992.992 0 0 0 .973-.043c.294-.183.474-.504.474-.851V9c0-.347-.18-.668-.474-.851Z"
+            d="M4 4a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h11a3 3 0 0 0 3-3v-2.12a1 1 0 0 0 .55.9l3 1.5a1 1 0 0 0 1.45-.9V7.62a1 1 0 0 0-1.45-.9l-3 1.5a1 1 0 0 0-.55.9V7a3 3 0 0 0-3-3H4Z"
         />
     </svg>
 )
