@@ -106,7 +106,7 @@ export const TikTokIcon = (props) => (
 //side bar social media 
 
 
-export const SideBarTwitterIcon = (props) => (
+export const SideBarTwitterIconOld = (props) => (
     <svg width={20} height={16} aria-hidden="true" viewBox="0 0 20 16" {...props}>
         <g fill="none" fillRule="evenodd">
             <path
@@ -116,6 +116,24 @@ export const SideBarTwitterIcon = (props) => (
             />
             <path d="M0 0h20v16H0z" />
         </g>
+    </svg>
+)
+export const SideBarTwitterIcon = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={16}
+        height={16}
+        fill="none"
+        aria-hidden="true"
+        className=""
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            d="m20.75 7.51.01.59c0 5.96-4.54 12.84-12.84 12.84-2.45 0-4.86-.7-6.92-2.03a9.06 9.06 0 0 0 6.68-1.87 4.52 4.52 0 0 1-4.22-3.13c.68.13 1.38.1 2.04-.08A4.51 4.51 0 0 1 1.88 9.4v-.05c.63.35 1.33.54 2.05.56a4.52 4.52 0 0 1-1.4-6.02 12.81 12.81 0 0 0 9.3 4.71 4.52 4.52 0 0 1 7.7-4.12 9.06 9.06 0 0 0 2.86-1.1 4.53 4.53 0 0 1-1.98 2.5c.9-.1 1.77-.34 2.59-.7-.6.9-1.37 1.7-2.25 2.33Z"
+            className="foreground__8f7af"
+        />
     </svg>
 )
 
@@ -856,6 +874,16 @@ export const ESCICON = (props) => (
     </svg>
 )
 
+export const ESCICONOLD = (props) => (
+    <svg width={18} height={18} aria-hidden="true" viewBox="0 0 24 24" {...props}>
+        <path
+            fill="currentColor"
+            d="M18.4 4 12 10.4 5.6 4 4 5.6l6.4 6.4L4 18.4 5.6 20l6.4-6.4 6.4 6.4 1.6-1.6-6.4-6.4L20 5.6 18.4 4Z"
+        />
+    </svg>
+)
+
+
 
 export const TrashCanIcon = (props) => (
     <svg width={24} height={24} aria-hidden="true" viewBox="0 0 24 24" className="" {...props}>
@@ -869,6 +897,34 @@ export const TrashCanIcon = (props) => (
 
 
 export const LogoutIcon = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={16}
+        height={16}
+        fill="none"
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        className=""
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            d="M9 12a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1Z"
+        />
+        <path
+            fill="currentColor"
+            fillRule="evenodd"
+            d="M2.75 3.02A3 3 0 0 1 5 2h10a3 3 0 0 1 3 3v7.64c0 .44-.55.7-.95.55a3 3 0 0 0-3.17 4.93l.02.03a.5.5 0 0 1-.35.85h-.05a.5.5 0 0 0-.5.5 2.5 2.5 0 0 1-3.68 2.2l-5.8-3.09A3 3 0 0 1 2 16V5a3 3 0 0 1 .76-1.98Zm1.3 1.95A.04.04 0 0 0 4 5v11c0 .36.2.68.49.86l5.77 3.08a.5.5 0 0 0 .74-.44V8.02a.5.5 0 0 0-.32-.46l-6.63-2.6Z"
+            clipRule="evenodd"
+        />
+        <path
+            fill="currentColor"
+            d="M15.3 16.7a1 1 0 0 1 1.4-1.4l4.3 4.29V16a1 1 0 1 1 2 0v6a1 1 0 0 1-1 1h-6a1 1 0 1 1 0-2h3.59l-4.3-4.3Z"
+        />
+    </svg>
+)
+
+export const LogoutIconOld = (props) => (
     <svg width={16} height={16} aria-hidden="true" viewBox="0 0 24 24" className="" {...props}>
         <path
             fill="currentColor"
