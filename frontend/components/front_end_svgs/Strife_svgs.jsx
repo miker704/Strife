@@ -1439,6 +1439,27 @@ export const SearchMagIcon = (props) => (
         aria-label="Search"
         className=""
         viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            fillRule="evenodd"
+            d="M15.62 17.03a9 9 0 1 1 1.41-1.41l4.68 4.67a1 1 0 0 1-1.42 1.42l-4.67-4.68ZM17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+            clipRule="evenodd"
+        />
+    </svg>
+)
+
+export const SearchMagIconOld = (props) => (
+    <svg
+        width={24}
+        height={24}
+        aria-hidden="false"
+        aria-label="Search"
+        className=""
+        viewBox="0 0 24 24"
         {...props}
     >
         <path
@@ -1447,6 +1468,7 @@ export const SearchMagIcon = (props) => (
         />
     </svg>
 )
+
 
 export const SearchXIcon = (props) => (
     <svg
@@ -2263,6 +2285,27 @@ export const VerifiedStarIcon = (props) => (
 
 export const VerifiedCheckIcon = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={16}
+        height={16}
+        fill="none"
+        aria-hidden="true"
+        className=""
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            fillRule="evenodd"
+            d="M18.7 7.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4l3.3 3.29 7.3-7.3a1 1 0 0 1 1.4 0Z"
+            clipRule="evenodd"
+        />
+    </svg>
+)
+
+
+export const VerifiedCheckIconOld = (props) => (
+    <svg
         width={16}
         height={16}
         aria-hidden="true"
@@ -2279,6 +2322,27 @@ export const VerifiedCheckIcon = (props) => (
 
 
 export const ExploreServersSearchXIcon = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden="true"
+        className=""
+        {...props}
+    >
+        <circle cx={12} cy={12} r={10} fill="transparent" />
+        <path
+            fill="currentColor"
+            fillRule="evenodd"
+            d="M12 23a11 11 0 1 0 0-22 11 11 0 0 0 0 22Zm4.7-15.7a1 1 0 0 0-1.4 0L12 10.58l-3.3-3.3A1 1 0 0 0 7.3 8.7l3.28 3.3-3.3 3.3a1 1 0 1 0 1.42 1.4l3.3-3.28 3.3 3.3a1 1 0 0 0 1.4-1.42L13.42 12l3.3-3.3a1 1 0 0 0 0-1.4Z"
+            clipRule="evenodd"
+        />
+    </svg>
+)
+
+export const ExploreServersSearchXIconOld = (props) => (
     <svg
         width={24}
         height={24}
