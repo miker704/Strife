@@ -681,4 +681,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Adjusted nitro badge size for MegaUPC Modal.
     - Added new version of MoreOptionsIcon, backed up old version under suffix old all components using it has been changed to the new version.
     - Added new version of CopyIDIcon, backed up old version under suffix old all components using it has been changed to the new version.    
-
+    - Added new version of CloseXIcon, backed up old version under suffix old all components using it has been changed to the new version.
