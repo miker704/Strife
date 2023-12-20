@@ -1229,3 +1229,14 @@
   color: var(--text-muted);
   font-family: var(--global-font);
 }
+
+.add-friends-explore-compass-icon {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+  border-radius: 8px;
+  background-color: var(--green-360);
+}
