@@ -436,6 +436,7 @@ export const NotificationBellIcon = (props) => (
         width={24}
         height={24}
         fill="none"
+        xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
         viewBox="0 0 24 24"
         className=""
@@ -444,9 +445,7 @@ export const NotificationBellIcon = (props) => (
     >
         <path
             fill="currentColor"
-            fillRule="evenodd"
-            d="M18 9v5a3 3 0 0 0 3 3v1H3v-1a3 3 0 0 0 3-3V9a6 6 0 1 1 12 0Zm-6 12c-1.476 0-2.752-.81-3.445-2h6.89c-.693 1.19-1.97 2-3.445 2Z"
-            clipRule="evenodd"
+            d="M9.7 2.89a.64.64 0 0 0 .37-.43 2 2 0 0 1 3.86 0c.05.2.19.36.38.43A7 7 0 0 1 19 9.5v2.09c0 .12.05.24.13.33l1.1 1.22a3 3 0 0 1 .77 2.01v.28c0 .67-.34 1.29-.95 1.56-1.31.6-4 1.51-8.05 1.51-4.05 0-6.74-.91-8.05-1.5-.61-.28-.95-.9-.95-1.57v-.28a3 3 0 0 1 .77-2l1.1-1.23a.5.5 0 0 0 .13-.33V9.5a7 7 0 0 1 4.7-6.61Zm-.52 16.95A.16.16 0 0 0 9 20a3 3 0 1 0 6 0c0-.1-.09-.17-.18-.16a24.86 24.86 0 0 1-5.64 0Z"
         />
     </svg>
 )
