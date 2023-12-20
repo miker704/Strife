@@ -709,4 +709,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of MicroPhoneMutedIcon backed up old version under suffix old.
     - Added new version of HeadPhoneIcon backed up old version under suffix old.
     - Added new version of HeadPhoneMutedIcon backed up old version under suffix old.
+    - Added new version of SettingsIcon_Medium backed up old version under suffix old.
 
