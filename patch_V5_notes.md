@@ -771,6 +771,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of HideUserProfileIcon backed up old version under suffix old.
     - Added new version of UnBlockUserIcon backed up old version under suffix old.
     - Adjusted styles for smiley face icon for chat inputs.
+    - Added new version of SMSIcon backed up old version under suffix old.
 
 
 
