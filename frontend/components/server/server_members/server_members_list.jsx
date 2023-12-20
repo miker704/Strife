@@ -172,7 +172,7 @@ const ServerMembersList = (props) => {
                                         handlePopupShow(e);
                                     }}>
 
-                                    <div className={`server-member-layout ${selectedMember.id === serverMember.id && showPopup === true ? `selected` : ``}`}>
+                                    <div className={`server-member-list-layout-member-inner server-member-layout ${selectedMember.id === serverMember.id && showPopup === true ? `selected` : ``}`}>
                                         <div className="server-member-avatar">
                                             <div className="server-member-avatar-inner-wrapper">
                                                 <svg width="40" height="40" viewBox="0 0 40 40" className="sml-mask sml-svg" aria-hidden="true">
@@ -236,7 +236,7 @@ const ServerMembersList = (props) => {
                                         handlePopupShow(e);
                                     }}>
 
-                                    <div className={`server-member-layout ${selectedMember.id === serverMember.id && showPopup === true ? `selected` : ``}`}>
+                                    <div className={`server-member-list-layout-member-inner server-member-layout ${selectedMember.id === serverMember.id && showPopup === true ? `selected` : ``}`}>
                                         <div className="server-member-avatar">
                                             <div className="server-member-avatar-inner-wrapper">
                                                 <svg width="32" height="32" viewBox="0 0 32 32" className="sml-mask sml-svg" aria-hidden="true">
