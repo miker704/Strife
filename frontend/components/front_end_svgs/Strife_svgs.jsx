@@ -3035,6 +3035,24 @@ export const MiniProfileCardIconOld = (props) => (
 
 export const DownloadUpdateIcon = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        aria-hidden="false"
+        fill="none"
+        className=""
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            d="M12 2a1 1 0 0 1 1 1v10.59l3.3-3.3a1 1 0 1 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.42l3.3 3.3V3a1 1 0 0 1 1-1ZM3 20a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2H3Z"
+        />
+    </svg>
+)
+
+export const DownloadUpdateIconOld = (props) => (
+    <svg
         width={24}
         height={24}
         fill="currentColor"
@@ -3046,6 +3064,7 @@ export const DownloadUpdateIcon = (props) => (
         <path d="m16.293 9.293 1.414 1.414L12 16.414l-5.707-5.707 1.414-1.414L11 12.586V2h2v10.586l3.293-3.293ZM18 20v-2h2v2c0 1.102-.896 2-2 2H6c-1.104 0-2-.898-2-2v-2h2v2h12Z" />
     </svg>
 )
+
 
 
 export const CUPCInvisibleStatusIcon = (props) => (
