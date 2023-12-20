@@ -1,7 +1,8 @@
 import React from "react";
 import {
-    AddRolePlusIcon, BoostModalNitroBall, BoostSparkleStarIcon, CloseXIcon, MinusIcon, ProfilePanelChevronIcon, ComputerStreamingIcon, GemBoostIcon, NitroHappyFaceIcon, NitroUpArrowIcon, StrifeBannerLogo,
-    LinkedInIcon, WumpusIcon, GitHubIcon, AngelListIcon, FolderIcon, Invite2ServerCheckBoxUnCheckedIcon, Invite2ServerCheckBoxCheckedIcon, BoostSparkleStarPurpleIcon,
+    AddRolePlusIcon, BoostModalNitroBall, BoostSparkleStarIcon, CloseXIcon, MinusIcon, ProfilePanelChevronIcon,
+    ComputerStreamingIcon, GemBoostIcon, StrifeBannerLogo,
+    LinkedInIcon, WumpusIcon, GitHubIcon, AngelListIcon, FolderIcon, Invite2ServerCheckBoxUnCheckedIcon, Invite2ServerCheckBoxCheckedIcon, BoostSparkleStarPurpleIcon, NitroSmilingFaceBlueIcon, NitroUploadArrowIcon, WarnILockIcon, PrivateLockIcon,
 } from "../../front_end_svgs/Strife_svgs";
 import { useEffect, useRef, useState } from "react";
 import REACT_PORTAL from "../../../utils/ReactPortal_api_util";
@@ -360,9 +361,9 @@ const BoostServerSelectPlanModal = (props) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="bsspm-warn-block">
-                                <div className="warn-block-icon"></div>
-                                <div className="warn-block-anchor-text">
+                            <div className="bsspm-warn-svg-block">
+                                <WarnILockIcon className="warn-block-svgIcon" width={20} height={20} />
+                                <div className="warn-block-svgIcon-anchor-text" style={{ color: `var(--header-muted)` }}>
                                     Final price and currency will be based on your selected payment method.
                                     <a className="warn-block-anchor" href="https://support.discord.com/hc/en-us/articles/4407269525911" rel="noreferrer noopener" target="_blank">{`${` `}`}Learn More</a>
                                     .
@@ -412,7 +413,7 @@ const BoostServerSelectPlanModal = (props) => {
     let buttonStyles = {
         "1": "sbm-button-footer-container",
         "2": "npsm-button-footer-container",
-        "3": "npsm-button-footer-container",
+        "3": "npsm-button-footer-container-reversed",
         "4": "sbm-button-footer-container sbm-payment-button-footer-layout",
         "5": "sbm-button-footer-container",
         "6": "sbm-button-footer-container"
@@ -440,7 +441,7 @@ const BoostServerSelectPlanModal = (props) => {
                     <div className="sbm-perk-description">30% off Server Boosts</div>
                 </div>
                 <div className="sbm-perk-row">
-                    <div className="sbm-perk-container"><NitroHappyFaceIcon className="sbm-perk-icon npsm-happy-face-icon" /></div>
+                    <div className="sbm-perk-container"><NitroSmilingFaceBlueIcon className="sbm-perk-icon npsm-happy-face-icon" /></div>
                     <div className="sbm-perk-description">Superpower chat perks: animated emoji, custom $TR!F3 tag, and more</div>
                 </div>
                 <div className="sbm-perk-row">
@@ -448,7 +449,7 @@ const BoostServerSelectPlanModal = (props) => {
                     <div className="sbm-perk-description">Source-quality Go Live streaming</div>
                 </div>
                 <div className="sbm-perk-row">
-                    <div className="sbm-perk-container"><NitroUpArrowIcon className="sbm-perk-icon npsm-arrow-icon" /></div>
+                    <div className="sbm-perk-container"><NitroUploadArrowIcon className="sbm-perk-icon npsm-arrow-icon" /></div>
                     <div className="sbm-perk-description">Upload file size increase to 100MB</div>
                 </div>
             </div>
@@ -494,6 +495,14 @@ const BoostServerSelectPlanModal = (props) => {
                                                                     <div className="sbm-payment-button-contents-flex">
                                                                         <div className="sbm-payment-card-icon sbm-payment-card-small venmo-card sbm-payment-card-button">Venmo</div>
                                                                         Venmo
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+                                                            <button type="button" className="sbm-payment-button" onClick={(e) => handleSlideForward(4)}>
+                                                                <div className="look-filled-button-contents global-button-contents">
+                                                                    <div className="sbm-payment-button-contents-flex">
+                                                                        <div className="sbm-payment-card-icon sbm-payment-card-small cash-app-card sbm-payment-card-button">cash_app</div>
+                                                                        Cash App Pay
                                                                     </div>
                                                                 </div>
                                                             </button>
@@ -918,11 +927,20 @@ const BoostServerSelectPlanModal = (props) => {
 
                                         {
                                             slide === 3 ? (
-                                                <div className="bsspm-foot-right">
-                                                    <button type="button" className="sbm-back-button" onClick={(e) => handleSlideBackward(1)}>
-                                                        <div className="look-filled-button-contents global-button-contents">Back</div>
-                                                    </button>
-                                                </div>
+
+                                                <>
+
+                                                    <div className="bbsspm-priv-lock-icon-payment-footer">
+                                                        <PrivateLockIcon className="bbsspm-priv-lock-icon" width={18} height={18} />
+                                                        <div className="bbsspm-priv-lock-icon-subtitle">Secure</div>
+                                                    </div>
+
+                                                    <div className="bsspm-foot-right">
+                                                        <button type="button" className="sbm-back-button" onClick={(e) => handleSlideBackward(1)}>
+                                                            <div className="look-filled-button-contents global-button-contents">Back</div>
+                                                        </button>
+                                                    </div>
+                                                </>
                                             ) : (null)
                                         }
 
@@ -933,6 +951,10 @@ const BoostServerSelectPlanModal = (props) => {
                                                     <button type="button" className="bsspm-continue-button" onClick={(e) => handleSlideForward(5)}>
                                                         <div className="look-filled-button-contents global-button-contents">Next</div>
                                                     </button>
+                                                    <div className="bbsspm-priv-lock-icon-payment-footer">
+                                                        <PrivateLockIcon className="bbsspm-priv-lock-icon" width={18} height={18} />
+                                                        <div className="bbsspm-priv-lock-icon-subtitle">Secure</div>
+                                                    </div>
                                                     <button type="button" className="sbm-back-button" onClick={(e) => handleSlideBackward(3)}>
                                                         <div className="look-filled-button-contents global-button-contents">Back</div>
                                                     </button>
@@ -949,7 +971,10 @@ const BoostServerSelectPlanModal = (props) => {
                                                             <div className="look-filled-button-contents global-button-contents">Back</div>
                                                         </button>
                                                     </div>
-
+                                                    <div className="bbsspm-priv-lock-icon-payment-footer">
+                                                        <PrivateLockIcon className="bbsspm-priv-lock-icon" width={18} height={18} />
+                                                        <div className="bbsspm-priv-lock-icon-subtitle">Secure</div>
+                                                    </div>
                                                     <div className="bsspm-foot-right">
                                                         <button type="button" className="npsm-upgrade-to-nitro-button" disabled={agreementCheck ? false : true}
                                                             data-tooltip-content={"Accept the Terms of Service and Paid Services Terms to continue"}
