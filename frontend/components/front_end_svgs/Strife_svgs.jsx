@@ -2262,22 +2262,20 @@ export const ReplyArrowIcon = (props) => (
 )
 export const AddReactionIcon = (props) => (
     <svg
-        width={18}
-        height={18}
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        fill="none"
         aria-hidden="true"
-        className=""
         viewBox="0 0 24 24"
+        className=""
         {...props}
     >
         <path
             fill="currentColor"
             fillRule="evenodd"
-            d="M12.115 2H12C6.477 2 2 6.477 2 12c0 5.522 4.477 10 10 10s10-4.478 10-10v-.115A7.735 7.735 0 0 1 12.115 2Zm-4.194 9.802a1.645 1.645 0 1 1-3.29 0 1.645 1.645 0 0 1 3.29 0Zm2.6 2.715a.987.987 0 1 0-1.91.492 3.62 3.62 0 0 0 7.008 0 .987.987 0 0 0-1.911-.492 1.646 1.646 0 0 1-3.186 0Z"
+            d="M12 23a11 11 0 1 0 0-22 11 11 0 0 0 0 22ZM6.5 13a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm-9.8 1.17a1 1 0 0 1 1.39.27 3.5 3.5 0 0 0 5.82 0 1 1 0 0 1 1.66 1.12 5.5 5.5 0 0 1-9.14 0 1 1 0 0 1 .27-1.4Z"
             clipRule="evenodd"
-        />
-        <path
-            fill="currentColor"
-            d="M18.5 2a1 1 0 0 0-1 1v1.5H16a1 1 0 1 0 0 2h1.5V8a1 1 0 1 0 2 0V6.5H21a1 1 0 1 0 0-2h-1.5V3a1 1 0 0 0-1-1Z"
         />
     </svg>
 )
