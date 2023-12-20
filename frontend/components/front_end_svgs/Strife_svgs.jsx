@@ -822,6 +822,7 @@ export const PrivateLockIcon = (props) => (
 
 export const SMSIcon = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
         width={24}
         height={24}
         fill="none"
@@ -832,7 +833,7 @@ export const SMSIcon = (props) => (
     >
         <path
             fill="currentColor"
-            d="M4.798 3a1.8 1.8 0 0 0-1.8 1.8v10.8a1.8 1.8 0 0 0 1.8 1.8h2.7V21l3.6-3.6h8.1a1.8 1.8 0 0 0 1.8-1.8V4.8a1.8 1.8 0 0 0-1.8-1.8h-14.4Z"
+            d="M12 22a10 10 0 1 0-8.45-4.64c.13.19.11.44-.04.61l-2.06 2.37A1 1 0 0 0 2.2 22H12Z"
         />
     </svg>
 )
