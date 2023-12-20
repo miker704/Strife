@@ -690,6 +690,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of SideBarInstagramIcon.
     - Added new version of SideBarFaceBookIcon.
     - Added new version of SideBarYoutubeIcon.
+    - Added new icons, tabs, security key section, etc to user settings.
 
 
 
