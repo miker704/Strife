@@ -1524,6 +1524,8 @@ export const StrifeBotTagIcon = (props) => (
 
 export const FriendsRaiseHandIcon = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
         width={24}
         height={24}
         aria-hidden="true"
@@ -1531,14 +1533,11 @@ export const FriendsRaiseHandIcon = (props) => (
         viewBox="0 0 24 24"
         {...props}
     >
-        <g fill="none" fillRule="evenodd">
-            <path
-                fill="currentColor"
-                fillRule="nonzero"
-                d="M2.5 4v1.5c0 4.15 2.21 7.78 5.5 9.8V20h15v-2c0-2.66-5.33-4-8-4h-.25C10 14 6 10 6 5.5V4H2.5ZM15 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"
-            />
-            <path d="M0 0h24v24H0V0Zm0 0h24v24H0V0Zm0 0h24v24H0V0Z" />
-        </g>
+        <path fill="currentColor" d="M13 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+        <path
+            fill="currentColor"
+            d="M3 5v-.75C3 3.56 3.56 3 4.25 3s1.24.56 1.33 1.25C6.12 8.65 9.46 12 13 12h1a8 8 0 0 1 8 8 2 2 0 0 1-2 2 .21.21 0 0 1-.2-.15 7.65 7.65 0 0 0-1.32-2.3c-.15-.2-.42-.06-.39.17l.25 2c.02.15-.1.28-.25.28H9a2 2 0 0 1-2-2v-2.22c0-1.57-.67-3.05-1.53-4.37A15.85 15.85 0 0 1 3 5Z"
+        />
     </svg>
 )
 
