@@ -716,3 +716,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of PrivateLockIcon backed up old version under suffix old.
     - Added private Lock symbols on multiple slides in the boost server modal.
     - Added cashAppCard.svg.
+    - Added cash app option to boost server modal.
