@@ -687,5 +687,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added the new security keys section in user settings.
     - Renamed two factor auth section to Authentication App and edited subtext in user settings.
     - Added new version of SideBarTwitterIcon.
+    - Added new version of SideBarInstagramIcon.
 
 
