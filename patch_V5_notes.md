@@ -727,5 +727,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of HashIcon backed up old version under suffix old.
     - Added new version of LoudSpeakerIcon backed up old version under suffix old.
     - Added updates to icons, tabs, mui sizings, and added back alt image uploader icon to server settings modal.
+    - Added updates to styles for server ssettings modal.
 
 
