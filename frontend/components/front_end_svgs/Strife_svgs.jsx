@@ -841,18 +841,22 @@ export const SMSIcon = (props) => (
 
 export const SMSPlusIcon = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
         width={24}
         height={24}
         aria-hidden="true"
         className=""
         viewBox="0 0 24 24"
+        fill="none"
         {...props}
     >
         <path
             fill="currentColor"
-            fillRule="evenodd"
-            d="M20.998 0v3h3v2h-3v3h-2V5h-3V3h3V0h2Zm-18 20v4l5.334-4h6.666c1.104 0 2-.897 2-2V9a2 2 0 0 0-2-2h-13a2 2 0 0 0-2 2v9c0 1.103.896 2 2 2h1Z"
-            clipRule="evenodd"
+            d="M19 14a1 1 0 0 1 1 1v3h3a1 1 0 1 1 0 2h-3v3a1 1 0 1 1-2 0v-3h-3a1 1 0 1 1 0-2h3v-3a1 1 0 0 1 1-1Z"
+        />
+        <path
+            fill="currentColor"
+            d="M20.76 12.57c.4.3 1.23.13 1.24-.37V12a10 10 0 1 0-18.44 5.36c.12.19.1.44-.04.61l-2.07 2.37A1 1 0 0 0 2.2 22h10c.5-.01.67-.84.37-1.24A3 3 0 0 1 15 16h.5a.5.5 0 0 0 .5-.5V15a3 3 0 0 1 4.76-2.43Z"
         />
     </svg>
 )
