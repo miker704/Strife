@@ -729,5 +729,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added updates to icons, tabs, mui sizings, build number and added back alt image uploader icon to server settings modal.
     - Added updates to styles for server settings modal.
     - Updated build number in Channel settings modal.
-
+    - Adjusted mui sizes for channel settings.
 
