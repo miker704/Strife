@@ -692,6 +692,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of SideBarYoutubeIcon backed up old version under suffix old.
     - Added new icons, tabs, security key section, etc to user settings.
     - Added new version of ExploreCompassIcon backed up old version under suffix old.
+    - Added new version of GameControllerIcon backed up old version under suffix old.
+
 
 
 
