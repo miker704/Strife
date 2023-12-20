@@ -684,4 +684,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of CloseXIcon, backed up old version under suffix old all components using it has been changed to the new version.
     - Added new version of OverFlowEllipsisIcon, backed up old version under suffix old all components using it has been changed to the new version.
     - Added new version of LogoutIcon, backed up old version under suffix old all components using it has been changed to the new version.
-    - Added the new security keys section for user settings.
+    - Added the new security keys section in user settings.
+    - Renamed two factor auth section to Authentication App and edited subtext in user settings.
+
