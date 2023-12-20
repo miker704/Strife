@@ -734,6 +734,22 @@
   margin-bottom: 20px;
 }
 
+.usm-security-key-settings{
+  margin-top: 32px;
+  box-sizing: border-box;
+}
+.usm-security-key-settings-subtext {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: var(--header-secondary);
+  cursor: default;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  font-family: var(--global-font);
+  margin-bottom: 8px;
+}
+
 .usm-enable-two-factor-auth-button {
   color: var(--white-500);
   background-color: var(--brand-experiment);
