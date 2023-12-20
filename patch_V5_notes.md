@@ -686,11 +686,12 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of LogoutIcon, backed up old version under suffix old all components using it has been changed to the new version.
     - Added the new security keys section in user settings.
     - Renamed two factor auth section to Authentication App and edited subtext in user settings.
-    - Added new version of SideBarTwitterIcon.
-    - Added new version of SideBarInstagramIcon.
-    - Added new version of SideBarFaceBookIcon.
-    - Added new version of SideBarYoutubeIcon.
+    - Added new version of SideBarTwitterIcon backed up old version under suffix old.
+    - Added new version of SideBarInstagramIcon backed up old version under suffix old.
+    - Added new version of SideBarFaceBookIcon backed up old version under suffix old.
+    - Added new version of SideBarYoutubeIcon backed up old version under suffix old.
     - Added new icons, tabs, security key section, etc to user settings.
+    - Added new version of ExploreCompassIcon backed up old version under suffix old.
 
 
 
