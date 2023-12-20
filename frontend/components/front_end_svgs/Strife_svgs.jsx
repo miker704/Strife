@@ -589,7 +589,6 @@ export const ServerInsightsIcon = (props) => (
 )
 
 
-
 export const CloseXIcon = (props) => (
     <svg
         width={24}
@@ -608,6 +607,22 @@ export const CloseXIcon = (props) => (
 
 )
 
+export const CloseXIconOld = (props) => (
+    <svg
+        width={24}
+        height={24}
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        role="img"
+        className=""
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            d="M18.4 4 12 10.4 5.6 4 4 5.6l6.4 6.4L4 18.4 5.6 20l6.4-6.4 6.4 6.4 1.6-1.6-6.4-6.4L20 5.6 18.4 4Z"
+        />
+    </svg>
+)
 
 //
 
@@ -1031,6 +1046,26 @@ export const UploadPhoneNumberIcon = (props) => (
 
 
 export const OverFlowEllipsisIcon = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        fill="none"
+        aria-hidden="true"
+        className=""
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            fillRule="evenodd"
+            d="M4 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm10-2a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm8 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
+            clipRule="evenodd"
+        />
+    </svg>
+)
+
+export const OverFlowEllipsisIconOld = (props) => (
     <svg
         width={24}
         height={24}
@@ -2008,7 +2043,7 @@ export const ExploreServersSearchXIcon = (props) => (
     </svg>
 )
 
-export const CopyIDIcon = (props) => (
+export const CopyIDIconOld = (props) => (
     <svg
         width={24}
         height={24}
@@ -2025,6 +2060,33 @@ export const CopyIDIcon = (props) => (
         />
     </svg>
 )
+
+export const CopyIDIcon = (props) => (
+    <svg
+        width={24}
+        height={24}
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        className=""
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            d="M15.3 14.48c-.46.45-1.08.67-1.86.67h-1.39V9.2h1.39c.78 0 1.4.22 1.86.67.46.45.68 1.22.68 2.31 0 1.1-.22 1.86-.68 2.31Z"
+        />
+        <path
+            fill="currentColor"
+            fillRule="evenodd"
+            d="M5 2a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3H5Zm1 15h2.04V7.34H6V17Zm4-9.66V17h3.44c1.46 0 2.6-.42 3.38-1.25.8-.83 1.2-2.02 1.2-3.58s-.4-2.75-1.2-3.58c-.79-.83-1.92-1.25-3.38-1.25H10Z"
+            clipRule="evenodd"
+        />
+    </svg>
+)
+
+
+
 
 export const ChainLinkIcon = (props) => (
     <svg
