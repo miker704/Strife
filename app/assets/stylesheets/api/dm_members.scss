@@ -254,13 +254,14 @@
   -webkit-box-flex: 0;
   flex: 0 0 auto;
   position: relative;
-  top: 1px;
   width: 14px;
   height: 14px;
   flex-shrink: 0;
   margin-left: 4px;
   color: var(--text-warning);
   outline: none;
+  //december 2023 disabled as i find the misalignment not fine.
+  // top: 1px;
 }
 
 .dm-server-members-list-sep {
@@ -282,4 +283,13 @@
 
 .dm-member-empty-info-div:empty {
   display: none;
+}
+
+.member-list-layout-member-inner {
+  padding-top: calc(
+    0.5 * var(--custom-member-list-item-avatar-decoration-padding)
+  );
+  padding-bottom: calc(
+    0.5 * var(--custom-member-list-item-avatar-decoration-padding)
+  );
 }
