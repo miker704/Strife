@@ -742,4 +742,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added styles to increase padding between members in server members list.
     - Added changed the group icon in server members list.
     - Changed spacing of members in server members list.
-
+    - Added padding vars for member list spacing to root core styles.
