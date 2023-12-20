@@ -736,10 +736,10 @@
 .sticker-icon {
   color: var(--interactive-normal);
   display: block;
-  width: 20px;
-  height: 20px;
   -webkit-app-region: no-drag;
   box-sizing: border-box;
+  // width: 20px;
+  // height: 20px;
 }
 
 .icongif {
@@ -789,11 +789,12 @@
 .smiley-face-icon {
   color: var(--interactive-normal);
   display: block !important;
-  width: 22px;
-  height: 22px;
   -webkit-app-region: no-drag;
   box-sizing: border-box;
   // transform: translate(-2px, 10px) !important;
+
+  // width: 22px;
+  // height: 22px;
 }
 
 .smiley-face-icon:hover {
