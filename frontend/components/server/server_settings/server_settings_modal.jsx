@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Tooltip } from "react-tooltip";
 import REACT_PORTAL from "../../../utils/ReactPortal_api_util";
 import { appPullerReleaseAnimation, appPullerReleaseHoldAnimation } from "../../../utils/appPullerAnimation_api_util";
-import { ESCICON, GemBoostIcon, TrashCanIcon, HashIcon, LogoutIcon, LoudSpeakerIcon, RadioCircleFilledIcon, RadioCircleIcon, SelectBoxCheckIcon } from "../../front_end_svgs/Strife_svgs";
+import { ESCICON, GemBoostIcon, TrashCanIcon, HashIcon, LogoutIcon, LoudSpeakerIcon, RadioCircleFilledIcon, RadioCircleIcon, SelectBoxCheckIcon, PopOutWindowIcon } from "../../front_end_svgs/Strife_svgs";
 
 const StrifeToggleSwitch = (props = {
     labelTagContents: String(),
@@ -1060,7 +1060,12 @@ const ServerSettingsModal = (props) => {
                                         <div className="server-settings-sidebar-list-header">User Management</div>
                                     </div>
 
-                                    <div className="server-settings-sidebar-list-item" role="tab">Members</div>
+                                    <div className="server-settings-sidebar-list-item" role="tab">
+                                        <div className="server-settings-sidebar-list-item-inner-special">
+                                            Members
+                                            <PopOutWindowIcon className="ssm-del-server-icon" width={16} height={16} />
+                                        </div>
+                                    </div>
                                     <div className="server-settings-sidebar-list-item" role="tab">Invites</div>
                                     <div className="server-settings-sidebar-list-sep"></div>
 
