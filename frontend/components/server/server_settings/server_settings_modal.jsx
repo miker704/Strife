@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Tooltip } from "react-tooltip";
 import REACT_PORTAL from "../../../utils/ReactPortal_api_util";
 import { appPullerReleaseAnimation, appPullerReleaseHoldAnimation } from "../../../utils/appPullerAnimation_api_util";
-import { ESCICON, GemBoostIcon, TrashCanIcon, HashIcon, LogoutIcon, LoudSpeakerIcon, RadioCircleFilledIcon, RadioCircleIcon, SelectBoxCheckIcon, PopOutWindowIcon } from "../../front_end_svgs/Strife_svgs";
+import { ESCICON, GemBoostIcon, TrashCanIcon, HashIcon, LogoutIcon, LoudSpeakerIcon, RadioCircleFilledIcon, RadioCircleIcon, SelectBoxCheckIcon, PopOutWindowIcon, UploadImgIndicatorSVGIcon } from "../../front_end_svgs/Strife_svgs";
 
 const StrifeToggleSwitch = (props = {
     labelTagContents: String(),
@@ -1457,7 +1457,7 @@ const ServerSettingsModal = (props) => {
                                                                         <div className="faint-img-uploader">
                                                                             <div className="faint-img-upload" style={{ backgroundImage: `${props.server.server_banner === undefined ? `linear-gradient(45deg, var(--guild-boosting-blue), var(--guild-boosting-purple))` : `url(${props.server.server_banner})`}` }}>
                                                                                 <div className="faint-img-acyro"></div>
-                                                                                <div className="faint-img-icon faint-img-uploader-icon"></div>
+                                                                                <div className="faint-img-icon faint-img-uploader-icon" style={{ backgroundImage: `none`, backgroundColor: `var(--white-500)` }}><UploadImgIndicatorSVGIcon /></div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -1504,7 +1504,7 @@ const ServerSettingsModal = (props) => {
                                                                         <div className="faint-img-uploader">
                                                                             <div className="faint-img-upload" style={{ backgroundImage: `${props.server.invite_splash === undefined ? `linear-gradient(45deg, var(--guild-boosting-blue), var(--guild-boosting-purple))` : `url(${props.server.invite_splash})`}` }}>
                                                                                 <div className="faint-img-acyro"></div>
-                                                                                <div className="faint-img-icon faint-img-uploader-icon"></div>
+                                                                                <div className="faint-img-icon faint-img-uploader-icon" style={{ backgroundImage: `none`, backgroundColor: `var(--white-500)` }}><UploadImgIndicatorSVGIcon /></div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
