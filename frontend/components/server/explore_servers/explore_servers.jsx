@@ -2,7 +2,10 @@ import React from "react";
 import { useEffect, useRef, useState } from "react";
 import ExploreServersNavBar from "./explore_servers_nav_bar";
 import ActionButtonPopUpContainer from "./action_button_pop_up_container";
-import { BackArrowIcon, ExploreServersSearchXIcon, OverFlowEllipsisIcon, ProfilePanelChevronIcon, SearchMagIcon, VerifiedCheckIcon, VerifiedStarIcon } from "../../front_end_svgs/Strife_svgs";
+import {
+    BackArrowIcon, ExploreServersSearchXIcon, ExploreServersChevronIcon, OverFlowEllipsisIcon,
+    SearchMagIcon, VerifiedCheckIcon, VerifiedStarIcon
+} from "../../front_end_svgs/Strife_svgs";
 import { Tooltip } from "react-tooltip";
 import { GuildCardGridSkeletonList, GuildCardSearchSkeletonList } from "../../custom_input_components/guild_card_skeletons/guild_card_skeletons";
 
@@ -515,7 +518,7 @@ const ExploreServers = (props) => {
                                             <div className="guild-language-selector-box">
                                                 <span className="guild-language-value">English</span>
                                                 <div className="guild-language-chevron-icon-container">
-                                                    <ProfilePanelChevronIcon className="chevronPointDown" />
+                                                    <ExploreServersChevronIcon className="chevronPointDown" />
                                                 </div>
                                             </div>
                                         </div>
