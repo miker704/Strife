@@ -293,13 +293,13 @@
   outline: 0;
   z-index: 2;
   background-color: var(--white-500);
-  padding-right: 8px;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   font-size: 18px;
-  padding-right: 16px;
+  // padding-right: 16px;
+  padding-right: 8px;
   border-radius: 3px;
   border: 1px solid transparent;
   box-shadow: 0px 2px 5px 0px var(--black-500-hsl-02);
