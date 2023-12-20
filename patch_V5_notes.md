@@ -699,6 +699,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of TelevisionIcon backed up old version under suffix old.
     - Added new version of TernaryTreeIcon backed up old version under suffix old.
     - Added ExploreServersChevronIcon.
+    - Added new version of ExploreServersSearchXIcon backed up old version under suffix old.
+    - Added new version of SearchMagIcon backed up old version under suffix old.
 
 
 
