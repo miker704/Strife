@@ -60,7 +60,7 @@ const UserSettings = (props) => {
     setUserPhone(props.currentUser.phone_number)
     setScrambleUserEmailString(scrambleEmail());
     setScrambleUserPhoneString(scramblePhoneNumber());
-    checkIfDemoUser();
+    // checkIfDemoUser();
 
     if (isSubModMounted === true) {
 
@@ -344,9 +344,11 @@ const UserSettings = (props) => {
                   <div className='user-settings-sidebar-list-item selected' role="tab">My Account</div>
                   <div className='user-settings-sidebar-list-item' role="tab">Profiles</div>
                   <div className='user-settings-sidebar-list-item' role="tab">Privacy & Safety</div>
+                  <div className='user-settings-sidebar-list-item' role="tab">Family Center</div>
                   <div className='user-settings-sidebar-list-item' role="tab">Authorized Apps</div>
                   <div className='user-settings-sidebar-list-item' role="tab">Devices</div>
                   <div className='user-settings-sidebar-list-item' role="tab">Connections</div>
+                  <div className='user-settings-sidebar-list-item' role="tab">Clips</div>
                   <div className='user-settings-sidebar-list-item' role="tab">Friend Requests</div>
                   <div className='user-settings-sidebar-list-seperator'></div>
                   <div className='user-settings-sidebar-list-header-wrapper' role="button">
@@ -395,6 +397,7 @@ const UserSettings = (props) => {
                   </div>
                   <div className='user-settings-sidebar-list-item' role="tab">Activity Privacy</div>
                   <div className='user-settings-sidebar-list-item' role="tab">What's New</div>
+                  <div className='user-settings-sidebar-list-item' role="tab">Merch</div>
                   <div className='user-settings-sidebar-list-item' role="tab">HypeSquad</div>
                   <div className='user-settings-sidebar-list-seperator'></div>
 
@@ -407,29 +410,32 @@ const UserSettings = (props) => {
                   <div className='user-settings-sidebar-list-seperator'></div>
 
                   <div className='usm-social-links'>
-                    <a className='usm-social-links-anchor' target='_blank' rel="noreferrer noopener" href="https://twitter.com/discord">
+                    <a className='usm-social-links-anchor' target='_blank' rel="noreferrer noopener" href="https://twitter.com/discord" tabIndex={-1} title='Twitter'>
                       <SideBarTwitterIcon />
                     </a>
-                    <a className='usm-social-links-anchor' target='_blank' rel="noreferrer noopener" href="https://www.instagram.com/discord/">
+                    <a className='usm-social-links-anchor' target='_blank' rel="noreferrer noopener" href="https://www.instagram.com/discord/" tabIndex={-1} title='Instagram'>
                       <SideBarInstaGramIcon />
                     </a>
-                    <a className='usm-social-links-anchor' target='_blank' rel="noreferrer noopener" href="https://www.facebook.com/discord/">
+                    <a className='usm-social-links-anchor' target='_blank' rel="noreferrer noopener" href="https://www.facebook.com/discord/" tabIndex={-1} title='Facebook'>
                       <SideBarFaceBookIcon />
                     </a>
-                    <a className='usm-social-links-anchor' target='_blank' rel="noreferrer noopener" href="https://www.youtube.com/discord/">
+                    <a className='usm-social-links-anchor' target='_blank' rel="noreferrer noopener" href="https://www.youtube.com/discord/" tabIndex={-1} title='Youtube'>
                       <SideBarYouTubeIcon />
                     </a>
-                    <a className='usm-social-links-anchor' target='_blank' rel="noreferrer noopener" href="https://www.tiktok.com/@discord">
+                    <a className='usm-social-links-anchor' target='_blank' rel="noreferrer noopener" href="https://www.tiktok.com/@discord" tabIndex={-1} title='TkTok'>
                       <SideBarTikTokIcon />
                     </a>
-                    <a className='usm-social-links-anchor' target='_blank' rel="noreferrer noopener" href="https://www.linkedin.com/in/michael-ramoutar/">
+                    <a className='usm-social-links-anchor' target='_blank' rel="noreferrer noopener" href="https://www.linkedin.com/in/michael-ramoutar/" tabIndex={-1} title='Linkedin'>
                       <LinkedInIcon width={16} height={16} />
                     </a>
                   </div>
 
                   <div className='usm-system-version-info'>
-                    <span className='usm-system-version-info-inners'>Stable 210566 (fc3ede1)</span>
+                    <span className='usm-system-version-info-inners'>Stable 255464 (f0b3159) 
+                    ($TR!F3-V5-Alpha-Build)
+                    </span>
                     <span className='usm-system-version-info-inners'>Windows 11 64-bit</span>
+                    {/* <span className='usm-system-version-info-inners'>{`${window.navigator}`}</span> */}
                   </div>
                 </div>
               </nav>
@@ -474,7 +480,7 @@ const UserSettings = (props) => {
                               isDemoUser === true ? (
                                 <button className='usm-edit-user-banner-button' type="button" id="edit-user-banner-button" disabled>
                                   <div className="usm-strife-nitro-badge">
-                                    <StrifeNitroBadgeIcon className="usm-strife-nitro-icon" />
+                                    <StrifeNitroBadgeIcon className="usm-strife-nitro-icon" height={16} width={16} />
                                   </div>
                                   <div className='global-button-contents look-filled-button-contents'>Edit User Banner</div>
                                 </button>
@@ -482,7 +488,7 @@ const UserSettings = (props) => {
                                 (
                                   <button className='usm-edit-user-banner-button' type="button" id="edit-user-banner-button" onClick={(e) => openModal("changeBanner")} >
                                     <div className="usm-strife-nitro-badge">
-                                      <StrifeNitroBadgeIcon className="usm-strife-nitro-icon" />
+                                      <StrifeNitroBadgeIcon className="usm-strife-nitro-icon" height={16} width={16} />
                                     </div>
                                     <div className='global-button-contents look-filled-button-contents'>Edit User Banner</div>
                                   </button>
@@ -707,17 +713,32 @@ const UserSettings = (props) => {
                           <div className='usm-flex-child' style={{ flex: `1 1 auto` }}>
                             <div>
                               <div className='usm-section-title'>
-                                <h3 className='usm-section-title-header-h3'>Two-factor authentication</h3>
+                                <h3 className='usm-section-title-header-h3'>Authenticator App</h3>
                               </div>
                               <div className='usm-children'>
                                 <div className='usm-two-factor-auth-subtext'>
                                   Protect your $TR!F3 account with an extra layer of security. Once configured, you'll be required
-                                  to enter both your password and an authentication code from your mobile phone in order to sign in.
+                                  to enter both your password and complete one additional step in order to sign in.
                                 </div>
                                 <div>
                                   <button className='usm-enable-two-factor-auth-button' type="button" disabled>
-                                    <div className='global-button-contents look-filled-button-contents'>Enable Two-Factor Auth</div>
+                                    <div className='global-button-contents look-filled-button-contents'>Enable Authenticator App</div>
                                   </button>
+                                </div>
+                                <div className='usm-security-key-settings'>
+                                  <div className='usm-section-title'>
+                                    <h3 className='usm-section-title-header-h3'>Security Keys</h3>
+                                  </div>
+                                  <div className='usm-children'>
+                                    <div className='usm-security-key-settings-subtext'>
+                                      Add an additional layer of protection to your account with a Security Key.
+                                    </div>
+                                    <div>
+                                      <button className='usm-enable-two-factor-auth-button' type="button" disabled>
+                                        <div className='global-button-contents look-filled-button-contents'>Register a Security Key</div>
+                                      </button>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
