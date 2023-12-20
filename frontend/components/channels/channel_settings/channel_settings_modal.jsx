@@ -201,7 +201,7 @@ const ChannelSettingsModal = (props) => {
 
 
     useEffect(() => {
-        if(isLoaded){
+        if (isLoaded) {
             catchChanges();
         }
     }, [newChannelName]);
@@ -792,7 +792,7 @@ const ChannelSettingsModal = (props) => {
                                         </div>
                                         <div className="cs-lf-lt-sep"></div>
                                         <div className="cs-version-number">
-                                            <span>Stable 210566 (fc3ede1)</span>
+                                            <span>Stable 255464 (f0b3159) ($TR!F3-V5-Alpha-Build)</span>
                                             <br />
                                             <span>Windows 11 64-bit</span>
                                         </div>
