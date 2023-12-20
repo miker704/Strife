@@ -775,6 +775,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of SMSPlusIcon backed up old version under suffix old.
     - Added new version of FriendsRaiseHandIcon backed up old version under suffix old.
     - Added MessageRequestsEnvelopeIcon.
+    - Added new version of CancelFriendRequestIcon backed up old version under suffix old.
 
 
 
