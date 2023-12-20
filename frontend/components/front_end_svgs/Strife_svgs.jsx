@@ -2253,13 +2253,14 @@ export const MarkUnReadIcon = (props) => (
 )
 
 export const ReplyArrowIcon = (props) => (
-    <svg width={24} height={24} className="" viewBox="0 0 24 24" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} className="" viewBox="0 0 24 24" aria-hidden="true" fill="none" {...props}>
         <path
             fill="currentColor"
-            d="M10 8.267V4l-7 7.467 7 7.466V14.56c5 0 8.5 1.707 11 5.44-1-5.333-4-10.667-11-11.733Z"
+            d="M2.3 7.3a1 1 0 0 0 0 1.4l5 5a1 1 0 0 0 1.4-1.4L5.42 9H11a7 7 0 0 1 7 7v4a1 1 0 1 0 2 0v-4a9 9 0 0 0-9-9H5.41l3.3-3.3a1 1 0 0 0-1.42-1.4l-5 5Z"
         />
     </svg>
 )
+
 export const AddReactionIcon = (props) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
