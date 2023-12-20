@@ -777,7 +777,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added MessageRequestsEnvelopeIcon.
     - Added new version of CancelFriendRequestIcon backed up old version under suffix old.
     - Added new version of AcceptFriendRequestIcon backed up old version under suffix old.
-
+    - Added new version of AddFriendsExploreCompassIcon backed up old version under suffix old.
 
 
 
