@@ -710,6 +710,27 @@ export const CheckBoxCheckedIcon = (props) => (
 
 export const ServerInsightsIcon = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={18}
+        height={18}
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        className=""
+        fill="none"
+        role="img"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            fillRule="evenodd"
+            d="M2 19V5a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3Zm16-9.59V13a1 1 0 1 0 2 0V7a1 1 0 0 0-1-1h-6a1 1 0 1 0 0 2h3.59l-5.09 5.09-1.8-1.8a1 1 0 0 0-1.4 0l-4 4a1 1 0 1 0 1.4 1.42L9 13.4l1.8 1.8a1 1 0 0 0 1.4 0L18 9.4Z"
+            clipRule="evenodd"
+        />
+    </svg>
+)
+
+export const ServerInsightsIconOld = (props) => (
+    <svg
         width={18}
         height={18}
         aria-hidden="true"
@@ -728,7 +749,6 @@ export const ServerInsightsIcon = (props) => (
         />
     </svg>
 )
-
 
 export const CloseXIcon = (props) => (
     <svg
