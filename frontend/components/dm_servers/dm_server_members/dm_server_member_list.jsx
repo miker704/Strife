@@ -201,7 +201,7 @@ const DmServerMemberList = (props) => {
                                     handlePopupShow(e);
                                 }}>
 
-                                <div className={`dm-member-layout ${selectedMember.id === dmMember.id && showPopup === true ? `selected` : ``}`}>
+                                <div className={`member-list-layout-member-inner dm-member-layout ${selectedMember.id === dmMember.id && showPopup === true ? `selected` : ``}`}>
                                     <div className="dm-member-avatar">
                                         <div className="dm-member-avatar-inner-wrapper" role="img">
 
