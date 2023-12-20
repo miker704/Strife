@@ -1464,6 +1464,8 @@ export const CancelFriendRequestIcon = (props) => (
 
 export const AcceptFriendRequestIcon = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
         width={24}
         height={24}
         aria-hidden="true"
@@ -1473,9 +1475,7 @@ export const AcceptFriendRequestIcon = (props) => (
     >
         <path
             fill="currentColor"
-            fillRule="evenodd"
-            d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17Z"
-            clipRule="evenodd"
+            d="M21.7 5.3a1 1 0 0 1 0 1.4l-12 12a1 1 0 0 1-1.4 0l-6-6a1 1 0 1 1 1.4-1.4L9 16.58l11.3-11.3a1 1 0 0 1 1.4 0Z"
         />
     </svg>
 )
