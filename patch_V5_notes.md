@@ -706,3 +706,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Updated icons in Explore Servers.
     - Updated icons in Explore Servers Nav Bar.
     - Added new version of MicroPhoneIcon backed up old version under suffix old.
+    - Added new version of MicroPhoneMutedIcon backed up old version under suffix old.
