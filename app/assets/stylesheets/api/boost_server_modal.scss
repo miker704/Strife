@@ -775,6 +775,11 @@
   align-items: center;
   padding-top: 10px;
 }
+.bsspm-warn-svg-block {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+}
 .warn-block-icon {
   background-image: image_url("warnBlockIcon.svg");
   position: absolute;
@@ -782,6 +787,18 @@
   width: 24px;
   height: 24px;
 }
+.warn-block-svgIcon {
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.warn-block-svgIcon-anchor-text {
+  font-family: var(--global-font);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  color: var(--header-muted);
+}
+
 .warn-block-anchor-text {
   margin-left: 34px;
   font-family: var(--global-font);
@@ -1052,6 +1069,22 @@
   flex-wrap: nowrap;
   display: flex;
 }
+.npsm-button-footer-container-reversed {
+  -webkit-box-shadow: inset 0 1px 0 var(--primary-630-hsl);
+  box-shadow: inset 0 1px 0 var(--primary-630-hsl);
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  border-radius: 0 0 5px 5px;
+  background-color: var(--modal-footer-background);
+  position: relative;
+  flex: 0 0 auto;
+  padding: 16px;
+  z-index: 1;
+  overflow-x: hidden;
+  flex-wrap: nowrap;
+  display: flex;
+}
 
 .npsm-perk-list {
   margin: 16px 0px;
@@ -1233,6 +1266,9 @@
 
 .sbm-payment-card-icon.venmo-card::before {
   background: image_url("venmoCard.svg");
+}
+.sbm-payment-card-icon.cash-app-card::before {
+  background: image_url("cashAppCard.svg");
 }
 
 .sbm-payment-button:disabled {
@@ -1932,4 +1968,23 @@
   font-size: 16px;
   line-height: 16px;
   padding-top: 10px;
+}
+
+.bbsspm-priv-lock-icon-payment-footer {
+  align-items: center;
+  display: flex;
+  padding: 0 10px;
+  color: var(--primary-300);
+}
+
+.bbsspm-priv-lock-icon {
+  margin-right: 2px;
+  color: var(--primary-300);
+}
+.bbsspm-priv-lock-icon-subtitle {
+  font-family: var(--global-font);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--text-normal);
 }
