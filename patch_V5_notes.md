@@ -704,3 +704,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of VerifiedCheckIcon backed up old version under suffix old.
     - Adjusted padding for mag icon in the explore servers search bar in guild discovery.
     - Updated icons in Explore Servers.
+    - Updated icons in Explore Servers Nav Bar.
