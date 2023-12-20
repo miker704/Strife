@@ -247,9 +247,9 @@ const CreateServerForm = (props) => {
 
     const warpToExploreServer = (e) => {
         e.preventDefault();
-        if (props.history.location.pathname !== `/$/channels/guild-discovery/`) {
+        if (props.history.location.pathname !== `/$/guild-discovery/`) {
             handleCloseOnOutSideClick(e);
-            props.history.push(`/$/channels/guild-discovery/`);
+            props.history.push(`/$/guild-discovery/`);
         }
         else {
             handleCloseOnOutSideClick(e);
