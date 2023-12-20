@@ -713,4 +713,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Updated SVG Icons on User Nav Bar.
     - Added new version of BoostModalNitroBall backed up old version under suffix old.
     - Created Svg Component version of WarnILockIcon.
+    - Added new version of PrivateLockIcon backed up old version under suffix old.
 
