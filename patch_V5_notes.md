@@ -711,4 +711,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of HeadPhoneMutedIcon backed up old version under suffix old.
     - Added new version of SettingsIcon_Medium backed up old version under suffix old.
     - Updated SVG Icons on User Nav Bar.
+    - Added new version of BoostModalNitroBall backed up old version under suffix old.
 
