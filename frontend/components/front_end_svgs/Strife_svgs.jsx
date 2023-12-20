@@ -1353,7 +1353,7 @@ export const CreateDmCheckBoxIcon = (props) => (
 )
 
 export const LeftChevronArrowIcon = (props) => (
-    <svg width={20} height={20} fill="none" className="arrow-3B" {...props}>
+    <svg width={20} height={20} fill="none" className="arrow-3B" viewBox="0 0 20 20" {...props}>
         <path
             fill="currentColor"
             fillRule="evenodd"
@@ -1979,6 +1979,27 @@ export const ExploreCompassIcon = (props) => (
         <path fill="currentColor" d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
         <path
             fill="currentColor"
+            fillRule="evenodd"
+            d="M23 12a11 11 0 1 1-22 0 11 11 0 0 1 22 0ZM7.74 9.3A2 2 0 0 1 9.3 7.75l7.22-1.45a1 1 0 0 1 1.18 1.18l-1.45 7.22a2 2 0 0 1-1.57 1.57l-7.22 1.45a1 1 0 0 1-1.18-1.18L7.74 9.3Z"
+            clipRule="evenodd"
+        />
+    </svg>
+)
+
+export const AddFriendsExploreCompassIcon = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        fill="none"
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        className=""
+        {...props}
+    >
+        <path fill="var(--white-500)" d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+        <path
+            fill="var(--white-500)"
             fillRule="evenodd"
             d="M23 12a11 11 0 1 1-22 0 11 11 0 0 1 22 0ZM7.74 9.3A2 2 0 0 1 9.3 7.75l7.22-1.45a1 1 0 0 1 1.18 1.18l-1.45 7.22a2 2 0 0 1-1.57 1.57l-7.22 1.45a1 1 0 0 1-1.18-1.18L7.74 9.3Z"
             clipRule="evenodd"
