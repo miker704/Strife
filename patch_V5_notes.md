@@ -765,6 +765,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Updates to Server Header Nav Bar including icop n replacement and removal of the red muted version of the notification bell icon as it is no longer present in discord.
     - Moved Server Header NavBar version pre December 20th 2023 to deprecated folder.
     - Added new version of LoudSpeakerLockIcon backed up old version under suffix old.
+    - Added new version of HashLockIcon backed up old version under suffix old.
 
 
 
