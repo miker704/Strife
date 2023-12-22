@@ -718,7 +718,7 @@ const UserSettings = (props) => {
                               <div className='usm-children'>
                                 <div className='usm-two-factor-auth-subtext'>
                                   Protect your $TR!F3 account with an extra layer of security. Once configured, you'll be required
-                                  to enter both your password and complete one additional step in order to sign in.
+                                  to enter your password and complete one additional step in order to sign in.
                                 </div>
                                 <div>
                                   <button className='usm-enable-two-factor-auth-button' type="button" disabled>
