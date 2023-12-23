@@ -75,11 +75,15 @@ const ServerMessageControl = (props) => {
                                             <AddReactionIcon className="add-reaction-icon" width={18} height={18} />
                                         </div>
 
-                                        <div className="message-accessories-button" data-tooltip-id="thread-tip-super-reaction" data-tooltip-place="top" data-tooltip-content="Add Super Reaction"
-                                            onMouseEnter={(e) => { e.stopPropagation(); props.setMsgCtrlSRTTHover(true) }}
-                                            onMouseLeave={(e) => { e.stopPropagation(); props.setMsgCtrlSRTTHover(false) }}>
-                                            <AddSuperReactionIcon className="add-super-reaction-icon" width={18} height={18} />
-                                        </div>
+                                        {
+                                            props._SHIFT ? (
+                                                <div className="message-accessories-button" data-tooltip-id="thread-tip-super-reaction" data-tooltip-place="top" data-tooltip-content="Add Super Reaction"
+                                                    onMouseEnter={(e) => { e.stopPropagation(); props.setMsgCtrlSRTTHover(true) }}
+                                                    onMouseLeave={(e) => { e.stopPropagation(); props.setMsgCtrlSRTTHover(false) }}>
+                                                    <AddSuperReactionIcon className="add-super-reaction-icon" width={18} height={18} />
+                                                </div>
+                                            ) : ("")
+                                        }
 
                                         <div className="message-accessories-button" data-tooltip-id="msgbs-thread-tip" data-tooltip-place="top" data-tooltip-content="Edit" onClick={() => props.openEdit()}
                                             onMouseEnter={(e) => { e.stopPropagation(); props.setMsgCtrlTTHover(true) }}
@@ -183,16 +187,26 @@ const ServerMessageControl = (props) => {
                                             <AddReactionIcon className="add-reaction-icon" width={18} height={18} />
                                         </div>
 
-                                        <div className="message-accessories-button" data-tooltip-id="thread-tip-super-reaction" data-tooltip-place="top" data-tooltip-content="Add Super Reaction"
-                                            onMouseEnter={(e) => { e.stopPropagation(); props.setMsgCtrlSRTTHover(true) }}
-                                            onMouseLeave={(e) => { e.stopPropagation(); props.setMsgCtrlSRTTHover(false) }}>
-                                            <AddSuperReactionIcon className="add-super-reaction-icon" width={18} height={18} />
-                                        </div>
+                                        {
+                                            props._SHIFT ? (
+                                                <div className="message-accessories-button" data-tooltip-id="thread-tip-super-reaction" data-tooltip-place="top" data-tooltip-content="Add Super Reaction"
+                                                    onMouseEnter={(e) => { e.stopPropagation(); props.setMsgCtrlSRTTHover(true) }}
+                                                    onMouseLeave={(e) => { e.stopPropagation(); props.setMsgCtrlSRTTHover(false) }}>
+                                                    <AddSuperReactionIcon className="add-super-reaction-icon" width={18} height={18} />
+                                                </div>
+                                            ) : ("")
+                                        }
 
                                         <div className="message-accessories-button" data-tooltip-id="msgbs-thread-tip" data-tooltip-place="top" data-tooltip-content="Reply"
                                             onMouseEnter={(e) => { e.stopPropagation(); props.setMsgCtrlTTHover(true) }}
                                             onMouseLeave={(e) => { e.stopPropagation(); props.setMsgCtrlTTHover(false) }}>
                                             <ReplyArrowIcon className="reply-to-msg-icon" width={24} height={24} />
+                                        </div>
+
+                                        <div className="message-accessories-button" data-tooltip-id="msgbs-thread-tip" data-tooltip-place="top" data-tooltip-content="Create Thread"
+                                            onMouseEnter={(e) => { e.stopPropagation(); props.setMsgCtrlTTHover(true) }}
+                                            onMouseLeave={(e) => { e.stopPropagation(); props.setMsgCtrlTTHover(false) }}>
+                                            <ThreadsIcon className="edit-msg-create-thread-icon" width={24} height={24} />
                                         </div>
 
                                         <div className="message-accessories-button" data-tooltip-id="msgbs-thread-tip" data-tooltip-place="top" data-tooltip-position-strategy="fixed" data-tooltip-content="More (Hold Shift)"
