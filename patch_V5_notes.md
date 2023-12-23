@@ -789,6 +789,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Made a grammar edit in user settings modal in authentication app section.
     - Removed Threads icon from dm Message control.
     - Removed the super reaction icon from appearing by default now it requires a user to hold shift to reveal it in dm Message control.
+    - Updated icon and control placement for dm message control.
 
 
 
