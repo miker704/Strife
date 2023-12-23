@@ -793,6 +793,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added threads icon to server message control when hovering over a message that is not the current user.
     - Changed super reaction icon to be hidden unless a user holds down the shift key for server message controls.
     - Updated icon and control placement for server message control.
+    - Made a change to splash body to correct the placement of two images.
 
 
 
