@@ -790,6 +790,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed Threads icon from dm Message control.
     - Removed the super reaction icon from appearing by default now it requires a user to hold shift to reveal it in dm Message control.
     - Updated icon and control placement for dm message control.
+    - Added thread icon to server message control when hovering over a message that is not the current user.
 
 
 
