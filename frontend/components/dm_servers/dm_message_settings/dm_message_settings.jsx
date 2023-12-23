@@ -1,5 +1,5 @@
 import React from "react";
-import { AddReactionIcon, AddSuperReactionIcon, ChainLinkIcon, CopyIDIcon, OverFlowEllipsisIcon, PenEditIcon, PinnedIcon, ReplyArrowIcon, MarkUnReadIcon, ThreadsIcon, TrashCanIcon } from "../../front_end_svgs/Strife_svgs";
+import { AddReactionIcon, AddSuperReactionIcon, ChainLinkIcon, CopyIDIcon, OverFlowEllipsisIcon, PenEditIcon, PinnedIcon, ReplyArrowIcon, MarkUnReadIcon, TrashCanIcon } from "../../front_end_svgs/Strife_svgs";
 const DmMessageSettings = (props) => {
     return (
         <React.Fragment>
@@ -76,11 +76,16 @@ const DmMessageSettings = (props) => {
                                             <AddReactionIcon className="add-reaction-icon" width={18} height={18} />
                                         </div>
 
-                                        <div className="message-accessories-button" data-tooltip-id="thread-tip-super-reaction" data-tooltip-place="top" data-tooltip-content="Add Super Reaction"
-                                            onMouseEnter={(e) => { e.stopPropagation(); props.setMsgCtrlSRTTHover(true) }}
-                                            onMouseLeave={(e) => { e.stopPropagation(); props.setMsgCtrlSRTTHover(false) }}>
-                                            <AddSuperReactionIcon className="add-super-reaction-icon" width={18} height={18} />
-                                        </div>
+                                        {
+                                            props._SHIFT ? (
+                                                <div className="message-accessories-button" data-tooltip-id="thread-tip-super-reaction" data-tooltip-place="top" data-tooltip-content="Add Super Reaction"
+                                                    onMouseEnter={(e) => { e.stopPropagation(); props.setMsgCtrlSRTTHover(true) }}
+                                                    onMouseLeave={(e) => { e.stopPropagation(); props.setMsgCtrlSRTTHover(false) }}>
+                                                    <AddSuperReactionIcon className="add-super-reaction-icon" width={18} height={18} />
+                                                </div>
+                                            ) : ("")
+
+                                        }
 
                                         <div className="message-accessories-button" data-tooltip-id="dmsgbs-thread-tip" data-tooltip-place="top" data-tooltip-content="Edit" onClick={() => props.openEdit()}
                                             onMouseEnter={(e) => { e.stopPropagation(); props.setMsgCtrlTTHover(true) }}
@@ -88,11 +93,6 @@ const DmMessageSettings = (props) => {
                                             <PenEditIcon className="pen-icon" width={16} height={16} />
                                         </div>
 
-                                        <div className="message-accessories-button" data-tooltip-id="dmsgbs-thread-tip" data-tooltip-place="top" data-tooltip-content="Create Thread"
-                                            onMouseEnter={(e) => { e.stopPropagation(); props.setMsgCtrlTTHover(true) }}
-                                            onMouseLeave={(e) => { e.stopPropagation(); props.setMsgCtrlTTHover(false) }}>
-                                            <ThreadsIcon className="edit-msg-create-thread-icon" width={24} height={24} />
-                                        </div>
 
                                         <div className="message-accessories-button" data-tooltip-id="dmsgbs-thread-tip" data-tooltip-place="top" data-tooltip-content="Delete"
                                             onClick={(e) => {
@@ -188,11 +188,17 @@ const DmMessageSettings = (props) => {
                                             <AddReactionIcon className="add-reaction-icon" width={18} height={18} />
                                         </div>
 
-                                        <div className="message-accessories-button" data-tooltip-id="thread-tip-super-reaction" data-tooltip-place="top"
-                                            data-tooltip-content="Add Super Reaction" onMouseEnter={(e) => { e.stopPropagation(); props.setMsgCtrlSRTTHover(true) }}
-                                            onMouseLeave={(e) => { e.stopPropagation(); props.setMsgCtrlSRTTHover(false) }}>
-                                            <AddSuperReactionIcon className="add-super-reaction-icon" width={18} height={18} />
-                                        </div>
+
+                                        {
+                                            props._SHIFT ? (
+                                                <div className="message-accessories-button" data-tooltip-id="thread-tip-super-reaction" data-tooltip-place="top"
+                                                    data-tooltip-content="Add Super Reaction" onMouseEnter={(e) => { e.stopPropagation(); props.setMsgCtrlSRTTHover(true) }}
+                                                    onMouseLeave={(e) => { e.stopPropagation(); props.setMsgCtrlSRTTHover(false) }}>
+                                                    <AddSuperReactionIcon className="add-super-reaction-icon" width={18} height={18} />
+                                                </div>
+                                            ) : ("")
+
+                                        }
 
                                         <div className="message-accessories-button" data-tooltip-id="dmsgbs-thread-tip" data-tooltip-place="top" data-tooltip-content="Reply"
                                             onMouseEnter={(e) => { e.stopPropagation(); props.setMsgCtrlTTHover(true) }}
