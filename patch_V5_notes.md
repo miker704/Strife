@@ -804,5 +804,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added VerifiedPartnerIcon.
     - Started Message Requests Page Styles.
     - Added message requests route to server nav bar to be rendered when at the url '/$/m3$$@g3-r3qu3$t$/'.
+    - Mounted message requessts page to _CORE_.jsx to route '/$/m3$$@g3-r3qu3$t$/'.
 
 
