@@ -797,6 +797,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Report User Profile Option to mega Upc friend options modal.
     - Added $TR!F3 Member since section to upc preview in profile effect preview modal.
     - Started Message Requests Page.
+    - Created Message Requests Page Container.js.
 
 
 
