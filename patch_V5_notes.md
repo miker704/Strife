@@ -802,6 +802,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Message Requests Header Nav Bar Container.js.
     - Created Message Requests Header Nav Bar.jsx.
     - Added VerifiedPartnerIcon.
-    - Start Message Requests Page Styles.
+    - Started Message Requests Page Styles.
+    - Added message requests route to server nav bar to be rendered when at the url '/$/m3$$@g3-r3qu3$t$/'.
 
 
