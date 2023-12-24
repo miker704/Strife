@@ -794,6 +794,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed super reaction icon to be hidden unless a user holds down the shift key for server message controls.
     - Updated icon and control placement for server message control.
     - Made a change to splash body to correct the placement of two images.
+    - Added Report User Profile Option to mega Upc friend options modal.
 
 
 
