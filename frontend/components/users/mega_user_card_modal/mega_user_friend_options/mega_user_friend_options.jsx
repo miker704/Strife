@@ -244,6 +244,13 @@ const MegaUPCUserFriendshipOptionsModal = (props) => {
                                 }
 
                                 {
+                                    props.memberStatus.friend_request_status !== -1 ? (
+                                        <div className="mfom-item red" onClick={(e) => props.setShowPopup(false)}>
+                                            <div className="mfom-item-label">Report User Profile</div>
+                                        </div>
+                                    ) : ("")
+                                }
+                                {
                                     props.memberStatus.friend_request_status === -1 ? (
                                         <div className="mfom-item" onClick={(e) => handleUnBlockUser(e)}>
                                             <div className="mfom-item-label">Unblock</div>
