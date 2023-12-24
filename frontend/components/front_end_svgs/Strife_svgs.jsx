@@ -252,17 +252,23 @@ export const InviteMemberIcon = (props) => (
 
 export const InviteMemberIcon_Small = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
         width={16}
         height={16}
         aria-hidden="true"
         role="img"
         className=""
-        viewBox="0 0 16 16"
+        viewBox="0 0 24 24"
+        fill="none"
         {...props}
     >
         <path
             fill="currentColor"
-            d="M14 2h2v1h-2v2h-1V3h-2V2h2V0h1v2ZM6.5 8.007a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 0 0 5ZM6.5 8.34c-3.24 0-5.5 1.647-5.5 4v.667h11v-.667c0-2.36-2.26-4-5.5-4Z"
+            d="M19 14a1 1 0 0 1 1 1v3h3a1 1 0 0 1 0 2h-3v3a1 1 0 0 1-2 0v-3h-3a1 1 0 1 1 0-2h3v-3a1 1 0 0 1 1-1Z"
+        />
+        <path
+            fill="currentColor"
+            d="M16.83 12.93c.26-.27.26-.75-.08-.92A9.5 9.5 0 0 0 12.47 11h-.94A9.53 9.53 0 0 0 2 20.53c0 .81.66 1.47 1.47 1.47h.22c.24 0 .44-.17.5-.4.29-1.12.84-2.17 1.32-2.91.14-.21.43-.1.4.15l-.26 2.61c-.02.3.2.55.5.55h7.64c.12 0 .17-.31.06-.36C12.82 21.14 12 20.22 12 19a3 3 0 0 1 3-3h.5a.5.5 0 0 0 .5-.5V15c0-.8.31-1.53.83-2.07ZM12 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
         />
     </svg>
 )
@@ -882,12 +888,14 @@ export const ChannelDropDownChevronIcon = (props) => (
 
 
 export const MiniChevronIcon = (props) => (
-    <svg width={24} height={24} className="" viewBox="0 0 24 24"{...props}>
+    <svg width={24} height={24} className=""
+        fill="none"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"{...props}>
         <path
             fill="currentColor"
-            fillRule="evenodd"
-            d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41Z"
-            clipRule="evenodd"
+            d="M5.3 9.3a1 1 0 0 1 1.4 0l5.3 5.29 5.3-5.3a1 1 0 1 1 1.4 1.42l-6 6a1 1 0 0 1-1.4 0l-6-6a1 1 0 0 1 0-1.42Z"
         />
     </svg>
 )
@@ -2167,7 +2175,24 @@ export const VerifiedCheckIcon = (props) => (
         />
     </svg>
 )
+export const VerifiedPartnerIcon = (props) => (
+    <svg
+        width={16}
+        height={16}
+        aria-hidden="true"
+        role="img"
+        className=""
+        viewBox="0 0 16 16"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            d="m10.59 6.4-1.398.9c-.2.1-.3.1-.5 0-.1-.1-.299-.2-.399-.3-.4-.1-.699 0-.999.2l-.499.3-2.497 1.7c-.6.3-1.299.2-1.598-.4-.4-.5-.2-1.2.3-1.6l2.996-2c.799-.5 1.798-.7 2.697-.5.799.2 1.398.6 1.898 1.2.2.2.1.4 0 .5ZM13.487 7.8c0 .4-.2.8-.5 1l-3.096 2c-.599.4-1.198.6-1.897.6-.3 0-.5 0-.8-.1-.799-.2-1.398-.6-1.897-1.2-.1-.2 0-.4.1-.5l1.398-.9c.1-.1.3-.1.4 0 .2.1.399.2.499.3.4 0 .7 0 .999-.2l.699-.4L11.39 7l.3-.2c.499-.3 1.298-.2 1.597.3.2.3.2.5.2.7Z"
+        />
+    </svg>
 
+
+)
 
 export const ExploreServersSearchXIcon = (props) => (
     <svg
@@ -3583,6 +3608,27 @@ export const BackArrowIcon = (props) => (
 
 export const StrifeShopIcon = (props) => (
     <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={23}
+        height={23}
+        fill="none"
+        aria-hidden="true"
+        className=""
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            d="M2.63 4.19A3 3 0 0 1 5.53 2H7a1 1 0 0 1 1 1v3.98a3.07 3.07 0 0 1-.3 1.35A2.97 2.97 0 0 1 4.98 10c-2 0-3.44-1.9-2.9-3.83l.55-1.98ZM10 2a1 1 0 0 0-1 1v4a3 3 0 0 0 3 3 3 3 0 0 0 3-2.97V3a1 1 0 0 0-1-1h-4Zm7 0a1 1 0 0 0-1 1v3.98a3.65 3.65 0 0 0 0 .05A2.95 2.95 0 0 0 19.02 10c2 0 3.44-1.9 2.9-3.83l-.55-1.98A3 3 0 0 0 18.47 2H17Z"
+        />
+        <path
+            fill="currentColor"
+            d="M21 11.42V19a3 3 0 0 1-3 3h-2.75a.25.25 0 0 1-.25-.25V16a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v5.75c0 .14-.11.25-.25.25H6a3 3 0 0 1-3-3v-7.58c0-.18.2-.3.37-.24a4.46 4.46 0 0 0 4.94-1.1c.1-.12.3-.12.4 0a4.49 4.49 0 0 0 6.58 0c.1-.12.3-.12.4 0a4.45 4.45 0 0 0 4.94 1.1c.17-.07.37.06.37.24Z"
+        />
+    </svg>
+)
+export const StrifeShopIcon1 = (props) => (
+    <svg
         width={23}
         height={18}
         fill="none"
@@ -3599,7 +3645,6 @@ export const StrifeShopIcon = (props) => (
         />
     </svg>
 )
-
 
 export const EnableCameraViewIcon = (props) => (
     <svg width={24} height={24} aria-hidden="true" viewBox="0 0 24 24" {...props} className="">
@@ -3793,3 +3838,22 @@ export const MessageRequestsEnvelopeIcon = (props) => (
         />
     </svg>
 )
+
+export const SmallAddButtonIcon = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={18}
+        height={18}
+        fill="none"
+        aria-hidden="true"
+        className=""
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            d="M13 6a1 1 0 1 0-2 0v5H6a1 1 0 1 0 0 2h5v5a1 1 0 1 0 2 0v-5h5a1 1 0 1 0 0-2h-5V6Z"
+        />
+    </svg>
+)
+
