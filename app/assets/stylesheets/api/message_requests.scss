@@ -1,0 +1,112 @@
+//message requests dm nav bar button
+
+.msg-req-dm-nav-button-nav-bar-wrapper {
+  position: relative;
+  max-width: 224px;
+  margin-left: 8px;
+  box-sizing: border-box;
+  display: block;
+  padding: 1px 0;
+  border-radius: 4px;
+  transition: none;
+}
+
+.msg-req-dm-nav-button-nav-bar {
+  padding-right: 8px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  color: var(--channels-default);
+  cursor: pointer;
+  border-radius: inherit;
+}
+
+.msg-req-dm-nav-button-nav-bar:hover,
+.msg-req-dm-nav-button-nav-bar:focus-within,
+.msg-req-dm-nav-button-nav-bar.selected:hover,
+.msg-req-dm-nav-button-nav-bar.selected:focus-within {
+  color: var(--interactive-hover);
+  background-color: var(--background-modifier-hover);
+
+  .msg-req-avatar-text,
+  .msg-req-avatar-icon {
+    color: var(--interactive-hover);
+  }
+}
+
+.msg-req-dm-nav-button-nav-bar:active {
+  color: var(--interactive-active);
+  background-color: var(--background-modifier-active);
+}
+
+.msg-req-dm-nav-button-nav-bar.selected {
+  color: var(--interactive-active);
+  background-color: var(--background-modifier-selected);
+
+  .msg-req-avatar-text,
+  .msg-req-avatar-icon {
+    color: var(--interactive-active);
+  }
+}
+
+.msg-req-nav-bar-link {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  align-items: center;
+  color: inherit;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.msg-req-avatar-wrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  border-radius: 4px;
+  height: 42px;
+  padding: 0px 8px;
+}
+
+.msg-req-avatar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
+
+.msg-req-avatar-text-wrapper {
+  min-width: 0;
+  flex: 1 1 auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.msg-req-avatar-text-inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.msg-req-avatar-text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  flex: 0 1 auto;
+  font-family: var(--global-font);
+}
+
+///end
