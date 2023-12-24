@@ -807,5 +807,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Mounted message requessts page to _CORE_.jsx to route '/$/m3$$@g3-r3qu3$t$/'.
     - Added UpdateIsReady Icon to Shop Header Nav Bar.
     - Added UpdateIsReady Icon to Nitro Header Nav Bar.
+    - Added Warp To Update Loading Screen to Shop Header Nav Bar.
 
 
