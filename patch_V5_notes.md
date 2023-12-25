@@ -822,3 +822,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finished Spam Message Requests container.js.
     - Finished Spam Message Requests.jsx.
     - Finished Message Requests tab container.js.
+    - Finished Message Requests tab.jsx.
