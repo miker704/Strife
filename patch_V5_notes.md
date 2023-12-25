@@ -92,6 +92,7 @@ the need to create a private room is need to prevent unwanted members from enter
     another tab while in the shop page.
     - Added created_date function for dm_server.rb model to return a formatted create date for one to one dms.
     - Added get_first_message function for dm_server.rb model to return the first dm msg for one to one dms.
+    - Added created_date to dm returned in one to one dms in _dm_server.json.jbuilder.
 
 ## Frontend Changes
 
