@@ -8,7 +8,7 @@ import { appPullerPullAnimation, appPullerPullAndHoldAnimation } from "../../../
 import {
     AddCircleIcon, AddEventIcon, AddFolderIcon, AppDirectoryBotIcon, CheckBoxCheckedIcon,
     CheckBoxUnCheckedIcon, GemBoostIcon, InviteMemberIcon, LeaveServerIcon, NotificationBellIcon,
-    PenEditIcon, PrivateLockIcon, PrivacyShieldIcon, ReportRaidShieldIcon, ServerInsightsIcon, SettingsIcon, SMSIcon
+    PenEditIcon, PrivateLockIcon, PrivacyShieldIcon, ReportRaidShieldIcon, ServerInsightsIcon, SettingsIcon_Medium, ThreadsIcon
 }
     from "../../front_end_svgs/Strife_svgs";
 
@@ -87,7 +87,7 @@ const ChannelDropDown = (props) => {
                                                     }}>
                                                     <div className="server-boost-label">Server Settings</div>
                                                     <div className="server-boost-icon-container">
-                                                        <SettingsIcon className="icon-cd-gear" />
+                                                        <SettingsIcon_Medium className="icon-cd-gear" />
                                                     </div>
                                                 </div>
                                             )
@@ -154,7 +154,7 @@ const ChannelDropDown = (props) => {
                                     <div className={`channel-drop-item`}>
                                         <div className="server-boost-label">Active Threads</div>
                                         <div className="server-boost-icon-container">
-                                            <SMSIcon className="icon-cd-atsms" />
+                                            <ThreadsIcon className="icon-cd-atsms" />
                                         </div>
                                     </div>
                                     <div className={`channel-drop-item`}>
@@ -194,7 +194,7 @@ const ChannelDropDown = (props) => {
                                     <div className="channel-drop-item" onClick={() => { appPullerPullAndHoldAnimation(); props.openModal('userSettings'); props.setShowPopUp(false); }}>
                                         <div className="server-boost-label">Edit Server Profile</div>
                                         <div className="server-boost-icon-container">
-                                            <PenEditIcon className="icon-cd-esp" height={16} width={16}/>
+                                            <PenEditIcon className="icon-cd-esp" height={16} width={16} />
                                         </div>
                                     </div>
                                     <div className="channel-drop-item" onClick={() => setCheckMark2(!checkMark2)}>
