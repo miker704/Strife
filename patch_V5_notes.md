@@ -822,4 +822,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finished Spam Message Requests container.js.
     - Finished Spam Message Requests.jsx.
     - Finished Message Requests tab container.js.
+    - Added one to one dms as a placeholder to a new system for dms is worked on in message requests page where accept dm button will warp the user to the dm.
     - Finished Message Requests tab.jsx.
+
