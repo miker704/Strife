@@ -5,7 +5,7 @@ import ChannelDropDownContainer from "../channel_drop_down/channel_drop_down_con
 import UserNavContainer from "../../users/user_nav/user_nav_container";
 import { useParams } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
-import { AddIcon, ChannelDropDownChevronIcon, HashIcon, InviteMemberIcon_Small, LoudSpeakerIcon, MiniChevronIcon, SMSIcon, SettingsIcon_Small } from "../../front_end_svgs/Strife_svgs";
+import { ChannelDropDownChevronIcon, HashIcon, InviteMemberIcon_Small, LoudSpeakerIcon, MiniChevronIcon, SMSIcon, SettingsIcon_Medium, SmallAddButtonIcon } from "../../front_end_svgs/Strife_svgs";
 import { appPullerPullAnimation, appPullerPullAndHoldAnimation } from "../../../utils/appPullerAnimation_api_util";
 
 
@@ -124,7 +124,7 @@ const ChannelNavBar = (props) => {
                                                     props.openModal('ChannelSettings')
 
                                                 }}>
-                                                <SettingsIcon_Small className="channel-gear-icon" />
+                                                <SettingsIcon_Medium className="channel-gear-icon" />
                                             </div>
                                         ) : ("")
                                 }
@@ -190,7 +190,7 @@ const ChannelNavBar = (props) => {
                                                 appPullerPullAndHoldAnimation();
                                                 props.openModal('ChannelSettings')
                                             }}>
-                                            <SettingsIcon_Small className="channel-gear-icon" />
+                                            <SettingsIcon_Medium className="channel-gear-icon" />
                                         </div>
 
                                     ) : ("")
@@ -263,7 +263,7 @@ const ChannelNavBar = (props) => {
                                                     props.openModal('CreateChannel');
                                                 }}>
                                                 <div className="global-button-contents">
-                                                    <AddIcon className="addButtonIcon" />
+                                                    <SmallAddButtonIcon className="addButtonIcon" />
                                                 </div>
                                             </button>
                                         </div>
@@ -297,7 +297,7 @@ const ChannelNavBar = (props) => {
                                                         props.openModal('CreateChannel');
                                                     }}>
                                                     <div className="global-button-contents">
-                                                        <AddIcon className="addButtonIcon" />
+                                                        <SmallAddButtonIcon className="addButtonIcon" />
                                                     </div>
                                                 </button>
                                             </div>
