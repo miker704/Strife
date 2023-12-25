@@ -837,3 +837,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added and changed svg icons for channel drop down modal.
     - Added more aria and accessibility options for friends tabs on home page header nav bar in friends home page.
     - Updates to Channel nav bar container.js
+    - Updates to svg icons in Channel nav bar.jsx
