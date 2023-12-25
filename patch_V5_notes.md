@@ -814,4 +814,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Seperated and Created a message requests tab for message requests.
     - Finished Styles for message requests page.
     - Added wumpussNoMsgRequests.svg which is for when a user has no normal or spam message requests.
+    - Added Default button sizing styles for small buttons in core styles.
 
