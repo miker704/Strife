@@ -810,5 +810,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Warp To Update Loading Screen to Shop Header Nav Bar.
     - Added Warp To Update Loading Screen to Nitro Header Nav Bar.
     - Added Warp to Update Loading Screen to Message Requests Header Nav Bar.
+    - Seperated and Create a spam message tab for message requests.
 
 
