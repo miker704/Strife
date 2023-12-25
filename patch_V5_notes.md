@@ -91,6 +91,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Asyc request to resync the current user in strife_core Cable if the user updates their avatar or banner in 
     another tab while in the shop page.
     - Added created_date function for dm_server.rb model to return a formatted create date for one to one dms.
+    - Added get_first_message function for dm_server.rb model to return the first dm msg for one to one dms.
 
 ## Frontend Changes
 
