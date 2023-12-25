@@ -816,4 +816,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added wumpussNoMsgRequests.svg which is for when a user has no normal or spam message requests.
     - Added Default button sizing styles for small buttons in core styles.
     - Added Message Requests tab.jsx.
+    - Added Message Requests tab container.js.
 
