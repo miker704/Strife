@@ -42,4 +42,17 @@ class DmServer < ApplicationRecord
         dm_name = self.members.filter_map{|member| member.username if member.id != current_user.id}.sort{ |a, b| a <=> b }.join(", ")
     end
 
+    def created_date
+        attributes['created_at'].strftime("%b %d, %Y")
+    end
+
+    def get_first_message
+        if self.dm_messages.length  == 0
+            return 'Sent you a Message Request.'
+        else
+            return self.dm_messages.first.body
+        end
+
+    end
+
 end
