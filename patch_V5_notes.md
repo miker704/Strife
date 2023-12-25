@@ -830,4 +830,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finished Message Requests Page Container.js.
     - Created a new selector to filter out only o2o dms.
     - Moved all old versions of svg icons to a new file.
+    - Added new active and hover styles for tabs on home page header nav bar.
 
