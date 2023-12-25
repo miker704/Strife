@@ -173,9 +173,23 @@ export const receiveUnexploredServers = (state) => {
     return showServers;
 }
 
+/**
+ * Function to return the first channel of a server if it exists.
+ * @param {Redux_State} state accepts current redux state and extracts state.dmServers and filters out all group
+ * chats and returns and array of one to one dm servers.
+ * @returns {Array}
+ *  returns an array of objectss containing one to one dm servers
+*/
+export const select020Dms = (state) => {
+    const dms = [];
+    for (let dm of Object.values(state.entities.dmServers)) {
+        if (dm?.one_to_one_dm === true) {
+            dms.push(dm);
+        }
+    }
 
-
-
+    return dms;
+}
 
 
 
