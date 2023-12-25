@@ -558,7 +558,12 @@
     background-image: linear-gradient(0deg,transparent,transparent var(--custom-button-link-underline-offset),var(--button--underline-color) var(--custom-button-link-underline-offset),var(--button--underline-color) var(--custom-button-link-underline-stop),transparent var(--custom-button-link-underline-stop));
     outline: 0;
 }
-
+.global-button-size-small{
+  width: var(--custom-button-button-sm-width);
+  height: var(--custom-button-button-sm-height);
+  min-width: var(--custom-button-button-sm-width);
+  min-height: var(--custom-button-button-sm-height);
+}
 .global-button-size-medium{
   width: var(--custom-button-button-md-width);
   height: var(--custom-button-button-md-height);
