@@ -81,8 +81,7 @@
   user-select: none;
 }
 
-
-.home-nav-bar-upper-container{
+.home-nav-bar-upper-container {
   display: flex;
   flex: 1;
   box-sizing: border-box;
@@ -377,6 +376,20 @@
 .add-friend-tab.selected {
   background-color: transparent;
   color: var(--text-positive);
+}
+
+.online-tab.selected:hover,
+.all-tab.selected:hover,
+.pending-tab.selected:hover,
+.blocked-tab.selected:hover {
+  background-color: var(--background-modifier-hover);
+}
+.online-tab:active,
+.all-tab:active,
+.pending-tab:active,
+.blocked-tab:active {
+  background-color: var(--background-modifier-active);
+  color: var(--interactive-active);
 }
 
 .online-tab:hover:not(.selected),
