@@ -200,13 +200,12 @@ const FriendsHomePageContainer = (props) => {
                                     <h1 className="home-nav-bar-title-text">Friends</h1>
                                 </div>
                                 <div className="home-friend-divider"></div>
-                                <div className="friends-tab-list">
-                                    <div onClick={() => handleClick("online")} className={`online-tab ${tabType.online ? "selected" : ""}`}>Online</div>
-                                    <div onClick={() => handleClick("All")} className={`all-tab ${tabType.All ? "selected" : ""}`}>All</div>
-                                    <div onClick={() => handleClick("Pending")} className={`pending-tab ${tabType.Pending ? "selected" : ""}`}>Pending</div>
-                                    <div onClick={() => handleClick("Blocked")} className={`blocked-tab ${tabType.Blocked ? "selected" : ""}`} >Blocked</div>
-                                    <div onClick={() => handleClick("Add_Friend")} className={`add-friend-tab ${tabType.Add_Friend ? "selected" : ""}`} ><span>Add Friend</span></div>
-
+                                <div className="friends-tab-list" role="tablist" aria-label="Friends" aria-orientation="horizontal">
+                                    <div onClick={() => handleClick("online")} className={`online-tab ${tabType.online ? "selected" : ""}`} role="tab" aria-selected={`${tabType.online ? true : false}`} aria-disabled={false} tabIndex={`${tabType.online ? 0 : -1}`}>Online</div>
+                                    <div onClick={() => handleClick("All")} className={`all-tab ${tabType.All ? "selected" : ""}`} role="tab" aria-selected={`${tabType.All ? true : false}`} aria-disabled={false} tabIndex={`${tabType.All ? 0 : -1}`}>All</div>
+                                    <div onClick={() => handleClick("Pending")} className={`pending-tab ${tabType.Pending ? "selected" : ""}`} role="tab" aria-selected={`${tabType.Pending ? true : false}`} aria-disabled={false} tabIndex={`${tabType.Pending ? 0 : -1}`}>Pending</div>
+                                    <div onClick={() => handleClick("Blocked")} className={`blocked-tab ${tabType.Blocked ? "selected" : ""}`} role="tab" aria-selected={`${tabType.Blocked ? true : false}`} aria-disabled={false} tabIndex={`${tabType.Blocked ? 0 : -1}`}>Blocked</div>
+                                    <div onClick={() => handleClick("Add_Friend")} className={`add-friend-tab ${tabType.Add_Friend ? "selected" : ""}`} role="tab" aria-selected={`${tabType.Add_Friend ? true : false}`} aria-disabled={false} tabIndex={`${tabType.Add_Friend ? 0 : -1}`}><span>Add Friend</span></div>
                                 </div>
                             </div>
                             {renderCreateDMModalHBV()}
