@@ -826,4 +826,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finished Message Requests tab.jsx.
     - Finished Message Requests Header Nav Bar.jsx.
     - Finished Message Requests Header Nav Bar Container.js.
+    - Finished Message Requests Page.jsx.
 
