@@ -90,6 +90,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed unneeded general channel in Server : compressIndex.json.jbuilder.
     - Added Asyc request to resync the current user in strife_core Cable if the user updates their avatar or banner in 
     another tab while in the shop page.
+    - Added created_date function for dm_server.rb model to return a formatted create date for one to one dms.
 
 ## Frontend Changes
 
@@ -834,4 +835,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added styles for message requests icon for dm server nav bar.
     - Added and changed svg icons for channel drop down modal.
     - Added more aria and accessibility options for friends tabs on home page header nav bar in friends home page.
-
+    -  
