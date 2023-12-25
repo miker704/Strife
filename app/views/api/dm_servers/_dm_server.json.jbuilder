@@ -25,5 +25,8 @@ if dm_server.is_one_to_one?
             end
         end
     end
+    json.dm_created dm_server.created_date
+    json.first_dm dm_server.get_first_message
+    
 end
 json.dm_server_color_tag dm_server.members.order(:id).last.color_tag
