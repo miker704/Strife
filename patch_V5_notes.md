@@ -817,4 +817,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Default button sizing styles for small buttons in core styles.
     - Added Message Requests tab.jsx.
     - Added Message Requests tab container.js.
+    - Added Spam Message Requests tab.jsx.
 
