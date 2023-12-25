@@ -831,4 +831,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created a new selector to filter out only o2o dms.
     - Moved all old versions of svg icons to a new file.
     - Added new active and hover styles for tabs on home page header nav bar.
+    - Added styles for message requests icon for dm server nav bar.
 
