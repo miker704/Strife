@@ -729,6 +729,17 @@
     color: vae(--white-500-hsl-03);
 }
 
+.theme-dark .create-server-root{
+  -webkit-box-shadow: var(--dark-elevation-border), var(--dark-elevation-high);
+  box-shadow: var(--dark-elevation-border), var(--dark-elevation-high);
+}
+
+.theme-light .create-server-root{
+  -webkit-box-shadow: var(--light-elevation-border), var(--light-elevation-high);
+  box-shadow: var(--light-elevation-border), var(--light-elevation-high);
+}
+
+
 .theme-light {
     --light-elevation-border: 0px 0px 0px 1px hsla(210, 9.3%, 78.8%, 0.3);
     --light-elevation-high: 0px 2px 10px 0px hsla(0, 0%, 0%, 0.1);
