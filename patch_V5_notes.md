@@ -848,3 +848,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added a random chance for servers to display partnership icons in explore servers page.
     - Adjusted hover effects in dm server header nav bar.
     - Returned top adjustment for create dm modal to be placed properly when dm list is scrolled.
+    - Added message request icon and route to dm nav bar.
