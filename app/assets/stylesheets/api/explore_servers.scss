@@ -686,6 +686,10 @@
   width: 100%;
   height: 100%;
   color: var(--white-500);
+
+  //december 2023 icon redesign updates
+  width: 12px;
+  height: 12px;
 }
 
 .guild-card-child-container {
@@ -1533,6 +1537,10 @@
   align-items: center;
   justify-content: center;
   position: relative;
+
+  // decemgber 2023 update
+  pointer-events: all;
+  z-index: 10;
 }
 
 .sr-guild-card-text {
