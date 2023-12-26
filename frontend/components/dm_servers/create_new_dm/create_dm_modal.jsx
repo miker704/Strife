@@ -169,7 +169,7 @@ const CreateDmModal = (props) => {
         return (
             <REACT_PORTAL wrapperId={'sub-modal'} classNameId={'subModal'} onClick={(e) => e.stopPropagation()}>
                 <div className={`clear-modal-wrapper`} onClick={(e) => props.setCreateDmModal(false)}>
-                    <div className="create-dm-modal-popup" onClick={e => e.stopPropagation()} ref={popupRef}>
+                    <div className="create-dm-modal-popup" onClick={e => e.stopPropagation()} ref={popupRef} style={{top:`${props.top}px`}}>
                         <div className="create-dm-modal-focus-lock">
                             <div className="create-dm-modal">
                                 <form onSubmit={handleDmServerCreation}>
