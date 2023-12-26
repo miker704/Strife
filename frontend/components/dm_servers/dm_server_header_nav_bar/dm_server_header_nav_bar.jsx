@@ -286,7 +286,8 @@ const DmServerHeaderNavBar = (props) => {
     }
 
     let hideMembersToolTipMessage = props._viz === false ? ("Hide Member List") : ("Show Member List");
-    let hideUserProfileToolTipMessage = viz === false ? ("Hide User Profile") : ("Show User Profile");
+    // let hideUserProfileToolTipMessage = viz === false ? ("Hide User Profile") : ("Show User Profile");
+    let hideUserProfileToolTipMessage = props._viz === false ? ("Hide User Profile") : ("Show User Profile");
 
     let renderedGroupChatIcon = colorObtained === true ? (
         <div>
@@ -390,7 +391,9 @@ const DmServerHeaderNavBar = (props) => {
             onMouseLeave={(e) => setHovered(false)}
             onClick={() => { props.isViz(); setViz(!viz) }}
         >
-            <HideUserProfileIcon className={`icon-hide-user-profile ${viz === false ? `selected` : ``}`} />
+            {/* <HideUserProfileIcon className={`icon-hide-user-profile ${viz === false ? `selected` : ``}`} /> */}
+            <HideUserProfileIcon className={`icon-hide-user-profile ${props._viz === false ? `selected` : ``}`} />
+
         </div>
     ) : ("");
 
