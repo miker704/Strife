@@ -857,10 +857,11 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed from theme-light to theme-dark for create server modal.
     - Added private lock icon to subscribe to nitro basic modal on slides 2-4.
     - Added private lock icon to subscribe to nitro pro modal on slides 2-4.
-    - Added warn icon icon to subscribe to nitro pro modal.
-    - Added warn icon icon to subscribe to nitro basic modal.
+    - Added warn icon to subscribe to nitro pro modal.
+    - Added warn icon to subscribe to nitro basic modal.
     - Added cash app card option as payment method to payment slide in subscribe to nitro basic modal.
     - Added cash app card option as payment method to payment slide in subscribe to nitro pro modal.
     - Updated subscribe to nitro basic modal.
     - Updated subscribe to nitro pro modal.
-    - Started purchase product modal.
+    - Started purchase product modal.jsx.
+    - 
