@@ -4,7 +4,7 @@ import ExploreServersNavBar from "./explore_servers_nav_bar";
 import ActionButtonPopUpContainer from "./action_button_pop_up_container";
 import {
     BackArrowIcon, ExploreServersSearchXIcon, ExploreServersChevronIcon, OverFlowEllipsisIcon,
-    SearchMagIcon, VerifiedCheckIcon, VerifiedStarIcon
+    SearchMagIcon, VerifiedCheckIcon, VerifiedStarIcon, VerifiedPartnerIcon
 } from "../../front_end_svgs/Strife_svgs";
 import { Tooltip } from "react-tooltip";
 import { GuildCardGridSkeletonList, GuildCardSearchSkeletonList } from "../../custom_input_components/guild_card_skeletons/guild_card_skeletons";
@@ -107,6 +107,8 @@ const ExploreServers = (props) => {
     const unExploredServersSearchResults = _liveSearch(Object.values(props.unExploredServers)).map((server, serverIdx) => {
         const checkIfJoined = checkIfJoinedServer(server);
         const publicServer = checkIfPrivateServer(server);
+        const randomNumber = Math.random();
+
         const defaultServerBanner = server.server_banner === undefined ?
             (
                 <svg width="240" height="135" viewBox="0 0 48 48" className={`purple-icon-bk ${server.server_color_tag ? `color-${server.server_color_tag}` : ``}`} fill="currentColor">
@@ -165,10 +167,18 @@ const ExploreServers = (props) => {
                                 {serverAvatar}
                                 <div className="sr-guild-card-header-name">
                                     <div>
-                                        <div className={`sr-guild-card-star fill-color-${server.server_color_tag}`} data-tooltip-place="top" data-tooltip-id="thread-tip-verified" data-tooltip-content={'Verified'}>
+                                        <div className={`sr-guild-card-star fill-color-${server.server_color_tag}`} data-tooltip-place="top" data-tooltip-id="thread-tip-verified"
+                                            data-tooltip-content={`${randomNumber > 0.95 ? `$TR!F3 Partner` : randomNumber > 0.85 ? `Verified & Partnered` : `Verified`}`} >
                                             <VerifiedStarIcon className="guild-card-star-icon" />
                                             <div className="guild-card-child-container">
-                                                <VerifiedCheckIcon className="guild-card-star-icon-2" />
+                                                {/* <VerifiedCheckIcon className="guild-card-star-icon-2" /> */}
+                                                {
+                                                    randomNumber > 0.95 ? (
+                                                        <VerifiedPartnerIcon className="guild-card-star-icon-2" />
+                                                    ) : (
+                                                        <VerifiedCheckIcon className="guild-card-star-icon-2" />
+                                                    )
+                                                }
                                             </div>
                                         </div>
                                     </div>
@@ -216,7 +226,7 @@ const ExploreServers = (props) => {
                         <div className="sr-action-buttons-layer">
                             <div className="sr-action-buttons-container">
                                 <div className="sr-action-buttons-wrapper">
-                                    <div className="action-button" role="button" tabIndex={0} sdata-tooltip-place="top" data-tooltip-id="thread-tip-exsp" data-tooltip-content={'More'}
+                                    <div className="action-button" role="button" tabIndex={0} data-tooltip-place="top" data-tooltip-id="thread-tip-exsp" data-tooltip-content={'More'}
                                         onClick={(e) => {
                                             handlePopupShow(e, server);
                                         }}>
@@ -236,6 +246,7 @@ const ExploreServers = (props) => {
     const unExploredServers = Object.values(props.unExploredServers).slice(0, 20).map((server) => {
         const checkIfJoined = checkIfJoinedServer(server);
         const publicServer = checkIfPrivateServer(server);
+        const randomNumber = Math.random();
         const defaultServerBanner = server.server_banner === undefined ?
             (
                 <svg width="100" height="100" viewBox="0 0 48 48" className={`purple-icon-bk ${server.server_color_tag ? `color-${server.server_color_tag}` : ``}`} fill="currentColor">
@@ -296,7 +307,7 @@ const ExploreServers = (props) => {
                         <div className="action-buttons-layer">
                             <div className="action-buttons-container">
                                 <div className="action-buttons-wrapper">
-                                    <div className="action-button" role="button" tabIndex={0} sdata-tooltip-place="top" data-tooltip-id="thread-tip-exsp" data-tooltip-content={'More'}
+                                    <div className="action-button" role="button" tabIndex={0} data-tooltip-place="top" data-tooltip-id="thread-tip-exsp" data-tooltip-content={'More'}
                                         onClick={(e) => {
                                             handlePopupShow(e, server);
                                         }}>
@@ -313,10 +324,18 @@ const ExploreServers = (props) => {
                     {showPopUp && selectedServer.id === server.id && <ActionButtonPopUpContainer serverLink={selectedServerLink} setShowPopUp={setShowPopUp} boundingClient={boundingClient} />}
                     <div className="guild-card-info">
                         <div className="guild-card-title">
-                            <div className={`guild-card-star fill-color-${server.server_color_tag}`} data-tooltip-place="top" data-tooltip-id="thread-tip-exsp" data-tooltip-content={'Verified'}>
+                            <div className={`guild-card-star fill-color-${server.server_color_tag}`} data-tooltip-place="top" data-tooltip-id="thread-tip-exsp"
+                                data-tooltip-content={`${randomNumber > 0.95 ? `$TR!F3 Partner` : randomNumber > 0.85 ? `Verified & Partnered` : `Verified`}`}>
                                 <VerifiedStarIcon className="guild-card-star-icon" />
                                 <div className="guild-card-child-container">
-                                    <VerifiedCheckIcon className="guild-card-star-icon-2" />
+                                    {/* <VerifiedCheckIcon className="guild-card-star-icon-2" /> */}
+                                    {
+                                        randomNumber > 0.95 ? (
+                                            <VerifiedPartnerIcon className="guild-card-star-icon-2" />
+                                        ) : (
+                                            <VerifiedCheckIcon className="guild-card-star-icon-2" />
+                                        )
+                                    }
                                 </div>
                             </div>
                             <h4 className="guild-card-h4-title">{server.server_name}</h4>
