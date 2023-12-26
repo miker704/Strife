@@ -846,3 +846,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Made an edit to display different messages in message input if a user was blocked or has block a user in upc modal.
     - Added Styles including z-index adjustments so tool tips will display in explore servers page.
     - Added a random chance for servers to display partnership icons in explore servers page.
+    - Adjusted hover effects in dm server header nav bar.
