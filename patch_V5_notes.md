@@ -852,3 +852,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Made updates to svg icons and routes in dm nav bar.
     - Replaced create_server_icon.png with create_a_server_icon.svg.
     - Removed styles based on theme type from create a server modal. 
+    - Moved styles based on theme type from create a server modal to core root styles. 
