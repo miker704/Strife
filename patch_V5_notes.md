@@ -842,3 +842,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Updates to Channel nav bar container.js
     - Updates to svg icons in Channel nav bar.jsx.
     - Created a Loading Skeleton call ShopItemCardSkeleton which takes in a number and produces a loading skeleton for shop banners or item cards.
+    - Added ShopItemCardSkeleton components to load in first when going to the shop page for about 6 seconds before rendering the proper output.
