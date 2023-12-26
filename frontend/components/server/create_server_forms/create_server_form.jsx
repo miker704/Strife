@@ -366,7 +366,7 @@ const CreateServerForm = (props) => {
         <React.Fragment>
 
             <div className='create-server-header-wrap'>
-                <h1 className='create-server-header'>Create a Server</h1>
+                <h1 className='create-server-header'>Create a server</h1>
                 <div className='create-server-header-subtext'>
                     Your server is where you and your friends hang out.
                     Make yours and start talking.
@@ -662,7 +662,7 @@ const CreateServerForm = (props) => {
             <div className='create-server-wrapper' onClick={(e) => handleCloseOnOutSideClick(e)}>
                 <div className='create-server-backdrop'></div>
                 <div id="create-server-modal" className='create-server-modal' >
-                    <div className='theme-light' ref={popUpRef} onClick={(e) => e.stopPropagation()}>
+                    <div className='theme-dark' ref={popUpRef} onClick={(e) => e.stopPropagation()}>
                         <div className='create-server-focus-lock'>
                             <div className='create-server-root'>
                                 <div className='create-server-slide-container'>
