@@ -853,3 +853,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Replaced create_server_icon.png with create_a_server_icon.svg.
     - Removed styles based on theme type from create a server modal. 
     - Moved styles based on theme type from create a server modal to core root styles. 
+    - Made a grammar edit in create a server modal.
