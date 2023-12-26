@@ -10,7 +10,7 @@ import { reSyncCurrentUser } from '../../../utils/session_api_util';
 import { returnUserBadgeFillColor } from '../../../utils/user_status_badge_color_api_util';
 import { returnUserOnlineActivityStatusBadgeMaskIMG } from '../../../utils/user_online_activity_status_badge_api_util';
 import NoFriendsDMModalContainer from '../no_friends_dm_modal/no_friends_dm_modal_container';
-import { CloseXIcon, FriendsRaiseHandIcon, SharpAddIcon, StrifeNitroBadgeIcon, StrifeNitroLabelIcon, StrifeShopIcon } from '../../front_end_svgs/Strife_svgs';
+import { CloseXIcon, FriendsRaiseHandIcon, StrifeNitroBadgeIcon, StrifeNitroLabelIcon, StrifeShopIcon, MessageRequestsEnvelopeIcon, SmallAddButtonIcon } from '../../front_end_svgs/Strife_svgs';
 
 
 const DmNavBar = (props) => {
@@ -103,7 +103,9 @@ const DmNavBar = (props) => {
 
     const openCreateDmModal = async (e) => {
         e.preventDefault();
+        setPopUpTop(e.currentTarget.getBoundingClientRect().top + 20);
         await reSyncCurrentUser(props.currentUserId).then((result) => {
+
             if (result.numberOfFriends > 0) {
                 setCreateDmModal(true);
             }
@@ -131,7 +133,7 @@ const DmNavBar = (props) => {
     const renderCreateDmModal = () => {
         if (createDmModal === true) {
             return (
-                <CreateDmModalContainer setCreateDmModal={setCreateDmModal} />
+                <CreateDmModalContainer setCreateDmModal={setCreateDmModal} top={popUpTop} />
             )
         }
     }
@@ -198,12 +200,33 @@ const DmNavBar = (props) => {
                             </div>
                         </li>
 
+
+                        <li className='msg-req-dm-nav-button-nav-bar-wrapper' key={`dmsnb-$TRIF3-Msg-Reqs`}>
+                            <div className={`msg-req-dm-nav-button-nav-bar ${props.location?.pathname === `/$/m3$$@g3-r3qu3$t$/` ? `selected` : ``}`} >
+                                <Link className='msg-req-nav-bar-link' to={`/$/m3$$@g3-r3qu3$t$/`}>
+                                    <div className='msg-req-avatar-wrapper'>
+                                        <div className='msg-req-avatar-icon'>
+                                            <MessageRequestsEnvelopeIcon className="dm-nav-bar-channel-item-message-requests-icon " width={24} height={24} />
+                                        </div>
+                                        <div className='msg-req-avatar-text-wrapper'>
+                                            <div className='msg-req-avatar-text-inner'>
+                                                <div className='msg-req-avatar-text'>
+                                                    Message Requests
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+                            </div>
+                        </li>
+
+
                         <li className='shop-dm-nav-button-nav-bar-wrapper' key={`dmsnb-$TRIF3-SH0P`}>
                             <div className={`shop-dm-nav-button-nav-bar ${props.location?.pathname === `/$/$H0P/` ? `selected` : ``}`} >
                                 <Link className='shop-nav-bar-link' to={`/$/$H0P/`}>
                                     <div className='shop-avatar-wrapper'>
                                         <div className='shop-avatar-icon'>
-                                            <StrifeShopIcon className="dm-nav-bar-channel-item-shop-icon" width={23} height={18} />
+                                            <StrifeShopIcon className="dm-nav-bar-channel-item-shop-icon" width={23} height={23} />
                                         </div>
                                         <div className='shop-avatar-text-wrapper'>
                                             <div className='shop-avatar-text-inner'>
@@ -224,11 +247,11 @@ const DmNavBar = (props) => {
                                     openCreateDmModal(e);
                                 }}
                             >
-                                <SharpAddIcon className="dm-add-button-icon" />
+                                <SmallAddButtonIcon className="dm-add-button-icon" />
                             </div>
 
                             <Tooltip className="create-DM-tool-tip-style"
-                                id="create-dm-tool-tip" place="top" 
+                                id="create-dm-tool-tip" place="top"
                                 positionStrategy="fixed" closeOnResize={true} closeOnScroll={true}
                             />
                         </h2>
