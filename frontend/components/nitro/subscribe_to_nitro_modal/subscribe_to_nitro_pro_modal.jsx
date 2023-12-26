@@ -1,5 +1,5 @@
 import React from "react";
-import { AngelListIcon, ChatPresentIcon, CloseXIcon, FolderIcon, GitHubIcon, Invite2ServerCheckBoxCheckedIcon, Invite2ServerCheckBoxUnCheckedIcon, LinkedInIcon, NitroTier2LogoIcon, ProfilePanelChevronIcon, RoundedCheckBoxCheckedIcon, RoundedCheckBoxUnCheckedIcon, StrifeBannerLogo, WumpusIcon, } from "../../front_end_svgs/Strife_svgs";
+import { AngelListIcon, ChatPresentIcon, CloseXIcon, FolderIcon, GitHubIcon, Invite2ServerCheckBoxCheckedIcon, Invite2ServerCheckBoxUnCheckedIcon, LinkedInIcon, NitroTier2LogoIcon, PrivateLockIcon, ProfilePanelChevronIcon, RoundedCheckBoxCheckedIcon, RoundedCheckBoxUnCheckedIcon, StrifeBannerLogo, WarnILockIcon, WumpusIcon, } from "../../front_end_svgs/Strife_svgs";
 import { useEffect, useRef, useState } from "react";
 import REACT_PORTAL from "../../../utils/ReactPortal_api_util";
 import { Tooltip } from "react-tooltip";
@@ -270,7 +270,7 @@ const SubscribeToStrifeNitroProModal = (props) => {
 
     let formStyles = {
         "1": { position: `relative`, width: `408px`, height: `${gifted ? `191px` : `237px`}`, overflow: `hidden` },
-        "2": { position: `relative`, width: `408px`, height: `164px`, overflow: `hidden` },
+        "2": { position: `relative`, width: `408px`, height: `202px`, overflow: `hidden` },
         "3": { position: `relative`, width: `408px`, height: `278px`, overflow: `hidden` },
         "4": { position: `relative`, width: `408px`, height: `${spinCubes && gifted ? `296px` : gifted ? `293px` : spinCubes ? `296px` : hideSubDesc ? `655px` : `518px`}`, overflow: `hidden` },
         "5": { position: `relative`, width: `408px`, height: `237px`, overflow: `hidden` },
@@ -326,9 +326,9 @@ const SubscribeToStrifeNitroProModal = (props) => {
             {
                 gifted ? (null) :
                     (
-                        <div className="bsspm-warn-block">
-                            <div className="warn-block-icon"></div>
-                            <div className="warn-block-anchor-text">
+                        <div className="bsspm-warn-svg-block">
+                            <WarnILockIcon className="warn-block-svgIcon" width={20} height={20} />
+                            <div className="warn-block-svgIcon-anchor-text" style={{ color: `var(--header-muted)` }}>
                                 Final price and currency will be based on your selected payment method.
                                 <a className="warn-block-anchor" href="https://support.discord.com/hc/en-us/articles/4407269525911" rel="noreferrer noopener" target="_blank">{`${` `}`}Learn More</a>
                                 .
@@ -374,6 +374,14 @@ const SubscribeToStrifeNitroProModal = (props) => {
                                                     <div className="sbm-payment-button-contents-flex">
                                                         <div className="sbm-payment-card-icon sbm-payment-card-small venmo-card sbm-payment-card-button">Venmo</div>
                                                         Venmo
+                                                    </div>
+                                                </div>
+                                            </button>
+                                            <button type="button" className="sbm-payment-button" onClick={(e) => handleSlideForward(3)}>
+                                                <div className="look-filled-button-contents global-button-contents">
+                                                    <div className="sbm-payment-button-contents-flex">
+                                                        <div className="sbm-payment-card-icon sbm-payment-card-small cash-app-card sbm-payment-card-button">cash_app</div>
+                                                        Cash App Pay
                                                     </div>
                                                 </div>
                                             </button>
@@ -652,7 +660,7 @@ const SubscribeToStrifeNitroProModal = (props) => {
 
     let buttonStyles = {
         "1": `${switchMod === 2 ? `sbm-button-footer-container sbm-payment-button-footer-layout` : `sbm-button-footer-container`}`,
-        "2": 'npsm-button-footer-container',
+        "2": 'npsm-button-footer-container-reversed',
         "3": 'sbm-button-footer-container sbm-payment-button-footer-layout',
         "4": 'sbm-button-footer-container stsnm-payment-button-footer-layout',
         "5": 'sbm-button-footer-container',
@@ -773,11 +781,18 @@ const SubscribeToStrifeNitroProModal = (props) => {
 
                                         {
                                             currentSlide === 2 ? (
-                                                <div className="bsspm-foot-right">
-                                                    <button type="button" className="sbm-back-button" onClick={(e) => handleSlideBackward(1)}>
-                                                        <div className="look-filled-button-contents global-button-contents">Back</div>
-                                                    </button>
-                                                </div>
+
+                                                <>
+                                                    <div className="bbsspm-priv-lock-icon-payment-footer">
+                                                        <PrivateLockIcon className="bbsspm-priv-lock-icon" width={18} height={18} />
+                                                        <div className="bbsspm-priv-lock-icon-subtitle">Secure</div>
+                                                    </div>
+                                                    <div className="bsspm-foot-right">
+                                                        <button type="button" className="sbm-back-button" onClick={(e) => handleSlideBackward(1)}>
+                                                            <div className="look-filled-button-contents global-button-contents">Back</div>
+                                                        </button>
+                                                    </div>
+                                                </>
 
                                             ) : (null)
                                         }
@@ -787,6 +802,10 @@ const SubscribeToStrifeNitroProModal = (props) => {
                                                     <button type="button" className="bsspm-continue-button" onClick={(e) => handleSlideForward(4)}>
                                                         <div className="look-filled-button-contents global-button-contents">Next</div>
                                                     </button>
+                                                    <div className="bbsspm-priv-lock-icon-payment-footer">
+                                                        <PrivateLockIcon className="bbsspm-priv-lock-icon" width={18} height={18} />
+                                                        <div className="bbsspm-priv-lock-icon-subtitle">Secure</div>
+                                                    </div>
                                                     <button type="button" className="sbm-back-button" onClick={(e) => handleSlideBackward(2)}>
                                                         <div className="look-filled-button-contents global-button-contents">Back</div>
                                                     </button>
@@ -805,6 +824,10 @@ const SubscribeToStrifeNitroProModal = (props) => {
                                                             {`${gifted ? `Buy Gift` : choosePlanType === 1 ? `Get $TR!F3 N!TR0 Yearly` : `Get $TR!F3 N!TR0 Monthly`}`}
                                                         </div>
                                                     </button>
+                                                    <div className="bbsspm-priv-lock-icon-payment-footer">
+                                                        <PrivateLockIcon className="bbsspm-priv-lock-icon" width={18} height={18} />
+                                                        <div className="bbsspm-priv-lock-icon-subtitle">Secure</div>
+                                                    </div>
                                                     <div className="stsnm-back-button-wrapper">
                                                         <div className="stsnm-back-payment-button" onClick={(e) => handleSlideBackward(3)}>Back</div>
                                                     </div>
