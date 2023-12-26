@@ -850,3 +850,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Returned top adjustment for create dm modal to be placed properly when dm list is scrolled.
     - Added message request svg icon and route to dm nav bar.
     - Made updates to svg icons and routes in dm nav bar.
+    - Replaced create_server_icon.png with create_a_server_icon.svg.
