@@ -227,14 +227,21 @@ const ServerUserOptionsModal = (props) => {
 
         for (let dmServer of props.dmServers) {
             if (dmMembersArray(Object.values(dmServer.members).map((member) => member.id).sort((a, b) => a - b), memberIds)) {
+                const messageHash = {
+                    body: message.trim(),
+                    sender_id: parseInt(props.currentUserId),
+                    dm_server_id: dmServer.id
+                }
+                
                 if (props.history.location.pathname !== `/$/channels/@me/${dmServer.id}`) {
-                    const messageHash = {
-                        body: message,
-                        sender_id: parseInt(props.currentUserId),
-                        dm_server_id: dmServer.id
-                    }
                     props.sendDmMessage(messageHash);
                     props.history.push(`/$/channels/@me/${dmServer.id}`);
+                    props.setShowPopup(false);
+
+                }
+                else if (props.history.location.pathname === `/$/channels/@me/${dmServer.id}`) {
+                    props.sendDmMessage(messageHash);
+                    props.setShowPopup(false);
                 }
                 return;
             }
@@ -263,7 +270,7 @@ const ServerUserOptionsModal = (props) => {
         props.createDmServer(submissionState).then((action) => {
             newDmServer = action.dmserver;
             const messageHash = {
-                body: message,
+                body: message.trim(),
                 sender_id: parseInt(props.currentUserId),
                 dm_server_id: newDmServer.id
             }
@@ -306,6 +313,10 @@ const ServerUserOptionsModal = (props) => {
             if (dmMembersArray(Object.values(dmServer.members).map((member) => member.id).sort((a, b) => a - b), memberIds)) {
                 if (props.history.location.pathname !== `/$/channels/@me/${dmServer.id}`) {
                     props.history.push(`/$/channels/@me/${dmServer.id}`);
+                    props.setShowPopup(false);
+                }
+                else{
+                    props.setShowPopup(false);
                 }
                 return;
             }
@@ -937,7 +948,7 @@ const ServerUserOptionsModal = (props) => {
                     maxLength={0} spellCheck={false} ref={dmMessageRef}
                     autoFocus={false} autoCorrect='off' autoComplete='off' value={message}
                     onChange={(e) => setMessage(e.currentTarget.value)}
-                    placeholder={`You cannot message this user`} disabled readOnly={true} />
+                    placeholder={`${member.friend_request_status === -2 ? `You cannot message this user`:`You cannot message blocked users`}`} disabled readOnly={true} />
             </div>
         </div>
     )
