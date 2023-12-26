@@ -858,3 +858,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added private lock icon to subscribe to nitro basic modal on slides 2-4.
     - Added private lock icon to subscribe to nitro pro modal on slides 2-4.
     - Added warn icon icon to subscribe to nitro pro modal.
+    - Added warn icon icon to subscribe to nitro basic modal.
