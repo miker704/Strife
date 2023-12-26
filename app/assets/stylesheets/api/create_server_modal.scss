@@ -222,8 +222,6 @@
 .create-server-root {
   opacity: 1;
   transform: scale(1);
-  -webkit-box-shadow: var(--light-elevation-border), var(--light-elevation-high);
-  box-shadow: var(--light-elevation-border), var(--light-elevation-high);
   width: 440px;
   max-height: 720px;
   min-height: 200px;
@@ -786,7 +784,7 @@
 }
 
 .create-a-Server-Img {
-  content: image_url("create_server_icon.png");
+  content: image_url("create_a_server_icon.svg");
   margin: 8px 8px 8px 16px;
 }
 
