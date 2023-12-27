@@ -1,0 +1,155 @@
+.purchase-product-header-container {
+  width: 100%;
+  height: 146px;
+  position: relative;
+  background-color: var(--background-primary);
+}
+
+.purchase-product-header-image-container {
+  width: 100%;
+  height: 100%;
+}
+
+.purchase-product-header-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  content: image_url("shopShelfFullBG.png");
+}
+
+.purchase-product-x-close-icon-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  color: currentColor;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.purchase-product-x-close-icon-filler {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--black-500-hsl-085);
+  border-radius: 50%;
+  padding: 0;
+}
+
+.purchase-product-x-close-icon-filler .purchase-product-x-close-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--primary-330);
+}
+.purchase-product-x-close-icon-filler .purchase-product-x-close-icon:hover {
+  color: var(--primary-230);
+}
+
+.stsnm-prod-slide-step2 {
+  padding-top: 16px;
+}
+
+.purchase-prod-header-title-h5 {
+  color: var(--header-secondary);
+  margin-bottom: 8px;
+  font-family: var(--global-font);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.purchase-prod-invoice {
+  margin-bottom: 16px;
+}
+
+.ppivce-table {
+  background-color: var(--background-secondary);
+  border-radius: 4px;
+  padding: 12px;
+  font-family: var(--global-font);
+}
+
+.costRowColor {
+  justify-content: space-between;
+  align-items: flex-start;
+  color: var(--interactive-normal);
+}
+
+.costRowBase {
+  display: flex;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.prodSubCostRow {
+  color: var(--header-primary);
+}
+
+.costRowLabel {
+  margin-right: 10px;
+}
+
+.costRowAmount {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.stsm-payment-source-wrapper-prod {
+  margin: 16px 0;
+}
+
+.sbm-legal-mumbo-jumbo-fine-print-prod {
+  font-family: var(--global-font);
+  color: var(--channels-default);
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.purchase-prod-mod-divider {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: 100%;
+  height: 1px;
+  background-color: var(--background-modifier-accent);
+}
+
+.purchase-prod-anchor {
+  color: var(--text-link);
+  -webkit-text-decoration: var(--link-decoration);
+  text-decoration: var(--link-decoration);
+}
+.purchase-prod-anchor:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.stsm-spinner-wrapper-prod {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 210px;
+}
