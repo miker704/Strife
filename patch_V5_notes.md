@@ -890,4 +890,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added WumpusCakeGiftIcon svg icon.
     - Added WumpusCupGiftIcon svg icon.
     - Added WumpusTreasureGiftIcon svg icon.
+    - Removed StrifeShopIcon1 to Old Svg Icons and renamed it to StrifeShopIconOld.
 
