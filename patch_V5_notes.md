@@ -885,4 +885,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added sgmPresent.svg.
     - Added sgmWumpusTreasureChest.svg.
     - Added SmallAddButtonIcon svg icon.
+    - Added WumpusChristmasPresentIcon svg icon.
 
