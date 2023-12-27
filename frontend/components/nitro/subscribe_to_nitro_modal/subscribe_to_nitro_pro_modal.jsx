@@ -81,7 +81,7 @@ const SubscribeToStrifeNitroProModal = (props) => {
         }
     }
 
-    const handleCloseModal = (e) => {
+    const handleCloseModal = (e, closeParentModal = false) => {
         e.preventDefault();
         e.stopPropagation();
         let modalToClose = document.getElementById('server-boost-modal')
@@ -89,15 +89,15 @@ const SubscribeToStrifeNitroProModal = (props) => {
             modalToClose.classList.add("transition-out-2");
             Promise.all(modalToClose.getAnimations().map((animation) => animation.finished),)
                 .then(() => {
-                    props.closeSubMod(props.formName);
+                    props.closeSubMod(props.formName, closeParentModal);
                     window.removeEventListener('keyup', handleESC, false);
                 }, () => {
-                    props.closeSubMod(props.formName);
+                    props.closeSubMod(props.formName, closeParentModal);
                     window.removeEventListener('keyup', handleESC, false);
                 });
         }
         else {
-            props.closeSubMod(props.formName);
+            props.closeSubMod(props.formName, closeParentModal);
             window.removeEventListener('keyup', handleESC, false);
         }
     }
@@ -533,7 +533,7 @@ const SubscribeToStrifeNitroProModal = (props) => {
                         </div>
                     </span>
                     <div className="sbm-fake-select-box-icons">
-                        <ProfilePanelChevronIcon className={`pp-chevron-icon chevronPointDown`} />
+                        <ProfilePanelChevronIcon className={`pp-chevron-icon chevronPointDown`} width={18} height={18} />
                     </div>
                 </div>
             </div>
@@ -588,7 +588,7 @@ const SubscribeToStrifeNitroProModal = (props) => {
                         </div>
                     </span>
                     <div className="sbm-fake-select-box-icons">
-                        <ProfilePanelChevronIcon className={`pp-chevron-icon chevronPointDown`} />
+                        <ProfilePanelChevronIcon className={`pp-chevron-icon chevronPointDown`} width={18} height={18} />
                     </div>
                 </div>
             </div>
@@ -838,7 +838,7 @@ const SubscribeToStrifeNitroProModal = (props) => {
                                             currentSlide === 5 ? (
                                                 <div className="bsspm-foot-right">
                                                     <button type="button" className="npsm-upgrade-to-nitro-button"
-                                                        onClick={(e) => handleCloseModal(e)}>
+                                                        onClick={(e) => handleCloseModal(e, true)}>
                                                         <div className="look-filled-button-contents global-button-contents">Exit</div>
                                                     </button>
                                                 </div>
