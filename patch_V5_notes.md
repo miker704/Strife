@@ -882,4 +882,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added handleCount functionn which keeps track of the character count entered for channel topic for the text area input in channel settings modal.
     - Added sgmCake.svg.
     - Added sgmCup.svg.
+    - Added sgmPresent.svg.
 
