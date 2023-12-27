@@ -878,4 +878,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Mounted purchase Product Modal to preview avatar decoration modal.
     - Mounted purchase Product Modal to preview profile effect modal.
     - Added the ability for sub to nitro pro and basic modals to close their parent modal if needed when being closed by passing a bool value of true which is to be handled by the parent modal function that called it using the value to then decide on closing the modal or not, if the parent component or parent modal does not take in the extra param and/ or handle it then it is ignored by the function and the parent modal can remain open after closing the child modal, it uses an powerful feature of javascript of passing extra params to a function more than declared/initiatized to the function.
+    - Added Adjustments to chevron icon by passing width and height sizing to sub to nitro basic and pro modals.
 
