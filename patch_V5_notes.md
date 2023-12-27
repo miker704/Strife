@@ -874,3 +874,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Started Gift Product Modal Container.js.
     - Started styles for Gift Product Modal.
     - Mounted purchase Product Modal to each avatar decoration item in shop page.
+    - Mounted purchase Product Modal to each profile effect item in shop page.
+
