@@ -866,3 +866,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Started purchase product modal.jsx.
     - Started purchase product modal container.js.
     - Added shopShelfFullBG.png for header background for purchase product modal.
+    - Started Purchase Product Modal Styles.
