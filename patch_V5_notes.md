@@ -876,4 +876,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Mounted purchase Product Modal to each avatar decoration item in shop page.
     - Mounted purchase Product Modal to each profile effect item in shop page.
     - Mounted purchase Product Modal to preview avatar decoration modal.
+    - Mounted purchase Product Modal to preview profile effect modal.
 
