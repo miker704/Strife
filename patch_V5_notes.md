@@ -869,3 +869,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Started Purchase Product Modal Styles.
     - Finished purchase product modal container.js.
     - Finished purchase product modal.jsx.
+    - Finished Purchase Product Modal Styles.
