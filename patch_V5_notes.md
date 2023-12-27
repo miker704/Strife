@@ -880,4 +880,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added the ability for sub to nitro pro and basic modals to close their parent modal if needed when being closed by passing a bool value of true which is to be handled by the parent modal function that called it using the value to then decide on closing the modal or not, if the parent component or parent modal does not take in the extra param and/ or handle it then it is ignored by the function and the parent modal can remain open after closing the child modal, it uses an powerful feature of javascript of passing extra params to a function more than declared/initiatized to the function.
     - Added Adjustments to chevron icon by passing width and height sizing to sub to nitro basic and pro modals.
     - Added handleCount functionn which keeps track of the character count entered for channel topic for the text area input in channel settings modal.
+    - Added sgmCake.svg.
 
