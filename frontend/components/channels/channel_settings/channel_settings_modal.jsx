@@ -552,6 +552,15 @@ const ChannelSettingsModal = (props) => {
         });
 
     }
+
+    const handleCount = (e) => {
+        if (e.currentTarget.value.length === 0) {
+            setCount(1024);
+        }
+        else {
+            setCount(1024 - e.currentTarget.value.length);
+        }
+    }
     const updateChannelTopic = () => {
         //tba at another time
     }
@@ -867,7 +876,7 @@ const ChannelSettingsModal = (props) => {
                                                                                 maxLength={1024}
                                                                                 minLength={2}
                                                                                 onChange={(e) => {
-                                                                                    setCount(e.currentTarget.value.length);
+                                                                                    handleCount(e);
                                                                                     setValue(e.currentTarget.value);
                                                                                 }}
                                                                                 placeholder="Let everyone know how to use this channel! ($TR!F3 N!TR0 Required!)">
