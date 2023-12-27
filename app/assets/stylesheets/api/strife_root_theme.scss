@@ -381,6 +381,9 @@
     --shop-banner-disxcore-outline-color:rgba(67, 33, 84, 0.4);
     --shop-banner-monsters-outline-color:rgba(0, 57, 77, 0.4);
 
+    --custom-channel-textarea-text-area-height: 44px;
+
+
     --custom-user-profile-themed-container-user-popout-width: 340px;
     --custom-user-profile-themed-container-user-profile-modal-width: 600px;
 
@@ -739,6 +742,9 @@
   box-shadow: var(--light-elevation-border), var(--light-elevation-high);
 }
 
+.theme-dark .sgm-modal-content{
+  box-shadow: 0 1px 0 0 var(--primary-800-30),0 1px 2px 0 var(--primary-800-30);
+}
 
 .theme-light {
     --light-elevation-border: 0px 0px 0px 1px hsla(210, 9.3%, 78.8%, 0.3);
