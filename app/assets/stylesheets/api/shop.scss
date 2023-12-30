@@ -175,6 +175,34 @@
   min-width: 500px;
 }
 
+.shop-hero-banner-holiday-version {
+  position: relative;
+  width: 100%;
+  min-width: 597px;
+  height: 300px;
+  background: center/cover no-repeat
+      image_url("shopChrismasSnowingBgBanner.png"),
+    lightgray;
+  margin-top: 24px;
+  border-radius: 32px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+  // padding: 60px 0;
+  // box-sizing: border-box;
+  // position: relative;
+  // min-width: 500px;
+  overflow: hidden;
+}
+.shop-hero-banner-holiday-version-description {
+  margin-left: 58px;
+  width: 480px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .shop-hero-description {
   max-width: 50%;
 }
@@ -350,6 +378,48 @@
   position: absolute;
   height: 30px;
   content: image_url("shopBannerHeaderSparkle.png");
+}
+
+//for winter holidays
+
+.shop-hero-holiday-banner-art {
+  position: absolute;
+  top: 0;
+  left: 510px;
+}
+
+.shop-hero-banner-holiday-grid {
+  position: absolute;
+  top: -77px;
+  left: 0;
+  width: 402px;
+  height: 484px;
+  content: image_url("shopHeaderBannerHolidayBackground.png");
+}
+.shop-hero-banner-holiday-gridShelf {
+  position: absolute;
+  left: 452px;
+  top: 116px;
+  width: 85px;
+  height: 60px;
+  content: image_url("shopHeaderBannerEmptyShelf.png");
+}
+.shop-hero-banner-holiday-gridShelfItems {
+  position: absolute;
+  left: 405px;
+  top: 206px;
+  width: 178px;
+  height: 106px;
+  content: image_url("shopBannerHeaderForeground.png");
+}
+
+.shop-hero-banner-holiday-gridHands {
+  position: absolute;
+  top: 27px;
+  left: 264px;
+  width: 265px;
+  height: 238px;
+  content: image_url("shopHeaderBannerHolidaysHand.png");
 }
 
 .shop-banner-card {
@@ -682,6 +752,10 @@
   box-shadow: rgb(116, 37, 101) 0px 0px 25px 1px !important;
 }
 
+.shop-item-card.monsters-items:hover {
+  box-shadow: rgb(0, 69, 92) 0px 0px 25px 1px !important;
+}
+
 .shop-item-card-inner {
   position: relative;
   border-radius: 50%;
@@ -844,6 +918,13 @@
   background-color: var(--brand-experiment);
 }
 
+.ppe-shop-item-purchase-button {
+  cursor: pointer;
+  color: var(--white-500);
+  background-color: var(--brand-experiment);
+  transition: opacity 0.5s;
+}
+
 .shop-item-preview-button {
   padding: 0 7px;
   background-color: var(--background-accent);
@@ -856,7 +937,7 @@
   cursor: pointer;
   height: auto;
 }
-
+.ppe-shop-item-purchase-button:hover,
 .shop-item-purchase-button:hover,
 .shop-item-gift-button:hover,
 .shop-item-preview-button:hover {
@@ -1748,6 +1829,18 @@
   content: image_url("disxcore.png");
 }
 
+.shop-monsters-banner {
+  background: image_url("shopMonstersBanner.png") 0% 0% / cover border-box
+    border-box;
+  outline-color: var(--shop-banner-monsters-outline-color);
+}
+
+.shop-monster-banner-logo {
+  z-index: 1;
+  max-height: 96px;
+  content: image_url("shopMonstersBannerLogo.png");
+}
+
 //shop fall animations
 
 .fall-leaves-image {
@@ -2050,6 +2143,87 @@
 }
 .winter-wonderland-string-lights {
   content: image_url("stringLightsStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.monsters-beam-chop {
+  content: image_url("beamChopStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.monsters-stinkums {
+  content: image_url("stinkumsStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.monsters-chuck {
+  content: image_url("chuckStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.monsters-winkle {
+  content: image_url("winkleStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.monsters-chewbert {
+  content: image_url("chewbertStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.monsters-doodlezard {
+  content: image_url("doodlezardStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.monsters-glop {
+  content: image_url("glopStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.monsters-gawblehop {
+  content: image_url("gawblehopStatic.png");
   display: block;
   -o-object-fit: cover;
   object-fit: cover;
@@ -2512,9 +2686,9 @@
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: ease-in-out;
   animation-name: cyberspace-cycle1;
-  animation-duration:5.6s;
+  animation-duration: 5.6s;
   animation-delay: 5s;
-  animation-iteration-count:infinite;
+  animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
 
@@ -2549,6 +2723,415 @@
   }
   100% {
     content: image_url("cyberSpaceLoop.png");
+  }
+}
+
+.shop-item-monsters-gooZilla {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("goozillaThumbnail.png");
+}
+
+.shop-item-monsters-gooZilla-claw {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("heartzillaEnd.png");
+  -webkit-animation-duration: 6s;
+  -webkit-animation-name: glooZilla-starting-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: glooZilla-starting-cycle;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+.shop-item-monsters-gooZilla-claw-goo {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-duration: 6s;
+  -webkit-animation-name: glooZilla-starting-gloo-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: glooZilla-starting-gloo-cycle;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+.shop-item-monsters-gooZilla-claw-goo-end {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 5s;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: glooZilla-ending-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: glooZilla-ending-cycle;
+  animation-duration: 1s;
+  animation-delay: 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.shop-item-monsters-gooZilla-claw-goo-end-drip {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 7s;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-name: glooZilla-ending-drip-cycle;
+  animation-name: glooZilla-ending-drip-cycle;
+  animation-duration: 1s;
+  animation-delay: 7s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes glooZilla-starting-cycle {
+  0% {
+    content: image_url("goozillaIntroClawInfinite.png");
+  }
+  100% {
+    content: image_url("heartzillaEnd.png");
+  }
+}
+@-webkit-keyframes glooZilla-starting-cycle {
+  0% {
+    content: image_url("goozillaIntroClawInfinite.png");
+  }
+  100% {
+    content: image_url("heartzillaEnd.png");
+  }
+}
+
+@keyframes glooZilla-starting-gloo-cycle {
+  0% {
+    content: image_url("goozillaIntroSlimeInfinite.png");
+  }
+  100% {
+    content: image_url("blankEffect.png");
+  }
+}
+@-webkit-keyframes glooZilla-starting-gloo-cycle {
+  0% {
+    content: image_url("goozillaIntroSlimeInfinite.png");
+  }
+  100% {
+    content: image_url("blankEffect.png");
+  }
+}
+
+@keyframes glooZilla-ending-cycle {
+  0% {
+    content: image_url("goozillaLoop.png");
+  }
+  100% {
+    content: image_url("goozillaLoop.png");
+  }
+}
+@-webkit-keyframes glooZilla-ending-cycle {
+  0% {
+    content: image_url("goozillaLoop.png");
+  }
+  100% {
+    content: image_url("goozillaLoop.png");
+  }
+}
+
+@keyframes glooZilla-ending-drip-cycle {
+  0% {
+    content: image_url("goozillaReducedMotion.png");
+  }
+  100% {
+    content: image_url("goozillaReducedMotion.png");
+  }
+}
+@-webkit-keyframes glooZilla-ending-drip-cycle {
+  0% {
+    content: image_url("goozillaReducedMotion.png");
+  }
+  100% {
+    content: image_url("goozillaReducedMotion.png");
+  }
+}
+
+.shop-item-monsters-heartZilla {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("heartzillaThumbnail.png");
+}
+
+.shop-item-monsters-heartZilla-claw {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("heartzillaEnd.png");
+  -webkit-animation-duration: 6s;
+  -webkit-animation-name: heartZilla-start-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: heartZilla-start-cycle;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+.shop-item-monsters-heartZilla-end-dripping {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 5s;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-name: heartZilla-ending-drip-cycle;
+  animation-name: heartZilla-ending-drip-cycle;
+  animation-duration: 1s;
+  animation-delay: 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+.shop-item-monsters-heartZilla-end {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 6s;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-name: heartZilla-ending-cycle;
+  animation-name: heartZilla-ending-cycle;
+  animation-duration: 1s;
+  animation-delay: 6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes heartZilla-start-cycle {
+  0% {
+    content: image_url("heartzillaIntroInfinite.png");
+  }
+  100% {
+    content: image_url("heartzillaEnd.png");
+  }
+}
+@-webkit-keyframes heartZilla-start-cycle {
+  0% {
+    content: image_url("heartzillaIntroInfinite.png");
+  }
+  100% {
+    content: image_url("heartzillaEnd.png");
+  }
+}
+@keyframes heartZilla-ending-drip-cycle {
+  0% {
+    content: image_url("heartzillaLoop.png");
+  }
+  100% {
+    content: image_url("heartzillaLoop.png");
+  }
+}
+@-webkit-keyframes heartZilla-ending-drip-cycle {
+  0% {
+    content: image_url("heartzillaLoop.png");
+  }
+  100% {
+    content: image_url("heartzillaLoop.png");
+  }
+}
+
+@keyframes heartZilla-ending-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("heartzillaReducedMotion.png");
+  }
+}
+@-webkit-keyframes heartZilla-ending-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("heartzillaReducedMotion.png");
+  }
+}
+
+.shop-item-monsters-monsterPop {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("monsterPopThumbnail.png");
+}
+
+.shop-item-monsters-monsterPop-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  // content: image_url("monsterPopReducedMotion.png");
+  -webkit-animation-duration: 6s;
+  -webkit-animation-name: monsterPop-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: monsterPop-cycle;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.shop-item-monsters-monsterPop-glass-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("monsterPopGlassEnd.png");
+  -webkit-animation-duration: 5.25s;
+  -webkit-animation-name: monsterPop-glass-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: monsterPop-glass-cycle;
+  animation-duration: 5.25s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+.shop-item-monsters-monsterPop-ending-pop {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 5.35s;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-name: monsterPop-ending-pop-cycle;
+  animation-name: monsterPop-ending-pop-cycle;
+  animation-duration: 2s;
+  animation-delay: 5.35s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+.shop-item-monsters-monsterPop-ending-shell-shock {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 7s;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-name: monsterPop-shell-shock-cycle;
+  animation-name: monsterPop-shell-shock-cycle;
+  animation-duration: 1s;
+  animation-delay: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes monsterPop-cycle {
+  0% {
+    content: image_url("monsterPopIntroMonsterInfinite.png");
+  }
+  100% {
+    content: image_url("monsterPopReducedMotion.png");
+  }
+}
+@-webkit-keyframes monsterPop-cycle {
+  0% {
+    content: image_url("monsterPopIntroMonsterInfinite.png");
+  }
+  100% {
+    content: image_url("monsterPopReducedMotion.png");
+  }
+}
+
+@keyframes monsterPop-glass-cycle {
+  0% {
+    content: image_url("monsterPopIntroGlassInfinite.png");
+  }
+  100% {
+    content: image_url("monsterPopGlassEnd.png");
+  }
+}
+@-webkit-keyframes monsterPop-glass-cycle {
+  0% {
+    content: image_url("monsterPopIntroGlassInfinite.png");
+  }
+  100% {
+    content: image_url("monsterPopGlassEnd.png");
+  }
+}
+
+@keyframes monsterPop-ending-pop-cycle {
+  0% {
+    content: image_url("monsterPopLoop.png");
+  }
+  100% {
+    content: image_url("monsterPopLoop.png");
+  }
+}
+@-webkit-keyframes monsterPop-ending-pop-cycle {
+  0% {
+    content: image_url("monsterPopLoop.png");
+  }
+  100% {
+    content: image_url("monsterPopLoop.png");
+  }
+}
+
+@keyframes monsterPop-shell-shock-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("monsterPopReducedMotion.png");
+  }
+}
+@-webkit-keyframes monsterPop-shell-shock-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+  100% {
+    content: image_url("monsterPopReducedMotion.png");
   }
 }
 
@@ -2676,6 +3259,31 @@
   .ssxcore-tech-hud {
     content: image_url("techhudAnimated.png");
   }
+
+  .monsters-beam-chop {
+    content: image_url("beamChopAnimated.png");
+  }
+  .monsters-stinkums {
+    content: image_url("stinkumsAnimated.png");
+  }
+  .monsters-chuck {
+    content: image_url("chuckAnimated.png");
+  }
+  .monsters-winkle {
+    content: image_url("winkleAnimated.png");
+  }
+  .monsters-chewbert {
+    content: image_url("chewbertAnimated.png");
+  }
+  .monsters-doodlezard {
+    content: image_url("doodlezardAnimated.png");
+  }
+  .monsters-glop {
+    content: image_url("glopAnimated.png");
+  }
+  .monsters-gawblehop {
+    content: image_url("gawblehopAnimated.png");
+  }
 }
 
 .halloween-jack-o-lantern::before,
@@ -2710,7 +3318,15 @@
 .winter-wonderland-new-year::before,
 .winter-wonderland-fresh-pine::before,
 .winter-wonderland-snow-globe::before,
-.winter-wonderland-string-lights::before {
+.winter-wonderland-string-lights::before,
+.monsters-beam-chop::before,
+.monsters-stinkums::before,
+.monsters-chuck::before,
+.monsters-winkle::before,
+.monsters-chewbert::before,
+.monsters-doodlezard::before,
+.monsters-glop::before,
+.monsters-gawblehop::before {
   content: "";
   display: block;
   width: 100%;
@@ -2797,4 +3413,81 @@
   color: var(--white-500);
   width: 16px;
   height: 16px;
+}
+
+.skeleton-shop-banner {
+  cursor: pointer;
+  box-sizing: border-box;
+  overflow: hidden;
+  -webkit-animation: placeholderPulse 1.3s ease-in-out infinite;
+  animation: placeholderPulse 1.3s ease-in-out infinite;
+  background-color: var(--background-secondary-alt);
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  padding: 16px;
+}
+
+.skeleton-shop-banner-cardBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-secondary);
+  border-radius: var(--radius-lg);
+  height: inherit;
+}
+.skeleton-shop-banner-cardBody-avatar {
+  margin-top: 32px;
+  height: 96px;
+  width: 96px;
+  border-radius: 50%;
+  background-color: var(--background-primary);
+}
+
+.skeleton-shop-banner-cardBody-title {
+  margin-top: 16px;
+  background-color: var(--background-primary);
+  width: 35%;
+  height: 16px;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-shop-banner-cardBody-description {
+  margin-top: 8px;
+  background-color: var(--background-primary);
+  width: 25%;
+  height: 16px;
+  border-radius: var(--radius-sm);
+}
+.skeleton-shop-banner-cardBody-summary {
+  height: 32px;
+  width: 90%;
+  border-radius: var(--radius-sm);
+  background-color: var(--background-primary);
+  margin-top: auto;
+  margin-bottom: 16px;
+}
+
+@keyframes placeholderPulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+
+@-webkit-keyframes placeholderPulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
+  }
 }
