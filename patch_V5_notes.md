@@ -95,7 +95,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added created_date to dm returned in one to one dms in _dm_server.json.jbuilder.
     - Added first_message to dm returned in one to one dms in _dm_server.json.jbuilder.
 
-
 ## Frontend Changes
 
     - Started Shop page components.
