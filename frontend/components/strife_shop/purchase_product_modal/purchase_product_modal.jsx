@@ -1,11 +1,10 @@
 import React from 'react';
 import { useState, useRef, useEffect } from "react";
 import {
-    PenEditIcon, StrifeBannerLogo,
-    StrifeBotTagIcon, StrifeNitroBadgeIcon, VerifiedCheckIcon, VerifiedStarIcon,
-    AngelListIcon, ChatPresentIcon, CloseXIcon, FolderIcon, GitHubIcon, Invite2ServerCheckBoxCheckedIcon, Invite2ServerCheckBoxUnCheckedIcon,
-    LinkedInIcon, NitroBasicBannerIcon,
-    PrivateLockIcon, ProfilePanelChevronIcon, RoundedCheckBoxCheckedIcon, RoundedCheckBoxUnCheckedIcon, WarnILockIcon, WumpusIcon,
+    StrifeBannerLogo,
+    AngelListIcon, CloseXIcon, FolderIcon, GitHubIcon,
+    LinkedInIcon,
+    PrivateLockIcon, ProfilePanelChevronIcon, WumpusIcon,
 } from '../../front_end_svgs/Strife_svgs';
 import REACT_PORTAL from '../../../utils/ReactPortal_api_util';
 
