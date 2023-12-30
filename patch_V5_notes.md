@@ -893,4 +893,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Removed StrifeShopIcon1 to Old Svg Icons and renamed it to StrifeShopIconOld.
     - Added custom-channel-textarea-text-area-height styling var to core styles.
     - Added Styles for larger body nitro and shop sliding modals.
+    - Started styles for Preview Gift Upc Modal.
 
