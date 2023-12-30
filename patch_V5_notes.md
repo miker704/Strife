@@ -900,4 +900,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved new Shop page code from temp file to offical shop file.
     - Moved old Shop page code to deprecated shop code file.
     - Mounted Purchase product modal to shop page.
+    - Mounted Send Gift Modal to shop page.
     - Finalized Update to New Shop Page.
