@@ -926,5 +926,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finished updates to styles for strife shop Page.
     - Finished Preview Gift UPC Modal Container.
     - Finished Preview Gift UPC Modal.
+    - Finished Purchase Product Modal.
 
 
