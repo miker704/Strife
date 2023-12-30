@@ -1,0 +1,1521 @@
+@-webkit-keyframes sendGiftModalOpenAnimation {
+  from {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes sendGiftModalOpenAnimation {
+  from {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes sendGiftModalExitAnimation {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes sendGiftModalExitAnimation {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+.sgm-modal-container-layer {
+  background: none !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1002;
+}
+
+.sgm-modal-backdrop {
+  pointer-events: all;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  opacity: 0.85;
+  background: var(--black-500);
+}
+
+.sgm-modal-layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.sgm-shaker {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 720px;
+  height: 100%;
+}
+.sgm-modal-focus-lock {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-width: 100%;
+}
+
+.sgm-modal-root {
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  pointer-events: all;
+  position: relative;
+  max-height: 100%;
+
+  opacity: 1;
+  transform: scale(1);
+  -webkit-animation-name: sendGiftModalOpenAnimation;
+  -webkit-animation-duration: 0.2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+  animation-name: sendGiftModalOpenAnimation;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  button[type="button"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+}
+
+.sgm-modal-root.transition-out {
+  -webkit-animation-name: sendGiftModalExitAnimation;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-duration: 0.15s;
+  -webkit-animation-iteration-count: 1;
+  animation-name: sendGiftModalExitAnimation;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-duration: 0.15s;
+  animation-iteration-count: 1;
+}
+
+.sgm-modal-root.sgm-with-header > :first-child {
+  background-color: transparent;
+}
+
+.sgm-modal-content {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+  border-radius: 4px 4px 0 0;
+  transition: box-shadow.1s ease-out;
+  word-wrap: break-word;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background-image: linear-gradient(
+    var(--modal-background),
+    var(--modal-background)
+  );
+  background-size: 100% calc(100% - 20px);
+  flex: 0 0 auto;
+}
+
+.sgm-modal-content-h1 {
+  font-family: var(--global-font);
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  color: var(--header-primary);
+}
+
+.sgm-modal-close-button {
+  margin-left: auto;
+  height: 26px;
+  padding: 4px;
+  transition: opacity.2s ease-in-out;
+  opacity: 0.5;
+  cursor: pointer;
+  border-radius: 3px;
+  color: var(--interactive-normal);
+  box-sizing: content-box;
+  width: auto;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  font-family: var(--global-font);
+  text-rendering: optimizeLegibility;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.sgm-modal-close-button:hover {
+  opacity: 1;
+  color: var(--interactive-hover);
+}
+
+.sgm-modal-scroller-body-content {
+  position: relative;
+  z-index: 0;
+  height: 100%;
+  padding: 0 16px;
+  border-radius: 0;
+  background-color: var(--modal-background);
+}
+
+.stsnm-slide-step-body {
+  padding-top: 12px;
+  display: flex;
+  flex-direction: row;
+}
+
+.stsnm-slide-step-body > * {
+  width: 50%;
+}
+.sgm-modal-bodyColumnMiddle {
+  margin-right: 30px;
+}
+.sgm-modal-bodyColumnRight {
+  margin-right: 10px;
+}
+
+.sgm-modal-giftMainAnimation {
+  position: relative;
+  height: 275px;
+}
+.sgm-modal-giftBoxOptionsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  margin: auto;
+  margin-top: 25px;
+  max-width: 85%;
+}
+
+.sgm-modal-send-to {
+  margin-top: 24px;
+}
+.sgm-modal-send-to-h1 {
+  color: var(--header-secondary);
+  margin-bottom: 8px;
+  font-family: var(--global-font);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.sgm-modal-send-to-body {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.sgm-modal-custom-giftMessage {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.sgm-modal-customizationSection {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--background-modifier-accent);
+}
+.sgm-modal-customizationSection:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.sgm-modal-customizationSection-h1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--header-secondary);
+  font-family: var(--global-font);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.sgm-channelTextArea {
+  position: relative;
+  width: 100%;
+  text-indent: 0;
+  border-radius: 8px;
+}
+
+.sgm-modal-giftPreview {
+  margin-bottom: 24px;
+}
+.sgm-modal-giftPreview-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.sgm-modal-giftPreview-title-h1 {
+  color: var(--header-secondary);
+  margin-bottom: 0;
+  font-family: var(--global-font);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.sgm-modal-giftPreview-link {
+  cursor: pointer;
+}
+.sgm-modal-giftPreview-link:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  text-decoration-color: var(--text-link);
+}
+.sgm-modal-giftPreview-link-text {
+  color: var(--text-link);
+  font-family: var(--global-font);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+.sgm-modal-giftPreview-container {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  border: 2px solid var(--brand-500);
+  padding: 16px;
+}
+.sgm-modal-profileEffect-container {
+  position: relative;
+  width: 48px;
+  height: 60px;
+}
+
+.sgm-modal-prod-preview-text-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 4px;
+  padding-left: 16px;
+}
+.sgm-modal-prod-item-type {
+  font-family: var(--global-font);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--header-secondary);
+}
+.sgm-modal-prod-item-name,
+.sgm-modal-prod-price {
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--text-normal);
+}
+.sgm-modal-upc-preview {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  content: image_url("shopUpcProfileEffectPrePreview.png");
+}
+
+.sgm-inner-scroller-text-area {
+  background-color: transparent;
+  resize: none;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  width: 100%;
+  height: var(--custom-channel-textarea-text-area-height);
+  min-height: var(--custom-channel-textarea-text-area-height);
+  color: var(--text-normal);
+  outline: 0;
+  padding: 0;
+  position: relative;
+  font-family: var(--global-font);
+  height: 136px;
+}
+
+.sgm-ta-wrapper-scrollable-container {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: 50vh;
+  border-radius: 8px;
+  backface-visibility: hidden;
+  scrollbar-width: none;
+}
+
+.sgm-customGiftMessage {
+  background-color: var(--background-tertiary);
+}
+.sgm-ta-wrapper {
+  --channel-text-area-placeholder: var(--input-placeholder-text);
+  border-radius: 3px;
+  height: 136px;
+  transition: border-color.2s ease-in-out;
+}
+
+.sgm-ta-wrapper > div {
+  height: 100%;
+}
+.sgm-ta-wrapper-inner {
+  display: flex;
+  position: relative;
+}
+
+.sgm-chat-box-area {
+  user-select: text;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+  text-align: left;
+  word-break: break-word;
+  white-space: break-spaces !important;
+  caret-color: var(--text-normal);
+  color: var(--white-500);
+  left: 0;
+  right: 10px;
+  padding: 0;
+  padding-right: 10px;
+  padding-bottom: 11px;
+  padding-top: 11px;
+  padding-left: 16px;
+  overflow-wrap: break-word;
+  position: relative;
+  outline: none;
+  font-family: var(--global-font);
+  //   background-color: var(--primary-800-lvl-2);
+
+  //remove this later but incase this app is used on FireFox
+  scrollbar-width: none;
+  resize: none;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--custom-channel-textarea-text-area-height);
+  min-height: var(--custom-channel-textarea-text-area-height);
+  height: 136px;
+}
+
+.sgm-chat-box-area:disabled {
+  cursor: not-allowed;
+}
+
+.sgm-chat-box-area::placeholder {
+  outline: 0;
+  padding-bottom: 11px;
+  padding-right: 10px;
+  position: absolute;
+  left: 0;
+  right: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: var(--channeltextarea-placeholder);
+  user-select: none;
+  pointer-events: none;
+  font-family: var(--global-font);
+}
+
+.sgm-characterCounterContainer {
+  align-items: flex-end;
+  bottom: 12px;
+  color: var(--text-normal);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 14px;
+}
+
+.sgm-flairContainer {
+  display: flex;
+  align-items: center;
+  height: 24px;
+}
+
+.sgm-modal-giftMainAnimation-animated {
+  transform: scale(1);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.sgm-soundEmojiContainer {
+  position: absolute;
+  bottom: 16px;
+  margin-left: 35px;
+  display: flex;
+}
+.sgm-sound,
+.sgm-emoji {
+  background-color: var(--primary-860);
+  opacity: 0.7;
+  margin-right: 6px;
+  border-radius: 5px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.sgm-sound-button-container {
+  cursor: pointer;
+  margin-right: 4px;
+  margin-left: 4px;
+  width: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sgm-emoji-button-container {
+  cursor: pointer;
+  margin-right: 4px;
+  margin-left: 4px;
+  width: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sgm-sound-button {
+  display: flex;
+  align-items: center;
+  padding: 3px;
+}
+
+.sgm-emoji-button {
+  display: flex;
+  align-items: center;
+}
+
+.sgm-sound-button-icon {
+  margin-right: 4px;
+}
+
+.sgm-emoji-button-icon {
+  margin-right: 4px;
+  color: var(--white-500);
+  padding: 4px;
+}
+
+.sgm-sound-button-text {
+  color: var(--white-500);
+  font-family: var(--global-font);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+}
+
+.sgm-present-choice-img {
+  background-color: var(--transparent);
+  border-radius: 8px;
+  border: 3px solid var(--transparent);
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  content: image_url("sgmPresent.svg");
+}
+.sgm-cake-choice-img {
+  background-color: var(--transparent);
+  border-radius: 8px;
+  border: 3px solid var(--transparent);
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  content: image_url("sgmCake.svg");
+}
+.sgm-cup-choice-img {
+  background-color: var(--transparent);
+  border-radius: 8px;
+  border: 3px solid var(--transparent);
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  content: image_url("sgmCup.svg");
+}
+.sgm-present-treasure-choice-img {
+  background-color: var(--transparent);
+  border-radius: 8px;
+  border: 3px solid var(--transparent);
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  content: image_url("sgmWumpusTreasureChest.svg");
+}
+
+.sgm-prez-card-selected {
+  border: 2px solid var(--brand-500);
+  padding: 2px;
+}
+
+.sgm-fall-foliage-static {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("fallLeavesThumbnail.png");
+}
+
+.sgm-fall-lilly-pad-life {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("rainThumbnail.png");
+}
+
+.sgm-ghoulish-graffiti {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("punkGirlThumbnail.png");
+}
+
+.sgm-slime-zombie {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("slimeZombieThumbnail.png");
+}
+
+.sgm-ghost-skulls {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("ghostSkullsThumbnail.png");
+}
+
+.sgm-fantasy-hydro-blast {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("waterSplashThumbnail.png");
+}
+.sgm-fantasy-sakura-dreams {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("sakuraThumbnail.png");
+}
+
+.sgm-fantasy-mystic-vines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("vinesThumbnail.png");
+}
+
+.sgm-fantasy-pixie-dust {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("fairyThumbnail.png");
+}
+
+.sgm-anime-magic-hearts {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("magicGirlThumbnail.png");
+}
+.sgm-anime-shatter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("earthquakeThumbnail.png");
+}
+
+.sgm-anime-shuriken-strike {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("shurikenThumbnail.png");
+}
+
+.sgm-anime-power-surge {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("sayanThumbnail.png");
+}
+
+.sgm-breakfast-strife-cereal-o-s {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("cerealThumbnail.png");
+}
+.sgm-breakfast-plate {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("plateThumbnail.png");
+}
+
+.sgm-winter-wonderland-deck-the-halls {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("deckTheHallsThumbnail.png");
+}
+
+.sgm-winter-wonderland-snowman {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("snowManThumbnail.png");
+}
+
+.sgm-disxcore-boosted-relic {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("boostedRelicThumbnail.png");
+}
+
+.sgm-disxcore-cyberspace {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("cyberSpaceThumbnail.png");
+}
+.sgm-monsters-gooZilla {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("goozillaThumbnail.png");
+}
+
+.sgm-monsters-heartZilla {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("heartzillaThumbnail.png");
+}
+
+.sgm-monsters-monsterPop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("monsterPopThumbnail.png");
+}
+
+.sgm-fall-leaves-image {
+  content: image_url("fallLeavesAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
+.sgm-fall-pumpkin-spice-image {
+  content: image_url("pumpkinSpiceAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
+.sgm-fall-fox-hat-image {
+  content: image_url("foxHatAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-fall-frog-hat-image {
+  content: image_url("frogHatAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
+.sgm-fantasy-flaming-sword {
+  content: image_url("flamingSwordAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-fantasy-fairy-sprites {
+  content: image_url("fairySpriteAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-fantasy-defensive-shield {
+  content: image_url("fantasyDefenseShieldAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-fantasy-magic-potion {
+  content: image_url("magicPotionAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
+.sgm-fantasy-wizard-staff {
+  content: image_url("wizardStaffAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-fantasy-glowing-runes {
+  content: image_url("glowingRunesAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
+.sgm-fantasy-skull-medallion {
+  content: image_url("skullMedallionAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-fantasy-treasure-n-key {
+  content: image_url("treasureNKeyAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
+.sgm-anime-radiating-energy {
+  content: image_url("radiatingEnergyAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
+.sgm-anime-soul-leaving-body {
+  content: image_url("soulLeavingBodyAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-anime-sweat-drops {
+  content: image_url("sweatDropsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-anime-starry-eyed {
+  content: image_url("starryEyedAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-anime-in-love {
+  content: image_url("inLoveAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-anime-shocked {
+  content: image_url("animeShockedAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-anime-angry {
+  content: image_url("animeAngryAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
+.sgm-breakfast-items-toast {
+  content: image_url("toastAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-breakfast-items-morning-coffee {
+  content: image_url("morningCoffeeAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
+.sgm-breakfast-items-fried-eggs {
+  content: image_url("friedEggsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
+.sgm-breakfast-items-blueberry-jam {
+  content: image_url("bbJamAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
+.sgm-breakfast-items-donuts {
+  content: image_url("donutsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
+.sgm-breakfast-items-pancakes {
+  content: image_url("pancakesAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
+.sgm-halloween-cat-grave {
+  content: image_url("halloweenCatGraveAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-halloween-minions {
+  content: image_url("halloweenMinionsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-halloween-ghosts {
+  content: image_url("halloweenGhostsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-halloween-jack-o-lantern {
+  content: image_url("jackolaternAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
+.sgm-winter-wonderland-new-year-2024 {
+  content: image_url("newYearAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
+.sgm-winter-wonderland-fresh-pine {
+  content: image_url("freshPineAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-winter-wonderland-snow-globe {
+  content: image_url("snowGlobeAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-winter-wonderland-string-lights {
+  content: image_url("stringLightsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-ssxcore-greenSmokeScreen {
+  content: image_url("greenSmokeScreenAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-ssxcore-tech-hud {
+  content: image_url("techhudAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-ssxcore-shakingBlueHeadset {
+  content: image_url("shakingBlueHeadsetAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
+.sgm-monsters-beam-chop {
+  content: image_url("beamChopAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-monsters-stinkums {
+  content: image_url("stinkumsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-monsters-chuck {
+  content: image_url("chuckAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-monsters-winkle {
+  content: image_url("winkleAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-monsters-chewbert {
+  content: image_url("chewbertAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-monsters-doodlezard {
+  content: image_url("doodlezardAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-monsters-glop {
+  content: image_url("glopAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-monsters-gawblehop {
+  content: image_url("gawblehopAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
+.sgm-select-mui-content {
+  grid-area: content;
+  display: flex;
+}
+.sgm-select-mui-prefix {
+  grid-area: prefix;
+  margin-right: 8px;
+}
+.sgm-select-mui-wrapper {
+  position: relative;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.sgm-select-friends-svg {
+  position: absolute;
+  contain: paint;
+}
+.sgm-select-friends-mask {
+  pointer-events: none;
+  display: block;
+  width: auto;
+}
+.sgm-select-friends-avatar-stack {
+  display: grid;
+  width: 100%;
+  height: 100%;
+}
+.sgm-select-friends-avatar-img {
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.sgm-select-friends-avatar-img::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-modifier-accent);
+}
+
+.sgm-iac-menu-item-container {
+  flex: 1 1 auto;
+  position: relative;
+  overflow: hidden;
+  flex-direction: row;
+  flex-wrap: wrap;
+  outline: 0;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  align-content: center;
+}
+.sgm-iac-menu-item-title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0 0px;
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--text-normal);
+  outline: 0;
+}
+
+//slide 2 avatar decos
+
+.sgm-avatar-deco-giftMainAnimationWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sgm-avatar-deco-giftMainContent {
+  margin: 24px 0;
+}
+
+.sgm-giftRecipientInfo {
+  display: flex;
+  align-items: center;
+}
+
+.sgm-giftRecipientInfo > * {
+  margin-right: 8px;
+}
+
+.sgm-gift-recipientName-review,
+.sgm-gift-recipientTag-review {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 200px;
+  font-family: var(--global-font);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--header-primary);
+}
+.sgm-gift-recipientTag-review {
+  color: GrayText;
+}
+
+.sgm-avatar-deco-preview-inner-wrapper {
+  position: relative;
+  border-radius: 50%;
+  width: 152px;
+  height: 152px;
+  margin-top: 24px;
+}
+.sgm-back-step {
+  width: auto;
+  min-width: auto;
+  padding: 2px 4px;
+  margin-right: auto;
+}
+
+.sgm-back-step-link {
+  color: var(--interactive-active);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  font-family: var(--global-font);
+  -webkit-text-decoration: var(--link-decoration);
+  text-decoration: var(--link-decoration);
+}
+.sgm-back-step-link:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.sgm-profileEffectGiftPreviewContainer {
+  height: 296px;
+  width: 200px;
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin: 16px auto 0;
+}
+
+.sgm-profileEffectGiftPreviewBG {
+  position: absolute;
+  width: 100%;
+  content: image_url("shopUpcProfileEffectPrePreview.png");
+}
+
+.sgm-profileEffectGiftPreviewEffects {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity.6s ease-in-out;
+}
+
+.sgm-profileEffectGiftPreview-Effects-inner {
+  overflow: hidden;
+  position: absolute;
+  border-radius: 8px;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.sgm-pegpei-img {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+}
