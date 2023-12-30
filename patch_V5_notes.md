@@ -895,3 +895,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Styles for larger body nitro and shop sliding modals.
     - Started styles for Preview Gift Upc Modal.
     - Add Styles for proper padding for Preview Gift Upc Modal in UPC Styles.
+    - Created Preview Gift Upc Modal.jsx.
+    
