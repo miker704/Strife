@@ -9,13 +9,10 @@ import { fetchChannel } from "../../actions/channel_actions";
 import { fetchDmServers } from "../../actions/dm_server_actions";
 import { fetchDmMemberShip } from "../../actions/dm_member_actions";
 import { createChannel, removeChannelErrors, createChannelsViaServerTemplate } from "../../actions/channel_actions";
-import { signUpUser, signInUser, reSyncCurrentUser, fetchUserByStrifeId, removeSessionErrors, searchUsers, fetchUserByUserNameOrStrifeID, removeUserAccount, logoutUser, updateUserInfo, disableUserAccount } from '../../actions/session_actions';
+import { fetchUser,signUpUser, signInUser, reSyncCurrentUser, fetchUserByStrifeId, removeSessionErrors, searchUsers, fetchUserByUserNameOrStrifeID, removeUserAccount, logoutUser, updateUserInfo, disableUserAccount } from '../../actions/session_actions';
 import { selectFriendStatusOnline, selectFriendStatus, selectFriendsViaStatusType, selectOnlineFriends } from '../../utils/selectors_api_util';
 import { requestFriendships, removeFriendshipErrors, requestAllFriendships, createFriendship } from '../../actions/friendship_actions';
 import { createDmServer, removeDmServerErrors } from '../../actions/dm_server_actions';
-
-
-
 
 const getRandomId = () => {
     const userId = [1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10];
@@ -70,6 +67,7 @@ const mSTP = (state, ownProps) => {
 
         // navLink: (<span className="navlinks">Need an account?{" "}<Link to="/register">Register</Link></span>),
         memberId: getRandomId(),
+        profileThemeObj:"monsterPop"
 
     }
 }
@@ -103,6 +101,7 @@ const mDTP = (dispatch) => {
 
 
 
+        fetchUser: (memberId) => dispatch(fetchUser(memberId)),
 
 
         // action: (server) => dispatch(createServer(server)),
