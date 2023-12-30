@@ -927,5 +927,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finished Preview Gift UPC Modal Container.
     - Finished Preview Gift UPC Modal.
     - Finished Purchase Product Modal.
+    - Finished Send a Gift Modal.
 
 
