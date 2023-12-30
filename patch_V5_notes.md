@@ -923,4 +923,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finished update for preview profile effect modal.
     - Finished update for strife shop Page Container.
     - Finished update for strife shop Page.
+    - Finished updates to styles for strife shop Page.
 
