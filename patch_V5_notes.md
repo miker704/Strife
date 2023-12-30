@@ -921,4 +921,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Switch mounts and Mounted SubToStrifeNitroBasic modal to preview profile effects modal instead of SubToStrifeNitroPro modal.
     - Finished profile effect item card.
     - Finished update for preview profile effect modal.
+    - Finished update for strife shop Page Container.
 
