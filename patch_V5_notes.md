@@ -910,4 +910,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Renamed Send Gift Modal to Send A Gift Modal.
     - Renamed Send Gift Modal Container to Send A Gift Modal Container.
     - Finished styles for Preview Gift UPC modal.
-    - Finished styles for Preview profile effect modal.
+    - Finished styles for Preview profile effects modal.
+    - Finished styles for Preview avatar decorations modal.
