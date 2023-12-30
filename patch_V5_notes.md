@@ -898,3 +898,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Created Preview Gift Upc Modal.jsx.
     - Created Preview Gift Upc Modal Container.js.
     - Moved new Shop page code from temp file to offical shop file.
+    - Moved old Shop page code to deprecated shop code file.
