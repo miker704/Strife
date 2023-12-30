@@ -1,0 +1,29 @@
+.pgupcm-example-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  font-family: var(--global-font);
+  text-rendering: optimizeLegibility;
+  background-color: var(--profile-gradient-button-color);
+  color: var(--white-500);
+  transition: opacity.2s ease-in-out;
+}
+
+.pgupcm-example-button:hover {
+  opacity: 0.8;
+}
+.pgupcm-example-button:active {
+  opacity: 0.9;
+}
