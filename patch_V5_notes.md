@@ -916,3 +916,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finished styles for Send A Gift modal.
     - Finished Avatar Decoration item card.
     - Finished updates to preview Avatar Decoration modal.
+    - Switch mounts and Mounted SubToStrifeNitroBasic modal to shop page instead of SubToStrifeNitroPro modal.
