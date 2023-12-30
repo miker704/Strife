@@ -931,5 +931,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finished Send a Gift Modal Container.
     - Created deprecated test bench file for preview gift upc.
     - Created second deprecated test bench file for preview gift upc v2.
-
-
+    - Completed Massive Update to entire App Where all svg icons where replaced with new versions of them matching the same svg icon changes on discord.
