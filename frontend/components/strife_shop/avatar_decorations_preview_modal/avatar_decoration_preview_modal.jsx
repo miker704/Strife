@@ -1,11 +1,15 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
 import REACT_PORTAL from "../../../utils/ReactPortal_api_util";
-import { AddCircleIcon, CloseXIcon, NitroHappyFaceIcon, StrifeBotTagIcon, StrifeNitroBadgeIcon } from "../../front_end_svgs/Strife_svgs";
+import { AddCircleIcon, ChatPresentIcon, CloseXIcon, NitroSmilingFaceIcon, StrifeBotTagIcon, StrifeNitroBadgeIcon } from "../../front_end_svgs/Strife_svgs";
 import { returnUserOnlineActivityStatusBadgeMaskIMG } from "../../../utils/user_online_activity_status_badge_api_util";
 import { returnUserBadgeFillColor } from "../../../utils/user_status_badge_color_api_util";
 import SubscribeToStrifeNitroProModalContainer from "../../nitro/subscribe_to_nitro_modal/subscribe_to_nitro_pro_modal_container";
+import SubscribeToStrifeNitroBasicModalContainer from "../../nitro/subscribe_to_nitro_basic_modal/subscribe_to_nitro_basic_modal_container";
+import PurchaseProductModalContainer from "../purchase_product_modal/purchase_product_modal_container";
+import SendAGiftModalContainer from "../send_a_gift_modal/send_a_gift_modal_container";
 import { useFormatTimeStampMessageBody } from "../../../utils/useTimeStamp_api_utils";
+import { Tooltip } from 'react-tooltip';
 
 const AvatarDecorationPreviewModal = (props) => {
 
@@ -28,12 +32,16 @@ const AvatarDecorationPreviewModal = (props) => {
     const [gift, setGift] = React.useState(false);
     const [currentSubModal, setCurrentSubModal] = useState({
         subToNitroPro: false,
+        subToNitroBasic: false,
+        purchaseProductModal: false,
+        sendGiftModal: false,
     });
+
     const [time, setTime] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
     const popUpRef = useRef(null);
 
-    const openModal = (field, isGift = false) => {
+    const openModal = (field, isGift = false, options = {}) => {
         setCurrentSubModal(previousState => {
             return { ...previousState, [field]: true };
         });
@@ -43,13 +51,17 @@ const AvatarDecorationPreviewModal = (props) => {
     }
 
 
-    const closeForm = (field) => {
+    const closeForm = (field, closeMainModal = false) => {
         setCurrentSubModal(previousState => {
             return { ...previousState, [field]: false };
         });
         setGift(false);
         setIsSubModMounted(false);
         window.addEventListener('keyup', overrideCloseModal, false);
+        if (closeMainModal === true) {
+            props.closeSubMod(props.formName);
+        }
+
     }
 
     const overrideCloseModal = (e) => {
@@ -110,6 +122,10 @@ const AvatarDecorationPreviewModal = (props) => {
         "fantasy-effect": { background: `linear-gradient(135deg, rgb(20, 97, 68), rgb(2, 24, 13))` },
         "anime-effect": { background: `linear-gradient(135deg, rgb(75, 120, 175), rgb(15, 14, 57))` },
         "breakfast-effect": { background: `linear-gradient(135deg, rgb(232, 177, 105), rgb(122, 59, 0))` },
+        "winter-wonderland-effect": { background: `linear-gradient(135deg, rgb(71, 126, 255), rgb(21, 77, 209))` },
+        "disxcore-effect": { background: `linear-gradient(135deg,rgb(116, 37, 101), rgb(17, 29, 64))` },
+        "monsters-effect": { background: `linear-gradient(135deg, rgb(0, 69, 92), rgb(0, 42, 56))` },
+
     }
 
     const profileEffectBgBanner = {
@@ -118,6 +134,9 @@ const AvatarDecorationPreviewModal = (props) => {
         "fantasy-effect": "ppe-fantasy-bg-banner",
         "anime-effect": "ppe-anime-bg-banner",
         "breakfast-effect": "ppe-breakfast-bg-banner",
+        "winter-wonderland-effect": "ppe-winter-wonderland-bg-banner",
+        "disxcore-effect": "ppe-disxcore-bg-banner",
+        "monsters-effect": "ppe-monsters-bg-banner"
     }
     const profileEffectTitleBanner = {
         "fall-effect": "ppe-fall-title-banner",
@@ -125,6 +144,9 @@ const AvatarDecorationPreviewModal = (props) => {
         "fantasy-effect": "ppe-fantasy-title-banner",
         "anime-effect": "ppe-anime-title-banner",
         "breakfast-effect": "ppe-breakfast-title-banner",
+        "winter-wonderland-effect": "ppe-winter-wonderland-title-banner",
+        "disxcore-effect": "ppe-disxcore-title-banner",
+        "monsters-effect": "ppe-monsters-title-banner"
     }
 
     const salePrice = {
@@ -157,6 +179,22 @@ const AvatarDecorationPreviewModal = (props) => {
         "blueberryJam": 2.99,
         "donut": 2.99,
         "pancakes": 2.99,
+        "newYear2024": 3.99,
+        "freshPine": 3.99,
+        "snowGlobe": 3.99,
+        "stringLights": 3.99,
+        "greenSmoke": 2.99,
+        "futuristicUI": 2.99,
+        "disxcoreHeadset": 2.99,
+        "beamChop": 3.99,
+        "stinkUms": 3.99,
+        "chuck": 3.99,
+        "winkle": 3.99,
+        "chewBert": 3.99,
+        "doodleZard": 3.99,
+        "glop": 3.99,
+        "gawbleHop": 3.99,
+
     };
 
 
@@ -190,6 +228,22 @@ const AvatarDecorationPreviewModal = (props) => {
         "blueberryJam": 3.99,
         "donut": 3.99,
         "pancakes": 3.99,
+        "newYear2024": 4.99,
+        "freshPine": 4.99,
+        "snowGlobe": 4.99,
+        "stringLights": 4.99,
+        "greenSmoke": 3.99,
+        "futuristicUI": 3.99,
+        "disxcoreHeadset": 3.99,
+        "beamChop": 4.99,
+        "stinkUms": 4.99,
+        "chuck": 4.99,
+        "winkle": 4.99,
+        "chewBert": 4.99,
+        "doodleZard": 4.99,
+        "glop": 4.99,
+        "gawbleHop": 4.99,
+
     };
 
     const avatarDecorationName = {
@@ -222,6 +276,22 @@ const AvatarDecorationPreviewModal = (props) => {
         "blueberryJam": "Blueberry Jam",
         "donut": "Donut",
         "pancakes": "Pancakes",
+        "newYear2024": "New Year",
+        "freshPine": "Fresh Pine",
+        "snowGlobe": "Snowglobe",
+        "stringLights": "String Lights",
+        "greenSmoke": "Smoke",
+        "futuristicUI": "Futuristic UI",
+        "disxcoreHeadset": "DISXCORE Headset",
+        "beamChop": "Beamchop",
+        "stinkUms": "Stinkums",
+        "chuck": "Chuck",
+        "winkle": "Winkle",
+        "chewBert": "Chewbert",
+        "doodleZard": "Doodlezard",
+        "glop": "Glop",
+        "gawbleHop": "Gawblehop",
+
     }
     const avatarDecorationDescription = {
         "graveyardCat": "Just a cat on graveyard duty.",
@@ -253,8 +323,92 @@ const AvatarDecorationPreviewModal = (props) => {
         "blueberryJam": "MMMM JUICY.",
         "donut": "Never enough sprinkles.",
         "pancakes": "How high can you stack 'em?",
+        "newYear2024": "Ringing in 2024!",
+        "freshPine": "Ah...the smell of Winter.",
+        "snowGlobe": "Try not to shake too hard.",
+        "stringLights": "String up some holiday cheer.",
+        "greenSmoke": "Now you see me, now you don't.",
+        "futuristicUI": "BEEP BOOP.",
+        "disxcoreHeadset": "Everything sounds better with these on.",
+        "beamChop": "Awh it's so cu- AHHH",
+        "stinkUms": "Questionably dealt. Definitely smelt.",
+        "chuck": "Wanna see what I had for lunch earlier?",
+        "winkle": "Eye love you.",
+        "chewBert": "Me chew gum, make bubbles, big fun.",
+        "doodleZard": "You might want to wash up after.",
+        "glop": "Is there something in my teeth?",
+        "gawbleHop": "Talk about being tongue-tied.",
     }
 
+    const giftColor = {
+        "fall-effect": {
+            background: `rgb(224, 146, 61)`,
+            color: `rgb(0,0,0)`
+        },
+        "halloween-effect": {
+            background: `rgb(80, 105, 175)`,
+            color: `rgb(0,0,0)`
+        },
+        "fantasy-effect": {
+            background: `rgb(0, 107, 75)`,
+            color: `rgb(255,255,255)`
+        },
+        "anime-effect": {
+            background: `rgb(19, 104, 150)`,
+            color: `rgb(255,255,255)`
+        },
+        "breakfast-effect": {
+            background: `rgb(255, 149, 56)`,
+            color: `rgb(0,0,0)`
+        },
+        "winter-wonderland-effect": {
+            background: `rgb(0, 157, 255)`,
+            color: `rgb(0,0,0)`
+        },
+        "disxcore-effect": {
+            background: `rgb(17, 29, 64))`,
+            color: `rgb(0,0,0)`
+        },
+        "monsters-effect": {
+            background: `rgb(0, 153, 122)`,
+            color: `rgb(0,0,0)`
+        },
+    }
+
+    const buttonStyles = {
+        "fall-effect": {
+            background: `linear-gradient(90deg,rgb(255, 194, 102), rgb(107, 25, 0))`,
+            color: `rgb(0,0,0)`
+        },
+        "halloween-effect": {
+            background: `linear-gradient(90deg,rgb(81, 127, 219), rgb(6, 14, 35))`,
+            color: `rgb(0,0,0)`
+        },
+        "fantasy-effect": {
+            background: `linear-gradient(90deg,rgb(2, 136, 55), rgb(0, 107, 75))`,
+            color: `rgb(255, 255, 255)`
+        },
+        "anime-effect": {
+            background: `linear-gradient(90deg,rgb(136, 68, 193), rgb(19, 104, 150))`,
+            color: `rgb(255, 255, 255)`
+        },
+        "breakfast-effect": {
+            background: `linear-gradient(90deg,rgb(255, 196, 87), rgb(255, 149, 56))`,
+            color: `rgb(0,0,0)`
+        },
+        "winter-wonderland-effect": {
+            background: `linear-gradient(90deg,rgb(66, 198, 255), rgb(0, 157, 255))`,
+            color: `rgb(0, 0, 0)`
+        },
+        "disxcore-effect": {
+            background: `linear-gradient(90deg,rgb(255, 196, 87), rgb(255, 149, 56))`,
+            color: `rgb(0,0,0)`
+        },
+        "monsters-effect": {
+            background: `linear-gradient(90deg, rgb(0, 230, 176), rgb(0, 153, 122))`,
+            color: `rgb(0,0,0)`
+        },
+    }
 
     const defaultcolorPalleteRef = useRef(Math.random());
     const colorPalleteAltRef = useRef(Math.random());
@@ -419,7 +573,83 @@ const AvatarDecorationPreviewModal = (props) => {
             </>
         ),
 
+        "newYear2024": (
+            <>
+                <img className='ppe-winter-wonderland-new-year-2024' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "freshPine": (
+            <>
+                <img className='ppe-winter-wonderland-fresh-pine' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "snowGlobe": (
+            <>
+                <img className='ppe-winter-wonderland-snow-globe' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "stringLights": (
+            <>
+                <img className='ppe-winter-wonderland-string-lights' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
 
+        "greenSmoke": (
+            <>
+                <img className='ppe-ssxcore-greenSmokeScreen' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "futuristicUI": (
+            <>
+                <img className='ppe-ssxcore-tech-hud ' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "disxcoreHeadset": (
+            <>
+                <img className='ppe-ssxcore-shakingBlueHeadset' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+
+        "beamChop": (
+            <>
+                <img className='ppe-monsters-beam-chop' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "stinkUms": (
+            <>
+                <img className='ppe-monsters-stinkums' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "chuck": (
+            <>
+                <img className='ppe-monsters-chuck' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "winkle": (
+            <>
+                <img className='ppe-monsters-winkle' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "chewBert": (
+            <>
+                <img className='ppe-monsters-chewbert' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "doodleZard": (
+            <>
+                <img className='ppe-monsters-doodlezard' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "glop": (
+            <>
+                <img className='ppe-monsters-glop' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "gawbleHop": (
+            <>
+                <img className='ppe-monsters-gawblehop' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
     }
 
 
@@ -454,6 +684,21 @@ const AvatarDecorationPreviewModal = (props) => {
         "blueberryJam": "ppe-breakfast-items-blueberry-jam",
         "donut": "ppe-breakfast-items-donuts",
         "pancakes": "ppe-breakfast-items-pancakes",
+        "newYear2024": "ppe-winter-wonderland-new-year-2024",
+        "freshPine": "ppe-winter-wonderland-fresh-pine",
+        "snowGlobe": "ppe-winter-wonderland-snow-globe",
+        "stringLights": "ppe-winter-wonderland-string-lights",
+        "greenSmoke": "ppe-ssxcore-greenSmokeScreen",
+        "futuristicUI": "ppe-ssxcore-tech-hud",
+        "disxcoreHeadset": "ppe-ssxcore-shakingBlueHeadset",
+        "beamChop": "ppe-monsters-beam-chop",
+        "stinkUms": "ppe-monsters-stinkums",
+        "chuck": "ppe-monsters-chuck",
+        "winkle": "ppe-monsters-winkle",
+        "chewBert": "ppe-monsters-chewbert",
+        "doodleZard": "ppe-monsters-doodlezard",
+        "glop": "ppe-monsters-glop",
+        "gawbleHop": "ppe-monsters-gawblehop",
     }
 
 
@@ -487,7 +732,7 @@ const AvatarDecorationPreviewModal = (props) => {
 
 
     let memberPhoto = (
-        <div className={`upc-pfp-icon-wrapper ${props.currentUser.banner ? `pro` : ``}`}>
+        <div className={`upc-pfp-icon-wrapper ${props.currentUser.banner ? `pro` : ``}`} role="button" tabIndex={0}>
             <div className='upc-avatar-wrapper' role='img'>
                 <svg width="92" height="92" viewBox="0 0 92 92" className="upc-avatar-svg-mask" aria-hidden="true">
                     <foreignObject x="0" y="0" width="80" height="80" mask="url(#svg-mask-avatar-status-round-80)">
@@ -508,7 +753,7 @@ const AvatarDecorationPreviewModal = (props) => {
                         className="upc-avatar-pointer-events"></rect>
                 </svg>
                 <svg width="96" height="96" viewBox="0 0 96 96" className="ssxcore-svg-avatar-decoration" aria-hidden="true">
-                    <foreignObject x="0" y="0" width="96" height="96" mask="url(#)">
+                    <foreignObject x="0" y="0" width="96" height="96" >
                         <div className="ssxcore-avatar-stack">
                             {avatarDecorationPreviewImgs[props.avatarEffectObj]}
                         </div>
@@ -520,7 +765,7 @@ const AvatarDecorationPreviewModal = (props) => {
     );
 
     let mp = (
-        <div className={`upc-pfp-icon-wrapper ${props.currentUser.banner ? `pro` : ``}`}>
+        <div className={`upc-pfp-icon-wrapper ${props.currentUser.banner ? `pro` : ``}`} role="button" tabIndex={0}>
             <div className='upc-avatar-wrapper' role='img'>
                 <svg width="80" height="80" viewBox="0 0 80 80" className="upc-avatar-svg-mask" aria-hidden="true">
                     <foreignObject x="0" y="0" width="80" height="80" mask="url(#svg-mask-avatar-default)">
@@ -532,6 +777,13 @@ const AvatarDecorationPreviewModal = (props) => {
                                     <img className="upc-avatar-pfp" src={props.currentUser.photo} alt=" " aria-hidden="true" />
                                 )
                             }
+                        </div>
+                    </foreignObject>
+                </svg>
+                <svg width="96" height="96" viewBox="0 0 96 96" className="ssxcore-svg-avatar-decoration" aria-hidden="true">
+                    <foreignObject x="0" y="0" width="96" height="96" >
+                        <div className="ssxcore-avatar-stack">
+                            {avatarDecorationPreviewImgs[props.avatarEffectObj]}
                         </div>
                     </foreignObject>
                 </svg>
@@ -548,19 +800,96 @@ const AvatarDecorationPreviewModal = (props) => {
 
     let badgeContainer = (
         <div className='upc-profile-badges-container' role='group'>
-            <a className='usm-user-strife-tag-badge-anchor' >
+            <a className='usm-user-strife-tag-badge-anchor' role="button" data-tooltip-position-strategy='fixed' data-tooltip-id="modal-tool-tip-usm"
+                data-tooltip-content={`Originally known as ${props.currentUser.username}#${props.currentUser.strife_id_tag}`}>
                 <img className='usm-user-strife-tag-badge' alt=" " />
             </a>
         </div>
     );
 
 
+    let buttonGroup = props.nitroExclusive ? (
+
+        <div className="ppe-button-container">
+            <div className="ppe-primary-buttons">
+                <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
+                    onClick={(e) => { e.stopPropagation(); openModal("subToNitroBasic"); }}>
+                    <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
+                        <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
+                        <span className="shopbuttonText">Unlock with Nitro</span>
+                        <div className="shiny-button-container">
+                            <div className="shiny-button-flex">
+                                <div className="shiny-button-inner"></div>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+    ) : (
+        <>
+            <div className="ppe-button-container">
+                <div className="ppe-primary-buttons">
+
+                    <button type="button" className={`shop-buttons ppe-shop-item-purchase-button global-button-size-medium global-button-full-width`}
+                        onClick={(e) => { e.stopPropagation(); openModal("purchaseProductModal", false); }}
+                        style={buttonStyles[props.profileEffectThemeType]}
+                    >
+                        <div className="global-button-contents look-filled-button-contents">
+                            Buy Decoration
+                        </div>
+                    </button>
+                    <button type="button" className="shop-buttons shop-item-gift-button global-button-growth button-look-filled"
+                        data-tooltip-content={"Send a gift"}
+                        data-tooltip-id={`sbmodal-thread-tip-${props.avatarEffectObj}`} data-tooltip-place="top"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            openModal("sendGiftModal");
+                        }}
+                        style={giftColor[props.profileEffectThemeType]}
+                    >
+                        <div className="global-button-contents look-filled-button-contents shop-item-previewButtonInner">
+                            <ChatPresentIcon height={24} width={24} />
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <Tooltip className="shop-avatar-deco-tool-tip" id={`sbmodal-thread-tip-${props.avatarEffectObj}`} place="top" closeOnResize={true} closeOnScroll={true} />
+        </>
+    );
 
 
     const renderNitroProModal = () => {
         if (currentSubModal.subToNitroPro === true) {
             return (
                 <SubscribeToStrifeNitroProModalContainer closeSubMod={closeForm} formName={"subToNitroPro"} gifted={gift} />
+            )
+        }
+    }
+    const renderNitroBasicModal = () => {
+        if (currentSubModal.subToNitroBasic === true) {
+            return (
+                <SubscribeToStrifeNitroBasicModalContainer closeSubMod={closeForm} formName={"subToNitroBasic"} gifted={gift} />
+            )
+        }
+    }
+
+    const renderPurchaseProductModal = () => {
+        if (currentSubModal.purchaseProductModal === true) {
+            return (
+                <PurchaseProductModalContainer closeSubMod={closeForm} formName={"purchaseProductModal"}
+                    productPrice={strikeThroughPrice[props.avatarEffectObj]} productName={avatarDecorationName[props.avatarEffectObj]}
+                />
+            )
+        }
+    }
+    const renderSendGiftModal = () => {
+        if (currentSubModal.sendGiftModal === true) {
+            return (
+                <SendAGiftModalContainer closeSubMod={closeForm} formName={"sendGiftModal"} productType={"Avatar_Decoration"}
+                    productPrice={strikeThroughPrice[props.avatarEffectObj]} productName={avatarDecorationName[props.avatarEffectObj]} productKey={props.avatarEffectObj}
+                />
             )
         }
     }
@@ -592,7 +921,7 @@ const AvatarDecorationPreviewModal = (props) => {
                                                         </foreignObject>
                                                     </svg>
                                                     <svg width="182.4" height="182.4" viewBox="0 0 182.4 182.4" className="ssxcore-svg-avatar-decoration" aria-hidden="true">
-                                                        <foreignObject x="0" y="0" width="182.4" height="182.4" mask="url(#)">
+                                                        <foreignObject x="0" y="0" width="182.4" height="182.4" >
                                                             <div className="ssxcore-avatar-stack">
                                                                 {avatarDecorationPreviewImgs[props.avatarEffectObj]}
                                                             </div>
@@ -610,32 +939,23 @@ const AvatarDecorationPreviewModal = (props) => {
 
                                                     <h2 className="ppe-profile-effect-h2" style={{ color: `white` }}>{`${avatarDecorationName[props.avatarEffectObj]}`}</h2>
                                                     <div className="ppe-profile-effect-small-text-description" style={{ color: `white` }}>{`${avatarDecorationDescription[props.avatarEffectObj]}`}</div>
-                                                    <div className="ppe-ped-price-tags-container">
-                                                        <h2 className="shop-item-price-tags-h2-medium" style={{ color: `white` }}>
-                                                            <span className="shop-item-striked-price">{`$${strikeThroughPrice[props.avatarEffectObj]}`}</span>
-                                                        </h2>
-                                                        <h2 className="shop-item-price-tags-h2-medium" style={{ color: `white` }}>
-                                                            <StrifeNitroBadgeIcon className="shop-item-nitro-ball-icon" height={24} width={24} />
-                                                            <span className="shop-item-price">{`$${salePrice[props.avatarEffectObj]}`}</span>
-                                                        </h2>
-                                                    </div>
-                                                </div>
-                                                <div className="shop-item-card-button-container">
-                                                    <button type="button" className="shop-buttons shop-item-shiny-button global-button-size-medium button-look-filled global-button-full-width"
-                                                        onClick={(e) => { e.stopPropagation(); openModal("subToNitroPro"); }}>
-                                                        <div className="global-button-contents look-filled-button-contents shopPremiumSubscribeButton">
-                                                            <StrifeNitroBadgeIcon className="shop-premium-nitro-ball-icon" height={24} width={24} />
-                                                            <span className="shopbuttonText">Unlock Shop with Nitro</span>
-                                                            <div className="shiny-button-container">
-                                                                <div className="shiny-button-flex">
-                                                                    <div className="shiny-button-inner"></div>
-                                                                </div>
-                                                            </div>
+
+                                                    {props.nitroExclusive ? (<div className="ppe-price-tags-h2-med-semi-bold" style={{ color: `white` }}>Included with Nitro</div>) : (
+                                                        <div className="ppe-ped-price-tags-container">
+                                                            <h2 className="shop-item-price-tags-h2-medium" style={{ color: `white` }}>
+                                                                {`$${strikeThroughPrice[props.avatarEffectObj]}`}
+                                                            </h2>
+                                                            <h2 className="ppe-profile-effect-price-tags-h2-xsmall-med-bold" style={{ color: `white` }}>
+                                                                <StrifeNitroBadgeIcon className="ppe-ped-nitro-ball-icon-faded" height={24} width={24} />
+                                                                {`$${salePrice[props.avatarEffectObj]} with Nitro. `}
+                                                                <div className="ppe-ped-premium-unlock-hook" role="button" tabIndex={0} onClick={(e) => { e.stopPropagation(); openModal("subToNitroBasic"); }}>Subscribe now</div>
+                                                            </h2>
                                                         </div>
-                                                    </button>
+                                                    )}
                                                 </div>
+                                                {buttonGroup}
                                                 <div className="ppe-ped-fine-print-disclaimer">
-                                                    After subscribing to Nitro, you’ll have to purchase this effect separately. Nitro subscriptions become non-refundable once you’ve purchased a effect.
+                                                    {`${props.nitroExclusive ? `This bonus item is yours to keep and use anytime with an active Nitro subscription.` : `Once purchased, this decoration will be added to your collection and can be used anytime`}`}
                                                 </div>
                                             </div>
                                         </div>
@@ -645,7 +965,7 @@ const AvatarDecorationPreviewModal = (props) => {
                                                 <div className={upcColorPallete}>
                                                     <div className={`user-mini-upc-inner ${props.currentUser.banner === undefined ? `userProfileThemeWithOutBanner` : `userProfileThemeWithBanner`}`}>
                                                         {memberBanner}
-                                                        {memberPhoto}
+                                                        {mp}
                                                         {badgeContainer}
                                                         <div className='upc-popout-overlay-background upc-overlay-background ppe-customization-upc-body' >
 
@@ -666,6 +986,9 @@ const AvatarDecorationPreviewModal = (props) => {
                                                     </div>
                                                 </div>
 
+
+
+                                                <Tooltip className="usm-tool-tip" id="modal-tool-tip-usm" place="top" closeOnResize={true} closeOnScroll={true} />
                                                 <div tabIndex={-1}>
                                                     <div className="ppem-AvatarDeco-ChatPreview">
                                                         <div className="ppem-AD-Chat-mock-message" role="article">
@@ -698,7 +1021,7 @@ const AvatarDecorationPreviewModal = (props) => {
                                                         </div>
                                                         <div className="ppem-AD-Chat-mock-message-input">
                                                             <AddCircleIcon height={24} width={24} className="ppem-AD-Chat-mock-message-input-button" />
-                                                            <NitroHappyFaceIcon height={24} width={24} className="ppem-AD-Chat-mock-message-input-button" />
+                                                            <NitroSmilingFaceIcon height={24} width={24} className="ppem-AD-Chat-mock-message-input-button" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -715,6 +1038,9 @@ const AvatarDecorationPreviewModal = (props) => {
                             ) : ("")
                         }
                         {renderNitroProModal()}
+                        {renderNitroBasicModal()}
+                        {renderPurchaseProductModal()}
+                        {renderSendGiftModal()}
                     </div>
                 </div>
             </div>
