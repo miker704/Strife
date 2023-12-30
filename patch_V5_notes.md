@@ -915,4 +915,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added more global styles and style vars to core root styles.
     - Finished styles for Send A Gift modal.
     - Finished Avatar Decoration item card.
-
+    - Finished updates to preview Avatar Decoration modal.
