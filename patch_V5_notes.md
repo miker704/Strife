@@ -919,3 +919,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Switch mounts and Mounted SubToStrifeNitroBasic modal to shop page instead of SubToStrifeNitroPro modal.
     - Switch mounts and Mounted SubToStrifeNitroBasic modal to preview Avatar Decoration modal instead of SubToStrifeNitroPro modal.
     - Switch mounts and Mounted SubToStrifeNitroBasic modal to preview profile effects modal instead of SubToStrifeNitroPro modal.
+    - Finished profile effect item card.
