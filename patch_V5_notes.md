@@ -912,3 +912,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finished styles for Preview Gift UPC modal.
     - Finished styles for Preview profile effects modal.
     - Finished styles for Preview avatar decorations modal.
+    - Added more global styles and style vars to core root styles.
