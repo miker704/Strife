@@ -902,3 +902,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Mounted Purchase product modal to shop page.
     - Mounted Send Gift Modal to shop page.
     - Finalized Update to New Shop Page.
+    - Mounted Send Gift Modal to Profile Effect Preview Modal.
