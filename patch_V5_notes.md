@@ -977,3 +977,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded Readme resources add_friends_page.mp4.
     - Uploaded Readme resources add_friend.mp4.
     - Uploaded Readme resources 4wayliveMessaging.mp4.
+    - Added userSettingsEmail2024.svg.
