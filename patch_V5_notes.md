@@ -965,3 +965,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded Readme resources delete_channel_while_others_in_it.mp4.
     - Uploaded Readme resources delete_channel_while_no_ones_in_it.mp4.
     - Uploaded Readme resources dashboard.PNG (newer version).
+    - Uploaded Readme resources createDmsViaMessageButton.mp4.
