@@ -1,5 +1,5 @@
 import { receiveAllFriends } from "../../actions/friendship_actions";
-import { fetchServer, fetchServers, receiveServer, receiveServers, removeServer, webSocketFetchServer } from "../../actions/server_actions";
+import { fetchServer, fetchServers, receiveServer, receiveServers, removeServer, webSocketFetchServer, removeServerViaWebSocket } from "../../actions/server_actions";
 import { fetchDmServer, fetchDmServers, receiveDmServer, receiveDmServers, removeDmServer, removeDmServerViaWebSocket, webSocketFetchDmServer } from "../../actions/dm_server_actions";
 import { reSyncCurrentUser, fetchUser } from "../../actions/session_actions";
 import { closeModal } from "../../actions/modal_actions";
@@ -53,6 +53,10 @@ const _STRIFE_CORE_CABLE_ = (store, _global_history, props, history, currentUser
                     }
                     store.dispatch(removeServer(data.removedServerId));
                     console.info(`%c[$TR!FE M0N!T0R]: %c[SERVER_REMOVAL%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;");
+                    break;
+                case 'WEB_SOCKET_REMOVE_SERVER':
+                    store.dispatch(removeServerViaWebSocket(data.removedServerId));
+                    console.info(`%c[$TR!FE M0N!T0R]: %c[W3B_$0CK3T_S3RV3R_R3M0V@L%c] %c@ [${time}%c]`, "color:#00FD61;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;", "color:#A12D2F;");
                     break;
                 // if a user creates a dmserver call this to the other members it is created with so they can receive it
                 // this will also take effect when using the add friends to dmserver allow new invites to receive the dmserver live
