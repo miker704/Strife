@@ -45,16 +45,15 @@
 
 ### Live Chat
 
-<video controls><source src="./readme_resources/live_messaging.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/3533691e-88d5-4120-b2f9-988f2772c50c
 
 Theres alot being shown here in the above clip, a user is able to send a message to other user(s) in real time, users are able to edit or delete a message they've sent before and those changes are reflected in real time to all other users in the server or dmserver. Also on the screen at 0:15 in the video if a user clicks on the red trash icon on the message control component will open up the same delete message modal that discord has. The modal displays the message, timestamp, and user avatar asking  for confirmation if they want to proceed in deleting the message or not. If you have noticed at 0:16 in the video there is a Pro Tip in green font at the bottom of the delete messgae modal that states by holding shift when clicking on the delete message button they can bypass the confirmation and delete the message entirely. Which is demonstrated at 0:20 - 0:26 in the above video. These features also apply to chats in servers as well and all reflect in real time as well.
 
+https://github.com/miker704/Strife/assets/33719996/17d3bf93-15b3-42f3-ab2c-ec906adae034
+
 Seems basic ? how about a group chat between four users at once
-<video controls><source src="./readme_resources/liveMessagingTasks.mp4" type="video/mp4"/></video>
 
-<video controls><source src="./readme_resources/4wayliveMessaging.mp4" type="video/mp4"/></video>
-
-[![4waymessaging](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/K5-mcDXjh0A)
+https://github.com/miker704/Strife/assets/33719996/cc87cda9-8364-4dc2-929e-b40850cbbc41
 
 As you can see there is really now limit to how many users you can live messsage at once.
 
@@ -194,7 +193,7 @@ The code to control, send, edit, and delete messages spans over multiple compone
 
 ### Server and Dm Protection
 
-<video controls><source src="./readme_resources/serverAndDmProtection.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/97b0227d-82b5-42ef-87b3-56fc5ba95f5e
 
 If a user enters a route to a server or dm Server that they no longer or have no membership to they will be booted to a loading screen preventing them
 from accessing the potential server or dm server and eventually be returned to the dashboard.
@@ -235,19 +234,28 @@ Here we check if isMember returns true which checks that state of the current us
 profile card there the current user can either click the message user button, or type in a message and hit the enter key to then send a message to that user, if the current user already has a dm with the user they will be teleport to that dm server for that user, if not a dm server is created and the messsage is sent after which the current user is teleport to the newly create dm. Before a user attempts to message a user through methods like these a check if ran to see if the current relationship between the two users is valid i.e. if either user has blocked the other user stop the message from going through.
 
 Creation of a Dm from a server via messaging from a user profile card modal.
-<video controls><source src="./readme_resources/createDmFromUpcMessage.mp4" type="video/mp4"/></video>
+
+https://github.com/miker704/Strife/assets/33719996/f1d0c8ea-5d22-4562-98cd-54783a6ba748
 
 Creation of a Dm from a server via clicking the message button from a user profile card modal.
-<video controls><source src="./readme_resources/createDmsViaMessageButton.mp4" type="video/mp4"/></video>
+
+https://github.com/miker704/Strife/assets/33719996/6bcb766f-d951-4d4a-9ee1-2ac4783eb90a
+
 
 Warping to an existing dm from a server via clicking the message button.
-<video controls><source src="./readme_resources/warpToDmViaButton.mp4" type="video/mp4"/></video>
+
+https://github.com/miker704/Strife/assets/33719996/9d7d12cf-f3c3-4771-8e05-cc1898a9bf90
+
 
 Warping to an existing dm from a server via enter a message.
-<video controls><source src="./readme_resources/warpToDmViaMessage.mp4" type="video/mp4"/></video>
+
+https://github.com/miker704/Strife/assets/33719996/5392949c-f7ca-498b-8f6b-c666af970d9e
+
 
 You can also create or warp to a dm within a group dm and by clicking on a users name or avatar on a previous sent message, you can also do in a server as well.
-<video controls><source src="./readme_resources/createAdmViaUPCInnerMessage.mp4" type="video/mp4"/></video>
+
+https://github.com/miker704/Strife/assets/33719996/d57dfa55-fa17-4775-9847-8a54cf2234cb
+
 
 ```jsx
 
