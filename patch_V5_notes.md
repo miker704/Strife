@@ -949,3 +949,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded Readme resources openChannelSettingsWithOldModalManager.PNG.
     - Uploaded Readme resources oldModalManagerStateWRS.PNG.
     - Uploaded Readme resources o2ofriendrequests.mp4.
+    - Uploaded Readme resources megaupc.mp4.
