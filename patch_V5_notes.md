@@ -955,3 +955,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded Readme resources liveUserChangesMegaUpc.mp4.
     - Uploaded Readme resources liveMessagingTasks.mp4.
     - Uploaded Readme resources live_messaging.mp4.
+    - Uploaded Readme resources join_via_invite_link.mp4.
