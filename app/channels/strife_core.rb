@@ -49,6 +49,10 @@ class StrifeCore < ApplicationCable::Channel
                          dmsms.members.where(online: true).pluck(:id)
                        end.flatten!.uniq!.delete_if { |dmsms| dmsms == current_user.id }
 
+      # get the current_users online friends
+      all_online_friends = current_user.friends.where(online: true).pluck(:id)
+
+
       # puts 'CURRENT ONE TO ONE DMSERVERS'.colorize(:yellow)
       # puts one_to_one_dm_servers.inspect
       # puts 'CURRENT All DMSERVERS'.colorize(:yellow)
@@ -96,7 +100,15 @@ class StrifeCore < ApplicationCable::Channel
       elsif currentLocation.include?('/$/$H0P/')
         core = '$TR!F3_' + current_user.id.to_s
         parse_fetch_current_user_update(core)
+      elsif currentLocation == '/$/channels/@me'
+        if all_online_friends.length > 0
+          all_online_friends.each do |user|
+            core = '$TR!F3_' + user.to_s
+            parse_fetch_user_update(core)
+          end
+        end
       end
+
     end
   end
 
@@ -219,7 +231,8 @@ class StrifeCore < ApplicationCable::Channel
     @banned_Server_Member = User.find_by(id: _banned_member['user_id'].to_i)
     if @banned_Server_Member.online == true
       core = '$TR!F3_' + @banned_Server_Member.id.to_s
-      received({ type: 'REMOVE_SERVER', core: core, removedServerId: _banned_member['server_id'] })
+      # received({ type: 'REMOVE_SERVER', core: core, removedServerId: _banned_member['server_id'] })
+      received({ type: 'WEB_SOCKET_REMOVE_SERVER', core: core, removedServerId: _banned_member['server_id'] })
       # received({ type: 'RECEIVE_SERVERS', core: core})
     end
   end
@@ -357,6 +370,9 @@ end
         core = data[:core]
         self.class.broadcast_to(core, data)
       when 'WEB_SOCKET_RECEIVE_SERVER'
+        core = data[:core]
+        self.class.broadcast_to(core, data)  
+      when 'WEB_SOCKET_REMOVE_SERVER'
         core = data[:core]
         self.class.broadcast_to(core, data)  
       when 'RECEIVE_ALL_FRIENDS'
