@@ -31,3 +31,6 @@ bundle.js.map
 .byebug_history
 .DS_Store
 npm-debug.log
+
+# ignore readme video files
+/readme_resources/readme_videos/
