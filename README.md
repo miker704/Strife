@@ -1297,6 +1297,8 @@ Here this component wrapper function servers a way to deploy modals with ```REAC
 
 Here is a demo video of it note that both video instances are using the same camera, over on heroku or render it would be 2 different cameras but you get the idea.
 
+https://github.com/miker704/Strife/assets/33719996/e537f018-a354-462d-9bb6-7c007b26cfce
+
 
 ### Explain how core works
 
