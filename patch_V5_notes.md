@@ -971,3 +971,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded Readme resources create_new_channel.mp4.
     - Uploaded Readme resources browertoBrowserChanges.mp4.
     - Uploaded Readme resources bootedDmProtection.gif.
+    - Uploaded Readme resources blockingAndUnblockingUserInDm.mp4.
