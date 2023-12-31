@@ -957,3 +957,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded Readme resources live_messaging.mp4.
     - Uploaded Readme resources join_via_invite_link.mp4.
     - Uploaded Readme resources InviteGC2Server.mp4.
+    - Uploaded Readme resources Invite_to_server.mp4.
