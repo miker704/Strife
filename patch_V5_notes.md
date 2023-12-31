@@ -960,3 +960,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded Readme resources Invite_to_server.mp4.
     - Uploaded Readme resources howDiscordOpensModals.PNG.
     - Uploaded Readme resources guild_servers.mp4.
+    - Uploaded Readme resources deleteServerOneonOne.mp4.
