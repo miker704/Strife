@@ -980,3 +980,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added userSettingsEmail2024.svg.
     - Added new styles to allow 2 different header images to be rendered in edit user email sub modal.
     - Added a random change to edit user email sub modal where the header image will be the classic animated one or the new static version.
+    - Finished winter 2023 update and readme update Happy New Year!
