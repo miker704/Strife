@@ -937,3 +937,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Adjustments to Core Cable.
     - Uploaded Readme resources warpToDmViaMessage.mp4.
     - Uploaded Readme resources warpToDmViaButton.mp4.
+    - Uploaded Readme resources update_channel.mp4.
