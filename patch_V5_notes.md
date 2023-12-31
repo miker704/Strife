@@ -947,3 +947,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded Readme resources serverAndDmProtection.mp4.
     - Uploaded Readme resources reactPortalUPCModal.png.
     - Uploaded Readme resources openChannelSettingsWithOldModalManager.PNG.
+    - Uploaded Readme resources oldModalManagerStateWRS.PNG.
