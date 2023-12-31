@@ -415,7 +415,7 @@ The following code basically depending on which method the user chooses to messa
 
 There are many ways for a user to join a server and just like in discord $TRIF3 also features the guild exploration (servers are referred to as Guilds) users can view some of the popular guilds on $TRIF3 or search for a guild to join. The UI of the explore guilds page is exactly the same as discords. Guilds that are private are hidden from view but Users are able to join public guilds while browsing using a demo account to join private servers as well.
 
-<video controls><source src="./readme_resources/guild_servers.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/05d137dd-5532-48bd-b807-11d316955e20
 
 ```jsx
 
@@ -655,8 +655,8 @@ On the front end while waiting for the request to obtain the guilds the componen
 ### Joining a Server Via Invite Link
 
 In addition to being invited to a server a user can obtain a server invite link to a server and by navigating to the create a server modal and selecting the join server option, a user can submit the server invite link to join the server.
-<video controls><source src="./readme_resources/join_via_invite_link.mp4" type="video/mp4"/></video>
 
+https://github.com/miker704/Strife/assets/33719996/36ce6858-e029-4bc3-bae7-8a9a8ce70cb1
 
 ```jsx
 
@@ -763,7 +763,7 @@ When a user enters a server invite link within the create a server modal and cli
 
 In addtion to the aformentioed methods of joining a server those methods only work for public servers for non demo accounts in order for a user to join a private server they must be invited by another user that is a member of that server itself. When using a Demo or bot account are user that is invited to a server by a demo or bot account is forcibly joined (for demonstration purposes) while non demo accounts in send a dm to that user with an invitation to the server. Note when invite a user to a server if that user that is to be invited is online they will receive the new server in their server list LIVE.
 
-<video controls><source src="./readme_resources/invite_to_server.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/7badb5d0-6c8d-47a1-9934-0767702eaacc
 
 ```js
 
@@ -877,7 +877,7 @@ So inviting single users seems cool, but doesnt discord also allow you to invite
 
 #### Inviting a Group of Users from a Group DM to a Server
 
-<video controls><source src="./readme_resources/InviteGC2Server.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/021d144a-5ace-454a-81db-1b28323550e7
 
 Well yeah you can do that too. This functionality at first seems pretty difficult as it is very error prone. But with some clever ingenuity it can be done very easily handling edge cases. And Allowing a user to invite a whole group dm of 10 members consisting of users that may or may not be friends with that user to the server. 
 
@@ -971,7 +971,7 @@ The users usernames are collected to also form one large group message welcoming
 
 Users can create dm servers with another user, invite more than one user or adding more users to where to where the total amount of members > 2 will create a group chat note that when inviting a user to a dm chat if that user is online they will receive that dm server live.
 
-<video controls><source src="./readme_resources/async_invite_to_dm.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/30f4047e-14a6-4e8a-9ebe-4cb2e3f5e695
 
 ```js
 
@@ -1312,7 +1312,13 @@ All user requests for sending, ignoring, and accepting friend requests, deleting
 
 There are many ways to add friends in $TR!F3 just like discord, one way is through the add friends page which is located by selecting the add friend tab in the home dash board of the app.
 
-<video controls><source src="./readme_resources/add_friends_page.mp4" type="video/mp4"/></video>
+By using the Add Friends tab.
+
+https://github.com/miker704/Strife/assets/33719996/f128d1df-81e2-4d7e-9362-31fd66a9e739
+
+Witness the live updates when adding, deleting, and blocking users.
+
+https://github.com/miker704/Strife/assets/33719996/e49ef0e6-72e7-4642-9b1d-ee8ddc08fa7a
 
 By combining the functionaily of the application cable class ```StrifeCore``` and the front end ```_STRIFE_CORE_CABLE_``` we can send any relationship request between two users and the returning result is not only received back by the current user but the backend server also executes a request to send the appropitate data to the other user to reflect the appropiate changes of that relationship request. Allowing both users to see changes LIVE IN REAL TIME. The current user sends a friend request to another user that user recieves a request to fetch that data and reflect that they have received a friend request if that user accepts or rejects the friend request that change is shown immediately on the current users end. Again THIS ALL HAPPENS LIVE via the CORE_CABLE of the app. Note that all the following components that allow for relationship interactions, or changes follow very similar code and follow similar websocket actions in order to reflect changes to all users in live time. This system has been carefully implemented to where users can be using different components to add each other. Which is shown here a user can add, delete, unblock, cancel, reject, approve a friend request from the friends list tabs and add friends page from the dashboard while the other user can do all of those actions using a different component that offers relationship interactions such as the MegaUPC Modal this user can send and receive updates to the relationship interactions live, if user (A) sends a friend request to user (B) from the add page tab, and User (B) is using the MegaUPC modal the buttons on the modal will change to reflect that relationship change offering the options to accept or ignore the friend request. This is the power of the core cable system allowing users to receive live updates anywhere in the app without having to refresh it just like the real thing.
 
@@ -1411,25 +1417,26 @@ Due to the use of Core Cable updates/requests involving relationships between us
 
 ##### Friends Pages interact with other Relationship control modals and components example UPC Modal interacting with another users add friends page
 
-<video controls><source src="./readme_resources/add_friends_vs_upc.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/a7703b19-7d9e-4318-82a9-b2b2e3da6126
 
 ##### Mega UPC interacting  with other relationship control modals/components UPC
 
-<video controls><source src="./readme_resources/upc_vs_mega_upc.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/09c51e97-e3a5-449d-9243-4dbc20ce400c
 
 ##### Relationship changes via users interacting with the UPC Modal
 
-<video controls><source src="./readme_resources/upc_vs_upc.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/e447bcbe-6869-491a-b6d3-3c18c768b464
 
 ##### Relationship changes via users interacting with the Mega UPC Modal
 
-<video controls><source src="./readme_resources/megaupc.mp4" type="video/mp4"/></video>
 
-<video controls><source src="./readme_resources/megaupc2.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/7b9c003d-883b-457f-83cf-8efa9b2177ec
+
+https://github.com/miker704/Strife/assets/33719996/d889b16a-d961-4cc6-80bd-86c099845f88
 
 ##### Relationship Changes via one to one dm server first chat message component
 
-<video controls><source src="./readme_resources/o2ofriendrequests.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/04d9f7c0-6d78-46fb-9dd9-46b6752fd5f4
 
 All the following components above use very similar processes to add, approve, cancel, ignore, block and unblock a user and all of them use the same action cable processes in order to send and receive updates to both users in real time. list below is code for adding deleting accepting, canceling and ignoring friend requests while code for blocking and unblocking a user is shown in more detail in the next section.
 
@@ -1565,7 +1572,9 @@ The code above is code that share minor differences in each relationship compone
 #### Blocking of a user and prevent messaging of blocked users in one to one dm server chat rooms
 
 When a user is blocked they are not allowed to send any messages directly towards them in one to one dm servers this applies if a user blocks another user but hasnt blocked them or if a both users block each other, both users can message each other again as long as one of the two users has not blocked the other. A snack bar appears over the message input area indicating to the current user "You cannot send messages to a user you have blocked." (if the current user blocked the user they are trying to chat with) or "You cannot send messages to this user." if the other user has blocked the current user but they did not block them. The snack bar offers depending who blocked whom to unblock the user or if they where blocked to blocked that user as well clicking any of the options on the dm info are or on the snackbar will send a request to add, confirm, block, delete, send, or unblock
-<video controls><source src="./readme_resources/blockingAndUnblockingUserInDm.mp4" type="video/mp4"/></video>
+
+https://github.com/miker704/Strife/assets/33719996/ea324446-98ed-456c-b6f8-def2ec113e1a
+
 (note the video above the left browser has the dm server list disabled from view in order to show off whats happening)
 
 Also note that all other relationship components allow for a user to block and unblock each  other and user very similar processes to do so.
@@ -1935,22 +1944,21 @@ subscribe () {
 
 #### Creating a new Channel
 
-<video controls><source src="./readme_resources/create_new_channel.mp4" type="video/mp4"/></video>
-
+https://github.com/miker704/Strife/assets/33719996/ef8e4a40-4fb7-4db2-9363-c9b4f342a8cc
 
 #### Updating a Channel
 
-<video controls><source src="./readme_resources/update_channel.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/ac5fd299-f169-4dc6-bd37-a921c693e8ad
 
 #### Deleting a Channel
 
 ##### Deleting a channel with other users browsing it
 
-<video controls><source src="./readme_resources/delete_channel_while_others_in_it.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/7ab2f50a-26d6-4446-b7dd-970d6978da81
 
 ##### Deleting a channel with no users browsing it
 
-<video controls><source src="./readme_resources/delete_channel_while_no_ones_in_it.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/743da347-d926-49da-b823-0b23cb72af28
 
 All the following actions when sent to the backend to be handled by the ```channels_controller.rb``` after they are handled a backend request is sent to  ```StrifeServer``` which brodcasts to the server the type of change that just occured whether a channel was created, updated, deleted etc. this is then received in the received handler of the ```subscribe``` function in server chat room where a redux call is made in response to the passed type rendering the changes live for all users currently browsing the server. For deleting channels when the request reaches back to the received portion of the server chat room cable it check if the user is in the channel that is being deleted or not if they are in the channel to be deleted they are teleported to the general channel and the deleted channel is removed. If the user is not in the channel that is being deleted the channel is deleted and removed from the users view.
 
@@ -1958,11 +1966,11 @@ All the following actions when sent to the backend to be handled by the ```chann
 
 ##### Changing a Server Name or Server Avatar 
 
-<video controls><source src="./readme_resources/serverPropsUpdate.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/62f3da62-983c-41e4-a38a-d37581b5157b
 
 ##### Receive Server Updates even when a user is not browsing that server
 
-<video controls><source src="./readme_resources/serverAvatarUpdateOutsideServer.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/65e63b7b-5352-44e5-8838-555a069b3da8
 
 ```js
 
@@ -2012,23 +2020,21 @@ a server is deleted with one user browsing it vs 3 other users browsing.
 
 ##### Deleting a Server with another member active in the server
 
-<video controls><source src="./readme_resources/deleteServerOneonOne.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/fb9b7577-cfd8-4811-b592-1707b777d9a6
 
 ##### Deleting a Server with 3 other members active in the server
 
-<video controls><source src="./readme_resources/deleteServer4v4.mp4" type="video/mp4"/></video>
-
+https://github.com/miker704/Strife/assets/33719996/3fd5203d-5e67-4c9a-bae1-6aaa47b2dc65
 
 ### Banning or Kicking Users from Dms, Group Chats and Servers
 
 ###### Banning a user from a server 
 
-<video controls><source src="./readme_resources/serverban1v1.mp4" type="video/mp4"/></video>
-
+https://github.com/miker704/Strife/assets/33719996/66657daf-f934-4607-97f6-23bcf4fec60f
 
 ###### Banning a user from a server with other members browsing it
 
-<video controls><source src="./readme_resources/serverban4v4.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/bda97717-c8c1-4a71-a463-3598a89decea
 
 As you can see from both clips when a user is banned they are sent to the intrustion loading screen where after a few seconds they are booted to the dashboard. When banning a member from the server other users that are currently active in the server will receive a message that the user has been banned and that member being removed from the members list In real time This is handled in the back-end if a user is banned from a server the ```server_membership_controller``` , ```destroy``` and ```async_ban_user``` function where before destroying the users server membership a request is sent to the async ban user function which checks to  see if the user keft the server or was banned and creates the proper message to be sent to the server and a request to broadcast to StrifeServer which broadcasts to every channel in the server to ensuure that the banned user is immediately removed to the intrusion screen. Which is handled by server chat room cable for the case of ```"REMOVE_SERVER_MEMBER"``` which calls every member in the server that is currently active in it to request a resync of their data which includes all the ids of all the servers they have memberships to and if a user(s) does not have the current server id in their server membership array the server is removed from their redux state and they are booted from server.
 
@@ -2039,15 +2045,15 @@ With core_cable we can allow a user to reflect any visual changes such changes t
 
 ###### Seeing a users changes to their avatar on the members list in a server
 
-<video controls><source src="./readme_resources/liveuserphotochangeinServer.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/b887c1fc-b12e-4ffc-9454-e35735831451
 
 ###### Seeing a users changes to their avatar and banner when looking at their profile in the Mega UPC Modal
 
-<video controls><source src="./readme_resources/liveUserChangesMegaUpc.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/463e227f-4b60-4694-8edd-ed578132f5c2
 
 ###### Seeing changes to your profile in a visual component when changing your avatar and banner in another browser tab.
 
-<video controls><source src="./readme_resources/browertoBrowserChanges.mp4" type="video/mp4"/></video>
+https://github.com/miker704/Strife/assets/33719996/6dd9d3e1-b787-4ac8-ae8b-cbc6c2ed38fa
 
 ### Others Things
 
