@@ -945,3 +945,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded Readme resources sserverban1v1.mp4.
     - Uploaded Readme resources serverAvatarUpdateOutsideServer.mp4.
     - Uploaded Readme resources serverAndDmProtection.mp4.
+    - Uploaded Readme resources reactPortalUPCModal.png.
