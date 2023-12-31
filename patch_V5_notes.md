@@ -940,3 +940,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded Readme resources update_channel.mp4.
     - Uploaded Readme resources upc_vs_upc.mp4.
     - Uploaded Readme resources upc_vs_mega_upc.mp4.
+    - Uploaded Readme resources serverPropsUpdate.mp4.
