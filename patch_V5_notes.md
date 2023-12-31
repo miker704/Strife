@@ -952,4 +952,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded Readme resources megaupc.mp4.
     - Uploaded Readme resources megaupc2.mp4.
     - Uploaded Readme resources liveuserphotochangeinServer.mp4.
-
+    - Uploaded Readme resources liveUserChangesMegaUpc.mp4.
