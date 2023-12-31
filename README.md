@@ -1291,6 +1291,16 @@ Example of usage for the User Profile Card Modal (UPC)
 
 Here this component wrapper function servers a way to deploy modals with ```REACT_PORTAL``` is a component that wraps around the component to be rendered and accepts the following parameters the component to be rendered itself (this is passed by wrapping REACT_PORTAL around the component) in this case its the all of the elements that make up the UPC Modal the wrapperId and classNameId of the node to create the portal on and teleport the component within it in this case wrapperId = "sub-modal" and classNameId = "subModal". The classNameId parameter is typically used to refer to a specific type of modal the is going to be rendered in $TRIFE and discord there are two types of modals, sub modals which are small modals that appear in the center of the screen, on top of another modal, or modals that do not take up the full screen. Then there are Mass Modals which are typically refered to as Setting modals which occupy the entire screen and are deployed within the div of className "app" or "app-main". The function uses a useLayoutEffect hook as it fires before the dom is repainted which is faster than than the more popularly used useEffect hook. There it checks if a node exists on the DOM with the passed in id exists if not it calls on the function ```createWrapperAndAppendToBody (wrapperId, classNameId)``` which takes in the wrapperId and classNameId and creates a node of the div type and they checks whether classNameId is "subModal" or "mass-modal-layer-container" which implies if the modal to be rendered is a sub modal or a full screen modal and it will create the node and open a portal for that component to be rendered in and place it in the appropriate spot within the DOM. It returns the new node and appends this node to state the function then returns the call `createPortal(children, wrapperElement)` and renders the component at the existing or newly created portal once the user exits the modal a clean up function is ran and reads the state containing the node we stored earlier and ensures that the node and its unused assets have been cleaned up.
 
+### Video and Voice Calling
+
+- Yes $TR!F3 has the ability to allow users to voice and video call each other however Currently $TRIFE has limited its video and voice calling features to just dm servers only and will be implementing it into server soon in $TRIF3-v5.
+
+Here is a demo video of it note that both video instances are using the same camera, over on heroku or render it would be 2 different cameras but you get the idea.
+
+
+### Explain how core works
+
+Core is a custom data layer controller first with intentions on defeating rails action cable websocket timeouts without the need to modify rails library files. Core is basically  a two - system both front end and backend processes Core is labeled as a action cable channel named Strife_core.rb while its front-end version id. Every user iss assigned an object called a Core which is a string with their id appended to it this allows for each user to have a unique idenitifer that can be used to send websocket requests to allowing to send muliple requests to multiple users over the network to recieve and render updates all in live time regardless where they are in the app.
 
 ### Live Time Functionality (via Asynchronous WebSockets)
 
@@ -2055,7 +2065,7 @@ https://github.com/miker704/Strife/assets/33719996/463e227f-4b60-4694-8edd-ed578
 
 https://github.com/miker704/Strife/assets/33719996/6dd9d3e1-b787-4ac8-ae8b-cbc6c2ed38fa
 
-### Others Things
+### Other Things
 
 - Theres A LOT more features that I havent listed here this readme could be thousands of lines long, this project is massive over 132 + components each being 300 - 4000 lines of code with more details on each of them will eventually make its way into the projects wikia, but if you have used the discord app before you will see all of those same features within $TR!F3 from creating or hopping into a dm with a friend by clicking on their username from your friends list, to opening and using the start conversation search modal and looking up a server you want to quickly visit instead of endlessly scrolling throught the server nav bar. User, Server, and Channel settings, inviting users to a dm or server, or even joining a server through the create a server modal with an invitation link, whatever you can think Ive implemented it, check it out.
 
