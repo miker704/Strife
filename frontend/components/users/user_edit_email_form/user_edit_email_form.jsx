@@ -8,6 +8,7 @@ const EditUserEmailForm = (props) => {
     const popUpRef = useRef(null);
     const [newEmail, setNewEmail] = useState('');
     const [password, setPassword] = useState('');
+    const randomChanceRef = useRef(Math.random() > 0.50);
 
     useEffect(() => {
 
@@ -157,7 +158,7 @@ const EditUserEmailForm = (props) => {
                     <div className='user-sub-modal-focus-lock'>
                         <div className='user-sub-modal' id="user-sub-modal" ref={popUpRef} onClick={(e) => e.stopPropagation()}>
 
-                            <img className="header-email-img" alt=" " />
+                            <img className={`header-email-img${randomChanceRef.current ? `-2` : ``}`} alt=" " />
                             <div style={{ position: `relative`, width: `440px`, height: `328px`, overflow: `hidden` }}>
                                 <div style={{ position: `absolute`, flexDirection: `column`, width: `440px`, backfaceVisibility: `hidden`, top: `50%`, left: `auto`, right: `auto`, transform: `translate3d(0px, -50%, 0px) scale(1, 1)` }}>
                                     <form onSubmit={handleSubmit}>
