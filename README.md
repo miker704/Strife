@@ -54,6 +54,8 @@ Seems basic ? how about a group chat between four users at once
 
 <video controls><source src="./readme_resources/4wayliveMessaging.mp4" type="video/mp4"/></video>
 
+[![4waymessaging](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://youtu.be/K5-mcDXjh0A)
+
 As you can see there is really now limit to how many users you can live messsage at once.
 
 ```js
