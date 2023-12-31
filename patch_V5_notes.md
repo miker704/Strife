@@ -973,3 +973,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded Readme resources bootedDmProtection.gif.
     - Uploaded Readme resources blockingAndUnblockingUserInDm.mp4.
     - Uploaded Readme resources async_invite_to_dm.mp4.
+    - Uploaded Readme resources add_friends_vs_upc.mp4.
