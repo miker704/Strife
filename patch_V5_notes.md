@@ -968,3 +968,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Uploaded Readme resources createDmsViaMessageButton.mp4.
     - Uploaded Readme resources createDmFromUpcMessage.mp4.
     - Uploaded Readme resources createAdmViaUPCInnerMessage.mp4.
+    - Uploaded Readme resources create_new_channel.mp4.
