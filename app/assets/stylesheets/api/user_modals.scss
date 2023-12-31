@@ -615,6 +615,14 @@
   content: image_url("addemail.gif");
 }
 
+.header-email-img-2 {
+  position: absolute;
+  top: -110px;
+  left: 156px;
+  width: 180px;
+  content: image_url("userSettingsEmail2024.svg");
+}
+
 //edit pfp modal
 
 .user-sub-modal-edit-pfp {
@@ -1112,7 +1120,7 @@
   font-size: 20px;
   line-height: 24px;
   color: var(--header-primary);
-} 
+}
 
 .user-sub-modal-form-content-remove-number {
   position: relative;
@@ -1197,7 +1205,7 @@
   font-family: var(--global-font);
   font-size: 20px;
   line-height: 24px;
-  color:var(--header-primary);
+  color: var(--header-primary);
 }
 
 .user-sub-modal-form-content-uownssw {
