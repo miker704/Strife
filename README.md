@@ -1299,10 +1299,9 @@ Here is a demo video of it note that both video instances are using the same cam
 
 https://github.com/miker704/Strife/assets/33719996/e537f018-a354-462d-9bb6-7c007b26cfce
 
+### Explaining how core works
 
-### Explain how core works
-
-Core is a custom data layer controller first with intentions on defeating rails action cable websocket timeouts without the need to modify rails library files. Core is basically  a two - system both front end and backend processes Core is labeled as a action cable channel named Strife_core.rb while its front-end version id. Every user iss assigned an object called a Core which is a string with their id appended to it this allows for each user to have a unique idenitifer that can be used to send websocket requests to allowing to send muliple requests to multiple users over the network to recieve and render updates all in live time regardless where they are in the app.
+Core is a custom data layer controller first with intentions on defeating rails action cable websocket timeouts without the need to modify rails library files. Core is basically  a two - system both front end and backend processes Core is labeled as a action cable channel named Strife_core.rb while its front-end version id. Every user is assigned an object called a Core which is a string with their id appended to it this allows for each user to have a unique idenitifer that can be used to send websocket requests to allowing to send muliple requests to multiple users over the network to recieve and render updates all in live time regardless where they are in the app.
 
 ### Live Time Functionality (via Asynchronous WebSockets)
 
