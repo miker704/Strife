@@ -1301,18 +1301,11 @@ https://github.com/miker704/Strife/assets/33719996/e537f018-a354-462d-9bb6-7c007
 
 ### Explaining how core works
 
-Core is a custom data layer controller first with intentions on defeating rails action cable websocket timeouts without the need to modify rails library files. Core is basically  a two - system both front end and backend processes Core is labeled as a action cable channel named Strife_core.rb while its front-end version id. Every user is assigned an object called a Core which is a string with their id appended to it this allows for each user to have a unique idenitifer that can be used to send websocket requests to allowing to send muliple requests to multiple users over the network to recieve and render updates all in live time regardless where they are in the app.
+Core is a custom data layer controller first with intentions on defeating rails action cable websocket timeouts without the need to modify rails library files. Core is basically a two - system both front end and backend processes Core is labeled as a action cable channel named Strife_core.rb while its front-end version id. Every user is assigned an object called a Core which is a string with their id appended to it this allows for each user to have a unique idenitifer that can be used to send websocket requests to allowing to send muliple requests to multiple users over the network to recieve and render updates all in live time regardless where they are in the app.
 
 ### Live Time Functionality (via Asynchronous WebSockets)
 
 - $TR!F3 has complete Async functionality being able to send and recieve requests live this is induced by the CORE Component whenever the user does something that would induce a visual change such as changing their display name, username, avatar, banner or changing a server name, avatar, banner, adding, deleting or updating channel names, or the kicking, banning, or inviting of users, joining a server, sending, accepting, or denying friend requests, blocking of users, etc if the request is successful another request is sent to the rails action cable channel strife_core where depending on the request certain validations are ran, and depending if other users are involved in the request the core proceeds to send out multiple requests to all online users to run a specific redux dispatch to then receive the new data and render these changes on screen all in live time for ALL users, no browser refreshing required!. This allows live changes to happen in areas outside of servers or dm server allowing live changes to happen anywhere in the app. Here are some of the many actions through out $TRIF3 that use them.
-
-
-- kicking and banning users show 4 way browser
-  - show server update via new server avatar and server channel creation
-  - show channel and server settings and error shaking
-  - show when a user updates a banner or photo it reflects on the other browser show how
-  - show blocking of user in upc while anotheruser trys to add them.
 
 #### Live time friend requests and relationship interactions
 
@@ -1332,7 +1325,6 @@ Witness the live updates when adding, deleting, and blocking users.
 https://github.com/miker704/Strife/assets/33719996/e49ef0e6-72e7-4642-9b1d-ee8ddc08fa7a
 
 By combining the functionaily of the application cable class ```StrifeCore``` and the front end ```_STRIFE_CORE_CABLE_``` we can send any relationship request between two users and the returning result is not only received back by the current user but the backend server also executes a request to send the appropitate data to the other user to reflect the appropiate changes of that relationship request. Allowing both users to see changes LIVE IN REAL TIME. The current user sends a friend request to another user that user recieves a request to fetch that data and reflect that they have received a friend request if that user accepts or rejects the friend request that change is shown immediately on the current users end. Again THIS ALL HAPPENS LIVE via the CORE_CABLE of the app. Note that all the following components that allow for relationship interactions, or changes follow very similar code and follow similar websocket actions in order to reflect changes to all users in live time. This system has been carefully implemented to where users can be using different components to add each other. Which is shown here a user can add, delete, unblock, cancel, reject, approve a friend request from the friends list tabs and add friends page from the dashboard while the other user can do all of those actions using a different component that offers relationship interactions such as the MegaUPC Modal this user can send and receive updates to the relationship interactions live, if user (A) sends a friend request to user (B) from the add page tab, and User (B) is using the MegaUPC modal the buttons on the modal will change to reflect that relationship change offering the options to accept or ignore the friend request. This is the power of the core cable system allowing users to receive live updates anywhere in the app without having to refresh it just like the real thing.
-
 
 ```js
 
@@ -1387,7 +1379,6 @@ By combining the functionaily of the application cable class ```StrifeCore``` an
     }
 
 ```
-
 
 ```rb
 
@@ -1578,7 +1569,6 @@ All the following components above use very similar processes to add, approve, c
 ```
 
 The code above is code that share minor differences in each relationship component but the general functionality is the same between all of them including the process of sending live updatess via action cable to the other user to receive the new updates and changes live. Each relationship function follows a similar process where it fetches the users being interacted with via ```fetchUser()``` to recieve the most up to date information as the other user could make a relationship change or request to the current user while they are make requests themselves. depending on the action being done we check the  current friend status and see if it matches a certain number or falls in a range of numbers before proceeding with calling a relationship modifying action such as ```props.updateFriendship``` or ```props.deleteFriendship``` if a user is trying to block a user that they are friends or have some pending request with a function such as ```handleBlockingOfUser``` fetches the user check the status of the user and sends a call to the proper function first if the status is 1-3 the relationship is deleted first then the user is blocked via the function ```deleteRelationShipThenBlockUser``` else if the status is -2 or 0 the ```handleBlockUser``` function is called and blocked the user immediately. After any relationship function is successful a ```App.StrifeCore.perform("something")``` function is executed to send a websocket request to send the updated data and reflect those changes live to the other user in real time.
-
 
 #### Blocking of a user and prevent messaging of blocked users in one to one dm server chat rooms
 
@@ -2050,7 +2040,6 @@ https://github.com/miker704/Strife/assets/33719996/bda97717-c8c1-4a71-a463-3598a
 As you can see from both clips when a user is banned they are sent to the intrustion loading screen where after a few seconds they are booted to the dashboard. When banning a member from the server other users that are currently active in the server will receive a message that the user has been banned and that member being removed from the members list In real time This is handled in the back-end if a user is banned from a server the ```server_membership_controller``` , ```destroy``` and ```async_ban_user``` function where before destroying the users server membership a request is sent to the async ban user function which checks to  see if the user keft the server or was banned and creates the proper message to be sent to the server and a request to broadcast to StrifeServer which broadcasts to every channel in the server to ensuure that the banned user is immediately removed to the intrusion screen. Which is handled by server chat room cable for the case of ```"REMOVE_SERVER_MEMBER"``` which calls every member in the server that is currently active in it to request a resync of their data which includes all the ids of all the servers they have memberships to and if a user(s) does not have the current server id in their server membership array the server is removed from their redux state and they are booted from server.
 
 ### Live rendering of user changes to other users
-
 
 With core_cable we can allow a user to reflect any visual changes such changes to username, display name, avatar, banner, status to all other users in the current server the user is active in or to all online friends of that user. Allow a users friends to immediately notice the avatar and username changes made by another user. This is handled by a simple ```App.StrifeCore.perform()``` request that is called when a user changes there username, avatar or banner a request is sent to ```StrifeCore``` which check the users current location and if they are in a server or dm to send a request each member that is online to receive and render the changes of that user immediately. if the user is not in a server or dm it will ssend a request to all the users friends that are online to receive the changes. With this we can also use it to see changes a user has made toward themselves for example changing their banner and avatar in another tab those changes can reflect in the other tab when viewing any modal that displays their profile.
 
