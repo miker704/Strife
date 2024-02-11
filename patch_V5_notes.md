@@ -982,3 +982,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added a random change to edit user email sub modal where the header image will be the classic animated one or the new static version.
     - Updated readme.md.
     - Finished winter 2023 update and readme update Happy New Year!
+
+    ##### Changes Febuary 2024
+
+    - Changed background banner color for ready for new look card in Strife Shop.
+    
