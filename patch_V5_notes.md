@@ -988,3 +988,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Changed background banner color for ready for new look card in Strife Shop.
     - Added styles of lunar new year banner and banner logo.
     - Added --chat-border css var to strife-root-theme.scss.
+    - Replaced ready for new look card in Strife Shop page to an updated version.
