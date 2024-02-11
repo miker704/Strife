@@ -1843,7 +1843,7 @@
 }
 
 .shop-lunar-dragon-new-year-banner {
-  background: image_url("shopMonstersBanner.png") 0% 0% / cover border-box
+  background: image_url("shopLunarDragonNewYearBanner.png") 0% 0% / cover border-box
     border-box;
   outline-color: var(--shop-banner-monsters-outline-color);
 }
@@ -1851,7 +1851,7 @@
 .shop-lunar-dragon-new-year-banner-logo {
   z-index: 1;
   max-height: 96px;
-  content: image_url("shopMonstersBannerLogo.png");
+  content: image_url("shopLunarDragonNewYearBannerLogo.png");
 }
 
 
