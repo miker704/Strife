@@ -1854,7 +1854,17 @@
   content: image_url("shopLunarDragonNewYearBannerLogo.png");
 }
 
+.shop-cyberpunk-banner {
+  background: image_url("shopCyberPunkBanner.png") 0% 0% / cover border-box
+    border-box;
+  outline-color: var(--shop-banner-monsters-outline-color);
+}
 
+.shop-cyberpunk-banner-logo {
+  z-index: 1;
+  max-height: 96px;
+  content: image_url("shopCyberPunkBannerLogo.png");
+}
 //shop fall animations
 
 .fall-leaves-image {
