@@ -1025,3 +1025,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new Cyberpunk avatar decorations Implant to Strife Shop.
     - Added all new Cyberpunk avatar decorations to avatar decoration preview modal.
     - Added all new Cyberpunk avatar decorations to avatar decoration item card.
+    - Added all new Cyberpunk avatar decorations to preview gift upc modal.
