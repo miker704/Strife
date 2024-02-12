@@ -1076,4 +1076,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added shopCyberPunkBanner.png.
     - Added shopCyberPunkBannerLogo.png.
     - Added shopLunarDragonNewYearBanner.png.
+    - Added shopLunarDragonNewYearBannerLogo.png.
 
