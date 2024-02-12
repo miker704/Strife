@@ -1016,4 +1016,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new Cyberpunk profile effect night runner to Strife Shop.
     - Added new Cyberpunk profile effect uplink error to Strife Shop.
     - Added all new Cyberpunk profile effects to profile effect preview modal.
+    - Added all new Cyberpunk profile effects to profile effect item card.
 
