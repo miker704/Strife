@@ -996,5 +996,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new Cyberpunk profile effect styles.
     - Added new Lunar New Year profile effect styles.
     - Added new Lunar New Year avatar effect styles.
+    - Added new Lunar New Year Fan Flourish avatar decoration to Strife Shop.
 
 
