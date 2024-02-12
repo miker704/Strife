@@ -1005,10 +1005,11 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new Lunar New Year Dragon Dance Profile effect to Strife Shop.
     - Added new Lunar New Year Fortune Flurry Profile effect to Strife Shop.
     - Added new Lunar New Year Midnight Celebration Profile effect to Strife Shop.
-    - Added all new Lunar New Year profile effect to profile effect preview modal.
-    - Added all new Lunar New Year profile effect to profile effect item card.
-    - Added all new Lunar New Year profile effect to preview gift upc modal.
-    - Added all new Lunar New Year profile effect to send gift modal.
-    - Added all new Lunar New Year avatar decoration to avatar decoration preview modal.
-    - Added all new Lunar New Year avatar decoration to avatar decoration item card.
+    - Added all new Lunar New Year profile effects to profile effect preview modal.
+    - Added all new Lunar New Year profile effects to profile effect item card.
+    - Added all new Lunar New Year profile effects to preview gift upc modal.
+    - Added all new Lunar New Year profile effects to send gift modal.
+    - Added all new Lunar New Year avatar decorations to avatar decoration preview modal.
+    - Added all new Lunar New Year avatar decorations to avatar decoration item card.
+    - Added all new Lunar New Year avatar decorations to preview gift upc modal.
 
