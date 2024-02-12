@@ -1019,4 +1019,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added all new Cyberpunk profile effects to profile effect item card.
     - Added all new Cyberpunk profile effects to preview gift upc modal.
     - Added all new Cyberpunk profile effects to send gift modal.
+    - Added new Cyberpunk avatar decorations glitch to Strife Shop.
 
