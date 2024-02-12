@@ -1027,3 +1027,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added all new Cyberpunk avatar decorations to avatar decoration item card.
     - Added all new Cyberpunk avatar decorations to preview gift upc modal.
     - Added all new Cyberpunk avatar decorations to send gift modal.
+    - Added cyberNeticAnimated.png.
