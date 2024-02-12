@@ -998,5 +998,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new Lunar New Year avatar effect styles.
     - Added new Lunar New Year Fan Flourish avatar decoration to Strife Shop.
     - Added new Lunar New Year Lunar Lanterns avatar decoration to Strife Shop.
+    - Added new Lunar New Year FireCrackers avatar decoration to Strife Shop.
 
 
