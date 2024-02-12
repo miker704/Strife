@@ -1039,4 +1039,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added dragonDanceReducedMotion.png.
     - Added dragonDanceThumnail.png.
     - Added dragonDanceIntro.png.
+    - Added dragonDanceIntroInfinite.png.
 
