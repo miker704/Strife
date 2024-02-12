@@ -1339,7 +1339,107 @@
   height: 48px;
   grid-area: 1/1;
 }
+.sgm-cyber-punk-glitch {
+  content: image_url("cyberPunkGlitchAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-cyber-punk-cybernetic {
+  content: image_url("cyberNeticAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-cyber-punk-digital-sunrise {
+  content: image_url("digitalSunriseAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-cyber-punk-implant {
+  content: image_url("cyberNeticImplantAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
 
+.sgm-lunar-dragon-fanFlourish {
+  content: image_url("fanFlourishAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-lunar-dragon-lunarLanterns {
+  content: image_url("lunarLanternsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-lunar-dragon-fireCrackers {
+  content: image_url("fireCrackersAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-lunar-dragon-dragonsSmile {
+  content: image_url("dragonsSmileAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-lunar-dragon-luckyEnvelopes {
+  content: image_url("luckyEnvelopesAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-lunar-dragon-koiPond {
+  content: image_url("koiPondAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
 .sgm-select-mui-content {
   grid-area: content;
   display: flex;
