@@ -1033,4 +1033,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added cyberNeticImplantStatic.png.
     - Added cyberPunkGlitchStatic.png.
     - Added cyberPunkGlitchAnimated.png.
+    - Added digitalSunriseAnimated.png.
 
