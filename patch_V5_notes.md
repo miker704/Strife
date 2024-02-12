@@ -1052,4 +1052,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added lunarLanternsAnimated.png.
     - Added luckyEnvelopesAnimated.png.
     - Added luckyEnvelopesStatic.png.
+    - Added fortuneFlurryEnding.png.
 
