@@ -205,6 +205,18 @@
   padding-top: 4px;
   max-height: 18px;
 }
+.ppe-cyber-punk-title-banner {
+  content: image_url("shopCyberPunkBannerLogo.png");
+  padding-right: 6px;
+  padding-top: 4px;
+  max-height: 18px;
+}
+.ppe-lunar-dragon-title-banner {
+  content: image_url("shopLunarDragonNewYearBannerLogo.png");
+  padding-right: 6px;
+  padding-top: 4px;
+  max-height: 18px;
+}
 
 .ppe-profile-effect-description-container {
   margin-bottom: 38px;
@@ -409,11 +421,13 @@
 }
 
 .ppe-collectible-preview-category-banner.ppe-cyber-punk-bg-banner {
-  background-size: cover;
+  // background-size: cover;
+  background-position: center;
   background-image: image_url("shopCyberPunkBanner.png");
 }
 .ppe-collectible-preview-category-banner.ppe-lunar-dragon-bg-banner {
   background-size: cover;
+  // background-position: center;
   background-image: image_url("shopLunarDragonNewYearBanner.png");
 }
 
