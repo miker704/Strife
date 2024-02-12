@@ -161,7 +161,10 @@
   //   var(--premium-tier-0-header-gradient-4) 100.07%,
   //   var(--premium-tier-0-header-gradient-5) 110.26%
   // );
-  background: var(--themes-light-gradients-blurple, linear-gradient(135deg,var(--brand-400),var(--brand-500)));
+  background: var(
+    --themes-light-gradients-blurple,
+    linear-gradient(135deg, var(--brand-400), var(--brand-500))
+  );
   background-size: contain, cover;
   background-position: right bottom, center;
   background-repeat: no-repeat, no-repeat;
@@ -755,6 +758,10 @@
 
 .shop-item-card.monsters-items:hover {
   box-shadow: rgb(0, 69, 92) 0px 0px 25px 1px !important;
+}
+
+.shop-item-card.lunar-dragon-items:hover {
+  box-shadow: var(--primary-700) 0px 0px 25px 1px !important;
 }
 
 .shop-item-card-inner {
@@ -1843,8 +1850,8 @@
 }
 
 .shop-lunar-dragon-new-year-banner {
-  background: image_url("shopLunarDragonNewYearBanner.png") 0% 0% / cover border-box
-    border-box;
+  background: image_url("shopLunarDragonNewYearBanner.png") 0% 0% / cover
+    border-box border-box;
   outline-color: var(--shop-banner-monsters-outline-color);
 }
 
@@ -2248,6 +2255,112 @@
 }
 .monsters-gawblehop {
   content: image_url("gawblehopStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+// cyber punk
+
+.cyber-punk-glitch {
+  content: image_url("cyberPunkGlitchStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.cyber-punk-cybernetic {
+  content: image_url("cyberNeticStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.cyber-punk-digital-sunrise {
+  content: image_url("digitalSunriseStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.cyber-punk-implant {
+  content: image_url("cyberNeticImplantStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+// lunar new year dragon
+
+.lunar-dragon-fanFlourish {
+  content: image_url("fanFlourishStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.lunar-dragon-lunarLanterns {
+  content: image_url("lunarLanternsStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.lunar-dragon-fireCrackers {
+  content: image_url("fireCrackersStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.lunar-dragon-dragonsSmile {
+  content: image_url("dragonsSmileStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.lunar-dragon-luckyEnvelopes {
+  content: image_url("luckyEnvelopesStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.lunar-dragon-koiPond {
+  content: image_url("koiPondStatic.png");
   display: block;
   -o-object-fit: cover;
   object-fit: cover;
@@ -3308,6 +3421,39 @@
   .monsters-gawblehop {
     content: image_url("gawblehopAnimated.png");
   }
+
+  .cyber-punk-glitch {
+    content: image_url("cyberPunkGlitchAnimated.png");
+  }
+  .cyber-punk-cybernetic {
+    content: image_url("cyberNeticAnimated.png");
+  }
+  .cyber-punk-digital-sunrise {
+    content: image_url("digitalSunriseAnimated.png");
+  }
+  .cyber-punk-implant {
+    content: image_url("cyberNeticImplantAnimated.png");
+  }
+
+  .lunar-dragon-fanFlourish {
+    content: image_url("fanFlourishAnimated.png");
+  }
+  .lunar-dragon-lunarLanterns {
+    content: image_url("lunarLanternsAnimated.png");
+  }
+  .lunar-dragon-fireCrackers {
+    content: image_url("fireCrackersAnimated.png");
+  }
+  .lunar-dragon-dragonsSmile {
+    content: image_url("dragonsSmileAnimated.png");
+  }
+  .lunar-dragon-luckyEnvelopes {
+    content: image_url("luckyEnvelopesAnimated.png");
+  }
+  .lunar-dragon-koiPond {
+    content: image_url("koiPondAnimated.png");
+  }
+  
 }
 
 .halloween-jack-o-lantern::before,
@@ -3350,7 +3496,17 @@
 .monsters-chewbert::before,
 .monsters-doodlezard::before,
 .monsters-glop::before,
-.monsters-gawblehop::before {
+.monsters-gawblehop::before,
+.cyber-punk-glitch::before,
+.cyber-punk-cybernetic::before,
+.cyber-punk-digital-sunrise::before,
+.cyber-punk-implant::before,
+.lunar-dragon-fanFlourish::before,
+.lunar-dragon-lunarLanterns::before,
+.lunar-dragon-fireCrackers::before,
+.lunar-dragon-dragonsSmile::before,
+.lunar-dragon-luckyEnvelopes::before,
+.lunar-dragon-koiPond::before {
   content: "";
   display: block;
   width: 100%;
