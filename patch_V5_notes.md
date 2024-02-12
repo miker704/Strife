@@ -990,3 +990,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added --chat-border css var to strife-root-theme.scss.
     - Replaced ready for new look card in Strife Shop page to an updated version.
     - Added outline color vars for cyberpunk and lunar new year.
+    - Added Lunar new year banner to strife shop.
