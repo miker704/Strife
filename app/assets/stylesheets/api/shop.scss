@@ -3275,6 +3275,302 @@
   }
 }
 
+.shop-item-lunar-dragon-dragonDance {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("dragonDanceThumbnail.png");
+}
+.shop-item-lunar-dragon-dragonDance-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: dragonDance-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  // -webkit-animation-fill-mode: forwards;
+  animation-name: dragonDance-cycle;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  // animation-fill-mode: forwards;
+}
+
+.shop-item-lunar-dragon-dragonDance-ending {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 5s;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: dragonDance-ending-cycle;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: dragonDance-ending-cycle;
+  animation-duration: 2s;
+  animation-delay: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes dragonDance-cycle {
+  0% {
+    content: image_url("dragonDanceTntroInfinite.png");
+  }
+  100% {
+    content: image_url("dragonDanceReducedMotion.png");
+  }
+}
+@-webkit-keyframes dragonDance-cycle {
+  0% {
+    content: image_url("dragonDanceTntroInfinite.png");
+  }
+  100% {
+    content: image_url("dragonDanceReducedMotion.png");
+  }
+}
+
+@keyframes dragonDance-ending-cycle {
+  0% {
+    content: image_url("dragonDanceLoop.png");
+  }
+  100% {
+    content: image_url("dragonDanceLoop.png");
+  }
+}
+@-webkit-keyframes dragonDance-ending-cycle {
+  0% {
+    content: image_url("dragonDanceLoop.png");
+  }
+  100% {
+    content: image_url("dragonDanceLoop.png");
+  }
+}
+
+.shop-item-lunar-dragon-fortuneFlurry {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("fortuneFlurryThumbnail.png");
+}
+
+.shop-item-lunar-dragon-fortuneFlurry-frame {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("fortuneFlurryFrame.png");
+}
+
+.shop-item-lunar-dragon-fortuneFlurry-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-duration: 4s;
+  -webkit-animation-name: fortuneFlurry-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  // -webkit-animation-fill-mode: forwards;
+  animation-name: fortuneFlurry-cycle;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  // animation-fill-mode: forwards;
+}
+.shop-item-lunar-dragon-fortuneFlurry-ending {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 4.1s;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  // -webkit-animation-iteration-count: 1;
+  -webkit-animation-name: fortuneFlurry-ending-cycle;
+  -webkit-animation-timing-function: ease-in-out;
+  // -webkit-animation-fill-mode: forwards;
+  animation-name: fortuneFlurry-ending-cycle;
+  animation-duration: 3s;
+  animation-delay: 4.1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  // animation-iteration-count: 1;
+  // animation-fill-mode: forwards;
+}
+
+@keyframes fortuneFlurry-cycle {
+  0% {
+    content: image_url("fortuneFlurryIntroInfinite.png");
+  }
+  100% {
+    content: image_url("fortuneFlurryEnding.png");
+  }
+}
+@-webkit-keyframes fortuneFlurry-cycle {
+  0% {
+    content: image_url("fortuneFlurryIntroInfinite.png");
+  }
+  100% {
+    content: image_url("fortuneFlurryEnding.png");
+  }
+}
+
+@keyframes fortuneFlurry-ending-cycle {
+  0% {
+    content: image_url("fortuneFlurryLoop.png");
+  }
+  100% {
+    content: image_url("fortuneFlurryLoop.png");
+  }
+}
+@-webkit-keyframes fortuneFlurry-ending-cycle {
+  0% {
+    content: image_url("fortuneFlurryLoop.png");
+  }
+  100% {
+    content: image_url("fortuneFlurryLoop.png");
+  }
+}
+
+.shop-item-lunar-dragon-midnightCelebrations {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("midnightCelebrationThumbnail.png");
+}
+.shop-item-lunar-dragon-midnightCelebrations-frame {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  content: image_url("blankEffect.png");
+  -webkit-animation-duration: 4s;
+  -webkit-animation-name: midnightCelebrations-frame-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: midnightCelebrations-frame-cycle;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.shop-item-lunar-dragon-midnightCelebrations-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-duration: 4s;
+  -webkit-animation-name: midnightCelebrations-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  // -webkit-animation-fill-mode: forwards;
+  animation-name: midnightCelebrations-cycle;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  // animation-fill-mode: forwards;
+}
+.shop-item-lunar-dragon-midnightCelebrations-ending {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-delay: 4.1s;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  // -webkit-animation-iteration-count: 1;
+  -webkit-animation-name: midnightCelebrations-ending-cycle;
+  -webkit-animation-timing-function: ease-in-out;
+  // -webkit-animation-fill-mode: forwards;
+  animation-name: midnightCelebrations-ending-cycle;
+  animation-duration: 3s;
+  animation-delay: 4.1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  // animation-iteration-count: 1;
+  // animation-fill-mode: forwards;
+}
+
+@keyframes midnightCelebrations-frame-cycle {
+  0% {
+    content: image_url("midnightCelebrationFrameInfinite.png");
+  }
+  100% {
+    content: image_url("midnightCelebrationReducedMotion.png");
+  }
+}
+@-webkit-keyframes midnightCelebrations-frame-cycle {
+  0% {
+    content: image_url("midnightCelebrationFrameInfinite.png");
+  }
+  100% {
+    content: image_url("midnightCelebrationReducedMotion.png");
+  }
+}
+@keyframes midnightCelebrations-cycle {
+  0% {
+    content: image_url("midnightCelebrationIntroInfinite.png");
+  }
+  100% {
+    content: image_url("midnightCelebrationReducedMotion.png");
+  }
+}
+@-webkit-keyframes midnightCelebrations-cycle {
+  0% {
+    content: image_url("midnightCelebrationIntroInfinite.png");
+  }
+  100% {
+    content: image_url("midnightCelebrationReducedMotion.png");
+  }
+}
+
+@keyframes midnightCelebrations-ending-cycle {
+  0% {
+    content: image_url("midnightCelebrationFireworks.png");
+  }
+  100% {
+    content: image_url("midnightCelebrationFireworks.png");
+  }
+}
+@-webkit-keyframes midnightCelebrations-ending-cycle {
+  0% {
+    content: image_url("midnightCelebrationFireworks.png");
+  }
+  100% {
+    content: image_url("midnightCelebrationFireworks.png");
+  }
+}
+
+.shop-item-cyber-punk-nightRunner {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("nightRunnerThumbnail.png");
+}
+.shop-item-cyber-punk-uplinkError {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("uplinkErrorThumbnail.png");
+}
+
 .shop-item-card:hover {
   .fall-leaves-image {
     content: image_url("fallLeavesAnimated.png");
