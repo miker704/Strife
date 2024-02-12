@@ -408,6 +408,15 @@
   background-image: image_url("shopMonstersBanner.png");
 }
 
+.ppe-collectible-preview-category-banner.ppe-cyber-punk-bg-banner {
+  background-size: cover;
+  background-image: image_url("shopCyberPunkBanner.png");
+}
+.ppe-collectible-preview-category-banner.ppe-lunar-dragon-bg-banner {
+  background-size: cover;
+  background-image: image_url("shopLunarDragonNewYearBanner.png");
+}
+
 .ppepes-preview-container-inner {
   position: relative;
   display: flex;
@@ -1872,6 +1881,110 @@
   grid-area: 1/1;
 }
 
+
+.ppe-cyber-punk-glitch {
+  content: image_url("cyberPunkGlitchAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-cyber-punk-cybernetic {
+  content: image_url("cyberNeticAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-cyber-punk-digital-sunrise {
+  content: image_url("digitalSunriseAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-cyber-punk-implant {
+  content: image_url("cyberNeticImplantAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.ppe-lunar-dragon-fanFlourish {
+  content: image_url("fanFlourishAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-lunar-dragon-lunarLanterns {
+  content: image_url("lunarLanternsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-lunar-dragon-fireCrackers {
+  content: image_url("fireCrackersAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-lunar-dragon-dragonsSmile {
+  content: image_url("dragonsSmileAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-lunar-dragon-luckyEnvelopes {
+  content: image_url("luckyEnvelopesAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-lunar-dragon-koiPond {
+  content: image_url("koiPondAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+
 .ppe-halloween-jack-o-lantern::before,
 .ppe-halloween-ghosts::before,
 .ppe-halloween-minions::before,
@@ -1916,7 +2029,18 @@
 .ppe-monsters-chewbert::before,
 .ppe-monsters-doodlezard::before,
 .ppe-monsters-glop::before,
-.ppe-monsters-gawblehop::before {
+.ppe-monsters-gawblehop::before
+.ppe-cyber-punk-glitch::before,
+.ppe-cyber-punk-cybernetic::before,
+.ppe-cyber-punk-digital-sunrise::before,
+.ppe-cyber-punk-implant::before,
+.ppe-lunar-dragon-fanFlourish::before,
+.ppe-lunar-dragon-lunarLanterns::before,
+.ppe-lunar-dragon-fireCrackers::before,
+.ppe-lunar-dragon-dragonsSmile::before,
+.ppe-lunar-dragon-luckyEnvelopes::before,
+.ppe-lunar-dragon-koiPond::before 
+{
   content: "";
   display: block;
   width: 100%;
