@@ -994,5 +994,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added CyberPunk banner to strife shop.
     - Added new Cyberpunk avatar effect styles.
     - Added new Cyberpunk profile effect styles.
+    - Added new Lunar New Year profile effect styles.
 
 
