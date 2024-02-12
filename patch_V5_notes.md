@@ -1055,4 +1055,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added fortuneFlurryEnding.png.
     - Added fortuneFlurryFrame.png.
     - Added fortuneFlurryIntroInfinite.png.
+    - Added fortuneFlurryLoop.png.
 
