@@ -1070,4 +1070,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added nightRunnerThumbnail.png.
     - Added uplinkErrorIdle.png.
     - Added uplinkErrorIntro.png.
+    - Added uplinkErrorIntroInfinite.png.
 
