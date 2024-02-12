@@ -1043,4 +1043,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added dragonsSmileStatic.png.
     - Added dragonsSmileAnimated.png.
     - Added fireCrackersAnimated.png.
+    - Added fireCrackersStatic.png.
 
