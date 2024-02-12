@@ -1064,4 +1064,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added midnightCelebrationFireworks.png.
     - Added midnightCelebrationReduceMotion.png.
     - Added nightRunnerIdle.png.
+    - Added nightRunnerIntro.png.
 
