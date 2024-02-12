@@ -764,6 +764,10 @@
   box-shadow: var(--primary-700) 0px 0px 25px 1px !important;
 }
 
+.shop-item-card.cyber-punk-effect-items:hover {
+  box-shadow: var(--primary-700) 0px 0px 25px 1px !important;
+}
+
 .shop-item-card-inner {
   position: relative;
   border-radius: 50%;
@@ -1852,9 +1856,8 @@
 .shop-lunar-dragon-new-year-banner {
   background: image_url("shopLunarDragonNewYearBanner.png") 0% 0% / cover
     border-box border-box;
-  outline-color: var(--shop-banner-monsters-outline-color);
+  outline-color: var(--shop-banner-lunar-dragon-outline-color);
 }
-
 .shop-lunar-dragon-new-year-banner-logo {
   z-index: 1;
   max-height: 96px;
@@ -1864,7 +1867,7 @@
 .shop-cyberpunk-banner {
   background: image_url("shopCyberPunkBanner.png") 0% 0% / cover border-box
     border-box;
-  outline-color: var(--shop-banner-monsters-outline-color);
+  outline-color: var(--shop-banner-cyber-punk-outline-color);
 }
 
 .shop-cyberpunk-banner-logo {
@@ -3453,7 +3456,6 @@
   .lunar-dragon-koiPond {
     content: image_url("koiPondAnimated.png");
   }
-  
 }
 
 .halloween-jack-o-lantern::before,
