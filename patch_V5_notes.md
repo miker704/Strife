@@ -1003,5 +1003,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new Lunar New Year Dragons Smile avatar decoration to Strife Shop.
     - Added new Lunar New Year Lucky Envelopes avatar decoration to Strife Shop.
     - Added new Lunar New Year Dragon Dance Profile effect to Strife Shop.
+    - Added new Lunar New Year Fortune Flurry Profile effect to Strife Shop.
 
 
