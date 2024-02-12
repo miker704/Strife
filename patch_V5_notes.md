@@ -1012,4 +1012,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added all new Lunar New Year avatar decorations to avatar decoration preview modal.
     - Added all new Lunar New Year avatar decorations to avatar decoration item card.
     - Added all new Lunar New Year avatar decorations to preview gift upc modal.
+    - Added all new Lunar New Year avatar decorations to send gift modal.
 
