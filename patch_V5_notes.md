@@ -1045,4 +1045,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added fireCrackersAnimated.png.
     - Added fireCrackersStatic.png.
     - Added fanFlourishStatic.png.
+    - Added fanFlourishAnimated.png.
 
