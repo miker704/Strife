@@ -588,7 +588,9 @@
   cursor: pointer;
   width: 100%;
   height: 100%;
-  content: image_url("sgmPresent.svg");
+  // content: image_url("sgmPresent.svg");
+  content: image_url("sgmPresentThumbnail.svg");
+
 }
 .sgm-cake-choice-img {
   background-color: var(--transparent);
@@ -597,7 +599,9 @@
   cursor: pointer;
   width: 100%;
   height: 100%;
-  content: image_url("sgmCake.svg");
+  // content: image_url("sgmCake.svg");
+  content: image_url("sgmCakeThumbnail.svg");
+
 }
 .sgm-cup-choice-img {
   background-color: var(--transparent);
@@ -606,7 +610,9 @@
   cursor: pointer;
   width: 100%;
   height: 100%;
-  content: image_url("sgmCup.svg");
+  // content: image_url("sgmCup.svg");
+  content: image_url("sgmFrostyCupThumbnail.svg");
+
 }
 .sgm-present-treasure-choice-img {
   background-color: var(--transparent);
@@ -615,7 +621,9 @@
   cursor: pointer;
   width: 100%;
   height: 100%;
-  content: image_url("sgmWumpusTreasureChest.svg");
+  // content: image_url("sgmWumpusTreasureChest.svg");
+  content: image_url("sgmTreasureChestThumbnail.svg");
+
 }
 
 .sgm-prez-card-selected {
