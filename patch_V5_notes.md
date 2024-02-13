@@ -1087,4 +1087,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added sgmTreasureChestThumbnail.svg.
     - Added sgmFrostyCupThumbnail.svg.
     - Added styles to use new svg thumbnails in send a gift modal.
-    - Moved old thumbnails to a holiday version style to be used when needed in the future. 
+    - Moved old thumbnails to a holiday version style to be used when needed in the future.
+    - Reworked svgs positioning for brand logo for new gift card backgrounds.
