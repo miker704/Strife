@@ -1077,4 +1077,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added shopCyberPunkBannerLogo.png.
     - Added shopLunarDragonNewYearBanner.png.
     - Added shopLunarDragonNewYearBannerLogo.png.
-
+    - Added new version of WumpusCakeGiftIcon and renamed old version to WumpusCakeHolidayGiftIcon. 
