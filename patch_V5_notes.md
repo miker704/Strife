@@ -1084,3 +1084,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Replaced the holiday versions of the thumbnail images for the gift card buttons in send a gift modal.
     - Added sgmCakeThumbnail.svg.
     - Added sgmPresentThumbnail.svg.
+    - Added sgmTreasureChestThumbnail.svg.
