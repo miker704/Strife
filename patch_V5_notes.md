@@ -1086,3 +1086,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added sgmPresentThumbnail.svg.
     - Added sgmTreasureChestThumbnail.svg.
     - Added sgmFrostyCupThumbnail.svg.
+    - Added styles to use new svg thumbnails in send a gift modal. 
