@@ -1081,3 +1081,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of WumpusCupGiftIcon and renamed old version to WumpusCupHolidayGiftIcon. 
     - Added new version of WumpusTreasureGiftIcon and renamed old version to WumpusTreasureHolidayGiftIcon. 
     - Added WumpusPresentIcon to replace the WumpusChristmasPresentIcon.
+    - Replaced the holiday versions of the thumbnail images for the gift card buttons in send a gift modal.
