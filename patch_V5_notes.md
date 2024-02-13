@@ -1080,3 +1080,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new version of WumpusCakeGiftIcon and renamed old version to WumpusCakeHolidayGiftIcon. 
     - Added new version of WumpusCupGiftIcon and renamed old version to WumpusCupHolidayGiftIcon. 
     - Added new version of WumpusTreasureGiftIcon and renamed old version to WumpusTreasureHolidayGiftIcon. 
+    - Added WumpusPresentIcon to replace the WumpusChristmasPresentIcon.
