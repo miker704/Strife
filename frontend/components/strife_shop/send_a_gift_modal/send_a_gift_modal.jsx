@@ -4,8 +4,8 @@ import {
     StrifeBannerLogo,
     AngelListIcon, CloseXIcon, FolderIcon, GitHubIcon,
     LinkedInIcon, PrivateLockIcon, ProfilePanelChevronIcon,
-    WumpusIcon, WumpusChristmasPresentIcon,
-    AddReactionIcon, PartyHornIcon, WumpusCakeGiftIcon, WumpusTreasureGiftIcon, WumpusCupGiftIcon, SelectBoxCheckIcon,
+    WumpusIcon,
+    AddReactionIcon, PartyHornIcon, WumpusCakeGiftIcon, WumpusTreasureGiftIcon, WumpusCupGiftIcon, SelectBoxCheckIcon, WumpusPresentIcon,
 } from '../../front_end_svgs/Strife_svgs';
 import REACT_PORTAL from '../../../utils/ReactPortal_api_util';
 import DefaultPFPSVG from "../../../../app/assets/images/defaultPFPSVG.svg";
@@ -355,7 +355,7 @@ const SendAGiftModal = (props) => {
     };
 
     let giftBackgrounds = {
-        "1": <WumpusChristmasPresentIcon />,
+        "1": <WumpusPresentIcon />,
         "2": <WumpusCakeGiftIcon />,
         "3": <WumpusCupGiftIcon />,
         "4": <WumpusTreasureGiftIcon />,
@@ -498,6 +498,16 @@ const SendAGiftModal = (props) => {
         "doodleZard": 'sgm-monsters-doodlezard',
         "glop": 'sgm-monsters-glop',
         "gawbleHop": 'sgm-monsters-gawblehop',
+        "cyberPunkGlitch": "sgm-cyber-punk-glitch",
+        "cyberNetic": "sgm-cyber-punk-cybernetic",
+        "digitalSunrise": "sgm-cyber-punk-digital-sunrise",
+        "cyberNeticImplant": "sgm-cyber-punk-implant",
+        "fanFlourish": "sgm-lunar-dragon-fanFlourish",
+        "lunarLanterns": "sgm-lunar-dragon-lunarLanterns",
+        "fireCrackers": "sgm-lunar-dragon-fireCrackers",
+        "dragonsSmile": "sgm-lunar-dragon-dragonsSmile",
+        "luckyEnvelopes": "sgm-lunar-dragon-luckyEnvelopes",
+        "koiPond": "sgm-lunar-dragon-koiPond",
     }
 
 
@@ -546,6 +556,16 @@ const SendAGiftModal = (props) => {
         "doodleZard": "ppe-monsters-doodlezard",
         "glop": "ppe-monsters-glop",
         "gawbleHop": "ppe-monsters-gawblehop",
+        "cyberPunkGlitch": "ppe-cyber-punk-glitch",
+        "cyberNetic": "ppe-cyber-punk-cybernetic",
+        "digitalSunrise": "ppe-cyber-punk-digital-sunrise",
+        "cyberNeticImplant": "ppe-cyber-punk-implant",
+        "fanFlourish": "ppe-lunar-dragon-fanFlourish",
+        "lunarLanterns": "ppe-lunar-dragon-lunarLanterns",
+        "fireCrackers": "ppe-lunar-dragon-fireCrackers",
+        "dragonsSmile": "ppe-lunar-dragon-dragonsSmile",
+        "luckyEnvelopes": "ppe-lunar-dragon-luckyEnvelopes",
+        "koiPond": "ppe-lunar-dragon-koiPond",
     }
 
     let profileEffectPreviewStaticClassNames = {
@@ -571,6 +591,11 @@ const SendAGiftModal = (props) => {
         "gooZilla": "sgm-monsters-gooZilla",
         "heartZilla": "sgm-monsters-heartZilla",
         "monsterPop": "sgm-monsters-monsterPop",
+        "dragonDance": "sgm-lunar-dragon-dragonDance",
+        "fortuneFlurry": "sgm-lunar-dragon-fortuneFlurry",
+        "midnightCelebrations": "sgm-lunar-dragon-midnightCelebrations",
+        "nightRunner": "sgm-cyber-punk-nightRunner",
+        "uplinkError": "sgm-cyber-punk-uplinkError",
     }
 
     let profileEffectPreviewImgs = {
@@ -703,6 +728,40 @@ const SendAGiftModal = (props) => {
 
             </>
         ),
+        "dragonDance": (
+            <>
+                <img className="shop-item-lunar-dragon-dragonDance-intro" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-dragonDance-ending" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "fortuneFlurry": (
+            <>
+                <img className="shop-item-lunar-dragon-fortuneFlurry-frame" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-fortuneFlurry-intro" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-fortuneFlurry-ending" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "midnightCelebrations": (
+            <>
+                <img className="shop-item-lunar-dragon-midnightCelebrations-frame" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-midnightCelebrations-intro" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-midnightCelebrations-ending" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+
+        "nightRunner": (
+            <>
+                <img className="shop-item-cyber-punk-nightRunner-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-cyber-punk-nightRunner-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "uplinkError": (
+            <>
+                <img className="shop-item-cyber-punk-uplinkError-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-cyber-punk-uplinkError-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+
     }
 
     let spinningCubes = spinCubes ? (
