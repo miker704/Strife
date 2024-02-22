@@ -1090,3 +1090,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Moved old thumbnails to a holiday version style to be used when needed in the future.
     - Reworked svgs positioning for brand logo for new gift card backgrounds.
     - Replaced holiday version gift card backgrounds with new ones in send a gift modal.
+    - Added all cyber punk and lunar new year avatar decorations to avatar decoration preview modal.
