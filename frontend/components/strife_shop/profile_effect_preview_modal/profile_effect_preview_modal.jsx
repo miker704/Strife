@@ -74,6 +74,14 @@ const ProfileEffectPreviewModal = (props) => {
             background: `rgb(0, 153, 122)`,
             color: `rgb(0,0,0)`
         },
+        "lunar-dragon-effect": {
+            background: `rgb(255, 136, 0)`,
+            color: `rgb(0, 0, 0)`,
+        },
+        "cyber-punk-effect": {
+            background: `rgb(54, 54, 181)`,
+            color: `rgb(255, 255, 255)`,
+        }
     }
     const buttonStyles = {
         "fall-effect": {
@@ -108,6 +116,14 @@ const ProfileEffectPreviewModal = (props) => {
             background: `linear-gradient(90deg, rgb(0, 230, 176), rgb(0, 153, 122))`,
             color: `rgb(0,0,0)`
         },
+        "lunar-dragon-effect": {
+            background: `linear-gradient(90deg, rgb(255, 176, 5), rgb(255, 136, 0))`,
+            color: `rgb(0, 0, 0)`,
+        },
+        "cyber-punk-effect": {
+            background: `linear-gradient(90deg, rgb(75, 68, 218), rgb(54, 54, 181))`,
+            color: `rgb(255, 255, 255)`,
+        }
     }
 
     const openModal = (field, isGift = false) => {
@@ -195,7 +211,8 @@ const ProfileEffectPreviewModal = (props) => {
         "winter-wonderland-effect": { background: `linear-gradient(135deg, rgb(71, 126, 255), rgb(21, 77, 209))` },
         "disxcore-effect": { background: `linear-gradient(135deg,rgb(116, 37, 101), rgb(17, 29, 64))` },
         "monsters-effect": { background: `linear-gradient(135deg,rgb(0, 69, 92), rgb(0, 42, 56))` },
-
+        "cyber-punk-effect": { background: `linear-gradient(135deg, rgb(32, 20, 107), rgb(5, 1, 0))` },
+        "lunar-dragon-effect": { background: `linear-gradient(135deg, rgb(143, 0, 0), rgb(92, 0, 0))` },
     }
 
     const profileEffectBgBanner = {
@@ -206,8 +223,9 @@ const ProfileEffectPreviewModal = (props) => {
         "breakfast-effect": "ppe-breakfast-bg-banner",
         "winter-wonderland-effect": "ppe-winter-wonderland-bg-banner",
         "disxcore-effect": "ppe-disxcore-bg-banner",
-        "monsters-effect": "ppe-monsters-bg-banner"
-
+        "monsters-effect": "ppe-monsters-bg-banner",
+        "cyber-punk-effect": "ppe-cyber-punk-bg-banner",
+        "lunar-dragon-effect": "ppe-lunar-dragon-bg-banner",
     }
 
     const profileEffectTitleBanner = {
@@ -218,7 +236,9 @@ const ProfileEffectPreviewModal = (props) => {
         "breakfast-effect": "ppe-breakfast-title-banner",
         "winter-wonderland-effect": "ppe-winter-wonderland-title-banner",
         "disxcore-effect": "ppe-disxcore-title-banner",
-        "monsters-effect": "ppe-monsters-title-banner"
+        "monsters-effect": "ppe-monsters-title-banner",
+        "cyber-punk-effect": "ppe-cyber-punk-title-banner",
+        "lunar-dragon-effect": "ppe-lunar-dragon-title-banner",
 
     }
 
@@ -245,6 +265,11 @@ const ProfileEffectPreviewModal = (props) => {
         "gooZilla": 3.99,
         "heartZilla": 3.99,
         "monsterPop": 3.99,
+        "dragonDance": 4.99,
+        "fortuneFlurry": 4.99,
+        "midnightCelebrations": 4.99,
+        "nightRunner": 4.99,
+        "uplinkError": 4.99,
     };
 
     const strikeThroughPrice = {
@@ -270,6 +295,11 @@ const ProfileEffectPreviewModal = (props) => {
         "gooZilla": 4.99,
         "heartZilla": 4.99,
         "monsterPop": 4.99,
+        "dragonDance": 5.99,
+        "fortuneFlurry": 5.99,
+        "midnightCelebrations": 5.99,
+        "nightRunner": 5.99,
+        "uplinkError": 5.99,
 
     };
 
@@ -296,6 +326,11 @@ const ProfileEffectPreviewModal = (props) => {
         "gooZilla": "Goozilla",
         "heartZilla": "Heartzilla",
         "monsterPop": "Monster Pop",
+        "dragonDance": "Dragon Dance",
+        "fortuneFlurry": "Fortune Flurry",
+        "midnightCelebrations": "Midnight Celebration",
+        "nightRunner": "Nightrunner",
+        "uplinkError": "Uplink Error",
 
     }
     const profileEffectDescription = {
@@ -321,6 +356,11 @@ const ProfileEffectPreviewModal = (props) => {
         "gooZilla": "Wait a second, what's my profile even made of?!",
         "heartZilla": "Is this what they mean when they say love hurts?",
         "monsterPop": "POP goes the monster.",
+        "dragonDance": "No evil spirits on my watch.",
+        "fortuneFlurry": "May fortune come your way!",
+        "midnightCelebrations": "Protection and prosperity guaranteed.",
+        "nightRunner": "Cruisin' the cyber highway.",
+        "uplinkError": "Anomaly detected, attempting system reset.",
     }
 
 
@@ -621,6 +661,39 @@ const ProfileEffectPreviewModal = (props) => {
                 <img className="shop-item-monsters-monsterPop-glass-intro" alt=" " style={{ top: `0px` }} />
                 <img className="shop-item-monsters-monsterPop-ending-pop" alt=" " style={{ top: `0px` }} />
 
+            </>
+        ),
+        "dragonDance": (
+            <>
+                <img className="shop-item-lunar-dragon-dragonDance-intro" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-dragonDance-ending" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "fortuneFlurry": (
+            <>
+                <img className="shop-item-lunar-dragon-fortuneFlurry-frame" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-fortuneFlurry-intro" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-fortuneFlurry-ending" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "midnightCelebrations": (
+            <>
+                <img className="shop-item-lunar-dragon-midnightCelebrations-frame" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-midnightCelebrations-intro" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-midnightCelebrations-ending" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+
+        "nightRunner": (
+            <>
+                <img className="shop-item-cyber-punk-nightRunner-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-cyber-punk-nightRunner-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "uplinkError": (
+            <>
+                <img className="shop-item-cyber-punk-uplinkError-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-cyber-punk-uplinkError-intro" alt=" " style={{ top: `0px` }} />
             </>
         ),
     }
