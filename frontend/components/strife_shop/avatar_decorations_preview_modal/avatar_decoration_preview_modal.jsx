@@ -125,6 +125,8 @@ const AvatarDecorationPreviewModal = (props) => {
         "winter-wonderland-effect": { background: `linear-gradient(135deg, rgb(71, 126, 255), rgb(21, 77, 209))` },
         "disxcore-effect": { background: `linear-gradient(135deg,rgb(116, 37, 101), rgb(17, 29, 64))` },
         "monsters-effect": { background: `linear-gradient(135deg, rgb(0, 69, 92), rgb(0, 42, 56))` },
+        "cyber-punk-effect": { background: `linear-gradient(135deg, rgb(32, 20, 107), rgb(5, 1, 0))` },
+        "lunar-dragon-effect": { background: `linear-gradient(135deg, rgb(143, 0, 0), rgb(92, 0, 0))` },
 
     }
 
@@ -136,7 +138,9 @@ const AvatarDecorationPreviewModal = (props) => {
         "breakfast-effect": "ppe-breakfast-bg-banner",
         "winter-wonderland-effect": "ppe-winter-wonderland-bg-banner",
         "disxcore-effect": "ppe-disxcore-bg-banner",
-        "monsters-effect": "ppe-monsters-bg-banner"
+        "monsters-effect": "ppe-monsters-bg-banner",
+        "cyber-punk-effect": "ppe-cyber-punk-bg-banner",
+        "lunar-dragon-effect": "ppe-lunar-dragon-bg-banner",
     }
     const profileEffectTitleBanner = {
         "fall-effect": "ppe-fall-title-banner",
@@ -146,7 +150,9 @@ const AvatarDecorationPreviewModal = (props) => {
         "breakfast-effect": "ppe-breakfast-title-banner",
         "winter-wonderland-effect": "ppe-winter-wonderland-title-banner",
         "disxcore-effect": "ppe-disxcore-title-banner",
-        "monsters-effect": "ppe-monsters-title-banner"
+        "monsters-effect": "ppe-monsters-title-banner",
+        "cyber-punk-effect": "ppe-cyber-punk-title-banner",
+        "lunar-dragon-effect": "ppe-lunar-dragon-title-banner",
     }
 
     const salePrice = {
@@ -194,7 +200,16 @@ const AvatarDecorationPreviewModal = (props) => {
         "doodleZard": 3.99,
         "glop": 3.99,
         "gawbleHop": 3.99,
-
+        "fanFlourish": 4.99,
+        "lunarLanterns": 4.99,
+        "fireCrackers": 4.99,
+        "dragonsSmile": 4.99,
+        "luckyEnvelopes": 4.99,
+        "koiPond": 4.99,
+        "cyberPunkGlitch": 4.99,
+        "cyberNetic": 4.99,
+        "digitalSunrise": 4.99,
+        "cyberNeticImplant": 4.99,
     };
 
 
@@ -243,7 +258,16 @@ const AvatarDecorationPreviewModal = (props) => {
         "doodleZard": 4.99,
         "glop": 4.99,
         "gawbleHop": 4.99,
-
+        "fanFlourish": 5.99,
+        "lunarLanterns": 5.99,
+        "fireCrackers": 5.99,
+        "dragonsSmile": 5.99,
+        "luckyEnvelopes": 5.99,
+        "koiPond": 5.99,
+        "cyberPunkGlitch": 5.99,
+        "cyberNetic": 5.99,
+        "digitalSunrise": 5.99,
+        "cyberNeticImplant": 5.99,
     };
 
     const avatarDecorationName = {
@@ -291,6 +315,16 @@ const AvatarDecorationPreviewModal = (props) => {
         "doodleZard": "Doodlezard",
         "glop": "Glop",
         "gawbleHop": "Gawblehop",
+        "fanFlourish": "Fan Flourish",
+        "lunarLanterns": "Lunar Lanterns",
+        "fireCrackers": "Firecrackers",
+        "dragonsSmile": "Dragon's Smile",
+        "luckyEnvelopes": "Lucky Envelopes",
+        "koiPond": "Koi Pond",
+        "cyberPunkGlitch": "Glitch",
+        "cyberNetic": "Cybernetic",
+        "digitalSunrise": "Digital Sunrise",
+        "cyberNeticImplant": "Implant",
 
     }
     const avatarDecorationDescription = {
@@ -338,6 +372,16 @@ const AvatarDecorationPreviewModal = (props) => {
         "doodleZard": "You might want to wash up after.",
         "glop": "Is there something in my teeth?",
         "gawbleHop": "Talk about being tongue-tied.",
+        "fanFlourish": "Incredibly fan-tastic.",
+        "lunarLanterns": "Light the night.",
+        "fireCrackers": "Don't try this at home!",
+        "dragonsSmile": "A dragon's grin fills your year with laughs.",
+        "luckyEnvelopes": "Capacity: 888 coins.",
+        "koiPond": "Swimming in an eternal, peaceful circle.",
+        "cyberPunkGlitch": "Neurovisor disruption detected, please standby.",
+        "cyberNetic": "Cybernetic visuals now online. Welcome aboard, runner.",
+        "digitalSunrise": "It's a new day in cyberspace.",
+        "cyberNeticImplant": "Get ready to jack in.",
     }
 
     const giftColor = {
@@ -373,6 +417,14 @@ const AvatarDecorationPreviewModal = (props) => {
             background: `rgb(0, 153, 122)`,
             color: `rgb(0,0,0)`
         },
+        "lunar-dragon-effect": {
+            background: `rgb(255, 136, 0)`,
+            color: `rgb(0, 0, 0)`,
+        },
+        "cyber-punk-effect": {
+            background: `rgb(54, 54, 181)`,
+            color: `rgb(255, 255, 255)`,
+        }
     }
 
     const buttonStyles = {
@@ -408,6 +460,14 @@ const AvatarDecorationPreviewModal = (props) => {
             background: `linear-gradient(90deg, rgb(0, 230, 176), rgb(0, 153, 122))`,
             color: `rgb(0,0,0)`
         },
+        "lunar-dragon-effect": {
+            background: `linear-gradient(90deg, rgb(255, 176, 5), rgb(255, 136, 0))`,
+            color: `rgb(0, 0, 0)`,
+        },
+        "cyber-punk-effect": {
+            background: `linear-gradient(90deg, rgb(75, 68, 218), rgb(54, 54, 181))`,
+            color: `rgb(255, 255, 255)`,
+        }
     }
 
     const defaultcolorPalleteRef = useRef(Math.random());
@@ -650,6 +710,62 @@ const AvatarDecorationPreviewModal = (props) => {
                 <img className='ppe-monsters-gawblehop' alt=" " style={{ top: `0px` }} />
             </>
         ),
+
+        "fanFlourish": (
+            <>
+                <img className='ppe-lunar-dragon-fanFlourish' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+
+        "lunarLanterns": (
+            <>
+                <img className='ppe-lunar-dragon-lunarLanterns' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+
+
+        "fireCrackers": (
+            <>
+                <img className='ppe-lunar-dragon-fireCrackers' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "dragonsSmile": (
+            <>
+                <img className='ppe-lunar-dragon-dragonsSmile' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "luckyEnvelopes": (
+            <>
+                <img className='ppe-lunar-dragon-luckyEnvelopes' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "koiPond": (
+            <>
+                <img className='ppe-lunar-dragon-koiPond' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+
+
+        "cyberPunkGlitch": (
+            <>
+                <img className='ppe-cyber-punk-glitch' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "cyberNetic": (
+            <>
+                <img className='ppe-cyber-punk-cybernetic' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "digitalSunrise": (
+            <>
+                <img className='ppe-cyber-punk-digital-sunrise' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "cyberNeticImplant": (
+            <>
+                <img className='ppe-cyber-punk-implant' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
     }
 
 
@@ -699,6 +815,16 @@ const AvatarDecorationPreviewModal = (props) => {
         "doodleZard": "ppe-monsters-doodlezard",
         "glop": "ppe-monsters-glop",
         "gawbleHop": "ppe-monsters-gawblehop",
+        "cyberPunkGlitch": "ppe-cyber-punk-glitch",
+        "cyberNetic": "ppe-cyber-punk-cybernetic",
+        "digitalSunrise": "ppe-cyber-punk-digital-sunrise",
+        "cyberNeticImplant": "ppe-cyber-punk-implant",
+        "fanFlourish": "ppe-lunar-dragon-fanFlourish",
+        "lunarLanterns": "ppe-lunar-dragon-lunarLanterns",
+        "fireCrackers": "ppe-lunar-dragon-fireCrackers",
+        "dragonsSmile": "ppe-lunar-dragon-dragonsSmile",
+        "luckyEnvelopes": "ppe-lunar-dragon-luckyEnvelopes",
+        "koiPond": "ppe-lunar-dragon-koiPond",
     }
 
 
