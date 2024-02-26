@@ -39,6 +39,14 @@ const ProfileEffectItemCard = (props) => {
             background: `rgb(0, 153, 122)`,
             color: `rgb(0,0,0)`
         },
+        "lunar-dragon-effect": {
+            background: `var(--brand-experiment)`,
+            color: `var(--white-500)`
+        },
+        "cyber-punk-effect": {
+            background: `var(--brand-experiment)`,
+            color: `var(--white-500)`
+        }
     }
 
 
@@ -252,6 +260,49 @@ const ProfileEffectItemCard = (props) => {
             <img className="shop-item-monsters-monsterPop" alt=" " style={{ top: `0px` }} />
         ),
 
+        "dragonDance": hovered ? (
+            <>
+                <img className="shop-item-lunar-dragon-dragonDance-intro" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-dragonDance-ending" alt=" " style={{ top: `0px` }} />
+            </>
+        ) : (
+            <img className="shop-item-lunar-dragon-dragonDance" alt=" " style={{ top: `0px` }} />
+        ),
+        "fortuneFlurry": hovered ? (
+            <>
+                <img className="shop-item-lunar-dragon-fortuneFlurry-frame" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-fortuneFlurry-intro" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-fortuneFlurry-ending" alt=" " style={{ top: `0px` }} />
+            </>
+        ) : (
+            <img className="shop-item-lunar-dragon-fortuneFlurry" alt=" " style={{ top: `0px` }} />
+        ),
+        "midnightCelebrations": hovered ? (
+            <>
+                <img className="shop-item-lunar-dragon-midnightCelebrations-frame" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-midnightCelebrations-intro" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-midnightCelebrations-ending" alt=" " style={{ top: `0px` }} />
+            </>
+        ) : (
+            <img className="shop-item-lunar-dragon-midnightCelebrations" alt=" " style={{ top: `0px` }} />
+        ),
+        "nightRunner": hovered ? (
+            <>
+                <img className="shop-item-cyber-punk-nightRunner-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-cyber-punk-nightRunner-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ) : (
+            <img className="shop-item-cyber-punk-nightRunner" alt=" " style={{ top: `0px` }} />
+        ),
+        "uplinkError": hovered ? (
+            <>
+                <img className="shop-item-cyber-punk-uplinkError-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-cyber-punk-uplinkError-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ) : (
+            <img className="shop-item-cyber-punk-uplinkError" alt=" " style={{ top: `0px` }} />
+        ),
+
     }
 
     return (
@@ -292,15 +343,16 @@ const ProfileEffectItemCard = (props) => {
                 </div>
             </div>
 
-            <div className="shop-item-card-inner-text shop-item-card-inner-text-profile-effect">
-                <div className="shop-item-card-inner-product-name"><div className="shop-item-card-inner-blur-text-lrg" style={{ color: `white` }}>{`${props.profileEffectTitle}`}</div></div>
+            <div className="shop-item-card-inner-text shop-item-card-inner-text-profile-effect shop-card-text-blurred">
+            <div className="shop-item-card-inner-cardBackground darkShopCardBackground shopItemCardBackground-lowOpacity"></div>
+                <div className="shop-item-card-inner-product-name"><div className="shop-item-card-inner-blur-text-lrg" style={{ color: `var(--text-normal)` }}>{`${props.profileEffectTitle}`}</div></div>
                 <div className="shop-item-card-inner-product-details">
+                        <div className="shop-item-card-inner-blur-text-med shop-item-card-inner-blur-text-med-desc" style={{ color: `var(--text-normal)` }}>{`${props.profileEffectTextDescription}`}</div>
                     <div className="shop-item-card-inner-blur">
-                        <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>{`${props.profileEffectTextDescription}`}</div>
-                        {props.nitroExclusive ? (<div className="shop-item-price-tags-h2-medium-semi-bold" style={{ color: `white` }}>Included with Nitro</div>) : (
+                        {props.nitroExclusive ? (<div className="shop-item-price-tags-h2-medium-semi-bold" style={{ color: `var(--text-normal)` }}>Included with Nitro</div>) : (
                             <div className="shop-item-price-tags-container" >
-                                <h2 className="shop-item-price-tags-h2-medium" style={{ color: `white` }}>${`${props.profileEffectPrice}`}</h2>
-                                <h2 className="shop-item-price-tags-h2-xsmall" style={{ color: `white` }}>
+                                <h2 className="shop-item-price-tags-h2-medium" style={{ color: `var(--header-primary)` }}>${`${props.profileEffectPrice}`}</h2>
+                                <h2 className="shop-item-price-tags-h2-xsmall" style={{ color: `var(--header-primary)` }}>
                                     <StrifeNitroBadgeIcon className="shop-item-nitro-ball-icon-faded" height={24} width={24} />
                                     ${`${props.profileEffectReducedPrice} with Nitro`}
                                 </h2>
