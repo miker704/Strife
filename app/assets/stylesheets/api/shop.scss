@@ -129,6 +129,9 @@
   width: 100%;
   position: relative;
 }
+.shop-page-wrapper-background {
+  background-color: var(--background-primary);
+}
 
 .shop-main-page {
   width: 100%;
@@ -705,22 +708,43 @@
   display: grid;
   grid-gap: 24px;
   grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+  // grid-template-columns: repeat(auto-fill,minmax(246px,1fr));
   overflow: visible;
 }
 
+.shop-taller-item-cards-container {
+  grid-template-columns: repeat(auto-fill, minmax(246px, 1fr));
+}
+
+// .shop-item-card {
+//   border-radius: var(--radius-xxl);
+//   border: 2px solid transparent;
+//   grid-column: auto;
+//   min-width: 100%;
+//   transition: transform 1s, box-shadow.5s;
+//   padding: 40px 32px 32px;
+//   box-sizing: border-box;
+//   position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   cursor: pointer;
+//   overflow: hidden;
+// }
+
 .shop-item-card {
-  border-radius: var(--radius-xxl);
-  border: 2px solid transparent;
   grid-column: auto;
-  min-width: 100%;
-  transition: transform 1s, box-shadow.5s;
-  padding: 40px 32px 32px;
+  border: 2px solid transparent;
   box-sizing: border-box;
   position: relative;
   display: flex;
   flex-direction: column;
   cursor: pointer;
   overflow: hidden;
+  border-radius: 16px;
+  width: 100%;
+  height: 420px;
+  top: 0;
+  transition: top 1s, box-shadow.5s;
 }
 
 .shop-item-card:hover,
@@ -768,17 +792,60 @@
   box-shadow: var(--primary-700) 0px 0px 25px 1px !important;
 }
 
+.shop-item-categories > .shop-item-categories-wrapper {
+  margin-top: 40px;
+}
+.shop-item-categories-wrapper {
+  position: relative;
+}
+.shop-item-categories
+  > .shop-item-categories-wrapper
+  ~ .shop-item-categories-wrapper {
+  margin-top: 80px;
+}
+
+.shop-item-card-inner-avatar-deco-container {
+  width: 100%;
+  height: 252px;
+  display: flex;
+  align-items: center;
+}
+.shop-item-card-inner-cardBackground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.darkShopCardBackground {
+  background-color: var(--background-tertiary);
+}
+.shopItemCardBackground-lowOpacity{
+  opacity: 0.6;
+}
+
 .shop-item-card-inner {
   position: relative;
   border-radius: 50%;
   margin: 0 auto;
 }
 .shop-item-card-inner-text {
-  margin-top: 32px;
+  // margin-top: 32px;
+  // z-index: 1;
+  // display: flex;
+  // flex-direction: column;
+  // flex: 1;
+
+  height: 170px;
+  width: calc(100% + 4px);
+  padding: 23px;
+  box-sizing: border-box;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
 }
 .shop-item-card-inner-product-name {
   position: relative;
@@ -787,6 +854,11 @@
   display: flex;
   position: relative;
   flex: 1;
+
+  //feb 2024
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .shop-item-card:hover .shop-item-card-inner-blur,
@@ -802,17 +874,18 @@
 .shop-item-card-inner-blur {
   opacity: 1;
   transition: opacity.5s;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  flex: 1;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+  // height: 100%;
+  // flex: 1;
 }
 
 .shop-item-card-inner-blur-text-lrg {
   font-family: var(--global-font);
   font-size: 20px;
-  line-height: 24px;
+  // line-height: 24px;
+  line-height: 1.2;
   font-weight: 700;
 }
 
@@ -821,8 +894,32 @@
   word-wrap: break-word;
   font-family: var(--global-font);
   font-size: 16px;
-  line-height: 20px;
+  line-height: 1.25;
   font-weight: 400;
+}
+
+.shop-item-card-taller-card-padding {
+  padding-left: 8px;
+}
+
+.shop-item-card-inner-blur-text-med-desc {
+  margin-top: 4px;
+  word-wrap: break-word;
+  flex: 1;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    var(--black-500) 100%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    var(--black-500) 100%,
+    transparent 100%
+  );
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .shop-item-price-tags-container {
@@ -833,7 +930,8 @@
 .shop-item-price-tags-h2-medium {
   font-family: var(--global-font);
   font-size: 16px;
-  line-height: 20px;
+  // line-height: 20px;
+  line-height: 1.25;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -853,7 +951,8 @@
 .shop-item-price-tags-h2-xsmall {
   font-family: var(--global-font);
   font-size: 12px;
-  line-height: 16px;
+  // line-height: 16px;
+  line-height: 1.3333333333333333;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -1059,18 +1158,24 @@
 }
 
 .shop-item-profileEffectPreview {
+  // position: relative;
+  // height: 120px;
+  // width: 200px;
+  // top: -10px;
+  // margin: 0 auto;
+
   position: relative;
-  height: 120px;
-  width: 200px;
-  top: -10px;
+  height: 100%;
+  width: 100%;
   margin: 0 auto;
+  overflow: hidden;
 }
 .shop-item-profileEffectPreviewContainer {
   position: relative;
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 390px;
+  // height: 390px;
   border-radius: var(--radius-md);
   overflow: hidden;
   z-index: 0;
@@ -1120,12 +1225,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
-    var(--transparent),
-    var(--transparent),
-    var(--black-500-hsl-08)
-  );
+  // background: linear-gradient(
+  //   to bottom,
+  //   var(--transparent),
+  //   var(--transparent),
+  //   var(--black-500-hsl-08)
+  // );
+}
+
+.shop-card-text-blurred {
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
 }
 
 .shop-item-slime-zombie {
@@ -3292,12 +3402,10 @@
   -webkit-animation-name: dragonDance-cycle;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
-  // -webkit-animation-fill-mode: forwards;
   animation-name: dragonDance-cycle;
   animation-duration: 5s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
-  // animation-fill-mode: forwards;
 }
 
 .shop-item-lunar-dragon-dragonDance-ending {
@@ -3306,15 +3414,15 @@
   width: 100%;
   position: absolute;
   content: image_url("blankEffect.png");
-  -webkit-animation-delay: 5s;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
   -webkit-animation-name: dragonDance-ending-cycle;
   -webkit-animation-timing-function: ease-in-out;
   animation-name: dragonDance-ending-cycle;
   animation-duration: 2s;
   animation-delay: 5s;
   animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 5s;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
 
@@ -3359,7 +3467,6 @@
   position: absolute;
   content: image_url("fortuneFlurryThumbnail.png");
 }
-
 .shop-item-lunar-dragon-fortuneFlurry-frame {
   top: 0;
   left: 0;
@@ -3378,12 +3485,10 @@
   -webkit-animation-name: fortuneFlurry-cycle;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
-  // -webkit-animation-fill-mode: forwards;
   animation-name: fortuneFlurry-cycle;
   animation-duration: 4s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
-  // animation-fill-mode: forwards;
 }
 .shop-item-lunar-dragon-fortuneFlurry-ending {
   top: 0;
@@ -3394,17 +3499,13 @@
   -webkit-animation-delay: 4.1s;
   -webkit-animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
-  // -webkit-animation-iteration-count: 1;
   -webkit-animation-name: fortuneFlurry-ending-cycle;
   -webkit-animation-timing-function: ease-in-out;
-  // -webkit-animation-fill-mode: forwards;
   animation-name: fortuneFlurry-ending-cycle;
   animation-duration: 3s;
   animation-delay: 4.1s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  // animation-iteration-count: 1;
-  // animation-fill-mode: forwards;
 }
 
 @keyframes fortuneFlurry-cycle {
@@ -3448,12 +3549,12 @@
   position: absolute;
   content: image_url("midnightCelebrationThumbnail.png");
 }
+
 .shop-item-lunar-dragon-midnightCelebrations-frame {
   top: 0;
   left: 0;
   width: 100%;
   position: absolute;
-  content: image_url("blankEffect.png");
   content: image_url("blankEffect.png");
   -webkit-animation-duration: 4s;
   -webkit-animation-name: midnightCelebrations-frame-cycle;
@@ -3477,12 +3578,10 @@
   -webkit-animation-name: midnightCelebrations-cycle;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
-  // -webkit-animation-fill-mode: forwards;
   animation-name: midnightCelebrations-cycle;
   animation-duration: 4s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
-  // animation-fill-mode: forwards;
 }
 .shop-item-lunar-dragon-midnightCelebrations-ending {
   top: 0;
@@ -3493,17 +3592,13 @@
   -webkit-animation-delay: 4.1s;
   -webkit-animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
-  // -webkit-animation-iteration-count: 1;
   -webkit-animation-name: midnightCelebrations-ending-cycle;
   -webkit-animation-timing-function: ease-in-out;
-  // -webkit-animation-fill-mode: forwards;
   animation-name: midnightCelebrations-ending-cycle;
   animation-duration: 3s;
   animation-delay: 4.1s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  // animation-iteration-count: 1;
-  // animation-fill-mode: forwards;
 }
 
 @keyframes midnightCelebrations-frame-cycle {
@@ -3563,12 +3658,95 @@
   position: absolute;
   content: image_url("nightRunnerThumbnail.png");
 }
+
+.shop-item-cyber-punk-nightRunner-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: nightRunner-intro-cycle;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: nightRunner-intro-cycle;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes nightRunner-intro-cycle {
+  0% {
+    content: image_url("nightRunnerIntroInfinite.png");
+  }
+  100% {
+    content: image_url("nightRunnerReducedMotion.png");
+  }
+}
+@-webkit-keyframes nightRunner-intro-cycle {
+  0% {
+    content: image_url("nightRunnerIntroInfinite.png");
+  }
+  100% {
+    content: image_url("nightRunnerReducedMotion.png");
+  }
+}
+
+.shop-item-cyber-punk-nightRunner-idle {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("nightRunnerIdle.png");
+}
+
 .shop-item-cyber-punk-uplinkError {
   top: 0;
   left: 0;
   width: 100%;
   position: absolute;
   content: image_url("uplinkErrorThumbnail.png");
+}
+
+.shop-item-cyber-punk-uplinkError-idle {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("uplinkErrorIdle.png");
+}
+
+.shop-item-cyber-punk-uplinkError-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: uplinkError-intro-cycle;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: uplinkError-intro-cycle;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes uplinkError-intro-cycle {
+  0% {
+    content: image_url("uplinkErrorIntroInfinite.png");
+  }
+  100% {
+    content: image_url("uplinkErrorReducedMotion.png");
+  }
+}
+@-webkit-keyframes uplinkError-intro-cycle {
+  0% {
+    content: image_url("uplinkErrorIntroInfinite.png");
+  }
+  100% {
+    content: image_url("uplinkErrorReducedMotion.png");
+  }
 }
 
 .shop-item-card:hover {
