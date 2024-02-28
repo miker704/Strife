@@ -146,6 +146,16 @@ const PreviewGiftUPCModal = (props) => {
         "doodleZard": "ppe-monsters-doodlezard",
         "glop": "ppe-monsters-glop",
         "gawbleHop": "ppe-monsters-gawblehop",
+        "cyberPunkGlitch": "ppe-cyber-punk-glitch",
+        "cyberNetic": "ppe-cyber-punk-cybernetic",
+        "digitalSunrise": "ppe-cyber-punk-digital-sunrise",
+        "cyberNeticImplant": "ppe-cyber-punk-implant",
+        "fanFlourish": "ppe-lunar-dragon-fanFlourish",
+        "lunarLanterns": "ppe-lunar-dragon-lunarLanterns",
+        "fireCrackers": "ppe-lunar-dragon-fireCrackers",
+        "dragonsSmile": "ppe-lunar-dragon-dragonsSmile",
+        "luckyEnvelopes": "ppe-lunar-dragon-luckyEnvelopes",
+        "koiPond": "ppe-lunar-dragon-koiPond",
     }
 
     let memberBanner = member.banner === undefined ?
@@ -356,6 +366,39 @@ const PreviewGiftUPCModal = (props) => {
                 <img className="shop-item-monsters-monsterPop-glass-intro" alt=" " style={{ top: `0px` }} />
                 <img className="shop-item-monsters-monsterPop-ending-pop" alt=" " style={{ top: `0px` }} />
 
+            </>
+        ),
+        "dragonDance": (
+            <>
+                <img className="shop-item-lunar-dragon-dragonDance-intro" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-dragonDance-ending" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "fortuneFlurry": (
+            <>
+                <img className="shop-item-lunar-dragon-fortuneFlurry-frame" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-fortuneFlurry-intro" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-fortuneFlurry-ending" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "midnightCelebrations": (
+            <>
+                <img className="shop-item-lunar-dragon-midnightCelebrations-frame" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-midnightCelebrations-intro" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-lunar-dragon-midnightCelebrations-ending" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+
+        "nightRunner": (
+            <>
+                <img className="shop-item-cyber-punk-nightRunner-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-cyber-punk-nightRunner-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "uplinkError": (
+            <>
+                <img className="shop-item-cyber-punk-uplinkError-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-cyber-punk-uplinkError-intro" alt=" " style={{ top: `0px` }} />
             </>
         ),
     }
