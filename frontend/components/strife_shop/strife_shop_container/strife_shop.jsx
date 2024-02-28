@@ -2,7 +2,7 @@ import React from "react";
 import StrifeShopHeaderNavBarContainer from "../strife_shop_header_nav_bar/strife_shop_header_nav_bar_container";
 import DMNavBarContainer from "../../dm_servers/dm_nav_bar/dm_nav_bar_container";
 import { useEffect, useState, useRef } from "react";
-import { StrifeBannerLogo } from "../../front_end_svgs/Strife_svgs";
+import { StrifeBannerLogo, StrifeNitroBadgeIcon } from "../../front_end_svgs/Strife_svgs";
 import SubscribeToStrifeNitroProModalContainer from "../../nitro/subscribe_to_nitro_modal/subscribe_to_nitro_pro_modal_container";
 import ProfileEffectPreviewModalContainer from "../profile_effect_preview_modal/profile_effect_preview_modal_container";
 import AvatarDecorationPreviewModalContainer from "../avatar_decorations_preview_modal/avatar_decoration_preview_modal_container";
@@ -138,10 +138,10 @@ const StrifeShop = (props) => {
         if (currentSubModal.sendGiftModal === true) {
             return (
                 <SendAGiftModalContainer closeSubMod={closeForm} formName={"sendGiftModal"} productType={productType}
-                    productPrice={productPrice} productName={productName} productKey={productKey} 
+                    productPrice={productPrice} productName={productName} productKey={productKey}
                 />
             )
-        } 
+        }
     }
     return (
         <div className="server-main-base">
@@ -156,7 +156,7 @@ const StrifeShop = (props) => {
                     {renderPurchaseProductModal()}
                     {renderSendGiftModal()}
                     <div className="shop-scroll auto-scroll-raw-attributes global-scroller-base" style={{ overflow: `hidden scroll`, paddingRight: `0px` }}>
-                        <div className="shop-page-wrapper">
+                        <div className="shop-page-wrapper shop-page-wrapper-background">
                             <main className="shop-main-page">
 
                                 {/* <div className="shop-hero-banner">
@@ -197,6 +197,38 @@ const StrifeShop = (props) => {
                                         </div>
                                     ) :
                                         (
+                                            <div className="shop-hero-banner">
+                                                <div className="shop-hero-description shop-hero-description-with-side-bar">
+                                                    <h2 className="shop-hero-h2" style={{ color: `white` }}>Ready for a new look?</h2>
+                                                    <div className="shop-hero-subtitle" style={{ color: `white` }}>
+                                                        Charming. Fierce. Hungry. Whatever your vibe, buy and collect your favorite styles for your profile for any occasion.
+                                                    </div>
+                                                </div>
+                                                <div className="shop-hero-banner-background-wrapper">
+                                                    <img className="shop-hero-banner-background-img" alt=" " />
+                                                </div>
+                                                <img className="shop-hero-banner-foreground" alt=" " />
+                                                <img className="shop-hero-banner-hand" alt=" " />
+                                                <img className="shop-hero-banner-large-Top-sparkle" alt=" " />
+                                                <img className="shop-hero-banner-smallTop-Sparkle" alt=" " />
+                                                <img className="shop-hero-banner-large-Left-sparkle" alt=" " />
+                                                <img className="shop-hero-banner-smallLeft-Sparkle" alt=" " />
+                                                <img className="shop-hero-banner-large-Right-sparkle" alt=" " />
+                                                <img className="shop-hero-banner-smallRight-Sparkle" alt=" " />
+                                            </div>
+                                        )
+                                }
+
+
+
+
+                                {/* {
+                                    isLoadingShop ? (
+                                        <div className="shop-banner-img">
+                                            <ShopItemCardGridSkeletonList listsToRender={1} />
+                                        </div>
+                                    ) :
+                                        (
                                             <div className="shop-hero-banner-holiday-version">
                                                 <div className="shop-hero-banner-holiday-version-description shop-hero-description-with-side-bar">
                                                     <h2 className="shop-hero-h2" style={{ color: `white` }}>Ready for a new look?</h2>
@@ -212,11 +244,353 @@ const StrifeShop = (props) => {
                                                 </div>
                                             </div>
                                         )
-                                }
+                                } */}
 
 
-                                <div>
-                                    <div>
+                                <div className="shop-item-categories">
+
+                                    <div className="shop-item-categories-wrapper">
+
+                                        {
+                                            isLoadingShop ? (
+                                                <div className="shop-banner-img">
+                                                    <ShopItemCardGridSkeletonList listsToRender={1} />
+                                                </div>
+                                            ) :
+                                                (
+                                                    <div className="shop-banner-img shop-lunar-dragon-new-year-banner">
+                                                        <div className="shop-strife-banner-logo-halloween">
+                                                            <StrifeBannerLogo width={124} height={24} className={'shop-strife-banner-logo-halloween-icon'} />
+                                                        </div>
+                                                        <img className="shop-lunar-dragon-new-year-banner-logo" alt=" " />
+                                                        <div className="shop-halloween-subtext" style={{ color: `white` }}>Roar into the Year of the Dragon.</div>
+                                                    </div>
+                                                )
+                                        }
+
+                                        <div>
+                                            <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
+
+                                            {
+                                                isLoadingShop ? (
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
+                                                        <ShopItemCardGridSkeletonList listsToRender={6} />
+                                                    </div>
+                                                )
+                                                    : (
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
+
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"lunar-dragon-items"}
+                                                                profileEffectTheme={"lunar-dragon-effect"} avatarEffectObj={"fanFlourish"} avatarTitle={"Fan Flourish"}
+                                                                avatarImageName={"lunar-dragon-fanFlourish"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Incredibly fan-tastic."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"lunar-dragon-items"}
+                                                                profileEffectTheme={"lunar-dragon-effect"} avatarEffectObj={"lunarLanterns"} avatarTitle={"Lunar Lanterns"}
+                                                                avatarImageName={"lunar-dragon-lunarLanterns"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Light the night."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"lunar-dragon-items"}
+                                                                profileEffectTheme={"lunar-dragon-effect"} avatarEffectObj={"fireCrackers"} avatarTitle={"Firecrackers"}
+                                                                avatarImageName={"lunar-dragon-fireCrackers"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Don't try this at home!"}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"lunar-dragon-items"}
+                                                                profileEffectTheme={"lunar-dragon-effect"} avatarEffectObj={"dragonsSmile"} avatarTitle={"Dragon's Smile"}
+                                                                avatarImageName={"lunar-dragon-dragonsSmile"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"A dragon's grin fills your year with laughs."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"lunar-dragon-items"}
+                                                                profileEffectTheme={"lunar-dragon-effect"} avatarEffectObj={"luckyEnvelopes"} avatarTitle={"Lucky Envelopes"}
+                                                                avatarImageName={"lunar-dragon-luckyEnvelopes"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Capacity: 888 coins."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"lunar-dragon-items"}
+                                                                profileEffectTheme={"lunar-dragon-effect"} avatarEffectObj={"koiPond"} avatarTitle={"Koi Pond"}
+                                                                avatarImageName={"lunar-dragon-koiPond"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Swimming in an eternal, peaceful circle."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+
+
+
+                                                        </div>
+                                                    )}
+
+
+                                        </div>
+
+                                        <div>
+                                            <div className="shop-item-type-title-container">
+                                                <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
+                                            </div>
+
+                                            {
+                                                isLoadingShop ? (
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
+                                                        <ShopItemCardGridSkeletonList listsToRender={3} />
+                                                    </div>
+                                                ) : (
+
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
+
+                                                        <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
+                                                            shopItemCardType={"lunar-dragon-items"} profileEffectTheme={"lunar-dragon-effect"} profileThemeObj={"dragonDance"}
+                                                            nitroExclusive={false} profileEffectTitle={"Dragon Dance"} profileEffectTextDescription={"No evil spirits on my watch."}
+                                                            profileEffectPrice={5.99} profileEffectReducedPrice={4.99} hasHoverEffect={true}
+                                                            styleProps={{
+                                                                background: `var(--background-floating)`,
+                                                                borderColor: `var(--chat-border)`,
+                                                                boxShadow: `none`
+                                                            }}
+                                                            buttonStyleProps={{
+                                                                background: `var(--brand-experiment)`,
+                                                                color: `var(--white-500)`
+                                                            }}
+                                                        />
+                                                        <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
+                                                            shopItemCardType={"lunar-dragon-items"} profileEffectTheme={"lunar-dragon-effect"} profileThemeObj={"fortuneFlurry"}
+                                                            nitroExclusive={false} profileEffectTitle={"Fortune Flurry"} profileEffectTextDescription={"May fortune come your way!"}
+                                                            profileEffectPrice={5.99} profileEffectReducedPrice={4.99} hasHoverEffect={true}
+                                                            styleProps={{
+                                                                background: `var(--background-floating)`,
+                                                                borderColor: `var(--chat-border)`,
+                                                                boxShadow: `none`
+                                                            }}
+                                                            buttonStyleProps={{
+                                                                background: `var(--brand-experiment)`,
+                                                                color: `var(--white-500)`
+                                                            }}
+                                                        />
+                                                        <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
+                                                            shopItemCardType={"lunar-dragon-items"} profileEffectTheme={"lunar-dragon-effect"} profileThemeObj={"midnightCelebrations"}
+                                                            nitroExclusive={false} profileEffectTitle={"Midnight Celebration"} profileEffectTextDescription={"Protection and prosperity guaranteed."}
+                                                            profileEffectPrice={5.99} profileEffectReducedPrice={4.99} hasHoverEffect={true}
+                                                            styleProps={{
+                                                                background: `var(--background-floating)`,
+                                                                borderColor: `var(--chat-border)`,
+                                                                boxShadow: `none`
+                                                            }}
+                                                            buttonStyleProps={{
+                                                                background: `var(--brand-experiment)`,
+                                                                color: `var(--white-500)`
+                                                            }}
+                                                        />
+
+
+                                                    </div>
+                                                )}
+
+                                        </div>
+                                    </div>
+
+
+                                    <div className="shop-item-categories-wrapper">
+
+                                        {
+                                            isLoadingShop ? (
+                                                <div className="shop-banner-img">
+                                                    <ShopItemCardGridSkeletonList listsToRender={1} />
+                                                </div>
+                                            ) :
+                                                (
+                                                    <div className="shop-banner-img shop-cyberpunk-banner">
+                                                        <div className="shop-strife-banner-logo-halloween">
+                                                            <StrifeBannerLogo width={124} height={24} className={'shop-strife-banner-logo-halloween-icon'} />
+                                                        </div>
+                                                        <img className="shop-cyberpunk-banner-logo" alt=" " />
+                                                        <div className="shop-halloween-subtext" style={{ color: `white` }}>Welcome to the neon embrace of the future.</div>
+                                                    </div>
+                                                )
+                                        }
+
+                                        <div>
+                                            <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
+
+                                            {
+                                                isLoadingShop ? (
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
+                                                        <ShopItemCardGridSkeletonList listsToRender={4} />
+                                                    </div>
+                                                )
+                                                    : (
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
+
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"cyber-punk-effect-items"}
+                                                                profileEffectTheme={"cyber-punk-effect"} avatarEffectObj={"cyberPunkGlitch"} avatarTitle={"Glitch"}
+                                                                avatarImageName={"cyber-punk-glitch"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Neurovisor disruption detected, please standby."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"cyber-punk-effect-items"}
+                                                                profileEffectTheme={"cyber-punk-effect"} avatarEffectObj={"cyberNetic"} avatarTitle={"Cybernetic"}
+                                                                avatarImageName={"cyber-punk-cybernetic"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Cybernetic visuals now online. Welcome aboard, runner."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"cyber-punk-effect-items"}
+                                                                profileEffectTheme={"cyber-punk-effect"} avatarEffectObj={"digitalSunrise"} avatarTitle={"Digital Sunrise"}
+                                                                avatarImageName={"cyber-punk-digital-sunrise"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"It's a new day in cyberspace."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"cyber-punk-effect-items"}
+                                                                profileEffectTheme={"cyber-punk-effect"} avatarEffectObj={"cyberNeticImplant"} avatarTitle={"Implant"}
+                                                                avatarImageName={"cyber-punk-implant"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Get ready to jack in."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                        </div>
+                                                    )}
+
+
+                                        </div>
+
+                                        <div>
+                                            <div className="shop-item-type-title-container">
+                                                <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
+                                            </div>
+
+                                            {
+                                                isLoadingShop ? (
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
+                                                        <ShopItemCardGridSkeletonList listsToRender={2} />
+                                                    </div>
+                                                ) : (
+
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
+
+                                                        <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
+                                                            shopItemCardType={"cyber-punk-effect-items"} profileEffectTheme={"cyber-punk-effect"} profileThemeObj={"nightRunner"}
+                                                            nitroExclusive={false} profileEffectTitle={"Nightrunner"} profileEffectTextDescription={"Cruisin' the cyber highway."}
+                                                            profileEffectPrice={5.99} profileEffectReducedPrice={4.99} hasHoverEffect={true}
+                                                            styleProps={{
+                                                                background: `var(--background-floating)`,
+                                                                borderColor: `var(--chat-border)`,
+                                                                boxShadow: `none`
+                                                            }}
+                                                            buttonStyleProps={{
+                                                                background: `var(--brand-experiment)`,
+                                                                color: `var(--white-500)`
+                                                            }}
+                                                        />
+                                                        <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
+                                                            shopItemCardType={"cyber-punk-effect-items"} profileEffectTheme={"cyber-punk-effect"} profileThemeObj={"uplinkError"}
+                                                            nitroExclusive={false} profileEffectTitle={"Uplink Error"} profileEffectTextDescription={"Anomaly detected, attempting system reset."}
+                                                            profileEffectPrice={5.99} profileEffectReducedPrice={4.99} hasHoverEffect={true}
+                                                            styleProps={{
+                                                                background: `var(--background-floating)`,
+                                                                borderColor: `var(--chat-border)`,
+                                                                boxShadow: `none`
+                                                            }}
+                                                            buttonStyleProps={{
+                                                                background: `var(--brand-experiment)`,
+                                                                color: `var(--white-500)`
+                                                            }}
+                                                        />
+
+                                                    </div>
+                                                )}
+
+                                        </div>
+                                    </div>
+
+                                    <div className="shop-item-categories-wrapper">
 
                                         {
                                             isLoadingShop ? (
@@ -236,16 +610,16 @@ const StrifeShop = (props) => {
                                         }
 
                                         <div>
-                                            <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
+                                            <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
 
                                             {
                                                 isLoadingShop ? (
-                                                    <div className="shop-item-cards-container">
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
                                                         <ShopItemCardGridSkeletonList listsToRender={8} />
                                                     </div>
                                                 )
                                                     : (
-                                                        <div className="shop-item-cards-container">
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
 
                                                             <AvatarDecorationItemCardContainer openModalType={openModal}
                                                                 modalName={"avatarDecorationPreviewModal"} shopItemCardType={"monsters-items"}
@@ -377,17 +751,17 @@ const StrifeShop = (props) => {
 
                                         <div>
                                             <div className="shop-item-type-title-container">
-                                                <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
+                                                <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
                                             </div>
 
                                             {
                                                 isLoadingShop ? (
-                                                    <div className="shop-item-cards-container">
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
                                                         <ShopItemCardGridSkeletonList listsToRender={3} />
                                                     </div>
                                                 ) : (
 
-                                                    <div className="shop-item-cards-container">
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
 
                                                         <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
                                                             shopItemCardType={"monsters-items"} profileEffectTheme={"monsters-effect"} profileThemeObj={"gooZilla"}
@@ -439,7 +813,7 @@ const StrifeShop = (props) => {
                                     </div>
 
 
-                                    <div>
+                                    <div className="shop-item-categories-wrapper">
 
                                         {
                                             isLoadingShop ? (
@@ -459,16 +833,16 @@ const StrifeShop = (props) => {
                                         }
 
                                         <div>
-                                            <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
+                                            <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
 
                                             {
                                                 isLoadingShop ? (
-                                                    <div className="shop-item-cards-container">
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
                                                         <ShopItemCardGridSkeletonList listsToRender={4} />
                                                     </div>
                                                 )
                                                     : (
-                                                        <div className="shop-item-cards-container">
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
 
                                                             <AvatarDecorationItemCardContainer openModalType={openModal}
                                                                 modalName={"avatarDecorationPreviewModal"} shopItemCardType={"halloween-items"}
@@ -538,17 +912,17 @@ const StrifeShop = (props) => {
 
                                         <div>
                                             <div className="shop-item-type-title-container">
-                                                <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
+                                                <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
                                             </div>
 
                                             {
                                                 isLoadingShop ? (
-                                                    <div className="shop-item-cards-container">
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
                                                         <ShopItemCardGridSkeletonList listsToRender={3} />
                                                     </div>
                                                 )
                                                     : (
-                                                        <div className="shop-item-cards-container">
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
 
                                                             <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
                                                                 shopItemCardType={"halloween-items"} profileEffectTheme={"halloween-effect"} profileThemeObj={"ghoulishGraffiti"}
@@ -600,7 +974,7 @@ const StrifeShop = (props) => {
                                     </div>
 
 
-                                    <div>
+                                    <div className="shop-item-categories-wrapper">
                                         {
                                             isLoadingShop ? (
                                                 <div className="shop-banner-img">
@@ -618,16 +992,16 @@ const StrifeShop = (props) => {
                                                 )}
 
                                         <div>
-                                            <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
+                                            <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
 
                                             {
                                                 isLoadingShop ? (
-                                                    <div className="shop-item-cards-container">
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
                                                         <ShopItemCardGridSkeletonList listsToRender={4} />
                                                     </div>
                                                 )
                                                     : (
-                                                        <div className="shop-item-cards-container">
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
 
                                                             <AvatarDecorationItemCardContainer openModalType={openModal}
                                                                 modalName={"avatarDecorationPreviewModal"}
@@ -721,16 +1095,16 @@ const StrifeShop = (props) => {
 
                                         <div>
                                             <div className="shop-item-type-title-container">
-                                                <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
+                                                <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
                                             </div>
                                             {
                                                 isLoadingShop ? (
-                                                    <div className="shop-item-cards-container">
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
                                                         <ShopItemCardGridSkeletonList listsToRender={2} />
                                                     </div>
                                                 )
                                                     : (
-                                                        <div className="shop-item-cards-container">
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
 
 
                                                             <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
@@ -770,7 +1144,7 @@ const StrifeShop = (props) => {
                                     </div>
 
 
-                                    <div>
+                                    <div className="shop-item-categories-wrapper">
                                         {
                                             isLoadingShop ? (
                                                 <div className="shop-banner-img">
@@ -787,16 +1161,16 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 )}
                                         <div>
-                                            <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
+                                            <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
 
                                             {
                                                 isLoadingShop ? (
-                                                    <div className="shop-item-cards-container">
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
                                                         <ShopItemCardGridSkeletonList listsToRender={4} />
                                                     </div>
                                                 )
                                                     : (
-                                                        <div className="shop-item-cards-container">
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
 
 
                                                             <AvatarDecorationItemCardContainer openModalType={openModal}
@@ -869,16 +1243,16 @@ const StrifeShop = (props) => {
 
                                         <div>
                                             <div className="shop-item-type-title-container">
-                                                <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
+                                                <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
                                             </div>
                                             {
                                                 isLoadingShop ? (
-                                                    <div className="shop-item-cards-container">
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
                                                         <ShopItemCardGridSkeletonList listsToRender={2} />
                                                     </div>
                                                 )
                                                     : (
-                                                        <div className="shop-item-cards-container">
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
 
                                                             <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
                                                                 shopItemCardType={"winter-wonderland-items"} profileEffectTheme={"winter-wonderland-effect"} profileThemeObj={"deckTheHalls"}
@@ -916,7 +1290,7 @@ const StrifeShop = (props) => {
                                     </div>
 
 
-                                    <div>
+                                    <div className="shop-item-categories-wrapper">
                                         {
                                             isLoadingShop ? (
                                                 <div className="shop-banner-img">
@@ -934,15 +1308,15 @@ const StrifeShop = (props) => {
                                                 )}
 
                                         <div>
-                                            <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
+                                            <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
                                             {
                                                 isLoadingShop ? (
-                                                    <div className="shop-item-cards-container">
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
                                                         <ShopItemCardGridSkeletonList listsToRender={8} />
                                                     </div>
                                                 )
                                                     : (
-                                                        <div className="shop-item-cards-container">
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
 
                                                             <AvatarDecorationItemCardContainer openModalType={openModal}
                                                                 modalName={"avatarDecorationPreviewModal"} shopItemCardType={"fantasy-items"}
@@ -1083,16 +1457,16 @@ const StrifeShop = (props) => {
                                         </div>
                                         <div>
                                             <div className="shop-item-type-title-container">
-                                                <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
+                                                <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
                                             </div>
                                             {
                                                 isLoadingShop ? (
-                                                    <div className="shop-item-cards-container">
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
                                                         <ShopItemCardGridSkeletonList listsToRender={4} />
                                                     </div>
                                                 )
                                                     : (
-                                                        <div className="shop-item-cards-container">
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
 
                                                             <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
                                                                 shopItemCardType={"fantasy-items"} profileEffectTheme={"fantasy-effect"} profileThemeObj={"hydroBlast"}
@@ -1161,7 +1535,7 @@ const StrifeShop = (props) => {
                                         </div>
                                     </div>
 
-                                    <div>
+                                    <div className="shop-item-categories-wrapper">
 
                                         {
                                             isLoadingShop ? (
@@ -1180,15 +1554,15 @@ const StrifeShop = (props) => {
                                                 )}
 
                                         <div>
-                                            <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
+                                            <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
                                             {
                                                 isLoadingShop ? (
-                                                    <div className="shop-item-cards-container">
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
                                                         <ShopItemCardGridSkeletonList listsToRender={7} />
                                                     </div>
                                                 )
                                                     : (
-                                                        <div className="shop-item-cards-container">
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
 
                                                             <AvatarDecorationItemCardContainer openModalType={openModal}
                                                                 modalName={"avatarDecorationPreviewModal"} shopItemCardType={"anime-items"}
@@ -1310,16 +1684,16 @@ const StrifeShop = (props) => {
 
                                         <div>
                                             <div className="shop-item-type-title-container">
-                                                <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
+                                                <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
                                             </div>
                                             {
                                                 isLoadingShop ? (
-                                                    <div className="shop-item-cards-container">
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
                                                         <ShopItemCardGridSkeletonList listsToRender={4} />
                                                     </div>
                                                 )
                                                     : (
-                                                        <div className="shop-item-cards-container">
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
 
                                                             <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
                                                                 shopItemCardType={"anime-items"} profileEffectTheme={"anime-effect"} profileThemeObj={"magicHearts"}
@@ -1388,7 +1762,7 @@ const StrifeShop = (props) => {
                                     </div>
 
 
-                                    <div>
+                                    <div className="shop-item-categories-wrapper">
                                         {
                                             isLoadingShop ? (
                                                 <div className="shop-banner-img">
@@ -1405,15 +1779,15 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 )}
                                         <div>
-                                            <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
+                                            <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
                                             {
                                                 isLoadingShop ? (
-                                                    <div className="shop-item-cards-container">
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
                                                         <ShopItemCardGridSkeletonList listsToRender={6} />
                                                     </div>
                                                 )
                                                     : (
-                                                        <div className="shop-item-cards-container">
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
 
                                                             <AvatarDecorationItemCardContainer openModalType={openModal}
                                                                 modalName={"avatarDecorationPreviewModal"} shopItemCardType={"breakfast-items"}
@@ -1520,16 +1894,16 @@ const StrifeShop = (props) => {
 
                                         <div>
                                             <div className="shop-item-type-title-container">
-                                                <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
+                                                <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
                                             </div>
                                             {
                                                 isLoadingShop ? (
-                                                    <div className="shop-item-cards-container">
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
                                                         <ShopItemCardGridSkeletonList listsToRender={2} />
                                                     </div>
                                                 )
                                                     : (
-                                                        <div className="shop-item-cards-container">
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
 
                                                             <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
                                                                 shopItemCardType={"breakfast-items"} profileEffectTheme={"breakfast-effect"} profileThemeObj={"strifeOs"}
@@ -1566,7 +1940,7 @@ const StrifeShop = (props) => {
                                         </div>
                                     </div>
 
-                                    <div>
+                                    <div className="shop-item-categories-wrapper">
 
                                         {
                                             isLoadingShop ? (
@@ -1588,15 +1962,15 @@ const StrifeShop = (props) => {
                                                     </div>
                                                 )}
                                         <div>
-                                            <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
+                                            <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
                                             {
                                                 isLoadingShop ? (
-                                                    <div className="shop-item-cards-container">
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
                                                         <ShopItemCardGridSkeletonList listsToRender={3} />
                                                     </div>
                                                 )
                                                     : (
-                                                        <div className="shop-item-cards-container">
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
 
 
                                                             <AvatarDecorationItemCardContainer openModalType={openModal}
@@ -1655,16 +2029,16 @@ const StrifeShop = (props) => {
 
                                         <div>
                                             <div className="shop-item-type-title-container">
-                                                <div className="shop-item-type" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
+                                                <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
                                             </div>
                                             {
                                                 isLoadingShop ? (
-                                                    <div className="shop-item-cards-container">
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
                                                         <ShopItemCardGridSkeletonList listsToRender={2} />
                                                     </div>
                                                 )
                                                     : (
-                                                        <div className="shop-item-cards-container">
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
 
                                                             <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
                                                                 shopItemCardType={"disxcore-items"} profileEffectTheme={"disxcore-effect"} profileThemeObj={"boostedRelic"}
