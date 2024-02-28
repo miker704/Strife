@@ -37,6 +37,14 @@ const AvatarDecorationItemCard = (props) => {
             background: `rgb(0, 153, 122)`,
             color: `rgb(0,0,0)`
         },
+        "lunar-dragon-effect": {
+            background: `var(--brand-experiment)`,
+            color: `var(--white-500)`
+        },
+        "cyber-punk-effect": {
+            background: `var(--brand-experiment)`,
+            color: `var(--white-500)`
+        }
     }
 
 
@@ -111,31 +119,35 @@ const AvatarDecorationItemCard = (props) => {
             ) : ("")}
 
 
-            <div className="shop-item-card-inner" style={{ width: `120px`, height: `120px` }}>
-                <svg width="120" height="120" viewBox="0 0 120 120" className="ssxcore-svg-mask" aria-hidden="true">
-                    <foreignObject x="0" y="0" width="120" height="120" mask="url(#svg-mask-avatar-default)">
-                        <div className="ssxcore-avatar-stack">
-                            <img alt=" " className="halloween-wumpus-avatar-img" aria-hidden="true" />
-                        </div>
-                    </foreignObject>
-                </svg>
-                <svg width="144" height="144" viewBox="0 0 144 144" className="ssxcore-svg-avatar-decoration" aria-hidden="true">
-                    <foreignObject x="0" y="0" width="144" height="144" >
-                        <div className="ssxcore-avatar-stack">
-                            <img className={props.avatarImageName} alt=" " aria-hidden="true" />
-                        </div>
-                    </foreignObject>
-                </svg>
+
+            <div className="shop-item-card-inner-avatar-deco-container">
+                <div className="shop-item-card-inner" style={{ width: `152px`, height: `152px` }}>
+                    <svg width="152" height="152" viewBox="0 0 152 152" className="ssxcore-svg-mask" aria-hidden="true">
+                        <foreignObject x="0" y="0" width="152" height="152" mask="url(#svg-mask-avatar-default)">
+                            <div className="ssxcore-avatar-stack">
+                                <img alt=" " className="halloween-wumpus-avatar-img" aria-hidden="true" />
+                            </div>
+                        </foreignObject>
+                    </svg>
+                    <svg width="182.4" height="182.4" viewBox="0 0 182.4 182.4" className="ssxcore-svg-avatar-decoration" aria-hidden="true">
+                        <foreignObject x="0" y="0" width="182.4" height="182.4" >
+                            <div className="ssxcore-avatar-stack">
+                                <img className={props.avatarImageName} alt=" " aria-hidden="true" />
+                            </div>
+                        </foreignObject>
+                    </svg>
+                </div>
             </div>
             <div className="shop-item-card-inner-text">
-                <div className="shop-item-card-inner-product-name"><div className="shop-item-card-inner-blur-text-lrg" style={{ color: `white` }}>{`${props.avatarTitle}`}</div></div>
+                <div className="shop-item-card-inner-cardBackground darkShopCardBackground"></div>
+                <div className="shop-item-card-inner-product-name"><div className="shop-item-card-inner-blur-text-lrg" style={{ color: `var(--text-normal)` }}>{`${props.avatarTitle}`}</div></div>
                 <div className="shop-item-card-inner-product-details">
+                    <div className="shop-item-card-inner-blur-text-med shop-item-card-inner-blur-text-med-desc" style={{ color: `var(--text-normal)` }}>{`${props.avatarTextDescription}`}</div>
                     <div className="shop-item-card-inner-blur">
-                        <div className="shop-item-card-inner-blur-text-med" style={{ color: `white` }}>{`${props.avatarTextDescription}`}</div>
-                        {props.nitroExclusive ? (<div className="shop-item-price-tags-h2-medium-semi-bold" style={{ color: `white` }}>Included with Nitro</div>) : (
+                        {props.nitroExclusive ? (<div className="shop-item-price-tags-h2-medium-semi-bold" style={{ color: `var(--text-normal)` }}>Included with Nitro</div>) : (
                             <div className="shop-item-price-tags-container" >
-                                <h2 className="shop-item-price-tags-h2-medium" style={{ color: `white` }}>${`${props.avatarPrice}`}</h2>
-                                <h2 className="shop-item-price-tags-h2-xsmall" style={{ color: `white` }}>
+                                <h2 className="shop-item-price-tags-h2-medium" style={{ color: `var(--header-primary)` }}>${`${props.avatarPrice}`}</h2>
+                                <h2 className="shop-item-price-tags-h2-xsmall" style={{ color: `var(--header-primary)` }}>
                                     <StrifeNitroBadgeIcon className="shop-item-nitro-ball-icon-faded" height={24} width={24} />
                                     ${`${props.avatarReducedPrice} with Nitro`}
                                 </h2>
