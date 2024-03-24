@@ -46,6 +46,10 @@ const ProfileEffectItemCard = (props) => {
         "cyber-punk-effect": {
             background: `var(--brand-experiment)`,
             color: `var(--white-500)`
+        },
+        "elements-effect": {
+            background: `var(--brand-experiment)`,
+            color: `var(--white-500)`
         }
     }
 
