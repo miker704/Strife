@@ -1124,3 +1124,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Elements Avatar Items to Send a Gift modal.
     - Added Elements Avatar Items styles for Send a Gift modal.
     - Added Elements Avatar Items Shop Styles.
+    - Added Elements Avatar Items to Strife Shop.
