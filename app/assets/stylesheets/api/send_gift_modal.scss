@@ -1544,6 +1544,68 @@
   height: 48px;
   grid-area: 1/1;
 }
+
+.sgm-elements-fire {
+  content: image_url("elementsFireAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-elements-water {
+  content: image_url("elementsWaterAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-elements-air {
+  content: image_url("elementsAirAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-elements-earth {
+  content: image_url("elementsEarthAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-elements-lightning {
+  content: image_url("elementsLightningAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-elements-balance {
+  content: image_url("elementsBalanceAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
 .sgm-select-mui-content {
   grid-area: content;
   display: flex;
