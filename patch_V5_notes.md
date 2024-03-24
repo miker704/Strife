@@ -1108,3 +1108,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added elementsBalanceStatic.png.
     - Added Elements shop banner.
     - Added Elements shop title banner logo.
+    - Added shop banner outline for elements banner.
