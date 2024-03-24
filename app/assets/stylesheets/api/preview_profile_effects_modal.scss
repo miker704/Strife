@@ -70,8 +70,9 @@
   left: 0;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  opacity: 0.85;
-  background: var(--black-500);
+  opacity: 0.7;
+  background: var(--black-500-hsl-07);
+  backdrop-filter: blur(0px);
 }
 
 .ppe-modal-layer {
@@ -137,6 +138,7 @@
   border-radius: inherit;
   position: relative;
   z-index: 0;
+  scrollbar-width: none;
 }
 
 .ppe-modal-collectible-info-container {
@@ -216,6 +218,14 @@
   padding-right: 6px;
   padding-top: 4px;
   max-height: 18px;
+}
+
+.ppe-elements-title-banner {
+  padding-right: 6px;
+  padding-top: 4px;
+  max-height: 25px;
+  max-width: 120px;
+  content: image_url("shopElementsBannerLogo.png");
 }
 
 .ppe-profile-effect-description-container {
@@ -329,6 +339,7 @@
   justify-content: center;
   position: relative;
   padding: 0px 40px 0px 20px;
+  background-color: var(--modal-background);
 }
 
 .ppe-close-button-button {
@@ -421,14 +432,26 @@
 }
 
 .ppe-collectible-preview-category-banner.ppe-cyber-punk-bg-banner {
-  // background-size: cover;
+  background-size: cover;
   background-position: center;
-  background-image: image_url("shopCyberPunkBanner.png");
+  background-blend-mode: multiply;
+  // background-image: image_url("shopCyberPunkBanner.png");
+  background-image: image_url("APMCyberPunkBanner.png"),
+  linear-gradient(rgba(0, 71, 94, 0.6) 5%, rgba(9, 33, 65, 0.6) 95%);
+
 }
 .ppe-collectible-preview-category-banner.ppe-lunar-dragon-bg-banner {
   background-size: cover;
   // background-position: center;
   background-image: image_url("shopLunarDragonNewYearBanner.png");
+}
+
+.ppe-collectible-preview-category-banner.ppe-elements-bg-banner {
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-position: center;
+  background-image: image_url("APMElementsBanner.png"),
+    linear-gradient(rgba(0, 71, 94, 0.6) 5%, rgba(9, 33, 65, 0.6) 95%);
 }
 
 .ppepes-preview-container-inner {
@@ -1895,7 +1918,6 @@
   grid-area: 1/1;
 }
 
-
 .ppe-cyber-punk-glitch {
   content: image_url("cyberPunkGlitchAnimated.png");
   display: block;
@@ -1998,6 +2020,66 @@
   grid-area: 1/1;
 }
 
+.ppe-elements-fire {
+  content: image_url("elementsFireAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-elements-water {
+  content: image_url("elementsWaterAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-elements-air {
+  content: image_url("elementsAirAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-elements-earth {
+  content: image_url("elementsEarthAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-elements-lightning {
+  content: image_url("elementsLightningAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-elements-balance {
+  content: image_url("elementsBalanceAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
 
 .ppe-halloween-jack-o-lantern::before,
 .ppe-halloween-ghosts::before,
@@ -2043,7 +2125,7 @@
 .ppe-monsters-chewbert::before,
 .ppe-monsters-doodlezard::before,
 .ppe-monsters-glop::before,
-.ppe-monsters-gawblehop::before
+.ppe-monsters-gawblehop::before,
 .ppe-cyber-punk-glitch::before,
 .ppe-cyber-punk-cybernetic::before,
 .ppe-cyber-punk-digital-sunrise::before,
@@ -2053,8 +2135,13 @@
 .ppe-lunar-dragon-fireCrackers::before,
 .ppe-lunar-dragon-dragonsSmile::before,
 .ppe-lunar-dragon-luckyEnvelopes::before,
-.ppe-lunar-dragon-koiPond::before 
-{
+.ppe-lunar-dragon-koiPond::before,
+.ppe-elements-fire::before,
+.ppe-elements-water::before,
+.ppe-elements-air::before,
+.ppe-elements-earth::before,
+.ppe-elements-lightning::before,
+.ppe-elements-balance ::before {
   content: "";
   display: block;
   width: 100%;
