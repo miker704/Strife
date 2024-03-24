@@ -1106,3 +1106,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added elementsAirStatic.png.
     - Added elementsBalanceAnimated.png.
     - Added elementsBalanceStatic.png.
+    - Added Elements shop banner.
