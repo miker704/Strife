@@ -1103,4 +1103,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added elementsLightningStatic.png.
     - Added elementsLightningAnimated.png.
     - Added elementsAirAnimated.png.
+    - Added elementsAirStatic.png.
     - Added elementsBalanceAnimated.png.
