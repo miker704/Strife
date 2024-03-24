@@ -1094,4 +1094,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added all cyber punk and lunar new year profile effects to profile effects preview modal.
     - Finalized Changes to the the sizing, styling, placements, structure along with adding Lunar new year and cyberpunk avatar decorations and profile effects to the $TR!F3 shop.
     - Started Shop Avatar items for elements.
-    - Added Elements fire static img.
+    - Added Elements fire static and animated img.
