@@ -1122,4 +1122,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Elements item effects to profile effect item card.
     - Added Elements item effects to profile effect preview modal.
     - Added Elements Avatar Items to Send a Gift modal.
+    - Added Elements Avatar Items styles for Send a Gift modal.
     - Added Elements Avatar Items Shop Styles.
