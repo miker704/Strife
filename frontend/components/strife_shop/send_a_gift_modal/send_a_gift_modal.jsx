@@ -508,6 +508,12 @@ const SendAGiftModal = (props) => {
         "dragonsSmile": "sgm-lunar-dragon-dragonsSmile",
         "luckyEnvelopes": "sgm-lunar-dragon-luckyEnvelopes",
         "koiPond": "sgm-lunar-dragon-koiPond",
+        "elementsFire": "sgm-elements-fire",
+        "elementsWater": "sgm-elements-water",
+        "elementsAir": "sgm-elements-air",
+        "elementsEarth": "sgm-elements-earth",
+        "elementsLightning": "sgm-elements-lightning",
+        "elementsBalance": "sgm-elements-balance",
     }
 
 
@@ -566,6 +572,12 @@ const SendAGiftModal = (props) => {
         "dragonsSmile": "ppe-lunar-dragon-dragonsSmile",
         "luckyEnvelopes": "ppe-lunar-dragon-luckyEnvelopes",
         "koiPond": "ppe-lunar-dragon-koiPond",
+        "elementsFire": "ppe-elements-fire",
+        "elementsWater": "ppe-elements-water",
+        "elementsAir": "ppe-elements-air",
+        "elementsEarth": "ppe-elements-earth",
+        "elementsLightning": "ppe-elements-lightning",
+        "elementsBalance": "ppe-elements-balance",
     }
 
     let profileEffectPreviewStaticClassNames = {
