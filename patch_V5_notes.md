@@ -1115,3 +1115,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added APMElementsBanner.png.
     - Added new backdrop color with opacity alpha 0.7 --black-500-07.
     - Added new styles for Shop and Avatar card, preview avatar modal.
+    - Added Elements Avatar Items styles.
