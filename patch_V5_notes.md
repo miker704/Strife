@@ -1111,3 +1111,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added shop banner outline for elements banner.
     - Added new background for PEP and AEP modal for cyberpunk items.
     - Added background for PEP and AEP modal for elements items.
+    - Added APMCyberPunkBanner.png.
