@@ -127,7 +127,7 @@ const AvatarDecorationPreviewModal = (props) => {
         "monsters-effect": { background: `linear-gradient(135deg, rgb(0, 69, 92), rgb(0, 42, 56))` },
         "cyber-punk-effect": { background: `linear-gradient(135deg, rgb(32, 20, 107), rgb(5, 1, 0))` },
         "lunar-dragon-effect": { background: `linear-gradient(135deg, rgb(143, 0, 0), rgb(92, 0, 0))` },
-
+        "elements-effect": { background: `linear-gradient(135deg, rgb(27, 27, 161), rgb(0, 22, 41))` },
     }
 
     const profileEffectBgBanner = {
@@ -141,6 +141,7 @@ const AvatarDecorationPreviewModal = (props) => {
         "monsters-effect": "ppe-monsters-bg-banner",
         "cyber-punk-effect": "ppe-cyber-punk-bg-banner",
         "lunar-dragon-effect": "ppe-lunar-dragon-bg-banner",
+        "elements-effect": "ppe-elements-bg-banner"
     }
     const profileEffectTitleBanner = {
         "fall-effect": "ppe-fall-title-banner",
@@ -153,6 +154,7 @@ const AvatarDecorationPreviewModal = (props) => {
         "monsters-effect": "ppe-monsters-title-banner",
         "cyber-punk-effect": "ppe-cyber-punk-title-banner",
         "lunar-dragon-effect": "ppe-lunar-dragon-title-banner",
+        "elements-effect": "ppe-elements-title-banner",
     }
 
     const salePrice = {
@@ -210,6 +212,12 @@ const AvatarDecorationPreviewModal = (props) => {
         "cyberNetic": 4.99,
         "digitalSunrise": 4.99,
         "cyberNeticImplant": 4.99,
+        "elementsFire": 4.99,
+        "elementsWater": 4.99,
+        "elementsAir": 4.99,
+        "elementsEarth": 4.99,
+        "elementsLightning": 4.99,
+        "elementsBalance": 4.99,
     };
 
 
@@ -268,6 +276,12 @@ const AvatarDecorationPreviewModal = (props) => {
         "cyberNetic": 5.99,
         "digitalSunrise": 5.99,
         "cyberNeticImplant": 5.99,
+        "elementsFire": 5.99,
+        "elementsWater": 5.99,
+        "elementsAir": 5.99,
+        "elementsEarth": 5.99,
+        "elementsLightning": 5.99,
+        "elementsBalance": 5.99,
     };
 
     const avatarDecorationName = {
@@ -325,6 +339,12 @@ const AvatarDecorationPreviewModal = (props) => {
         "cyberNetic": "Cybernetic",
         "digitalSunrise": "Digital Sunrise",
         "cyberNeticImplant": "Implant",
+        "elementsFire": "Fire",
+        "elementsWater": "Water",
+        "elementsAir": "Air",
+        "elementsEarth": "Earth",
+        "elementsLightning": "Lightning",
+        "elementsBalance": "Balance",
 
     }
     const avatarDecorationDescription = {
@@ -382,6 +402,12 @@ const AvatarDecorationPreviewModal = (props) => {
         "cyberNetic": "Cybernetic visuals now online. Welcome aboard, runner.",
         "digitalSunrise": "It's a new day in cyberspace.",
         "cyberNeticImplant": "Get ready to jack in.",
+        "elementsFire": "Ignite your flame within.",
+        "elementsWater": "Control the ebb and flow.",
+        "elementsAir": "Will the wind.",
+        "elementsEarth": "Call the might of the earth.",
+        "elementsLightning": "Electrify your presence.",
+        "elementsBalance": "Harness the elements.",
     }
 
     const giftColor = {
@@ -424,7 +450,11 @@ const AvatarDecorationPreviewModal = (props) => {
         "cyber-punk-effect": {
             background: `rgb(54, 54, 181)`,
             color: `rgb(255, 255, 255)`,
-        }
+        },
+        "elements-effect": {
+            background: `rgb(242, 135, 13)`,
+            color: `rgb(0, 0,0)`,
+        },
     }
 
     const buttonStyles = {
@@ -467,7 +497,12 @@ const AvatarDecorationPreviewModal = (props) => {
         "cyber-punk-effect": {
             background: `linear-gradient(90deg, rgb(75, 68, 218), rgb(54, 54, 181))`,
             color: `rgb(255, 255, 255)`,
-        }
+        },
+        "elements-effect": {
+            background: `linear-gradient(90deg, rgb(235, 190, 25), rgb(242, 135, 13))`,
+            color: `rgb(0,0,0)`,
+        },
+
     }
 
     const defaultcolorPalleteRef = useRef(Math.random());
@@ -766,6 +801,36 @@ const AvatarDecorationPreviewModal = (props) => {
                 <img className='ppe-cyber-punk-implant' alt=" " style={{ top: `0px` }} />
             </>
         ),
+        "elementsFire": (
+            <>
+                <img className='ppe-elements-fire' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "elementsWater": (
+            <>
+                <img className='ppe-elements-water' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "elementsAir": (
+            <>
+                <img className='ppe-elements-air' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "elementsEarth": (
+            <>
+                <img className='ppe-elements-earth' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "elementsLightning": (
+            <>
+                <img className='ppe-elements-lightning' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "elementsBalance": (
+            <>
+                <img className='ppe-elements-balance' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
     }
 
 
@@ -825,6 +890,12 @@ const AvatarDecorationPreviewModal = (props) => {
         "dragonsSmile": "ppe-lunar-dragon-dragonsSmile",
         "luckyEnvelopes": "ppe-lunar-dragon-luckyEnvelopes",
         "koiPond": "ppe-lunar-dragon-koiPond",
+        "elementsFire": "ppe-elements-fire",
+        "elementsWater": "ppe-elements-water",
+        "elementsAir": "ppe-elements-air",
+        "elementsEarth": "ppe-elements-earth",
+        "elementsLightning": "ppe-elements-lightning",
+        "elementsBalance": "ppe-elements-balance",
     }
 
 
