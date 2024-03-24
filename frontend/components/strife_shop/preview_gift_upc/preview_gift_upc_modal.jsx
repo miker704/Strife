@@ -156,6 +156,12 @@ const PreviewGiftUPCModal = (props) => {
         "dragonsSmile": "ppe-lunar-dragon-dragonsSmile",
         "luckyEnvelopes": "ppe-lunar-dragon-luckyEnvelopes",
         "koiPond": "ppe-lunar-dragon-koiPond",
+        "elementsFire": "ppe-elements-fire",
+        "elementsWater": "ppe-elements-water",
+        "elementsAir": "ppe-elements-air",
+        "elementsEarth": "ppe-elements-earth",
+        "elementsLightning": "ppe-elements-lightning",
+        "elementsBalance": "ppe-elements-balance",
     }
 
     let memberBanner = member.banner === undefined ?
