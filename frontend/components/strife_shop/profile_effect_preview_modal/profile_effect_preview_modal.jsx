@@ -213,6 +213,8 @@ const ProfileEffectPreviewModal = (props) => {
         "monsters-effect": { background: `linear-gradient(135deg,rgb(0, 69, 92), rgb(0, 42, 56))` },
         "cyber-punk-effect": { background: `linear-gradient(135deg, rgb(32, 20, 107), rgb(5, 1, 0))` },
         "lunar-dragon-effect": { background: `linear-gradient(135deg, rgb(143, 0, 0), rgb(92, 0, 0))` },
+        "elements-effect": { background: `linear-gradient(135deg, rgb(27, 27, 161), rgb(0, 22, 41))` },
+
     }
 
     const profileEffectBgBanner = {
@@ -226,6 +228,7 @@ const ProfileEffectPreviewModal = (props) => {
         "monsters-effect": "ppe-monsters-bg-banner",
         "cyber-punk-effect": "ppe-cyber-punk-bg-banner",
         "lunar-dragon-effect": "ppe-lunar-dragon-bg-banner",
+        "elements-effect": "ppe-elements-bg-banner",
     }
 
     const profileEffectTitleBanner = {
@@ -239,6 +242,7 @@ const ProfileEffectPreviewModal = (props) => {
         "monsters-effect": "ppe-monsters-title-banner",
         "cyber-punk-effect": "ppe-cyber-punk-title-banner",
         "lunar-dragon-effect": "ppe-lunar-dragon-title-banner",
+        "elements-effect": "ppe-elements-title-banner",
 
     }
 
