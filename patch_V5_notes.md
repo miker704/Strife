@@ -1109,11 +1109,12 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Elements shop banner.
     - Added Elements shop title banner logo.
     - Added shop banner outline for elements banner.
-    - Added new background for PEP and AEP modal for cyberpunk items.
-    - Added background for PEP and AEP modal for elements items.
+    - Added new background for PEP and ADP modal for cyberpunk items.
+    - Added background for PEP and ADP modal for elements items.
     - Added APMCyberPunkBanner.png.
     - Added APMElementsBanner.png.
     - Added new backdrop color with opacity alpha 0.7 --black-500-07.
     - Added new styles for Shop and Avatar card, preview avatar modal.
     - Added Elements Avatar Items styles.
-    - Added Elements Avatar Items to AEP Modal.
+    - Added Elements Avatar Items to ADP Modal.
+    - Added Elements Avatar Items to ADP Card.
