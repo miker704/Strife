@@ -1118,3 +1118,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Elements Avatar Items styles.
     - Added Elements Avatar Items to ADP Modal.
     - Added Elements Avatar Items to ADP Card.
+    - Added Elements Avatar Items to preview gift UPC Modal.
