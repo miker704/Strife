@@ -1149,3 +1149,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Finalized Elements Avatar Decorations to Strife Shop.
     - Started SpringToons Avatar Decorations.
     - Added SpringToons outline color for Springtoons banner.
+    - Added shopSpringToonsBanner.png.
