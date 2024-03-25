@@ -514,6 +514,12 @@ const SendAGiftModal = (props) => {
         "elementsEarth": "sgm-elements-earth",
         "elementsLightning": "sgm-elements-lightning",
         "elementsBalance": "sgm-elements-balance",
+        "springToonsHoneyBlossom": "sgm-spring-toons-honey-blossom",
+        "springToonsDandelionDuo": "sgm-spring-toons-dandelion-duo",
+        "springToonsHughTheRainbow":"sgm-spring-toons-hugh-the-rainbow",
+        "springToonsStrawberryVine":"sgm-spring-toons-strawberry-vine",
+        "springToonsButterflies": "sgm-spring-toons-butterflies",
+        "springToonsPetalPack": "sgm-spring-toons-petal-pack",
     }
 
 
@@ -578,6 +584,12 @@ const SendAGiftModal = (props) => {
         "elementsEarth": "ppe-elements-earth",
         "elementsLightning": "ppe-elements-lightning",
         "elementsBalance": "ppe-elements-balance",
+        "springToonsHoneyBlossom": "ppe-spring-toons-honey-blossom",
+        "springToonsDandelionDuo": "ppe-spring-toons-dandelion-duo",
+        "springToonsHughTheRainbow":"ppe-spring-toons-hugh-the-rainbow",
+        "springToonsStrawberryVine":"ppe-spring-toons-strawberry-vine",
+        "springToonsButterflies": "ppe-spring-toons-butterflies",
+        "springToonsPetalPack": "ppe-spring-toons-petal-pack",
     }
 
     let profileEffectPreviewStaticClassNames = {
