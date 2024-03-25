@@ -1155,4 +1155,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added APMSpringToonsBanner.png.
     - Added butterfliesAnimated.png.
     - Added butterfliesStatic.png.
+    - Added dandelionDuoAnimated.png.
 
