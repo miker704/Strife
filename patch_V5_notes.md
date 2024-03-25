@@ -1192,4 +1192,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added springBoomIntroInfinite.png.
     - Added springBoomIdleRain.png.
     - Added petalSerenadeThumnail.png.
+    - Added petalSerenadeReducedMotion.png.
+
 
