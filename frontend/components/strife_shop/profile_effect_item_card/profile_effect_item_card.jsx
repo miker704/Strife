@@ -335,6 +335,33 @@ const ProfileEffectItemCard = (props) => {
         ) : (
             <img className="shop-item-elements-mastery" alt=" " style={{ top: `0px` }} />
         ),
+        "springToonsPetals": hovered ? (
+            <>
+                <img className="shop-item-spring-toons-petals-serenade-idle-flowers" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-petals-serenade-idle-rain-drops" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-petals-serenade-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ) : (
+            <img className="shop-item-spring-toons-petals-serenade" alt=" " style={{ top: `0px` }} />
+        ),
+        "springToonsFellowship": hovered ? (
+            <>
+                <img className="shop-item-spring-toons-fellowship-idle-critters" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-fellowship-idle-critter-vines" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-fellowship-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ) : (
+            <img className="shop-item-spring-toons-fellowship" alt=" " style={{ top: `0px` }} />
+        ),
+        "springToonsSpringBoom": hovered ? (
+            <>
+                <img className="shop-item-spring-toons-spring-boom-idle-flowers" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-spring-boom-idle-rain-drops" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-spring-boom-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ) : (
+            <img className="shop-item-spring-toons-spring-boom" alt=" " style={{ top: `0px` }} />
+        ),
 
     }
 
