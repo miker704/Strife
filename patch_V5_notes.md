@@ -1195,5 +1195,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added petalSerenadeReducedMotion.png.
     - Added petalSerenadeIntroInfinite.png.
     - Added petalSerenadeIdleFrame.png.
+    - Added petalSerenadeIdlePetals.png.
 
 
