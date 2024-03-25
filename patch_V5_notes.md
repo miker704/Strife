@@ -1151,4 +1151,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added SpringToons outline color for Springtoons banner.
     - Added shopSpringToonsBanner.png.
     - Added shopSpringToonsBannerLogo.png.
+    - Added SpringToons banner styles.
 
