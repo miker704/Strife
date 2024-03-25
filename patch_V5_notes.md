@@ -1185,3 +1185,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Spring toons Profile Effect Items to Preview Gift UPC modal.
     - Added Spring toons Profile Effect Items to Send a Gift modal.
     - Added Spring toons Profile Effect Items styles to Send a Gift modal styles.
+    - Added Spring toons Profile Effect Items styles to Strife shop styles.
