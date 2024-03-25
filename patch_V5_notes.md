@@ -1163,4 +1163,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added hughTheRainbowStatic.png.
     - Added petalPackStatic.png.
     - Added petalPackAnimated.png.
+    - Added strawberryVineStatic.png.
 
