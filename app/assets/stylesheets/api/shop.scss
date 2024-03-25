@@ -2002,6 +2002,20 @@
   content: image_url("shopElementsBannerLogo.png");
 }
 
+
+.shop-spring-toons-banner {
+  background: image_url("shopSpringToonsBanner.png") 0% 0% / cover border-box
+    border-box;
+  outline-color: var(--shop-banner-spring-toons-outline-color);
+}
+
+.shop-spring-toons-banner-logo {
+  z-index: 1;
+  max-height: 96px;
+  content: image_url("shopSpringToonsBannerLogo.png");
+}
+
+
 //shop fall animations
 
 .fall-leaves-image {
