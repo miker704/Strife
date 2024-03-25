@@ -1144,8 +1144,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added rockSlideReducedMotion.png.
     - Added rockSlideIntroInfinite.png.
     - Added vortexIntroInfinite.png.
-
-
-
-
-
+    - Added Elements Profile Effect Items to Strife Shop.
+    - Finalized Elements Profile Effects to Strife Shop.
+    - Finalized Elements Avatar Decorations to Strife Shop.
