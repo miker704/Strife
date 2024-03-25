@@ -1134,3 +1134,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Elements Profile Effect Items styles to Strife shop styles.
     - Added masterIdle.png.
     - Added masterIntroInfinite.png.
+    - Added masterReducedMotion.png.
