@@ -1188,3 +1188,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Spring toons Profile Effect Items styles to Strife shop styles.
     - Added springBoomIdleFlowers.png.
     - Added springBoomThumnail.png.
+    - Added springBoomReducedMotion.png.
+
