@@ -162,6 +162,12 @@ const PreviewGiftUPCModal = (props) => {
         "elementsEarth": "ppe-elements-earth",
         "elementsLightning": "ppe-elements-lightning",
         "elementsBalance": "ppe-elements-balance",
+        "springToonsHoneyBlossom": "ppe-spring-toons-honey-blossom",
+        "springToonsDandelionDuo": "ppe-spring-toons-dandelion-duo",
+        "springToonsHughTheRainbow":"ppe-spring-toons-hugh-the-rainbow",
+        "springToonsStrawberryVine":"ppe-spring-toons-strawberry-vine",
+        "springToonsButterflies": "ppe-spring-toons-butterflies",
+        "springToonsPetalPack": "ppe-spring-toons-petal-pack",
     }
 
     let memberBanner = member.banner === undefined ?
