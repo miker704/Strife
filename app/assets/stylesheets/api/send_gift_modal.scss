@@ -1011,6 +1011,40 @@
   content: image_url("masteryThumbnail.png");
 }
 
+.sgm-spring-toons-petals-serenade {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("petalSerenadeThumbnail.png");
+}
+.sgm-spring-toons-fellowship {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("fellowshipThumbnail.png");
+}
+.sgm-spring-toons-spring-boom {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("springBoomThumbnail.png");
+}
+
 .sgm-fall-leaves-image {
   content: image_url("fallLeavesAnimated.png");
   display: block;
