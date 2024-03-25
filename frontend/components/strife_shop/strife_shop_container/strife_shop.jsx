@@ -249,6 +249,203 @@ const StrifeShop = (props) => {
 
                                 <div className="shop-item-categories">
 
+
+                                    <div className="shop-item-categories-wrapper">
+
+                                        {
+                                            isLoadingShop ? (
+                                                <div className="shop-banner-img">
+                                                    <ShopItemCardGridSkeletonList listsToRender={1} />
+                                                </div>
+                                            ) :
+                                                (
+                                                    <div className="shop-banner-img shop-spring-toons-banner">
+                                                        <div className="shop-strife-banner-logo-halloween">
+                                                            <StrifeBannerLogo width={124} height={24} className={'shop-strife-banner-logo-halloween-icon'} />
+                                                        </div>
+                                                        <img className="shop-spring-toons-banner-logo" alt=" " />
+                                                        <div className="shop-halloween-subtext" style={{ color: `var(--black-500)` }}>You awaken to find yourself in a springtime wonderland.</div>
+                                                    </div>
+                                                )
+                                        }
+
+                                        <div>
+                                            <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
+
+                                            {
+                                                isLoadingShop ? (
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
+                                                        <ShopItemCardGridSkeletonList listsToRender={6} />
+                                                    </div>
+                                                )
+                                                    : (
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
+
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"spring-toons-items"}
+                                                                profileEffectTheme={"spring-toons-effect"} avatarEffectObj={"springToonsHoneyBlossom"} avatarTitle={"Honeyblossom"}
+                                                                avatarImageName={"spring-toons-honey-blossom"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Buzz meets bloom."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"spring-toons-items"}
+                                                                profileEffectTheme={"spring-toons-effect"} avatarEffectObj={"springToonsDandelionDuo"} avatarTitle={"Dandelion Duo"}
+                                                                avatarImageName={"spring-toons-dandelion-duo"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Strengths: Cute and fluffy. Weaknesses: The breeze."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"spring-toons-items"}
+                                                                profileEffectTheme={"spring-toons-effect"} avatarEffectObj={"springToonsHughTheRainbow"} avatarTitle={"Hugh the Rainbow"}
+                                                                avatarImageName={"spring-toons-hugh-the-rainbow"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Does he have a hue for every mood?"}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"spring-toons-items"}
+                                                                profileEffectTheme={"spring-toons-effect"} avatarEffectObj={"springToonsStrawberryVine"} avatarTitle={"Strawberry Vine"}
+                                                                avatarImageName={"spring-toons-strawberry-vine"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Now that's a sweet harvest."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"spring-toons-items"}
+                                                                profileEffectTheme={"spring-toons-effect"} avatarEffectObj={"springToonsButterflies"} avatarTitle={"Butterflies"}
+                                                                avatarImageName={"spring-toons-butterflies"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"We shall tickle the clouds today - join us!"}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"spring-toons-items"}
+                                                                profileEffectTheme={"spring-toons-effect"} avatarEffectObj={"springToonsPetalPack"} avatarTitle={"The Petal Pack"}
+                                                                avatarImageName={"spring-toons-petal-pack"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Comes with sunshine and smiles."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+
+
+
+
+                                                        </div>
+                                                    )}
+
+
+                                        </div>
+
+                                        <div>
+                                            <div className="shop-item-type-title-container">
+                                                <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
+                                            </div>
+
+                                            {
+                                                isLoadingShop ? (
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
+                                                        <ShopItemCardGridSkeletonList listsToRender={3} />
+                                                    </div>
+                                                ) : (
+
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
+
+                                                        <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
+                                                            shopItemCardType={"elements-items"} profileEffectTheme={"elements-effect"} profileThemeObj={"elementsRockSlide"}
+                                                            nitroExclusive={false} profileEffectTitle={"Rock Slide"} profileEffectTextDescription={"A ballet of rock and stone."}
+                                                            profileEffectPrice={5.99} profileEffectReducedPrice={4.99} hasHoverEffect={true}
+                                                            styleProps={{
+                                                                background: `var(--background-floating)`,
+                                                                borderColor: `var(--chat-border)`,
+                                                                boxShadow: `none`
+                                                            }}
+                                                            buttonStyleProps={{
+                                                                background: `var(--brand-experiment)`,
+                                                                color: `var(--white-500)`
+                                                            }}
+                                                        />
+                                                        <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
+                                                            shopItemCardType={"elements-items"} profileEffectTheme={"elements-effect"} profileThemeObj={"elementsVortex"}
+                                                            nitroExclusive={false} profileEffectTitle={"Vortex"} profileEffectTextDescription={"Beware the eye of the storm."}
+                                                            profileEffectPrice={5.99} profileEffectReducedPrice={4.99} hasHoverEffect={true}
+                                                            styleProps={{
+                                                                background: `var(--background-floating)`,
+                                                                borderColor: `var(--chat-border)`,
+                                                                boxShadow: `none`
+                                                            }}
+                                                            buttonStyleProps={{
+                                                                background: `var(--brand-experiment)`,
+                                                                color: `var(--white-500)`
+                                                            }}
+                                                        />
+                                                        <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
+                                                            shopItemCardType={"elements-items"} profileEffectTheme={"elements-effect"} profileThemeObj={"elementsMastery"}
+                                                            nitroExclusive={false} profileEffectTitle={"Mastery"} profileEffectTextDescription={"Unleash the elements."}
+                                                            profileEffectPrice={5.99} profileEffectReducedPrice={4.99} hasHoverEffect={true}
+                                                            styleProps={{
+                                                                background: `var(--background-floating)`,
+                                                                borderColor: `var(--chat-border)`,
+                                                                boxShadow: `none`
+                                                            }}
+                                                            buttonStyleProps={{
+                                                                background: `var(--brand-experiment)`,
+                                                                color: `var(--white-500)`
+                                                            }}
+                                                        />
+
+
+
+                                                    </div>
+                                                )}
+
+                                        </div>
+                                    </div>
+
                                     <div className="shop-item-categories-wrapper">
 
                                         {
