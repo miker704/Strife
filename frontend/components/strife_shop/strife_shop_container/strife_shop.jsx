@@ -258,6 +258,200 @@ const StrifeShop = (props) => {
                                                 </div>
                                             ) :
                                                 (
+                                                    <div className="shop-banner-img shop-elements-banner">
+                                                        <div className="shop-strife-banner-logo-halloween">
+                                                            <StrifeBannerLogo width={124} height={24} className={'shop-strife-banner-logo-halloween-icon'} />
+                                                        </div>
+                                                        <img className="shop-elements-banner-logo" alt=" " />
+                                                        <div className="shop-halloween-subtext" style={{ color: `white` }}>Which will you unleash?</div>
+                                                    </div>
+                                                )
+                                        }
+
+                                        <div>
+                                            <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
+
+                                            {
+                                                isLoadingShop ? (
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
+                                                        <ShopItemCardGridSkeletonList listsToRender={6} />
+                                                    </div>
+                                                )
+                                                    : (
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
+
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"elements-items"}
+                                                                profileEffectTheme={"elements-effect"} avatarEffectObj={"elementsFire"} avatarTitle={"Fire"}
+                                                                avatarImageName={"elements-fire"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Ignite your flame within."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"elements-items"}
+                                                                profileEffectTheme={"elements-effect"} avatarEffectObj={"elementsWater"} avatarTitle={"Water"}
+                                                                avatarImageName={"elements-water"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Control the ebb and flow."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"elements-items"}
+                                                                profileEffectTheme={"elements-effect"} avatarEffectObj={"elementsAir"} avatarTitle={"Air"}
+                                                                avatarImageName={"elements-air"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Will the wind."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"elements-items"}
+                                                                profileEffectTheme={"elements-effect"} avatarEffectObj={"elementsEarth"} avatarTitle={"Earth"}
+                                                                avatarImageName={"elements-earth"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Call the might of the earth."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"elements-items"}
+                                                                profileEffectTheme={"elements-effect"} avatarEffectObj={"elementsLightning"} avatarTitle={"Lightning"}
+                                                                avatarImageName={"elements-lightning"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Electrify your presence."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"elements-items"}
+                                                                profileEffectTheme={"elements-effect"} avatarEffectObj={"elementsBalance"} avatarTitle={"Balance"}
+                                                                avatarImageName={"elements-balance"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Harness the elements."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+
+                                                        </div>
+                                                    )}
+
+
+                                        </div>
+
+                                        <div>
+                                            <div className="shop-item-type-title-container">
+                                                <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
+                                            </div>
+
+                                            {
+                                                isLoadingShop ? (
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
+                                                        <ShopItemCardGridSkeletonList listsToRender={3} />
+                                                    </div>
+                                                ) : (
+
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
+
+                                                        <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
+                                                            shopItemCardType={"elements-items"} profileEffectTheme={"elements-effect"} profileThemeObj={"elementsRockSlide"}
+                                                            nitroExclusive={false} profileEffectTitle={"Rock Slide"} profileEffectTextDescription={"A ballet of rock and stone."}
+                                                            profileEffectPrice={5.99} profileEffectReducedPrice={4.99} hasHoverEffect={true}
+                                                            styleProps={{
+                                                                background: `var(--background-floating)`,
+                                                                borderColor: `var(--chat-border)`,
+                                                                boxShadow: `none`
+                                                            }}
+                                                            buttonStyleProps={{
+                                                                background: `var(--brand-experiment)`,
+                                                                color: `var(--white-500)`
+                                                            }}
+                                                        />
+                                                        <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
+                                                            shopItemCardType={"elements-items"} profileEffectTheme={"elements-effect"} profileThemeObj={"elementsVortex"}
+                                                            nitroExclusive={false} profileEffectTitle={"Vortex"} profileEffectTextDescription={"Beware the eye of the storm."}
+                                                            profileEffectPrice={5.99} profileEffectReducedPrice={4.99} hasHoverEffect={true}
+                                                            styleProps={{
+                                                                background: `var(--background-floating)`,
+                                                                borderColor: `var(--chat-border)`,
+                                                                boxShadow: `none`
+                                                            }}
+                                                            buttonStyleProps={{
+                                                                background: `var(--brand-experiment)`,
+                                                                color: `var(--white-500)`
+                                                            }}
+                                                        />
+                                                        <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
+                                                            shopItemCardType={"elements-items"} profileEffectTheme={"elements-effect"} profileThemeObj={"elementsMastery"}
+                                                            nitroExclusive={false} profileEffectTitle={"Mastery"} profileEffectTextDescription={"Unleash the elements."}
+                                                            profileEffectPrice={5.99} profileEffectReducedPrice={4.99} hasHoverEffect={true}
+                                                            styleProps={{
+                                                                background: `var(--background-floating)`,
+                                                                borderColor: `var(--chat-border)`,
+                                                                boxShadow: `none`
+                                                            }}
+                                                            buttonStyleProps={{
+                                                                background: `var(--brand-experiment)`,
+                                                                color: `var(--white-500)`
+                                                            }}
+                                                        />
+
+
+
+                                                    </div>
+                                                )}
+
+                                        </div>
+                                    </div>
+
+                                    <div className="shop-item-categories-wrapper">
+
+                                        {
+                                            isLoadingShop ? (
+                                                <div className="shop-banner-img">
+                                                    <ShopItemCardGridSkeletonList listsToRender={1} />
+                                                </div>
+                                            ) :
+                                                (
                                                     <div className="shop-banner-img shop-lunar-dragon-new-year-banner">
                                                         <div className="shop-strife-banner-logo-halloween">
                                                             <StrifeBannerLogo width={124} height={24} className={'shop-strife-banner-logo-halloween-icon'} />
