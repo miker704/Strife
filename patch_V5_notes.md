@@ -1140,6 +1140,8 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added rockslideThumbnail.png.
     - Added vortexIdle.png.
     - Added rockSlideIdle.png.
+    - Added vortexReducedMotion.png.
+
 
 
 
