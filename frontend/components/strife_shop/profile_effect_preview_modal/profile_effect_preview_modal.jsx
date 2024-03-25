@@ -86,6 +86,10 @@ const ProfileEffectPreviewModal = (props) => {
             background: `rgb(242, 135, 13)`,
             color: `rgb(0, 0,0)`,
         },
+        "spring-toons-effect": {
+            background: `rgb(251, 127, 50)`,
+            color: `rgb(0, 0,0)`,
+        },
     }
     const buttonStyles = {
         "fall-effect": {
@@ -130,6 +134,10 @@ const ProfileEffectPreviewModal = (props) => {
         },
         "elements-effect": {
             background: `linear-gradient(90deg, rgb(235, 190, 25), rgb(242, 135, 13))`,
+            color: `rgb(0,0,0)`,
+        },
+        "spring-toons-effect": {
+            background: `linear-gradient(90deg, rgb(237, 213, 80), rgb(251, 127, 50))`,
             color: `rgb(0,0,0)`,
         },
     }
@@ -222,6 +230,7 @@ const ProfileEffectPreviewModal = (props) => {
         "cyber-punk-effect": { background: `linear-gradient(135deg, rgb(32, 20, 107), rgb(5, 1, 0))` },
         "lunar-dragon-effect": { background: `linear-gradient(135deg, rgb(143, 0, 0), rgb(92, 0, 0))` },
         "elements-effect": { background: `linear-gradient(135deg, rgb(27, 27, 161), rgb(0, 22, 41))` },
+        "spring-toons-effect": { background: `linear-gradient(135deg, rgb(255, 255, 255), rgb(113, 191, 254))` },
 
     }
 
@@ -237,6 +246,8 @@ const ProfileEffectPreviewModal = (props) => {
         "cyber-punk-effect": "ppe-cyber-punk-bg-banner",
         "lunar-dragon-effect": "ppe-lunar-dragon-bg-banner",
         "elements-effect": "ppe-elements-bg-banner",
+        "spring-toons-effect": "ppe-spring-toons-bg-banner",
+
     }
 
     const profileEffectTitleBanner = {
@@ -251,6 +262,7 @@ const ProfileEffectPreviewModal = (props) => {
         "cyber-punk-effect": "ppe-cyber-punk-title-banner",
         "lunar-dragon-effect": "ppe-lunar-dragon-title-banner",
         "elements-effect": "ppe-elements-title-banner",
+        "spring-toons-effect": "ppe-spring-toons-title-banner",
 
     }
 
@@ -285,6 +297,9 @@ const ProfileEffectPreviewModal = (props) => {
         "elementsRockSlide": 4.99,
         "elementsVortex": 4.99,
         "elementsMastery": 4.99,
+        "springToonsPetals": 4.99,
+        "springToonsFellowship": 4.99,
+        "springToonsSpringBoom": 4.99,
     };
 
     const strikeThroughPrice = {
@@ -318,6 +333,9 @@ const ProfileEffectPreviewModal = (props) => {
         "elementsRockSlide": 5.99,
         "elementsVortex": 5.99,
         "elementsMastery": 5.99,
+        "springToonsPetals": 5.99,
+        "springToonsFellowship": 5.99,
+        "springToonsSpringBoom": 5.99,
 
     };
 
@@ -352,6 +370,9 @@ const ProfileEffectPreviewModal = (props) => {
         "elementsRockSlide": "Rock Slide",
         "elementsVortex": "Vortex",
         "elementsMastery": "Mastery",
+        "springToonsPetals": "Petal Serenade",
+        "springToonsFellowship": "Fellowship of the Spring",
+        "springToonsSpringBoom": "Spring Bloom",
 
     }
     const profileEffectDescription = {
@@ -385,6 +406,9 @@ const ProfileEffectPreviewModal = (props) => {
         "elementsRockSlide": "A ballet of rock and stone.",
         "elementsVortex": "Beware the eye of the storm.",
         "elementsMastery": "Unleash the elements.",
+        "springToonsPetals": "A cascade of floral delight.",
+        "springToonsFellowship": "They only gather around this time of the year.",
+        "springToonsSpringBoom": "Welcome to my garden.",
     }
 
 
@@ -739,6 +763,27 @@ const ProfileEffectPreviewModal = (props) => {
                 <img className="shop-item-elements-mastery-intro" alt=" " style={{ top: `0px` }} />
             </>
         ),
+        "springToonsPetals": (
+            <>
+                <img className="shop-item-spring-toons-petals-serenade-idle-flowers" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-petals-serenade-idle-rain-drops" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-petals-serenade-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "springToonsFellowship": (
+            <>
+                <img className="shop-item-spring-toons-fellowship-idle-critters" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-fellowship-idle-critter-vines" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-fellowship-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "springToonsSpringBoom": (
+            <>
+                <img className="shop-item-spring-toons-spring-boom-idle-flowers" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-spring-boom-idle-rain-drops" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-spring-boom-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
     }
 
     let buttonGroup = props.nitroExclusive ? (
@@ -827,11 +872,14 @@ const ProfileEffectPreviewModal = (props) => {
         }
     }
 
+    const renderTextTheme = () => {
+        return props.profileEffectThemeType === "spring-toons-effect" ? `ppem-darkText-mod` : ``;
+    }
 
     return (
         <REACT_PORTAL wrapperId={'sub-modal'} classNameId={'subModal'} onClick={(e) => e.stopPropagation()}>
             <div className="ppe-modal-container-layer" onClick={(e) => handleCloseModal(e)}>
-                <div className="ppe-modal-backdrop" style={{ opacity: `${isSubModMounted ? 0 : 0.85}` }}></div>
+                <div className="ppe-modal-backdrop" style={{ opacity: `${isSubModMounted ? 0 : 0.7}` }}></div>
                 <div className="ppe-modal-layer">
                     <div className="ppe-modal-focus-lock">
                         {
@@ -846,18 +894,18 @@ const ProfileEffectPreviewModal = (props) => {
                                             </div>
                                             <div>
                                                 <div className="ppe-profile-effect-description-container">
-                                                    <div className="ppe-type-pill-label">
-                                                        <div className="ppe-type-pill-label-text" style={{ color: `white` }}>
+                                                    <div className={`ppe-type-pill-label ${props.profileEffectThemeType === "spring-toons-effect" ? `ppem-darkText-deco-label-mod` : ``}`}>
+                                                        <div className="ppe-type-pill-label-text">
                                                             Profile Effect
                                                         </div>
                                                     </div>
-                                                    <h2 className="ppe-profile-effect-h2" style={{ color: `white` }}>{`${profileEffectName[props.profileThemeObj]}`}</h2>
-                                                    <div className="ppe-profile-effect-small-text-description" style={{ color: `white` }}>{`${profileEffectDescription[props.profileThemeObj]}`}</div>
+                                                    <h2 className={`ppe-profile-effect-h2 ${renderTextTheme()}`}>{`${profileEffectName[props.profileThemeObj]}`}</h2>
+                                                    <div className={`ppe-profile-effect-small-text-description ${renderTextTheme()}`} >{`${profileEffectDescription[props.profileThemeObj]}`}</div>
 
                                                     {props.nitroExclusive ? (<div className="ppe-price-tags-h2-med-semi-bold" style={{ color: `white` }}>Included with Nitro</div>) : (
                                                         <div className="ppe-ped-price-tags-container">
                                                             <h2 className="shop-item-price-tags-h2-medium" style={{ color: `white` }}>{`$${strikeThroughPrice[props.profileThemeObj]}`}</h2>
-                                                            <h2 className="ppe-profile-effect-price-tags-h2-xsmall-med-bold" style={{ color: `white` }}>
+                                                            <h2 className={`ppe-profile-effect-price-tags-h2-xsmall-med-bold ${renderTextTheme()}`}>
                                                                 <StrifeNitroBadgeIcon className="ppe-ped-nitro-ball-icon-faded" height={24} width={24} />
                                                                 {`$${salePrice[props.profileThemeObj]} with Nitro. `}
                                                                 <div className="ppe-ped-premium-unlock-hook" role="button" tabIndex={0} onClick={(e) => { e.stopPropagation(); openModal("subToNitroBasic"); }}>Subscribe now</div>
@@ -866,7 +914,7 @@ const ProfileEffectPreviewModal = (props) => {
                                                     )}
                                                 </div>
                                                 {buttonGroup}
-                                                <div className="ppe-ped-fine-print-disclaimer">
+                                                <div className={`ppe-ped-fine-print-disclaimer ${renderTextTheme()}`}>
                                                     {`${props.nitroExclusive ? `This bonus item is yours to keep and use anytime with an active Nitro subscription.` : `Once purchased, this effect will be added to your collection and can be used anytime`}`}
                                                 </div>
                                             </div>
