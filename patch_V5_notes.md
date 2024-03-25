@@ -1137,5 +1137,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added masteryReducedMotion.png.
     - Added masteryThumbnail.png.
     - Added vortexThumbnail.png.
+    - Added rockslideThumbnail.png.
+
 
 
