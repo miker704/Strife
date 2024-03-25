@@ -371,13 +371,8 @@ const StrifeShop = (props) => {
                                                                     color: `var(--white-500)`
                                                                 }}
                                                             />
-
-
-
-
                                                         </div>
                                                     )}
-
 
                                         </div>
 
@@ -396,8 +391,8 @@ const StrifeShop = (props) => {
                                                     <div className="shop-item-cards-container shop-taller-item-cards-container">
 
                                                         <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
-                                                            shopItemCardType={"elements-items"} profileEffectTheme={"elements-effect"} profileThemeObj={"elementsRockSlide"}
-                                                            nitroExclusive={false} profileEffectTitle={"Rock Slide"} profileEffectTextDescription={"A ballet of rock and stone."}
+                                                            shopItemCardType={"spring-toons-items"} profileEffectTheme={"spring-toons-effect"} profileThemeObj={"springToonsPetals"}
+                                                            nitroExclusive={false} profileEffectTitle={"Petal Serenade"} profileEffectTextDescription={"A cascade of floral delight."}
                                                             profileEffectPrice={5.99} profileEffectReducedPrice={4.99} hasHoverEffect={true}
                                                             styleProps={{
                                                                 background: `var(--background-floating)`,
@@ -410,8 +405,8 @@ const StrifeShop = (props) => {
                                                             }}
                                                         />
                                                         <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
-                                                            shopItemCardType={"elements-items"} profileEffectTheme={"elements-effect"} profileThemeObj={"elementsVortex"}
-                                                            nitroExclusive={false} profileEffectTitle={"Vortex"} profileEffectTextDescription={"Beware the eye of the storm."}
+                                                            shopItemCardType={"spring-toons-items"} profileEffectTheme={"spring-toons-effect"} profileThemeObj={"springToonsFellowship"}
+                                                            nitroExclusive={false} profileEffectTitle={"Fellowship of the Spring"} profileEffectTextDescription={"They only gather around this time of the year."}
                                                             profileEffectPrice={5.99} profileEffectReducedPrice={4.99} hasHoverEffect={true}
                                                             styleProps={{
                                                                 background: `var(--background-floating)`,
@@ -424,8 +419,8 @@ const StrifeShop = (props) => {
                                                             }}
                                                         />
                                                         <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
-                                                            shopItemCardType={"elements-items"} profileEffectTheme={"elements-effect"} profileThemeObj={"elementsMastery"}
-                                                            nitroExclusive={false} profileEffectTitle={"Mastery"} profileEffectTextDescription={"Unleash the elements."}
+                                                            shopItemCardType={"spring-toons-items"} profileEffectTheme={"spring-toons-effect"} profileThemeObj={"springToonsSpringBoom"}
+                                                            nitroExclusive={false} profileEffectTitle={"Spring Bloom"} profileEffectTextDescription={"Welcome to my garden."}
                                                             profileEffectPrice={5.99} profileEffectReducedPrice={4.99} hasHoverEffect={true}
                                                             styleProps={{
                                                                 background: `var(--background-floating)`,
