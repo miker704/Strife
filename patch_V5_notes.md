@@ -1182,3 +1182,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new Styles for dark text theme to Avatar decorations preview modal.
     - Added new Styles for dark text theme to preview profile effects modals.
     - Added Spring toons Profile Effect Items to Profile Effect Preview modal.
+    - Added Spring toons Profile Effect Items to Preview Gift UPC modal.
