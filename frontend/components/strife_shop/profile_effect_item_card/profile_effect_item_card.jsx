@@ -307,6 +307,31 @@ const ProfileEffectItemCard = (props) => {
             <img className="shop-item-cyber-punk-uplinkError" alt=" " style={{ top: `0px` }} />
         ),
 
+        "elementsRockSlide": hovered ? (
+            <>
+                <img className="shop-item-elements-rock-slide-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-elements-rock-slide-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ) : (
+            <img className="shop-item-elements-rock-slide" alt=" " style={{ top: `0px` }} />
+        ),
+        "elementsVortex": hovered ? (
+            <>
+                <img className="shop-item-elements-vortex-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-elements-vortex-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ) : (
+            <img className="shop-item-elements-vortex" alt=" " style={{ top: `0px` }} />
+        ),
+        "elementsMastery": hovered ? (
+            <>
+                <img className="shop-item-elements-mastery-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-elements-mastery-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ) : (
+            <img className="shop-item-elements-mastery" alt=" " style={{ top: `0px` }} />
+        ),
+
     }
 
     return (
@@ -348,10 +373,10 @@ const ProfileEffectItemCard = (props) => {
             </div>
 
             <div className="shop-item-card-inner-text shop-item-card-inner-text-profile-effect shop-card-text-blurred">
-            <div className="shop-item-card-inner-cardBackground darkShopCardBackground shopItemCardBackground-lowOpacity"></div>
+                <div className="shop-item-card-inner-cardBackground darkShopCardBackground shopItemCardBackground-lowOpacity"></div>
                 <div className="shop-item-card-inner-product-name"><div className="shop-item-card-inner-blur-text-lrg" style={{ color: `var(--text-normal)` }}>{`${props.profileEffectTitle}`}</div></div>
                 <div className="shop-item-card-inner-product-details">
-                        <div className="shop-item-card-inner-blur-text-med shop-item-card-inner-blur-text-med-desc" style={{ color: `var(--text-normal)` }}>{`${props.profileEffectTextDescription}`}</div>
+                    <div className="shop-item-card-inner-blur-text-med shop-item-card-inner-blur-text-med-desc" style={{ color: `var(--text-normal)` }}>{`${props.profileEffectTextDescription}`}</div>
                     <div className="shop-item-card-inner-blur">
                         {props.nitroExclusive ? (<div className="shop-item-price-tags-h2-medium-semi-bold" style={{ color: `var(--text-normal)` }}>Included with Nitro</div>) : (
                             <div className="shop-item-price-tags-container" >
