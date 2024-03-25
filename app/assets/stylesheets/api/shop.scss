@@ -4209,12 +4209,14 @@
   width: 100%;
   position: absolute;
   content: image_url("fellowshipIdleFrame.png");
-  -webkit-animation-duration: 4.6s;
+  -webkit-animation-duration: 5s;
+  // -webkit-animation-duration: 4.6s;
   -webkit-animation-name: petals-idle-rain-cycle;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
   animation-name: petals-idle-rain-cycle;
-  animation-duration: 4.6s;
+  animation-duration: 5s;
+  // animation-duration: 4.6s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
 }
@@ -4228,19 +4230,28 @@
   -webkit-animation-name: fellowship-intro-cycle;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
   animation-name: fellowship-intro-cycle;
   animation-duration: 5.5s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 @keyframes fellowship-intro-cycle {
   0% {
     content: image_url("fellowshipIntroInfinite.png");
   }
+
+  100% {
+    content: image_url("fellowshipIdleFrame.png");
+  }
 }
 @-webkit-keyframes fellowship-intro-cycle {
   0% {
     content: image_url("fellowshipIntroInfinite.png");
+  }
+  100% {
+    content: image_url("fellowshipIdleFrame.png");
   }
 }
 
