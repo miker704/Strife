@@ -1147,3 +1147,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Elements Profile Effect Items to Strife Shop.
     - Finalized Elements Profile Effects to Strife Shop.
     - Finalized Elements Avatar Decorations to Strife Shop.
+    - Started SpringToons Avatar Decorations.
