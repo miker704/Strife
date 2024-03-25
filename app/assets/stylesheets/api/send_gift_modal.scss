@@ -130,7 +130,6 @@
     opacity: 0.5;
     cursor: not-allowed;
   }
-
 }
 
 .sgm-modal-root.transition-out {
@@ -589,7 +588,6 @@
   width: 100%;
   height: 100%;
   content: image_url("sgmPresent.svg");
-
 }
 .sgm-cake-HolidayVersion-choice-img {
   background-color: var(--transparent);
@@ -599,7 +597,6 @@
   width: 100%;
   height: 100%;
   content: image_url("sgmCake.svg");
-
 }
 .sgm-cup-HolidayVersion-choice-img {
   background-color: var(--transparent);
@@ -609,7 +606,6 @@
   width: 100%;
   height: 100%;
   content: image_url("sgmCup.svg");
-
 }
 .sgm-present-treasure-HolidayVersion-choice-img {
   background-color: var(--transparent);
@@ -619,7 +615,6 @@
   width: 100%;
   height: 100%;
   content: image_url("sgmWumpusTreasureChest.svg");
-
 }
 
 .sgm-present-choice-img {
@@ -630,7 +625,6 @@
   width: 100%;
   height: 100%;
   content: image_url("sgmPresentThumbnail.svg");
-
 }
 .sgm-cake-choice-img {
   background-color: var(--transparent);
@@ -640,7 +634,6 @@
   width: 100%;
   height: 100%;
   content: image_url("sgmCakeThumbnail.svg");
-
 }
 .sgm-cup-choice-img {
   background-color: var(--transparent);
@@ -650,7 +643,6 @@
   width: 100%;
   height: 100%;
   content: image_url("sgmFrostyCupThumbnail.svg");
-
 }
 .sgm-present-treasure-choice-img {
   background-color: var(--transparent);
@@ -661,7 +653,6 @@
   height: 100%;
   content: image_url("sgmTreasureChestThumbnail.svg");
 }
-
 
 .sgm-prez-card-selected {
   border: 2px solid var(--brand-500);
@@ -928,7 +919,6 @@
   content: image_url("monsterPopThumbnail.png");
 }
 
-
 .sgm-lunar-dragon-dragonDance {
   position: absolute;
   width: 100%;
@@ -939,7 +929,6 @@
   -o-object-position: top;
   object-position: top;
   content: image_url("dragonDanceThumbnail.png");
-
 }
 .sgm-lunar-dragon-fortuneFlurry {
   position: absolute;
@@ -973,7 +962,6 @@
   -o-object-position: top;
   object-position: top;
   content: image_url("nightRunnerThumbnail.png");
-
 }
 .sgm-cyber-punk-uplinkError {
   position: absolute;
@@ -985,6 +973,42 @@
   -o-object-position: top;
   object-position: top;
   content: image_url("uplinkErrorThumbnail.png");
+}
+
+.sgm-elements-rock-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("rockSlideThumbnail.png");
+}
+
+.sgm-elements-vortex {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("vortexThumbnail.png");
+}
+
+.sgm-elements-mastery {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("masteryThumbnail.png");
 }
 
 .sgm-fall-leaves-image {
