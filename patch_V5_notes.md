@@ -1170,3 +1170,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added color styles to text for certain styles for preview profile effects modals.
     - Added Spring toons Avatar decoration styles for preview profile effects modals.
     - Added elements gift button styles for avatar decoration card.
+    - Added Spring toons gift button styles for avatar decoration card.
