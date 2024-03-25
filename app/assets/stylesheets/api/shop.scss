@@ -4093,6 +4093,242 @@
   }
 }
 
+//spring toons profile effects
+
+.shop-item-spring-toons-petals-serenade {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("petalSerenadeThumbnail.png");
+}
+
+.shop-item-spring-toons-petals-serenade-idle-flowers {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("petalSerenadeIdleFrame.png");
+  -webkit-animation-duration: 4.2s;
+  -webkit-animation-name: petals-idle-flowers-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: petals-idle-flowers-cycle;
+  animation-duration: 4.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+.shop-item-spring-toons-petals-serenade-idle-rain-drops {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("petalSerenadeIdlePetals.png");
+  -webkit-animation-duration: 6.2s;
+  -webkit-animation-name: petals-idle-rain-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: petals-idle-rain-cycle;
+  animation-duration: 6.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+.shop-item-spring-toons-petals-serenade-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: petals-serenade-intro-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: petals-serenade-intro-cycle;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes petals-serenade-intro-cycle {
+  0% {
+    content: image_url("petalSerenadeIntroInfinite.png");
+  }
+}
+@-webkit-keyframes petals-serenade-intro-cycle {
+  0% {
+    content: image_url("petalSerenadeIntroInfinite.png");
+  }
+}
+
+@keyframes petals-idle-flowers-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+}
+@-webkit-keyframes petals-idle-flowers-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+}
+@keyframes petals-idle-rain-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+}
+@-webkit-keyframes petals-idle-rain-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+}
+
+.shop-item-spring-toons-fellowship {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("fellowshipThumbnail.png");
+}
+
+.shop-item-spring-toons-fellowship-idle-critters {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("fellowshipIdleCritters.png");
+  -webkit-animation-duration: 4.5s;
+  -webkit-animation-name: petals-idle-rain-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: petals-idle-rain-cycle;
+  animation-duration: 4.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+.shop-item-spring-toons-fellowship-idle-critter-vines {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("fellowshipIdleFrame.png");
+  -webkit-animation-duration: 4.6s;
+  -webkit-animation-name: petals-idle-rain-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: petals-idle-rain-cycle;
+  animation-duration: 4.6s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+.shop-item-spring-toons-fellowship-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-duration: 5.5s;
+  -webkit-animation-name: fellowship-intro-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: fellowship-intro-cycle;
+  animation-duration: 5.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes fellowship-intro-cycle {
+  0% {
+    content: image_url("fellowshipIntroInfinite.png");
+  }
+}
+@-webkit-keyframes fellowship-intro-cycle {
+  0% {
+    content: image_url("fellowshipIntroInfinite.png");
+  }
+}
+
+.shop-item-spring-toons-spring-boom {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("springBoomThumbnail.png");
+}
+
+.shop-item-spring-toons-spring-boom-idle-flowers {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("springBoomIdleFlowers.png");
+  -webkit-animation-duration: 10.2s;
+  -webkit-animation-name: spring-boom-idle-flowers-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: spring-boom-idle-flowers-cycle;
+  animation-duration: 10.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+.shop-item-spring-toons-spring-boom-idle-rain-drops {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("springBoomIdleRain.png");
+  -webkit-animation-duration: 16.2s;
+  -webkit-animation-name: spring-boom-idle-rain-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: spring-boom-idle-rain-cycle;
+  animation-duration: 16.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+.shop-item-spring-toons-spring-boom-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-duration: 14s;
+  -webkit-animation-name: spring-boom-intro-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: spring-boom-intro-cycle;
+  animation-duration: 14s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes spring-boom-intro-cycle {
+  0% {
+    content: image_url("springBoomIntroInfinite.png");
+  }
+}
+@-webkit-keyframes spring-boom-intro-cycle {
+  0% {
+    content: image_url("springBoomIntroInfinite.png");
+  }
+}
+
+@keyframes spring-boom-idle-flowers-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+}
+@-webkit-keyframes spring-boom-idle-flowers-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+}
+@keyframes spring-boom-idle-rain-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+}
+@-webkit-keyframes spring-boom-idle-rain-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+}
+
 .shop-item-card:hover {
   .fall-leaves-image {
     content: image_url("fallLeavesAnimated.png");
