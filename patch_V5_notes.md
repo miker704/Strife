@@ -1167,4 +1167,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added strawberryVineAnimated.png.
     - Added Spring toons Avatar decoration styles to send a gift modal styles.
     - Added Spring toons Avatar decoration styles to strife shop styles.
+    - Added color styles to text for certain styles for preview profile effects modals.
+    - Added Spring toons Avatar decoration styles for preview profile effects modals.
 
