@@ -795,6 +795,9 @@
 .shop-item-card.elements-items:hover {
   box-shadow: var(--primary-700) 0px 0px 25px 1px !important;
 }
+.shop-item-card.spring-toons-items:hover {
+  box-shadow: var(--primary-700) 0px 0px 25px 1px !important;
+}
 
 .shop-item-categories > .shop-item-categories-wrapper {
   margin-top: 40px;
@@ -2002,7 +2005,6 @@
   content: image_url("shopElementsBannerLogo.png");
 }
 
-
 .shop-spring-toons-banner {
   background: image_url("shopSpringToonsBanner.png") 0% 0% / cover border-box
     border-box;
@@ -2014,7 +2016,6 @@
   max-height: 96px;
   content: image_url("shopSpringToonsBannerLogo.png");
 }
-
 
 //shop fall animations
 
@@ -2568,6 +2569,69 @@
 }
 .elements-balance {
   content: image_url("elementsBalanceStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+//spring toons
+
+.spring-toons-honey-blossom {
+  content: image_url("honeyBlossomStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.spring-toons-dandelion-duo {
+  content: image_url("dandelionDuoStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.spring-toons-hugh-the-rainbow {
+  content: image_url("hughTheRainbowStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.spring-toons-strawberry-vine {
+  content: image_url("strawberryVineStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.spring-toons-butterflies {
+  content: image_url("butterfliesStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.spring-toons-petal-pack {
+  content: image_url("petalPackStatic.png");
   display: block;
   -o-object-fit: cover;
   object-fit: cover;
@@ -4229,6 +4293,25 @@
   .elements-balance {
     content: image_url("elementsBalanceAnimated.png");
   }
+
+  .spring-toons-honey-blossom {
+    content: image_url("honeyBlossomAnimated.png");
+  }
+  .spring-toons-dandelion-duo {
+    content: image_url("dandelionDuoAnimated.png");
+  }
+  .spring-toons-hugh-the-rainbow {
+    content: image_url("hughTheRainbowAnimated.png");
+  }
+  .spring-toons-strawberry-vine {
+    content: image_url("strawberryVineAnimated.png");
+  }
+  .spring-toons-butterflies {
+    content: image_url("butterfliesAnimated.png");
+  }
+  .spring-toons-petal-pack {
+    content: image_url("petalPackAnimated.png");
+  }
 }
 
 .halloween-jack-o-lantern::before,
@@ -4287,7 +4370,13 @@
 .elements-air::before,
 .elements-earth::before,
 .elements-lightning::before,
-.elements-balance::before {
+.elements-balance::before,
+.spring-toons-honey-blossom::before,
+.spring-toons-dandelion-duo::before,
+.spring-toons-hugh-the-rainbow::before,
+.spring-toons-strawberry-vine::before,
+.spring-toons-butterflies::before,
+.spring-toons-petal-pack::before {
   content: "";
   display: block;
   width: 100%;
