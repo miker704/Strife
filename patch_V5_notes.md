@@ -1173,4 +1173,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Spring toons gift button styles for avatar decoration card.
     - Added Spring toons Avatar decorations to Avatar decorations preview modal.
     - Added Spring toons Avatar decorations to preview gift UPC modal.
+    - Added elements effect gift button styles for Profile Effect item card.
+    - Added Spring toons effect gift button styles for Profile Effect item card.
 
