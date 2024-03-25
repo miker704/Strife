@@ -516,8 +516,8 @@ const SendAGiftModal = (props) => {
         "elementsBalance": "sgm-elements-balance",
         "springToonsHoneyBlossom": "sgm-spring-toons-honey-blossom",
         "springToonsDandelionDuo": "sgm-spring-toons-dandelion-duo",
-        "springToonsHughTheRainbow":"sgm-spring-toons-hugh-the-rainbow",
-        "springToonsStrawberryVine":"sgm-spring-toons-strawberry-vine",
+        "springToonsHughTheRainbow": "sgm-spring-toons-hugh-the-rainbow",
+        "springToonsStrawberryVine": "sgm-spring-toons-strawberry-vine",
         "springToonsButterflies": "sgm-spring-toons-butterflies",
         "springToonsPetalPack": "sgm-spring-toons-petal-pack",
     }
@@ -586,8 +586,8 @@ const SendAGiftModal = (props) => {
         "elementsBalance": "ppe-elements-balance",
         "springToonsHoneyBlossom": "ppe-spring-toons-honey-blossom",
         "springToonsDandelionDuo": "ppe-spring-toons-dandelion-duo",
-        "springToonsHughTheRainbow":"ppe-spring-toons-hugh-the-rainbow",
-        "springToonsStrawberryVine":"ppe-spring-toons-strawberry-vine",
+        "springToonsHughTheRainbow": "ppe-spring-toons-hugh-the-rainbow",
+        "springToonsStrawberryVine": "ppe-spring-toons-strawberry-vine",
         "springToonsButterflies": "ppe-spring-toons-butterflies",
         "springToonsPetalPack": "ppe-spring-toons-petal-pack",
     }
@@ -623,6 +623,10 @@ const SendAGiftModal = (props) => {
         "elementsRockSlide": "sgm-elements-rock-slide",
         "elementsVortex": "sgm-elements-vortex",
         "elementsMastery": "sgm-elements-mastery",
+        "springToonsPetals": "sgm-spring-toons-petals-serenade",
+        "springToonsFellowship": "sgm-spring-toons-fellowship",
+        "springToonsSpringBoom": "sgm-spring-toons-spring-boom",
+
     }
 
     let profileEffectPreviewImgs = {
@@ -806,7 +810,27 @@ const SendAGiftModal = (props) => {
                 <img className="shop-item-elements-mastery-intro" alt=" " style={{ top: `0px` }} />
             </>
         ),
-
+        "springToonsPetals": (
+            <>
+                <img className="shop-item-spring-toons-petals-serenade-idle-flowers" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-petals-serenade-idle-rain-drops" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-petals-serenade-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "springToonsFellowship": (
+            <>
+                <img className="shop-item-spring-toons-fellowship-idle-critters" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-fellowship-idle-critter-vines" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-fellowship-intro" alt=" " style={{ top: `0px` }} />s
+            </>
+        ),
+        "springToonsSpringBoom": (
+            <>
+                <img className="shop-item-spring-toons-spring-boom-idle-flowers" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-spring-boom-idle-rain-drops" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-spring-boom-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
     }
 
     let spinningCubes = spinCubes ? (
