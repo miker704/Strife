@@ -1129,5 +1129,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Elements Profile Effect Items to Profile Effect Items card.
     - Added Elements Profile Effect Items to Profile Effect Preview modal.
     - Added Elements Profile Effect Items to Preview Gift UPC modal.
-    - Added Elements Profile Effect Items to Sned a Gift modal.
+    - Added Elements Profile Effect Items to Send a Gift modal.
+    - Added Elements Profile Effect Items styles to Send a Gift modal styles.
+
 
