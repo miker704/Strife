@@ -81,7 +81,11 @@ const ProfileEffectPreviewModal = (props) => {
         "cyber-punk-effect": {
             background: `rgb(54, 54, 181)`,
             color: `rgb(255, 255, 255)`,
-        }
+        },
+        "elements-effect": {
+            background: `rgb(242, 135, 13)`,
+            color: `rgb(0, 0,0)`,
+        },
     }
     const buttonStyles = {
         "fall-effect": {
@@ -123,7 +127,11 @@ const ProfileEffectPreviewModal = (props) => {
         "cyber-punk-effect": {
             background: `linear-gradient(90deg, rgb(75, 68, 218), rgb(54, 54, 181))`,
             color: `rgb(255, 255, 255)`,
-        }
+        },
+        "elements-effect": {
+            background: `linear-gradient(90deg, rgb(235, 190, 25), rgb(242, 135, 13))`,
+            color: `rgb(0,0,0)`,
+        },
     }
 
     const openModal = (field, isGift = false) => {
@@ -274,6 +282,9 @@ const ProfileEffectPreviewModal = (props) => {
         "midnightCelebrations": 4.99,
         "nightRunner": 4.99,
         "uplinkError": 4.99,
+        "elementsRockSlide": 4.99,
+        "elementsVortex": 4.99,
+        "elementsMastery": 4.99,
     };
 
     const strikeThroughPrice = {
@@ -304,6 +315,9 @@ const ProfileEffectPreviewModal = (props) => {
         "midnightCelebrations": 5.99,
         "nightRunner": 5.99,
         "uplinkError": 5.99,
+        "elementsRockSlide": 5.99,
+        "elementsVortex": 5.99,
+        "elementsMastery": 5.99,
 
     };
 
@@ -335,6 +349,9 @@ const ProfileEffectPreviewModal = (props) => {
         "midnightCelebrations": "Midnight Celebration",
         "nightRunner": "Nightrunner",
         "uplinkError": "Uplink Error",
+        "elementsRockSlide": "Rock Slide",
+        "elementsVortex": "Vortex",
+        "elementsMastery": "Mastery",
 
     }
     const profileEffectDescription = {
@@ -365,6 +382,9 @@ const ProfileEffectPreviewModal = (props) => {
         "midnightCelebrations": "Protection and prosperity guaranteed.",
         "nightRunner": "Cruisin' the cyber highway.",
         "uplinkError": "Anomaly detected, attempting system reset.",
+        "elementsRockSlide": "A ballet of rock and stone.",
+        "elementsVortex": "Beware the eye of the storm.",
+        "elementsMastery": "Unleash the elements.",
     }
 
 
@@ -698,6 +718,25 @@ const ProfileEffectPreviewModal = (props) => {
             <>
                 <img className="shop-item-cyber-punk-uplinkError-idle" alt=" " style={{ top: `0px` }} />
                 <img className="shop-item-cyber-punk-uplinkError-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+
+        "elementsRockSlide": (
+            <>
+                <img className="shop-item-elements-rock-slide-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-elements-rock-slide-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "elementsVortex": (
+            <>
+                <img className="shop-item-elements-vortex-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-elements-vortex-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "elementsMastery": (
+            <>
+                <img className="shop-item-elements-mastery-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-elements-mastery-intro" alt=" " style={{ top: `0px` }} />
             </>
         ),
     }
