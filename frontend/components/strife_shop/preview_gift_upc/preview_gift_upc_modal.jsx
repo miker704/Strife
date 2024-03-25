@@ -164,8 +164,8 @@ const PreviewGiftUPCModal = (props) => {
         "elementsBalance": "ppe-elements-balance",
         "springToonsHoneyBlossom": "ppe-spring-toons-honey-blossom",
         "springToonsDandelionDuo": "ppe-spring-toons-dandelion-duo",
-        "springToonsHughTheRainbow":"ppe-spring-toons-hugh-the-rainbow",
-        "springToonsStrawberryVine":"ppe-spring-toons-strawberry-vine",
+        "springToonsHughTheRainbow": "ppe-spring-toons-hugh-the-rainbow",
+        "springToonsStrawberryVine": "ppe-spring-toons-strawberry-vine",
         "springToonsButterflies": "ppe-spring-toons-butterflies",
         "springToonsPetalPack": "ppe-spring-toons-petal-pack",
     }
@@ -431,6 +431,27 @@ const PreviewGiftUPCModal = (props) => {
                 <img className="shop-item-elements-mastery-intro" alt=" " style={{ top: `0px` }} />
             </>
         ),
+        "springToonsPetals": (
+            <>
+                <img className="shop-item-spring-toons-petals-serenade-idle-flowers" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-petals-serenade-idle-rain-drops" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-petals-serenade-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "springToonsFellowship": (
+            <>
+                <img className="shop-item-spring-toons-fellowship-idle-critters" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-fellowship-idle-critter-vines" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-fellowship-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "springToonsSpringBoom": (
+            <>
+                <img className="shop-item-spring-toons-spring-boom-idle-flowers" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-spring-boom-idle-rain-drops" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-spring-toons-spring-boom-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
     }
 
 
@@ -475,7 +496,7 @@ const PreviewGiftUPCModal = (props) => {
             <div className='server-user-options-upc-layer-container' onClick={(e) => handleCloseOnOuterClick(e)}>
                 <div id="upc-mod" className={`upc-popout message-version`} ref={popUpRef} onClick={(e) => e.stopPropagation()}
                     style={{
-                        top: `${member.banner ?`140`: `200`}px`, right: ``,
+                        top: `${member.banner ? `140` : `200`}px`, right: ``,
                         left: `${575}px`
                     }}
                 >
