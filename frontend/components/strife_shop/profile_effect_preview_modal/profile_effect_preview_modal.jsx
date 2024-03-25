@@ -773,7 +773,6 @@ const ProfileEffectPreviewModal = (props) => {
         "springToonsFellowship": (
             <>
                 <img className="shop-item-spring-toons-fellowship-idle-critters" alt=" " style={{ top: `0px` }} />
-                <img className="shop-item-spring-toons-fellowship-idle-critter-vines" alt=" " style={{ top: `0px` }} />
                 <img className="shop-item-spring-toons-fellowship-intro" alt=" " style={{ top: `0px` }} />
             </>
         ),
