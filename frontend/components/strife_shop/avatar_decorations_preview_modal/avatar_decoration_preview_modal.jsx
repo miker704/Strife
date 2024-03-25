@@ -128,6 +128,8 @@ const AvatarDecorationPreviewModal = (props) => {
         "cyber-punk-effect": { background: `linear-gradient(135deg, rgb(32, 20, 107), rgb(5, 1, 0))` },
         "lunar-dragon-effect": { background: `linear-gradient(135deg, rgb(143, 0, 0), rgb(92, 0, 0))` },
         "elements-effect": { background: `linear-gradient(135deg, rgb(27, 27, 161), rgb(0, 22, 41))` },
+        "spring-toons-effect": { background: `linear-gradient(135deg, rgb(255, 255, 255), rgb(113, 191, 254))` },
+
     }
 
     const profileEffectBgBanner = {
@@ -141,7 +143,9 @@ const AvatarDecorationPreviewModal = (props) => {
         "monsters-effect": "ppe-monsters-bg-banner",
         "cyber-punk-effect": "ppe-cyber-punk-bg-banner",
         "lunar-dragon-effect": "ppe-lunar-dragon-bg-banner",
-        "elements-effect": "ppe-elements-bg-banner"
+        "elements-effect": "ppe-elements-bg-banner",
+        "spring-toons-effect": "ppe-spring-toons-bg-banner",
+
     }
     const profileEffectTitleBanner = {
         "fall-effect": "ppe-fall-title-banner",
@@ -155,6 +159,7 @@ const AvatarDecorationPreviewModal = (props) => {
         "cyber-punk-effect": "ppe-cyber-punk-title-banner",
         "lunar-dragon-effect": "ppe-lunar-dragon-title-banner",
         "elements-effect": "ppe-elements-title-banner",
+        "spring-toons-effect": "ppe-spring-toons-title-banner",
     }
 
     const salePrice = {
@@ -218,6 +223,12 @@ const AvatarDecorationPreviewModal = (props) => {
         "elementsEarth": 4.99,
         "elementsLightning": 4.99,
         "elementsBalance": 4.99,
+        "springToonsHoneyBlossom": 4.99,
+        "springToonsDandelionDuo": 4.99,
+        "springToonsHughTheRainbow": 4.99,
+        "springToonsStrawberryVine": 4.99,
+        "springToonsButterflies": 4.99,
+        "springToonsPetalPack": 4.99,
     };
 
 
@@ -282,6 +293,12 @@ const AvatarDecorationPreviewModal = (props) => {
         "elementsEarth": 5.99,
         "elementsLightning": 5.99,
         "elementsBalance": 5.99,
+        "springToonsHoneyBlossom": 5.99,
+        "springToonsDandelionDuo": 5.99,
+        "springToonsHughTheRainbow": 5.99,
+        "springToonsStrawberryVine": 5.99,
+        "springToonsButterflies": 5.99,
+        "springToonsPetalPack": 5.99,
     };
 
     const avatarDecorationName = {
@@ -345,6 +362,12 @@ const AvatarDecorationPreviewModal = (props) => {
         "elementsEarth": "Earth",
         "elementsLightning": "Lightning",
         "elementsBalance": "Balance",
+        "springToonsHoneyBlossom": "Honeyblossom",
+        "springToonsDandelionDuo": "Dandelion Duo",
+        "springToonsHughTheRainbow": "Hugh the Rainbow",
+        "springToonsStrawberryVine": "Strawberry Vine",
+        "springToonsButterflies": "Butterflies",
+        "springToonsPetalPack": "The Petal Pack",
 
     }
     const avatarDecorationDescription = {
@@ -408,6 +431,12 @@ const AvatarDecorationPreviewModal = (props) => {
         "elementsEarth": "Call the might of the earth.",
         "elementsLightning": "Electrify your presence.",
         "elementsBalance": "Harness the elements.",
+        "springToonsHoneyBlossom": "Buzz meets bloom.",
+        "springToonsDandelionDuo": "Strengths: Cute and fluffy. Weaknesses: The breeze.",
+        "springToonsHughTheRainbow": "Does he have a hue for every mood?",
+        "springToonsStrawberryVine": "Now that's a sweet harvest.",
+        "springToonsButterflies": "We shall tickle the clouds today - join us!",
+        "springToonsPetalPack": "Comes with sunshine and smiles.",
     }
 
     const giftColor = {
@@ -455,6 +484,10 @@ const AvatarDecorationPreviewModal = (props) => {
             background: `rgb(242, 135, 13)`,
             color: `rgb(0, 0,0)`,
         },
+        "spring-toons-effect": {
+            background: `rgb(251, 127, 50)`,
+            color: `rgb(0, 0,0)`,
+        },
     }
 
     const buttonStyles = {
@@ -500,6 +533,10 @@ const AvatarDecorationPreviewModal = (props) => {
         },
         "elements-effect": {
             background: `linear-gradient(90deg, rgb(235, 190, 25), rgb(242, 135, 13))`,
+            color: `rgb(0,0,0)`,
+        },
+        "spring-toons-effect": {
+            background: `linear-gradient(90deg, rgb(237, 213, 80), rgb(251, 127, 50))`,
             color: `rgb(0,0,0)`,
         },
 
@@ -831,6 +868,36 @@ const AvatarDecorationPreviewModal = (props) => {
                 <img className='ppe-elements-balance' alt=" " style={{ top: `0px` }} />
             </>
         ),
+        "springToonsHoneyBlossom": (
+            <>
+                <img className='ppe-spring-toons-honey-blossom' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "springToonsDandelionDuo": (
+            <>
+                <img className='ppe-spring-toons-dandelion-duo' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "springToonsHughTheRainbow": (
+            <>
+                <img className='ppe-spring-toons-hugh-the-rainbow' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "springToonsStrawberryVine": (
+            <>
+                <img className='ppe-spring-toons-strawberry-vine' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "springToonsButterflies": (
+            <>
+                <img className='ppe-spring-toons-butterflies' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "springToonsPetalPack": (
+            <>
+                <img className='ppe-spring-toons-petal-pack' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
     }
 
 
@@ -896,6 +963,12 @@ const AvatarDecorationPreviewModal = (props) => {
         "elementsEarth": "ppe-elements-earth",
         "elementsLightning": "ppe-elements-lightning",
         "elementsBalance": "ppe-elements-balance",
+        "springToonsHoneyBlossom": "ppe-spring-toons-honey-blossom",
+        "springToonsDandelionDuo": "ppe-spring-toons-dandelion-duo",
+        "springToonsHughTheRainbow": "ppe-spring-toons-hugh-the-rainbow",
+        "springToonsStrawberryVine": "ppe-spring-toons-strawberry-vine",
+        "springToonsButterflies": "ppe-spring-toons-butterflies",
+        "springToonsPetalPack": "ppe-spring-toons-petal-pack",
     }
 
 
@@ -1091,10 +1164,15 @@ const AvatarDecorationPreviewModal = (props) => {
         }
     }
 
+    const renderTextTheme = () => {
+        return props.profileEffectThemeType === "spring-toons-effect" ? `ppem-darkText-mod` : ``;
+    }
+
+
     return (
         <REACT_PORTAL wrapperId={'sub-modal'} classNameId={'subModal'} onClick={(e) => e.stopPropagation()}>
             <div className="ppe-modal-container-layer" onClick={(e) => handleCloseModal(e)}>
-                <div className="ppe-modal-backdrop" style={{ opacity: `${isSubModMounted ? 0 : 0.85}` }}></div>
+                <div className="ppe-modal-backdrop" style={{ opacity: `${isSubModMounted ? 0 : 0.7}` }}></div>
                 <div className="ppe-modal-layer">
                     <div className="ppe-modal-focus-lock">
                         {
@@ -1128,21 +1206,21 @@ const AvatarDecorationPreviewModal = (props) => {
                                             </div>
                                             <div>
                                                 <div className="ppe-profile-effect-description-container">
-                                                    <div className="ppe-type-pill-label">
-                                                        <div className="ppe-type-pill-label-text" style={{ color: `white` }}>
+                                                    <div className={`ppe-type-pill-label ${props.profileEffectThemeType === "spring-toons-effect" ? `ppem-darkText-deco-label-mod` : ``}`}>
+                                                        <div className="ppe-type-pill-label-text">
                                                             Avatar Decoration
                                                         </div>
                                                     </div>
 
-                                                    <h2 className="ppe-profile-effect-h2" style={{ color: `white` }}>{`${avatarDecorationName[props.avatarEffectObj]}`}</h2>
-                                                    <div className="ppe-profile-effect-small-text-description" style={{ color: `white` }}>{`${avatarDecorationDescription[props.avatarEffectObj]}`}</div>
+                                                    <h2 className={`ppe-profile-effect-h2 ${renderTextTheme()}`}>{`${avatarDecorationName[props.avatarEffectObj]}`}</h2>
+                                                    <div className={`ppe-profile-effect-small-text-description ${renderTextTheme()}`}>{`${avatarDecorationDescription[props.avatarEffectObj]}`}</div>
 
-                                                    {props.nitroExclusive ? (<div className="ppe-price-tags-h2-med-semi-bold" style={{ color: `white` }}>Included with Nitro</div>) : (
+                                                    {props.nitroExclusive ? (<div className="ppe-price-tags-h2-med-semi-bold">Included with Nitro</div>) : (
                                                         <div className="ppe-ped-price-tags-container">
                                                             <h2 className="shop-item-price-tags-h2-medium" style={{ color: `white` }}>
                                                                 {`$${strikeThroughPrice[props.avatarEffectObj]}`}
                                                             </h2>
-                                                            <h2 className="ppe-profile-effect-price-tags-h2-xsmall-med-bold" style={{ color: `white` }}>
+                                                            <h2 className={`ppe-profile-effect-price-tags-h2-xsmall-med-bold ${renderTextTheme()}`} >
                                                                 <StrifeNitroBadgeIcon className="ppe-ped-nitro-ball-icon-faded" height={24} width={24} />
                                                                 {`$${salePrice[props.avatarEffectObj]} with Nitro. `}
                                                                 <div className="ppe-ped-premium-unlock-hook" role="button" tabIndex={0} onClick={(e) => { e.stopPropagation(); openModal("subToNitroBasic"); }}>Subscribe now</div>
@@ -1151,7 +1229,7 @@ const AvatarDecorationPreviewModal = (props) => {
                                                     )}
                                                 </div>
                                                 {buttonGroup}
-                                                <div className="ppe-ped-fine-print-disclaimer">
+                                                <div className={`ppe-ped-fine-print-disclaimer ${renderTextTheme()}`}>
                                                     {`${props.nitroExclusive ? `This bonus item is yours to keep and use anytime with an active Nitro subscription.` : `Once purchased, this decoration will be added to your collection and can be used anytime`}`}
                                                 </div>
                                             </div>
