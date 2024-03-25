@@ -407,6 +407,24 @@ const PreviewGiftUPCModal = (props) => {
                 <img className="shop-item-cyber-punk-uplinkError-intro" alt=" " style={{ top: `0px` }} />
             </>
         ),
+        "elementsRockSlide": (
+            <>
+                <img className="shop-item-elements-rock-slide-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-elements-rock-slide-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "elementsVortex": (
+            <>
+                <img className="shop-item-elements-vortex-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-elements-vortex-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "elementsMastery": (
+            <>
+                <img className="shop-item-elements-mastery-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-elements-mastery-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
     }
 
 
