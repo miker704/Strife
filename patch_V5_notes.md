@@ -1126,3 +1126,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Elements Avatar Items Shop Styles.
     - Added Elements Avatar Items to Strife Shop.
     - Added Elements Profile Effect Items.
+    - Added Elements Profile Effect Items to Profile Effect Items card.
