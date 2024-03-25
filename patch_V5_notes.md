@@ -1165,4 +1165,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added petalPackAnimated.png.
     - Added strawberryVineStatic.png.
     - Added strawberryVineAnimated.png.
+    - Added Spring toons Avatar decoration styles to send a gift modal.
 
