@@ -48,6 +48,10 @@ const AvatarDecorationItemCard = (props) => {
         "elements-effect": {
             background: `var(--brand-experiment)`,
             color: `var(--white-500)`
+        },
+        "spring-toons-effect": {
+            background: `var(--brand-experiment)`,
+            color: `var(--white-500)`
         }
     }
 
