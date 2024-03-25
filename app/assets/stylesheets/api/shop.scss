@@ -3829,6 +3829,192 @@
   }
 }
 
+//elements profile effects
+
+.shop-item-elements-vortex {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("vortexThumbnail.png");
+}
+.shop-item-elements-vortex-idle {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("vortexIdle.png");
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: vortex-idle-cycle;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: vortex-idle-cycle;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.shop-item-elements-vortex-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: vortex-intro-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: vortex-intro-cycle;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+.shop-item-elements-rock-slide {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("rockSlideThumbnail.png");
+}
+
+.shop-item-elements-rock-slide-idle {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("rockSlideIdle.png");
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: rock-slide-idle-cycle;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: rock-slide-idle-cycle;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.shop-item-elements-rock-slide-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: rock-slide-intro-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: rock-slide-intro-cycle;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+.shop-item-elements-mastery {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("masteryThumbnail.png");
+}
+
+.shop-item-elements-mastery-idle {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("masteryIdle.png");
+  -webkit-animation-duration: 5.2s;
+  -webkit-animation-name: mastery-idle-cycle;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: mastery-idle-cycle;
+  animation-duration: 5.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.shop-item-elements-mastery-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-duration: 5.2s;
+  -webkit-animation-name: mastery-intro-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: mastery-intro-cycle;
+  animation-duration: 5.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes vortex-intro-cycle {
+  0% {
+    content: image_url("vortexIntroInfinite.png");
+  }
+}
+@-webkit-keyframes vortex-intro-cycle {
+  0% {
+    content: image_url("vortexIntroInfinite.png");
+  }
+}
+
+@keyframes vortex-idle-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+}
+@-webkit-keyframes vortex-idle-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+}
+
+@keyframes rock-slide-intro-cycle {
+  0% {
+    content: image_url("rockSlideIntroInfinite.png");
+  }
+}
+@-webkit-keyframes rock-slide-intro-cycle {
+  0% {
+    content: image_url("rockSlideIntroInfinite.png");
+  }
+}
+@keyframes rock-slide-idle-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+}
+@-webkit-keyframes rock-slide-idle-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+}
+
+@keyframes mastery-intro-cycle {
+  0% {
+    content: image_url("masteryIntroInfinite.png");
+  }
+}
+@-webkit-keyframes mastery-intro-cycle {
+  0% {
+    content: image_url("masteryIntroInfinite.png");
+  }
+}
+
+@keyframes mastery-idle-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+}
+@-webkit-keyframes mastery-idle-cycle {
+  0% {
+    content: image_url("blankEffect.png");
+  }
+}
+
 .shop-item-card:hover {
   .fall-leaves-image {
     content: image_url("fallLeavesAnimated.png");
