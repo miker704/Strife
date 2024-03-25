@@ -1179,4 +1179,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Spring toons Avatar decorations to Strife Shop.
     - Added Spring toons Profile Effect Items.
     - Added Spring toons Profile Effect Items to Profile Effect Items card.
-
+    - Added new Style for dark text theme to Avatar decorations preview modal.
