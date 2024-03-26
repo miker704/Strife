@@ -520,12 +520,12 @@ const SendAGiftModal = (props) => {
         "springToonsStrawberryVine": "sgm-spring-toons-strawberry-vine",
         "springToonsButterflies": "sgm-spring-toons-butterflies",
         "springToonsPetalPack": "sgm-spring-toons-petal-pack",
-        "animeCatEars":  "sgm-anime-cat-ears",
-        "animeKiEnergy":  "sgm-anime-ki-energy",
-        "animeHeartBloom":  "sgm-anime-heart-bloom",
-        "animeDismay":  "sgm-anime-dismay",
-        "animeRage":  "sgm-anime-rage",
-        "animeInTears":  "sgm-anime-inTears",
+        "animeCatEars": "sgm-anime-cat-ears",
+        "animeKiEnergy": "sgm-anime-ki-energy",
+        "animeHeartBloom": "sgm-anime-heart-bloom",
+        "animeDismay": "sgm-anime-dismay",
+        "animeRage": "sgm-anime-rage",
+        "animeInTears": "sgm-anime-inTears",
     }
 
 
@@ -596,12 +596,12 @@ const SendAGiftModal = (props) => {
         "springToonsStrawberryVine": "ppe-spring-toons-strawberry-vine",
         "springToonsButterflies": "ppe-spring-toons-butterflies",
         "springToonsPetalPack": "ppe-spring-toons-petal-pack",
-        "animeCatEars":  "ppe-anime-cat-ears",
-        "animeKiEnergy":  "ppe-anime-ki-energy",
-        "animeHeartBloom":  "ppe-anime-heart-bloom",
-        "animeDismay":  "ppe-anime-dismay",
-        "animeRage":  "ppe-anime-rage",
-        "animeInTears":  "ppe-anime-inTears",
+        "animeCatEars": "ppe-anime-cat-ears",
+        "animeKiEnergy": "ppe-anime-ki-energy",
+        "animeHeartBloom": "ppe-anime-heart-bloom",
+        "animeDismay": "ppe-anime-dismay",
+        "animeRage": "ppe-anime-rage",
+        "animeInTears": "ppe-anime-inTears",
     }
 
     let profileEffectPreviewStaticClassNames = {
@@ -638,7 +638,9 @@ const SendAGiftModal = (props) => {
         "springToonsPetals": "sgm-spring-toons-petals-serenade",
         "springToonsFellowship": "sgm-spring-toons-fellowship",
         "springToonsSpringBoom": "sgm-spring-toons-spring-boom",
-
+        "animeDreamy": "sgm-anime-v2-dreamy",
+        "animeKIDetonate": "sgm-anime-v2-ki-detonate",
+        "animeSushiMania": "sgm-anime-v2-sushi-mania",
     }
 
     let profileEffectPreviewImgs = {
@@ -842,6 +844,27 @@ const SendAGiftModal = (props) => {
                 <img className="shop-item-spring-toons-spring-boom-intro" alt=" " style={{ top: `0px` }} />
             </>
         ),
+
+
+        "animeDreamy": (
+            <>
+                <img className="shop-item-anime-v2-dreamy-intro" alt=" " style={{ top: `0px` }} />
+
+            </>
+        ),
+        "animeKIDetonate": (
+            <>
+                <img className="shop-item-anime-v2-ki-detonate-intro" alt=" " style={{ top: `0px` }} />
+
+            </>
+        ),
+        "animeSushiMania": (
+            <>
+                <img className="shop-item-anime-v2-sushi-mania-intro " alt=" " style={{ top: `0px` }} />
+
+            </>
+        ),
+
     }
 
     let spinningCubes = spinCubes ? (
