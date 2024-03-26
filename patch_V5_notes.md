@@ -1207,3 +1207,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Started Anime V2 Avatar Decoration items.
     - Added animeCatEarsAnimated.png.
     - Added animeInTearsAnimated.png.
+    - Added animeRageAnimated.png.
+
