@@ -168,6 +168,12 @@ const PreviewGiftUPCModal = (props) => {
         "springToonsStrawberryVine": "ppe-spring-toons-strawberry-vine",
         "springToonsButterflies": "ppe-spring-toons-butterflies",
         "springToonsPetalPack": "ppe-spring-toons-petal-pack",
+        "animeCatEars":  "ppe-anime-cat-ears",
+        "animeKiEnergy":  "ppe-anime-ki-energy",
+        "animeHeartBloom":  "ppe-anime-heart-bloom",
+        "animeDismay":  "ppe-anime-dismay",
+        "animeRage":  "ppe-anime-rage",
+        "animeInTears":  "ppe-anime-inTears",
     }
 
     let memberBanner = member.banner === undefined ?
