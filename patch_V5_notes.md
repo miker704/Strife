@@ -1235,5 +1235,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Anime V2 Profile effects styles to Strife shop styles.
     - Added dreamyIdle.png.
     - Added dreamyIntro.png.
+    - Added dreamyReducedMotion.png.
 
 
