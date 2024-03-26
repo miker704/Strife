@@ -1217,4 +1217,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added animeCatEarsStatic.png.
     - Added animeInTearsStatic.png.
     - Added animeRageStatic.png.
+    - Added APMAnimeV2Banner.png.
 
