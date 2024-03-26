@@ -1232,6 +1232,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Anime V2 Effects to Profile effects card.
     - Started Anime V2 Profile Effect items.
     - Added Anime V2 Profile effects styles to Send a Gift modal styles.
+    - Added Anime V2 Profile effects styles to Strife shop styles.
 
 
 
