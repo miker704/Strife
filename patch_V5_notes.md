@@ -1222,5 +1222,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added shopAnimeV2BannerLogo.png.
     - Added Anime V2 Avatar decoration styles for preview profile effects modals.
     - Added Anime V2 Banner outline styles.
+    - Added Anime V2 Avatar decoration styles to Send a Gift modal styles.
 
 
