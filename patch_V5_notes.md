@@ -1241,5 +1241,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added kiDetonateIntro.png.
     - Added kiDetonateReducedMotion.png.
     - Added kiDetonateThumbnail.png.
+    - Added sushiManiaIdle.png.
 
 
