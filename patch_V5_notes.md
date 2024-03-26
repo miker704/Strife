@@ -1247,4 +1247,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added sushiManiaThumbnail.png.
     - Added Anime V2 Profile effects to Send a Gift Modal.
     - Added Anime V2 Profile effects to Preview Gift UPC Modal.
+    - Added Anime V2 Profile effects to Profile Effect card.
 
