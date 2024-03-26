@@ -90,6 +90,10 @@ const ProfileEffectPreviewModal = (props) => {
             background: `rgb(251, 127, 50)`,
             color: `rgb(0, 0,0)`,
         },
+        "anime-v2-effect": {
+            background: `rgb(121, 93, 223)`,
+            color: `rgb(0,0,0)`
+        },
     }
     const buttonStyles = {
         "fall-effect": {
@@ -138,6 +142,10 @@ const ProfileEffectPreviewModal = (props) => {
         },
         "spring-toons-effect": {
             background: `linear-gradient(90deg, rgb(237, 213, 80), rgb(251, 127, 50))`,
+            color: `rgb(0,0,0)`,
+        },
+        "anime-v2-effect": {
+            background: `linear-gradient(90deg, rgb(66, 183, 255), rgb(121, 93, 223))`,
             color: `rgb(0,0,0)`,
         },
     }
@@ -231,6 +239,7 @@ const ProfileEffectPreviewModal = (props) => {
         "lunar-dragon-effect": { background: `linear-gradient(135deg, rgb(143, 0, 0), rgb(92, 0, 0))` },
         "elements-effect": { background: `linear-gradient(135deg, rgb(27, 27, 161), rgb(0, 22, 41))` },
         "spring-toons-effect": { background: `linear-gradient(135deg, rgb(255, 255, 255), rgb(113, 191, 254))` },
+        "anime-v2-effect": { background: `linear-gradient(135deg, rgb(173, 255, 254), rgb(2, 61, 116))` },
 
     }
 
@@ -247,6 +256,7 @@ const ProfileEffectPreviewModal = (props) => {
         "lunar-dragon-effect": "ppe-lunar-dragon-bg-banner",
         "elements-effect": "ppe-elements-bg-banner",
         "spring-toons-effect": "ppe-spring-toons-bg-banner",
+        "anime-v2-effect":"ppe-anime-v2-bg-banner",
 
     }
 
@@ -263,6 +273,7 @@ const ProfileEffectPreviewModal = (props) => {
         "lunar-dragon-effect": "ppe-lunar-dragon-title-banner",
         "elements-effect": "ppe-elements-title-banner",
         "spring-toons-effect": "ppe-spring-toons-title-banner",
+        "anime-v2-effect":"ppe-anime-v2-title-banner",
 
     }
 
