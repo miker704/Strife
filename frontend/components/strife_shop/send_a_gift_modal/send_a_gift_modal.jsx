@@ -520,6 +520,12 @@ const SendAGiftModal = (props) => {
         "springToonsStrawberryVine": "sgm-spring-toons-strawberry-vine",
         "springToonsButterflies": "sgm-spring-toons-butterflies",
         "springToonsPetalPack": "sgm-spring-toons-petal-pack",
+        "animeCatEars":  "sgm-anime-cat-ears",
+        "animeKiEnergy":  "sgm-anime-ki-energy",
+        "animeHeartBloom":  "sgm-anime-heart-bloom",
+        "animeDismay":  "sgm-anime-dismay",
+        "animeRage":  "sgm-anime-rage",
+        "animeInTears":  "sgm-anime-inTears",
     }
 
 
@@ -590,6 +596,12 @@ const SendAGiftModal = (props) => {
         "springToonsStrawberryVine": "ppe-spring-toons-strawberry-vine",
         "springToonsButterflies": "ppe-spring-toons-butterflies",
         "springToonsPetalPack": "ppe-spring-toons-petal-pack",
+        "animeCatEars":  "ppe-anime-cat-ears",
+        "animeKiEnergy":  "ppe-anime-ki-energy",
+        "animeHeartBloom":  "ppe-anime-heart-bloom",
+        "animeDismay":  "ppe-anime-dismay",
+        "animeRage":  "ppe-anime-rage",
+        "animeInTears":  "ppe-anime-inTears",
     }
 
     let profileEffectPreviewStaticClassNames = {
