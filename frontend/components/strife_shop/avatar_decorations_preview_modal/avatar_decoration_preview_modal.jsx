@@ -145,7 +145,7 @@ const AvatarDecorationPreviewModal = (props) => {
         "lunar-dragon-effect": "ppe-lunar-dragon-bg-banner",
         "elements-effect": "ppe-elements-bg-banner",
         "spring-toons-effect": "ppe-spring-toons-bg-banner",
-        "anime-v2-effect":"ppe-anime-v2-bg-banner",
+        "anime-v2-effect": "ppe-anime-v2-bg-banner",
     }
     const profileEffectTitleBanner = {
         "fall-effect": "ppe-fall-title-banner",
@@ -160,7 +160,7 @@ const AvatarDecorationPreviewModal = (props) => {
         "lunar-dragon-effect": "ppe-lunar-dragon-title-banner",
         "elements-effect": "ppe-elements-title-banner",
         "spring-toons-effect": "ppe-spring-toons-title-banner",
-        "anime-v2-effect":"ppe-anime-v2-title-banner",
+        "anime-v2-effect": "ppe-anime-v2-title-banner",
     }
 
     const salePrice = {
@@ -1290,10 +1290,14 @@ const AvatarDecorationPreviewModal = (props) => {
                                                                 {`$${strikeThroughPrice[props.avatarEffectObj]}`}
                                                             </h2>
                                                             <h2 className={`ppe-profile-effect-price-tags-h2-xsmall-med-bold ${renderTextTheme()}`} >
-                                                                <StrifeNitroBadgeIcon className="ppe-ped-nitro-ball-icon-faded" height={24} width={24} />
+                                                                <StrifeNitroBadgeIcon className="ppe-ped-nitro-ball-icon-faded" height={24} width={24}
+                                                                    data-tooltip-content={"Nitro subscribers get a discount on this decoration"}
+                                                                    data-tooltip-id={`usmmodal-thread-tip-${props.avatarEffectObj}`} data-tooltip-place="top" data-tooltip-position-strategy="fixed"
+                                                                />
                                                                 {`$${salePrice[props.avatarEffectObj]} with Nitro. `}
                                                                 <div className="ppe-ped-premium-unlock-hook" role="button" tabIndex={0} onClick={(e) => { e.stopPropagation(); openModal("subToNitroBasic"); }}>Subscribe now</div>
                                                             </h2>
+                                                            <Tooltip className="usm-tool-tip" id={`usmmodal-thread-tip-${props.avatarEffectObj}`} place="top" closeOnResize={true} closeOnScroll={true} positionStrategy={'fixed'}/>
                                                         </div>
                                                     )}
                                                 </div>
