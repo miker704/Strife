@@ -1204,3 +1204,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Adjusted Fellowship of the spring profile effect item.
     - Finalized Spring toons Avatar Decorations in Strife shop.
     - Finalized Spring toons Profile effects in Strife shop.
+    - Started Anime V2 Avatar Decoration items.
+    - Added animeCatEarsAnimated.png.
