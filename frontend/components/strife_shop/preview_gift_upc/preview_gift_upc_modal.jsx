@@ -168,12 +168,12 @@ const PreviewGiftUPCModal = (props) => {
         "springToonsStrawberryVine": "ppe-spring-toons-strawberry-vine",
         "springToonsButterflies": "ppe-spring-toons-butterflies",
         "springToonsPetalPack": "ppe-spring-toons-petal-pack",
-        "animeCatEars":  "ppe-anime-cat-ears",
-        "animeKiEnergy":  "ppe-anime-ki-energy",
-        "animeHeartBloom":  "ppe-anime-heart-bloom",
-        "animeDismay":  "ppe-anime-dismay",
-        "animeRage":  "ppe-anime-rage",
-        "animeInTears":  "ppe-anime-inTears",
+        "animeCatEars": "ppe-anime-cat-ears",
+        "animeKiEnergy": "ppe-anime-ki-energy",
+        "animeHeartBloom": "ppe-anime-heart-bloom",
+        "animeDismay": "ppe-anime-dismay",
+        "animeRage": "ppe-anime-rage",
+        "animeInTears": "ppe-anime-inTears",
     }
 
     let memberBanner = member.banner === undefined ?
@@ -455,6 +455,24 @@ const PreviewGiftUPCModal = (props) => {
                 <img className="shop-item-spring-toons-spring-boom-idle-flowers" alt=" " style={{ top: `0px` }} />
                 <img className="shop-item-spring-toons-spring-boom-idle-rain-drops" alt=" " style={{ top: `0px` }} />
                 <img className="shop-item-spring-toons-spring-boom-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "animeDreamy": (
+            <>
+                <img className="shop-item-anime-v2-dreamy-intro" alt=" " style={{ top: `0px` }} />
+
+            </>
+        ),
+        "animeKIDetonate": (
+            <>
+                <img className="shop-item-anime-v2-ki-detonate-intro" alt=" " style={{ top: `0px` }} />
+
+            </>
+        ),
+        "animeSushiMania": (
+            <>
+                <img className="shop-item-anime-v2-sushi-mania-intro " alt=" " style={{ top: `0px` }} />
+
             </>
         ),
     }
