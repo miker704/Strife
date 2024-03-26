@@ -256,7 +256,7 @@ const ProfileEffectPreviewModal = (props) => {
         "lunar-dragon-effect": "ppe-lunar-dragon-bg-banner",
         "elements-effect": "ppe-elements-bg-banner",
         "spring-toons-effect": "ppe-spring-toons-bg-banner",
-        "anime-v2-effect":"ppe-anime-v2-bg-banner",
+        "anime-v2-effect": "ppe-anime-v2-bg-banner",
 
     }
 
@@ -273,7 +273,7 @@ const ProfileEffectPreviewModal = (props) => {
         "lunar-dragon-effect": "ppe-lunar-dragon-title-banner",
         "elements-effect": "ppe-elements-title-banner",
         "spring-toons-effect": "ppe-spring-toons-title-banner",
-        "anime-v2-effect":"ppe-anime-v2-title-banner",
+        "anime-v2-effect": "ppe-anime-v2-title-banner",
 
     }
 
@@ -311,6 +311,9 @@ const ProfileEffectPreviewModal = (props) => {
         "springToonsPetals": 4.99,
         "springToonsFellowship": 4.99,
         "springToonsSpringBoom": 4.99,
+        "animeDreamy": 4.99,
+        "animeKIDetonate": 4.99,
+        "animeSushiMania": 4.99,
     };
 
     const strikeThroughPrice = {
@@ -347,7 +350,9 @@ const ProfileEffectPreviewModal = (props) => {
         "springToonsPetals": 5.99,
         "springToonsFellowship": 5.99,
         "springToonsSpringBoom": 5.99,
-
+        "animeDreamy": 5.99,
+        "animeKIDetonate": 5.99,
+        "animeSushiMania": 5.99,
     };
 
     const profileEffectName = {
@@ -384,7 +389,9 @@ const ProfileEffectPreviewModal = (props) => {
         "springToonsPetals": "Petal Serenade",
         "springToonsFellowship": "Fellowship of the Spring",
         "springToonsSpringBoom": "Spring Bloom",
-
+        "animeDreamy": "Dreamy",
+        "animeKIDetonate": "Ki Detonate",
+        "animeSushiMania": "Sushi Mania",
     }
     const profileEffectDescription = {
         "fallFoliage": "Getting ready for sweater weather.",
@@ -420,6 +427,9 @@ const ProfileEffectPreviewModal = (props) => {
         "springToonsPetals": "A cascade of floral delight.",
         "springToonsFellowship": "They only gather around this time of the year.",
         "springToonsSpringBoom": "Welcome to my garden.",
+        "animeDreamy": "When senpai notices you.",
+        "animeKIDetonate": "Obliteration in 3... 2... 1...",
+        "animeSushiMania": "Always keep the sushi rolling.",
     }
 
 
@@ -792,6 +802,23 @@ const ProfileEffectPreviewModal = (props) => {
                 <img className="shop-item-spring-toons-spring-boom-idle-flowers" alt=" " style={{ top: `0px` }} />
                 <img className="shop-item-spring-toons-spring-boom-idle-rain-drops" alt=" " style={{ top: `0px` }} />
                 <img className="shop-item-spring-toons-spring-boom-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "animeDreamy": (
+            <>
+                <img className="shop-item-anime-v2-dreamy-intro" alt=" " style={{ top: `0px` }} />
+
+            </>
+        ),
+        "animeKIDetonate": (
+            <>
+                <img className="shop-item-anime-v2-ki-detonate-intro" alt=" " style={{ top: `0px` }} />
+
+            </>
+        ),
+        "animeSushiMania": (
+            <>
+                <img className="shop-item-anime-v2-sushi-mania-intro " alt=" " style={{ top: `0px` }} />
             </>
         ),
     }
