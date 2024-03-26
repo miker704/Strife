@@ -1251,4 +1251,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Anime V2 Profile effects to Profile Effect Preview Modal.
     - Finalized Anime V2 Avatar Decorations to Strife Shop.
     - Finalized Anime V2 Profile effects to Strife Shop.
+    - Added new tool tip to nitro icon on Profile Effect Preview Modal.
 
