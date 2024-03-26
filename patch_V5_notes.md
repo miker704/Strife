@@ -1236,5 +1236,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added dreamyIdle.png.
     - Added dreamyIntro.png.
     - Added dreamyReducedMotion.png.
+    - Added dreamyThumbnail.png.
 
 
