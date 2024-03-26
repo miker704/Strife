@@ -1045,6 +1045,41 @@
   content: image_url("springBoomThumbnail.png");
 }
 
+.sgm-anime-v2-dreamy{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("dreamyThumbnail.png");
+}
+.sgm-anime-v2-ki-detonate{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("kiDetonateThumbnail.png");
+}
+.sgm-anime-v2-sushi-mania{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top;
+  object-position: top;
+  content: image_url("sushiManiaThumbnail.png");
+}
+
+
 .sgm-fall-leaves-image {
   content: image_url("fallLeavesAnimated.png");
   display: block;
