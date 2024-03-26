@@ -800,7 +800,7 @@
 }
 
 .shop-item-card.anime-v2-items:hover {
-  box-shadow: rgb(216 ,175 ,100) 0px 0px 25px 1px !important;
+  box-shadow: rgb(216, 175, 100) 0px 0px 25px 1px !important;
 }
 
 .shop-item-categories > .shop-item-categories-wrapper {
@@ -4415,6 +4415,111 @@
 @-webkit-keyframes spring-boom-idle-rain-cycle {
   0% {
     content: image_url("blankEffect.png");
+  }
+}
+
+//anime v2
+
+.shop-item-anime-v2-dreamy {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("dreamyThumbnail.png");
+}
+
+.shop-item-anime-v2-dreamy-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("dreamyIdle.png");
+  -webkit-animation-duration: 5s;
+  -webkit-animation-name: anime-v2-dreamy-intro-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: anime-v2-dreamy-intro-cycle;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes anime-v2-dreamy-intro-cycle {
+  0% {
+    content: image_url("dreamyIntro.png");
+  }
+}
+@-webkit-keyframes anime-v2-dreamy-intro-cycle {
+  0% {
+    content: image_url("dreamyIntro.png");
+  }
+}
+
+.shop-item-anime-v2-ki-detonate {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("kiDetonateThumbnail.png");
+}
+
+.shop-item-anime-v2-ki-detonate-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("kiDetonateIdle.png");
+  -webkit-animation-duration: 6s;
+  -webkit-animation-name: anime-v2-ki-detonate-intro-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: anime-v2-ki-detonate-intro-cycle;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes anime-v2-ki-detonate-intro-cycle {
+  0% {
+    content: image_url("kiDetonateIntro.png");
+  }
+}
+@-webkit-keyframes anime-v2-ki-detonate-intro-cycle {
+  0% {
+    content: image_url("kiDetonateIntro.png");
+  }
+}
+.shop-item-anime-v2-sushi-mania {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("sushiManiaThumbnail.png");
+}
+
+.shop-item-anime-v2-sushi-mania-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("sushiManiaIdle.png");
+  -webkit-animation-duration: 6s;
+  -webkit-animation-name: anime-v2-sushi-mania-intro-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: anime-v2-sushi-mania-intro-cycle;
+  animation-duration: 6s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes anime-v2-sushi-mania-intro-cycle {
+  0% {
+    content: image_url("sushiManiaIntro.png");
+  }
+}
+@-webkit-keyframes anime-v2-sushi-mania-intro-cycle {
+  0% {
+    content: image_url("sushiManiaIntro.png");
   }
 }
 
