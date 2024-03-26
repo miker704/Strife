@@ -54,7 +54,11 @@ const ProfileEffectItemCard = (props) => {
         "spring-toons-effect": {
             background: `var(--brand-experiment)`,
             color: `var(--white-500)`
-        }
+        },
+        "anime-v2-effect": {
+            background: `rgb(121, 93, 223)`,
+            color: `rgb(0,0,0)`
+        },
     }
 
 
@@ -361,7 +365,27 @@ const ProfileEffectItemCard = (props) => {
         ) : (
             <img className="shop-item-spring-toons-spring-boom" alt=" " style={{ top: `0px` }} />
         ),
-
+        "animeDreamy": hovered ? (
+            <>
+                <img className="shop-item-anime-v2-dreamy-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ) : (
+            <img className="shop-item-anime-v2-dreamy" alt=" " style={{ top: `0px` }} />
+        ),
+        "animeKIDetonate": hovered ? (
+            <>
+                <img className="shop-item-anime-v2-ki-detonate-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ) : (
+            <img className="shop-item-anime-v2-ki-detonate" alt=" " style={{ top: `0px` }} />
+        ),
+        "animeSushiMania": hovered ? (
+            <>
+                <img className="shop-item-anime-v2-sushi-mania-intro " alt=" " style={{ top: `0px` }} />
+            </>
+        ) : (
+            <img className="shop-item-anime-v2-sushi-mania" alt=" " style={{ top: `0px` }} />
+        ),
     }
 
     return (
