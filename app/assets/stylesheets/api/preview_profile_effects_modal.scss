@@ -236,6 +236,15 @@
   content: image_url("shopSpringToonsBannerLogo.png");
 }
 
+.ppe-anime-v2-title-banner {
+  padding-right: 6px;
+  padding-top: 4px;
+  max-height: 25px;
+  max-width: 120px;
+  content: image_url("shopAnimeV2BannerLogo.png");
+}
+
+
 .ppe-profile-effect-description-container {
   margin-bottom: 38px;
 }
@@ -473,6 +482,13 @@
   background-blend-mode: multiply;
   background-position: center;
   background-image: image_url("APMSpringToonsBanner.png");
+}
+
+.ppe-collectible-preview-category-banner.ppe-anime-v2-bg-banner {
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-position: center;
+  background-image: image_url("APMAnimeV2Banner.png");
 }
 
 .ppepes-preview-container-inner {
@@ -2163,6 +2179,68 @@
   grid-area: 1/1;
 }
 
+.ppe-anime-cat-ears {
+  content: image_url("animeCatEarsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-anime-ki-energy {
+  content: image_url("animeKiEnergyAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-anime-heart-bloom {
+  content: image_url("animeHeartBloomAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-anime-dismay {
+  content: image_url("animeDismayAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-anime-rage {
+  content: image_url("animeRageAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-anime-inTears {
+  content: image_url("animeInTearsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+
 .ppe-halloween-jack-o-lantern::before,
 .ppe-halloween-ghosts::before,
 .ppe-halloween-minions::before,
@@ -2229,7 +2307,13 @@
 .ppe-spring-toons-hugh-the-rainbow::before,
 .ppe-spring-toons-strawberry-vine::before,
 .ppe-spring-toons-butterflies::before,
-.ppe-spring-toons-petal-pack::before {
+.ppe-spring-toons-petal-pack::before,
+.ppe-anime-cat-ears::before,
+.ppe-anime-ki-energy::before,
+.ppe-anime-heart-bloom::before,
+.ppe-anime-dismay::before,
+.ppe-anime-rage::before,
+.ppe-anime-inTears::before {
   content: "";
   display: block;
   width: 100%;
