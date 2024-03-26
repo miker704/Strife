@@ -1220,4 +1220,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added APMAnimeV2Banner.png.
     - Added shopAnimeV2Banner.png.
     - Added shopAnimeV2BannerLogo.png.
+    - Added Anime V2 Avatar decoration styles for preview profile effects modals.
+
 
