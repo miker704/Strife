@@ -1224,5 +1224,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Anime V2 Banner outline styles.
     - Added Anime V2 Avatar decoration styles to Send a Gift modal styles.
     - Added Anime V2 Avatar decoration styles to Strife shop styles.
+    - Added Anime V2 Avatar decoration to Send a Gift modal.
 
 
