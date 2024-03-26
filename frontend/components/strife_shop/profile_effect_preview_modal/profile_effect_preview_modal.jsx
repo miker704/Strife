@@ -943,10 +943,14 @@ const ProfileEffectPreviewModal = (props) => {
                                                         <div className="ppe-ped-price-tags-container">
                                                             <h2 className="shop-item-price-tags-h2-medium" style={{ color: `white` }}>{`$${strikeThroughPrice[props.profileThemeObj]}`}</h2>
                                                             <h2 className={`ppe-profile-effect-price-tags-h2-xsmall-med-bold ${renderTextTheme()}`}>
-                                                                <StrifeNitroBadgeIcon className="ppe-ped-nitro-ball-icon-faded" height={24} width={24} />
+                                                                <StrifeNitroBadgeIcon className="ppe-ped-nitro-ball-icon-faded" height={24} width={24}
+                                                                    data-tooltip-content={"Nitro subscribers get a discount on this decoration"}
+                                                                    data-tooltip-id={`usmmodal-thread-tip-usm-${props.profileThemeObj}`} data-tooltip-place="top" data-tooltip-position-strategy="fixed"
+                                                                />
                                                                 {`$${salePrice[props.profileThemeObj]} with Nitro. `}
                                                                 <div className="ppe-ped-premium-unlock-hook" role="button" tabIndex={0} onClick={(e) => { e.stopPropagation(); openModal("subToNitroBasic"); }}>Subscribe now</div>
                                                             </h2>
+                                                            <Tooltip className="usm-tool-tip" id={`usmmodal-thread-tip-usm-${props.profileThemeObj}`} place="top" closeOnResize={true} closeOnScroll={true} positionStrategy={'fixed'} />
                                                         </div>
                                                     )}
                                                 </div>
