@@ -129,7 +129,7 @@ const AvatarDecorationPreviewModal = (props) => {
         "lunar-dragon-effect": { background: `linear-gradient(135deg, rgb(143, 0, 0), rgb(92, 0, 0))` },
         "elements-effect": { background: `linear-gradient(135deg, rgb(27, 27, 161), rgb(0, 22, 41))` },
         "spring-toons-effect": { background: `linear-gradient(135deg, rgb(255, 255, 255), rgb(113, 191, 254))` },
-
+        "anime-v2-effect": { background: `linear-gradient(135deg, rgb(173, 255, 254), rgb(2, 61, 116))` },
     }
 
     const profileEffectBgBanner = {
@@ -145,7 +145,7 @@ const AvatarDecorationPreviewModal = (props) => {
         "lunar-dragon-effect": "ppe-lunar-dragon-bg-banner",
         "elements-effect": "ppe-elements-bg-banner",
         "spring-toons-effect": "ppe-spring-toons-bg-banner",
-
+        "anime-v2-effect":"ppe-anime-v2-bg-banner",
     }
     const profileEffectTitleBanner = {
         "fall-effect": "ppe-fall-title-banner",
@@ -160,6 +160,7 @@ const AvatarDecorationPreviewModal = (props) => {
         "lunar-dragon-effect": "ppe-lunar-dragon-title-banner",
         "elements-effect": "ppe-elements-title-banner",
         "spring-toons-effect": "ppe-spring-toons-title-banner",
+        "anime-v2-effect":"ppe-anime-v2-title-banner",
     }
 
     const salePrice = {
@@ -229,6 +230,12 @@ const AvatarDecorationPreviewModal = (props) => {
         "springToonsStrawberryVine": 4.99,
         "springToonsButterflies": 4.99,
         "springToonsPetalPack": 4.99,
+        "animeCatEars": 4.99,
+        "animeKiEnergy": 4.99,
+        "animeHeartBloom": 4.99,
+        "animeDismay": 4.99,
+        "animeRage": 4.99,
+        "animeInTears": 4.99,
     };
 
 
@@ -299,6 +306,12 @@ const AvatarDecorationPreviewModal = (props) => {
         "springToonsStrawberryVine": 5.99,
         "springToonsButterflies": 5.99,
         "springToonsPetalPack": 5.99,
+        "animeCatEars": 5.99,
+        "animeKiEnergy": 5.99,
+        "animeHeartBloom": 5.99,
+        "animeDismay": 5.99,
+        "animeRage": 5.99,
+        "animeInTears": 5.99,
     };
 
     const avatarDecorationName = {
@@ -368,6 +381,12 @@ const AvatarDecorationPreviewModal = (props) => {
         "springToonsStrawberryVine": "Strawberry Vine",
         "springToonsButterflies": "Butterflies",
         "springToonsPetalPack": "The Petal Pack",
+        "animeCatEars": "Cat Ears",
+        "animeKiEnergy": "Ki Energy",
+        "animeHeartBloom": "Heartbloom",
+        "animeDismay": "Dismay",
+        "animeRage": "Rage",
+        "animeInTears": "In Tears",
 
     }
     const avatarDecorationDescription = {
@@ -437,6 +456,12 @@ const AvatarDecorationPreviewModal = (props) => {
         "springToonsStrawberryVine": "Now that's a sweet harvest.",
         "springToonsButterflies": "We shall tickle the clouds today - join us!",
         "springToonsPetalPack": "Comes with sunshine and smiles.",
+        "animeCatEars": "≽ ^ • ⩊ • ^ ≼",
+        "animeKiEnergy": "Focus from within.",
+        "animeHeartBloom": "Let your love blossom.",
+        "animeDismay": "Not like this...",
+        "animeRage": "THAT'S IT.",
+        "animeInTears": "*sobbing*",
     }
 
     const giftColor = {
@@ -487,6 +512,10 @@ const AvatarDecorationPreviewModal = (props) => {
         "spring-toons-effect": {
             background: `rgb(251, 127, 50)`,
             color: `rgb(0, 0,0)`,
+        },
+        "anime-v2-effect": {
+            background: `rgb(121, 93, 223)`,
+            color: `rgb(0,0,0)`
         },
     }
 
@@ -539,7 +568,10 @@ const AvatarDecorationPreviewModal = (props) => {
             background: `linear-gradient(90deg, rgb(237, 213, 80), rgb(251, 127, 50))`,
             color: `rgb(0,0,0)`,
         },
-
+        "anime-v2-effect": {
+            background: `linear-gradient(90deg, rgb(66, 183, 255), rgb(121, 93, 223))`,
+            color: `rgb(0,0,0)`,
+        },
     }
 
     const defaultcolorPalleteRef = useRef(Math.random());
@@ -898,6 +930,37 @@ const AvatarDecorationPreviewModal = (props) => {
                 <img className='ppe-spring-toons-petal-pack' alt=" " style={{ top: `0px` }} />
             </>
         ),
+        "animeCatEars": (
+            <>
+                <img className='ppe-anime-cat-ears' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "animeKiEnergy": (
+            <>
+                <img className='ppe-anime-ki-energy' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "animeHeartBloom": (
+            <>
+                <img className='ppe-anime-heart-bloom' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "animeDismay": (
+            <>
+                <img className='ppe-anime-dismay' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "animeRage": (
+            <>
+                <img className='ppe-anime-rage' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "animeInTears": (
+            <>
+                <img className='ppe-anime-inTears' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+
     }
 
 
@@ -969,6 +1032,12 @@ const AvatarDecorationPreviewModal = (props) => {
         "springToonsStrawberryVine": "ppe-spring-toons-strawberry-vine",
         "springToonsButterflies": "ppe-spring-toons-butterflies",
         "springToonsPetalPack": "ppe-spring-toons-petal-pack",
+        "animeCatEars": "ppe-anime-cat-ears",
+        "animeKiEnergy": "ppe-anime-ki-energy",
+        "animeHeartBloom": "ppe-anime-heart-bloom",
+        "animeDismay": "ppe-anime-dismay",
+        "animeRage": "ppe-anime-rage",
+        "animeInTears": "ppe-anime-inTears",
     }
 
 
