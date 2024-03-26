@@ -1243,6 +1243,67 @@
   grid-area: 1/1;
 }
 
+.sgm-anime-cat-ears {
+  content: image_url("animeCatEarsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-anime-ki-energy {
+  content: image_url("animeKiEnergyAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-anime-heart-bloom {
+  content: image_url("animeHeartBloomAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-anime-dismay {
+  content: image_url("animeDismayAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-anime-rage {
+  content: image_url("animeRageAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+.sgm-anime-inTears {
+  content: image_url("animeInTearsAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  grid-area: 1/1;
+}
+
 .sgm-breakfast-items-toast {
   content: image_url("toastAnimated.png");
   display: block;
