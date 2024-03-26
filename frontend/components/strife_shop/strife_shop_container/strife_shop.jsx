@@ -441,6 +441,205 @@ const StrifeShop = (props) => {
                                         </div>
                                     </div>
 
+
+                                    <div className="shop-item-categories-wrapper">
+
+                                        {
+                                            isLoadingShop ? (
+                                                <div className="shop-banner-img">
+                                                    <ShopItemCardGridSkeletonList listsToRender={1} />
+                                                </div>
+                                            ) :
+                                                (
+                                                    <div className="shop-banner-img shop-anime-v2-banner">
+                                                        <div className="shop-strife-banner-logo-halloween">
+                                                            <StrifeBannerLogo width={124} height={24} className={'shop-strife-banner-logo-halloween-icon'} />
+                                                        </div>
+                                                        <img className="shop-anime-v2-banner-logo" alt=" " />
+                                                        <div className="shop-halloween-subtext" style={{ color: `var(--black-500)` }}>Senpai will definitely notice you.</div>
+                                                    </div>
+                                                )}
+
+                                        <div>
+                                            <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
+                                            {
+                                                isLoadingShop ? (
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
+                                                        <ShopItemCardGridSkeletonList listsToRender={7} />
+                                                    </div>
+                                                )
+                                                    : (
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
+
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"anime-v2-items"}
+                                                                profileEffectTheme={"anime-v2-effect"} avatarEffectObj={"animeCatEars"} avatarTitle={"Cat Ears"}
+                                                                avatarImageName={"anime-cat-ears"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"≽ ^ • ⩊ • ^ ≼"}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `linear-gradient(90deg, rgb(66, 183, 255), rgb(121, 93, 223))`,
+                                                                    color: `rgb(0,0,0)`
+                                                                }}
+                                                            />
+
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"anime-v2-items"}
+                                                                profileEffectTheme={"anime-v2-effect"} avatarEffectObj={"animeKiEnergy"} avatarTitle={"Ki Energy"}
+                                                                avatarImageName={"anime-ki-energy"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Focus from within."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `linear-gradient(90deg, rgb(66, 183, 255), rgb(121, 93, 223))`,
+                                                                    color: `rgb(0,0,0)`
+                                                                }}
+                                                            />
+
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"anime-v2-items"}
+                                                                profileEffectTheme={"anime-v2-effect"} avatarEffectObj={"animeHeartBloom"} avatarTitle={"Heartbloom"}
+                                                                avatarImageName={"anime-heart-bloom"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Let your love blossom."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `linear-gradient(90deg, rgb(66, 183, 255), rgb(121, 93, 223))`,
+                                                                    color: `rgb(0,0,0)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"anime-v2-items"}
+                                                                profileEffectTheme={"anime-v2-effect"} avatarEffectObj={"animeDismay"} avatarTitle={"Dismay"}
+                                                                avatarImageName={"anime-dismay"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"Not like this..."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `linear-gradient(90deg, rgb(66, 183, 255), rgb(121, 93, 223))`,
+                                                                    color: `rgb(0,0,0)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"anime-v2-items"}
+                                                                profileEffectTheme={"anime-v2-effect"} avatarEffectObj={"animeRage"} avatarTitle={"Rage"}
+                                                                avatarImageName={"anime-rage"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"THAT'S IT."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `linear-gradient(90deg, rgb(66, 183, 255), rgb(121, 93, 223))`,
+                                                                    color: `rgb(0,0,0)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"anime-v2-items"}
+                                                                profileEffectTheme={"anime-v2-effect"} avatarEffectObj={"animeInTears"} avatarTitle={"In Tears"}
+                                                                avatarImageName={"anime-inTears"} nitroExclusive={false} avatarReducedPrice={4.99} avatarPrice={5.99}
+                                                                avatarTextDescription={"*sobbing*"}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `linear-gradient(90deg, rgb(66, 183, 255), rgb(121, 93, 223))`,
+                                                                    color: `rgb(0,0,0)`
+                                                                }}
+                                                            />
+
+                                                        </div>
+                                                    )}
+                                        </div>
+
+
+                                        <div>
+                                            <div className="shop-item-type-title-container">
+                                                <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
+                                            </div>
+                                            {
+                                                isLoadingShop ? (
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
+                                                        <ShopItemCardGridSkeletonList listsToRender={3} />
+                                                    </div>
+                                                )
+                                                    : (
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
+
+                                                            <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
+                                                                shopItemCardType={"anime-v2-items"} profileEffectTheme={"anime-v2-effect"} profileThemeObj={"animeDreamy"}
+                                                                nitroExclusive={false} profileEffectTitle={"Dreamy"} profileEffectTextDescription={"When senpai notices you."}
+                                                                profileEffectPrice={5.99} profileEffectReducedPrice={4.99} hasHoverEffect={true}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `linear-gradient(90deg, rgb(66, 183, 255), rgb(121, 93, 223))`,
+                                                                    color: `rgb(0,0,0)`
+                                                                }}
+                                                            />
+                                                            <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
+                                                                shopItemCardType={"anime-v2-items"} profileEffectTheme={"anime-v2-effect"} profileThemeObj={"animeKIDetonate"}
+                                                                nitroExclusive={false} profileEffectTitle={"Ki Detonate"} profileEffectTextDescription={"Obliteration in 3... 2... 1..."}
+                                                                profileEffectPrice={5.99} profileEffectReducedPrice={4.99}  hasHoverEffect={true}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `linear-gradient(90deg, rgb(66, 183, 255), rgb(121, 93, 223))`,
+                                                                    color: `rgb(0,0,0)`
+                                                                }}
+                                                            />
+
+
+                                                            <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
+                                                                shopItemCardType={"anime-v2-items"} profileEffectTheme={"anime-v2-effect"} profileThemeObj={"animeSushiMania"}
+                                                                nitroExclusive={false} profileEffectTitle={"Sushi Mania"} profileEffectTextDescription={"Always keep the sushi rolling."}
+                                                                profileEffectPrice={5.99} profileEffectReducedPrice={4.99}  hasHoverEffect={true}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `linear-gradient(90deg, rgb(66, 183, 255), rgb(121, 93, 223))`,
+                                                                    color: `rgb(0,0,0)`
+                                                                }}
+                                                            />
+
+
+
+                                                        </div>
+                                                    )}
+                                        </div>
+
+                                    </div>
+
+
+
+
+
+
                                     <div className="shop-item-categories-wrapper">
 
                                         {
