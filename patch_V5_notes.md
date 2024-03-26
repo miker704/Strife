@@ -1227,5 +1227,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Anime V2 Avatar decoration to Send a Gift modal.
     - Added Anime V2 Avatar decoration to Preview Gift UPC modal.
     - Fixed Anime V2 Banner outline styles.
+    - Added Anime V2 Avatar decoration to Avatar decorations preview modal.
+
 
 
