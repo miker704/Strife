@@ -1211,4 +1211,5 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added animeKiEnergyAnimated.png.
     - Added animeDismayAnimated.png.
     - Added animeHeartBloomAnimated.png.
+    - Added animeHeartBloomStatic.png.
 
