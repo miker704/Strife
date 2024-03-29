@@ -1265,3 +1265,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added valorantHintCloveStatic.png.
     - Added valorantHintCloveAnimated.png.
     - Added valorantFragOutStatic.png.
+    - Added valorantFragOutAnimated.png.
