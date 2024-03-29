@@ -1256,3 +1256,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added APMValorantBanner.png.
     - Added shopValorantBannerLogo.png.
     - Added shopValorantMotionBannerLogo.png.
+    - Added shopValorantShyBannerLeft.png.
