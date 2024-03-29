@@ -1272,3 +1272,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added valorantReynasLeerStatic.png.
     - Added APMValorantBannerLogo.png.
     - Added aceThumbnail.png.
+    - Added clovesRuseThumbnail.png.
