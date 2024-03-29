@@ -1279,3 +1279,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added immortalCloveIdle.png.
     - Added immortalCloveIntro.png.
     - Added immortalCloveReducedMotion.png.
+    - Added clovesRuseReducedMotion.png.
