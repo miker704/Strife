@@ -1274,3 +1274,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added aceThumbnail.png.
     - Added clovesRuseThumbnail.png.
     - Added immortalCloveThumbnail.png.
+    - Added clovesRuseIdle.png.
