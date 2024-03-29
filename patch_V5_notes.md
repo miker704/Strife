@@ -1262,3 +1262,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added valorantXCollabLogo.png.
     - Added valorantOmensCowlStatic.png.
     - Added valorantOmensCowlAnimated.png.
+    - Added valorantHintCloveStatic.png.
