@@ -1273,3 +1273,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added APMValorantBannerLogo.png.
     - Added aceThumbnail.png.
     - Added clovesRuseThumbnail.png.
+    - Added immortalCloveThumbnail.png.
