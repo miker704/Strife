@@ -1255,3 +1255,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added new tool tip to nitro icon on Avatar decorations preview modal.
     - Added APMValorantBanner.png.
     - Added shopValorantBannerLogo.png.
+    - Added shopValorantMotionBannerLogo.png.
