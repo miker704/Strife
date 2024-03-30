@@ -244,6 +244,13 @@
   content: image_url("shopAnimeV2BannerLogo.png");
 }
 
+.ppe-valorant-title-banner {
+  padding-right: 6px;
+  padding-top: 4px;
+  max-height: 25px;
+  max-width: 120px;
+  content: image_url("APMValorantBannerLogo.png");
+}
 
 .ppe-profile-effect-description-container {
   margin-bottom: 38px;
@@ -293,7 +300,6 @@
   white-space: pre-wrap;
   opacity: 0.7;
   color: var(--white-500);
-
 }
 
 .ppe-price-tags-h2-med-semi-bold {
@@ -489,6 +495,13 @@
   background-blend-mode: multiply;
   background-position: center;
   background-image: image_url("APMAnimeV2Banner.png");
+}
+
+.ppe-collectible-preview-category-banner.ppe-valorant-bg-banner {
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-position: center;
+  background-image: image_url("APMValorantBanner.png");
 }
 
 .ppepes-preview-container-inner {
@@ -2240,6 +2253,57 @@
   grid-area: 1/1;
 }
 
+//valorant
+.ppe-valorant-a-hint-of-clove {
+  content: image_url("valorantHintCloveAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-valorant-omens-cowl {
+  content: image_url("valorantOmensCowlAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-valorant-reynas-leer {
+  content: image_url("valorantReynasLeerAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-valorant-frag-out {
+  content: image_url("valorantFragOutAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.ppe-valorant-blade-storm {
+  content: image_url("valorantBladeStormAnimated.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
 
 .ppe-halloween-jack-o-lantern::before,
 .ppe-halloween-ghosts::before,
@@ -2313,7 +2377,12 @@
 .ppe-anime-heart-bloom::before,
 .ppe-anime-dismay::before,
 .ppe-anime-rage::before,
-.ppe-anime-inTears::before {
+.ppe-anime-inTears::before,
+.ppe-valorant-a-hint-of-clove::before,
+.ppe-valorant-omens-cowl::before,
+.ppe-valorant-reynas-leer::before,
+.ppe-valorant-frag-out::before,
+.ppe-valorant-blade-storm::before {
   content: "";
   display: block;
   width: 100%;
