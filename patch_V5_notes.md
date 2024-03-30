@@ -1285,3 +1285,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added aceReducedMotion.png.
     - Added aceIdle.png.
     - Added aceIdleFrame.png.
+    - Added aceIntroInfinite.png.
