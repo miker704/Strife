@@ -526,6 +526,11 @@ const SendAGiftModal = (props) => {
         "animeDismay": "sgm-anime-dismay",
         "animeRage": "sgm-anime-rage",
         "animeInTears": "sgm-anime-inTears",
+        "valorantAHintofClove": "sgm-valorant-a-hint-of-clove",
+        "valorantOmensCowl": "sgm-valorant-omens-cowl",
+        "valorantReynasLeer": "sgm-valorant-reynas-leer",
+        "valorantFragOut": "sgm-valorant-frag-out",
+        "valorantBladeStorm": "sgm-valorant-blade-storm",
     }
 
 
@@ -602,6 +607,11 @@ const SendAGiftModal = (props) => {
         "animeDismay": "ppe-anime-dismay",
         "animeRage": "ppe-anime-rage",
         "animeInTears": "ppe-anime-inTears",
+        "valorantAHintofClove": "ppe-valorant-a-hint-of-clove",
+        "valorantOmensCowl": "ppe-valorant-omens-cowl",
+        "valorantReynasLeer": "ppe-valorant-reynas-leer",
+        "valorantFragOut": "ppe-valorant-frag-out",
+        "valorantBladeStorm": "ppe-valorant-blade-storm",
     }
 
     let profileEffectPreviewStaticClassNames = {
@@ -641,6 +651,9 @@ const SendAGiftModal = (props) => {
         "animeDreamy": "sgm-anime-v2-dreamy",
         "animeKIDetonate": "sgm-anime-v2-ki-detonate",
         "animeSushiMania": "sgm-anime-v2-sushi-mania",
+        "valorantClovesRuse": "sgm-valorant-cloves-ruse",
+        "valorantACE": "sgm-valorant-ace",
+        "valorantImmortalClove": "sgm-valorant-immortal-clove",
     }
 
     let profileEffectPreviewImgs = {
@@ -862,6 +875,24 @@ const SendAGiftModal = (props) => {
             <>
                 <img className="shop-item-anime-v2-sushi-mania-intro " alt=" " style={{ top: `0px` }} />
 
+            </>
+        ),
+        "valorantClovesRuse": (
+            <>
+                <img className="shop-item-valorant-cloves-ruse-intro" alt=" " style={{ top: `0px` }} />
+
+            </>
+        ),
+        "valorantACE": (
+            <>
+                <img className="shop-item-valorant-ace-intro" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-valorant-ace-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-valorant-ace-idle-frame" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "valorantImmortalClove": (
+            <>
+                <img className="shop-item-valorant-immortal-clove-intro" alt=" " style={{ top: `0px` }} />
             </>
         ),
 
