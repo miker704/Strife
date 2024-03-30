@@ -803,6 +803,10 @@
   box-shadow: rgb(216, 175, 100) 0px 0px 25px 1px !important;
 }
 
+.shop-item-card.valorant-items:hover {
+  box-shadow: var(--strife-shop-valorant-red) 0px 0px 25px 1px !important;
+}
+
 .shop-item-categories > .shop-item-categories-wrapper {
   margin-top: 40px;
 }
@@ -2033,6 +2037,89 @@
   content: image_url("shopAnimeV2BannerLogo.png");
 }
 
+//valorant
+.shop-valorant-banner {
+  min-width: 700px;
+  background-color: var(--strife-shop-valorant-red);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 0;
+  background-position-y: 100%;
+  background-origin: border-box;
+  justify-content: center;
+  gap: 120px;
+  box-shadow: var(--strife-shop-valorant-bg-banner-box-shadow);
+}
+.shop-valorant-no-overflow-wrapper {
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  width: 100%;
+  height: 240px;
+}
+
+.shop-valorant-motion-banner {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 394px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  content: image_url("shopValorantMotionBanner.png");
+}
+
+.shop-valorant-shy-banner-right-side {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: var(--radius-xxl);
+  height: 394px;
+  content: image_url("shopValorantShyBannerRight.png");
+}
+.shop-valorant-shy-banner-right {
+  -o-object-position: right center;
+  object-position: right center;
+}
+
+.shop-valorant-shy-banner-left-side {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: var(--radius-xxl);
+  height: 394px;
+  content: image_url("shopValorantShyBannerLeft.png");
+}
+.shop-valorant-shy-banner-left {
+  -o-object-position: left center;
+  object-position: left center;
+}
+.shop-valorant-banner-logo {
+  position: absolute;
+  max-width: 55%;
+  content: image_url("shopValorantBannerLogo.png");
+}
+
+.attribution-logo-collabs {
+  display: flex;
+  height: 16px;
+  gap: 4px;
+  color: var(--white);
+}
+.attribution-logo-collabs img {
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.valorantCollabLogo {
+  content: image_url("valorantCollabLogo.png");
+}
+.valorantXCollabLogo {
+  content: image_url("valorantXCollabLogo.png");
+}
 //shop fall animations
 
 .fall-leaves-image {
@@ -2710,6 +2797,59 @@
 }
 .anime-inTears {
   content: image_url("animeInTearsStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+// valorant
+.valorant-a-hint-of-clove {
+  content: image_url("valorantHintCloveStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+
+.valorant-omens-cowl {
+  content: image_url("valorantOmensCowlStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.valorant-reynas-leer {
+  content: image_url("valorantReynasLeerStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.valorant-frag-out {
+  content: image_url("valorantFragOutStatic.png");
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1;
+}
+.valorant-blade-storm {
+  content: image_url("valorantBladeStormStatic.png");
   display: block;
   -o-object-fit: cover;
   object-fit: cover;
@@ -4523,6 +4663,138 @@
   }
 }
 
+//valorant
+
+.shop-item-valorant-cloves-ruse {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("clovesRuseThumbnail.png");
+}
+.shop-item-valorant-cloves-ruse-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("clovesRuseIdle.png");
+  -webkit-animation-duration: 9s;
+  -webkit-animation-name: valorant-cloves-ruse-intro-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: valorant-cloves-ruse-intro-cycle;
+  animation-duration: 9s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes valorant-cloves-ruse-intro-cycle {
+  0% {
+    content: image_url("clovesRuseIntroInfinite.png");
+  }
+}
+@-webkit-keyframes valorant-cloves-ruse-intro-cycle {
+  0% {
+    content: image_url("clovesRuseIntroInfinite.png");
+  }
+}
+.shop-item-valorant-ace {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("aceThumbnail.png");
+}
+.shop-item-valorant-ace-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("blankEffect.png");
+  -webkit-animation-duration: 9.5s;
+  -webkit-animation-name: valorant-ace-intro-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: valorant-ace-intro-cycle;
+  animation-duration: 9.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+.shop-item-valorant-ace-idle {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("aceIdle.png");
+  -webkit-animation-duration: 13.5s;
+  -webkit-animation-name: spring-boom-idle-rain-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: spring-boom-idle-rain-cycle;
+  animation-duration: 13.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+.shop-item-valorant-ace-idle-frame {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("aceIdleFrame.png");
+  -webkit-animation-duration: 11.5s;
+  -webkit-animation-name: spring-boom-idle-rain-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: spring-boom-idle-rain-cycle;
+  animation-duration: 11.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes valorant-ace-intro-cycle {
+  0% {
+    content: image_url("aceIntroInfinite.png");
+  }
+}
+@-webkit-keyframes valorant-ace-intro-cycle {
+  0% {
+    content: image_url("aceIntroInfinite.png");
+  }
+}
+
+.shop-item-valorant-immortal-clove {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("immortalCloveThumbnail.png");
+}
+
+.shop-item-valorant-immortal-clove-intro {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  content: image_url("immortalCloveIdle.png");
+  -webkit-animation-duration: 9s;
+  -webkit-animation-name: valorant-immortal-clove-intro-cycle;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-name: valorant-immortal-clove-intro-cycle;
+  animation-duration: 9s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes valorant-immortal-clove-intro-cycle {
+  0% {
+    content: image_url("immortalCloveIntroInfinite.png");
+  }
+}
+@-webkit-keyframes valorant-immortal-clove-intro-cycle {
+  0% {
+    content: image_url("immortalCloveIntroInfinite.png");
+  }
+}
+
 .shop-item-card:hover {
   .fall-leaves-image {
     content: image_url("fallLeavesAnimated.png");
@@ -4761,6 +5033,21 @@
   .spring-toons-petal-pack {
     content: image_url("petalPackAnimated.png");
   }
+  .valorant-a-hint-of-clove {
+    content: image_url("valorantHintCloveAnimated.png");
+  }
+  .valorant-omens-cowl {
+    content: image_url("valorantOmensCowlAnimated.png");
+  }
+  .valorant-reynas-leer {
+    content: image_url("valorantReynasLeerAnimated.png");
+  }
+  .valorant-frag-out {
+    content: image_url("valorantFragOutAnimated.png");
+  }
+  .valorant-blade-storm {
+    content: image_url("valorantBladeStormAnimated.png");
+  }
 }
 
 .halloween-jack-o-lantern::before,
@@ -4831,7 +5118,12 @@
 .anime-heart-bloom::before,
 .anime-dismay::before,
 .anime-rage::before,
-.anime-inTears::before {
+.anime-inTears::before,
+.valorant-a-hint-of-clove::before,
+.valorant-omens-cowl::before,
+.valorant-reynas-leer::before,
+.valorant-frag-out::before,
+.valorant-blade-storm::before {
   content: "";
   display: block;
   width: 100%;
