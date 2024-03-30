@@ -1292,6 +1292,7 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Valorant outline var to strife root styles.
     - Added Valorant gift button styles to avatar decoration item card.
     - Added Valorant gift button styles and profile effect items to profile effect item card.
+    - Added Valorant Avatar decoration and  profile effect items to send a gift modal.
 
 
 
