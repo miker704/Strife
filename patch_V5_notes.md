@@ -1287,3 +1287,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added aceIdleFrame.png.
     - Added aceIntroInfinite.png.
     - Added Valorant banner, Profile effects, and avatar decoration styles to shop styles.
+    - Added Valorant Profile effects, and avatar decoration styles to send a gift modal styles.
