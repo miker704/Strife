@@ -57,6 +57,10 @@ const AvatarDecorationItemCard = (props) => {
             background: `rgb(121, 93, 223)`,
             color: `rgb(0,0,0)`
         },
+        "valorant-effect": {
+            background: `var(--brand-experiment)`,
+            color: `var(--white-500)`
+        },
     }
 
 
