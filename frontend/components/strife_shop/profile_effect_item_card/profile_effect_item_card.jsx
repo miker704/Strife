@@ -59,6 +59,10 @@ const ProfileEffectItemCard = (props) => {
             background: `rgb(121, 93, 223)`,
             color: `rgb(0,0,0)`
         },
+        "valorant-effect": {
+            background: `var(--brand-experiment)`,
+            color: `var(--white-500)`
+        },
     }
 
 
@@ -385,6 +389,31 @@ const ProfileEffectItemCard = (props) => {
             </>
         ) : (
             <img className="shop-item-anime-v2-sushi-mania" alt=" " style={{ top: `0px` }} />
+        ),
+
+
+        "valorantClovesRuse": hovered ? (
+            <>
+                <img className="shop-item-valorant-cloves-ruse-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ) : (
+            <img className="shop-item-valorant-cloves-ruse" alt=" " style={{ top: `0px` }} />
+        ),
+        "valorantACE": hovered ? (
+            <>
+                <img className="shop-item-valorant-ace-intro" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-valorant-ace-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-valorant-ace-idle-frame" alt=" " style={{ top: `0px` }} />
+            </>
+        ) : (
+            <img className="shop-item-valorant-ace" alt=" " style={{ top: `0px` }} />
+        ),
+        "valorantImmortalClove": hovered ? (
+            <>
+                <img className="shop-item-valorant-immortal-clove-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ) : (
+            <img className="shop-item-valorant-immortal-clove" alt=" " style={{ top: `0px` }} />
         ),
     }
 
