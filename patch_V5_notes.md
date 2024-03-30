@@ -1289,4 +1289,6 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Valorant banner, Profile effects, and avatar decoration styles to shop styles.
     - Added Valorant Profile effects, and avatar decoration styles to send a gift modal styles.
     - Added Valorant Profile effects, and avatar decoration styles to preview profile effects modal styles.
+    - Added Valorant outline var to strife root styles.
+
 
