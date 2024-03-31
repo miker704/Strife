@@ -2,7 +2,7 @@ import React from "react";
 import StrifeShopHeaderNavBarContainer from "../strife_shop_header_nav_bar/strife_shop_header_nav_bar_container";
 import DMNavBarContainer from "../../dm_servers/dm_nav_bar/dm_nav_bar_container";
 import { useEffect, useState, useRef } from "react";
-import { StrifeBannerLogo, StrifeNitroBadgeIcon } from "../../front_end_svgs/Strife_svgs";
+import { StrifeBannerLogo, StrifeNitroBadgeIcon, WumpusIcon } from "../../front_end_svgs/Strife_svgs";
 import SubscribeToStrifeNitroProModalContainer from "../../nitro/subscribe_to_nitro_modal/subscribe_to_nitro_pro_modal_container";
 import ProfileEffectPreviewModalContainer from "../profile_effect_preview_modal/profile_effect_preview_modal_container";
 import AvatarDecorationPreviewModalContainer from "../avatar_decorations_preview_modal/avatar_decoration_preview_modal_container";
@@ -248,6 +248,187 @@ const StrifeShop = (props) => {
 
 
                                 <div className="shop-item-categories">
+
+                                    <div className="shop-item-categories-wrapper">
+
+                                        {
+                                            isLoadingShop ? (
+                                                <div className="shop-banner-img">
+                                                    <ShopItemCardGridSkeletonList listsToRender={1} />
+                                                </div>
+                                            ) :
+                                                (
+                                                    <div className="shop-banner-img shop-valorant-banner">
+                                                        <div className="shop-valorant-no-overflow-wrapper">
+                                                            <img className="shop-valorant-motion-banner" alt=" " />
+                                                            <img className="shop-valorant-shy-banner-right-side shop-valorant-shy-banner-right" alt=" " />
+                                                        </div>
+                                                        <img className="shop-valorant-shy-banner-left-side shop-valorant-shy-banner-left" alt=" " />
+                                                        <img className="shop-valorant-banner-logo" alt=" " />
+                                                        <div className="attribution-logo-collabs">
+                                                            <img className="valorantCollabLogo" alt=" " />
+                                                            <img className="valorantXCollabLogo" alt=" " />
+                                                            <WumpusIcon width={28} height={16} />
+                                                        </div>
+                                                        <div className="shop-halloween-subtext" style={{ color: `var(--white-500)`, zIndex: 1 }}>DEFY DEFINITION</div>
+                                                    </div>
+                                                )
+                                        }
+
+                                        <div>
+                                            <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Avatar Decorations</div>
+
+                                            {
+                                                isLoadingShop ? (
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
+                                                        <ShopItemCardGridSkeletonList listsToRender={5} />
+                                                    </div>
+                                                )
+                                                    : (
+                                                        <div className="shop-item-cards-container shop-taller-item-cards-container">
+
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"valorant-items"}
+                                                                profileEffectTheme={"valorant-effect"} avatarEffectObj={"valorantAHintofClove"} avatarTitle={"A Hint of Clove"}
+                                                                avatarImageName={"valorant-a-hint-of-clove"} nitroExclusive={false} avatarReducedPrice={11.99} avatarPrice={15.99}
+                                                                avatarTextDescription={"Back again from the great beyond."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"valorant-items"}
+                                                                profileEffectTheme={"valorant-effect"} avatarEffectObj={"valorantOmensCowl"} avatarTitle={"Omen's Cowl"}
+                                                                avatarImageName={"valorant-omens-cowl"} nitroExclusive={false} avatarReducedPrice={11.99} avatarPrice={15.99}
+                                                                avatarTextDescription={"Embrace the shadows."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"valorant-items"}
+                                                                profileEffectTheme={"valorant-effect"} avatarEffectObj={"valorantReynasLeer"} avatarTitle={"Reyna's Leer"}
+                                                                avatarImageName={"valorant-reynas-leer"} nitroExclusive={false} avatarReducedPrice={11.99} avatarPrice={15.99}
+                                                                avatarTextDescription={"The last thing they'll ever see. Lucky them."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"valorant-items"}
+                                                                profileEffectTheme={"valorant-effect"} avatarEffectObj={"valorantFragOut"} avatarTitle={"FRAG OUT"}
+                                                                avatarImageName={"valorant-frag-out"} nitroExclusive={false} avatarReducedPrice={11.99} avatarPrice={15.99}
+                                                                avatarTextDescription={"Five down. None to go."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+                                                            <AvatarDecorationItemCardContainer openModalType={openModal}
+                                                                modalName={"avatarDecorationPreviewModal"} shopItemCardType={"valorant-items"}
+                                                                profileEffectTheme={"valorant-effect"} avatarEffectObj={"valorantBladeStorm"} avatarTitle={"Blade Storm"}
+                                                                avatarImageName={"valorant-blade-storm"} nitroExclusive={false} avatarReducedPrice={11.99} avatarPrice={15.99}
+                                                                avatarTextDescription={"Watch this."}
+                                                                styleProps={{
+                                                                    background: `var(--background-floating)`,
+                                                                    borderColor: `var(--chat-border)`,
+                                                                    boxShadow: `none`
+                                                                }}
+                                                                buttonStyleProps={{
+                                                                    background: `var(--brand-experiment)`,
+                                                                    color: `var(--white-500)`
+                                                                }}
+                                                            />
+
+                                                        </div>
+                                                    )}
+
+                                        </div>
+
+                                        <div>
+                                            <div className="shop-item-type-title-container">
+                                                <div className="shop-item-type shop-item-card-taller-card-padding" style={{ color: `var(--header-secondary)` }}>Profile Effects</div>
+                                            </div>
+
+                                            {
+                                                isLoadingShop ? (
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
+                                                        <ShopItemCardGridSkeletonList listsToRender={3} />
+                                                    </div>
+                                                ) : (
+
+                                                    <div className="shop-item-cards-container shop-taller-item-cards-container">
+
+                                                        <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
+                                                            shopItemCardType={"valorant-items"} profileEffectTheme={"valorant-effect"} profileThemeObj={"valorantClovesRuse"}
+                                                            nitroExclusive={false} profileEffectTitle={"Clove's Ruse"} profileEffectTextDescription={"Smoke's out. Time to make some mischief."}
+                                                            profileEffectPrice={15.99} profileEffectReducedPrice={11.99} hasHoverEffect={true}
+                                                            styleProps={{
+                                                                background: `var(--background-floating)`,
+                                                                borderColor: `var(--chat-border)`,
+                                                                boxShadow: `none`
+                                                            }}
+                                                            buttonStyleProps={{
+                                                                background: `var(--brand-experiment)`,
+                                                                color: `var(--white-500)`
+                                                            }}
+                                                        />
+                                                        <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
+                                                            shopItemCardType={"valorant-items"} profileEffectTheme={"valorant-effect"} profileThemeObj={"valorantACE"}
+                                                            nitroExclusive={false} profileEffectTitle={"ACE"} profileEffectTextDescription={"Too bad there's only 5 of 'em."}
+                                                            profileEffectPrice={15.99} profileEffectReducedPrice={11.99} hasHoverEffect={true}
+                                                            styleProps={{
+                                                                background: `var(--background-floating)`,
+                                                                borderColor: `var(--chat-border)`,
+                                                                boxShadow: `none`
+                                                            }}
+                                                            buttonStyleProps={{
+                                                                background: `var(--brand-experiment)`,
+                                                                color: `var(--white-500)`
+                                                            }}
+                                                        />
+                                                        <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
+                                                            shopItemCardType={"valorant-items"} profileEffectTheme={"valorant-effect"} profileThemeObj={"valorantImmortalClove"}
+                                                            nitroExclusive={false} profileEffectTitle={"The Immortal Clove"} profileEffectTextDescription={"They've got all the time in the world."}
+                                                            profileEffectPrice={15.99} profileEffectReducedPrice={11.99} hasHoverEffect={true}
+                                                            styleProps={{
+                                                                background: `var(--background-floating)`,
+                                                                borderColor: `var(--chat-border)`,
+                                                                boxShadow: `none`
+                                                            }}
+                                                            buttonStyleProps={{
+                                                                background: `var(--brand-experiment)`,
+                                                                color: `var(--white-500)`
+                                                            }}
+                                                        />
+                                                    </div>
+                                                )}
+
+                                        </div>
+                                    </div>
 
 
                                     <div className="shop-item-categories-wrapper">
@@ -599,7 +780,7 @@ const StrifeShop = (props) => {
                                                             <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
                                                                 shopItemCardType={"anime-v2-items"} profileEffectTheme={"anime-v2-effect"} profileThemeObj={"animeKIDetonate"}
                                                                 nitroExclusive={false} profileEffectTitle={"Ki Detonate"} profileEffectTextDescription={"Obliteration in 3... 2... 1..."}
-                                                                profileEffectPrice={5.99} profileEffectReducedPrice={4.99}  hasHoverEffect={true}
+                                                                profileEffectPrice={5.99} profileEffectReducedPrice={4.99} hasHoverEffect={true}
                                                                 styleProps={{
                                                                     background: `var(--background-floating)`,
                                                                     borderColor: `var(--chat-border)`,
@@ -615,7 +796,7 @@ const StrifeShop = (props) => {
                                                             <ProfileEffectItemCardContainer openModalType={openModal} modalName={"profileEffectModal"}
                                                                 shopItemCardType={"anime-v2-items"} profileEffectTheme={"anime-v2-effect"} profileThemeObj={"animeSushiMania"}
                                                                 nitroExclusive={false} profileEffectTitle={"Sushi Mania"} profileEffectTextDescription={"Always keep the sushi rolling."}
-                                                                profileEffectPrice={5.99} profileEffectReducedPrice={4.99}  hasHoverEffect={true}
+                                                                profileEffectPrice={5.99} profileEffectReducedPrice={4.99} hasHoverEffect={true}
                                                                 styleProps={{
                                                                     background: `var(--background-floating)`,
                                                                     borderColor: `var(--chat-border)`,
