@@ -174,6 +174,11 @@ const PreviewGiftUPCModal = (props) => {
         "animeDismay": "ppe-anime-dismay",
         "animeRage": "ppe-anime-rage",
         "animeInTears": "ppe-anime-inTears",
+        "valorantAHintofClove": "ppe-valorant-a-hint-of-clove",
+        "valorantOmensCowl": "ppe-valorant-omens-cowl",
+        "valorantReynasLeer": "ppe-valorant-reynas-leer",
+        "valorantFragOut": "ppe-valorant-frag-out",
+        "valorantBladeStorm": "ppe-valorant-blade-storm",
     }
 
     let memberBanner = member.banner === undefined ?
@@ -473,6 +478,24 @@ const PreviewGiftUPCModal = (props) => {
             <>
                 <img className="shop-item-anime-v2-sushi-mania-intro " alt=" " style={{ top: `0px` }} />
 
+            </>
+        ),
+        "valorantClovesRuse": (
+            <>
+                <img className="shop-item-valorant-cloves-ruse-intro" alt=" " style={{ top: `0px` }} />
+
+            </>
+        ),
+        "valorantACE": (
+            <>
+                <img className="shop-item-valorant-ace-intro" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-valorant-ace-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-valorant-ace-idle-frame" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "valorantImmortalClove": (
+            <>
+                <img className="shop-item-valorant-immortal-clove-intro" alt=" " style={{ top: `0px` }} />
             </>
         ),
     }
