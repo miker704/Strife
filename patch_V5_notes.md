@@ -1296,3 +1296,4 @@ the need to create a private room is need to prevent unwanted members from enter
     - Added Valorant banner and button styles, along with Avatar decorations to Avatar Decoration preview modal.
     - Added Valorant Avatar decoration and profile effect items to preview gift UPC modal.
     - Added Valorant Avatar decoration and profile effect items to profile effect preview modal.
+    - Added Valorant Avatar decoration and profile effect items to strife shop.
