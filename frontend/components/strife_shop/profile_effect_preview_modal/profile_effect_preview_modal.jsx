@@ -94,6 +94,10 @@ const ProfileEffectPreviewModal = (props) => {
             background: `rgb(121, 93, 223)`,
             color: `rgb(0,0,0)`
         },
+        "valorant-effect": {
+            background: `rgb(255, 71, 87)`,
+            color: `rgb(255, 255, 255)`
+        },
     }
     const buttonStyles = {
         "fall-effect": {
@@ -147,6 +151,10 @@ const ProfileEffectPreviewModal = (props) => {
         "anime-v2-effect": {
             background: `linear-gradient(90deg, rgb(66, 183, 255), rgb(121, 93, 223))`,
             color: `rgb(0,0,0)`,
+        },
+        "valorant-effect": {
+            background: `linear-gradient(90deg, rgb(255, 71, 87), rgb(255, 71, 87))`,
+            color: `rgb(255, 255, 255)`,
         },
     }
 
@@ -240,6 +248,7 @@ const ProfileEffectPreviewModal = (props) => {
         "elements-effect": { background: `linear-gradient(135deg, rgb(27, 27, 161), rgb(0, 22, 41))` },
         "spring-toons-effect": { background: `linear-gradient(135deg, rgb(255, 255, 255), rgb(113, 191, 254))` },
         "anime-v2-effect": { background: `linear-gradient(135deg, rgb(173, 255, 254), rgb(2, 61, 116))` },
+        "valorant-effect": { background: `linear-gradient(135deg, rgb(84, 33, 44), rgb(15, 26, 36))` },
 
     }
 
@@ -257,6 +266,7 @@ const ProfileEffectPreviewModal = (props) => {
         "elements-effect": "ppe-elements-bg-banner",
         "spring-toons-effect": "ppe-spring-toons-bg-banner",
         "anime-v2-effect": "ppe-anime-v2-bg-banner",
+        "valorant-effect": "ppe-valorant-bg-banner",
 
     }
 
@@ -274,7 +284,7 @@ const ProfileEffectPreviewModal = (props) => {
         "elements-effect": "ppe-elements-title-banner",
         "spring-toons-effect": "ppe-spring-toons-title-banner",
         "anime-v2-effect": "ppe-anime-v2-title-banner",
-
+        "valorant-effect": "ppe-valorant-title-banner",
     }
 
     const salePrice = {
@@ -314,6 +324,9 @@ const ProfileEffectPreviewModal = (props) => {
         "animeDreamy": 4.99,
         "animeKIDetonate": 4.99,
         "animeSushiMania": 4.99,
+        "valorantClovesRuse": 15.99,
+        "valorantACE": 15.99,
+        "valorantImmortalClove": 15.99,
     };
 
     const strikeThroughPrice = {
@@ -353,6 +366,9 @@ const ProfileEffectPreviewModal = (props) => {
         "animeDreamy": 5.99,
         "animeKIDetonate": 5.99,
         "animeSushiMania": 5.99,
+        "valorantClovesRuse": 11.99,
+        "valorantACE": 11.99,
+        "valorantImmortalClove": 11.99,
     };
 
     const profileEffectName = {
@@ -392,6 +408,9 @@ const ProfileEffectPreviewModal = (props) => {
         "animeDreamy": "Dreamy",
         "animeKIDetonate": "Ki Detonate",
         "animeSushiMania": "Sushi Mania",
+        "valorantClovesRuse": "Clove's Ruse",
+        "valorantACE": "ACE",
+        "valorantImmortalClove": "The Immortal Clove",
     }
     const profileEffectDescription = {
         "fallFoliage": "Getting ready for sweater weather.",
@@ -430,6 +449,9 @@ const ProfileEffectPreviewModal = (props) => {
         "animeDreamy": "When senpai notices you.",
         "animeKIDetonate": "Obliteration in 3... 2... 1...",
         "animeSushiMania": "Always keep the sushi rolling.",
+        "valorantClovesRuse": "Smoke's out. Time to make some mischief.",
+        "valorantACE": "Too bad there's only 5 of 'em.",
+        "valorantImmortalClove": "They've got all the time in the world.",
     }
 
 
@@ -821,6 +843,25 @@ const ProfileEffectPreviewModal = (props) => {
                 <img className="shop-item-anime-v2-sushi-mania-intro " alt=" " style={{ top: `0px` }} />
             </>
         ),
+        "valorantClovesRuse": (
+            <>
+                <img className="shop-item-valorant-cloves-ruse-intro" alt=" " style={{ top: `0px` }} />
+
+            </>
+        ),
+        "valorantACE": (
+            <>
+                <img className="shop-item-valorant-ace-intro" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-valorant-ace-idle" alt=" " style={{ top: `0px` }} />
+                <img className="shop-item-valorant-ace-idle-frame" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "valorantImmortalClove": (
+            <>
+                <img className="shop-item-valorant-immortal-clove-intro" alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+
     }
 
     let buttonGroup = props.nitroExclusive ? (
