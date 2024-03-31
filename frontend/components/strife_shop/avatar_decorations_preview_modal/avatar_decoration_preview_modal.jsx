@@ -130,6 +130,8 @@ const AvatarDecorationPreviewModal = (props) => {
         "elements-effect": { background: `linear-gradient(135deg, rgb(27, 27, 161), rgb(0, 22, 41))` },
         "spring-toons-effect": { background: `linear-gradient(135deg, rgb(255, 255, 255), rgb(113, 191, 254))` },
         "anime-v2-effect": { background: `linear-gradient(135deg, rgb(173, 255, 254), rgb(2, 61, 116))` },
+        "valorant-effect": { background: `linear-gradient(135deg, rgb(84, 33, 44), rgb(15, 26, 36))` },
+
     }
 
     const profileEffectBgBanner = {
@@ -146,6 +148,8 @@ const AvatarDecorationPreviewModal = (props) => {
         "elements-effect": "ppe-elements-bg-banner",
         "spring-toons-effect": "ppe-spring-toons-bg-banner",
         "anime-v2-effect": "ppe-anime-v2-bg-banner",
+        "valorant-effect": "ppe-valorant-bg-banner",
+
     }
     const profileEffectTitleBanner = {
         "fall-effect": "ppe-fall-title-banner",
@@ -161,6 +165,8 @@ const AvatarDecorationPreviewModal = (props) => {
         "elements-effect": "ppe-elements-title-banner",
         "spring-toons-effect": "ppe-spring-toons-title-banner",
         "anime-v2-effect": "ppe-anime-v2-title-banner",
+        "valorant-effect": "ppe-valorant-title-banner",
+
     }
 
     const salePrice = {
@@ -236,6 +242,11 @@ const AvatarDecorationPreviewModal = (props) => {
         "animeDismay": 4.99,
         "animeRage": 4.99,
         "animeInTears": 4.99,
+        "valorantAHintofClove": 11.99,
+        "valorantOmensCowl": 11.99,
+        "valorantReynasLeer": 11.99,
+        "valorantFragOut": 11.99,
+        "valorantBladeStorm": 11.99,
     };
 
 
@@ -312,6 +323,11 @@ const AvatarDecorationPreviewModal = (props) => {
         "animeDismay": 5.99,
         "animeRage": 5.99,
         "animeInTears": 5.99,
+        "valorantAHintofClove": 15.99,
+        "valorantOmensCowl": 15.99,
+        "valorantReynasLeer": 15.99,
+        "valorantFragOut": 15.99,
+        "valorantBladeStorm": 15.99,
     };
 
     const avatarDecorationName = {
@@ -387,6 +403,11 @@ const AvatarDecorationPreviewModal = (props) => {
         "animeDismay": "Dismay",
         "animeRage": "Rage",
         "animeInTears": "In Tears",
+        "valorantAHintofClove": "A Hint of Clove",
+        "valorantOmensCowl": "Omen's Cowl",
+        "valorantReynasLeer": "Reyna's Leer",
+        "valorantFragOut": "FRAG OUT",
+        "valorantBladeStorm": "Blade Storm",
 
     }
     const avatarDecorationDescription = {
@@ -462,6 +483,11 @@ const AvatarDecorationPreviewModal = (props) => {
         "animeDismay": "Not like this...",
         "animeRage": "THAT'S IT.",
         "animeInTears": "*sobbing*",
+        "valorantAHintofClove": "Back again from the great beyond.",
+        "valorantOmensCowl": "Embrace the shadows.",
+        "valorantReynasLeer": "The last thing they'll ever see. Lucky them.",
+        "valorantFragOut": "Five down. None to go.",
+        "valorantBladeStorm": "Watch this.",
     }
 
     const giftColor = {
@@ -517,6 +543,10 @@ const AvatarDecorationPreviewModal = (props) => {
             background: `rgb(121, 93, 223)`,
             color: `rgb(0,0,0)`
         },
+        "valorant-effect": {
+            background: `rgb(255, 71, 87)`,
+            color: `rgb(255, 255, 255)`
+        },
     }
 
     const buttonStyles = {
@@ -571,6 +601,10 @@ const AvatarDecorationPreviewModal = (props) => {
         "anime-v2-effect": {
             background: `linear-gradient(90deg, rgb(66, 183, 255), rgb(121, 93, 223))`,
             color: `rgb(0,0,0)`,
+        },
+        "valorant-effect": {
+            background: `linear-gradient(90deg, rgb(255, 71, 87), rgb(255, 71, 87))`,
+            color: `rgb(255, 255, 255)`,
         },
     }
 
@@ -960,6 +994,31 @@ const AvatarDecorationPreviewModal = (props) => {
                 <img className='ppe-anime-inTears' alt=" " style={{ top: `0px` }} />
             </>
         ),
+        "valorantAHintofClove": (
+            <>
+                <img className='ppe-valorant-a-hint-of-clove' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "valorantOmensCowl": (
+            <>
+                <img className='ppe-valorant-omens-cowl' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "valorantReynasLeer": (
+            <>
+                <img className='ppe-valorant-reynas-leer' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "valorantFragOut": (
+            <>
+                <img className='ppe-valorant-frag-out' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
+        "valorantBladeStorm": (
+            <>
+                <img className='ppe-valorant-blade-storm' alt=" " style={{ top: `0px` }} />
+            </>
+        ),
 
     }
 
@@ -1038,6 +1097,11 @@ const AvatarDecorationPreviewModal = (props) => {
         "animeDismay": "ppe-anime-dismay",
         "animeRage": "ppe-anime-rage",
         "animeInTears": "ppe-anime-inTears",
+        "valorantAHintofClove": "ppe-valorant-a-hint-of-clove",
+        "valorantOmensCowl": "ppe-valorant-omens-cowl",
+        "valorantReynasLeer": "ppe-valorant-reynas-leer",
+        "valorantFragOut": "ppe-valorant-frag-out",
+        "valorantBladeStorm": "ppe-valorant-blade-storm",
     }
 
 
@@ -1297,7 +1361,7 @@ const AvatarDecorationPreviewModal = (props) => {
                                                                 {`$${salePrice[props.avatarEffectObj]} with Nitro. `}
                                                                 <div className="ppe-ped-premium-unlock-hook" role="button" tabIndex={0} onClick={(e) => { e.stopPropagation(); openModal("subToNitroBasic"); }}>Subscribe now</div>
                                                             </h2>
-                                                            <Tooltip className="usm-tool-tip" id={`usmmodal-thread-tip-${props.avatarEffectObj}`} place="top" closeOnResize={true} closeOnScroll={true} positionStrategy={'fixed'}/>
+                                                            <Tooltip className="usm-tool-tip" id={`usmmodal-thread-tip-${props.avatarEffectObj}`} place="top" closeOnResize={true} closeOnScroll={true} positionStrategy={'fixed'} />
                                                         </div>
                                                     )}
                                                 </div>
